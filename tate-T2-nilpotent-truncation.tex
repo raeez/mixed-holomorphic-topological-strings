@@ -1,16 +1,52 @@
 \section*{Nilpotent truncation of the cotangent shadow}
 
-The cubic nilpotent truncation gives a finite classical CE/PV
-calculation on
-\(\mathfrak h_{\leq N}=\mathfrak m^3/\mathfrak m^{N+1}\).  The full
-unreduced Tate-coefficient cotangent lift is governed by
-\ref{prob:formal-factorization-center}.  Its deciding obstructions are
-\ref{lem:tate-casimir-obstruction} (Casimir support fails in the
-direct-sum dual) and \ref{lem:finite-window-hamiltonian-obstruction}
-(no finite-dimensional Lie truncation of the full sector).  Weighted
-Tate completion changes the coefficient category.  Nilpotent truncation
-closes the classical finite CE/PV shadow and leaves the quantum
-Moyal-flat truncation problem.
+\emph{Closure-layer organizing question.}  Which subalgebra of the
+formal Hamiltonian algebra $\mathfrak h$ admits a finite-dimensional
+nilpotent truncation satisfying the lower-central Tate-pronilpotence
+hypothesis of Lemma~\ref{lem:continuous-bar-cobar}, and which sectors
+must be removed a priori for that hypothesis to hold?
+
+\emph{Named obstruction terms.}  For every $N\geq 1$,
+\[
+  \{z_1,z_2^{N+1}\}=(N+1)z_2^N\notin\mathfrak m^{N+1},\qquad
+  \{z_1^2,z_2^2\}=4z_1z_2,\qquad [H_2,H_2]=H_2\cong\mathfrak{sl}_2.
+\]
+The first identity is the linear-tail obstruction
+$\mathfrak o^{\mathrm{lin}}_N(z_1;z_2^{N+1})=(N+1)z_2^N$; it rules out
+$\mathfrak m^{N+1}$ as a Lie ideal once $z_1\in H_1$ is admitted.  The
+last two are the semisimple obstruction
+$\mathfrak o^{\mathrm{ss}}\colon\Lambda^2H_2\to H_2$ with image
+$\mathfrak{sl}_2$, ruling out nilpotence of $H_2$.  Together with the
+low-degree Casimir component
+$\mathfrak o^{\mathrm{Cas}}_{\leq2}=\sum_ie_{1,i}\otimes
+e_1^i+\sum_ie_{2,i}\otimes e_2^i$, these are the obstruction triple
+of Definition~\ref{defn:nilpotent-low-degree-obstruction-terms}.
+
+\emph{Unique survivor.}  Theorem~\ref{thm:phi-trunc-classical}:
+classically, on the cubic ideal
+$\mathfrak h_{\leq N}=\mathfrak m^3/\mathfrak m^{N+1}$, the finite
+cotangent CE/PV identity
+$\Phi_{\leq N}\colon
+C^\bullet_{\mathrm{CE},\mathrm{cont}}(\mathfrak g_{\leq N,I})
+\xrightarrow{\sim}
+\mathrm{PV}(\widehat{\mathbf S}(\mathfrak h_{\leq N,I}))$ is
+unconditional.
+
+\emph{Cuts on this survivor.}  Theorem~\ref{thm:phi-hbar-trunc}
+excludes the all-order Moyal lift on the same finite truncation;
+Theorem~\ref{rmk:colim-does-not-recover-full} shows the inverse limit
+recovers $\mathfrak m^3\subsetneq\mathfrak h$, not the whole.
+
+\emph{Residual.}  Problem~\ref{prob:linear-sector-lift}: extend
+$\Phi_{\mathfrak m^3}$ to $\mathfrak h=\mathfrak m$ by supplying a
+coefficient category in which
+$\mathfrak o^{\mathrm{Cas}}_{\leq2}$ converges and a relative or
+reductive replacement for the lower-central Tate-pronilpotent route
+that handles the semisimple
+$H_2\cong\mathfrak{sl}_2$ direction.  The truncation route does not
+solve $(\mathfrak o^{\mathrm{lin}}_N,\mathfrak o^{\mathrm{ss}},
+\mathfrak o^{\mathrm{Cas}}_{\leq2})$; it removes the sector on which
+those obstructions are felt.
 
 \subsection*{The truncation}
 
@@ -674,25 +710,24 @@ relative or reductive model for the \(H_2\)-sector.
 
 \begin{prob}[Low-degree-sector lift from the cubic ideal to the maximal ideal]
 \label{prob:linear-sector-lift}
-Extend the coordinate-window cotangent lift datum $\Phi_{\mathfrak m^3}$ of
-\ref{prop:colim-recovery} from $\mathfrak m^3$ to all of
-$\mathfrak h=\mathfrak m$. Equivalently, supply a Tate or
-weighted-coefficient extension in which the degree-$1$ and
-degree-$2$ Casimir components converge as kernels for the BV
-propagator, and in which the conformal-symplectic
-$\mathfrak{sl}_2$ direction $H_2$ is included by a relative or reductive
-replacement for the lower-central Tate-pronilpotence hypothesis of
-\ref{lem:continuous-bar-cobar}. By
-\ref{rmk:colim-does-not-recover-full} this is the
-low-degree-sector failure; by
-\ref{defn:nilpotent-low-degree-obstruction-terms} its obstruction
-terms are
-\(\mathfrak o^{\mathrm{lin}}_N\),
-\(\mathfrak o^{\mathrm{ss}}\), and
-\(\mathfrak o^{\mathrm{Cas}}_{\leq2}\); by
-\ref{lem:tate-casimir-obstruction}
-this is the same coefficient-category problem as
-\ref{prob:formal-factorization-center}. Thus the nilpotent-truncation route
+\emph{Construction problem.}  Extend the coordinate-window cotangent
+lift datum $\Phi_{\mathfrak m^3}$ of \ref{prop:colim-recovery} from
+$\mathfrak m^3$ to all of $\mathfrak h=\mathfrak m$ by supplying:
+(D1) a Tate or weighted-coefficient extension in which the degree-$1$
+and degree-$2$ Casimir components converge as kernels for the BV
+propagator; (D2) a relative or reductive replacement for the
+lower-central Tate-pronilpotence hypothesis of
+\ref{lem:continuous-bar-cobar} in which the conformal-symplectic
+$\mathfrak{sl}_2$ direction $H_2$ is included as semisimple data.
+\emph{Named obstruction class.}  By
+\ref{defn:nilpotent-low-degree-obstruction-terms} the obstruction
+terms are the triple
+\(\bigl(\mathfrak o^{\mathrm{lin}}_N,
+   \mathfrak o^{\mathrm{ss}},
+   \mathfrak o^{\mathrm{Cas}}_{\leq2}\bigr)\);
+by \ref{lem:tate-casimir-obstruction} (D1) is the same
+coefficient-category problem as
+\ref{prob:formal-factorization-center}.  The nilpotent-truncation route
 closes the classical nilpotent cotangent shadow on $\mathfrak m^3$, and the
 residual moves from \ref{prob:formal-factorization-center} as stated
 to its restricted form on the low-degree sector
@@ -780,39 +815,41 @@ $\mathfrak{sl}_2\subset H_2$ semisimple obstruction to
 lower-central Tate-pronilpotence.
 \end{rmk}
 
-\subsection*{Summary}
+\subsection*{Closure-layer ledger}
 
-The nilpotent truncation
-$\mathfrak h_{\leq N}=\mathfrak m^3/\mathfrak m^{N+1}$ closes
-the classical finite nilpotent cotangent CE/PV shadow on the truncated
-sector (degree-zero Hamiltonian plus finite cotangent labels). It does
-not construct the unreduced open BV factorization-centre morphism. The quantum
-all-order version on the same finite source is obstructed by
-\ref{thm:phi-hbar-trunc}: the Moyal bracket leaves
-$\mathfrak m^3/\mathfrak m^{N+1}$ for $N\geq4$.  The family
-$\Phi_{\mathfrak m^3}=\{\Phi_{\leq N}\}_N$ of
-\ref{prop:colim-recovery} is the classical coordinate-window cotangent
-lift datum on the full classical $\mathfrak m^3$ sector; a completed
-cochain inverse-limit statement requires the variance and
-continuous-dualization datum named there. What is lost: the low-degree sector
-$\mathfrak m/\mathfrak m^3=H_1\oplus H_2$ (linear translations and
-the conformal-symplectic $\mathfrak{sl}_2$), the
-constant-Hamiltonian $\hbar$-normalization, the U(1) center anomaly
-$[\bar c]$, and the stable connected limit on the full
-$\mathfrak h$. Recovering the low-degree sector requires the
-coefficient-category change of
-\ref{prob:formal-factorization-center} together with a
-relative or reductive replacement for the lower-central
-Tate-pronilpotent route of \ref{lem:continuous-bar-cobar}, so that the
-semisimple $\mathfrak{sl}_2\subset H_2$ is treated as semisimple data
-rather than as a pronilpotent radical. Thus the
-nilpotent truncation
-closes only the classical $\mathfrak m^3$ truncation; its all-order
-quantum version is the separate Moyal-flat truncation problem above.
+\emph{What is closed.}  The classical finite nilpotent cotangent
+CE/PV shadow on the cubic ideal:
+\(\mathfrak h_{\leq N}=\mathfrak m^3/\mathfrak m^{N+1}\) carries
+\ref{thm:phi-trunc-classical} unconditionally; the coordinate-window
+family $\Phi_{\mathfrak m^3}=\{\Phi_{\leq N}\}_N$ of
+\ref{prop:colim-recovery} recovers
+$\varprojlim_N\mathfrak h_{\leq N}=\mathfrak m^3$.
 
-This is the same structural truncation as Costello--Li
-$\mathfrak{gl}(N\mid N)\to\mathfrak{gl}(\infty\mid\infty)$, with the
-key difference that the symplectic-plane $\mathfrak m$-adic system
-does not admit a free directed exhaustion by nilpotent Lie
-subalgebras containing $H_1\oplus H_2$; the truncation removes the
-low-degree sector by hypothesis.
+\emph{What is obstructed.}  The all-order Moyal lift on the same
+finite source (\ref{thm:phi-hbar-trunc}: Moyal bracket leaves
+$\mathfrak m^3/\mathfrak m^{N+1}$ at order $\hbar^2$ already from
+$N\geq4$); the extension of $\Phi_{\mathfrak m^3}$ to
+$\mathfrak h=\mathfrak m$ by the obstruction triple
+$(\mathfrak o^{\mathrm{lin}}_N,\mathfrak o^{\mathrm{ss}},
+\mathfrak o^{\mathrm{Cas}}_{\leq2})$ of
+\ref{defn:nilpotent-low-degree-obstruction-terms}
+(\ref{rmk:colim-does-not-recover-full},
+\ref{lem:nilpotent-obstructions-exact}); a completed cochain
+inverse-limit statement on cochains, which requires the variance and
+continuous-dualization datum named in \ref{prop:colim-recovery}.
+
+\emph{Missing data for the low-degree-sector lift.}  The residual
+problem \ref{prob:linear-sector-lift} is the existence of: a
+coefficient category in which
+$\mathfrak o^{\mathrm{Cas}}_{\leq2}=\sum_ie_{1,i}\otimes
+e_1^i+\sum_ie_{2,i}\otimes e_2^i$ converges as a kernel for the BV
+propagator; a relative or reductive replacement for the lower-central
+Tate-pronilpotent route of \ref{lem:continuous-bar-cobar} that treats
+$H_2\cong\mathfrak{sl}_2$ as semisimple data rather than as a
+pronilpotent radical
+(\ref{rmk:conilpotency-essential}).  The Costello--Li
+$\mathfrak{gl}(N\mid N)\to\mathfrak{gl}(\infty\mid\infty)$ structural
+analogue (\ref{rmk:costello-li-precedent}) does not transfer: the
+symplectic-plane $\mathfrak m$-adic system has no free directed
+exhaustion by nilpotent Lie subalgebras containing
+$H_1\oplus H_2$.

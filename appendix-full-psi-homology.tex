@@ -3,6 +3,43 @@
 \section{\texorpdfstring{Full Primitive Higher-\(\psi\) Koszul Homology}{Full Primitive Higher-psi Koszul Homology}}
 \label{sec:app-full-psi-homology}
 
+\emph{Load-bearing role.}  Principle~1 of the introduction asserts
+that the open BV theory of the brane probe stack is the Koszul
+zero-fibre of the
+\(GL_N\)-conjugation moment map and that its primitive trace content
+is the matrix-probe family \(J(f)\).  Principle~4 then asserts that
+the polynomial one-\(\psi\) descendant labels \(\Psi_{a,b}\) are the
+PBW special-fibre shadow of a different module from the residual
+cotangent module \(\mc P\).  Both principles need a single universal
+calculation: the full primitive cyclic Koszul homology of
+\((A_\psi,d\psi=xy-yx)\) graded by \(\psi\)-count.  This appendix
+supplies that calculation in the bidegree-organised form.  The
+load-bearing outputs are
+\begin{enumerate}
+  \item the bidegree homology theorem
+    (Theorem~\ref{thm:app-full-primitive-psi-homology}): no primitive
+    classes beyond \(\psi\)-degree one and the explicit one-\(\psi\)
+    cycle \(\Psi_{R-1,S-1}\);
+  \item the universal primitive descendant theorem
+    (Theorem~\ref{thm:app-full-universal-primitive-descendant}): every
+    stable primitive single-trace model with the same generators and
+    \(d\psi=xy-yx\) factors through this one;
+  \item the Hamiltonian-sector extraction
+    (Theorem~\ref{thm:app-full-hamiltonian-sector-extraction}): the
+    decomposition into the closed Hamiltonian summand
+    \(\bar A\), its one-\(\psi\) descendant copy
+    \(\bar A_{\mathrm{desc}}[1]\), and the removed scalar lines
+    \(\C\cdot[1]\) and \(\C\cdot[\Psi_{0,0}]\).
+\end{enumerate}
+These outputs are the computation cited by
+Proposition~\ref{prop:one-psi-homology}, by the corollary in §6 of
+the body that pins the no-higher-\(\psi\)-class statement
+(\(p\geq2\) groups vanish), and by
+Theorem~\ref{thm:T5-full-primitive-psi-homology} of the Tate residual
+fragment.  The \(\Psi_{a,b}\)-versus-\(\rho_{a,b}\) separation theorem
+(Theorem~\ref{thm:pbw-vs-deformation}) cites the same generator
+together with the Matlis appendix.
+
 The universal primitive single-trace Koszul complex is attached to the
 moment-map equation \([x,y]=0\).  Universal means that no
 choice of Matlis target, PBW model, finite \(N\) trace identity, or quantum
@@ -567,3 +604,51 @@ explicit condition excluding new \(\varprojlim^1\) classes.
   homology statement; it does not identify \(\Psi_{a,b}\) with Matlis
   principal parts or with the Moyal coadjoint module.
 \end{proof}
+
+\begin{rmk}[What supports what]
+\label{rmk:app-full-psi-what-supports-what}
+  This appendix supplies the full primitive single-trace Koszul
+  calculation invoked by the body in three independent places.
+  \begin{enumerate}
+    \item Theorem~\ref{thm:app-full-primitive-psi-homology} is the
+      bidegree-resolved form of the calculation cited by
+      Proposition~\ref{prop:one-psi-homology}.  The body proposition
+      proves the one-\(\psi\) homology line in each bidegree; the
+      appendix proves additionally that all higher-\(\psi\) groups
+      vanish.  This vanishing is what allows the body to write the
+      stable primitive descendant module as \(\bar A\theta\).
+    \item Theorem~\ref{thm:app-full-universal-primitive-descendant}
+      is the universal property used in the corollary near
+      line~6047 of \texttt{main.tex} (``the result does not identify
+      the polynomial one-\(\psi\) span with Matlis principal parts'')
+      and quoted again in
+      Theorem~\ref{thm:T5-full-primitive-psi-homology} of
+      \texttt{tate-T5-chain-level-primitive.tex}: every stable
+      primitive single-trace model satisfying the hypotheses factors
+      on homology through the displayed two-line module, hence cannot
+      generate hidden higher-\(\psi\) classes that would then have to
+      be matched against a cotangent target.
+    \item Theorem~\ref{thm:app-full-hamiltonian-sector-extraction}
+      identifies the surviving sectors after removing the constants
+      \([1]\) and the odd scalar \([\Psi_{0,0}]\).  The reduced
+      decomposition \(\bar A\oplus\bar A_{\mathrm{desc}}[1]\) is the
+      target of the open trace generators \(O_{a,b}\) and the
+      one-\(\psi\) primitive labels \(\Psi_{a,b}\) used by the
+      body.  Together with
+      Theorem~\ref{thm:app-matlis-polynomial-descendant-obstruction}
+      it forms the technical core of the
+      \(\Psi\)-versus-\(\rho\) separation in
+      Theorem~\ref{thm:pbw-vs-deformation}: the polynomial label
+      module is the bidegree-graded one-\(\psi\) sector here, and the
+      cotangent module is the residual one in the Matlis appendix;
+      they share an index set and not a module structure.
+  \end{enumerate}
+  The chip-moving state-complex construction of
+  Construction~\ref{constr:app-chip-state-complex} and the cyclic
+  Abel-quotient calculation of
+  Lemmas~\ref{lem:app-state-chain-identification}--\ref{lem:app-cyclic-abel-stabilizers}
+  are the explicit cellular model that proves the cyclic Koszul
+  complex has the homology of a circle in each bidegree; they are
+  load-bearing for the bidegree theorem above.  No section of this
+  appendix is auxiliary.
+\end{rmk}

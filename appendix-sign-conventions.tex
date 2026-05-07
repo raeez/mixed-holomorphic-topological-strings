@@ -2,15 +2,21 @@
 \label{sec:app-sign-conventions}
 \label{app:sign-conventions}
 
-The CE/PV comparison, the primitive one-\(\psi\) complex, the
-principal-part coadjoint action, and the Moyal deformation use the
-following signs.  The cohomological shift convention is
-\[
-  (V[1])^n=V^{n+1}.
-\]
-The reduced matrix Koszul letter \(\psi\) is odd.  All cyclic signs
-below use its parity; the absolute BV grading enters only through the
-global shift of the cotangent coordinate.
+The unique consistent sign datum.  A single set of signs is fixed
+here once for the entire manuscript and underwrites every later
+identity: the CE/PV cochain isomorphism, the residue coadjoint
+formula, the Moyal \(1/24\) coefficient, the principal-part raising
+versus PBW lowering separation, the brane-line current bracket, and
+the scalar contact \(\hbar N\omega\).  The cohomological shift
+convention is \((V[1])^n=V^{n+1}\); the reduced matrix Koszul letter
+\(\psi\) is odd, and all cyclic signs use its parity.  Absolute BV
+grading enters only through the global shift of the cotangent
+coordinate.  By
+Corollary~\ref{cor:app-sign-universal-dual-normalization}, no scalar
+renormalization absorbs the structural mismatch between the
+principal-part coadjoint action and the polynomial PBW raising
+action: an inconsistency below is not a tunable parameter but a
+load-bearing flag for repair.
 
 \begin{defn}[Hamiltonian and cyclic conventions]
 \label{def:app-sign-hamiltonian-cyclic}
@@ -324,3 +330,48 @@ global shift of the cotangent coordinate.
   this non-locally-nilpotent principal-part action; the obstruction is structural, not a
   convention error.
 \end{proof}
+
+\begin{rmk}[What supports what]
+\label{rmk:app-sign-conventions-support-map}
+  Each lemma is the unique consistent sign datum for one downstream
+  identity; the corollary records the structural separation that no
+  rescaling can absorb.
+  \begin{enumerate}[label=(\roman*)]
+    \item Lemma~\ref{lem:app-sign-ce-pv}: CE/PV intertwining on
+      generators (\(c^I\mapsto\theta^I\), \(u_K\mapsto O_K\));
+      underlies the central operation theorem and every cochain CE/PV
+      identity.
+    \item Lemma~\ref{lem:app-sign-one-psi-boundary}: primitive
+      one-\(\psi\) chain boundary
+      \(\partial_2(u,v)=vxyu-vyxu-uxyv+uyxv\); used in the open-side
+      homology computations.
+    \item Lemma~\ref{lem:app-sign-principal-part}: residue-coadjoint
+      signs \(z_1\cdot\rho_{a,b}=-(b+1)\rho_{a,b+1}\),
+      \(z_2\cdot\rho_{a,b}=(a+1)\rho_{a+1,b}\) of the Matlis
+      principal-part module (Principle 4); enters
+      Theorem~\ref{thm:principal-part-coadjoint-uniqueness}.
+    \item Lemma~\ref{lem:app-sign-pbw-descendant}: opposite PBW
+      raising sign of the polynomial descendant shadow; feeds the
+      no-go Theorem~\ref{thm:no-polynomial-realization-categorical}.
+    \item Lemma~\ref{lem:app-sign-current-source}: brane-line current
+      source convention \(u_{a(t)dt\otimes f}\mapsto B_f(a)\) and its
+      bracket signs; used by
+      Theorem~\ref{thm:app-algebraic-factorization-centre-zero-homotopies}.
+    \item Lemma~\ref{lem:app-sign-moyal-coefficients}: third Moyal
+      weight \(1/24\) and the higher odd weights used throughout
+      Appendix~\ref{sec:app-radial-parts-moyal}.
+    \item Lemma~\ref{lem:app-sign-moyal-coadjoint} and
+      Corollary~\ref{cor:app-sign-universal-dual-normalization}:
+      universal residue-dual normalization for the quantum
+      principal-part target in
+      Proposition~\ref{prop:app-moyal-capelli-realization-boundary}(4).
+  \end{enumerate}
+  These conventions also fix the scalar cocycle
+  \(\omega(z_1,z_2)=1\), the Capelli/Weyl shift \(\hbar N\), the
+  obstruction class \(\operatorname{Ob}_{\mathrm{sc}}\), and the
+  cohomology class \([\bar c]\) of
+  Appendix~\ref{sec:app-unreduced-bv-qme} and
+  Theorem~\ref{thm:app-scalar-contact-qme-class}.  Any later identity
+  read in a different sign convention is a load-bearing
+  inconsistency, not a parameter freedom.
+\end{rmk}

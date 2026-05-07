@@ -1,33 +1,89 @@
 \section*{BV-cohomology vanishing and the unreduced cotangent lift}
 
+\emph{Closure-layer organizing question.}  Does the Costello--Li 2012
+BCOV vanishing theorem \cite{costello-li-quantum-bcov}, possibly
+extended by its 2015 open-closed sequel
+\cite{costello-li-open-closed-bcov}, supply an endpoint-admissible
+coefficient module for Problem~\ref{prob:formal-factorization-center}
+on $\R^2\times\C^2$ with brane
+$L=\R_{\mathrm{brane}}\times\{0\}\times\{p\}$ and ordinary
+$\lie{gl}_N$ gauge data?
+
+\emph{Named obstruction tuple.}
+$\mathfrak o_{\mathrm{BV,end}}=(\mathfrak o_{\mathrm{Cas}},
+\mathfrak o_{\mathrm{def}},\mathfrak o_{\mathrm{RG}},
+\mathfrak o_{\mathrm{QME}})$ of
+Definition~\ref{defn:bv-endpoint-obstruction-tuple}.  Its components
+record, in order: the strict-pair Casimir support failure of
+Lemma~\ref{lem:tate-casimir-obstruction}; the absence of a brane-line
+extension of the bulk propagator and bracket transport with ordinary
+$\lie{gl}_N$ open observables; the failure of Costello's RG flow
+$W(P_{\epsilon,L},I)$ to preserve the strict finite-window
+Mittag--Leffler tower; and the mixed brane-defect QME class
+in $H^1(\mathcal O_{\mathrm{loc}}(\mathcal E_\ast),Q+\{I_\ast,-\})$.
+
+\emph{Hypothesis comparison.}  The cited theorems and the present
+local model differ along five independent axes:
+(S1)~compact Hodge-theoretic geometry vs.\ the formal $\C^2$ jet
+model; (S2)~pure holomorphic-volume kinematics vs.\ mixed
+$d_{\R^2}+\bar\partial_{\C^2}$; (S3)~no brane vs.\ topological line
+defect $L\subset\R^2\times\C^2$;
+(S4)~$\mathrm{str}(I)=N-N=0$ on $\lie{gl}(N\mid N)$ vs.\ ordinary
+$\lie{gl}_N$ with residual U(1) center class
+$[\bar c]\in H^2_{\mathrm{Lie}}(\bar A,\C)$; (S5)~worldsheet $t$-Tate
+direction vs.\ coefficient-system Tate direction
+$\widehat{\mathfrak h}\widehat\otimes\widehat{\mathfrak
+h}^{\vee}_{\mathrm{cont}}$ in which the Casimir must converge.
+
+\emph{Unique survivor.}  The separation theorem
+Theorem~\ref{thm:costello-li-no-coefficient-endpoint}: the cited
+theorems run on different geometric and coefficient data and yield an
+endpoint-admissible coefficient module only after three independent
+data are added (E2,~E3,~E5), with vanishing of the QME component
+$\mathfrak o_{\mathrm{QME}}$ a separate quantum input.
+
+\emph{Construction that closes the tuple.}  By
+Proposition~\ref{prop:bv-endpoint-obstruction-tuple}, the endpoint of
+Definition~\ref{defn:endpoint-admissible-coefficient-module} exists
+exactly on the common zero locus of
+$\mathfrak o_{\mathrm{BV,end}}$.  Three of its four components sit
+outside the cited Costello--Li theorems by hypothesis comparison; the
+named missing data are listed precisely in
+Theorem~\ref{thm:t4-four-missing}: a non-compact / Omega-background
+BV-cohomology vanishing replacing (S1); a topological--holomorphic
+mixed kinematics vanishing on $D=d_{\R^2}+\bar\partial_{\C^2}$
+replacing (S2); a brane-defect extension on $L$ with ordinary
+$\lie{gl}_N$ replacing (S3)--(S4); and a coefficient-system Tate
+completion replacing (S5).
+
+\emph{Residual.}  The four missing data of
+Theorem~\ref{thm:t4-four-missing} together with the QME component
+$\mathfrak o_{\mathrm{QME}}$.  The closure layer is a separation
+theorem, not an importation theorem: no Costello--Li statement is used
+as a closure here.
+
 \subsection*{Costello--Li 2012 hypotheses, restated}
 
 \begin{stmt}[Costello--Li 2012 BCOV construction,
    restated]\label{stmt:costello-li-2012-restated}
   Let $X$ satisfy the compact holomorphic-volume hypotheses of
   Costello--Li 2012, with volume form $\Omega$. Let
-  $\mathrm{PV}(X)[[t]]$ be
-  the polyvector field complex with the Tate parameter $t$ (the
-  worldsheet $S^1$ rotation), with differential
-  $Q=\bar\partial+t\,\partial_\Omega$ and $(-1)$-shifted symplectic
+  $\mathrm{PV}(X)[[t]]$ be the polyvector field complex with the Tate
+  parameter $t$ (worldsheet $S^1$ rotation), differential
+  $Q=\bar\partial+t\,\partial_\Omega$, and $(-1)$-shifted symplectic
   pairing
   $$\langle \alpha,\beta\rangle
     =\int_X (\alpha\wedge\beta)\big|_{\mathrm{PV}^{d,d}}\cdot\Omega^2.$$
   The classical BCOV interaction $I_{\mathrm{BCOV}}$ is the cubic
-  vertex on $\mathrm{PV}(X)[[t]]$ supplied by
+  vertex on $\mathrm{PV}(X)[[t]]$ of
   \cite{costello-li-quantum-bcov}.  The cited construction supplies the
   generalized classical BCOV complex, its local-functional obstruction
-  complex, and the renormalization framework in which quantization
-  obstructions are stated.  The quantization vanishing theorems used as
-  primary-source precedent here are used only under their stated
-  hypotheses.
+  complex, and the renormalization framework.  The 2015 sequel
+  \cite{costello-li-open-closed-bcov} extends to open-closed BCOV with
+  open gauge data $\lie{gl}(N\mid N)$, anomaly cancellation by the
+  supertrace, on flat $\mathbb C^d$, $d$ odd.  Each is used here only
+  under its stated hypotheses.
 \end{stmt}
-
-The 2015 sequel \cite{costello-li-open-closed-bcov} extends to
-open-closed BCOV with open gauge data $\lie{gl}(N\mid N)$, anomaly
-cancellation by the supertrace, on flat $\mathbb C^d$, $d$ odd. That
-is the precedent for defects in the Costello--Li line, but on
-$\mathbb C^d$, not on $\R^2\times\C^2$ with topological factor.
 
 \subsection*{Applicability check on \texorpdfstring{$\R^2\times\C^2$}{R2 x C2}
    with brane \texorpdfstring{$L=\R_{\mathrm{brane}}\times\{0\}\times\{p\}$}{L} and \texorpdfstring{$\lie{gl}_N$}{gl\_N}}
@@ -303,8 +359,14 @@ $\mathbb C^d$, not on $\R^2\times\C^2$ with topological factor.
 \end{proof}
 
 \begin{rmk}[Costello--Li convention boundary]\label{rmk:t4-external-comparison-boundary}
-  The local Hamiltonian BF sector here supplies the formal-disk
-  coefficient normalization.  Costello--Li 2012 supplies the convention
-  template used to state the coefficient problem for the unreduced
-  cotangent lift.
+  The local Hamiltonian BF sector supplies the formal-disk coefficient
+  normalization.  Costello--Li 2012 supplies the convention template
+  used to state the coefficient problem.  No theorem from the cited
+  sources is imported as a closure of the present coefficient
+  endpoint; the closure data are precisely the named obstruction
+  components in
+  Definition~\ref{defn:bv-endpoint-obstruction-tuple}, and the
+  endpoint-admissible coefficient module of
+  Definition~\ref{defn:endpoint-admissible-coefficient-module} exists
+  if and only if all four components vanish.
 \end{rmk}

@@ -1,14 +1,72 @@
 \section{Radial Parts and the Moyal Normalization}
 \label{sec:app-radial-parts-moyal}
 
-The degree-zero quantum target is the scalar-reduced Weyl/Moyal algebra
-with Capelli-renormalized matrix traces.  The reduced open-line Wick
-model uses midpoint propagator
-\(\frac12\operatorname{sgn}(t-s)\).  Given the finite-\(N\) radial image
-datum of Statement~\ref{stmt:app-radial-external-input}, Vandermonde
-conjugation removes the Dunkl--Calogero connection terms, radial
-injectivity detects the reduced quotient, and the stable primitive
-projection extracts the single-trace Moyal bracket.
+Quantization is a measurement test (Principle 6).  Take the formal
+Weyl quantization of the symplectic disk on one side and stable
+scalar-reduced trace measurement on the matrix probe stack on the
+other.  At each bidegree \((a,b)\), the obstruction to their
+commuting is a single class
+\[
+  \Omega^{\mathrm{rad}}_{a,b}
+    \in
+  \operatorname{coker}B_{a,b},
+  \qquad
+  B_{a,b}\colon\mathsf W_{a,b}
+    \longrightarrow
+  \mathsf V_{a,b}\oplus\mathsf{Diag}_{a,b},
+\]
+defined on the necklace word / cyclic word / free indexed
+normal-diagram triple of
+Definition~\ref{def:app-free-kernel-correction-obstruction}.
+Vanishing \(\Omega^{\mathrm{rad}}_{a,b}=0\) is equivalent to the
+decorated PBW Stokes equation
+\[
+  D^\square_{a,b}H_{a,b}=R^{\mathrm{free}}_{a,b},
+  \qquad
+  D^\square_{a,b}=C^+_{a,b}\partial_2,
+\]
+and a genuine failure is a normalized signed row
+\((\phi,-\lambda)\in\ker B_{a,b}^*\) with
+\(\lambda(E^+_{a,b})-\phi(T_{a,b})=1\)
+(Proposition~\ref{prop:app-radial-dual-potential-obstruction}).  This
+is the unique survivor of the appendix.
+
+The calculus that makes that single statement honest is the
+following.  The formal Weyl/Moyal coefficients on the constant
+symplectic plane and the Capelli triangular trace normalization on
+the matrix Weyl algebra reduce the comparison to a finite-dimensional
+linear-algebra problem in the free indexed normal-diagram algebra,
+where finite-rank Procesi--Razmyslov stable injectivity makes
+all-\(N\) identities visible window by window.  The
+Vandermonde-conjugated Harish-Chandra radial-parts datum
+\cites{harish-chandra-invariant-differential-operators,
+wallach-reductive-invariant-differential,
+levasseur-stafford-harish-chandra,
+levasseur-stafford-kernel-harish-chandra} is named precisely as
+Statement~\ref{stmt:app-radial-external-input}, with the missing
+clause and its nonlinear-shear obstruction marked.  The decorated
+square-cell PBW Stokes complex resolves the kernel-correction
+problem into the equation \(D^\square_{a,b}H_{a,b}=R^{\mathrm{free}}_{a,b}\).
+The reduced open-line Wick graph realization with midpoint propagator
+\(\tfrac12\operatorname{sgn}(t-s)\) realizes the same Moyal product
+to all orders.
+
+Closure status across the bidegree lattice.  The edge strips
+\(\mathfrak o_{2,b}=\mathfrak o_{a,2}=0\) close in closed form
+(Proposition~\ref{prop:app-edge-pbw-telescoping}).  The interior
+bidegrees \((4,4)\), \((3,5)\), \((5,3)\), \((3,6)\), \((6,3)\)
+close, by the displayed kernel correction or by zero residual
+(Propositions~\ref{prop:app-free-trace-diagram-K44},
+\ref{prop:app-free-residual-vanishings}).  The first undecided
+bidegrees are total degree \(14\): \((6,8)\), \((8,6)\), \((7,7)\).
+Reflection symmetry \((a,b)\leftrightarrow(b,a)\) reduces the open
+frontier to \((6,8)\) and \((7,7)\).  At each bidegree
+Proposition~\ref{prop:app-radial-dual-potential-obstruction} demands
+exactly one of two named finite-dimensional data: an explicit Stokes
+primitive \(H_{a,b}\), or a normalized signed row
+\((\phi,\lambda)\in\ker B_{a,b}^*\) with
+\(\lambda(E^+_{a,b})-\phi(T_{a,b})=1\); see
+Remark~\ref{rmk:app-radial-open-bidegree-frontier}.
 
 \begin{defn}[Formal Weyl/Moyal convention]
 \label{def:app-radial-moyal-convention}
@@ -1956,3 +2014,112 @@ exactly the assertion that the ordinary Weyl trace \(J_N(f)\) equals
   from the Costello graph/QME realization is part of the hypothesis
   boundary in Theorem~\ref{thm:phi-hbar-all-order}.
 \end{proof}
+
+\begin{rmk}[Open-bidegree frontier and the precise construction request at \((6,8),(8,6),(7,7)\)]
+\label{rmk:app-radial-open-bidegree-frontier}
+  The all-bidegree decorated PBW Stokes identity is the strongest true
+  theorem on this frontier: prove
+  \(\Omega^{\mathrm{rad}}_{a,b}=0\) for every \((a,b)\), equivalently
+  \(D^\square_{a,b}H_{a,b}=R^{\mathrm{free}}_{a,b}\) for every
+  \((a,b)\).  Edge strips and the named interior bidegrees up through
+  total degree \(13\), together with \((3,6)\) and \((6,3)\), are
+  closed.  In total degree \(14\) the diagonal
+  bidegrees \((6,8),(8,6),(7,7)\) are not closed by the present exact
+  enumeration: at these bidegrees \(\mathsf W_{a,b}\),
+  \(\mathsf{Diag}_{a,b}\), and the matching count for \(C^+_{a,b}\) are
+  the timeout frontier of
+  \(\texttt{scripts/quantum\_shear\_trace\_diagram\_normal\_form.py}\)
+  in \(\texttt{--solve-free}\) and \(\texttt{--kernel-correction}\)
+  modes.
+
+  At the supremum of the present construction, closure of \((6,8)\),
+  \((8,6)\), or \((7,7)\) is exactly one of the following two named
+  finite-dimensional data.
+  \begin{enumerate}[label=(\roman*)]
+    \item \emph{Stokes primitive.}  An element
+      \(H_{a,b}\in\mathsf S_{a,b}\) with
+      \(D^\square_{a,b}H_{a,b}=R^{\mathrm{free}}_{a,b}\), equivalently
+      a kernel correction
+      \(K_{a,b}=\partial_2H_{a,b}\in Z_{a,b}\) with
+      \(C^+_{a,b}(K_{a,b})=R^{\mathrm{free}}_{a,b}\).  Existence is the
+      Hodge equivalence
+      \(\Pi^{\mathrm{harm}}_{a,b}R^{\mathrm{free}}_{a,b}=0\) of
+      Statement~\ref{stmt:app-free-kernel-homotopy-obstruction}; the
+      explicit primitive is then the canonical Hodge correction
+      \(K_{a,b}=A_{a,b}^{*}(\Delta^{\mathrm{dec}}_{a,b})^{-1}
+      R^{\mathrm{free}}_{a,b}\).
+    \item \emph{Normalized signed row.}  A pair
+      \((\phi,\lambda)\in
+      \mathsf V_{a,b}^*\oplus\mathsf{Diag}_{a,b}^*\) with
+      \[
+        \lambda C^+_{a,b}(W)=\phi(\partial W)
+          \quad(W\in\mathsf W_{a,b}),
+        \qquad
+        \lambda(E^+_{a,b})-\phi(T_{a,b})=1,
+      \]
+      equivalently a normalized
+      \(\lambda\in\ker(D^\square_{a,b})^*\) with
+      \(\lambda(R^{\mathrm{free}}_{a,b})=1\).
+  \end{enumerate}
+  These are mutually exclusive by
+  Proposition~\ref{prop:app-radial-dual-potential-obstruction}: at each
+  bidegree \((a,b)\) exactly one of (i) or (ii) holds.  A heuristic
+  computation cannot resolve them.  The construction request for the
+  open frontier is therefore the explicit production of (i) or (ii) at
+  each of \((6,8)\), \((8,6)\), \((7,7)\).  Until that datum is
+  supplied at a given bidegree, the corresponding instance of P6 is a
+  named obstruction problem, not a closed theorem; this is exactly the
+  scope of the C1 conjecture in the abstract.
+
+  The reflection symmetry \((a,b)\leftrightarrow(b,a)\) reduces the
+  question to \((6,8)\) and \((7,7)\): every datum at \((8,6)\) is the
+  transpose of a datum at \((6,8)\) under the symplectic involution
+  \(z_1\leftrightarrow z_2\), \(x\leftrightarrow y\), with sign
+  \(\omega(z_1,z_2)\to-\omega(z_2,z_1)\) recorded in
+  Proposition~\ref{prop:app-local-geometry-scalar-shadow}.
+\end{rmk}
+
+\begin{rmk}[What supports what]
+\label{rmk:app-radial-parts-moyal-support-map}
+  Three load-bearing surfaces in the main text rest on this appendix.
+  \begin{enumerate}[label=(\roman*)]
+    \item \emph{Principle 6 (quantization is a measurement test).}
+      Proposition~\ref{prop:app-radial-dual-potential-obstruction}
+      isolates the obstruction \(\Omega^{\mathrm{rad}}_{a,b}\), the
+      decorated PBW Stokes equation
+      \(D^\square_{a,b}H_{a,b}=R^{\mathrm{free}}_{a,b}\), and the
+      normalized signed-row failure criterion.  This is the
+      obstruction-theoretic content of P6 cited in the preface and in
+      conjecture C1 of the abstract.
+    \item \emph{Theorem~\ref{thm:componentwise-quantum-coefficient-comparison}.}
+      Proposition~\ref{prop:app-moyal-capelli-realization-boundary}
+      assembles four independent components: raw Moyal commutator
+      coefficients (Theorem~\ref{thm:app-radial-moyal-coefficients});
+      Capelli triangular trace normalization
+      (Lemma~\ref{lem:app-radial-capelli-triangular}); the radial-parts
+      identity assuming the
+      Statement~\ref{stmt:app-radial-external-input} input
+      (Theorem~\ref{thm:app-radial-finite-N}); connected-trace bracket
+      compatibility (Theorem~\ref{cor:app-radial-stable-connected});
+      and the open-line midpoint Moyal realization
+      (Theorem~\ref{thm:app-reduced-open-line-moyal-product},
+      Corollary~\ref{cor:app-reduced-graph-realizes-moyal}).
+    \item \emph{Edge-strip closures.}
+      Proposition~\ref{prop:app-edge-pbw-telescoping} closes
+      \(\mathfrak o_{2,b}=\mathfrak o_{a,2}=0\) for every
+      \(a,b\geq2\) in closed form, eliminating the one-moving-letter
+      strip from the open-bidegree frontier.
+  \end{enumerate}
+  Open frontier.  The first undecided bidegrees live at total degree
+  \(14\): \((6,8)\), \((8,6)\), \((7,7)\), reduced by reflection
+  symmetry to \((6,8)\) and \((7,7)\).  At each, the construction
+  request is item (i) or (ii) of
+  Remark~\ref{rmk:app-radial-open-bidegree-frontier}: an explicit
+  Stokes primitive \(H_{a,b}\in\mathsf S_{a,b}\) with
+  \(D^\square_{a,b}H_{a,b}=R^{\mathrm{free}}_{a,b}\), or a normalized
+  signed row \((\phi,\lambda)\in\ker B_{a,b}^*\) with
+  \(\lambda(E^+_{a,b})-\phi(T_{a,b})=1\).  These two alternatives are
+  mutually exclusive
+  (Proposition~\ref{prop:app-radial-dual-potential-obstruction}); a
+  heuristic timeout is not a resolution.
+\end{rmk}

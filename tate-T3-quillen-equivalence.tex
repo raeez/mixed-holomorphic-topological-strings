@@ -1,6 +1,63 @@
 \subsection[Tate Quillen equivalence and the infinity-categorical upgrade]{Tate Quillen equivalence and the $\infty$-categorical
 upgrade of the cochain bar-cobar identity}\label{sec:tate-quillen}
 
+\emph{Closure-layer organizing question.}  In which model-categorical
+envelope does the strict cochain CE/PV identity promote to a Quillen
+equivalence and to an equivalence of associated $\infty$-categories,
+and how is the strict product/direct-sum tail-quotient class
+neutralized?
+
+\emph{Named obstruction class.}  For zero-differential
+finite-dimensional pieces $\{V_d\}_{d\geq1}$,
+\[
+  V_\oplus=\bigoplus_{d\geq1}V_d
+    \hookrightarrow
+  V_\Pi=\prod_{d\geq1}V_d,
+\]
+filtered by degree tails, is an admissible filtered weak equivalence
+(isomorphism on every finite quotient, isomorphism on associated
+graded), yet
+$H^0(V_\Pi/V_\oplus)=V_\Pi/V_\oplus\neq0$
+(Lemma~\ref{lem:tate-envelope-tail-boundary}): the tail-quotient class
+is invisible to admissible filtered weak equivalence.  The full
+closure-layer obstruction is the Koszul datum
+$\mathcal O_{\mathrm{Kos}}=\mathcal O_{\mathrm{win}}\oplus
+\mathcal O_{\mathrm{top}}\oplus\mathcal O_{\mathrm{conilp}}\oplus
+\mathcal O_{\mathrm{MC}}(\tau)\oplus\mathcal O_{\mathrm{cobar}}(\tau)$
+of Definition~\ref{defn:universal-koszul-obstruction-complex}.
+
+\emph{Unique survivor.}  Theorem~\ref{thm:tate-bar-cobar-quillen}: the
+bar-cobar adjunction $\Omega\dashv\mathrm{Bar}$ is a Quillen
+equivalence on the admissible Tate envelope of
+Statement~\ref{stmt:tate-model-envelope}, and by Lurie A.3.7 it
+descends to an equivalence of associated $\infty$-categories
+(Corollary~\ref{cor:tate-bar-cobar-infinity}).
+
+\emph{Missing datum.}  An admissible Tate model envelope: a
+bounded-below, locally presentable symmetric monoidal model category
+extending the strict finite-window Mittag--Leffler habitat
+$\Cat{MLTateChain}_{\geq0}^{\mathrm{str}}$ of
+Definition~\ref{defn:strict-ml-tate-habitat} with transfer,
+smallness, and monoid axioms; equivalently
+Statement~\ref{stmt:tate-model-envelope}.  The admissibility criterion
+\[
+  \omega_{\mathrm{win}}=0,\quad
+  \mathcal O_{\mathrm{conilp}}=0,\quad
+  \mathcal O_{\mathrm{MC}}(\tau)=0,\quad
+  H^\bullet\bigl(\mathcal O_{\mathrm{top}}
+    \oplus\mathcal O_{\mathrm{cobar}}(\tau)\bigr)=0
+\]
+is necessary and sufficient
+(Theorem~\ref{thm:universal-filtered-cobar-recognition}).
+
+\emph{Residual.}  The Weiss-cosheaf descent on the unreduced
+factorization algebra
+(Proposition~\ref{prop:weiss-cosheaf-residual}); the algebraic
+$\infty$-categorical promotion does not by itself pass Weiss covers on
+$\R^2\times\C^2$, which require the brane-defect heat-kernel
+propagator extension of
+Problem~\ref{prob:formal-factorization-center}~item~(2).
+
 \subsubsection{Categorical home}
 
 Let $\Cat{TateVec}$ be the closed symmetric monoidal category of
@@ -10,12 +67,12 @@ $V=\varprojlim_w V_{\leq w}$ and $\bigcap_w F^w V=0$. Concrete
 morphisms are filtration-preserving continuous chain maps. The
 working ambient category is the bounded-below filtered subcategory
 $\Cat{TateChain}_{\geq 0}$ of non-negatively filtered chain
-complexes in $\Cat{TateVec}$, large enough to contain every CE
-  chain coalgebra and completed enveloping algebra used here.  The
-  exact completion used below is constructed first.  The
-  model-categorical statements add transfer, smallness, and monoid
-  hypotheses to this exact Mittag-Leffler habitat; they are not
-  statements about the raw category of all Tate spaces.
+complexes in $\Cat{TateVec}$, large enough to contain every CE chain
+coalgebra and completed enveloping algebra used here.  The exact
+finite-window Mittag-Leffler habitat is constructed first.  The
+model-categorical statements add transfer, smallness, and monoid
+axioms to this exact habitat; they are not statements about the raw
+category of all Tate spaces.
 
 \begin{defn}[Strict finite-window Mittag-Leffler Tate habitat]
 \label{defn:strict-ml-tate-habitat}

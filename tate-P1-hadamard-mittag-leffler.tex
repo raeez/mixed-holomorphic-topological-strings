@@ -1,17 +1,97 @@
+% !TEX root = main.tex
+%
+% Universal summation residual.  Named residual class:
+% \operatorname{Ob}^{\mathrm{HML}}_{w}, the obstruction to commuting
+% the Hadamard parametrix / Hörmander wave-front machinery with the
+% strict Mittag-Leffler inverse limit on the weighted Tate coefficient
+% module.
+
 \subsection*{Hadamard parametrix on the Mittag-Leffler coefficient module}
 
-The weighted Tate field complex \eqref{eq:wt-field-complex} carries an
-infinite tower of coefficient bundles indexed by Hamiltonian degree.
-Costello's heat-kernel BV calculus
+\paragraph*{Organizing question.}  Costello's heat-kernel BV calculus
 \cite{costello-renormalization}*{Chs.~5--7} requires a free elliptic
-complex with finite-rank coefficient bundle, and its Hadamard
-parametrix expansion together with Hörmander's wave-front-set tracking
-controls singular support along the diagonal.  The forcing question:
-does this finite-rank machinery survive the strict Mittag-Leffler
-inverse limit in the coefficient direction?  The answer is recorded
-here: it does, exactly because the weighted propagator factors as a
-spacetime-Hadamard tensor coefficient-Casimir, and the coefficient
-factor carries no spacetime singular support.
+complex with finite-rank coefficient bundle; its Hadamard parametrix
+expansion together with Hörmander wave-front tracking
+\cite{hormander-vol1}*{Ch.~7} pins the singular support of the
+propagator on the bulk diagonal.  The weighted Tate field complex
+\eqref{eq:wt-field-complex},
+\[
+  \mc E_w
+    =
+  \Omega^\bullet(\R^2)\widehat\otimes
+    \Omega^{0,\bullet}(\C^2)\widehat\otimes
+  \Bigl(
+    \prod_{d\geq1}w(d)H_d[1]
+    \oplus\prod_{d\geq1}w(d)^{-1}H_d^\vee[2]
+  \Bigr),
+\]
+carries an infinite tower of coefficient bundles indexed by Hamiltonian
+degree, so the coefficient direction is not finite rank.  Does that
+finite-rank machinery commute, graphwise and at every order in
+\(\hbar\), with the strict Mittag-Leffler inverse limit in the
+coefficient direction?  Equivalently, does universal summation of the
+windowwise counterterms survive passage to the inverse-limit weighted
+Tate envelope, and what is the exact class measuring its failure?
+
+\paragraph*{Unique survivor.}  The H/ML commutation residual is the
+named two-coordinate class
+\[
+  \operatorname{Ob}^{\mathrm{HML}}_{w}
+  =
+  \bigl(
+    \operatorname{Ob}_{w},\,
+    \lambda^{\mathrm{fw}}_{n_0}
+  \bigr)
+  \in
+  H^1\!\bigl(\mathcal O_{\mathrm{loc}}(\mc E_w),Q+\{I_0,-\}\bigr)
+  \,\oplus\,
+  \varprojlim\nolimits^1_M
+  H^0\!\bigl(\mathcal Q^\bullet_{\mathcal G,M}(I)\bigr).
+\]
+Theorem~\ref{thm:hadamard-mittag-leffler} reduces the analytic content
+of Problem~\ref{prob:weighted-rg-locality} -- exact propagator
+factorization, empty coefficient-Casimir wave front, strict ML
+transition surjectivity -- to the algebraic remainder: graphwise QME
+in the local-functional class \(\operatorname{Ob}_{w}\) and an
+inverse-limit Roos primitive class
+\(\lambda^{\mathrm{fw}}_{n_0}\) controlled by
+Theorem~\ref{thm:finite-window-graph-qme-assembly}.  Vanishing of
+both coordinates is necessary and sufficient for compatible
+graphwise quantum extension on \(\mc E_w\); a single nonzero
+coordinate is the precise mechanism that fails.
+
+\paragraph*{Habitat.}  The first coordinate
+\(\operatorname{Ob}_{w}\) is the QME obstruction class in
+local-functional cohomology with differential
+\(Q+\{I_0,-\}\); the second coordinate
+\(\lambda^{\mathrm{fw}}_{n_0}\) is the Roos
+\(\varprojlim^1\)-cocycle measuring failure of compatible
+windowwise primitives at the lowest unsolved order \(n_0\).  The
+two coordinates lie in independent cohomology groups and detect
+independent failure modes: a vanishing graphwise QME class does not
+imply tower-compatibility of windowwise primitives, and a
+Mittag-Leffler tower can produce zero \(\lambda^{\mathrm{fw}}_{n_0}\)
+while the underlying cohomology obstruction is nonzero.  The
+\(\theta_3\) row of
+Proposition~\ref{prop:concrete-order-three-enlarged-system-row} is
+the minimal explicit non-scalar exhibit: a local-functional row that
+passes the full-equivariant scalar-condition vanishing and presents
+its missing primitive as the named datum (CE-ancestor, scalar-zero
+counterterm, or complete companion-face table).
+
+\paragraph*{Closure.}  The construction completing the residual on a
+given graph system supplies the four named ingredients: the finite
+Hamiltonian window \(M\) and graph list \(\mathcal G_M\); a chain
+projection \(\widehat\sigma_{\mathrm{sc},M}\) onto the scalar-symbol
+sector with vanishing image of the residual; primitives \(c_{n,M}\)
+of the non-scalar residual at every window; and Roos-compatible
+truncation coefficients across windows.  Failure of any ingredient
+names the corresponding nonzero coordinate of
+\(\operatorname{Ob}^{\mathrm{HML}}_{w}\).  The downstream
+finite-row machinery -- graph arrays, truncation matrices,
+scalar-condition projection, primitive search -- is included so
+that the residual is a finite cochain whose vanishing is tested at
+every window \(M\) and every order \(\hbar^n\), not a slogan.
 
 \begin{rmk}[Spacetime/coefficient factorization of the Hadamard parametrix]\label{rmk:hadamard-factorization}
   In Costello's heat-kernel BV calculus
@@ -2645,3 +2725,20 @@ construction can be tracked explicitly.
   on \(\C^2\) alone, and the local theorem combines their separate
   finite-window outputs through the obstruction vectors stated above.
 \end{rmk}
+
+\paragraph*{H/ML residual.}  The two-coordinate class
+\(\operatorname{Ob}^{\mathrm{HML}}_{w}=
+(\operatorname{Ob}_{w},\lambda^{\mathrm{fw}}_{n_0})\) of the opening
+is the only datum separating the bulk Hadamard / Hörmander control
+(Theorem~\ref{thm:hadamard-mittag-leffler}) from the graphwise
+all-window QME extension on the weighted Tate envelope.  Vanishing
+with chosen primitives (Theorem~\ref{thm:finite-window-graph-qme-assembly},
+Proposition~\ref{prop:finite-window-qme-limit-condition}) is exactly
+the Costello-locality / QME compatibility input demanded by
+Problem~\ref{prob:weighted-rg-locality}; a single nonzero coordinate
+is the precise mechanism that fails, with the
+\(\theta_3\) row of
+Proposition~\ref{prop:concrete-order-three-enlarged-system-row}
+exhibiting the minimal nontrivial exhibit.  No claim of universal
+summation is mathematics without either a vanishing certificate or
+a named nonzero coordinate.

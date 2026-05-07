@@ -1,6 +1,51 @@
 \section{Factorization Current Conventions for the CE/PV Interface}
 \label{sec:app-factorization-current-conventions}
 
+\emph{Load-bearing role.}  Principles~3, 4, 5 of the introduction are
+inscribed in algebra by an interval-wise CE/PV current interface: a
+brane interval supports a Hamiltonian current factor with the open
+\(P_0\)-bracket
+\(\{B_f(a),B_g(b)\}=B_{\{f,g\}}(ab)\), a residual cotangent current
+factor with coadjoint action
+\(\{B_f(a),\Theta_\rho(B)\}=\Theta_{f\cdot\rho}(aB)\), and an abelian
+odd ideal
+\(\{\Theta_\rho(B),\Theta_\sigma(C)\}=0\).  This appendix builds that
+interface, controls its scope, and isolates exactly which of its
+extensions remain obstruction problems.  The load-bearing outputs are
+\begin{enumerate}
+  \item the universal algebraic current interface
+    (Theorem~\ref{thm:app-factorization-universal-current-interface},
+    Corollary~\ref{cor:app-factorization-principal-part-current-brackets}),
+    used by
+    Theorem~\ref{thm:hamiltonian-current-factorization} and
+    Theorem~\ref{thm:reduced-principal-part-boundary-current};
+  \item the BMK current data and the finite-window obstruction vector
+    \(\operatorname{Ob}^{\Pi}_{\mathrm{BM}}\)
+    (Theorem~\ref{thm:app-finite-window-bmk-current-transfer}), which
+    is the construction underneath
+    Proposition~\ref{prop:finite-window-bm-native-e2-transfer} and the
+    abstract conjecture~(C4);
+  \item the normal \(\Omega\)-weighted brane-current bracket sector
+    (Theorem~\ref{thm:app-omega-weighted-current-brackets}), the
+    coefficient-current kernel layer
+    (Proposition~\ref{prop:app-bulk-defect-kernel-layer}), and the
+    regular-density and wavefront-admissible Costello graph layers
+    (Propositions~\ref{prop:app-regular-density-costello-graph-kernel},
+    \ref{prop:app-wavefront-admissible-costello-graph-kernel},
+    \ref{prop:app-current-compatible-Dprimec-graph-criterion}), which
+    underwrite Principle~7 in the form of
+    Problem~\ref{prob:quantum-p0-operation-realization} and
+    Theorem~\ref{thm:componentwise-quantum-coefficient-comparison};
+  \item the curved kernel centrality homotopy criterion
+    (Theorem~\ref{thm:app-curved-kernel-centrality-homotopy-criterion})
+    and its obstruction map list
+    (Proposition~\ref{prop:app-nonscalar-current-lift-obstructions}),
+    which are the criterion governing
+    Problem~\ref{prob:formal-factorization-center}.
+\end{enumerate}
+Every section of this appendix supplies a structure cited by a §1 or
+§2 theorem in the list above; nothing here is decorative.
+
 The factorization-current theorem uses the following algebraic
 source/target interface.  The interface is used before the
 admissible bar-cobar/enveloping criterion: interval Hamiltonian
@@ -2193,3 +2238,67 @@ symplectic disk with
   primitive are supplied in the chosen finite-window system, the displayed
   equation is only an obstruction equation, not a constructed homotopy.
 \end{proof}
+
+\begin{rmk}[What supports what]
+\label{rmk:app-factorization-what-supports-what}
+  The interface and obstruction theorems in this appendix support the
+  following §1 and §2 statements.
+  \begin{enumerate}
+    \item Theorem~\ref{thm:app-factorization-universal-current-interface}
+      and
+      Corollary~\ref{cor:app-factorization-principal-part-current-brackets}
+      are the algebraic content used by
+      Theorem~\ref{thm:hamiltonian-current-factorization} (interval-wise
+      reduced CE/PV map) and
+      Theorem~\ref{thm:reduced-principal-part-boundary-current}
+      (support-local principal-part current \(P_0\) datum).  The three
+      generator brackets \(B\)--\(B\), \(B\)--\(\Theta\),
+      \(\Theta\)--\(\Theta\) are the prefactorization brackets used in
+      the body.
+    \item Proposition~\ref{prop:app-local-unimodular-current-kernel-input}
+      records the formal-local unimodular datum
+      \((\widehat{\C^2}_0,dz_1\wedge dz_2)\) at the level of currents
+      and is the convention check for every later factorization-current
+      proof.  Lemma~\ref{lem:app-factorization-current-product} fixes
+      the only distributional operation used in the reduced current
+      model and is the technical lemma cited by
+      Lemma~\ref{lem:distribution-locality-principal-parts}.
+    \item Theorem~\ref{thm:app-finite-window-bmk-current-transfer}
+      constructs the BMK current data \((H_\chi,p_N,i_N)\), the
+      finite-window obstruction
+      \(\operatorname{Ob}^{\mathrm{BMK\mbox{-}curr}}_N\), and the
+      all-window obstruction vector
+      \(\operatorname{Ob}^{\Pi}_{\mathrm{BM}}\).  These are the
+      construction inputs to
+      Proposition~\ref{prop:finite-window-bm-native-e2-transfer} and
+      to abstract conjecture~(C4) (strict native all-window BMK current
+      transfer).
+    \item Theorem~\ref{thm:app-omega-weighted-current-brackets} is the
+      \(T_\Omega\)-equivariant current sector used wherever the body
+      invokes a weighted Hamiltonian/principal-part bracket; it pins
+      the \(\hbar_\omega\) line and the self-dual specialisation.
+    \item Definition~\ref{def:app-unreduced-nonscalar-current-lift-datum},
+      Definition~\ref{def:app-bulk-defect-convolution-habitat},
+      Proposition~\ref{prop:app-bulk-defect-kernel-layer},
+      Proposition~\ref{prop:app-regular-density-costello-graph-kernel},
+      Proposition~\ref{prop:app-wavefront-admissible-costello-graph-kernel},
+      Proposition~\ref{prop:app-current-compatible-Dprimec-graph-criterion},
+      Proposition~\ref{prop:app-nonscalar-current-lift-obstructions},
+      and
+      Theorem~\ref{thm:app-curved-kernel-centrality-homotopy-criterion}
+      assemble the source/target/kernel data, the regular-density
+      Costello graph layer, the wavefront-admissible distributional
+      extension, the obstruction map list, and the binary centrality
+      homotopy criterion that underwrite
+      Problem~\ref{prob:quantum-p0-operation-realization} (reduced
+      non-scalar Costello QME) and
+      Problem~\ref{prob:formal-factorization-center} (unreduced
+      \(P_0\)-factorization-centre lift).  In particular the
+      arbitrary-\(\mathcal D'_c(I)\) obstruction in
+      Proposition~\ref{prop:app-current-compatible-Dprimec-graph-criterion}
+      is the precise residual flagged by
+      Remark~\ref{rmk:unreduced-lift-obstruction} of the body.
+  \end{enumerate}
+  No section of this appendix is decorative; each item above is the
+  exact construction or obstruction class quoted by the body.
+\end{rmk}

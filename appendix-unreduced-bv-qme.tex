@@ -1,24 +1,99 @@
 \section{Unreduced BV Cotangent, Scalar QME Obstructions, and Cancellations}
 \label{sec:app-unreduced-bv-qme}
 
-The scalar part of the mixed brane-defect QME, the algebraic current
-presentation after passage to distributional principal-part currents,
-and the cancellations before scalar reduction or after balanced
-superization are formal-local.  Every
-statement is formal-local on
+Stronger global claims about the brane-defect quantum master equation
+are obstruction problems in finite-row, finite-window form (Principle
+7).  Once a filtered chain scalar projection
+\(\widehat\sigma_{\mathrm{sc}}\) on the local-functional complex
+\(\mathfrak Q^\bullet_{w,\partial,\hbar}(I)\) is supplied, the
+non-scalar Costello QME on a brane interval reduces to a single
+cohomology class
 \[
-  \R^2_{\mathrm{top}}\times\widehat{\C^2}_0,
-  \qquad
-  \Omega_{\mathrm{loc}}=dz_1\wedge dz_2 .
+  [\operatorname{Ob}^{\mathrm{red}}_{w,\partial,\hbar}]
+  \in
+  H^1\!\bigl(\ker\widehat\sigma_{\mathrm{sc}},
+    d_{\mathrm{QME}}\bigr),
 \]
-The calculation separates five formal-local facts: finite
-polynomial boundary observables cannot carry the principal-part module;
-the current principal-part model carries a strict algebraic \(P_0\)
-presentation with zero homotopies inside the added current target; the
-ordinary scalar-reduced trace model has a nonzero central CE class; the
-unreduced central-character source absorbs the scalar symbol before
-scalar reduction; and the standard balanced supertrace model makes the
-scalar representative vanish.
+paired with its finite-window
+\(\varprojlim^1H^0\)-primitive-compatibility class.  This is the
+unique survivor of the appendix.
+
+At each finite window \(M\), the obstruction is the linear-algebra
+problem
+\[
+  A^M c^M=-r^M,
+\]
+of Theorem~\ref{thm:app-constructive-nonscalar-costello-qme-realization}.
+The rows of \(A^M\) and the residual \(r^M\) are exactly the four
+named row types
+\[
+  R^{\mathrm{row}}_{d\Gamma,M}
+   =\varepsilon_\Gamma d_M K^M_\Gamma,
+  \qquad
+  R^{\mathrm{row}}_{\mathrm{CE}(\Gamma,\nu),M}
+   =-\varepsilon^{\mathrm{CE}}_{\Gamma,\nu}K^M_\Gamma(\zeta_{M,\nu}),
+\]
+\[
+  R^{\mathrm{row}}_{b(\Gamma_1,\Gamma_2),M}
+   =\tfrac12\varepsilon_{\Gamma_1,\Gamma_2}
+     \{K^M_{\Gamma_1},K^M_{\Gamma_2}\}_{\hbar,M},
+\]
+together with the order-\(n\) homogeneous lower-counterterm rows.
+Solvability is the existence of a degree-zero counterterm \(c^M\) in
+the supplied row span.  Nonsolvability is a separating covector
+\(\ell A^M=0\), \(\ell(r^M)\neq0\).  Tower compatibility adds the
+truncation matrices \(T^{M,N}\) on rows and \(P^{M,N}\) on primitive
+candidates and the Roos class
+\([P^{M,N}c^M-c^N]\in H^0(\mathcal K^\bullet_{\mathrm{ns},N}(I))\).
+A heuristic timeout on a finite window is not a resolution.
+
+First exposed larger non-scalar source-face row.  The order-three
+row \(\theta_3=\mathrm{CE}(\Theta_3,\nu_3)\) has
+\[
+  R^{\mathrm{row}}_{\theta_3,M}
+   =-K^M_{\Theta_3}(\zeta_{M,\nu_3})=:\mathsf E_{\theta_3,M},
+  \qquad
+  S_{\theta_3,M}=0,
+\]
+and in the supplied one-row complex
+\(\mathcal K^0_{\theta_3,M}=0\),
+\(\mathcal K^1_{\theta_3,M}=\C\mathsf E_{\theta_3,M}\),
+\(d_{\theta_3,M}=0\), the covector
+\(\ell_{\theta_3}(\mathsf E_{\theta_3,M})=1\) is an exact obstruction
+(Proposition~\ref{prop:app-closed-rows-and-theta-three-source-face}).
+A named coefficient \(C_{\theta_3}\) is evidence only with one of
+three named data: a CE ancestor with controlled boundary; a
+scalar-zero Costello local counterterm \(C_{\theta_3,M}\) with
+\(d_{\mathrm{ns},M}C_{\theta_3,M}=-\mathsf E_{\theta_3,M}\) and
+truncation-compatible primitives; or a complete companion-face table
+of Hom-valued companion rows whose signed sum moves the residual
+vector into the image of \(A^M\).  Tower compatibility passes through
+\(\Delta^1_{M,N}=-\pi_{M,N}\mathfrak b^M+\mathfrak b^N\) and the
+secondary \(\varprojlim^1H^0\) primitive class
+(Proposition~\ref{prop:app-theta-three-bianchi-lower-condition}).
+Without one of these data, the order-three larger system is not a
+solved QME row.
+
+The local geometry is fixed once.  Every formula below uses the
+formal-local mixed habitat
+\(\R^2_{\mathrm{top}}\times\widehat{\C^2}_0\) with
+\(\Omega_{\mathrm{loc}}=dz_1\wedge dz_2\).  Five formal-local facts
+separate the branches.  Finite polynomial boundary observables
+cannot carry the principal-part module
+(Theorem~\ref{thm:app-unreduced-polynomial-centrality-no-go}); the
+distributional current principal-part target carries a strict
+algebraic \(P_0\) presentation with zero homotopies inside the
+algebraic current model
+(Theorem~\ref{thm:app-algebraic-factorization-centre-zero-homotopies});
+the ordinary scalar-reduced \(\lie{gl}_N\) trace model has nonzero
+central CE class \(\hbar N[\bar c]\)
+(Theorem~\ref{thm:app-scalar-contact-qme-class}); the unreduced
+central-character source absorbs that scalar symbol before scalar
+reduction
+(Theorem~\ref{thm:app-central-character-qme-cancellation}); and the
+balanced \(\C^{N|N}\) supertrace model makes the scalar
+representative vanish
+(Theorem~\ref{thm:app-balanced-supertrace-qme-cancellation}).
 
 \begin{defn}[BV degrees and signs]
 \label{def:app-unreduced-bv-degrees}
@@ -3818,3 +3893,105 @@ scalar representative vanish.
   identifies \([\bar c]\neq0\) on \(\bar A\).  Thus no internal local
   counterterm cancels the ordinary scalar-reduced obstruction.
 \end{proof}
+
+\begin{rmk}[What supports what]
+\label{rmk:app-unreduced-bv-qme-support-map}
+  The non-scalar QME criterion of
+  Principle~7 is stated in this appendix in finite-row,
+  finite-window matrix form, with named first exposed row and named
+  missing data.
+  \begin{enumerate}[label=(\roman*)]
+    \item \emph{Filtered scalar projection and the unique-survivor
+      cohomology class.}  The scalar-contact filtration
+      \(F^\bullet\), its associated-graded scalar-symbol map, and the
+      filtered chain projection
+      \(\widehat\sigma_{\mathrm{sc}}\) are isolated by
+      Definition~\ref{def:app-scalar-obstruction-complex} and
+      Lemma~\ref{lem:filtered-scalar-projection-obstruction}.  The
+      single class
+      \([\operatorname{Ob}^{\mathrm{red}}_{w,\partial,\hbar}]
+      \in H^1(\ker\widehat\sigma_{\mathrm{sc}},d_{\mathrm{QME}})\)
+      exposed by
+      Proposition~\ref{prop:app-first-scalar-lift-obstruction} and
+      Theorem~\ref{thm:app-scalar-contact-qme-class} is the unique
+      survivor of this appendix and the conjecture C2 in the
+      abstract.
+    \item \emph{Branch ledger.}
+      Theorem~\ref{thm:app-central-character-qme-cancellation},
+      Theorem~\ref{thm:app-balanced-supertrace-qme-cancellation},
+      Proposition~\ref{prop:app-balanced-scalar-contact-projection},
+      Proposition~\ref{prop:app-balanced-costello-graph-preservation},
+      Theorem~\ref{thm:app-supertraceless-monodromy-projection},
+      Theorem~\ref{thm:app-full-equivariant-marked-shadow-vanishing},
+      and
+      Theorem~\ref{thm:app-ordinary-glN-scalar-obstruction-criterion}
+      together prove the four-branch ledger cited as Principle~2 of
+      the preface and as proved data in the abstract: ordinary scalar
+      reduction is obstructed by \(\hbar N[\bar c]\); central
+      character, balanced \(\C^{N|N}\) supertrace, supertraceless
+      monodromy, and full \(\lie{gl}(V)\)-equivariant marker tensors
+      each absorb or kill the scalar.
+    \item \emph{Polynomial no-go and the distributional current target.}
+      Theorem~\ref{thm:app-unreduced-polynomial-centrality-no-go} and
+      Theorem~\ref{thm:app-algebraic-factorization-centre-zero-homotopies}
+      separate the polynomial impossibility from the strict zero
+      homotopy on the algebraic current target, supporting
+      Principle~3 (ghosts move, cotangent coordinates measure) and
+      Principle~4 (defect momentum is residual) in the preface.
+    \item \emph{Native finite-window realization.}
+      Definition~\ref{def:app-finite-window-marked-costello-list},
+      Definition~\ref{def:app-oriented-full-equivariant-marked-boundary-complex},
+      Lemma~\ref{lem:app-oriented-marked-incidence-signs},
+      Proposition~\ref{prop:app-finite-window-marked-habitat-compatibility},
+      Definition~\ref{def:app-nonscalar-kernel-row-complex},
+      Definition~\ref{def:app-native-finite-window-realization-habitat},
+      and
+      Theorem~\ref{thm:app-constructive-nonscalar-costello-qme-realization}
+      build the explicit finite-row habitat in which
+      \(A^M c^M=-r^M\) is a linear-algebra problem.  The minimal
+      vanishing
+      Theorems~\ref{thm:app-minimal-full-equivariant-kernel-vanishing}
+      and~\ref{thm:app-minimal-full-equivariant-all-order-vanishing}
+      bound the scope of the conclusion: zero residual is theorem
+      data only in the named minimal full-equivariant array; outside
+      that array,
+      Proposition~\ref{prop:app-first-missing-nonscalar-row},
+      Proposition~\ref{prop:app-first-scalar-zero-order-one-row},
+      Proposition~\ref{prop:app-first-order-three-enlarged-row} list
+      the next missing row data exactly.
+    \item \emph{Centrality homotopies and \(Q_\Omega\)-equivariant
+      lift.}  Proposition~\ref{prop:app-marked-row-centrality-homotopy-test}
+      and
+      Proposition~\ref{prop:app-qomega-centrality-homotopy-criterion}
+      record the row form of unreduced centrality homotopies and the
+      \(Q_\Omega\)-invariant analogue.
+      Definition~\ref{def:app-normal-omega-costello-kernel-datum} and
+      Theorem~\ref{thm:app-equivariant-brane-defect-qme-criterion}
+      isolate the brane-preserving normal scaling
+      \(T_\Omega=\C^*_{\varepsilon_s}\times\C^*_{\varepsilon_1}\times\C^*_{\varepsilon_2}\)
+      as a habitat, not as a QME proof.  This is the
+      \(\Omega\)-background discipline of the repository
+      \texttt{CLAUDE.md}.
+    \item \emph{First exposed row \(\theta_3\) and the named missing
+      data.}
+      Proposition~\ref{prop:app-closed-rows-and-theta-three-source-face}
+      gives \(R^{\mathrm{row}}_{\theta_3,M}=\mathsf E_{\theta_3,M}\),
+      \(S_{\theta_3,M}=0\), and the one-row covector
+      \(\ell_{\theta_3}\) detecting nonzero finite-row obstruction.
+      Repair requires CE ancestor, scalar-zero Costello counterterm
+      \(C_{\theta_3,M}\), or a complete companion-face table; tower
+      compatibility passes through
+      Proposition~\ref{prop:app-theta-three-bianchi-lower-condition}
+      and the
+      \(\Delta^1_{M,N}=-\pi_{M,N}\mathfrak b^M+\mathfrak b^N\) and
+      \(\varprojlim^1 H^0\) tests.  Even-block markers
+      (Proposition~\ref{prop:app-even-block-marker-obstruction})
+      give a nonzero scalar shadow when
+      \(\lambda_0\neq\lambda_1\) and collapse the larger habitat back
+      to the full-equivariant single-marker case otherwise.
+  \end{enumerate}
+  Stronger global claims (C2, C3, C4 of the abstract) are written here
+  as the matrix equation \(A^Mc=-r^M\), the Roos compatibility on
+  primitives, and the centrality homotopy / \(\varprojlim^1H^0\) tests
+  attached to it; they are not vague open ends.
+\end{rmk}

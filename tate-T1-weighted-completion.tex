@@ -1,14 +1,66 @@
 \section*{Weighted Tate completion of the coefficient pair}
 
+\emph{Closure-layer organizing question.}  In which coefficient
+category does the formal Casimir
+$C_{\mathfrak h}=\sum_d\sum_i e_{d,i}\otimes e_d^i$ converge as a BV
+inverse pairing for the unreduced cotangent lift datum of
+Problem~\ref{prob:formal-factorization-center}~item~(1)?
+
+\emph{Named obstruction class.}  In the strict Tate pair
+$(\mathfrak h,\mathfrak h^\vee_{\mathrm{cont}})
+=(\prod_{d\geq1}H_d,\bigoplus_{d\geq1}H_d^\vee)$, every element of the
+second factor has support in finitely many degrees, while
+$C_{\mathfrak h}$ has nonzero $H_d^\vee$-component in every $d$.  The
+obstruction is
+\[
+  \mathfrak o_{\mathrm{Cas}}=\bigl(C^M_{\mathfrak h}\bigr)_{M\geq1}
+  \in Q_{\mathrm{Cas}}
+  =\frac{\varprojlim_M(H_{\leq M}\otimes H_{\leq M}^\vee)}
+        {\operatorname{im}\bigl(\mathfrak h\widehat\otimes
+        \mathfrak h^\vee_{\mathrm{cont}}\bigr)},
+\]
+nonzero by Lemma~\ref{lem:tate-casimir-obstruction} and strengthened
+by Theorem~\ref{thm:strict-unweighted-no-go}: no tensor in
+$\mathfrak h_\Pi\widehat\otimes D_\oplus$ has the finite Casimirs
+$C^{w_0}_{\mathfrak h}$ as its $w_0$-projections.  The strict pair
+fails Costello requirement~\ref{costello:CC1}.
+
+\emph{Unique survivor.}  Theorem~\ref{thm:wt-cotangent-lift}: a
+weighted Tate envelope
+$(\mathfrak h_w,\mathfrak h^{\vee,w}_{\mathrm{cont}})$, with degree
+weight $w$ satisfying the bracket-tame, windowwise
+coadjoint-continuity, and Mittag--Leffler coevaluation conditions of
+Definition~\ref{defn:wt-degree-weight}, in which (a) the Casimir
+converges; (b) the Costello heat-kernel propagator extends; (c) every
+fixed Costello graph stays in the weighted category; (d) the cochain
+CE/PV map extends continuously.
+
+\emph{Construction that closes $\mathfrak o_{\mathrm{Cas}}$.}
+Replace the direct-sum dual $\bigoplus_dH_d^\vee$ by the symmetric
+Mittag--Leffler product
+$\mathfrak h^{\vee,w}_{\mathrm{cont}}=\varprojlim_{w_0}\prod_{d\leq
+w_0}w(d)^{-1}H_d^\vee$ of
+Definition~\ref{defn:wt-coefficient-pair}; the diagonal-rescaled
+Casimir
+$C_{\mathfrak h,w}=\sum_d\sum_i(w(d)e_{d,i})\otimes(w(d)^{-1}e^i_d)$
+is then a strict Mittag--Leffler kernel
+(Proposition~\ref{prop:wt-casimir-convergence}).
+
+\emph{Residual.}  The mixed brane-defect QME obstruction
+$\operatorname{Ob}^{\mathrm{QME}}_{\Omega,w}$ of
+Corollary~\ref{cor:wt-omega-denominators-qme-boundary} and the
+locality compatibility class of
+Problem~\ref{prob:weighted-rg-locality}: the closure layer leaves a
+coefficient-kernel theorem, not a Costello QME vanishing.
+
 \subsection*{Strict Tate pair}
 
 The strict product/direct-sum Tate pair
 \(\mathfrak h=\prod_dH_d\),
 \(\mathfrak h^\vee_{\mathrm{cont}}=\bigoplus_dH_d^\vee\) carries the
 formal Casimir on the wrong side of the duality: the second tensor
-factor lies in \(\prod_dH_d^\vee\), not in \(\bigoplus_dH_d^\vee\).  The
-diagnosis below isolates that obstruction; the weighted Mittag--Leffler
-completion of the next subsection cures it by replacing the direct-sum
+factor lies in \(\prod_dH_d^\vee\), not in \(\bigoplus_dH_d^\vee\).
+The weighted Mittag--Leffler completion below replaces the direct-sum
 dual with a symmetric product coefficient module.
 
 \begin{rmk}[Strict Tate Casimir obstruction]\label{rmk:diagnosis-unweighted-casimir}
@@ -761,29 +813,38 @@ $I_L$ must remain in the same weighted category.
 \end{proof}
 
 \begin{prob}[Costello-locality compatibility for the weighted RG flow]\label{prob:weighted-rg-locality}
-  Verify that the Costello QME counterterms at the brane defect
-  \(L=\R_{\mathrm{brane}}\times\{0\}\times\{p\}\) in the weighted field complex $\mathcal E_w$ remain
-  local-functional classes
-  $\Op\in H^1(\mathcal O_{\mathrm{loc}}(\mathcal E_w),Q+\{I_0,-\})$,
-  i.e.\ that the bulk Costello locality theorem
-  \cite{costello-renormalization}*{Chs.~5--7} extends to the
-  weighted pair. The exact published theorem numbering is not an
-  input to this problem. Concretely: a counterterm contribution
-  $C_n\in\mathcal O_{\mathrm{loc}}^{\hbar^n}(\mathcal E)$ at order
-  $\hbar^n$ in the standard pair is a polynomial functional of
-  bounded degree; one must check that the same counterterm,
-  rescaled by the weight $w$ on each coefficient leg, remains a
-  local functional of the same bounded polynomial degree in the
-  weighted pair. The estimate \ref{w:W1} bounds vertex weights, and
-  \ref{w:W2} bounds coadjoint legs graph by graph.  The endpoint
-  question is whether the compatible finite-window counterterm system
-  obtained from Costello's Hadamard locality theorem has vanishing
-  obstruction class in
-  $H^1(\mathcal O_{\mathrm{loc}}(\mathcal E_w),Q+\{I_0,-\})$ for the
-  mixed brane-defect interaction.
-  Theorem~\ref{thm:hadamard-mittag-leffler} controls the wave-front
-  and finite-window locality estimates.  The obstruction class displayed
-  above is the exact further datum.
+  \emph{Construction problem.}  Construct a compatible counterterm
+  system $\{C_{n,M}\}_{n\geq1,M\geq1}$ for the mixed brane-defect
+  interaction at the defect
+  $L=\R_{\mathrm{brane}}\times\{0\}\times\{p\}$ in the weighted field
+  complex $\mathcal E_w$ such that:
+  \begin{enumerate}[label=(L\arabic*)]
+    \item each $C_{n,M}$ is a local functional in
+      $\mathcal O_{\mathrm{loc}}^{\hbar^n}(\mathcal E_w^{\leq M})$ of
+      bounded vertex polynomial degree;
+    \item the truncations are compatible:
+      $\pi_{M,N}C_{n,M}=C_{n,N}$ for $M\geq N$;
+    \item the recursion solves the QME order by order.
+  \end{enumerate}
+  \emph{Named obstruction class.}  The class
+  \[
+    [\operatorname{Ob}^{\mathrm{loc}}_{w,\partial}]
+      \in
+      H^1\bigl(\mathcal O_{\mathrm{loc}}(\mathcal E_w),
+        Q+\{I_0,-\}\bigr)
+  \]
+  obstructing (L1)--(L3); equivalently, by
+  Theorem~\ref{thm:wt-nonscalar-counterterm-criterion}, the pair
+  \(\bigl(([\mathfrak o^{\mathrm{ns}}_{n,M}])_M,\lambda_n\bigr)\)
+  in
+  \(\varprojlim_M H^1(\mathcal Q^\bullet_{w,M}(I))\oplus
+  \varprojlim^1_M H^0(\mathcal Q^\bullet_{w,M}(I))\).
+  \emph{Available inputs.}  Estimate \ref{w:W1} bounds vertex weights;
+  \ref{w:W2} bounds coadjoint legs graph by graph;
+  Theorem~\ref{thm:hadamard-mittag-leffler} controls wave-front and
+  finite-window locality estimates.  The construction problem is the
+  exact further datum that turns Hadamard control into anomaly
+  cancellation.
 \end{prob}
 
 \begin{cor}[Descendant cochain comparison under weighted QME vanishing]\label{cor:wt-descendant-qme-vanishing}
