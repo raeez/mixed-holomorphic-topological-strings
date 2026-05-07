@@ -6484,81 +6484,86 @@ ambient product is a separate admissibility input.
   for linear Poisson structures.
 \end{proof}
 
-\begin{thm}[Coordinate uniqueness of \(J\)]\label{thm:Jf-coordinate-uniqueness}
+\begin{thm}[Matrix-microscope measurement theorem: uniqueness of \(J\)]\label{thm:Jf-coordinate-uniqueness}
   Let \(\mathfrak h=\C[[z_1,z_2]]/\C\cdot1\) be the reduced Hamiltonian
   Lie algebra of the formal symplectic polydisk and let
   \(A_\partial=\widehat{\mathbf S}_{\mathrm{Tate}}(\mathfrak h)\) be the
   stable scalar-reduced Hamiltonian trace algebra of
-  Proposition~\ref{prop:brane-ops}. Among all linear maps
+  Proposition~\ref{prop:brane-ops}.  Among linear maps
   \[
     \widetilde J\colon\mathfrak h\longrightarrow A_\partial
   \]
   satisfying:
   \begin{enumerate}[label=(U\arabic*)]
-    \item (\(GL_N\)-invariance, stable) \(\widetilde J(f)\) is a stable
-      \(GL_N\)-invariant trace polynomial in \((\phi_1,\phi_2)\) modulo
-      the moment-map ideal \([\phi_1,\phi_2]=0\), in the sense of
+    \item (\emph{Polynomial \(GL_N\)-invariance, stable})
+      \(\widetilde J(f)\) is a stable \(GL_N\)-invariant trace
+      polynomial in \((\phi_1,\phi_2)\) in the sense of
       Proposition~\ref{prop:stable-trace-invariants};
-    \item (Darboux naturality) \(\widetilde J\) commutes with the formal
-      \(GL_N\)-equivariant symplectomorphisms preserving
-      \(\omega=dz_1\wedge dz_2\), i.e.\ for every formal canonical
-      transformation \(\Phi\colon\widehat{\C^2}_0\to\widehat{\C^2}_0\)
-      one has \(\widetilde J(\Phi^*f)=\Phi^*\widetilde J(f)\) under the
-      induced action on \(A_\partial\);
-    \item (scalar reduction) \(\widetilde J\) descends through the
+    \item (\emph{Dirac constraint}) \(\widetilde J(f)\) descends modulo
+      the moment-map ideal \([\phi_1,\phi_2]=0\);
+    \item (\emph{Scalar reduction}) \(\widetilde J\) factors through the
       stable scalar-reduced quotient
       \(A_\partial=A^{GL_\infty}_\infty/\C\cdot\operatorname{Tr}(1)\);
-    \item (linear normalization) on linear generators
-      \(\widetilde J(z_1)=\overline{\operatorname{Tr}\phi_1}\) and
+    \item (\emph{Darboux naturality}) for every formal canonical
+      transformation \(\Phi\colon\widehat{\C^2}_0\to\widehat{\C^2}_0\)
+      preserving \(\omega=dz_1\wedge dz_2\),
+      \(\widetilde J(\Phi^*f)=\Phi^*\widetilde J(f)\) under the induced
+      action on \(A_\partial\);
+    \item (\emph{Linear normalization})
+      \(\widetilde J(z_1)=\overline{\operatorname{Tr}\phi_1}\),
       \(\widetilde J(z_2)=\overline{\operatorname{Tr}\phi_2}\),
   \end{enumerate}
   the brane substitution
   \(J(f)=\overline{\operatorname{Tr}\,f(\phi_1,\phi_2)}\) is the unique
-  solution. The Lie-algebra morphism property
+  solution.  Lie-algebra morphism
   \(\{\widetilde J(f),\widetilde J(g)\}_\partial=
-  \widetilde J(\{f,g\}_{\bar A})\) holds for any solution
-  (Theorem~\ref{thm:bulk-boundary}); uniqueness is the additional
-  content of (U1)--(U4). The category-theoretic terminal-object
-  formulation, including the protected admissibility hypotheses, is
+  \widetilde J(\{f,g\}_{\bar A})\) holds for every solution
+  (Theorem~\ref{thm:bulk-boundary}); uniqueness is the content of
+  (U1)--(U5).  The categorical terminal-object refinement, including
+  protected admissibility, is
   Theorem~\ref{thm:formal-local-universal-property} of
   \S\ref{ssec:tate-residual-resolution}.
 \end{thm}
 
 \begin{proof}
-  By Proposition~\ref{prop:stable-trace-invariants},
-  \(GL_N\)-invariance (U1) restricts \(\widetilde J(f)\) to a polynomial
-  in cyclic words on \((\phi_1,\phi_2)\) modulo finite-rank trace
-  identities, with stable representative an element of
-  \(\mathbf S(\operatorname{Cyc}(F)_{\mathrm{nonempty}})\). Restriction
-  to the moment-map zero-fibre and the adjacent-swap exactness
-  Lemma~\ref{lem:adjacent-swaps} collapses every cyclic word to a
-  commutative monomial trace
+  Five steps, one per hypothesis.
+
+  \emph{Invariant theory (U1).}  Proposition~\ref{prop:stable-trace-invariants}
+  restricts \(\widetilde J(f)\) to a polynomial in cyclic words on
+  \((\phi_1,\phi_2)\) modulo finite-rank trace identities, with stable
+  representative an element of
+  \(\mathbf S(\operatorname{Cyc}(F)_{\mathrm{nonempty}})\).
+
+  \emph{Dirac collapse (U2).}  Restriction to the moment-map zero-fibre
+  together with adjacent-swap exactness (Lemma~\ref{lem:adjacent-swaps})
+  collapses every cyclic word to a commutative monomial trace
   \(\overline{\operatorname{Tr}(\phi_1^a\phi_2^b)}\)
-  (Corollary~\ref{cor:matrix-evaluation-well-defined}); the
-  ghost-zero invariant ring computed by the Koszul derived zero-fibre
-  model and Procesi--Razmyslov is therefore
-  \(\mathbf S(\bar A)\) on the connected single-trace generators. On
-  each Taylor monomial \(z_1^az_2^b\) the value
-  \(\widetilde J(z_1^az_2^b)\) is a scalar multiple of
-  \(\overline{\operatorname{Tr}(\phi_1^a\phi_2^b)}\) plus multi-trace
-  decomposables.
-  Scalar reduction (U3) kills the multi-trace decomposable summands
-  at the level of the connected indecomposable quotient
-  \(\mathfrak m/\mathfrak m^2\) of Proposition~\ref{prop:brane-ops}, so
-  \(\widetilde J\) is determined by its values on the indecomposable
-  primitives.
-  Linear normalization (U4) fixes the scalar on the two degree-1
-  primitives. Darboux naturality (U2) under translations
-  \(z_i\mapsto z_i+c_i\), dilations
-  \(z_1\mapsto\lambda z_1, z_2\mapsto\lambda^{-1}z_2\), and the
-  diagonal Hamiltonian flow generated by linear generators propagates
-  the normalization through every Taylor degree: the \(GL_N\)-action
-  commutes with substitution, so \(\widetilde J(\Phi^*f)=\Phi^*J(f)\)
-  forces \(\widetilde J=J\) on the orbit of the linear generators
-  under canonical transformations, which exhausts the polynomial
-  algebra \(\bar A\) by formal Darboux density. Continuity of
-  \(\widetilde J\) in the \(\widehat{\mathfrak h}\)-topology extends
-  the equality from \(\bar A\) to all of \(\widehat{\mathfrak h}\).
+  (Corollary~\ref{cor:matrix-evaluation-well-defined}); the ghost-zero
+  invariant ring computed by the Koszul derived zero-fibre model and
+  Procesi--Razmyslov is \(\mathbf S(\bar A)\) on the connected
+  single-trace generators.
+
+  \emph{Scalar reduction (U3).}  Scalar reduction kills the multi-trace
+  decomposable summands at the connected indecomposable quotient
+  \(\mathfrak m/\mathfrak m^2\) of
+  Proposition~\ref{prop:brane-ops}; \(\widetilde J\) is determined by
+  its values on the indecomposable primitives.
+
+  \emph{Darboux naturality (U4).}  The action of formal Darboux
+  symplectomorphisms intertwines \(\widetilde J\) with substitution by
+  \(\Phi^*\): equality on linear generators propagates to the orbit of
+  the linear generators under canonical transformations, exhausting the
+  polynomial algebra \(\bar A\) by formal Darboux density.  Continuity
+  of \(\widetilde J\) in the \(\widehat{\mathfrak h}\)-topology
+  extends from \(\bar A\) to all of \(\widehat{\mathfrak h}\).
+
+  \emph{Linear normalization (U5).}  The values
+  \(\widetilde J(z_1)=\overline{\operatorname{Tr}\phi_1}\),
+  \(\widetilde J(z_2)=\overline{\operatorname{Tr}\phi_2}\) fix the
+  scalar on each degree-one primitive.  Combined with (U1)--(U4),
+  \(\widetilde J(z_1^az_2^b)=
+   \overline{\operatorname{Tr}(\phi_1^a\phi_2^b)}\) at every bidegree;
+  hence \(\widetilde J=J\).
 \end{proof}
 
 \begin{cor}[CE/PV generator identity, formal symplectic polydisk]\label{cor:ce-pv-formal-disk}
