@@ -1,195 +1,441 @@
 \section*{BV-cohomology vanishing and the unreduced cotangent lift}
 
-\emph{Closure-layer organizing question.}  Does the Costello--Li 2012
-BCOV vanishing theorem \cite{costello-li-quantum-bcov}, possibly
-extended by its 2015 open-closed sequel
-\cite{costello-li-open-closed-bcov}, supply an endpoint-admissible
-coefficient module for Problem~\ref{prob:formal-factorization-center}
-on $\R^2\times\C^2$ with brane
-$L=\R_{\mathrm{brane}}\times\{0\}\times\{p\}$ and ordinary
-$\lie{gl}_N$ gauge data?
+\emph{Closure-layer organizing question.}  Which finite-window
+homological vanishing of the BV operator
+\(\Delta=Q+\{I_0,-\}\), in degree \(+1\) on the local-functional
+complex \(\mathcal O_{\mathrm{loc}}(\mathcal E_w)\) of the formal
+mixed habitat
+\(X=\R^2_{\mathrm{top}}\times\widehat{\C^2}_{0,\mathrm{hol}}\) with
+brane \(L=\R_{\mathrm{brane}}\times\{0\}\times\{p\}\) and ordinary
+\(\lie{gl}_N\) gauge data, would supply an endpoint-admissible
+coefficient module for
+Problem~\ref{prob:formal-factorization-center}, and to what extent does
+the closed BCOV vanishing of \cite{costello-li-quantum-bcov}, or its
+open-closed extension \cite{costello-li-open-closed-bcov}, control any
+of those four named cocycle classes in this geometry?
 
-\emph{Named obstruction tuple.}
-$\mathfrak o_{\mathrm{BV,end}}=(\mathfrak o_{\mathrm{Cas}},
-\mathfrak o_{\mathrm{def}},\mathfrak o_{\mathrm{RG}},
-\mathfrak o_{\mathrm{QME}})$ of
-Definition~\ref{defn:bv-endpoint-obstruction-tuple}.  Its components
-record, in order: the strict-pair Casimir support failure of
-Lemma~\ref{lem:tate-casimir-obstruction}; the absence of a brane-line
-extension of the bulk propagator and bracket transport with ordinary
-$\lie{gl}_N$ open observables; the failure of Costello's RG flow
-$W(P_{\epsilon,L},I)$ to preserve the strict finite-window
-Mittag--Leffler tower; and the mixed brane-defect QME class
-in $H^1(\mathcal O_{\mathrm{loc}}(\mathcal E_\ast),Q+\{I_\ast,-\})$.
+\emph{Named obstruction tuple, with explicit cocycle representatives.}
+The endpoint obstruction is the four-component class
+\[
+  \mathfrak o_{\mathrm{BV,end}}
+    =\bigl(
+      \mathfrak o_{\mathrm{Cas}},\,
+      \mathfrak o_{\mathrm{def}},\,
+      \mathfrak o_{\mathrm{RG}},\,
+      \mathfrak o_{\mathrm{QME}}
+     \bigr)
+\]
+of Definition~\ref{defn:bv-endpoint-obstruction-tuple}.  In order:
+\(\mathfrak o_{\mathrm{Cas}}\) is the residual class of the compatible
+finite Casimir family
+\((C^M_{\mathfrak h})_{M\ge1}\),
+\(C^M_{\mathfrak h}=\sum_{d\le M}\sum_ie_{d,i}\otimes e^i_d\), in the
+cokernel of the represented-kernel map into the strict pair
+\(\mathfrak h_\Pi\widehat\otimes D_\oplus\)
+(\ref{lem:tate-casimir-obstruction});
+\(\mathfrak o_{\mathrm{def}}\) is the obstruction to a brane-line
+extension of the bulk Costello propagator
+\(P_{\epsilon,L}\) of \cite{costello-renormalization}*{Ch.~2 \S2,
+Ch.~5 \S6} and of bracket transport with ordinary \(\lie{gl}_N\)
+boundary observables, equivalently the Hadamard locality class of
+\ref{thm:hadamard-mittag-leffler}~item~(2);
+\(\mathfrak o_{\mathrm{RG}}\) is the obstruction to preservation of the
+strict finite-window Mittag-Leffler tower
+\(\Cat{MLTateChain}_{\geq0}^{\mathrm{str}}\) of
+\ref{defn:strict-ml-tate-habitat} under the Costello recursion
+\[
+  W(P_{\epsilon,L},I)
+    =\sum_{\Gamma\text{ connected}}
+      \frac{\hbar^{\mathrm{loops}(\Gamma)}}{\lvert\mathrm{Aut}(\Gamma)\rvert}
+      W_\Gamma(P_{\epsilon,L},I)
+\]
+of \cite{costello-renormalization}*{Ch.~2 \S6}; and
+\(\mathfrak o_{\mathrm{QME}}\) is the degree-\(+1\) BV cocycle class
+\[
+  \mathfrak o_{\mathrm{QME}}
+    \in
+    H^1\!\bigl(\mathcal O_{\mathrm{loc}}(\mathcal E_w),
+      Q+\{I_0,-\}\bigr)
+\]
+representing the local-functional anomaly of the mixed brane-defect
+QME of Problem~\ref{prob:weighted-rg-locality}.  The BV degree
+convention is the cotangent-coordinate grading of
+\ref{def:app-unreduced-bv-degrees} together with the sign data of
+\ref{def:app-sign-hamiltonian-cyclic} and
+\ref{cor:app-sign-universal-dual-normalization}: \(|\Delta|=+1\), the
+reduced Hamiltonian boundary \(P_0\)-bracket has degree \(0\), and the
+Schouten/cotangent bracket has degree \(-1\).
 
-\emph{Hypothesis comparison.}  The cited theorems and the present
-local model differ along five independent axes:
-(S1)~compact Hodge-theoretic geometry vs.\ the formal $\C^2$ jet
-model; (S2)~pure holomorphic-volume kinematics vs.\ mixed
-$d_{\R^2}+\bar\partial_{\C^2}$; (S3)~no brane vs.\ topological line
-defect $L\subset\R^2\times\C^2$;
-(S4)~$\mathrm{str}(I)=N-N=0$ on $\lie{gl}(N\mid N)$ vs.\ ordinary
-$\lie{gl}_N$ with residual U(1) center class
-$[\bar c]\in H^2_{\mathrm{Lie}}(\bar A,\C)$; (S5)~worldsheet $t$-Tate
-direction vs.\ coefficient-system Tate direction
-$\widehat{\mathfrak h}\widehat\otimes\widehat{\mathfrak
-h}^{\vee}_{\mathrm{cont}}$ in which the Casimir must converge.
+\emph{Hypothesis comparison, five axes.}  The cited theorems and the
+present local model differ along five independent axes which are
+verified cocycle-wise below:
+(S1)~compact Hodge-theoretic geometry vs.\ the formal
+\(\widehat{\C^2}_0\) jet model;
+(S2)~pure holomorphic-volume kinematics
+\(\bar\partial+t\,\partial_\Omega\) vs.\ mixed kinematics
+\(D=d_{\R^2}+\bar\partial_{\C^2}\);
+(S3)~no brane vs.\ topological line defect
+\(L\subset\R^2_{\mathrm{top}}\times\C^2\);
+(S4)~the \cite{costello-li-open-closed-bcov} cancellation
+\(\mathrm{str}(I)=N-N=0\) on \(\lie{gl}(N\mid N)\) vs.\ ordinary
+\(\lie{gl}_N\) carrying the residual scalar contact class
+\(\hbar N[\bar c]\) of \ref{thm:app-scalar-contact-qme-class};
+(S5)~the BCOV worldsheet \(t\)-Tate direction vs.\ the
+coefficient-system Tate direction
+\(\widehat{\mathfrak h}\widehat\otimes\widehat{\mathfrak
+h}^{\vee}_{\mathrm{cont}}\) in which the Casimir must converge.
 
-\emph{Unique survivor.}  The separation theorem
-Theorem~\ref{thm:costello-li-no-coefficient-endpoint}: the cited
-theorems run on different geometric and coefficient data and yield an
-endpoint-admissible coefficient module only after three independent
-data are added (E2,~E3,~E5), with vanishing of the QME component
-$\mathfrak o_{\mathrm{QME}}$ a separate quantum input.
+\emph{Unique survivor.}  Theorem~\ref{thm:costello-li-no-coefficient-endpoint}:
+the closed BCOV vanishing of \cite{costello-li-quantum-bcov} and the
+open-closed extension of \cite{costello-li-open-closed-bcov}, in their
+stated geometries, supply vanishing of none of \(\mathfrak
+o_{\mathrm{Cas}}\), \(\mathfrak o_{\mathrm{def}}\), \(\mathfrak
+o_{\mathrm{RG}}\), \(\mathfrak o_{\mathrm{QME}}\) for the present
+brane-defect coefficient endpoint.  Equivalently
+(Proposition~\ref{prop:bv-endpoint-obstruction-tuple}), an
+endpoint-admissible coefficient module exists if and only if all four
+classes vanish; the four-input extension criterion of
+Theorem~\ref{thm:t4-four-missing} names exactly the data that must be
+supplied along (S1)--(S5).
 
-\emph{Construction that closes the tuple.}  By
-Proposition~\ref{prop:bv-endpoint-obstruction-tuple}, the endpoint of
-Definition~\ref{defn:endpoint-admissible-coefficient-module} exists
-exactly on the common zero locus of
-$\mathfrak o_{\mathrm{BV,end}}$.  Three of its four components sit
-outside the cited Costello--Li theorems by hypothesis comparison; the
-named missing data are listed precisely in
-Theorem~\ref{thm:t4-four-missing}: a non-compact / Omega-background
-BV-cohomology vanishing replacing (S1); a topological--holomorphic
-mixed kinematics vanishing on $D=d_{\R^2}+\bar\partial_{\C^2}$
-replacing (S2); a brane-defect extension on $L$ with ordinary
-$\lie{gl}_N$ replacing (S3)--(S4); and a coefficient-system Tate
-completion replacing (S5).
+\emph{Residual.}  The four-input criterion (T4 main theorem) plus the
+quantum endpoint datum \(\mathfrak o_{\mathrm{QME}}=0\).  The closure
+layer here is a hypothesis-separation theorem, not an importation
+theorem: no Costello--Li statement is used as a closure of the present
+coefficient endpoint.  The downstream chain-level primitive shadow of
+\ref{thm:chain-level-primitive-projection} closes the classical
+indecomposable shadow without analytic input, and the
+model-categorical Quillen envelope of
+\ref{thm:tate-bar-cobar-quillen} provides the admissible Tate habitat
+in which the obstruction tuple is computed.
 
-\emph{Residual.}  The four missing data of
-Theorem~\ref{thm:t4-four-missing} together with the QME component
-$\mathfrak o_{\mathrm{QME}}$.  The closure layer is a separation
-theorem, not an importation theorem: no Costello--Li statement is used
-as a closure here.
+\subsection*{BV degree convention and Costello renormalization datum}
+
+\begin{rmk}[BV grading and \(\Delta\) for the brane-defect endpoint]
+\label{rmk:t4-bv-degree-recall}
+  Throughout this section the BV grading is fixed by
+  \ref{def:app-unreduced-bv-degrees}: \(|\phi_1|=|\phi_2|=0\),
+  \(|\psi=A^*|=-1\), \(Q\psi=[\phi_1,\phi_2]\), \(|Q|=+1\); a
+  Hamiltonian generator \(H_f\) has degree \(0\), a shifted cotangent
+  generator \(\eta_\rho=\rho[1]\) is odd of BV degree \(-1\), and the
+  CE cotangent--coordinate grading is \(|c_f|=+1\), \(|u_\rho|=0\).  In
+  this convention the BV operator
+  \[
+    \Delta=Q+\{I_0,-\}
+  \]
+  acting on \(\mathcal O_{\mathrm{loc}}(\mathcal E_w)\) has degree
+  \(+1\), and a quantum master equation \emph{anomaly representative}
+  is a degree-\(+1\) cocycle in
+  \(\bigl(\mathcal O_{\mathrm{loc}}(\mathcal E_w),\Delta\bigr)\).  The
+  Schouten/cotangent--coordinate antibracket has degree \(-1\); the
+  reduced Hamiltonian boundary \(P_0\)-bracket has degree \(0\).  The
+  scalar Hamiltonian cocycle
+  \(\omega(z_1,z_2)=1\) of \ref{lem:app-sign-moyal-coefficients}
+  controls the central contribution to the symbol, and the local
+  Poisson sign convention \(\{z_1,z_2\}=1\) is the one of
+  \ref{def:app-sign-hamiltonian-cyclic}.
+\end{rmk}
+
+\begin{rmk}[Costello (2011) heat-kernel renormalization datum invoked]
+\label{rmk:t4-costello-renorm-datum}
+  The endpoint comparison invokes the renormalization framework of
+  \cite{costello-renormalization}*{Ch.~2 \S2, Ch.~2 \S6, Ch.~5 \S6}: a
+  parametrix
+  \(P_{\epsilon,L}=\int_\epsilon^Lds\,K_s\) for a generalized
+  Laplacian, the homotopy RG flow
+  \[
+    W(P_{\epsilon,L},I)
+      =\hbar\log\!\left(
+        \exp(\hbar\partial_{P_{\epsilon,L}})\exp(I/\hbar)
+      \right)
+      \;=\;
+      \sum_{\Gamma\text{ connected}}
+        \frac{\hbar^{\mathrm{loops}(\Gamma)}}
+             {\lvert\mathrm{Aut}(\Gamma)\rvert}
+        W_\Gamma(P_{\epsilon,L},I),
+  \]
+  the scale-zero limit
+  \(\lim_{\epsilon\to0}W(P_{\epsilon,L},I)\) constructed by counterterm
+  subtraction, and the QME
+  \(QI+\hbar\Delta_LI+\tfrac12\{I,I\}_L=0\) at scale \(L\).  In the
+  present brane-defect geometry the propagator factorizes (when it
+  exists) as
+  \(P^w_{\epsilon,L}=P^{\mathrm{base}}_{\epsilon,L}
+  \widehat\otimes C_{\mathfrak h\oplus\mathfrak h^\vee[1],w}\)
+  (\ref{thm:hadamard-mittag-leffler}); the bulk Hadamard parametrix is
+  taken from \cite{costello-renormalization}*{Ch.~3} on
+  \(\R^2_{\mathrm{top}}\times\C^2_{\mathrm{hol}}\) and the coefficient
+  factor is the algebraic kernel of T1.  The components
+  \(\mathfrak o_{\mathrm{def}}\) and \(\mathfrak o_{\mathrm{RG}}\) of
+  \(\mathfrak o_{\mathrm{BV,end}}\) measure failure of the brane-line
+  extension of \(P^{\mathrm{base}}_{\epsilon,L}\) and of strict-window
+  preservation of \(W(P_{\epsilon,L},-)\) inside this convention.
+\end{rmk}
 
 \subsection*{Costello--Li 2012 hypotheses, restated}
 
 \begin{stmt}[Costello--Li 2012 BCOV construction,
    restated]\label{stmt:costello-li-2012-restated}
-  Let $X$ satisfy the compact holomorphic-volume hypotheses of
-  Costello--Li 2012, with volume form $\Omega$. Let
-  $\mathrm{PV}(X)[[t]]$ be the polyvector field complex with the Tate
-  parameter $t$ (worldsheet $S^1$ rotation), differential
-  $Q=\bar\partial+t\,\partial_\Omega$, and $(-1)$-shifted symplectic
-  pairing
-  $$\langle \alpha,\beta\rangle
-    =\int_X (\alpha\wedge\beta)\big|_{\mathrm{PV}^{d,d}}\cdot\Omega^2.$$
-  The classical BCOV interaction $I_{\mathrm{BCOV}}$ is the cubic
-  vertex on $\mathrm{PV}(X)[[t]]$ of
-  \cite{costello-li-quantum-bcov}.  The cited construction supplies the
-  generalized classical BCOV complex, its local-functional obstruction
-  complex, and the renormalization framework.  The 2015 sequel
-  \cite{costello-li-open-closed-bcov} extends to open-closed BCOV with
-  open gauge data $\lie{gl}(N\mid N)$, anomaly cancellation by the
-  supertrace, on flat $\mathbb C^d$, $d$ odd.  Each is used here only
-  under its stated hypotheses.
+  Let \(X\) satisfy the compact Calabi-Yau holomorphic-volume
+  hypotheses of \cite{costello-li-quantum-bcov}, with volume form
+  \(\Omega\), \(\dim_{\C}X=d\).  Let
+  \(\mathrm{PV}(X)[[t]]=\bigoplus_{i,j}\mathrm{PV}^{i,j}(X)[[t]]\) be
+  the polyvector-field complex with the Tate parameter \(t\) for the
+  worldsheet \(S^1\) rotation, BV differential
+  \[
+    Q_{\mathrm{BCOV}}=\bar\partial+t\,\partial_\Omega,\qquad
+      |Q_{\mathrm{BCOV}}|=+1,
+  \]
+  with \(\partial_\Omega=\Omega^{-1}\circ\partial\circ\Omega\) the
+  divergence operator, and the \((-1)\)-shifted symplectic pairing
+  \[
+    \langle\alpha,\beta\rangle
+      =\int_X(\alpha\wedge\beta)\big|_{\mathrm{PV}^{d,d}}\cdot\Omega^2.
+  \]
+  The classical BCOV interaction \(I_{\mathrm{BCOV}}\) is the cubic
+  vertex of \cite{costello-li-quantum-bcov}*{\S3}.  The cited
+  construction supplies the generalized classical BCOV complex, its
+  local-functional obstruction complex, and the renormalization
+  framework of \cite{costello-renormalization} adapted to compact
+  Calabi-Yau \(X\).  The 2015 open-closed sequel
+  \cite{costello-li-open-closed-bcov} extends the construction to flat
+  \(\C^d\) (\(d\) odd) coupled to open gauge data
+  \(\lie{gl}(N\mid N)\), with the U(1)-anomaly cancellation
+  \(\mathrm{str}(I)=N-N=0\).  Each is used here only under its stated
+  geometric and coefficient hypotheses.
 \end{stmt}
 
-\subsection*{Applicability check on \texorpdfstring{$\R^2\times\C^2$}{R2 x C2}
+\subsection*{Hypothesis separation on \texorpdfstring{$\R^2\times\C^2$}{R2 x C2}
    with brane \texorpdfstring{$L=\R_{\mathrm{brane}}\times\{0\}\times\{p\}$}{L} and \texorpdfstring{$\lie{gl}_N$}{gl\_N}}
 
-\begin{prop}[Costello--Li 2012 hypothesis separation for the local
-   model]\label{prop:costello-li-2012-hypothesis-separation}
-  The hypotheses of \ref{stmt:costello-li-2012-restated} differ from
-  the formal local model on $\R^2\times\C^2$ with brane
-  \(L=\R_{\mathrm{brane}}\times\{0\}\times\{p\}\)
-  and gauge data $\lie{gl}_N$ along five independent axes.
-
+\begin{prop}[Costello--Li 2012/2015 hypothesis separation for the
+   brane-defect endpoint]\label{prop:costello-li-2012-hypothesis-separation}
+  Let \(\mathfrak o_{\mathrm{BV,end}}=(\mathfrak o_{\mathrm{Cas}},
+  \mathfrak o_{\mathrm{def}},\mathfrak o_{\mathrm{RG}},
+  \mathfrak o_{\mathrm{QME}})\) be the four-component endpoint
+  obstruction class of \ref{defn:bv-endpoint-obstruction-tuple} for the
+  formal local geometry
+  \(X=\R^2_{\mathrm{top}}\times\widehat{\C^2}_{0,\mathrm{hol}}\) with
+  brane \(L=\R_{\mathrm{brane}}\times\{0\}\times\{p\}\) and ordinary
+  \(\lie{gl}_N\) gauge data.  The hypotheses of
+  \ref{stmt:costello-li-2012-restated} differ from this local model
+  along five independent axes.  In each axis the failure is named at
+  the level of the cocycle representative the Costello--Li theorem does
+  not control:
   \begin{enumerate}
-    \item[(S1)] \emph{Hodge-theoretic hypothesis.} The 2012
-      Hodge-theoretic hypothesis does not apply directly to the formal
-      \(\C^2\) jet model.  The 2015 theorem shows that flat
-      affine geometry can be admissible under its own odd-dimensional
-      \(\mathfrak{gl}(N\mid N)\) hypotheses; those are not the mixed
-      topological-holomorphic defect hypotheses used here.
-    \item[(S2)] \emph{Topological--holomorphic mixing.} The local
-      theory has a topological factor $\R^2$ (de~Rham) crossed with
-      a holomorphic factor $\C^2$ (Dolbeault). Costello--Li 2012 is
-      pure BCOV/HCS on a single holomorphic-volume space; there is no
-      pure BCOV statement covering the mixed kinematics. The
-      protected sector of twisted M-theory \cite{costello-twistedM}
-      has the right shape as motivation, but no theorem from that source
-      is used here without a separate local anchor, and Costello--Li 2012
-      is not stated for it.
-    \item[(S3)] \emph{Brane defect.} The brane \(L\) is
-      one-real-dimensional in the topological direction and
-      point-supported in the holomorphic direction. Costello--Li
-      2012 has no brane sector. Costello--Li 2015
-      \cite{costello-li-open-closed-bcov} has a brane sector but on
-      flat $\C^d$ (not $\R^2\times\C^2$) with $\lie{gl}(N\mid N)$
-      open gauge data.
-    \item[(S4)] \emph{Gauge data.} Ordinary $\lie{gl}_N$ is not
-      $\lie{gl}(N\mid N)$. Costello--Li 2015 cancel the U(1) center
-      anomaly by the supertrace; this cancellation is unavailable for
-      ordinary $\lie{gl}_N$. The U(1) center class $[\bar c]$ in
-      part~(f) of \ref{thm:main-local} is the local trace-line avatar of
-      that Costello--Li anomaly, not a graph-level identification with it.
-    \item[(S5)] \emph{Tate direction.} Costello--Li's $t$-Tate
-      completion is along the worldsheet $S^1$ rotation, not along
-      the coefficient system. The Tate completion required by
-      \ref{prob:formal-factorization-center} is along the
-      \emph{coefficient} direction
-      $\widehat{\mathfrak h}\,\widehat\otimes\,
-      \widehat{\mathfrak h}^{\vee}_{\mathrm{cont}}$ in which the
-      Casimir
-      $C_{\mathfrak h}=\sum_{d\geq 1}\sum_i e_{d,i}\otimes e^i_d$
-      must converge. By \ref{lem:tate-casimir-obstruction}, the
-      direct-sum dual fixed in the parent calculation obstructs
-      convergence, and the coefficient category itself must change.
-      Costello--Li provide no convergence theorem in this direction.
+    \item[(S1)] \emph{Compact Hodge-theoretic geometry vs.\ formal
+      jet.}  The 2012 theorem requires compact Calabi-Yau \(X\) with
+      Hodge-theoretic harmonic projection
+      \(\Pi_{\mathrm{harm}}\colon\Omega^{0,\bullet}\to
+      \mathcal H^{0,\bullet}\); on the formal jet
+      \(\widehat{\C^2}_0\) there is no harmonic projector and
+      \(H^*_{\mathrm{Dol}}(\widehat{\C^2}_0)=\C\) sits in degree zero
+      only.  Hence the 2012 BV-cohomology vanishing
+      \(H^*_{\mathrm{BV},\mathrm{BCOV}}(X)=0\) above degree zero is not
+      a statement about
+      \(\bigl(\mathcal O_{\mathrm{loc}}(\mathcal E_w),\Delta\bigr)\)
+      on \(X=\R^2_{\mathrm{top}}\times\widehat{\C^2}_{0,\mathrm{hol}}\),
+      and the cocycle representative
+      of \(\mathfrak o_{\mathrm{QME}}\) is not its image.  The 2015
+      open-closed theorem replaces compact \(X\) by flat \(\C^d\) (\(d\)
+      odd) but keeps the holomorphic-volume kinematics and the
+      \(\lie{gl}(N\mid N)\) anomaly cancellation; it is a different
+      geometric and coefficient setting.
+    \item[(S2)] \emph{Pure holomorphic-volume vs.\ mixed
+      topological--holomorphic kinematics.}  The 2012 BV differential is
+      \(Q_{\mathrm{BCOV}}=\bar\partial+t\,\partial_\Omega\) on
+      \(\mathrm{PV}(X)[[t]]\).  The kinematic differential of the
+      present model is
+      \(D=d_{\R^2}+\bar\partial_{\C^2}\) on
+      \(\Omega^\bullet_{\R^2}(I)\widehat\otimes
+      \Omega^{0,\bullet}_{\C^2}\widehat\otimes
+      (\mathfrak h\ltimes\mathfrak h^\vee_{\mathrm{cont}}[1])\)
+      (the native holomorphic \(E_2\) factorization algebra of the
+      Repo-local CLAUDE).  The two complexes share neither generators
+      nor differential, so the cocycle representative of any
+      Costello--Li class on \((\mathrm{PV}(X)[[t]],Q_{\mathrm{BCOV}})\)
+      is not transferable to a cocycle of \(\Delta\) on the mixed
+      complex without a separate kinematic comparison map; none is
+      supplied by the 2012/2015 theorems.  The protected sector of
+      twisted M-theory \cite{costello-twistedM} carries this mixed
+      kinematic shape as physical motivation, but no theorem from
+      \cite{costello-twistedM} is used here as a closure.
+    \item[(S3)] \emph{No brane vs.\ topological line defect.}  The 2012
+      theorem has no brane sector; the propagator
+      \(P^{\mathrm{2012}}_{\epsilon,L}\) on \(\mathrm{PV}(X)[[t]]\)
+      carries no boundary condition along any submanifold.  The 2015
+      theorem has an open-closed sector on flat \(\C^d\) with open gauge
+      \(\lie{gl}(N\mid N)\), but the open boundary is the boundary of a
+      worldsheet disk in \(\C^d\), not a transverse line
+      \(L\subset\R^2_{\mathrm{top}}\times\C^2\) point-supported in the
+      holomorphic direction.  Hence neither theorem extends
+      \(P^{\mathrm{base}}_{\epsilon,L}\) across \(L\) with ordinary
+      \(\lie{gl}_N\) brackets, and the obstruction
+      \(\mathfrak o_{\mathrm{def}}\) of
+      \ref{defn:bv-endpoint-obstruction-tuple} is uncontrolled.
+    \item[(S4)] \emph{Supertrace cancellation vs.\ ordinary
+      \(\lie{gl}_N\) scalar contact.}  On \(\lie{gl}(N\mid N)\) the
+      \cite{costello-li-open-closed-bcov} cancellation
+      \(\mathrm{str}(I)=N-N=0\) kills the would-be U(1)-anomaly at
+      every loop order.  On ordinary \(\lie{gl}_N\) the same closed
+      exchange supplies the scalar contact term
+      \(\hbar N\omega(f,g)\gamma_{\mathbf 1}\) of
+      \ref{thm:app-scalar-contact-qme-class}, with cohomology class
+      \(\hbar N[\bar c]\in H^2_{\mathrm{Lie}}(\bar A,\C)\).  This class
+      is not killed by Costello--Li graph signs; it is the local
+      trace-line avatar of the cancelled supertrace anomaly, not a
+      graph-level identification with it.  Hence
+      \(\mathfrak o_{\mathrm{QME}}\) carries the residual
+      \(\hbar N[\bar c]\) summand for ordinary \(\lie{gl}_N\), and that
+      summand is uncontrolled by either Costello--Li theorem in its
+      stated form.
+    \item[(S5)] \emph{Worldsheet \(t\)-Tate vs.\ coefficient-system
+      Tate.}  The 2012 Tate parameter \(t\) is a worldsheet \(S^1\)
+      rotation completion of the polyvector field complex.  The Tate
+      direction required by
+      Problem~\ref{prob:formal-factorization-center} is along the
+      coefficient pair
+      \[
+        \widehat{\mathfrak h}\,\widehat\otimes\,
+        \widehat{\mathfrak h}^{\vee}_{\mathrm{cont}},
+        \qquad
+        C_{\mathfrak h}=\sum_{d\ge1}\sum_ie_{d,i}\otimes e^i_d.
+      \]
+      By \ref{lem:tate-casimir-obstruction} the strict pair
+      \((\mathfrak h_\Pi,D_\oplus)\) carries no represented kernel
+      projecting to every finite Casimir
+      \(C^M_{\mathfrak h}\): the dual side admits only finitely many
+      degree components, while the compatible kernel has nonzero
+      identity component in every \(H_d^\vee\).  Hence the cocycle
+      representative
+      \(\mathfrak o_{\mathrm{Cas}}=[(C^M_{\mathfrak h})_M]\) is nonzero
+      in the cokernel.  The 2012/2015 theorems are silent on this
+      coefficient direction; their \(t\)-Tate completion is orthogonal
+      to it.
   \end{enumerate}
 
-  Hypothesis (S5) is the coefficient endpoint obstruction: even if
-  (S1)--(S4) were supplied by an Omega-background or twisted M-theory
-  extension, the coefficient-system Tate completion would still be
-  unprovided.
+  Each axis identifies a distinct uncontrolled component of
+  \(\mathfrak o_{\mathrm{BV,end}}\): (S1)+(S2) prevent any direct
+  identification of \(\mathfrak o_{\mathrm{QME}}\) with a Costello--Li
+  cocycle; (S3) prevents control of \(\mathfrak o_{\mathrm{def}}\);
+  (S4) names the residual \(\hbar N[\bar c]\) summand of
+  \(\mathfrak o_{\mathrm{QME}}\); (S5) names the cokernel class of
+  \(\mathfrak o_{\mathrm{Cas}}\).  The remaining component
+  \(\mathfrak o_{\mathrm{RG}}\) is the failure of the strict
+  finite-window Mittag-Leffler tower to be preserved by the recursion
+  \(W(P_{\epsilon,L},I)\) of \ref{rmk:t4-costello-renorm-datum}; this
+  preservation is not asserted by any compact-target Costello--Li
+  theorem.
 \end{prop}
 
 \begin{proof}
-  Each clause is a direct comparison of the hypotheses of
-  \ref{stmt:costello-li-2012-restated} (and its 2015 sequel) with
-  the data of \ref{thm:main-local} and the topology declared in
-  the linear-heat / coefficient-Casimir analysis
+  Each axis is a direct comparison of the hypotheses of
+  \ref{stmt:costello-li-2012-restated} (and its 2015 sequel) with the
+  data of \ref{thm:main-local}, the linear-heat / Casimir analysis
   (\ref{rmk:linear-heat-versus-bv-kernel},
-  \ref{lem:tate-casimir-obstruction}). The non-compactness of
-  $\C^2$ blocks the harmonic-projection step in Costello--Li's
-  one-loop anomaly cancellation; the topological factor $\R^2$ is
-  not BCOV kinematics; the brane \(L\) is a topological
-  line transverse to a holomorphic point, not an open boundary on a
-  flat $\C^d$; ordinary $\lie{gl}_N$ lacks the Costello--Li
-  supertrace cancellation (whose local trace-line avatar here is the
-  class $[\bar c]$ of part~(f)); and the worldsheet-$t$ Tate completion
-  is orthogonal to the coefficient-Casimir Tate direction.
+  \ref{lem:tate-casimir-obstruction}), the scalar contact theorem
+  \ref{thm:app-scalar-contact-qme-class}, and the strict-window habitat
+  \ref{defn:strict-ml-tate-habitat}.  Concretely:
+
+  \emph{(S1).}  Compactness enters \cite{costello-li-quantum-bcov}
+  through the Hodge-theoretic harmonic projection used to construct
+  the BV propagator and to verify the QME at the parametrix limit
+  \(\epsilon\to0\), \(L\to\infty\); on the formal jet
+  \(\widehat{\C^2}_0\) this projection has no analogue and
+  \(H^*_{\mathrm{Dol}}(\widehat{\C^2}_0)\) is one-dimensional.
+
+  \emph{(S2).}  The 2012 BV differential is purely Dolbeault plus the
+  divergence \(t\,\partial_\Omega\); the present
+  \(D=d_{\R^2}+\bar\partial_{\C^2}\) carries an additional de Rham
+  factor on the topological line.  No symmetric-monoidal map
+  \((\mathrm{PV}(X)[[t]],Q_{\mathrm{BCOV}})\to(\Omega^\bullet_{\R^2}
+  (I)\widehat\otimes\Omega^{0,\bullet}_{\C^2}\widehat\otimes\cdots,D)\)
+  is supplied by the cited theorems.
+
+  \emph{(S3).}  The brane \(L\) is transverse to the topological
+  factor and point-supported in the holomorphic factor; the open
+  boundary in \cite{costello-li-open-closed-bcov} is a worldsheet
+  boundary on flat \(\C^d\), not a Wilson line on a transverse
+  topological direction.  The bulk Hadamard parametrix
+  \(P^{\mathrm{base}}_{\epsilon,L}\) of
+  \cite{costello-renormalization}*{Ch.~3} on
+  \(\R^2\times\C^2_{\mathrm{hol}}\) does not by itself decide the
+  brane-line trace.
+
+  \emph{(S4).}  By \ref{thm:app-scalar-contact-qme-class} the closed
+  exchange between two Hamiltonian sources
+  \(B_f,B_g\) on the brane line produces the universal scalar contact
+  density
+  \(\hbar N\,\omega(f,g)\,\gamma_{\mathbf 1}(t)\,a(t)b(t)\).  Its
+  associated-graded scalar symbol is the Lie 2-cocycle
+  \(\omega(f,g)\,\gamma_{\mathbf 1}\) on \(\bar A\), with
+  \(\omega(z_1,z_2)=1\) by
+  \ref{cor:app-sign-universal-dual-normalization}; this is a nonzero
+  class in
+  \(H^2_{\mathrm{Lie}}(\bar A,\C)\) by \ref{thm:main-local}~part~(f).
+  On \(\lie{gl}(N\mid N)\) the same scalar is multiplied by
+  \(\mathrm{sdim}(\C^{N|N})=N-N=0\), killing the representative.  On
+  ordinary \(\lie{gl}_N\) it is \(\hbar N\), nonzero, and the
+  Costello--Li sequel does not supply a counterterm absorbing it.
+
+  \emph{(S5).}  The compatible Casimir family
+  \((C^M_{\mathfrak h})_M\) projects nonzero into every
+  \(H_d\otimes H_d^\vee\) for \(d\le M\), while the strict direct-sum
+  dual \(D_\oplus=\bigoplus_dH_d^\vee\) has only finitely many nonzero
+  degree components per element.  Hence
+  \([C_{\mathfrak h}]\not\in\mathrm{im}(\mathfrak h_\Pi\widehat\otimes
+  D_\oplus\to(\mathfrak h_\Pi\widehat\otimes D_\oplus)^{\wedge\bullet})\)
+  by \ref{lem:tate-casimir-obstruction}; equivalently the cocycle
+  representative of
+  \(\mathfrak o_{\mathrm{Cas}}\) is nonzero, and the worldsheet
+  \(t\)-Tate completion of \cite{costello-li-quantum-bcov} commutes
+  with this coefficient direction trivially.
+
+  Finally, \(\mathfrak o_{\mathrm{RG}}\) is the assertion that
+  \(W(P_{\epsilon,L},-)\) sends the strict ML habitat
+  \(\Cat{MLTateChain}_{\geq0}^{\mathrm{str}}\) of
+  \ref{defn:strict-ml-tate-habitat} into itself with surjective
+  finite-window transition maps; this is a statement about the
+  algebraic-coefficient direction of the propagator, not the
+  worldsheet direction, and is not part of either Costello--Li
+  theorem.
 \end{proof}
 
 \begin{cor}[Costello--Li input and the unreduced coefficient endpoint]
 \label{cor:costello-li-input-coefficient-endpoint}
   The Costello--Li 2012 BCOV construction supplies a pure closed BCOV
-  template.  The unreduced Tate-coefficient cotangent lift
-  for the present brane-defect model additionally requires the endpoint
-  coefficient data of
+  template; the 2015 sequel supplies the open-closed extension on flat
+  \(\C^d\) with \(\lie{gl}(N\mid N)\) gauge data.  Neither, in the
+  form cited, supplies vanishing of any of the four cocycle classes
+  in \(\mathfrak o_{\mathrm{BV,end}}\) for the present
+  \(\R^2_{\mathrm{top}}\times\widehat{\C^2}_{0,\mathrm{hol}}\)
+  brane-defect endpoint.  The unreduced Tate-coefficient cotangent
+  lift therefore additionally requires the endpoint coefficient data
+  of
   Definition~\ref{defn:endpoint-admissible-coefficient-module}.  The
   independent chain-level route
   \ref{thm:chain-level-primitive-projection} closes the classical
-  primitive indecomposable shadow without analytic input.  The
-  unreduced cotangent factorization-centre morphism and the
-  quantum one-antifield extension of part~(e) require the
-  weighted coefficient category and the mixed brane-defect
-  locality/QME input isolated in
-  Problem~\ref{prob:weighted-rg-locality} and
+  primitive indecomposable shadow on the open observables without
+  analytic input; the model-categorical envelope
+  \ref{stmt:tate-model-envelope} provides the admissible Tate habitat
+  on which the obstruction tuple is computed.  The unreduced cotangent
+  factorization-centre morphism and the quantum one-antifield
+  extension of part~(e) of \ref{thm:main-local} require the weighted
+  coefficient category of T1 and the mixed brane-defect locality/QME
+  input of Problem~\ref{prob:weighted-rg-locality} together with
   \ref{thm:hadamard-mittag-leffler}.
 \end{cor}
 
 \begin{proof}
-  By Proposition~\ref{prop:costello-li-2012-hypothesis-separation}, the
-  BCOV theory of \cite{costello-li-quantum-bcov} is stated
-  for different geometric and coefficient data.  Its conclusion, in the
-  form used here as source precedent, contains
-  neither the coefficient-system Tate completion in which the Casimir
-  converges nor a brane-defect extension of the propagator.  The closures
-  cited in the statement supply the classical chain-level lift and the
-  weighted finite-scale coefficient kernel by other routes.  The endpoint
-  data remain exactly those listed in
+  Direct from
+  Proposition~\ref{prop:costello-li-2012-hypothesis-separation}: each
+  Costello--Li hypothesis is silent on a distinct cocycle representative
+  in \(\mathfrak o_{\mathrm{BV,end}}\), so vanishing of the tuple is
+  not a consequence of the cited theorems.  The remaining sentences
+  collect the closures of the present manuscript supplying the
+  classical chain-level lift, the model-categorical envelope, and the
+  weighted finite-scale coefficient kernel by other routes; the
+  endpoint data remain exactly those listed in
   Definition~\ref{defn:endpoint-admissible-coefficient-module}.
 \end{proof}
 
@@ -197,176 +443,354 @@ as a closure here.
 \label{thm:costello-li-no-coefficient-endpoint}
   The Costello--Li 2012 BCOV construction
   \cite{costello-li-quantum-bcov} and its 2015 open-closed extension
-  \cite{costello-li-open-closed-bcov}, in the forms cited above, can
-  yield an endpoint-admissible coefficient module for
-  Definition~\ref{defn:endpoint-admissible-coefficient-module} only after
-  three independent data are added:
+  \cite{costello-li-open-closed-bcov}, in the forms restated in
+  \ref{stmt:costello-li-2012-restated}, supply an endpoint-admissible
+  coefficient module of
+  Definition~\ref{defn:endpoint-admissible-coefficient-module} for the
+  formal local brane-defect geometry only after three independent
+  classical data are added:
   \[
-  \begin{gathered}
-    \text{(E2) coefficient Casimir kernel},\\
-    \text{(E3) mixed brane-defect transport},\\
-    \text{(E5) endpoint RG preservation}.
-  \end{gathered}
+    \text{(E2) coefficient Casimir kernel},\quad
+    \text{(E3) mixed brane-defect transport},\quad
+    \text{(E5) endpoint RG preservation},
   \]
-  Here (E1) and (E4) are the inherited finite-window and Mittag--Leffler
-  envelope conditions of
-  Definition~\ref{defn:endpoint-admissible-coefficient-module}.  A
-  quantum endpoint additionally requires vanishing of the separate QME
-  component \(\mathfrak o_{\mathrm{QME}}\) in
-  Definition~\ref{defn:bv-endpoint-obstruction-tuple}.
+  with (E1) and (E4) the inherited finite-window and Mittag-Leffler
+  envelope conditions.  A quantum endpoint additionally requires
+  vanishing of the QME component
+  \(\mathfrak o_{\mathrm{QME}}\) of
+  Definition~\ref{defn:bv-endpoint-obstruction-tuple}.  Equivalently:
+  none of the four cocycle representatives in
+  \(\mathfrak o_{\mathrm{BV,end}}\) is forced to vanish by either
+  Costello--Li theorem on this geometry.
 \end{thm}
 
 \begin{proof}
   An endpoint-admissible coefficient module requires a coefficient
   kernel
   \(C_\ast\in\mathfrak h_\ast\widehat\otimes D_\ast\) whose projection
-  to every finite Hamiltonian window is the finite Casimir, together
-  with mixed brane-defect transport of the bracket, propagator,
-  interaction, counterterms, and RG recursion.  By
-  Proposition~\ref{prop:costello-li-2012-hypothesis-separation}, the cited
-  Costello--Li theorems are pure closed BCOV statements on the
-  polyvector \(t\)-Tate direction, with a separate
-  \(\mathfrak{gl}(N\mid N)\) open-closed setting in the sequel.  Their
-  stated data are orthogonal to the coefficient pair
-  \(\widehat{\mathfrak h}\widehat\otimes
-  \widehat{\mathfrak h}^{\vee}_{\mathrm{cont}}\), its Casimir kernel,
-  and the topological line defect with ordinary \(\mathfrak{gl}_N\)
-  boundary observables.  Thus the endpoint conditions (E2), (E3), and
-  (E5) of
-  Definition~\ref{defn:endpoint-admissible-coefficient-module} are not
-  consequences of the cited theorems.
+  to every finite Hamiltonian window is the finite Casimir
+  \(C^M_{\mathfrak h}\), together with mixed brane-defect transport of
+  the bracket, propagator, interaction, counterterms, and RG recursion
+  (Definition~\ref{defn:endpoint-admissible-coefficient-module}).  By
+  Proposition~\ref{prop:costello-li-2012-hypothesis-separation}, each
+  axis (S1)--(S5) names a distinct cocycle in
+  \(\mathfrak o_{\mathrm{BV,end}}\) that the Costello--Li hypotheses
+  do not control: (S5) for \(\mathfrak o_{\mathrm{Cas}}\), (S3) for
+  \(\mathfrak o_{\mathrm{def}}\), the algebraic-coefficient direction
+  for \(\mathfrak o_{\mathrm{RG}}\), and (S1)+(S2)+(S4) for
+  \(\mathfrak o_{\mathrm{QME}}\).  Hence (E2), (E3), (E5), and the QME
+  vanishing are not consequences of the cited theorems.
 \end{proof}
 
-\begin{defn}[BV endpoint obstruction tuple]
+\begin{defn}[BV endpoint obstruction tuple, with explicit cocycle
+   representatives]
 \label{defn:bv-endpoint-obstruction-tuple}
-  For the mixed local geometry
-  \(\R^2\times\C^2\) with brane
-  \(L=\R_{\mathrm{brane}}\times\{0\}\times\{p\}\), the obstruction
-  tuple for a BV-cohomology vanishing theorem to construct an
-  endpoint-admissible coefficient module is
+  For the formal mixed local geometry
+  \(X=\R^2_{\mathrm{top}}\times\widehat{\C^2}_{0,\mathrm{hol}}\) with
+  brane \(L=\R_{\mathrm{brane}}\times\{0\}\times\{p\}\) and ordinary
+  \(\lie{gl}_N\) gauge data, the BV endpoint obstruction tuple is
   \[
     \mathfrak o_{\mathrm{BV,end}}
       =\bigl(
-        \mathfrak o_{\mathrm{Cas}},
-        \mathfrak o_{\mathrm{def}},
-        \mathfrak o_{\mathrm{RG}},
+        \mathfrak o_{\mathrm{Cas}},\,
+        \mathfrak o_{\mathrm{def}},\,
+        \mathfrak o_{\mathrm{RG}},\,
         \mathfrak o_{\mathrm{QME}}
        \bigr).
   \]
-  Its components are:
+  Each component is named with its habitat, BV degree, and explicit
+  cocycle representative:
   \begin{enumerate}[label=(O\arabic*)]
-    \item \(\mathfrak o_{\mathrm{Cas}}\): the class of the compatible
-      finite Casimirs
-      \((C^M_{\mathfrak h})_{M\geq1}\) in the quotient by represented
-      coefficient kernels
-      \(\mathfrak h_\ast\widehat\otimes D_\ast\);
-    \item \(\mathfrak o_{\mathrm{def}}\): the obstruction to extending
-      the bulk propagator and bracket transport to the topological line
-      defect with ordinary \(\lie{gl}_N\) open observables;
-    \item \(\mathfrak o_{\mathrm{RG}}\): the obstruction to preserving
-      the same strict finite-window Mittag-Leffler tower under
-      Costello's recursion \(W(P_{\epsilon,L},I)\);
-    \item \(\mathfrak o_{\mathrm{QME}}\): the mixed brane-defect local
-      functional class in
+    \item \emph{Casimir cokernel class
+      \(\mathfrak o_{\mathrm{Cas}}\)} --- habitat
+      \(\mathrm{coker}\bigl(\mathfrak h_\Pi\widehat\otimes D_\oplus
+      \to\varprojlim_M(\mathfrak h\otimes\mathfrak h^\vee)_{\le M}\bigr)\),
+      degree \(0\); cocycle representative the compatible family
       \[
-        H^1\bigl(\mathcal O_{\mathrm{loc}}(\mathcal E_\ast),
-          Q+\{I_\ast,-\}\bigr)
+        \mathfrak o_{\mathrm{Cas}}=
+        \bigl[(C^M_{\mathfrak h})_{M\ge1}\bigr],
+        \qquad
+        C^M_{\mathfrak h}=\sum_{d\le M}\sum_ie_{d,i}\otimes e^i_d,
       \]
-      produced by the quantum master equation at the endpoint.
+      with transition maps the standard truncations
+      \(C^{M+1}_{\mathfrak h}\mapsto C^M_{\mathfrak h}\); nonzero in
+      the strict pair by \ref{lem:tate-casimir-obstruction}.
+    \item \emph{Brane-defect transport class
+      \(\mathfrak o_{\mathrm{def}}\)} --- habitat
+      \(H^0\!\bigl(\mathrm{Hom}^\bullet_{\mathrm{loc}}
+        (P^{\mathrm{base}}_{\epsilon,L},
+         P^{\mathrm{brane}}_{\epsilon,L}),\,\delta_L\bigr)\),
+      degree \(0\); cocycle representative the brane-line restriction
+      datum
+      \[
+        \mathfrak o_{\mathrm{def}}=
+        \bigl[\delta_L^*P^{\mathrm{base}}_{\epsilon,L}
+          -P^{\mathrm{brane}}_{\epsilon,L}\bigr]
+      \]
+      together with the failure of bracket transport
+      \(\{\,\cdot\,,\,\cdot\,\}_{\mathrm{open}}\) of
+      \ref{lem:app-sign-current-source} across \(L\) with ordinary
+      \(\lie{gl}_N\) brackets, equivalently the Hadamard locality
+      class of \ref{thm:hadamard-mittag-leffler}~item~(2).
+    \item \emph{RG-window preservation class
+      \(\mathfrak o_{\mathrm{RG}}\)} --- habitat the Mittag-Leffler
+      \(\varprojlim^1H^0\) of the strict-window functional complex
+      \(\Cat{MLTateChain}_{\geq0}^{\mathrm{str}}\) of
+      \ref{defn:strict-ml-tate-habitat}, degree \(0\); cocycle
+      representative the compatible family of recursion-induced
+      transition failures
+      \[
+        \mathfrak o_{\mathrm{RG}}
+        =\bigl[
+          \mathrm{T}^{M,M-1}\circ
+          W(P_{\epsilon,L},-)|_{\le M}
+          -W(P_{\epsilon,L},-)|_{\le M-1}\circ\mathrm{T}^{M,M-1}
+        \bigr]
+        \in\varprojlim\nolimits^1_M H^0,
+      \]
+      where \(\mathrm{T}^{M,M-1}\) is the strict ML truncation of
+      \ref{defn:strict-ml-tate-habitat} and
+      \(W(P_{\epsilon,L},-)\) is the Costello recursion of
+      \ref{rmk:t4-costello-renorm-datum}.
+    \item \emph{QME anomaly class
+      \(\mathfrak o_{\mathrm{QME}}\)} --- habitat the local-functional
+      cohomology
+      \[
+        H^1\!\bigl(\mathcal O_{\mathrm{loc}}(\mathcal E_w),\,
+          \Delta\bigr),
+        \qquad
+        \Delta=Q+\{I_0,-\},\ \ |\Delta|=+1,
+      \]
+      degree \(+1\); cocycle representative the local functional
+      \[
+        \mathfrak o_{\mathrm{QME}}
+          =\bigl[QI_0+\hbar\Delta_LI_0
+                 +\tfrac12\{I_0,I_0\}_L\bigr]
+      \]
+      produced by the quantum master equation of
+      \cite{costello-renormalization}*{Ch.~5} at scale \(L\),
+      restricted to the mixed brane-defect interaction \(I_0\) of
+      Problem~\ref{prob:weighted-rg-locality}.  In the ordinary
+      \(\lie{gl}_N\) branch this class carries the residual scalar
+      contact summand
+      \(\hbar N\,\omega(f,g)\,\gamma_{\mathbf 1}\) of
+      \ref{thm:app-scalar-contact-qme-class}; in the balanced
+      \(\C^{N|N}\) branch the same summand vanishes by
+      \ref{thm:app-balanced-supertrace-qme-cancellation}.
   \end{enumerate}
 \end{defn}
 
-\begin{prop}[Endpoint construction is equivalent to vanishing of the tuple]
+\begin{prop}[Endpoint construction is equivalent to vanishing of the
+   tuple]
 \label{prop:bv-endpoint-obstruction-tuple}
-  A Costello--Li type BV-cohomology theorem closes the coefficient
-  endpoint for this local brane-defect problem only if all four
-  components of
-  \(\mathfrak o_{\mathrm{BV,end}}\) vanish and a compatible choice of
-  primitives is made.  Under such a choice, the endpoint satisfies
-  Definition~\ref{defn:endpoint-admissible-coefficient-module}; conversely
-  an endpoint-admissible coefficient module kills
-  \(\mathfrak o_{\mathrm{Cas}}\), \(\mathfrak o_{\mathrm{def}}\), and
-  \(\mathfrak o_{\mathrm{RG}}\), and the QME solution kills
-  \(\mathfrak o_{\mathrm{QME}}\).
+  An endpoint-admissible coefficient module of
+  Definition~\ref{defn:endpoint-admissible-coefficient-module} for the
+  brane-defect geometry of
+  \ref{defn:bv-endpoint-obstruction-tuple} exists if and only if all
+  four cocycle classes
+  \(\mathfrak o_{\mathrm{Cas}}\), \(\mathfrak o_{\mathrm{def}}\),
+  \(\mathfrak o_{\mathrm{RG}}\), \(\mathfrak o_{\mathrm{QME}}\) of
+  \ref{defn:bv-endpoint-obstruction-tuple} vanish and a compatible
+  choice of primitives is made.  In particular, a Costello--Li type
+  BV-cohomology theorem closes the present coefficient endpoint only
+  when it certifies vanishing of all four classes simultaneously, with
+  primitives compatible with the strict finite-window Mittag-Leffler
+  envelope of \ref{defn:strict-ml-tate-habitat}.
 \end{prop}
 
 \begin{proof}
+  \emph{(O1)\(\Leftrightarrow\)(E2).}
   Definition~\ref{defn:endpoint-admissible-coefficient-module}(E2) is
-  precisely the existence of a coefficient kernel whose
-  finite-window projections are the \(C^M_{\mathfrak h}\); this is the
-  vanishing of \(\mathfrak o_{\mathrm{Cas}}\).  Condition (E3) requires
-  transport of bracket, propagator contraction, interaction, and
-  counterterm representatives through the brane-defect geometry; this
-  is exactly \(\mathfrak o_{\mathrm{def}}=0\) together with the chosen
-  transport primitives.  Condition (E5) is
-  \(\mathfrak o_{\mathrm{RG}}=0\).  The endpoint QME is the vanishing of
-  the displayed degree-one local-functional class
-  \(\mathfrak o_{\mathrm{QME}}\).  These conditions are also necessary:
-  a nonzero component removes one of the endpoint data just listed.
+  the existence of a coefficient kernel
+  \(C_*\in\mathfrak h_*\widehat\otimes D_*\) whose finite-window
+  projections are the \(C^M_{\mathfrak h}\); equivalently a primitive
+  for the cocycle representative of
+  \(\mathfrak o_{\mathrm{Cas}}\) under the represented-kernel map.
+
+  \emph{(O2)\(\Leftrightarrow\)(E3).}  Condition (E3) requires
+  transport of bracket
+  \(\{\,\cdot\,,\,\cdot\,\}_{\mathrm{open}}\), propagator
+  \(P^{\mathrm{base}}_{\epsilon,L}\), interaction \(I_0\), and
+  counterterm representatives across the brane line \(L\) with ordinary
+  \(\lie{gl}_N\) brackets; equivalently a primitive for the
+  Hom-complex cocycle representative of \(\mathfrak o_{\mathrm{def}}\).
+
+  \emph{(O3)\(\Leftrightarrow\)(E5).}  Condition (E5) is preservation
+  of the strict finite-window Mittag-Leffler tower under the Costello
+  recursion \(W(P_{\epsilon,L},-)\); equivalently vanishing of the
+  \(\varprojlim^1H^0\) class of
+  \(\mathfrak o_{\mathrm{RG}}\).
+
+  \emph{(O4) and the quantum endpoint.}  The endpoint QME is the
+  vanishing of the degree-\(+1\) local-functional class
+  \(\mathfrak o_{\mathrm{QME}}\) in
+  \(H^1\bigl(\mathcal O_{\mathrm{loc}}(\mathcal E_w),\Delta\bigr)\),
+  which by \ref{def:app-unreduced-bv-degrees} has \(|\Delta|=+1\) on
+  the cotangent-coordinate grading of the local-functional complex.
+
+  Necessity is the same chain of equivalences in reverse: a nonzero
+  component removes one of the endpoint data just listed.  The
+  primitive-compatibility clause is the requirement that the chosen
+  cobounding primitives be morphisms in the strict ML habitat
+  \(\Cat{MLTateChain}_{\geq0}^{\mathrm{str}}\), so that the endpoint
+  module sits in
+  \(\Cat{TateChain}_{\geq0}^{\mathrm{adm}}\) (\ref{stmt:tate-model-envelope}).
 \end{proof}
 
-\subsection*{Costello--Li extension criterion}
+\subsection*{Four-input extension criterion}
 
-\begin{thm}[Costello--Li extension criterion for the mixed coefficient endpoint]\label{thm:t4-four-missing}
-  Any Costello--Li type theorem that proves an endpoint-admissible
-  coefficient module for the setup here must supply the following four
-  components simultaneously:
+\begin{thm}[Costello--Li extension criterion for the mixed coefficient
+   endpoint]\label{thm:t4-four-missing}
+  Let \(\mathfrak o_{\mathrm{BV,end}}\) be the obstruction tuple of
+  Definition~\ref{defn:bv-endpoint-obstruction-tuple}.  A Costello--Li
+  type BV-cohomology theorem certifies vanishing of \(\mathfrak
+  o_{\mathrm{BV,end}}\) on the formal local geometry
+  \(X=\R^2_{\mathrm{top}}\times\widehat{\C^2}_{0,\mathrm{hol}}\), brane
+  \(L=\R_{\mathrm{brane}}\times\{0\}\times\{p\}\), gauge \(\lie{gl}_N\),
+  if and only if it supplies the following four classical and one
+  quantum data simultaneously, each addressing a distinct cocycle
+  representative in
+  \(\mathfrak o_{\mathrm{BV,end}}\):
   \begin{enumerate}
-    \item \emph{Non-compact / Omega-background BV-cohomology
-      vanishing.} A version of \ref{stmt:costello-li-2012-restated}
-      on $\R^2\times\C^2$, either via a separately anchored
-      Omega-background route or via a compactification with Lagrangian
-      boundary at infinity.
-    \item \emph{Topological--holomorphic mixed kinematics.} The
-      vanishing must hold on the kinematic differential
-      $D=d_{\R^2}+\bar\partial_{\C^2}$, with the linearized
-      complex of \ref{rmk:linear-heat-versus-bv-kernel}, and on
-      the Hamiltonian sector with cotangent $[1]$ extension.
-    \item \emph{Brane-defect extension.} The vanishing must allow
-      the transverse one-real-dimensional defect \(L\) on
-      which open gauge data $\lie{gl}_N$ live; not the flat-$\C^d$
-      $\lie{gl}(N\mid N)$ setup of
-      \cite{costello-li-open-closed-bcov}. It must also decide the
-      scalar contact class of
-      Theorem~\ref{thm:app-scalar-contact-qme-class}: closed
-      exchange cancellation, supertrace removal, central-character
-      normalization, or renormalized boundary generators.
-    \item \emph{Coefficient-system Tate completion.} The
-      coefficient direction
-      $\widehat{\mathfrak h}\,\widehat\otimes\,
-      \widehat{\mathfrak h}^{\vee}_{\mathrm{cont}}$ must support the
-      Casimir as a convergent kernel. By
-      \ref{lem:tate-casimir-obstruction} this is a category-level
-      change, not a damping factor.
+    \item[\emph{(I1)}] \emph{Non-compact / \(\Omega\)-background
+      BV-cohomology vanishing} replacing (S1).  A vanishing theorem
+      for the BV operator \(\Delta\) on
+      \(\bigl(\mathcal O_{\mathrm{loc}}(\mathcal E_w),\Delta\bigr)\)
+      over the non-compact base
+      \(\R^2_{\mathrm{top}}\times\C^2_{\mathrm{hol}}\), either via a
+      separately anchored \(\Omega\)-background route in the normal
+      bundle \(N_LX=\R_s\oplus\C_{z_1}\oplus\C_{z_2}\) (with the
+      vector field, equivariant differential
+      \(Q_\Omega=Q+\iota_{V_\Omega}\), inverted normal weights, and
+      stratification of the Repo-local CLAUDE
+      ``Normal \(\Omega\)-background discipline''), or via
+      compactification with Lagrangian boundary at infinity preserving
+      the brane \(L\) as a fixed locus.
+    \item[\emph{(I2)}] \emph{Topological--holomorphic mixed kinematics}
+      replacing (S2).  The vanishing must hold for
+      \(D=d_{\R^2}+\bar\partial_{\C^2}\) on
+      \(\Omega^\bullet_{\R^2}(I)\widehat\otimes
+        \Omega^{0,\bullet}_{\C^2}\widehat\otimes
+        (\mathfrak h\ltimes\mathfrak h^\vee_{\mathrm{cont}}[1])\),
+      together with its linearized BV-kernel complex of
+      \ref{rmk:linear-heat-versus-bv-kernel} and the cotangent
+      \([1]\)-extension of the Hamiltonian sector
+      (\ref{def:app-unreduced-bv-degrees}).
+    \item[\emph{(I3)}] \emph{Brane-defect extension with ordinary
+      \(\lie{gl}_N\) scalar contact decision} replacing (S3)--(S4).
+      The vanishing must allow the transverse one-real-dimensional
+      defect \(L\) carrying open gauge \(\lie{gl}_N\) (not the
+      flat-\(\C^d\) \(\lie{gl}(N\mid N)\) setup of
+      \cite{costello-li-open-closed-bcov}), and must decide the scalar
+      contact class
+      \[
+        \hbar N\,\omega(f,g)\,\gamma_{\mathbf 1}\in
+        H^2_{\mathrm{Lie}}(\bar A,\C),
+        \qquad\omega(z_1,z_2)=1,
+      \]
+      of \ref{thm:app-scalar-contact-qme-class} by one of the four
+      named cancellations:
+      closed-exchange cancellation,
+      \(\C^{N|N}\) supertrace removal
+      (\ref{thm:app-balanced-supertrace-qme-cancellation}),
+      central-character normalization
+      (\ref{thm:app-central-character-qme-cancellation}), or
+      renormalized boundary generators.
+    \item[\emph{(I4)}] \emph{Coefficient-system Tate completion}
+      replacing (S5).  The coefficient direction
+      \(\widehat{\mathfrak h}\,\widehat\otimes\,
+        \widehat{\mathfrak h}^{\vee}_{\mathrm{cont}}\)
+      must support the Casimir
+      \(C_{\mathfrak h}=\sum_{d\ge1}\sum_ie_{d,i}\otimes e^i_d\)
+      as a convergent represented kernel; by
+      \ref{lem:tate-casimir-obstruction} this requires a coefficient
+      category change, supplied for example by the weighted Tate pair
+      \((\mathfrak h_w,\mathfrak h^{\vee,w}_{\mathrm{cont}})\) of T1.
+    \item[\emph{(I5)}] \emph{Quantum endpoint vanishing}.  A primitive
+      for the degree-\(+1\) cocycle
+      \(\mathfrak o_{\mathrm{QME}}=
+        \bigl[QI_0+\hbar\Delta_LI_0+\tfrac12\{I_0,I_0\}_L\bigr]\)
+      in \(H^1\!\bigl(\mathcal O_{\mathrm{loc}}(\mathcal E_w),
+        \Delta\bigr)\), with the Costello-2011 counterterm subtraction
+      of \ref{rmk:t4-costello-renorm-datum} compatible with the
+      strict-window Mittag-Leffler tower of
+      \ref{defn:strict-ml-tate-habitat}.  Casimir-balanced equivariant
+      data of
+      \ref{defn:super-balanced-equivariant-qme-datum} kill the scalar
+      component
+      \(\mathfrak o_{\mathrm{QME}}^{\mathrm{sc}}\); the non-scalar
+      residual is the obstruction class of
+      \ref{thm:wt-nonscalar-counterterm-criterion} in
+      \(H^1(\ker\widehat\sigma_{\mathrm{sc}},d_{\mathrm{QME}})\)
+      together with the secondary
+      \(\varprojlim^1H^0\) primitive class.
   \end{enumerate}
-  These four inputs are the coefficient data of
-  \ref{prob:formal-factorization-center}.  They are the necessary data
-  for turning the Costello--Li convention template into the mixed
-  brane-defect coefficient theorem used here.
+  Equivalently, (I1)--(I5) are exactly the data of
+  Problem~\ref{prob:formal-factorization-center} for the present
+  brane-defect endpoint.
 \end{thm}
 
 \begin{proof}
-  Component (1) supplies the compactness/Hodge-theoretic replacement
-  needed in (S1).  Component (2) supplies the mixed
-  topological--holomorphic complex required by (S2).  Component (3)
-  supplies the line-defect transport and ordinary \(\lie{gl}_N\) scalar
-  anomaly decision required by (S3)--(S4).  Component (4) is precisely
-  condition (E2) of
-  Definition~\ref{defn:endpoint-admissible-coefficient-module}; together
-  with the transport and RG requirements in (E3) and (E5), it is the
-  coefficient endpoint datum.  Proposition~\ref{prop:bv-endpoint-obstruction-tuple}
-  identifies these requirements with vanishing of the obstruction tuple.
+  By Proposition~\ref{prop:costello-li-2012-hypothesis-separation},
+  axes (S1)--(S5) name pairwise distinct cocycle representatives in
+  \(\mathfrak o_{\mathrm{BV,end}}\) that the Costello--Li hypotheses do
+  not control: (S1)+(S2) for the kinematic side of
+  \(\mathfrak o_{\mathrm{QME}}\), (S3) for
+  \(\mathfrak o_{\mathrm{def}}\), (S4) for the residual
+  \(\hbar N[\bar c]\) summand of \(\mathfrak o_{\mathrm{QME}}\), and
+  (S5) for \(\mathfrak o_{\mathrm{Cas}}\); the
+  algebraic-coefficient direction governs
+  \(\mathfrak o_{\mathrm{RG}}\).  Components (I1)--(I4) supply
+  primitives, in turn, for the cocycle representatives forced by
+  (S1)+(S2), (S3)+(S4)\(_{\mathrm{transport}}\), the strict-window
+  Mittag-Leffler preservation of \(W(P_{\epsilon,L},-)\), and the
+  Casimir convergence; (I5) supplies the quantum primitive.  By
+  Proposition~\ref{prop:bv-endpoint-obstruction-tuple} this is exactly
+  vanishing of \(\mathfrak o_{\mathrm{BV,end}}\), with primitives
+  compatible with
+  \(\Cat{MLTateChain}_{\geq0}^{\mathrm{str}}\) of
+  \ref{defn:strict-ml-tate-habitat}.
+
+  For necessity: dropping (I1) leaves the kinematic representative of
+  \(\mathfrak o_{\mathrm{QME}}\) unprimitivated; dropping (I2) leaves
+  \(D\) without a vanishing theorem; dropping (I3) leaves
+  \(\mathfrak o_{\mathrm{def}}\) and the scalar contact summand of
+  \(\mathfrak o_{\mathrm{QME}}\) unaddressed; dropping (I4) leaves
+  \(\mathfrak o_{\mathrm{Cas}}\) nonzero in the cokernel by
+  \ref{lem:tate-casimir-obstruction}; dropping (I5) leaves the
+  degree-\(+1\) anomaly primitive unsupplied.  The chain-level
+  primitive shadow of \ref{thm:chain-level-primitive-projection}
+  closes the classical indecomposable shadow without analytic input
+  but does not by itself supply (I3) or (I5); the Quillen envelope of
+  \ref{thm:tate-bar-cobar-quillen} promotes the strict habitat of
+  (I4) to an admissible Tate model envelope.
 \end{proof}
 
-\begin{rmk}[Costello--Li convention boundary]\label{rmk:t4-external-comparison-boundary}
-  The local Hamiltonian BF sector supplies the formal-disk coefficient
-  normalization.  Costello--Li 2012 supplies the convention template
-  used to state the coefficient problem.  No theorem from the cited
-  sources is imported as a closure of the present coefficient
+\begin{rmk}[Costello--Li convention boundary and downstream cross-references]
+\label{rmk:t4-external-comparison-boundary}
+  Costello--Li 2012 \cite{costello-li-quantum-bcov} supplies the
+  convention template used to state the coefficient problem; the local
+  Hamiltonian BF sector of
+  \ref{def:app-sign-hamiltonian-cyclic}--\ref{cor:app-sign-universal-dual-normalization}
+  supplies the formal-disk coefficient normalization.  No theorem from
+  the cited sources is imported as a closure of the present coefficient
   endpoint; the closure data are precisely the named obstruction
   components in
   Definition~\ref{defn:bv-endpoint-obstruction-tuple}, and the
   endpoint-admissible coefficient module of
-  Definition~\ref{defn:endpoint-admissible-coefficient-module} exists
-  if and only if all four components vanish.
+  Definition~\ref{defn:endpoint-admissible-coefficient-module} exists if
+  and only if all four classical components together with the quantum
+  endpoint of
+  \(\mathfrak o_{\mathrm{QME}}\) vanish
+  (Proposition~\ref{prop:bv-endpoint-obstruction-tuple} and
+  Theorem~\ref{thm:t4-four-missing}).  The model-categorical setting
+  is fixed by T2--T3
+  (\ref{defn:strict-ml-tate-habitat},
+  \ref{stmt:tate-model-envelope},
+  \ref{thm:tate-bar-cobar-quillen}); the chain-level primitive shadow
+  closing the classical indecomposable side without analytic input is
+  T5 (\ref{thm:chain-level-primitive-projection}).  The Repo-local
+  CLAUDE invariant ``BCOV / Kodaira-Spencer gravity supplies motivation
+  and convention checks only'' is enforced here as: T4 is a
+  hypothesis-separation theorem, not an importation theorem.
 \end{rmk}
