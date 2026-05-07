@@ -3,23 +3,29 @@
 \section{\texorpdfstring{Full Primitive Higher-\(\psi\) Koszul Homology}{Full Primitive Higher-psi Koszul Homology}}
 \label{sec:app-full-psi-homology}
 
-\emph{Load-bearing role.}  Principle~1 of the introduction asserts
-that the open BV theory of the brane probe stack is the Koszul
-zero-fibre of the
-\(GL_N\)-conjugation moment map and that its primitive trace content
-is the matrix-probe family \(J(f)\).  Principle~4 then asserts that
-the polynomial one-\(\psi\) descendant labels \(\Psi_{a,b}\) are the
-PBW special-fibre shadow of a different module from the residual
-cotangent module \(\mc P\).  Both principles need a single universal
+\emph{Load-bearing role.}  This appendix is the computational backbone of
+the special-fibre versus deformation-level distinction
+(Theorem~\ref{thm:pbw-vs-deformation}).  Two modules carry the same
+bidegree index set \((a,b)\) and a different
+\(\mathfrak h\)-action: the polynomial PBW one-\(\psi\) descendant
+labels \(\Psi_{a,b}\) of the open BV brane sector and the residual
+Matlis principal parts \(\rho_{a,b}\) of
+Appendix~\ref{sec:app-matlis-principal-parts}.  The slogan one
+expects, ``defect position is polynomial; defect cotangent momentum is
+residual'', is upgraded to a theorem only after a single universal
 calculation: the full primitive cyclic Koszul homology of
-\((A_\psi,d\psi=xy-yx)\) graded by \(\psi\)-count.  This appendix
-supplies that calculation in the bidegree-organised form.  The
-load-bearing outputs are
+\((A_\psi,\,d\psi=xy-yx)\) graded by \(\psi\)-count and by
+\((R,S)=(\#x+\#\psi,\#y+\#\psi)\).  This appendix supplies the
+calculation, identifies the surviving \(H_1\)-line as the special-fibre
+image of the PBW Rees lattice, and pins the precise associated-graded
+morphism
+\(\operatorname{gr}\Phi:\bar A_{\mathrm{desc}}[1]\to\mc P\) to its
+special-fibre habitat.  The load-bearing outputs are
 \begin{enumerate}
   \item the bidegree homology theorem
     (Theorem~\ref{thm:app-full-primitive-psi-homology}): no primitive
     classes beyond \(\psi\)-degree one and the explicit one-\(\psi\)
-    cycle \(\Psi_{R-1,S-1}\);
+    cycle \(\Psi_{R-1,S-1}\) generating the unique \(H_1\)-line;
   \item the universal primitive descendant theorem
     (Theorem~\ref{thm:app-full-universal-primitive-descendant}): every
     stable primitive single-trace model with the same generators and
@@ -29,16 +35,36 @@ load-bearing outputs are
     decomposition into the closed Hamiltonian summand
     \(\bar A\), its one-\(\psi\) descendant copy
     \(\bar A_{\mathrm{desc}}[1]\), and the removed scalar lines
-    \(\C\cdot[1]\) and \(\C\cdot[\Psi_{0,0}]\).
+    \(\C\cdot[1]\) and \(\C\cdot[\Psi_{0,0}]\);
+  \item the special-fibre PBW label construction
+    (Construction~\ref{constr:app-full-pbw-special-fibre-basis}):
+    \(\Psi_{a,b}\in\bar A_{\mathrm{desc}}[1]\) is the
+    \(\hbar=0\) image of the Rees lattice
+    \(\mathbf S_\hbar(\mathfrak h\oplus\mathfrak h^\vee[1])\)
+    cut by the \(\psi\)-count grading;
+  \item the associated-graded label morphism
+    (Proposition~\ref{prop:app-full-gr-Phi}):
+    \(\operatorname{gr}\Phi:\bar A_{\mathrm{desc}}[1]\to\mc P\) is the
+    bidegree-only special-fibre relabelling, an isomorphism of
+    \(\Z_{\geq0}^2\)-graded vector spaces and not of
+    \(\mathfrak h\)-modules;
+  \item the Defect Polarization slogan
+    (Corollary~\ref{cor:app-full-defect-polarization-slogan}): the full
+    \(\psi\)-homology computes the special-fibre shadow of the cotangent
+    module, while the Matlis principal-parts module is the
+    deformation-level cotangent module itself.
 \end{enumerate}
 These outputs are the computation cited by
-Proposition~\ref{prop:one-psi-homology}, by the corollary in §6 of
-the body that pins the no-higher-\(\psi\)-class statement
-(\(p\geq2\) groups vanish), and by
+Proposition~\ref{prop:one-psi-homology}, by the body corollary that
+records the no-higher-\(\psi\)-class statement
+(\(p\geq2\) groups vanish), by the named separation
+Theorem~\ref{thm:pbw-vs-deformation}, and by
 Theorem~\ref{thm:T5-full-primitive-psi-homology} of the Tate residual
-fragment.  The \(\Psi_{a,b}\)-versus-\(\rho_{a,b}\) separation theorem
-(Theorem~\ref{thm:pbw-vs-deformation}) cites the same generator
-together with the Matlis appendix.
+fragment.  The companion Matlis appendix
+(Theorem~\ref{thm:app-matlis-polynomial-descendant-obstruction},
+Theorem~\ref{thm:app-matlis-rees-fourier-bridge}) supplies the
+\(\hbar\)-deformation side; this appendix supplies the
+\(\hbar=0\) source.
 
 The universal primitive single-trace Koszul complex is attached to the
 moment-map equation \([x,y]=0\).  Universal means that no
@@ -406,8 +432,8 @@ explicit condition excluding new \(\varprojlim^1\) classes.
 \end{lem}
 
 \begin{proof}
-  By Lemma~\ref{lem:app-abel-map-state-homology}, the labelled Abel map is
-  a homology equivalence from \(\widetilde Y_{R,S}\) to the circle.  A
+  By Lemma~\ref{lem:app-abel-map-state-homology}, the labelled Abel map
+  is a homology equivalence from \(\widetilde Y_{R,S}\) to the circle.  A
   cyclic relabelling by \(r\in \Gamma_S\) adds \(r\) to each of the \(R\) chip
   positions, hence translates the Abel coordinate by \(Rr\) in
   \(\R/S\Z\).  The action on the target circle is by
@@ -526,6 +552,222 @@ explicit condition excluding new \(\varprojlim^1\) classes.
   generator as \(\Psi_{R-1,S-1}\).
 \end{proof}
 
+\begin{rmk}[Numerical anchor]
+\label{rmk:app-full-psi-numerical-anchor}
+  The script
+  \texttt{scripts/check\_one\_psi\_homology.py} tabulates the same
+  three-term skeleton over \(\Q\), confirms
+  \(\partial_1\partial_2=0\), checks that \(\Psi_{R-1,S-1}\) is closed
+  and independent modulo boundaries, and verifies
+  \[
+    \dim\,H_1(K_{R,S})=1
+  \]
+  in each of the \(36\) bidegrees \(0\leq R-1,S-1\leq5\).  The same
+  script verifies the open Hamiltonian descendant action of
+  Proposition~\ref{prop:open-descendant-action} in \(240\) cases with
+  exponents at most \(3\), and the closed coadjoint Taylor-dual / residue
+  formula of Proposition~\ref{prop:app-matlis-coadjoint-action} in
+  \(1225\) cases with exponents at most \(5\).  The
+  PBW-versus-Moyal sweep records \(1200\) explicit mismatches and
+  \(958\) cases where the coadjoint Moyal action carries genuine
+  \(\hbar^{\geq2}\) higher-order terms; the \(70\) linear-generator
+  leading-order tests with labels at most \(5\) pin the exact obstruction
+  to any \(\hbar\)-adic deformation of the classical
+  \(\Psi\to\rho\) projection.  The displayed homology lines and the
+  separation in
+  Theorem~\ref{thm:pbw-vs-deformation} are therefore certified at the
+  bidegree level by an independent finite computation, and not by a
+  symbolic shortcut.
+\end{rmk}
+
+\begin{constr}[Special-fibre PBW one-\(\psi\) label basis]
+\label{constr:app-full-pbw-special-fibre-basis}
+  Let
+  \[
+    \mathfrak h=\C[[z_1,z_2]]/\C\cdot1,\qquad
+    \mathfrak h^\vee_{\mathrm{cont}}\cong \mc P
+      =\bigoplus_{a+b>0}\C\,\rho_{a,b},
+  \]
+  with the Hamiltonian Lie algebra of
+  Definition~\ref{def:app-matlis-topology} and the Matlis principal-part
+  module of Definition~\ref{def:app-matlis-principal-parts}.  Let
+  \[
+    \mathfrak g
+      =\mathfrak h\ltimes\mathfrak h^\vee_{\mathrm{cont}}[1]
+  \]
+  be the semidirect Hamiltonian shifted-cotangent Lie algebra of
+  Proposition~\ref{prop:hamiltonian-polyvector-reduction}, and let
+  \[
+    U_\hbar(\mathfrak g)
+      \supset
+    \mathbf S_\hbar(\mathfrak h\oplus\mathfrak h^\vee[1])
+  \]
+  denote its Rees PBW lattice over \(\C[[\hbar]]\), namely the Rees
+  algebra of the canonical PBW filtration.  The special fibre is
+  \[
+    \mathbf S_\hbar(\mathfrak h\oplus\mathfrak h^\vee[1])
+      \big|_{\hbar=0}
+      \cong
+    \mathbf S(\mathfrak h\oplus\mathfrak h^\vee[1]),
+  \]
+  the symmetric algebra carrying the trivial \(\mathfrak h\)-action on
+  generators.  The \emph{primitive one-\(\psi\) PBW label sector} is the
+  one-tensor-factor piece in \(\mathfrak h^\vee[1]\), tensored with the
+  symmetric algebra of \(\mathfrak h\), in bidegree \((a,b)\):
+  \[
+    \bar A_{\mathrm{desc}}[1]
+      :=
+    \bigoplus_{a+b>0}\C\cdot e^{\mathrm{PBW}}_{a,b}\,[1],
+    \qquad
+    e^{\mathrm{PBW}}_{a,b}\,[1]\in
+    \mathbf S^1(\mathfrak h^\vee[1])\otimes
+    \mathbf S(\mathfrak h)\big|_{\hbar=0} .
+  \]
+  The boundary pairing of
+  Corollary~\ref{cor:cotangent-boundary-pairing} identifies this label
+  sector with the surviving primitive
+  \(H_1\)-lines of
+  Theorem~\ref{thm:app-full-primitive-psi-homology}: under
+  \[
+    e^{\mathrm{PBW}}_{a,b}\,[1]
+      \longmapsto
+    [\Psi_{a,b}],
+    \qquad a+b>0,
+  \]
+  the \(\Psi_{a,b}\) of Theorem~\ref{thm:app-full-primitive-psi-homology}
+  are exactly the special-fibre representatives of the PBW label basis,
+  with the binomial weight \(\epsilon(\Psi_{a,b})=\binom{a+b}{a}\)
+  recording the totally symmetric averaging of the cyclic words.
+\end{constr}
+
+\begin{prop}[Associated-graded label morphism]
+\label{prop:app-full-gr-Phi}
+  Let
+  \[
+    \widetilde\Psi_{a,b}
+      :=
+    \binom{a+b}{a}^{-1}\Psi_{a,b}
+      \in\bar A_{\mathrm{desc}}[1]
+  \]
+  be the unit-normalised special-fibre PBW label, so that
+  \(\epsilon(\widetilde\Psi_{a,b})=1\), and let
+  \(\rho_{a,b}\in\mc P\) be the Matlis principal-part basis of
+  Definition~\ref{def:app-matlis-principal-parts}.  The bidegree-only
+  relabelling
+  \[
+    \operatorname{gr}\Phi:
+    \bar A_{\mathrm{desc}}[1]
+      \xrightarrow{\;\;\sim\;\;}
+    \mc P,
+    \qquad
+    \widetilde\Psi_{a,b}\longmapsto\rho_{a,b},\quad a+b>0,
+  \]
+  is an isomorphism of \(\Z_{\geq0}^2\)-graded
+  \(\C\)-vector spaces.  It is the special-fibre associated-graded
+  label match cited by
+  Theorem~\ref{thm:app-matlis-rees-fourier-bridge}, transported to the
+  \(\Psi\)-presentation by
+  Construction~\ref{constr:app-full-pbw-special-fibre-basis}.
+
+  This morphism is \emph{not} an \(\mathfrak h\)-module isomorphism.
+  More precisely, on the linear Hamiltonians,
+  \[
+    z_1\cdot\widetilde\Psi_{a,b}
+      =b\,\widetilde\Psi_{a,b-1},
+      \qquad
+    z_2\cdot\widetilde\Psi_{a,b}
+      =-a\,\widetilde\Psi_{a-1,b},
+  \]
+  while
+  \[
+    z_1\cdot\rho_{a,b}
+      =-(b+1)\,\rho_{a,b+1},
+      \qquad
+    z_2\cdot\rho_{a,b}
+      =(a+1)\,\rho_{a+1,b}.
+  \]
+  The two actions have opposite shift directions and unequal scalars; in
+  particular the polynomial PBW action is locally nilpotent on every
+  \(\widetilde\Psi_{a,b}\), whereas the principal-part coadjoint action
+  is not locally nilpotent on any nonzero \(\rho_{a,b}\).  The
+  obstruction to an \(\hbar\)-adic same-action lift of
+  \(\operatorname{gr}\Phi\) is the local-nilpotence dichotomy of
+  Theorem~\ref{thm:app-matlis-polynomial-descendant-obstruction} and
+  Corollary~\ref{cor:app-matlis-no-flat-same-action-interpolation}.
+\end{prop}
+
+\begin{proof}
+  The bidegree component of \(\bar A_{\mathrm{desc}}[1]\) is the line
+  \(\C\cdot e^{\mathrm{PBW}}_{a,b}[1]\) for \(a+b>0\); the bidegree
+  component of \(\mc P\) is \(\C\cdot\rho_{a,b}\), \(a+b>0\), by
+  Definition~\ref{def:app-matlis-principal-parts}.  The displayed map
+  is the bidegree identity, hence an isomorphism of bigraded vector
+  spaces.
+
+  The polynomial Hamiltonian action on \(\widetilde\Psi_{a,b}\) is
+  Proposition~\ref{prop:open-descendant-action}: for
+  \(F_{p,q}=\operatorname{Tr}(\phi_1^p\phi_2^q)\),
+  \(F_{p,q}\cdot\widetilde\Psi_{a,b}=(pb-qa)\widetilde\Psi_{a+p-1,b+q-1}\).
+  Setting \((p,q)=(1,0),(0,1)\) gives the displayed two formulas.  The
+  principal-part coadjoint action is
+  Proposition~\ref{prop:app-matlis-coadjoint-action}: for
+  \((p,q)=(1,0),(0,1)\) the formula
+  \(z_1^pz_2^q\cdot\rho_{a,b}=-(pb-qa+p-q)\rho_{a-p+1,b-q+1}\) gives the
+  two displayed formulas with the principal-part shifts
+  \(b+1\) and \(a+1\).
+
+  For local nilpotence: \(z_1\) lowers the second index of
+  \(\widetilde\Psi_{a,b}\) by one and is killed by \(\widetilde\Psi_{a,0}\)
+  for \(a\geq0\); a finite linear combination is exhausted after at most
+  \(\max b+1\) iterations.  By contrast, \(z_1\) raises the second index
+  of \(\rho_{a,b}\) and produces a nonzero rising-factorial coefficient
+  \((-1)^N(b+1)(b+2)\cdots(b+N)\rho_{a,b+N}\), which is never zero.  The
+  same dichotomy holds for \(z_2\).  Local nilpotence is an isomorphism
+  invariant; therefore no module isomorphism with the displayed
+  \(\mathfrak h\)-actions can exist.
+
+  The obstruction to extending \(\operatorname{gr}\Phi\) to an
+  \(\hbar\)-adic same-action map is exactly this local-nilpotence
+  dichotomy, and is recorded as
+  Theorem~\ref{thm:app-matlis-polynomial-descendant-obstruction} together
+  with the deformation-level
+  Corollary~\ref{cor:app-matlis-no-flat-same-action-interpolation}.
+  Theorem~\ref{thm:app-matlis-rees-fourier-bridge} supplies the
+  positive Fourier--Rees bridge that does identify the two label sets,
+  but only after the Fourier twist of the Hamiltonian action.
+\end{proof}
+
+\begin{rmk}[Instant computation: the \((4,0,1,1)\) fingerprint]
+\label{rmk:app-full-instant-computation}
+  The polynomial PBW action on the descendant labels and the Moyal
+  coadjoint action on the principal parts disagree already at one
+  exponent pair recorded by the verification script.  Take the quartic
+  Hamiltonian \(F_{4,0}=\operatorname{Tr}(\phi_1^4)\) and the
+  bidegree-\((1,1)\) descendant target.  On the polynomial PBW side
+  Proposition~\ref{prop:open-descendant-action} gives
+  \[
+    F_{4,0}:\widetilde\Psi_{1,1}\longmapsto
+      (4\cdot1-0\cdot1)\,\widetilde\Psi_{1+4-1,1-1}
+      =4\,\widetilde\Psi_{4,0}.
+  \]
+  Direct calculation in the Moyal coadjoint module gives
+  \[
+    \operatorname{ad}^*_{z_1^4}(\delta_{1,1})
+      =-24\,\hbar^2\,\delta_{0,4},
+  \]
+  the only nonzero term of order \(\leq3\) in the formal Moyal expansion.
+  No Fourier-untwisted relabelling of the bidegree pair \((1,1)\to(0,4)\)
+  versus \((1,1)\to(4,0)\) carries the polynomial PBW action onto the
+  Moyal coadjoint action.  Replacing the Moyal coadjoint by its classical
+  truncation \((\hbar^0)\) gives
+  \(\operatorname{ad}^*_{z_1^4}(\rho_{1,1})=0\) by the principal-part
+  formula at this exponent, again disagreeing with the polynomial PBW
+  output \(4\widetilde\Psi_{4,0}\).  The script confirms this fingerprint
+  exactly and embeds it inside a sweep of \(1200\) such mismatches; this
+  appendix records the same datum as the smallest single-monomial
+  certificate.
+\end{rmk}
+
 \begin{thm}[Universal primitive descendant calculation]
 \label{thm:app-full-universal-primitive-descendant}
   Let \(\mathsf K_{\mathrm{univ}}\) be the stable primitive cyclic Koszul
@@ -585,8 +827,15 @@ explicit condition excluding new \(\varprojlim^1\) classes.
       =\bigoplus_{a+b>0}\C\cdot[\Psi_{a,b}].
   \]
   The Hamiltonian comparison uses only
-  \(\bar A\oplus\bar A_{\mathrm{desc}}[1]\).  The complementary sectors
-  are exactly the scalar unit \([1]\), the scalar odd primitive
+  \(\bar A\oplus\bar A_{\mathrm{desc}}[1]\), and recognises this latter
+  pair as the special-fibre, \(\hbar=0\), shadow of the Rees PBW lattice
+  of Construction~\ref{constr:app-full-pbw-special-fibre-basis}: the
+  closed Hamiltonian summand is the polynomial part
+  \(\mathbf S(\mathfrak h)|_{\hbar=0}\), and the descendant copy is the
+  primitive one-\(\psi\) PBW label sector
+  \(\mathbf S^1(\mathfrak h^\vee[1])\otimes\mathbf S(\mathfrak h)|_{\hbar=0}\).
+  The complementary sectors are exactly the scalar unit \([1]\), the
+  scalar odd primitive
   \(\Psi_{0,0}\), and the vanishing higher-\(\psi\) primitive groups
   \(H_p(K_{R,S})=0\) for \(p\geq2\).
 \end{thm}
@@ -597,18 +846,63 @@ explicit condition excluding new \(\varprojlim^1\) classes.
   degree.  This removes the degree-zero scalar class \([1]\).  The odd
   scalar \(\Psi_{0,0}\) is the one-\(\psi\) descendant of the same removed
   constant direction; it is a stable primitive trace class, but it has no
-  partner in \(\bar A_{\mathrm{desc}}[1]\).  Theorem~\ref{thm:app-full-primitive-psi-homology}
-  proves that no primitive classes remain in \(\psi\)-degree at least
-  two.  What remains is exactly the positive-degree Hamiltonian and
-  one-\(\psi\) PBW label sector displayed above.  This is a vector-space
-  homology statement; it does not identify \(\Psi_{a,b}\) with Matlis
-  principal parts or with the Moyal coadjoint module.
+  partner in \(\bar A_{\mathrm{desc}}[1]\).
+  Theorem~\ref{thm:app-full-primitive-psi-homology} proves that no
+  primitive classes remain in \(\psi\)-degree at least two.  What remains
+  is exactly the positive-degree Hamiltonian and one-\(\psi\) PBW label
+  sector displayed above.  The identification with the special-fibre
+  Rees lattice is
+  Construction~\ref{constr:app-full-pbw-special-fibre-basis}: the closed
+  Hamiltonian summand is the polynomial special fibre of the Rees algebra
+  of \(\mathfrak h\), and the one-\(\psi\) descendant copy is the
+  bidegree-graded \(\widetilde\Psi_{a,b}\) sector of the
+  cotangent-shifted \(\mathfrak h^\vee[1]\) tensor.  This is a
+  vector-space homology statement; it does not identify
+  \(\Psi_{a,b}\) or its symmetrised normalisation
+  \(\widetilde\Psi_{a,b}\) with Matlis principal parts as
+  \(\mathfrak h\)-modules.
+\end{proof}
+
+\begin{cor}[Defect Polarization slogan]
+\label{cor:app-full-defect-polarization-slogan}
+  The polynomial one-\(\psi\) PBW labels \(\Psi_{a,b}\) and the Matlis
+  principal parts \(\rho_{a,b}\) are joined by the bidegree-only
+  associated-graded morphism
+  \(\operatorname{gr}\Phi\) of
+  Proposition~\ref{prop:app-full-gr-Phi}: this morphism intertwines the
+  two index sets at the special fibre \(\hbar=0\) and only there.  In
+  particular, the full primitive \(\psi\)-homology of this appendix
+  computes the special-fibre shadow of the cotangent module on the open
+  brane sector, while the Matlis principal-parts module of
+  Appendix~\ref{sec:app-matlis-principal-parts} is the deformation-level
+  cotangent module itself.  The brane probe measures positions
+  polynomially through \(\bar A\), and its cotangent momenta live as
+  residues through \(\mc P\); the shared bidegree label is
+  associated-graded data, not module data.
+\end{cor}
+
+\begin{proof}
+  Construction~\ref{constr:app-full-pbw-special-fibre-basis} identifies
+  \(\widetilde\Psi_{a,b}\) with the unit-normalised \(\hbar=0\) class in
+  \(\mathbf S^1(\mathfrak h^\vee[1])\otimes\mathbf S(\mathfrak h)|_{\hbar=0}\)
+  in bidegree \((a,b)\).  The bidegree-only relabelling
+  \(\operatorname{gr}\Phi\) of
+  Proposition~\ref{prop:app-full-gr-Phi} is an isomorphism of bigraded
+  vector spaces and not of \(\mathfrak h\)-modules; the obstruction is
+  Theorem~\ref{thm:app-matlis-polynomial-descendant-obstruction}.
+  The Matlis side is the continuous coadjoint module
+  identified by Theorem~\ref{thm:app-matlis-residue-rigidity} as the
+  unique perfect continuous coadjoint pairing.  Therefore
+  \(\bar A_{\mathrm{desc}}[1]\) is the special-fibre shadow and
+  \(\mc P\) is the deformation-level cotangent module, with the shared
+  index set carrying associated-graded label data only.  This is the
+  separation displayed by Theorem~\ref{thm:pbw-vs-deformation}.
 \end{proof}
 
 \begin{rmk}[What supports what]
 \label{rmk:app-full-psi-what-supports-what}
   This appendix supplies the full primitive single-trace Koszul
-  calculation invoked by the body in three independent places.
+  calculation invoked by the body in four independent places.
   \begin{enumerate}
     \item Theorem~\ref{thm:app-full-primitive-psi-homology} is the
       bidegree-resolved form of the calculation cited by
@@ -616,9 +910,12 @@ explicit condition excluding new \(\varprojlim^1\) classes.
       proves the one-\(\psi\) homology line in each bidegree; the
       appendix proves additionally that all higher-\(\psi\) groups
       vanish.  This vanishing is what allows the body to write the
-      stable primitive descendant module as \(\bar A\theta\).
+      stable primitive descendant module as \(\bar A\theta\).  The
+      finite numerical anchor of
+      Remark~\ref{rmk:app-full-psi-numerical-anchor} certifies the
+      bidegree-by-bidegree dimension count up to total exponent five.
     \item Theorem~\ref{thm:app-full-universal-primitive-descendant}
-      is the universal property used in the corollary near
+      is the universal property used in the body corollary near
       line~6047 of \texttt{main.tex} (``the result does not identify
       the polynomial one-\(\psi\) span with Matlis principal parts'')
       and quoted again in
@@ -630,18 +927,37 @@ explicit condition excluding new \(\varprojlim^1\) classes.
       be matched against a cotangent target.
     \item Theorem~\ref{thm:app-full-hamiltonian-sector-extraction}
       identifies the surviving sectors after removing the constants
-      \([1]\) and the odd scalar \([\Psi_{0,0}]\).  The reduced
-      decomposition \(\bar A\oplus\bar A_{\mathrm{desc}}[1]\) is the
-      target of the open trace generators \(O_{a,b}\) and the
-      one-\(\psi\) primitive labels \(\Psi_{a,b}\) used by the
-      body.  Together with
+      \([1]\) and the odd scalar \([\Psi_{0,0}]\).
+      Construction~\ref{constr:app-full-pbw-special-fibre-basis} is
+      the Rees PBW decoration of those sectors: \(\bar A\) is the
+      special-fibre image of \(\mathbf S(\mathfrak h)\), and
+      \(\bar A_{\mathrm{desc}}[1]\) is the special-fibre image of
+      \(\mathbf S^1(\mathfrak h^\vee[1])\otimes\mathbf S(\mathfrak h)\),
+      both at \(\hbar=0\).  Together with
       Theorem~\ref{thm:app-matlis-polynomial-descendant-obstruction}
-      it forms the technical core of the
+      and
+      Corollary~\ref{cor:app-matlis-no-flat-same-action-interpolation}
+      they form the technical core of the
       \(\Psi\)-versus-\(\rho\) separation in
       Theorem~\ref{thm:pbw-vs-deformation}: the polynomial label
       module is the bidegree-graded one-\(\psi\) sector here, and the
       cotangent module is the residual one in the Matlis appendix;
       they share an index set and not a module structure.
+    \item Proposition~\ref{prop:app-full-gr-Phi} and
+      Corollary~\ref{cor:app-full-defect-polarization-slogan}
+      record the precise associated-graded label morphism
+      \(\operatorname{gr}\Phi:\bar A_{\mathrm{desc}}[1]\to\mc P\) and
+      the Defect Polarization slogan it certifies: the polynomial PBW
+      side is the special-fibre shadow of the cotangent module, and
+      the Matlis principal-parts side is the deformation-level cotangent
+      module itself.  This statement is the open/closed companion of
+      the Fourier--Rees bridge of
+      Theorem~\ref{thm:app-matlis-rees-fourier-bridge}, which records
+      the same comparison from the principal-parts side: there it is
+      a Fourier-twisted \(\mathcal D_\hbar\)-module bridge, and here
+      it is the bidegree-only special-fibre relabelling of the
+      \(\Psi\)-presentation, with the same conclusion that the two
+      modules are not \(\mathfrak h\)-isomorphic.
   \end{enumerate}
   The chip-moving state-complex construction of
   Construction~\ref{constr:app-chip-state-complex} and the cyclic
@@ -649,6 +965,9 @@ explicit condition excluding new \(\varprojlim^1\) classes.
   Lemmas~\ref{lem:app-state-chain-identification}--\ref{lem:app-cyclic-abel-stabilizers}
   are the explicit cellular model that proves the cyclic Koszul
   complex has the homology of a circle in each bidegree; they are
-  load-bearing for the bidegree theorem above.  No section of this
-  appendix is auxiliary.
+  load-bearing for the bidegree theorem above.  The instant
+  computation of Remark~\ref{rmk:app-full-instant-computation}
+  is the smallest single-monomial certificate that no Fourier-untwisted
+  same-action lift of \(\operatorname{gr}\Phi\) exists.  No section of
+  this appendix is auxiliary.
 \end{rmk}
