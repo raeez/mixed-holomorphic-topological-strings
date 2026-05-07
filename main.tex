@@ -264,7 +264,7 @@ disk.  The closed algebra is
 \end{equation}
 with the Hamiltonian bracket on \(\widehat{\mathfrak h}\) and the
 coadjoint action on \(\mathfrak h^\vee[1]\).  The closed observables are
-continuous CE cochains
+\emph{by definition} the continuous CE cochains
 \[
 \mathcal{O}^{\mathrm{cl}}_{\mathrm{grav}}
   =
@@ -272,6 +272,16 @@ C^\bullet_{\mathrm{CE},\mathrm{cont}}(\mathfrak g)
   =
 \widehat{\mathbf S}\bigl(\mathfrak g^\vee_{\mathrm{cont}}[-1]\bigr).
 \]
+The proved cotangent CE/PV identity
+(Theorem~\ref{thm:reduced-ce-pv-central-operation}) lives on the
+coordinate envelope
+\(C^\bullet_{\mathrm{CE},\mathrm{coord}}(\mathfrak g)\), the product over
+finite graded-commutative words in the CE coordinates; the continuous
+CE cochains are the continuity-controlled subspace inside that product,
+and the \(P_0\)-bracket and Maurer--Cartan kernel refinements live
+exactly on bracket-admissible
+\(B\subset\mathrm{PV}_{\mathrm{coord}}(A_{\partial,\mathrm{coord}})\)
+(Definition~\ref{defn:bracket-kernel-admissible}).
 
 For a finite Lie algebra \(\mathfrak l\), CE cochains on
 \(T^*[1]\mathfrak l\) are Schouten polyvectors on
@@ -2206,19 +2216,17 @@ verify that the Hamiltonian bracket coefficient is $kn-lm$.
 \subsection{Cotangent CE/PV reduced central-operation spine}
 \label{ssec:coordinate-free-ce-pv-synthesis}
 
-The formal CE/PV source-to-boundary coordinate comparison is the
-formal-local instance of the finite and admissible cotangent CE/PV
-construction.  The finite identity is purely algebraic:
-CE cochains on \(T^*[1]\mathfrak l\) are Schouten polyvectors on
-\(\mathbf S(\mathfrak l)\).  Completion at the formal disk keeps the same
-formula by finite-coordinate tests.  Bar-cobar/Koszul duality is the
-separate admissible enhancement governed by conilpotence and filtered
-convergence.  Thus the boundary Hamiltonian is not a Hamiltonian ghost;
-it is the function coordinate dual to the cotangent generator.
-This paragraph uses the cotangent-coordinate grading fixed above:
-the Schouten/cotangent bracket has degree \(-1\), while the reduced
-Hamiltonian boundary bracket introduced later is the degree-zero
-Poisson bracket.
+The finite identity is algebraic: CE cochains on
+\(T^*[1]\mathfrak l\) are Schouten polyvectors on
+\(\mathbf S(\mathfrak l)\), with generator map \(c^I\mapsto\theta^I\)
+and \(u_I\mapsto O_I\).  The boundary Hamiltonian is the image of the
+shifted-cotangent CE coordinate \(u\), not the Hamiltonian CE coordinate
+\(c\).  Completion at the formal disk preserves this formula
+coefficientwise by finite-coordinate tests; bar-cobar/Koszul duality is
+the separate admissible enhancement governed by conilpotence and
+filtered convergence.  The Schouten/cotangent bracket carrying the
+comparison has degree \(-1\); the reduced Hamiltonian boundary bracket
+introduced below is the degree-zero Poisson bracket.
 
 \begin{defn}[Reduced Hamiltonian \(P_0\) central-operation complex]\label{defn:reduced-hamiltonian-p0-center}
   Let \(A\) be a complete graded-commutative Poisson algebra with a
@@ -2243,6 +2251,7 @@ Poisson bracket.
 
 \begin{thm}[Coordinate-free cotangent CE/PV identity]
   \label{thm:coordinate-free-cotangent-ce-pv}
+  \label{thm:finite-cotangent-ce-pv-identity}
   Let \(\mathfrak l\) be a finite-dimensional Lie algebra over \(\C\), and
   put
 	  \[
@@ -2546,10 +2555,18 @@ are the obstruction data listed in the criterion.
 \end{thm}
 
 \begin{proof}
-	  The first item is
-	  Theorem~\ref{thm:finite-cotangent-ce-pv-identity}; the second is
-	  Theorem~\ref{thm:formal-disk-completed-ce-pv} together with
-  Proposition~\ref{prop:cotangent-coordinate-boundary-hamiltonian}.  The
+  The first item is the finite-dimensional cotangent CE/PV identity
+  Theorem~\ref{thm:coordinate-free-cotangent-ce-pv}.  The coordinate
+  formal-disk identity in the second item is the cochain-level theorem
+  Theorem~\ref{thm:reduced-ce-pv-central-operation}, whose generator
+  clause already records \(\Phi_{\mathrm{coord}}(u_f)=O_f\) and
+  \(\Phi_{\mathrm{coord}}(c^f)=\theta^f\); the boundary-Hamiltonian
+  evaluation \(O_f=\overline{\operatorname{Tr}f(\phi_1,\phi_2)}\) is
+  Theorem~\ref{thm:coordinate-free-closed-open-synthesis}; the
+  diagonal element \(\Theta_B=\sum_I H_I\otimes\theta^I+\sum_I\eta^I\otimes O_I\)
+  on a kernel-admissible target satisfies the Maurer--Cartan equation
+  by Theorem~\ref{thm:wt-omega-kernel-admissibility} for the worked
+  weighted-Tate target.  The
 	  third item separates two inputs: Lemma~\ref{lem:continuous-bar-cobar}
 	  supplies the closed Lie bar-cobar/enveloping comparison when its
 	  lower-central Tate-pronilpotence hypothesis holds, while the additional
@@ -2751,16 +2768,17 @@ protected sector and no further.
 
 \section{The Local Model}
 
-The local theorem is built from a single geometric setup: a topological
-line carrying a stack of probes, crossed with a holomorphic-symplectic
-disk to which they couple. Quantizing this setup gives the data on which
-	the component theorems are verified.
+A topological line carrying a stack of \(\mathfrak{gl}_N\) probes meets a
+formal holomorphic-symplectic disk transverse to it. The brane line
+selects a Lagrangian inside that disk; the disk supplies the Hamiltonian
+deformations that the brane records as conjugate matrix coordinates.
+Every theorem below reads off this single geometric pairing.
 
 \subsection{Setup}
 Let
 $$M=\R^2,\qquad Y=\C^2,\qquad X=M\times Y,$$
-with $M$ the topological factor, $Y$ the holomorphic factor, and all
-Hamiltonian calculations completed at the formal neighbourhood of $p=0\in Y$.
+with $M$ the topological factor, $Y$ the holomorphic factor, all
+Hamiltonian calculations performed in the formal neighbourhood of $p=0\in Y$.
 The exact A-brane is the standard line
 \(\R_{\mathrm{brane}}\times\{0\}\subset M\) with trivial brane data;
 the B-brane is the skyscraper $\mc{O}_p\in\mathrm{Perf}(Y)$. Their product is
@@ -2774,11 +2792,12 @@ so the model is topological along $\R^2$ and holomorphic Hamiltonian along
 $\C^2$.
 
 \begin{prop}[Local mixed model]\label{prop:local-model-mixed-definition}
-  The formal local Hamiltonian data used here define a closed mixed
-  holomorphic-topological BV sector and a compatible cyclic open brane BV
-  theory. The constructed operation is the degree-zero Hamiltonian
-  boundary evaluation. The full Poisson factorization-center morphism is
-  Problem~\ref{prob:formal-factorization-center}, not part of this proposition.
+  The formal local Hamiltonian data define a closed mixed
+  holomorphic-topological BV sector and a compatible cyclic open brane
+  BV theory; the constructed bulk-to-brane operation is the degree-zero
+  Hamiltonian boundary evaluation. The full Poisson
+  factorization-center morphism is the residual
+  Problem~\ref{prob:formal-factorization-center}.
 \end{prop}
 
 \begin{proof}
@@ -2827,7 +2846,7 @@ $\C^2$.
 	    -(-1)^{|\beta|}
 	    \int_{D\times B}\langle\beta,D_\alpha\xi\rangle\,dz_1dz_2 .
 	  \]
-	  variation of \(S=\int\langle\beta,F_\alpha\rangle dz_1dz_2\) gives
+	  Variation of \(S=\int\langle\beta,F_\alpha\rangle dz_1dz_2\) gives
 	  \[
 	    \frac12\{S,S\}_{\mathrm{BV}}
 	      =\int_{D\times B}
@@ -3156,16 +3175,17 @@ invariance of the trace pairing.
 
 \subsection{Closed mixed Hamiltonian sector}
 
-The closed field is the infinitesimal geometry of the formal normal surface.
-Because the surface is holomorphic symplectic, an infinitesimal canonical
-transformation is a Hamiltonian function modulo constants. The BF partner is
-the cotangent variable which makes the theory local and BV. This is the closed
-counterpart of the open first-order form: both sides are governed by the same
-symplectic normal plane.
+An infinitesimal canonical transformation of the holomorphic-symplectic
+disk is a Hamiltonian function modulo constants; constants act trivially
+because their Hamiltonian vector fields vanish. The BF partner is the
+cotangent variable that promotes this Lie algebra of canonical
+transformations to a local BV field theory, and the same symplectic
+normal plane governs both the closed BF sector and the open first-order
+matrix mechanics.
 
-The closed sector used here is a mixed field theory, not a tensor product of
-two independent closed-string state spaces. Its fields have a topological de
-Rham factor along $\R^2$ and a holomorphic Dolbeault factor along $\C^2$:
+The closed sector is a mixed field theory: a topological de Rham factor
+along $\R^2$ and a holomorphic Dolbeault factor along $\C^2$, not a
+tensor product of two independent closed-string state spaces:
 $$\Omega^*(\R^2)\widehat{\otimes}\Omega^{0,*}(\C^2)
   \widehat{\otimes}\bigl(\widehat{\mathfrak h}[1]\oplus
   \widehat{\mathfrak h}^{\vee}_{\mathrm{cont}}[2]\bigr).$$
@@ -3987,7 +4007,19 @@ corollary of
   \mathrm{PV}_{\mathrm{coord}}(A_{\partial,\mathrm{coord}})\) is
   bracket-admissible when the Schouten bracket and the Hamiltonian
   boundary brackets of the generators extend continuously from every
-  finite coordinate window to \(B\).
+  finite coordinate window to \(B\).  The worked nontrivial class is
+  the weighted-Tate coefficient pair of
+  Definition~\ref{defn:wt-coefficient-pair}, with bracket-admissibility
+  established by Theorem~\ref{thm:wt-cotangent-lift} and the diagonal
+  kernel-admissibility refinement by
+  Theorem~\ref{thm:wt-omega-kernel-admissibility}.  The strict ambient
+  product completion is admissible at neither level: the continuous
+  Schouten biderivation fails to extend from finite words to the full
+  product, and the diagonal Casimir \(C_{\mathfrak h}\) fails to
+  converge in any candidate kernel-admissible tensor product
+  (Lemma~\ref{lem:tate-casimir-obstruction}); item~(4) of
+  Theorem~\ref{thm:universal-ce-pv-koszul-criterion} records the
+  combined obstruction datum.
 \end{defn}
 
 \begin{lem}[Formal-disk coordinate differential formulas]\label{lem:formal-disk-ce-schouten-continuity}
@@ -4007,9 +4039,6 @@ corollary of
 \begin{thm}[Admissible reduced Hamiltonian CE/PV central-operation map, cochain level]
 \label{thm:reduced-ce-pv-central-operation}
 \label{thm:formal-disk-completed-ce-pv}
-\label{thm:finite-cotangent-ce-pv-identity}
-\label{thm:universal-formal-local-ce-pv-recognition}
-\label{prop:cotangent-coordinate-boundary-hamiltonian}
   Let
   \[
     \mathfrak h=\C[[z_1,z_2]]/\C\cdot1
@@ -4208,6 +4237,106 @@ corollary of
   generators to the completed target.  The last sentence is the same
   condition written in the convolution dg Lie algebra where an unreduced
   factorization lift would have to live.
+\end{proof}
+
+\begin{thm}[Abstract bracket-compatible CE/PV recognition criterion]\label{thm:universal-formal-local-ce-pv-recognition}
+  Let \(L=\varprojlim_\alpha L_\alpha\) be a complete Hausdorff filtered
+  dg Lie algebra over \(\C\), with finite-dimensional bracket-compatible
+  dg Lie quotients \(L_\alpha\), and let
+  \(D=L^\vee_{\mathrm{cont}}=\varinjlim_\alpha L_\alpha^\vee\).  Put
+  \(G=L\ltimes D[1]\).  Form the completed coordinate CE and PV
+  algebras by taking products over finite words and finite coordinate
+  windows.  Assume:
+  \begin{enumerate}[label=(U\arabic*)]
+    \item the internal differential, Lie bracket on \(L\), and
+      coadjoint action on \(D\) are continuous, equivalently every
+      finite coordinate projection of \(d_Lx\), \([x,y]\), and
+      \(x\cdot\lambda\) factors through a finite Lie quotient of the
+      inputs;
+    \item the linear Poisson bivector
+      \[
+        \pi_L=\frac12 C^k_{ij}O_k\theta^i\theta^j
+      \]
+      determined by the structure constants of \(L\) is a continuous
+      Schouten bivector on
+      \(\widehat{\mathbf S}_{\mathrm{coord}}(L)\);
+    \item the source cotangent bracket
+      \(\{c^i,u_j\}_{\mathrm{CE}}=\delta^i_j\) and the target Schouten
+      contraction bracket \([\theta^i,O_j]_S=\delta^i_j\) are continuous
+      biderivations on the chosen mixed or weighted completion.  This is
+      a summability hypothesis, not a consequence of the generator
+      formula on the ambient product.
+  \end{enumerate}
+  Then the generator assignment
+  \[
+    \Phi_L\colon
+    C^\bullet_{\mathrm{CE},\mathrm{cont}}(G)
+    \xrightarrow{\ \sim\ }
+    \mathrm{PV}\bigl(\widehat{\mathbf S}_{\mathrm{coord}}(L)\bigr),
+    \qquad
+    c^i\mapsto\theta^i,\quad u_i\mapsto O_i,
+  \]
+  is an isomorphism of completed dg algebras with the
+  degree-\((-1)\) cotangent/Schouten contraction bracket.  Without the
+  summability condition (U3), the conclusion is only the compatible pro
+  finite-window dg-commutative CE/PV identity, and the global
+  contraction bracket is obstruction data.  This is a formal-local
+  cochain theorem: it does not require lower-central Tate-pronilpotence,
+  and it does not assert that the coordinate pairing is represented by
+  a strict kernel \(C_L\in L\widehat\otimes D\).  The strict formal
+  Hamiltonian disk \(\mathfrak h=\C[[z_1,z_2]]/\C\cdot1\) is not an
+  instance: \(\mathfrak h\) admits no exhaustion by finite-dimensional
+  bracket-compatible Lie quotients
+  (Remark~\ref{rmk:ce-source-obstruction-disk}), and the formal-disk
+  case is covered by the coordinate finite-test theorem
+  \ref{thm:reduced-ce-pv-central-operation}.
+\end{thm}
+
+\begin{proof}
+  The completed CE algebra of \(G=L\ltimes D[1]\) and the completed PV
+  algebra of the linear formal space \(L\) are products over the same
+  finite-word coordinate monomials after \(c^i\leftrightarrow\theta^i\)
+  and \(u_i\leftrightarrow O_i\).  Hence \(\Phi_L\) is a continuous
+  graded-commutative algebra isomorphism with continuous inverse.
+
+  Assumption (U1) makes the CE differential continuous: every finite
+  output coordinate of the internal differential, of
+  \(d_{\mathrm{CE}}c^k\), and of \(d_{\mathrm{CE}}u_i\) is computed
+  from finitely many input coordinates.  The internal differential is
+  carried to the identical linear vector field on the PV side by the
+  coordinate substitution.  Assumption (U2) makes
+  \(d_{\pi_L}=[\pi_L,-]_S\) a continuous differential on the PV side.
+  On generators the bracket terms are the same structure-constant
+  formulas:
+  \[
+    d_{\mathrm{CE}}c^k=-\tfrac12 C^k_{ij}c^ic^j,\qquad
+    d_{\pi_L}\theta^k=-\tfrac12 C^k_{ij}\theta^i\theta^j,
+  \]
+  and
+  \[
+    d_{\mathrm{CE}}u_i=C^\ell_{ij}u_\ell c^j,\qquad
+    d_{\pi_L}O_i=C^\ell_{ij}O_\ell\theta^j .
+  \]
+  Jacobi for \(L\) gives \(d_{\mathrm{CE}}^2=0\) and
+  \([\pi_L,\pi_L]_S=0\), hence \(d_{\pi_L}^2=0\).  Both differentials
+  are continuous derivations, so generator-level compatibility
+  propagates to \(\Phi_Ld_{\mathrm{CE}}=d_{\pi_L}\Phi_L\) on the
+  completed algebras.
+
+  Assumption (U3) gives the same conclusion for the contraction
+  brackets:
+  \[
+    \{c^i,u_j\}_{\mathrm{CE}}=\delta^i_j
+    \quad\text{and}\quad
+    [\theta^i,O_j]_S=\delta^i_j
+  \]
+  on generators, with all same-type brackets zero.  Continuity and the
+  biderivation rule extend the equality to finite words and then to
+  the chosen mixed or weighted completion.  A strict Casimir kernel is
+  stronger than the coordinate biderivation; the unweighted ambient
+  product can fail to carry the biderivation globally.  This boundary
+  is the strict-Casimir obstruction of
+  Lemma~\ref{lem:tate-casimir-obstruction}.
 \end{proof}
 
 \input{tate-T3-quillen-equivalence}
@@ -4492,24 +4621,22 @@ corollary of
 
 \subsection{Obstruction calculus for the unreduced Tate-coefficient cotangent lift}\label{ssec:tate-residual-resolution}
 
-The mechanisms in \ref{ssec:tate-residual-resolution} analyzing
-\ref{prob:formal-factorization-center} are separated below into proved
-mechanisms and the residual obstruction. The
-  Costello--Li 2012 BCOV/HCS theorem is recorded as a negative applicability
-  check: it does not transfer to the geometry studied here, and the
-  failure mode forces the replacement mechanisms below. The weighted Tate completion
-closes the Casimir convergence and the finite-scale heat-kernel
-propagator extension.
-The nilpotent truncation closes a conformal-symplectic-quotient sector
-classically and exhibits the all-order Moyal obstruction. The chain-level primitive
-  projection closes the cosheaf and factorization compatibilities of the
-  indecomposable shadow without analytic input. The weighted Hadamard/Mittag-Leffler theorem below reduces the
-remaining Costello-locality compatibility of
-\ref{prob:weighted-rg-locality} to the mixed brane-defect QME obstruction
-class.  Hadamard control is not anomaly cancellation: it supplies the
-coefficient-kernel and locality regulator, while the QME branch still
-requires the scalar and non-scalar obstruction classes to vanish in their
-own local-functional complexes.
+Problem~\ref{prob:formal-factorization-center} splits into proved
+mechanisms and one residual obstruction. The Costello--Li 2012 BCOV/HCS
+theorem fails as a source: it does not transfer to the present
+brane-defect geometry, and that failure forces the replacement
+mechanisms. Weighted Tate completion closes Casimir convergence and the
+finite-scale heat-kernel propagator extension. Nilpotent truncation
+closes a conformal-symplectic-quotient sector classically and exhibits
+the all-order Moyal obstruction. Chain-level primitive projection
+closes the cosheaf and factorization compatibilities of the
+indecomposable shadow without analytic input. The weighted
+Hadamard/Mittag-Leffler theorem reduces the remaining Costello-locality
+compatibility of Problem~\ref{prob:weighted-rg-locality} to the mixed
+brane-defect QME obstruction class. Hadamard control is not anomaly
+cancellation: it supplies the coefficient-kernel and locality regulator,
+while the QME branch still requires the scalar and non-scalar
+obstruction classes to vanish in their own local-functional complexes.
 
 \input{tate-T4-bv-vanishing}
 
@@ -4571,23 +4698,19 @@ own local-functional complexes.
   factorization-center morphism.
 \end{rmk}
 
-\subsection{Operators in the open brane gauge theory and the large N limit}
+\subsection{Open-brane operators and the large $N$ limit}
 
-The local-operator calculation is performed in the reduced BV model with
-fields $\phi_1,\phi_2$ and the antifield $\psi=A^*$ for the Lagrange
-multiplier $A$. We work with degree-zero rational \(GL_N\)-invariant
-functions in characteristic zero.  This is the algebraic invariant
-calculation used by the trace theorem, not the full Lie-algebra
-Chevalley--Eilenberg BRST cohomology of \(\lie{gl}_N\).  The scalar
-gauge direction acts trivially and would leave scalar ghost classes in
-the unreduced Lie-CE complex; those stack-level stabilizer classes are
-outside the Hamiltonian trace calculation.
-
-The gauge field has one algebraic job: it imposes the moment-map equation
-$[\phi_1,\phi_2]=0$. In BV language this equation is imposed by the Koszul
-differential $Q\psi=[\phi_1,\phi_2]$. This is why the stable trace algebra
-starts noncommutative, as cyclic words in two matrices, and then collapses in
-cohomology to commutative monomials on the formal symplectic plane.
+The reduced BV model carries fields $\phi_1,\phi_2$ and one antifield
+$\psi=A^*$ for the Lagrange multiplier $A$, with the Koszul differential
+$Q\psi=[\phi_1,\phi_2]$ enforcing the moment-map equation. Local
+operators are degree-zero rational \(GL_N\)-invariant functions in
+characteristic zero: this is the algebraic invariant theory feeding the
+trace theorem, not the unreduced Lie-CE BRST cohomology of
+\(\lie{gl}_N\), whose scalar-stabilizer ghost classes from the trivially
+acting scalar gauge direction sit outside the Hamiltonian trace sector.
+The trace algebra therefore starts as cyclic words in two matrices and
+collapses in $Q$-cohomology onto commutative monomials on the formal
+symplectic plane.
 
 \begin{constr}[The reduced BV algebra at the insertion point]\label{constr:reduced-bv-algebra}
   At a fixed point of the brane line, introduce three matrix variables
@@ -5426,12 +5549,11 @@ field.
 
 \subsection{Operators in the closed Hamiltonian sector}\label{sec:grav-ops}
 
-The brane side has produced a stable algebra of trace classes generated
-by the primitive ghost-zero monomials $\overline{\mathrm{Tr}(\phi_1^k\phi_2^l)}$
-and the primitive one-$\psi$ descendants $\Psi_{k,l}$. The closed
-Hamiltonian sector must produce the same data as a Lie algebra of local
-modes whose Chevalley--Eilenberg cochains carry the residual BRST
-differential.
+The open side has produced primitive ghost-zero monomials
+$\overline{\mathrm{Tr}(\phi_1^k\phi_2^l)}$ and primitive one-$\psi$
+descendants $\Psi_{k,l}$. The closed side must match these as a Lie
+algebra of local modes whose Chevalley--Eilenberg cochains carry the
+residual BRST differential.
 
 Let $\mathfrak h=\widehat{\mathfrak h}=\C[[z_1,z_2]]/\C\cdot1$ with the
 projected Poisson bracket, and let $\mathfrak h^\vee$ be its continuous Taylor
@@ -5524,26 +5646,24 @@ linear functions have positive ghost numbers.
 
 \subsection{Stratified CE/PV and admissible Koszul duality}
 
-The closed local operators have been identified with continuous
-Chevalley--Eilenberg cochains of $\mathfrak g$. The brane Hamiltonian
-sector is a free graded-commutative algebra on $\bar A$ and $\bar
-A_{\mathrm{desc}}[1]$. To compare these as $E_1$-algebras one passes to
-the operation that exchanges commutative cochains and associative
-enveloping algebras: admissible Koszul duality.
-The admissible calculation has staged input.  The finite, coordinate, and
-bracket-admissible CE/PV statements precede any kernel assertion; a
-kernel-admissible Maurer--Cartan tensor appears only when the diagonal
-converges.  The enveloping/bar-cobar step is an admissible envelope
-criterion.  The cochain layer is the
-completed cotangent CE/PV identity of
-Theorem~\ref{thm:universal-ce-pv-koszul-criterion}, valid for the formal
-disk by finite coordinate tests.  The enveloping layer is a bar-cobar
-criterion: it applies exactly when the chosen Tate or weighted coefficient
-category makes the CE coalgebra conilpotent and the filtered inverse
-limits exact.  The strict product/direct-sum full-disk coefficient pair is
-therefore not discarded; it contributes the obstruction tuple whose
-vanishing or replacement is the input required for the enveloping
-upgrade.
+Closed local operators are continuous Chevalley--Eilenberg cochains of
+$\mathfrak g$; the brane Hamiltonian sector is a free
+graded-commutative algebra on $\bar A$ and $\bar A_{\mathrm{desc}}[1]$.
+Comparing them as $E_1$-algebras requires the operation that exchanges
+commutative cochains and associative enveloping algebras: Koszul
+duality, here in its admissible form.
+
+Three layers separate. The cochain layer is the completed cotangent
+CE/PV identity of Theorem~\ref{thm:universal-ce-pv-koszul-criterion},
+valid for the formal disk on finite coordinate tests; a
+kernel-admissible Maurer--Cartan tensor appears only after the diagonal
+converges. The enveloping layer is a bar-cobar criterion that applies
+exactly when the chosen Tate or weighted coefficient category makes the
+CE coalgebra conilpotent and the filtered inverse limits exact. The
+strict product/direct-sum full-disk coefficient pair fails this
+criterion: its obstruction tuple, whose vanishing or replacement is the
+input required for the enveloping upgrade, is preserved as load-bearing
+data, not discarded.
 
 \begin{defn}
   For an augmented complete dg algebra $B$, its Koszul dual is
@@ -5815,7 +5935,7 @@ Hamiltonian bracket deforms the special fibre inside that admissible
 enveloping algebra; on the brane side the matching deformation at order
 one is the Hamiltonian trace bracket proved below.
 
-\subsubsection{First-order corrections, order hbar one}
+\subsubsection{First-order Poisson identification}
 
 The PBW special-fibre label correspondence used in the reduced comparison reads
 $$z_1^kz_2^l \leftrightarrow
@@ -5995,14 +6115,14 @@ remain distinct.
   $z_1,z_2$ at the brane point $p\in\C^2$, the following three notions of
   locality are independent.
   \begin{enumerate}
-    \item \emph{Support locality}:distributional support on the
+    \item \emph{Support locality:} distributional support on the
       brane: a section $T\otimes m$ of $\mathcal D'_c(I)\,\widehat\otimes\,M$
       has support locality whenever $\mathrm{supp}\,T\subset I\subset\R$.
-    \item \emph{Topological locality}:locally constant in the
+    \item \emph{Topological locality:} locally constant in the
       $\R$-direction up to $Q$-exact translations: every section is
       identified with its translate by a parameter on $\R$ modulo the open
       BV differential $Q_{\mathrm{open}}$.
-    \item \emph{Formal holomorphic locality}:polynomial, or
+    \item \emph{Formal holomorphic locality:} polynomial, or
       Taylor-series, dependence on the transverse coordinates $z_1,z_2$.
   \end{enumerate}
   The polynomial trace observables
@@ -6315,7 +6435,7 @@ $\mc P\cong\mathfrak h^\vee_{\mathrm{cont}}$ is unique modulo that scalar.
       The displayed shift is the negative-transpose residue action.
       Linear Hamiltonians raise pole order, while higher monomials have
       the mixed direction prescribed by the formula.
-    \item \emph{No module interpolation in the present theorem.} The
+    \item \emph{No module interpolation.} The
       bidegree relabelling between the PBW special-fibre basis
       $\widetilde\Psi_{a,b}$ and the coadjoint basis
       $\rho_{a,b}\leftrightarrow\delta_{a,b}$ is only an isomorphism of
@@ -6978,16 +7098,12 @@ Feynman-integral proof.
 
 \subsubsection{Formal deformation-quantization target}
 
-The degree-zero Hamiltonian sector has a Weyl-normalized formal
-deformation-quantization target. The formal holomorphic disk has constant
-Poisson tensor, so after choosing the translation-invariant Weyl convention
-its deformation is the Weyl/Moyal algebra. This fixes the algebraic
-coefficients one would have to recover from a quantum closed-open BV
-construction. It is not, by itself, a
-construction of that quantum BV theory. The degree-zero Hamiltonian bracket
-part of the classical theorem is the proposed special fibre of this formal
-deformation; the cotangent/descendant part remains the separate problem stated
-below.
+The constant Poisson tensor on the formal holomorphic disk has a unique
+translation-invariant deformation, the Weyl/Moyal algebra; this fixes
+the algebraic coefficients that any quantum closed-open BV construction
+must recover, but does not construct that BV theory. The classical
+degree-zero Hamiltonian bracket is the proposed special fibre; the
+cotangent/descendant part is stated below as a separate problem.
 Put
 $$A_\hbar=\bigl(\C[[z_1,z_2]][[\hbar]],*\bigr),$$
 where $*$ is the Weyl/Moyal product of the next subsection. The symbol

@@ -1,21 +1,15 @@
 \section*{Weighted Tate completion of the coefficient pair}
 
-\paragraph{Coefficient theorem.}
-The weighted coefficient category carries the Casimir, finite-window
-Mittag--Leffler, heat-kernel, and classical cochain statements.
-Renormalization-flow compatibility is graphwise at finite scale for
-polynomial-degree-bounded vertices, and the passage to an all-order QME
-solution is exactly the weighted RG criterion
-\ref{stmt:weighted-rg-criterion}.  For \(q,q'>1\), admissible
-exponential weights define canonically equivalent finite-degree local
-observables on the same strict Mittag-Leffler tower.  The symbol
-\(q\to1^+\) means finite-window stabilization after unweighting, and an
-endpoint exists precisely under
-Definition~\ref{defn:endpoint-admissible-coefficient-module}.  The
-strict product/direct-sum Tate pair carries the endpoint obstruction
-of Theorem~\ref{thm:strict-unweighted-no-go}.
-
 \subsection*{Strict Tate pair}
+
+The strict product/direct-sum Tate pair
+\(\mathfrak h=\prod_dH_d\),
+\(\mathfrak h^\vee_{\mathrm{cont}}=\bigoplus_dH_d^\vee\) carries the
+formal Casimir on the wrong side of the duality: the second tensor
+factor lies in \(\prod_dH_d^\vee\), not in \(\bigoplus_dH_d^\vee\).  The
+diagnosis below isolates that obstruction; the weighted Mittag--Leffler
+completion of the next subsection cures it by replacing the direct-sum
+dual with a symmetric product coefficient module.
 
 \begin{rmk}[Strict Tate Casimir obstruction]\label{rmk:diagnosis-unweighted-casimir}
   In the parent manuscript the Hamiltonian Lie algebra is the
@@ -647,9 +641,9 @@ $I_L$ must remain in the same weighted category.
   Each fixed graph contribution to the Costello RG flow
   $$I_L=W(P_{\epsilon,L}^{w},I)$$
   lies in the weighted Tate completion and is continuous in
-  $(\epsilon,L)$.  The theorem is graphwise.  The completed sum over
-  counterterms and the QME obstruction class require the locality
-  input of Problem~\ref{prob:weighted-rg-locality}.
+  $(\epsilon,L)$.  The completed sum over counterterms and the QME
+  obstruction class require the locality input of
+  Problem~\ref{prob:weighted-rg-locality}.
 \end{thm}
 
 \begin{proof}
@@ -1079,11 +1073,11 @@ $I_L$ must remain in the same weighted category.
   Mittag-Leffler compatibility of the finite-window obstruction system.
 \end{proof}
 
-The next theorem is a finite-window weight-transport statement.  It is
-not a \(q\to1^+\) endpoint theorem for the strict product/direct-sum
-Tate pair, and it is not a full regulator-independence theorem for
-classes detecting the quotient \(D_{\Pi,w}/D_{\oplus}\).  That endpoint
-is excluded by Theorem~\ref{thm:strict-unweighted-no-go}.
+The transport groupoid identifies any two admissible weights on the
+finite-window Mittag--Leffler sector.  Classes detecting the quotient
+\(D_{\Pi,w}/D_{\oplus}\) are outside this sector, and a \(q\to1^+\)
+endpoint to the strict product/direct-sum Tate pair is excluded by
+Theorem~\ref{thm:strict-unweighted-no-go}.
 
 \begin{thm}[Regulator independence inside the admissible finite-window sector]\label{thm:wt-regulator-independence-admissible}
   Let \(w,w'\) be degree weights satisfying
@@ -2660,13 +2654,12 @@ is excluded by Theorem~\ref{thm:strict-unweighted-no-go}.
   cochain maps and commute with the quotient to
   \(\widetilde{\mathcal C}^{\bullet,\mathrm{reg}}\).
 
-  This theorem is an extension theorem.  It does not say that
-  \(p^{\mathrm{WF}}_{n_0,M}\) belongs to the original Costello
-  counterterm complex, and it does not identify a singular current with a
-  smooth density.  Inside the original complex
-  \(\mathcal Q^\bullet_{w,M}(I)\), existence of a primitive remains
-  exactly the vanishing condition
-  \(\eta^{\mathrm{reg}}_{n_0,M}=0\) of
+  The new generator \(p^{\mathrm{WF}}_{n_0,M}\) lives in the extended
+  complex; it is not an element of the original Costello counterterm
+  complex \(\mathcal Q^\bullet_{w,M}(I)\), and the construction does
+  not identify a singular current with a smooth density.  A primitive
+  inside \(\mathcal Q^\bullet_{w,M}(I)\) exists exactly under the
+  vanishing condition \(\eta^{\mathrm{reg}}_{n_0,M}=0\) of
   Theorem~\ref{thm:wt-wavefront-singular-current-eta-obstruction}.
 \end{thm}
 
@@ -3074,5 +3067,3 @@ is excluded by Theorem~\ref{thm:strict-unweighted-no-go}.
   Problem~\ref{prob:tate-coefficient-descendant-lift} on the formal
   local model.
 \end{rmk}
-
-% End of fragment.
