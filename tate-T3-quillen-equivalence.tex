@@ -862,10 +862,11 @@ through the bar-cobar adjunction itself.
       $\mathrm{TateAssocAlg}^+$.
     \item $\mathrm{Bar}$ is right Quillen: it preserves fibrations and
       acyclic fibrations.  This is the adjoint statement to (1) by
-      Hovey~\cite{hovey}*{Lemma~1.1.10}; verifying either direction
-      suffices, and we have chosen the left adjoint as the primary
-      construction since cofibrations on the coalgebra side are given
-      definitionally.
+      Hovey~\cite{hovey}*{Lemma~1.3.4}: a Quillen pair is determined by
+      either condition on its adjoint.  We verify the left adjoint as
+      the primary construction since cofibrations on the coalgebra side
+      are given definitionally as monomorphisms with filtered cokernel
+      (Lemma~\ref{lem:tate-conilp-model}).
     \item For every cofibrant conilpotent coalgebra $C$ and every
       fibrant augmented associative algebra $A$, the unit
       $\eta_C\colon C\to\mathrm{Bar}\,\Omega(C)$ and the counit
@@ -909,10 +910,12 @@ through the bar-cobar adjunction itself.
 
   \emph{Item~(2).}  Right-adjoint preservation of fibrations and
   acyclic fibrations follows from item~(1) by Hovey's adjunction
-  lemma~\cite{hovey}*{Lemma~1.1.10}.  We do not need an independent
-  construction-level verification on the right side: the lifting
-  property defining fibrations on the coalgebra side
-  (Lemma~\ref{lem:tate-conilp-model}) is precisely tuned so that
+  lemma~\cite{hovey}*{Lemma~1.3.4}: for a Quillen adjunction, the left
+  adjoint preserves cofibrations and acyclic cofibrations if and only
+  if the right adjoint preserves fibrations and acyclic fibrations.  We
+  do not need an independent construction-level verification on the
+  right side: the lifting property defining fibrations on the coalgebra
+  side (Lemma~\ref{lem:tate-conilp-model}) is precisely tuned so that
   $\mathrm{Bar}$ inherits the right-adjoint Quillen property from
   $\Omega$.
 
@@ -1253,25 +1256,45 @@ admissible envelope; they are not independently asserted habitats.
   Definition~\ref{defn:wt-coefficient-pair}.  Form the shifted
   cotangent extension
   $\mathfrak g_w=\mathfrak h_w\ltimes
-  \mathfrak h^{\vee,w}_{\mathrm{cont}}[1]$.  Assume that the
-  finite-window towers
-  \[
-    \mathfrak h_{w,\leq M}
-      =\prod_{d\leq M}w(d)\,H_d,\qquad
-    \mathfrak h^{\vee,w}_{\leq M}
-      =\prod_{d\leq M}w(d)^{-1}H_d^\vee
-  \]
-  satisfy the bracket-tame, windowwise coadjoint-continuity, and
-  Mittag-Leffler coevaluation conditions
-  (\ref{w:W1}--\ref{w:W3} of
-  Definition~\ref{defn:wt-degree-weight}).
+  \mathfrak h^{\vee,w}_{\mathrm{cont}}[1]$.  Assume:
+  \begin{enumerate}[label=(B\arabic*)]
+    \item\label{B1-pronilp} $\mathfrak h_w$ is lower-central
+      Tate-pronilpotent in the sense of
+      Lemma~\ref{lem:continuous-bar-cobar}: there is a filtration of
+      $\mathfrak h_w$ by closed dg Lie ideals
+      $\mathfrak h_w=\mathfrak h_{w,(0)}\supset\mathfrak h_{w,(1)}
+      \supset\cdots$ with finite-dimensional surjective
+      bracket-compatible quotients
+      $\mathfrak h_w/\mathfrak h_{w,(M)}=\mathfrak h_{w,\leq M}$
+      and lower-central pronilpotence
+      $\bigcap_M(\mathfrak h_w^{(\geq m)}+\mathfrak h_{w,(M)})=
+      \mathfrak h_{w,(M)}$ for every $M$.
+    \item\label{B2-coad} the windowwise coadjoint-continuity condition
+      \ref{w:W2} of Definition~\ref{defn:wt-degree-weight} holds, so
+      that the dual transition maps
+      $\pi^\vee_{M,N}\colon\mathfrak h^{\vee,w}_{\leq M}\to
+      \mathfrak h^{\vee,w}_{\leq N}$ make the dual a strict ML system
+      with finite-dimensional windows compatible with the bracket
+      transitions on $\mathfrak h_w$.
+    \item\label{B3-coev} the Mittag-Leffler coevaluation condition
+      \ref{w:W3} of Definition~\ref{defn:wt-degree-weight} holds:
+      the weighted Casimir family
+      $(C^{\mathrm{w}}_M)_{M\geq1}$ is a strict compatible
+      Mittag-Leffler tensor in
+      $\mathfrak h_w\widehat\otimes_{\mathrm{ML}}
+      \mathfrak h^{\vee,w}_{\mathrm{cont}}$.
+  \end{enumerate}
   Then:
   \begin{enumerate}[label=(\roman*)]
     \item The weighted strict ML tower
       $(\mathfrak g_{w,\leq M},\pi_{M,N})$ is an object of the
       strict habitat
       $\Cat{MLTateChain}_{\geq0}^{\mathrm{str}}$ of
-      Definition~\ref{defn:strict-ml-tate-habitat}.
+      Definition~\ref{defn:strict-ml-tate-habitat}.  In particular,
+      the closed-window bracket and coadjoint obstructions
+      $\mathfrak o^{\mathrm{br}}_{M,N},\,\mathfrak o^{\mathrm{coad}}_{M,N}$
+      of Definition~\ref{defn:closed-window-obstruction-terms}
+      vanish for all $M\geq N$.
     \item The weighted completion
       $(\mathfrak g_w,\widehat\otimes_{\mathrm{ML}})$ embeds fully
       faithfully in the admissible envelope
@@ -1281,9 +1304,7 @@ admissible envelope; they are not independently asserted habitats.
       $C_{\mathfrak h,w}=\sum_d\sum_i(w(d)e_{d,i})\otimes
       (w(d)^{-1}e^i_d)$
       of Proposition~\ref{prop:wt-casimir-convergence} is
-      kernel-admissible in the sense of
-      Definition~\ref{defn:closed-window-obstruction-terms}: the
-      Casimir window obstruction
+      kernel-admissible: the Casimir window obstruction
       $\mathfrak o^{\mathrm{Cas}}_{M,N}$ vanishes for all $M\geq N$.
     \item Inside the admissible envelope, the bar-cobar Quillen
       equivalence of Theorem~\ref{thm:tate-bar-cobar-quillen} restricts
@@ -1306,46 +1327,49 @@ admissible envelope; they are not independently asserted habitats.
 \end{prop}
 
 \begin{proof}
-  \emph{Item~(i).}  The bracket-tame condition \ref{w:W1} of
-  Definition~\ref{defn:wt-degree-weight} states that there is a
-  constant $C\geq1$ with
-  $\{w(p)e_{p,i},w(q)e_{q,j}\}\subset C\cdot w(p+q-2)e_{p+q-2,*}$ on
-  basis elements; this is exactly the bracket-compatible transition
-  condition
-  $\pi_{M,N}\colon\mathfrak h_{w,\leq M}\to\mathfrak h_{w,\leq N}$
-  underlying the window obstruction
-  $\mathfrak o^{\mathrm{br}}_{M,N}=0$ of
-  Definition~\ref{defn:closed-window-obstruction-terms}.  Windowwise
-  coadjoint-continuity \ref{w:W2} gives
-  $\mathfrak o^{\mathrm{coad}}_{M,N}=0$.  The transition maps are
-  surjective on each finite degree pair by construction.  Hence the
-  weighted tower is a strict ML object.
+  \emph{Item~(i).}  Hypothesis~\ref{B1-pronilp} supplies a filtration of
+  $\mathfrak h_w$ by closed dg Lie ideals with bracket-compatible
+  finite-dimensional quotients; the transition maps $\pi_{M,N}$ are
+  Lie algebra morphisms by construction, hence
+  $\mathfrak o^{\mathrm{br}}_{M,N}=0$.  Hypothesis~\ref{B2-coad}
+  upgrades the dual side: the coadjoint action of $\mathfrak h_w$ on
+  $\mathfrak h^{\vee,w}_{\mathrm{cont}}$ commutes with the dual
+  transitions, so $\mathfrak o^{\mathrm{coad}}_{M,N}=0$.  The transition
+  maps are surjective by definition.  Hence the weighted tower
+  $(\mathfrak g_{w,\leq M},\pi_{M,N})$ satisfies all clauses of
+  Definition~\ref{defn:strict-ml-tate-habitat} and is a strict ML
+  object.  Bracket-tameness \ref{w:W1} of
+  Definition~\ref{defn:wt-degree-weight} enters separately as a
+  uniform bound on the rescaled bracket structure constants in the
+  weighted basis; it is what makes \ref{B1-pronilp} a workable
+  hypothesis on the canonical exponential weight $w(d)=q^d$ and is the
+  T1 input that controls the rescaled bracket coefficients on
+  Costello graphs.
 
-  \emph{Item~(ii).}  The weighted Casimir
-  $C_{\mathfrak h,w}=\sum_d\sum_i(w(d)e_{d,i})\otimes(w(d)^{-1}e^i_d)$,
-  restricted to the finite window, has $w_0$-projection
+  \emph{Item~(ii).}  Hypothesis~\ref{B3-coev} states that the family
+  $(C^{\mathrm{w}}_M)_M$ with
   $C^{\mathrm{w}}_M=\sum_{d\leq M}\sum_iw(d)e_{d,i}\otimes
-  w(d)^{-1}e^i_d$, an element of
-  $\mathfrak h_{w,\leq M}\otimes\mathfrak h^{\vee,w}_{\leq M}$
-  which is a finite sum.  By Mittag-Leffler coevaluation \ref{w:W3} of
-  Definition~\ref{defn:wt-degree-weight} and
-  Proposition~\ref{prop:wt-casimir-convergence}, the family
-  $(C^{\mathrm{w}}_M)_M$ is a strict compatible Mittag-Leffler tensor
-  in $\mathfrak h_w\widehat\otimes_{\mathrm{ML}}
-  \mathfrak h^{\vee,w}_{\mathrm{cont}}$.  The Casimir transition
-  obstruction
+  w(d)^{-1}e^i_d$ is a strict compatible Mittag-Leffler tensor in
+  $\mathfrak h_w\widehat\otimes_{\mathrm{ML}}
+  \mathfrak h^{\vee,w}_{\mathrm{cont}}$.  Compatibility under the
+  truncation $\pi_{M,N}\otimes\pi^\vee_{M,N}$ is exactly the
+  Casimir window obstruction
   $\mathfrak o^{\mathrm{Cas}}_{M,N}=
-  (\pi_{M,N}\otimes\pi^\vee_{M,N})C^{\mathrm{w}}_M-C^{\mathrm{w}}_N$
-  vanishes because the truncation acts as the identity on the kept
-  weighted basis vectors and as zero on those discarded.  Hence
+  (\pi_{M,N}\otimes\pi^\vee_{M,N})C^{\mathrm{w}}_M-C^{\mathrm{w}}_N$.
+  The truncation pair acts as the identity on the kept weighted basis
+  vectors $\{e_{d,i}\otimes e^i_d:d\leq N\}$ and as zero on those
+  discarded; the rescaling factors $w(d)$ and $w(d)^{-1}$ cancel on
+  each kept summand.  Hence
+  $\mathfrak o^{\mathrm{Cas}}_{M,N}=0$ for $M\geq N$, so
   $C_{\mathfrak h,w}$ is kernel-admissible in the sense of
-  Definition~\ref{defn:closed-window-obstruction-terms}.
+  Definition~\ref{defn:closed-window-obstruction-terms}.  The fully
+  faithful embedding into the admissible envelope is the structural
+  embedding of Statement~\ref{stmt:tate-model-envelope}.
 
   \emph{Item~(iii).}  Items~(i)--(ii) place the weighted pair in the
   strict ML habitat, hence in the admissible envelope by the structural
-  embedding of Statement~\ref{stmt:tate-model-envelope}.  All
-  hypotheses of Theorem~\ref{thm:tate-bar-cobar-quillen} hold for the
-  weighted pair: the conilpotent coalgebra
+  embedding.  All hypotheses of Theorem~\ref{thm:tate-bar-cobar-quillen}
+  hold for the weighted pair: the conilpotent coalgebra
   $C_w=C_*^{\mathrm{CE}}(\mathfrak g_w)$ and the augmented associative
   algebra $A_w=\widehat U(\mathfrak g_w)$ are objects of the admissible
   envelope; the Tate filtration on each is bounded below, complete, and
@@ -1369,6 +1393,29 @@ admissible envelope; they are not independently asserted habitats.
   is a categorical (not analytic) base change and preserves these
   obstructions.
 \end{proof}
+
+\begin{rmk}[Bracket-truncation versus bracket-tameness]
+\label{rmk:tate-T3-T1-bracket-distinction}
+  The bracket-tame condition \ref{w:W1} of
+  Definition~\ref{defn:wt-degree-weight} is a uniform bound on the
+  rescaled bracket structure constants in the weighted basis; it is
+  not, by itself, the bracket-truncation compatibility
+  $\mathfrak o^{\mathrm{br}}_{M,N}=0$ of
+  Definition~\ref{defn:closed-window-obstruction-terms}.  The latter
+  asks that the Lie bracket descend to surjective truncations
+  $\pi_{M,N}\colon\mathfrak h_{w,\leq M}\to\mathfrak h_{w,\leq N}$ as
+  Lie algebra morphisms, equivalent to a filtration of $\mathfrak h_w$
+  by closed dg Lie ideals.  This is precisely the
+  lower-central Tate-pronilpotence hypothesis of
+  Lemma~\ref{lem:continuous-bar-cobar}, restated here as
+  hypothesis~\ref{B1-pronilp}, and is a separate input from \ref{w:W1}.
+  In the manuscript, both are supplied: \ref{w:W1} controls the rescaled
+  bracket on Costello graphs and Casimir convergence; \ref{B1-pronilp}
+  controls the bracket truncation needed for the cochain CE/PV
+  identity.  Where the natural Hamiltonian truncation ``drop $H_d$ for
+  $d>N$'' fails to be a Lie ideal, the manuscript replaces it by the
+  lower-central truncation, restoring \ref{B1-pronilp}.
+\end{rmk}
 
 \begin{cor}[Weighted bar-cobar inside the admissible envelope]
 \label{cor:tate-T3-weighted-bar-cobar}
