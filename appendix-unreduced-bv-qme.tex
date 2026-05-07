@@ -3,11 +3,19 @@
 
 Fix the formal-local mixed habitat
 \(\R^2_{\mathrm{top}}\times\widehat{\C^2}_0\) with
-\(\Omega_{\mathrm{loc}}=dz_1\wedge dz_2\).  On the brane-defect
-local-functional complex
-\(\mathfrak Q^\bullet_{w,\partial,\hbar}(I)\), a filtered chain scalar
-projection \(\widehat\sigma_{\mathrm{sc}}\) reduces the non-scalar
-Costello QME on a brane interval to a single cohomology class
+\(\Omega_{\mathrm{loc}}=dz_1\wedge dz_2\).  On a brane interval
+\(I\subset L\) the open BV theory contributes scalar contact
+counterterms each order in \(\hbar\); the residual non-scalar Costello
+quantum master equation lives in their orthogonal complement.  Naming
+the players: \(\mathfrak Q^\bullet_{w,\partial,\hbar}(I)\) is the
+local-functional cochain complex on \(I\) at weighted-Tate coefficient
+weight \(w\), with the brane-tangential differential
+\(d_\partial\) and the \(\hbar\)-formal grading;
+\(\widehat\sigma_{\mathrm{sc}}\) is the filtered scalar-symbol chain
+projection killing the scalar-contact filtration; and
+\(d_{\mathrm{QME}}=Q+\{I_0,-\}+\hbar\Delta\) is the quantum master
+differential of Costello's renormalization.  Once these are in place,
+the residual non-scalar QME obstruction is a single cohomology class
 \[
   [\operatorname{Ob}^{\mathrm{red}}_{w,\partial,\hbar}]
   \in
@@ -15,7 +23,9 @@ Costello QME on a brane interval to a single cohomology class
     d_{\mathrm{QME}}\bigr),
 \]
 paired with its finite-window
-\(\varprojlim^1H^0\)-primitive-compatibility class.
+\(\varprojlim^1H^0\)-primitive-compatibility class
+(the secondary Roos cohomology obstruction tracking compatibility of
+window-by-window primitives across the truncation tower).
 
 The scalar anomaly is one cohomology class realized in four
 cohomologies.  The algebraic central extension of
@@ -37,13 +47,22 @@ tensors satisfy
 \(\operatorname{Str}_{\mathrm{cyc}}(\mathfrak m)=0\).  Modifying one
 branch displaces the same class.
 
-At each finite window \(M\), the obstruction is the linear-algebra
+At each finite window \(M\) (a Hamiltonian-degree truncation of the
+weighted Tate coefficient pair) the obstruction is the linear-algebra
 problem
 \[
   A^M c^M=-r^M
 \]
 of Theorem~\ref{thm:app-constructive-nonscalar-costello-qme-realization},
-with rows
+where \(A^M\) is the finite matrix whose columns enumerate the
+candidate counterterms supplied by the row span, \(c^M\) is the
+unknown counterterm vector, and \(r^M\) is the residual vector
+collecting the QME source faces.  The row entries are graph-by-graph
+Costello data: \(K^M_\Gamma\) the windowed kernel of the Feynman graph
+\(\Gamma\), \(\varepsilon_\Gamma\) its sign, \(\zeta_{M,\nu}\) a CE
+test pairing labelled by the cycle \(\nu\), and the bracket
+\(\{-,-\}_{\hbar,M}\) the windowed Schouten/BV bracket.  In these
+terms,
 \[
   R^{\mathrm{row}}_{d\Gamma,M}
    =\varepsilon_\Gamma d_M K^M_\Gamma,
@@ -61,8 +80,11 @@ counterterm \(c^M\) exists in the supplied row span exactly when the
 system is consistent; otherwise a separating covector
 \(\ell A^M=0\), \(\ell(r^M)\neq0\) detects the obstruction.  Tower
 compatibility passes through truncation matrices \(T^{M,N}\) on rows
-and \(P^{M,N}\) on primitive candidates and the Roos class
-\([P^{M,N}c^M-c^N]\in H^0(\mathcal K^\bullet_{\mathrm{ns},N}(I))\).
+(restriction-of-graphs from window \(M\) to a smaller window \(N\)) and
+\(P^{M,N}\) on primitive candidates (the matched counterterm projector)
+and the Roos class \([P^{M,N}c^M-c^N]\in H^0(\mathcal K^\bullet_{\mathrm{ns},N}(I))\)
+(the cohomology class measuring failure of windowwise primitives to
+agree across truncation).
 
 The order-three row \(\theta_3=\mathrm{CE}(\Theta_3,\nu_3)\) is the
 first scalar-zero source-face row beyond the order-one one-cross
@@ -85,8 +107,10 @@ counterterm \(C_{\theta_3,M}\) with
 \(d_{\mathrm{ns},M}C_{\theta_3,M}=-\mathsf E_{\theta_3,M}\) and
 truncation-compatible primitives; or a complete companion-face table
 of Hom-valued companion rows whose signed sum moves the residual
-vector into the image of \(A^M\).  Tower compatibility passes through
-\(\Delta^1_{M,N}=-\pi_{M,N}\mathfrak b^M+\mathfrak b^N\) and the
+vector into the image of \(A^M\).  Tower compatibility passes through the truncation defect
+\(\Delta^1_{M,N}=-\pi_{M,N}\mathfrak b^M+\mathfrak b^N\)
+(\(\mathfrak b^M\) the order-one Bianchi residual at window \(M\),
+\(\pi_{M,N}\) the truncation projector) and the
 secondary \(\varprojlim^1H^0\) primitive class
 (Proposition~\ref{prop:app-theta-three-bianchi-lower-condition}).
 The unreduced factorization-center cotangent lift is governed by a
