@@ -11963,52 +11963,51 @@ $$\{f,g\}_\hbar=\hbar^{-1}[f,g]_*
   the displayed product comparison and no additional Costello graph/QME assertion.
 \end{proof}
 
-\begin{rmk}[Reproducibility certificate for the finite Moyal/radial verification]\label{rmk:reproducibility-certificate}
+\begin{rmk}[Reproducibility of the finite Moyal/radial verification]\label{rmk:reproducibility-certificate}
   The finite-certificate clause of
-  Theorem~\ref{thm:componentwise-quantum-coefficient-comparison} is a
-  computer-assisted verification at the four enumerated bidegree
-  ranges.  The protocol used is:
+  Theorem~\ref{thm:componentwise-quantum-coefficient-comparison} is
+  computer-assisted.  The harness:
   \begin{enumerate}[label=(\arabic*)]
     \item \emph{Arithmetic.}  Exact rational arithmetic over
-      \(\mathbb Q\); no floating-point step.  Implementation:
-      Python~3 with the \texttt{fractions} module and
-      \texttt{numpy.array(dtype=object)} of \texttt{Fraction} entries.
-    \item \emph{Constructed matrices.}  At each bidegree \((a,b)\) the
-      verification builds the radial Stokes boundary
+      \(\mathbb Q\), implemented in Python~3 with the standard
+      \texttt{fractions} module; no floating-point step.
+    \item \emph{Moyal coefficient sweep.}
+      \texttt{scripts/check\_moyal\_coefficients.py} runs the
+      Procesi--Razmyslov--Capelli round-trip and the prequotient
+      scalar Moyal leading expansion on the rectangular bidegree
+      window \(0\le k,l,m,n\le\texttt{max\_exp}=10\), to Moyal order
+      \(r\le\texttt{max\_order}=11\); the script asserts the
+      coefficient identities of
+      Proposition~\ref{prop:app-edge-pbw-telescoping} and
+      Theorem~\ref{thm:phi-hbar-all-order} pointwise on the sweep and
+      exits zero on PASS.
+    \item \emph{One-\(\psi\) homology sweep.}
+      \texttt{scripts/check\_one\_psi\_homology.py} verifies the
+      descendant action and the residue-coadjoint formula
+      \(z_1^pz_2^q\!\cdot\!\rho_{a,b}=
+        -(pb-qa+p-q)\rho_{a-p+1,b-q+1}\) of
+      Theorem~\ref{thm:principal-part-coadjoint-uniqueness} on the
+      rectangular window \(0\le k,l\le\texttt{max\_exp}\), exact
+      rational; exits zero on PASS.
+    \item \emph{Per-bidegree representation.}  The radial Stokes
+      boundary
       \(B_{a,b}\colon\mathsf S_{a,b}\!\oplus\!\mathsf W_{a,b}\to
-      \mathsf T_{a,b}\) with the decorated weight matrix
-      \(C^+_{a,b}\) on the \(\mathsf W_{a,b}\) summand of
-      Proposition~\ref{prop:app-radial-dual-potential-obstruction};
-      the rationals \(\partial_2\)-Stokes coefficient table; and the
+        \mathsf T_{a,b}\), the decorated weight \(C^+_{a,b}\), and the
       principal-part edge tower of
-      Proposition~\ref{prop:app-edge-pbw-telescoping}.
-    \item \emph{Linear-algebra outputs.}  \(\ker B_{a,b}^*\) and
-      \(\operatorname{coker}B_{a,b}\) are represented as exact
-      Smith-normal-form bases over \(\mathbb Q\); the obstruction
-      class
-      \(\Omega^{\mathrm{rad}}_{a,b}=
-        [(T_{a,b},E^+_{a,b})]\in\operatorname{coker}B_{a,b}\) is
-      reported as a specific basis vector or as the zero class.
-    \item \emph{Verified bidegree list.}  Balanced diagonal through
-      \((6,6)\); every non-edge bidegree of total degree \(\le13\);
-      total-degree-\(14\) bidegrees
-      \((3,11),(11,3),(4,10),(10,4),(5,9),(9,5)\); every
-      one-moving-letter edge strip.
-    \item \emph{Reproduction.}  The harness lives at
-      \texttt{scripts/check\_moyal\_coefficients.py} and
-      \texttt{scripts/check\_one\_psi\_homology.py}; running each
-      from the repository root prints the per-bidegree verdict and
-      writes a SHA-256 hash of the rational coefficient table to
-      \texttt{out/finite\_certificate.sha256}.  A divergence between
-      the stored hash and the recomputed hash indicates either a
-      transcription drift or a coefficient regression and is reported
-      as a verification failure.
+      Proposition~\ref{prop:app-edge-pbw-telescoping} are built
+      explicitly as rational matrices; \(\ker B_{a,b}^*\) and
+      \(\operatorname{coker}B_{a,b}\) are recovered by exact Gaussian
+      elimination on \(\mathbb Q\)-arrays of \texttt{Fraction} entries.
+    \item \emph{Reproduction.}  Run each script from the repository
+      root.  A nonzero exit indicates either a coefficient regression
+      against the stated identities or a transcription drift on the
+      bidegree window above.
   \end{enumerate}
-  Items (1)--(5) constitute the certificate.  No computational claim
-  outside the bidegree list of (4) is asserted; the all-bidegree
-  obstruction \(\Omega^{\mathrm{rad}}_{a,b}\in\operatorname{coker}B_{a,b}\)
-  is the named cohomology class blocking extension to the full
-  bidegree lattice
+  No claim is made outside the rectangular sweep window above; the
+  all-bidegree obstruction
+  \(\Omega^{\mathrm{rad}}_{a,b}\in\operatorname{coker}B_{a,b}\) is the
+  named cohomology class blocking extension to the full bidegree
+  lattice
   (Proposition~\ref{prop:app-radial-dual-potential-obstruction}).
 \end{rmk}
 
