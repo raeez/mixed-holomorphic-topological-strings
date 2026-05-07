@@ -1,17 +1,129 @@
 \section{Factorization Current Conventions for the CE/PV Interface}
 \label{sec:app-factorization-current-conventions}
 
-\emph{Load-bearing role.}  Principles~3, 4, 5 of the introduction are
-inscribed in algebra by an interval-wise CE/PV current interface: a
-brane interval supports a Hamiltonian current factor with the open
-\(P_0\)-bracket
-\(\{B_f(a),B_g(b)\}=B_{\{f,g\}}(ab)\), a residual cotangent current
-factor with coadjoint action
-\(\{B_f(a),\Theta_\rho(B)\}=\Theta_{f\cdot\rho}(aB)\), and an abelian
-odd ideal
-\(\{\Theta_\rho(B),\Theta_\sigma(C)\}=0\).  This appendix builds that
-interface, controls its scope, and isolates exactly which of its
-extensions remain obstruction problems.  The load-bearing outputs are
+This appendix is the convention bedrock for the brane-line
+factorization-current sector of the local mixed
+\(\mathrm{HT}\) string field theory on
+\(\R^2_{\mathrm{top}}\times\widehat{\C^2}_{0,\mathrm{hol}}\): it
+supplies the interval-wise CE/PV current interface in which Principles
+3, 4, 5 of the introduction are inscribed in algebra, and it isolates
+the obstruction surfaces that block strengthening from the algebraic
+current model to a Costello local-functional graph theorem in the sense
+of Costello \cite{costello-renormalization} and
+Costello--Gwilliam \cite{costello-gwilliam,costello-gwilliam-vol2}.  The
+unique survivor is the convention package: every BV degree, sign,
+habitat, and obstruction class cited by the body and by every other
+appendix is fixed here once.
+
+The interface is one universal triangle of brackets.  On a brane interval
+\(I\subset\R_{\mathrm{brane}}\), the Hamiltonian boundary observable
+\(B_f(a)\) (degree \(0\)) and the residual cotangent observable
+\(\Theta_\rho(B)\) (degree \(1\)) carry the open \(P_0\)-brackets
+\[
+  \{B_f(a),B_g(b)\}=B_{\{f,g\}}(ab),\qquad
+  \{B_f(a),\Theta_\rho(B)\}=\Theta_{f\cdot\rho}(aB),\qquad
+  \{\Theta_\rho(B),\Theta_\sigma(C)\}=0,
+\]
+where \(\{f,g\}\) is the Poisson bracket of the formal holomorphic
+symplectic disk \((\widehat{\C^2}_0,dz_1\wedge dz_2)\),
+\(f\cdot\rho\) is its Matlis residue coadjoint action of
+Proposition~\ref{prop:app-matlis-coadjoint-action}, and \(aB\) is the
+multiplication of a smooth compactly supported test function by a
+compactly supported distributional current.  The CE source coordinates
+are \(c_\lambda\) (degree \(1\)) and \(u_{a(t)dt\otimes f}\) (degree
+\(0\)), with the universal generator dictionary
+\[
+  c_\lambda\longmapsto\theta_\lambda=\Theta_\rho(B),\qquad
+  u_{a(t)dt\otimes f}\longmapsto B_f(a),\qquad
+  \lambda=B\otimes\rho .
+\]
+The reduced algebraic current target is the freely adjoined completed
+graded-commutative algebra
+\(A_\partial^{\mathrm{cur}}(I)
+   =\widehat{\mathbf S}(\mathfrak h_I)
+    \widehat\otimes
+    \widehat{\mathbf S}(\mathcal P_I[1])\)
+on these generators.  All four bracket signs and the displayed
+generator dictionary are forced by the symplectic form
+\(\Omega_{\mathrm{loc}}=dz_1\wedge dz_2\), the residue pairing
+\(\langle\rho_{a,b},z_1^mz_2^n\rangle=\delta_{a,m}\delta_{b,n}\), and
+the equal-time bracket of
+Remark~\ref{rmk:equal-time-locality}; the displayed signs match
+Lemmas~\ref{lem:app-sign-ce-pv}--\ref{lem:app-sign-current-source} of
+Appendix~\ref{sec:app-sign-conventions} verbatim.
+
+\medskip
+\noindent\emph{Three notions of locality, formal apparatus.}  The body
+proves three independent locality statements in
+Proposition~\ref{prop:three-localities}: support locality
+(\(\delta(t-s)\) on the brane), topological locality
+(\(L_v=[Q,\iota_v]\) in the \(\R^2_{\mathrm{top}}\) factor), and
+formal-holomorphic locality
+(\(L_{\partial/\partial\bar z_i}
+   =[Q,\iota_{\partial/\partial\bar z_i}]\) in the
+\(\widehat{\C^2}_{0,\mathrm{hol}}\) factor).  This appendix supplies
+the formal apparatus for each:
+\begin{enumerate}
+  \item \emph{Support locality} is encoded by the cosheaf
+    Lie-algebra \(\mathfrak h_I=\Omega^\bullet_c(I)\widehat\otimes\mathfrak h\)
+    and its current dual \(\mathcal P_I=\mathcal D'_c(I)\widehat\otimes\mc P\)
+    of Definitions~\ref{def:app-factorization-current-source},
+    \ref{def:app-factorization-current-dual}.  Multiplication of a
+    current by a smooth compactly supported test function
+    (Lemma~\ref{lem:app-factorization-current-product}) is the only
+    distributional operation used in the reduced current model; for
+    disjoint supports it kills the bracket and produces the strict
+    factorization product.  The smeared form \(ab\) of the equal-time
+    contact \(\delta(t-s)\) of
+    Remark~\ref{rmk:equal-time-locality} is the same operation read on
+    the source side.
+  \item \emph{Topological locality} is encoded by the de Rham
+    differential \(d_I=d_{\mathrm{dR}}\otimes 1\) on \(\Omega^\bullet_c(I)\)
+    and by the compact-support density shift of
+    Lemma~\ref{lem:compact-support-interval-contraction}: the surviving
+    cohomology along the brane line is the density line, so the
+    factorization algebra is locally constant in the topological
+    direction.  The interval factor of every current operator below is
+    a compactly supported de Rham object; topological motion changes it
+    by a \(d_I\)-boundary.
+  \item \emph{Formal-holomorphic locality} is encoded by the residue
+    pairing \(\langle\rho,f\rangle=\operatorname{Res}_0(\rho f)\) on
+    the formal holomorphic disk
+    \((\widehat{\C^2}_0,\Omega_{\mathrm{loc}})\)
+    (Proposition~\ref{prop:app-local-unimodular-current-kernel-input}),
+    realized through the Matlis principal-part module \(\mc P\) of
+    Appendix~\ref{sec:app-matlis-principal-parts}.  This produces the
+    Taylor Hamiltonian source side and its residue-dual
+    principal-part current target side; they are not the same as a
+    polynomial cotangent realization
+    (Corollary~\ref{cor:descendant-coadjoint-difference},
+    Corollary~\ref{cor:app-sign-universal-dual-normalization}).
+\end{enumerate}
+Each of the three localities is independent: the three operators
+\(\delta(t-s)\), \(L_v\), \(L_{\partial/\partial\bar z_i}\) live in
+different directions and none implies the others.  Convention drift in
+this appendix would propagate immediately into all three sides; this is
+the reason for stating the apparatus explicitly here once.
+
+\medskip
+\noindent\emph{Prefactorization versus factorization.}  All structure
+constructed in this appendix is prefactorization in the sense of
+Costello--Gwilliam \cite{costello-gwilliam}*{Ch.~3}: cosheaf source on
+intervals, completed graded-commutative target, extension-by-zero
+factorization product, and strict vanishing of mixed brackets between
+disjoint-support generators.  Weiss-cover descent and the upgrade to a
+factorization algebra in the Weiss-cover sense is the responsibility of
+the body Theorems~\ref{thm:hamiltonian-current-factorization} and
+\ref{thm:reduced-principal-part-boundary-current}, which interpret this
+appendix's prefactorization datum as a factorization algebra on the
+brane line under the locality hypotheses of
+Proposition~\ref{prop:three-localities}.  The appendix supplies the
+prefactorization datum and verifies its convention compatibility; it
+does not by itself prove the Weiss-cover extension.
+
+\medskip
+\noindent\emph{Load-bearing outputs.}  Every theorem of this appendix
+is cited by a §1 or §2 statement of the body or by another appendix:
 \begin{enumerate}
   \item the universal algebraic current interface
     (Theorem~\ref{thm:app-factorization-universal-current-interface},
@@ -43,38 +155,100 @@ extensions remain obstruction problems.  The load-bearing outputs are
     which are the criterion governing
     Problem~\ref{prob:formal-factorization-center}.
 \end{enumerate}
-Every section of this appendix supplies a structure cited by a §1 or
-§2 theorem in the list above; nothing here is decorative.
+Nothing in this appendix is decorative; the convergence of every other
+appendix and theorem-lane in the manuscript depends on the convention
+table fixed here.
 
+\medskip
+\noindent\emph{Convention table.}  Every later identity in this
+appendix uses, without further announcement, the following
+degree/sign/topology conventions.  They match
+Appendix~\ref{sec:app-sign-conventions} verbatim and are repeated here
+because this appendix is the convention bedrock for every other
+factorization-current statement in the manuscript.
+\begin{itemize}
+  \item[(BV degrees)]
+    \(|c_\lambda|=1\), \(|u_{a(t)dt\otimes f}|=0\),
+    \(|\theta_\lambda|=|\Theta_\rho(B)|=1\),
+    \(|B_f(a)|=0\), \(|\gamma_{\mathbf 1}|=1\).  The source CE
+    differential \(d_{\mathrm{CE}}\) and the target Schouten/QME
+    differential \(d_\pi\) (resp.~\(d_{\mathrm{QME}}=Q+\{I_0,-\}\))
+    have degree \(+1\); the open \(P_0\)-bracket on the reduced
+    current target has degree \(0\); the convolution-habitat curvature
+    \(\operatorname{Curv}_{\mathbf K}\) has degree \(+1\); the BV
+    Laplacian \(\Delta\) has degree \(+1\) wherever it is invoked.
+  \item[(Hamiltonian)]
+    \(\mathfrak h=\C[[z_1,z_2]]/\C\cdot 1\),
+    \(\Omega_{\mathrm{loc}}=dz_1\wedge dz_2\),
+    \(\iota_{X_f}\Omega_{\mathrm{loc}}=-df\),
+    \(\{f,g\}=\partial_{z_1}f\,\partial_{z_2}g
+      -\partial_{z_2}f\,\partial_{z_1}g\),
+    \(\{z_1,z_2\}=1\),
+    \(\operatorname{div}_{\Omega_{\mathrm{loc}}}X_f=0\).
+    The Moyal first quantum correction has coefficient
+    \(1/24\) (Lemma~\ref{lem:app-sign-moyal-coefficients}).
+  \item[(Residue pairing)]
+    \(\rho_{a,b}=z_1^{-a-1}z_2^{-b-1}\,dz_1dz_2\), \(a,b\geq 0\),
+    \((a,b)\neq (0,0)\); residue normalization
+    \(\langle\rho_{a,b},z_1^mz_2^n\rangle
+        =\operatorname{Res}_0(\rho_{a,b}z_1^mz_2^n)
+        =\delta_{a,m}\delta_{b,n}\); coadjoint sign
+    \((f\cdot\rho)(g)=-\rho(\{f,g\})\); resulting monomial action
+    \(z_1^pz_2^q\cdot\rho_{a,b}
+       =-(pb-qa+p-q)\rho_{a-p+1,b-q+1}\).  This is the universal
+    cotangent normalization of
+    Corollary~\ref{cor:app-sign-universal-dual-normalization}.
+  \item[(Brane-line currents)]
+    \(I\subset\R_{\mathrm{brane}}\subset\R^2_{\mathrm{top}}\) is an
+    oriented open interval; \(\Omega^\bullet_c(I)\) is the de~Rham
+    complex of compactly supported smooth forms (degree \(\leq 1\) on a
+    \(1\)-manifold); \(\mathcal D'_c(I)\) is the space of compactly
+    supported distributions in the duality \(\mathcal D'(I)
+       =C^\infty(I)^\vee\) of de~Rham \(0\)-currents
+    (\cite{hormander-vol1}*{Ch.~6}); the de~Rham differential is
+    \(d_I=d_{\mathrm{dR}}\otimes 1\).  The only distributional
+    operation on the reduced current model is multiplication
+    \(B\mapsto aB\) of a current by a smooth compactly supported test
+    function (Lemma~\ref{lem:app-factorization-current-product}); no
+    product of two distributions occurs except inside the explicitly
+    flagged Costello graph layers of
+    Propositions~\ref{prop:app-regular-density-costello-graph-kernel}--\ref{prop:app-current-compatible-Dprimec-graph-criterion}.
+  \item[(CE/PV generator dictionary)]
+    \(c_\lambda\longmapsto\theta_\lambda\), \(u_{a(t)dt\otimes f}\longmapsto B_f(a)\), with
+    \(\lambda=B\otimes\rho\in\mathcal P_I\); the symbol
+    \(\theta_\lambda\) is interchangeable with \(\Theta_\rho(B)\),
+    where the upper-case form is the boundary-observable physics-side
+    notation and the lower-case form is the PV/CE-image side
+    coordinate.  Both are degree \(1\) and abelian on the cotangent
+    current ideal.
+  \item[(Topology and completions)]
+    All completed symmetric algebras are interpreted degreewise in the
+    chosen current category: finite symmetric powers are formed
+    before completion, and brackets extend continuously from the
+    displayed length-one current formulas; tensor products are
+    completed projective tensor products of nuclear Fr\'echet spaces in
+    the de~Rham/distribution direction and \(\mathfrak m\)-adic in the
+    formal Hamiltonian direction (Appendix~\ref{sec:app-matlis-principal-parts}).
+\end{itemize}
+
+\medskip
 The factorization-current theorem uses the following algebraic
-source/target interface.  The interface is used before the
-admissible bar-cobar/enveloping criterion: interval Hamiltonian
-currents form the CE source, distributional Matlis principal parts form
-the cotangent current target, and the CE/PV generator dictionary is
-\[
-  c_\lambda\longmapsto\theta_\lambda,\qquad
-  u_{a(t)dt\otimes f}\longmapsto B_f(a).
-\]
-The proved content is the reduced algebraic current model after
-de Rham-current contraction.  The unreduced BV/QME current lift and the
-Costello brane-defect graph theorem are separate obstruction problems,
-isolated in Remark~\ref{rmk:unreduced-lift-obstruction},
+source/target interface.  The interface is used before the admissible
+bar-cobar/enveloping criterion: interval Hamiltonian currents form the
+CE source, distributional Matlis principal parts form the cotangent
+current target, and the CE/PV generator dictionary is the one fixed by
+the convention table above.  The proved content is the reduced
+algebraic current model after de Rham-current contraction.  The
+unreduced BV/QME current lift and the Costello brane-defect graph
+theorem are separate obstruction problems, isolated in
+Remark~\ref{rmk:unreduced-lift-obstruction},
 Appendix~\ref{sec:app-unreduced-bv-qme}, and
-Problem~\ref{prob:analytic-graph-realization}.
-Completed symmetric algebras are interpreted degreewise in the chosen
-current category: finite symmetric powers are formed before completion,
-and brackets extend continuously from the displayed length-one current
-formulas.
-The geometry throughout is the formal-local mixed HT model on
-\(\R^2_{\mathrm{top}}\times\widehat{\C^2}_{0,\mathrm{hol}}\).  The
+Problem~\ref{prob:analytic-graph-realization}.  The geometry throughout
+is the formal-local mixed HT model on
+\(\R^2_{\mathrm{top}}\times\widehat{\C^2}_{0,\mathrm{hol}}\); the
 interval \(I\) is an oriented topological current interval in the brane
-line, while the Hamiltonian labels live on the formal holomorphic
-symplectic disk with
-\[
-  \Omega_{\mathrm{loc}}=dz_1\wedge dz_2,\qquad
-  \{f,g\}=\partial_{z_1}f\,\partial_{z_2}g
-    -\partial_{z_2}f\,\partial_{z_1}g .
-\]
+line, and the Hamiltonian labels live on the formal holomorphic
+symplectic disk \((\widehat{\C^2}_0,\Omega_{\mathrm{loc}})\).
 
 \begin{defn}[Interval Hamiltonian current algebra]
 \label{def:app-factorization-current-source}
@@ -436,6 +610,23 @@ symplectic disk with
   the displayed formula.  The regular-current statement is
   Lemma~\ref{lem:app-factorization-current-product}.
 \end{proof}
+
+\medskip
+The next theorem is the BMK obstruction lane.  The classical
+Bochner--Martinelli--Koppelman kernel gives a Dolbeault homotopy on
+\(\C^2\setminus\{0\}\) with explicit Hadamard estimates.  One asks
+whether truncating to the finite Matlis window
+\(\mc P_{\leq N}\) and quotienting by a section
+\(i_N\), \(p_N\) yields a strict native finite-window homotopy on the
+full compact-support/current complex.  The answer is no: a precise
+four-component obstruction vector \(\operatorname{Ob}^{\mathrm{BMK}\text{-}\mathrm{curr}}_N\)
+blocks the strict native quotient, while the analytic Taylor tower
+gives a one-pair pro-Matlis retract that is not a native
+support-local factorization-current transfer.  The proved content of
+the theorem is the BMK current data
+\((H_\chi,p_N,i_N)\), the finite-window obstruction vector, the
+positive one-pair analytic pro-Matlis retract, and the arity-two
+Hamiltonian/Matlis comparison.
 
 \begin{thm}[BMK current data and finite-window obstruction vector]
 \label{thm:app-finite-window-bmk-current-transfer}
@@ -868,6 +1059,26 @@ symplectic disk with
   \(b=0\) principal-part truncation as a native submodule.
 \end{proof}
 
+\medskip
+The next theorem switches on the brane-preserving normal
+\(\Omega\)-background.  In the local dictionary the brane-preserving
+equivariant deformation is normal scaling of
+\(N_LX=\R_s\oplus\C_{z_1}\oplus\C_{z_2}\), with \(t\) fixed; a literal
+rotation in the \((t,s)\)-plane does not preserve the brane line as
+the fixed locus.  The current sector responds to this normal action
+by an explicit grading on the generators
+\(B_{p,q}(a)\) and \(\Theta_{r,s}(B)\); the Hamiltonian/Matlis
+brackets become weighted by the inverse symplectic-character line
+\(\mathbb L_\omega^{-1}\), or equivalently by adjoining a
+weight-\(\chi_\omega\) parameter \(\hbar_\omega\).  The theorem records
+the resulting triangle of length-one current brackets and the
+self-dual specialization \(\epsilon_1+\epsilon_2=0\).  This is an
+algebraic identity in the freely adjoined current target; it does not
+by itself prove a normal-\(\Omega\) graph/QME lift, which requires the
+\(Q_\Omega\)-Cartan data, normal-weight contraction,
+residue/Euler normalization choice, equivariant counterterms, and the
+scalar/non-scalar QME obstruction classes named below.
+
 \begin{thm}[Normal \(\Omega\)-weighted brane-current brackets]
 \label{thm:app-omega-weighted-current-brackets}
   Use the normal brane-preserving equivariant parameters of the local
@@ -1082,6 +1293,28 @@ symplectic disk with
   Appendix~\ref{sec:app-unreduced-bv-qme} and
   Problem~\ref{prob:analytic-graph-realization}.
 \end{rmk}
+
+\medskip
+The remainder of the appendix prepares the unreduced lift.  The
+algebraic interface above is degree-zero current data on the freely
+adjoined principal-part current sector; the genuine target is a
+weighted Costello local-functional complex with a finite-scale BV
+Laplacian, a finite-scale propagator, and a QME differential
+\(d_{\mathrm{QME}}=Q+\{I_0^w,-\}_{\hbar}\) of degree \(+1\).  The
+remaining conventions split into four habitats: the unreduced source
+and target (Definition~\ref{def:app-unreduced-nonscalar-current-lift-datum}),
+the bulk-to-defect convolution Hom-habitat
+(Definition~\ref{def:app-bulk-defect-convolution-habitat}) in which
+Maurer--Cartan / curvature lives, the coefficient-current kernel layer
+(Proposition~\ref{prop:app-bulk-defect-kernel-layer}) that solves the
+algebraic problem strictly, and the Costello graph layers
+(Propositions~\ref{prop:app-regular-density-costello-graph-kernel}--\ref{prop:app-current-compatible-Dprimec-graph-criterion})
+that supply the analytic extension under wavefront/scaling-degree
+hypotheses.  The obstruction map list and centrality homotopy
+criterion (Proposition~\ref{prop:app-nonscalar-current-lift-obstructions},
+Theorem~\ref{thm:app-curved-kernel-centrality-homotopy-criterion}) then
+record exactly which classes block strengthening from the algebraic
+kernel to a Costello graph lift.
 
 \begin{defn}[Unreduced non-scalar current lift datum]
 \label{def:app-unreduced-nonscalar-current-lift-datum}
@@ -1369,6 +1602,40 @@ symplectic disk with
   graph-extension theorem named in the statement.
 \end{proof}
 
+\medskip
+The Costello graph layer is split by the analytic admissibility of the
+external cotangent labels.  Three habitats are constructed, in
+strict order of increasing label generality:
+\begin{itemize}
+  \item \emph{Regular densities}
+    \(\mathcal D^{\mathrm{reg}}_c(I)\)
+    (Proposition~\ref{prop:app-regular-density-costello-graph-kernel}),
+    where the only distributional operation is multiplication of
+    smooth heat-kernel propagators by smooth densities; no wavefront
+    obstruction;
+  \item \emph{Wavefront-admissible distributional tuples}
+    \(\mathcal D'_{c,\mathrm{WF}}(I;\Gamma,M)\)
+    (Definition~\ref{def:app-wavefront-admissible-defect-labels},
+    Proposition~\ref{prop:app-wavefront-admissible-costello-graph-kernel}),
+    where the H\"ormander product, pushforward, and finite-scaling
+    extension calculus
+    \cite{hormander-vol1}*{Ch.~8}, \cite{costello-renormalization}*{Chs.~5--7}
+    are defined, including the one-sided sign-conic finite-scaling
+    classes \(\mathcal D'_{c,\Lambda_\pm,\mathrm{fs}}(I)\);
+  \item \emph{Arbitrary compactly supported distributions}
+    \(\mathcal D'_c(I)\)
+    (Proposition~\ref{prop:app-current-compatible-Dprimec-graph-criterion}),
+    where the algebraic kernel is the coefficient-current kernel of
+    Proposition~\ref{prop:app-bulk-defect-kernel-layer}, and the
+    coincident-current boundary graph
+    \(B_1=B_2=\delta_{t_0}\) gives an explicit H\"ormander product
+    failure: no Costello graph theorem follows for general
+    \(\mathcal D'_c(I)\).
+\end{itemize}
+The first two habitats give renormalized graph kernels compatible with
+interval extension, finite-window truncation, and admissible weight
+transport; the third names the residual obstruction problem.
+
 \begin{prop}[Regular-density Costello graph kernel layer]
 \label{prop:app-regular-density-costello-graph-kernel}
   Let
@@ -1507,7 +1774,8 @@ symplectic disk with
   \(0<\epsilon\leq L<\infty\).  In this window the coefficient part of
   the propagator is finite rank, and the spacetime part of
   \(P_{\epsilon,L}^{w,M}\) is the finite-scale heat-kernel propagator of
-  Costello's elliptic BV calculus.  It is smooth at positive scale.  After
+  Costello's elliptic BV calculus
+  \cite{costello-renormalization}*{Chs.~2--4}.  It is smooth at positive scale.  After
   restriction to the brane line, multiplication by the smooth compactly
   supported functions \(a_i\) and densities \(b_j(t)dt\) produces a smooth
   compactly supported graph integrand on the relevant configuration space
@@ -1989,6 +2257,24 @@ symplectic disk with
   counterterms under their hypotheses, but they do not prove a
   current-valued arbitrary-\(\mathcal D'_c\) brane-defect theorem.
 \end{proof}
+
+\medskip
+The remaining two statements list the obstruction classes that block
+strengthening from the algebraic coefficient-current kernel
+(Proposition~\ref{prop:app-bulk-defect-kernel-layer}) to a Costello
+local-functional graph theorem.  Four classes appear: the scalar
+projection of the curvature; the recovery condition under scalar
+reduction; the three unreduced bracket defects \(D_{f,g}\), \(D_{f,\rho}\),
+\(D_{\rho,\sigma}\) of degree zero with their factorization /
+finite-window-compatible homotopies; and the residual non-scalar
+curvature class in
+\(H^1(\ker\widehat\sigma_{\mathrm{sc}},d_{\mathrm{QME}})\).  The
+binary centrality criterion of
+Theorem~\ref{thm:app-curved-kernel-centrality-homotopy-criterion}
+records the precise homotopy equation \eqref{eq:app-centrality-homotopy-equation}
+that a non-scalar Costello local lift must satisfy on every pair of
+source generators, with the inverse-system and Milnor primitive
+classes that obstruct compatible window-by-window assembly.
 
 \begin{prop}[Obstruction maps for the non-scalar current lift]
 \label{prop:app-nonscalar-current-lift-obstructions}
