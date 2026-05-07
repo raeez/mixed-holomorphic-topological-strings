@@ -533,120 +533,95 @@ and a Dirac Brane Probe on $\R^2_{\mathrm{top}}\times\C^2_{\mathrm{hol}}$}
 
 \subsection{The brane microscope in one calculation}\label{ssec:brane-microscope-one-calculation}
 
-\noindent
-The local geometry is forced by physics, not stipulated.  Three
-factors play three distinct roles:
+The local geometry is the product
 \[
-  \R_t=\text{worldline time on the brane},\qquad
-  \R_s=\text{topological propagator direction transverse to the brane},
+  X=\R_t\times\R_s\times\widehat{\C^2}_{0,\mathrm{hol}}:
 \]
-\[
-  \widehat{\C^2}_{0,\mathrm{hol}}=
-    \text{formal holomorphic symplectic normal disk at the brane point}.
-\]
-Without \(\R_t\) there is no brane line for the open observable.
-Without \(\R_s\) there is no topological direction in which a
-bulk-to-boundary propagator can implement support locality on the
-brane line; the propagator has to land somewhere transverse, and that
-somewhere is \(\R_s\).  Without \(\widehat{\C^2}_{0,\mathrm{hol}}\)
-there is no Hamiltonian algebra to measure.  Without the formal
-completion the brane sees global geometry that is irrelevant to the
-local microscope.  These four inputs are independent; deleting any one
-of them collapses the construction.
+\(\R_t\) is the brane worldline; \(\R_s\) is the transverse topological
+propagator direction; \(\widehat{\C^2}_{0,\mathrm{hol}}\) is the formal
+holomorphic symplectic normal disk at the brane point.  Omission of
+\(\R_t\) voids the open-line observable algebra; omission of \(\R_s\)
+voids the bulk-to-boundary propagator; omission of
+\(\widehat{\C^2}_{0,\mathrm{hol}}\) voids the Hamiltonian algebra;
+relaxation of the formal completion admits global geometry into the
+brane stalk.
 
-\medskip
-\noindent
-Place \(N\) Dirac branes on the topological line
-\(L=\R_t\times\{s=z_1=z_2=0\}\subset X=\R_t\times\R_s\times\C^2\).  The
-brane carries a matrix-valued normal coordinate
-\((\phi_1,\phi_2)\in\mathfrak{gl}_N^{\oplus2}\) (Chan--Paton).  The
-holomorphic symplectic form \(dz_1\wedge dz_2\) pulls back along
-\(z_i\rightsquigarrow\phi_i\) and is traced over Chan--Paton:
+\(N\) Dirac branes on
+\(L=\R_t\times\{s=z_1=z_2=0\}\subset X=\R_t\times\R_s\times\C^2\)
+carry a Chan--Paton normal coordinate
+\((\phi_1,\phi_2)\in\mathfrak{gl}_N^{\oplus2}\).  The holomorphic
+symplectic form \(dz_1\wedge dz_2\) pulls back along
+\(z_i\rightsquigarrow\phi_i\) and traces to
 \[
-  \theta_N=\operatorname{Tr}(\phi_1\,d\phi_2)
-    \quad\Longrightarrow\quad
-  \{\phi_1,\phi_2\}\sim 1.
+  \theta_N=\operatorname{Tr}(\phi_1\,d\phi_2),\qquad
+  \Omega_N=\operatorname{Tr}(d\phi_1\wedge d\phi_2).
 \]
-The \(GL_N\)-action by simultaneous conjugation has moment map
-\[
-  \mu(\epsilon)=-\operatorname{Tr}\bigl(\epsilon[\phi_1,\phi_2]\bigr),
-  \qquad\epsilon\in\mathfrak{gl}_N,
-\]
-so Dirac reduction imposes \([\phi_1,\phi_2]=0\): the simultaneous
-spectrum exists, and the \(N\) branes sit at \(N\) points of the
-polydisk.  A closed Hamiltonian \(f(z_1,z_2)\) is measured on the
-brane by literal substitution into the matrix-valued transverse
-coordinate followed by trace and stable scalar reduction:
+\(GL_N\)-conjugation acts symplectically with moment map
+\(\mu(\epsilon)=-\operatorname{Tr}(\epsilon[\phi_1,\phi_2])\), so the
+Dirac first-class constraint is \([\phi_1,\phi_2]=0\): the simultaneous
+spectrum of \((\phi_1,\phi_2)\) is the configuration of \(N\) points
+in the polydisk.  Substitution into a closed Hamiltonian followed by
+trace and stable scalar reduction is the brane measurement
 \[
   z_i\rightsquigarrow\phi_i,\qquad
-  f\rightsquigarrow J(f)=\overline{\operatorname{Tr}f(\phi_1,\phi_2)}
-  \in\widehat{\mathbf S}(\bar A),\qquad
+  J(f)=\overline{\operatorname{Tr}f(\phi_1,\phi_2)}\in
+    \widehat{\mathbf S}(\bar A),\qquad
   \bar A=\C[z_1,z_2]/\C\cdot1.
 \]
-This is the experiment.  Everything else --- the BV antifield
-\(\psi\) resolving \([\phi_1,\phi_2]=0\), the shifted-cotangent closed
-sector \(\mathfrak g=\mathfrak h\ltimes\mathfrak h^\vee_{\mathrm{cont}}[1]\),
-the CE/PV cochain dictionary
-\(c_f\!\mapsto\!\theta_f,\,u_f\!\mapsto\!O_f\), the Matlis
-principal-part module
-\(\mathcal P\cong\mathfrak h^\vee_{\mathrm{cont}}\), the scalar
-anomaly \(\hbar N[\bar c]\), the radial obstruction
-\(\Omega^{\mathrm{rad}}_{a,b}\) --- is forced from this substitution by
-the named hypotheses below.
+The BV antifield \(\psi\in\mathfrak{gl}_N[1]\) with
+\(Q\psi=[\phi_1,\phi_2]\) gives the Koszul derived zero-fibre model
+for the moment-map equation
+(\S\ref{ssec:open-mixed-bft}); the closed shifted-cotangent extension
+\(\mathfrak g=\mathfrak h\ltimes\mathfrak h^\vee_{\mathrm{cont}}[1]\)
+with \(\mathfrak h=\C[[z_1,z_2]]/\C\cdot1\) supplies the canonical
+closed sector
+(\S\ref{ssec:closed-mixed-hamiltonian}); the CE/PV cochain dictionary
+\(c_f\mapsto\theta_f,\;u_f\mapsto O_f\) compares the two
+(Theorem~\ref{thm:reduced-ce-pv-central-operation}); and the
+continuous dual is the Matlis principal-part module
+\(\mathfrak h^\vee_{\mathrm{cont}}\cong\mathcal P\)
+(Theorem~\ref{thm:principal-part-coadjoint-uniqueness}).
 
-\paragraph{Three running examples.}
-The same calculation specializes to three vignettes that recur
-through the manuscript.
+\begin{exa}[Classical point probe, \(N=1\)]\label{exa:point-probe-N1}
+  For \(N=1\) the matrices commute automatically, and
+  \(J(f)=f(\phi_1,\phi_2)\) is the evaluation map
+  \(\C[[z_1,z_2]]\to\C\) at the point
+  \((\phi_1,\phi_2)\in\C^2\).  The brane is one point of the polydisk;
+  Procesi--Razmyslov degenerates to the polynomial ring on two scalar
+  variables, and the matrix microscope is the classical evaluation
+  homomorphism.
+\end{exa}
 
-\emph{Example~A: \(N=1\), the classical point probe.}  For \(N=1\)
-the matrices are scalars, \([\phi_1,\phi_2]=0\) automatically, and
-\(J(f)=f(\phi_1,\phi_2)\) is literal substitution of two complex
-numbers.  The brane is one point of the polydisk; the matrix
-microscope reduces to the classical evaluation map
-\(\C[[z_1,z_2]]\to\C\), \(f\mapsto f(\phi_1,\phi_2)\).  Every
-mechanism of the manuscript is checked on this case first.
+\begin{exa}[Linear Hamiltonians and the scalar anomaly]\label{exa:linear-hamiltonians-anomaly}
+  For \(f=z_1\), \(g=z_2\), the unreduced brane Poisson bracket is
+  \[
+    \{\operatorname{Tr}\phi_1,\operatorname{Tr}\phi_2\}=N,
+  \]
+  the central extension of \(\bar A\) by \(\bar c\) on linear
+  generators.  Moyal quantization promotes this to
+  \([\Phi_\hbar(z_1),\Phi_\hbar(z_2)]_\star=\hbar N\); the first
+  scalar-reduced \(\mathfrak{gl}_N\) QME obstruction is
+  \(W_1^{\mathrm{sc,ord}}=\hbar N[\bar c]\)
+  (Theorem~\ref{thm:app-scalar-anomaly-transgression}).
+\end{exa}
 
-\emph{Example~B: linear Hamiltonians and the scalar anomaly.}  Take
-\(f=z_1\) and \(g=z_2\).  Then
-\(J(z_1)=\operatorname{Tr}\phi_1\) and
-\(J(z_2)=\operatorname{Tr}\phi_2\), and the unreduced brane
-Poisson bracket is
-\[
-  \{\operatorname{Tr}\phi_1,\operatorname{Tr}\phi_2\}=N.
-\]
-Removing the constants from \(\C[[z_1,z_2]]\) to obtain \(\bar A\)
-projects out the kernel of the Hamiltonian-vector-field map
-\(f\mapsto X_f\).  On the brane the same kernel reappears as the
-\(U(1)\) center of mass, and the closed-open mismatch is forced and
-equal to the central scalar \(N\).  Under Moyal quantization this
-becomes the Capelli term
-\([\Phi_\hbar(z_1),\Phi_\hbar(z_2)]_\star=\hbar N\) and the first
-quantum master-equation obstruction
-\(W_1^{\mathrm{sc,ord}}=\hbar N[\bar c]\).
-
-\emph{Example~C: a single Matlis residue.}  The continuous dual of
-\(\mathfrak h\) is not a polynomial copy of \(\bar A\): it is the
-Grothendieck--Matlis principal-part module
-\(\mathcal P=\bigoplus_{a+b>0}\C\,\rho_{a,b}\) with
-\[
-  \rho_{a,b}=z_1^{-a-1}z_2^{-b-1}\,dz_1\,dz_2.
-\]
-The residue pairing
-\(\langle\rho_{a,b},f\rangle=\operatorname{Res}_0(\rho_{a,b}f)\)
-detects the Taylor coefficient of \(z_1^az_2^b\) in \(f\) and
-nothing else.  In particular \(\rho_{a,b}\) is not a polynomial mode:
-linear Hamiltonians act locally nilpotently on the polynomial PBW
-classes \(\Psi_{a,b}\) and never locally nilpotently on \(\rho_{a,b}\),
-so no relabelling of bases interpolates between the two
-\(\mathfrak h\)-module structures.  Continuous duality, not
-polynomial duality, is the right cotangent module on the closed
-side.
-
-\medskip
-\noindent
-The remainder of this section makes each of the seven principles
-(\S\ref{sec:organizing-principles}) into a theorem.  Categorical
-vocabulary appears only after the experiment is on the page.
+\begin{exa}[A single Matlis residue]\label{exa:single-matlis-residue}
+  The Grothendieck--Matlis principal-part
+  \[
+    \rho_{a,b}=z_1^{-a-1}z_2^{-b-1}\,dz_1\,dz_2
+      \in\mathcal P\subset H^2_{\mathfrak m}(\C[[z_1,z_2]])\,dz_1dz_2
+  \]
+  pairs with \(f\in\mathfrak h\) by
+  \(\langle\rho_{a,b},f\rangle=\operatorname{Res}_0(\rho_{a,b}f)\) and
+  detects the Taylor coefficient of \(z_1^az_2^b\) in \(f\).  Linear
+  Hamiltonians act on \(\mathcal P\) via the residue-coadjoint formula
+  \(z_1^pz_2^q\cdot\rho_{a,b}=-(pb-qa+p-q)\rho_{a-p+1,b-q+1}\), never
+  locally nilpotently.  The polynomial PBW class
+  \(\widetilde\Psi_{a,b}\) carries the same label and a strictly
+  different \(\mathfrak h\)-module structure
+  (Theorem~\ref{thm:principal-part-coadjoint-uniqueness},
+  Corollary~\ref{cor:descendant-coadjoint-difference}).
+\end{exa}
 
 \subsection{The Dirac brane}
 
@@ -711,12 +686,12 @@ The displayed equation defines \(Q\) on the new generator; every matrix
 entry of the commutator equals \(Q\psi^i{}_j\) and is therefore
 \(Q\)-exact, so the moment-map ideal vanishes in cohomology.  The
 matrix entries of \([\phi_1,\phi_2]\) are not a regular sequence in
-\(\C[\phi_1{}^i{}_j,\phi_2{}^i{}_j]\) for \(N\geq2\); the present
-construction is the derived zero fibre, not a regular Koszul
-resolution.  Its ghost-zero invariant cohomology computes the classical
-invariant functions on the commuting-pair quotient; higher Koszul
-homology is not discarded, but lies outside the degree-zero Hamiltonian
-trace comparison unless explicitly invoked.  The
+\(\C[\phi_1{}^i{}_j,\phi_2{}^i{}_j]\) for \(N\geq2\); the construction
+is the derived zero fibre, not a regular Koszul resolution.  Its
+ghost-zero invariant cohomology computes the classical invariant
+functions on the commuting-pair quotient.  The degree-zero Hamiltonian
+trace comparison ignores higher Koszul homology; that homology enters
+only through explicit invocation.  The
 ghost-zero invariant ring is
 \[
   \mathcal R_N
@@ -3945,29 +3920,23 @@ Theorem~\ref{thm:universal-ce-pv-koszul-criterion}.  Once an ambient
 background supplies an admissible protected Hamiltonian restriction,
 the local theorem applies to that restricted sector.
 
-The local theory is governed by one measurement principle.  A
-Hamiltonian on the formal symplectic normal disk is evaluated on the
-brane's matrix-valued transverse coordinate.  Dirac reduction forces
-the commuting-matrix trace algebra
-(Lemma~\ref{lem:probe-trace-microscope}).  The shifted-cotangent
-closed BV theory separates canonical motion from measurement
-(\S\ref{ssec:hamiltonian-bf-algebra}).  The CE/PV dictionary sends
-Hamiltonian ghosts \(c_f\) to Schouten operations \(\theta_f\) and
-cotangent coordinates \(u_f\) to brane observables \(O_f=J(f)\)
-(Theorem~\ref{thm:reduced-ce-pv-central-operation}).  Continuous
-duality replaces polynomial cotangent modes by Matlis principal parts
-(Theorem~\ref{thm:principal-part-coadjoint-uniqueness}).  Scalar
-reduction leaves a center-of-mass anomaly
-\(\hbar N[\bar c]\)
-(Theorem~\ref{thm:app-scalar-anomaly-transgression}).  Moyal
-quantization tests whether Weyl ordering commutes with trace
-measurement, with componentwise compatibility through enumerated
-finite-certificate ranges
-(Theorem~\ref{thm:componentwise-quantum-coefficient-comparison}).
+A Hamiltonian on the formal symplectic normal disk is evaluated on
+the brane's matrix-valued transverse coordinate.  Dirac reduction
+forces the commuting-matrix trace algebra; the shifted-cotangent
+closed BV theory \(\mathfrak g=\mathfrak h\ltimes\mathfrak h^\vee_{\mathrm{cont}}[1]\)
+separates canonical motion from measurement; the CE/PV dictionary
+sends Hamiltonian ghosts \(c_f\) to Schouten operations \(\theta_f\)
+and cotangent coordinates \(u_f\) to brane observables \(O_f=J(f)\);
+continuous duality replaces polynomial cotangent modes by Matlis
+principal parts \(\mathcal P\); scalar reduction leaves the
+center-of-mass anomaly \(\hbar N[\bar c]\); Moyal quantization tests
+componentwise whether Weyl ordering commutes with trace measurement.
 Every stronger global, chain-level, or all-bidegree quantum claim is
-expressed as a named obstruction problem
-(\S\ref{ssec:tate-residual-resolution};
-Proposition~\ref{prop:finite-window-bm-native-e2-transfer}).
+a named cohomology class or matrix-equation obstruction:
+\(\Omega^{\mathrm{rad}}_{a,b}\),
+\([\operatorname{Ob}^{\mathrm{red}}_{w,\partial,\hbar}]\),
+\(\operatorname{Ob}_{\mathrm{cent/QME/desc}}\),
+\(\operatorname{Ob}^{\Pi}_{\mathrm{BM}}\).
 
 \section{The Local Model}
 
