@@ -272,17 +272,15 @@ admits a \emph{literal} evaluation
 \[
   J(f)=\overline{\operatorname{Tr}f(\phi_1,\phi_2)}
 \]
-on that matrix-valued transverse coordinate.  No ambient compact
-Calabi--Yau is invoked; only the formal Darboux disk at the brane point
-and the Chan--Paton substitution
+on that matrix-valued transverse coordinate.  The data are the formal
+Darboux disk at the brane point and the Chan--Paton substitution
 \[
   z_1\rightsquigarrow\phi_1,\qquad z_2\rightsquigarrow\phi_2,\qquad
   \phi_i\in\mathfrak{gl}_N .
 \]
-The substitution is the only datum.  Every other piece of open-side
-structure---symplectic potential, moment map, Dirac constraint, BV
-differential, gauge-invariant operator algebra---is its forced
-consequence.
+Every other piece of open-side structure---symplectic potential,
+moment map, Dirac constraint, BV differential, gauge-invariant operator
+algebra---is forced from this substitution.
 
 \paragraph{The substitution forces the open BV theory.}
 The pullback of \(dz_1\wedge dz_2\) along the substitution, traced over
@@ -367,18 +365,15 @@ closed sector \(\bar A\) acts on the brane through nothing else.
   identity, killed by passage to the connected stable class.
 \end{proof}
 
-The lemma fixes the meaning of the open sector.  It is not a
-representation of \(\bar A\) on a chosen module; it is the
-substitution-realised Lie algebra image of \(\bar A\) inside the open
-trace cohomology, and that image generates everything else.  Every
-closed-side construction in the manuscript is tested against the brane
-by reading it through \(J\).
+The substitution-realised Lie algebra image of \(\bar A\) inside the
+open trace cohomology generates the open sector; it is not a
+representation of \(\bar A\) on a chosen module.
 
-The matrix microscope is exact at the level of the scalar trace algebra.
-It is not exact at the level of the full \(P_0\)-factorization centre.
-The natural strengthening---a chain-level morphism from closed
-observables on \(L\) to the open factorization centre---fails for a
-named structural reason.
+The microscope is exact at the level of the scalar trace algebra and
+fails at the level of the full \(P_0\)-factorization centre.  The
+strengthening to a chain-level morphism from closed observables on
+\(L\) to the open factorization centre fails for the structural reason
+recorded next.
 
 \begin{rmk}[The microscope obstruction]\label{rmk:microscope-obstruction}
   Lemma~\ref{lem:probe-trace-microscope} resolves the scalar-trace
@@ -412,10 +407,10 @@ named structural reason.
 \subsection{The Hamiltonian BF algebra}
 
 A BV theory of canonical transformations of the formal symplectic disk
-needs three pieces of data: the Lie algebra of infinitesimal closed
-symmetries, its shifted cotangent extension carrying the antifields, and
-a continuous duality identifying the cotangent module on which closed
-observables are read.  Each is forced.
+is fixed by three pieces of data: the Lie algebra of infinitesimal
+closed symmetries, its shifted cotangent extension carrying the
+antifields, and a continuous duality identifying the cotangent module
+on which closed observables are read.
 
 \paragraph{The Lie algebra is forced by Cartan's magic formula.}
 An infinitesimal canonical transformation of
@@ -448,9 +443,8 @@ A BV theory of canonical transformations promotes \(\widehat{\mathfrak h}\)
 to a Lie algebra of fields by adjoining a degree-shifted cotangent
 partner: each Hamiltonian ghost \(c\) acquires its antifield \(u\) in
 the dual direction.  The Hamiltonian sector of BCOV/Kodaira--Spencer
-gravity \cite{bcov} fixes this language; the present model is its
-two-complex-dimensional formal-disk analogue.  Thus the closed BV Lie
-algebra is the shifted cotangent extension
+gravity \cite{bcov} fixes this language.  The closed BV Lie algebra is
+the shifted cotangent extension
 \begin{equation}\label{eq:cotangent-Lie-algebra}
 \mathfrak g=\widehat{\mathfrak h}\ltimes
   \mathfrak h^\vee_{\mathrm{cont}}[1],
@@ -511,18 +505,17 @@ the Hamiltonian action.  Both requirements name a unique module.
   is canonical.
 \end{proof}
 
-Cotangent fields on a formal brane are residues, not polynomials.  Each
-\(\rho_{a,b}\) is a defect-supported transverse mode: a distributional
-object on the brane line whose holomorphic transverse behaviour is
-encoded by a single principal-part coefficient.  This is the
-defect-momentum content of the closed BF cotangent partner.  An
+Cotangent fields on a formal brane are residues, not polynomials.
+Each \(\rho_{a,b}\) is a defect-supported transverse mode: a
+distributional object on the brane line whose holomorphic transverse
+behaviour is encoded by a single principal-part coefficient.  An
 abstract copy \(\bar A_{\mathrm{desc}}\) of \(\bar A\) sees the same
 labels through the polynomial PBW special-fibre descendants
 \(\Psi_{k,l}\) of Construction~\ref{constr:boundary-evaluation}; they
 carry the same \((a,b)\)-bidegree as the principal parts but a
 different \(\mathfrak h\)-module structure
-(Corollary~\ref{cor:descendant-coadjoint-difference}).  This is the
-type-distinction enforced in \S\ref{ssec:intro-notation-index}.
+(Corollary~\ref{cor:descendant-coadjoint-difference}); see
+\S\ref{ssec:intro-notation-index} for the alphabet separation.
 
 \begin{rmk}[Scalar Hamiltonian and center-of-mass term]\label{rmk:scalar-hamiltonian-center-of-mass}
   In \(\bar A\), \(\{z_1,z_2\}=1\equiv0\) by quotient.  On the
@@ -620,31 +613,27 @@ Smeared boundary Hamiltonian
 \end{tabular}
 \end{center}
 
-\begin{rmk}[Type discipline: two forbidden assignments]\label{rmk:intro-symbol-separation}
-  Two assignments collapse the alphabet distinction and are excluded
-  from the manuscript.
-
-  \emph{(i) The operation/measurement type error.}  The boundary
-  Hamiltonian observable on the brane is the image of the
-  shifted-cotangent coordinate \(u_f\), not of the Hamiltonian CE
-  coordinate \(c_f\).  The CE/PV map of
+\begin{rmk}[Two forbidden type-collapses]\label{rmk:intro-symbol-separation}
+  \emph{(i) Operation versus measurement.}  The boundary Hamiltonian
+  observable on the brane is the image of the shifted-cotangent
+  coordinate \(u_f\), not of the Hamiltonian CE coordinate \(c_f\).
+  The CE/PV map of
   Theorem~\ref{thm:reduced-ce-pv-central-operation} sends
-  \(u_f\mapsto O_f\); the assignment \(c_f\mapsto O_f\) is a forbidden
-  type-collapse, identifying an operation (Hamiltonian vector field
-  \(\theta^I\)) with an observable (Schouten function \(O_I\)).  This
-  collapse breaks the \(P_0\)-bracket compatibility
-  \([\theta^I,O_J]_S=\delta^I_J\) on which the central-operation map
-  depends, and obstructs every \(P_0\)-centrality homotopy in
+  \(u_f\mapsto O_f\); the assignment \(c_f\mapsto O_f\) collapses the
+  operation (Hamiltonian vector field \(\theta^I\)) onto the observable
+  (Schouten function \(O_I\)), breaking the \(P_0\)-bracket
+  compatibility \([\theta^I,O_J]_S=\delta^I_J\) on which the
+  central-operation map depends and obstructing every
+  \(P_0\)-centrality homotopy in
   Problem~\ref{prob:formal-factorization-center}.
 
-  \emph{(ii) The label coincidence \(\Psi_{a,b}\leftrightarrow\rho_{a,b}\).}
+  \emph{(ii) Label coincidence \(\Psi_{a,b}\leftrightarrow\rho_{a,b}\).}
   The polynomial PBW descendant \(\Psi_{a,b}\) and the principal part
-  \(\rho_{a,b}\) carry the same \((a,b)\)-bidegree.  They are not
+  \(\rho_{a,b}\) carry the same \((a,b)\)-bidegree but are not
   identified as \(\mathfrak h\)-modules: their adjoint actions differ
-  by the structural separation of
-  Corollary~\ref{cor:descendant-coadjoint-difference}, and the only
-  intermodule passage in the manuscript is the Fourier-polarized Rees
-  bridge of Theorem~\ref{thm:app-matlis-rees-fourier-bridge}.
+  by Corollary~\ref{cor:descendant-coadjoint-difference}, and the only
+  intermodule passage is the Fourier-polarized Rees bridge of
+  Theorem~\ref{thm:app-matlis-rees-fourier-bridge}.
 \end{rmk}
 
 \subsection{The reduced CE/PV measurement}
@@ -1451,15 +1440,13 @@ forced by item~(3) of Proposition~\ref{prop:three-localities}]
    =[Q,\iota_{\partial/\partial\bar z_i}]\), is what locality
   item~(3) constructs.  The active geometry below is
   \(\R^2_{\mathrm{top}}\times\widehat{\C^2}_{0,\mathrm{hol}}\).
-  BCOV/Kodaira--Spencer \cite{bcov} supplies the source convention
-  only: Dolbeault polyvectors, cotangent BV notation, the divergence
-  determined by a holomorphic volume form.  In the present surface
-  model the holomorphic-symplectic form \(dz_1\wedge dz_2\) and the
-  volume form \(dz_1dz_2\) are local unimodularity data, providing
-  the BV pairing, divergence operator, and cyclic trace densities;
-  divergence-free vector fields are represented locally by
-  Hamiltonians modulo constants (Principle~2).  No compact-CY claim
-  is imported.
+  BCOV/Kodaira--Spencer \cite{bcov} supplies the source conventions:
+  Dolbeault polyvectors, cotangent BV notation, the divergence
+  determined by a holomorphic volume form.  Here the
+  holomorphic-symplectic form \(dz_1\wedge dz_2\) and the volume form
+  \(dz_1dz_2\) provide the BV pairing, divergence operator, and cyclic
+  trace densities; divergence-free vector fields are locally
+  Hamiltonians modulo constants.
 \end{rmk}
 
 \begin{rmk}[Gwilliam--Williams is not a transfer source]
@@ -1656,11 +1643,9 @@ its dg Lie input must be
 \widehat\otimes(\mathfrak h\ltimes\mathfrak h^\vee_{\mathrm{cont}}[1])\)
 on every product open \(U\times B\), locally constant in \(U\) and
 holomorphic in \(B\).  Definition~\ref{def:local-hamiltonian-chiral-factorization-algebra}
-records this object as
-\(\mathcal F^{\mathrm{hol}}_{\mathrm{Ham}}\) with mixed enhancement
-\(\mathcal F^{\mathrm{mix}}_{\mathrm{Ham}}\); every theorem of this
-section is a theorem about this completed object.  Compact and global
-comparisons require separate hypotheses and are not part of the
+records this object as \(\mathcal F^{\mathrm{hol}}_{\mathrm{Ham}}\)
+with mixed enhancement \(\mathcal F^{\mathrm{mix}}_{\mathrm{Ham}}\).
+Compact and global comparisons require separate hypotheses outside the
 formal-local claim.
 
 \begin{defn}[Local Hamiltonian holomorphic factorization algebra]\label{def:local-hamiltonian-chiral-factorization-algebra}
@@ -1720,12 +1705,12 @@ formal-local claim.
   Its quantum version replaces the classical coadjoint action by the
   Moyal coadjoint action.
 
-  Thus any use of the word ``chiral'' in this paper refers to a
-  two-complex-dimensional holomorphic factorization algebra and its mixed
-  topological-current extensions.  A one-dimensional VOA/OPE statement
-  requires an additional theorem choosing a complex line or holomorphic
-  defect, a transverse boundary condition or restriction functor, and the
-  finite Laurent OPE expansion on that restricted object.
+  ``Chiral'' here means this two-complex-dimensional holomorphic
+  factorization algebra and its mixed topological-current extensions.
+  A one-dimensional VOA/OPE statement requires an additional theorem
+  choosing a complex line or holomorphic defect, a transverse boundary
+  condition or restriction functor, and the finite Laurent OPE
+  expansion on that restricted object.
 \end{defn}
 
 \begin{prop}[Constructed Hamiltonian CE/factorization observables]\label{prop:local-hamiltonian-factorization-observables}
@@ -2287,15 +2272,16 @@ formal-local claim.
 \end{rmk}
 
 \begin{rmk}[Formal stalk restriction]
-  The Hamiltonian identification used here is formal local. On a holomorphic
-  symplectic surface $X$, a holomorphic vector field $v$ is symplectic when
+  The Hamiltonian identification is formal local. On a holomorphic
+  symplectic surface $X$, a holomorphic vector field $v$ is symplectic
+  when
   $$\alpha_v=-\iota_v\omega$$
-  is a closed holomorphic one-form, and it is Hamiltonian only after
-  choosing $f$ with $df=\alpha_v$, in the convention
-  $\iota_{X_f}\omega=-df$. A global Hamiltonian sector therefore requires
-  a sheaf of local Hamiltonians and the vanishing of the corresponding
-  holomorphic de Rham obstruction. The formal disk used in this paper has
-  no such obstruction by the holomorphic Poincare lemma.
+  is a closed holomorphic one-form, and Hamiltonian only after choosing
+  $f$ with $df=\alpha_v$, in the convention $\iota_{X_f}\omega=-df$. A
+  global Hamiltonian sector requires a sheaf of local Hamiltonians and
+  the vanishing of the corresponding holomorphic de Rham obstruction.
+  The formal disk has no such obstruction by the holomorphic Poincare
+  lemma.
 \end{rmk}
 
 \begin{prop}[Formal-stalk Hamiltonian restriction]\label{prop:formal-local-global-restriction}
@@ -2394,8 +2380,7 @@ to the Dirac first-order matrix model \eqref{eq:open-action-derived}
 under
 \(\phi_1=-\chi_1,\ \phi_2=\chi_2,\ A=-A_{\mathrm{CS}}\).  The local
 unimodular datum is the residue/cyclic pairing on this exterior
-algebra: a holomorphic volume input on the Darboux disk, not a
-compact-CY assumption.
+algebra: a holomorphic volume input on the Darboux disk.
 
 \subsection{Hamiltonian sector and stable large N}
 
@@ -3264,7 +3249,6 @@ admissibility criterion of clause (3) below.
   datum of Problem~\ref{prob:formal-factorization-center}.
 \end{rmk}
 
-\paragraph{Obstruction vector for stronger statements.}
 The four-component obstruction vector for promoting
 Theorem~\ref{thm:main-local} to a stronger native statement is
 \[
@@ -3320,14 +3304,12 @@ Theorem~\ref{thm:main-local} to a stronger native statement is
     \),
     blocking strict native all-window factorization-current transfer.
 \end{itemize}
-Theorem~\ref{thm:main-local} is the measurement statement of the
-seven-principle mechanism on the formal local model alone; its portable
-content is the cochain CE/PV identification, with the enveloping/Koszul
-upgrade governed by the admissible criterion of
-Theorem~\ref{thm:universal-ce-pv-koszul-criterion}.  The protected
-twisted-M-theory origin is not used: once an ambient background supplies
-an admissible protected Hamiltonian restriction, the local theorem
-applies to that restricted sector and no further.
+The portable content of Theorem~\ref{thm:main-local} is the cochain
+CE/PV identification, with the enveloping/Koszul upgrade governed by
+the admissible criterion of
+Theorem~\ref{thm:universal-ce-pv-koszul-criterion}.  Once an ambient
+background supplies an admissible protected Hamiltonian restriction,
+the local theorem applies to that restricted sector.
 
 \section{The Local Model}
 
