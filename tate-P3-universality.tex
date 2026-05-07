@@ -8,21 +8,24 @@
 
 \subsection{Protected twisted-M motivation and local reduction}\label{ssec:twistedM-universality}
 
-Perturbative twisted M-theory in the sense of
-Costello~\cite{costello-twistedM} enters through a protected
-Hamiltonian realization datum at a brane point.  The mathematical
-assertion is a realization criterion: vanishing of the period,
-closed-field comparison, scalar-anomaly, and brane-defect QME
-obstructions constructs the admissible Hamiltonian sector to which the
-formal local theorem of \S\ref{ssec:local-theorem} applies.
+Costello's perturbative twisted-M-theory~\cite{costello-twistedM}
+proposes a brane-point datum that should reduce, on its protected
+sector, to the formal-local Hamiltonian model of
+\S\ref{ssec:local-theorem}.  The reduction is not automatic: it is
+controlled by four obstruction classes -- the period of the symplectic
+vector field, the closed-field comparison cone, the scalar-anomaly
+mismatch, and the brane-defect quantum master equation.  Their joint
+vanishing constructs the admissible protected Hamiltonian sector and
+identifies it with the formal-local model.
 
-\begin{defn}[Protected Hamiltonian sector at a brane point]
+\begin{defn}[Protected Hamiltonian sector at a brane point]\label{defn:protected-hamiltonian-sector-brane-point}
   Let $(X,\omega)$ be a connected holomorphic-symplectic surface, let
   $p\in X$, and let
   $\mc T_{\mathrm{tw}M}\bigl(\R\times X;\R\times p\bigr)$ denote
   perturbative twisted-M-theory data on $\R\times X$ in the presence
   of a stack of $N$ one-dimensional topological branes supported on
-  $\R\times p$.  A \emph{protected Hamiltonian sector at $\widehat p$}
+  $\R\times p$ (Costello~\cite{costello-twistedM}).  A
+  \emph{protected Hamiltonian sector at $\widehat p$}
   is a restricted datum
   $$
   \mc T_{\mathrm{tw}M}\bigl(\R\times X;\R\times p\bigr)
@@ -64,7 +67,9 @@ formal local theorem of \S\ref{ssec:local-theorem} applies.
     \item \emph{Scalar anomaly compatibility.}  The centre-of-mass
       scalar anomaly of the protected brane stack maps to the class
       $[\bar c]\in H^2_{\mathrm{Lie}}(\bar A,\C)$ used in the local
-      scalar-anomaly comparison.
+      scalar-anomaly comparison; here
+      $\bar A=\C[z_1,z_2]/\C\cdot 1$ is the reduced
+      polynomial Hamiltonian algebra at the brane point.
   \end{enumerate}
 \end{defn}
 
@@ -188,12 +193,14 @@ formal local theorem of \S\ref{ssec:local-theorem} applies.
   boundary ghost line \(\C\gamma_{\mathbf 1}\).
 \end{defn}
 
-\begin{thm}[Theorem F double-prime: Casimir-balanced equivariant scalar QME criterion]\label{thm:joint-super-balanced-symp-qme-vanishing}
+\begin{thm}[Casimir-balanced equivariant scalar QME criterion]\label{thm:joint-super-balanced-symp-qme-vanishing}
   Let
   \((\mathfrak s,B_{\mathfrak s},\operatorname{tr}_{\mathfrak s})\)
   be a Casimir-balanced equivariant datum in the sense of
-  Definition~\ref{defn:super-balanced-equivariant-qme-datum}.  For
-  \(a,b\in\Omega^0_c(\R)\) and
+  Definition~\ref{defn:super-balanced-equivariant-qme-datum}.  Write
+  \(\omega(f,g)=[\{f,g\}]_0\in\C\) for the constant Taylor coefficient
+  of the Poisson bracket on \(\C[z_1,z_2]\) (Lemma~\ref{lem:omega-cocycle}).
+  For \(a,b\in\Omega^0_c(\R)\) and
   \(f,g\in\C[z_1,z_2]\), the scalar part of the mixed brane-defect QME
   obstruction is represented in \(\mathfrak Q_{\mathfrak s}\) by
   \[
@@ -294,7 +301,8 @@ formal local theorem of \S\ref{ssec:local-theorem} applies.
     \qquad
     P^{\mathfrak q}=\begin{pmatrix}I_N&0\\0&-I_N\end{pmatrix},
   \]
-  and define the queer trace
+  and define the queer trace, valued in the odd line \(\Pi\C\) (parity
+  reversal of \(\C\); \(\Pi\) shifts even degree to odd):
   \[
     \operatorname{otr}
       \begin{pmatrix}A&B\\ B&A\end{pmatrix}
@@ -311,7 +319,7 @@ formal local theorem of \S\ref{ssec:local-theorem} applies.
   \]
 \end{defn}
 
-\begin{thm}[Theorem G odd-trace: queer centre anomaly from the spin-Hecke input]\label{thm:queer-u1-center-anomaly-spin-hecke}
+\begin{thm}[Queer centre anomaly from the spin-Hecke input]\label{thm:queer-u1-center-anomaly-spin-hecke}
   Assume the spin-Hecke input of
   Definition~\ref{defn:spin-hecke-queer-input}.  For the queer-trace
   boundary evaluation
@@ -445,7 +453,7 @@ formal local theorem of \S\ref{ssec:local-theorem} applies.
   has QME obstruction \(\operatorname{ob}_{\mathrm{QME}}\).
 \end{defn}
 
-\begin{prop}[Admissible protected-sector reduction]
+\begin{prop}[Admissible protected-sector reduction]\label{prop:admissible-protected-sector-reduction}
   Let $(X,\omega)$ be a connected holomorphic-symplectic surface and
   let $p\in X$.  Suppose that a perturbative twisted-M background with
   branes on $\R\times p$ supplies an admissible protected Hamiltonian

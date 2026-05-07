@@ -1,33 +1,33 @@
 % !TEX root = main.tex
 %
 % Cross-volume matched conventions and obstruction complexes.
-%
-% This appendix gives the exact convention data and obstruction classes
-% needed to use the local Hamiltonian theorem inside a global or
-% cross-volume theorem.
 
 \section{Cross-volume matched conventions and obstruction complexes}\label{app:convention-contract}
 
-The theorem is local on
+The local theorem lives on
 \[
   \R^2_{\mathrm{top}}\times\widehat{\C^2}_{0,\mathrm{hol}}
   =
   \R_{\mathrm{brane}}\times\R_{\mathrm{top,normal}}
   \times\widehat{\C^2}_{0,\mathrm{hol}},
 \]
-with brane line \(\R_{\mathrm{brane}}\times\{0\}\times\{0\}\). Its
-closed sector is Hamiltonian BF theory on the formal
-holomorphic-symplectic disk together with the topological directions, and
-its open sector is the Dirac brane probe on the brane line. The statement
-is at \(d=\dim_\C Y=2\) in the holomorphic factor and uses the brane line
-\(\R_{\mathrm{brane}}\) as its one-dimensional factorization direction.
+with brane line \(\R_{\mathrm{brane}}\times\{0\}\times\{0\}\), closed
+Hamiltonian BF sector on the formal holomorphic-symplectic disk
+\(\widehat{\C^2}_{0,\mathrm{hol}}\) together with the topological
+directions, and open Dirac brane probe on the brane line.  Its
+holomorphic dimension is \(d=\dim_\C\widehat{\C^2}_0=2\), and the brane
+line is its one-dimensional factorization direction.
 
-This appendix states the transfer problem in theorem form.  The local
-result contributes a \(d=2\) formal-disk convention base for the
-external global or cross-volume descent problem.  A global or
-cross-volume theorem using it is accepted exactly when it gives a target
-convention datum, comparison morphisms, and null-homotopies for the
-named obstruction classes.
+The compact CY\(_3\) BCOV programme of
+Bershadsky-Cecotti-Ooguri-Vafa~\cite{bcov}, the Vol III
+CY-to-chiral frontier, and the Borcherds/BKM bridge to the Igusa cusp
+form \(\Delta_5\) each carry their own conventions, obstruction
+complexes, and global data.  None of those theorems is a consequence of
+the local \(d=2\) Hamiltonian theorem alone: the local theorem
+contributes the formal-disk stalk; everything compact, global, modular,
+or operadic is target datum.  Convention divergence is load-bearing and
+reported, not silently reconciled.  The named obstruction classes below
+isolate the exact transfer problem.
 
 \begin{defn}[Local Hamiltonian convention base]\label{defn:local-hamiltonian-convention-base}
   The local theorem supplies the convention base
@@ -43,10 +43,19 @@ named obstruction classes.
     [\bar c],\,
     \hbar_{\mathrm{Weyl}},\,
     \Phi^{\mathrm{Ham}}_{\mathrm{fact}}
-  \bigr),
+  \bigr).
   \]
-  where
-  \(\widehat{\mathfrak h}=\C[[z_1,z_2]]/\C\cdot 1\).  The base includes
+  The superscript \((2)\) is the holomorphic dimension
+  \(d=\dim_\C\widehat{\C^2}_0\).  The completed Hamiltonian algebra is
+  \(\widehat{\mathfrak h}=\C[[z_1,z_2]]/\C\cdot 1\) (formal Hamiltonians
+  modulo constants), \(\widehat{\mathfrak h}^{\vee}_{\mathrm{cont}}[1]\)
+  is its continuous cotangent shift, \([\bar c]\in
+  H^2_{\mathrm{Lie}}(\bar A,\C)\) is the scalar anomaly class
+  carried by the brane line on the reduced Hamiltonian algebra
+  \(\bar A=\C[z_1,z_2]/\C\cdot1\), \(\hbar_{\mathrm{Weyl}}\) is the
+  Weyl/Moyal deformation parameter, and
+  \(\Phi^{\mathrm{Ham}}_{\mathrm{fact}}\) is the brane-line interval
+  factorization map produced by the local theorem.  The base packages
   the brane-line factorization convention, the scalar quotient, and the
   reduced degree-zero Capelli/Moyal normalization.
 \end{defn}
@@ -153,8 +162,13 @@ named obstruction classes.
 \begin{defn}[Global Hamiltonian descent complex]\label{defn:global-hamiltonian-descent-complex}
   Let \(L\) be the brane locus in a proposed global target and suppose
   that formal Darboux charts have produced local Hamiltonian maps
-  \(\Phi_U\) on a Weiss/Ran cover of \(L\).  The descent target for these
-  maps is the total complex
+  \(\Phi_U\) on a Weiss/Ran cover of \(L\).  Write
+  \(\mathrm{Obs}^{\mathrm{cl}}_{\mathrm{closed},H}\) for the
+  Hamiltonian closed-sector classical observables and
+  \(\mathrm Z^{P_0}_{\mathrm{fact}}(\mathrm{Obs}^{\mathrm{cl}}_{\mathrm{open}})\)
+  for the \(P_0\)-factorization centre of the open observables, both
+  taken from the local theorem's reduced Hamiltonian model.  The
+  descent target for these maps is the total complex
   \[
   \mathfrak G_{\mathrm{WR}}(L)=
   \operatorname{Tot} C^\bullet_{\mathrm{WR}}\!\left(
@@ -715,7 +729,9 @@ named obstruction classes.
 \begin{defn}[Named target convention data]\label{defn:matched-conventions-templates}
   The cross-volume targets require the following matched-conventions data.
   \begin{enumerate}[label=(\roman*)]
-    \item \emph{Vol III CY-to-chiral datum.}
+    \item \emph{Vol III CY-to-chiral datum} (comparison-only;
+      compact-CY conventions are target data, not consequences of the
+      local theorem).
       \[
       \mathfrak C_{\mathrm{CY\to ch}}=
       \bigl(d,Y,\eta_{\mathrm{CY}}\in HC^-_d(Y),
@@ -740,7 +756,11 @@ named obstruction classes.
 	      component of
       \(\operatorname{Ob}_{\mathrm{UKD}}\), not a consequence of the
       unqualified total-space supertrace.
-    \item \emph{Compact BCOV datum.}
+    \item \emph{Compact BCOV datum} (comparison-only; a compact CY\(_3\),
+      a global gauge-fixed propagator, an \(S^3\)-framing, the BCOV
+      holomorphic anomaly equation, and the genus-expansion endpoints
+      are target data and are not consequences of the local
+      \(d=2\) Hamiltonian theorem).
       \[
       \mathfrak C_{\mathrm{BCOV}}=
       \bigl(Y^3,\Omega_Y,\mathrm{PV}^{*,*}(Y)[[t]],Q_{\mathrm{BCOV}},
@@ -749,11 +769,22 @@ named obstruction classes.
       \mathfrak K_{\mathrm{KD}},
       \operatorname{Ob}_{\mathrm{UKD}}\bigr).
       \]
-      Here \(P_{\mathrm{prop}}\) is the global gauge-fixed propagator,
-      \(I_{\mathrm{ct}}\) is the counterterm scheme, and
-      \(\mc O_{\mathrm{HAE}}\) is the holomorphic-anomaly/QME obstruction
-      complex.
-    \item \emph{Igusa/BKM datum.}
+      Here \(Y^3\) is the compact Calabi-Yau threefold, \(\Omega_Y\) the
+      holomorphic volume form, \(\mathrm{PV}^{*,*}(Y)[[t]]\) the
+      polyvector-field BCOV field complex, \(Q_{\mathrm{BCOV}}\) the
+      BCOV differential, \(P_{\mathrm{prop}}\) the global gauge-fixed
+      propagator, \(\mathfrak f_{S^3}\) the framing on \(S^3\),
+      \(I_{\mathrm{ct}}\) the counterterm scheme, and
+      \(\mc O_{\mathrm{HAE}}\) the holomorphic-anomaly/QME obstruction
+      complex.  The BCOV holomorphic anomaly equation
+      \(\bar\partial_{\bar i}F_g=\tfrac12\bar
+      C_{\bar i}^{jk}(D_jD_kF_{g-1}+\sum_{h+h'=g}D_jF_h\,D_kF_{h'})\)
+      is a target equation in this column~\cite{bcov}; it is not a
+      theorem on the local \(\R^2_{\mathrm{top}}\times\widehat{\C^2}_0\)
+      surface, where neither a compact Calabi-Yau threefold nor a
+      genus expansion is asserted.
+    \item \emph{Igusa/BKM datum} (comparison-only, not a consequence
+      of the local Hamiltonian theorem).
       \[
       \mathfrak C_{\mathrm{BKM}}=
       \bigl(\varphi_{\mathrm{Jac}},\Lambda_{\mathrm{Borch}},
@@ -765,7 +796,7 @@ named obstruction classes.
       The entries are the Jacobi or modular input, Borcherds lattice, Weyl
       chamber, character, Hall or chiral source, orientation line, primitive
       recognition map, and scalar DT/PT/OP normalization.
-      In the \(\Delta_5\) row the matched constants are
+      In the \(\Delta_5\) row the candidate matched constants are
       \[
         D_5=64^{-1}\Delta_5,\qquad
         \operatorname{den}(\mathfrak g_{\Delta_5})
@@ -775,7 +806,13 @@ named obstruction classes.
         \kappa_{\mathrm{BKM}}(\Phi_1)=c_1(0)/2=10/2=5,\qquad
         Z^X_{\mathrm{OP}}=-4096\,\Delta_5^{-2}.
       \]
-      The orientation comparison
+      These constants live in the BKM/Borcherds programme of the
+      \(\Delta_5\) construction: they are recorded here only to declare
+      the convention layer at which a target acceptance theorem must
+      match; the local Hamiltonian theorem on
+      \(\R^2_{\mathrm{top}}\times\widehat{\C^2}_{0,\mathrm{hol}}\) does
+      not derive any of them, and the manuscript treats divergence with
+      the BKM lane as load-bearing.  The orientation comparison
       \(\epsilon_o=\nu_{\Delta_5}\), compact Hall constants, and
       primitive BKM recognition are target obstructions; they are not
       supplied by the local \(d=2\) Hamiltonian theorem.

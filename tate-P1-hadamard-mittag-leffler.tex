@@ -1,5 +1,18 @@
 \subsection*{Hadamard parametrix on the Mittag-Leffler coefficient module}
 
+The weighted Tate field complex \eqref{eq:wt-field-complex} carries an
+infinite tower of coefficient bundles indexed by Hamiltonian degree.
+Costello's heat-kernel BV calculus
+\cite{costello-renormalization}*{Chs.~5--7} requires a free elliptic
+complex with finite-rank coefficient bundle, and its Hadamard
+parametrix expansion together with Hörmander's wave-front-set tracking
+controls singular support along the diagonal.  The forcing question:
+does this finite-rank machinery survive the strict Mittag-Leffler
+inverse limit in the coefficient direction?  The answer is recorded
+here: it does, exactly because the weighted propagator factors as a
+spacetime-Hadamard tensor coefficient-Casimir, and the coefficient
+factor carries no spacetime singular support.
+
 \begin{rmk}[Spacetime/coefficient factorization of the Hadamard parametrix]\label{rmk:hadamard-factorization}
   In Costello's heat-kernel BV calculus
   \cite{costello-renormalization}*{Ch.~5}, the Hadamard parametrix
@@ -357,6 +370,17 @@
 
 \subsection*{Finite-window graph/QME assembly}
 
+Theorem~\ref{thm:hadamard-mittag-leffler} controls the analytic factor
+windowwise; it isolates the QME obstruction class but does not assemble
+it.  The class is a sum over Costello graphs at every \(\hbar\)-order,
+each graph carrying its renormalized weight, source-face, BV-bracket,
+and counterterm contributions.  To extract the obstruction one must
+first fix a finite graph list \(\mathcal G_M\) on a finite Hamiltonian
+window \(M\), declare the labels and incidence signs, and write the
+order-\(n\) residual as a finite cochain.  The next definition packages
+this finite combinatorial assembly so that the residual, its scalar
+projection, and its truncation behaviour can be tested as a row system.
+
 \begin{defn}[Finite-window graph/QME system]\label{defn:finite-window-graph-qme-system}
   Fix an interval \(I\), an admissible weight \(w\), a finite Hamiltonian
   window \(M\), and a finite set \(\mathcal G_M\) of connected Costello
@@ -676,6 +700,15 @@
   compatibility follows from the same diagonal transport squares used in
   Theorem~\ref{thm:wt-regulator-independence-admissible}.
 \end{proof}
+
+Proposition~\ref{prop:finite-window-qme-limit-condition} reduces the
+finite-window obstruction to two cohomology classes, but neither class
+is computable from a graph list alone.  The order-\(n\) residual is a
+sum of graph-differential, CE-source, BV-bracket, and lower-counterterm
+contributions, each carrying its own incidence sign, scalar projection,
+and truncation matrix.  To compute, test, and propagate the residual
+window by window, one needs a finite array of rows that records every
+contribution in normal form.
 
 \begin{defn}[Finite-window graph array]\label{defn:finite-window-graph-array}
   Fix a finite-window graph/QME system
@@ -1205,8 +1238,8 @@
     \qquad
     C^{\mathrm{gen}}_{2,M}=0.
   \]
-  In any larger system, the present manuscript does not yet decide
-  vanishing, counterterms, or obstruction.  The exact missing data are:
+  In any larger system, vanishing, counterterms, and obstruction are
+  not yet decided.  The exact missing data are:
   the finite seed list \(\mathcal G^{\mathrm{gen}}_{2,M}\); the
   renormalized local weights \(K^M_\Gamma\) with regular-density or
   wavefront-admissible current labels; the full \(d_M K^M_\Gamma\)
@@ -1877,6 +1910,18 @@
   Proposition~\ref{prop:finite-window-qme-limit-condition}.
 \end{proof}
 
+In the minimal full-equivariant array all order-one and order-two
+rows close to zero (Propositions~\ref{prop:first-finite-window-array-rows},
+\ref{prop:universal-scalar-contact-bracket-rows},
+\ref{prop:order-two-finite-window-boundary-rows}).  The first
+non-trivial obstruction can therefore appear no earlier than order
+three.  The smallest enlargement that exhibits a non-scalar row with
+nonzero local-functional value is a single CE-source face attached to
+a genuine marked Costello seed at \(\hbar^3\); this is the row
+\(\theta_3\) below, named so that the obstruction class
+\(\operatorname{Ob}^{\Pi}_{\theta_3}\) and the companion-face
+construction can be tracked explicitly.
+
 \begin{prop}[Concrete order-three row in an enlarged system]\label{prop:concrete-order-three-enlarged-system-row}
   Work in the full-equivariant marked branch with \(V=\C^{N|N}\), and let
   \(M\geq3\).  Enlarge the minimal finite-window system by one Hom-valued
@@ -2145,8 +2190,8 @@
     \quad\text{for the solution }c_M=1.
   \]
   Thus such a payload kills the fixed-window row and has zero Roos
-  compatibility class.  The present manuscript data do not contain this
-  payload: in the supplied one-row complex \(K^0_{\theta_3,M}=0\), so
+  compatibility class.  No such payload is supplied here: the one-row
+  complex \(K^0_{\theta_3,M}=0\), so
   Proposition~\ref{prop:theta-three-finite-row-obstruction} remains the
   active claim.
 
@@ -2208,11 +2253,13 @@
 \begin{thm}[\(\theta_3\) companion-face construction obstruction]\label{thm:theta-three-companion-face-obstruction}
   Work in the order-three full-equivariant marked branch of
   Proposition~\ref{prop:concrete-order-three-enlarged-system-row}, and put
-  \(H_{p,q}=z_1^pz_2^q\).  Consider the two-\(u\) source-algebra ancestor
+  \(H_{p,q}=z_1^pz_2^q\).  On the standard symplectic
+  \(\C^2\) with \(\omega=dz_1\wedge dz_2\) the Hamiltonian Poisson rule
+  is
+  \(\{H_{a,b},H_{r,s}\}=(as-br)H_{a+r-1,b+s-1}\); in particular
+  \(\{H_{1,0},H_{2,1}\}=H_{2,0}\).  Consider the source-algebra ancestor
   \[
-    \zeta^0_M=u_{a,H_{1,0}}u_{b,H_{0,1}},
-    \qquad
-    [H_{1,0},H_{2,1}]=H_{2,0}.
+    \zeta^0_M=u_{a,H_{1,0}}\,u_{b,H_{0,1}}\,c_{B_\theta,\rho_{2,1}}.
   \]
   Its monomial CE differential is the first source-algebraic table of the
   same external shape whose source faces contain the displayed
@@ -2554,4 +2601,47 @@
   endpoint obstruction of Theorem~\ref{thm:strict-unweighted-no-go}: the
   required coefficient Casimir has no strict product/direct-sum
   representative.
+\end{rmk}
+
+\begin{rmk}[Hadamard parametrix versus the Bochner-Martinelli-Koppelman kernel]\label{rmk:hadamard-vs-bmk}
+  The Hadamard parametrix used in
+  Theorem~\ref{thm:hadamard-mittag-leffler} controls Costello's
+  heat-kernel propagator \(P_{\epsilon,L}^{\mathrm{base}}\) on the bulk
+  free elliptic complex
+  \(\Omega^\bullet(\R^2)\widehat\otimes\Omega^{0,\bullet}(\C^2)\) by
+  short-time asymptotics in Hadamard normal form, with Hörmander
+  wave-front-set tracking
+  \cite{costello-renormalization}*{Ch.~5},
+  \cite{hormander-vol1}*{Ch.~7}.  The Bochner-Martinelli-Koppelman
+  kernel
+  \[
+    K_{\mathrm{BM}}(\zeta,z)
+      =
+    \frac{1}{(2\pi i)^2}
+    \frac{
+      \overline{\eta_1}\,d\bar\eta_2-\overline{\eta_2}\,d\bar\eta_1
+    }{r^4}
+    \wedge d\zeta_1\wedge d\zeta_2,
+    \qquad
+    \eta_j=\zeta_j-z_j,\ r=|\zeta-z|,
+  \]
+  is the several-complex-variables homotopy kernel of
+  \cite{ruppenthal-bmk}*{\S5} producing the classical Koppelman
+  formula
+  \(\bar\partial H+H\bar\partial=\operatorname{id}-i_Bp_B\) on bounded
+  \(C^1\) domains
+  (\cite{ruppenthal-bmk}*{Def.~5.1, Thm.~5.2, Eq.~(10)};
+  Laurent-Thiébaut \cite{laurent-thiebaut-bmk}*{Ch.~III, Def.~1.2,
+  Lem.~1.3}).  These are two distinct analytic technologies attached
+  to two different sectors of the local theorem: the heat-kernel
+  parametrix governs the Costello/QME graph expansion above; the BMK
+  kernel underwrites the analytic one-pair pro-Matlis principal-part
+  current quotient and the strict all-window obstruction
+  \(\operatorname{Ob}^{\mathrm{BMK\mbox{-}curr}}_N\) recorded in
+  Theorem~\ref{thm:app-finite-window-bmk-current-transfer}.
+  No formula is transferred between them: the Hadamard parametrix uses
+  the bulk Riemannian/Hermitian heat data on
+  \(\R^2\times\C^2\), the BMK kernel uses the holomorphic homotopy data
+  on \(\C^2\) alone, and the local theorem combines their separate
+  finite-window outputs through the obstruction vectors stated above.
 \end{rmk}
