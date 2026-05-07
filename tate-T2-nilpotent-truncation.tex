@@ -446,12 +446,13 @@ so $1\notin\mathfrak m^k$ for any $k\geq 1$; the truncation domain
 excludes constants by being a quotient of an ideal of $\C[[z_1,z_2]]$
 contained in $\mathfrak m$.
 
-\emph{(iv).}  The cocycle $\omega$ pairs $H_a\otimes H_b$ nontrivially
-only when $(a,b)=(1,1)$, by the indicator
-$\mathbf 1[(k+m,l+n)=(1,1)]$; both arguments must lie in
-$H_1\subset\mathfrak m\setminus\mathfrak m^2$, hence outside
-$\mathfrak h_{\leq N}=\mathfrak m^3/\mathfrak m^{N+1}$.  No central
-extension class therefore survives the truncation.
+\emph{(iv).}  The cocycle $\omega(z_1^kz_2^l,z_1^mz_2^n)$ has the
+indicator $\mathbf 1[(k+m,l+n)=(1,1)]$ on the combined multidegree.
+Since both arguments must be nonconstant, the only options are
+$(k,l)=(1,0),(m,n)=(0,1)$ or $(k,l)=(0,1),(m,n)=(1,0)$, both giving
+arguments in $H_1\subset\mathfrak m\setminus\mathfrak m^2$, hence
+outside $\mathfrak h_{\leq N}=\mathfrak m^3/\mathfrak m^{N+1}$.  No
+central extension class therefore survives the truncation.
 
 \emph{(v).}  A compatible family
 $(f_N\in\mathfrak m^3/\mathfrak m^{N+1})_{N\geq3}$ under the
@@ -518,25 +519,23 @@ completed cochain theorem must be obtained either from a chain-side
 inverse limit followed by exact continuous dualization or from a
 separately supplied topology whose cochain transition maps are dg maps.
 
-The Lie algebra $\mathfrak m^3$ is lower-central Tate-pronilpotent in the
-$\mathfrak m$-adic Tate filtration: its descending Lie powers satisfy
-$(\mathfrak m^3)^{(\geq m)}\subset\mathfrak m^{m+3}$ because each
-iterated bracket raises the $\mathfrak m$-adic degree by at least
-$1$ when both arguments lie in $\mathfrak m^3$ (since
-$\{H_p,H_q\}\subset\mathfrak m^{p+q-2}$ and $p,q\geq 3$ implies
-$p+q-2\geq p+1$). Hence $\bigcap_m(\mathfrak m^3)^{(\geq m)}=0$,
-	and the lower-central Tate-pronilpotence hypothesis of
-\ref{lem:continuous-bar-cobar} holds. The Tate Casimir
-$C_{\mathfrak m^3}=\sum_{d\geq 3}\sum_i e_{d,i}\otimes e_d^i$
-is governed by the same product/direct-sum convergence question
-as in \ref{lem:tate-casimir-obstruction}, but on the smaller
-	direct-sum dual $\bigoplus_{d\geq 3}H_d^\vee\subset
-\bigoplus_{d\geq 1}H_d^\vee$.  The finite maps
-\(\Phi_{\leq N}\) at every finite \(N\) use only the finite Casimir
-\(\sum_{3\leq d\leq N}\sum_i e_{d,i}\otimes e_d^i\).  Passing from these
-finite identities to a completed cochain identity is exactly the
-continuous-dualization and variance datum isolated in the statement, not
-a formal inverse-limit consequence.
+The lower-central Tate-pronilpotence of $\mathfrak m^3$ in the
+$\mathfrak m$-adic Tate filtration follows from the same bracket-degree
+count as in Lemma~\ref{lem:trunc-is-nilpotent-lie}~(ii): for
+$p,q\geq3$, $\{H_p,H_q\}\subset\mathfrak m^{p+q-2}\subset\mathfrak
+m^{p+1}$ raises $\mathfrak m$-adic degree by at least one, so
+$(\mathfrak m^3)^{(\geq m)}\subset\mathfrak m^{m+3}$ and
+$\bigcap_m(\mathfrak m^3)^{(\geq m)}=0$.  The Tate Casimir
+$C_{\mathfrak m^3}=\sum_{d\geq 3}\sum_i e_{d,i}\otimes e_d^i$ is
+governed by the same product/direct-sum convergence question as
+Lemma~\ref{lem:tate-casimir-obstruction}, but on the smaller
+direct-sum dual $\bigoplus_{d\geq 3}H_d^\vee\subset
+\bigoplus_{d\geq 1}H_d^\vee$.  At every finite $N$ the map
+$\Phi_{\leq N}$ uses only the finite Casimir $\sum_{3\leq d\leq
+N}\sum_i e_{d,i}\otimes e_d^i$; passing from these finite identities to
+a completed cochain identity is precisely the continuous-dualization
+and variance datum isolated in the statement, not a formal
+inverse-limit consequence.
 \end{proof}
 
 \begin{defn}[Low-degree obstruction datum for the nilpotent tower]
