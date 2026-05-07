@@ -8,29 +8,43 @@ projection
   \pi_{\mathrm{prim}}\colon
   \mathrm{Obs}^{\mathrm{cl}}_{\mathrm{open},N}(I)
   \longrightarrow
-  \Omega^\bullet_c(I)\widehat\otimes\bar A
+  \Omega^\bullet_c(I)\widehat\otimes\bar A,
+  \qquad
+  \bar A=\C[z_1,z_2]/\C\cdot 1,
 \]
 exists strictly, without heat-kernel propagator or finite-scale
-regularization, and realizes the indecomposable $P_0$-shadow of the
+regularization, and realizes the indecomposable \(P_0\)-shadow of the
 reduced cotangent comparison?
 
-\emph{Named obstruction class.}  The missing primitive in the
-$\varprojlim^1H^0$ tower of
-Theorem~\ref{thm:wt-nonscalar-counterterm-criterion}: equivalently the
+\emph{Named obstruction class.}  The chain-level primitive component
+\(\mathfrak o_{\mathrm{prim}}\) of the unreduced cotangent lift
+obstruction vector
+\(\operatorname{Ob}_T\) of
+Definition~\ref{defn:tate-cotangent-lift-obstruction-vector}: the
+class of the residual cotangent label shadow as a centrality-homotopy
+obstruction in the cotangent target
+\(\widehat{\mathbf S}(\mc M^{\mathrm{pp,unred}}_\partial(I))\),
+together with a one-antifield boundary realization datum.  The
+chain-level construction below kills the indecomposable-shadow part
+of \(\mathfrak o_{\mathrm{prim}}\) on the \(F_1/F_0\) layer of the
+trace-count filtration; the residue is the pair
+\((\operatorname{ob}_{\mathrm{cent}}^{\mathrm{prod}},
+\operatorname{ob}_{\mathrm{cent}}^{P_0})\) of centrality homotopies
+on the multi-trace strata, plus the cotangent-target Moyal-coadjoint
+intertwiner whose unique survivor is
+Theorem~\ref{thm:no-same-action-rees-fourier-descendants}.  The Roos
 secondary class
-\[
-  \lambda_n\in
-  \varprojlim\nolimits^1_M H^0\bigl(\mathcal Q^\bullet_{w,M}(I)\bigr),
-\]
-where $\mathcal Q^\bullet_{w,M}$ is the finite-window non-scalar
-local-functional complex of
-Definition~\ref{defn:wt-nonscalar-qme-tower}.  Vanishing of $\lambda_n$
-identifies a chain-level primitive of the
-$P_0$-shadow recursion compatibly with truncation; nonvanishing is the
-Roos primitive obstruction.
+\(\lambda_n\in
+\varprojlim^1_M H^0\bigl(\mathcal Q^\bullet_{w,M}(I)\bigr)\) of
+Theorem~\ref{thm:wt-nonscalar-counterterm-criterion} is a separate,
+analytic-side companion of this obstruction, controlling the
+QME-tower primitive-compatibility for the brane-defect QME endpoint
+of \(\mathfrak o_{\mathrm{BV,end}}\) (item~T4); its vanishing is
+needed for the Costello-renormalized one-loop and higher-loop
+counterterms, not for the chain-level construction below.
 
-\emph{Higher-$\psi$ ceiling.}  For the cyclic chip-moving Koszul
-complex $K^\bullet_{R,S}$ of
+\emph{Higher-\(\psi\) ceiling.}  For the cyclic chip-moving Koszul
+complex \(K^\bullet_{R,S}\) of
 Definition~\ref{def:T5-full-psi-complex},
 \[
   H_p(K_{R,S})\cong\begin{cases}
@@ -39,28 +53,107 @@ Definition~\ref{def:T5-full-psi-complex},
     0, & p\geq2,
   \end{cases}
 \]
-by the Abel-map Vietoris--Begle equivalence
-$\widetilde Y_{R,S}\simeq_{\mathrm H}S^1$ together with cyclic
-coinvariants (Lemmas~\ref{lem:T5-cellular-chain-identification},
-\ref{lem:T5-abel-cyclic-stabilizers}).  Thus the chain-level primitive
-is confined to the Hamiltonian sector
-$\bar A\oplus\bar A_{\mathrm{desc}}[1]$; no higher-$\psi$ correction
-line is available, and the missing-datum search is constrained to that
-two-summand target.
+where \(\Psi_{a,b}=\sum_{w\in\mathsf W_{a,b}}\operatorname{Tr}(\psi w)\)
+is the symmetrised one-\(\psi\) trace
+(Theorem~\ref{thm:T5-one-psi-homology}, Lemmas
+\ref{lem:T5-cellular-chain-identification},
+\ref{lem:T5-abel-cyclic-stabilizers}).  The displayed homology is the
+Abel-map Vietoris--Begle equivalence
+\(\widetilde Y_{R,S}\simeq_{\mathrm H}S^1\) of the cellular chip-moving
+state complex \(\widetilde Y_{R,S}\), passed to cyclic coinvariants by
+\(\C[C_S]\)-semisimplicity.  Hence the chain-level primitive lives
+exactly on the Hamiltonian sector
+\(\bar A\oplus\bar A_{\mathrm{desc}}[1]\), the closed Hamiltonian
+algebra \(\bar A\) summed with its odd-shifted one-\(\psi\) descendant
+copy
+\(\bar A_{\mathrm{desc}}=\bigoplus_{a+b>0}\C\cdot[\Psi_{a,b}]\); no
+higher-\(\psi\) correction line is available, and the missing-datum
+search is constrained to that two-summand target.
+
+\emph{Unreduced cotangent lift, scope equivalence.}  The unreduced
+cotangent factorization-centre morphism
+\[
+  \Phi_{\mathrm{fact}}^{\mathrm{unred}}:
+  \mathrm{Obs}^{\mathrm{cl}}_{\mathrm{closed},H}\big|_L
+    \longrightarrow
+  \mathrm Z^{P_0}_{\mathrm{fact}}
+    \bigl(\mathrm{Obs}^{\mathrm{cl}}_{\mathrm{open},N}\bigr)
+\]
+of Problem~\ref{prob:formal-factorization-center} exists, modulo the
+analytic and convention sublattice
+\((\mathfrak o_{\mathrm{Cas}},
+\mathfrak o_{\mathrm{nilp}},
+\mathfrak o_{\mathrm{Quil}},
+\mathfrak o_{\mathrm{Had}},
+\mathfrak o_{\mathrm{univ}},
+\mathfrak o_{\mathrm{cv}})=0\) of \(\operatorname{Ob}_T\), if and only
+if the joint centrality / QME / descent obstruction
+\[
+  \operatorname{Ob}_{\mathrm{cent/QME/desc}}
+    =
+    \bigl(
+      \operatorname{ob}_{\mathrm{cent}}^{\mathrm{prod}},\
+      \operatorname{ob}_{\mathrm{cent}}^{P_0},\
+      \operatorname{ob}_{\mathrm{QME}}^{\mathrm{bd}},\
+      \delta_{\check C/R}^{\mathrm{Weiss}}
+    \bigr)
+\]
+also vanishes with chosen compatible null-homotopies: the
+factorization-product centrality class
+\(\operatorname{ob}_{\mathrm{cent}}^{\mathrm{prod}}\), the
+\(P_0\)-bracket centrality class
+\(\operatorname{ob}_{\mathrm{cent}}^{P_0}\), the brane-defect QME
+endpoint class \(\operatorname{ob}_{\mathrm{QME}}^{\mathrm{bd}}\), and
+the stratified Weiss \v{C}ech--Roos descent class
+\(\delta_{\check C/R}^{\mathrm{Weiss}}\) of
+Remark~\ref{rmk:weiss-ran-descent-obstruction}.  This iff is the
+restriction of Theorem~\ref{thm:tate-cotangent-lift-iff} to the
+two components
+\(\mathfrak o_{\mathrm{prim}}\) and \(\mathfrak o_{\mathrm{BV,end}}\)
+of \(\operatorname{Ob}_T\), expanded into their centrality, QME, and
+descent constituents, under the displayed sublattice constraint.
+\(\mathfrak o_{\mathrm{prim}}\) supplies
+\(\operatorname{ob}_{\mathrm{cent}}^{\mathrm{prod}}\) and
+\(\operatorname{ob}_{\mathrm{cent}}^{P_0}\); the QME endpoint
+component of \(\mathfrak o_{\mathrm{BV,end}}\) supplies
+\(\operatorname{ob}_{\mathrm{QME}}^{\mathrm{bd}}\); the descent class
+\(\delta_{\check C/R}^{\mathrm{Weiss}}\) is the local stratification
+of the descent component of \(\mathfrak o_{\mathrm{cv}}\) of
+Remark~\ref{rmk:weiss-ran-descent-obstruction}, retained here because
+its local form is forced by the Weiss-cosheaf condition on the
+unreduced factorization centre even when the cross-volume part of
+\(\mathfrak o_{\mathrm{cv}}\) vanishes.
+In that filtration the chain-level primitive shadow constructed below
+is the \emph{associated graded} of the unreduced lift problem on its
+zero-\(\psi\) Hamiltonian and one-\(\psi\) descendant generator
+subspaces, equivalently the \(E_1\)-page of the
+obstruction-filtration spectral sequence whose \(E_\infty\)-page is
+\(\Phi_{\mathrm{fact}}^{\mathrm{unred}}\) itself.  The chain-level
+construction is honest evidence on the \(E_1\)-page; its strict
+\(Q\)-, factorization-, and \(P_0\)-bracket compatibilities are the
+\(d_1\)-vanishings.  The four enumerated obstruction classes above
+are the higher differentials, none of which is supplied by the
+present construction.
 
 \emph{Unique survivor.}
 Theorem~\ref{thm:chain-level-primitive-projection}: the algebraic
 primitive/indecomposable projection on the free symmetric algebra
-$\mathbf S(\mathrm{Cyc}(F)_{\mathrm{nonempty}})$, composed with the
-zero-$\psi$ Hamiltonian abelianization
-$\mathrm{Cyc}(F)_{\mathrm{nonempty}}\twoheadrightarrow\bar A$, is a
-strict $Q$-chain map, factorization-compatible after unit retention,
-and $P_0$-bracket-compatible with an explicit zero homotopy.
+\(\mathbf S(\mathrm{Cyc}(F)_{\mathrm{nonempty}})\), where
+\(F=\C\langle x_1,x_2\rangle\) is the free associative algebra on the
+two probe-matrix generators and
+\(\mathrm{Cyc}(F)_{\mathrm{nonempty}}=F/[F,F]\setminus\C\cdot 1\) is
+its space of nontrivial cyclic-word generators, composed with the
+zero-\(\psi\) Hamiltonian abelianization
+\(\mathrm{Cyc}(F)_{\mathrm{nonempty}}\twoheadrightarrow\bar A\), is a
+strict \(Q\)-chain map, factorization-compatible after unit retention,
+and \(P_0\)-bracket-compatible with explicit zero homotopy.
 
 \emph{Construction inputs.}  The chain structure of the reduced BV
 algebra (Construction~\ref{constr:reduced-bv-algebra}), the de Rham
-contraction (Lemma~\ref{lem:derivative-jets}), and the stable
-trace invariant theory
+contraction \(H^\bullet(\Omega^\bullet_c(I))\cong H^\bullet_c(I;\C)\)
+(Lemma~\ref{lem:derivative-jets}), and the stable trace invariant
+theory \(\mc R_\infty^{GL_\infty,\mathrm{st}}\cong
+\mathbf S(\mathrm{Cyc}(F)_{\mathrm{nonempty}})\)
 (Proposition~\ref{prop:stable-trace-invariants}); no analytic
 propagator and no Tate-completion convergence input is used.
 
@@ -392,17 +485,28 @@ $P_0$ bracket]\label{lem:filtration-preservation}
 \begin{rmk}[Why the homotopy is zero]\label{rmk:why-homotopy-zero}
   The strictness in
   Theorem~\ref{thm:chain-level-primitive-projection-P0} is not an
-  accident of small word degree; it is a structural consequence of
+  accident of small word degree.  It is a structural consequence of
   the trace-count filtration of
-  Lemma~\ref{lem:filtration-preservation}.  The bracket of two single
+  Lemma~\ref{lem:filtration-preservation}: the bracket of two single
   traces is a single trace by Procesi--Razmyslov cycle merging; the
   bracket of a single trace with a multi-trace is a multi-trace by
   the Leibniz rule; the primitive/indecomposable projection keeps the
-  single-trace component.  Hence the failure of the bracket compatibility, if any,
-  must lie in the multi-trace stratum, where both sides are zero.
-  \end{rmk}
+  single-trace component, so the only stratum left for a potential
+  defect is the multi-trace stratum, on which both sides of the
+  comparison square are identically zero.
+\end{rmk}
 
 \begin{constr}[Primitive one-antifield chain complex]\label{constr:T5-one-psi-complex}
+  The trace-count filtration places the one-\(\psi\) primitive
+  generators on the layer \(F_1/F_0\) below the multi-trace strata, and
+  Theorem~\ref{thm:chain-level-primitive-projection-Q} reduces the
+  question of strict \(Q\)-compatibility on this layer to a finite
+  combinatorial homology calculation: identify every closed
+  one-\(\psi\) primitive cycle modulo \(Q\) of a two-\(\psi\)
+  primitive.  The chain complex below records exactly that calculation
+  in bidegree \((k,l)\), and the next two results compute its
+  \(H_1\)-line.
+
   Put \(x=\phi_1\), \(y=\phi_2\), and let
   \(\mathsf W_{k,l}\) be the set of ordinary words with \(k\) letters
   \(x\) and \(l\) letters \(y\).  Let \(\mathsf N_{a,b}\) be the set of
@@ -857,7 +961,13 @@ $P_0$ bracket]\label{lem:filtration-preservation}
 \begin{constr}[Primitive one-\(\psi\) label shadow]\label{constr:chain-level-primitive-cotangent}
   Extend $\pi_{\mathrm{prim}}$ to the one-$\psi$ primitive shadow by
   recording the labels of the symmetrised traces $\Psi_{a,b}$ of
-  Construction~\ref{constr:boundary-evaluation}.  The domain here is the
+  Construction~\ref{constr:boundary-evaluation}, with target the
+  reduced principal-part label space \(\mc P\), the
+  \(\C\)-vector space spanned by the basis vectors
+  \(\rho_{a,b}=z_1^{-a-1}z_2^{-b-1}dz_1dz_2\) of the local-cohomology
+  Matlis dual of \(\bar A\) at the origin
+  (Theorem~\ref{thm:principal-part-coadjoint-uniqueness}), shifted by
+  \([1]\) for the odd \(\psi\)-degree.  The domain here is the
   enlarged principal-part shadow object
   \(\widetilde{\mathrm{Obs}}^{\mathrm{cl,pp}}_{\partial,N}(I)\): the
   Hamiltonian primitive sector is smeared by \(\Omega^\bullet_c(I)\), and
@@ -888,8 +998,12 @@ $P_0$ bracket]\label{lem:filtration-preservation}
       \[
         \pi_{\mathrm{prim}}^{\mathrm{cot}}\bigl(B\otimes\Psi_{a,b}\bigr)
         =B\otimes\rho_{a,b}[1]
-        =\Theta_{a,b}(B).
+        =\Theta_{a,b}(B),
       \]
+      where \(\Theta_\rho(B)=B\otimes\rho[1]\) is the shifted cotangent
+      current of label \(\rho\in\mc P\) smeared by
+      \(B\in\mathcal D'_c(I)\), in the convention of
+      Construction~\ref{constr:interval-fact-algebras}.
     \item the scalar class \(\Psi_{0,0}=\operatorname{Tr}(\psi)\) maps to
       the removed odd scalar line, equivalently to zero in the
       Hamiltonian principal-part target \(\mc P[1]\);
@@ -1390,15 +1504,13 @@ $P_0$ bracket]\label{lem:filtration-preservation}
   cocycle level by uniqueness of the primitive projection on a symmetric
   algebra.
 
-  The chain-level construction has the advantage of being independent
-  of the analytic input of the heat kernel, and therefore independent
-  of the Tate-completion convergence question recorded in
-  Problem~\ref{prob:formal-factorization-center}, item (1).  It does
-  not, however, by itself produce the renormalized BV homotopies
-  required for the quantum (one-loop and higher) lift; that requires
-  Costello renormalization of the brane-defect propagator, recorded
-  separately in
-  Problem~\ref{prob:formal-factorization-center}, items (1)--(2).
+  The chain-level route is independent of the heat kernel and hence
+  independent of the Tate-completion convergence question of
+  Problem~\ref{prob:formal-factorization-center}, item~(1).  It
+  produces no renormalized BV homotopies; the one-loop and higher-loop
+  quantum lift requires the Costello renormalization of the
+  brane-defect propagator, recorded separately as
+  Problem~\ref{prob:formal-factorization-center}, items~(1)--(2).
 \end{rmk}
 
 \begin{cor}[Primitive indecomposable shadow of the reduced cotangent comparison]
@@ -1440,27 +1552,140 @@ $P_0$ bracket]\label{lem:filtration-preservation}
   asserted result is exactly the shadow statement and nothing stronger.
 \end{proof}
 
-\begin{rmk}[Scope of the primitive indecomposable shadow]
-  \label{rmk:T5-primitive-shadow-scope}
-	  The primitive indecomposable \(P_0\)-shadow map of
-	  Theorem~\ref{thm:chain-level-primitive-projection} supplies the
-	  local primitive indecomposable \(P_0\)-shadow component of
-  Problem~\ref{prob:formal-factorization-center}, item~(3), and the
-	  primitive indecomposable shadow component of
-  Theorem~\ref{thm:main-local}. It does not by itself close
-  Problem~\ref{prob:formal-factorization-center},
-  because the Tate-completion of the Casimir
-  ($\bigoplus_{d\geq 1}H_d^\vee\to$ a topological coefficient in
-  which the Casimir converges) and the propagator extension are
-  separate analytic obligations not addressed here. Nor does it supply
-  the missing centrality homotopies for principal-part currents against
-  arbitrary unreduced open observables.
-  Proposition~\ref{prop:quantum-descendant-label-obstruction} further
-  shows that the one-\(\psi\) label map is not compatible with the
-  Moyal coadjoint action after quantization. The chain-level
-  construction is therefore sufficient only for the classical primitive
-  indecomposable shadow.
-\end{rmk}
+\begin{thm}[Scope of the chain-level primitive indecomposable
+shadow]\label{thm:T5-primitive-shadow-scope}
+  The chain-level primitive indecomposable \(P_0\)-shadow map of
+  Theorem~\ref{thm:chain-level-primitive-projection} supplies the
+  associated-graded \(E_1\)-page evidence on the zero-\(\psi\) and
+  one-\(\psi\) primitive subspaces of the unreduced cotangent
+  factorization-centre obstruction filtration: equivalently the
+  generator-subspace component of
+  Problem~\ref{prob:formal-factorization-center}~item~(3) and the
+  indecomposable-shadow component of
+  Theorem~\ref{thm:main-local}.  It does not supply, and is not a
+  surrogate for, any of the following four data of the unreduced lift:
+  \begin{enumerate}
+    \item \emph{(Centrality homotopies.)}  The strict cochain-level
+      \(P_0\)-centrality homotopy
+      \(h^{P_0}_{\mathrm{cent}}\) of unreduced principal-part currents
+      against arbitrary unreduced open observables, and the
+      factorization-product centrality homotopy
+      \(h^{\mathrm{prod}}_{\mathrm{cent}}\), corresponding to the
+      components
+      \(\operatorname{ob}_{\mathrm{cent}}^{P_0}\) and
+      \(\operatorname{ob}_{\mathrm{cent}}^{\mathrm{prod}}\) of
+      \(\operatorname{Ob}_{\mathrm{cent/QME/desc}}\).  The chain-level
+      primitive shadow is strictly compatible with the open \(P_0\)
+      bracket and the factorization product on the indecomposable
+      quotient (Theorems
+      \ref{thm:chain-level-primitive-projection-Q},
+      \ref{thm:chain-level-primitive-projection-factorization},
+      \ref{thm:chain-level-primitive-projection-P0}); it does not
+      address either centrality homotopy on the full unreduced complex,
+      because the unreduced complex contains positive-trace-count
+      strata which the indecomposable projection kills.
+    \item \emph{(Tate/weighted coefficient kernel.)}  The convergent
+      Casimir kernel
+      \(C_{\mathfrak h}=\sum_{d\geq1}\sum_i e_{d,i}\otimes e^i_d\) inside
+      a coefficient category in which the Costello propagator
+      \(P_{\epsilon,L}\) extends, the component
+      \(\mathfrak o_{\mathrm{Cas}}\) of \(\operatorname{Ob}_T\), and the
+      stratified Weiss \v{C}ech--Roos descent class
+      \(\delta_{\check C/R}^{\mathrm{Weiss}}\) of
+      Remark~\ref{rmk:weiss-ran-descent-obstruction}.  The chain-level
+      construction uses no analytic input and therefore neither
+      provides nor obstructs the Tate completion.
+    \item \emph{(Brane-defect propagator extension.)}  The Costello
+      heat-kernel propagator \(P_{\epsilon,L}\) extended to the
+      brane-defect coefficient module of
+      \ref{defn:endpoint-admissible-coefficient-module}, the component
+      \(\mathfrak o_{\mathrm{BV,end}}\) of \(\operatorname{Ob}_T\), and
+      its renormalized one-loop and higher-loop QME endpoint
+      \(\operatorname{ob}_{\mathrm{QME}}^{\mathrm{bd}}\).  The
+      chain-level construction is the analytic-free \(E_1\)-page
+      surrogate for this datum on the indecomposable subspace; the
+      renormalized BV homotopies of Costello are recorded separately as
+      Problem~\ref{prob:formal-factorization-center}, items~(1)--(2).
+    \item \emph{(One-\(\psi\) Moyal-coadjoint intertwiner.)}  The
+      polynomial PBW descendant action and the principal-part
+      coadjoint action are not isomorphic as \(\mathfrak h_\hbar\)-modules
+      (Proposition~\ref{prop:quantum-descendant-label-obstruction},
+      Theorem~\ref{thm:no-same-action-rees-fourier-descendants}); the
+      one-\(\psi\) label shadow records labels only and does not
+      intertwine these two actions, equivalently the chain-level
+      construction provides no quantum lift of the cotangent label map.
+  \end{enumerate}
+  Equivalently, in the spectral-sequence presentation of the masthead,
+  the chain-level primitive shadow is the \(E_1\)-page; the higher
+  differentials \(d_2,d_3,\ldots\), are the four enumerated data, none
+  of which is supplied here.  The chain-level construction is
+  sufficient \emph{exactly and only} for the classical
+  associated-graded primitive indecomposable shadow on the displayed
+  generator subspaces.
+\end{thm}
+
+\begin{proof}
+  Theorem~\ref{thm:chain-level-primitive-projection} establishes the
+  four positive compatibilities (\(Q\), factorization, \(P_0\)-bracket,
+  cosheaf) on the indecomposable quotient.  Each negative item of the
+  scope statement is a separate residual:
+
+  Item~(1).  A \(P_0\)-centrality homotopy on the unreduced complex
+  is a chain \(h^{P_0}_{\mathrm{cent}}\) trivializing
+  \(\{\Phi(\xi),F\}_{\mathrm{open}}\) for every closed input
+  \(\xi\) and every open observable \(F\), at the chain level rather
+  than only on cohomology; analogously for
+  \(h^{\mathrm{prod}}_{\mathrm{cent}}\) and the factorization product.
+  The chain-level primitive shadow is a projection onto the generator
+  subspace \(F_1/F_0\) and contains no information about the
+  bracket of \(\Phi\)-image against an element of \(F_{\geq2}\) at
+  the chain level; the indecomposable projection annihilates
+  \(F_{\geq2}\), so the strict zero homotopy of
+  Theorem~\ref{thm:chain-level-primitive-projection-P0} is the
+  \(d_1\)-vanishing of the obstruction-filtration spectral sequence
+  on \(F_1/F_0\), not the full \(P_0\)-centrality homotopy on the
+  unreduced complex \(F_{\geq2}\).
+
+  Item~(2).  The Tate/weighted Casimir convergence and the stratified
+  Weiss \v{C}ech--Roos descent are coefficient-category and
+  topology-of-covers data which the chain-level construction never
+  uses; their habitats are
+  \(\widehat{\mathfrak h}\widehat\otimes
+  \widehat{\mathfrak h}^\vee_{\mathrm{cont}}\) and the Cech cone
+  \(\Delta^{N,M}_{V,\mathcal U}\) of
+  Remark~\ref{rmk:weiss-ran-descent-obstruction}, neither of which
+  appears anywhere in the proofs above.
+
+  Item~(3).  The chain-level shadow is independent of the analytic
+  input \((P_{\epsilon,L},Q+\hbar\Delta)\) by
+  Remark~\ref{rmk:no-heat-kernel-needed}; therefore it can neither
+  produce the Costello renormalized BV homotopies nor obstruct them.
+  The renormalized brane-defect QME class
+  \(\operatorname{ob}_{\mathrm{QME}}^{\mathrm{bd}}\) is the residual
+  endpoint of \(\mathfrak o_{\mathrm{BV,end}}\) and lives in the
+  cohomology
+  \(H^1(\mathcal O_{\mathrm{loc}}(\mathcal E_w),Q+\{I_w,-\})\) of
+  \ref{thm:hadamard-mittag-leffler}~(iii), which is constructed from
+  the Hadamard parametrix; this complex contains no chain-level
+  primitive datum.
+
+  Item~(4).  The negative result is
+  Proposition~\ref{prop:quantum-descendant-label-obstruction} together
+  with Theorem~\ref{thm:no-same-action-rees-fourier-descendants}: at
+  bidegree \((1,1)\) on the test Hamiltonian \(z_1^4\) the polynomial
+  PBW descendant action gives \(4\,\widetilde\Psi_{4,0}\) at order
+  \(\hbar^0\), while the Moyal coadjoint action gives
+  \(-24\,\hbar^2\rho_{0,4}+\cdots\); independently, the local
+  nilpotence of \(z_1,z_2\) on the polynomial Rees Weyl module is
+  incompatible with the non-local-nilpotence on
+  \(\mc P((\hbar))\).  Both obstructions appear after the
+  indecomposable projection, so adding decomposable terms cannot
+  repair them within the present construction.
+
+  Hence the chain-level primitive shadow supplies exactly the
+  associated-graded \(E_1\)-page on the displayed generator subspace,
+  no more and no less.
+\end{proof}
 
 \begin{rmk}[On the role of the de Rham contraction]
   \label{rmk:role-of-deRham-contraction}
