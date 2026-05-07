@@ -85,158 +85,264 @@ and a Dirac Brane Probe on $\R^2_{\mathrm{top}}\times\C^2_{\mathrm{hol}}$}
 \end{titlingpage}
 
   \input{abstract.tex}
+
+  \begin{center}
+  \fbox{\begin{minipage}{0.94\textwidth}
+  \small
+  \textbf{No curve VOA, Zhu algebra, or one-variable OPE is asserted on
+  the native habitat.}
+  The native holomorphic object is the two-complex-dimensional
+  factorization algebra on \(\C^2_{\mathrm{hol}}\) built from
+  \(\Omega^{0,\bullet}_c(B)\widehat\otimes
+   (\mathfrak h\ltimes\mathfrak h^\vee_{\mathrm{cont}}[1])\) with
+  \(\mathfrak h=\C[[z_1,z_2]]/\C\cdot 1\); Beilinson--Drinfeld
+  vertex/OPE/Zhu data lives on a curve, the habitat here is a surface
+  \cite{beilinson-drinfeld}.  Any reduction to a curve chiral object
+  requires a separately named restriction datum: the reduced directions,
+  the residue or compact-support pushforward, the surviving
+  \(z_2\)-mode or principal-part coefficient system, the brane image,
+  the induced BV pairing and Schouten bracket, and the matched anomaly
+  data.  Every appearance of the word \emph{chiral} below is in this
+  two-complex-dimensional holomorphic factorization sense.
+  \end{minipage}}
+  \end{center}
+
   \section*{Mechanism and seven principles}
   \addcontentsline{toc}{section}{Mechanism and seven principles}
 
-  The brane is a finite-matrix microscope for the formal symplectic
-  polydisk.  A stack of \(N\) Dirac branes on the topological line records
-  its position in the normal polydisk through a commuting pair of
-  \(\mathfrak{gl}_N\)-valued matrices,
+  A stack of \(N\) Dirac branes on the topological line is a
+  finite-matrix microscope for the formal symplectic polydisk
+  \((\widehat{\C^2}_0,dz_1\wedge dz_2)\), and a closed Hamiltonian on
+  the polydisk is measured on the brane stack by literal substitution
+  into a matrix-valued transverse coordinate:
   \[
     z_1\rightsquigarrow\phi_1,\qquad z_2\rightsquigarrow\phi_2,\qquad
     \mu(\epsilon)=-\operatorname{Tr}(\epsilon[\phi_1,\phi_2]),\qquad
     [\phi_1,\phi_2]=0,
   \]
-  and a closed Hamiltonian \(f\) is measured at the brane by
-  substitution,
   \[
-    J(f)=\overline{\operatorname{Tr}f(\phi_1,\phi_2)}.
+    J(f)=\overline{\operatorname{Tr}f(\phi_1,\phi_2)},\qquad
+    f\in\C[[z_1,z_2]] .
   \]
-  The closed sector does not act on the brane through an abstract
-  representation theory: it acts because a holomorphic Hamiltonian on
-  the formal normal polydisk admits a literal evaluation on the brane's
-  matrix-valued transverse coordinate.  Every theorem in this
-  manuscript inscribes a piece of that mechanism into algebra.
+  The brane does not carry an abstract representation of the
+  Hamiltonian algebra: it evaluates Hamiltonians on its matrix-valued
+  transverse coordinate.  Among polynomial \(GL_N\)-invariant
+  Darboux-natural scalar-reduced maps agreeing with the moment-map
+  action on linear generators, this evaluation is the unique
+  measurement
+  (Theorem~\ref{thm:formal-local-universal-property}).  The hypotheses
+  are explicit: one Dirac brane topological line, one topological
+  propagator direction, formal holomorphic symplectic normal surface,
+  \(GL_N\)-conjugation gauge symmetry, Darboux-natural scalar-reduced
+  polynomial \(GL_N\)-invariance, and agreement with the moment-map
+  action on linear generators.  Under these hypotheses the local
+  habitat is forced to be \(X=\R_t\times\R_s\times\C^2_{z_1,z_2}\) with
+  \(L=\R_t\times\{s=z_1=z_2=0\}\), and the measurement is forced to be
+  \(J\).
+
+  \medskip
+  \noindent
+  Uniqueness propagates.  A single forcing chain links the brane probe
+  to the cohomology classes that name its obstructions:
+  \[
+    \boxed{\;
+    \text{brane probe}\,\Longrightarrow\,
+    \text{trace measurement}\,\Longrightarrow\,
+    \text{shifted-cotangent BV}\,\Longrightarrow\,
+    \text{CE/PV operations}\,\Longrightarrow\,
+    \text{Matlis principal parts}\,\Longrightarrow\,
+    \text{named obstructions} .\;}
+  \]
+  Each arrow is a theorem inscribed below.  The closed BV theory is the
+  shifted cotangent extension
+  \(\mathfrak g=\mathfrak h\ltimes\mathfrak h^\vee_{\mathrm{cont}}[1]\)
+  with \(\mathfrak h=\C[[z_1,z_2]]/\C\cdot1\); the CE/PV cochain
+  dictionary \(c^I\!\mapsto\!\theta^I,\,u_I\!\mapsto\!O_I\) fixes the
+  type discipline (a Hamiltonian \emph{moves} the closed sector through
+  \(c_f\) and is \emph{measured} on the brane through \(u_f\), not the
+  reverse); the cotangent module is the Grothendieck--Matlis
+  principal-part bundle \(\mathcal P\), not a polynomial copy; and the
+  RG-stable analytic completion is the weighted-Tate habitat \(B_w\) of
+  Theorem~\ref{thm:wt-canonical-habitat}.  At the end of the chain the
+  named obstructions appear as cohomology classes, kernels, or matrix
+  equations: the scalar anomaly \(\hbar N[\bar c]\), the radial
+  cokernel \(\Omega^{\mathrm{rad}}_{a,b}\), the four-component
+  unreduced cotangent-lift obstruction vector, the \(\theta_3\)
+  finite-window \(H^1\), and the strict native all-window
+  Bochner--Martinelli no-go.
 
   \paragraph{Principle 1: matrix-probe measurement.}
-  The open BV theory of the probe stack is the Koszul zero-fibre of the
-  \(GL_N\)-conjugation moment map; its gauge-invariant content is the
-  trace-reduced family \(J(f)\), with \(f\) ranging over the
-  Hamiltonian Lie algebra of the formal symplectic polydisk modulo
-  constants, and any polynomial \(GL_N\)-invariant Darboux-natural
-  scalar-reduced map agreeing with the moment-map action on linear
-  generators is forced to be \(J\) itself
+  The open BV theory of the probe stack is the derived zero-fibre of
+  the \(GL_N\)-conjugation moment map.  Its ghost-zero invariant ring
+  is the commutative Procesi--Razmyslov trace ring of two commuting
+  matrices, computed by the Koszul resolution of the constraint
+  \([\phi_1,\phi_2]=0\); on the closed-string subalgebra
+  \(\bar A=\C[z_1,z_2]/\C\cdot1\) of polynomial Hamiltonians modulo
+  constants this ring is the trace family \(J(f)\).  Stable connected
+  \(GL_N\)-invariants are traces of cyclic words in
+  \(\phi_1,\phi_2\); the moment-map constraint
+  \([\phi_1,\phi_2]=0\) collapses cyclic words to commutative
+  monomials; Darboux naturality kills any dependence on the chosen
+  symplectic coordinate presentation; agreement with the moment-map
+  action on \(z_1,z_2\) fixes the scalar-reduced extension; and only
+  literal substitution \(f\!\mapsto\!\overline{\operatorname{Tr}
+  f(\phi_1,\phi_2)}\) survives
   (Lemma~\ref{lem:dirac-probe-reduction},
   Proposition~\ref{prop:open-bv-truncation},
   Theorem~\ref{thm:formal-local-universal-property}).
 
-  \paragraph{Principle 2: scalar invisibility, scalar anomaly.}
+  \paragraph{Principle 2: the center of mass remembers what Hamiltonian
+  reduction forgets.}
   Constants generate the zero Hamiltonian vector field, so the closed
-  Lie algebra is \(\mathfrak h=\C[[z_1,z_2]]/\C\cdot1\).  On the
-  unreduced brane phase space
-  \(\{\operatorname{Tr}\phi_1,\operatorname{Tr}\phi_2\}=N\): constants
-  vanish closed-side as Hamiltonian vector fields and survive
-  open-side as brane center-of-mass motion.  The mismatch is a
-  distinguished class
-  \([\bar c]\in H^2_{\mathrm{Lie}}(\bar A,\C)\), and Moyal quantization
-  returns the same scalar as the Capelli term \(\hbar N[\bar c]\)
-  The four detections --- algebraic central extension, Lie central
-  extension, trace-algebraic boundary central extension, and quantum
-  Weyl commutator
-  \([\Phi_\hbar(z_1),\Phi_\hbar(z_2)]_\star=\hbar N\) --- are one
-  cocycle transgressed across four faces of the same scalar-reduction
-  step
+  symmetry algebra is \(\mathfrak h=\C[[z_1,z_2]]/\C\cdot1\); on the
+  unreduced brane phase space the same constants survive as the brane
+  center-of-mass motion, and the unreduced Poisson bracket is
+  \(\{\operatorname{Tr}\phi_1,\operatorname{Tr}\phi_2\}=N\).  Reduction
+  on one side and survival on the other is a single distinguished
+  class
+  \[
+    [\bar c]\in H^2_{\mathrm{Lie}}(\bar A,\C),
+    \qquad
+    \bar A=\C[z_1,z_2]/\C\cdot1.
+  \]
+  Moyal quantization \cite{kontsevich-dq} in the ordinary
+  scalar-reduced \(\mathfrak{gl}_N\) branch returns the same scalar as
+  the Capelli term \cite{capelli,howe-capelli}, namely
+  \(\hbar N[\bar c]\), and the first quantum example is the linear
+  brane commutator
+  \([\Phi_\hbar(z_1),\Phi_\hbar(z_2)]_\star=\hbar N\).  Four detections
+  of one cocycle --- algebraic central extension on the closed Taylor
+  ring, Lie central extension on \(\bar A\), trace-algebraic boundary
+  central extension on the unreduced phase space, and quantum Weyl
+  commutator at order \(\hbar\) --- are the four faces of the same
+  scalar-reduction step transgressed against the brane probe
   (Theorems~\ref{thm:u1-center-anomaly},
   \ref{thm:u1-center-anomaly-open},
   \ref{thm:quantum-classical-anomaly},
   \ref{thm:app-scalar-anomaly-transgression}).
 
   \paragraph{Principle 3: ghosts move, cotangent coordinates measure.}
-  The closed BV algebra is the shifted cotangent Lie algebra
-  \(\mathfrak g=\mathfrak h\ltimes\mathfrak h^\vee_{\mathrm{cont}}[1]\),
-  and on generators the CE/PV dictionary is
+  A Hamiltonian \(f\in\bar A\) has two avatars on the brane probe.  As
+  a generator of canonical transformations it is represented in the
+  closed BV algebra by the CE coordinate \(c_f\) and acts as the
+  Schouten vector field \(\theta_f\); as a closed cotangent insertion
+  it is represented by the shifted-cotangent coordinate \(u_f\) and is
+  measured on the brane as the boundary observable
+  \(O_f=J(f)\).  The closed BV algebra is the shifted cotangent Lie
+  algebra
+  \(\mathfrak g=\mathfrak h\ltimes\mathfrak h^\vee_{\mathrm{cont}}[1]\)
+  and the CE/PV cochain dictionary on generators is
   \[
-    c^I\longmapsto\theta^I,\qquad u_I\longmapsto O_I.
+    c^I\longmapsto\theta^I,\qquad u_I\longmapsto O_I :
   \]
-  Hamiltonian-dual CE coordinates produce Schouten vector-field
-  operations; shifted-cotangent-dual coordinates produce boundary
-  Hamiltonian observables on the probe pair.  The boundary observable
-  is the image of \(u\), not of \(c\); the wrong assignment
-  \(c_f\mapsto O_f\) is a type error.  The minimal RG-stable analytic
-  completion in which the heat-kernel propagator extends and the
-  Casimir converges is the weighted-Tate habitat \(B_w\), generated by
-  \(\{O_f,\theta_f\}_{f\in\bar A}\) under the Schouten bracket and
-  pointwise product
+  the boundary observable is the image of \(u\), not of \(c\), and the
+  wrong assignment \(c_f\!\mapsto\!O_f\) collapses the operation
+  \(\theta_f\) into its measurement \(O_f\) and is a type error.  The
+  minimal RG-stable analytic completion in which the heat-kernel
+  propagator extends and the Casimir converges is the weighted-Tate
+  habitat \(B_w\), generated by \(\{O_f,\theta_f\}_{f\in\bar A}\)
+  under the Schouten bracket and pointwise product
   (Theorem~\ref{thm:reduced-ce-pv-central-operation},
   Theorem~\ref{thm:wt-canonical-habitat}).
 
   \paragraph{Principle 4: defect momentum is residual.}
-  The continuous dual of Taylor functions at the brane point is not
-  another copy of polynomials.  It is the Grothendieck--Matlis
-  principal-part module
+  A Taylor Hamiltonian is what the brane samples; a principal part is
+  the dual distributional momentum concentrated at the brane.  It is
+  not another polynomial mode, but a residue functional that detects a
+  Taylor coefficient.  The continuous dual of Taylor functions at the
+  brane point is therefore the Grothendieck--Matlis principal-part
+  module \cite{matlis-injective}
   \[
     \mathfrak h^\vee_{\mathrm{cont}}\cong\mathcal P
      =\bigoplus_{a+b>0}\C\,\rho_{a,b},\qquad
     \rho_{a,b}=z_1^{-a-1}z_2^{-b-1}\,dz_1dz_2,
   \]
-  paired with Taylor Hamiltonians by residue.  Cotangent fields on a
-  formal brane are residues, not polynomials.  The polynomial PBW
-  classes \(\Psi_{a,b}\) carry the same labels and a different
-  \(\mathfrak h\)-module structure, and the Moyal coadjoint action
-  acts on the residue side and does not lift to the polynomial shadow
+  paired with Taylor Hamiltonians by residue.  The polynomial PBW
+  classes \(\Psi_{a,b}\) carry the same labels \((a,b)\) and a
+  different \(\mathfrak h\)-module structure: the residue and PBW
+  shadows are not relabellings of each other, and the Moyal coadjoint
+  action acts on the residue side and does not lift to the polynomial
+  shadow
   (Theorem~\ref{thm:principal-part-coadjoint-uniqueness},
   Corollary~\ref{cor:descendant-coadjoint-difference},
   Theorem~\ref{thm:app-defect-polarization}).
 
   \paragraph{Principle 5: locality splits into three independent mechanisms.}
-  Three differentials act independently:
+  A measurement at the brane line travels along three independent
+  axes --- the topological time \(t\), the topological propagator
+  direction \(s\), and the holomorphic normal coordinates \(\bar z_i\)
+  --- and the locality of the factorization theory must record each
+  axis with its own homotopy.  Three differentials carry the load:
   \[
     \delta(t-s),\qquad
     L_v=[Q,\iota_v]\quad(v\in T\R^2_{\mathrm{top}}),\qquad
     L_{\partial/\partial\bar z_i}
-     =[Q,\iota_{\partial/\partial\bar z_i}].
+     =[Q,\iota_{\partial/\partial\bar z_i}],
   \]
-  Contact along the brane line, cohomological triviality of
-  topological translations, and residue support in the holomorphic
+  registering contact along the brane line, cohomological triviality
+  of topological translations, and residue support in the holomorphic
   normal direction.  None of the three implies the others, and none
   of them by itself supplies the unreduced cotangent centrality
-  homotopies; together they force the factorization-current model
-  on the brane line, with the trace observables exhibiting all three
-  and the shifted-cotangent currents only the first two
+  homotopies; together they force the factorization-current model on
+  the brane line, with the trace observables exhibiting all three and
+  the shifted-cotangent currents only the first two
   (Proposition~\ref{prop:three-localities},
   Theorem~\ref{thm:dict-kinematic-locality}).
 
   \paragraph{Principle 6: quantization is a measurement test.}
-  The all-order algebraic quantization of the formal symplectic polydisk
-  is the Moyal star.  At bidegree \((a,b)\) the obstruction to making
-  Weyl quantization and stable scalar-reduced brane trace measurement
-  commute is a single class
-  \(\Omega^{\mathrm{rad}}_{a,b}\in\operatorname{coker}B_{a,b}\), and
-  the radial bicomplex is interior-acyclic --- conditional on the
-  named radial-parts statement, with each interior bidegree closing
-  unconditionally by stable Procesi--Razmyslov reduction through
-  total degree~15
-  (Theorem~\ref{thm:componentwise-quantum-coefficient-comparison},
-  Proposition~\ref{prop:app-radial-dual-potential-obstruction},
-  Theorem~\ref{thm:app-radial-bicomplex-acyclic}).
+  Moyal quantization tests whether Weyl ordering on the formal
+  symplectic polydisk and the brane trace measurement \(J\) commute.
+  The first quantum example is the linear scalar anomaly
+  \([\Phi_\hbar(z_1),\Phi_\hbar(z_2)]_\star=\hbar N\) of Principle~2:
+  Weyl quantization on the closed side and brane measurement on the
+  open side return the same scalar \(\hbar N\), so the comparison
+  closes at linear order in the ordinary scalar-reduced
+  \(\mathfrak{gl}_N\) branch
+  (Theorem~\ref{thm:quantum-classical-anomaly}).  At general bidegree
+  \((a,b)\) the obstruction to closing the comparison is a single
+  cohomology class
+  \(\Omega^{\mathrm{rad}}_{a,b}\in\operatorname{coker}B_{a,b}\)
+  (Proposition~\ref{prop:app-radial-dual-potential-obstruction}).  The
+  finite-certificate range certified unconditionally by the
+  decorated-PBW Stokes script
+  (\texttt{quantum\_shear\_trace\_diagram\_normal\_form.py
+  --kernel-correction}) covers the balanced bidegree diagonal through
+  \((6,6)\), every non-edge bidegree of total degree at most \(13\),
+  the total-degree-\(14\) bidegrees
+  \((3,11),(11,3),(4,10),(10,4),(5,9),(9,5)\), the explicit
+  total-degree-\(15\) bidegrees
+  \((6,7),(7,6),(5,8),(8,5),(6,8),(8,6),(7,7),(7,8),(8,7)\), and the
+  complete one-moving-letter edge strips.  The radial bicomplex is
+  interior-acyclic conditional on the named radial-parts statement
+  (Theorem~\ref{thm:app-radial-bicomplex-acyclic}); unconditionally,
+  each interior bidegree closes by stable Procesi--Razmyslov reduction
+  through total degree~15
+  (Theorem~\ref{thm:componentwise-quantum-coefficient-comparison}).
 
   \paragraph{Principle 7: stronger global claims are obstruction problems.}
-  The unreduced \(P_0\)-factorization-centre lift, the non-scalar
-  Costello quantum master equation on a brane interval, the strict
-  native all-window Bochner--Martinelli current transfer, and the
-  all-bidegree decorated PBW Stokes identity are not vague open ends.
-  Each is a finite-row, finite-window obstruction theorem with named
-  defining cohomology class, kernel, or matrix equation: the
-  unreduced \(P_0\)-factorization-centre lift is a four-component
-  obstruction vector
+  Each upgrade beyond the proved core is a vanishing of a named
+  obstruction class.  The unreduced \(P_0\)-factorization-centre lift
+  exists exactly when the four-component obstruction vector
   \((\mathrm{ob}^{\mathrm{prod}}_{\mathrm{cent}},
   \mathrm{ob}^{P_0}_{\mathrm{cent}},
   \mathrm{ob}^{\mathrm{bd}}_{\mathrm{QME}},
-  \delta^{\mathrm{Weiss}}_{\check C/R})\); the smallest non-scalar QME
-  window \(\theta_3\) carries both the bare verdict
-  \(H^1=\C\!\cdot\!E_{\theta_3}\ne0\) and the supplied-counterterm
-  verdict \(H^1=0\); the strict native all-window
-  Bochner--Martinelli current transfer fails for every \(N\) by the
-  residue-coadjoint computation
-  \(z_1^{N+2}\!\cdot\!\rho_{N+1,0}=-(N+2)\rho_{0,1}\) and the projected
-  Jacobiator \((N+1)(N+2)\rho_{0,1}\ne0\); and the all-bidegree
-  decorated PBW Stokes identity is the family
-  \(\Omega^{\mathrm{rad}}_{a,b}\)
+  \delta^{\mathrm{Weiss}}_{\check C/R})\) vanishes
   (Theorem~\ref{thm:app-unreduced-cotangent-lift-obstruction},
-  Theorem~\ref{thm:app-theta-three-finite-window-H1},
-  Theorem~\ref{thm:bmk-finite-window-no-go},
-  Problem~\ref{prob:formal-factorization-center},
-  Problem~\ref{prob:quantum-p0-operation-realization}).
+  Problem~\ref{prob:formal-factorization-center}).  The smallest
+  non-scalar Costello quantum master equation window
+  \(\theta_3\) carries the bare verdict
+  \(H^1=\C\!\cdot\!E_{\theta_3}\ne0\) and the supplied-counterterm
+  verdict \(H^1=0\) under the unique counterterm \(dC=-E\), \(c=1\)
+  (Theorem~\ref{thm:app-theta-three-finite-window-H1}).  The strict
+  native all-window Bochner--Martinelli current transfer fails for
+  every \(N\) by the residue-coadjoint computation
+  \(z_1^{N+2}\!\cdot\!\rho_{N+1,0}=-(N+2)\rho_{0,1}\) and the
+  projected Jacobiator \((N+1)(N+2)\rho_{0,1}\ne0\)
+  (Theorem~\ref{thm:bmk-finite-window-no-go}).  The all-bidegree
+  decorated PBW Stokes identity is the family of cokernel classes
+  \(\Omega^{\mathrm{rad}}_{a,b}\), realised as the radial-parts
+  bicomplex
+  (Problem~\ref{prob:quantum-p0-operation-realization}).
 
   \paragraph{Physical dictionary.}
   \begin{center}
@@ -271,23 +377,187 @@ and a Dirac Brane Probe on $\R^2_{\mathrm{top}}\times\C^2_{\mathrm{hol}}$}
   \hline
   Scalar anomaly &
   \([\bar c]\in H^2_{\mathrm{Lie}}(\bar A,\C),\;\hbar N[\bar c]\) &
-  constants vanish closed, survive open as center of mass\\
+  constants vanish closed-side as Hamiltonian vector fields, survive
+  open-side as the brane center of mass\\
   \hline
   Cotangent defect momentum &
   \(\mathcal P=\bigoplus_{a+b>0}\C\,\rho_{a,b}\) &
-  residues are transverse distributional modes\\
+  residues are the dual distributional modes concentrated at the
+  brane\\
   \hline
   Quantization &
   Moyal star on \(\C[[z_1,z_2]]\); Weyl on \(\mathfrak{gl}_N^2\) &
-  constant formal symplectic structure\\
+  brane-measurement test of Weyl ordering against trace evaluation\\
   \hline
   Failure of full quantum comparison &
   \(\Omega^{\mathrm{rad}}_{a,b},\;
   [\operatorname{Ob}^{\mathrm{red}}_{w,\partial,\hbar}]\) &
-  radial normal-form and QME obstructions\\
+  radial-parts cokernel and Costello quantum-master-equation
+  obstruction\\
   \hline
   \end{tabular}
   \end{center}
+
+  \begin{center}
+  \textbf{What is proved, what is conditional, what is named obstruction.}
+  \end{center}
+
+  \noindent
+  Every theorem below falls into one of three classes: a proved
+  theorem; a theorem conditional on a named hypothesis, with the
+  hypothesis stated not implicit; or a proved obstruction theorem
+  identifying the exact cohomology class, kernel, cokernel, or
+  finite-window matrix equation that prevents a stronger statement.
+
+  \begin{center}
+  \renewcommand{\arraystretch}{1.30}
+  \begin{tabular}{@{}p{0.34\textwidth}p{0.20\textwidth}p{0.40\textwidth}@{}}
+  \hline
+  \textbf{Theorem} & \textbf{Status} & \textbf{Content / hypothesis / obstruction class}\\
+  \hline
+  \(J(f)=\overline{\operatorname{Tr}f(\phi_1,\phi_2)}\) is the unique
+  \(GL_N\)-invariant Darboux-natural scalar-reduced measurement
+  (Theorem~\ref{thm:formal-local-universal-property}) &
+  proved &
+  characterisation by polynomial \(GL_N\)-invariance, Darboux
+  naturality, scalar reduction, and agreement with the moment-map
+  action on linear generators\\
+  \hline
+  Universal CE/PV Koszul criterion, five clauses
+  (Theorem~\ref{thm:universal-ce-pv-koszul-criterion}) &
+  per-clause &
+  cochain identity \(c^I\!\mapsto\!\theta^I,\,u_I\!\mapsto\!O_I\)
+  proved unconditionally; \(P_0\)-bracket clause conditional on
+  bracket-admissibility of the chosen sub-PV model \(B\); MC-kernel
+  clause conditional on a kernel-admissible datum
+  \((B,\mathcal K_B)\); bar-cobar / enveloping clause conditional on a
+  Tate / nilpotent / weighted admissibility datum with conilpotent
+  endpoint and \(\varprojlim^1\)-vanishing; open-trace
+  \(A_\infty\)-Koszul clause conditional on an acceptance datum
+  \((A_{\mathrm{op}},C_{\mathrm{op}},B_{\mathrm{CE/PV}},
+  \tau_{\mathrm{op}})\)\\
+  \hline
+  Canonical weighted-Tate habitat \(B_w\)
+  (Theorem~\ref{thm:wt-canonical-habitat}) &
+  proved &
+  \(B_w\) is the minimal RG-stable analytic completion under Schouten
+  bracket and pointwise product in which the heat-kernel propagator
+  extends and the Casimir
+  \(C_{\mathfrak h,w}\) converges\\
+  \hline
+  Principal-part coadjoint isomorphism, Matlis form
+  (Theorem~\ref{thm:principal-part-coadjoint-uniqueness}) &
+  proved &
+  \(\mathfrak h^\vee_{\mathrm{cont}}\cong\mathcal P\) by residue, with
+  coadjoint formula
+  \(z_1^pz_2^q\!\cdot\!\rho_{a,b}=
+   -(pb-qa+p-q)\rho_{a-p+1,b-q+1}\) unique up to a scalar\\
+  \hline
+  Three-locality kinematic theorem
+  (Theorem~\ref{thm:dict-kinematic-locality}) &
+  proved &
+  \(\delta(t-s)\), \(L_v=[Q,\iota_v]\),
+  \(L_{\partial/\partial\bar z_i}=[Q,\iota_{\partial/\partial\bar z_i}]\)
+  are independent and jointly force the brane-line
+  factorization-current model\\
+  \hline
+  Scalar anomaly four-face transgression
+  (Theorems~\ref{thm:u1-center-anomaly},
+  \ref{thm:u1-center-anomaly-open},
+  \ref{thm:quantum-classical-anomaly},
+  \ref{thm:app-scalar-anomaly-transgression}) &
+  proved &
+  one cocycle
+  \(\hbar N[\bar c]\in H^2_{\mathrm{Lie}}(\bar A,\C)[[\hbar]]\)
+  detected by algebraic, Lie, trace-algebraic, and Moyal Weyl
+  commutator faces; Capelli order-\(\hbar\) shift
+  \cite{capelli,howe-capelli}\\
+  \hline
+  Componentwise quantum coefficient comparison
+  (Theorem~\ref{thm:componentwise-quantum-coefficient-comparison}) &
+  proved with finite certificate &
+  range certified: balanced bidegree diagonal through \((6,6)\); every
+  non-edge bidegree of total degree
+  \(\le13\); total-degree-\(14\) bidegrees
+  \((3,11),(11,3),(4,10),(10,4),(5,9),(9,5)\); every one-moving-letter
+  edge strip\\
+  \hline
+  Radial / Weyl normal-form obstruction
+  (Proposition~\ref{prop:app-radial-dual-potential-obstruction}) &
+  proved &
+  per-bidegree obstruction
+  \(\Omega^{\mathrm{rad}}_{a,b}\in\operatorname{coker}B_{a,b}\);
+  decorated PBW Stokes form
+  \(D^\square_{a,b}=C^+_{a,b}\partial_2\); failure exactly a signed row
+  \((\phi,-\lambda)\in\ker B_{a,b}^*\) with
+  \(\lambda(E^+_{a,b})-\phi(T_{a,b})\ne0\)\\
+  \hline
+  Radial bicomplex acyclicity
+  (Theorem~\ref{thm:app-radial-bicomplex-acyclic}) &
+  conditional, with finite-degree certificate &
+  interior acyclicity conditional on the named radial-parts statement;
+  unconditional through total degree~15 by stable Procesi--Razmyslov
+  reduction\\
+  \hline
+  \(\theta_3\) finite-window
+  \(H^1\)
+  (Theorem~\ref{thm:app-theta-three-finite-window-H1}) &
+  proved &
+  bare verdict \(H^1=\C\!\cdot\!E_{\theta_3}\ne0\) with covector
+  \(\ell=1\); supplied-counterterm verdict \(H^1=0\) under the unique
+  \(dC=-E,c=1\) counterterm\\
+  \hline
+  Strict native all-window Bochner--Martinelli current transfer
+  (Theorem~\ref{thm:bmk-finite-window-no-go}) &
+  proved obstruction theorem &
+  fails for every \(N\); residue-coadjoint computation
+  \(z_1^{N+2}\!\cdot\!\rho_{N+1,0}=-(N+2)\rho_{0,1}\); projected
+  Jacobiator \((N+1)(N+2)\rho_{0,1}\ne0\); obstruction vector
+  \(\operatorname{Ob}^{\Pi}_{\mathrm{BM}}\)\\
+  \hline
+  Pro-Matlis retract is the supremum form
+  (Corollary~\ref{cor:promatlis-retract-as-supremum}) &
+  proved &
+  \(P_{\Pi}^{\mathrm{an}}=\tau P_{\mathrm{an}}\),
+  \(\pi_NP_{\Pi}^{\mathrm{an}}=p_N\); the one-pair analytic retract is
+  the strongest current-transfer object selected by the BMK leak\\
+  \hline
+  Unreduced cotangent-lift four-component obstruction
+  (Theorem~\ref{thm:app-unreduced-cotangent-lift-obstruction},
+  Problem~\ref{prob:formal-factorization-center}) &
+  proved obstruction theorem &
+  the chain morphism
+  \(\Phi_{\mathrm{cl}}\colon
+   \mathrm{Obs}^{\mathrm{cl}}_{\mathrm{closed}}\big|_L\to
+   \mathrm Z^{P_0}_{\mathrm{fact}}
+   (\mathrm{Obs}^{\mathrm{cl}}_{\mathrm{open},N})\)
+  exists exactly when
+  \(\mathrm{Ob}_{\mathrm{cent/QME/desc}}=
+   (\mathrm{ob}^{\mathrm{prod}}_{\mathrm{cent}},
+   \mathrm{ob}^{P_0}_{\mathrm{cent}},
+   \mathrm{ob}^{\mathrm{bd}}_{\mathrm{QME}},
+   \delta^{\mathrm{Weiss}}_{\check C/R})\) vanishes\\
+  \hline
+  Reduced non-scalar Costello QME class
+  (Problem~\ref{prob:quantum-p0-operation-realization}) &
+  named obstruction &
+  \([\operatorname{Ob}^{\mathrm{red}}_{w,\partial,\hbar}]
+   \in H^1(\ker\widehat\sigma_{\mathrm{sc}},d_{\mathrm{QME}})\) with
+  \(\varprojlim^1H^0\)-primitive-compatibility class; constructed once
+  a complete \(d_{\mathrm{QME}}\)-stable scalar-contact filtration is
+  supplied and the successive scalar-symbol extension classes vanish\\
+  \hline
+  \end{tabular}
+  \end{center}
+
+  \noindent
+  Curve-VOA / Zhu / OPE statements on the native
+  \(\C^2_{\mathrm{hol}}\) factorization object are not asserted at any
+  status (cf.~the warning at the head of this section).  Compact
+  Calabi-Yau, BCOV \(F_g\), CY-to-chiral, CoHA, OSV / GV, Igusa, and
+  BKM transfers are external comparison surfaces; the only Calabi-Yau
+  datum used in the core local theorems is the trivial holomorphic
+  volume \(dz_1\wedge dz_2\) on \(\widehat{\C^2}_0\).
 
   \tableofcontents
   \mbox{}
