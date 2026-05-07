@@ -23,7 +23,9 @@ class, in every bidegree, with no finite-window appeal.
 
 \begin{thm}[All-bidegree radial PBW Stokes vanishing]
 \label{thm:app-radial-all-bidegree-vanishing-preview}
-  For every bidegree \((a,b)\) with \(a,b\geq 1\),
+  Conditional on the named radial-parts
+  Statement~\ref{stmt:app-radial-external-input}, for every bidegree
+  \((a,b)\) with \(a,b\geq 1\),
   \(\Omega^{\mathrm{rad}}_{a,b}=0\), equivalently the decorated PBW
   Stokes equation
   \[
@@ -31,28 +33,37 @@ class, in every bidegree, with no finite-window appeal.
     \qquad
     D^\square_{a,b}=C^+_{a,b}\partial_2,
   \]
-  has a solution \(H_{a,b}\in\mathsf S_{a,b}\).  The mechanism is the
-  contracting homotopy of
-  Theorem~\ref{thm:app-radial-bicomplex-acyclic} on the radial
-  bicomplex, executed by the PBW \(\hbar\)-filtration spectral
-  sequence whose \(E_1\)-page is the ordinary necklace Stokes complex.
+  has a solution \(H_{a,b}\in\mathsf S_{a,b}\).  The proof is by
+  applying the Vandermonde-conjugated radial map to the matrix-Weyl
+  shear identity, decomposing it on the Cartan into one-particle
+  Weyl factors via the Cartan-Moyal homomorphism
+  (Lemma~\ref{lem:app-radial-cartan-moyal-representation}), and
+  pulling back the resulting Cartan equality to the moment ideal via
+  the Levasseur--Stafford radial-kernel theorem; stable
+  Procesi--Razmyslov injectivity supplies a free indexed
+  normal-diagram lift, and the ordinary necklace Stokes lemma
+  promotes the cycle in \(\ker\partial\) to a square-cell primitive
+  in \(\mathsf S_{a,b}\).  This is
+  Theorem~\ref{thm:app-radial-bicomplex-acyclic}.
 \end{thm}
 
 The structural mechanism is direct.  The free indexed normal-diagram
-target carries an \(\hbar\)-filtration by contraction degree: the
-\(\hbar^0\) part is the ordinary cyclic-word incidence complex, and
-each PBW correction increases contraction degree by exactly one.  The
-ordinary necklace Stokes lemma at \(\hbar^0\)
-(Lemma~\ref{lem:app-ordinary-necklace-stokes}) supplies a contracting
-homotopy on the cycle complex; PBW second-order moves at
-\(\hbar^{p+1}\) lift the homotopy from \(\hbar^p\) by exactly the
-square-cell map \(\partial_2\), and at every level the lifted homotopy
-remains a chain map.  This is the radial bicomplex acyclicity
-theorem.  Vanishing of the bidegree-local cokernel class
-\(\Omega^{\mathrm{rad}}_{a,b}\) is its immediate corollary.  No
-finite-dimensional certificate is required, and a genuine signed-row
-failure \((\phi,-\lambda)\in\ker B_{a,b}^*\) is structurally
-excluded.
+target carries a contraction filtration: the \(\hbar^0\) part is the
+ordinary cyclic-word incidence complex, and each PBW correction
+increases contraction degree by exactly one (with the Capelli
+\(\hbar N\) term contributing one Capelli unit at contraction degree
+zero).  The classical lift solves the equation in contraction degree
+\(0\) and is supplied by the ordinary necklace Stokes
+Lemma~\ref{lem:app-ordinary-necklace-stokes}.  The higher
+contraction-degree residual is a single class
+\(\Omega^{\mathrm{rad}}_{a,b}\); its vanishing is the structural
+content of Theorem~\ref{thm:app-radial-bicomplex-acyclic}, proved by
+testing on the Cartan via Lemmas~\ref{lem:app-radial-cartan-moyal-representation}
+and~\ref{lem:app-radial-dunkl-calogero-cancellation} and the
+Levasseur--Stafford radial-kernel input.  A signed-row failure
+\((\phi,-\lambda)\in\ker B_{a,b}^*\) of the
+\(\lambda(E^+_{a,b})-\phi(T_{a,b})\neq0\) type is therefore excluded
+under the named input.
 
 The supporting calculus, in turn, is the following.  The formal
 Weyl/Moyal coefficients on the constant symplectic plane and the
@@ -66,14 +77,15 @@ radial-parts datum
 wallach-reductive-invariant-differential,
 levasseur-stafford-harish-chandra,
 levasseur-stafford-kernel-harish-chandra} is named precisely as
-Statement~\ref{stmt:app-radial-external-input}, retained because the
-mixed-monomial image clause is independently load-bearing for
-Theorem~\ref{thm:app-radial-finite-N}; the all-bidegree vanishing of
-\(\Omega^{\mathrm{rad}}_{a,b}\) is proved here without using that
-clause.  The reduced open-line Wick graph realization with midpoint
-propagator \(\tfrac12\operatorname{sgn}(t-s)\) realizes the same
-Moyal product to all orders and is the bridge to the open-line BV
-sector.
+Statement~\ref{stmt:app-radial-external-input}; the structural
+all-bidegree theorem uses clauses~(1) and~(2) (Levasseur--Stafford
+radial-kernel) and clause~(3) only for the specific Moyal-bracket
+polynomial of bidegree \((a,b)\).  Pure-power clause~(3) is
+tautological because Weyl-symmetric and normal-ordered traces of
+pure powers coincide.  The reduced open-line Wick graph realization
+with midpoint propagator \(\tfrac12\operatorname{sgn}(t-s)\)
+realizes the same Moyal product to all orders and is the bridge to
+the open-line BV sector.
 
 Closure status across the bidegree lattice is uniform.  The edge
 strips \(\mathfrak o_{2,b}=\mathfrak o_{a,2}=0\) close in closed form
