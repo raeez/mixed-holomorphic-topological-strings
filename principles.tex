@@ -1,303 +1,186 @@
-\section{Three principles and the admissibility discipline}\label{sec:three-principles}
+\section{Five organizing principles}\label{sec:organizing-principles}
 
-After the symplectic primitive, scalar quotient, and residue
-normalization are fixed, the formal-local CE/PV theory and its
-admissible Koszul-duality enhancement are
-organized by three source principles.  Each is physical in origin; each
-enters as algebraic theorem data.  Together they specify
-the open brane complex, the closed Hamiltonian BF complex, the
-formal CE/PV source-to-boundary coordinate map, the Tate coefficient envelope, the current lift
-datum, and the obstruction complexes controlling global use.  A separate
-admissibility discipline governs repairs: a failed strong sentence is
-not replaced by a weak true slogan, but by the strongest true theorem
-obtained after adding the missing object, topology, kernel, homotopy,
-counterterm, finite-window row, or obstruction class.
+The mixed holomorphic-topological local model on
+\(\R^2_{\mathrm{top}}\times\widehat{\C^2}_{0,\mathrm{hol}}\) is forced
+by five principles.  Each is a single mathematical sentence; each
+forces a named theorem in the manuscript.  Together they fix the open
+brane complex, the closed Hamiltonian BF complex, the formal-local
+CE/PV identification, the cotangent coefficient module, the support
+mechanism of the factorization algebra, the scalar anomaly cocycle,
+and the form in which every frontier obstruction is named.  The
+classical attributions -- Dirac, Witten, Grothendieck -- enter as the
+mathematical instruments inside the principles, not as the principles
+themselves.
 
-\subsection{Dirac: a brane stack is a constrained probe}
+\subsection{Principle 1 (Brane Measurement Microscope)}
 
-Fix the formal holomorphic symplectic disk
-\[
-  \widehat{\C^2}_0=\operatorname{Spf}\C[[z_1,z_2]],
-  \qquad \omega=dz_1\wedge dz_2.
-\]
-A stack of \(N\) branes supported on the topological line probes this
-disk by replacing the normal coordinates by matrices
-\[
-  z_1\rightsquigarrow\phi_1,\qquad
-  z_2\rightsquigarrow\phi_2,\qquad
-  \phi_i\in\mathfrak{gl}_N .
-\]
-The pulled-back symplectic form is
-\[
-  \Omega_N=\operatorname{Tr}(d\phi_1\wedge d\phi_2),
-\]
-with primitive \(\operatorname{Tr}(\phi_1\,d\phi_2)\). Change of basis
-in the probe stack is gauge. Its moment map is
-\[
-  \mu(\epsilon)=-\operatorname{Tr}(\epsilon[\phi_1,\phi_2]),
-  \qquad \epsilon\in\mathfrak{gl}_N .
-\]
-Dirac reduction therefore imposes the first-class constraint
-\[
-  [\phi_1,\phi_2]=0.
-\]
-After the primitive \(\operatorname{Tr}(\phi_1\,d\phi_2)\) and moment
-map convention have been fixed, the corresponding first-order
-world-line action is
-\[
-  S_\partial
-  =\int_\R\operatorname{Tr}
-    \bigl(\phi_1\,d\phi_2+A[\phi_1,\phi_2]\bigr).
-\]
-In BV form the constraint is the Koszul differential
-\[
-  Q\psi=[\phi_1,\phi_2],\qquad Q\phi_1=Q\phi_2=0,
-\]
-where \(\psi=A^*\). Thus the open algebra is not postulated as a
-trace algebra. It is the algebra of gauge-invariant functions on the
-derived commuting-pair locus. Lemma~\ref{lem:dirac-probe-reduction}
-and Proposition~\ref{prop:open-bv-truncation} give the formal proof.
+\emph{A stack of \(N\) Dirac branes on the topological line is a
+finite Chan--Paton microscope for the formal holomorphic symplectic
+disk; its measured observables are the stable scalar-reduced traces
+\(J(f)=\overline{\operatorname{Tr}f(\phi_1,\phi_2)}\), and these
+exhaust the gauge-invariant content of the probe pair.}
 
-\subsection{Witten convention: closed fields target central operations}
+The substitution \(z_i\rightsquigarrow\phi_i\) of normal coordinates
+into a commuting pair of \(\mathfrak{gl}_N\)-valued matrices is the
+only datum: the \(GL_N\)-symplectic potential
+\(\operatorname{Tr}(\phi_1\,d\phi_2)\), the moment map
+\(-\operatorname{Tr}(\epsilon[\phi_1,\phi_2])\), the Dirac constraint
+\([\phi_1,\phi_2]=0\), and the Koszul differential
+\(Q\psi=[\phi_1,\phi_2]\) are its forced consequences.  The closed
+Hamiltonian Lie algebra \(\bar A=\C[z_1,z_2]/\C\cdot1\) acts on the
+brane through nothing other than \(J\); cyclic invariance and
+adjacent-swap \(Q\)-exactness collapse every trace word to the
+symmetric symbol family
+\(\operatorname{Tr}(\phi_1^k\phi_2^l)=J(z_1^kz_2^l)\).  This forces
+the matrix-microscope theorem
+(Lemma~\ref{lem:probe-trace-microscope}) and, after formal Darboux
+normalization at any brane point of any connected
+holomorphic-symplectic surface, the measurement-universality theorem
+of \S\ref{ssec:twistedM-universality}: every admissible protected
+Hamiltonian sector reduces to the same brane microscope, and divergence
+is read coordinate by coordinate in the four-class residual
+\(\operatorname{Ob}^{\mathrm{univ}}_{p,X}\).
 
-Witten's open string field theory supplies the cyclic open-field-theory
-source convention.  A closed insertion approaching a brane gives an
-operation on compatible boundary observables.  In a topological
-direction the algebraic target for such an operation is centrality up to
-derived Poisson homotopies.  The formal-local target is therefore
-\[
-  Z^{P_0}_{\mathrm{red,Ham}}(\mathrm{Obs}_{\mathrm{open}}),
-\]
-not \(\mathrm{Obs}_{\mathrm{open}}\) itself.  The reduced Hamiltonian
-sector supplies the cochain CE/PV theorem; the unreduced
-factorization-current theorem is formulated by adding the boundary
-representatives, centrality homotopies, coefficient kernel, and QME
-solution demanded by that target.
+\subsection{Principle 2 (Three Localities)}
 
-For the formal symplectic disk the infinitesimal closed symmetries are
-Hamiltonian vector fields. Constants generate the zero vector field,
-so the Hamiltonian Lie algebra is
+\emph{The factorization-algebra structure on the brane line is forced
+by three independent local-current identities,
 \[
-  \mathfrak h=\C[[z_1,z_2]]/\C\cdot1,
-  \qquad
-  \{f,g\}
-  =\partial_{z_1}f\,\partial_{z_2}g
-   -\partial_{z_2}f\,\partial_{z_1}g .
+  \delta(t-s)\quad\text{(support)},\qquad
+  L_v=[Q,\iota_v]\quad\text{(topological)},\qquad
+  L_{\partial/\partial\bar z_i}
+   =[Q,\iota_{\partial/\partial\bar z_i}]
+   \quad\text{(formal-holomorphic)},
 \]
-In the local model the closed BV algebra of canonical transformations is
-the shifted cotangent theory
-\[
-  \mathfrak g
-  =\mathfrak h\ltimes\mathfrak h^\vee_{\mathrm{cont}}[1].
-\]
-The finite-window and coordinate-completed CE/PV theorem is the
-cochain identity
-\[
-  C^\bullet_{\mathrm{CE},\mathrm{cont}}(\mathfrak g)
-  \cong
-  \mathrm{PV}_{\mathrm{coord}}
-  \bigl(\widehat{\mathbf S}_{\mathrm{Tate}}(\mathfrak h)\bigr),
-\]
-with generator dictionary
-\[
-  c^I\mapsto\theta^I,\qquad u_I\mapsto O_I .
-\]
-The \(Z^{P_0}_{\mathrm{red,Ham}}\) interpretation is made only after
-imposing the finite-window or mixed/weighted continuity condition that
-makes the bracket continuous; it is not a statement about the full
-ambient product completion.
-The boundary Hamiltonian observable is the image of the shifted
-cotangent coordinate \(u_I\). It is not the image of the Hamiltonian
-ghost coordinate \(c^I\). This distinction is the type check behind
-the factorization-current theorem.  At the unreduced BV level the same
-type check defines the theorem datum: boundary representatives for
-\(u_I\), product centrality homotopies, \(P_0\)-bracket homotopies,
-coefficient kernel, and mixed brane-defect QME solution.
+and none of the three implies the others.}
 
-The polynomial category is eliminated by a local-nilpotence criterion.
-In the polynomial unreduced BV/Koszul category the linear Hamiltonians
-act by constant translations of \(\phi_2\) and \(\phi_1\), hence
-locally nilpotently on every finite polynomial observable and on its
-\(Q\)-cohomology. The principal-part cotangent module has the opposite
-behavior:
-\[
-  z_1^r\cdot\rho_{a,b}
-  =(-1)^r(b+1)\cdots(b+r)\rho_{a,b+r}\neq0,
-  \qquad r\geq1,
-\]
-and similarly for \(z_2\). Thus a same-action unreduced lift cannot be
-hidden inside polynomial one-\(\psi\) representatives. The boundary
-target is therefore the distributional principal-part current sector,
-with its centrality homotopies stated as theorem data.
+Support locality identifies \(P_0\)-brackets of disjoint smeared
+Hamiltonian currents with zero; topological locality makes the brane
+factorization algebra locally constant in \(\R^2_{\mathrm{top}}\);
+formal-holomorphic locality concentrates closed-side cohomology on
+holomorphic jets at the brane point and pairs cotangent modes with
+Taylor Hamiltonians by residue.  Trace observables exhibit all three
+identities; shifted-cotangent currents exhibit support and topological
+locality but \emph{not} formal-holomorphic locality, and the gap is
+precisely the cotangent centrality homotopy that no single identity
+supplies.  This forces the kinematic locality theorem
+(Proposition~\ref{prop:three-localities}) and the factorization-shape
+determination of \(\mathcal F^{\mathrm{mix}}_{\mathrm{Ham}}\): the
+unique factorization algebra compatible with the three identities has
+dg Lie input
+\(\Omega_c^\bullet(U)\widehat\otimes
+\Omega_c^{0,\bullet}(B)\widehat\otimes
+(\mathfrak h\ltimes\mathfrak h^\vee_{\mathrm{cont}}[1])\).
 
-The QME obstruction has an independent scalar component. With the
-Capelli/Weyl convention used below,
-\[
-  \operatorname{Tr}(A\,XY)-\operatorname{Tr}(A\,YX)
-  =\hbar N\,\operatorname{Tr}(A)
-  \quad\bmod\ \mathcal W_N\widehat\mu(\lie{gl}_N).
-\]
-After inserting the central boundary ghost
-\(\gamma_{\mathbf 1}\), \(|\gamma_{\mathbf 1}|=1\), the scalar contact
-contributes
-\[
-  \operatorname{Ob}_{\mathrm{sc}}
-  =
-  \hbar N\,\omega(f,g)
-  \int_\R a(t)b(t)\gamma_{\mathbf 1}(t)\,dt .
-\]
-  Its associated graded class is \(\hbar N[\bar c]\). The reduced
-  Hamiltonian source has no constant Hamiltonian line on which the
-  primitive \(\eta(f)=-[f]_0\) could live.  A fixed scalar-reduced
-  ordinary \(\mathfrak{gl}_N\) lift therefore requires a closed-exchange
-  contribution \(W_{\mathrm{ext}}\) whose leading class satisfies
-  \[
-    [w_{\mathrm{ext}}]=-\hbar N[\bar c]
-    \qquad\text{in }H^2_{\mathrm{Lie}}(\bar A,\C).
-  \]
-  Alternatively, the unreduced central-character source absorbs the
-  scalar symbol before scalar reduction, while a Casimir-balanced
-  supertrace model makes the scalar representative zero.
-  The obstruction complex controls any further mechanism by the same
-  degree-one class.
+\subsection{Principle 3 (Defect Polarization)}
 
-\subsection{Grothendieck: cotangent modes are residue currents}
+\emph{The brane defect line carries a canonical polarization:
+configuration observables are polynomial Taylor classes
+\(O_f=\overline{\operatorname{Tr}f(\phi_1,\phi_2)}\) on the
+matrix-valued normal coordinate, while cotangent defect momenta are
+distributional residues \(\rho_{a,b}=z_1^{-a-1}z_2^{-b-1}\,dz_1dz_2\)
+in the Grothendieck--Matlis principal-part module
+\(\mathcal P=\bigoplus_{a+b>0}\C\,\rho_{a,b}\).}
 
-The continuous dual of functions on a formal disk is not another copy
-of polynomial functions. It is the local-cohomology module of residue
-currents. For
-\[
-  R=\C[[z_1,z_2]],\qquad \mathfrak m=(z_1,z_2),
-\]
-the Matlis dualizing module is
-\[
-  H^2_{\mathfrak m}(R)\,dz_1dz_2
-  =
-  \bigoplus_{a,b\geq0}
-  \C\,z_1^{-a-1}z_2^{-b-1}\,dz_1dz_2 .
-\]
-After removing the scalar Hamiltonian, the cotangent module is
-\[
-  \mathcal P
-  =
-  \operatorname{Ann}_{\mathrm{res}}(\C\cdot1)
-  =
-  \bigoplus_{a+b>0}\C\,\rho_{a,b},
-  \qquad
-  \rho_{a,b}=z_1^{-a-1}z_2^{-b-1}\,dz_1dz_2 .
-\]
-The residue pairing
-\[
-  \langle\rho_{a,b},z_1^m z_2^n\rangle
-  =
-  \operatorname{Res}_{0}
-  z_1^{m-a-1}z_2^{n-b-1}\,dz_1dz_2
-  =
-  \delta_{a,m}\delta_{b,n}
-\]
-identifies \(\mathfrak h^\vee_{\mathrm{cont}}\) with \(\mathcal P\).
-The coadjoint action is the principal-part formula
-\[
-  z_1^p z_2^q\cdot\rho_{a,b}
-  =
-  -(pb-qa+p-q)\rho_{a-p+1,b-q+1}.
-\]
-This is the cotangent sector used by the closed theory. The
-one-\(\psi\) open classes \(\Psi_{a,b}\) carry the same labels but a
-different \(\mathfrak h\)-module structure. They form a PBW
-special-fibre shadow; they do not realize the principal-part module.
-The no-go theorem
-\ref{thm:no-polynomial-realization-categorical} records the formal
-obstruction.
+The continuous dual of the reduced Hamiltonian disk algebra is not
+another copy of polynomials but the residue annihilator of the
+constant line in the top local-cohomology module
+\(H^2_{\mathfrak m}(\C[[z_1,z_2]])\,dz_1dz_2\); the residue pairing
+makes the identification canonical, and the residue-coadjoint formula
+\(z_1^p z_2^q\cdot\rho_{a,b}=-(pb-qa+p-q)\,\rho_{a-p+1,b-q+1}\) is its
+closed-form fingerprint.  The polynomial PBW one-\(\psi\) descendants
+\(\widetilde\Psi_{a,b}\) carry the same labels but a strictly different
+\(\mathfrak h\)-module structure: linear Hamiltonians act locally
+nilpotently on the polynomial side and never locally nilpotently on
+\(\mathcal P\), so no relabelling of bases interpolates -- the PBW
+classes are the special-fibre shadow, not the deformation-level
+cotangent module.  This forces the defect polarization theorem
+(Theorem~\ref{thm:app-defect-polarization}), the residue-coadjoint
+uniqueness theorem
+(Theorem~\ref{thm:principal-part-coadjoint-uniqueness}), and the type
+discipline of the CE/PV dictionary
+(Theorem~\ref{thm:reduced-ce-pv-central-operation}): boundary
+Hamiltonian observables are the image of the cotangent coordinate
+\(u\), not the Hamiltonian ghost coordinate \(c\).
 
-\subsection{Admissibility discipline: repair by construction}
+\subsection{Principle 4 (Scalar Anomaly Transgression)}
 
-Every frontier statement in this manuscript is read with its repair datum.
-Suppose a proposed theorem \(T\) fails in the displayed habitat.  The
-admissible repair is not the largest harmless weakening of \(T\).  It is
-the smallest enlargement of the mathematical habitat in which the
-intended mechanism is a theorem, or else the exact obstruction proving
-that no such enlargement of the prescribed type can work.
-Thus a failed theorem surface is not a stable status.  It must be
-reconstituted until it is either a proved theorem with all missing data
-supplied, or a proved obstruction theorem naming the cohomology class,
-cokernel functional, Roos class, finite-window matrix row, graph
-incidence table, or source fixture that prevents the original statement.
+\emph{The constant Hamiltonian generates the zero Hamiltonian vector
+field closed-side and survives open-side as the brane \(U(1)\)
+center of mass; the same scalar cocycle is detected algebraically as
+\([\bar c]\in H^2_{\mathrm{Lie}}(\bar A,\C)\), Lie-theoretically as the
+central extension of \(\bar A\), in the trace algebra as
+\(\{\operatorname{Tr}\phi_1,\operatorname{Tr}\phi_2\}=N\), and after
+Moyal quantization as the Capelli/QME shift \(\hbar N[\bar c]\).}
 
-Concretely, a failed bracket statement demands the missing continuous
-bracket habitat, scalar quotient, line-valued parameter, or weight
-character; a failed kernel statement demands the missing convergence
-topology, diagonal tensor, Bochner--Martinelli homotopy, finite-window
-transport, or source-face table; a failed QME statement demands the
-filtered local-functional complex, scalar-contact projection,
-bulk-to-defect kernel, counterterm primitive, centrality homotopies, and
-the non-scalar obstruction class.  If any of these data are unavailable,
-the precise class or construction problem is recorded rather than
-demoting the theorem into analogy.
+The four detections are not four cocycles -- they are one cocycle
+transgressed across four faces of the same scalar-reduction step.
+Removing constants from \(\C[[z_1,z_2]]\) to obtain \(\mathfrak h\)
+projects out the kernel of the Hamiltonian vector field map
+\(f\mapsto X_f\); on the brane the same kernel reappears as the
+center-of-mass mode, so the closed-open mismatch is forced and equal
+to the transgressed class.  Algebraic deformation quantization of the
+disk by the Moyal star product converts the same scalar into the
+order-\(\hbar\) Capelli term, with \(\hbar N\) the only admissible
+coefficient; the first scalar-reduced \(\mathfrak{gl}_N\) QME
+obstruction is therefore \(W_1^{\mathrm{sc,ord}}=\hbar N\,[\bar c]\),
+and any cancellation must run through the unreduced central-character
+branch, the opposite-extension branch, or the balanced-supertrace
+branch.  This forces the scalar anomaly transgression theorems
+(Theorems~\ref{thm:u1-center-anomaly},
+\ref{thm:u1-center-anomaly-open},
+\ref{thm:quantum-classical-anomaly}) and the cancellation theorems of
+the unreduced QME appendix.
 
-Thus the non-scalar QME surface is not the vague assertion that
-``the QME is open''.  It is the finite-window criterion in
-\(\mathfrak Q^\bullet_{w,\partial,\hbar}(I)\): the scalar-contact lift
-must exist, the reduced class in
-\[
-  H^1(\ker\widehat\sigma_{\mathrm{sc}},d_{\mathrm{QME}})
-\]
-must vanish, and each row must pass the matrix equation
-\[
-  A^M c^M=-r^M
-\]
-with Roos-compatible primitives.  The first exposed larger row is
-\(\theta_3\).  In the supplied one-row complex
-\[
-  \mathcal Q^0_{\theta_3,M}=0,\qquad
-  \mathcal Q^1_{\theta_3,M}=\C\mathsf E_{\theta_3,M},
-\]
-the covector \(\ell_{\theta_3}(\mathsf E_{\theta_3,M})=1\) is an exact
-obstruction.  Admissibility repair therefore asks for a CE ancestor, a
-scalar-zero Costello counterterm primitive, or a complete companion-face
-table whose differential or signed CE boundary kills
-\(\mathsf E_{\theta_3,M}\).  Merely naming \(C_{\theta_3}\) is not
-mathematics.
+\subsection{Principle 5 (Supremum Form of Obstructions)}
 
-The same discipline governs the radial/Weyl input.  The finite
-normal-form certificates are not discarded because they stop before the
-all-bidegree theorem, and they are not inflated into that theorem either.
-They define the stronger true target: construct a functorial splitting
-of the free normal-diagram correction maps
-\[
-  \mathcal C_{a,b}\colon
-  \ker\partial\longrightarrow\mathsf{Diag}_{a,b},
-\]
-or prove a left-cokernel functional detecting a genuine obstruction.
-Likewise the native chiral object is not weakened to a curve vertex
-algebra; it remains the \(\C^2\) holomorphic factorization algebra, with
-curve/Zhu structures admitted only after the controlled
-\(\C\times\R\) reduction retaining the \(z_2\)-mode or principal-part
-system.
+\emph{Every frontier obstruction in this manuscript is stated as a
+named cohomology class or a named contracting-homotopy obligation,
+never as a hedge; ``conditional'', ``external'', and ``expected'' are
+not stopping categories.}
 
-\subsection{Deduction of the local theorem}
+Four frontier surfaces share this discipline.  The unreduced
+\(P_0\)-factorization-centre lift is the comparison cone class
+\([\Phi_{\mathrm{cl}}]\) of Problem~\ref{prob:formal-factorization-center},
+with named boundary representatives, centrality homotopies, coefficient
+kernel, and brane--defect QME solution as its construction data.  The
+non-scalar Costello QME on a brane interval is the single class
+\([\operatorname{Ob}^{\mathrm{red}}_{w,\partial,\hbar}]
+\in H^1(\ker\widehat\sigma_{\mathrm{sc}},d_{\mathrm{QME}})\) together
+with its \(\varprojlim^1H^0\)-primitive-compatibility pair, and its
+first exposed larger row is \(\theta_3\) with covector
+\(\ell_{\theta_3}(\mathsf E_{\theta_3,M})=1\) -- a named
+\(C_{\theta_3}\) is evidence only when paired with a CE ancestor, a
+scalar-zero Costello local counterterm, or a complete companion-face
+table.  The strict native all-window Bochner--Martinelli current
+transfer is the obstruction vector
+\(\operatorname{Ob}^{\Pi}_{\mathrm{BM}}\), and the residue-coadjoint
+formula on \(z_1^{N+2}\rho_{N+1,0}\) computes its first nonvanishing
+component as \((N+1)(N+2)\rho_{0,1}\).  The all-bidegree decorated PBW
+Stokes identity is the family of single classes
+\(\Omega^{\mathrm{rad}}_{a,b}\in\operatorname{coker}B_{a,b}\),
+equivalently the cokernel of the radial PBW boundary operator at each
+bidegree, and a finite normal-form certificate is not inflated into
+all-bidegree closure.  In every frontier surface the admissible repair
+is therefore the smallest enlargement of the mathematical habitat in
+which the intended mechanism is a theorem, or else the proved
+obstruction theorem naming the exact class that prevents it.
 
-The three principles have disjoint jobs in the formal-local theorem.
+\subsection{Forcing the local theorem}
 
-\begin{enumerate}
-  \item Dirac determines the open BV complex and the stable trace
-  observables.
-  \item Witten's source convention motivates the source-to-boundary target as a
-  derived \(P_0\)-centre; the local CE/PV theorem supplies the proof in
-  the reduced Hamiltonian sector.
-  \item Grothendieck determines the continuous cotangent coefficients
-  and separates principal parts from polynomial descendants.
-\end{enumerate}
-
-The resulting theorem decomposes into independent
-component theorems: the Dirac probe theorem; the stable trace and
-one-\(\psi\) calculation; the CE/PV central-operation theorem; the Matlis
-principal-part theorem; the brane-line factorization-current theorem;
-the reduced principal-part defect-current theorem; the degree-zero
-Moyal/Weyl quantum theorem; and the scalar \(U(1)\) anomaly theorem.
-The frontier components are theorem data: the admissible and endpoint
-Tate envelope, the unreduced cotangent factorization-centre morphism,
-the one-antifield quantum lift, the Costello brane-defect QME
-realization, and matched-conventions global descent.  Each is governed
-by the obstruction complex displayed in
-Section~\ref{sec:open-obligations}.
+The five principles have disjoint roles.  Principle~1 selects the open
+BV complex and the stable trace observables.  Principle~2 selects the
+factorization habitat and forces \(\mathcal F^{\mathrm{mix}}_{\mathrm{Ham}}\)
+as its unique solution.  Principle~3 selects the cotangent coefficient
+module and the operadic type discipline of the CE/PV dictionary.
+Principle~4 inscribes the scalar cocycle as the only mismatch the
+closed-open reduction can carry.  Principle~5 sets the form in which
+every remaining frontier statement is named.  Their combined force
+splits the local theorem into independent components -- the Dirac probe
+theorem, the matrix-microscope and one-\(\psi\) calculation, the CE/PV
+central-operation theorem, the Matlis principal-part theorem, the
+brane-line factorization-current theorem, the reduced principal-part
+defect-current theorem, the degree-zero Moyal/Weyl quantum theorem,
+and the scalar \(U(1)\) anomaly theorem -- and isolates the four
+frontier components as named obstruction surfaces governed by the
+obstruction complex of \S\ref{sec:open-obligations}.
