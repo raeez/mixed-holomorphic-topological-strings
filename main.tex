@@ -611,16 +611,19 @@ continuous dual is the Matlis principal-part module
     \rho_{a,b}=z_1^{-a-1}z_2^{-b-1}\,dz_1\,dz_2
       \in\mathcal P\subset H^2_{\mathfrak m}(\C[[z_1,z_2]])\,dz_1dz_2
   \]
-  pairs with \(f\in\mathfrak h\) by
+  in the local-cohomology module
+  \(H^2_{\mathfrak m}=H^2_{\{0\}}\) at the maximal ideal
+  \(\mathfrak m=(z_1,z_2)\) pairs with \(f\in\mathfrak h\) by
   \(\langle\rho_{a,b},f\rangle=\operatorname{Res}_0(\rho_{a,b}f)\) and
-  detects the Taylor coefficient of \(z_1^az_2^b\) in \(f\).  Linear
-  Hamiltonians act on \(\mathcal P\) via the residue-coadjoint formula
-  \(z_1^pz_2^q\cdot\rho_{a,b}=-(pb-qa+p-q)\rho_{a-p+1,b-q+1}\), never
-  locally nilpotently.  The polynomial PBW class
-  \(\widetilde\Psi_{a,b}\) carries the same label and a strictly
-  different \(\mathfrak h\)-module structure
-  (Theorem~\ref{thm:principal-part-coadjoint-uniqueness},
-  Corollary~\ref{cor:descendant-coadjoint-difference}).
+  detects the Taylor coefficient of \(z_1^az_2^b\) in \(f\).  The
+  residue-coadjoint formula
+  \(z_1^pz_2^q\cdot\rho_{a,b}=-(pb-qa+p-q)\rho_{a-p+1,b-q+1}\) of
+  Theorem~\ref{thm:principal-part-coadjoint-uniqueness} acts on
+  \(\mathcal P\) without local nilpotency.  The polynomial PBW class
+  \(\widetilde\Psi_{a,b}\) of
+  Corollary~\ref{cor:descendant-coadjoint-difference} carries the
+  same label and a strictly different \(\mathfrak h\)-module structure;
+  no relabelling interpolates between the two.
 \end{exa}
 
 \subsection{The Dirac brane}
@@ -1095,6 +1098,35 @@ observable is the image of the second, never the first.  This is the
 type-discipline lemma; every later use of the symbols
 \(c_f,u_f,\theta_f,O_f\) refers back to it.
 
+The CE/PV comparison itself is graded into five rungs, each at its own
+admissibility hypothesis.  Every later assertion of a CE/PV statement
+specifies which rung it inhabits.
+\[
+  \begin{array}{c|l|l}
+    \text{rung} & \text{statement} & \text{admissibility} \\[2pt]
+    \hline\\[-9pt]
+    1 & \text{coordinate cochain identity }
+        \Phi_{\mathrm{coord}}(c^I)=\theta^I,\,
+        \Phi_{\mathrm{coord}}(u_I)=O_I
+      & \text{none (unconditional)} \\
+    2 & P_0\text{-bracket enhancement on the chosen sub-PV model}
+      & \text{bracket-admissibility of } B \\
+    3 & \text{Maurer--Cartan kernel compatibility}
+      & \text{kernel datum }(B,\mathcal K_B) \\
+    4 & \text{bar-cobar / enveloping upgrade }
+        \Omega C^\bullet_{\mathrm{CE}}\xrightarrow{\sim}A
+      & \text{Tate / nilpotent / weighted datum} \\
+    5 & \text{open-trace }A_\infty\text{-Koszul upgrade}
+      & A_\infty\text{-acceptance datum }
+        (A_{\mathrm{op}},C_{\mathrm{op}},B_{\mathrm{CE/PV}},\tau_{\mathrm{op}})
+  \end{array}
+\]
+The unconditional content is rung 1.  Rungs~2--5 are conditional, each
+on a separate admissibility datum named in
+Theorem~\ref{thm:universal-ce-pv-koszul-criterion}.  When prose below
+refers to ``the CE/PV comparison'' or ``the CE/PV ladder'', the rung
+is identified explicitly.
+
 \begin{lem}[Type discipline: a Hamiltonian has two avatars]\label{lem:type-discipline}
   A Hamiltonian \(f\in\mathfrak h\) has two algebraic avatars on the
   closed shifted-cotangent BV side.
@@ -1135,6 +1167,31 @@ type-discipline lemma; every later use of the symbols
   extension or kernel datum can repair the collision: the failure is
   already at the bracket on generators.
 \end{proof}
+
+\begin{rmk}[Generator table for the type discipline]\label{rmk:type-discipline-table}
+  \[
+    \begin{array}{c|c|c|c}
+      \text{symbol} & \text{CE coordinate on}
+        & \Phi_{\mathrm{coord}}\text{-image}
+        & \text{physical role}\\[2pt]
+      \hline\\[-9pt]
+      c_f & \mathfrak h^\vee[-1]
+        & \theta_f\in\mathrm{Vect}(\widehat{\mathbf S}(\bar A))
+        & \text{generator of canonical motion}\\
+      u_f & (\mathfrak h^\vee_{\mathrm{cont}}[1])^\vee
+        & O_f=J(f)\in\widehat{\mathbf S}(\bar A)
+        & \text{brane-line measurement}
+    \end{array}
+  \]
+  The bracket-on-observables identity
+  \[
+    \theta_f(O_g)=O_{\{f,g\}}
+  \]
+  exhibits \(c_f\) acting on observables through its Schouten image
+  \(\theta_f\) without itself being an observable: the value of the
+  derivation on the observable \(O_g\) is the observable attached to
+  the Hamiltonian bracket \(\{f,g\}\).
+\end{rmk}
 
 \paragraph{The CE/PV dictionary.}
 On generators the cochain CE/PV identification of
