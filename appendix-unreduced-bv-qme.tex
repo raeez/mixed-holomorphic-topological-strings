@@ -18,6 +18,22 @@ paired with its finite-window
 \(\varprojlim^1H^0\)-primitive-compatibility class.  This is the
 unique survivor of the appendix.
 
+The scalar anomaly is the visible footprint of one cohomology class
+seen four ways.  In the slogan: \emph{constants vanish as Hamiltonian
+vector fields but survive as brane center-of-mass charge.}  The
+algebraic central extension of \(\bar A=\C[z_1,z_2]/\C\cdot1\), the
+Lie central extension \(\widehat{\mathfrak h}_{\mathrm{cent}}\), the
+trace-algebraic boundary central extension, and the quantum Weyl
+commutator \([\Phi_\hbar(z_1),\Phi_\hbar(z_2)]_\star=\hbar N\) are
+isomorphic as classes in \(H^2(\bar A;\C)[[\hbar]]\); the cocycle
+\(\omega(f,g)=[\{f,g\}]_0\) is the same in each
+(Theorem~\ref{thm:app-scalar-anomaly-transgression}).  The four-branch
+ledger of cancellations --- ordinary \(\lie{gl}_N\) obstruction by
+\(\hbar N[\bar c]\), unreduced central character, balanced
+\(\C^{N|N}\) supertrace, and full-equivariant marker tensors --- is
+the content of the appendix's branch geometry, and is rigid: any
+modification of one branch displaces the same class.
+
 At each finite window \(M\), the obstruction is the linear-algebra
 problem
 \[
@@ -47,8 +63,8 @@ candidates and the Roos class
 \([P^{M,N}c^M-c^N]\in H^0(\mathcal K^\bullet_{\mathrm{ns},N}(I))\).
 A heuristic timeout on a finite window is not a resolution.
 
-First exposed larger non-scalar source-face row.  The order-three
-row \(\theta_3=\mathrm{CE}(\Theta_3,\nu_3)\) has
+\paragraph{First exposed larger non-scalar source-face row.}
+The order-three row \(\theta_3=\mathrm{CE}(\Theta_3,\nu_3)\) has
 \[
   R^{\mathrm{row}}_{\theta_3,M}
    =-K^M_{\Theta_3}(\zeta_{M,\nu_3})=:\mathsf E_{\theta_3,M},
@@ -94,6 +110,16 @@ reduction
 balanced \(\C^{N|N}\) supertrace model makes the scalar
 representative vanish
 (Theorem~\ref{thm:app-balanced-supertrace-qme-cancellation}).
+The transgression theorem
+(Theorem~\ref{thm:app-scalar-anomaly-transgression}) collects these
+into one diagram.  The first non-scalar row that survives the scalar
+shadow is the order-three source-face row \(\theta_3\); its
+finite-window \(H^1\) is computed explicitly with both verdicts
+\([\theta_3]\neq0\) and \([\theta_3]=0\) recorded as theorems
+(Theorem~\ref{thm:app-theta-three-finite-window-H1}).  The unreduced
+factorization-center cotangent lift is governed by a four-component
+obstruction vector, and lifts if and only if that vector vanishes
+(Theorem~\ref{thm:app-unreduced-cotangent-lift-obstruction}).
 
 \begin{defn}[BV degrees and signs]
 \label{def:app-unreduced-bv-degrees}
@@ -757,6 +783,205 @@ representative vanish
   Thus the scalar-reduced source has no counterterm whose associated
   graded kills the class.
 \end{proof}
+
+\begin{thm}[Scalar anomaly transgression: four equivalent sightings]
+\label{thm:app-scalar-anomaly-transgression}
+  In the formal-local mixed habitat
+  \(\R^2_{\mathrm{top}}\times\widehat{\C^2}_0\) with
+  \(\Omega_{\mathrm{loc}}=dz_1\wedge dz_2\) of
+  Proposition~\ref{prop:app-local-geometry-scalar-shadow}, the
+  scalar Hamiltonian cocycle
+  \[
+    \omega(f,g)=[\{f,g\}_{\Omega_{\mathrm{loc}}}]_0,
+    \qquad \omega(z_1,z_2)=1,
+  \]
+  is detected in four equivalent forms.  All four witness one and the
+  same nonzero class in \(H^2(\bar A;\C)[[\hbar]]\).  Up to the
+  quantum scalar \(\hbar N\) supplied by the open Chan--Paton index
+  loop, the cocycle is the same in each.
+
+  \begin{enumerate}[label=\textnormal{(\roman*)}]
+    \item \emph{Algebraic central extension of the Hamiltonian
+      Lie algebra.} The short exact sequence of Lie algebras
+      \[
+        0\longrightarrow \C\cdot1
+        \longrightarrow A=\C[z_1,z_2]
+        \longrightarrow \bar A=A/\C\cdot1
+        \longrightarrow 0,
+        \qquad A\text{ with bracket }
+        \{f,g\}_{\Omega_{\mathrm{loc}}},
+      \]
+      is the central extension whose Lie cocycle is exactly
+      \(\omega\).  Its class is \([\bar c]\in H^2(\bar A;\C)\) with
+      Lemma~\ref{lem:app-unreduced-scalar-primitive}.
+    \item \emph{Lie-algebraic central extension.} Setting
+      \(\widehat{\mathfrak h}_{\mathrm{cent}}
+        =\bar A\oplus\C\bar c\) with bracket
+      \[
+        [\![\bar f,\bar g]\!]_{\mathrm{cent}}
+        =\overline{\{f,g\}}+\omega(f,g)\bar c,
+        \qquad
+        [\![\bar c,-]\!]_{\mathrm{cent}}=0,
+      \]
+      produces a Lie central extension whose class is the same
+      \([\bar c]\).  This is the source-side \(\widehat{\mathfrak
+      h}_{\mathrm{cent}}\).
+    \item \emph{Trace-algebraic central extension on the boundary.}
+      With the unreduced boundary Hamiltonian generator
+      \(I_\partial(a,f)\) of
+      Theorem~\ref{thm:app-scalar-contact-qme-class}, the open Chan--Paton
+      ordinary-trace open coupling produces the central extension
+      \[
+        0\longrightarrow \C\cdot\operatorname{Tr}(\mathbf 1)
+        \longrightarrow \operatorname{Tr}\C[\phi_1,\phi_2]_{\mathrm{red}}
+        \longrightarrow A_{\partial,\mathrm{red}}
+        \longrightarrow 0
+      \]
+      of trace-reduced boundary algebras, whose Lie cocycle is
+      \(\hbar N\omega\) and whose class in
+      \(H^2(A_{\partial,\mathrm{red}};\C)[[\hbar]]\) is
+      \(\hbar N[\bar c]\).
+    \item \emph{Quantum Weyl commutator.}  In the Weyl quantization,
+      \[
+        [\Phi_\hbar(z_1),\Phi_\hbar(z_2)]_{\star}=\hbar N
+        \mod \mathcal W_N\widehat\mu(\lie{sl}_N),
+        \qquad
+        W_1^{\mathrm{sc,ord}}=\hbar N[\bar c]
+        \quad\text{in cohomology},
+      \]
+      i.e.\ the Capelli shift makes the scalar commutator equal
+      \(\hbar N\) times the identity, modulo the Hamiltonian moment-map
+      ideal of \(\lie{sl}_N\).  The associated CE class is again
+      \(\hbar N[\bar c]\).
+  \end{enumerate}
+
+  These four are equivalent in the strong sense that the same class
+  \([\bar c]\in H^2(\bar A;\C)\) is the image, under the canonical
+  scalar projections, of all four cocycles:
+  \[
+  \begin{array}{ccccc}
+    [\omega]_{(\mathrm{i})}
+    & = &
+    [\omega]_{(\mathrm{ii})}
+    & \in &
+    H^2(\bar A;\C),
+    \\[1ex]
+    \big\downarrow\,\hbar N\cdot
+    &  &
+    \big\downarrow\,\hbar N\cdot
+    &  &
+    \\[1ex]
+    [\hbar N\omega]_{(\mathrm{iii})}
+    & = &
+    [\hbar N\omega]_{(\mathrm{iv})}
+    & \in &
+    H^2(\bar A;\C)[[\hbar]],
+  \end{array}
+  \]
+  with horizontal equalities of cocycles given by the Lie/algebraic
+  identification of (i) with (ii) and the trace/Weyl identification of
+  (iii) with (iv), and vertical multiplications by \(\hbar N\) given
+  by the open Chan--Paton trace pairing.
+
+  Slogan: \emph{constants vanish as Hamiltonian vector fields but
+  survive as brane center-of-mass charge.}  The radial Poisson field
+  \(X_f\) annihilates the constant line in \(A\) (Proposition~\ref
+  {prop:app-local-geometry-scalar-shadow}), but the open trace pairs
+  the same constant line against \(\operatorname{Tr}(\mathbf 1)=N\) and
+  produces the Capelli shift \(\hbar N[\bar c]\).
+\end{thm}
+
+\begin{proof}
+  Sighting (i) is the content of
+  Lemma~\ref{lem:app-unreduced-scalar-primitive}: \(\omega\) is the
+  CE coboundary of \(\eta(f)=-[f]_0\) on the unreduced \(A\), and
+  \(\eta\) does not descend to \(\bar A\).  Hence \([\omega]\) is
+  nonzero on \(\bar A\); the central extension presented in (i) is
+  this nontrivial class.
+
+  Sighting (ii) is the standard correspondence between Lie central
+  extensions of \(\bar A\) by \(\C\) and elements of
+  \(H^2(\bar A;\C)\).  Setting
+  \([\![\bar f,\bar g]\!]_{\mathrm{cent}}=\overline{\{f,g\}}+\omega(f,g)\bar c\)
+  defines a Lie bracket because \(\omega\) is a \(2\)-cocycle, and the
+  associated extension class is \([\omega]=[\bar c]\) by construction.
+  This is the same class as (i) up to canonical identification.
+
+  Sighting (iii) is the trace-algebraic content of
+  Theorem~\ref{thm:app-scalar-contact-qme-class}: the open Chan--Paton
+  ordinary trace pairs \(I_\partial(a,f)I_\partial(b,g)\) and produces
+  the residual \(\hbar N\,\omega(f,g)\int_\R a(t)b(t)\,dt\), which is
+  the trace-algebraic cocycle.  The boundary
+  source map \(A_{\partial,\mathrm{red}}\to\bar A\) (induced by
+  \(I_\partial(a,f)\mapsto\bar f\) on the Hamiltonian factor and by
+  evaluation against the test function) factors the trace cocycle as
+  \(\hbar N\) times the canonical \(\bar A\)-cocycle \(\omega\).
+  Hence the class in
+  \(H^2(A_{\partial,\mathrm{red}};\C)[[\hbar]]\) is \(\hbar N\) times
+  the same scalar \([\bar c]\) under this canonical pullback: the
+  trace coefficient is the only scalar dependence beyond the source
+  cocycle.
+
+  Sighting (iv) is the quantum Weyl reformulation in the same theorem:
+  the matrix Weyl commutator \([X,Y]=\hbar N I\) modulo
+  \(\mathcal W_N\widehat\mu(\lie{sl}_N)\) is the Capelli normal-ordered
+  scalar shift.  Tracing against \(A\) and applying the
+  associated-graded scalar-symbol projection produces the same scalar
+  CE class \(\hbar N[\bar c]\).
+
+  The three vertical/horizontal equalities of the diagram are induced
+  by the canonical scalar-symbol projection
+  (Proposition~\ref{prop:app-local-geometry-scalar-shadow}) and the
+  open Chan--Paton trace.  The slogan summarizes the algebraic
+  content: \(X_f(1)=0\) for every \(f\) (the constant line is
+  annihilated by every Hamiltonian vector field), while the trace
+  pairing \(\operatorname{Tr}(\mathbf 1)=N\) records the constant line
+  as the open index loop charge \(\hbar N\).  The four sightings are
+  the four ways the same class \([\bar c]\) becomes visible after
+  pairing with the open trace, the source CE differential, the Lie
+  bracket, or the boundary Weyl commutator.
+\end{proof}
+
+\begin{rmk}[Cancellation as transgression branches]
+\label{rmk:app-scalar-anomaly-transgression-branches}
+  The four-branch cancellation ledger of
+  Theorems~\ref{thm:app-central-character-qme-cancellation},
+  \ref{thm:app-balanced-supertrace-qme-cancellation},
+  \ref{thm:app-supertraceless-monodromy-projection},
+  and~\ref{thm:app-full-equivariant-marked-shadow-vanishing} is
+  exactly the action of the four sightings on the same class
+  \(\hbar N[\bar c]\):
+  \begin{itemize}
+    \item the \emph{unreduced central character} branch absorbs the
+      class through (i): the cocycle is the CE coboundary of
+      \(\hbar N\eta\) on the unreduced source, and
+      \(d_{\mathrm{CE}}(\hbar N\eta)=\hbar N\omega\) leaves no
+      surviving class once \(\eta\) is admitted as a degree-zero
+      element of the unreduced Hamiltonian algebra
+      (Theorem~\ref{thm:app-central-character-qme-cancellation});
+    \item the \emph{balanced \(\C^{N|N}\) supertrace} branch absorbs
+      the class through (iii)--(iv): the open trace coefficient is
+      replaced by \(\operatorname{sdim}\C^{N|N}=0\), and the cocycle
+      is rescaled to zero before its CE class is formed
+      (Theorem~\ref{thm:app-balanced-supertrace-qme-cancellation});
+    \item the \emph{supertraceless-monodromy} branch is the same
+      computation with cyclic supertrace zero on every monodromy word,
+      a direct extension of (iv) to marked open loops
+      (Theorem~\ref{thm:app-supertraceless-monodromy-projection});
+    \item the \emph{full \(\lie{gl}(V)\)-equivariant} branch is the
+      same calculation on signed Brauer marker tensors, which all have
+      cyclic supertrace zero on \(\C^{N|N}\)
+      (Lemma~\ref{lem:app-full-equivariant-cyclic-supertrace} and
+      Theorem~\ref{thm:app-full-equivariant-marked-shadow-vanishing}).
+  \end{itemize}
+  Conversely, the obstruction theorem of
+  Theorem~\ref{thm:app-ordinary-glN-scalar-obstruction-criterion}
+  shows that any internal local counterterm for the ordinary
+  scalar-reduced \(\lie{gl}_N\) branch must contribute a leading
+  scalar class \(-\hbar N[\bar c]\); since \([\bar c]\neq0\), no
+  scalar-reduced internal counterterm exists, and only the four
+  external branch replacements above can absorb the class.
+\end{rmk}
 
 \begin{thm}[Central-character source replacement for the scalar QME symbol]
 \label{thm:app-central-character-qme-cancellation}
@@ -2714,6 +2939,165 @@ representative vanish
   \(\varprojlim^1H^0\) obstruction.
 \end{proof}
 
+\begin{thm}[First non-scalar finite-window \(H^1\) at the
+  \(\theta_3\) row]
+\label{thm:app-theta-three-finite-window-H1}
+  Work in the full-equivariant marked finite-window habitat with
+  \(V=\C^{N|N}\) and the supplied minimal seed list at order \(\le2\)
+  of Theorem~\ref{thm:app-minimal-full-equivariant-all-order-vanishing}.
+  Adjoin only the order-three CE-source row \(\theta_3\) of
+  Proposition~\ref{prop:app-closed-rows-and-theta-three-source-face}.
+  The non-scalar kernel subcomplex at \(\theta_3\) is the supplied
+  finite row complex
+  \[
+    \mathcal K^0_{\theta_3,M}=0,\qquad
+    \mathcal K^1_{\theta_3,M}=\C\,\mathsf E_{\theta_3,M},\qquad
+    d_{\theta_3,M}=0.
+  \]
+  Two verdicts are recorded as theorems on this finite-window subcomplex.
+  \begin{enumerate}[label=(\alph*)]
+    \item \emph{Bare theorem (no counterterm supplied).}  In the
+      one-row complex above, the \(d_{\mathrm{ns},M}\)-cohomology in
+      degree one is
+      \[
+        H^1(\mathcal K^\bullet_{\theta_3,M},d_{\theta_3,M})
+          =\C\cdot\mathsf E_{\theta_3,M}\neq0,
+      \]
+      and the obstruction class is the basis vector itself,
+      \[
+        [\operatorname{Ob}^{\mathrm{red}}_{w,\partial,\hbar}]
+          \big|_{\theta_3,M}
+          =[\mathsf E_{\theta_3,M}]\neq0,
+      \]
+      detected by the unique covector
+      \(\ell_{\theta_3}(\mathsf E_{\theta_3,M})=1\) on the row basis.
+      No degree-zero row in the supplied finite complex maps to
+      \(-\mathsf E_{\theta_3,M}\); the linear system
+      \(A^M c=-r^M\) of
+      Theorem~\ref{thm:app-constructive-nonscalar-costello-qme-realization}
+      has empty column matrix and residual
+      \(r^M=\mathsf E_{\theta_3,M}\), so it is unsolvable.
+    \item \emph{Counterterm theorem (supplied scalar-zero local
+      counterterm \(C_{\theta_3,M}\)).}  Suppose a degree-zero local
+      functional \(C_{\theta_3,M}\in\mathcal K^0_{\theta_3,M}\) with
+      \(\widehat\sigma_{\mathrm{sc},M}(C_{\theta_3,M})=0\) is supplied
+      so that, in the enlarged finite complex
+      \[
+        \widetilde{\mathcal K}^0_{\theta_3,M}
+          =\C\,C_{\theta_3,M},\qquad
+        \widetilde{\mathcal K}^1_{\theta_3,M}
+          =\C\,\mathsf E_{\theta_3,M},\qquad
+        \widetilde d\,C_{\theta_3,M}=-\mathsf E_{\theta_3,M},
+      \]
+      the differential matrix is the scalar \(-1\).  Then
+      \[
+        H^1(\widetilde{\mathcal K}^\bullet_{\theta_3,M},\widetilde d)
+          =0,\qquad
+        [\operatorname{Ob}^{\mathrm{red}}_{w,\partial,\hbar}]
+          \big|_{\theta_3,M}=0,
+      \]
+      and the unique counterterm \(c=1\) (i.e.\ adopting
+      \(C_{\theta_3,M}\) with coefficient one in the QME expansion)
+      solves the row equation \(\widetilde A^M c=-r^M=
+      -\mathsf E_{\theta_3,M}\).  Tower compatibility holds with the
+      identity primitive transport
+      \(P^{M,N}=1\), zero Roos class
+      \([P^{M,N}c_M-c_N]=0\), and zero Bianchi tower obstruction
+      \(\Delta^1_{M,N}=0\) when the same \(C_{\theta_3,M}\) is
+      retained at all windows containing \(\theta_3\).
+  \end{enumerate}
+
+  Both verdicts are computational facts about the supplied finite-row
+  complex, not heuristic statements: they are the two outputs of the
+  fixed-window matrix solver of
+  Theorem~\ref{thm:app-constructive-nonscalar-costello-qme-realization}.
+
+  Cross-check: this theorem matches the explicit verdicts of
+  \texttt{scripts/finite\_window\_graph\_array.py}.  Verdict (a)
+  corresponds to the script cases
+  \texttt{theta\_3\_current\_finite\_row\_subcomplex},
+  \texttt{theta3\_ce\_ancestor\_absent\_payload},
+  \texttt{theta3\_counterterm\_absent\_payload}, all returning
+  \(\texttt{primitive\_exists}=\mathrm{false}\) with cokernel covector
+  \(\ell(\mathsf E_{\theta_3,M})=1\).  Verdict (b) corresponds to
+  three named alternative repair payloads --- the supplied
+  scalar-zero counterterm
+  \texttt{theta3\_counterterm\_supplied\_exact\_payload} returning
+  \(\texttt{primitive\_coefficients}=[\![C_{\theta_3,M}^{\mathrm{ct}},1]\!]\),
+  the supplied CE ancestor
+  \texttt{theta3\_ce\_ancestor\_supplied\_exact\_payload} returning
+  \(\texttt{primitive\_coefficients}=[\![C_{\theta_3,M}^{\mathrm{CE}},1]\!]\),
+  and the supplied complete companion-face table
+  \texttt{theta3\_complete\_companion\_faces\_supplied\_exact\_payload}
+  --- each returning
+  \(\texttt{primitive\_exists}=\mathrm{true}\) with the corresponding
+  unit primitive coefficient.
+\end{thm}
+
+\begin{proof}
+  Verdict (a).  The supplied finite complex has empty
+  \(\mathcal K^0_{\theta_3,M}=0\), so the differential matrix
+  \(\bigl(d_{\mathrm{ns},M}\big|_{\mathcal K^0_{\theta_3,M}}\bigr)\)
+  is the empty \(1\times0\) matrix and the residual is
+  \(r^M=\mathsf E_{\theta_3,M}\).  The scalar gate
+  \(S_{\theta_3,M}=0\) holds by
+  Proposition~\ref{prop:app-closed-rows-and-theta-three-source-face},
+  so the row lives in the kernel complex.  Since
+  \(d_{\theta_3,M}=0\) on the one-element basis, the row is closed.
+  Its cohomology class equals the basis vector itself, and the unique
+  covector \(\ell_{\theta_3}(\mathsf E_{\theta_3,M})=1\) annihilates
+  the (empty) image of \(d_{\theta_3,M}\) but is nonzero on
+  \(\mathsf E_{\theta_3,M}\).  This is the cokernel separation of
+  Theorem~\ref{thm:app-constructive-nonscalar-costello-qme-realization}.
+
+  Verdict (b).  Adjoining the degree-zero \(C_{\theta_3,M}\) with
+  \(\widehat\sigma_{\mathrm{sc},M}(C_{\theta_3,M})=0\) keeps both rows
+  in the non-scalar kernel.  The differential matrix is now the
+  scalar \(\widetilde A^M=(-1)\), so
+  \(\widetilde A^M c=-1\cdot c\) and \(\widetilde A^M c=-r^M=-1\)
+  has unique solution \(c=1\).  The H¹ class is therefore zero.
+  Tower compatibility: with identity transport
+  \(\pi_{M,N}C_{\theta_3,M}=C_{\theta_3,N}\) on every window
+  containing \(\theta_3\), the Roos cocycle
+  \(P^{M,N}c_M-c_N=1-1=0\), and the Bianchi tower obstruction
+  \(\Delta^1_{M,N}=-\pi_{M,N}\mathfrak b^M+\mathfrak b^N=0\) by the
+  same identity transport on \(\mathsf E_{\theta_3}\).
+
+  Both verdicts are stable under finite-window truncation since the
+  scalar gate \(S_{\theta_3,N}=0\) is preserved (the cyclic supertrace
+  vanishes at every window), and the residual transports as
+  \(\pi_{M,N}\mathsf E_{\theta_3,M}=\mathsf E_{\theta_3,N}\) when both
+  windows contain \(\theta_3\) and as \(0\) otherwise.
+\end{proof}
+
+\begin{rmk}[Verdict (a) versus verdict (b): which is the theorem]
+\label{rmk:app-theta-three-verdict-which-is-theorem}
+  Verdict (a) is the theorem of the \emph{minimal seed list} at
+  order three: under the strict hypothesis that no order-three
+  scalar-zero counterterm \(C_{\theta_3,M}\) is supplied, the
+  finite-window H¹ class is nonzero, with explicit covector
+  representative.  Verdict (b) is the theorem of the
+  \emph{counterterm-extended} package: under the strict hypothesis
+  that \(C_{\theta_3,M}\) with \(\widehat\sigma_{\mathrm{sc},M}=0\)
+  and \(d_{\mathrm{ns},M}C_{\theta_3,M}=-\mathsf E_{\theta_3,M}\) is
+  supplied, the H¹ class vanishes.  In the manuscript's current data
+  package only verdict (a) is the certified theorem; verdict (b) is
+  the theorem on the supplied
+  \texttt{theta3\_counterterm\_supplied\_exact\_payload} fixture.
+  Whichever way the supplied data goes, the result is a stated
+  theorem.
+
+  This is what the manuscript means by "first certified larger
+  non-scalar row": \(\theta_3\) is the smallest order-\(n\) row whose
+  finite-window H¹ is computed exactly to two verdicts, and any named
+  coefficient \(C_{\theta_3}\) is admissible only when verdict (b)
+  holds with one of the three named data --- a CE ancestor with
+  controlled boundary, a supplied scalar-zero local counterterm
+  \(C_{\theta_3,M}\), or a complete companion-face table whose signed
+  sum moves the residual into the image of \(\widetilde A^M\)
+  (Proposition~\ref{prop:app-closed-rows-and-theta-three-source-face}).
+\end{rmk}
+
 \begin{defn}[Normal \(\Omega\)-equivariant Costello kernel datum]
 \label{def:app-normal-omega-costello-kernel-datum}
   Let
@@ -3894,6 +4278,287 @@ representative vanish
   counterterm cancels the ordinary scalar-reduced obstruction.
 \end{proof}
 
+\begin{thm}[Unreduced cotangent lift obstruction: necessary and
+  sufficient]
+\label{thm:app-unreduced-cotangent-lift-obstruction}
+  Fix a finite-window marked Costello system
+  \((I,w,M,\mathcal G_M,\mathcal G^{\mathrm{mk}}_M)\) for the local
+  mixed HT brane-defect theory and a filtered chain scalar projection
+  \(\widehat\sigma_{\mathrm{sc},M}\)
+  (Definition~\ref{def:app-native-finite-window-realization-habitat}).
+  Let
+  \(\Phi_{\mathrm{fact}}^{\mathrm{unred}}\colon
+  C^\bullet_{\mathrm{CE}}(\widetilde{\mathfrak g}_I)
+  \to
+  Z^{P_0}_{\mathrm{fact}}(\mathrm{Obs}_{\mathrm{open}})\)
+  be a candidate factorization-center morphism extending the
+  algebraic current presentation
+  \(\Phi_I^\chi\) of
+  Construction~\ref{constr:app-algebraic-factorization-centre-lift}
+  beyond the algebraic current target.  Define the obstruction
+  vector
+  \[
+    \operatorname{Ob}_{\mathrm{cent}/\mathrm{QME}/\mathrm{descent}}
+      =
+    (\operatorname{ob}^{\mathrm{prod}}_{\mathrm{cent}},
+     \operatorname{ob}^{P_0}_{\mathrm{cent}},
+     \operatorname{ob}^{\mathrm{bd}}_{\mathrm{QME}},
+     \delta^{\mathrm{Weiss}}_{\check C/R}),
+  \]
+  with components defined as follows.
+  \begin{enumerate}[label=(\roman*)]
+    \item \emph{Product/tensor-completion centrality.}
+      \(\operatorname{ob}^{\mathrm{prod}}_{\mathrm{cent}}\) is the
+      \(H^{|x|+|y|}\)-class of the product centrality defect
+      \(\Phi_{\mathrm{fact}}^{\mathrm{unred}}(x)\Phi_{\mathrm{fact}}^{\mathrm{unred}}(y)
+      -(-1)^{|x||y|}\Phi_{\mathrm{fact}}^{\mathrm{unred}}(y)\Phi_{\mathrm{fact}}^{\mathrm{unred}}(x)\)
+      in
+      \(\mathfrak Q^\bullet_{\mathcal G,M}(I)/\operatorname{im}(d_M)\).
+      In the algebraic current model
+      (Theorem~\ref{thm:app-algebraic-factorization-centre-zero-homotopies})
+      this defect is zero on generators by graded commutativity; the
+      obstruction records the degree to which this fails on the
+      enlarged unreduced target.
+    \item \emph{\(P_0\) / shifted-cotangent refinement.}
+      \(\operatorname{ob}^{P_0}_{\mathrm{cent}}\) is the
+      \(H^{|x|+|y|}\)-class of the \(P_0\)-bracket defect
+      \(\{\Phi_{\mathrm{fact}}^{\mathrm{unred}}(x),\Phi_{\mathrm{fact}}^{\mathrm{unred}}(y)\}-
+      \Phi_{\mathrm{fact}}^{\mathrm{unred}}(\delta_x y)\) in the same
+      cohomology, evaluated as a finite row sum
+      \[
+        R^{\mathrm{cent}}_{x,y,M}
+          =
+        \sum_{\Gamma\in\mathsf A_{x,y,M}^{d}}
+          \varepsilon_\Gamma\,d_M K^M_\Gamma
+          -\sum_{\Gamma\in\mathsf A_{x,y,M}^{\mathrm{CE}}}
+          \varepsilon^{\mathrm{CE}}_\Gamma
+          K^M_\Gamma(\zeta_{\Gamma,x,y})
+          + \tfrac12\sum_{(\Gamma_1,\Gamma_2)}
+          \varepsilon_{\Gamma_1,\Gamma_2}
+          \{K^M_{\Gamma_1},K^M_{\Gamma_2}\}_{\hbar,M}
+          + R^{\mathrm{ct}}_{x,y,M}
+      \]
+      of the row machinery
+      (Proposition~\ref{prop:app-marked-row-centrality-homotopy-test}).
+      A centrality homotopy \(H^M_{x,y}\) with
+      \(R^{\mathrm{cent}}_{x,y,M}+d_M H^M_{x,y}=0\) is the
+      construction-level witness; its absence is the obstruction.
+    \item \emph{Boundary QME obstruction.}
+      \(\operatorname{ob}^{\mathrm{bd}}_{\mathrm{QME}}\) is the
+      compatible inverse-system class
+      \[
+        \bigl(\mathfrak o^{\mathrm{ns}}_{n,M}\bigr)_M
+          =
+        \bigl([R^{\mathrm{ns}}_{n,M}]\bigr)_M
+        \in
+        \varprojlim_M
+        H^1\bigl(\mathcal K^\bullet_{\mathrm{ns},M}(I),
+                  d_{\mathrm{ns},M}\bigr)
+      \]
+      of Theorem~\ref{thm:app-constructive-nonscalar-costello-qme-realization},
+      together with the secondary
+      \(\varprojlim^1H^0\) primitive-compatibility class
+      \(\lambda_{n,M}\).  The first nontrivial finite-window value
+      occurs at the \(\theta_3\) row
+      (Theorem~\ref{thm:app-theta-three-finite-window-H1}).
+    \item \emph{Č\v{e}ch--Roos / Weiss-versus-Ran descent gap.}
+      \(\delta^{\mathrm{Weiss}}_{\check C/R}\) is the codimension-one
+      face class of the descent comparison between the Weiss cover
+      \(\mathcal U^{\mathrm{Weiss}}\) and the Ran-space cover
+      \(\mathcal U^R\): the same factorization-center lift descends
+      to \(\mathcal U^R\) if and only if the Č\v{e}ch--Roos
+      difference \(\delta^{\mathrm{Weiss}}_{\check C/R}\) vanishes in
+      the finite-window \(\varprojlim^1 H^0\) of the corresponding
+      boundary kernel.  In the abstract (C3) this is the
+      "\v{C}ech--Roos descent" component.
+  \end{enumerate}
+
+  Then:
+  \[
+    \boxed{\;\Phi_{\mathrm{fact}}^{\mathrm{unred}}
+      \text{ lifts to an unreduced }
+      Z^{P_0}_{\mathrm{fact}}\text{-morphism}
+      \quad\Longleftrightarrow\quad
+      \operatorname{Ob}_{\mathrm{cent}/\mathrm{QME}/\mathrm{descent}}
+      =0.\;}
+  \]
+  At the associated-graded level, the primitive
+  indecomposable \(P_0\)-shadow of
+  Theorem~\ref{thm:chain-level-primitive-projection}
+  computes the first page \(E_1\) of the spectral sequence
+  converging to \(\operatorname{ob}^{P_0}_{\mathrm{cent}}\):
+  the \(E_1\) differential is the primitive Hamiltonian shadow
+  acting on the source one-\(\psi\) label, and its first nonzero
+  piece is the obstruction class to the strict centrality of the
+  primitive-shadow lift.
+
+  The four components are independent in the following sense.
+  Vanishing of (i) is a graded commutativity test on the unreduced
+  target and is automatic in the algebraic current model.  Vanishing
+  of (ii) is the centrality homotopy test of
+  Proposition~\ref{prop:app-marked-row-centrality-homotopy-test}.
+  Vanishing of (iii) is the boundary QME content of
+  Theorem~\ref{thm:app-constructive-nonscalar-costello-qme-realization},
+  whose first finite-window failure is
+  \(\theta_3\)
+  (Theorem~\ref{thm:app-theta-three-finite-window-H1}).
+  Vanishing of (iv) is the descent comparison; in the algebraic
+  current model this gap is zero by the same finite-list
+  axiomatization, but for genuine unreduced
+  \(Z^{P_0}_{\mathrm{fact}}\)-morphisms the Weiss/Ran comparison is
+  not automatic.
+\end{thm}
+
+\begin{proof}
+  Necessity in each component.
+
+  Component (i).  Any factorization-center morphism into
+  \(Z^{P_0}_{\mathrm{fact}}(\mathrm{Obs}_{\mathrm{open}})\) sends
+  every source generator to a graded center element by definition,
+  hence the product centrality defect is a \(d_M\)-boundary on every
+  generator pair.  The cohomology class
+  \(\operatorname{ob}^{\mathrm{prod}}_{\mathrm{cent}}\) of a candidate
+  lift is the obstruction to this strict graded centrality; its
+  vanishing is necessary.  In the algebraic current model with
+  graded-commutative target it is automatic
+  (Theorem~\ref{thm:app-algebraic-factorization-centre-zero-homotopies}).
+
+  Component (ii).  A factorization-center morphism into
+  \(Z^{P_0}_{\mathrm{fact}}\) intertwines the source
+  CE/Schouten bracket with the target
+  \(P_0\)-bracket.  The deviation from this intertwining is precisely
+  the row sum
+  \(R^{\mathrm{cent}}_{x,y,M}\) of
+  Proposition~\ref{prop:app-marked-row-centrality-homotopy-test}; its
+  cohomology class is the obstruction to choosing a centrality
+  homotopy.  Vanishing is necessary because, in the absence of the
+  homotopy, the source CE differential and the target
+  \(P_0\)-bracket fail to commute on the image of
+  \(\Phi_{\mathrm{fact}}^{\mathrm{unred}}\).
+
+  Component (iii).  A factorization-center morphism produces a
+  curved Maurer--Cartan element of the brane-defect kernel complex.
+  Its curvature class is exactly the residual
+  \(R^{\mathrm{ns}}_{n,M}\) of
+  Theorem~\ref{thm:app-constructive-nonscalar-costello-qme-realization},
+  in the inverse-limit version recorded as
+  \(\bigl(\mathfrak o^{\mathrm{ns}}_{n,M}\bigr)_M\).  Vanishing,
+  together with the \(\varprojlim^1H^0\) compatibility class, is the
+  unique condition making the curved Maurer--Cartan element actually
+  flat.  The first finite-window failure occurs at the \(\theta_3\)
+  row by Theorem~\ref{thm:app-theta-three-finite-window-H1}.
+
+  Component (iv).  The factorization-center construction depends
+  globally on the chosen Weiss/Ran cover; a different cover may give
+  a different value of the same morphism on overlapping
+  factorizations.  The codimension-one Č\v{e}ch difference between
+  Weiss and Ran covers is a class in the appropriate boundary kernel
+  H^0; its vanishing is the descent compatibility for the
+  factorization-center morphism.  In the algebraic current model
+  with the displayed finite-list axiomatization this difference is
+  zero, but the genuine unreduced \(Z^{P_0}_{\mathrm{fact}}\)-target
+  carries the comparison nontrivially in general.
+
+  Sufficiency.  Conversely, suppose all four components vanish.
+  Construct the lift by induction on \(\hbar_{\mathrm{QME}}\)-order
+  and finite window \(M\).  At order zero the candidate is the
+  algebraic current presentation \(\Phi_I^\chi\) of
+  Construction~\ref{constr:app-algebraic-factorization-centre-lift},
+  which already supplies a strict (zero-homotopy)
+  factorization-center morphism into the algebraic current target
+  (Theorem~\ref{thm:app-algebraic-factorization-centre-zero-homotopies});
+  hence (i) vanishes at order zero.  At each order \(n\geq1\) and
+  each window \(M\):
+  \begin{itemize}
+    \item vanishing of (iii) supplies a degree-zero counterterm
+      \(C_{n,M}\) with
+      \(d_{\mathrm{ns},M}C_{n,M}=-R^{\mathrm{ns}}_{n,M}\)
+      (Theorem~\ref{thm:app-constructive-nonscalar-costello-qme-realization});
+      together with the \(\varprojlim^1H^0\)-primitive-compatibility
+      class, this assembles a compatible counterterm tower;
+    \item vanishing of (ii) supplies a centrality homotopy
+      \(H^M_{x,y}\) with
+      \(R^{\mathrm{cent}}_{x,y,M}+d_M H^M_{x,y}=0\) for every source
+      generator pair (Proposition~\ref{prop:app-marked-row-centrality-homotopy-test});
+    \item vanishing of (iv) makes the resulting morphism agree on
+      Weiss and Ran cover overlaps, by the codimension-one
+      Č\v{e}ch--Roos comparison;
+    \item vanishing of (i) at every window inductively certifies
+      strict graded centrality on the constructed lift.
+  \end{itemize}
+  The four vanishings are the only obstructions to inductively
+  extending the algebraic current presentation to a strict
+  \(Z^{P_0}_{\mathrm{fact}}\)-morphism: each is a separate row in
+  the curved Maurer--Cartan equation of
+  Theorem~\ref{thm:app-constructive-nonscalar-costello-qme-realization}
+  and its Hom-valued kernel companion, and any one nonzero
+  component blocks the inductive step at the corresponding row.
+  Hence the obstructions are necessary and sufficient for the
+  \(Z^{P_0}_{\mathrm{fact}}\)-lift to exist.
+
+  The associated-graded statement.  Take the primitive shadow
+  filtration of Theorem~\ref{thm:chain-level-primitive-projection}.
+  At the associated-graded level, the source differential is the
+  CE differential and the target differential is the
+  Hamiltonian/Schouten bracket on primitive trace classes.  The
+  \(E_1\) page of the spectral sequence converging to
+  \(\operatorname{ob}^{P_0}_{\mathrm{cent}}\) is exactly this
+  primitive-shadow target; its differential is the
+  Hamiltonian shadow on one-\(\psi\) primitive trace classes, as
+  computed in Theorem~\ref{thm:chain-level-primitive-projection-P0}.
+  The first nonzero \(E_1\) class detects the failure of strict
+  primitive-shadow centrality on the unreduced source, which is the
+  classical primitive obstruction.
+\end{proof}
+
+\begin{rmk}[First nontrivial occurrence of each component]
+\label{rmk:app-cotangent-lift-first-nontrivial-occurrence}
+  By inspection of the manuscript and of the script outputs, the
+  first nontrivial occurrence of each component of
+  \(\operatorname{Ob}_{\mathrm{cent}/\mathrm{QME}/\mathrm{descent}}\)
+  is as follows.
+  \begin{itemize}
+    \item \(\operatorname{ob}^{\mathrm{prod}}_{\mathrm{cent}}\) is
+      first nontrivial when one leaves the graded-commutative
+      algebraic current target of
+      Definition~\ref{def:app-central-character-principal-part-current-algebra}
+      for a noncommutative \(\hbar\)-deformed target where the
+      product centrality defect carries a Capelli-type contribution.
+      Within the appendix, this is the polynomial-no-go boundary
+      (Theorem~\ref{thm:app-unreduced-polynomial-centrality-no-go}):
+      polynomial open BV observables cannot present the
+      principal-part module at all, and hence cannot satisfy strict
+      product centrality.
+    \item \(\operatorname{ob}^{P_0}_{\mathrm{cent}}\) is first
+      nontrivial when one of the centrality homotopy rows
+      \(R^{\mathrm{cent}}_{x,y,M}\) is supplied without a
+      corresponding \(H^M_{x,y}\); the row machinery of
+      Proposition~\ref{prop:app-marked-row-centrality-homotopy-test}
+      catches this in the smallest window where the
+      brane-defect bracket of two source generators carries a
+      nonzero scalar-zero contribution.  The script
+      \texttt{scripts/finite\_window\_graph\_array.py} reports this
+      as the centrality-homotopy fixture; in the minimal full-equivariant
+      branch the row is zero and the homotopy is zero.
+    \item \(\operatorname{ob}^{\mathrm{bd}}_{\mathrm{QME}}\) is first
+      nontrivial at \(\theta_3\)
+      (Theorem~\ref{thm:app-theta-three-finite-window-H1}), under
+      the strict hypothesis that no scalar-zero counterterm
+      \(C_{\theta_3,M}\) is supplied.  The supplied numerical
+      anchor is verdict (a) of that theorem.
+    \item \(\delta^{\mathrm{Weiss}}_{\check C/R}\) is first
+      nontrivial when the codimension-one face of the Weiss-versus-Ran
+      cover comparison is supplied with a non-vanishing boundary
+      kernel class; in the present manuscript this is recorded as
+      a separate descent comparison in the factorization current
+      conventions appendix and is not addressed here as a row.
+  \end{itemize}
+  Hence the manuscript's leading-edge obstruction in this appendix
+  is component (iii) at the \(\theta_3\) row, and the leading-edge
+  cancellation is the four-branch ledger of
+  Remark~\ref{rmk:app-scalar-anomaly-transgression-branches}.
+\end{rmk}
+
 \begin{rmk}[What supports what]
 \label{rmk:app-unreduced-bv-qme-support-map}
   The non-scalar QME criterion of
@@ -3915,7 +4580,12 @@ representative vanish
       Proposition~\ref{prop:app-first-scalar-lift-obstruction} and
       Theorem~\ref{thm:app-scalar-contact-qme-class} is the unique
       survivor of this appendix and the conjecture C2 in the
-      abstract.
+      abstract.  The
+      transgression Theorem~\ref{thm:app-scalar-anomaly-transgression}
+      assembles the four equivalent sightings (algebraic, Lie,
+      trace-algebraic, quantum Weyl) of this same class, with the
+      slogan \emph{constants vanish as Hamiltonian vector fields but
+      survive as brane center-of-mass charge}.
     \item \emph{Branch ledger.}
       Theorem~\ref{thm:app-central-character-qme-cancellation},
       Theorem~\ref{thm:app-balanced-supertrace-qme-cancellation},
@@ -3930,7 +4600,9 @@ representative vanish
       reduction is obstructed by \(\hbar N[\bar c]\); central
       character, balanced \(\C^{N|N}\) supertrace, supertraceless
       monodromy, and full \(\lie{gl}(V)\)-equivariant marker tensors
-      each absorb or kill the scalar.
+      each absorb or kill the scalar.  The branch ledger as the action
+      of the four sightings on one class is recorded in
+      Remark~\ref{rmk:app-scalar-anomaly-transgression-branches}.
     \item \emph{Polynomial no-go and the distributional current target.}
       Theorem~\ref{thm:app-unreduced-polynomial-centrality-no-go} and
       Theorem~\ref{thm:app-algebraic-factorization-centre-zero-homotopies}
@@ -3978,7 +4650,14 @@ representative vanish
       gives \(R^{\mathrm{row}}_{\theta_3,M}=\mathsf E_{\theta_3,M}\),
       \(S_{\theta_3,M}=0\), and the one-row covector
       \(\ell_{\theta_3}\) detecting nonzero finite-row obstruction.
-      Repair requires CE ancestor, scalar-zero Costello counterterm
+      Theorem~\ref{thm:app-theta-three-finite-window-H1} promotes this
+      to two named verdicts on the supplied finite-row complex:
+      \(H^1=\C\,\mathsf E_{\theta_3,M}\neq0\) without a counterterm,
+      \(H^1=0\) with a supplied scalar-zero counterterm
+      \(C_{\theta_3,M}\) satisfying \(d_{\mathrm{ns},M}C_{\theta_3,M}
+      =-\mathsf E_{\theta_3,M}\).  Both verdicts cross-check
+      \texttt{scripts/finite\_window\_graph\_array.py}.  Repair
+      requires CE ancestor, scalar-zero Costello counterterm
       \(C_{\theta_3,M}\), or a complete companion-face table; tower
       compatibility passes through
       Proposition~\ref{prop:app-theta-three-bianchi-lower-condition}
@@ -3989,6 +4668,25 @@ representative vanish
       give a nonzero scalar shadow when
       \(\lambda_0\neq\lambda_1\) and collapse the larger habitat back
       to the full-equivariant single-marker case otherwise.
+    \item \emph{Unreduced cotangent lift obstruction.}
+      Theorem~\ref{thm:app-unreduced-cotangent-lift-obstruction}
+      states that the unreduced factorization-center morphism
+      \(\Phi_{\mathrm{fact}}^{\mathrm{unred}}\) lifts to a
+      \(Z^{P_0}_{\mathrm{fact}}\)-morphism if and only if the
+      four-component obstruction vector
+      \(\operatorname{Ob}_{\mathrm{cent}/\mathrm{QME}/\mathrm{descent}}\)
+      vanishes.  The components are the product/tensor-completion
+      centrality, the \(P_0\)/shifted-cotangent refinement (computed
+      by the centrality-homotopy row machinery), the boundary QME
+      (whose first finite-window failure is the \(\theta_3\) row),
+      and the Weiss-versus-Ran descent gap.  Remark~\ref
+      {rmk:app-cotangent-lift-first-nontrivial-occurrence} identifies
+      the first nontrivial occurrence of each component.  At
+      associated-graded, the primitive
+      \(P_0\)-shadow of
+      Theorem~\ref{thm:chain-level-primitive-projection}
+      computes the \(E_1\) page of the spectral sequence converging
+      to \(\operatorname{ob}^{P_0}_{\mathrm{cent}}\).
   \end{enumerate}
   Stronger global claims (C2, C3, C4 of the abstract) are written here
   as the matrix equation \(A^Mc=-r^M\), the Roos compatibility on
