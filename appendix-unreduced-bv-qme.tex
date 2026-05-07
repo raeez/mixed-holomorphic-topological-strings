@@ -18,6 +18,22 @@ paired with its finite-window
 \(\varprojlim^1H^0\)-primitive-compatibility class.  This is the
 unique survivor of the appendix.
 
+The scalar anomaly is the visible footprint of one cohomology class
+seen four ways.  In the slogan: \emph{constants vanish as Hamiltonian
+vector fields but survive as brane center-of-mass charge.}  The
+algebraic central extension of \(\bar A=\C[z_1,z_2]/\C\cdot1\), the
+Lie central extension \(\widehat{\mathfrak h}_{\mathrm{cent}}\), the
+trace-algebraic boundary central extension, and the quantum Weyl
+commutator \([\Phi_\hbar(z_1),\Phi_\hbar(z_2)]_\star=\hbar N\) are
+isomorphic as classes in \(H^2(\bar A;\C)[[\hbar]]\); the cocycle
+\(\omega(f,g)=[\{f,g\}]_0\) is the same in each
+(Theorem~\ref{thm:app-scalar-anomaly-transgression}).  The four-branch
+ledger of cancellations --- ordinary \(\lie{gl}_N\) obstruction by
+\(\hbar N[\bar c]\), unreduced central character, balanced
+\(\C^{N|N}\) supertrace, and full-equivariant marker tensors --- is
+the content of the appendix's branch geometry, and is rigid: any
+modification of one branch displaces the same class.
+
 At each finite window \(M\), the obstruction is the linear-algebra
 problem
 \[
@@ -94,6 +110,16 @@ reduction
 balanced \(\C^{N|N}\) supertrace model makes the scalar
 representative vanish
 (Theorem~\ref{thm:app-balanced-supertrace-qme-cancellation}).
+The transgression theorem
+(Theorem~\ref{thm:app-scalar-anomaly-transgression}) collects these
+into one diagram.  The first non-scalar row that survives the scalar
+shadow is the order-three source-face row \(\theta_3\); its
+finite-window \(H^1\) is computed explicitly with both verdicts
+\([\theta_3]\neq0\) and \([\theta_3]=0\) recorded as theorems
+(Theorem~\ref{thm:app-theta-three-finite-window-H1}).  The unreduced
+factorization-center cotangent lift is governed by a four-component
+obstruction vector, and lifts if and only if that vector vanishes
+(Theorem~\ref{thm:app-unreduced-cotangent-lift-obstruction}).
 
 \begin{defn}[BV degrees and signs]
 \label{def:app-unreduced-bv-degrees}
@@ -757,6 +783,199 @@ representative vanish
   Thus the scalar-reduced source has no counterterm whose associated
   graded kills the class.
 \end{proof}
+
+\begin{thm}[Scalar anomaly transgression: four equivalent sightings]
+\label{thm:app-scalar-anomaly-transgression}
+  In the formal-local mixed habitat
+  \(\R^2_{\mathrm{top}}\times\widehat{\C^2}_0\) with
+  \(\Omega_{\mathrm{loc}}=dz_1\wedge dz_2\) of
+  Proposition~\ref{prop:app-local-geometry-scalar-shadow}, the
+  scalar Hamiltonian cocycle
+  \[
+    \omega(f,g)=[\{f,g\}_{\Omega_{\mathrm{loc}}}]_0,
+    \qquad \omega(z_1,z_2)=1,
+  \]
+  is detected in four equivalent forms.  All four witness one and the
+  same nonzero class in \(H^2(\bar A;\C)[[\hbar]]\).  Up to the
+  quantum scalar \(\hbar N\) supplied by the open Chan--Paton index
+  loop, the cocycle is the same in each.
+
+  \begin{enumerate}[label=\textnormal{(\roman*)}]
+    \item \emph{Algebraic central extension of the Hamiltonian
+      Lie algebra.} The short exact sequence of Lie algebras
+      \[
+        0\longrightarrow \C\cdot1
+        \longrightarrow A=\C[z_1,z_2]
+        \longrightarrow \bar A=A/\C\cdot1
+        \longrightarrow 0,
+        \qquad A\text{ with bracket }
+        \{f,g\}_{\Omega_{\mathrm{loc}}},
+      \]
+      is the central extension whose Lie cocycle is exactly
+      \(\omega\).  Its class is \([\bar c]\in H^2(\bar A;\C)\) with
+      Lemma~\ref{lem:app-unreduced-scalar-primitive}.
+    \item \emph{Lie-algebraic central extension.} Setting
+      \(\widehat{\mathfrak h}_{\mathrm{cent}}
+        =\bar A\oplus\C\bar c\) with bracket
+      \[
+        [\![\bar f,\bar g]\!]_{\mathrm{cent}}
+        =\overline{\{f,g\}}+\omega(f,g)\bar c,
+        \qquad
+        [\![\bar c,-]\!]_{\mathrm{cent}}=0,
+      \]
+      produces a Lie central extension whose class is the same
+      \([\bar c]\).  This is the source-side \(\widehat{\mathfrak
+      h}_{\mathrm{cent}}\).
+    \item \emph{Trace-algebraic central extension on the boundary.}
+      With the unreduced boundary Hamiltonian generator
+      \(I_\partial(a,f)\) of
+      Theorem~\ref{thm:app-scalar-contact-qme-class}, the open Chan--Paton
+      ordinary-trace open coupling produces the central extension
+      \[
+        0\longrightarrow \C\cdot\operatorname{Tr}(\mathbf 1)
+        \longrightarrow \operatorname{Tr}\C[\phi_1,\phi_2]_{\mathrm{red}}
+        \longrightarrow A_{\partial,\mathrm{red}}
+        \longrightarrow 0
+      \]
+      of trace-reduced boundary algebras, whose Lie cocycle is
+      \(\hbar N\omega\) and whose class in
+      \(H^2(A_{\partial,\mathrm{red}};\C)[[\hbar]]\) is
+      \(\hbar N[\bar c]\).
+    \item \emph{Quantum Weyl commutator.}  In the Weyl quantization,
+      \[
+        [\Phi_\hbar(z_1),\Phi_\hbar(z_2)]_{\star}=\hbar N
+        \mod \mathcal W_N\widehat\mu(\lie{sl}_N),
+        \qquad
+        W_1^{\mathrm{sc,ord}}=\hbar N[\bar c]
+        \quad\text{in cohomology},
+      \]
+      i.e.\ the Capelli shift makes the scalar commutator equal
+      \(\hbar N\) times the identity, modulo the Hamiltonian moment-map
+      ideal of \(\lie{sl}_N\).  The associated CE class is again
+      \(\hbar N[\bar c]\).
+  \end{enumerate}
+
+  These four are equivalent in the strong sense that the same class
+  \([\bar c]\in H^2(\bar A;\C)\) is the image, under the canonical
+  scalar projections, of all four cocycles:
+  \[
+  \begin{array}{ccccc}
+    [\omega]_{(\mathrm{i})}
+    & = &
+    [\omega]_{(\mathrm{ii})}
+    & \in &
+    H^2(\bar A;\C),
+    \\[1ex]
+    \big\downarrow\,\hbar N\cdot
+    &  &
+    \big\downarrow\,\hbar N\cdot
+    &  &
+    \\[1ex]
+    [\hbar N\omega]_{(\mathrm{iii})}
+    & = &
+    [\hbar N\omega]_{(\mathrm{iv})}
+    & \in &
+    H^2(\bar A;\C)[[\hbar]],
+  \end{array}
+  \]
+  with horizontal equalities of cocycles given by the Lie/algebraic
+  identification of (i) with (ii) and the trace/Weyl identification of
+  (iii) with (iv), and vertical multiplications by \(\hbar N\) given
+  by the open Chan--Paton trace pairing.
+
+  Slogan: \emph{constants vanish as Hamiltonian vector fields but
+  survive as brane center-of-mass charge.}  The radial Poisson field
+  \(X_f\) annihilates the constant line in \(A\) (Proposition~\ref
+  {prop:app-local-geometry-scalar-shadow}), but the open trace pairs
+  the same constant line against \(\operatorname{Tr}(\mathbf 1)=N\) and
+  produces the Capelli shift \(\hbar N[\bar c]\).
+\end{thm}
+
+\begin{proof}
+  Sighting (i) is the content of
+  Lemma~\ref{lem:app-unreduced-scalar-primitive}: \(\omega\) is the
+  CE coboundary of \(\eta(f)=-[f]_0\) on the unreduced \(A\), and
+  \(\eta\) does not descend to \(\bar A\).  Hence \([\omega]\) is
+  nonzero on \(\bar A\); the central extension presented in (i) is
+  this nontrivial class.
+
+  Sighting (ii) is the standard correspondence between Lie central
+  extensions of \(\bar A\) by \(\C\) and elements of
+  \(H^2(\bar A;\C)\).  Setting
+  \([\![\bar f,\bar g]\!]_{\mathrm{cent}}=\overline{\{f,g\}}+\omega(f,g)\bar c\)
+  defines a Lie bracket because \(\omega\) is a \(2\)-cocycle, and the
+  associated extension class is \([\omega]=[\bar c]\) by construction.
+  This is the same class as (i) up to canonical identification.
+
+  Sighting (iii) is the trace-algebraic content of
+  Theorem~\ref{thm:app-scalar-contact-qme-class}: the open Chan--Paton
+  ordinary trace pairs \(I_\partial(a,f)I_\partial(b,g)\) and produces
+  the residual \(\hbar N\,\omega(f,g)\int_\R a(t)b(t)\,dt\), which is
+  the trace-algebraic cocycle.  Its class in
+  \(H^2(A_{\partial,\mathrm{red}};\C)[[\hbar]]\) is \(\hbar N\) times
+  the same scalar \([\bar c]\): the trace coefficient is the only
+  scalar dependence.
+
+  Sighting (iv) is the quantum Weyl reformulation in the same theorem:
+  the matrix Weyl commutator \([X,Y]=\hbar N I\) modulo
+  \(\mathcal W_N\widehat\mu(\lie{sl}_N)\) is the Capelli normal-ordered
+  scalar shift.  Tracing against \(A\) and applying the
+  associated-graded scalar-symbol projection produces the same scalar
+  CE class \(\hbar N[\bar c]\).
+
+  The three vertical/horizontal equalities of the diagram are induced
+  by the canonical scalar-symbol projection
+  (Proposition~\ref{prop:app-local-geometry-scalar-shadow}) and the
+  open Chan--Paton trace.  The slogan summarizes the algebraic
+  content: \(X_f(1)=0\) for every \(f\) (the constant line is
+  annihilated by every Hamiltonian vector field), while the trace
+  pairing \(\operatorname{Tr}(\mathbf 1)=N\) records the constant line
+  as the open index loop charge \(\hbar N\).  The four sightings are
+  the four ways the same class \([\bar c]\) becomes visible after
+  pairing with the open trace, the source CE differential, the Lie
+  bracket, or the boundary Weyl commutator.
+\end{proof}
+
+\begin{rmk}[Cancellation as transgression branches]
+\label{rmk:app-scalar-anomaly-transgression-branches}
+  The four-branch cancellation ledger of
+  Theorems~\ref{thm:app-central-character-qme-cancellation},
+  \ref{thm:app-balanced-supertrace-qme-cancellation},
+  \ref{thm:app-supertraceless-monodromy-projection},
+  and~\ref{thm:app-full-equivariant-marked-shadow-vanishing} is
+  exactly the action of the four sightings on the same class
+  \(\hbar N[\bar c]\):
+  \begin{itemize}
+    \item the \emph{unreduced central character} branch absorbs the
+      class through (i): the cocycle is the CE coboundary of
+      \(\hbar N\eta\) on the unreduced source, and
+      \(d_{\mathrm{CE}}(\hbar N\eta)=\hbar N\omega\) leaves no
+      surviving class once \(\eta\) is admitted as a degree-zero
+      element of the unreduced Hamiltonian algebra
+      (Theorem~\ref{thm:app-central-character-qme-cancellation});
+    \item the \emph{balanced \(\C^{N|N}\) supertrace} branch absorbs
+      the class through (iii)--(iv): the open trace coefficient is
+      replaced by \(\operatorname{sdim}\C^{N|N}=0\), and the cocycle
+      is rescaled to zero before its CE class is formed
+      (Theorem~\ref{thm:app-balanced-supertrace-qme-cancellation});
+    \item the \emph{supertraceless-monodromy} branch is the same
+      computation with cyclic supertrace zero on every monodromy word,
+      a direct extension of (iv) to marked open loops
+      (Theorem~\ref{thm:app-supertraceless-monodromy-projection});
+    \item the \emph{full \(\lie{gl}(V)\)-equivariant} branch is the
+      same calculation on signed Brauer marker tensors, which all have
+      cyclic supertrace zero on \(\C^{N|N}\)
+      (Lemma~\ref{lem:app-full-equivariant-cyclic-supertrace} and
+      Theorem~\ref{thm:app-full-equivariant-marked-shadow-vanishing}).
+  \end{itemize}
+  Conversely, the obstruction theorem of
+  Theorem~\ref{thm:app-ordinary-glN-scalar-obstruction-criterion}
+  shows that any internal local counterterm for the ordinary
+  scalar-reduced \(\lie{gl}_N\) branch must contribute a leading
+  scalar class \(-\hbar N[\bar c]\); since \([\bar c]\neq0\), no
+  scalar-reduced internal counterterm exists, and only the four
+  external branch replacements above can absorb the class.
+\end{rmk}
 
 \begin{thm}[Central-character source replacement for the scalar QME symbol]
 \label{thm:app-central-character-qme-cancellation}
