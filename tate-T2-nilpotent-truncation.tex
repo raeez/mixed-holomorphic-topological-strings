@@ -1,70 +1,109 @@
 \section*{Nilpotent truncation of the cotangent shadow}
 
-\emph{Closure-layer organizing question.}  Which subalgebra of the
-formal Hamiltonian algebra $\mathfrak h$ admits a finite-dimensional
-nilpotent truncation satisfying the lower-central Tate-pronilpotence
-hypothesis of Lemma~\ref{lem:continuous-bar-cobar}, and which sectors
-must be removed a priori for that hypothesis to hold?
+\emph{Closure-layer organizing question.}  Which Lie subalgebra of the
+reduced formal Hamiltonian algebra
+$\mathfrak h=\mathfrak m=(z_1,z_2)\C[[z_1,z_2]]$ admits a
+finite-dimensional nilpotent truncation satisfying the lower-central
+Tate-pronilpotence hypothesis of
+Lemma~\ref{lem:continuous-bar-cobar}, and which sectors must be cut
+\emph{a priori} for that hypothesis to hold?
 
-\emph{Named obstruction terms.}  For every $N\geq 1$,
+\emph{Setup.}  Write
+$H_d=\mathrm{Span}_\C\{z_1^az_2^b:a+b=d\}$ for the homogeneous
+degree-$d$ Hamiltonians, $\mathfrak h_{\mathrm{poly}}=\bigoplus_{d\geq
+1}H_d$ for the polynomial Hamiltonian Lie algebra, and
+$\mathfrak m^k=(z_1,z_2)^k\C[[z_1,z_2]]$ for the $\mathfrak m$-adic
+ideals of the formal symplectic disk.  Fix a basis
+$\{e_{d,i}\}_i\subset H_d$ in each degree and the dual basis
+$\{e_d^i\}_i\subset H_d^\vee$.  The Poisson bracket
+$\{f,g\}=\partial_{z_1}f\,\partial_{z_2}g-\partial_{z_2}f\,
+\partial_{z_1}g$ satisfies $\{H_p,H_q\}\subset H_{p+q-2}$, so each
+finite degree window $\bigoplus_{d\leq N}H_d$ fails to be a Lie
+subalgebra (Lemma~\ref{lem:finite-window-hamiltonian-obstruction}).
+
+\emph{Named obstruction triple.}  Three load-bearing identities
+control which finite truncation can survive:
 \[
-  \{z_1,z_2^{N+1}\}=(N+1)z_2^N\notin\mathfrak m^{N+1},\qquad
-  \{z_1^2,z_2^2\}=4z_1z_2,\qquad [H_2,H_2]=H_2\cong\mathfrak{sl}_2.
+  \mathfrak o^{\mathrm{lin}}_N(z_1;z_2^{N+1})
+    =\{z_1,z_2^{N+1}\}=(N+1)z_2^N\notin\mathfrak m^{N+1},
 \]
-The first identity is the linear-tail obstruction
-$\mathfrak o^{\mathrm{lin}}_N(z_1;z_2^{N+1})=(N+1)z_2^N$; it rules out
-$\mathfrak m^{N+1}$ as a Lie ideal once $z_1\in H_1$ is admitted.  The
-last two are the semisimple obstruction
-$\mathfrak o^{\mathrm{ss}}\colon\Lambda^2H_2\to H_2$ with image
-$\mathfrak{sl}_2$, ruling out nilpotence of $H_2$.  Together with the
-low-degree Casimir component
-$\mathfrak o^{\mathrm{Cas}}_{\leq2}=\sum_ie_{1,i}\otimes
-e_1^i+\sum_ie_{2,i}\otimes e_2^i$, these are the obstruction triple
-of Definition~\ref{defn:nilpotent-low-degree-obstruction-terms}.
+the \emph{linear-tail obstruction}: it rules out
+$\mathfrak m^{N+1}$ as a Lie ideal once $z_1\in H_1$ is admitted;
+\[
+  \mathfrak o^{\mathrm{ss}}\colon\Lambda^2H_2\to H_2,\qquad
+  \mathfrak o^{\mathrm{ss}}(z_1^2,z_2^2)=\{z_1^2,z_2^2\}=4z_1z_2,
+\]
+the \emph{semisimple obstruction}: $H_2$ is closed under the bracket,
+$[H_2,H_2]=H_2\cong\mathfrak{sl}_2$, so $H_2$ admits no nilpotent
+filtration; and
+\[
+  \mathfrak o^{\mathrm{Cas}}_{\leq2}
+    =\sum_ie_{1,i}\otimes e_1^i+\sum_ie_{2,i}\otimes e_2^i
+    \in (H_1\oplus H_2)\otimes(H_1\oplus H_2)^\vee,
+\]
+the \emph{low-degree Casimir component}: it carries the BV inverse
+pairing on the linear and quadratic sectors that any cubic-ideal
+truncation removes.  These three constitute the obstruction triple
+$\mathfrak o_{\mathrm{nilp}}=(\mathfrak o^{\mathrm{lin}}_N,
+\mathfrak o^{\mathrm{ss}},\mathfrak o^{\mathrm{Cas}}_{\leq2})$ of
+Definition~\ref{defn:nilpotent-low-degree-obstruction-terms} below.
 
-\emph{Unique survivor.}  Theorem~\ref{thm:phi-trunc-classical}:
-classically, on the cubic ideal
-$\mathfrak h_{\leq N}=\mathfrak m^3/\mathfrak m^{N+1}$, the finite
-cotangent CE/PV identity
-$\Phi_{\leq N}\colon
-C^\bullet_{\mathrm{CE},\mathrm{cont}}(\mathfrak g_{\leq N,I})
-\xrightarrow{\sim}
-\mathrm{PV}(\widehat{\mathbf S}(\mathfrak h_{\leq N,I}))$ is
-unconditional.
+\emph{Unique survivor.}  Theorem~\ref{thm:phi-trunc-classical}: on the
+cubic ideal $\mathfrak h_{\leq N}=\mathfrak m^3/\mathfrak m^{N+1}$,
+where the obstruction triple is silent, the finite cotangent CE/PV
+identity
+\[
+  \Phi_{\leq N}\colon
+  C^\bullet_{\mathrm{CE},\mathrm{cont}}(\mathfrak g_{\leq N,I})
+    \xrightarrow{\sim}
+    \mathrm{PV}\bigl(\widehat{\mathbf S}(\mathfrak h_{\leq N,I})\bigr),
+  \qquad
+  \mathfrak g_{\leq N}=\mathfrak h_{\leq N}\ltimes
+    \mathfrak h_{\leq N}^\vee[1],
+\]
+is unconditional in the classical sector.
 
 \emph{Cuts on this survivor.}  Theorem~\ref{thm:phi-hbar-trunc}
-excludes the all-order Moyal lift on the same finite truncation;
+excludes the all-order Moyal lift on the same finite truncation:
+the $\hbar^2$-correction
+$\{z_1^4,z_2^4\}_\hbar=16z_1^3z_2^3+24\hbar^2z_1z_2$ has the
+quadratic Hamiltonian residue $24\hbar^2 z_1z_2\notin\mathfrak m^3$,
+so $\mathfrak h_{\leq N}$ is not Moyal-closed for $N\geq4$.
 Theorem~\ref{rmk:colim-does-not-recover-full} shows the inverse limit
-recovers $\mathfrak m^3\subsetneq\mathfrak h$, not the whole.
+of nilpotent windows recovers $\mathfrak m^3\subsetneq\mathfrak h$,
+not the whole reduced Hamiltonian algebra.
 
 \emph{Residual.}  Problem~\ref{prob:linear-sector-lift}: extend
-$\Phi_{\mathfrak m^3}$ to $\mathfrak h=\mathfrak m$ by supplying a
-coefficient category in which
-$\mathfrak o^{\mathrm{Cas}}_{\leq2}$ converges and a relative or
-reductive replacement for the lower-central Tate-pronilpotent route
-that handles the semisimple
-$H_2\cong\mathfrak{sl}_2$ direction.  The truncation route does not
-solve $(\mathfrak o^{\mathrm{lin}}_N,\mathfrak o^{\mathrm{ss}},
-\mathfrak o^{\mathrm{Cas}}_{\leq2})$; it removes the sector on which
-those obstructions are felt.
+$\Phi_{\mathfrak m^3}$ to $\mathfrak h=\mathfrak m$ by supplying both
+a coefficient category in which $\mathfrak o^{\mathrm{Cas}}_{\leq2}$
+converges as a BV propagator kernel and a relative or reductive
+replacement for the lower-central Tate-pronilpotent route handling the
+semisimple $H_2\cong\mathfrak{sl}_2$ direction.  The truncation route
+does not solve the obstruction triple; it removes the sector on which
+that triple is felt and certifies that what remains can be controlled
+unconditionally.
 
 \subsection*{The truncation}
 
-Let $\mathfrak h=(z_1,z_2)\C[[z_1,z_2]]=\mathfrak m$ be the reduced
-Hamiltonian Lie algebra of the formal symplectic disk on $\C^2$, with
-bracket $\{f,g\}=\partial_{z_1}f\,\partial_{z_2}g-
-\partial_{z_2}f\,\partial_{z_1}g$ modulo constants. Let
-$\mathfrak m^k=(z_1,z_2)^k\C[[z_1,z_2]]$ for $k\geq 1$ be the
-$k$-th power of the maximal ideal. Fix integers $N\geq k\geq 3$ and
-define the \emph{nilpotent truncation}
-$$\mathfrak h_{\leq N}^{(k)}:=\mathfrak m^k/\mathfrak m^{N+1},$$
-with $\mathfrak m$-adic Poisson bracket inherited from the
-ambient $\mathfrak h_{\mathrm{poly}}$. The standard choice is
+Inside the reduced Hamiltonian algebra $\mathfrak h=\mathfrak m$ of
+the formal symplectic disk on $\C^2$, fix integers $N\geq k\geq 3$
+and define the \emph{nilpotent truncation}
+\[
+  \mathfrak h_{\leq N}^{(k)}:=\mathfrak m^k/\mathfrak m^{N+1},
+\]
+with bracket induced by the polynomial Poisson bracket on
+$\mathfrak h_{\mathrm{poly}}$ of the Setup.  The standard choice is
 $k=3$:
-$$\mathfrak h_{\leq N}:=\mathfrak h_{\leq N}^{(3)}=
-  \mathfrak m^3/\mathfrak m^{N+1}.$$
-Concretely, $\mathfrak h_{\leq N}$ is the finite-dimensional vector
-space spanned by monomials $z_1^az_2^b$ with $3\leq a+b\leq N$.
+\[
+  \mathfrak h_{\leq N}:=\mathfrak h_{\leq N}^{(3)}
+    =\mathfrak m^3/\mathfrak m^{N+1}.
+\]
+Concretely, $\mathfrak h_{\leq N}$ is the finite-dimensional
+$\C$-linear span of the monomials $z_1^az_2^b$ with $3\leq a+b\leq N$.
+The choice $k=3$ is forced by the bracket-degree count
+$\{H_p,H_q\}\subset H_{p+q-2}$: only at $k=3$ does every iterated
+bracket strictly raise $\mathfrak m$-adic degree, and only then is the
+quotient nilpotent.
 
 \begin{rmk}[Why degree three and not degree two]
 The naive choice $k=2$ fails to give a nilpotent Lie algebra: the
@@ -395,12 +434,42 @@ added.
 \end{prop}
 
 \begin{proof}
-(i)--(iv) are immediate from the definitions and from the
-$\mathfrak m$-adic concentration of $\omega$. (v) is the explicit
-inverse limit calculation: a compatible family
-$\{f_N\in\mathfrak m^3/\mathfrak m^{N+1}\}_N$ assembles to a unique
-formal series in $\mathfrak m^3\subset\C[[z_1,z_2]]$, and the
-$\mathfrak m$-adic Lie structure is preserved at every level.
+\emph{(i)--(ii).}  Both $z_1,z_2\in H_1$ and the spanning set
+$\{z_1^2,z_1z_2,z_2^2\}$ of $H_2$ have $\mathfrak m$-adic degree
+strictly below $3$; the cubic-ideal cutoff
+$\mathfrak m^3/\mathfrak m^{N+1}$ kills both layers.  The
+$\mathfrak{sl}_2$ structure on $H_2$ recorded in the
+``Why degree three'' remark forbids any nilpotent extension of
+$\mathfrak h_{\leq N}$ that includes $H_2$.
+
+\emph{(iii).}  The constant Hamiltonian $1$ is not in $\mathfrak m$,
+so $1\notin\mathfrak m^k$ for any $k\geq 1$; the truncation domain
+excludes constants by being a quotient of an ideal of $\C[[z_1,z_2]]$
+contained in $\mathfrak m$.
+
+\emph{(iv).}  The cocycle $\omega(z_1^kz_2^l,z_1^mz_2^n)$ has the
+indicator $\mathbf 1[(k+m,l+n)=(1,1)]$ on the combined multidegree.
+Since both arguments must be nonconstant, the only options are
+$(k,l)=(1,0),(m,n)=(0,1)$ or $(k,l)=(0,1),(m,n)=(1,0)$, both giving
+arguments in $H_1\subset\mathfrak m\setminus\mathfrak m^2$, hence
+outside $\mathfrak h_{\leq N}=\mathfrak m^3/\mathfrak m^{N+1}$.  No
+central extension class therefore survives the truncation.
+
+\emph{(v).}  A compatible family
+$(f_N\in\mathfrak m^3/\mathfrak m^{N+1})_{N\geq3}$ under the
+projections $\pi_{N+1,N}\colon\mathfrak h_{\leq N+1}\twoheadrightarrow
+\mathfrak h_{\leq N}$ specifies, for every $N$, the truncation modulo
+$\mathfrak m^{N+1}$ of a formal series.  The unique formal series in
+$\mathfrak m^3\subset\C[[z_1,z_2]]$ projecting consistently to every
+finite layer is the inverse limit; this is the standard
+$\mathfrak m$-adic completion identity
+$\varprojlim_N\mathfrak m^3/\mathfrak m^{N+1}=\mathfrak m^3$.  The
+Hamiltonian bracket is continuous in the $\mathfrak m$-adic
+filtration on each layer (since $\{H_p,H_q\}\subset H_{p+q-2}$
+respects the $\mathfrak m$-adic ideal stratification), so the limit
+inherits the Lie structure of $\mathfrak m^3$.  Because every layer of
+the tower has zero image in $H_1$ and $H_2$, no element of the limit
+can recover the linear or quadratic sector.
 \end{proof}
 
 \subsection*{Cubic inverse-limit survivor}
@@ -451,25 +520,23 @@ completed cochain theorem must be obtained either from a chain-side
 inverse limit followed by exact continuous dualization or from a
 separately supplied topology whose cochain transition maps are dg maps.
 
-The Lie algebra $\mathfrak m^3$ is lower-central Tate-pronilpotent in the
-$\mathfrak m$-adic Tate filtration: its descending Lie powers satisfy
-$(\mathfrak m^3)^{(\geq m)}\subset\mathfrak m^{m+3}$ because each
-iterated bracket raises the $\mathfrak m$-adic degree by at least
-$1$ when both arguments lie in $\mathfrak m^3$ (since
-$\{H_p,H_q\}\subset\mathfrak m^{p+q-2}$ and $p,q\geq 3$ implies
-$p+q-2\geq p+1$). Hence $\bigcap_m(\mathfrak m^3)^{(\geq m)}=0$,
-	and the lower-central Tate-pronilpotence hypothesis of
-\ref{lem:continuous-bar-cobar} holds. The Tate Casimir
-$C_{\mathfrak m^3}=\sum_{d\geq 3}\sum_i e_{d,i}\otimes e_d^i$
-is governed by the same product/direct-sum convergence question
-as in \ref{lem:tate-casimir-obstruction}, but on the smaller
-	direct-sum dual $\bigoplus_{d\geq 3}H_d^\vee\subset
-\bigoplus_{d\geq 1}H_d^\vee$.  The finite maps
-\(\Phi_{\leq N}\) at every finite \(N\) use only the finite Casimir
-\(\sum_{3\leq d\leq N}\sum_i e_{d,i}\otimes e_d^i\).  Passing from these
-finite identities to a completed cochain identity is exactly the
-continuous-dualization and variance datum isolated in the statement, not
-a formal inverse-limit consequence.
+The lower-central Tate-pronilpotence of $\mathfrak m^3$ in the
+$\mathfrak m$-adic Tate filtration follows from the same bracket-degree
+count as in Lemma~\ref{lem:trunc-is-nilpotent-lie}~(ii): for
+$p,q\geq3$, $\{H_p,H_q\}\subset\mathfrak m^{p+q-2}\subset\mathfrak
+m^{p+1}$ raises $\mathfrak m$-adic degree by at least one, so
+$(\mathfrak m^3)^{(\geq m)}\subset\mathfrak m^{m+3}$ and
+$\bigcap_m(\mathfrak m^3)^{(\geq m)}=0$.  The Tate Casimir
+$C_{\mathfrak m^3}=\sum_{d\geq 3}\sum_i e_{d,i}\otimes e_d^i$ is
+governed by the same product/direct-sum convergence question as
+Lemma~\ref{lem:tate-casimir-obstruction}, but on the smaller
+direct-sum dual $\bigoplus_{d\geq 3}H_d^\vee\subset
+\bigoplus_{d\geq 1}H_d^\vee$.  At every finite $N$ the map
+$\Phi_{\leq N}$ uses only the finite Casimir $\sum_{3\leq d\leq
+N}\sum_i e_{d,i}\otimes e_d^i$; passing from these finite identities to
+a completed cochain identity is precisely the continuous-dualization
+and variance datum isolated in the statement, not a formal
+inverse-limit consequence.
 \end{proof}
 
 \begin{defn}[Low-degree obstruction datum for the nilpotent tower]
