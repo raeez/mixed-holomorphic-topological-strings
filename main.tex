@@ -287,16 +287,19 @@ and a Dirac Brane Probe on $\R^2_{\mathrm{top}}\times\C^2_{\mathrm{hol}}$}
   cohomology class
   \(\Omega^{\mathrm{rad}}_{a,b}\in\operatorname{coker}B_{a,b}\)
   (Proposition~\ref{prop:app-radial-dual-potential-obstruction}).  The
-  finite-certificate range certified unconditionally by the
   decorated-PBW Stokes script
-  (\texttt{quantum\_shear\_trace\_diagram\_normal\_form.py
-  --kernel-correction}) covers the balanced bidegree diagonal through
-  \((6,6)\), every non-edge bidegree of total degree at most \(13\),
-  the total-degree-\(14\) bidegrees
-  \((3,11),(11,3),(4,10),(10,4),(5,9),(9,5)\), the explicit
-  total-degree-\(15\) bidegrees
-  \((6,7),(7,6),(5,8),(8,5),(6,8),(8,6),(7,7),(7,8),(8,7)\), and the
-  complete one-moving-letter edge strips.  The radial bicomplex is
+  \texttt{quantum\_shear\_trace\_diagram\_normal\_form.py
+  --kernel-correction} verifies vanishing of
+  \(\Omega^{\mathrm{rad}}_{a,b}\) on its default 13-case window plus
+  the bidegrees enumerated by \texttt{--edge-family-max} and
+  \texttt{--balanced-family-max}; the bidegrees explicitly cited in
+  Theorem~\ref{thm:componentwise-quantum-coefficient-comparison}
+  --- balanced diagonal through \((6,6)\), every non-edge bidegree of
+  total degree at most \(13\), the total-degree-\(14\) bidegrees
+  \((3,11),(11,3),(4,10),(10,4),(5,9),(9,5)\), and every
+  one-moving-letter edge strip --- are reproduced by running the
+  script with the flag combinations specified in
+  \S\ref{ssec:tate-residual-resolution}.  The radial bicomplex is
   interior-acyclic conditional on the named radial-parts statement
   (Theorem~\ref{thm:app-radial-bicomplex-acyclic}); unconditionally,
   each interior bidegree closes by stable Procesi--Razmyslov reduction
@@ -304,8 +307,8 @@ and a Dirac Brane Probe on $\R^2_{\mathrm{top}}\times\C^2_{\mathrm{hol}}$}
   (Theorem~\ref{thm:componentwise-quantum-coefficient-comparison}).
 
   \medskip\noindent
-  Each upgrade beyond the proved core is a vanishing of a named
-  obstruction class.  The unreduced \(P_0\)-factorization-centre lift
+  Each strengthening beyond the proved core is the vanishing of a
+  named cohomology class.  The unreduced \(P_0\)-factorization-centre lift
   exists exactly when the four-component obstruction vector
   \((\mathrm{ob}^{\mathrm{prod}}_{\mathrm{cent}},
   \mathrm{ob}^{P_0}_{\mathrm{cent}},
@@ -450,11 +453,13 @@ and a Dirac Brane Probe on $\R^2_{\mathrm{top}}\times\C^2_{\mathrm{hol}}$}
   Componentwise quantum coefficient comparison
   (Theorem~\ref{thm:componentwise-quantum-coefficient-comparison}) &
   proved with finite certificate &
-  range certified: balanced bidegree diagonal through \((6,6)\); every
-  non-edge bidegree of total degree
-  \(\le13\); total-degree-\(14\) bidegrees
-  \((3,11),(11,3),(4,10),(10,4),(5,9),(9,5)\); every one-moving-letter
-  edge strip\\
+  range certified by
+  \texttt{quantum\_shear\_trace\_diagram\_normal\_form.py
+  --kernel-correction} run with \texttt{--balanced-family-max=6} and
+  \texttt{--edge-family-max} sufficient to cover every one-moving-letter
+  edge strip; total-degree-\(14\) bidegrees
+  \((3,11),(11,3),(4,10),(10,4),(5,9),(9,5)\) covered by explicit
+  \texttt{--case} arguments\\
   \hline
   Radial / Weyl normal-form obstruction
   (Proposition~\ref{prop:app-radial-dual-potential-obstruction}) &
@@ -3413,8 +3418,7 @@ pointwise product
   degree-zero reduced Hamiltonian Poisson bracket on boundary currents.
   An HKR or Hochschild-center identification would require a
   continuous HKR theorem compatible with the chosen completion and
-  interval functoriality, supplied externally to the present
-  definition.
+  interval functoriality, supplied externally.
 \end{defn}
 
 \begin{thm}[Coordinate-free cotangent CE/PV identity]
@@ -4103,7 +4107,6 @@ Corollary~\ref{cor:moment-map-shadow};
 Theorem~\ref{thm:formal-local-universal-property} for the
 terminal-object form among admissible protected ambient data).
 
-The remainder of \S2 unfolds the algebraic content of \(J\).
 \S\S\ref{ssec:open-mixed-brane-states}--\ref{ssec:open-mixed-bft} build
 the matrix-probe BV theory whose ghost-zero classical observables are
 the cyclic Procesi--Razmyslov traces on the moment-map zero-fibre, with
@@ -11987,8 +11990,9 @@ $$\{f,g\}_\hbar=\hbar^{-1}[f,g]_*
       \(z_1^pz_2^q\!\cdot\!\rho_{a,b}=
         -(pb-qa+p-q)\rho_{a-p+1,b-q+1}\) of
       Theorem~\ref{thm:principal-part-coadjoint-uniqueness} on the
-      rectangular window \(0\le k,l\le\texttt{max\_exp}\), exact
-      rational; exits zero on PASS.
+      rectangular window \(0\le k,l\le\texttt{max\_exp}\) with
+      \texttt{max\_exp=5} as the script default, exact rational;
+      exits zero on PASS.
     \item \emph{Per-bidegree representation.}  The radial Stokes
       boundary
       \(B_{a,b}\colon\mathsf S_{a,b}\!\oplus\!\mathsf W_{a,b}\to
