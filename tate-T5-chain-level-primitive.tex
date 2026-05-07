@@ -68,8 +68,15 @@ cotangent factorization-centre morphism
   \mathrm Z^{P_0}_{\mathrm{fact}}
     \bigl(\mathrm{Obs}^{\mathrm{cl}}_{\mathrm{open},N}\bigr)
 \]
-of Problem~\ref{prob:formal-factorization-center} exists if and only
-if the joint obstruction
+of Problem~\ref{prob:formal-factorization-center} exists, modulo the
+analytic and convention sublattice
+\((\mathfrak o_{\mathrm{Cas}},
+\mathfrak o_{\mathrm{nilp}},
+\mathfrak o_{\mathrm{Quil}},
+\mathfrak o_{\mathrm{Had}},
+\mathfrak o_{\mathrm{univ}},
+\mathfrak o_{\mathrm{cv}})=0\) of \(\operatorname{Ob}_T\), if and only
+if the joint centrality / QME / descent obstruction
 \[
   \operatorname{Ob}_{\mathrm{cent/QME/desc}}
     =
@@ -80,7 +87,7 @@ if the joint obstruction
       \delta_{\check C/R}^{\mathrm{Weiss}}
     \bigr)
 \]
-vanishes with chosen compatible null-homotopies: the
+also vanishes with chosen compatible null-homotopies: the
 factorization-product centrality class
 \(\operatorname{ob}_{\mathrm{cent}}^{\mathrm{prod}}\), the
 \(P_0\)-bracket centrality class
@@ -89,20 +96,21 @@ endpoint class \(\operatorname{ob}_{\mathrm{QME}}^{\mathrm{bd}}\), and
 the stratified Weiss \v{C}ech--Roos descent class
 \(\delta_{\check C/R}^{\mathrm{Weiss}}\) of
 Remark~\ref{rmk:weiss-ran-descent-obstruction}.  This iff is the
-specialization of
-Theorem~\ref{thm:tate-cotangent-lift-iff} to the centrality / QME /
-descent components of the obstruction vector
-\(\operatorname{Ob}_T\).  In that filtration the chain-level
-primitive shadow constructed below is the \emph{associated graded} of
-the unreduced lift problem on its zero-\(\psi\) Hamiltonian and
-one-\(\psi\) descendant generator subspaces, that is, the \(E_1\)-page
-of the Beilinson--Roos spectral sequence whose \(E_\infty\)-page is
-\(\Phi_{\mathrm{fact}}^{\mathrm{unred}}\) itself.  The chain-level
-construction is honest evidence on the \(E_1\)-page; its strict
-\(Q\)-, factorization-, and \(P_0\)-bracket compatibilities are the
-\(d_1\)-vanishings.  The higher differentials are the displayed
-obstruction components, none of which is supplied by the present
-construction.
+restriction of Theorem~\ref{thm:tate-cotangent-lift-iff} to the
+component
+\(\mathfrak o_{\mathrm{prim}}\subset\operatorname{Ob}_T\), expanded
+into its four constituents (centrality, QME, descent), under the
+sublattice constraint just displayed.  In that filtration the
+chain-level primitive shadow constructed below is the \emph{associated
+graded} of the unreduced lift problem on its zero-\(\psi\) Hamiltonian
+and one-\(\psi\) descendant generator subspaces, equivalently the
+\(E_1\)-page of the obstruction-filtration spectral sequence whose
+\(E_\infty\)-page is \(\Phi_{\mathrm{fact}}^{\mathrm{unred}}\) itself.
+The chain-level construction is honest evidence on the \(E_1\)-page;
+its strict \(Q\)-, factorization-, and \(P_0\)-bracket compatibilities
+are the \(d_1\)-vanishings.  The four enumerated obstruction classes
+above are the higher differentials, none of which is supplied by the
+present construction.
 
 \emph{Unique survivor.}
 Theorem~\ref{thm:chain-level-primitive-projection}: the algebraic
@@ -465,6 +473,16 @@ $P_0$ bracket]\label{lem:filtration-preservation}
   \end{rmk}
 
 \begin{constr}[Primitive one-antifield chain complex]\label{constr:T5-one-psi-complex}
+  The trace-count filtration places the one-\(\psi\) primitive
+  generators on the layer \(F_1/F_0\) below the multi-trace strata, and
+  Theorem~\ref{thm:chain-level-primitive-projection-Q} reduces the
+  question of strict \(Q\)-compatibility on this layer to a finite
+  combinatorial homology calculation: identify every closed
+  one-\(\psi\) primitive cycle modulo \(Q\) of a two-\(\psi\)
+  primitive.  The chain complex below records exactly that calculation
+  in bidegree \((k,l)\), and the next two results compute its
+  \(H_1\)-line.
+
   Put \(x=\phi_1\), \(y=\phi_2\), and let
   \(\mathsf W_{k,l}\) be the set of ordinary words with \(k\) letters
   \(x\) and \(l\) letters \(y\).  Let \(\mathsf N_{a,b}\) be the set of
@@ -919,7 +937,13 @@ $P_0$ bracket]\label{lem:filtration-preservation}
 \begin{constr}[Primitive one-\(\psi\) label shadow]\label{constr:chain-level-primitive-cotangent}
   Extend $\pi_{\mathrm{prim}}$ to the one-$\psi$ primitive shadow by
   recording the labels of the symmetrised traces $\Psi_{a,b}$ of
-  Construction~\ref{constr:boundary-evaluation}.  The domain here is the
+  Construction~\ref{constr:boundary-evaluation}, with target the
+  reduced principal-part label space \(\mc P\), the
+  \(\C\)-vector space spanned by the basis vectors
+  \(\rho_{a,b}=z_1^{-a-1}z_2^{-b-1}dz_1dz_2\) of the local-cohomology
+  Matlis dual of \(\bar A\) at the origin
+  (Theorem~\ref{thm:principal-part-coadjoint-uniqueness}), shifted by
+  \([1]\) for the odd \(\psi\)-degree.  The domain here is the
   enlarged principal-part shadow object
   \(\widetilde{\mathrm{Obs}}^{\mathrm{cl,pp}}_{\partial,N}(I)\): the
   Hamiltonian primitive sector is smeared by \(\Omega^\bullet_c(I)\), and
@@ -950,8 +974,12 @@ $P_0$ bracket]\label{lem:filtration-preservation}
       \[
         \pi_{\mathrm{prim}}^{\mathrm{cot}}\bigl(B\otimes\Psi_{a,b}\bigr)
         =B\otimes\rho_{a,b}[1]
-        =\Theta_{a,b}(B).
+        =\Theta_{a,b}(B),
       \]
+      where \(\Theta_\rho(B)=B\otimes\rho[1]\) is the shifted cotangent
+      current of label \(\rho\in\mc P\) smeared by
+      \(B\in\mathcal D'_c(I)\), in the convention of
+      Construction~\ref{constr:interval-fact-algebras}.
     \item the scalar class \(\Psi_{0,0}=\operatorname{Tr}(\psi)\) maps to
       the removed odd scalar line, equivalently to zero in the
       Hamiltonian principal-part target \(\mc P[1]\);
