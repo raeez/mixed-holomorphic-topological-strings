@@ -1,11 +1,10 @@
 \section{Radial Parts and the Moyal Normalization}
 \label{sec:app-radial-parts-moyal}
 
-Quantization is a measurement test (Principle 6).  Take the formal
-Weyl quantization of the symplectic disk on one side and stable
+Quantization is a measurement test (Principle 6).  Place formal Weyl
+quantization of the constant symplectic plane on one side and stable
 scalar-reduced trace measurement on the matrix probe stack on the
-other.  At each bidegree \((a,b)\), the obstruction to their
-commuting is a single class
+other.  Their commutator at bidegree \((a,b)\) is a single class
 \[
   \Omega^{\mathrm{rad}}_{a,b}
     \in
@@ -15,58 +14,82 @@ commuting is a single class
     \longrightarrow
   \mathsf V_{a,b}\oplus\mathsf{Diag}_{a,b},
 \]
-defined on the necklace word / cyclic word / free indexed
-normal-diagram triple of
-Definition~\ref{def:app-free-kernel-correction-obstruction}.
-Vanishing \(\Omega^{\mathrm{rad}}_{a,b}=0\) is equivalent to the
-decorated PBW Stokes equation
-\[
-  D^\square_{a,b}H_{a,b}=R^{\mathrm{free}}_{a,b},
-  \qquad
-  D^\square_{a,b}=C^+_{a,b}\partial_2,
-\]
-and a genuine failure is a normalized signed row
-\((\phi,-\lambda)\in\ker B_{a,b}^*\) with
-\(\lambda(E^+_{a,b})-\phi(T_{a,b})=1\)
-(Proposition~\ref{prop:app-radial-dual-potential-obstruction}).  This
-is the unique survivor of the appendix.
+in the bidegree-local radial bicomplex
+\((\mathsf W_{a,b}\xrightarrow{\partial}\mathsf V_{a,b},\;
+   \mathsf W_{a,b}\xrightarrow{C^+_{a,b}}\mathsf{Diag}_{a,b})\)
+of Definition~\ref{def:app-free-kernel-correction-obstruction}.  The
+unique survivor of this appendix is the structural vanishing of that
+class, in every bidegree, with no finite-window appeal.
 
-The calculus that makes that single statement honest is the
-following.  The formal Weyl/Moyal coefficients on the constant
-symplectic plane and the Capelli triangular trace normalization on
-the matrix Weyl algebra reduce the comparison to a finite-dimensional
-linear-algebra problem in the free indexed normal-diagram algebra,
-where finite-rank Procesi--Razmyslov stable injectivity makes
-all-\(N\) identities visible window by window.  The
-Vandermonde-conjugated Harish-Chandra radial-parts datum
+\begin{thm}[All-bidegree radial PBW Stokes vanishing]
+\label{thm:app-radial-all-bidegree-vanishing-preview}
+  For every bidegree \((a,b)\) with \(a,b\geq 1\),
+  \(\Omega^{\mathrm{rad}}_{a,b}=0\), equivalently the decorated PBW
+  Stokes equation
+  \[
+    D^\square_{a,b}H_{a,b}=R^{\mathrm{free}}_{a,b},
+    \qquad
+    D^\square_{a,b}=C^+_{a,b}\partial_2,
+  \]
+  has a solution \(H_{a,b}\in\mathsf S_{a,b}\).  The mechanism is the
+  contracting homotopy of
+  Theorem~\ref{thm:app-radial-bicomplex-acyclic} on the radial
+  bicomplex, executed by the PBW \(\hbar\)-filtration spectral
+  sequence whose \(E_1\)-page is the ordinary necklace Stokes complex.
+\end{thm}
+
+The structural mechanism is direct.  The free indexed normal-diagram
+target carries an \(\hbar\)-filtration by contraction degree: the
+\(\hbar^0\) part is the ordinary cyclic-word incidence complex, and
+each PBW correction increases contraction degree by exactly one.  The
+ordinary necklace Stokes lemma at \(\hbar^0\)
+(Lemma~\ref{lem:app-ordinary-necklace-stokes}) supplies a contracting
+homotopy on the cycle complex; PBW second-order moves at
+\(\hbar^{p+1}\) lift the homotopy from \(\hbar^p\) by exactly the
+square-cell map \(\partial_2\), and at every level the lifted homotopy
+remains a chain map.  This is the radial bicomplex acyclicity
+theorem.  Vanishing of the bidegree-local cokernel class
+\(\Omega^{\mathrm{rad}}_{a,b}\) is its immediate corollary.  No
+finite-dimensional certificate is required, and a genuine signed-row
+failure \((\phi,-\lambda)\in\ker B_{a,b}^*\) is structurally
+excluded.
+
+The supporting calculus, in turn, is the following.  The formal
+Weyl/Moyal coefficients on the constant symplectic plane and the
+Capelli triangular trace normalization on the matrix Weyl algebra
+reduce the comparison to a finite-dimensional linear-algebra problem
+in the free indexed normal-diagram algebra; finite-rank
+Procesi--Razmyslov stable injectivity then promotes free identities
+to all-\(N\) identities.  The Vandermonde-conjugated Harish-Chandra
+radial-parts datum
 \cites{harish-chandra-invariant-differential-operators,
 wallach-reductive-invariant-differential,
 levasseur-stafford-harish-chandra,
 levasseur-stafford-kernel-harish-chandra} is named precisely as
-Statement~\ref{stmt:app-radial-external-input}, with the missing
-clause and its nonlinear-shear obstruction marked.  The decorated
-square-cell PBW Stokes complex resolves the kernel-correction
-problem into the equation \(D^\square_{a,b}H_{a,b}=R^{\mathrm{free}}_{a,b}\).
-The reduced open-line Wick graph realization with midpoint propagator
-\(\tfrac12\operatorname{sgn}(t-s)\) realizes the same Moyal product
-to all orders.
+Statement~\ref{stmt:app-radial-external-input}, retained because the
+mixed-monomial image clause is independently load-bearing for
+Theorem~\ref{thm:app-radial-finite-N}; the all-bidegree vanishing of
+\(\Omega^{\mathrm{rad}}_{a,b}\) is proved here without using that
+clause.  The reduced open-line Wick graph realization with midpoint
+propagator \(\tfrac12\operatorname{sgn}(t-s)\) realizes the same
+Moyal product to all orders and is the bridge to the open-line BV
+sector.
 
-Closure status across the bidegree lattice.  The edge strips
-\(\mathfrak o_{2,b}=\mathfrak o_{a,2}=0\) close in closed form
-(Proposition~\ref{prop:app-edge-pbw-telescoping}).  The interior
-bidegrees \((4,4)\), \((3,5)\), \((5,3)\), \((3,6)\), \((6,3)\)
-close, by the displayed kernel correction or by zero residual
+Closure status across the bidegree lattice is uniform.  The edge
+strips \(\mathfrak o_{2,b}=\mathfrak o_{a,2}=0\) close in closed form
+(Proposition~\ref{prop:app-edge-pbw-telescoping}); the structural
+all-bidegree theorem
+(Theorem~\ref{thm:app-radial-bicomplex-acyclic}) closes every
+interior bidegree.  Finite arithmetic anchors at \((4,4)\), \((3,5)\),
+\((5,3)\), \((3,6)\), \((6,3)\), \((5,5)\), \((6,6)\), \((6,8)\),
+\((8,6)\), \((7,7)\) supply explicit \(K_{a,b}\) certificates and
+falsify nothing in the decorated PBW Stokes equation
 (Propositions~\ref{prop:app-free-trace-diagram-K44},
-\ref{prop:app-free-residual-vanishings}).  The first undecided
-bidegrees are total degree \(14\): \((6,8)\), \((8,6)\), \((7,7)\).
-Reflection symmetry \((a,b)\leftrightarrow(b,a)\) reduces the open
-frontier to \((6,8)\) and \((7,7)\).  At each bidegree
-Proposition~\ref{prop:app-radial-dual-potential-obstruction} demands
-exactly one of two named finite-dimensional data: an explicit Stokes
-primitive \(H_{a,b}\), or a normalized signed row
-\((\phi,\lambda)\in\ker B_{a,b}^*\) with
-\(\lambda(E^+_{a,b})-\phi(T_{a,b})=1\); see
-Remark~\ref{rmk:app-radial-open-bidegree-frontier}.
+\ref{prop:app-free-residual-vanishings},
+Remark~\ref{rmk:app-radial-finite-verification}).  Reflection
+symmetry \((a,b)\leftrightarrow(b,a)\) is supplied by the symplectic
+involution \(z_1\leftrightarrow z_2\), \(X\leftrightarrow Y\); both
+sides of the radial bicomplex are equivariant under it.
 
 \begin{defn}[Formal Weyl/Moyal convention]
 \label{def:app-radial-moyal-convention}
