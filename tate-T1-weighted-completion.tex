@@ -596,6 +596,20 @@ $B_w$.
 
 \subsection*{Normal \(\Omega\)-weights and equivariant kernel admissibility}
 
+The brane-preserving equivariant deformation rescales the normal bundle
+\(N_LX=\R_s\oplus\C_{z_1}\oplus\C_{z_2}\) by the torus
+\(T_\Omega=\C^*_{\epsilon_s}\times\C^*_{\epsilon_1}\times\C^*_{\epsilon_2}\),
+with \(t\) fixed (CLAUDE.md normal-\(\Omega\) discipline). The
+equivariant differential is \(Q_\Omega=Q+\iota_{V_\Omega}\) for the
+generating vector field
+\(V_\Omega=\epsilon_s s\partial_s+\epsilon_1z_1\partial_{z_1}+\epsilon_2z_2\partial_{z_2}\),
+with \(Q_\Omega^2=L_{V_\Omega}\). The weighted-Tate envelope of the
+preceding subsection extends to a stratified factorization-algebra over
+\((X,L)\) by the diagonal Casimir of the present subsection; the
+residue-versus-Euler normalization is recorded as a one-dimensional
+scalar comparison map, and resonance among the normal characters is the
+exact obstruction to localizing the contraction.
+
 \begin{defn}[Equivariant finite normal window]\label{defn:wt-omega-normal-window}
   Fix normal equivariant parameters
   \(\epsilon_s,\epsilon_1,\epsilon_2\), with \(t\) fixed and
@@ -752,15 +766,15 @@ $B_w$.
   ring; the same equation cannot be written.  Thus resonance is precisely
   the obstruction to moving that summand.
 
-  The preceding comparison is an equality in the one-dimensional scalar
-  localization line.  The residue convention fixes the formal residue
-  density and inserts no smooth normal Euler factor.  The Euler convention
-  pushes along the normal bundle with inverse equivariant Euler class
-  \(\sigma_s\bigl(\epsilon_s\epsilon_1\epsilon_2\bigr)^{-1}\).  The coefficient
-  Casimir pairs dual bases before this scalar pushforward is applied, so it
-  is unchanged.  Scalar-contact rows and trace rows are changed by
-  multiplication by the chosen \(\nu_\Omega\), which is exactly the
-  displayed comparison map.
+  The residue convention fixes the formal residue density and inserts no
+  smooth normal Euler factor; the Euler convention pushes along the
+  normal bundle with inverse equivariant Euler class
+  \(\sigma_s(\epsilon_s\epsilon_1\epsilon_2)^{-1}\). The coefficient
+  Casimir pairs dual bases before either pushforward is applied, so it is
+  unchanged. The two conventions differ only in the one-dimensional
+  scalar localization line: scalar-contact rows and trace rows are
+  multiplied by the chosen \(\nu_\Omega\), which is the displayed
+  comparison map.
 \end{proof}
 
 \begin{cor}[Equivariant denominators do not decide the Costello QME]\label{cor:wt-omega-denominators-qme-boundary}
@@ -904,66 +918,49 @@ $I_L$ must remain in the same weighted category.
   precisely the residual analytic problem.
 \end{proof}
 
-\subsection*{Cotangent-lift theorem}
+\subsection*{Cotangent-lift inside \(B_w\)}
 
-\begin{thm}[Cotangent-lift inside the weighted coefficient category]\label{thm:wt-cotangent-lift}
-  Let $w(d)=q^d$ with $q>1$ be the exponential degree weight of
-  Remark~\ref{rmk:wt-canonical-weight}. Then in the weighted Tate
-  coefficient pair $(\mathfrak h_w,\mathfrak h^{\vee,w}_{\mathrm{cont}})$
-  of Definition~\ref{defn:wt-coefficient-pair} the following internal
-  weighted-category statements hold:
+\begin{cor}[Cotangent-lift inside the weighted coefficient category]\label{thm:wt-cotangent-lift}
+  Take $w(d)=q^d$ with $q>1$ as in
+  Remark~\ref{rmk:wt-canonical-weight}. The Canonical Habitat
+  Theorem~\ref{thm:wt-canonical-habitat} packages four classical
+  weighted-category assertions:
   \begin{enumerate}[label=(\alph*)]
-    \item the Casimir
-      $C_{\mathfrak h,w}=\sum_d\sum_i w(d)e_{d,i}\otimes
-      w(d)^{-1}e^i_d$ converges as an element of
-      $\mathfrak h_w\widehat\otimes
-      \mathfrak h^{\vee,w}_{\mathrm{cont}}$
-      (Proposition~\ref{prop:wt-casimir-convergence});
-    \item the Costello heat-kernel propagator
-      $P_{\epsilon,L}^{w}$ extends to the weighted field complex
-      $\mathcal E_w$ as a continuous family in $(\epsilon,L)$
-      satisfying the BV identity
-      (Proposition~\ref{prop:wt-propagator-extends});
-    \item each fixed Costello graph contribution preserves the
-      weighted category on vertexwise polynomial-degree-bounded
-      interactions
-      (Theorem~\ref{thm:wt-rg-compatibility});
-    \item the cochain-level $\Phi$ of
+    \item the Casimir $C_{\mathfrak h,w}$ converges in
+      $\mathfrak h_w\widehat\otimes\mathfrak h^{\vee,w}_{\mathrm{cont}}$;
+    \item the Costello heat-kernel propagator $P^w_{\epsilon,L}$ extends
+      to the weighted field complex $\mathcal E_w$ as a continuous BV
+      family;
+    \item each fixed Costello graph contribution from a vertexwise
+      polynomial-degree-bounded interaction stays inside $B_w$;
+    \item the central-operation cochain $\Phi$ of
       Theorem~\ref{thm:reduced-ce-pv-central-operation} extends to the
-      weighted cotangent extension $\mathfrak g_w=\mathfrak h_w\ltimes
-      \mathfrak h^{\vee,w}_{\mathrm{cont}}[1]$ as a continuous cochain
-      map in the weighted coefficient envelope
+      weighted cotangent extension
+      $\mathfrak g_w=\mathfrak h_w\ltimes\mathfrak h^{\vee,w}_{\mathrm{cont}}[1]$
+      as a continuous cochain map
       $$\Phi^w\colon C^\bullet_{\mathrm{CE},\mathrm{cont}}(\mathfrak g_w)
-        \to\mathrm{PV}\bigl(\widehat{\mathbf S}_{\mathrm{Tate}}(
-        \mathfrak h_w)\bigr);$$
+        \longrightarrow B_w\subset
+        \mathrm{PV}\bigl(\widehat{\mathbf S}_{\mathrm{Tate}}
+        (\mathfrak h_w)\bigr).$$
   \end{enumerate}
-\end{thm}
+  These four items are the classical content of the canonical habitat;
+  the open quantum content is the QME locality compatibility of
+  Problem~\ref{prob:weighted-rg-locality}, and the conditional
+  lift~$\Phi_{\hbar,\mathrm{cond}}^w$ is
+  Proposition~\ref{prop:wt-qme-lift-obstruction-vanishing}.
+\end{cor}
 
 \begin{proof}
-  Items (a)--(c) are
-  Propositions~\ref{prop:wt-casimir-convergence},
-  \ref{prop:wt-propagator-extends}, and
-  Theorem~\ref{thm:wt-rg-compatibility}. For item~(d): the
-  classical $\Phi$ of Theorem~\ref{thm:reduced-ce-pv-central-operation}
-  acts on continuous CE cochains by the cochain identity
-  $\Phi d_{\mathrm{CE}}=d_\pi\Phi$, which is a degree-by-degree
-  algebraic identity on the polynomial Hamiltonian Lie algebra
-  $\mathfrak h$ together with its dual $\mathfrak h^\vee[1]$. The
-  identity is preserved under any rescaling of the bases by an
-  invertible weight, so it descends to the weighted pair. The
-  \(P_0\)-algebra reading is available only after the weighted envelope is
-  treated as a bracket-admissible realization in the sense of
-  Definition~\ref{defn:bracket-kernel-admissible}; this is not the strict
-  continuous duality statement of Lemma~\ref{lem:continuous-bar-cobar} for
-  a product/direct-sum Tate pair.  The needed dual generators are inserted
-  by the symmetric Mittag-Leffler coefficient pairing of
-  Remark~\ref{rmk:wt-topology-content}. On the target, the Schouten bracket
-  descends to the weighted symmetric algebra by \ref{w:W2}, subject to the
-  same bracket-admissibility reading.
-
-  The all-order QME and regulator-independence assertions are separate
-  theorems; the quantum assertion is isolated in
-  Proposition~\ref{prop:wt-qme-lift-obstruction-vanishing}.
+  This is Theorem~\ref{thm:wt-canonical-habitat} parts
+  \ref{wt:canon:casimir}--\ref{wt:canon:phi}, evaluated at the
+  exponential weight $w(d)=q^d$, $q>1$. The
+  $P_0$-algebra reading of $\Phi^w$ uses the bracket-admissible envelope
+  of Definition~\ref{defn:bracket-kernel-admissible}; it is not the
+  strict continuous duality statement of
+  Lemma~\ref{lem:continuous-bar-cobar} for a product/direct-sum Tate
+  pair. The needed dual generators are inserted by the symmetric
+  Mittag-Leffler coefficient pairing of
+  Remark~\ref{rmk:wt-topology-content}.
 \end{proof}
 
 \begin{prop}[Weighted QME lift under obstruction vanishing]\label{prop:wt-qme-lift-obstruction-vanishing}
