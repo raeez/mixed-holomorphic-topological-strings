@@ -1230,6 +1230,178 @@ gives the cochain-level equivalence used in the CE/PV theorem.
   \ref{lem:transferred-model}.
 \end{rmk}
 
+\subsubsection{Compatibility with the weighted Tate completion}
+\label{ssec:tate-T3-T1-compatibility}
+
+The admissible Tate model envelope of
+Statement~\ref{stmt:tate-model-envelope} is the algebraic habitat
+inside which the bar-cobar Quillen equivalence is verified.  The
+weighted Tate completion of
+Definition~\ref{defn:wt-coefficient-pair} (in
+tate-T1-weighted-completion) is a coefficient-pair completion that
+closes the Casimir convergence obstruction
+$\mathfrak o_{\mathrm{Cas}}$ outside the strict pair.  The two
+completions are related by an explicit base change inside the
+admissible envelope; they are not independently asserted habitats.
+
+\begin{prop}[T3 admissible envelope absorbs the T1 weighted pair]
+\label{prop:tate-T3-T1-base-change}
+  Let $w$ be a polynomial Hamiltonian degree weight in the sense of
+  Definition~\ref{defn:wt-degree-weight}, and let
+  $(\mathfrak h_w,\mathfrak h^{\vee,w}_{\mathrm{cont}})$ be the weighted
+  Tate coefficient pair of
+  Definition~\ref{defn:wt-coefficient-pair}.  Form the shifted
+  cotangent extension
+  $\mathfrak g_w=\mathfrak h_w\ltimes
+  \mathfrak h^{\vee,w}_{\mathrm{cont}}[1]$.  Assume that the
+  finite-window towers
+  \[
+    \mathfrak h_{w,\leq M}
+      =\prod_{d\leq M}w(d)\,H_d,\qquad
+    \mathfrak h^{\vee,w}_{\leq M}
+      =\prod_{d\leq M}w(d)^{-1}H_d^\vee
+  \]
+  satisfy the bracket-tame, windowwise coadjoint-continuity, and
+  Mittag-Leffler coevaluation conditions
+  (\ref{w:W1}--\ref{w:W3} of
+  Definition~\ref{defn:wt-degree-weight}).
+  Then:
+  \begin{enumerate}[label=(\roman*)]
+    \item The weighted strict ML tower
+      $(\mathfrak g_{w,\leq M},\pi_{M,N})$ is an object of the
+      strict habitat
+      $\Cat{MLTateChain}_{\geq0}^{\mathrm{str}}$ of
+      Definition~\ref{defn:strict-ml-tate-habitat}.
+    \item The weighted completion
+      $(\mathfrak g_w,\widehat\otimes_{\mathrm{ML}})$ embeds fully
+      faithfully in the admissible envelope
+      $\Cat{TateChain}_{\geq0}^{\mathrm{adm}}$ via the structural
+      embedding of Statement~\ref{stmt:tate-model-envelope}, and the
+      weighted Casimir
+      $C_{\mathfrak h,w}=\sum_d\sum_i(w(d)e_{d,i})\otimes
+      (w(d)^{-1}e^i_d)$
+      of Proposition~\ref{prop:wt-casimir-convergence} is
+      kernel-admissible in the sense of
+      Definition~\ref{defn:closed-window-obstruction-terms}: the
+      Casimir window obstruction
+      $\mathfrak o^{\mathrm{Cas}}_{M,N}$ vanishes for all $M\geq N$.
+    \item Inside the admissible envelope, the bar-cobar Quillen
+      equivalence of Theorem~\ref{thm:tate-bar-cobar-quillen} restricts
+      to a Quillen equivalence between the weighted Tate
+      conilpotent coalgebras and the weighted Tate augmented
+      associative algebras.  The unit
+      $\eta_{C_w}\colon C_w\to\mathrm{Bar}\,\Omega(C_w)$ and the counit
+      $\varepsilon_{A_w}\colon\Omega\,\mathrm{Bar}(A_w)\to A_w$ are
+      admissible filtered quasi-isomorphisms in the weighted Tate
+      filtration.
+    \item The admissibility criterion of
+      Theorem~\ref{thm:universal-filtered-cobar-recognition} restricted
+      to the weighted pair has $\omega_{\mathrm{win}}=0$ and zero
+      $Q_{\mathrm{Cas}}$-class.  The remaining obstructions
+      ($\mathcal O_{\mathrm{conilp}},\mathcal O_{\mathrm{MC}}(\tau),
+      \mathcal O_{\mathrm{top}},\mathcal O_{\mathrm{cobar}}(\tau)$)
+      are unchanged by the weight rescaling and are inherited from
+      the unweighted statement.
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  \emph{Item~(i).}  The bracket-tame condition \ref{w:W1} of
+  Definition~\ref{defn:wt-degree-weight} states that there is a
+  constant $C\geq1$ with
+  $\{w(p)e_{p,i},w(q)e_{q,j}\}\subset C\cdot w(p+q-2)e_{p+q-2,*}$ on
+  basis elements; this is exactly the bracket-compatible transition
+  condition
+  $\pi_{M,N}\colon\mathfrak h_{w,\leq M}\to\mathfrak h_{w,\leq N}$
+  underlying the window obstruction
+  $\mathfrak o^{\mathrm{br}}_{M,N}=0$ of
+  Definition~\ref{defn:closed-window-obstruction-terms}.  Windowwise
+  coadjoint-continuity \ref{w:W2} gives
+  $\mathfrak o^{\mathrm{coad}}_{M,N}=0$.  The transition maps are
+  surjective on each finite degree pair by construction.  Hence the
+  weighted tower is a strict ML object.
+
+  \emph{Item~(ii).}  The weighted Casimir
+  $C_{\mathfrak h,w}=\sum_d\sum_i(w(d)e_{d,i})\otimes(w(d)^{-1}e^i_d)$,
+  restricted to the finite window, has $w_0$-projection
+  $C^{\mathrm{w}}_M=\sum_{d\leq M}\sum_iw(d)e_{d,i}\otimes
+  w(d)^{-1}e^i_d$, an element of
+  $\mathfrak h_{w,\leq M}\otimes\mathfrak h^{\vee,w}_{\leq M}$
+  which is a finite sum.  By Mittag-Leffler coevaluation \ref{w:W3} of
+  Definition~\ref{defn:wt-degree-weight} and
+  Proposition~\ref{prop:wt-casimir-convergence}, the family
+  $(C^{\mathrm{w}}_M)_M$ is a strict compatible Mittag-Leffler tensor
+  in $\mathfrak h_w\widehat\otimes_{\mathrm{ML}}
+  \mathfrak h^{\vee,w}_{\mathrm{cont}}$.  The Casimir transition
+  obstruction
+  $\mathfrak o^{\mathrm{Cas}}_{M,N}=
+  (\pi_{M,N}\otimes\pi^\vee_{M,N})C^{\mathrm{w}}_M-C^{\mathrm{w}}_N$
+  vanishes because the truncation acts as the identity on the kept
+  weighted basis vectors and as zero on those discarded.  Hence
+  $C_{\mathfrak h,w}$ is kernel-admissible in the sense of
+  Definition~\ref{defn:closed-window-obstruction-terms}.
+
+  \emph{Item~(iii).}  Items~(i)--(ii) place the weighted pair in the
+  strict ML habitat, hence in the admissible envelope by the structural
+  embedding of Statement~\ref{stmt:tate-model-envelope}.  All
+  hypotheses of Theorem~\ref{thm:tate-bar-cobar-quillen} hold for the
+  weighted pair: the conilpotent coalgebra
+  $C_w=C_*^{\mathrm{CE}}(\mathfrak g_w)$ and the augmented associative
+  algebra $A_w=\widehat U(\mathfrak g_w)$ are objects of the admissible
+  envelope; the Tate filtration on each is bounded below, complete, and
+  Hausdorff; the bar-cobar adjunction is the same operad-categorical
+  one applied to the (now weighted) underlying Tate complexes.  The
+  unit and counit constructions of item~(3) of
+  Theorem~\ref{thm:tate-bar-cobar-quillen} apply verbatim, with the
+  bigraded associated graded now using the weighted symmetric coalgebra
+  length / augmentation tensor length filtrations.
+
+  \emph{Item~(iv).}  The window obstruction class
+  $\omega_{\mathrm{win}}=
+  (\mathfrak o^{\mathrm{br}},\mathfrak o^{\mathrm{coad}},
+  [(C^{\mathrm{w}}_M)])$
+  of Theorem~\ref{thm:universal-filtered-cobar-recognition} vanishes by
+  items~(i)--(ii); the Casimir cokernel quotient
+  $Q_{\mathrm{Cas}}$ accordingly contains the zero class.  The
+  conilpotence, Maurer-Cartan, topology, and cobar obstruction
+  summands are properties of $C_w$, $A_w$, and the twisting cochain
+  $\tau$; the diagonal weight rescaling on the underlying Tate complex
+  is a categorical (not analytic) base change and preserves these
+  obstructions.
+\end{proof}
+
+\begin{cor}[Weighted bar-cobar inside the admissible envelope]
+\label{cor:tate-T3-weighted-bar-cobar}
+  Under the hypotheses of Proposition~\ref{prop:tate-T3-T1-base-change},
+  the bar-cobar Quillen equivalence of
+  Theorem~\ref{thm:tate-bar-cobar-quillen} and the
+  $\infty$-categorical equivalence of
+  Corollary~\ref{cor:tate-bar-cobar-infinity} both descend to the
+  weighted pair $(\mathfrak h_w,\mathfrak h^{\vee,w}_{\mathrm{cont}})$
+  without modification of the model-categorical statement.  The Casimir
+  convergence input from
+  Proposition~\ref{prop:wt-casimir-convergence} is consumed only at
+  the kernel-admissibility level and is independent of the bar-cobar
+  Quillen equivalence; the latter is the algebraic promotion of the
+  cochain CE/PV identity, the former is the coefficient closure of
+  $\mathfrak o_{\mathrm{Cas}}$.  This is the T1/T3 closure-layer
+  dichotomy at the model-categorical level: weighted Tate completion
+  closes coefficient-kernel obstructions, the admissible Tate model
+  envelope closes the bar-cobar promotion, and they compose by base
+  change rather than by reduction of either to the other.
+\end{cor}
+
+\begin{proof}
+  Direct from Proposition~\ref{prop:tate-T3-T1-base-change}: the
+  weighted pair is an object of the admissible envelope, so all
+  conclusions of Theorem~\ref{thm:tate-bar-cobar-quillen} and
+  Corollary~\ref{cor:tate-bar-cobar-infinity} apply.  The independence
+  is Proposition~\ref{prop:quillen-vs-casimir}: the bar-cobar
+  comparison uses conilpotence, not Casimir convergence; the weighted
+  pair supplies both, but only conilpotence enters the Quillen
+  equivalence proof.
+\end{proof}
+
 \subsubsection{Compatibility with the descendant residual}
 
 The Tate Quillen equivalence of \ref{thm:tate-bar-cobar-quillen}
