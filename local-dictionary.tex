@@ -10,6 +10,33 @@
 \setlength{\tabcolsep}{3pt}
 \renewcommand{\arraystretch}{1.15}
 
+The mixed holomorphic-topological string field theory on the local pair
+\[
+  X=\R^2_{t,s}\times\C^2_{z_1,z_2},\qquad
+  L=\R_t\times\{s=z_1=z_2=0\},\qquad
+  \omega=dz_1\wedge dz_2,
+\]
+is fixed by three pieces of data: a holomorphic orientation on the
+formal disk \((\widehat\C^2_0,\omega)\); three locality operators
+acting on the brane line; a separation between native
+two-complex-dimensional structure and reduced one-complex-dimensional
+shadows.  This dictionary is the rectification table for that data.
+
+Each entry names two sides and the precise morphism between them: an
+algebraic side (a CE/PV cochain, a residue module, a shifted-cotangent
+generator, a coordinate ring), a physical side (a Hamiltonian current,
+a brane measurement, a principal-part observable), and the comparison
+map fixing their identification.  Entries are not parallel lists.  An
+entry is admissible only when both sides and the comparison morphism
+are explicit; an entry without a comparison morphism is fenced as a
+named obstruction class, not as a heuristic.
+
+The dictionary is forced rather than tabulated.  The kinematic
+locality theorem below derives the entire factorization-current model
+from the unimodularity datum and three elementary operators.  The
+remaining blocks record the admissible identifications and the named
+obstructions to extending them.
+
 \paragraph{Local Calabi--Yau/unimodularity datum.}
 In the core local theorem surface, ``Calabi--Yau'' means only the
 following formal orientation/unimodularity datum.  It is a definition,
@@ -122,6 +149,97 @@ trace.\\
 \hline
 \end{longtable}
 
+\paragraph{Kinematic locality theorem.}
+The factorization-current model on the brane line is the local algebra
+of brane measurements.  Three locality operators force the
+construction.
+
+\begin{thm}[Kinematic locality]
+\label{thm:dict-kinematic-locality}
+On the local pair \((X,L)\) with unimodularity datum
+\(\omega=dz_1\wedge dz_2\) and reduced Hamiltonian Lie algebra
+\(\mathfrak h=\C[[z_1,z_2]]/\C\cdot1\), three operators acting on the
+brane-line observable complex force the entire factorization-current
+model:
+\begin{enumerate}
+\item[(i)]\emph{(Support locality on the brane line.)}  The equal-time
+  bracket kernel \(\delta(t-s)\) implies, after smearing against test
+  functions \(a(t),b(s)\),
+  \[
+    \{B_f(a),B_g(b)\}=B_{\{f,g\}}(ab),
+  \]
+  where the multiplication \(ab\) is the pointwise product of smooth
+  test functions on \(\R_t\).  Disjoint supports give zero bracket;
+  this is the support-local \(P_0\)-bracket.
+\item[(ii)]\emph{(Topological locality along the brane line.)}  Every
+  topological translation \(v\in T\R^2_{\mathrm{top}}\) is
+  \(Q\)-exact:
+  \[
+    L_v=[Q,\iota_v].
+  \]
+  Hence the \(Q\)-cohomology of brane observables is locally constant
+  along \(\R_t\): inclusions of disks \(U\subset V\) act by
+  quasi-isomorphism on \(H^\bullet(\mathrm{Obs}^{\mathrm{cl}})\).
+\item[(iii)]\emph{(Formal-holomorphic locality at the brane point.)}
+  Every antiholomorphic translation \(\partial/\partial\bar z_i\) is
+  \(Q\)-exact:
+  \[
+    L_{\partial/\partial\bar z_i}
+      =[Q,\iota_{\partial/\partial\bar z_i}].
+  \]
+  The surviving \(\bar\partial\)-cohomology at the brane point is the
+  formal jet algebra \(\mathfrak h\), Grothendieck-dually paired with
+  the residue/Matlis principal-part module
+  \(\mathcal P=\operatorname{Ann}_{\mathrm{res}}(\C\cdot1)\subset
+  H^2_{\mathfrak m}(\C[[z_1,z_2]])\,dz_1dz_2\).
+\end{enumerate}
+The three implications are derivations, not metaphors.  The
+\(Q\)-cohomology of (ii) and (iii) is the constructive content of the
+locality conclusion; (i) is a strict identity at chain level after
+distributional pairing, holding before any cohomology is taken.
+
+\emph{Admissibility under the three localities.}  Trace observables
+\(\overline{\operatorname{Tr}\,f(\phi_1,\phi_2)}\) on the brane probe,
+smeared as \(B_f(a)\) (defined in the interval-current block below),
+exhibit all three localities: support locality from the equal-time
+bracket of the matrix model fields, topological locality from the
+\(Q\)-exact \(t\)-direction, formal-holomorphic locality from the
+\(\bar\partial\)-exact transverse direction.  Shifted-cotangent
+currents \(\Theta_\rho(B)\) (also defined below) exhibit (i) and (ii)
+but not the polynomial/formal-holomorphic locality of (iii):
+\(\rho\in\mathcal P\) is a residue current at the brane point, not a
+polynomial jet.
+
+\emph{Forced shape.}  Items (ii) and (iii) restrict the dg Lie input
+of any acceptable factorization algebra to be locally constant in
+\(\R^2_{\mathrm{top}}\) and holomorphic in \(B\subset\C^2_{\mathrm{hol}}\),
+i.e.\
+\[
+  \Omega_c^\bullet(U)\widehat\otimes
+  \Omega_c^{0,\bullet}(B)\widehat\otimes
+  \mathfrak g,\qquad
+  \mathfrak g=\mathfrak h\ltimes
+  \mathfrak h^\vee_{\mathrm{cont}}[1].
+\]
+Item (i) selects the \(P_0\)-bracket on smeared currents.  Together,
+the three locality operators force the native \(\C^2\) holomorphic
+factorization algebra
+\(\mathcal F_{\mathrm{Ham}}^{\mathrm{hol}}\) and its mixed
+topological-current enhancement
+\(\mathcal F_{\mathrm{Ham}}^{\mathrm{mix}}\); the dictionary's
+remaining entries are the named comparison morphisms inside that
+forced shape.
+\end{thm}
+
+The conceptual engine of this manuscript is contained in
+Theorem~\ref{thm:dict-kinematic-locality}: every CE/PV correspondence,
+trace algebra entry, shifted-cotangent identification, and Matlis
+principal-part comparison below is a downstream consequence.  Where an
+entry would force a comparison morphism the three localities cannot
+provide, that entry is fenced as a named obstruction class; the
+obstruction is not a deferral, it is the precise mathematical datum
+the next theorem cycle must construct.
+
 \paragraph{Admissible and inadmissible uses.}
 \begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.25\textwidth}
   >{\raggedright\arraybackslash}p{0.67\textwidth}@{}}
@@ -167,14 +285,17 @@ obstruction calculation.\\
 \end{longtable}
 
 \paragraph{Native \(\C^2\) holomorphic factorization taxonomy.}
-In this manuscript the word ``chiral'', when it is used informally, means
-the native \(\C^2\) Hamiltonian holomorphic factorization object below, or
-one of its mixed, brane, or current avatars.  The construction is present;
-the missing extra theorem, if desired, is only the extraction of a
-one-complex-dimensional vertex/OPE algebra from it.  The word never means
-a compact Calabi--Yau chiral homology object, a CoHA, a quintic/GV/OSV
-structure, or a Borcherds--Kac--Moody denominator unless a separate
-matched-conventions theorem supplies that target.
+The native holomorphic object forced by
+Theorem~\ref{thm:dict-kinematic-locality} is a
+two-complex-dimensional factorization algebra on
+\(\C^2_{\mathrm{hol}}\), not a one-complex-dimensional vertex/OPE
+algebra.  The taxonomy below records each native object on
+\(\R^2_{\mathrm{top}}\times\C^2_{\mathrm{hol}}\), its construction
+status, and the precise extra reduction datum that would extract a
+curve VOA from it.  No compact Calabi--Yau chiral homology, CoHA,
+quintic/GV/OSV structure, or Borcherds--Kac--Moody denominator is
+present in the native object; importing such targets requires a
+matched-conventions theorem stated explicitly.
 \begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.25\textwidth}
   >{\raggedright\arraybackslash}p{0.67\textwidth}@{}}
 \hline
@@ -426,10 +547,15 @@ shadow of \(\mathcal F_{\mathrm{Ham}}^{\mathrm{hol}}\), not the native
 \end{longtable}
 
 \paragraph{Normal \(\Omega\)-background theorem surface.}
-This block is the dictionary for the brane-preserving equivariant
-deformation.  It is a theorem surface: it records the objects and the
-identities that must be constructed in the mixed de Rham/Dolbeault
-coefficient category.  It is not a Costello graph/QME theorem and does
+The brane-preserving equivariant deformation scales the normal bundle
+\(N_LX=\R_s\oplus\C_{z_1}\oplus\C_{z_2}\) with \(t\) fixed; a literal
+rotation in the \((t,s)\)-plane does not preserve \(L\) as fixed
+locus.  This block records the objects and identities that must be
+constructed in the mixed de Rham/Dolbeault coefficient category to
+inscribe that deformation: the Cartan differential
+\(Q_\Omega=Q+\iota_{V_\Omega}\), the localized normal contraction, the
+equivariant CE/PV bracket, and the residue-versus-Euler normalization.
+It is a theorem surface, not a Costello graph/QME theorem, and does
 not produce physical trace-state asymptotics.
 \begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.25\textwidth}
   >{\raggedright\arraybackslash}p{0.67\textwidth}@{}}
@@ -722,6 +848,12 @@ large-\(N\) trace-state theorem.\\
 \end{longtable}
 
 \paragraph{Canonical maps and obstruction symbols.}
+The symbols below name the comparison morphisms of the manuscript and
+the obstruction classes that fence them.  Each map has an algebraic
+source, a physical or geometric target, and an explicit construction
+status; each obstruction class is a precise cohomology, cokernel, or
+finite-window matrix datum, not a heuristic deferral.
+
 \begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.25\textwidth}
   >{\raggedright\arraybackslash}p{0.67\textwidth}@{}}
 \hline
@@ -835,12 +967,15 @@ claimed.\\
 \end{longtable}
 
 \paragraph{Non-scalar Costello/QME dictionary.}
-The entries in this block are the local obstruction habitat for
-Problem~\ref{prob:quantum-p0-operation-realization}.  A scalar-symbol
-map is associated-graded data.  A scalar-contact projection is a
-filtered chain map.  Reduced principal-part brackets live after
-de Rham-current contraction.  A non-scalar Costello graph realization is
-the unreduced QME equation below.
+This block records the local obstruction habitat for
+Problem~\ref{prob:quantum-p0-operation-realization}.  Each entry names
+a comparison morphism, an obstruction class, or both.  The scalar
+projection \(\sigma_{\mathrm{sc}}\) is associated-graded data; the
+projection \(\widehat\sigma_{\mathrm{sc}}\) is a filtered chain map
+existing exactly when the successive scalar-lift obstructions vanish;
+the reduced principal-part brackets live after de Rham-current
+contraction; the unreduced non-scalar QME is the curvature equation
+\(\operatorname{Curv}(K_{\hbar,w,I})=0\) of the bulk-to-defect kernel.
 \begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.25\textwidth}
   >{\raggedright\arraybackslash}p{0.67\textwidth}@{}}
 \hline
@@ -1137,6 +1272,13 @@ observables.\\
 \end{longtable}
 
 \paragraph{Common local rings and quotients.}
+The rings below carry the local algebraic data of the formal
+symplectic disk and are the source side for every comparison morphism
+that follows.  Their physical side enters only through specific
+constructions: \(\mathfrak h\) labels Hamiltonian observables;
+\(\mathfrak g_{\mathrm{str}}\) labels CE/PV closed cochains;
+\(\bar A\) labels the polynomial trace sector; \(N\) labels the brane
+probe rank.  No other identifications are tacit.
 \begin{center}
 \begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.25\textwidth}
   >{\raggedright\arraybackslash}p{0.67\textwidth}@{}}
@@ -1195,6 +1337,11 @@ Taylor truncation degree when a finite quotient
 \end{center}
 
 \paragraph{Large-\(N\) and quotient conventions.}
+The conventions below distinguish algebraic stable trace sectors from
+physical large-\(N\) cumulant claims.  An algebraic primitive
+projection is admissible inside the stable range; a physical cumulant
+requires a state \(\omega_{N,\Omega}\) and is not supplied by the
+projection alone.
 \begin{center}
 \begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.25\textwidth}
   >{\raggedright\arraybackslash}p{0.67\textwidth}@{}}
@@ -1219,30 +1366,45 @@ generators. The unit of the symmetric algebra remains.\\
 \end{center}
 
 \paragraph{Separation rule.}
-The next three blocks are disjoint.  PBW special-fibre labels
-\(H_{a,b},O_{a,b},\Psi_{a,b}\), CE/PV labels \(c^I,u_I,\theta^I,O_I\),
-and Matlis labels \(\rho_{a,b}\) live in different modules unless a
-specific theorem supplies a comparison.  The Fourier--Rees theorem
-matches associated-graded labels after Fourier normalization through
-the Fourier delta Rees lattice
-\(\mathcal D_\hbar/(z_1,z_2)\).  Its \v{C}ech realization carries the
-factor \((-1)^{a+b}\hbar^{a+b}a!b!\), so before \(\hbar\) is inverted
-it is the Rees sublattice, and as a module statement it uses a
-Fourier-twisted polarization rather than the original Hamiltonian
-coadjoint action.
+The next three blocks live in disjoint modules.  PBW special-fibre
+labels \(H_{a,b},O_{a,b},\Psi_{a,b}\); CE/PV labels
+\(c^I,u_I,\theta^I,O_I\); and Matlis labels \(\rho_{a,b}\) carry
+different \(\mathfrak h\)-actions and different polarizations.  Shared
+indices are labels, not module identifications.
+
+The Fourier--Rees theorem
+(Theorem~\ref{thm:app-matlis-rees-fourier-bridge}) is the only
+comparison morphism between PBW and Matlis labels: it matches
+associated-graded labels through the Fourier delta Rees lattice
+\(\mathcal D_\hbar/(z_1,z_2)\), with \v{C}ech realization carrying the
+factor \((-1)^{a+b}\hbar^{a+b}a!b!\).  Before \(\hbar\) is inverted
+this is a Rees sublattice; as a module statement it uses a
+Fourier-twisted polarization, not the original Hamiltonian coadjoint
+action.  Outside the Fourier--Rees theorem, no isomorphism between the
+spans of \(\Psi_{a,b}\) and \(\rho_{a,b}\) is asserted.
 
 \paragraph{Source--target status table.}
+The table below names, for each source/target pair, the comparison
+morphism (the algebra-to-physics identification), its proof status,
+and the inadmissible identification it does \emph{not} supply.  The
+``Status'' column is a strict claim about which morphism has been
+constructed; ``Forbidden identification'' fences the surface against
+silent transfer to a stronger object.  No row asserts more than the
+explicit comparison morphism it names.
+
 \begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.22\textwidth}
   >{\raggedright\arraybackslash}p{0.22\textwidth}
   >{\raggedright\arraybackslash}p{0.18\textwidth}
   >{\raggedright\arraybackslash}p{0.28\textwidth}@{}}
 \hline
-\textbf{Source} & \textbf{Target} & \textbf{Status} &
+\textbf{Source (algebraic)} & \textbf{Target (physical)} &
+\textbf{Comparison morphism status} &
 \textbf{Forbidden identification}\\
 \hline
 \endfirsthead
 \hline
-\textbf{Source} & \textbf{Target} & \textbf{Status} &
+\textbf{Source (algebraic)} & \textbf{Target (physical)} &
+\textbf{Comparison morphism status} &
 \textbf{Forbidden identification}\\
 \hline
 \endhead
@@ -1360,6 +1522,13 @@ not a consequence of the local Koszul Layers 0--6\\
 \end{longtable}
 
 \paragraph{PBW special-fibre open trace labels.}
+The labels below name the algebraic side of the brane probe at the
+\(\hbar=0\) special fibre.  The physical side is the trace observable
+\(\overline{\operatorname{Tr}\,f(\phi_1,\phi_2)}\) on the matrix Weyl
+brane after the moment-map reduction.  The comparison morphism is the
+PBW limit of that trace observable; it is an isomorphism of stable
+trace complexes only after the Procesi--Razmyslov stable range
+\(N\geq d\) has been entered.
 \begin{center}
 \begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.25\textwidth}
   >{\raggedright\arraybackslash}p{0.67\textwidth}@{}}
@@ -1401,11 +1570,21 @@ and \(\rho_{a,b}\).\\
 
 The shared indices on \(H_{a,b}\), \(\Psi_{a,b}\), and
 \(\rho_{a,b}\) are labels, not an \(\mathfrak h\)-module
-identification. The span of the \(\Psi_{a,b}\) is not
+identification: the span of the \(\Psi_{a,b}\) is not
 \(\mathfrak h^\vee_{\mathrm{cont}}\), not \(\mathcal P\), and not a
-principal-part current module.
+principal-part current module.  The Fourier--Rees bridge is the only
+comparison morphism between PBW and Matlis sectors.
 
 \paragraph{Closed CE/PV labels.}
+The labels below name the closed-side algebraic complex.  The physical
+side is the closed-string \(P_0\)-central operation acting on brane
+observables through Witten's source convention.  The comparison
+morphism is \(\Phi_{\mathrm{coord}}\): a coordinate dg CE/PV
+isomorphism on generators
+(\(c^I\mapsto\theta^I\), \(u_I\mapsto O_I\)).  Its restriction to a
+bracket-admissible \(B\) is the \(P_0\) realization \(\Phi^B_{P_0}\);
+without bracket-admissibility data only the dg algebra identification
+holds.
 \begin{center}
 \begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.25\textwidth}
   >{\raggedright\arraybackslash}p{0.67\textwidth}@{}}
@@ -1450,6 +1629,17 @@ is \(\Phi^B_{P_0}\) only after a bracket-admissible \(B\) is chosen.\\
 \end{center}
 
 \paragraph{Matlis principal-part labels.}
+The labels below name the Grothendieck-dual side of the formal jet
+algebra \(\mathfrak h\): the residue/Matlis principal-part module
+\(\mathcal P\) that appears as
+\(\mathfrak h^\vee_{\mathrm{cont}}\) under residue duality.  The
+physical side is the principal-part current observable
+\(\Theta_\rho(B)\) on a brane interval.  The comparison morphism is
+the residue pairing \(\mathfrak h\otimes\mathcal P\to\C\),
+\(f\otimes\rho\mapsto\operatorname{Res}_0(f\rho)\); the Hamiltonian
+coadjoint action on \(\mathcal P\) is its image under this pairing.
+This is the formal-holomorphic locality (iii) of
+Theorem~\ref{thm:dict-kinematic-locality} read as algebra.
 \begin{center}
 \begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.25\textwidth}
   >{\raggedright\arraybackslash}p{0.67\textwidth}@{}}
@@ -1481,16 +1671,29 @@ compactly supported distributional principal-part currents on an interval
 \end{tabular}
 \end{center}
 
-Thus \(\Psi_{a,b}\) and \(\rho_{a,b}\) live in different modules:
+As stated in the separation rule above,
 \[
   \Psi_{a,b}\in\text{PBW special-fibre open homology},\qquad
   \rho_{a,b}\in
-  \mathcal P\cong\mathfrak h^\vee_{\mathrm{cont}}.
+  \mathcal P\cong\mathfrak h^\vee_{\mathrm{cont}}
 \]
-No ordinary \(\mathfrak h\)-module isomorphism between these two spans
-is used or asserted.
+live in different modules.  The only comparison morphism between them
+is the Fourier--Rees label bridge \(\mathsf F_{\mathrm{Rees}}\) of
+Theorem~\ref{thm:app-matlis-rees-fourier-bridge}, which acts on
+associated-graded labels through Fourier-twisted polarization, not on
+the original Hamiltonian coadjoint action.  No \(\mathfrak h\)-module
+isomorphism between the two spans is used or asserted.
 
 \paragraph{Interval-current and boundary labels.}
+The labels below name the brane-line algebraic objects produced by the
+support-locality differential of
+Theorem~\ref{thm:dict-kinematic-locality}\,(i).  The physical side is
+the smeared brane measurement \(B_f(a)\) and the principal-part
+current observable \(\Theta_\rho(B)\).  The comparison morphism is the
+de Rham-current contraction sending the CE coordinate
+\(u_{a(t)dt\otimes f}\) to \(B_f(a)\) and \(c_{B,\rho}\) to
+\(\Theta_\rho(B)\); a smooth test function multiplies a distribution,
+no product of two distributions is required.
 \begin{center}
 \begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.25\textwidth}
   >{\raggedright\arraybackslash}p{0.67\textwidth}@{}}
