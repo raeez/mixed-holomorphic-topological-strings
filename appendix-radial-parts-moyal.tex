@@ -2187,10 +2187,12 @@ exactly the assertion that the ordinary Weyl trace \(J_N(f)\) equals
   \]
   Each verification is a finite rational linear-algebra problem on
   \((\mathsf W_{a,b}\oplus\mathsf S_{a,b})\), in exact rational
-  arithmetic; computational cost in \(\texttt{--kernel-correction}\)
-  mode grows roughly as the cube of \(\binom{a+b-2}{a-1}\), so
-  bidegrees of total degree \(\geq 16\) require longer runs but the
-  underlying linear algebra is unconditional.  The structural
+  arithmetic; the column count is
+  \(\dim\mathsf W_{a,b}=\binom{a+b-2}{a-1}\), the row count is the
+  number of indexed normal diagrams in bidegree \((a,b)\), and the
+  Gaussian-elimination cost grows as a cube of the column count.
+  Bidegrees of total degree \(\geq 16\) therefore require longer
+  runs but the underlying linear algebra is unconditional.  The structural
   all-bidegree theorem (Theorem~\ref{thm:app-radial-bicomplex-acyclic})
   extends the closure to every bidegree under the named
   Statement-input.  The \(\texttt{--edge-family-max}\) and
