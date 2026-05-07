@@ -2739,14 +2739,19 @@ construction can be tracked explicitly.
     \mc P_{\leq N}=\bigoplus_{0<a+b\leq N}\C\rho_{a,b},
   \]
   and write \(\pi_N\colon\mc P\twoheadrightarrow\mc P_{\leq N}\) for the
-  finite-Matlis truncation.  For every \(N\geq1\), no support-local
-  current quotient
+  finite-Matlis truncation.  For every \(N\geq1\), no \(\C\)-linear
+  quotient
   \[
     q_N\colon\mc P\longrightarrow\mc P_{\leq N}
   \]
-  retains \(\mc P_{\leq N}\), kills the high transverse currents
-  \(\rho_{a,b}\) with \(a+b>N\), and intertwines the full Hamiltonian
-  coadjoint action of \(\mathfrak h\).  The obstruction is the
+  retains \(\mc P_{\leq N}\) pointwise, kills the high transverse
+  currents \(\rho_{a,b}\) with \(a+b>N\), and intertwines the full
+  Hamiltonian coadjoint action of \(\mathfrak h\) on principal parts.
+  In particular, no support-local quotient on the
+  derivative-delta-current habitat
+  \(\Delta_{a,b}\in\mathcal D'_0{}^{0,2}(B)\) of
+  Theorem~\ref{thm:app-finite-window-bmk-current-transfer} carries the
+  Hamiltonian action onto a finite Matlis target.  The obstruction is the
   Tate-cohomology class of the principal-part module recorded by
   \[
     \operatorname{ob}_{\mathfrak h,N}
@@ -2821,27 +2826,48 @@ construction can be tracked explicitly.
   contradicting \(N+2\neq 0\) and \(\rho_{0,1}\neq 0\) in
   \(\mc P_{\leq N}\).  This is the no-go.
 
-  The Jacobiator computation~\eqref{eq:bmk-bockstein-jacobiator}
-  follows by applying the same coadjoint formula to
-  \(\{z_1^{N+2},\{z_2,\rho_{N,0}\}\}\): one finds
-  \(\{z_2,\rho_{N,0}\}=-\rho_{N,1}\) and
-  \(z_1^{N+2}\cdot\rho_{N,1}=-(N+2)(N-(N+2)+1)\rho_{-1,1}\), but
-  \(\rho_{-1,1}=0\) by the negative-index-zero rule of
-  Proposition~\ref{prop:app-matlis-coadjoint-action}; the surviving
-  cyclic-permutation contribution is
-  \(\{z_2,\{z_1^{N+2},\rho_{N+1,0}\}\}
-   =-(N+2)\{z_2,\rho_{0,1}\}=(N+2)\cdot 0=0\) (negative index again),
-  while the third cycle \(\{\rho_{N,0},\{z_1^{N+2},z_2\}\}
-   =\{\rho_{N,0},(N+2)z_1^{N+1}\}=(N+1)(N+2)\rho_{0,1}\) by
-  \(\{z_1^{N+1},\rho_{N,0}\}=-(N+1)\rho_{0,0}\) and an additional
-  \(z_2\)-derivative bookkeeping in the cyclic Jacobi sum.  The
-  coefficient \((N+1)(N+2)\) is the same coefficient as in the
-  finite-window obstruction in
-  Theorem~\ref{thm:app-finite-window-bmk-current-transfer}, recorded
-  there as the projected escape-return Jacobiator on the same triple.
-  No quotient \(q_N\) absorbing this return as a unary boundary
-  preserves \(\rho_{0,1}\) without collapsing \(\mc P_{\leq N}\)
-  itself.
+  The projected
+  Jacobiator~\eqref{eq:bmk-bockstein-jacobiator} is the failure of the
+  truncated bracket to satisfy Jacobi: the unprojected coadjoint
+  bracket on
+  \(\mathfrak h\ltimes\mc P[1]\) is a genuine semidirect Lie module
+  and obeys Jacobi, but its image after \(\pi_N\) does not.
+  Concretely, on the triple \((z_1^{N+2},z_2,\rho_{N,0})\) the three
+  cyclic terms in the lifted Jacobi sum are computed by the displayed
+  coadjoint rule together with the Hamiltonian Poisson rule
+  \(\{H_{a,b},H_{r,s}\}=(as-br)H_{a+r-1,b+s-1}\) of the disk:
+  \[
+  \begin{aligned}
+    \{z_1^{N+2},\{z_2,\rho_{N,0}\}\}
+      &=\{z_1^{N+2},(N+1)\rho_{N+1,0}\}
+       =-(N+1)(N+2)\,\rho_{0,1}, \\
+    \{z_2,\{\rho_{N,0},z_1^{N+2}\}\}
+      &=\{z_2,0\}=0
+       \quad\text{since } \{\rho_{N,0},z_1^{N+2}\}
+       =-(z_1^{N+2}\cdot\rho_{N,0})=0\\
+      &\hspace{3.7cm}\text{by the negative-index rule of
+       Proposition~\ref{prop:app-matlis-coadjoint-action}},\\
+    \{\rho_{N,0},\{z_1^{N+2},z_2\}\}
+      &=\{\rho_{N,0},(N+2)\,z_1^{N+1}\}
+       =(N+1)(N+2)\,\rho_{0,1}.
+  \end{aligned}
+  \]
+  The unprojected sum is zero, as required by Jacobi for the lifted
+  bracket.  Apply \(\pi_N\) entrywise: the first cycle's intermediate
+  \(\{z_2,\rho_{N,0}\}=(N+1)\rho_{N+1,0}\) lies in \(\ker\pi_N\) since
+  \(N+1>N\), so the projected first cycle is
+  \(\pi_N\{z_1^{N+2},\pi_N(N+1)\rho_{N+1,0}\}
+   =\pi_N\{z_1^{N+2},0\}=0\); the second cycle is already zero; the
+  third cycle is
+  \(\pi_N\{\rho_{N,0},(N+2)z_1^{N+1}\}=(N+1)(N+2)\rho_{0,1}\) since
+  \(\rho_{0,1}\in\mc P_{\leq N}\) is retained.  The projected sum is
+  therefore \((N+1)(N+2)\rho_{0,1}\neq 0\), which
+  is~\eqref{eq:bmk-bockstein-jacobiator}.  This is the projected
+  escape-return Jacobiator recorded in
+  Theorem~\ref{thm:app-finite-window-bmk-current-transfer} on the same
+  triple; no quotient \(q_N\) absorbing this return as a unary
+  boundary preserves \(\rho_{0,1}\) without collapsing
+  \(\mc P_{\leq N}\) itself.
 
   The third entry \(\operatorname{ob}_{\mathfrak h,N}\) of
   \(\operatorname{Ob}^{\mathrm{BMK\mbox{-}curr}}_N\) in
