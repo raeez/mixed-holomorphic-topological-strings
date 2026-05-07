@@ -1,64 +1,44 @@
 \section{Matlis Principal Parts and the Continuous Cotangent Module}
 \label{sec:app-matlis-principal-parts}
 
-\emph{The brane measures positions polynomially, but its cotangent
-momenta live as residues.}  The defect polarization of the brane line is
-not a free choice.  Configuration observables on the brane are the
-polynomial trace classes
+The defect polarization of the brane line is not a free choice.
+Configuration observables on the brane are the polynomial trace classes
 \(O_f=\overline{\operatorname{Tr}f(\phi_1,\phi_2)}\); these are
-\emph{Taylor} in the matrix-valued normal coordinates and form the
-PBW special-fibre alphabet.  Cotangent momenta on the same brane, by
+\emph{Taylor} in the matrix-valued normal coordinates and form the PBW
+special-fibre alphabet.  Cotangent momenta on the same brane, by
 Grothendieck local-cohomology duality, are not another copy of
 polynomials.  They are residues
 \(\rho_{a,b}=z_1^{-a-1}z_2^{-b-1}\,dz_1dz_2\), top local-cohomology
-generators of \(R=\C[[z_1,z_2]]\) at the maximal ideal
-\((z_1,z_2)\).  This appendix proves the canonical polarization, in the
-form of a single physical theorem
-(Theorem~\ref{thm:app-defect-polarization}), and supplies the four
-construction inputs that turn it into algebra
-(Propositions~\ref{prop:app-matlis-realization},
-\ref{prop:app-matlis-coadjoint-action};
-Theorems~\ref{thm:app-matlis-residue-rigidity},
-\ref{thm:app-matlis-polynomial-descendant-obstruction},
-\ref{thm:app-matlis-rees-fourier-bridge}).  These five outputs are the
-proof spine of Principle~4 of the introduction.  They feed into
-Theorem~\ref{thm:principal-part-coadjoint-uniqueness},
-Corollary~\ref{cor:descendant-coadjoint-difference}, and the
-Bochner--Martinelli current data of
-Proposition~\ref{prop:finite-window-bm-native-e2-transfer} -- the
-loci where the matrix-probe versus residue-defect separation governs
-the unreduced \(P_0\)-factorization-centre lift.
+generators of \(R=\C[[z_1,z_2]]\) at the maximal ideal \((z_1,z_2)\).
+The brane measures positions polynomially; its cotangent momenta live as
+residues.
 
-Three structural points organize this appendix.  First, the
-\(\mathfrak m\)-adic continuous dual of the reduced Hamiltonian Lie
+The \(\mathfrak m\)-adic continuous dual of the reduced Hamiltonian Lie
 algebra \(\mathfrak h=R/\C\cdot1\) sits inside
 \(H^2_{\mathfrak m}(R)\,dz_1dz_2\) as the scalar annihilator of the
 constant line; the residue pairing identifies it canonically with the
-direct sum \(\mc P=\bigoplus_{a+b>0}\C\,\rho_{a,b}\).  Second, the
-Hamiltonian coadjoint action, transported through this residue
-identification, is the principal-part residue formula
+direct sum \(\mc P=\bigoplus_{a+b>0}\C\,\rho_{a,b}\).  The Hamiltonian
+coadjoint action, transported through this residue identification, is
+the principal-part residue formula
 \(z_1^p z_2^q\cdot\rho_{a,b}=-(pb-qa+p-q)\,\rho_{a-p+1,b-q+1}\), with
-negative-index targets zero -- the closed-form fingerprint of the
-polarization, verified independently by the
-companion scripts.  Third, the polynomial PBW one-\(\psi\) descendants
-\(\widetilde\Psi_{a,b}\) carry the same labels \((a,b)\) and a strictly
-different \(\mathfrak h\)-module structure: linear Hamiltonians act
-locally nilpotently on the polynomial side and never locally
-nilpotently on \(\mc P\), so no relabelling of bases interpolates.
-Fourier--Rees conjugation supplies the only universal label bridge,
-and only after a polarization change: it sends
+negative-index targets zero.  The polynomial PBW one-\(\psi\)
+descendants \(\widetilde\Psi_{a,b}\) carry the same labels \((a,b)\) and
+a strictly different \(\mathfrak h\)-module structure: linear
+Hamiltonians act locally nilpotently on the polynomial side and never
+locally nilpotently on \(\mc P\), so no relabelling of bases
+interpolates.  Fourier--Rees conjugation supplies the only universal
+label bridge, and only after a polarization change: it sends
 \(\mathcal O_\hbar=\mathcal D_\hbar/(\partial_1,\partial_2)\) to
-\(\Delta^{\mathsf F}_\hbar=\mathcal D_\hbar/(z_1,z_2)\), whose
-\v{C}ech realization sits inside the standard local-cohomology
-lattice as \(\bigoplus\hbar^{a+b}\C[[\hbar]]\rho_{a,b}\); the full
-lattice \(\bigoplus\C[[\hbar]]\rho_{a,b}\) is recovered only after
-\(\hbar\) is inverted.
+\(\Delta^{\mathsf F}_\hbar=\mathcal D_\hbar/(z_1,z_2)\), whose \v{C}ech
+realization sits inside the standard local-cohomology lattice as
+\(\bigoplus\hbar^{a+b}\C[[\hbar]]\rho_{a,b}\); the full lattice
+\(\bigoplus\C[[\hbar]]\rho_{a,b}\) is recovered only after \(\hbar\) is
+inverted.
 
-The source conventions are Matlis duality
-\cite{matlis-injective}, Grothendieck--Hartshorne local cohomology
+Source conventions: Matlis duality \cite{matlis-injective},
+Grothendieck--Hartshorne local cohomology
 \cite{hartshorne-local-cohomology}, and the power-series residue model
-of Kunz--Cox--Dickenstein, Chapter~5
-\cite{kunz-residues-duality}.
+of Kunz--Cox--Dickenstein, Chapter~5 \cite{kunz-residues-duality}.
 
 \subsection{The defect polarization}
 \label{ssec:app-defect-polarization}
@@ -72,15 +52,13 @@ alphabet, through the matrix microscope of
 Lemma~\ref{lem:probe-trace-microscope}: a holomorphic Hamiltonian
 \(f\in\mathfrak h\) becomes a brane configuration observable
 \(O_f=\overline{\operatorname{Tr}f(\phi_1,\phi_2)}\), a \emph{polynomial}
-in the Chan--Paton-valued normal coordinates.  Configuration
-observables are therefore Taylor functions of the probe pair.  The
-question this appendix answers is what kind of object the cotangent
-momentum dual to \(O_f\) must be.  Three properties are forced.  First,
-it must pair with Hamiltonian observables to a scalar.  Second, it must
-be continuous for the natural \(\mathfrak m\)-adic topology on
-\(\mathfrak h\), where \(\mathfrak m=(z_1,z_2)\).  Third, it must
-intertwine the Hamiltonian coadjoint action coming from the Poisson
-bracket on the disk.  The next theorem records that those three
+in the Chan--Paton-valued normal coordinates.  Configuration observables
+are therefore Taylor functions of the probe pair.  The cotangent
+momentum dual to \(O_f\) is constrained by three properties: it pairs
+with Hamiltonian observables to a scalar; it is continuous for the
+\(\mathfrak m\)-adic topology on \(\mathfrak h\), where
+\(\mathfrak m=(z_1,z_2)\); it intertwines the Hamiltonian coadjoint
+action coming from the Poisson bracket on the disk.  Those three
 constraints together select a polarization that is \emph{not} a copy of
 polynomials: the cotangent direction is residue-valued.
 
@@ -161,13 +139,12 @@ polynomials: the cotangent direction is residue-valued.
   Hamiltonians \(z_1,z_2\) on this side is
   Theorem~\ref{thm:app-matlis-polynomial-descendant-obstruction}.
 
-  The cotangent side decomposes into three parts.  The basis identity
+  On the cotangent side, the basis identity
   \(\mc P=\bigoplus_{a+b>0}\C\,\rho_{a,b}\) and the residue Kronecker
   pairing
   \(\langle\rho_{a,b},z_1^m z_2^n\rangle=\delta_{a,m}\delta_{b,n}\) are
   Definition~\ref{def:app-matlis-principal-parts}.  The continuous-dual
-  identification
-  \(\mathfrak h^\vee_{\mathrm{cont}}\cong\mc P\) is
+  identification \(\mathfrak h^\vee_{\mathrm{cont}}\cong\mc P\) is
   Proposition~\ref{prop:app-matlis-realization}.  The principal-part
   coadjoint action with monomial coefficient \(-(pb-qa+p-q)\) is
   Proposition~\ref{prop:app-matlis-coadjoint-action} and
@@ -177,48 +154,32 @@ polynomials: the cotangent direction is residue-valued.
   Theorem~\ref{thm:app-matlis-polynomial-descendant-obstruction},
   excluding local nilpotence.
 
-  The no-interpolation clause is the local-nilpotence dichotomy: linear
-  Hamiltonians act locally nilpotently on the polynomial side and not
-  on the residual side, by the same theorem.  The unique universal
-  label bridge between the two sides is
-  Theorem~\ref{thm:app-matlis-rees-fourier-bridge}; that the bridge
-  requires a Fourier polarization change of action and is no
-  same-action \(\mathfrak h\)-module isomorphism is the obstruction
-  clause of the same theorem and
+  Linear Hamiltonians act locally nilpotently on the polynomial side and
+  not on the residual side, by the same theorem, so no same-action
+  module isomorphism interpolates.  The unique universal label bridge
+  between the two sides is Theorem~\ref{thm:app-matlis-rees-fourier-bridge};
+  that the bridge requires a Fourier polarization change of action is
+  the obstruction clause of the same theorem and
   Corollary~\ref{cor:app-matlis-no-flat-same-action-interpolation}.
-  The rigidity clause (residue-coadjoint pairing unique up to one
-  scalar) is
-  Theorem~\ref{thm:app-matlis-residue-rigidity}.  Each cited result is
-  self-contained in this appendix.
+  The residue-coadjoint pairing is unique up to one scalar by
+  Theorem~\ref{thm:app-matlis-residue-rigidity}.
 \end{proof}
-
-The polarization is forced by three independent inputs: residue duality
-on the formal disk, locally-nilpotent action of linear Hamiltonians on
-polynomial observables, and rising-factorial action of the same
-Hamiltonians on principal parts.  None of the three is delicate; their
-combined consequence is that no choice of polynomial sub-bimodule
-substitutes for the residual cotangent direction.  The remainder of the
-appendix supplies the algebraic constructions that make the two sides
-rigorous, the rigidity that pins each up to scalar, the obstruction to
-interpolation, and the only universal label bridge between them.
 
 \begin{rmk}[Computational verification of the polarization]
 \label{rmk:app-defect-polarization-numerics}
   The coadjoint coefficient \(-(pb-qa+p-q)\) on the residual side is
-  verified by the companion scripts
-  \texttt{scripts/check\_one\_psi\_homology.py} and
-  \texttt{scripts/check\_moyal\_coefficients.py}.  The first computes
-  \(\operatorname{ad}^\vee_{z_1^pz_2^q}(\delta_{a,b})\) symbolically on
-  Taylor-monomial test labels, identifies the one-functional support,
-  and confirms \(-(pb-qa+p-q)\rho_{a-p+1,b-q+1}\) on every quadruple
-  \((p,q,a,b)\) with exponents \(\le 5\) and \(p+q,a+b>0\): \(1225\)
-  cases, all match.  The same script attacks the candidate label map
-  \(\widetilde\Psi_{a,b}\mapsto\rho_{a,b}\) by the exact Moyal
-  coadjoint action: \(1200\) of \(1225\) cases register a PBW-vs-Moyal
-  mismatch, and \(958\) cases carry genuine higher Moyal coadjoint
-  terms which the polynomial one-\(\psi\) action does not produce at
-  any order in \(\hbar\).  The smallest explicit obstruction is the
-  pair
+  verified by \texttt{scripts/check\_one\_psi\_homology.py}, which
+  computes \(\operatorname{ad}^\vee_{z_1^pz_2^q}(\delta_{a,b})\)
+  symbolically on Taylor-monomial test labels, identifies the
+  one-functional support, and confirms
+  \(-(pb-qa+p-q)\rho_{a-p+1,b-q+1}\) on every quadruple \((p,q,a,b)\)
+  with exponents \(\le 5\) and \(p+q,a+b>0\): \(1225\) cases, all match.
+  The same script attacks the candidate label map
+  \(\widetilde\Psi_{a,b}\mapsto\rho_{a,b}\) by the exact Moyal coadjoint
+  action: \(1200\) of \(1225\) cases register a PBW-vs-Moyal mismatch,
+  and \(958\) cases carry genuine higher Moyal coadjoint terms which the
+  polynomial one-\(\psi\) action does not produce at any order in
+  \(\hbar\).  The smallest explicit obstruction is the pair
   \[
     \operatorname{ad}^\vee_{z_1^4}(\delta_{1,1})
       =-24\,\hbar^2\,\delta_{0,4},
@@ -227,13 +188,13 @@ interpolation, and the only universal label bridge between them.
     \quad\text{(polynomial side)};
   \]
   the two functionals are supported at different bidegrees and at
-  different powers of \(\hbar\).  The second script verifies the Moyal
+  different powers of \(\hbar\).  The companion script
+  \texttt{scripts/check\_moyal\_coefficients.py} verifies the Moyal
   star-bracket coefficients on monomials up to exponents \(\le 10\) and
   orders \(\le 11\), with the antisymmetric odd-order tower
-  \(1,\ \tfrac1{24},\ \tfrac1{1920},\ \tfrac1{322560},\ \dots\)  matching
-  the closed-form
-  \(\tfrac{1}{2^{r-1}\,r!}\) for odd \(r\).  Both scripts run from the
-  command line with no external dependencies.
+  \(1,\ \tfrac1{24},\ \tfrac1{1920},\ \tfrac1{322560},\ \dots\) matching
+  the closed-form \(\tfrac{1}{2^{r-1}\,r!}\) for odd \(r\).  Both
+  scripts run from the command line with no external dependencies.
 \end{rmk}
 
 \subsection{Construction of the residual side}
@@ -357,9 +318,10 @@ interpolation, and the only universal label bridge between them.
   \(\C\)-linear scalar-annihilator dual to
   \(\mathfrak h=R/\C\cdot1\).  The \(R\)-module structure on
   \(E_R(\C)\) does not restrict to \(\mc P\); multiplication can hit the
-  excluded scalar residue line.  The Hamiltonian coadjoint action below
-  is transported separately by the residue pairing and is the structure
-  used by the brane cotangent sector.
+  excluded scalar residue line.  The Hamiltonian coadjoint action is
+  transported separately by the residue pairing
+  (Proposition~\ref{prop:app-matlis-coadjoint-action}) and is the
+  structure used by the brane cotangent sector.
 \end{prop}
 
 \begin{proof}
@@ -587,9 +549,8 @@ interpolation, and the only universal label bridge between them.
   preserved by module isomorphism and by restriction to submodules.
   Therefore no polynomial descendant module with locally nilpotent
   linear Hamiltonians realizes \(\mc P\), nor any nonzero submodule of
-  \(\mc P\).  This is the local-nilpotence obstruction; it is
-  independent of \(\hbar\) and survives every label relabelling between
-  the two alphabets.
+  \(\mc P\).  The obstruction is independent of \(\hbar\) and survives
+  every label relabelling between the two alphabets.
 
   For the primitive PBW labels \(\widetilde\Psi_{a,b}\) the obstruction
   is already visible at the boundary of the index quadrant.  After the
@@ -603,11 +564,9 @@ interpolation, and the only universal label bridge between them.
   Thus \(z_1\) kills \(\widetilde\Psi_{a,0}\) for every \(a>0\), whereas
   on the residual side \(z_1\cdot\rho_{a,0}=-\rho_{a,1}\neq0\).  No
   rescaling \(\widetilde\Psi_{a,b}\mapsto\lambda_{a,b}\rho_{a,b}\) with
-  \(\lambda_{a,b}\neq0\) intertwines the two actions, since the linear
-  Hamiltonian \(z_1\) acts by lowering the second index on the polynomial
-  side and by raising it on the residual side.  The two formulas have
-  opposite index-shift directions; this is the architectural separation
-  recorded in the defect-polarization theorem.
+  \(\lambda_{a,b}\neq0\) intertwines the two actions: the linear
+  Hamiltonian \(z_1\) lowers the second index on the polynomial side
+  and raises it on the residual side.
 \end{proof}
 
 \subsection{Universal Fourier--Rees label bridge}
@@ -826,76 +785,50 @@ interpolation, and the only universal label bridge between them.
   \(\hbar\) cannot change local nilpotence.
 \end{proof}
 
-\begin{rmk}[What the Fourier--Rees construction proves]
+\begin{rmk}[Lattice content of the Fourier--Rees bridge]
 \label{rmk:app-matlis-rees-bridge-scope}
-  The construction above justifies the shared index set
-  \((a,b)\) as the Fourier--Rees associated-graded index convention, with the factorial and
-  \(\hbar^{a+b}\) normalization displayed explicitly.  It also records
-  the lattice convention: the Fourier twist gives
+  The shared index set \((a,b)\) is the Fourier--Rees
+  associated-graded convention, with explicit factorial and
+  \(\hbar^{a+b}\) normalization.  The Fourier twist gives
   \(\mathcal D_\hbar/(z_1,z_2)\), whose \v{C}ech realization is the Rees
   sublattice \(\bigoplus\hbar^{a+b}\C[[\hbar]]\rho_{a,b}\), not the full
-  \(\bigoplus\C[[\hbar]]\rho_{a,b}\) before \(\hbar\) is inverted.  It
-  does not weaken the no-polynomial theorem.  The theorem says
-  precisely where the apparent comparison breaks: Fourier sends the
-  Hamiltonian vector fields to Fourier-transformed operators, while the
-  Matlis cotangent module uses the original coadjoint vector fields on
-  principal parts.
+  \(\bigoplus\C[[\hbar]]\rho_{a,b}\) before \(\hbar\) is inverted.
+  Fourier sends the Hamiltonian vector fields to Fourier-transformed
+  operators on \(\Delta^{\mathsf F}_\hbar\); the Matlis cotangent module
+  uses the original coadjoint vector fields on principal parts.
 \end{rmk}
 
-\subsection{Dependency map for the body theorems}
+\subsection{Citations into the body of the manuscript}
 \label{ssec:app-matlis-dependency-map}
 
-\begin{rmk}[What supports what]
+\begin{rmk}[Where the appendix is used]
 \label{rmk:app-matlis-what-supports-what}
-  This appendix supplies the proof spine for Principle~4 of the
-  introduction.  The architecture is as follows.
   \begin{enumerate}
-    \item Theorem~\ref{thm:app-defect-polarization} is the apex: it
-      states the canonical polarization of the brane defect line and
-      organises the four construction inputs below into one physical
-      theorem.  Each construction supplies a hypothesis the
-      polarization needs: the Matlis realization
-      (Proposition~\ref{prop:app-matlis-realization}) supplies the
-      module identity, the coadjoint formula
-      (Proposition~\ref{prop:app-matlis-coadjoint-action}) supplies the
-      action, the rigidity statement
-      (Theorem~\ref{thm:app-matlis-residue-rigidity}) pins the pairing
-      up to one scalar, the polynomial obstruction
-      (Theorem~\ref{thm:app-matlis-polynomial-descendant-obstruction})
-      proves the no-interpolation clause, and the Fourier--Rees bridge
-      (Theorem~\ref{thm:app-matlis-rees-fourier-bridge}) names the
-      unique label passage between the two sides of the polarization.
-    \item Proposition~\ref{prop:app-matlis-realization} and
-      Proposition~\ref{prop:app-matlis-coadjoint-action} are the
+    \item The Matlis realization
+      (Proposition~\ref{prop:app-matlis-realization}) and the coadjoint
+      formula \eqref{eq:app-matlis-coadjoint-monomial}
+      (Proposition~\ref{prop:app-matlis-coadjoint-action}) are the
       construction inputs to
       Proposition~\ref{prop:principal-part-coadjoint} and
-      Theorem~\ref{thm:principal-part-coadjoint-uniqueness}; the
-      monomial coadjoint formula
-      \eqref{eq:app-matlis-coadjoint-monomial} is the formula used in
-      those theorems.
+      Theorem~\ref{thm:principal-part-coadjoint-uniqueness}.
     \item Lemma~\ref{lem:app-matlis-coadjoint-centralizer} and
       Theorem~\ref{thm:app-matlis-residue-rigidity} are the rigidity
       inputs to Theorem~\ref{thm:canonical-residue-pairing} and the
       uniqueness clause of
-      Theorem~\ref{thm:principal-part-coadjoint-uniqueness}: the
-      residue scalar normalisation is the unique perfect continuous
-      coadjoint pairing.
+      Theorem~\ref{thm:principal-part-coadjoint-uniqueness}.
     \item Theorem~\ref{thm:app-matlis-polynomial-descendant-obstruction}
-      and
-      Corollary~\ref{cor:app-matlis-no-flat-same-action-interpolation}
-      are the local-nilpotence obstructions used in
+      and Corollary~\ref{cor:app-matlis-no-flat-same-action-interpolation}
+      are the local-nilpotence obstructions cited in
       Proposition~\ref{prop:no-polynomial-principal-part-boundary} and
-      Theorem~\ref{thm:pbw-vs-deformation}: they are the precise reason
-      that the polynomial PBW one-\(\psi\) descendant labels do not
-      realise the continuous cotangent module, classical or after Moyal
-      deformation.
+      Theorem~\ref{thm:pbw-vs-deformation}: the polynomial PBW
+      one-\(\psi\) descendant labels do not realise the continuous
+      cotangent module, classical or after Moyal deformation.
     \item Theorem~\ref{thm:app-matlis-rees-fourier-bridge} is the
-      Fourier-polarised label bridge cited in the introductory
-      Lie/PBW separation passage (Remark~\ref{rmk:intro-symbol-separation}
-      and the surrounding paragraph) and again in
-      Theorem~\ref{thm:pbw-vs-deformation}: it makes the shared bidegree
-      index set \((a,b)\) into a Fourier--Rees associated-graded
-      comparison rather than an \(\mathfrak h\)-module isomorphism.
+      Fourier-polarised label bridge cited in
+      Remark~\ref{rmk:intro-symbol-separation} and in
+      Theorem~\ref{thm:pbw-vs-deformation}: the shared bidegree index
+      set \((a,b)\) is a Fourier--Rees associated-graded comparison
+      rather than an \(\mathfrak h\)-module isomorphism.
     \item The discrete-direct-sum topology on \(\mc P\) and the
       \(\mathfrak m\)-adic dual identification of
       Lemma~\ref{lem:app-matlis-continuous-dual} supply the topology
@@ -904,9 +837,4 @@ interpolation, and the only universal label bridge between them.
       reduced principal-part current sector of
       Theorem~\ref{thm:reduced-principal-part-boundary-current}.
   \end{enumerate}
-  No theorem of this appendix is auxiliary; each is cited explicitly by
-  a §1 or §2 theorem listed above.  The appendix therefore stands as
-  the proved unique-survivor account of the defect polarization: the
-  brane measures positions polynomially, but its cotangent momenta live
-  as residues.
 \end{rmk}
