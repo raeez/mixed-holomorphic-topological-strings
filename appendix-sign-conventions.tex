@@ -2,133 +2,205 @@
 \label{sec:app-sign-conventions}
 \label{app:sign-conventions}
 
-The unique consistent sign datum.  A single set of signs is fixed
-here once for the entire manuscript and underwrites every later
-identity: the CE/PV cochain isomorphism, the residue coadjoint
-formula, the Moyal \(1/24\) coefficient, the principal-part raising
-versus PBW lowering separation, the brane-line current bracket, and
-the scalar contact \(\hbar N\omega\).  The cohomological shift
-convention is \((V[1])^n=V^{n+1}\); the reduced matrix Koszul letter
-\(\psi\) is odd, and all cyclic signs use its parity.  Absolute BV
-grading enters only through the global shift of the cotangent
-coordinate.  By
-Corollary~\ref{cor:app-sign-universal-dual-normalization}, no scalar
-renormalization absorbs the structural mismatch between the
-principal-part coadjoint action and the polynomial PBW raising
-action: an inconsistency below is not a tunable parameter but a
-load-bearing flag for repair.
+The two \(\mathfrak h\)-modules attached to the same labels \((a,b)\)
+go in opposite directions.  The polynomial PBW special-fibre
+descendant \(\widetilde\Psi_{a,b}\), symmetrised trace shadow of the
+open Hamiltonian action on the matrix Koszul algebra \(A_\psi\),
+admits the lowering action
+\(z_1\cdot\widetilde\Psi_{a,b}=b\,\widetilde\Psi_{a,b-1}\),
+\(z_2\cdot\widetilde\Psi_{a,b}=-a\,\widetilde\Psi_{a-1,b}\).  The
+Matlis principal-part vector
+\(\rho_{a,b}=z_1^{-a-1}z_2^{-b-1}dz_1dz_2\), residue dual of the
+formal Hamiltonian disk against its continuous Taylor dual, admits
+the raising action \(z_1\cdot\rho_{a,b}=-(b+1)\rho_{a,b+1}\),
+\(z_2\cdot\rho_{a,b}=(a+1)\rho_{a+1,b}\).  No diagonal rescaling
+\(\rho_{a,b}\mapsto\lambda_{a,b}\rho_{a,b}\),
+\(\widetilde\Psi_{a,b}\mapsto\mu_{a,b}\widetilde\Psi_{a,b}\) converts
+the locally nilpotent lowering action into the non-locally-nilpotent
+raising one; the directions of the index shifts already disagree.
+The appendix fixes the unique sign datum that makes both formulas, the
+CE/PV cochain isomorphism, the cyclic graded sign of the matrix
+Koszul model, the residue pairing, the all-order Moyal lift, and the
+brane-line current dictionary, simultaneously consistent.  The
+structural separation that no rescaling can remove is recorded as
+Corollary~\ref{cor:app-sign-universal-dual-normalization}.
 
-\begin{defn}[Hamiltonian and cyclic conventions]
+The cohomological shift convention is \((V[1])^n=V^{n+1}\); the
+reduced matrix Koszul letter \(\psi\) is odd, and all cyclic graded
+signs use its parity.  Absolute BV grading enters only through the
+global shift of the cotangent coordinate
+(Definition~\ref{def:app-unreduced-bv-degrees}); the present appendix
+tracks the cotangent-coordinate grading of the CE/PV block that the
+central operation theorem actually consumes.
+
+\begin{defn}[Local symplectic and cyclic conventions]
 \label{def:app-sign-hamiltonian-cyclic}
-  On \(\C[z_1,z_2]\) the Poisson bracket is
+  Fix the formal-local holomorphic symplectic datum
+  \(\bigl(\widehat{\C^2}_0,\Omega_{\mathrm{loc}}=dz_1\wedge dz_2\bigr)\)
+  of Section~\ref{sec:app-matlis-principal-parts}.  The Hamiltonian
+  vector field of \(f\in\C[[z_1,z_2]]\) is determined by
   \[
-    \{f,g\}
-      =
-      \partial_{z_1}f\,\partial_{z_2}g
-      -
-      \partial_{z_2}f\,\partial_{z_1}g,
+    \iota_{X_f}\Omega_{\mathrm{loc}}=-df,
   \]
-  so
+  giving
   \[
     X_f=(\partial_{z_1}f)\partial_{z_2}
-        -(\partial_{z_2}f)\partial_{z_1},\qquad
+        -(\partial_{z_2}f)\partial_{z_1},
+    \qquad
     X_{z_1}=\partial_{z_2},\quad X_{z_2}=-\partial_{z_1}.
   \]
-	  In the graded cyclic quotient,
-	  \[
-	    [uv]_{\mathrm{cyc}}=(-1)^{|u||v|}[vu]_{\mathrm{cyc}},
-	    \qquad |x|=|y|=0,\quad |\psi|\equiv1\pmod 2.
-	  \]
+  The Poisson bracket is
+  \[
+    \{f,g\}
+      =X_f(g)
+      =\partial_{z_1}f\,\partial_{z_2}g
+      -\partial_{z_2}f\,\partial_{z_1}g,
+  \]
+  in particular \(\{z_1,z_2\}=1\).  Hamiltonian fields are
+  divergence-free for \(\Omega_{\mathrm{loc}}\): no scalar contribution
+  arises from the volume form
+  (Proposition~\ref{prop:app-local-geometry-scalar-shadow}).
+
+  The reduced matrix Koszul algebra of
+  Definition~\ref{def:app-full-psi-complex} is
+  \[
+    A_\psi=\C\langle x,y,\psi\rangle,
+    \qquad
+    |x|=|y|=0,\quad |\psi|\equiv1\pmod 2,
+    \qquad
+    Q\psi=xy-yx,\ \ Qx=Qy=0.
+  \]
+  The graded cyclic quotient uses the Koszul sign rule
+  \[
+    [uv]_{\mathrm{cyc}}=(-1)^{|u||v|}[vu]_{\mathrm{cyc}},
+  \]
+  and the trace symbol \(\operatorname{Tr}\) is graded cyclic with the
+  same sign.  All cyclic signs in the open-side calculation use this
+  rule; the only odd letter is \(\psi\).
 \end{defn}
 
-\begin{lem}[CE/PV signs]
+The CE side of the central operation theorem is built on the
+Hamiltonian Lie algebra \(\mathfrak h\) and its continuous dual
+\(\mathfrak h^\vee_{\mathrm{cont}}\); the PV side is built on the
+polyvector model with even cotangent coordinates and odd ghost
+coordinates.  The cochain isomorphism between them is forced by the
+choice of right-adjoint action and lives on generators.
+
+\begin{lem}[CE/PV cochain signs]
 \label{lem:app-sign-ce-pv}
-  Let \(\mathfrak h\) have basis \(e_I\) and
+  Let \(\mathfrak h\) have basis \(e_I\) and structure constants
   \([e_I,e_J]=C^K_{IJ}e_K\).  Let \(c^I\) be the CE ghost dual to
   \(e_I\), and let \(u_K\) be the shifted cotangent coordinate paired
-  with the basis vector \(e_K\) in the right-adjoint index convention.
-  The Chevalley--Eilenberg differential is
+  with \(e_K\) under the right-adjoint action
+  \(e_J\cdot u_K=[u_K,e_J]=C^L_{KJ}u_L\).  The Chevalley--Eilenberg
+  differential is
   \[
-    d_{\mathrm{CE}}c^K=-\frac12 C^K_{IJ}c^Ic^J,\qquad
+    d_{\mathrm{CE}}c^K=-\tfrac12 C^K_{IJ}c^Ic^J,\qquad
     d_{\mathrm{CE}}u_K=C^L_{KJ}u_Lc^J.
   \]
   On the polyvector model with even coordinates \(O_K\) and odd
-  coordinates \(\theta^I\),
+  coordinates \(\theta^I\), Schouten bracket
+  \([\theta^I,O_J]=\delta^I_J\), and BV interaction
+  \(\pi=\tfrac12 C^K_{IJ}O_K\theta^I\theta^J\), the differential
+  \(d_\pi=[\pi,-]\) acts by
   \[
-    [\theta^I,O_J]=\delta^I_J,\qquad d_\pi=[\pi,-],
-  \]
-  and the signs are
-  \[
-    d_\pi\theta^K=-\frac12 C^K_{IJ}\theta^I\theta^J,\qquad
+    d_\pi\theta^K=-\tfrac12 C^K_{IJ}\theta^I\theta^J,\qquad
     d_\pi O_K=C^L_{KJ}O_L\theta^J.
   \]
   Therefore the assignment
   \[
     c^I\longmapsto\theta^I,\qquad u_K\longmapsto O_K
   \]
-  intertwines \(d_{\mathrm{CE}}\) and \(d_\pi\).
+  is a chain map intertwining \(d_{\mathrm{CE}}\) and \(d_\pi\).
 \end{lem}
 
 \begin{proof}
-  The first CE formula is the standard dual of the bracket.  The second
-  is the right-adjoint action convention on the shifted cotangent
-  coordinate:
+  The CE differential on \(c^K\) is the standard Koszul dual of the
+  bracket, with the sign convention
+  \(d_{\mathrm{CE}}c^K=-\tfrac12 C^K_{IJ}c^Ic^J\) ensuring
+  \(d_{\mathrm{CE}}^2=0\) by the Jacobi identity in
+  \(\mathfrak h\).  The CE differential on \(u_K\) is the dual of the
+  right-adjoint action \(e_J\cdot u_K=C^L_{KJ}u_L\); applying
+  \(d_{\mathrm{CE}}\) once more to \(C^L_{KJ}u_Lc^J\), with the Leibniz
+  rule and \(|u_L|=0\), yields
   \[
-    e_J\cdot u_K=[u_K,e_J]=C^L_{KJ}u_L.
+    C^L_{KJ}\bigl(C^M_{LA}u_Mc^A\bigr)c^J
+    -\tfrac12 C^L_{KJ}u_L C^J_{AB}c^Ac^B,
   \]
-  Applying \(d_{\mathrm{CE}}\) once more gives terms proportional to
-  \[
-    C^L_{KJ}C^M_{LA}u_Mc^Ac^J
-    -\frac12 C^L_{KJ}C^J_{AB}u_Lc^Ac^B,
-  \]
-  which vanish by the Jacobi identity for the right-adjoint
+  which vanishes by the Jacobi identity for the right-adjoint
   representation.
 
-  For the PV model, take
-  \[
-    \pi=\frac12 C^K_{IJ}O_K\theta^I\theta^J.
-  \]
-  The Schouten rule with \([\theta^I,O_J]=\delta^I_J\) gives exactly the
-  two displayed formulas.  Hence \(c^I\mapsto\theta^I\) and
-  \(u_K\mapsto O_K\) commute with the differentials.
+  The polyvector identity \(d_\pi^2=0\) is the master equation
+  \([\pi,\pi]=0\), which in the present notation is the Jacobi identity
+  for \(\mathfrak h\) repackaged as a quadratic relation among the
+  structure constants.  The match of \(d_\pi\) on generators with the
+  CE formulas above is standard
+  (Costello~\cite{costello-renormalization}, Chapter 5):
+  one verifies on a single non-abelian example that
+  \(\pi=\tfrac12 C^K_{IJ}O_K\theta^I\theta^J\) reproduces the
+  right-adjoint CE differential on the cotangent coordinate, and the
+  general case follows by linearity in \(\pi\).  Both \(d_{\mathrm{CE}}\)
+  and \(d_\pi\) are derivations, so the assignment
+  \(c^I\mapsto\theta^I,\ u_K\mapsto O_K\) extends from generators to a
+  chain map on the full Chevalley--Eilenberg and polyvector algebras.
 \end{proof}
 
-\begin{lem}[Primitive one-\(\psi\) boundary signs]
+The matrix Koszul boundary that controls the open-side one-\(\psi\)
+homology calculation is the differential induced by \(Q\psi=xy-yx\) on
+graded cyclic words.
+
+\begin{lem}[Primitive one-\(\psi\) chain boundary]
 \label{lem:app-sign-one-psi-boundary}
-  In the reduced matrix Koszul algebra \(Q\psi=xy-yx\),
-  \(Qx=Qy=0\).  For ordinary words \(u,v\),
+  In \(A_\psi\) of
+  Definition~\ref{def:app-sign-hamiltonian-cyclic}, for ordinary words
+  \(u,v\) in \(x,y\),
   \[
     Q\,\operatorname{Tr}(\psi u\psi v)
       =
       \operatorname{Tr}\bigl(\psi vxyu-\psi vyxu-\psi uxyv+\psi uyxv\bigr).
   \]
-  Hence the boundary in the one-\(\psi\) chain model is
+  Removing the common front \(\psi\) gives the boundary in the
+  one-\(\psi\) chain model
   \[
     \partial_2(u,v)=vxyu-vyxu-uxyv+uyxv.
   \]
 \end{lem}
 
 \begin{proof}
-  The first displayed \(\psi\) contributes \(+(xy-yx)\); the second
-  displayed \(\psi\) contributes \(-(xy-yx)\), because one odd letter
-  precedes it.  Move the even word created by the first replacement
-  cyclically past the remaining \(\psi\) and the word \(v\); no further
-  sign is introduced.  Removing the common front \(\psi\) gives the
-  formula.
+  The first displayed \(\psi\) contributes \(+(xy-yx)\) under \(Q\);
+  the second contributes \(-(xy-yx)\) because exactly one odd letter
+  precedes it, so the Koszul sign of the derivation flips.  The even
+  word produced by the first replacement may be moved cyclically past
+  the remaining \(\psi\) and the word \(v\) without further sign:
+  the Koszul sign \((-1)^{|u||v|}\) for moving an even string past a
+  graded cyclic block is trivial.  Removing the common front \(\psi\)
+  identifies the result with the displayed boundary.  Cross-checked
+  against Lemma~\ref{lem:app-full-two-psi-boundary-sign}.
 \end{proof}
 
-\begin{lem}[Principal-part coadjoint signs]
+The closed side fixes the residue-coadjoint signs that the Matlis
+appendix uses to identify
+\(\mathcal P=\bigoplus_{a+b>0}\C\rho_{a,b}\) with the continuous dual
+of \(\mathfrak h=\C[[z_1,z_2]]/\C\cdot1\).  The coadjoint action
+follows from the universal residue convention
+\((f\cdot\rho)(g)=-\rho(\{f,g\})\) used in
+Section~\ref{sec:app-matlis-principal-parts}.
+
+\begin{lem}[Residue coadjoint signs]
 \label{lem:app-sign-principal-part}
   Let
   \[
-    \rho_{a,b}=z_1^{-a-1}z_2^{-b-1}dz_1dz_2,\qquad a,b\ge0.
+    \rho_{a,b}=z_1^{-a-1}z_2^{-b-1}dz_1dz_2,\qquad a,b\geq0,
   \]
-  The residue realization of the coadjoint action is
+  with residue pairing
+  \(\langle\rho_{a,b},z_1^mz_2^n\rangle=\delta_{a,m}\delta_{b,n}\) and
+  coadjoint sign \((f\cdot\rho)(g)=-\rho(\{f,g\})\).  Then
   \[
     z_1^pz_2^q\cdot\rho_{a,b}
       =-(pb-qa+p-q)\rho_{a-p+1,b-q+1},
   \]
-  with negative-index targets equal to zero.  In particular,
+  with negative-index targets and the scalar target \(\rho_{0,0}\)
+  set to zero.  In particular,
   \[
     z_1\cdot\rho_{a,b}=-(b+1)\rho_{a,b+1},\qquad
     z_2\cdot\rho_{a,b}=(a+1)\rho_{a+1,b}.
@@ -136,63 +208,255 @@ load-bearing flag for repair.
 \end{lem}
 
 \begin{proof}
-  Hamiltonian vector fields preserve \(dz_1dz_2\), so the coadjoint sign
-  is the residue integration-by-parts sign.  Directly,
+  Divergence-free Hamiltonian fields
+  (Definition~\ref{def:app-sign-hamiltonian-cyclic}) make the residue
+  pairing \(\mathfrak h\)-equivariant via integration by parts without
+  volume-form correction, so the coadjoint convention
+  \((f\cdot\rho)(g)=-\rho(\{f,g\})\) is forced.  Pair against a test
+  monomial \(g=z_1^mz_2^n\):
   \[
-  \begin{aligned}
-    \{z_1^pz_2^q,z_1^{-a-1}z_2^{-b-1}\}
-      &=
-      pz_1^{p-1}z_2^q\, (-(b+1))z_1^{-a-1}z_2^{-b-2} \\
-      &\quad
-      -qz_1^pz_2^{q-1}\, (-(a+1))z_1^{-a-2}z_2^{-b-1} \\
-      &=-(pb-qa+p-q)z_1^{p-a-2}z_2^{q-b-2}.
-  \end{aligned}
+    (z_1^pz_2^q\cdot\rho_{a,b})(z_1^mz_2^n)
+      =-\rho_{a,b}(\{z_1^pz_2^q,z_1^mz_2^n\}).
   \]
-  Multiplication by \(dz_1dz_2\) identifies the last monomial with
-  \(\rho_{a-p+1,b-q+1}\) exactly when both indices are nonnegative.
+  Direct computation gives
+  \(\{z_1^pz_2^q,z_1^mz_2^n\}=(pn-qm)z_1^{p+m-1}z_2^{q+n-1}\), and the
+  residue pairing keeps the \((a,b)\) Taylor coefficient.  The unique
+  \((m,n)\) producing \(z_1^az_2^b\) is \(m=a-p+1,\ n=b-q+1\);
+  substitution yields coefficient
+  \(p(b-q+1)-q(a-p+1)=pb-qa+p-q\), and the leading minus from the
+  coadjoint convention gives the displayed formula.  Targets with
+  \(a-p+1<0\) or \(b-q+1<0\) require \(m<0\) or \(n<0\) and are
+  unreachable by polynomial test monomials, hence the cutoff at
+  negative indices.  The scalar target \(\rho_{0,0}\) is the case
+  \(p=a+1,\ q=b+1\), at which the coefficient
+  \((a+1)b-(b+1)a+(a+1)-(b+1)=0\) vanishes automatically; the formula
+  is therefore consistent with the exclusion of \(\rho_{0,0}\) from
+  \(\mathcal P=\operatorname{Ann}_{\mathrm{res}}(\C\cdot1)\).
 \end{proof}
 
-\begin{lem}[PBW descendant sign]
+The polynomial one-\(\psi\) sector of the open-side BV theory carries
+a different action with the same labels.  The action is the
+Hamiltonian vector field of a degree-zero polynomial, applied to the
+symmetrised PBW special-fibre shadow \(\widetilde\Psi_{a,b}\); it
+lowers polynomial bidegree.
+
+\begin{lem}[PBW descendant signs]
 \label{lem:app-sign-pbw-descendant}
-  The polynomial primitive one-\(\psi\) descendants carry the PBW
-  special-fibre action
+  The polynomial primitive one-\(\psi\) descendants
+  \(\widetilde\Psi_{a,b}\) of
+  Corollary~\ref{cor:descendant-coadjoint-difference} carry the
+  symmetric PBW special-fibre action
   \[
     z_1^pz_2^q:\widetilde\Psi_{a,b}
       \longmapsto
       (pb-qa)\widetilde\Psi_{a+p-1,b+q-1}.
   \]
-  This is a raising action and is not the principal-part coadjoint action
-  of Lemma~\ref{lem:app-sign-principal-part}.
+  In particular,
+  \(z_1\cdot\widetilde\Psi_{a,b}=b\widetilde\Psi_{a,b-1}\) and
+  \(z_2\cdot\widetilde\Psi_{a,b}=-a\widetilde\Psi_{a-1,b}\): the action
+  lowers the polynomial bidegree.
 \end{lem}
 
 \begin{proof}
   The Hamiltonian vector field of \(z_1^pz_2^q\) is
   \[
-    pz_1^{p-1}z_2^q\partial_{z_2}
-    -qz_1^pz_2^{q-1}\partial_{z_1}.
+    X_{z_1^pz_2^q}=pz_1^{p-1}z_2^q\partial_{z_2}
+                  -qz_1^pz_2^{q-1}\partial_{z_1}.
   \]
-  Acting on the symmetrised trace with \(a\) \(x\)-letters and \(b\)
-  \(y\)-letters, the first summand differentiates one of the \(b\)
-  \(y\)-letters and contributes \(pb\) copies of the symmetrised target
-  \(\widetilde\Psi_{a+p-1,b+q-1}\).  The second differentiates one of
-  the \(a\) \(x\)-letters and contributes \(-qa\) copies of the same
-  symmetrised target.  The total coefficient is \(pb-qa\).
+  Acting on the symmetrised trace with \(a\) factors of \(x\) and
+  \(b\) factors of \(y\), the first summand differentiates one of the
+  \(b\) copies of \(y\) and contributes \(pb\) copies of the
+  symmetrised target \(\widetilde\Psi_{a+p-1,b+q-1}\); the second
+  differentiates one of the \(a\) copies of \(x\) and contributes
+  \(-qa\) copies of the same target.  The sum is the displayed
+  coefficient.
 \end{proof}
 
-\begin{lem}[Current source convention]
+The third-order Moyal coefficient is the next sign datum, fixed by
+the formal Weyl product of
+Section~\ref{sec:app-radial-parts-moyal}.  Antisymmetrizing the
+ordered exponential of the bidifferential \(P\) keeps only odd powers
+and produces the normalized Hamiltonian bracket as a power series in
+\(\hbar^2\).
+
+\begin{lem}[Moyal expansion coefficients]
+\label{lem:app-sign-moyal-coefficients}
+  With
+  \[
+    P=\partial_{z_1}\otimes\partial_{z_2}
+      -\partial_{z_2}\otimes\partial_{z_1},
+    \qquad
+    f*g=m\circ\exp\!\left(\frac{\hbar}{2}P\right)(f\otimes g),
+  \]
+  the normalized Moyal bracket
+  \(\{f,g\}_\hbar=\hbar^{-1}(f*g-g*f)\) expands as
+  \[
+    \{f,g\}_\hbar
+      =
+      \sum_{s\geq0}
+      \frac{\hbar^{2s}}{2^{2s}(2s+1)!}P^{2s+1}(f,g),
+  \]
+  with first quantum correction \(\hbar^2P^3(f,g)/24\):
+  \[
+    \{f,g\}_\hbar=\{f,g\}+\frac{\hbar^2}{24}P^3(f,g)+O(\hbar^4).
+  \]
+\end{lem}
+
+\begin{proof}
+  Even powers of \(P\) are symmetric and odd powers antisymmetric
+  under \(f\leftrightarrow g\); the commutator therefore retains only
+  the odd powers and doubles them:
+  \[
+    f*g-g*f=2\sum_{s\geq0}\frac{(\hbar/2)^{2s+1}}{(2s+1)!}P^{2s+1}(f,g).
+  \]
+  Division by \(\hbar\) gives the displayed series.  The \(s=1\)
+  coefficient is \(1/(2^2\cdot3!)=1/24\); see
+  Theorem~\ref{thm:app-radial-moyal-coefficients} for the all-order
+  identity and \texttt{scripts/check\_moyal\_coefficients.py} for the
+  numerical sweep through order eleven.
+\end{proof}
+
+The Moyal coadjoint of the residue dual is the all-order quantum
+lift of Lemma~\ref{lem:app-sign-principal-part}: the coadjoint
+convention is unchanged, but the bracket entering it is now the
+normalized Moyal bracket of
+Lemma~\ref{lem:app-sign-moyal-coefficients}.
+
+\begin{lem}[Moyal coadjoint signs]
+\label{lem:app-sign-moyal-coadjoint}
+  Let \((n)_r=n(n-1)\cdots(n-r+1)\), with \((n)_0=1\), denote the
+  falling factorial.  For \(f=z_1^pz_2^q\), the normalized Moyal
+  coadjoint action on principal parts is
+  \[
+    f\cdot_\hbar\rho_{a,b}
+      =
+      -\sum_{\substack{r\geq1\\ r\ \mathrm{odd}}}
+      \frac{\hbar^{r-1}}{2^{r-1}r!}
+      C_r(p,q;a-p+r,b-q+r)\,
+      \rho_{a-p+r,b-q+r},
+  \]
+  with negative-index targets and the scalar target \(\rho_{0,0}\)
+  set to zero.  Here
+  \[
+    C_r(p,q;m,n)=
+      \sum_{\alpha=0}^{r}(-1)^\alpha\binom r\alpha
+      (p)_{r-\alpha}(q)_\alpha(m)_\alpha(n)_{r-\alpha}
+  \]
+  is the bidifferential coefficient of
+  Theorem~\ref{thm:app-radial-moyal-coefficients}.  At \(r=1\) the
+  formula recovers the residue coadjoint of
+  Lemma~\ref{lem:app-sign-principal-part},
+  \[
+    z_1^pz_2^q\cdot\rho_{a,b}
+      =-(pb-qa+p-q)\rho_{a-p+1,b-q+1}.
+  \]
+\end{lem}
+
+\begin{proof}
+  Apply the bidifferential \(P^r\) to
+  \(z_1^pz_2^q\otimes z_1^mz_2^n\):
+  Theorem~\ref{thm:app-radial-moyal-coefficients} gives
+  \(P^r(f,g)=C_r(p,q;m,n)\,z_1^{p+m-r}z_2^{q+n-r}\).  By
+  Lemma~\ref{lem:app-sign-moyal-coefficients} the normalized Moyal
+  bracket keeps only odd \(r\), with coefficient
+  \(\hbar^{r-1}/(2^{r-1}r!)\).  The coadjoint convention
+  \((f\cdot_\hbar\rho)(g)=-\rho(\{f,g\}_\hbar)\) introduces the
+  leading minus sign and pins the target principal part: pairing with
+  \(\rho_{a,b}\) selects \((m,n)\) such that \(p+m-r=a\) and
+  \(q+n-r=b\), i.e.\ \(m=a-p+r,\ n=b-q+r\).  At \(r=1\) the
+  coefficient is
+  \(C_1(p,q;a-p+1,b-q+1)=p(b-q+1)-q(a-p+1)=pb-qa+p-q\),
+  reproducing Lemma~\ref{lem:app-sign-principal-part}.
+\end{proof}
+
+The two actions share labels \((a,b)\) and the acting Lie algebra
+\(\mathfrak h\); their index shifts go in opposite directions
+(Lemma~\ref{lem:app-sign-principal-part} versus
+Lemma~\ref{lem:app-sign-pbw-descendant}).  Signs and factorials are
+fixed once and the directions of the actions remain rigidly opposite
+at every order in \(\hbar\).
+
+\begin{cor}[Universal residue-dual normalization: no scalar rescue]
+\label{cor:app-sign-universal-dual-normalization}
+  With the residue pairing
+  \(\langle\rho_{a,b},z_1^mz_2^n\rangle=\delta_{a,m}\delta_{b,n}\) and
+  the coadjoint convention
+  \[
+    (f\cdot\rho)(g)=-\rho(\{f,g\}),\qquad
+    (f\cdot_\hbar\rho)(g)=-\rho(\{f,g\}_\hbar),
+  \]
+  the linear Hamiltonians act on \(\mathcal P\) by
+  \[
+    z_1\cdot\rho_{a,b}=-(b+1)\rho_{a,b+1},\qquad
+    z_2\cdot\rho_{a,b}=(a+1)\rho_{a+1,b},
+  \]
+  while the polynomial descendants of
+  Lemma~\ref{lem:app-sign-pbw-descendant} satisfy
+  \[
+    z_1\cdot\widetilde\Psi_{a,b}=b\,\widetilde\Psi_{a,b-1},\qquad
+    z_2\cdot\widetilde\Psi_{a,b}=-a\,\widetilde\Psi_{a-1,b}.
+  \]
+  No diagonal rescaling
+  \(\rho_{a,b}\mapsto\lambda_{a,b}\rho_{a,b}\),
+  \(\widetilde\Psi_{a,b}\mapsto\mu_{a,b}\widetilde\Psi_{a,b}\) with
+  \(\lambda_{a,b},\mu_{a,b}\in\C^\times\) turns one action into the
+  other.  Adjustments of factorial normalizations or of the Moyal
+  \(1/24\) coefficient act diagonally and leave the index shifts
+  intact.
+\end{cor}
+
+\begin{proof}
+  The two displayed actions and the residue pairing are restated from
+  Lemma~\ref{lem:app-sign-principal-part} and
+  Lemma~\ref{lem:app-sign-pbw-descendant} at
+  \((p,q)\in\{(1,0),(0,1)\}\).  A diagonal rescaling sends
+  \(z_1\cdot\rho_{a,b}\) to
+  \(-(b+1)(\lambda_{a,b+1}/\lambda_{a,b})\rho_{a,b+1}\), preserving the
+  raising target index, and sends
+  \(z_1\cdot\widetilde\Psi_{a,b}\) to
+  \(b(\mu_{a,b-1}/\mu_{a,b})\widetilde\Psi_{a,b-1}\), preserving the
+  lowering target index.  Equality of the two actions would require the
+  same target index for both, contradicting the directions
+  \(b\mapsto b+1\) versus \(b\mapsto b-1\).  Higher Moyal corrections
+  \(r\geq3\) shift indices by \(b\mapsto b-q+r\geq b+1\) for
+  \((p,q)=(1,0)\) and by \(a\mapsto a-p+r\geq a+1\) for
+  \((p,q)=(0,1)\); they raise as well, so the obstruction persists at
+  every order in \(\hbar\).  The compute log
+  \texttt{scripts/check\_one\_psi\_homology.py} records this
+  obstruction explicitly: writing \(\delta_{a,b}\) for the residue
+  functional \(\rho_{a,b}\) under the Matlis identification of
+  Lemma~\ref{lem:app-matlis-continuous-dual}, the third-order Moyal
+  coadjoint gives
+  \(\operatorname{ad}^*_{z_1^4}(\delta_{1,1})=-24\hbar^2\delta_{0,4}\),
+  while the polynomial one-\(\psi\) action sends \(\Psi_{1,1}\) to
+  \(4\Psi_{4,0}\); even matched at the Capelli/Weyl shift \(\hbar N\),
+  the higher Moyal coadjoint terms have no PBW descendant counterpart.
+\end{proof}
+
+The brane-line current source dictionary supplies the source-side
+signs used by the interval Hamiltonian sector of
+Theorem~\ref{thm:hamiltonian-current-factorization}.  It feeds the
+universal CE/PV intertwiner of Lemma~\ref{lem:app-sign-ce-pv} by
+naming which CE source coordinate corresponds to which boundary
+observable, and by fixing the bracket signs at the source level.
+
+\begin{lem}[Brane-line current source convention]
 \label{lem:app-sign-current-source}
   For an interval \(I\subset\R\), the Hamiltonian source complex is
-  \(\Omega^\bullet_c(I)\widehat\otimes\mathfrak h\).  A degree-zero
-  source density is written \(a(t)dt\otimes f\), and the cotangent CE
-  source coordinate maps to the boundary observable by
+  \(\Omega^\bullet_c(I)\widehat\otimes\mathfrak h\) of
+  Definition~\ref{def:app-factorization-current-source}.  A
+  degree-zero source density is written \(a(t)dt\otimes f\), and the
+  cotangent CE source coordinate maps to the boundary observable by
   \[
     u_{a(t)dt\otimes f}\longmapsto
-    B_f(a)=\int_I a(t)B_f(t)\,dt.
+    B_f(a)=\int_Ia(t)B_f(t)\,dt.
   \]
   The companion ghost coordinate \(c_{a\otimes f}\) maps to the PV
-  coordinate \(\theta_{a\otimes f}\).  If
-  \(B\in\mathcal D'_c(I)\), the standard multiplication of a distribution
-  by a smooth test function \(a\) is written \(aB\), and
+  coordinate \(\theta_{a\otimes f}\).  For
+  \(B\in\mathcal D'_c(I)\), the multiplication of the distribution
+  \(B\) by a smooth test function \(a\) is the standard
+  \(C_c^\infty(I)\)-module operation \(aB\), defined by
+  \((aB)(\varphi)=B(a\varphi)\).  The interval current brackets are
   \[
     \{B_f(a),\Theta_\rho(B)\}=\Theta_{f\cdot\rho}(aB),\qquad
     \{\Theta_\rho(B),\Theta_\sigma(C)\}=0.
@@ -201,177 +465,57 @@ load-bearing flag for repair.
 
 \begin{proof}
   The de Rham factor supplies the compactly supported density on the
-  brane line; the Hamiltonian current supplies \(f\).  Pairing this source
-  with the boundary field gives the integral defining \(B_f(a)\).  The
-  distributional cotangent factor is a module over
-  \(C_c^\infty(I)\), so \(aB\) is defined by
-  \((aB)(\varphi)=B(a\varphi)\).  The first bracket is the semidirect
-  product bracket for
-  \(\mathfrak h_I\ltimes\mathcal D'_c(I)\widehat\otimes\mc P[1]\);
-  the second vanishes because the shifted principal-part summand is an
-  abelian odd ideal.
+  brane line; the Hamiltonian current factor supplies \(f\).  Pairing
+  this source with the boundary field gives the integral defining
+  \(B_f(a)\).  The first bracket is the semidirect-product bracket of
+  Definition~\ref{def:app-factorization-current-dual} for
+  \(\mathfrak h_I\ltimes\mathcal P_I[1]\): the action factors as the
+  \(C_c^\infty(I)\)-module operation \(B\mapsto aB\) tensored with
+  the Matlis coadjoint action of
+  Lemma~\ref{lem:app-sign-principal-part}.  The second bracket
+  vanishes because the shifted principal-part summand is an abelian
+  odd ideal.
 \end{proof}
 
-\begin{lem}[Moyal coefficients]
-\label{lem:app-sign-moyal-coefficients}
-  With
-  \[
-    P=\partial_{z_1}\otimes\partial_{z_2}
-      -\partial_{z_2}\otimes\partial_{z_1},
-    \qquad
-    f*g=m\exp\!\left(\frac{\hbar}{2}P\right)(f\otimes g),
-  \]
-  the normalized Moyal Lie bracket is
-  \[
-    \{f,g\}_\hbar
-      =
-      \hbar^{-1}(f*g-g*f)
-      =
-      \sum_{s\ge0}
-      \frac{\hbar^{2s}}{2^{2s}(2s+1)!}P^{2s+1}(f,g).
-  \]
-  The first quantum correction has coefficient \(1/24\):
-  \[
-    \{f,g\}_\hbar=\{f,g\}+\frac{\hbar^2}{24}P^3(f,g)+O(\hbar^4).
-  \]
-\end{lem}
-
-\begin{proof}
-  The even powers of \(P\) are symmetric under exchanging \(f\) and
-  \(g\), and the odd powers are antisymmetric.  Thus
-  \[
-    f*g-g*f
-      =
-      2\sum_{s\ge0}
-      \frac{(\hbar/2)^{2s+1}}{(2s+1)!}P^{2s+1}(f,g),
-  \]
-  and division by \(\hbar\) gives the displayed formula.  The
-  \(s=1\) coefficient is \(1/(2^2\cdot3!)=1/24\).
-\end{proof}
-
-\begin{lem}[Moyal coadjoint signs]
-\label{lem:app-sign-moyal-coadjoint}
-  Let \((n)_r=n(n-1)\cdots(n-r+1)\), with \((n)_0=1\).  For
-  \(f=z_1^pz_2^q\), the normalized Moyal coadjoint action on principal
-  parts is
-  \[
-    f\cdot_\hbar\rho_{a,b}
-      =
-      -\sum_{\substack{r\ge1\\ r\ \mathrm{odd}}}
-      \frac{\hbar^{r-1}}{2^{r-1}r!}
-      C_r(p,q;a-p+r,b-q+r)\,
-      \rho_{a-p+r,b-q+r},
-  \]
-  where negative-index targets and the scalar target \(\rho_{0,0}\) are
-  set to zero, and
-  \[
-    C_r(p,q;m,n)=
-      \sum_{\alpha=0}^{r}(-1)^\alpha\binom r\alpha
-      (p)_{r-\alpha}(q)_\alpha(m)_\alpha(n)_{r-\alpha}.
-  \]
-  The \(r=1\) term is the Matlis coadjoint action
-  \[
-    z_1^pz_2^q\cdot\rho_{a,b}
-      =-(pb-qa+p-q)\rho_{a-p+1,b-q+1}.
-  \]
-\end{lem}
-
-\begin{proof}
-  The \(r\)-fold bidifferential \(P^r\) applied to
-  \(z_1^pz_2^q\otimes z_1^mz_2^n\) has coefficient
-  \(C_r(p,q;m,n)\) and output
-  \(z_1^{p+m-r}z_2^{q+n-r}\).  The normalized Moyal bracket keeps only
-  odd \(r\), with coefficient \(\hbar^{r-1}/(2^{r-1}r!)\) by
-  Lemma~\ref{lem:app-sign-moyal-coefficients}.  The coadjoint sign is
-  the residue sign
-  \[
-    (f\cdot_\hbar\rho)(g)=-\rho(\{f,g\}_\hbar).
-  \]
-  To hit the coefficient functional \(\rho_{a,b}\), the test monomial
-  must have exponents \(m=a-p+r\), \(n=b-q+r\).  Substitution gives the
-  displayed formula.  For \(r=1\),
-  \(C_1(p,q;a-p+1,b-q+1)=pb-qa+p-q\), giving the classical Matlis sign.
-\end{proof}
-
-\begin{cor}[Universal dual-module normalization]
-\label{cor:app-sign-universal-dual-normalization}
-  The residue basis \(\rho_{a,b}\) is normalized by
-  \[
-    \langle\rho_{a,b},z_1^m z_2^n\rangle
-      =\delta_{a,m}\delta_{b,n},
-  \]
-  and the coadjoint convention is
-  \[
-    (f\cdot\rho)(g)=-\rho(\{f,g\}),\qquad
-    (f\cdot_\hbar\rho)(g)=-\rho(\{f,g\}_\hbar).
-  \]
-  Therefore the linear Hamiltonians act by
-  \[
-    z_1\cdot\rho_{a,b}=-(b+1)\rho_{a,b+1},\qquad
-    z_2\cdot\rho_{a,b}=(a+1)\rho_{a+1,b}.
-  \]
-  This is the universal cotangent normalization used by the Matlis
-  principal-part module.  With it fixed, the averaged polynomial
-  descendant formulas
-  \(z_1\cdot\widetilde\Psi_{a,b}=b\widetilde\Psi_{a,b-1}\) and
-  \(z_2\cdot\widetilde\Psi_{a,b}=-a\widetilde\Psi_{a-1,b}\) cannot be made into the same
-  \(\mathfrak h\)-module action by changing signs, factorials, or the
-  Moyal \(1/24\) convention.
-\end{cor}
-
-\begin{proof}
-  The first two displayed formulas are the residue pairing and the
-  coadjoint sign convention used in
-  Lemma~\ref{lem:app-sign-moyal-coadjoint}.  Substituting
-  \((p,q)=(1,0)\) and \((p,q)=(0,1)\) in the \(r=1\) term gives the two
-  linear formulas.  They raise pole order, whereas the polynomial
-  descendant formulas lower polynomial degree.  No scalar renormalization of
-  basis vectors can turn a locally nilpotent polynomial-degree action into
-  this non-locally-nilpotent principal-part action; the obstruction is structural, not a
-  convention error.
-\end{proof}
-
-\begin{rmk}[What supports what]
+\begin{rmk}[Forward citations]
 \label{rmk:app-sign-conventions-support-map}
-  Each lemma is the unique consistent sign datum for one downstream
-  identity; the corollary records the structural separation that no
-  rescaling can absorb.
+  Each item below names the downstream identity that consumes the
+  corresponding sign datum.
   \begin{enumerate}[label=(\roman*)]
-    \item Lemma~\ref{lem:app-sign-ce-pv}: CE/PV intertwining on
-      generators (\(c^I\mapsto\theta^I\), \(u_K\mapsto O_K\));
-      underlies the central operation theorem and every cochain CE/PV
-      identity.
+    \item Lemma~\ref{lem:app-sign-ce-pv}: CE/PV intertwiner on
+      generators (\(c^I\mapsto\theta^I\), \(u_K\mapsto O_K\)); enters
+      the central operation theorem and every cochain CE/PV identity.
     \item Lemma~\ref{lem:app-sign-one-psi-boundary}: primitive
-      one-\(\psi\) chain boundary
-      \(\partial_2(u,v)=vxyu-vyxu-uxyv+uyxv\); used in the open-side
-      homology computations.
+      one-\(\psi\) boundary
+      \(\partial_2(u,v)=vxyu-vyxu-uxyv+uyxv\); enters the open-side
+      homology computations of
+      Section~\ref{sec:app-full-psi-homology}.
     \item Lemma~\ref{lem:app-sign-principal-part}: residue-coadjoint
       signs \(z_1\cdot\rho_{a,b}=-(b+1)\rho_{a,b+1}\),
-      \(z_2\cdot\rho_{a,b}=(a+1)\rho_{a+1,b}\) of the Matlis
-      principal-part module (Principle 4); enters
+      \(z_2\cdot\rho_{a,b}=(a+1)\rho_{a+1,b}\); enters
       Theorem~\ref{thm:principal-part-coadjoint-uniqueness}.
     \item Lemma~\ref{lem:app-sign-pbw-descendant}: opposite PBW
-      raising sign of the polynomial descendant shadow; feeds the
-      no-go Theorem~\ref{thm:no-polynomial-realization-categorical}.
-    \item Lemma~\ref{lem:app-sign-current-source}: brane-line current
-      source convention \(u_{a(t)dt\otimes f}\mapsto B_f(a)\) and its
-      bracket signs; used by
-      Theorem~\ref{thm:app-algebraic-factorization-centre-zero-homotopies}.
+      special-fibre lowering signs on
+      \(\widetilde\Psi_{a,b}\); feed the no-go
+      Theorem~\ref{thm:no-polynomial-realization-categorical}.
     \item Lemma~\ref{lem:app-sign-moyal-coefficients}: third Moyal
-      weight \(1/24\) and the higher odd weights used throughout
-      Appendix~\ref{sec:app-radial-parts-moyal}.
+      weight \(1/24\) and the higher odd weights used in
+      Section~\ref{sec:app-radial-parts-moyal}.
     \item Lemma~\ref{lem:app-sign-moyal-coadjoint} and
       Corollary~\ref{cor:app-sign-universal-dual-normalization}:
       universal residue-dual normalization for the quantum
       principal-part target in
-      Proposition~\ref{prop:app-moyal-capelli-realization-boundary}(4).
+      Proposition~\ref{prop:app-moyal-capelli-realization-boundary}(4),
+      and the no-scalar-rescue obstruction.
+    \item Lemma~\ref{lem:app-sign-current-source}: brane-line current
+      source convention \(u_{a(t)dt\otimes f}\mapsto B_f(a)\) and its
+      bracket signs; enters
+      Theorem~\ref{thm:app-algebraic-factorization-centre-zero-homotopies}.
   \end{enumerate}
   These conventions also fix the scalar cocycle
   \(\omega(z_1,z_2)=1\), the Capelli/Weyl shift \(\hbar N\), the
   obstruction class \(\operatorname{Ob}_{\mathrm{sc}}\), and the
   cohomology class \([\bar c]\) of
-  Appendix~\ref{sec:app-unreduced-bv-qme} and
-  Theorem~\ref{thm:app-scalar-contact-qme-class}.  Any later identity
-  read in a different sign convention is a load-bearing
-  inconsistency, not a parameter freedom.
+  Section~\ref{sec:app-unreduced-bv-qme} and
+  Theorem~\ref{thm:app-scalar-contact-qme-class}.
 \end{rmk}
