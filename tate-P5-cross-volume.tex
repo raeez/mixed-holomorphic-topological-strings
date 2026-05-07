@@ -172,16 +172,17 @@ coordinate by coordinate, not silently reconciled.
   \(\mathfrak C_{\mathrm{tar}}\) and a null-homotopy of the acceptance
   class
   \[
-  \operatorname{Ob}_{\mathrm{UKD}}(\mathfrak T)
-  =
-  \left(
-    \operatorname{Ob}_{\mathfrak C_{\mathrm{tar}}},
-    \operatorname{Ob}_{\mathrm{glob}},
-    \operatorname{ob}_{6r},
-    \operatorname{ob}_{\mathrm{MD}}
-  \right),
+    \operatorname{Ob}_{\mathrm{UKD}}(\mathfrak C_{\mathrm{tar}})
+    =
+    \bigl(
+      \operatorname{Ob}_{\mathfrak C_{\mathrm{tar}}}^{\mathrm{univ}},\,
+      \operatorname{Ob}_{\mathfrak C_{\mathrm{tar}}}^{\mathrm{tar}},\,
+      [\,d\Theta_{\mathrm{KD}}+\tfrac12
+       [\Theta_{\mathrm{KD}},\Theta_{\mathrm{KD}}]\,]
+    \bigr)
   \]
-  with the entries omitted only when the corresponding structure is not
+  of Theorem~\ref{thm:matched-conventions-transfer}, with each
+  coordinate omitted only when the corresponding structure is not
   asserted by \(\mathfrak T\).  The accepted morphism has formal stalk
   \[
     \chi_{\mathrm{op}}^{-1}
@@ -199,13 +200,21 @@ coordinate by coordinate, not silently reconciled.
   negative-cyclic Calabi--Yau class, a worldsheet or specialization
   curve, an \(S^3\) framing, a global BV propagator, the holomorphic
   anomaly equation, Borcherds input data, a Weyl chamber, a compact Hall
-  orientation, and a compact chiral-homology object therefore enter as
-  components of \(\mathfrak C_{\mathrm{tar}}\), not as consequences of the
-  formal germ.  The four displayed components record exactly the target
-  convention, global descent, six-relation mixed-factorization, and
-  mixed-Dunn acceptance tests.  Vanishing with null-homotopies is the
-  matched-conventions admissibility datum; a nonzero component is the corresponding
-  obstruction class.
+  orientation, virtual cycles, attractor counts, and compact
+  chiral-homology objects therefore enter as components of
+  \(\mathfrak C_{\mathrm{tar}}\), not as consequences of the formal
+  germ.  The displayed coordinates record exactly the universal
+  acceptance tests
+  (\(\operatorname{Ob}_{\mathfrak C_{\mathrm{tar}}}^{\mathrm{univ}}\):
+  period, Weiss/Ran descent, scalar anomaly, brane-defect QME,
+  inverse-limit convergence, hyperdescent), the target-specific
+  acceptance tests
+  (\(\operatorname{Ob}_{\mathfrak C_{\mathrm{tar}}}^{\mathrm{tar}}\):
+  BCOV, Vol III, Igusa/BKM, GW/DT/PT/MNOP, OSV, six-relation,
+  mixed-Dunn), and the transported Maurer--Cartan curvature in
+  \(H^1(\mathfrak K_{\mathrm{KD}})\).  Vanishing with null-homotopies
+  is the matched-conventions admissibility datum; a nonzero coordinate
+  is the corresponding obstruction class.
 \end{proof}
 
 \begin{defn}[Matched-conventions theorem datum]\label{defn:matched-conventions-theorem-datum}
@@ -1267,11 +1276,10 @@ interchanges are target data, not consequences of the local
       \(Z^{\mathrm{BH}}_{Q,P}\), the attractor entropy
       \(e^{-S_{\mathrm{att}}}\), and the OSV identification
       \(\Phi_{\mathrm{OSV}}\colon Z^{\mathrm{BH}}\sim
-      |Z^{\mathrm{top}}|^2\).  The OSV equation is a target
-      conjecture~\cite{bcov} on a compact CY\(_3\); it is not asserted
-      by the local theorem on
-      \(\widehat{\C^2}_{0,\mathrm{hol}}\), and is not a step in its
-      derivation.
+      |Z^{\mathrm{top}}|^2\).  The OSV identification is a target
+      conjecture on a compact CY\(_3\); it is not asserted by the local
+      theorem on \(\widehat{\C^2}_{0,\mathrm{hol}}\), and is not a step
+      in its derivation.
     \item \emph{Obstruction class.}  The acceptance obstruction is
       \[
         \operatorname{ob}_{\mathrm{OSV}}
@@ -1446,7 +1454,7 @@ specialization curves, and operadic rectification enter only through
 \(\mathfrak C_{\mathrm{tar}}\).
 
 Second (sharp compact-surface period obstruction,
-Theorem~\ref{thm:global-descent-criterion}), on a compact connected
+Theorem~\ref{thm:compact-period-sharp}), on a compact connected
 holomorphic-symplectic surface every nonzero global holomorphic
 symplectic vector field has nonzero period
 \(\operatorname{per}_X(v)\in H^1(X,\C_X)\) and is rejected by the
