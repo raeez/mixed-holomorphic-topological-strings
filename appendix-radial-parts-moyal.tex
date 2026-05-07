@@ -1424,7 +1424,7 @@ exactly the assertion that the ordinary Weyl trace \(J_N(f)\) equals
   Subtracting the two displayed identities,
   \(\operatorname{Rad}_0(E_{a,b,N})=0\).
 
-  \emph{Step 3 (Moment-ideal lift).}  By
+  \emph{Step 3 (Universal lift via Procesi--Razmyslov).}  By
   Statement~\ref{stmt:app-radial-external-input}~clause~(2)
   (Levasseur--Stafford radial-kernel theorem), the kernel of the
   Vandermonde-conjugated Harish-Chandra map on
@@ -1435,33 +1435,35 @@ exactly the assertion that the ordinary Weyl trace \(J_N(f)\) equals
     E_{a,b,N}\in\mathcal W_N\widehat\mu(\lie{sl}_N)\qquad
     (\text{all }N\geq1).
   \]
-  By Lemma~\ref{lem:app-quantum-shear-primitive-obstruction} this
-  membership is equivalent to the existence of coefficients
-  \(A^j{}_i(a,b,N)\in\mathcal W_N\) with
-  \(E_{a,b,N}=\sum A^j{}_i\widehat\mu^i{}_j\).  After choosing a
-  free-word ansatz
-  \(A^j{}_i(a,b,N)=\sum_{W} c_W(a,b)\,W^j{}_i\) where \(W\) ranges
-  over words of bidegree \((a-1,b-1)\), the membership becomes
+  By
+  Lemma~\ref{lem:app-quantum-shear-primitive-obstruction}, this
+  membership is the universal trace-level equation
   \[
-    E_{a,b,N}=\sum_{W\in\mathsf W_{a,b}}c_W\operatorname{Tr}(WM)
-    \qquad(\text{all }N\geq1),
+    E_{a,b,N}=\sum_{W\in\mathsf W_{a,b}}c_W(a,b)\operatorname{Tr}(WM)
   \]
-  with rational coefficients \(c_W=c_W(a,b)\) independent of \(N\).
-  Existence of such \(N\)-independent coefficients is supplied by the
-  free indexed normal-diagram polarization
-  argument: the matrix-trace identity in
-  \(\mathcal W_N\) holds for every \(N\), and stable
-  Procesi--Razmyslov injectivity
-  (Lemma~\ref{lem:app-free-trace-diagram-stable-injectivity}) extracts
-  rational coefficients on the universal free indexed normal-diagram
-  side.
+  in the indexed Weyl algebra \(\mathcal W_N\), where the coefficients
+  \(c_W(a,b)\in\mathbb Q\) are sought independently of \(N\).
+  Existence of such \(N\)-independent rational coefficients is the
+  output of the free indexed normal-diagram polarization argument:
+  both sides of the equation are universal trace expressions in
+  \(X,Y,M=YX-XY+\hbar NI\) and the Capelli scalar; their projection to
+  free indexed normal diagrams of bidegree \((a,b)\) and total edge
+  degree \(\leq a+b-1\) is computed by stable Procesi--Razmyslov
+  (Lemma~\ref{lem:app-free-trace-diagram-stable-injectivity}) and
+  carries no extra trace identity in ranks \(N\geq a+b\); hence the
+  coefficient system is a finite-dimensional rational linear system.
+  The system is consistent because, for every \(N\geq a+b\), it has a
+  solution in \(\mathcal W_N\) by the moment-ideal membership above,
+  and stable Procesi--Razmyslov injectivity converts an all-\(N\)
+  finite-rank consistency to free-side rational consistency.  Choose
+  any \(\mathbb Q\)-rational solution \(c=\sum_W c_W W\in\mathsf W_{a,b}\).
 
   Project the resulting free identity through the cyclic-word target.
   At contraction degree \(0\),
   \(\sum_W c_W \pi_0\mathcal N_{\mathrm{free}}\operatorname{Tr}(WM)
    =\sum_W c_W([WYX]-[WXY])
    =\partial(\sum_W c_W W)\), so the underlying word
-  \(c=\sum_W c_W W\in\mathsf W_{a,b}\) is a classical lift,
+  \(c\in\mathsf W_{a,b}\) is a classical lift,
   \(\partial c=T_{a,b}\).  Subtracting any preferred classical lift
   \(c^{\mathrm{cl}}_{a,b}\), the difference
   \(K_{a,b}=c-c^{\mathrm{cl}}_{a,b}\) is a cycle in
