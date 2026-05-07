@@ -22,12 +22,13 @@ holomorphic dimension
 \(\R_{\mathrm{brane}}\times\{0\}\times\{0\}\) as the one-dimensional
 factorization direction.  Seven external programmes carry their own
 conventions, global data, and obstruction complexes: the compact
-CY\(_3\) BCOV programme of
+CY\(_3\) BCOV / Kodaira--Spencer programme of
 Bershadsky--Cecotti--Ooguri--Vafa~\cite{bcov}; the Vol III
 CY-to-chiral frontier with two-stage factorization
 \(\Phi_d=\mathrm{Sp}_{\Sigma_{d-1},C}\circ\Phi^{\mathrm{FA}}_d\); the
-Borcherds / BKM bridge to the Igusa cusp form \(\Delta_5\); the
-Gromov--Witten / Donaldson--Thomas / Pandharipande--Thomas / MNOP
+Borcherds / Borcherds--Kac--Moody (BKM) bridge to the Igusa cusp
+form \(\Delta_5\); the Gromov--Witten / Donaldson--Thomas /
+Pandharipande--Thomas / Maulik--Nekrasov--Okounkov--Pandharipande
 generating-function lane; the Ooguri--Strominger--Vafa attractor
 counting; the mixed topological--holomorphic six-relation
 factorization / mixed-Dunn operadic programme; and the global
@@ -64,6 +65,68 @@ precise mechanism of \(T\) that fails; no compact CY\(_3\), MNOP /
 GV / OSV / DT / PT, Vol III, Igusa, BKM, or six-relation conclusion
 is accepted without that certificate.
 
+\begin{thm}[Cross-volume firewall theorem]\label{thm:cross-volume-firewall}
+  Let \(\mathfrak T\) be any of the seven quarantined targets of the
+  organizing question -- compact CY\(_3\) BCOV / Kodaira--Spencer, Vol
+  III CY-to-chiral specialization, Igusa / BKM bridge to \(\Delta_5\),
+  GW / DT / PT / MNOP, OSV attractor, mixed-Dunn / six-relation, or
+  global Hamiltonian descent on a compact connected
+  holomorphic-symplectic surface.  The local theorem on
+  \(\R^2_{\mathrm{top}}\times\widehat{\C^2}_{0,\mathrm{hol}}\) does
+  not imply any compact, global, modular, automorphic,
+  specialization, framing, descent, virtual-cycle, attractor, or
+  operadic structure of \(\mathfrak T\): it contributes exactly the
+  transported formal-disk stalk
+  \[
+    \chi_{\mathrm{op}}^{-1}\,
+    \Phi^{\mathrm{Ham}}_{\mathrm{fact}}\,
+    \chi_{\mathrm{cl}}
+  \]
+  to a target morphism, and only after a matched-conventions datum
+  \(\mathfrak C_{\mathrm{tar}}\) (Definition~\ref{defn:matched-conventions-theorem-datum})
+  has been supplied and the universal Koszul-descent acceptance
+  class
+  \(\operatorname{Ob}_{\mathrm{UKD}}(\mathfrak C_{\mathrm{tar}})\) of
+  Theorem~\ref{thm:matched-conventions-transfer} has been
+  null-homotoped.  Equivalently, the only sentence the local theorem
+  provides to a cross-volume target is the formal-stalk component;
+  every other sentence (compactness, modularity, virtual cycle,
+  attractor, specialization, operadic interchange, global descent,
+  hyperdescent, framing) is target datum.  A nonzero coordinate of
+  \(\operatorname{Ob}_{\mathrm{UKD}}\) is the exact obstruction to
+  acceptance in \(\mathfrak T\); divergence is reported coordinate by
+  coordinate and is not silently reconciled.
+\end{thm}
+
+\begin{proof}
+  The formal-stalk content of any cross-volume morphism produced by
+  the local theorem is identified by
+  Lemma~\ref{lem:no-formal-disk-transfer}: only the displayed
+  transported stalk passes from \(\mathfrak C_{\mathrm{loc}}^{(2)}\)
+  through the comparison morphisms.  The matched-conventions
+  acceptance criterion is
+  Theorem~\ref{thm:matched-conventions-transfer}: under vanishing of
+  \(\operatorname{Ob}_{\mathrm{UKD}}(\mathfrak C_{\mathrm{tar}})\)
+  and a chosen null-homotopy, the target morphism exists and has the
+  displayed formal stalk; otherwise the nonzero coordinate is the
+  exact obstruction.  The per-target divergence content is the
+  divergence row of each quarantined target, given respectively by
+  Theorems \ref{thm:divergence-bcov},
+  \ref{thm:divergence-volIII},
+  \ref{thm:divergence-igusa-bkm},
+  \ref{thm:divergence-gwdt},
+  \ref{thm:divergence-osv},
+  \ref{thm:divergence-mixed-dunn}, and
+  \ref{thm:divergence-global-ham}: each names the local convention
+  layer, the target convention layer, the named obstruction class,
+  and the matched-conventions claim.  Independence of any one
+  divergence row from another is not asserted in this theorem; what
+  is asserted is the absence of implication from local to target on
+  every row simultaneously, which follows from the
+  Lemma~\ref{lem:no-formal-disk-transfer} restriction of the local
+  contribution to the formal stalk.
+\end{proof}
+
 \paragraph*{Quarantine declaration.}  The seven external programmes
 are quarantined comparison targets, in the precise sense of CLAUDE.md:
 their conventions, theorems, and constants are target data with
@@ -85,34 +148,105 @@ of \(\operatorname{Ob}_{\mathrm{UKD}}\); each carries an independent
 acceptance class.  Divergence is load-bearing and reported coordinate
 by coordinate; no entry is silently reconciled.
 
-\paragraph*{Named acceptance vector.}  The acceptance class decomposes
-as
-\[
-  \operatorname{Ob}_{\mathfrak C_{\mathrm{tar}}}
-  =
-  \bigl(
-    \operatorname{per}_{\mathrm{tar}},\,
-    \operatorname{ob}_{\mathrm{WR}},\,
-    \operatorname{ob}_{\mathrm{anom}},\,
-    \operatorname{ob}_{\mathrm{QME}},\,
-    \operatorname{ob}_{\mathrm{conv}},\,
-    \operatorname{ob}_{\mathrm{hyp}},\,
-    \operatorname{ob}_{\mathrm{VolIII}},\,
-    \operatorname{ob}_{\mathrm{Igusa/BKM}},\,
-    \operatorname{ob}_{6r},\,
-    \operatorname{ob}_{\mathrm{MD}}
-  \bigr)
-\]
-together with the transported Maurer--Cartan curvature
-\([d\Theta_{\mathrm{KD}}+\tfrac12[\Theta_{\mathrm{KD}},\Theta_{\mathrm{KD}}]]\).
-Each coordinate is a named cohomology class in its own programme:
-period, Weiss/Ran descent, scalar anomaly, brane-defect QME,
-inverse-limit convergence, hyperdescent, Vol III CY-to-chiral
-specialization, Igusa / BKM Borcherds match, six-relation mixed
-factorization, and mixed-Dunn operadic rectification.  A coordinate
-is omitted only when \(T\) does not assert the corresponding
-structure; a present nonzero coordinate is the exact obstruction to
-acceptance in \(T\).
+\paragraph*{Named acceptance vector.}  The acceptance class
+\(\operatorname{Ob}_{\mathfrak C_{\mathrm{tar}}}\) decomposes into
+six \emph{universal} coordinates -- coordinates every cross-volume
+target must address by the very fact of using a global formal-disk
+input -- and seven \emph{target-specific} coordinates indexed by the
+external programmes:
+\begin{align*}
+  \operatorname{Ob}_{\mathfrak C_{\mathrm{tar}}}^{\mathrm{univ}}
+    &=\bigl(
+      \operatorname{per}_{\mathrm{tar}},\,
+      \operatorname{ob}_{\mathrm{WR}},\,
+      \operatorname{ob}_{\mathrm{anom}},\,
+      \operatorname{ob}_{\mathrm{QME}},\,
+      \operatorname{ob}_{\mathrm{conv}},\,
+      \operatorname{ob}_{\mathrm{hyp}}
+    \bigr),\\
+  \operatorname{Ob}_{\mathfrak C_{\mathrm{tar}}}^{\mathrm{tar}}
+    &=\bigl(
+      \operatorname{ob}_{\mathrm{BCOV}},\,
+      \operatorname{ob}_{\mathrm{VolIII}},\,
+      \operatorname{ob}_{\mathrm{Igusa/BKM}},\,
+      \operatorname{ob}_{\mathrm{GW/DT}},\,
+      \operatorname{ob}_{\mathrm{OSV}},\,
+      \operatorname{ob}_{6r},\,
+      \operatorname{ob}_{\mathrm{MD}}
+    \bigr).
+\end{align*}
+The universal coordinates are: period of locally Hamiltonian fields,
+Weiss/Ran descent of the local maps, scalar anomaly compatibility,
+brane-defect quantum master equation, inverse-limit convergence of
+the obstruction tower, and hyperdescent / absence of hidden
+\(\varprojlim^1\) defects.  The target-specific coordinates name the
+seven quarantined programmes one by one: compact CY\(_3\) BCOV
+holomorphic-anomaly equation; Vol III two-stage CY-to-chiral
+specialization; Igusa / BKM Borcherds-product input; Gromov--Witten /
+Donaldson--Thomas / Pandharipande--Thomas / MNOP virtual-cycle
+counts; OSV black-hole attractor identification; mixed
+topological--holomorphic six-relation factorization; mixed-Dunn
+operadic rectification.  The full acceptance class also carries the
+transported Maurer--Cartan curvature
+\(\bigl[d\Theta_{\mathrm{KD}}+
+  \tfrac12[\Theta_{\mathrm{KD}},\Theta_{\mathrm{KD}}]\bigr]\).
+A coordinate is omitted only when \(\mathfrak C_{\mathrm{tar}}\)
+does not assert the corresponding structure; a present nonzero
+coordinate is the exact obstruction to acceptance in
+\(\mathfrak C_{\mathrm{tar}}\), and is the divergence to be reported
+coordinate by coordinate, not silently reconciled.
+
+\paragraph*{Decomposition table (target $\leftrightarrow$ named coordinate).}
+The seven quarantined targets are bound to the seven target-specific
+coordinates of \(\operatorname{Ob}_{\mathfrak C_{\mathrm{tar}}}^{\mathrm{tar}}\)
+by the following table; the universal coordinates apply uniformly across
+all rows.
+\begin{center}
+\begin{tabular}{@{}p{0.36\textwidth}p{0.16\textwidth}p{0.36\textwidth}@{}}
+\textbf{Target programme}
+  & \textbf{Coordinate}
+  & \textbf{Divergence row} \\
+\hline
+Compact CY\(_3\) BCOV / Kodaira--Spencer
+\cite{bcov}
+  & \(\operatorname{ob}_{\mathrm{BCOV}}\)
+  & Theorem~\ref{thm:divergence-bcov} \\
+Vol III CY-to-chiral specialization
+\(\Phi_d=\mathrm{Sp}_{\Sigma_{d-1},C}\circ\Phi^{\mathrm{FA}}_d\)
+  & \(\operatorname{ob}_{\mathrm{VolIII}}\)
+  & Theorem~\ref{thm:divergence-volIII} \\
+Borcherds / BKM bridge to Igusa \(\Delta_5\)
+  & \(\operatorname{ob}_{\mathrm{Igusa/BKM}}\)
+  & Theorem~\ref{thm:divergence-igusa-bkm} \\
+GW / DT / PT / MNOP virtual cycles on a compact CY\(_3\)
+  & \(\operatorname{ob}_{\mathrm{GW/DT}}\)
+  & Theorem~\ref{thm:divergence-gwdt} \\
+OSV attractor identification
+\(Z^{\mathrm{BH}}\sim|Z^{\mathrm{top}}|^2\)
+  & \(\operatorname{ob}_{\mathrm{OSV}}\)
+  & Theorem~\ref{thm:divergence-osv} \\
+Mixed-Dunn / six-relation factorization on
+\(\R\times\C^2\)
+  & \(\operatorname{ob}_{6r},\,\operatorname{ob}_{\mathrm{MD}}\)
+  & Theorem~\ref{thm:divergence-mixed-dunn} \\
+Global Hamiltonian descent on
+\((X,\omega,L)\)
+  & \(\operatorname{Ob}_{\mathrm{glob}}\)
+  & Theorem~\ref{thm:divergence-global-ham} \\
+\end{tabular}
+\end{center}
+Each row inscribes a divergence theorem (this manuscript's local
+convention vs.\ the target convention), an obstruction class
+(the named coordinate), and a matched-conventions claim
+(conditional on a chosen null-homotopy).  The named coordinates
+live in syntactically distinct cohomology groups
+(\(H^1(\mc K_{\mathrm{obs}})\),
+\(H^1(\mathfrak K_{\mathrm{KD}})\), and the appropriate
+target-specific complexes); a strict cohomology-level coordinate
+independence theorem is target programme business and is not
+asserted here.  The firewall claim is the absence of
+implication from local to target row by row, in the sense of
+Theorem~\ref{thm:cross-volume-firewall}.
 
 \begin{defn}[Local Hamiltonian convention base]\label{defn:local-hamiltonian-convention-base}
   The local theorem supplies the convention base
@@ -152,16 +286,17 @@ acceptance in \(T\).
   \(\mathfrak C_{\mathrm{tar}}\) and a null-homotopy of the acceptance
   class
   \[
-  \operatorname{Ob}_{\mathrm{UKD}}(\mathfrak T)
-  =
-  \left(
-    \operatorname{Ob}_{\mathfrak C_{\mathrm{tar}}},
-    \operatorname{Ob}_{\mathrm{glob}},
-    \operatorname{ob}_{6r},
-    \operatorname{ob}_{\mathrm{MD}}
-  \right),
+    \operatorname{Ob}_{\mathrm{UKD}}(\mathfrak C_{\mathrm{tar}})
+    =
+    \bigl(
+      \operatorname{Ob}_{\mathfrak C_{\mathrm{tar}}}^{\mathrm{univ}},\,
+      \operatorname{Ob}_{\mathfrak C_{\mathrm{tar}}}^{\mathrm{tar}},\,
+      [\,d\Theta_{\mathrm{KD}}+\tfrac12
+       [\Theta_{\mathrm{KD}},\Theta_{\mathrm{KD}}]\,]
+    \bigr)
   \]
-  with the entries omitted only when the corresponding structure is not
+  of Theorem~\ref{thm:matched-conventions-transfer}, with each
+  coordinate omitted only when the corresponding structure is not
   asserted by \(\mathfrak T\).  The accepted morphism has formal stalk
   \[
     \chi_{\mathrm{op}}^{-1}
@@ -179,13 +314,21 @@ acceptance in \(T\).
   negative-cyclic Calabi--Yau class, a worldsheet or specialization
   curve, an \(S^3\) framing, a global BV propagator, the holomorphic
   anomaly equation, Borcherds input data, a Weyl chamber, a compact Hall
-  orientation, and a compact chiral-homology object therefore enter as
-  components of \(\mathfrak C_{\mathrm{tar}}\), not as consequences of the
-  formal germ.  The four displayed components record exactly the target
-  convention, global descent, six-relation mixed-factorization, and
-  mixed-Dunn acceptance tests.  Vanishing with null-homotopies is the
-  matched-conventions admissibility datum; a nonzero component is the corresponding
-  obstruction class.
+  orientation, virtual cycles, attractor counts, and compact
+  chiral-homology objects therefore enter as components of
+  \(\mathfrak C_{\mathrm{tar}}\), not as consequences of the formal
+  germ.  The displayed coordinates record exactly the universal
+  acceptance tests
+  (\(\operatorname{Ob}_{\mathfrak C_{\mathrm{tar}}}^{\mathrm{univ}}\):
+  period, Weiss/Ran descent, scalar anomaly, brane-defect QME,
+  inverse-limit convergence, hyperdescent), the target-specific
+  acceptance tests
+  (\(\operatorname{Ob}_{\mathfrak C_{\mathrm{tar}}}^{\mathrm{tar}}\):
+  BCOV, Vol III, Igusa/BKM, GW/DT/PT/MNOP, OSV, six-relation,
+  mixed-Dunn), and the transported Maurer--Cartan curvature in
+  \(H^1(\mathfrak K_{\mathrm{KD}})\).  Vanishing with null-homotopies
+  is the matched-conventions admissibility datum; a nonzero coordinate
+  is the corresponding obstruction class.
 \end{proof}
 
 \begin{defn}[Matched-conventions theorem datum]\label{defn:matched-conventions-theorem-datum}
@@ -286,6 +429,44 @@ acceptance in \(T\).
   factorization-centre morphism.
 \end{defn}
 
+\begin{thm}[Sharp compact-surface period obstruction]\label{thm:compact-period-sharp}
+  Let \((X,\omega)\) be a compact connected holomorphic-symplectic
+  surface and \(v\) a global holomorphic symplectic vector field on
+  \(X\).  Then
+  \[
+    \operatorname{per}_X(v)=0
+    \iff
+    \alpha_v=0
+    \iff
+    v=0 .
+  \]
+  In particular, every nonzero such \(v\) has nonzero period
+  \(\operatorname{per}_X(v)\in H^1(X,\C_X)\), and is rejected by the
+  global Hamiltonian acceptance criterion before any descent or
+  matched-conventions datum is supplied.
+\end{thm}
+
+\begin{proof}
+  If \(\operatorname{per}_X(v)=0\), local Stein primitives \(h_i\) of
+  \(\alpha_v=-\iota_v\omega\) on a Stein cover differ on overlaps by
+  constants exact in the de Rham connecting morphism, hence can be
+  modified by constants to glue to a global holomorphic primitive
+  \(h\).  Since \(X\) is compact and connected,
+  \(H^0(X,\mc O_X)=\C\), so \(dh=0\), so \(\alpha_v=0\), so by
+  nondegeneracy of \(\omega\) we get \(v=0\).  The converses are
+  immediate.
+\end{proof}
+
+\begin{rmk}[Translations on abelian surfaces are not formal-disk Hamiltonians]
+  A nonzero translation vector field \(v\) on an abelian surface
+  \((X,\omega)\) satisfies \(\alpha_v\ne0\) and
+  \(\operatorname{per}_X(v)\ne0\) by
+  Theorem~\ref{thm:compact-period-sharp}.  Local Darboux primitives
+  exist for \(v\) on each chart, but they do not glue to a global
+  holomorphic Hamiltonian: local-to-global descent of the formal
+  Hamiltonian model fails on the period coordinate alone.
+\end{rmk}
+
 \begin{thm}[Formal local-to-global Hamiltonian descent theorem data]\label{thm:global-descent-criterion}
   Let \((X,\omega)\) be a compact connected holomorphic-symplectic
   surface and \(L\subset X\) a brane locus for which the formal local
@@ -356,31 +537,19 @@ acceptance in \(T\).
   obstruction; when a component required by the asserted target structure
   is absent, the target datum is incomplete.
 
-  On a compact connected \(X\) the period condition is sharp:
-  \[
-  \begin{aligned}
-    \operatorname{per}_X(v)=0
-      &\Longleftrightarrow \alpha_v=0\\
-      &\Longleftrightarrow v=0 .
-  \end{aligned}
-  \]
-  Thus a nonzero global holomorphic symplectic vector field on a compact
-  surface, for example a translation on an abelian surface, has nonzero
-  \(\operatorname{per}_X(v)\) and is rejected by the global Hamiltonian
-  acceptance criterion.
+  On a compact connected \(X\) the period condition is sharp by
+  Theorem~\ref{thm:compact-period-sharp}: every nonzero global
+  holomorphic symplectic vector field has nonzero
+  \(\operatorname{per}_X(v)\) and is rejected.
 \end{thm}
 
 \begin{proof}
-  The period calculation is Definition~\ref{defn:compact-hamiltonian-period-complex}.
-  If \(\operatorname{per}_X(v)=0\), the local primitives \(h_i\) can be
-  modified by constants and glued to a global holomorphic function
-  \(h\) with \(dh=-\iota_v\omega\).  Since \(X\) is compact and
-  connected, \(H^0(X,\mc O_X)=\C\), hence \(dh=0\).  Therefore
-  \(\iota_v\omega=0\), and nondegeneracy of \(\omega\) gives \(v=0\).
-  The converse is immediate.  This proves the sharp compact-surface
-  obstruction: \(\operatorname{per}_X(v)\) is the exact class preventing
-  formal local Hamiltonians from becoming nonzero compact global
-  Hamiltonians by descent alone.
+  The period calculation is
+  Definition~\ref{defn:compact-hamiltonian-period-complex}, and the
+  sharpness on compact connected \(X\) is
+  Theorem~\ref{thm:compact-period-sharp}: vanishing of
+  \(\operatorname{per}_X(v)\) is the precise obstruction to gluing
+  local holomorphic Hamiltonian primitives to a global one.
 
   Once local primitives and Darboux charts are fixed, the remaining
   problem is ordinary descent for morphisms of factorization objects.  On
@@ -429,28 +598,41 @@ acceptance in \(T\).
   \[
   \operatorname{Ob}_{\mathfrak C_{\mathrm{tar}}}
   =
-  \left(
-    \operatorname{per}_{\mathrm{tar}},\,
-    \operatorname{ob}_{\mathrm{WR}},\,
-    \operatorname{ob}_{\mathrm{anom}},\,
-    \operatorname{ob}_{\mathrm{QME}},\,
-    \operatorname{ob}_{\mathrm{conv}},\,
-    \operatorname{ob}_{\mathrm{hyp}},\,
-    \operatorname{ob}_{\mathrm{VolIII}},\,
-    \operatorname{ob}_{\mathrm{Igusa/BKM}},\,
-    \operatorname{ob}_{6r},\,
-    \operatorname{ob}_{\mathrm{MD}}
-  \right)
+  \bigl(
+    \operatorname{Ob}_{\mathfrak C_{\mathrm{tar}}}^{\mathrm{univ}},\,
+    \operatorname{Ob}_{\mathfrak C_{\mathrm{tar}}}^{\mathrm{tar}}
+  \bigr)
   \]
-  is zero, with \(\operatorname{ob}_{\mathrm{VolIII}}\),
-  \(\operatorname{ob}_{\mathrm{Igusa/BKM}}\), \(\operatorname{ob}_{6r}\),
-  and \(\operatorname{ob}_{\mathrm{MD}}\) omitted only when the
-  corresponding Vol III, Igusa/BKM, six-relation, or mixed
-  topological-holomorphic operadic structure is not part of the target
-  datum.  The component \(\operatorname{ob}_{\mathrm{conv}}\)
-  records convergence of the transported Maurer--Cartan obstruction
-  tower, and \(\operatorname{ob}_{\mathrm{hyp}}\) records hyperdescent
-  and the absence of hidden \(\varprojlim^1\) defects.
+  is zero, where
+  \begin{align*}
+    \operatorname{Ob}_{\mathfrak C_{\mathrm{tar}}}^{\mathrm{univ}}
+      &=\bigl(
+        \operatorname{per}_{\mathrm{tar}},\,
+        \operatorname{ob}_{\mathrm{WR}},\,
+        \operatorname{ob}_{\mathrm{anom}},\,
+        \operatorname{ob}_{\mathrm{QME}},\,
+        \operatorname{ob}_{\mathrm{conv}},\,
+        \operatorname{ob}_{\mathrm{hyp}}
+      \bigr),\\
+    \operatorname{Ob}_{\mathfrak C_{\mathrm{tar}}}^{\mathrm{tar}}
+      &=\bigl(
+        \operatorname{ob}_{\mathrm{BCOV}},\,
+        \operatorname{ob}_{\mathrm{VolIII}},\,
+        \operatorname{ob}_{\mathrm{Igusa/BKM}},\,
+        \operatorname{ob}_{\mathrm{GW/DT}},\,
+        \operatorname{ob}_{\mathrm{OSV}},\,
+        \operatorname{ob}_{6r},\,
+        \operatorname{ob}_{\mathrm{MD}}
+      \bigr),
+  \end{align*}
+  with each target-specific coordinate omitted only when the
+  corresponding BCOV, Vol III, Igusa/BKM, GW/DT/PT/MNOP, OSV,
+  six-relation, or mixed topological-holomorphic operadic structure
+  is not part of \(\mathfrak C_{\mathrm{tar}}\).  The component
+  \(\operatorname{ob}_{\mathrm{conv}}\) records convergence of the
+  transported Maurer--Cartan obstruction tower, and
+  \(\operatorname{ob}_{\mathrm{hyp}}\) records hyperdescent and the
+  absence of hidden \(\varprojlim^1\) defects.
   Let
   \[
     \operatorname{Ob}_{\mathrm{UKD}}(\mathfrak C_{\mathrm{tar}})
@@ -735,15 +917,17 @@ acceptance in \(T\).
   tower of lifting problems.  The
   primary curvature \(F_\delta\) is the obstruction at the first stage;
   the associated-graded obstruction groups record the successive
-  failures of operadic composition, Beilinson--Drinfeld holomorphic
-  compatibility, and the topological-holomorphic interchange law.  By
-  hypothesis each obstruction class is zero and a compatible
-  null-homotopy has been chosen, so the tower has a rectified operad map.
-  The aritywise homology isomorphism makes the rectified map a weak
-  equivalence.  Applying the cofibrant-operad Quillen-equivalence theorem
-  gives (i), and Proposition~\ref{prop:fact6r-functor-of-points-recognition}
-  identifies the resulting algebra objects with the displayed functor of
-  points.
+  failures of operadic composition, holomorphic-side coherence in the
+  \(\mathbb E_n^{\mathrm{hol}}\) factor, and the
+  topological-holomorphic interchange law.  By hypothesis each
+  obstruction class is zero and a compatible null-homotopy has been
+  chosen, so the tower has a rectified operad map.  The aritywise
+  homology isomorphism makes the rectified map a weak equivalence.
+  Applying the cofibrant-operad Quillen-equivalence theorem gives
+  (i), and
+  Proposition~\ref{prop:fact6r-functor-of-points-recognition}
+  identifies the resulting algebra objects with the displayed functor
+  of points.
 \end{proof}
 
 \begin{cor}[Matched-conventions factorization]\label{cor:matched-conventions-factorization}
@@ -972,26 +1156,403 @@ acceptance in \(T\).
   \end{enumerate}
 \end{defn}
 
+\subsection*{Named divergence theorems per quarantined target}
+
+The seven matched-conventions templates of
+Definition~\ref{defn:matched-conventions-templates} carry seven
+independent divergence theorems.  Each theorem records: the
+convention used in the local theorem, the convention used in the
+target programme, the obstruction class to identification, and the
+matched-conventions claim that survives once that obstruction is
+killed.  Russian discipline requires the divergence to be named, the
+convention layer to be flagged, and the matched-conventions claim to
+be conditional on a chosen null-homotopy.  Compactness, modularity,
+virtual cycles, attractor identifications, and operadic
+interchanges are target data, not consequences of the local
+\(d=2\) Hamiltonian theorem.
+
+\begin{thm}[BCOV divergence and matched-conventions]\label{thm:divergence-bcov}
+  Let \(\mathfrak C_{\mathrm{BCOV}}\) be the compact BCOV datum of
+  Definition~\ref{defn:matched-conventions-templates}~(ii).
+  \begin{enumerate}[label=(\roman*)]
+    \item \emph{Divergence.}  The local theorem on
+      \(\R^2_{\mathrm{top}}\times\widehat{\C^2}_{0,\mathrm{hol}}\)
+      asserts neither a compact Calabi-Yau threefold \(Y^3\), nor a
+      global gauge-fixed BCOV propagator \(P_{\mathrm{prop}}\), nor an
+      \(S^3\)-framing \(\mathfrak f_{S^3}\), nor a genus expansion in
+      \(F_g\), nor the BCOV holomorphic-anomaly equation.  The
+      Bershadsky--Cecotti--Ooguri--Vafa equation
+      \[
+        \bar\partial_{\bar i}F_g
+        =\tfrac12\,\bar C_{\bar i}^{\,jk}
+          \Bigl(D_jD_kF_{g-1}
+            +\sum_{h+h'=g}D_jF_h\,D_kF_{h'}\Bigr)
+      \]
+      is a target equation in \(\mathfrak C_{\mathrm{BCOV}}\) and a
+      proven theorem of \cite{bcov} only on a compact CY\(_3\); it is
+      not derived from the local Hamiltonian theorem.
+    \item \emph{Obstruction class.}  The acceptance obstruction is
+      the holomorphic-anomaly / counterterm class
+      \[
+        \operatorname{ob}_{\mathrm{BCOV}}
+          \in
+          H^1(\mc O_{\mathrm{HAE}}),
+      \]
+      computed in the BCOV obstruction complex
+      \(\mc O_{\mathrm{HAE}}\) of
+      Definition~\ref{defn:matched-conventions-templates}~(ii).
+    \item \emph{Matched-conventions claim.}  If
+      \(\operatorname{ob}_{\mathrm{BCOV}}=0\) with a chosen
+      null-homotopy and the universal coordinates
+      \(\operatorname{Ob}_{\mathfrak C_{\mathrm{tar}}}^{\mathrm{univ}}\)
+      vanish, then by Theorem~\ref{thm:matched-conventions-transfer}
+      the BCOV target inherits the formal-disk component
+      \(\chi_{\mathrm{op}}^{-1}\Phi^{\mathrm{Ham}}_{\mathrm{fact}}
+      \chi_{\mathrm{cl}}\) at every Darboux chart of
+      \(Y^3\) where the formal local Hamiltonian model is invoked.
+      Compactification, propagator, framing, and genus-expansion data
+      remain target data.
+  \end{enumerate}
+\end{thm}
+
+\begin{proof}
+  Clauses (i) and (ii) are
+  Definition~\ref{defn:matched-conventions-templates}~(ii) read as a
+  divergence and an obstruction class.  Clause (iii) is the BCOV
+  column of Theorem~\ref{thm:matched-conventions-transfer}.
+\end{proof}
+
+\begin{thm}[Vol III CY-to-chiral divergence and matched-conventions]\label{thm:divergence-volIII}
+  Let \(\mathfrak C_{\mathrm{CY\to ch}}\) be the Vol III datum of
+  Definition~\ref{defn:matched-conventions-templates}~(i).
+  \begin{enumerate}[label=(\roman*)]
+    \item \emph{Divergence.}  The Vol III convention is the two-stage
+      factorization
+      \(\Phi_d=\mathrm{Sp}_{\Sigma_{d-1},C}\circ\Phi^{\mathrm{FA}}_d\)
+      with worldsheet / specialization curve
+      \((\Sigma_{d-1},C)\), negative-cyclic CY class
+      \(\eta_{\mathrm{CY}}\in HC^-_d(Y)\), and total-space
+      coefficient \(\kappa_{\mathrm{cat}}\).  None of these data is
+      asserted by the local theorem on
+      \(\R^2_{\mathrm{top}}\times\widehat{\C^2}_{0,\mathrm{hol}}\),
+      whose holomorphic factor is a formal disk and whose Calabi-Yau
+      input is the trivial holomorphic symplectic form on
+      \(\C^2\), used only as a unimodularity datum.
+    \item \emph{Obstruction class.}  The acceptance obstruction is
+      the Vol III specialization class
+      \[
+        \operatorname{ob}_{\mathrm{VolIII}}
+          \in
+          H^1(\mathfrak K_{\mathrm{KD}})
+      \]
+      attached to the comparison of the local
+      \(\mathfrak C_{\mathrm{loc}}^{(2)}\)-stalk with the Vol III
+      formal restriction at the chosen brane point.  In the compact
+      CY\(_3\) row the Hodge supertrace
+      \(\kappa_{\mathrm{cat}}=\sum_q(-1)^qh^{0,q}(Y)\) is target
+      datum; \(\kappa_{\mathrm{cat}}(K3\times E)=0\) is recorded
+      only as a convention check, distinct from any Heisenberg, BKM,
+      or fibre normalization in Vol III.
+    \item \emph{Matched-conventions claim.}  If
+      \(\operatorname{ob}_{\mathrm{VolIII}}=0\) with a chosen
+      null-homotopy and the universal coordinates vanish, then by
+      Theorem~\ref{thm:matched-conventions-transfer} the specialized
+      morphism
+      \(\mathrm{Sp}_{\Sigma_{d-1},C}(\Phi_{\mathfrak C_{\mathrm{tar}}})\)
+      is defined and has formal stalk
+      \(\chi_{\mathrm{op}}^{-1}\Phi^{\mathrm{Ham}}_{\mathrm{fact}}
+      \chi_{\mathrm{cl}}\).  The remaining specialization,
+      worldsheet, BKM-weight, and Hall-orientation maps are target
+      data.
+  \end{enumerate}
+\end{thm}
+
+\begin{proof}
+  Clauses (i)--(ii) read off
+  Definition~\ref{defn:matched-conventions-templates}~(i).
+  Clause (iii) is the Vol III column of
+  Theorem~\ref{thm:matched-conventions-transfer}, applied with the
+  specialization functor \(\mathrm{Sp}_{\Sigma_{d-1},C}\) supplied by
+  \(\mathfrak C_{\mathrm{tar}}\).
+\end{proof}
+
+\begin{thm}[Igusa / BKM divergence and matched-conventions]\label{thm:divergence-igusa-bkm}
+  Let \(\mathfrak C_{\mathrm{BKM}}\) be the Igusa/BKM datum of
+  Definition~\ref{defn:matched-conventions-templates}~(iii).
+  \begin{enumerate}[label=(\roman*)]
+    \item \emph{Divergence.}  The Igusa/BKM convention layer consists
+      of the Jacobi input \(\varphi_{\mathrm{Jac}}\), Borcherds
+      lattice \(\Lambda_{\mathrm{Borch}}\), Weyl chamber \(W\),
+      character \(\rho\), Hall character
+      \(\mathrm{ch}_{\mathrm{Hall}}\), orientation line
+      \(\ell_{\mathrm{or}}\), primitive recognition map
+      \(\pi_{\mathrm{prim}}\), and DT/PT/OP normalization
+      \(\tau_{\mathrm{DT/PT/OP}}\).  None of these data is asserted by
+      the local theorem.  In the \(\Delta_5\) row, the constants
+      \[
+        D_5=64^{-1}\Delta_5,\qquad
+        \operatorname{den}(\mathfrak g_{\Delta_5})
+          =64^{-1}\Delta_5(2Z),
+      \]
+      \[
+        \kappa_{\mathrm{BKM}}(\Phi_1)=c_1(0)/2=10/2=5,\qquad
+        Z^X_{\mathrm{OP}}=-4096\,\Delta_5^{-2},
+      \]
+      live in the BKM/Borcherds programme of the Igusa cusp-form
+      construction.  They are recorded here only as a heuristic /
+      convention-checking declaration of the layer at which a target
+      acceptance theorem must match; the local Hamiltonian theorem on
+      \(\R^2_{\mathrm{top}}\times\widehat{\C^2}_{0,\mathrm{hol}}\) does
+      not derive any of them.
+    \item \emph{Obstruction class.}  The acceptance obstruction is
+      the Igusa/BKM Borcherds match class
+      \[
+        \operatorname{ob}_{\mathrm{Igusa/BKM}}
+          \in
+          H^1(\mathfrak K_{\mathrm{KD}})
+      \]
+      computed in the BKM matched-conventions complex of
+      \(\mathfrak C_{\mathrm{BKM}}\); it includes the orientation
+      comparison \(\epsilon_o=\nu_{\Delta_5}\), compact Hall constants,
+      and primitive BKM recognition.  These are target obstructions and
+      are not supplied by the local \(d=2\) Hamiltonian theorem.
+    \item \emph{Matched-conventions claim.}  If
+      \(\operatorname{ob}_{\mathrm{Igusa/BKM}}=0\) with a chosen
+      null-homotopy and the universal coordinates vanish, then the
+      target inherits the formal-disk component as in
+      Theorem~\ref{thm:matched-conventions-transfer}.  The
+      \(\Delta_5\) constants, Borcherds-product factorization, BKM
+      weights, and modular invariance remain target data.  Divergence
+      between this manuscript's local convention layer and the BKM
+      lane is load-bearing and is reported coordinate by coordinate;
+      it is not silently reconciled.
+  \end{enumerate}
+\end{thm}
+
+\begin{proof}
+  Clauses (i)--(ii) read off
+  Definition~\ref{defn:matched-conventions-templates}~(iii).
+  Clause (iii) is the Igusa/BKM column of
+  Theorem~\ref{thm:matched-conventions-transfer}.
+\end{proof}
+
+\begin{thm}[GW / DT / PT / MNOP divergence and matched-conventions]\label{thm:divergence-gwdt}
+  Let \(\mathfrak C_{\mathrm{GW/DT}}\) be the GW/DT/PT/MNOP datum of
+  Definition~\ref{defn:matched-conventions-templates}~(v).
+  \begin{enumerate}[label=(\roman*)]
+    \item \emph{Divergence.}  The GW/DT/PT/MNOP convention layer
+      consists of the compact CY\(_3\)~\(Y\), a curve class
+      \(\beta\in H_2(Y,\Z)\), the four generating series
+      \(F^{\mathrm{GW}}_{g,\beta}\),
+      \(Z^{\mathrm{DT}}_{n,\beta}\),
+      \(Z^{\mathrm{PT}}_{n,\beta}\), the virtual framing
+      \(\mathfrak f_{\mathrm{vir}}\), Behrend's microlocal weight
+      \(\nu_{\mathrm{Behr}}\), the virtual trace pairing
+      \(\tau_{\mathrm{vir}}\), and the MNOP correspondence map
+      \(\Phi_{\mathrm{MNOP}}\).  None of these data is asserted by the
+      local theorem, whose holomorphic factor is the formal disk
+      \(\widehat{\C^2}_0\) and which carries no compact curve class,
+      virtual cycle, or moduli of ideal sheaves.
+    \item \emph{Obstruction class.}  The acceptance obstruction is
+      \[
+        \operatorname{ob}_{\mathrm{GW/DT}}
+          \in
+          H^1(\mathfrak K_{\mathrm{KD}})
+      \]
+      attached to compatibility of the formal-disk stalk with the
+      virtual GW/DT/PT/MNOP normalization at every Darboux chart
+      where the local Hamiltonian model is invoked in
+      \(\mathfrak C_{\mathrm{GW/DT}}\).
+    \item \emph{Matched-conventions claim.}  If
+      \(\operatorname{ob}_{\mathrm{GW/DT}}=0\) with a chosen
+      null-homotopy and the universal coordinates vanish, then the
+      target inherits the formal-disk component as in
+      Theorem~\ref{thm:matched-conventions-transfer}.  The virtual
+      cycle, MNOP correspondence, and curve-class generating series
+      remain target data.
+  \end{enumerate}
+\end{thm}
+
+\begin{proof}
+  Clauses (i)--(ii) read off
+  Definition~\ref{defn:matched-conventions-templates}~(v).
+  Clause (iii) is the GW/DT/PT/MNOP column of
+  Theorem~\ref{thm:matched-conventions-transfer}.
+\end{proof}
+
+\begin{thm}[OSV attractor divergence and matched-conventions]\label{thm:divergence-osv}
+  Let \(\mathfrak C_{\mathrm{OSV}}\) be the OSV datum of
+  Definition~\ref{defn:matched-conventions-templates}~(vi).
+  \begin{enumerate}[label=(\roman*)]
+    \item \emph{Divergence.}  The OSV convention layer consists of the
+      compact CY\(_3\)~\(Y\), the attractor lattice
+      \(\Lambda_{\mathrm{att}}\), the black-hole partition
+      \(Z^{\mathrm{BH}}_{Q,P}\), the attractor entropy
+      \(e^{-S_{\mathrm{att}}}\), and the OSV identification
+      \(\Phi_{\mathrm{OSV}}\colon Z^{\mathrm{BH}}\sim
+      |Z^{\mathrm{top}}|^2\).  The OSV identification is a target
+      conjecture on a compact CY\(_3\); it is not asserted by the local
+      theorem on \(\widehat{\C^2}_{0,\mathrm{hol}}\), and is not a step
+      in its derivation.
+    \item \emph{Obstruction class.}  The acceptance obstruction is
+      \[
+        \operatorname{ob}_{\mathrm{OSV}}
+          \in
+          H^1(\mathfrak K_{\mathrm{KD}})
+      \]
+      attached to compatibility of the formal-disk stalk with the
+      attractor identification, when an OSV target invokes the
+      formal-disk component.
+    \item \emph{Matched-conventions claim.}  If
+      \(\operatorname{ob}_{\mathrm{OSV}}=0\) with a chosen
+      null-homotopy and the universal coordinates vanish, then the
+      target inherits the formal-disk component as in
+      Theorem~\ref{thm:matched-conventions-transfer}.  Black-hole
+      attractor counts and the OSV identification remain target
+      data.
+  \end{enumerate}
+\end{thm}
+
+\begin{proof}
+  Clauses (i)--(ii) read off
+  Definition~\ref{defn:matched-conventions-templates}~(vi).
+  Clause (iii) is the OSV column of
+  Theorem~\ref{thm:matched-conventions-transfer}.
+\end{proof}
+
+\begin{thm}[Mixed-Dunn divergence and matched-conventions]\label{thm:divergence-mixed-dunn}
+  Let \(\mathfrak C_{\mathrm{MD}}\) be the mixed-Dunn datum of
+  Definition~\ref{defn:matched-conventions-templates}~(vii).  Native
+  to the local theorem are the holomorphic \(E_2\)-type factorization
+  algebra on \(\C^2\) (the formal symplectic surface, with native
+  bidegree two in the holomorphic direction; cf.\ CLAUDE.md), the
+  topological factorization algebra on \(\R_{\mathrm{brane}}\) (one
+  topological direction along the brane line), and a chosen
+  brane-line interval factorization map
+  \(\Phi^{\mathrm{Ham}}_{\mathrm{fact}}\) on
+  product disks \(D\times B\subset\R\times\C^2\).
+  \begin{enumerate}[label=(\roman*)]
+    \item \emph{Divergence.}  The native local product-disk site
+      \(\operatorname{Ran}_{\prod}(\R,\C^2)\) is generated by product
+      disks \(D\times B\); cofinality of product-disk covers inside
+      arbitrary Weiss covers of \(\R\times\C^2\) is not asserted, and
+      no descent on the unrestricted Weiss site
+      \(\operatorname{Ran}(\R\times\C^2)\) is asserted.  A target
+      using arbitrary Weiss/Ran covers, the operadic interchange
+      \(\delta_{m,n}\colon\mathbb E_m^{\mathrm{top}}\otimes
+      \mathbb E_n^{\mathrm{hol}}\to\mathbb E_{m,n}^{\mathrm{mix}}\)
+      with \((m,n)\) different from the native \((1,2)\), or a
+      strict mixed-operadic rectification, supplies independent
+      data; none of it is a consequence of the local theorem.
+    \item \emph{Obstruction class.}  The acceptance obstruction is the
+      ordered pair
+      \[
+        \bigl(
+          \operatorname{ob}_{6r},\,
+          \operatorname{ob}_{\mathrm{MD}}
+        \bigr)
+        \in
+        H^2\!\bigl(
+          \operatorname{Der}^{\mathrm{fact,mix}}(\mathcal A_R)\otimes I
+        \bigr)
+        \oplus
+        H^1(\mathfrak D_{\mathrm{MD}}(m,n)).
+      \]
+      The first coordinate is the six-relation deformation
+      obstruction of
+      Proposition~\ref{prop:fact6r-functor-of-points-recognition};
+      the second is the operadic deformation curvature of
+      Definition~\ref{defn:mixed-dunn-obstruction-complex}.  Higher
+      operadic obstructions live in
+      \(H^{r+1}(\operatorname{gr}^r\mathfrak D_{\mathrm{MD}}(m,n))\).
+    \item \emph{Matched-conventions claim.}  If both classes vanish
+      with chosen null-homotopies and the universal coordinates
+      vanish, then by Theorem~\ref{thm:matched-conventions-transfer}
+      the target inherits the formal-disk component as a strict
+      mixed-operadic factorization map.  Operadic rectification at
+      arities other than the native \((1,2)\) and Weiss/Ran descent
+      outside the product-disk site remain target data.
+  \end{enumerate}
+\end{thm}
+
+\begin{proof}
+  Clauses (i)--(ii) read off
+  Definitions \ref{defn:matched-conventions-templates}~(vii),
+  \ref{defn:mixed-dunn-fact6r-datum}, and
+  \ref{defn:mixed-dunn-obstruction-complex}.  Clause (iii) is the
+  mixed-Dunn column of Theorem~\ref{thm:matched-conventions-transfer},
+  combined with Theorem~\ref{thm:mixed-dunn-criterion}.
+\end{proof}
+
+\begin{thm}[Global Hamiltonian descent divergence and matched-conventions]\label{thm:divergence-global-ham}
+  Let \(\mathfrak C_{\mathrm{glob}}\) be the global descent datum of
+  Definition~\ref{defn:matched-conventions-templates}~(iv).
+  \begin{enumerate}[label=(\roman*)]
+    \item \emph{Divergence.}  The local theorem is stated on the
+      formal Darboux chart \(\widehat{\C^2}_0\); the global descent
+      datum \(\mathfrak C_{\mathrm{glob}}\) lives on a compact
+      connected holomorphic-symplectic surface \((X,\omega)\) with
+      brane locus \(L\), a Stein cover \(\mathfrak U\), the de Rham
+      extension
+      \(0\to\C_X\to\mc O_X\to\Omega^1_{X,\mathrm{cl}}\to0\), and the
+      total complex \(\mathfrak G_{\mathrm{WR}}(L)\) of
+      Definition~\ref{defn:global-hamiltonian-descent-complex}.  None
+      of this global structure is supplied by the formal disk.
+    \item \emph{Obstruction class.}  The acceptance obstruction is
+      the global descent vector
+      \[
+        \operatorname{Ob}_{\mathrm{glob}}(X,L,\Phi_{\mathrm{loc}})
+          \in
+          H^1(X,\C_X)
+            \oplus H^1(\mathfrak G_{\mathrm{WR}}(L))
+            \oplus
+            \bigoplus_{r\ge1}
+              H^{r+1}\!\bigl(
+                \operatorname{gr}^r\mathfrak G_{\mathrm{WR}}(L)
+              \bigr)
+            \oplus H^2_{\mathrm{Lie}}(\bar A,\C),
+      \]
+      with first coordinate the period
+      \(\operatorname{per}_X(v)\) -- sharp by
+      Theorem~\ref{thm:compact-period-sharp} on a compact connected
+      surface -- the second coordinate the first Weiss/Ran descent
+      class, the third the higher coherence classes, and the fourth
+      the scalar anomaly compatibility class.
+    \item \emph{Matched-conventions claim.}  Vanishing of
+      \(\operatorname{Ob}_{\mathrm{glob}}\) with chosen null-homotopies
+      is equivalent to a global Hamiltonian central-operation
+      morphism on \(L\) whose Darboux restrictions are the local maps
+      \(\Phi_{\mathrm{loc}}\), by
+      Theorem~\ref{thm:global-descent-criterion}.
+  \end{enumerate}
+\end{thm}
+
+\begin{proof}
+  Clauses (i)--(iii) are
+  Definition~\ref{defn:matched-conventions-templates}~(iv) and
+  Theorem~\ref{thm:global-descent-criterion} read as a divergence and
+  a matched-conventions claim.
+\end{proof}
+
 \paragraph*{Cross-volume firewall residual.}  The named acceptance
 class
 \(\operatorname{Ob}_{\mathrm{UKD}}(\mathfrak C_{\mathrm{tar}})\) is the
 sole datum mediating between the local theorem and any of the seven
 quarantined targets.  In particular, the Borcherds--Kac--Moody (BKM)
-automorphic lane through the Igusa cusp form
-\(\Delta_5\)~\cite{bcov} -- with Borcherds lattice
-\(\Lambda_{\mathrm{Borch}}\), Weyl chamber \(W\), Jacobi input
-\(\varphi_{\mathrm{Jac}}\), and primitive recognition map
-\(\pi_{\mathrm{prim}}\) -- is firewalled from the local theorem by the
-\(\operatorname{ob}_{\mathrm{Igusa/BKM}}\) coordinate of
+automorphic lane through the Igusa cusp form \(\Delta_5\) -- with
+Borcherds lattice \(\Lambda_{\mathrm{Borch}}\), Weyl chamber \(W\),
+Jacobi input \(\varphi_{\mathrm{Jac}}\), and primitive recognition
+map \(\pi_{\mathrm{prim}}\) -- is firewalled from the local theorem
+by the \(\operatorname{ob}_{\mathrm{Igusa/BKM}}\) coordinate of
 \(\operatorname{Ob}_{\mathrm{UKD}}\).  The local Hamiltonian theorem
 on \(\R^2_{\mathrm{top}}\times\widehat{\C^2}_{0,\mathrm{hol}}\) does
 not derive any BKM weight, Borcherds-product factorization, or
 \(\Delta_5\)-modular constant; their arithmetic content lives in
 \(\mathfrak C_{\mathrm{BKM}}\), not in the formal-disk stalk.  The
 same statement holds, mutatis mutandis, for compact CY\(_3\) BCOV
-genus expansion, MNOP / GV / OSV / DT / PT virtual-cycle counts, the
-Vol III specialization functor, and the mixed-Dunn rectification
-problem: each is firewalled by its own coordinate of
+genus expansion~\cite{bcov}, MNOP / GV / OSV / DT / PT virtual-cycle
+counts, the Vol III specialization functor, and the mixed-Dunn
+rectification problem: each is firewalled by its own coordinate of
 \(\operatorname{Ob}_{\mathrm{UKD}}\), and a target theorem is
 licensed only by killing that coordinate with a chosen
 null-homotopy.
@@ -1007,7 +1568,7 @@ specialization curves, and operadic rectification enter only through
 \(\mathfrak C_{\mathrm{tar}}\).
 
 Second (sharp compact-surface period obstruction,
-Theorem~\ref{thm:global-descent-criterion}), on a compact connected
+Theorem~\ref{thm:compact-period-sharp}), on a compact connected
 holomorphic-symplectic surface every nonzero global holomorphic
 symplectic vector field has nonzero period
 \(\operatorname{per}_X(v)\in H^1(X,\C_X)\) and is rejected by the
