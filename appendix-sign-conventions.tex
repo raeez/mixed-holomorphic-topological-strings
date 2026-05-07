@@ -2,11 +2,11 @@
 \label{sec:app-sign-conventions}
 \label{app:sign-conventions}
 
-The two \(\mathfrak h\)-modules attached to the same labels \((a,b)\)
-go in opposite directions.  The polynomial PBW special-fibre
-descendant \(\widetilde\Psi_{a,b}\), symmetrised trace shadow of the
-open Hamiltonian action on the matrix Koszul algebra \(A_\psi\),
-admits the lowering action
+The two \(\mathfrak h\)-modules attached to the labels \((a,b)\) go in
+opposite directions.  The polynomial PBW special-fibre descendant
+\(\widetilde\Psi_{a,b}\), symmetrised trace shadow of the open
+Hamiltonian action on the matrix Koszul algebra \(A_\psi\), admits the
+lowering action
 \(z_1\cdot\widetilde\Psi_{a,b}=b\,\widetilde\Psi_{a,b-1}\),
 \(z_2\cdot\widetilde\Psi_{a,b}=-a\,\widetilde\Psi_{a-1,b}\).  The
 Matlis principal-part vector
@@ -18,20 +18,12 @@ the raising action \(z_1\cdot\rho_{a,b}=-(b+1)\rho_{a,b+1}\),
 \(\widetilde\Psi_{a,b}\mapsto\mu_{a,b}\widetilde\Psi_{a,b}\) converts
 the locally nilpotent lowering action into the non-locally-nilpotent
 raising one; the directions of the index shifts already disagree.
-The appendix fixes the unique sign datum that makes both formulas, the
-CE/PV cochain isomorphism, the cyclic graded sign of the matrix
-Koszul model, the residue pairing, the all-order Moyal lift, and the
-brane-line current dictionary, simultaneously consistent.  The
-structural separation that no rescaling can remove is recorded as
-Corollary~\ref{cor:app-sign-universal-dual-normalization}.
 
 The cohomological shift convention is \((V[1])^n=V^{n+1}\); the
-reduced matrix Koszul letter \(\psi\) is odd, and all cyclic graded
-signs use its parity.  Absolute BV grading enters only through the
-global shift of the cotangent coordinate
-(Definition~\ref{def:app-unreduced-bv-degrees}); the present appendix
-tracks the cotangent-coordinate grading of the CE/PV block that the
-central operation theorem actually consumes.
+reduced matrix Koszul letter \(\psi\) is odd, and cyclic graded signs
+use its parity.  Absolute BV grading enters only through the global
+shift of the cotangent coordinate
+(Definition~\ref{def:app-unreduced-bv-degrees}).
 
 \begin{defn}[Local symplectic and cyclic conventions]
 \label{def:app-sign-hamiltonian-cyclic}
@@ -75,16 +67,8 @@ central operation theorem actually consumes.
     [uv]_{\mathrm{cyc}}=(-1)^{|u||v|}[vu]_{\mathrm{cyc}},
   \]
   and the trace symbol \(\operatorname{Tr}\) is graded cyclic with the
-  same sign.  All cyclic signs in the open-side calculation use this
-  rule; the only odd letter is \(\psi\).
+  same sign.  The only odd letter is \(\psi\).
 \end{defn}
-
-The CE side of the central operation theorem is built on the
-Hamiltonian Lie algebra \(\mathfrak h\) and its continuous dual
-\(\mathfrak h^\vee_{\mathrm{cont}}\); the PV side is built on the
-polyvector model with even cotangent coordinates and odd ghost
-coordinates.  The cochain isomorphism between them is forced by the
-choice of right-adjoint action and lives on generators.
 
 \begin{lem}[CE/PV cochain signs]
 \label{lem:app-sign-ce-pv}
@@ -145,10 +129,6 @@ choice of right-adjoint action and lives on generators.
   chain map on the full Chevalley--Eilenberg and polyvector algebras.
 \end{proof}
 
-The matrix Koszul boundary that controls the open-side one-\(\psi\)
-homology calculation is the differential induced by \(Q\psi=xy-yx\) on
-graded cyclic words.
-
 \begin{lem}[Primitive one-\(\psi\) chain boundary]
 \label{lem:app-sign-one-psi-boundary}
   In \(A_\psi\) of
@@ -177,14 +157,6 @@ graded cyclic words.
   identifies the result with the displayed boundary.  Cross-checked
   against Lemma~\ref{lem:app-full-two-psi-boundary-sign}.
 \end{proof}
-
-The closed side fixes the residue-coadjoint signs that the Matlis
-appendix uses to identify
-\(\mathcal P=\bigoplus_{a+b>0}\C\rho_{a,b}\) with the continuous dual
-of \(\mathfrak h=\C[[z_1,z_2]]/\C\cdot1\).  The coadjoint action
-follows from the universal residue convention
-\((f\cdot\rho)(g)=-\rho(\{f,g\})\) used in
-Section~\ref{sec:app-matlis-principal-parts}.
 
 \begin{lem}[Residue coadjoint signs]
 \label{lem:app-sign-principal-part}
@@ -234,12 +206,6 @@ Section~\ref{sec:app-matlis-principal-parts}.
   \(\mathcal P=\operatorname{Ann}_{\mathrm{res}}(\C\cdot1)\).
 \end{proof}
 
-The polynomial one-\(\psi\) sector of the open-side BV theory carries
-a different action with the same labels.  The action is the
-Hamiltonian vector field of a degree-zero polynomial, applied to the
-symmetrised PBW special-fibre shadow \(\widetilde\Psi_{a,b}\); it
-lowers polynomial bidegree.
-
 \begin{lem}[PBW descendant signs]
 \label{lem:app-sign-pbw-descendant}
   The polynomial primitive one-\(\psi\) descendants
@@ -271,13 +237,6 @@ lowers polynomial bidegree.
   \(-qa\) copies of the same target.  The sum is the displayed
   coefficient.
 \end{proof}
-
-The third-order Moyal coefficient is the next sign datum, fixed by
-the formal Weyl product of
-Section~\ref{sec:app-radial-parts-moyal}.  Antisymmetrizing the
-ordered exponential of the bidifferential \(P\) keeps only odd powers
-and produces the normalized Hamiltonian bracket as a power series in
-\(\hbar^2\).
 
 \begin{lem}[Moyal expansion coefficients]
 \label{lem:app-sign-moyal-coefficients}
@@ -315,12 +274,6 @@ and produces the normalized Hamiltonian bracket as a power series in
   identity and \texttt{scripts/check\_moyal\_coefficients.py} for the
   numerical sweep through order eleven.
 \end{proof}
-
-The Moyal coadjoint of the residue dual is the all-order quantum
-lift of Lemma~\ref{lem:app-sign-principal-part}: the coadjoint
-convention is unchanged, but the bracket entering it is now the
-normalized Moyal bracket of
-Lemma~\ref{lem:app-sign-moyal-coefficients}.
 
 \begin{lem}[Moyal coadjoint signs]
 \label{lem:app-sign-moyal-coadjoint}
@@ -368,13 +321,6 @@ Lemma~\ref{lem:app-sign-moyal-coefficients}.
   \(C_1(p,q;a-p+1,b-q+1)=p(b-q+1)-q(a-p+1)=pb-qa+p-q\),
   reproducing Lemma~\ref{lem:app-sign-principal-part}.
 \end{proof}
-
-The two actions share labels \((a,b)\) and the acting Lie algebra
-\(\mathfrak h\); their index shifts go in opposite directions
-(Lemma~\ref{lem:app-sign-principal-part} versus
-Lemma~\ref{lem:app-sign-pbw-descendant}).  Signs and factorials are
-fixed once and the directions of the actions remain rigidly opposite
-at every order in \(\hbar\).
 
 \begin{cor}[Universal residue-dual normalization: no scalar rescue]
 \label{cor:app-sign-universal-dual-normalization}
@@ -433,13 +379,6 @@ at every order in \(\hbar\).
   the higher Moyal coadjoint terms have no PBW descendant counterpart.
 \end{proof}
 
-The brane-line current source dictionary supplies the source-side
-signs used by the interval Hamiltonian sector of
-Theorem~\ref{thm:hamiltonian-current-factorization}.  It feeds the
-universal CE/PV intertwiner of Lemma~\ref{lem:app-sign-ce-pv} by
-naming which CE source coordinate corresponds to which boundary
-observable, and by fixing the bracket signs at the source level.
-
 \begin{lem}[Brane-line current source convention]
 \label{lem:app-sign-current-source}
   For an interval \(I\subset\R\), the Hamiltonian source complex is
@@ -477,45 +416,3 @@ observable, and by fixing the bracket signs at the source level.
   odd ideal.
 \end{proof}
 
-\begin{rmk}[Forward citations]
-\label{rmk:app-sign-conventions-support-map}
-  Each item below names the downstream identity that consumes the
-  corresponding sign datum.
-  \begin{enumerate}[label=(\roman*)]
-    \item Lemma~\ref{lem:app-sign-ce-pv}: CE/PV intertwiner on
-      generators (\(c^I\mapsto\theta^I\), \(u_K\mapsto O_K\)); enters
-      the central operation theorem and every cochain CE/PV identity.
-    \item Lemma~\ref{lem:app-sign-one-psi-boundary}: primitive
-      one-\(\psi\) boundary
-      \(\partial_2(u,v)=vxyu-vyxu-uxyv+uyxv\); enters the open-side
-      homology computations of
-      Section~\ref{sec:app-full-psi-homology}.
-    \item Lemma~\ref{lem:app-sign-principal-part}: residue-coadjoint
-      signs \(z_1\cdot\rho_{a,b}=-(b+1)\rho_{a,b+1}\),
-      \(z_2\cdot\rho_{a,b}=(a+1)\rho_{a+1,b}\); enters
-      Theorem~\ref{thm:principal-part-coadjoint-uniqueness}.
-    \item Lemma~\ref{lem:app-sign-pbw-descendant}: opposite PBW
-      special-fibre lowering signs on
-      \(\widetilde\Psi_{a,b}\); feed the no-go
-      Theorem~\ref{thm:no-polynomial-realization-categorical}.
-    \item Lemma~\ref{lem:app-sign-moyal-coefficients}: third Moyal
-      weight \(1/24\) and the higher odd weights used in
-      Section~\ref{sec:app-radial-parts-moyal}.
-    \item Lemma~\ref{lem:app-sign-moyal-coadjoint} and
-      Corollary~\ref{cor:app-sign-universal-dual-normalization}:
-      universal residue-dual normalization for the quantum
-      principal-part target in
-      Proposition~\ref{prop:app-moyal-capelli-realization-boundary}(4),
-      and the no-scalar-rescue obstruction.
-    \item Lemma~\ref{lem:app-sign-current-source}: brane-line current
-      source convention \(u_{a(t)dt\otimes f}\mapsto B_f(a)\) and its
-      bracket signs; enters
-      Theorem~\ref{thm:app-algebraic-factorization-centre-zero-homotopies}.
-  \end{enumerate}
-  These conventions also fix the scalar cocycle
-  \(\omega(z_1,z_2)=1\), the Capelli/Weyl shift \(\hbar N\), the
-  obstruction class \(\operatorname{Ob}_{\mathrm{sc}}\), and the
-  cohomology class \([\bar c]\) of
-  Section~\ref{sec:app-unreduced-bv-qme} and
-  Theorem~\ref{thm:app-scalar-contact-qme-class}.
-\end{rmk}
