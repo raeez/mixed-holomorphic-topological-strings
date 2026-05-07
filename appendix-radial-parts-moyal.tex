@@ -1535,6 +1535,66 @@ exactly the assertion that the ordinary Weyl trace \(J_N(f)\) equals
   Remark~\ref{rmk:app-radial-finite-verification}.
 \end{rmk}
 
+\begin{cor}[Bidegree obstruction is exactly clause-(3) defect on the Moyal-bracket polynomial]
+\label{cor:app-radial-bicomplex-clause3-equivalence}
+  Assume Statement~\ref{stmt:app-radial-external-input}~clauses~(1)
+  and~(2) (Levasseur--Stafford radial homomorphism and radial-kernel
+  theorem).  For each bidegree \((a,b)\) with \(a,b\geq1\), the
+  following are equivalent.
+  \begin{enumerate}
+    \item \(\Omega^{\mathrm{rad}}_{a,b}=0\).
+    \item Statement~\ref{stmt:app-radial-external-input}~clause~(3)
+      holds modulo the moment ideal for the Moyal-bracket polynomial
+      \(\{z_1^{a+1}/(a+1),z_2^{b+1}\}_\hbar\):
+      \[
+        \operatorname{Rad}_0\!\bigl(
+          J_N(\{z_1^{a+1}/(a+1),z_2^{b+1}\}_\hbar)
+        \bigr)
+        \equiv
+        \Delta^{-1}S_N\!\bigl(
+          \{z_1^{a+1}/(a+1),z_2^{b+1}\}_\hbar
+        \bigr)\Delta
+        \pmod{I_N}.
+      \]
+  \end{enumerate}
+  Equivalently, the bidegree-local cokernel obstruction is exactly
+  the spherical-reduction defect of the radial image on the
+  Moyal-bracket polynomial.
+\end{cor}
+
+\begin{proof}
+  Step 1 of the proof of
+  Theorem~\ref{thm:app-radial-bicomplex-acyclic} shows that, under
+  clauses~(1) and~(2),
+  \[
+    \operatorname{Rad}_0\!\bigl(
+      \hbar^{-1}[J_N(z_1^{a+1}/(a+1)),J_N(z_2^{b+1})]
+    \bigr)
+    =
+    \Delta^{-1}S_N\!\bigl(
+      \{z_1^{a+1}/(a+1),z_2^{b+1}\}_\hbar
+    \bigr)\Delta .
+  \]
+  Subtracting the radial image of \(J_N(\{...\}_\hbar)\),
+  \[
+    \operatorname{Rad}_0(E_{a,b,N})
+    =
+    \Delta^{-1}S_N\!\bigl(
+      \{...\}_\hbar
+    \bigr)\Delta
+    -
+    \operatorname{Rad}_0\!\bigl(J_N(\{...\}_\hbar)\bigr) .
+  \]
+  By clause~(2), \(E_{a,b,N}\in I_N\) iff
+  \(\operatorname{Rad}_0(E_{a,b,N})=0\), iff the displayed clause-(3)
+  identity holds.  Lemma~\ref{lem:app-quantum-shear-primitive-obstruction}
+  identifies \(E_{a,b,N}\in I_N\) with
+  \(\Omega^{\mathrm{rad}}_{a,b}=0\) via
+  Proposition~\ref{prop:app-radial-dual-potential-obstruction}; the
+  intermediate Procesi--Razmyslov reduction is in Step 3 of the
+  bicomplex acyclicity proof.
+\end{proof}
+
 \begin{prop}[Procesi--Razmyslov unconditional verification window]
 \label{prop:app-radial-pr-unconditional-window}
   For each bidegree \((a,b)\) and each \(N\geq a+b\), the
@@ -2368,11 +2428,17 @@ exactly the assertion that the ordinary Weyl trace \(J_N(f)\) equals
   Statement~\ref{stmt:app-radial-external-input}: clauses~(1) and~(2)
   are the Levasseur--Stafford radial-kernel theorem, and clause~(3)
   is required only for the specific Moyal-bracket polynomial
-  \(\{z_1^{a+1}/(a+1),z_2^{b+1}\}_\hbar\) at the chosen bidegree.  No
-  signed dual row \((\phi,-\lambda)\in\ker B_{a,b}^*\) with
+  \(\{z_1^{a+1}/(a+1),z_2^{b+1}\}_\hbar\) at the chosen bidegree.
+  Corollary~\ref{cor:app-radial-bicomplex-clause3-equivalence}
+  sharpens this to a logical equivalence: under clauses~(1) and~(2),
+  \(\Omega^{\mathrm{rad}}_{a,b}=0\) holds if and only if
+  clause~(3) holds modulo the moment ideal for that Moyal-bracket
+  polynomial.  No signed dual row
+  \((\phi,-\lambda)\in\ker B_{a,b}^*\) with
   \(\lambda(E^+_{a,b})-\phi(T_{a,b})=1\) can exist under that input.
   The bidegree-local obstruction class is therefore concentrated, in
-  a single named place, in clause~(3) for mixed monomials.
+  a single named place, in clause~(3) for the Moyal-bracket
+  polynomial of the chosen bidegree.
 
   Two residual obstructions and two routes to remove them.
   \begin{enumerate}[label=(\roman*)]
