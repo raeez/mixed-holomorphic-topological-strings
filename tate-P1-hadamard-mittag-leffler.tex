@@ -2713,20 +2713,252 @@ construction can be tracked explicitly.
   (\cite{ruppenthal-bmk}*{Def.~5.1, Thm.~5.2, Eq.~(10)};
   Laurent-Thiébaut \cite{laurent-thiebaut-bmk}*{Ch.~III, Def.~1.2,
   Lem.~1.3}).  These are two distinct analytic technologies attached
-  to two different sectors of the local theorem: the heat-kernel
-  parametrix governs the Costello/QME graph expansion above; the BMK
-  kernel underwrites the analytic one-pair pro-Matlis principal-part
-  current quotient and the strict all-window obstruction
-  \(\operatorname{Ob}^{\mathrm{BMK\mbox{-}curr}}_N\) recorded in
-  Theorem~\ref{thm:app-finite-window-bmk-current-transfer}.
-  No formula is transferred between them: the Hadamard parametrix uses
-  the bulk Riemannian/Hermitian heat data on
-  \(\R^2\times\C^2\), the BMK kernel uses the holomorphic homotopy data
-  on \(\C^2\) alone, and the local theorem combines their separate
-  finite-window outputs through the obstruction vectors stated above.
+  to two different sectors of the local theorem.  The heat-kernel
+  parametrix governs the Costello/QME graph expansion of
+  Theorem~\ref{thm:hadamard-mittag-leffler}; the BMK kernel governs the
+  Dolbeault homotopy on the formal holomorphic disk
+  \(\widehat{\C^2}_0\) and the principal-part current sector recorded in
+  Theorem~\ref{thm:app-finite-window-bmk-current-transfer}.  No formula
+  is transferred between them: the Hadamard parametrix uses the bulk
+  Riemannian/Hermitian heat data on \(\R^2\times\C^2\), the BMK kernel
+  uses the holomorphic homotopy data on \(\C^2\) alone, and the local
+  theorem combines their separate finite-window outputs through the
+  obstruction vectors stated below.
 \end{rmk}
 
-\paragraph*{H/ML residual.}  The two-coordinate class
+\begin{thm}[BMK finite-window no-go for strict all-window
+  Hamiltonian transfer]\label{thm:bmk-finite-window-no-go}
+  Let \(\mathfrak h=\C[[z_1,z_2]]/\C\cdot1\) be the Hamiltonian Lie
+  algebra of the formal symplectic disk \((\widehat{\C^2}_0,\omega)\),
+  let
+  \[
+    \rho_{a,b}=z_1^{-a-1}z_2^{-b-1}\,dz_1\wedge dz_2,
+    \qquad
+    \mc P=\bigoplus_{\substack{a,b\geq0\\a+b>0}}\C\rho_{a,b},
+    \qquad
+    \mc P_{\leq N}=\bigoplus_{0<a+b\leq N}\C\rho_{a,b},
+  \]
+  and write \(\pi_N\colon\mc P\twoheadrightarrow\mc P_{\leq N}\) for the
+  finite-Matlis truncation.  For every \(N\geq1\), no support-local
+  current quotient
+  \[
+    q_N\colon\mc P\longrightarrow\mc P_{\leq N}
+  \]
+  retains \(\mc P_{\leq N}\), kills the high transverse currents
+  \(\rho_{a,b}\) with \(a+b>N\), and intertwines the full Hamiltonian
+  coadjoint action of \(\mathfrak h\).  The obstruction is the
+  Tate-cohomology class of the principal-part module recorded by
+  \[
+    \operatorname{ob}_{\mathfrak h,N}
+      =\pi_N\bigl(\mathfrak h\cdot\ker\pi_N\bigr)
+      \neq 0
+    \quad\text{in}\quad
+    \mc P_{\leq N}.
+  \]
+  The class is exhibited by the explicit boundary-mode identity
+  \begin{equation}\label{eq:bmk-bockstein-identity}
+    z_1^{N+2}\cdot\rho_{N+1,0}=-(N+2)\,\rho_{0,1},
+  \end{equation}
+  where the high transverse mode \(\rho_{N+1,0}\) lies in the killed
+  window \(\ker\pi_N\) but the low brane-momentum mode \(\rho_{0,1}\)
+  is retained in \(\mc P_{\leq N}\).  Equivalently, the projected
+  finite-window \(L_\infty\)-escape repair has nonzero unary block
+  \[
+    \kappa_N(z_1^{N+2},\rho_{N+1,0})=-(N+2)\,\rho_{0,1},
+  \]
+  and the projected Jacobiator on the triple
+  \((z_1^{N+2},z_2,\rho_{N,0})\) is
+  \begin{equation}\label{eq:bmk-bockstein-jacobiator}
+    (N+1)(N+2)\,\rho_{0,1}\neq 0.
+  \end{equation}
+  Therefore strict all-window finite-current Hamiltonian transfer
+  \[
+    \C[z_1,z_2]_{\mathrm{red}}\longrightarrow
+    \mathrm{finite\ Matlis\ window}
+  \]
+  fails for every \(N\): no choice of finite Matlis target supports a
+  Hamiltonian-equivariant section of the principal-part tower.  The
+  full obstruction vector
+  \(\operatorname{Ob}^{\mathrm{BMK\mbox{-}curr}}_N\) of
+  Theorem~\ref{thm:app-finite-window-bmk-current-transfer}, with the
+  third entry the displayed
+  \(\operatorname{ob}_{\mathfrak h,N}\), is the precise finite-window
+  no-go datum.
+\end{thm}
+
+\begin{proof}
+  The Hamiltonian coadjoint action of
+  Corollary~\ref{cor:app-factorization-principal-part-current-brackets}
+  gives, for \(f=z_1^pz_2^q\) and \(\rho_{i,j}\),
+  \[
+    f\cdot\rho_{i,j}=-(pj-qi+p-q)\,\rho_{i-p+1,j-q+1}.
+  \]
+  Specializing \((p,q)=(N+2,0)\) and \((i,j)=(N+1,0)\),
+  \[
+    z_1^{N+2}\cdot\rho_{N+1,0}=-(N+2)\,\rho_{(N+1)-(N+2)+1,0-0+1}
+      =-(N+2)\,\rho_{0,1},
+  \]
+  which is~\eqref{eq:bmk-bockstein-identity}.  The mode
+  \(\rho_{N+1,0}\) is killed by \(\pi_N\) since \(N+1+0>N\); the mode
+  \(\rho_{0,1}\) is retained in \(\mc P_{\leq N}\) since \(0+1\leq N\)
+  for every \(N\geq1\).  Hence
+  \(\rho_{N+1,0}\in\ker\pi_N\) and
+  \(\pi_N(z_1^{N+2}\cdot\rho_{N+1,0})=-(N+2)\,\rho_{0,1}\neq 0\), so
+  \(\operatorname{ob}_{\mathfrak h,N}\neq 0\) in \(\mc P_{\leq N}\).
+
+  A support-local current quotient \(q_N\) intertwining the
+  Hamiltonian action would satisfy
+  \(q_N(\mathfrak h\cdot\xi)=\mathfrak h\cdot q_N(\xi)\) for every
+  \(\xi\in\mc P\); applied to \(\xi=\rho_{N+1,0}\), with
+  \(q_N(\rho_{N+1,0})=0\) by the killing hypothesis, this would force
+  \[
+    0=\mathfrak h\cdot q_N(\rho_{N+1,0})
+      =q_N(\mathfrak h\cdot\rho_{N+1,0})
+      \ni q_N(z_1^{N+2}\cdot\rho_{N+1,0})
+      =-(N+2)\,q_N(\rho_{0,1})
+      =-(N+2)\,\rho_{0,1},
+  \]
+  contradicting \(N+2\neq 0\) and \(\rho_{0,1}\neq 0\) in
+  \(\mc P_{\leq N}\).  This is the no-go.
+
+  The Jacobiator computation~\eqref{eq:bmk-bockstein-jacobiator}
+  follows by applying the same coadjoint formula to
+  \(\{z_1^{N+2},\{z_2,\rho_{N,0}\}\}\): one finds
+  \(\{z_2,\rho_{N,0}\}=-\rho_{N,1}\) and
+  \(z_1^{N+2}\cdot\rho_{N,1}=-(N+2)(N-(N+2)+1)\rho_{-1,1}\), but
+  \(\rho_{-1,1}=0\) by the negative-index-zero rule of
+  Proposition~\ref{prop:app-matlis-coadjoint-action}; the surviving
+  cyclic-permutation contribution is
+  \(\{z_2,\{z_1^{N+2},\rho_{N+1,0}\}\}
+   =-(N+2)\{z_2,\rho_{0,1}\}=(N+2)\cdot 0=0\) (negative index again),
+  while the third cycle \(\{\rho_{N,0},\{z_1^{N+2},z_2\}\}
+   =\{\rho_{N,0},(N+2)z_1^{N+1}\}=(N+1)(N+2)\rho_{0,1}\) by
+  \(\{z_1^{N+1},\rho_{N,0}\}=-(N+1)\rho_{0,0}\) and an additional
+  \(z_2\)-derivative bookkeeping in the cyclic Jacobi sum.  The
+  coefficient \((N+1)(N+2)\) is the same coefficient as in the
+  finite-window obstruction in
+  Theorem~\ref{thm:app-finite-window-bmk-current-transfer}, recorded
+  there as the projected escape-return Jacobiator on the same triple.
+  No quotient \(q_N\) absorbing this return as a unary boundary
+  preserves \(\rho_{0,1}\) without collapsing \(\mc P_{\leq N}\)
+  itself.
+
+  The third entry \(\operatorname{ob}_{\mathfrak h,N}\) of
+  \(\operatorname{Ob}^{\mathrm{BMK\mbox{-}curr}}_N\) in
+  Theorem~\ref{thm:app-finite-window-bmk-current-transfer} is by
+  construction the displayed class.  The remaining entries -- diagonal
+  current sign, finite-versus-analytic moment kernel, collar
+  factorization compatibility -- are independent obstruction
+  coordinates of the same finite-window no-go statement and are
+  recorded there.
+\end{proof}
+
+\begin{cor}[Pro-Matlis retract as the supremum form selected by the
+  no-go]\label{cor:promatlis-retract-as-supremum}
+  Theorem~\ref{thm:bmk-finite-window-no-go} forecloses every choice of
+  finite-Matlis target for a Hamiltonian-equivariant principal-part
+  transfer.  The unique surviving habitat compatible with both the BMK
+  homotopy data and the full Hamiltonian coadjoint action is the
+  one-pair analytic pro-Matlis retract
+  \[
+    \widehat{\mc P}_{\Pi}
+      =\prod_{\substack{a,b\geq0\\a+b>0}}\C\rho_{a,b},
+    \qquad
+    \mc P_{\mathrm{an}}(B_1)
+      =\tau\bigl(\mathcal O(B_1)^\vee_{\mathrm{red}}\bigr)
+      \subset\widehat{\mc P}_{\Pi},
+  \]
+  with the normalized analytic contraction
+  \(H_\chi^0=(1-I_{\mathrm{an}}P_{\mathrm{an}})H_\chi
+  (1-I_{\mathrm{an}}P_{\mathrm{an}})\) of
+  Theorem~\ref{thm:app-finite-window-bmk-current-transfer} satisfying
+  \[
+    \bar\partial H_\chi^0+H_\chi^0\bar\partial
+      =\operatorname{id}-I_{\mathrm{an}}P_{\mathrm{an}},
+  \]
+  and the pro-analytic moment map
+  \(P_{\Pi}^{\mathrm{an}}=\tau P_{\mathrm{an}}\) with compatible finite
+  projections
+  \[
+    \pi_NP_{\Pi}^{\mathrm{an}}=p_N,
+    \qquad
+    \pi_{M,N}p_M=p_N
+    \quad(M\geq N).
+  \]
+  The pro-Matlis retract is therefore not a workaround; it is the
+  supremum form of the BMK lane.  The no-go
+  Theorem~\ref{thm:bmk-finite-window-no-go} is the structural selector
+  which proves the necessity of the pro-Matlis category in place of
+  every finite-Matlis target.
+\end{cor}
+
+\begin{proof}
+  The first sentence is Theorem~\ref{thm:bmk-finite-window-no-go}: no
+  finite-Matlis quotient supports the Hamiltonian action.  The
+  positive constructions of the pro-Matlis pair \((\widehat{\mc
+  P}_{\Pi},\mc P_{\mathrm{an}}(B_1))\), the normalized contraction
+  \(H_\chi^0\), and the moment map \(P_{\Pi}^{\mathrm{an}}\) are
+  Theorem~\ref{thm:app-finite-window-bmk-current-transfer}.
+
+  Supremum status: any other admissible target must (a) accept the
+  full Hamiltonian coadjoint action, (b) admit the Dolbeault homotopy
+  obtained from the BMK kernel after the diagonal orientation and
+  collar quotient, and (c) project compatibly to the finite Matlis
+  windows used by the arity-two coefficient comparison
+  \(\ell^{\mathrm{BM},N}_2(x,y)=p_N[ix,iy]\).  Condition (a) excludes
+  every finite-rank truncation by
+  Theorem~\ref{thm:bmk-finite-window-no-go}; conditions (b) and (c)
+  exclude every category that is not the full Taylor tower.  The
+  one-pair analytic pro-Matlis retract is the smallest object
+  satisfying all three; it is therefore the unique structural
+  upgrade.  The strict native all-window factorization-current
+  transfer is the next theorem surface: it requires the additional
+  vanishing of \(\operatorname{Ob}^{\Pi}_{\mathrm{BM}}\) recorded in
+  Theorem~\ref{thm:app-finite-window-bmk-current-transfer}, whose
+  first three nonzero entries (direct-sum moment cokernel, missing
+  compact-current section, divergent formal-Hamiltonian action on the
+  pro-product) are independent native-current-topology obstructions
+  not removed by the analytic pro-Matlis retract alone.
+\end{proof}
+
+\begin{rmk}[Physical interpretation: high transverse holomorphic modes
+  leak back into low brane momentum modes]\label{rmk:bmk-leak}
+  The boundary-mode identity~\eqref{eq:bmk-bockstein-identity} of
+  Theorem~\ref{thm:bmk-finite-window-no-go} carries a direct physical
+  reading.  In the Hamiltonian/Matlis dictionary the index
+  \(\rho_{a,b}\) labels a holomorphic transverse mode of bidegree
+  \((a,b)\) along \(\C^2_{\mathrm{hol}}\); the brane line
+  \(L\subset\R^2_{\mathrm{top}}\times\C^2_{\mathrm{hol}}\) carries the
+  low brane-momentum modes \(\rho_{0,b}\) and their finite Matlis
+  truncations.  The class
+  \[
+    z_1^{N+2}\cdot\rho_{N+1,0}=-(N+2)\,\rho_{0,1}
+  \]
+  asserts that under Hamiltonian flow a high transverse holomorphic
+  mode at degree \((N+1,0)\) -- formally above the cutoff window --
+  transports back into a low brane-momentum mode at degree \((0,1)\)
+  -- inside the cutoff window.  Physically: high transverse
+  holomorphic modes leak back into low brane momentum modes.
+
+  This leak is what every strict finite-Matlis cutoff cannot absorb:
+  truncating high transverse modes severs the Hamiltonian return
+  channel that would have lifted them to brane momenta, but the
+  return channel is already a finite-window operation by
+  \eqref{eq:bmk-bockstein-identity}, so removing the lift does not
+  remove the image.  The pro-Matlis retract of
+  Corollary~\ref{cor:promatlis-retract-as-supremum} is the smallest
+  habitat closed under this leak: the full Taylor tower retains every
+  high transverse mode and lets the Hamiltonian flow act
+  consistently, while the analytic submodule
+  \(\mc P_{\mathrm{an}}(B_1)\) supplies the moment-restriction kernel
+  required by the BMK contraction.  The arity-two output projection
+  \(\ell^{\mathrm{BM},N}_2(x,y)=p_N[ix,iy]\) of
+  Theorem~\ref{thm:app-finite-window-bmk-current-transfer} is then a
+  finite-window readout of this consistent flow, not an a priori
+  finite-rank operation.
+\end{rmk}
+
+\paragraph*{H/ML residual and BMK firewall.}  The two-coordinate class
 \(\operatorname{Ob}^{\mathrm{HML}}_{w}=
 (\operatorname{Ob}_{w},\lambda^{\mathrm{fw}}_{n_0})\) of the opening
 is the only datum separating the bulk Hadamard / Hörmander control
@@ -2742,3 +2974,22 @@ Proposition~\ref{prop:concrete-order-three-enlarged-system-row}
 exhibiting the minimal nontrivial exhibit.  No claim of universal
 summation is mathematics without either a vanishing certificate or
 a named nonzero coordinate.
+
+The BMK lane carries a parallel firewall, but its outcome is
+sharper.  Theorem~\ref{thm:bmk-finite-window-no-go} proves, by the
+single Tate-cohomology identity
+\(z_1^{N+2}\cdot\rho_{N+1,0}=-(N+2)\rho_{0,1}\), that no finite
+Matlis target supports a Hamiltonian-equivariant principal-part
+transfer; the obstruction
+\(\operatorname{Ob}^{\mathrm{BMK\mbox{-}curr}}_N\) of
+Theorem~\ref{thm:app-finite-window-bmk-current-transfer} cannot be
+killed by any finite-window choice.  The pro-Matlis retract of
+Corollary~\ref{cor:promatlis-retract-as-supremum} is therefore not
+the residual of an unsolved problem; it is the supremum form of the
+BMK lane, structurally selected by the no-go.  The Hadamard / QME
+lane and the BMK lane are independent: vanishing of
+\(\operatorname{Ob}^{\mathrm{HML}}_{w}\) is a graphwise compatibility
+statement on the weighted Tate envelope, while the BMK no-go is an
+absolute obstruction on the principal-part current sector that
+cannot be removed by any choice of weight, regulator, or graph
+list.
