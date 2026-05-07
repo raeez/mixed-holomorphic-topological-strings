@@ -8,7 +8,7 @@
 
 \subsection*{Hadamard parametrix on the Mittag-Leffler coefficient module}
 
-\paragraph*{Organizing question.}  Costello's heat-kernel BV calculus
+Costello's heat-kernel BV calculus
 \cite{costello-renormalization}*{Chs.~5--7} requires a free elliptic
 complex with finite-rank coefficient bundle; its Hadamard parametrix
 expansion together with Hörmander wave-front tracking
@@ -26,15 +26,14 @@ propagator on the bulk diagonal.  The weighted Tate field complex
   \Bigr),
 \]
 carries an infinite tower of coefficient bundles indexed by Hamiltonian
-degree, so the coefficient direction is not finite rank.  Does that
-finite-rank machinery commute, graphwise and at every order in
-\(\hbar\), with the strict Mittag-Leffler inverse limit in the
-coefficient direction?  Equivalently, does universal summation of the
-windowwise counterterms survive passage to the inverse-limit weighted
-Tate envelope, and what is the exact class measuring its failure?
+degree, so the coefficient direction is not finite rank.  The question
+is whether that finite-rank machinery commutes, graphwise and at every
+order in \(\hbar\), with the strict Mittag-Leffler inverse limit in the
+coefficient direction; equivalently, whether universal summation of the
+windowwise counterterms survives passage to the inverse-limit weighted
+Tate envelope, and what class measures the failure.
 
-\paragraph*{Unique survivor.}  The H/ML commutation residual is the
-named two-coordinate class
+The H/ML commutation residual is the two-coordinate class
 \[
   \operatorname{Ob}^{\mathrm{HML}}_{w}
   =
@@ -48,67 +47,59 @@ named two-coordinate class
   \varprojlim\nolimits^1_M
   H^0\!\bigl(\mathcal Q^\bullet_{\mathcal G,M}(I)\bigr).
 \]
+The first coordinate \(\operatorname{Ob}_{w}\) is the QME obstruction
+class in local-functional cohomology with differential \(Q+\{I_0,-\}\);
+the second coordinate \(\lambda^{\mathrm{fw}}_{n_0}\) is the Roos
+\(\varprojlim^1\)-cocycle measuring failure of compatible windowwise
+primitives at the lowest unsolved order \(n_0\).  The two coordinates
+lie in independent cohomology groups and detect independent failure
+modes: a vanishing graphwise QME class does not imply
+tower-compatibility of windowwise primitives, and a Mittag-Leffler
+tower can produce zero \(\lambda^{\mathrm{fw}}_{n_0}\) while the
+underlying cohomology obstruction is nonzero.
 Theorem~\ref{thm:hadamard-mittag-leffler} reduces the analytic content
 of Problem~\ref{prob:weighted-rg-locality} -- exact propagator
 factorization, empty coefficient-Casimir wave front, strict ML
 transition surjectivity -- to the algebraic remainder: graphwise QME
 in the local-functional class \(\operatorname{Ob}_{w}\) and an
-inverse-limit Roos primitive class
-\(\lambda^{\mathrm{fw}}_{n_0}\) controlled by
-Theorem~\ref{thm:finite-window-graph-qme-assembly}.  Vanishing of
-both coordinates is necessary and sufficient for compatible
-graphwise quantum extension on \(\mc E_w\); a single nonzero
-coordinate is the precise mechanism that fails.
+inverse-limit Roos primitive class \(\lambda^{\mathrm{fw}}_{n_0}\)
+controlled by Theorem~\ref{thm:finite-window-graph-qme-assembly}.
+Vanishing of both coordinates is necessary and sufficient for
+compatible graphwise quantum extension on \(\mc E_w\); a single nonzero
+coordinate is the precise mechanism that fails.  The \(\theta_3\) row
+of Proposition~\ref{prop:concrete-order-three-enlarged-system-row}
+exhibits a local-functional row that passes the full-equivariant
+scalar-condition vanishing and presents its missing primitive as the
+named datum (CE-ancestor, scalar-zero counterterm, or complete
+companion-face table).
 
-\paragraph*{Habitat.}  The first coordinate
-\(\operatorname{Ob}_{w}\) is the QME obstruction class in
-local-functional cohomology with differential
-\(Q+\{I_0,-\}\); the second coordinate
-\(\lambda^{\mathrm{fw}}_{n_0}\) is the Roos
-\(\varprojlim^1\)-cocycle measuring failure of compatible
-windowwise primitives at the lowest unsolved order \(n_0\).  The
-two coordinates lie in independent cohomology groups and detect
-independent failure modes: a vanishing graphwise QME class does not
-imply tower-compatibility of windowwise primitives, and a
-Mittag-Leffler tower can produce zero \(\lambda^{\mathrm{fw}}_{n_0}\)
-while the underlying cohomology obstruction is nonzero.  The
-\(\theta_3\) row of
-Proposition~\ref{prop:concrete-order-three-enlarged-system-row} is
-the minimal explicit non-scalar exhibit: a local-functional row that
-passes the full-equivariant scalar-condition vanishing and presents
-its missing primitive as the named datum (CE-ancestor, scalar-zero
-counterterm, or complete companion-face table).
+The construction completing the residual on a given graph system
+supplies four ingredients: the finite Hamiltonian window \(M\) and
+graph list \(\mathcal G_M\); a chain projection
+\(\widehat\sigma_{\mathrm{sc},M}\) onto the scalar-symbol sector with
+vanishing image of the residual; primitives \(c_{n,M}\) of the
+non-scalar residual at every window; and Roos-compatible truncation
+coefficients across windows.  Failure of any ingredient names the
+corresponding nonzero coordinate of
+\(\operatorname{Ob}^{\mathrm{HML}}_{w}\).  The downstream finite-row
+machinery -- graph arrays, truncation matrices, scalar-condition
+projection, primitive search -- yields a finite cochain whose vanishing
+is tested at every window \(M\) and every order \(\hbar^n\).
 
-\paragraph*{Closure.}  The construction completing the residual on a
-given graph system supplies the four named ingredients: the finite
-Hamiltonian window \(M\) and graph list \(\mathcal G_M\); a chain
-projection \(\widehat\sigma_{\mathrm{sc},M}\) onto the scalar-symbol
-sector with vanishing image of the residual; primitives \(c_{n,M}\)
-of the non-scalar residual at every window; and Roos-compatible
-truncation coefficients across windows.  Failure of any ingredient
-names the corresponding nonzero coordinate of
-\(\operatorname{Ob}^{\mathrm{HML}}_{w}\).  The downstream
-finite-row machinery -- graph arrays, truncation matrices,
-scalar-condition projection, primitive search -- is included so
-that the residual is a finite cochain whose vanishing is tested at
-every window \(M\) and every order \(\hbar^n\), not a slogan.
-
-\paragraph*{BMK firewall.}  A second, sharper firewall sits on the
-parallel principal-part current sector.
+A parallel firewall sits on the principal-part current sector.
 Theorem~\ref{thm:bmk-finite-window-no-go} below proves, by the single
 Tate-cohomology identity
 \(z_1^{N+2}\cdot\rho_{N+1,0}=-(N+2)\,\rho_{0,1}\), that no finite
 Matlis target supports a Hamiltonian-equivariant principal-part
 transfer: high transverse holomorphic modes leak back into low brane
 momentum modes under Hamiltonian flow, and no finite-window cutoff
-can absorb the leak.  The unique surviving habitat is the one-pair
+absorbs the leak.  The unique surviving habitat is the one-pair
 analytic pro-Matlis retract
-(Corollary~\ref{cor:promatlis-retract-as-supremum}).  This is the
-supremum form of the BMK lane: not a workaround, but the structural
-target selected by the no-go.  The Hadamard / QME residual
-\(\operatorname{Ob}^{\mathrm{HML}}_{w}\) and the BMK no-go live in
-independent sectors of the local theorem and admit no transfer of
-formula between them.
+(Corollary~\ref{cor:promatlis-retract-as-supremum}), the supremum form
+of the BMK lane structurally selected by the no-go.  The Hadamard / QME
+residual \(\operatorname{Ob}^{\mathrm{HML}}_{w}\) and the BMK no-go
+live in independent sectors of the local theorem and admit no transfer
+of formula between them.
 
 \begin{rmk}[Spacetime/coefficient factorization of the Hadamard parametrix]\label{rmk:hadamard-factorization}
   In Costello's heat-kernel BV calculus
@@ -467,16 +458,13 @@ formula between them.
 
 \subsection*{Finite-window graph/QME assembly}
 
-Theorem~\ref{thm:hadamard-mittag-leffler} controls the analytic factor
-windowwise; it isolates the QME obstruction class but does not assemble
-it.  The class is a sum over Costello graphs at every \(\hbar\)-order,
-each graph carrying its renormalized weight, source-face, BV-bracket,
-and counterterm contributions.  To extract the obstruction one must
-first fix a finite graph list \(\mathcal G_M\) on a finite Hamiltonian
-window \(M\), declare the labels and incidence signs, and write the
-order-\(n\) residual as a finite cochain.  The next definition packages
-this finite combinatorial assembly so that the residual, its scalar
-projection, and its truncation behaviour can be tested as a row system.
+The QME obstruction class isolated by
+Theorem~\ref{thm:hadamard-mittag-leffler} is a sum over Costello graphs
+at every \(\hbar\)-order, each graph carrying its renormalized weight,
+source-face, BV-bracket, and counterterm contributions.  Extracting it
+requires a finite graph list \(\mathcal G_M\) on a finite Hamiltonian
+window \(M\), with labels and incidence signs declared, and the
+order-\(n\) residual written as a finite cochain.
 
 \begin{defn}[Finite-window graph/QME system]\label{defn:finite-window-graph-qme-system}
   Fix an interval \(I\), an admissible weight \(w\), a finite Hamiltonian
@@ -798,14 +786,13 @@ projection, and its truncation behaviour can be tested as a row system.
   Theorem~\ref{thm:wt-regulator-independence-admissible}.
 \end{proof}
 
-Proposition~\ref{prop:finite-window-qme-limit-condition} reduces the
-finite-window obstruction to two cohomology classes, but neither class
-is computable from a graph list alone.  The order-\(n\) residual is a
-sum of graph-differential, CE-source, BV-bracket, and lower-counterterm
+The order-\(n\) residual of
+Proposition~\ref{prop:finite-window-qme-limit-condition} is a sum of
+graph-differential, CE-source, BV-bracket, and lower-counterterm
 contributions, each carrying its own incidence sign, scalar projection,
-and truncation matrix.  To compute, test, and propagate the residual
-window by window, one needs a finite array of rows that records every
-contribution in normal form.
+and truncation matrix.  Computing, testing, and propagating the
+residual window by window requires a finite array of rows recording
+every contribution in normal form.
 
 \begin{defn}[Finite-window graph array]\label{defn:finite-window-graph-array}
   Fix a finite-window graph/QME system
@@ -1031,9 +1018,8 @@ contribution in normal form.
 \end{defn}
 
 \begin{prop}[First finite-window array rows]\label{prop:first-finite-window-array-rows}
-  The universal rows that are presently computed are the reduced current
-  interface row in order \(0\) and the two-Hamiltonian scalar-contact row in
-  order \(1\).
+  The universal computed rows are the reduced current interface row in
+  order \(0\) and the two-Hamiltonian scalar-contact row in order \(1\).
 
   On the length-one reduced current interface,
   Theorem~\ref{thm:app-factorization-universal-current-interface} gives
@@ -2008,16 +1994,18 @@ contribution in normal form.
 \end{proof}
 
 In the minimal full-equivariant array all order-one and order-two
-rows close to zero (Propositions~\ref{prop:first-finite-window-array-rows},
+rows close to zero
+(Propositions~\ref{prop:first-finite-window-array-rows},
 \ref{prop:universal-scalar-contact-bracket-rows},
-\ref{prop:order-two-finite-window-boundary-rows}).  The first
-non-trivial obstruction can therefore appear no earlier than order
-three.  The smallest enlargement that exhibits a non-scalar row with
-nonzero local-functional value is a single CE-source face attached to
-a genuine marked Costello seed at \(\hbar^3\); this is the row
-\(\theta_3\) below, named so that the obstruction class
-\(\operatorname{Ob}^{\Pi}_{\theta_3}\) and the companion-face
-construction can be tracked explicitly.
+\ref{prop:order-two-finite-window-boundary-rows}); the first
+non-trivial obstruction therefore appears at order three.  The smallest
+enlargement exhibiting a non-scalar row with nonzero local-functional
+value is a single CE-source face attached to a genuine marked Costello
+seed at \(\hbar^3\), the row \(\theta_3\) of
+Proposition~\ref{prop:concrete-order-three-enlarged-system-row}, with
+obstruction class \(\operatorname{Ob}^{\Pi}_{\theta_3}\) and
+companion-face construction tracked through
+Theorem~\ref{thm:theta-three-companion-face-obstruction}.
 
 \begin{prop}[Concrete order-three row in an enlarged system]\label{prop:concrete-order-three-enlarged-system-row}
   Work in the full-equivariant marked branch with \(V=\C^{N|N}\), and let
@@ -2143,8 +2131,8 @@ construction can be tracked explicitly.
     d_M C_{\theta_3,M}=-\mathsf E_{\theta_3,M}
   \]
   for some \(C_{\theta_3,M}\in\mathcal K^0_{\mathrm{ns},M}(I)\).  No such
-  primitive is supplied by this row, so the manuscript may name the class
-  but may not claim the larger order-three QME branch is solved.
+  primitive is supplied by this row; the class is named, the larger
+  order-three QME branch is not solved.
 \end{prop}
 
 \begin{prop}[\(\theta_3\) finite-row obstruction criterion]\label{prop:theta-three-finite-row-obstruction}
@@ -2175,8 +2163,8 @@ construction can be tracked explicitly.
     \quad\text{in}\quad
     H^1(\mathcal K^\bullet_{\theta_3,M}).
   \]
-  This is an exact obstruction statement for the finite row subcomplex
-  presently supplied.  It does not exclude a primitive in a larger
+  This is an exact obstruction statement for the supplied finite row
+  subcomplex.  It does not exclude a primitive in a larger
   local-functional complex.  To kill the row one must add either a
   degree-zero candidate \(C_{\theta_3,M}\) with
   \(d_{\mathrm{ns},M}C_{\theta_3,M}=-\mathsf E_{\theta_3,M}\), or additional
@@ -2623,9 +2611,9 @@ construction can be tracked explicitly.
   whose rows specify graph type, edge labels, vertex labels, marker tensor,
   incidence coefficient, \(\hbar\)-order, coefficient degree,
   scalar-contact filtration, scalar-condition term, row curvature value, and
-  truncation coefficients in \(M\).  Without this array the manuscript has
-  only the formal obstruction symbol of
-  Theorem~\ref{thm:finite-window-graph-qme-assembly}; it has no
+  truncation coefficients in \(M\).  Without this array only the formal
+  obstruction symbol of
+  Theorem~\ref{thm:finite-window-graph-qme-assembly} is available: no
   computation of \(n_0\), no proof that
   \([\mathfrak o^{\mathrm{fw}}_{n_0,M}]=0\), and no defined
   \(\lambda^{\mathrm{fw}}_{n_0}\).
@@ -3013,38 +3001,3 @@ construction can be tracked explicitly.
   finite-rank operation.
 \end{rmk}
 
-\paragraph*{H/ML residual and BMK firewall.}  The two-coordinate class
-\(\operatorname{Ob}^{\mathrm{HML}}_{w}=
-(\operatorname{Ob}_{w},\lambda^{\mathrm{fw}}_{n_0})\) of the opening
-is the only datum separating the bulk Hadamard / Hörmander control
-(Theorem~\ref{thm:hadamard-mittag-leffler}) from the graphwise
-all-window QME extension on the weighted Tate envelope.  Vanishing
-with chosen primitives (Theorem~\ref{thm:finite-window-graph-qme-assembly},
-Proposition~\ref{prop:finite-window-qme-limit-condition}) is exactly
-the Costello-locality / QME compatibility input demanded by
-Problem~\ref{prob:weighted-rg-locality}; a single nonzero coordinate
-is the precise mechanism that fails, with the
-\(\theta_3\) row of
-Proposition~\ref{prop:concrete-order-three-enlarged-system-row}
-exhibiting the minimal nontrivial exhibit.  No claim of universal
-summation is mathematics without either a vanishing certificate or
-a named nonzero coordinate.
-
-The BMK lane carries a parallel firewall, but its outcome is
-sharper.  Theorem~\ref{thm:bmk-finite-window-no-go} proves, by the
-single Tate-cohomology identity
-\(z_1^{N+2}\cdot\rho_{N+1,0}=-(N+2)\rho_{0,1}\), that no finite
-Matlis target supports a Hamiltonian-equivariant principal-part
-transfer; the obstruction
-\(\operatorname{Ob}^{\mathrm{BMK\mbox{-}curr}}_N\) of
-Theorem~\ref{thm:app-finite-window-bmk-current-transfer} cannot be
-killed by any finite-window choice.  The pro-Matlis retract of
-Corollary~\ref{cor:promatlis-retract-as-supremum} is therefore not
-the residual of an unsolved problem; it is the supremum form of the
-BMK lane, structurally selected by the no-go.  The Hadamard / QME
-lane and the BMK lane are independent: vanishing of
-\(\operatorname{Ob}^{\mathrm{HML}}_{w}\) is a graphwise compatibility
-statement on the weighted Tate envelope, while the BMK no-go is an
-absolute obstruction on the principal-part current sector that
-cannot be removed by any choice of weight, regulator, or graph
-list.
