@@ -1,34 +1,21 @@
-% Weighted Tate completion of the coefficient pair
-% (\widehat{\mathfrak h}, \widehat{\mathfrak h}^\vee_{\mathrm{cont}})
-% compatible with the Costello heat-kernel BV calculus on
-% \R^2\times\C^2 with brane defect L=\R_{\mathrm{brane}}\times\{0\}\times\{p\}. Addresses
-% Lemma~\ref{lem:tate-casimir-obstruction} and
-% Problem~\ref{prob:tate-coefficient-descendant-lift} of the parent
-% manuscript via a graded Mittag-Leffler completion in the polynomial
-% Hamiltonian degree. The cochain identity, finite-scale coefficient
-% kernel, regulator transport, and finite-window endpoint criterion are
-% proved in the weighted coefficient category. The BV graph realization
-% is governed by the named Costello-locality / QME obstruction class for
-% the mixed brane-defect theory.
-
 \section*{Weighted Tate completion of the coefficient pair}
 
-\paragraph{Theorem lane.}
+\paragraph{Coefficient theorem.}
 The weighted coefficient category carries the Casimir, finite-window
-Mittag-Leffler, heat-kernel, and classical cochain statements below.
+Mittag--Leffler, heat-kernel, and classical cochain statements.
 Renormalization-flow compatibility is graphwise at finite scale for
 polynomial-degree-bounded vertices, and the passage to an all-order QME
-solution is exactly the acceptance gate
-\ref{stmt:weighted-rg-acceptance-gate}.  For \(q,q'>1\), admissible
+solution is exactly the weighted RG criterion
+\ref{stmt:weighted-rg-criterion}.  For \(q,q'>1\), admissible
 exponential weights define canonically equivalent finite-degree local
 observables on the same strict Mittag-Leffler tower.  The symbol
 \(q\to1^+\) means finite-window stabilization after unweighting, and an
-actual endpoint exists precisely under
+endpoint exists precisely under
 Definition~\ref{defn:endpoint-admissible-coefficient-module}.  The
-original product/direct-sum Tate pair carries the endpoint obstruction
+strict product/direct-sum Tate pair carries the endpoint obstruction
 of Theorem~\ref{thm:strict-unweighted-no-go}.
 
-\subsection*{Diagnosis}
+\subsection*{Strict Tate pair}
 
 \begin{rmk}[Strict Tate Casimir obstruction]\label{rmk:diagnosis-unweighted-casimir}
   In the parent manuscript the Hamiltonian Lie algebra is the
@@ -88,7 +75,7 @@ of Theorem~\ref{thm:strict-unweighted-no-go}.
   and the coefficient piece is the BV inverse pairing on
   $\widehat{\mathfrak h}\oplus\widehat{\mathfrak h}^\vee_{\mathrm{cont}}[1]$.
   By Remark~\ref{rmk:linear-heat-versus-bv-kernel}, the spacetime piece
-  exists as an actual continuous operator. The whole kernel exists as
+  exists as a continuous operator. The whole kernel exists as
   an element of $\mathcal E\widehat\otimes\mathcal E$ \emph{iff} the
   coefficient piece, the bare Casimir $C_{\mathfrak h}$ together with
   its dual coevaluation, exists as a coefficient kernel.
@@ -96,7 +83,7 @@ of Theorem~\ref{thm:strict-unweighted-no-go}.
   Costello's heat-kernel BV requires three properties of the
   coefficient module:
   \begin{enumerate}[label=(C\arabic*)]
-    \item\label{costello:CC1} an actual distributional inverse pairing,
+    \item\label{costello:CC1} a distributional inverse pairing,
       i.e.\ a coefficient coevaluation
       $C_{\mathfrak h}\in\mathfrak h\widehat\otimes
       \mathfrak h^\vee_{\mathrm{cont}}$ realizing the bilinear form
@@ -300,7 +287,7 @@ of Theorem~\ref{thm:strict-unweighted-no-go}.
       continuous in $(\epsilon,L)$ in the weighted Tate topology;
     \item the limit $L\to\infty$, $\epsilon\to0^+$ exists as a
       distributional kernel after the standard spacetime counterterm
-      subtraction in Costello's heat-kernel RG package
+      subtraction in Costello's heat-kernel renormalization-group construction
       \cite{costello-renormalization}*{Chs.~5--7}; the coefficient
       direction introduces no additional spacetime singular support.
       Locality and QME counterterm compatibility for the mixed
@@ -339,7 +326,7 @@ of Theorem~\ref{thm:strict-unweighted-no-go}.
   continuous in $(\epsilon,L)$ because $C_{\mathfrak h,w}$ is a fixed
   element of the weighted pair and the bulk family is continuous.
   Item~(3), at the level asserted here, is the Costello bulk
-  regularity package \cite{costello-renormalization}*{Chs.~5--7}
+  regularity results \cite{costello-renormalization}*{Chs.~5--7}
   tensored with a fixed coefficient kernel. This proves finite-scale
   kernel regularity and absence of new coefficient wave-front
   directions. The brane-defect QME obstruction classes are separate
@@ -523,7 +510,7 @@ of Theorem~\ref{thm:strict-unweighted-no-go}.
   ring; the same equation cannot be written.  Thus resonance is precisely
   the obstruction to moving that summand.
 
-  The last paragraph is bookkeeping in the one-dimensional scalar
+  The preceding comparison is an equality in the one-dimensional scalar
   localization line.  The residue convention fixes the formal residue
   density and inserts no smooth normal Euler factor.  The Euler convention
   pushes along the normal bundle with inverse equivariant Euler class
@@ -541,10 +528,10 @@ of Theorem~\ref{thm:strict-unweighted-no-go}.
   equivariant Costello kernel complex; it is not the vanishing theorem for
   that complex.
 
-  Once an equivariant brane-defect Costello package is supplied, in the
+  Once equivariant brane-defect Costello data are supplied, in the
   sense of
   Definition~\ref{def:app-normal-omega-costello-kernel-datum}, the exact
-  remaining obstruction vector is
+  obstruction vector is
   \[
     \operatorname{Ob}^{\mathrm{QME}}_{\Omega,w}
       =
@@ -566,7 +553,7 @@ of Theorem~\ref{thm:strict-unweighted-no-go}.
   is the resonance obstruction to the normal contraction,
   \(\operatorname{ob}_{\Omega,\nu}\) is the failure to use one named
   residue/Euler normalization, \(\mathfrak s_{n,\Omega,M}\) is the scalar
-  gate
+  condition
   \[
     \widehat\sigma_{\mathrm{sc},\Omega,M}
       (R^{\mathrm{ns}}_{n,\Omega,M}),
@@ -583,7 +570,7 @@ of Theorem~\ref{thm:strict-unweighted-no-go}.
     H^0(\mathcal K^\bullet_{\mathrm{ns},\Omega,M}(I))
   \]
   are the non-scalar cohomology and primitive-compatibility obstructions.
-  The equivariant weighted kernel package promotes to a Costello
+  The equivariant weighted kernel data determine a Costello
   brane-defect QME solution exactly on the common zero locus of this
   vector, and only there.
 \end{cor}
@@ -593,8 +580,8 @@ of Theorem~\ref{thm:strict-unweighted-no-go}.
   \(C_{\Omega,w}\), the normal denominators, and the normalization line.
   Costello's QME is the Maurer--Cartan equation for the Hom-valued
   brane-defect graph kernel plus local counterterms.  Therefore, after the
-  equivariant package is present, the scalar projection must first be a
-  chain projection and its scalar gate must vanish.  Only then is the
+  equivariant datum is present, the scalar projection must first be a
+  chain projection and its scalar condition must vanish.  Only then is the
   residual a class in the non-scalar kernel complex, and the finite-window
   counterterm criterion is the same inverse-limit \(H^1\) and
   \(\varprojlim^1H^0\) criterion as
@@ -784,7 +771,7 @@ $I_L$ must remain in the same weighted category.
   \(L=\R_{\mathrm{brane}}\times\{0\}\times\{p\}\) in the weighted field complex $\mathcal E_w$ remain
   local-functional classes
   $\Op\in H^1(\mathcal O_{\mathrm{loc}}(\mathcal E_w),Q+\{I_0,-\})$,
-  i.e.\ that the bulk Costello locality package
+  i.e.\ that the bulk Costello locality theorem
   \cite{costello-renormalization}*{Chs.~5--7} extends to the
   weighted pair. The exact published theorem numbering is not an
   input to this problem. Concretely: a counterterm contribution
@@ -966,7 +953,7 @@ $I_L$ must remain in the same weighted category.
   every diagonal weight and each internal Casimir becomes \(C^M_0\).
 \end{proof}
 
-\begin{stmt}[Acceptance gate for weighted RG transport]\label{stmt:weighted-rg-acceptance-gate}
+\begin{stmt}[Weighted RG transport criterion]\label{stmt:weighted-rg-criterion}
   A weighted mixed brane-defect interaction enters the regulator theorem
   only with the following data.
   \begin{enumerate}[label=(G\arabic*)]
@@ -1003,7 +990,7 @@ $I_L$ must remain in the same weighted category.
 \begin{thm}[Transport groupoid of admissible weights]
 \label{thm:wt-transport-groupoid}
   On the class of interactions satisfying
-  \ref{stmt:weighted-rg-acceptance-gate}, admissible degree weights form
+  \ref{stmt:weighted-rg-criterion}, admissible degree weights form
   a connected transport groupoid.  Its objects are the weighted
   finite-window local-functional complexes
   \[
@@ -1030,7 +1017,7 @@ $I_L$ must remain in the same weighted category.
   Composition multiplies the scalars degree by degree, hence gives the
   displayed groupoid law.  Since the maps are diagonal in \(d\), they
   commute with truncation to \(d\leq w_0\).  By
-  \ref{stmt:weighted-rg-acceptance-gate}(G3), the transported bracket,
+  \ref{stmt:weighted-rg-criterion}(G3), the transported bracket,
   interaction, propagator, and counterterm representatives are the
   corresponding \(w'\)-objects.  Therefore \(R^{w_0}_{w,w'}\) is an
   isomorphism of the finite-window RG complexes and intertwines every
@@ -1101,8 +1088,8 @@ is excluded by Theorem~\ref{thm:strict-unweighted-no-go}.
 \begin{thm}[Regulator independence inside the admissible finite-window sector]\label{thm:wt-regulator-independence-admissible}
   Let \(w,w'\) be degree weights satisfying
   Definition~\ref{defn:wt-degree-weight}, and let \(I_0^w\) be a
-  regulator-admissible mixed brane-defect interaction satisfying the
-  acceptance gate \ref{stmt:weighted-rg-acceptance-gate}.  Put
+	  regulator-admissible mixed brane-defect interaction satisfying
+	  \ref{stmt:weighted-rg-criterion}.  Put
   \(I_0^{w'}=R_{w,w'}I_0^w\).  Then the diagonal rescalings
   \(R_{w,w'}^{w_0}\) assemble to an isomorphism of strict
   Mittag-Leffler local-functional complexes
@@ -1173,7 +1160,7 @@ is excluded by Theorem~\ref{thm:strict-unweighted-no-go}.
 \label{defn:wt-nonscalar-qme-tower}
   Fix an interval \(I\), a degree weight \(w\), and a
   regulator-admissible interaction satisfying
-  Statement~\ref{stmt:weighted-rg-acceptance-gate}.  For a finite
+  Statement~\ref{stmt:weighted-rg-criterion}.  For a finite
   Hamiltonian window \(M\), put
   \[
     D_{w,\leq M}:=\prod_{d\leq M}w(d)^{-1}H_d^\vee,
@@ -1210,7 +1197,7 @@ is excluded by Theorem~\ref{thm:strict-unweighted-no-go}.
   where
   \(d_M=Q+\{I^w_{0,M},-\}_{\hbar,M}\).  The bracket, interaction, and
   differential are the transported finite-window structures supplied by
-  the acceptance gate; they are not naive projected Hamiltonian brackets.
+	  the weighted RG criterion; they are not naive projected Hamiltonian brackets.
   The inverse system
   \(\{\mathcal Q^\bullet_{w,M}(I)\}_{M\geq1}\) uses degree truncation
   \(\pi_{M,N}\) for \(M\geq N\), together with the \(\hbar\)-adic
@@ -1494,7 +1481,7 @@ is excluded by Theorem~\ref{thm:strict-unweighted-no-go}.
         \kappa^{\mathrm{graph,reg},M}_{\hbar,w,I}
       ]_{\mathbf K}.
   \]
-  Thus the regular-density graph layer supplies a theorem-grade
+  Thus the regular-density graph layer supplies a proved
   closed-exchange tower by the subcomplex construction above.  The
   stronger assertion that the raw bulk-to-defect CE kernel itself is the
   cochain map is equivalent to vanishing of the displayed scalar and
@@ -1970,8 +1957,8 @@ is excluded by Theorem~\ref{thm:strict-unweighted-no-go}.
   chosen to be \(0\).  This proves the saturated regular-density claim.
 \end{proof}
 
-\begin{prop}[Actual first residual and the regular-density decision]
-\label{prop:wt-actual-first-residual-regular-density-decision}
+\begin{prop}[First regular-density residual criterion]
+\label{prop:wt-first-regular-density-residual-criterion}
   The first non-scalar residual used in the closed-exchange criterion is
   not an additional symbol.  For the chosen scalar-contact chain
   projection, the chosen lower-order counterterms, and the finite window
@@ -1994,7 +1981,7 @@ is excluded by Theorem~\ref{thm:strict-unweighted-no-go}.
       =
     \mathcal X^{\bullet,\mathrm{reg}}_{w,M}(I)
   \]
-  if and only if the following regular-density residual certificate is
+  if and only if the following regular-density residual criterion is
   supplied for every finite window \(M\), compatibly with \(\pi_{M,N}\) and
   \(R^M_{w,w'}\).
   \begin{enumerate}[label=(R\arabic*)]
@@ -2024,8 +2011,8 @@ is excluded by Theorem~\ref{thm:strict-unweighted-no-go}.
       local-functional complex
       \(\mathcal O_{\mathrm{loc}}^{\mathrm{bd}}
       (\mathcal E_w^M|_I;
-      A_{\partial,\hbar}^{\mathrm{pp},w,M}(I))\), not merely after
-      applying cohomology or scalar reduction.
+      A_{\partial,\hbar}^{\mathrm{pp},w,M}(I))\) before cohomology and
+      before scalar reduction.
     \item The representatives commute with finite-window truncation and
       admissible weight transport:
       \[
@@ -2039,7 +2026,7 @@ is excluded by Theorem~\ref{thm:strict-unweighted-no-go}.
       \]
   \end{enumerate}
 
-  If this certificate is supplied, then
+  If this criterion holds, then
   \[
     \mathfrak o^{\mathrm{ns}}_{n_0,M}
       \in
@@ -2062,7 +2049,7 @@ is excluded by Theorem~\ref{thm:strict-unweighted-no-go}.
   \]
   for this saturated branch.
 
-  If the certificate is not supplied, the regular-density branch is not
+  If the criterion does not hold, the regular-density branch is not
   decided.  The exact computable obstruction is
   \[
   \begin{aligned}
@@ -2135,7 +2122,7 @@ is excluded by Theorem~\ref{thm:strict-unweighted-no-go}.
   complete regular-density graph/counterterm subcomplex constructed in
   Definition~\ref{defn:wt-regular-density-closed-exchange-complex} and
   Proposition~\ref{prop:wt-regular-density-X-Xi-construction}.  Hence the
-  certificate is equivalent to
+  criterion is equivalent to
   \(\mathfrak o^{\mathrm{ns}}_{n_0,M}\in
   Z^1(\mathcal X^{\bullet,\mathrm{reg}}_{w,M}(I))\) compatibly in the
   finite-window tower.  Since
@@ -2152,7 +2139,7 @@ is excluded by Theorem~\ref{thm:strict-unweighted-no-go}.
   differences vanish.  This proves the displayed vanishing of
   \(\eta\), \(\kappa\), \(\beta\), \(\mu\), and \(\lambda\).
 
-  Without the certificate, the only invariant operation supplied by the
+  Without this criterion, the only invariant operation supplied by the
   constructed regular-density tower is quotienting by
   \(\mathcal X^{\bullet,\mathrm{reg}}\).  Applying
   Proposition~\ref{prop:wt-Xi-reg-first-residual-quotient-obstruction} to
@@ -2173,15 +2160,15 @@ is excluded by Theorem~\ref{thm:strict-unweighted-no-go}.
   Proposition~\ref{prop:wt-Xi-reg-first-residual-quotient-obstruction}.
 \end{proof}
 
-\begin{prop}[Regular-density certificate for the evaluated curvature]
-\label{prop:wt-regular-density-curvature-certificate}
+\begin{prop}[Regular-density criterion for the evaluated curvature]
+\label{prop:wt-regular-density-curvature-criterion}
   Work at a fixed finite window \(M\).  Assume the finite-window
-  graph/QME package of
-  Definition~\ref{defn:finite-window-graph-qme-package} is the
-  regular-density package: every cotangent defect label is
+  graph/QME system of
+  Definition~\ref{defn:finite-window-graph-qme-system} is the
+  regular-density system: every cotangent defect label is
   \(B_j=b_j(t)dt\in\mathcal D^{\mathrm{reg}}_c(I)\), the finite graph list
   is closed under the \(d_M\)-boundary and BV-bracket terms appearing in
-  the package, and the scalar-contact projection is zero on the chosen
+  the system, and the scalar-contact projection is zero on the chosen
   subhabitat.  Let
   \[
     \operatorname{Ob}^{\mathrm{red,reg}}_{w,\partial,\hbar,M}
@@ -2227,7 +2214,7 @@ is excluded by Theorem~\ref{thm:strict-unweighted-no-go}.
   \]
   compatibly with finite-window truncation and admissible weight transport.
 
-  More explicitly, after expanding the finite graph package at the
+  More explicitly, after expanding the finite graph system at the
   coefficient of \(\hbar^{n_0}\), there is a finite indexing set
   \(\mathcal A^{\mathrm{reg}}_{n_0,M}\) and coefficients
   \(\varepsilon_{\alpha,M}\in\C\) such that
@@ -2255,11 +2242,11 @@ is excluded by Theorem~\ref{thm:strict-unweighted-no-go}.
   to such a labelled graph.  The last two displayed terms also lie in
   \(\mathcal X^{\bullet,\mathrm{reg}}_{w,M}(I)\): the first by
   \(d_M\)-stability, the second by the bracket-closure clause in the
-  finite-window graph/QME package.
+  finite-window graph/QME system.
 
-  Hence the regular-density residual certificate of
-  Proposition~\ref{prop:wt-actual-first-residual-regular-density-decision}
-  is supplied for this actual evaluated curvature.  The closed-exchange
+  Hence the regular-density residual criterion of
+  Proposition~\ref{prop:wt-first-regular-density-residual-criterion}
+  is supplied for this evaluated curvature.  The closed-exchange
   solution is
   \[
     W_{n_0,M}
@@ -2347,7 +2334,7 @@ is excluded by Theorem~\ref{thm:strict-unweighted-no-go}.
   puts all scalar-zero regular graph weights and their regular local
   counterterms in
   \(\mathcal X^{\bullet,\mathrm{reg}}_{w,M}(I)\), and closes this space
-  under \(d_M\).  The finite-window graph/QME package includes the
+  under \(d_M\).  The finite-window graph/QME system includes the
   BV-bracket terms forced by the finite graph differential, so the
   quadratic counterterm term remains in the same complete regular-density
   graph/counterterm habitat.  Hence every summand in the displayed
@@ -2357,7 +2344,7 @@ is excluded by Theorem~\ref{thm:strict-unweighted-no-go}.
   The Bianchi identity in the convolution dg Lie algebra gives closedness
   of the first unsolved coefficient after the lower-order equations have
   been imposed.  The scalar projection is zero on the chosen
-  regular-density package, so this closed coefficient lies in
+  regular-density system, so this closed coefficient lies in
   \(\mathcal Q^\bullet_{w,M}(I)\).  The same truncation and
   weight-transport identities hold term by term for the graph weights,
   counterterms, differential, and bracket; therefore the residuals are
@@ -2379,7 +2366,7 @@ is excluded by Theorem~\ref{thm:strict-unweighted-no-go}.
   \(\kappa^{\mathrm{reg}}_{n_0}\), and the three closed-exchange and
   counterterm obstruction classes therefore vanish.
 
-  For a non-regular label package, the quotient map \(q_M\) kills exactly
+  For a non-regular label set, the quotient map \(q_M\) kills exactly
   the regular-density subcomplex.  Expanding the same curvature expression
   into regular and non-regular summands therefore leaves only the four
   non-regular terms displayed in the formula for
@@ -2388,7 +2375,7 @@ is excluded by Theorem~\ref{thm:strict-unweighted-no-go}.
   a regular counterterm, and the purely non-regular bracket.  The
   wavefront-admissible graph layer of
   Proposition~\ref{prop:app-wavefront-admissible-costello-graph-kernel}
-  is theorem-grade as a distributional graph layer, but it is not a
+  is proved as a distributional graph layer, but it is not a
   regular-density layer when some \(B_j\notin
   \mathcal D^{\mathrm{reg}}_c(I)\).  Such a term can enter the
   regular-density branch only if its displayed quotient class is killed
@@ -2399,7 +2386,7 @@ is excluded by Theorem~\ref{thm:strict-unweighted-no-go}.
 \begin{thm}[Wavefront singular-current obstruction]
 \label{thm:wt-wavefront-singular-current-eta-obstruction}
   Fix a finite window \(M\) and a wavefront-admissible finite graph/QME
-  package as in
+  system as in
   Proposition~\ref{prop:app-wavefront-admissible-costello-graph-kernel}.
   Put
   \[
@@ -2563,7 +2550,7 @@ is excluded by Theorem~\ref{thm:strict-unweighted-no-go}.
   independent of the splitting.
 
   Closedness follows from the same Bianchi identity used in
-  Proposition~\ref{prop:wt-regular-density-curvature-certificate}, after
+  Proposition~\ref{prop:wt-regular-density-curvature-criterion}, after
   passing to the quotient complex.  The wavefront and support containment
   is exactly the H\"ormander product and extension statement in
   Proposition~\ref{prop:app-wavefront-admissible-costello-graph-kernel}:
@@ -2586,7 +2573,7 @@ is excluded by Theorem~\ref{thm:strict-unweighted-no-go}.
 \label{thm:wt-wavefront-distributional-primitive-cone}
   Keep the hypotheses and notation of
   Theorem~\ref{thm:wt-wavefront-singular-current-eta-obstruction}, and
-  assume that the chosen wavefront graph/QME packages are compatible under
+  assume that the chosen wavefront graph/QME systems are compatible under
   finite-window truncation and admissible weight transport.  Thus
   \[
     \pi_{M,N}\mathfrak o^{\mathrm{ns,WF}}_{n_0,M}
@@ -3075,18 +3062,14 @@ is excluded by Theorem~\ref{thm:strict-unweighted-no-go}.
   Corollary~\ref{cor:strict-endpoint-obstruction-criterion}.
 \end{proof}
 
-\subsection*{External comparison boundary}
+\subsection*{Local regulator boundary}
 
 \begin{rmk}[Local-disk regulator datum]\label{rmk:wt-no-transfer-vol3}
   The weighted Tate completion is a local-disk operation on the
   formal symplectic plane $\C^2$ with brane defect
   \(L=\R_{\mathrm{brane}}\times\{0\}\times\{p\}\) and
-  bulk $\R^2\times\C^2$. Compact Calabi-Yau data, a $\Phi_d$ functor,
-  \(\kappa_{\mathrm{ch}}\) or \(\kappa_{\mathrm{BKM}}\) consequences,
-  \(K3\times E\) specializations, Igusa cusp forms, Borcherds input
-  forms, BKM denominator identities, and Stage-1 or Stage-2
-  \(\Phi_d\) specializations require a separate comparison theorem.
-  This regulator datum addresses the analytic obstruction named in
+  bulk $\R^2\times\C^2$.  This regulator datum addresses the analytic
+  obstruction named in
   Lemma~\ref{lem:tate-casimir-obstruction} and
   Problem~\ref{prob:tate-coefficient-descendant-lift} on the formal
   local model.

@@ -1,18 +1,14 @@
 \section{Radial Parts and the Moyal Normalization}
 \label{sec:app-radial-parts-moyal}
 
-This appendix records the proof spine for
-Theorem~\ref{thm:phi-hbar-all-order}.  The stable core is the
-scalar-reduced Weyl/Moyal normalization, the Capelli change of basis,
-the stable connected trace bracket, and the reduced open-line Wick
-graph expansion with midpoint propagator
-\(\frac12\operatorname{sgn}(t-s)\).  The finite-\(N\) radial-parts
-comparison is isolated as the explicit input package stated below.
-Once that package is assumed, the radial argument is algebraic:
-Vandermonde conjugation removes the Dunkl--Calogero connection terms,
-injectivity detects the reduced quotient, and the stable connected
-primitive/indecomposable projection extracts the single-trace Moyal
-bracket.
+The degree-zero quantum target is the scalar-reduced Weyl/Moyal algebra
+with Capelli-renormalized matrix traces.  The reduced open-line Wick
+model uses midpoint propagator
+\(\frac12\operatorname{sgn}(t-s)\).  Given the finite-\(N\) radial image
+datum of Statement~\ref{stmt:app-radial-external-input}, Vandermonde
+conjugation removes the Dunkl--Calogero connection terms, radial
+injectivity detects the reduced quotient, and the stable primitive
+projection extracts the single-trace Moyal bracket.
 
 \begin{defn}[Formal Weyl/Moyal convention]
 \label{def:app-radial-moyal-convention}
@@ -265,7 +261,7 @@ bracket.
   the bivariate trace normalization used here.
 \end{proof}
 
-\begin{stmt}[Radial-parts input package]
+\begin{stmt}[Radial-parts input data]
 \label{stmt:app-radial-external-input}
   The finite-\(N\) radial-parts step uses the following
   Harish-Chandra radial-parts theorem for invariant differential
@@ -275,7 +271,7 @@ bracket.
   wallach-reductive-invariant-differential,
   levasseur-stafford-harish-chandra,
   levasseur-stafford-kernel-harish-chandra}.  After identifying
-  \(\mathcal W_N\simeq\mathcal D_\hbar(\mathfrak{gl}_N)\), this package
+  \(\mathcal W_N\simeq\mathcal D_\hbar(\mathfrak{gl}_N)\), this input
   uses the Harish-Chandra map on invariants whose kernel is the quantum
   moment-map ideal and hence injects the quantum Hamiltonian reduction
   by conjugation into Weyl-invariant differential operators on the
@@ -289,7 +285,7 @@ bracket.
   exact Weyl-trace image in item~(3) is the matched normalization datum
   used in the formal-local comparison.  It is not supplied by the cited radial-parts
   sources in this exact Weyl/Capelli convention.  The finite exact checks
-  below attack it in ranks \(2\) and \(3\), but they do not replace the
+  below test it in ranks \(2\) and \(3\), but they do not replace the
   all-\(N\) radial-parts input.
 
   The input consists of the following three assertions.
@@ -311,7 +307,7 @@ bracket.
   Lemma~\ref{lem:app-radial-nonlinear-shear-obstruction} shows that
   pure \(z_1\)- and \(z_2\)-power images together with classical
   symbol-level shear compatibility do not determine item~(3).  A smaller
-  source package would need a genuine quantum-corrected Egorov theorem in
+  weaker input data would need a genuine quantum-corrected Egorov theorem in
   the Weyl algebra.
 \end{stmt}
 
@@ -412,7 +408,7 @@ exactly the assertion that the ordinary Weyl trace \(J_N(f)\) equals
   image represents the zero class in the reduced quotient.
 \end{proof}
 
-\begin{lem}[Nonlinear shear obstruction to a smaller radial package]
+\begin{lem}[Nonlinear shear obstruction to weaker radial-parts input]
 \label{lem:app-radial-nonlinear-shear-obstruction}
   Pure-power radial images plus classical symbol-level compatibility
   with nonlinear shears do not determine the mixed Weyl-trace image
@@ -645,7 +641,7 @@ exactly the assertion that the ordinary Weyl trace \(J_N(f)\) equals
   whose cyclic boundary is zero.  The free normal-form computation below
   proves that this correction cancels the \((4,4)\) residual before any
   finite-rank trace identity is imposed.  The remaining theorem
-  obligation is the decorated PBW Stokes identity: prove, for every
+  criterion is the decorated PBW Stokes identity: prove, for every
   bidegree, that
   \[
     \Omega^{\mathrm{rad}}_{a,b}=0
@@ -654,7 +650,7 @@ exactly the assertion that the ordinary Weyl trace \(J_N(f)\) equals
     \qquad
     D^\square_{a,b}=C^+_{a,b}\partial_2 .
   \]
-  If this fails, the certificate is not a timed-out finite computation
+  If this fails, failure is not inferred from timeout of a finite computation
   but a normalized signed row
   \((\phi,-\lambda)\in\ker B_{a,b}^*\) with
   \(\lambda(E^+_{a,b})-\phi(T_{a,b})=1\).
@@ -678,7 +674,7 @@ exactly the assertion that the ordinary Weyl trace \(J_N(f)\) equals
   to the four words in \(K_{4,4}\) gives two copies of each resulting
   cyclic word with opposite signs, so \(K_{4,4}\in\ker\partial\).  The
   finite computation proves the obstruction to the uncorrected cyclic
-  lift.  The all-\(N\) status of \(K_{4,4}\) is supplied by the free
+  lift.  The all-\(N\) identity for \(K_{4,4}\) is supplied by the free
   trace-diagram normal form below, not by finite-rank specialization.
 \end{proof}
 
@@ -1356,8 +1352,8 @@ exactly the assertion that the ordinary Weyl trace \(J_N(f)\) equals
   \(C^{\mathrm{edge}}_{a,2}\) and proves the second identity.
 \end{proof}
 
-\begin{prop}[Free obstruction certificates beyond \((4,4)\)]
-\label{prop:app-free-obstruction-certificates}
+\begin{prop}[Free residual vanishings beyond \((4,4)\)]
+\label{prop:app-free-residual-vanishings}
   In the free indexed normal-diagram algebra,
   \(\mathfrak o_{3,5}=\mathfrak o_{5,3}=0\), and the lexicographic
   cyclic lifts already have zero quantum residual.  Explicitly,
@@ -1432,7 +1428,7 @@ exactly the assertion that the ordinary Weyl trace \(J_N(f)\) equals
       +\operatorname{Tr}(XXYXYXX\,M).
   \end{aligned}
   \]
-  Edge strips are not part of this finite-certificate assertion:
+  Edge strips are not part of this finite residual-vanishing assertion:
   Proposition~\ref{prop:app-edge-pbw-telescoping} proves
   \(\mathfrak o_{2,b}=\mathfrak o_{a,2}=0\) for all \(a,b\geq2\).
 \end{prop}
@@ -1492,7 +1488,7 @@ exactly the assertion that the ordinary Weyl trace \(J_N(f)\) equals
   Cartan variables.  Summing over \(i\) gives the displayed identity.
 \end{proof}
 
-\begin{thm}[Finite-\(N\) radial-parts identity from the input package]
+\begin{thm}[Finite-\(N\) radial-parts identity from the input data]
 \label{thm:app-radial-finite-N}
   Under the radial-parts input of
   Statement~\ref{stmt:app-radial-external-input}, put
@@ -1804,8 +1800,8 @@ exactly the assertion that the ordinary Weyl trace \(J_N(f)\) equals
   compute the intermediate kernel-correction class
   \(\mathfrak o_{a,b}\) of
   Definition~\ref{def:app-free-kernel-correction-obstruction}; they
-  give the additional finite certificates in
-  Proposition~\ref{prop:app-free-obstruction-certificates}, including
+  give the additional finite residual-vanishing computations in
+  Proposition~\ref{prop:app-free-residual-vanishings}, including
   the total-degree-\(9\) cases \((3,6)\) and \((6,3)\).  The current
   exact obstruction theorem is the vanishing of
   \(\Omega^{\mathrm{rad}}_{a,b}\), equivalently the decorated PBW Stokes
@@ -1833,7 +1829,7 @@ exactly the assertion that the ordinary Weyl trace \(J_N(f)\) equals
 
 \begin{prop}[Moyal--Capelli normalization and realization boundary]
 \label{prop:app-moyal-capelli-realization-boundary}
-  The following statements are the exact theorem surface used by the
+  The following statements are used by the
   degree-zero Moyal sector.
   \begin{enumerate}
     \item The formal Weyl algebra on the constant symplectic plane gives
@@ -1941,9 +1937,9 @@ exactly the assertion that the ordinary Weyl trace \(J_N(f)\) equals
   fixed-lift Hodge form.  The edge
   strip is proved by
   Proposition~\ref{prop:app-edge-pbw-telescoping}.  The finite
-  interior certificates in
+  interior computations in
   Proposition~\ref{prop:app-free-trace-diagram-K44} and
-  Proposition~\ref{prop:app-free-obstruction-certificates} do not supply
+  Proposition~\ref{prop:app-free-residual-vanishings} do not supply
   the missing all-bidegree decorated PBW Stokes identity.
 
   Item (4) is the residue-dual definition of the Moyal coadjoint action,
