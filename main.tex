@@ -2576,8 +2576,12 @@ are the obstruction data listed in the criterion.
   Lemma~\ref{lem:continuous-bar-cobar} supplies the Tate-pronilpotent
   case.  The unmodified formal disk is not in the criterion's domain,
   by Proposition~\ref{prop:low-degree-pronilpotent-obstruction}.  The
-  additional open \(A_\infty\)-Koszul comparison requires a separate
-  open-side acceptance datum.  The obstruction
+  additional open \(A_\infty\)-Koszul comparison requires the open-side
+  acceptance datum of
+  Definition~\ref{defn:stable-ainfty-koszul-acceptance-datum}, with
+  acceptance certified by
+  Theorem~\ref{thm:stable-ainfty-koszul-under-hypotheses}.  The
+  obstruction
   terms in the fourth item are
   Remark~\ref{rmk:colim-does-not-recover-full},
   Remark~\ref{rmk:conilpotency-essential}, and the finite-window
@@ -4491,6 +4495,155 @@ corollary of
   is the definition of admissible filtered quasi-isomorphism in this
   envelope: it is detected on associated graded and on the exact
   finite-window towers.
+\end{proof}
+
+\begin{defn}[Admissible open-trace \(A_\infty\)-Koszul acceptance datum]\label{defn:stable-ainfty-koszul-acceptance-datum}
+  An admissible open-trace \(A_\infty\)-Koszul acceptance datum
+  consists of:
+  \begin{enumerate}[label=(K\arabic*)]
+    \item a finite-window tower of one-object cyclic open dg
+      categories whose endomorphism complexes are
+      \(\Omega_c^\bullet(I)\otimes\Lambda(\varepsilon_1,\varepsilon_2)
+      \otimes\operatorname{End}(\C^N)\), with cyclic trace
+      \(\int_I\eta\,[\varepsilon_1\varepsilon_2]\operatorname{Tr}_N(M)\)
+      and Dirac/Koszul reduction \(Q\psi=[\phi_1,\phi_2]\);
+    \item the reduced cyclic dg algebra \(A_\psi=T(x,y,\psi)\),
+      \(d\psi=xy-yx\), with \(CC_{\mathrm{red}}(A_\psi)\) and the
+      necklace \(H_0\)-shadow \(\operatorname{Cyc}(A_\psi)\);
+    \item a finite-window Loday--Quillen--Tsygan comparison: with
+      Koszul weights \(\operatorname{wt}(x)=(1,0)\),
+      \(\operatorname{wt}(y)=(0,1)\),
+      \(\operatorname{wt}(\psi)=(1,1)\) and
+      \(A_{\psi,K}=A_\psi/F^{>K}A_\psi\), the stable single-cycle map
+      \[
+        \lambda_{\mathrm{LQT},K,L}\colon
+        \operatorname{Prim}^{1\mathrm{cyc}}_{N,K,L}
+        \longrightarrow
+        CC_{\mathrm{red},\le L}(A_{\psi,K})[1]
+      \]
+      is theorem-grade in the stable range
+      \(N\geq\max(K,L+2)\); the same-rank deletion of multicycle
+      tensors is not a chain map, and the separated-block stabilization
+      zigzag \(P^{\mathrm{sep}}_{M,K,L}=
+      \beta_{M,K,L}P_{1\mathrm{cyc}}\alpha_{M,K,L}\) supplies the
+      finite-rank bridge;
+    \item a completed augmented filtered \(A_\infty\)-algebra
+      \(A_{\mathrm{op}}\) in the scalar-reduced stable trace/Koszul/BV
+      sector, with associated graded
+      \(\operatorname{gr}A_{\mathrm{op}}\cong\widehat{\mathbf S}(V_H)\)
+      and \(\operatorname{Indec}\operatorname{gr}A_{\mathrm{op}}
+      =\mathfrak m/\mathfrak m^2\cong V_H\); the indecomposables target
+      is either \(\bar A\oplus\mathcal P[1]\) or
+      \(\bar A\oplus\bar A_{\mathrm{desc}}[1]\) together with a proved
+      Fourier--Rees/Moyal bridge to \(\mathcal P[1]\); the raw
+      same-label map \(\Psi_{a,b}\mapsto\rho_{a,b}\) is not accepted;
+    \item the completed closed target
+      \[
+        B_{\mathrm{CE/PV}}
+          =
+        C^\bullet_{\mathrm{CE},\mathrm{cont}}(\mathfrak g_{\mathrm{adm}})
+          \cong
+        \mathrm{PV}\bigl(
+          \widehat{\mathbf S}_{\mathrm{coord}}(\mathfrak h_{\mathrm{adm}})
+        \bigr),
+      \]
+      with the generator dictionary \(c^f\mapsto\theta^f\),
+      \(u_f\mapsto O_f\);
+    \item the open bar coalgebra
+      \(C_{\mathrm{op}}=\mathrm{Bar}(A_{\mathrm{op}})\), equipped with
+      a complete bounded-below filtration compatible with the bar
+      differential, coproduct, and finite coordinate windows;
+    \item a continuous degree-one map
+      \(\tau_{\mathrm{op}}\colon C_{\mathrm{op}}\to B_{\mathrm{CE/PV}}\)
+      satisfying the explicit Maurer--Cartan equation
+      \[
+        d_{B_{\mathrm{CE/PV}}}\tau_{\mathrm{op}}
+        +\tau_{\mathrm{op}} b_{\mathrm{op}}
+        +\mu_{B_{\mathrm{CE/PV}}}
+          (\tau_{\mathrm{op}}\otimes\tau_{\mathrm{op}})\Delta
+        =0;
+      \]
+    \item the induced completed cobar morphism
+      \(\kappa_{\tau_{\mathrm{op}}}\colon\Omega C_{\mathrm{op}}\to
+      B_{\mathrm{CE/PV}}\) whose associated-graded linear symbol is
+      \(B_f\mapsto O_f\), \(\Theta_{\rho_{a,b}}\mapsto\theta^{a,b}\);
+    \item the acceptance obstruction complex
+      \[
+        \mathfrak C_{\tau_{\mathrm{op}}}
+          =
+        \operatorname{Cone}(
+          \operatorname{gr}\kappa_{\tau_{\mathrm{op}}})
+          \oplus
+        \bigoplus_n\varprojlim\nolimits^1_M
+          H^{n-1}\!\left((\Omega C_{\mathrm{op}})_{\leq M}\right)[-n]
+          \oplus
+        \bigoplus_n\varprojlim\nolimits^1_M
+          H^{n-1}\!\left((B_{\mathrm{CE/PV}})_{\leq M}\right)[-n];
+      \]
+    \item exact continuous dualization on the same finite-window tower;
+      and a cyclicity/BV-pairing package: the scalar word is retained
+      before scalar reduction, graded cyclicity uses
+      \(\operatorname{Tr}(ab)=(-1)^{|a||b|}\operatorname{Tr}(ba)\), two
+      \(\psi\)-letters skew, the open trace is continuous, and the BV
+      pairing has degree \(-1\) after the de Rham, Ext, and field-shift
+      conventions.
+  \end{enumerate}
+\end{defn}
+
+\begin{thm}[Admissible open-side filtered \(A_\infty\)-Koszul acceptance]\label{thm:stable-ainfty-koszul-under-hypotheses}
+  For a datum in the sense of
+  Definition~\ref{defn:stable-ainfty-koszul-acceptance-datum}, the
+  following are equivalent:
+  \begin{enumerate}[label=(\alph*)]
+    \item \(\tau_{\mathrm{op}}\) is an accepted open-side twisting
+      cochain, i.e.\ \(\kappa_{\tau_{\mathrm{op}}}\) is an admissible
+      filtered quasi-isomorphism of complete augmented
+      \(A_\infty\)-algebras with the displayed associated-graded
+      symbol;
+    \item the Maurer--Cartan equation in (K7) holds and the
+      obstruction complex \(\mathfrak C_{\tau_{\mathrm{op}}}\) from
+      (K9) is exact.
+  \end{enumerate}
+  Under these equivalent conditions,
+  \[
+    \Omega\mathrm{Bar}(A_{\mathrm{op}})
+      \xrightarrow{\ \sim\ }
+    B_{\mathrm{CE/PV}}
+  \]
+  and hence \(A_{\mathrm{op}}\simeq B_{\mathrm{CE/PV}}\) in the
+  completed filtered \(A_\infty\) homotopy category.  If the CE-side
+  cobar map
+  \(\Omega C_*^{\mathrm{CE}}(\mathfrak g_{\mathrm{adm}})
+  \to A_{\mathrm{op}}\) satisfies the same exact cone and
+  \(\varprojlim^1\) test, exact continuous dualization gives the
+  Koszul-dual cochain form
+  \[
+    C^\bullet_{\mathrm{CE},\mathrm{cont}}(\mathfrak g_{\mathrm{adm}})
+      \simeq
+    A_{\mathrm{op}}^! .
+  \]
+\end{thm}
+
+\begin{proof}
+  Apply Lemma~\ref{lem:filtered-cobar-qiso-criterion} with
+  \(C=C_{\mathrm{op}}\) and \(B=B_{\mathrm{CE/PV}}\).  The
+  Maurer--Cartan equation in (K7) is precisely the condition that
+  \(\kappa_{\tau_{\mathrm{op}}}\) is a morphism.  Exactness of
+  \(\mathfrak C_{\tau_{\mathrm{op}}}\) says simultaneously that
+  \(\operatorname{gr}\kappa_{\tau_{\mathrm{op}}}\) is a
+  quasi-isomorphism and that both finite-window towers compute the
+  completed cohomology.  The filtered comparison theorem then gives
+  the accepted quasi-isomorphism, and the converse is the
+  admissible-filtered definition.
+
+  The bar-cobar counit
+  \(\Omega\mathrm{Bar}(A_{\mathrm{op}})\to A_{\mathrm{op}}\) is a
+  filtered quasi-isomorphism under the same boundedness and
+  convergence hypotheses, so the accepted
+  \(\kappa_{\tau_{\mathrm{op}}}\) identifies \(A_{\mathrm{op}}\) with
+  \(B_{\mathrm{CE/PV}}\) in the homotopy category.  The final
+  displayed equivalence is the CE-side specialization of the same
+  criterion, followed by exact continuous dualization.
 \end{proof}
 
 \input{tate-T3-quillen-equivalence}
