@@ -942,22 +942,26 @@ through the bar-cobar adjunction itself.
   $C_{n,w}\to\mathrm{Bar}\,\Omega(C_{n,w})$ is a quasi-isomorphism for
   every $(n,w)$.  Conilpotence
   (Definition~\ref{defn:tate-conilp-coalg}) makes the
-  $L^{\mathrm{coalg}}$-filtration exhaustive on $C$, so the spectral
-  sequence
+  $L^{\mathrm{coalg}}$-filtration exhaustive on $C$.  Pass to the cone
+  $\mathrm{Cone}(\eta_C)$ and consider the bigraded spectral sequence
   \[
     E_1^{n,w,p}
       =
-      H^p\bigl(\operatorname{gr}^{L,F}C_{n,w}\to
-      \mathrm{Bar}\,\Omega(\operatorname{gr}^{L,F}C_{n,w})\bigr)
+      H^p\bigl(
+      \mathrm{Cone}(\operatorname{gr}^{L,F}C_{n,w}\xrightarrow{\eta}
+      \mathrm{Bar}\,\Omega(\operatorname{gr}^{L,F}C_{n,w}))
+      \bigr)
       \Longrightarrow
-      H^p\bigl(\eta_C\bigr)
+      H^p\bigl(\mathrm{Cone}(\eta_C)\bigr)
   \]
-  has $E_1$-isomorphism on every page, hence an abutment isomorphism
-  inside the bounded-below admissible envelope.  Mittag-Leffler
-  exactness on the Tate tower
-  (Lemma~\ref{lem:continuous-bar-cobar} item~(1)) makes
-  $\varprojlim^1$ vanish, so the windowwise qiso assembles to a global
-  admissible filtered quasi-isomorphism on $\eta_C$.
+  associated to the joint $(L,F)$-filtration.  The windowwise
+  qiso of the unit on each $(n,w)$-piece gives $E_1=0$, so the
+  spectral sequence collapses to zero and abuts to zero inside the
+  bounded-below admissible envelope.  Mittag-Leffler exactness on the
+  Tate tower (Lemma~\ref{lem:continuous-bar-cobar} item~(1)) makes the
+  $\varprojlim^1$ term in the abutment vanish, so
+  $H^\bullet(\mathrm{Cone}(\eta_C))=0$ and $\eta_C$ is an admissible
+  filtered quasi-isomorphism.
 
   \emph{Item~(3), counit construction.}  For
   $\varepsilon_A\colon\Omega\,\mathrm{Bar}(A)\to A$ with
@@ -971,11 +975,16 @@ through the bar-cobar adjunction itself.
   Loday-Vallette \cite{loday-vallette}*{\S 2.2.5, \S 11.1.5}.  The
   $T^{\geq m}$-filtration is bounded below, complete, and exhausts on
   the cobar of the bar coalgebra; the Tate window filtration is
-  complete and Hausdorff in the admissible envelope.  The associated
-  bigraded spectral sequence collapses on $E_1$ to a windowwise qiso,
-  and exactness of the inverse limit on the Tate tower
-  (Lemma~\ref{lem:continuous-bar-cobar} item~(1)) lifts the
-  finite-window qiso to an admissible filtered qiso on $\varepsilon_A$.
+  complete and Hausdorff in the admissible envelope.  Pass to the
+  cone $\mathrm{Cone}(\varepsilon_A)$ and consider the bigraded
+  spectral sequence associated to $(T^{\geq m},F^w)$: the windowwise
+  qiso of the counit on each $(m,w)$-piece gives $E_1=0$, so the
+  spectral sequence collapses to zero and abuts to zero.  Exactness of
+  the inverse limit on the Tate tower
+  (Lemma~\ref{lem:continuous-bar-cobar} item~(1)) makes the
+  $\varprojlim^1$ term in the abutment vanish, so
+  $H^\bullet(\mathrm{Cone}(\varepsilon_A))=0$ and $\varepsilon_A$ is an
+  admissible filtered quasi-isomorphism.
 
   \emph{Lie specialization.}  In the Lie specialization
   $A=\widehat U(\mathfrak g)$, the same counit can also be read
