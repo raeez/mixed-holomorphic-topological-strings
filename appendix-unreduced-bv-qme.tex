@@ -911,10 +911,16 @@ obstruction vector, and lifts if and only if that vector vanishes
   Theorem~\ref{thm:app-scalar-contact-qme-class}: the open Chan--Paton
   ordinary trace pairs \(I_\partial(a,f)I_\partial(b,g)\) and produces
   the residual \(\hbar N\,\omega(f,g)\int_\R a(t)b(t)\,dt\), which is
-  the trace-algebraic cocycle.  Its class in
+  the trace-algebraic cocycle.  The boundary
+  source map \(A_{\partial,\mathrm{red}}\to\bar A\) (induced by
+  \(I_\partial(a,f)\mapsto\bar f\) on the Hamiltonian factor and by
+  evaluation against the test function) factors the trace cocycle as
+  \(\hbar N\) times the canonical \(\bar A\)-cocycle \(\omega\).
+  Hence the class in
   \(H^2(A_{\partial,\mathrm{red}};\C)[[\hbar]]\) is \(\hbar N\) times
-  the same scalar \([\bar c]\): the trace coefficient is the only
-  scalar dependence.
+  the same scalar \([\bar c]\) under this canonical pullback: the
+  trace coefficient is the only scalar dependence beyond the source
+  cocycle.
 
   Sighting (iv) is the quantum Weyl reformulation in the same theorem:
   the matrix Weyl commutator \([X,Y]=\hbar N I\) modulo
@@ -4532,7 +4538,12 @@ obstruction vector, and lifts if and only if that vector vanishes
       Proposition~\ref{prop:app-first-scalar-lift-obstruction} and
       Theorem~\ref{thm:app-scalar-contact-qme-class} is the unique
       survivor of this appendix and the conjecture C2 in the
-      abstract.
+      abstract.  The
+      transgression Theorem~\ref{thm:app-scalar-anomaly-transgression}
+      assembles the four equivalent sightings (algebraic, Lie,
+      trace-algebraic, quantum Weyl) of this same class, with the
+      slogan \emph{constants vanish as Hamiltonian vector fields but
+      survive as brane center-of-mass charge}.
     \item \emph{Branch ledger.}
       Theorem~\ref{thm:app-central-character-qme-cancellation},
       Theorem~\ref{thm:app-balanced-supertrace-qme-cancellation},
@@ -4547,7 +4558,9 @@ obstruction vector, and lifts if and only if that vector vanishes
       reduction is obstructed by \(\hbar N[\bar c]\); central
       character, balanced \(\C^{N|N}\) supertrace, supertraceless
       monodromy, and full \(\lie{gl}(V)\)-equivariant marker tensors
-      each absorb or kill the scalar.
+      each absorb or kill the scalar.  The branch ledger as the action
+      of the four sightings on one class is recorded in
+      Remark~\ref{rmk:app-scalar-anomaly-transgression-branches}.
     \item \emph{Polynomial no-go and the distributional current target.}
       Theorem~\ref{thm:app-unreduced-polynomial-centrality-no-go} and
       Theorem~\ref{thm:app-algebraic-factorization-centre-zero-homotopies}
@@ -4595,7 +4608,14 @@ obstruction vector, and lifts if and only if that vector vanishes
       gives \(R^{\mathrm{row}}_{\theta_3,M}=\mathsf E_{\theta_3,M}\),
       \(S_{\theta_3,M}=0\), and the one-row covector
       \(\ell_{\theta_3}\) detecting nonzero finite-row obstruction.
-      Repair requires CE ancestor, scalar-zero Costello counterterm
+      Theorem~\ref{thm:app-theta-three-finite-window-H1} promotes this
+      to two named verdicts on the supplied finite-row complex:
+      \(H^1=\C\,\mathsf E_{\theta_3,M}\neq0\) without a counterterm,
+      \(H^1=0\) with a supplied scalar-zero counterterm
+      \(C_{\theta_3,M}\) satisfying \(d_{\mathrm{ns},M}C_{\theta_3,M}
+      =-\mathsf E_{\theta_3,M}\).  Both verdicts cross-check
+      \texttt{scripts/finite\_window\_graph\_array.py}.  Repair
+      requires CE ancestor, scalar-zero Costello counterterm
       \(C_{\theta_3,M}\), or a complete companion-face table; tower
       compatibility passes through
       Proposition~\ref{prop:app-theta-three-bianchi-lower-condition}
@@ -4606,6 +4626,25 @@ obstruction vector, and lifts if and only if that vector vanishes
       give a nonzero scalar shadow when
       \(\lambda_0\neq\lambda_1\) and collapse the larger habitat back
       to the full-equivariant single-marker case otherwise.
+    \item \emph{Unreduced cotangent lift obstruction.}
+      Theorem~\ref{thm:app-unreduced-cotangent-lift-obstruction}
+      states that the unreduced factorization-center morphism
+      \(\Phi_{\mathrm{fact}}^{\mathrm{unred}}\) lifts to a
+      \(Z^{P_0}_{\mathrm{fact}}\)-morphism if and only if the
+      four-component obstruction vector
+      \(\operatorname{Ob}_{\mathrm{cent}/\mathrm{QME}/\mathrm{descent}}\)
+      vanishes.  The components are the product/tensor-completion
+      centrality, the \(P_0\)/shifted-cotangent refinement (computed
+      by the centrality-homotopy row machinery), the boundary QME
+      (whose first finite-window failure is the \(\theta_3\) row),
+      and the Weiss-versus-Ran descent gap.  Remark~\ref
+      {rmk:app-cotangent-lift-first-nontrivial-occurrence} identifies
+      the first nontrivial occurrence of each component.  At
+      associated-graded, the primitive
+      \(P_0\)-shadow of
+      Theorem~\ref{thm:chain-level-primitive-projection}
+      computes the \(E_1\) page of the spectral sequence converging
+      to \(\operatorname{ob}^{P_0}_{\mathrm{cent}}\).
   \end{enumerate}
   Stronger global claims (C2, C3, C4 of the abstract) are written here
   as the matrix equation \(A^Mc=-r^M\), the Roos compatibility on
