@@ -16,39 +16,26 @@ The mixed holomorphic-topological string field theory on the local pair
   L=\R_t\times\{s=z_1=z_2=0\},\qquad
   \omega=dz_1\wedge dz_2,
 \]
-is fixed by three pieces of data: a holomorphic orientation on the
-formal disk \((\widehat\C^2_0,\omega)\); three locality operators
-acting on the brane line; a separation between native
-two-complex-dimensional structure and reduced one-complex-dimensional
-shadows.  This dictionary is the rectification table for that data.
+rests on a holomorphic orientation on the formal disk
+\((\widehat\C^2_0,\omega)\); three locality operators on the brane
+line; and the separation between native two-complex-dimensional
+structure and one-complex-dimensional reductions.
 
-Each entry names two sides and the precise morphism between them: an
-algebraic side (a CE/PV cochain, a residue module, a shifted-cotangent
-generator, a coordinate ring), a physical side (a Hamiltonian current,
-a brane measurement, a principal-part observable), and the comparison
-map fixing their identification.  Entries are not parallel lists.  An
-entry is admissible only when both sides and the comparison morphism
-are explicit; an entry without a comparison morphism is fenced as a
-named obstruction class, not as a heuristic.
+Each entry names an algebraic side (a CE/PV cochain, a residue module,
+a shifted-cotangent generator, a coordinate ring), a physical side (a
+Hamiltonian current, a brane measurement, a principal-part observable),
+and the comparison morphism between them.  An entry without a
+comparison morphism appears as a named obstruction class.
 
-The dictionary is forced rather than tabulated.  The kinematic
-locality theorem below derives the entire factorization-current model
-from the unimodularity datum and three elementary operators.  The
-remaining blocks record the admissible identifications and the named
-obstructions to extending them.
-
-\paragraph{Local Calabi--Yau/unimodularity datum.}
-In the core local theorem surface, ``Calabi--Yau'' means only the
-following formal orientation/unimodularity datum.  It is a definition,
-not a compact-target hypothesis.
+\paragraph{Unimodularity datum.}
 \begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.25\textwidth}
   >{\raggedright\arraybackslash}p{0.67\textwidth}@{}}
 \hline
-\textbf{Datum} & \textbf{Definition and force}\\
+\textbf{Datum} & \textbf{Definition}\\
 \hline
 \endfirsthead
 \hline
-\textbf{Datum} & \textbf{Definition and force}\\
+\textbf{Datum} & \textbf{Definition}\\
 \hline
 \endhead
 \(\Omega_{\mathrm{loc}}\) &
@@ -59,8 +46,7 @@ The fixed holomorphic volume and symplectic form on the formal disk
   \Omega_{\mathrm{loc}}=dz_1\wedge dz_2 .
 \]
 It trivializes the local canonical line and fixes the residue
-orientation.  No compact manifold, no global moduli space, and no
-threefold Hodge theory are part of the datum.\\
+orientation.\\
 \hline
 Poisson tensor and bracket &
 The inverse bivector is
@@ -139,20 +125,9 @@ orientation dual to \(dz_1\wedge dz_2\), and the cyclic trace is
     \operatorname{Tr}_N(M).
 \]\\
 \hline
-Difference from compact CY\(_3\) BCOV &
-BCOV supplies source conventions: Dolbeault polyvectors, divergence from
-a volume form, and cotangent BV language.  It is not a theorem input for
-the local \(2_{\R}+2_{\C}\) Hamiltonian surface model.  The local datum is
-only \((\widehat{\C^2}_0,dz_1\wedge dz_2)\) with its Hamiltonian Lie
-algebra, continuous cotangent module, BV pairing, and residue/cyclic
-trace.\\
-\hline
 \end{longtable}
 
-\paragraph{Kinematic locality theorem.}
-The factorization-current model on the brane line is the local algebra
-of brane measurements.  Three locality operators force the
-construction.
+\paragraph{Kinematic locality.}
 
 \begin{thm}[Kinematic locality]
 \label{thm:dict-kinematic-locality}
@@ -193,27 +168,24 @@ model:
   \(\mathcal P=\operatorname{Ann}_{\mathrm{res}}(\C\cdot1)\subset
   H^2_{\mathfrak m}(\C[[z_1,z_2]])\,dz_1dz_2\).
 \end{enumerate}
-The three implications are derivations, not metaphors.  The
-\(Q\)-cohomology of (ii) and (iii) is the constructive content of the
-locality conclusion; (i) is a strict identity at chain level after
-distributional pairing, holding before any cohomology is taken.
+The \(Q\)-cohomology of (ii) and (iii) carries the locality
+conclusion; (i) is a chain-level identity after distributional
+pairing.
 
-\emph{Admissibility under the three localities.}  Trace observables
-\(\overline{\operatorname{Tr}\,f(\phi_1,\phi_2)}\) on the brane probe,
-smeared as \(B_f(a)\) (defined in the interval-current block below),
-exhibit all three localities: support locality from the equal-time
-bracket of the matrix model fields, topological locality from the
+Trace observables
+\(\overline{\operatorname{Tr}\,f(\phi_1,\phi_2)}\) smeared as
+\(B_f(a)\) satisfy (i)--(iii): support locality from the equal-time
+bracket of the matrix-model fields, topological locality from the
 \(Q\)-exact \(t\)-direction, formal-holomorphic locality from the
 \(\bar\partial\)-exact transverse direction.  Shifted-cotangent
-currents \(\Theta_\rho(B)\) (also defined below) exhibit (i) and (ii)
-but not the polynomial/formal-holomorphic locality of (iii):
+currents \(\Theta_\rho(B)\) satisfy (i) and (ii) but not (iii):
 \(\rho\in\mathcal P\) is a residue current at the brane point, not a
 polynomial jet.
 
-\emph{Forced shape.}  Items (ii) and (iii) restrict the dg Lie input
-of any acceptable factorization algebra to be locally constant in
-\(\R^2_{\mathrm{top}}\) and holomorphic in \(B\subset\C^2_{\mathrm{hol}}\),
-i.e.\
+Items (ii) and (iii) restrict the dg Lie input of an acceptable
+factorization algebra to be locally constant in
+\(\R^2_{\mathrm{top}}\) and holomorphic in
+\(B\subset\C^2_{\mathrm{hol}}\),
 \[
   \Omega_c^\bullet(U)\widehat\otimes
   \Omega_c^{0,\bullet}(B)\widehat\otimes
@@ -221,81 +193,20 @@ i.e.\
   \mathfrak g=\mathfrak h\ltimes
   \mathfrak h^\vee_{\mathrm{cont}}[1].
 \]
-Item (i) selects the \(P_0\)-bracket on smeared currents.  Together,
-the three locality operators force the native \(\C^2\) holomorphic
-factorization algebra
+Item (i) selects the \(P_0\)-bracket on smeared currents.  The three
+operators force the native \(\C^2\) holomorphic factorization algebra
 \(\mathcal F_{\mathrm{Ham}}^{\mathrm{hol}}\) and its mixed
 topological-current enhancement
-\(\mathcal F_{\mathrm{Ham}}^{\mathrm{mix}}\); the dictionary's
-remaining entries are the named comparison morphisms inside that
-forced shape.
+\(\mathcal F_{\mathrm{Ham}}^{\mathrm{mix}}\).
 \end{thm}
-
-The conceptual engine of this manuscript is contained in
-Theorem~\ref{thm:dict-kinematic-locality}: every CE/PV correspondence,
-trace algebra entry, shifted-cotangent identification, and Matlis
-principal-part comparison below is a downstream consequence.  Where an
-entry would force a comparison morphism the three localities cannot
-provide, that entry is fenced as a named obstruction class; the
-obstruction is not a deferral, it is the precise mathematical datum
-the next theorem cycle must construct.
-
-\paragraph{Admissible and inadmissible uses.}
-\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.25\textwidth}
-  >{\raggedright\arraybackslash}p{0.67\textwidth}@{}}
-\hline
-\textbf{Use} & \textbf{Status}\\
-\hline
-\endfirsthead
-\hline
-\textbf{Use} & \textbf{Status}\\
-\hline
-\endhead
-Admissible &
-Use \(\Omega_{\mathrm{loc}}\) to define
-\(\partial_{\Omega_{\mathrm{loc}}}\), the Poisson bracket, Hamiltonian
-vector fields modulo constants, the local BF action, the degree \(-1\)
-BV pairing, residue principal parts, Ext orientation, cyclic traces, and
-integration-by-parts/coadjoint formulas.\\
-\hline
-Admissible with proof &
-Use a global holomorphic symplectic surface only after reducing to a
-formal Darboux neighbourhood and recording the period obstruction to
-global Hamiltonian primitives.  Use a Costello graph/QME theorem only
-after supplying the elliptic parent, gauge fixing, convergent coefficient
-kernel, counterterm scheme, and brane-defect wavefront rules.\\
-\hline
-Inadmissible &
-Do not import compact Calabi--Yau threefold hypotheses, compact Hodge
-theory, compact-CY chiral homology, unproved one-dimensional
-vertex-algebra structure, period integrals, holomorphic anomaly equations,
-Gromov--Witten or Gopakumar--Vafa expansions, MNOP/PT/DT comparisons,
-quintic computations, OSV/GV, Abel--Jacobi or normal-function claims,
-CoHA structures, Igusa products, Borcherds lifts, BKM algebras, or Vol
-III comparison theorems into the core local SFT.\\
-\hline
-Inadmissible &
-Do not infer a compact BCOV theorem, Costello--Li anomaly cancellation,
-ordinary \(\lie{gl}_N\) QME cancellation, radial-parts theorem,
-finite-\(N\) trace normalization, or non-scalar closed-open BV/QME
-factorization-centre morphism from the word ``Calabi--Yau''.  Each such
-claim requires its own matched-conventions theorem and its own
-obstruction calculation.\\
-\hline
-\end{longtable}
 
 \paragraph{Native \(\C^2\) holomorphic factorization taxonomy.}
 The native holomorphic object forced by
 Theorem~\ref{thm:dict-kinematic-locality} is a
 two-complex-dimensional factorization algebra on
-\(\C^2_{\mathrm{hol}}\), not a one-complex-dimensional vertex/OPE
-algebra.  The taxonomy below records each native object on
-\(\R^2_{\mathrm{top}}\times\C^2_{\mathrm{hol}}\), its construction
-status, and the precise extra reduction datum that would extract a
-curve VOA from it.  No compact Calabi--Yau chiral homology, CoHA,
-quintic/GV/OSV structure, or Borcherds--Kac--Moody denominator is
-present in the native object; importing such targets requires a
-matched-conventions theorem stated explicitly.
+\(\C^2_{\mathrm{hol}}\).  The taxonomy below records each native object
+on \(\R^2_{\mathrm{top}}\times\C^2_{\mathrm{hol}}\) and the extra
+reduction datum required to extract a curve VOA from it.
 \begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.25\textwidth}
   >{\raggedright\arraybackslash}p{0.67\textwidth}@{}}
 \hline
@@ -329,9 +240,8 @@ The formal stalk of observables is the completed CE/PV object
   \simeq
   \mathrm{PV}_{\mathrm{coord}}(A_{\partial,\mathrm{coord}})
 \]
-only in the coordinate/admissible sense recorded below.  This is a
-two-complex-dimensional holomorphic factorization algebra in the
-manuscript's local sense of ``chiral''.  It is not yet the
+in the coordinate/admissible sense recorded below.  This is a
+two-complex-dimensional holomorphic factorization algebra, not a
 one-complex-dimensional vertex-algebra specialization.\\
 \hline
 Mixed topological-current enhancement over \(\R^2\) &
@@ -345,10 +255,8 @@ polydisk \(B\subset\C^2_{\mathrm{hol}}\), the mixed current input is
   (\mathfrak h\ltimes\mathfrak h^\vee_{\mathrm{cont}}[1]).
 \]
 Its observables are locally constant in \(U\) and holomorphic in \(B\).
-The brane-line current algebras below are the support-local
-one-real-dimensional restrictions of this mixed topological current
-object.  They are not compact-CY chiral homology and not a VOA obtained
-from a complex curve.\\
+The brane-line current algebras below are its support-local
+one-real-dimensional restrictions.\\
 \hline
 Weyl/Moyal open-string brane algebra and cyclic avatars &
 The degree-zero quantum brane target is the Weyl/Moyal deformation of the
@@ -373,8 +281,7 @@ algebra generated by \((\phi_1)^i{}_j,(\phi_2)^k{}_l\) with
 \]
 followed by the quantum moment-map reduction and the connected trace
 projection.  Cyclic and supercyclic bar-cobar avatars are trace or
-supertrace word complexes for matrix or supermatrix branes; they are not
-CoHA objects, compact-CY chiral homology, or BKM denominator data.\\
+supertrace word complexes for matrix or supermatrix branes.\\
 \hline
 Defect/principal-part current algebra &
 For an interval \(I\subset\R_{\mathrm{brane}}\),
@@ -404,14 +311,12 @@ with brackets
   \end{aligned}
 \]
 This is a support-local real-current \(P_0\) algebra with Matlis
-principal parts in two holomorphic variables.  It is not the singular OPE
-algebra of a one-dimensional vertex algebra.\\
+principal parts in two holomorphic variables.\\
 \hline
 One-dimensional vertex/OPE restriction boundary &
-The native \(\C^2\) Hamiltonian holomorphic factorization algebra above does not require
-the following data.  They are necessary only for the stronger assertion
-that it has been restricted to a one-complex-dimensional vertex/OPE
-algebra.  Such a restriction requires extra datum
+A restriction of the native \(\C^2\) Hamiltonian holomorphic
+factorization algebra to a one-complex-dimensional vertex/OPE algebra
+requires the extra datum
 \[
   \mathfrak R_L
   =
@@ -436,14 +341,9 @@ construction, and must prove independence of the auxiliary transverse
 radius, functoriality for disjoint disks, and translation covariance along
 the coordinate \(w\).  The tuple also includes the restricted state
 space \(V_L\), vacuum, translation, state-field map, and Zhu/zero-mode
-map.  In the \(\C\times\R\) interface used below, such a generic \(V_L\)
-datum is admissible only when it factors through
+map.  In the \(\C\times\R\) interface, such a \(V_L\) datum factors through
 \(\mathcal R_{\C\times\R}\) and is identified with
-\(V_{\mathrm{red}}\) in \(\mathfrak I_{\mathrm{ch}}\).  The present
-formal \(\C^2\) Hamiltonian data
-construct \(\mathcal F_{\mathrm{Ham}}^{\mathrm{hol}}\) and its mixed
-current avatars, but they do not choose \(L\), \(\mathcal B_\perp\), or
-\(\mathsf R_{L,\mathcal B_\perp}\).\\
+\(V_{\mathrm{red}}\) in \(\mathfrak I_{\mathrm{ch}}\).\\
 \hline
 OPE data for a restricted curve object &
 After such a restriction one must construct
@@ -467,9 +367,10 @@ with \(a_{(n)}b=0\) for \(n\gg0\), a vacuum
   (w_1-w_2)^N
   [Y_L(a,w_1),Y_L(b,w_2)]=0
 \]
-for \(N\gg0\).  These Laurent modes and finite singular orders are not
-part of the two-complex-dimensional holomorphic factorization algebra or
-of the real interval current algebra.\\
+for \(N\gg0\).  These Laurent modes and finite singular orders belong
+to the restricted curve object, not to the two-complex-dimensional
+holomorphic factorization algebra or the real interval current
+algebra.\\
 \hline
 Compatibility with the Weyl/Moyal brane algebra &
 A one-dimensional vertex/OPE restriction must also specify how the
@@ -492,17 +393,18 @@ current sector
 \[
   [J_{f,(0)},\Theta_\rho]
   =
-  \Theta_{\operatorname{ad}^{\vee}_{f,\hbar}\rho}.
+  \Theta_{\operatorname{ad}^{\vee}_{f,\hbar}\rho},
 \]
-Equivalently,
+together with
 \(\zeta_{L,\hbar}(f*g)=\zeta_{L,\hbar}(f)\zeta_{L,\hbar}(g)\).
-The existing Weyl/Moyal calculation supplies \(f*g\) and the reduced
-interval-current brackets only; it does not supply \(\zeta_{L,\hbar}\),
-the fields \(J_f(w)\), the central level, or the OPE singular expansion.\\
+The Weyl/Moyal calculation supplies \(f*g\) and the reduced
+interval-current brackets; the data \(\zeta_{L,\hbar}\), the fields
+\(J_f(w)\), the central level, and the OPE singular expansion are
+separate constructions.\\
 \hline
-Constructed chiral algebra interface tuple &
-An externally constructed curve chiral algebra may enter this manuscript
-only as the reduced vertex object \(V_{\mathrm{red}}\) in
+Curve chiral algebra interface tuple &
+An externally constructed curve chiral algebra enters as the reduced
+vertex object \(V_{\mathrm{red}}\) in
 \[
   \mathfrak I_{\mathrm{ch}}
   =
@@ -523,14 +425,12 @@ principal-part coefficient system
   \mathcal P_{\mathrm{red}}\subset
   H^2_{(z_1,z_2)}(\C[[z_1,z_2]])\,dz_1dz_2 .
 \]
-\(\mathcal F_{\mathrm{red}}\) denotes the resulting pushed-forward
-factorization algebra on \(\R_t\times\C_{z_1}\); until the reduction
-obstruction vanishes, it is a theorem target, not native \(\C^2\) data.
-The interface must prove the pushed-forward bracket, BV pairing, brane
-image, factorization-to-vertex package, BRST nilpotence, Zhu/zero-mode
-map, Capelli normalization, Moyal multiplicativity, the completed stable
-Hochschild/HKR/CE-PV comparison, and anomaly transport.  Its exact
-obstruction vector is
+\(\mathcal F_{\mathrm{red}}\) is the pushed-forward factorization
+algebra on \(\R_t\times\C_{z_1}\).  The interface must prove the
+pushed-forward bracket, BV pairing, brane image, factorization-to-vertex
+package, BRST nilpotence, Zhu/zero-mode map, Capelli normalization,
+Moyal multiplicativity, the completed stable Hochschild/HKR/CE-PV
+comparison, and anomaly transport.  The obstruction vector is
 \[
   \operatorname{Ob}_{\mathfrak I_{\mathrm{ch}}}
   =
@@ -539,32 +439,28 @@ obstruction vector is
    \operatorname{Ob}_{\mathrm{Zhu}},
    \operatorname{Ob}_{\mathrm{nat}}).
 \]
-Before this datum is supplied, a curve VOA or Zhu assertion is false
-transfer.  After it is supplied, \(V_{\mathrm{red}}\) is still a reduced
-shadow of \(\mathcal F_{\mathrm{Ham}}^{\mathrm{hol}}\), not the native
-\(\C^2\) holomorphic factorization algebra.\\
+\(V_{\mathrm{red}}\) is a reduced shadow of
+\(\mathcal F_{\mathrm{Ham}}^{\mathrm{hol}}\), not the native \(\C^2\)
+holomorphic factorization algebra.\\
 \hline
 \end{longtable}
 
-\paragraph{Normal \(\Omega\)-background theorem surface.}
+\paragraph{Normal \(\Omega\)-background.}
 The brane-preserving equivariant deformation scales the normal bundle
-\(N_LX=\R_s\oplus\C_{z_1}\oplus\C_{z_2}\) with \(t\) fixed; a literal
-rotation in the \((t,s)\)-plane does not preserve \(L\) as fixed
-locus.  This block records the objects and identities that must be
-constructed in the mixed de Rham/Dolbeault coefficient category to
-inscribe that deformation: the Cartan differential
+\(N_LX=\R_s\oplus\C_{z_1}\oplus\C_{z_2}\) with \(t\) fixed; a rotation
+in the \((t,s)\)-plane does not preserve \(L\) as fixed locus.  The
+objects and identities below define the deformation in the mixed de
+Rham/Dolbeault coefficient category: the Cartan differential
 \(Q_\Omega=Q+\iota_{V_\Omega}\), the localized normal contraction, the
 equivariant CE/PV bracket, and the residue-versus-Euler normalization.
-It is a theorem surface, not a Costello graph/QME theorem, and does
-not produce physical trace-state asymptotics.
 \begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.25\textwidth}
   >{\raggedright\arraybackslash}p{0.67\textwidth}@{}}
 \hline
-\textbf{Object or convention} & \textbf{Definition and force}\\
+\textbf{Object or convention} & \textbf{Definition}\\
 \hline
 \endfirsthead
 \hline
-\textbf{Object or convention} & \textbf{Definition and force}\\
+\textbf{Object or convention} & \textbf{Definition}\\
 \hline
 \endhead
 Ambient pair and fixed stratum &
@@ -577,9 +473,7 @@ The normal bundle of the brane line is
 \[
   N_LX=\R_s\oplus\C_{z_1}\oplus\C_{z_2}.
 \]
-The \(\Omega\)-background used here is normal scaling of this bundle with
-\(t\) fixed.  A literal rotation in the \((t,s)\)-plane is not native to
-this brane problem because it does not leave \(L\) as the fixed line.\\
+The \(\Omega\)-background scales this bundle with \(t\) fixed.\\
 \hline
 Equivariant parameters &
 Write
@@ -645,8 +539,7 @@ nonzero characters, so \(\epsilon_1+\epsilon_2\) is not inverted on the
 self-dual branch.\\
 \hline
 Normal contraction datum &
-The stronger theorem surface is the construction of a localized
-deformation retract
+A localized deformation retract
 \[
   \mathsf C_\Omega=(\pi_L,j_L,h_\Omega)
   \colon
@@ -661,13 +554,10 @@ for the mixed de Rham/Dolbeault coefficient complex, with
   Q_\Omega h_\Omega+h_\Omega Q_\Omega
   =\operatorname{id}-j_L\pi_L
 \]
-on the localized invariant normal complex.  On a homogeneous normal
-summand of nonzero weight \(\lambda\), \(h_\Omega\) is the Euler/Koszul
-homotopy divided by \(\lambda\), with signs fixed by the de Rham degree
-in the \(s\)-direction and the Dolbeault degree in the \(z_i\)-directions.
-The dictionary records this contraction datum as required data;
-it does not assert that the Costello propagator and counterterms have
-been transported through it.\\
+on the localized invariant normal complex.  On a homogeneous normal summand of nonzero weight \(\lambda\),
+\(h_\Omega\) is the Euler/Koszul homotopy divided by \(\lambda\), with
+signs fixed by the de Rham degree in the \(s\)-direction and the
+Dolbeault degree in the \(z_i\)-directions.\\
 \hline
 Hamiltonian and cotangent weights &
 For \(H_{a,b}=z_1^az_2^b\), \(a+b>0\),
@@ -737,7 +627,7 @@ Hamiltonian algebra is line-valued, not the old scalar Hamiltonian Lie
 algebra.\\
 \hline
 Equivariant CE/PV generator rule &
-The equivariant CE/PV theorem surface keeps the same generator labels
+The equivariant CE/PV map keeps the same generator labels
 \[
   c_{a,b}\mapsto\theta_{a,b},\qquad
   u_{a,b}\mapsto O_{a,b},
@@ -818,11 +708,11 @@ on the pair \((X,L)\),
 where the open stratum is the \(T_\Omega\)-equivariant mixed bulk
 factorization algebra, the closed stratum is the brane-line current
 object, and \(\mathcal M_{\Omega,L}\) is the defect module.  Protected
-observables become stratified factorization-homology traces only after
-the brane-defect QME and the trace-state normalization are supplied.\\
+observables become stratified factorization-homology traces after the
+brane-defect QME and the trace-state normalization are supplied.\\
 \hline
 Open obstruction vector &
-The residual theorem obligations are recorded as
+The residual obligations are
 \[
   \begin{aligned}
   \operatorname{Ob}_\Omega
@@ -848,11 +738,6 @@ large-\(N\) trace-state theorem.\\
 \end{longtable}
 
 \paragraph{Canonical maps and obstruction symbols.}
-The symbols below name the comparison morphisms of the manuscript and
-the obstruction classes that fence them.  Each map has an algebraic
-source, a physical or geometric target, and an explicit construction
-status; each obstruction class is a precise cohomology, cokernel, or
-finite-window matrix datum, not a heuristic deferral.
 
 \begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.25\textwidth}
   >{\raggedright\arraybackslash}p{0.67\textwidth}@{}}
@@ -960,16 +845,14 @@ Matched-conventions descent vector
   \operatorname{ob}_{\mathrm{conv}},
   \operatorname{ob}_{\mathrm{hyp}},
   \operatorname{ob}_{6r},
-  \operatorname{ob}_{\mathrm{MD}})\), with target-specific Vol III,
-Igusa/BKM, or sister-volume components appended when such a target is
-claimed.\\
+  \operatorname{ob}_{\mathrm{MD}})\),
+indexed by the comparison target \(\mathfrak C_{\mathrm{tar}}\).\\
 \hline
 \end{longtable}
 
-\paragraph{Non-scalar Costello/QME dictionary.}
-This block records the local obstruction habitat for
-Problem~\ref{prob:quantum-p0-operation-realization}.  Each entry names
-a comparison morphism, an obstruction class, or both.  The scalar
+\paragraph{Non-scalar Costello/QME labels.}
+The local obstruction habitat for
+Problem~\ref{prob:quantum-p0-operation-realization}.  The scalar
 projection \(\sigma_{\mathrm{sc}}\) is associated-graded data; the
 projection \(\widehat\sigma_{\mathrm{sc}}\) is a filtered chain map
 existing exactly when the successive scalar-lift obstructions vanish;
@@ -1272,13 +1155,10 @@ observables.\\
 \end{longtable}
 
 \paragraph{Common local rings and quotients.}
-The rings below carry the local algebraic data of the formal
-symplectic disk and are the source side for every comparison morphism
-that follows.  Their physical side enters only through specific
-constructions: \(\mathfrak h\) labels Hamiltonian observables;
+\(\mathfrak h\) labels Hamiltonian observables;
 \(\mathfrak g_{\mathrm{str}}\) labels CE/PV closed cochains;
 \(\bar A\) labels the polynomial trace sector; \(N\) labels the brane
-probe rank.  No other identifications are tacit.
+probe rank.
 \begin{center}
 \begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.25\textwidth}
   >{\raggedright\arraybackslash}p{0.67\textwidth}@{}}
@@ -1337,11 +1217,8 @@ Taylor truncation degree when a finite quotient
 \end{center}
 
 \paragraph{Large-\(N\) and quotient conventions.}
-The conventions below distinguish algebraic stable trace sectors from
-physical large-\(N\) cumulant claims.  An algebraic primitive
-projection is admissible inside the stable range; a physical cumulant
-requires a state \(\omega_{N,\Omega}\) and is not supplied by the
-projection alone.
+An algebraic primitive projection is defined inside the stable range;
+a physical cumulant requires a state \(\omega_{N,\Omega}\).
 \begin{center}
 \begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.25\textwidth}
   >{\raggedright\arraybackslash}p{0.67\textwidth}@{}}
@@ -1366,9 +1243,8 @@ generators. The unit of the symmetric algebra remains.\\
 \end{center}
 
 \paragraph{Separation rule.}
-The next three blocks live in disjoint modules.  PBW special-fibre
-labels \(H_{a,b},O_{a,b},\Psi_{a,b}\); CE/PV labels
-\(c^I,u_I,\theta^I,O_I\); and Matlis labels \(\rho_{a,b}\) carry
+PBW special-fibre labels \(H_{a,b},O_{a,b},\Psi_{a,b}\), CE/PV labels
+\(c^I,u_I,\theta^I,O_I\), and Matlis labels \(\rho_{a,b}\) carry
 different \(\mathfrak h\)-actions and different polarizations.  Shared
 indices are labels, not module identifications.
 
@@ -1383,14 +1259,7 @@ Fourier-twisted polarization, not the original Hamiltonian coadjoint
 action.  Outside the Fourier--Rees theorem, no isomorphism between the
 spans of \(\Psi_{a,b}\) and \(\rho_{a,b}\) is asserted.
 
-\paragraph{Source--target status table.}
-The table below names, for each source/target pair, the comparison
-morphism (the algebra-to-physics identification), its proof status,
-and the inadmissible identification it does \emph{not} supply.  The
-``Status'' column is a strict claim about which morphism has been
-constructed; ``Forbidden identification'' fences the surface against
-silent transfer to a stronger object.  No row asserts more than the
-explicit comparison morphism it names.
+\paragraph{Source--target table.}
 
 \begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.22\textwidth}
   >{\raggedright\arraybackslash}p{0.22\textwidth}
@@ -1398,14 +1267,14 @@ explicit comparison morphism it names.
   >{\raggedright\arraybackslash}p{0.28\textwidth}@{}}
 \hline
 \textbf{Source (algebraic)} & \textbf{Target (physical)} &
-\textbf{Comparison morphism status} &
-\textbf{Forbidden identification}\\
+\textbf{Comparison morphism} &
+\textbf{Excluded identification}\\
 \hline
 \endfirsthead
 \hline
 \textbf{Source (algebraic)} & \textbf{Target (physical)} &
-\textbf{Comparison morphism status} &
-\textbf{Forbidden identification}\\
+\textbf{Comparison morphism} &
+\textbf{Excluded identification}\\
 \hline
 \endhead
 coordinate-window tower / mixed-continuous replacement attached to
@@ -1418,14 +1287,14 @@ and descent data\\
 \hline
 bracket-admissible \(B\subset\mathrm{PV}_{\mathrm{coord}}\) &
 \(P_0\) realization \(\Phi^B_{P_0}\) &
-proved after completeness, \(d_\pi^{\mathrm{coord}}\)-stability, product stability, and
-continuous contraction bracket are part of \(B\)'s data &
+restriction of \(\Phi_{\mathrm{coord}}\) when \(B\) supplies completeness,
+\(d_\pi^{\mathrm{coord}}\)-stability, product stability, and a
+continuous contraction bracket &
 not the strict product/direct-sum completion\\
 \hline
 kernel-admissible \(B\) &
 Maurer--Cartan kernel \(\Theta_B\) &
-accepted only after diagonal convergence in the chosen completed tensor
-product is proved &
+diagonal-convergent kernel in the chosen completed tensor product &
 not a strict Casimir kernel for the ambient product completion\\
 \hline
 \(C^\bullet_{\mathrm{CE}}(\mathfrak g)\) / \(\mathrm{PV}(A)\) &
@@ -1443,18 +1312,18 @@ not a same-action identification of \(\Psi_{a,b}\) with
 \hline
 admissible Tate / relative bar-cobar envelope &
 \(\widehat U(\mathfrak g_{\mathrm{adm}})\) &
-accepted only after conilpotent CE chains, exact continuous duality, PBW
-completeness, and strong convergence are supplied &
+PBW envelope under conilpotent CE chains, exact continuous duality,
+PBW completeness, and strong convergence &
 not available for the raw full formal disk without admissibility data\\
 \hline
 \(c^I\) &
 \(\theta^I\) &
-proved generator rule &
+generator rule \(c^I\mapsto\theta^I\) of \(\Phi_{\mathrm{coord}}\) &
 not a boundary Hamiltonian coordinate\\
 \hline
 \(u_I\) &
 \(O_I\) and brane-line Hamiltonian coordinates \(B_f(a)\) &
-proved generator rule &
+generator rule \(u_I\mapsto O_I\) of \(\Phi_{\mathrm{coord}}\) &
 not a Hamiltonian CE ghost\\
 \hline
 \(C^\bullet_{\mathrm{CE}}(\mathfrak g_I)\) on intervals &
@@ -1465,70 +1334,66 @@ not a same-variance morphism of raw factorization algebras\\
 \hline
 \(\Psi_{a,b}\) &
 stable primitive one-\(\psi\) PBW special-fibre class &
-proved in the stable trace complex &
+stable-trace identification in the trace complex &
 not \(\mathfrak h^\vee_{\mathrm{cont}}\), not \(\mathcal P\), and not a
 principal-part current\\
 \hline
 \(\rho_{a,b}\) &
 \(\mathcal P=\operatorname{Ann}_{\mathrm{res}}(\C\cdot1)\) &
-proved by residue/Matlis comparison &
+residue/Matlis pairing
+\(f\otimes\rho\mapsto\operatorname{Res}_0(f\rho)\) &
 not a polynomial descendant and not an \(R\)-submodule quotient\\
 \hline
 \(\mathsf F_{\mathrm{Rees}}\) &
 \(\bigoplus\hbar^{a+b}\C[[\hbar]]\rho_{a,b}\) &
-proved after Fourier polarization &
+Fourier-polarized Rees label bridge &
 not a same-action bridge \(\Psi_{a,b}\cong\rho_{a,b}\)\\
 \hline
 \(\Omega_c^\bullet(I)\otimes\mathfrak h\) &
 brane-line Hamiltonian currents &
-proved reduced current model &
+reduced current model &
 \(C_c^\infty(I)\) denotes only the degree-zero summand\\
 \hline
 \(\mathcal D'_c(I)\widehat\otimes\mathcal P[1]\) &
 principal-part current sector \(\Theta_\rho(B)\) &
-proved reduced post-contraction &
+post-de-Rham-current contraction &
 does not require a product of two distributions\\
 \hline
 formal Moyal algebra \(\bar A_\hbar\) &
 degree-zero Weyl coefficient target &
-proved algebraically in the reduced setting with raw weights \(1\) and
-\(1/24\) &
+reduced algebraic Moyal map with raw weights \(1\) and \(1/24\) &
 not a finite-\(N\) radial-parts theorem by itself\\
 \hline
 finite-\(N\) radial-parts target &
 stable connected trace realization of the Moyal coefficients &
-finite-certificate-relative theorem datum: the formal coefficients,
-Capelli normalization, free normal-diagram obstruction
-\(\mathfrak o^{\mathrm{rad}}_{a,b}\), proved edge PBW strip, and the
+finite-certificate-relative datum: formal coefficients, Capelli
+normalization, free normal-diagram obstruction
+\(\mathfrak o^{\mathrm{rad}}_{a,b}\), edge PBW strip, and the
 remaining uniform splitting or left-cokernel theorem &
 not supplied by formal Moyal coefficients or by the cited radial-parts
 sources alone; not a Costello analytic graph/QME realization\\
 \hline
 Costello brane-defect kernel &
 closed-open BV/QME specialization &
-open obstruction datum &
+obstruction datum
+\(\operatorname{Ob}_{w,\partial,\hbar}\) of bulk-to-defect curvature &
 not inferred from the formal Moyal or reduced open-line computation\\
 \hline
 scalar cocycle \([\bar c]\) &
 \(U(1)\) anomaly / Capelli contact line &
-proved distinguished class &
+distinguished class in
+\(H^2_{\mathrm{Lie}}(\bar A,\C)\) &
 not an exhaustive classification of unreduced QME cancellation\\
-\hline
-External global bulk-boundary target &
-compact BCOV / Calabi--Yau / Vol III / Igusa--BKM consequence &
-open matched-conventions descent problem &
-not a consequence of the local Koszul Layers 0--6\\
 \hline
 \end{longtable}
 
 \paragraph{PBW special-fibre open trace labels.}
-The labels below name the algebraic side of the brane probe at the
-\(\hbar=0\) special fibre.  The physical side is the trace observable
+Algebraic side: the brane probe at the \(\hbar=0\) special fibre.
+Physical side: the trace observable
 \(\overline{\operatorname{Tr}\,f(\phi_1,\phi_2)}\) on the matrix Weyl
-brane after the moment-map reduction.  The comparison morphism is the
-PBW limit of that trace observable; it is an isomorphism of stable
-trace complexes only after the Procesi--Razmyslov stable range
-\(N\geq d\) has been entered.
+brane after moment-map reduction.  Comparison morphism: the PBW limit
+of that trace observable, an isomorphism of stable trace complexes in
+the Procesi--Razmyslov stable range \(N\geq d\).
 \begin{center}
 \begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.25\textwidth}
   >{\raggedright\arraybackslash}p{0.67\textwidth}@{}}
@@ -1572,19 +1437,17 @@ The shared indices on \(H_{a,b}\), \(\Psi_{a,b}\), and
 \(\rho_{a,b}\) are labels, not an \(\mathfrak h\)-module
 identification: the span of the \(\Psi_{a,b}\) is not
 \(\mathfrak h^\vee_{\mathrm{cont}}\), not \(\mathcal P\), and not a
-principal-part current module.  The Fourier--Rees bridge is the only
-comparison morphism between PBW and Matlis sectors.
+principal-part current module.  The Fourier--Rees bridge
+\(\mathsf F_{\mathrm{Rees}}\) is the only comparison morphism between
+PBW and Matlis sectors.
 
 \paragraph{Closed CE/PV labels.}
-The labels below name the closed-side algebraic complex.  The physical
-side is the closed-string \(P_0\)-central operation acting on brane
-observables through Witten's source convention.  The comparison
-morphism is \(\Phi_{\mathrm{coord}}\): a coordinate dg CE/PV
-isomorphism on generators
-(\(c^I\mapsto\theta^I\), \(u_I\mapsto O_I\)).  Its restriction to a
-bracket-admissible \(B\) is the \(P_0\) realization \(\Phi^B_{P_0}\);
-without bracket-admissibility data only the dg algebra identification
-holds.
+Algebraic side: the closed-side complex of CE/PV cochains.  Physical
+side: the closed-string \(P_0\)-central operation on brane
+observables.  Comparison morphism: \(\Phi_{\mathrm{coord}}\), the
+coordinate dg CE/PV isomorphism on generators
+\(c^I\mapsto\theta^I\), \(u_I\mapsto O_I\); its restriction to a
+bracket-admissible \(B\) is the \(P_0\) realization \(\Phi^B_{P_0}\).
 \begin{center}
 \begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.25\textwidth}
   >{\raggedright\arraybackslash}p{0.67\textwidth}@{}}
@@ -1629,17 +1492,16 @@ is \(\Phi^B_{P_0}\) only after a bracket-admissible \(B\) is chosen.\\
 \end{center}
 
 \paragraph{Matlis principal-part labels.}
-The labels below name the Grothendieck-dual side of the formal jet
-algebra \(\mathfrak h\): the residue/Matlis principal-part module
-\(\mathcal P\) that appears as
-\(\mathfrak h^\vee_{\mathrm{cont}}\) under residue duality.  The
-physical side is the principal-part current observable
-\(\Theta_\rho(B)\) on a brane interval.  The comparison morphism is
-the residue pairing \(\mathfrak h\otimes\mathcal P\to\C\),
-\(f\otimes\rho\mapsto\operatorname{Res}_0(f\rho)\); the Hamiltonian
-coadjoint action on \(\mathcal P\) is its image under this pairing.
-This is the formal-holomorphic locality (iii) of
-Theorem~\ref{thm:dict-kinematic-locality} read as algebra.
+Algebraic side: the Grothendieck-dual of the formal jet algebra
+\(\mathfrak h\), namely the residue/Matlis principal-part module
+\(\mathcal P\cong\mathfrak h^\vee_{\mathrm{cont}}\).  Physical side:
+the principal-part current observable \(\Theta_\rho(B)\) on a brane
+interval.  Comparison morphism: the residue pairing
+\(\mathfrak h\otimes\mathcal P\to\C\),
+\(f\otimes\rho\mapsto\operatorname{Res}_0(f\rho)\), with Hamiltonian
+coadjoint action on \(\mathcal P\) its image.  This is the
+formal-holomorphic locality (iii) of
+Theorem~\ref{thm:dict-kinematic-locality}.
 \begin{center}
 \begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.25\textwidth}
   >{\raggedright\arraybackslash}p{0.67\textwidth}@{}}
@@ -1685,15 +1547,14 @@ the original Hamiltonian coadjoint action.  No \(\mathfrak h\)-module
 isomorphism between the two spans is used or asserted.
 
 \paragraph{Interval-current and boundary labels.}
-The labels below name the brane-line algebraic objects produced by the
-support-locality differential of
-Theorem~\ref{thm:dict-kinematic-locality}\,(i).  The physical side is
-the smeared brane measurement \(B_f(a)\) and the principal-part
-current observable \(\Theta_\rho(B)\).  The comparison morphism is the
-de Rham-current contraction sending the CE coordinate
-\(u_{a(t)dt\otimes f}\) to \(B_f(a)\) and \(c_{B,\rho}\) to
-\(\Theta_\rho(B)\); a smooth test function multiplies a distribution,
-no product of two distributions is required.
+Algebraic side: the brane-line objects produced by the support-locality
+differential of Theorem~\ref{thm:dict-kinematic-locality}\,(i).
+Physical side: the smeared brane measurement \(B_f(a)\) and the
+principal-part current observable \(\Theta_\rho(B)\).  Comparison
+morphism: the de Rham-current contraction
+\(u_{a(t)dt\otimes f}\mapsto B_f(a)\),
+\(c_{B,\rho}\mapsto\Theta_\rho(B)\); a smooth test function multiplies
+a distribution, no product of two distributions appears.
 \begin{center}
 \begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.25\textwidth}
   >{\raggedright\arraybackslash}p{0.67\textwidth}@{}}
