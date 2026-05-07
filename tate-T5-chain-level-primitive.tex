@@ -1502,27 +1502,139 @@ $P_0$ bracket]\label{lem:filtration-preservation}
   asserted result is exactly the shadow statement and nothing stronger.
 \end{proof}
 
-\begin{rmk}[Scope of the primitive indecomposable shadow]
-  \label{rmk:T5-primitive-shadow-scope}
-	  The primitive indecomposable \(P_0\)-shadow map of
-	  Theorem~\ref{thm:chain-level-primitive-projection} supplies the
-	  local primitive indecomposable \(P_0\)-shadow component of
-  Problem~\ref{prob:formal-factorization-center}, item~(3), and the
-	  primitive indecomposable shadow component of
-  Theorem~\ref{thm:main-local}. It does not by itself close
-  Problem~\ref{prob:formal-factorization-center},
-  because the Tate-completion of the Casimir
-  ($\bigoplus_{d\geq 1}H_d^\vee\to$ a topological coefficient in
-  which the Casimir converges) and the propagator extension are
-  separate analytic obligations not addressed here. Nor does it supply
-  the missing centrality homotopies for principal-part currents against
-  arbitrary unreduced open observables.
-  Proposition~\ref{prop:quantum-descendant-label-obstruction} further
-  shows that the one-\(\psi\) label map is not compatible with the
-  Moyal coadjoint action after quantization. The chain-level
-  construction is therefore sufficient only for the classical primitive
-  indecomposable shadow.
-\end{rmk}
+\begin{thm}[Scope of the chain-level primitive indecomposable
+shadow]\label{thm:T5-primitive-shadow-scope}
+  The chain-level primitive indecomposable \(P_0\)-shadow map of
+  Theorem~\ref{thm:chain-level-primitive-projection} supplies the
+  associated-graded \(E_1\)-page evidence on the zero-\(\psi\) and
+  one-\(\psi\) primitive subspaces of the unreduced cotangent
+  factorization-centre obstruction filtration: equivalently the
+  generator-subspace component of
+  Problem~\ref{prob:formal-factorization-center}~item~(3) and the
+  indecomposable-shadow component of
+  Theorem~\ref{thm:main-local}.  It does not supply, and is not a
+  surrogate for, any of the following four data of the unreduced lift:
+  \begin{enumerate}
+    \item \emph{(Centrality homotopies.)}  The strict cochain-level
+      \(P_0\)-centrality homotopy
+      \(h^{P_0}_{\mathrm{cent}}\) of unreduced principal-part currents
+      against arbitrary unreduced open observables, and the
+      factorization-product centrality homotopy
+      \(h^{\mathrm{prod}}_{\mathrm{cent}}\), corresponding to the
+      components
+      \(\operatorname{ob}_{\mathrm{cent}}^{P_0}\) and
+      \(\operatorname{ob}_{\mathrm{cent}}^{\mathrm{prod}}\) of
+      \(\operatorname{Ob}_{\mathrm{cent/QME/desc}}\).  The chain-level
+      primitive shadow is strictly compatible with the open \(P_0\)
+      bracket and the factorization product on the indecomposable
+      quotient (Theorems
+      \ref{thm:chain-level-primitive-projection-Q},
+      \ref{thm:chain-level-primitive-projection-factorization},
+      \ref{thm:chain-level-primitive-projection-P0}); it does not
+      address either centrality homotopy on the full unreduced complex,
+      because the unreduced complex contains positive-trace-count
+      strata which the indecomposable projection kills.
+    \item \emph{(Tate/weighted coefficient kernel.)}  The convergent
+      Casimir kernel
+      \(C_{\mathfrak h}=\sum_{d\geq1}\sum_i e_{d,i}\otimes e^i_d\) inside
+      a coefficient category in which the Costello propagator
+      \(P_{\epsilon,L}\) extends, the component
+      \(\mathfrak o_{\mathrm{Cas}}\) of \(\operatorname{Ob}_T\), and the
+      stratified Weiss \v{C}ech--Roos descent class
+      \(\delta_{\check C/R}^{\mathrm{Weiss}}\) of
+      Remark~\ref{rmk:weiss-ran-descent-obstruction}.  The chain-level
+      construction uses no analytic input and therefore neither
+      provides nor obstructs the Tate completion.
+    \item \emph{(Brane-defect propagator extension.)}  The Costello
+      heat-kernel propagator \(P_{\epsilon,L}\) extended to the
+      brane-defect coefficient module of
+      \ref{defn:endpoint-admissible-coefficient-module}, the component
+      \(\mathfrak o_{\mathrm{BV,end}}\) of \(\operatorname{Ob}_T\), and
+      its renormalized one-loop and higher-loop QME endpoint
+      \(\operatorname{ob}_{\mathrm{QME}}^{\mathrm{bd}}\).  The
+      chain-level construction is the analytic-free \(E_1\)-page
+      surrogate for this datum on the indecomposable subspace; the
+      renormalized BV homotopies of Costello are recorded separately as
+      Problem~\ref{prob:formal-factorization-center}, items~(1)--(2).
+    \item \emph{(One-\(\psi\) Moyal-coadjoint intertwiner.)}  The
+      polynomial PBW descendant action and the principal-part
+      coadjoint action are not isomorphic as \(\mathfrak h_\hbar\)-modules
+      (Proposition~\ref{prop:quantum-descendant-label-obstruction},
+      Theorem~\ref{thm:no-same-action-rees-fourier-descendants}); the
+      one-\(\psi\) label shadow records labels only and does not
+      intertwine these two actions, equivalently the chain-level
+      construction provides no quantum lift of the cotangent label map.
+  \end{enumerate}
+  Equivalently, in the spectral-sequence presentation of the masthead,
+  the chain-level primitive shadow is the \(E_1\)-page; the higher
+  differentials \(d_2,d_3,\ldots\), are the four enumerated data, none
+  of which is supplied here.  The chain-level construction is
+  sufficient \emph{exactly and only} for the classical
+  associated-graded primitive indecomposable shadow on the displayed
+  generator subspaces.
+\end{thm}
+
+\begin{proof}
+  Theorem~\ref{thm:chain-level-primitive-projection} establishes the
+  four positive compatibilities (\(Q\), factorization, \(P_0\)-bracket,
+  cosheaf) on the indecomposable quotient.  Each negative item of the
+  scope statement is a separate residual:
+
+  Item~(1).  A \(P_0\)-centrality homotopy is a chain
+  \(h^{P_0}_{\mathrm{cent}}\) on the full unreduced open observable
+  complex with
+  \(Q h^{P_0}_{\mathrm{cent}}+h^{P_0}_{\mathrm{cent}}Q
+   =\Phi\circ\{-,-\}_{\mathrm{closed}}-\{-,-\}_{\mathrm{open}}\circ
+   (\Phi\otimes\Phi)\), and analogously for the factorization product;
+  the chain-level primitive shadow is a projection onto the
+  generator subspace and contains no information about how to extend
+  \(\{-,-\}_{\mathrm{open}}\) past the symmetric-algebra augmentation
+  ideal squared.  By
+  Theorem~\ref{thm:chain-level-primitive-projection-P0}, the homotopy
+  on the indecomposable subspace can be taken to be zero, but this is
+  the \(d_1\)-vanishing of the spectral sequence on \(F_1/F_0\), not the
+  full \(P_0\)-centrality homotopy on \(F_{\geq2}\).
+
+  Item~(2).  The Tate/weighted Casimir convergence and the stratified
+  Weiss \v{C}ech--Roos descent are coefficient-category and
+  topology-of-covers data which the chain-level construction never
+  uses; their habitats are
+  \(\widehat{\mathfrak h}\widehat\otimes
+  \widehat{\mathfrak h}^\vee_{\mathrm{cont}}\) and the Cech cone
+  \(\Delta^{N,M}_{V,\mathcal U}\) of
+  Remark~\ref{rmk:weiss-ran-descent-obstruction}, neither of which
+  appears anywhere in the proofs above.
+
+  Item~(3).  The chain-level shadow is independent of the analytic
+  input \((P_{\epsilon,L},Q+\hbar\Delta)\) by
+  Remark~\ref{rmk:no-heat-kernel-needed}; therefore it can neither
+  produce the Costello renormalized BV homotopies nor obstruct them.
+  The renormalized brane-defect QME class
+  \(\operatorname{ob}_{\mathrm{QME}}^{\mathrm{bd}}\) is the residual
+  endpoint of \(\mathfrak o_{\mathrm{BV,end}}\) and lives in the
+  cohomology
+  \(H^1(\mathcal O_{\mathrm{loc}}(\mathcal E_w),Q+\{I_w,-\})\) of
+  \ref{thm:hadamard-mittag-leffler}~(iii), which is constructed from
+  the Hadamard parametrix; this complex contains no chain-level
+  primitive datum.
+
+  Item~(4).  The negative result is
+  Proposition~\ref{prop:quantum-descendant-label-obstruction} together
+  with Theorem~\ref{thm:no-same-action-rees-fourier-descendants}: at
+  bidegree \((1,1)\) on the test Hamiltonian \(z_1^4\) the polynomial
+  PBW descendant action gives \(4\,\widetilde\Psi_{4,0}\) at order
+  \(\hbar^0\), while the Moyal coadjoint action gives
+  \(-24\,\hbar^2\rho_{0,4}+\cdots\); independently, the local
+  nilpotence of \(z_1,z_2\) on the polynomial Rees Weyl module is
+  incompatible with the non-local-nilpotence on
+  \(\mc P((\hbar))\).  Both obstructions appear after the
+  indecomposable projection, so adding decomposable terms cannot
+  repair them within the present construction.
+
+  Hence the chain-level primitive shadow supplies exactly the
+  associated-graded \(E_1\)-page on the displayed generator subspace,
+  no more and no less.
+\end{proof}
 
 \begin{rmk}[On the role of the de Rham contraction]
   \label{rmk:role-of-deRham-contraction}
