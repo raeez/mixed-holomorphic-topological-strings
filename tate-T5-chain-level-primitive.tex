@@ -8,29 +8,32 @@ projection
   \pi_{\mathrm{prim}}\colon
   \mathrm{Obs}^{\mathrm{cl}}_{\mathrm{open},N}(I)
   \longrightarrow
-  \Omega^\bullet_c(I)\widehat\otimes\bar A
+  \Omega^\bullet_c(I)\widehat\otimes\bar A,
+  \qquad
+  \bar A=\C[z_1,z_2]/\C\cdot 1,
 \]
 exists strictly, without heat-kernel propagator or finite-scale
-regularization, and realizes the indecomposable $P_0$-shadow of the
+regularization, and realizes the indecomposable \(P_0\)-shadow of the
 reduced cotangent comparison?
 
 \emph{Named obstruction class.}  The missing primitive in the
-$\varprojlim^1H^0$ tower of
-Theorem~\ref{thm:wt-nonscalar-counterterm-criterion}: equivalently the
+\(\varprojlim^1H^0\) tower of
+Theorem~\ref{thm:wt-nonscalar-counterterm-criterion}, namely the
 secondary class
 \[
   \lambda_n\in
   \varprojlim\nolimits^1_M H^0\bigl(\mathcal Q^\bullet_{w,M}(I)\bigr),
 \]
-where $\mathcal Q^\bullet_{w,M}$ is the finite-window non-scalar
-local-functional complex of
-Definition~\ref{defn:wt-nonscalar-qme-tower}.  Vanishing of $\lambda_n$
-identifies a chain-level primitive of the
-$P_0$-shadow recursion compatibly with truncation; nonvanishing is the
-Roos primitive obstruction.
+in which \(\mathcal Q^\bullet_{w,M}(I)\) is the finite-window
+non-scalar local-functional complex of
+Definition~\ref{defn:wt-nonscalar-qme-tower}.  Vanishing of
+\(\lambda_n\) is the precise primitive-compatibility datum that
+licences a chain-level primitive of the \(P_0\)-shadow recursion
+compatibly with truncation; nonvanishing is the Roos primitive
+obstruction.
 
-\emph{Higher-$\psi$ ceiling.}  For the cyclic chip-moving Koszul
-complex $K^\bullet_{R,S}$ of
+\emph{Higher-\(\psi\) ceiling.}  For the cyclic chip-moving Koszul
+complex \(K^\bullet_{R,S}\) of
 Definition~\ref{def:T5-full-psi-complex},
 \[
   H_p(K_{R,S})\cong\begin{cases}
@@ -39,28 +42,87 @@ Definition~\ref{def:T5-full-psi-complex},
     0, & p\geq2,
   \end{cases}
 \]
-by the Abel-map Vietoris--Begle equivalence
-$\widetilde Y_{R,S}\simeq_{\mathrm H}S^1$ together with cyclic
-coinvariants (Lemmas~\ref{lem:T5-cellular-chain-identification},
-\ref{lem:T5-abel-cyclic-stabilizers}).  Thus the chain-level primitive
-is confined to the Hamiltonian sector
-$\bar A\oplus\bar A_{\mathrm{desc}}[1]$; no higher-$\psi$ correction
-line is available, and the missing-datum search is constrained to that
-two-summand target.
+where \(\Psi_{a,b}=\sum_{w\in\mathsf W_{a,b}}\operatorname{Tr}(\psi w)\)
+is the symmetrised one-\(\psi\) trace
+(Theorem~\ref{thm:T5-one-psi-homology}, Lemmas
+\ref{lem:T5-cellular-chain-identification},
+\ref{lem:T5-abel-cyclic-stabilizers}).  The displayed homology is the
+Abel-map Vietoris--Begle equivalence
+\(\widetilde Y_{R,S}\simeq_{\mathrm H}S^1\) of the cellular chip-moving
+state complex \(\widetilde Y_{R,S}\), passed to cyclic coinvariants by
+\(\C[C_S]\)-semisimplicity.  Hence the chain-level primitive lives
+exactly on the Hamiltonian sector
+\(\bar A\oplus\bar A_{\mathrm{desc}}[1]\), the closed Hamiltonian
+algebra \(\bar A\) summed with its odd-shifted one-\(\psi\) descendant
+copy
+\(\bar A_{\mathrm{desc}}=\bigoplus_{a+b>0}\C\cdot[\Psi_{a,b}]\); no
+higher-\(\psi\) correction line is available, and the missing-datum
+search is constrained to that two-summand target.
+
+\emph{Unreduced cotangent lift, scope equivalence.}  The unreduced
+cotangent factorization-centre morphism
+\[
+  \Phi_{\mathrm{fact}}^{\mathrm{unred}}:
+  \mathrm{Obs}^{\mathrm{cl}}_{\mathrm{closed},H}\big|_L
+    \longrightarrow
+  \mathrm Z^{P_0}_{\mathrm{fact}}
+    \bigl(\mathrm{Obs}^{\mathrm{cl}}_{\mathrm{open},N}\bigr)
+\]
+of Problem~\ref{prob:formal-factorization-center} exists if and only
+if the joint obstruction
+\[
+  \operatorname{Ob}_{\mathrm{cent/QME/desc}}
+    =
+    \bigl(
+      \operatorname{ob}_{\mathrm{cent}}^{\mathrm{prod}},\
+      \operatorname{ob}_{\mathrm{cent}}^{P_0},\
+      \operatorname{ob}_{\mathrm{QME}}^{\mathrm{bd}},\
+      \delta_{\check C/R}^{\mathrm{Weiss}}
+    \bigr)
+\]
+vanishes with chosen compatible null-homotopies: the
+factorization-product centrality class
+\(\operatorname{ob}_{\mathrm{cent}}^{\mathrm{prod}}\), the
+\(P_0\)-bracket centrality class
+\(\operatorname{ob}_{\mathrm{cent}}^{P_0}\), the brane-defect QME
+endpoint class \(\operatorname{ob}_{\mathrm{QME}}^{\mathrm{bd}}\), and
+the stratified Weiss \v{C}ech--Roos descent class
+\(\delta_{\check C/R}^{\mathrm{Weiss}}\) of
+Remark~\ref{rmk:weiss-ran-descent-obstruction}.  This iff is the
+specialization of
+Theorem~\ref{thm:tate-cotangent-lift-iff} to the centrality / QME /
+descent components of the obstruction vector
+\(\operatorname{Ob}_T\).  In that filtration the chain-level
+primitive shadow constructed below is the \emph{associated graded} of
+the unreduced lift problem on its zero-\(\psi\) Hamiltonian and
+one-\(\psi\) descendant generator subspaces, that is, the \(E_1\)-page
+of the Beilinson--Roos spectral sequence whose \(E_\infty\)-page is
+\(\Phi_{\mathrm{fact}}^{\mathrm{unred}}\) itself.  The chain-level
+construction is honest evidence on the \(E_1\)-page; its strict
+\(Q\)-, factorization-, and \(P_0\)-bracket compatibilities are the
+\(d_1\)-vanishings.  The higher differentials are the displayed
+obstruction components, none of which is supplied by the present
+construction.
 
 \emph{Unique survivor.}
 Theorem~\ref{thm:chain-level-primitive-projection}: the algebraic
 primitive/indecomposable projection on the free symmetric algebra
-$\mathbf S(\mathrm{Cyc}(F)_{\mathrm{nonempty}})$, composed with the
-zero-$\psi$ Hamiltonian abelianization
-$\mathrm{Cyc}(F)_{\mathrm{nonempty}}\twoheadrightarrow\bar A$, is a
-strict $Q$-chain map, factorization-compatible after unit retention,
-and $P_0$-bracket-compatible with an explicit zero homotopy.
+\(\mathbf S(\mathrm{Cyc}(F)_{\mathrm{nonempty}})\), where
+\(F=\C\langle x_1,x_2\rangle\) is the free associative algebra on the
+two probe-matrix generators and
+\(\mathrm{Cyc}(F)_{\mathrm{nonempty}}=F/[F,F]\setminus\C\cdot 1\) is
+its space of nontrivial cyclic-word generators, composed with the
+zero-\(\psi\) Hamiltonian abelianization
+\(\mathrm{Cyc}(F)_{\mathrm{nonempty}}\twoheadrightarrow\bar A\), is a
+strict \(Q\)-chain map, factorization-compatible after unit retention,
+and \(P_0\)-bracket-compatible with explicit zero homotopy.
 
 \emph{Construction inputs.}  The chain structure of the reduced BV
 algebra (Construction~\ref{constr:reduced-bv-algebra}), the de Rham
-contraction (Lemma~\ref{lem:derivative-jets}), and the stable
-trace invariant theory
+contraction \(H^\bullet(\Omega^\bullet_c(I))\cong H^\bullet_c(I;\C)\)
+(Lemma~\ref{lem:derivative-jets}), and the stable trace invariant
+theory \(\mc R_\infty^{GL_\infty,\mathrm{st}}\cong
+\mathbf S(\mathrm{Cyc}(F)_{\mathrm{nonempty}})\)
 (Proposition~\ref{prop:stable-trace-invariants}); no analytic
 propagator and no Tate-completion convergence input is used.
 
