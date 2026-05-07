@@ -1,70 +1,108 @@
 \section*{Nilpotent truncation of the cotangent shadow}
 
-\emph{Closure-layer organizing question.}  Which subalgebra of the
-formal Hamiltonian algebra $\mathfrak h$ admits a finite-dimensional
-nilpotent truncation satisfying the lower-central Tate-pronilpotence
-hypothesis of Lemma~\ref{lem:continuous-bar-cobar}, and which sectors
-must be removed a priori for that hypothesis to hold?
+\emph{Closure-layer organizing question.}  Which Lie subalgebra of the
+reduced formal Hamiltonian algebra
+$\mathfrak h=\mathfrak m=(z_1,z_2)\C[[z_1,z_2]]$ admits a
+finite-dimensional nilpotent truncation satisfying the lower-central
+Tate-pronilpotence hypothesis of
+Lemma~\ref{lem:continuous-bar-cobar}, and which sectors must be cut
+\emph{a priori} for that hypothesis to hold?
 
-\emph{Named obstruction terms.}  For every $N\geq 1$,
+\emph{Setup.}  Write
+$H_d=\mathrm{Span}_\C\{z_1^az_2^b:a+b=d\}$ for the homogeneous
+degree-$d$ Hamiltonians, $\mathfrak h_{\mathrm{poly}}=\bigoplus_{d\geq
+1}H_d$ for the polynomial Hamiltonian Lie algebra, and
+$\mathfrak m^k=(z_1,z_2)^k\C[[z_1,z_2]]$ for the $\mathfrak m$-adic
+ideals of the formal symplectic disk.  Fix a basis
+$\{e_{d,i}\}_i\subset H_d$ in each degree and the dual basis
+$\{e_d^i\}_i\subset H_d^\vee$.  The Poisson bracket
+$\{f,g\}=\partial_{z_1}f\,\partial_{z_2}g-\partial_{z_2}f\,
+\partial_{z_1}g$ satisfies $\{H_p,H_q\}\subset H_{p+q-2}$, so each
+finite degree window $\bigoplus_{d\leq N}H_d$ fails to be a Lie
+subalgebra (Lemma~\ref{lem:finite-window-hamiltonian-obstruction}).
+
+\emph{Named obstruction triple.}  Three load-bearing identities
+control which finite truncation can survive:
 \[
-  \{z_1,z_2^{N+1}\}=(N+1)z_2^N\notin\mathfrak m^{N+1},\qquad
-  \{z_1^2,z_2^2\}=4z_1z_2,\qquad [H_2,H_2]=H_2\cong\mathfrak{sl}_2.
+  \mathfrak o^{\mathrm{lin}}_N(z_1;z_2^{N+1})
+    =\{z_1,z_2^{N+1}\}=(N+1)z_2^N\notin\mathfrak m^{N+1},
 \]
-The first identity is the linear-tail obstruction
-$\mathfrak o^{\mathrm{lin}}_N(z_1;z_2^{N+1})=(N+1)z_2^N$; it rules out
-$\mathfrak m^{N+1}$ as a Lie ideal once $z_1\in H_1$ is admitted.  The
-last two are the semisimple obstruction
-$\mathfrak o^{\mathrm{ss}}\colon\Lambda^2H_2\to H_2$ with image
-$\mathfrak{sl}_2$, ruling out nilpotence of $H_2$.  Together with the
-low-degree Casimir component
-$\mathfrak o^{\mathrm{Cas}}_{\leq2}=\sum_ie_{1,i}\otimes
-e_1^i+\sum_ie_{2,i}\otimes e_2^i$, these are the obstruction triple
-of Definition~\ref{defn:nilpotent-low-degree-obstruction-terms}.
+the \emph{linear-tail obstruction}: it rules out
+$\mathfrak m^{N+1}$ as a Lie ideal once $z_1\in H_1$ is admitted;
+\[
+  \mathfrak o^{\mathrm{ss}}\colon\Lambda^2H_2\to H_2,\qquad
+  \mathfrak o^{\mathrm{ss}}(z_1^2,z_2^2)=\{z_1^2,z_2^2\}=4z_1z_2,
+\]
+the \emph{semisimple obstruction}: $H_2$ is closed under the bracket,
+$[H_2,H_2]=H_2\cong\mathfrak{sl}_2$, so $H_2$ admits no nilpotent
+filtration; and
+\[
+  \mathfrak o^{\mathrm{Cas}}_{\leq2}
+    =\sum_ie_{1,i}\otimes e_1^i+\sum_ie_{2,i}\otimes e_2^i
+    \in (H_1\oplus H_2)\otimes(H_1\oplus H_2)^\vee,
+\]
+the \emph{low-degree Casimir component}: it carries the BV inverse
+pairing on the linear and quadratic sectors that any cubic-ideal
+truncation removes.  These three constitute the obstruction triple
+$\mathfrak o_{\mathrm{nilp}}=(\mathfrak o^{\mathrm{lin}}_N,
+\mathfrak o^{\mathrm{ss}},\mathfrak o^{\mathrm{Cas}}_{\leq2})$ of
+Definition~\ref{defn:nilpotent-low-degree-obstruction-terms} below.
 
-\emph{Unique survivor.}  Theorem~\ref{thm:phi-trunc-classical}:
-classically, on the cubic ideal
-$\mathfrak h_{\leq N}=\mathfrak m^3/\mathfrak m^{N+1}$, the finite
-cotangent CE/PV identity
-$\Phi_{\leq N}\colon
-C^\bullet_{\mathrm{CE},\mathrm{cont}}(\mathfrak g_{\leq N,I})
-\xrightarrow{\sim}
-\mathrm{PV}(\widehat{\mathbf S}(\mathfrak h_{\leq N,I}))$ is
-unconditional.
+\emph{Unique survivor.}  Theorem~\ref{thm:phi-trunc-classical}: on the
+cubic ideal $\mathfrak h_{\leq N}=\mathfrak m^3/\mathfrak m^{N+1}$,
+where the obstruction triple is silent, the finite cotangent CE/PV
+identity
+\[
+  \Phi_{\leq N}\colon
+  C^\bullet_{\mathrm{CE},\mathrm{cont}}(\mathfrak g_{\leq N,I})
+    \xrightarrow{\sim}
+    \mathrm{PV}\bigl(\widehat{\mathbf S}(\mathfrak h_{\leq N,I})\bigr),
+  \qquad
+  \mathfrak g_{\leq N}=\mathfrak h_{\leq N}\ltimes
+    \mathfrak h_{\leq N}^\vee[1],
+\]
+is unconditional in the classical sector.
 
 \emph{Cuts on this survivor.}  Theorem~\ref{thm:phi-hbar-trunc}
-excludes the all-order Moyal lift on the same finite truncation;
-Theorem~\ref{rmk:colim-does-not-recover-full} shows the inverse limit
-recovers $\mathfrak m^3\subsetneq\mathfrak h$, not the whole.
+excludes the all-order Moyal lift on the same finite truncation:
+already $\{z_1^4,z_2^4\}_\hbar\supset 24\hbar^2 z_1z_2\notin
+\mathfrak m^3$, so $\mathfrak h_{\leq N}$ is not Moyal-closed for
+$N\geq4$.  Theorem~\ref{rmk:colim-does-not-recover-full} shows the
+inverse limit of nilpotent windows recovers
+$\mathfrak m^3\subsetneq\mathfrak h$, not the whole reduced
+Hamiltonian algebra.
 
 \emph{Residual.}  Problem~\ref{prob:linear-sector-lift}: extend
-$\Phi_{\mathfrak m^3}$ to $\mathfrak h=\mathfrak m$ by supplying a
-coefficient category in which
-$\mathfrak o^{\mathrm{Cas}}_{\leq2}$ converges and a relative or
-reductive replacement for the lower-central Tate-pronilpotent route
-that handles the semisimple
-$H_2\cong\mathfrak{sl}_2$ direction.  The truncation route does not
-solve $(\mathfrak o^{\mathrm{lin}}_N,\mathfrak o^{\mathrm{ss}},
-\mathfrak o^{\mathrm{Cas}}_{\leq2})$; it removes the sector on which
-those obstructions are felt.
+$\Phi_{\mathfrak m^3}$ to $\mathfrak h=\mathfrak m$ by supplying both
+a coefficient category in which $\mathfrak o^{\mathrm{Cas}}_{\leq2}$
+converges as a BV propagator kernel and a relative or reductive
+replacement for the lower-central Tate-pronilpotent route handling the
+semisimple $H_2\cong\mathfrak{sl}_2$ direction.  The truncation route
+does not solve the obstruction triple; it removes the sector on which
+that triple is felt and certifies that what remains can be controlled
+unconditionally.
 
 \subsection*{The truncation}
 
-Let $\mathfrak h=(z_1,z_2)\C[[z_1,z_2]]=\mathfrak m$ be the reduced
-Hamiltonian Lie algebra of the formal symplectic disk on $\C^2$, with
-bracket $\{f,g\}=\partial_{z_1}f\,\partial_{z_2}g-
-\partial_{z_2}f\,\partial_{z_1}g$ modulo constants. Let
-$\mathfrak m^k=(z_1,z_2)^k\C[[z_1,z_2]]$ for $k\geq 1$ be the
-$k$-th power of the maximal ideal. Fix integers $N\geq k\geq 3$ and
-define the \emph{nilpotent truncation}
-$$\mathfrak h_{\leq N}^{(k)}:=\mathfrak m^k/\mathfrak m^{N+1},$$
-with $\mathfrak m$-adic Poisson bracket inherited from the
-ambient $\mathfrak h_{\mathrm{poly}}$. The standard choice is
+Inside the reduced Hamiltonian algebra $\mathfrak h=\mathfrak m$ of
+the formal symplectic disk on $\C^2$, fix integers $N\geq k\geq 3$
+and define the \emph{nilpotent truncation}
+\[
+  \mathfrak h_{\leq N}^{(k)}:=\mathfrak m^k/\mathfrak m^{N+1},
+\]
+with bracket induced by the polynomial Poisson bracket on
+$\mathfrak h_{\mathrm{poly}}$ of the Setup.  The standard choice is
 $k=3$:
-$$\mathfrak h_{\leq N}:=\mathfrak h_{\leq N}^{(3)}=
-  \mathfrak m^3/\mathfrak m^{N+1}.$$
-Concretely, $\mathfrak h_{\leq N}$ is the finite-dimensional vector
-space spanned by monomials $z_1^az_2^b$ with $3\leq a+b\leq N$.
+\[
+  \mathfrak h_{\leq N}:=\mathfrak h_{\leq N}^{(3)}
+    =\mathfrak m^3/\mathfrak m^{N+1}.
+\]
+Concretely, $\mathfrak h_{\leq N}$ is the finite-dimensional
+$\C$-linear span of the monomials $z_1^az_2^b$ with $3\leq a+b\leq N$.
+The choice $k=3$ is forced by the bracket-degree count
+$\{H_p,H_q\}\subset H_{p+q-2}$: only at $k=3$ does every iterated
+bracket strictly raise $\mathfrak m$-adic degree, and only then is the
+quotient nilpotent.
 
 \begin{rmk}[Why degree three and not degree two]
 The naive choice $k=2$ fails to give a nilpotent Lie algebra: the
