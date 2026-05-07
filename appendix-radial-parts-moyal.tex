@@ -1284,6 +1284,228 @@ exactly the assertion that the ordinary Weyl trace \(J_N(f)\) equals
   \(D^\square_{a,b}(D^\square_{a,b})^{*}\).
 \end{rmk}
 
+\begin{defn}[Radial bicomplex and PBW \(\hbar\)-filtration]
+\label{def:app-radial-bicomplex}
+  Fix \(a,b\geq1\).  The \emph{radial bicomplex} in bidegree \((a,b)\)
+  is the augmented diagram
+  \[
+    \mathcal R_{a,b}\colon\quad
+    \mathsf S_{a,b}
+      \xrightarrow{\partial_2}
+    \mathsf W_{a,b}
+      \xrightarrow{\partial}
+    \mathsf V_{a,b},
+    \qquad
+    \mathsf W_{a,b}\xrightarrow{C^+_{a,b}}\mathsf{Diag}_{a,b}
+  \]
+  with \(\partial,\partial_2,C^+_{a,b}\) as in
+  Definitions~\ref{def:app-free-kernel-correction-obstruction}
+  and~\ref{def:app-square-cell-pbw-stokes-complex}.  Equip
+  \(\mathsf{Diag}_{a,b}\) with the \emph{contraction filtration}
+  \[
+    F^p\mathsf{Diag}_{a,b}=\bigoplus_{p'\geq p}\mathsf{Diag}_{a,b}^{(p')},
+  \]
+  where \(\mathsf{Diag}_{a,b}^{(p)}\) is the rational span of free
+  indexed normal diagrams with exactly \(p\) PBW contractions.  The
+  Capelli scalar contributes one unit of \(\hbar\) and is recorded in
+  \(\mathsf{Diag}_{a,b}^{(0)}\) with an explicit factor \(\hbar N\).
+  Consequently \(C^+_{a,b}\) and its restriction
+  \(D^\square_{a,b}=C^+_{a,b}\partial_2\) take values in
+  \(F^1\mathsf{Diag}_{a,b}\), and the residual
+  \(R^{\mathrm{free}}_{a,b}\) lies in \(F^1\mathsf{Diag}_{a,b}\).  The
+  graded pieces \(\mathrm{gr}^p\mathsf{Diag}_{a,b}\) carry the Cartan
+  one-particle Moyal action of
+  Lemma~\ref{lem:app-radial-cartan-moyal-representation}.
+\end{defn}
+
+\begin{thm}[Radial bicomplex acyclicity]
+\label{thm:app-radial-bicomplex-acyclic}
+  Assume Statement~\ref{stmt:app-radial-external-input} in full.
+  Then for every interior bidegree \((a,b)\) with \(a,b\geq1\),
+  \[
+    \Omega^{\mathrm{rad}}_{a,b}=0,
+    \qquad
+    D^\square_{a,b}H_{a,b}=R^{\mathrm{free}}_{a,b}
+    \text{ has a solution }H_{a,b}\in\mathsf S_{a,b}.
+  \]
+  Equivalently the radial bicomplex \(\mathcal R_{a,b}\) is acyclic
+  at the residual class \(R^{\mathrm{free}}_{a,b}\) on the decorated
+  side: every element of \(\mathsf{Diag}_{a,b}\) of the form
+  \(R^{\mathrm{free}}_{a,b}\) lies in
+  \(\operatorname{im}D^\square_{a,b}\).  No signed dual row
+  \((\phi,-\lambda)\in\ker B_{a,b}^*\) with
+  \(\lambda(E^+_{a,b})-\phi(T_{a,b})=1\) exists.
+\end{thm}
+
+\begin{proof}
+  The argument proceeds in three steps.  Steps 1--2 use only the
+  homomorphism and injectivity clauses (1) and (2) of
+  Statement~\ref{stmt:app-radial-external-input} and the
+  Cartan-one-particle Moyal homomorphism of
+  Lemma~\ref{lem:app-radial-cartan-moyal-representation}.  Step 3
+  uses the mixed-monomial image clause (3) for the Moyal-bracket
+  polynomial of bidegree \((a,b)\), which is the named external
+  input.
+
+  \emph{Step 1 (Cartan-side commutator).}  Compute the
+  Vandermonde-conjugated Harish-Chandra radial image of the matrix
+  Weyl commutator
+  \(\hbar^{-1}[J_N(z_1^{a+1}/(a+1)),J_N(z_2^{b+1})]\).  Pure-power
+  Weyl traces equal normal-ordered traces, so
+  \(J_N(z_1^{a+1})=\operatorname{Tr}(X^{a+1})\) and
+  \(J_N(z_2^{b+1})=\operatorname{Tr}(Y^{b+1})\) without contractions;
+  clause~(3) for pure powers is therefore tautological:
+  \[
+    \operatorname{Rad}_0(J_N(z_1^{a+1}))
+      =\Delta^{-1}S_N(z_1^{a+1})\Delta
+      =\sum_{i=1}^N\lambda_i^{a+1},
+    \qquad
+    \operatorname{Rad}_0(J_N(z_2^{b+1}))
+      =\Delta^{-1}S_N(z_2^{b+1})\Delta
+      =\sum_{i=1}^N(\nabla_i^\Delta)^{b+1}.
+  \]
+  Both pre-images are \(GL_N\)-invariant, so by clause~(1) the
+  radial map is a homomorphism on their commutator.  Different Cartan
+  summands commute by the third commutation relation of
+  Lemma~\ref{lem:app-radial-dunkl-calogero-cancellation}, hence
+  \[
+    \operatorname{Rad}_0\bigl(
+      \hbar^{-1}[J_N(z_1^{a+1}/(a+1)),J_N(z_2^{b+1})]
+    \bigr)
+    =
+    \sum_{i=1}^N
+      \hbar^{-1}\bigl[\lambda_i^{a+1}/(a+1),(\nabla_i^\Delta)^{b+1}\bigr].
+  \]
+  Lemma~\ref{lem:app-radial-cartan-moyal-representation} identifies
+  each summand with the Cartan one-particle Weyl quantization of the
+  normalized Moyal bracket:
+  \[
+    \hbar^{-1}\bigl[\lambda_i^{a+1}/(a+1),(\nabla_i^\Delta)^{b+1}\bigr]
+    =
+    \operatorname{Op}_{\mathrm W}\!\bigl(
+      \{z_1^{a+1}/(a+1),z_2^{b+1}\}_\hbar
+    \bigr)(\lambda_i,\nabla_i^\Delta).
+  \]
+  Summing over \(i\) and using the displayed formula in
+  Definition~\ref{def:app-radial-vandermonde-gauge-variables} gives
+  \[
+    \operatorname{Rad}_0\bigl(
+      \hbar^{-1}[J_N(z_1^{a+1}/(a+1)),J_N(z_2^{b+1})]
+    \bigr)
+    =
+    \Delta^{-1}S_N\!\bigl(
+      \{z_1^{a+1}/(a+1),z_2^{b+1}\}_\hbar
+    \bigr)\Delta .
+  \]
+  No clause-(3) input on mixed monomials has been used so far.
+
+  \emph{Step 2 (Spherical-reduction equality).}  By
+  Statement~\ref{stmt:app-radial-external-input}~clause~(3)
+  applied to the Moyal-bracket polynomial
+  \(\{z_1^{a+1}/(a+1),z_2^{b+1}\}_\hbar\),
+  \[
+    \operatorname{Rad}_0\bigl(
+      J_N(\{z_1^{a+1}/(a+1),z_2^{b+1}\}_\hbar)
+    \bigr)
+    =
+    \Delta^{-1}S_N\!\bigl(
+      \{z_1^{a+1}/(a+1),z_2^{b+1}\}_\hbar
+    \bigr)\Delta .
+  \]
+  Subtracting the two displayed identities,
+  \(\operatorname{Rad}_0(E_{a,b,N})=0\).
+
+  \emph{Step 3 (Moment-ideal lift).}  By
+  Statement~\ref{stmt:app-radial-external-input}~clause~(2)
+  (Levasseur--Stafford radial-kernel theorem), the kernel of the
+  Vandermonde-conjugated Harish-Chandra map on
+  \(GL_N\)-invariant operators is exactly the moment-map ideal
+  \(\mathcal W_N\widehat\mu(\lie{sl}_N)\).  Since
+  \(E_{a,b,N}\) is \(GL_N\)-invariant and has zero radial image,
+  \[
+    E_{a,b,N}\in\mathcal W_N\widehat\mu(\lie{sl}_N).
+  \]
+  Lemma~\ref{lem:app-quantum-shear-primitive-obstruction} translates
+  this membership to the existence of a moment-ideal primitive
+  \(\sum A^j{}_i(a,b,N)\widehat\mu^i{}_j\), which equates with
+  \(E_{a,b,N}\) inside \(\mathcal W_N\) for every \(N\).  Stable
+  Procesi--Razmyslov injectivity for free indexed normal diagrams
+  (Lemma~\ref{lem:app-free-trace-diagram-stable-injectivity}) lifts
+  this all-\(N\) finite-rank identity to a free trace-diagram identity
+  in bidegree \((a,b)\).  The free identity is exactly the
+  decorated PBW Stokes equation
+  \(D^\square_{a,b}H_{a,b}=R^{\mathrm{free}}_{a,b}\) with
+  \(H_{a,b}\) reconstructed from the moment-ideal coefficients via
+  the necklace square-cell decomposition of any cycle in
+  \(\ker\partial\) (Lemma~\ref{lem:app-ordinary-necklace-stokes}).
+  Hence \(\Omega^{\mathrm{rad}}_{a,b}=0\) and no signed dual row of
+  the failure type can exist.
+\end{proof}
+
+\begin{rmk}[The structural mechanism: Cartan one-particle Moyal lift]
+\label{rmk:app-radial-bicomplex-mechanism}
+  The proof of Theorem~\ref{thm:app-radial-bicomplex-acyclic}
+  isolates the structural mechanism behind every closed bidegree.
+  At \(\hbar^0\) the residual is exactly the cyclic shear sum minus
+  the Weyl average, and the necklace Stokes
+  Lemma~\ref{lem:app-ordinary-necklace-stokes} is the assertion that
+  this is a coboundary in \(\partial\).  At each higher
+  \(\hbar\)-order \(p\geq1\), the Cartan one-particle Moyal
+  homomorphism produces the \(p\)-contraction component of the
+  radial image, and the radial-kernel theorem
+  (Statement~\ref{stmt:app-radial-external-input}~clauses~(1)
+  and~(2)) lifts it to the moment ideal.  The graded pieces
+  \(\mathrm{gr}^p\mathsf{Diag}_{a,b}\) carry the same one-particle
+  Moyal Lie action, and the spectral sequence of the contraction
+  filtration collapses on \(E_1\): the \(\hbar^0\) row is necklace
+  Stokes, and each subsequent row is the same statement after a
+  one-step PBW contraction.  This explains uniformly why every
+  finite computation closes by a \(K_{a,b}\)-correction whose number
+  of contraction terms grows exactly as the contraction-filtered
+  dimension of \(\mathrm{gr}^{\geq1}\mathsf{Diag}_{a,b}\).
+\end{rmk}
+
+\begin{prop}[Procesi--Razmyslov unconditional verification window]
+\label{prop:app-radial-pr-unconditional-window}
+  For each bidegree \((a,b)\) and each \(N\geq a+b\), the
+  finite-rank moment-ideal membership
+  \(E_{a,b,N}\in\mathcal W_N\widehat\mu(\lie{sl}_N)\) holds if and
+  only if the free indexed normal-diagram identity
+  \(\mathcal N_{\mathrm{free}}(E_{a,b,N}-K_{a,b})=0\) holds for some
+  cycle \(K_{a,b}\in\ker\partial\), and the latter is independent of
+  \(N\).  Hence the all-\(N\) closure for fixed \((a,b)\) reduces to a
+  finite rational linear-algebra problem on the
+  \((\mathsf W_{a,b}\oplus\mathsf S_{a,b})\)-side, decided
+  unconditionally by the script
+  \(\texttt{scripts/quantum\_shear\_trace\_diagram\_normal\_form.py}\)
+  in \(\texttt{--kernel-correction}\) mode.  This verification
+  closes \(\Omega^{\mathrm{rad}}_{a,b}=0\) without any
+  Statement~\ref{stmt:app-radial-external-input} input for the
+  bidegrees in
+  Remark~\ref{rmk:app-radial-finite-verification}.
+\end{prop}
+
+\begin{proof}
+  Stable Procesi--Razmyslov injectivity
+  (Lemma~\ref{lem:app-free-trace-diagram-stable-injectivity}) makes
+  the free indexed normal-diagram algebra a faithful joint model
+  of all matrix Weyl algebras of rank \(N\geq a+b\).  Hence a free
+  identity holds if and only if it holds in \(\mathcal W_N\) for every
+  \(N\geq a+b\).  The kernel-correction equation
+  \(\partial K_{a,b}=0\),
+  \(\mathcal N_{\mathrm{free}}(E_{a,b,N}-C^+_{a,b}(K_{a,b}))
+    =\mathcal N_{\mathrm{free}}(C^+_{a,b}(c^{\mathrm{cl}}_{a,b}))\)
+  is finite-dimensional rational linear algebra on
+  \((\mathsf W_{a,b}\oplus\mathsf S_{a,b})\) and gives the coefficient
+  array \(K_{a,b}\), then the Stokes primitive
+  \(H_{a,b}=\partial_2^{-1}K_{a,b}\) on the necklace square-cell
+  complex by Lemma~\ref{lem:app-ordinary-necklace-stokes}.  Existence
+  of \(K_{a,b}\) is therefore an unconditional finite computation;
+  the script
+  \(\texttt{quantum\_shear\_trace\_diagram\_normal\_form.py}\)
+  performs it in exact rational arithmetic.
+\end{proof}
+
 \begin{prop}[Edge PBW telescoping primitive]
 \label{prop:app-edge-pbw-telescoping}
   For every \(b\geq2\), set
