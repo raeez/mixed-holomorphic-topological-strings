@@ -8602,14 +8602,18 @@ The closed local operator algebra
 \(C^\bullet_{\mathrm{CE},\mathrm{cont}}(\mathfrak g)\) of
 \S\ref{sec:grav-ops} and the open brane Hamiltonian descendant
 algebra \(\widehat{\mathbf S}(\bar A\oplus\bar A_{\mathrm{desc}}[1])\)
-of \S\ref{ssec:open-brane-operators} compare as \(E_1\)-algebras
-through Koszul duality (Priddy 1970, \cite{priddy}; Loday--Vallette
-2012, \cite{loday-vallette}): commutative cochains exchange for
-associative enveloping algebras.  On the strict formal-disk
-product/direct-sum coefficient pair the comparison fails; on the
-weighted Tate replacement of \S\ref{ssec:tate-residual-resolution}
-it holds.  The stratification below records the construction at each
-layer and the precise obstruction class at each boundary.
+of \S\ref{ssec:open-brane-operators} are two \(E_1\)-algebras built
+from the same Lie/coComm operadic pair, on different coefficient
+categories.  Koszul duality
+(Priddy 1970, \cite{priddy}; Loday--Vallette 2012,
+\cite{loday-vallette}) exchanges commutative cochains for associative
+enveloping algebras whenever its convergence hypotheses are met.  On
+the strict formal-polydisk product/direct-sum pair those hypotheses
+fail at a single class --- the Tate Casimir
+\(\mathfrak o_{\mathrm{Cas}}\); on the weighted Tate replacement of
+\S\ref{ssec:tate-residual-resolution} they are met.  The stratification
+below names what is built at each coefficient layer and the precise
+obstruction class at each boundary.
 
 \begin{enumerate}[wide=0pt,leftmargin=*]
   \item \emph{Operadic input.}  The closed BV side has dg Lie input
@@ -9001,10 +9005,18 @@ one is the Hamiltonian trace bracket proved below.
 
 \subsubsection{First-order Poisson identification}
 
-The PBW special-fibre label correspondence used in the reduced comparison reads
+The brane probe evaluates a closed Hamiltonian on the matrix-valued
+transverse coordinate \((\phi_1,\phi_2)\); Dirac reduction forces
+\([\phi_1,\phi_2]=0\); the surviving algebra of cyclic single traces
+is the first nontrivial test.  The question is whether the closed
+Poisson bracket on \(\bar A=\C[z_1,z_2]/\C\cdot1\) and the matrix
+trace bracket give equal coefficients on the trace generators.
+
+The PBW special-fibre label correspondence used in the reduced
+comparison reads
 $$z_1^kz_2^l \leftrightarrow
   \overline{\mathrm{Tr}(\phi_1^k\phi_2^l)}.$$
-The reduced Poisson bracket on the gravity side is:
+The reduced Poisson bracket on the closed side is
 $$\{z_1^kz_2^l,\, z_1^mz_2^n\}_{\bar A}
   =\overline{(kn - lm)\,z_1^{k+m-1}z_2^{l+n-1}}.$$
 If an exponent in the displayed monomial is negative then the coefficient
@@ -10159,14 +10171,85 @@ contraction producing the coefficient $(kn-lm)$ in
 Proposition~\ref{prop:first-order-bracket}; it is not a separate
 Feynman-integral proof.
 
-\subsubsection{Formal deformation-quantization target}
+\subsubsection{Quantization as a brane-measurement test}\label{sssec:quantization-measurement-test}
 
-The constant Poisson tensor on the formal holomorphic polydisk has a unique
-translation-invariant deformation, the Weyl/Moyal algebra; this fixes
-the algebraic coefficients that any quantum closed-open BV construction
-must recover, but does not construct that BV theory. The classical
-degree-zero Hamiltonian bracket is the proposed special fibre; the
-cotangent/descendant part is stated below as a separate problem.
+Three operations are at stake: Moyal star-quantisation of
+Hamiltonians on the formal symplectic polydisk, Weyl quantisation of
+the matrix entries of \((\phi_1,\phi_2)\), and the brane trace
+measurement \(J\colon f\mapsto\overline{\operatorname{Tr}f(\phi_1,\phi_2)}\)
+extended to a quantum measurement \(\Phi_\hbar\).  The question is
+whether they commute up to identifiable obstruction classes.
+Theorem~\ref{thm:componentwise-quantum-coefficient-comparison} names
+the four components on which compatibility is proved: weighted BV
+kernel convergence, balanced-supertrace scalar QME cancellation on
+its habitat, weighted Moyal principal-part current brackets, and a
+finite-certificate degree-zero Hamiltonian trace comparison.  The
+remaining obstructions are inscribed sharply: the all-bidegree
+radial/Weyl normal-form question is the single cokernel class
+\(\Omega^{\mathrm{rad}}_{a,b}\in\operatorname{coker}B_{a,b}\)
+(Proposition~\ref{prop:app-radial-dual-potential-obstruction}); the
+reduced non-scalar Costello QME question is the single cohomology
+class
+\([\operatorname{Ob}^{\mathrm{red}}_{w,\partial,\hbar}]\in
+H^1(\ker\widehat\sigma_{\mathrm{sc}},d_{\mathrm{QME}})\)
+(Problem~\ref{prob:quantum-p0-operation-realization}); the smallest
+non-scalar window \(\theta_3\) splits into a bare verdict
+\(H^1=\C\!\cdot\!E_{\theta_3}\ne0\) and a supplied-counterterm verdict
+\(H^1=0\) with \(c=1\) unique
+(Theorem~\ref{thm:app-theta-three-finite-window-H1}).
+
+\medskip\noindent
+\emph{The center of mass remembers what Hamiltonian reduction
+forgets.}  On the closed side, the Hamiltonian vector field of every
+constant is zero; the further quotient
+\(\bar A=\C[z_1,z_2]/\C\cdot1\) removes the unit from the source.
+On the brane side, the unit \(1\in\C[z_1,z_2]\) lifts to
+\(\operatorname{Tr}(I_N)=N\), the rank of the brane stack: the
+center-of-mass mode of the matrix coordinate, which Hamiltonian
+reduction does not see.  The two linear generators
+\(\operatorname{Tr}(\phi_1)\) and \(\operatorname{Tr}(\phi_2)\) are
+the open-side images of \(z_1\) and \(z_2\), and on them the
+unreduced matrix Poisson bracket reads
+\[
+  \{\operatorname{Tr}\phi_1,\operatorname{Tr}\phi_2\}
+   = \operatorname{Tr}(I_N) = N,
+\]
+while \(\{z_1,z_2\}_{\bar A}=0\) modulo constants.  Quantising the same
+linear generators by the Moyal star and reading the Weyl commutator,
+\[
+  [\Phi_\hbar(z_1),\Phi_\hbar(z_2)]_\star=\hbar N,
+\]
+detects on the closed side the Lie two-cocycle
+\(\bar c\in H^2_{\mathrm{Lie}}(\bar A,\C)\) with
+\(\bar c(f,g)=[\{f,g\}]_0\), and on the brane side reproduces the
+Capelli contact term in the reduced ordinary scalar
+\(\mathfrak{gl}_N\) branch
+\cite{capelli,howe-capelli}.  The four faces of the same scalar
+obstruction --- algebraic central extension, Lie central extension,
+trace-algebraic boundary central extension, and quantum Weyl
+commutator --- realise the same class
+\(\hbar N[\bar c]\in H^2_{\mathrm{Lie}}(\bar A,\C)[[\hbar]]\)
+(Theorems~\ref{thm:u1-center-anomaly},
+\ref{thm:u1-center-anomaly-open},
+\ref{thm:quantum-classical-anomaly},
+\ref{thm:app-scalar-anomaly-transgression}).  The cancellation
+branches are catalogued in
+Theorem~\ref{thm:scalar-qme-alternatives}: the unreduced source, the
+central-character source, the opposite central extension, the
+balanced supertrace, the algebraic central-contact cone, and the
+Costello-local closed-exchange criterion.  The all-order Moyal/Weyl
+identity that promotes the linear-generator computation is the
+constant-Poisson deformation quantisation
+\cite{kontsevich-dq}.
+
+\medskip\noindent
+The formal Moyal target is the unique translation-invariant
+deformation of the constant Poisson tensor on the formal holomorphic
+polydisk.  It fixes the algebraic coefficients that any quantum
+closed-open BV construction must recover; it does not construct that
+BV theory.  The classical degree-zero Hamiltonian bracket is the
+proposed special fibre; the cotangent/descendant part is recorded as
+Problem~\ref{prob:tate-coefficient-descendant-lift}.
 Put
 $$A_\hbar=\bigl(\C[[z_1,z_2]][[\hbar]],*\bigr),$$
 where $*$ is the Weyl/Moyal product
@@ -10763,9 +10846,14 @@ Theorem~\ref{thm:bulk-boundary}.
 
 \subsubsection{Graph formalism and specialization datum}
 
-The graph problem asks for the same coefficients as renormalized
-closed-open BV observable products.  The required data are the
-propagator, counterterms, anomaly class, and trace normalization.
+The Moyal coefficients \(\hbar P\), \(\hbar^3 P^3/24\), \(\hbar^5 P^5/1920\),
+\(\hbar^7 P^7/322560\) of the previous subsection are an algebraic
+target.  Costello's heat-kernel BV calculus produces coefficients of
+the same operad-theoretic shape from a different input: an elliptic
+parent theory, a propagator, a counterterm scheme, an anomaly class,
+and a trace normalisation.  The question is whether these two
+calculations land on the same coefficients on the brane-defect
+target.
 
 \begin{stmt}[Costello perturbative BV construction]\label{stmt:costello-bv-construction}
   For an elliptic BV theory with a gauge fixing, heat kernel $K_t$, propagator
@@ -10908,11 +10996,51 @@ propagator, counterterms, anomaly class, and trace normalization.
 \end{proof}
 
 \begin{prob}[Hamiltonian specialization datum for Costello perturbative BV]\label{prob:analytic-graph-realization}
-  Costello supplies the general renormalized BV graph calculus. For the
-  Hamiltonian sector here, the required theorem data begin with
+  \begin{itemize}
+    \item \emph{Desired upgrade:} a Costello-type closed-open BV
+      theory whose restriction is the formal-local Hamiltonian BF
+      sector \(\R^2\times\C^2\) of \S\ref{sec:setup}.
+    \item \emph{Minimal input data:} an elliptic parent or stated
+      dimensional reduction; field topology, BV pairing, gauge
+      fixing, heat-kernel propagator; weighted Tate coefficient
+      kernel
+      (Theorem~\ref{thm:wt-cotangent-lift}); brane-defect condition;
+      ribbon graph data; Capelli/scalar normalisation; bulk-to-defect
+      kernel.
+    \item \emph{Obstruction complex:} the Tate Casimir
+      \(\mathfrak o_{\mathrm{Cas}}\)
+      (Lemma~\ref{lem:tate-casimir-obstruction}); the scalar-symbol
+      class \(\hbar N[\bar c]\)
+      (Theorem~\ref{thm:scalar-qme-alternatives}); the reduced
+      non-scalar QME class
+      \([\operatorname{Ob}^{\mathrm{red}}_{w,\partial,\hbar}]\)
+      (Problem~\ref{prob:quantum-p0-operation-realization}); the
+      \(\theta_3\) finite-window class
+      (Theorem~\ref{thm:app-theta-three-finite-window-H1}).
+    \item \emph{Vanishing criterion:} weighted Tate completion closes
+      \(\mathfrak o_{\mathrm{Cas}}\); a balanced or unreduced source
+      replacement closes \(\hbar N[\bar c]\); the reduced
+      non-scalar class is closed exactly on the locus where the
+      filtered scalar-contact tower of
+      Theorem~\ref{thm:wt-nonscalar-counterterm-criterion} closes.
+    \item \emph{First nonzero example:} the strict full-polydisk
+      product/direct-sum coefficient pair carries a nonzero
+      \(\mathfrak o_{\mathrm{Cas}}\); the ordinary scalar-reduced
+      \(\mathfrak{gl}_N\) branch carries nonzero
+      \(\hbar N[\bar c]\) at order \(\hbar^1\) on the linear pair
+      \((z_1,z_2)\).
+    \item \emph{Physical meaning:} the analytic specialization datum
+      is the elliptic parent and the brane-defect renormalisation
+      under which Costello's heat-kernel BV calculus and the
+      Hamiltonian trace measurement are simultaneously controllable.
+  \end{itemize}
+
+  \noindent\emph{Statement.}
+  Costello supplies the general renormalized BV graph calculus. For
+  the Hamiltonian sector here, the required theorem data begin with
   an elliptic closed-open parent theory, or a stated dimensional
-  reduction of one, whose restriction is this Hamiltonian BF sector and whose
-  obstruction class vanishes. The required data are:
+  reduction of one, whose restriction is this Hamiltonian BF sector
+  and whose obstruction class vanishes. The required data are:
   \begin{enumerate}
     \item choose the mechanism: either prove that the Hamiltonian cotangent BF
       complex
@@ -11070,6 +11198,49 @@ propagator, counterterms, anomaly class, and trace normalization.
 
 \begin{thm}[Scalar QME obstruction and cancellation branches]
 \label{thm:scalar-qme-alternatives}
+  \begin{itemize}
+    \item \emph{Desired upgrade:} cancellation of the scalar-symbol
+      QME obstruction in the ordinary scalar-reduced
+      \(\mathfrak{gl}_N\) brane-defect model.
+    \item \emph{Minimal input data:} on the source side, an
+      \(\bar A\)-cochain \(J\) with \(d_{\mathrm{CE}}J=-\hbar N\bar c\),
+      or an alternative source category in which \(\bar c\) is
+      cohomologous to zero; on the Costello side, finite-window
+      complexes \(\mathcal X^\bullet_{\mathrm{sc},w,M}\), cochain
+      maps \(\Xi^{\mathrm{Cost},\mathrm{sc}}_M\), a filtered scalar
+      chain projection \(\widehat\sigma_{\mathrm{sc},M}\), and
+      compatible local counterterms.
+    \item \emph{Obstruction complex:} the Lie cohomology class
+      \(\hbar N[\bar c]\in H^2_{\mathrm{Lie}}(\bar A;\C)[[\hbar]]\),
+      and its filtered Costello image
+      \(\beta_M^{\mathrm{Cost},\mathrm{sc}}=
+      [\hbar N[\bar c_M]]\in
+      \operatorname{coker}H^1(\widehat\sigma_{\mathrm{sc},M}
+      \Xi^{\mathrm{Cost},\mathrm{sc}}_M)\).
+    \item \emph{Vanishing criterion:} either replace the scalar-reduced
+      source by the unreduced source, the central-character source,
+      the opposite central extension, the balanced
+      \(\mathfrak{gl}(N|N)\)-supertrace source, or the algebraic
+      central-contact cone --- each cancellation is a source
+      replacement, made explicit below; alternatively, supply a
+      Costello-local closed-exchange triple
+      \((W_M,C_M,\widehat\sigma_{\mathrm{sc},M})\) with
+      \(\beta_M^{\mathrm{Cost},\mathrm{sc}}=0\) and compatible
+      truncation.
+    \item \emph{First nonzero example:} on the linear pair
+      \((z_1,z_2)\), \(\omega(z_1,z_2)=1\) and \(\bar c\ne0\) in
+      \(H^2_{\mathrm{Lie}}(\bar A;\C)\); the Moyal commutator gives
+      the Capelli term \([\Phi_\hbar(z_1),\Phi_\hbar(z_2)]_\star=
+      \hbar N\) at order \(\hbar^1\).
+    \item \emph{Physical meaning:} the scalar-symbol QME obstruction
+      records the brane center-of-mass anomaly that survives ordinary
+      \(\mathfrak{gl}_N\) Hamiltonian reduction; cancelling it
+      requires changing what one means by ``Hamiltonian'' (source
+      replacement) or supplying a closed-exchange counterterm with a
+      matched scalar leading class.
+  \end{itemize}
+
+  \noindent\emph{Statement.}
   Let \(A=\C[z_1,z_2]\), \(\bar A=A/\C\cdot1\), and
   \[
     \omega(f,g)=[\{f,g\}]_0 .
@@ -11249,8 +11420,14 @@ propagator, counterterms, anomaly class, and trace normalization.
 \end{rmk}
 
 \subsubsection{Formal Weyl/Moyal target, all orders}
-The Weyl/Moyal Rees convention for the formal quantization of the
-constant Poisson tensor \cite{kontsevich-dq} is
+The order-\(\hbar\) coefficient \([\Phi_\hbar(z_1),\Phi_\hbar(z_2)]_\star=\hbar N\)
+identifies the linear-generator anomaly; the all-order question is
+whether the same identification persists at orders \(\hbar^3,\hbar^5,\dots\).
+The unique translation-invariant deformation of the constant Poisson
+tensor on the formal holomorphic polydisk
+\cite{kontsevich-dq} fixes the all-order target on the closed side.
+
+The Weyl/Moyal Rees convention is
 $$f*g=m\circ\exp\left(\frac{\hbar}{2}
   (\partial_{z_1}\otimes\partial_{z_2}
    -\partial_{z_2}\otimes\partial_{z_1})\right)(f\otimes g).$$
@@ -11422,6 +11599,65 @@ $$\{f,g\}_\hbar=\hbar^{-1}[f,g]_*
 \end{proof}
 
 \begin{thm}[Componentwise quantum coefficient comparison]\label{thm:componentwise-quantum-coefficient-comparison}
+  Moyal-quantised Hamiltonians, Weyl-quantised brane operators, and the
+  brane trace measurement commute on a four-component product target,
+  with the failure of any other component recorded as a separate
+  obstruction class on its own habitat.
+  \begin{itemize}
+    \item \emph{Components proved compatible:} weighted BV kernel
+      convergence \(\mathcal K_{\mathrm{BV}}^w\); balanced
+      \(\mathfrak{gl}(N|N)\)-supertrace zero scalar QME representative
+      \(0_{\mathrm{sc}}\) on its scalar-contact habitat; reduced
+      weighted Moyal principal-part current target
+      \(A^{\mathrm{pp},w}_{\partial,\hbar}(I)\); finite-certificate
+      degree-zero Hamiltonian trace target \(T_{\mathrm{Ham},\hbar}\).
+    \item \emph{Minimal input data:} weighted Tate completion
+      \(\mathfrak h_w\) (Theorem~\ref{thm:wt-canonical-habitat}),
+      Costello propagator and weighted RG calculus
+      (Theorem~\ref{thm:wt-cotangent-lift}), balanced supertrace
+      replacement
+      (Theorem~\ref{thm:app-balanced-supertrace-qme-cancellation}),
+      Capelli-renormalised \(J_N\)-basis transitions
+      (Lemma~\ref{lem:capelli-renormalized-stable-trace}), and the
+      finite-certificate enumeration cited in clause~(4).
+    \item \emph{Obstruction classes outside this product:} the
+      ordinary-\(\mathfrak{gl}_N\) scalar QME class
+      \(\hbar N[\bar c]\in H^2_{\mathrm{Lie}}(\bar A,\C)[[\hbar]]\)
+      (Theorem~\ref{thm:scalar-qme-alternatives}); the all-bidegree
+      radial/Weyl normal-form class
+      \(\Omega^{\mathrm{rad}}_{a,b}\in\operatorname{coker}B_{a,b}\)
+      (Proposition~\ref{prop:app-radial-dual-potential-obstruction});
+      the reduced non-scalar Costello QME class
+      \([\operatorname{Ob}^{\mathrm{red}}_{w,\partial,\hbar}]\in
+      H^1(\ker\widehat\sigma_{\mathrm{sc}},d_{\mathrm{QME}})\)
+      (Problem~\ref{prob:quantum-p0-operation-realization}); the
+      \(\theta_3\) bare-verdict / supplied-counterterm dichotomy
+      (Theorem~\ref{thm:app-theta-three-finite-window-H1}).
+    \item \emph{Vanishing criterion for the four named components:}
+      the displayed equalities of items (1)--(4) hold without further
+      external input on the scalar-contact balanced habitat and on the
+      finite-certificate range listed in
+      Proposition~\ref{prop:app-edge-pbw-telescoping},
+      Proposition~\ref{prop:app-radial-pr-unconditional-window},
+      Proposition~\ref{prop:app-free-residual-vanishings}, and
+      Theorem~\ref{thm:phi-hbar-all-order}.
+    \item \emph{First nonzero example outside the proved components:}
+      the ordinary scalar branch is blocked at order \(\hbar^1\) on
+      linear generators by
+      \([\Phi_\hbar(z_1),\Phi_\hbar(z_2)]_\star=\hbar N\); the
+      reduced non-scalar Costello QME branch is blocked at the
+      smallest non-scalar window
+      \(\theta_3\), where the bare verdict is \(H^1=\C\!\cdot\!E_{\theta_3}\ne0\).
+    \item \emph{Physical meaning:} the Moyal star, the matrix Weyl
+      algebra, and the brane trace measurement agree
+      componentwise on the proved habitat; mismatch on either of the
+      four named obstruction classes is the precise location at which
+      compatibility breaks and a counterterm, source replacement, or
+      scalar-contact lift is required.
+  \end{itemize}
+
+  \noindent
+  \emph{Statement.}
   Fix an exponential degree weight \(w(d)=q^d\), \(q>1\), and work over
   \(\C[[\hbar]]\).  Write
   \[
@@ -11603,6 +11839,61 @@ $$\{f,g\}_\hbar=\hbar^{-1}[f,g]_*
 \end{proof}
 
 \begin{prob}[Non-scalar quantum \(P_0\)-operation obstruction complex]\label{prob:quantum-p0-operation-realization}
+  After the four proved components of
+  Theorem~\ref{thm:componentwise-quantum-coefficient-comparison}, the
+  remaining non-scalar Costello QME comparison reduces to a single
+  cohomology class on a single habitat.
+  \begin{itemize}
+    \item \emph{Desired upgrade:} a chain-level Costello-local
+      \(P_{0,\hbar}\)-factorisation-centre map
+      \(C^\bullet_{\mathrm{CE},\mathrm{cont}}(\mathfrak h_{w,\hbar}\ltimes\mathfrak h^{\vee,w}_{\hbar,\mathrm{cont}}[1])
+      \to Z^{P_{0,\hbar}}_{\mathrm{fact}}(\mathrm{Obs}^\hbar_{\mathrm{open}})|_{\mathfrak S_{\hbar,w}}\),
+      curved bulk-to-defect kernel \(\kappa_{\hbar,w,I}\) included.
+    \item \emph{Minimal input data:} a complete
+      \(d_{\mathrm{QME}}\)-stable scalar-contact filtration with
+      vanishing successive scalar-symbol extension classes
+      \(o^{(r)}_{\sigma,w}(I)\); a filtered chain projection
+      \(\widehat\sigma_{\mathrm{sc}}\); a curved bulk-to-defect kernel
+      \(\kappa_{\hbar,w,I}\) on the current source of
+      Definition~\ref{def:app-unreduced-nonscalar-current-lift-datum};
+      compatible local counterterms
+      \(C_{\Gamma,w}^{w_0}(\epsilon)\) with finite-window transport.
+    \item \emph{Obstruction class:} the reduced non-scalar QME
+      cohomology class
+      \([\operatorname{Ob}^{\mathrm{red}}_{w,\partial,\hbar}]
+      \in H^1(\ker\widehat\sigma_{\mathrm{sc}},d_{\mathrm{QME}})\),
+      together with its finite-window
+      \(\varprojlim^1H^0\)-primitive-compatibility class.
+    \item \emph{Vanishing criterion:} successive vanishing of
+      \(o^{(r)}_{\sigma,w}(I)\) for \(r>0\) builds
+      \(\widehat\sigma_{\mathrm{sc}}\); on a fixed window the row
+      equation \(A^Mc=-r^M\) is solvable iff
+      \([\mathfrak o^{\mathrm{ns}}_{n_0,M}]\) lies in
+      \(-\operatorname{im}H^1(\Xi_M)\); in the inverse-limit tower
+      vanishing of the closed-exchange triple
+      \((\beta^{\mathrm{cl}}_{n_0},\mu^{\mathrm{cl}}_{n_0},\lambda^{\mathrm{cl}}_{n_0})\)
+      is necessary and sufficient.
+    \item \emph{First nonzero example or known failure:} the
+      smallest non-scalar window \(\theta_3\) carries the bare verdict
+      \(H^1=\C\!\cdot\!\mathsf E_{\theta_3,M}\ne0\) with covector
+      \(\ell_{\theta_3}(\mathsf E_{\theta_3,M})=1\); a supplied
+      scalar-zero counterterm \(C_{\theta_3,M}\) with
+      \(d_MC_{\theta_3,M}=-\mathsf E_{\theta_3,M}\) forces \(c=1\)
+      unique and \(H^1=0\)
+      (Theorem~\ref{thm:app-theta-three-finite-window-H1}); the
+      lower source-coordinate Bianchi route of
+      Proposition~\ref{prop:theta-three-finite-window-criterion}
+      exhibits a nontrivial cokernel
+      \(\widetilde\lambda_{02,\mathfrak b}\) that cannot be repaired
+      inside the current Bianchi-exposed habitat.
+    \item \emph{Physical meaning:} the unreduced
+      Costello-local closed-exchange or local-counterterm cancellation
+      of the non-scalar QME residual is the bulk-to-defect Ward identity
+      compatible with the quantum moment-map constraint.
+  \end{itemize}
+
+  \noindent
+  \emph{Statement.}
   The non-scalar Costello graph/QME obstruction criterion is the vanishing problem in the
   filtered local-functional complex
   \[
@@ -12248,6 +12539,15 @@ $$\{f,g\}_\hbar=\hbar^{-1}[f,g]_*
 \end{rmk}
 
 \subsubsection{Third-order target for Costello's graph problem}
+
+The order-\(\hbar^1\) Moyal coefficient \(P\) is fixed by the
+linear-Hamiltonian Heisenberg commutator and gives the target
+\(\hbar(kn-lm)z_1^{k+m-1}z_2^{l+n-1}\).  At order \(\hbar^3\) the
+Moyal target is \(P^3/24\); a Costello-graph realisation of the same
+coefficient would supply a separate trivalent boundary contraction
+diagram.  Whether the two answers match is the
+content of this subsection.
+
 For monomials $f=z_1^kz_2^l$ and $g=z_1^mz_2^n$, the third-order Moyal
 coefficient from Proposition~\ref{prop:moyal-monomial} is
 $$P^3(f,g)=
@@ -12551,10 +12851,22 @@ checks in the problem below.
 \end{rmk}
 
 \section*{Acknowledgements}
-This work belongs to the lineage of Bershadsky--Cecotti--Ooguri--Vafa 1993,
-Witten 1988, Costello 2011, and Beilinson--Drinfeld 2004. The local
-Hamiltonian BF analysis is a finite algebraic chain-level probe of the
-formal-disk corner of that program.
+This work belongs to the lineage of Bershadsky--Cecotti--Ooguri--Vafa
+1993, Witten 1988, Costello 2011, and Beilinson--Drinfeld 2004; the
+Capelli--Howe scalar identities, Procesi--Razmyslov trace relations,
+and Harish-Chandra radial-parts theorem supply the matrix-microscope
+side; Matlis 1958 and Hartshorne local cohomology supply the
+principal-part dual; Kontsevich's deformation quantisation supplies
+the all-order Moyal target.  The local Hamiltonian BF analysis is a
+finite algebraic chain-level probe of the formal-polydisk corner of
+that programme.  Its single measurement principle is that a closed
+Hamiltonian on the formal symplectic normal polydisk is evaluated on
+the brane's matrix-valued transverse coordinate; the obstructions to
+extending this principle are the named classes
+\(\mathfrak o_{\mathrm{Cas}}\), \(\hbar N[\bar c]\),
+\(\Omega^{\mathrm{rad}}_{a,b}\),
+\([\operatorname{Ob}^{\mathrm{red}}_{w,\partial,\hbar}]\), and the
+\(\theta_3\) finite-window class.
 
 \appendix
 \input{appendix-matlis-principal-parts}
