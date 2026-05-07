@@ -1501,24 +1501,29 @@ exactly the assertion that the ordinary Weyl trace \(J_N(f)\) equals
 \begin{rmk}[The structural mechanism: Cartan one-particle Moyal lift]
 \label{rmk:app-radial-bicomplex-mechanism}
   The proof of Theorem~\ref{thm:app-radial-bicomplex-acyclic}
-  isolates the structural mechanism behind every closed bidegree.
-  At \(\hbar^0\) the residual is exactly the cyclic shear sum minus
-  the Weyl average, and the necklace Stokes
+  isolates the structural mechanism uniformly behind every closed
+  bidegree.  At contraction degree~\(0\), the residual is the
+  cyclic shear sum minus the Weyl average; the necklace Stokes
   Lemma~\ref{lem:app-ordinary-necklace-stokes} is the assertion that
-  this is a coboundary in \(\partial\).  At each higher
-  \(\hbar\)-order \(p\geq1\), the Cartan one-particle Moyal
-  homomorphism produces the \(p\)-contraction component of the
-  radial image, and the radial-kernel theorem
-  (Statement~\ref{stmt:app-radial-external-input}~clauses~(1)
-  and~(2)) lifts it to the moment ideal.  The graded pieces
-  \(\mathrm{gr}^p\mathsf{Diag}_{a,b}\) carry the same one-particle
-  Moyal Lie action, and the spectral sequence of the contraction
-  filtration collapses on \(E_1\): the \(\hbar^0\) row is necklace
-  Stokes, and each subsequent row is the same statement after a
-  one-step PBW contraction.  This explains uniformly why every
-  finite computation closes by a \(K_{a,b}\)-correction whose number
-  of contraction terms grows exactly as the contraction-filtered
-  dimension of \(\mathrm{gr}^{\geq1}\mathsf{Diag}_{a,b}\).
+  it is a coboundary in \(\partial\).  At each higher contraction
+  degree~\(p\geq1\), the residual is the \(p\)-contraction component
+  of the matrix-Weyl shear identity \emph{after} subtracting the
+  classical lift; the Vandermonde-conjugated radial map evaluates
+  this on the Cartan as a sum of one-particle Moyal commutators
+  \(\hbar^{-1}[\lambda_i^{a+1}/(a+1),(\nabla_i^\Delta)^{b+1}]\), and
+  Lemma~\ref{lem:app-radial-cartan-moyal-representation} replaces
+  each by its Weyl quantization of the Moyal-bracket polynomial.
+  Statement~\ref{stmt:app-radial-external-input}~clause~(3) for
+  that polynomial closes the equality with
+  \(\operatorname{Rad}_0(J_N(\{...\}_\hbar))\); clause~(2) places the
+  matrix-Weyl difference in the moment ideal.  Stable
+  Procesi--Razmyslov polarization extracts the universal cycle
+  \(K_{a,b}\), and the necklace Stokes lemma supplies the square-cell
+  primitive.  The contraction-filtered dimension of
+  \(\mathrm{gr}^{\geq1}\mathsf{Diag}_{a,b}\) grows polynomially in
+  \((a,b)\), matching the empirical
+  \(K_{a,b}\)-correction support count in
+  Remark~\ref{rmk:app-radial-finite-verification}.
 \end{rmk}
 
 \begin{prop}[Procesi--Razmyslov unconditional verification window]
@@ -2169,7 +2174,7 @@ exactly the assertion that the ordinary Weyl trace \(J_N(f)\) equals
   Proposition~\ref{prop:app-radial-pr-unconditional-window}.  The
   bidegrees verified in this mode include the edge strips, the
   named lower-degree interior cases, and the previously open total
-  degrees \(13\), \(14\), \(15\):
+  degrees \(13\)--\(15\):
   \[
     (3,3),(3,4),(4,3),(4,4),(3,5),(5,3),(3,6),(6,3),
     (4,5),(5,4),(4,6),(6,4),(5,5),
@@ -2182,10 +2187,13 @@ exactly the assertion that the ordinary Weyl trace \(J_N(f)\) equals
   \]
   Each verification is a finite rational linear-algebra problem on
   \((\mathsf W_{a,b}\oplus\mathsf S_{a,b})\), in exact rational
-  arithmetic.  The structural all-bidegree theorem
-  (Theorem~\ref{thm:app-radial-bicomplex-acyclic}) extends this to
-  every bidegree under the named Statement-input.  The
-  \(\texttt{--edge-family-max}\) and
+  arithmetic; computational cost in \(\texttt{--kernel-correction}\)
+  mode grows roughly as the cube of \(\binom{a+b-2}{a-1}\), so
+  bidegrees of total degree \(\geq 16\) require longer runs but the
+  underlying linear algebra is unconditional.  The structural
+  all-bidegree theorem (Theorem~\ref{thm:app-radial-bicomplex-acyclic})
+  extends the closure to every bidegree under the named
+  Statement-input.  The \(\texttt{--edge-family-max}\) and
   \(\texttt{--balanced-family-max}\) modes regression-check edges
   and balanced diagonals against the closed PBW formula and the
   unconditional kernel-correction window.
