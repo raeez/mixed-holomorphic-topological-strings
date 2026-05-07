@@ -653,7 +653,9 @@ Cyclic invariance and iterated \(Q\)-exact swaps reduce every cyclic
 word in \(\phi_1,\phi_2\) to a symmetric symbol \(z_1^kz_2^l\).  This
 gives the matrix-microscope statement: the gauge-invariant content of
 the probe pair is exactly the trace family \(\{J(f)\}\), and the
-closed sector \(\bar A\) acts on the brane through nothing else.
+closed sector --- the Hamiltonian polynomial algebra modulo constants
+\(\bar A=\C[z_1,z_2]/\C\cdot1\) --- acts on the brane through nothing
+else.
 
 \begin{lem}[Trace realisation of the formal polydisk: the matrix microscope]\label{lem:probe-trace-microscope}
   In the stable connected ghost-zero open observables
@@ -689,6 +691,23 @@ The substitution-realised Lie algebra image of \(\bar A\) inside the
 open trace cohomology generates the open sector; it is not a
 representation of \(\bar A\) on a chosen module.
 
+\begin{ex}[\(N=1\): the geometric prototype]\label{ex:N1-commuting-case}
+  At \(N=1\), \([\phi_1,\phi_2]=0\) holds tautologically, so the Dirac
+  constraint imposes nothing and the antifield \(\psi\) is decoupled.
+  The probe pair \((\phi_1,\phi_2)\in\C^2\) is a chosen point of the
+  formal polydisk, and
+  \[
+    J(f)=\overline{\operatorname{Tr}f(\phi_1,\phi_2)}=f(\phi_1,\phi_2)
+    \in\C
+  \]
+  is ordinary scalar evaluation modulo the constant.  The matrix
+  microscope reduces to the closed-string evaluation map
+  \(f\mapsto f(p)\) at a chosen polydisk point \(p\), and the
+  Procesi--Razmyslov input is trivial.  Every later non-commutative
+  refinement of \(J\) collapses to this scalar evaluation when
+  \(N=1\); the matrix structure enters with the brane stack.
+\end{ex}
+
 The microscope is exact at the level of the scalar trace algebra and
 fails at the level of the full \(P_0\)-factorization centre: the
 chain-level morphism from closed observables on \(L\) to the open
@@ -723,7 +742,27 @@ factorization centre fails for a structural reason.
   residual, not papered over.
 \end{rmk}
 
-\subsection{The Hamiltonian BF algebra}
+\begin{rmk}[The native object is a two-complex-dimensional factorization algebra, not a one-dimensional VOA]\label{rmk:not-a-voa}
+  The closed observables produced by the brane-probe analysis live on
+  the complex surface \(\C^2\): the holomorphic factorization algebra
+  \(\mathcal F^{\mathrm{hol}}_{\mathrm{Ham}}\) of
+  \S\ref{ssec:two-algebras},
+  Definition~\ref{def:local-hamiltonian-chiral-factorization-algebra}
+  takes its value on holomorphic polydisks \(B\subset\C^2\), and its
+  dg Lie input
+  \(\Omega^{0,\bullet}_c(B)\widehat\otimes
+  (\mathfrak h\ltimes\mathfrak h^\vee_{\mathrm{cont}}[1])\) --- with
+  \(\mathfrak h=\C[[z_1,z_2]]/\C\cdot1\) the Hamiltonian Lie algebra
+  modulo constants of \S\ref{ssec:hamiltonian-bf-algebra} --- carries
+  two complex variables \(z_1,z_2\) and the residue duality between them.  No one-dimensional vertex algebra, OPE expansion, or Zhu
+  reduction is asserted on this native object.  Reduction to a curve
+  chiral algebra requires a separate codimension-one defect,
+  transverse boundary condition, and Laurent expansion datum, and is
+  not part of the local Hamiltonian theorem
+  (Remark~\ref{rmk:constructed-chiral-interface-target}).
+\end{rmk}
+
+\subsection{The Hamiltonian BF algebra}\label{ssec:hamiltonian-bf-algebra}
 
 A BV theory of canonical transformations of the formal symplectic polydisk
 is fixed by three pieces of data: the Lie algebra of infinitesimal
@@ -824,17 +863,43 @@ the Hamiltonian action.  Both requirements name a unique module.
   is canonical.
 \end{proof}
 
-Cotangent fields on a formal brane are residues, not polynomials.
-Each \(\rho_{a,b}\) is a defect-supported transverse mode: a
-distributional object on the brane line whose holomorphic transverse
-behaviour is encoded by a single principal-part coefficient.  An
-abstract copy \(\bar A_{\mathrm{desc}}\) of \(\bar A\) sees the same
-labels through the polynomial PBW special-fibre descendants
-\(\Psi_{k,l}\) of Construction~\ref{constr:boundary-evaluation}; they
-carry the same \((a,b)\)-bidegree as the principal parts but a
-different \(\mathfrak h\)-module structure
+A Taylor Hamiltonian is what the brane samples.  A principal part is
+the dual distributional momentum concentrated at the brane: the
+residue functional that detects a Taylor coefficient.  Cotangent
+fields on a formal brane are residues, not polynomials.  Each
+\(\rho_{a,b}\) is a defect-supported transverse mode: a distributional
+object on the brane line whose holomorphic transverse behaviour is
+encoded by a single principal-part coefficient.  An abstract copy
+\(\bar A_{\mathrm{desc}}\) of \(\bar A\) sees the same labels through
+the polynomial PBW special-fibre descendants \(\Psi_{k,l}\) of
+Construction~\ref{constr:boundary-evaluation}; they carry the same
+\((a,b)\)-bidegree as the principal parts but a different
+\(\mathfrak h\)-module structure
 (Corollary~\ref{cor:descendant-coadjoint-difference}); see
 \S\ref{ssec:intro-notation-index} for the alphabet separation.
+
+\begin{ex}[The lowest non-trivial residue mode]\label{ex:residue-mode-rho10}
+  Take the linear Hamiltonian \(z_1\) and act on the lowest reduced
+  residue \(\rho_{1,0}\).  The coadjoint formula of
+  Theorem~\ref{thm:hbf-cotangent-uniqueness-summary} with
+  \((p,q,a,b)=(1,0,1,0)\) gives
+  \[
+    z_1\cdot\rho_{1,0}=-(0-0+1-0)\rho_{1,1}=-\rho_{1,1}.
+  \]
+  The polynomial PBW shadow \(\Psi_{1,0}\), labelled identically,
+  carries a different action: under the open one-\(\psi\) descendant
+  module of Proposition~\ref{prop:open-descendant-action} the linear
+  Hamiltonian shifts \(\Psi_{k,l}\) by the bracket on the
+  open-trace ring, not by the residue.  Same label, two
+  \(\mathfrak h\)-module structures.  The residue mode is what the
+  defect momentum sees; the polynomial PBW class is what the open
+  trace ring records.  The Fourier-polarized Rees bridge of
+  Theorem~\ref{thm:app-matlis-rees-fourier-bridge} is the only
+  passage between the two; it is not a same-action identification.
+  This worked case prevents the type collapse
+  \(\Psi_{a,b}\leftrightarrow\rho_{a,b}\) flagged in
+  Remark~\ref{rmk:intro-symbol-separation}.
+\end{ex}
 
 \begin{rmk}[Scalar Hamiltonian and center-of-mass term]\label{rmk:scalar-hamiltonian-center-of-mass}
   In \(\bar A\), \(\{z_1,z_2\}=1\equiv0\) by quotient.  On the
@@ -936,13 +1001,11 @@ Smeared boundary Hamiltonian
   \emph{(i) Operation versus measurement.}  The boundary Hamiltonian
   observable on the brane is the image of the shifted-cotangent
   coordinate \(u_f\), not of the Hamiltonian CE coordinate \(c_f\).
-  The CE/PV map of
-  Theorem~\ref{thm:reduced-ce-pv-central-operation} sends
-  \(u_f\mapsto O_f\); the assignment \(c_f\mapsto O_f\) collapses the
-  operation (Hamiltonian vector field \(\theta^I\)) onto the observable
-  (Schouten function \(O_I\)), breaking the \(P_0\)-bracket
-  compatibility \([\theta^I,O_J]_S=\delta^I_J\) on which the
-  central-operation map depends and obstructing every
+  Lemma~\ref{lem:type-discipline} below records this as a single rule;
+  the assignment \(c_f\mapsto O_f\) collapses the operation
+  (Hamiltonian vector field \(\theta^I\)) onto the observable
+  (Schouten function \(O_I\)), breaks the bracket compatibility
+  \([\theta^I,O_J]_S=\delta^I_J\), and obstructs every
   \(P_0\)-centrality homotopy in
   Problem~\ref{prob:formal-factorization-center}.
 
@@ -952,10 +1015,12 @@ Smeared boundary Hamiltonian
   identified as \(\mathfrak h\)-modules: their adjoint actions differ
   by Corollary~\ref{cor:descendant-coadjoint-difference}, and the only
   intermodule passage is the Fourier-polarized Rees bridge of
-  Theorem~\ref{thm:app-matlis-rees-fourier-bridge}.
+  Theorem~\ref{thm:app-matlis-rees-fourier-bridge}.  See
+  Example~\ref{ex:residue-mode-rho10} for the lowest non-trivial
+  worked case.
 \end{rmk}
 
-\subsection{The reduced CE/PV measurement}
+\subsection{The reduced CE/PV measurement}\label{ssec:reduced-ce-pv-measurement}
 
 The closed BV theory has two coordinate types, and the brane reads only
 one of them.  Hamiltonian ghosts \(c^I\)---dual to generators
@@ -973,22 +1038,65 @@ the moment-map identity
 \(\{J(f),J(g)\}_\partial=J(\{f,g\}_{\mathfrak h})\), read locally on
 the brane.
 
+A single discipline rule controls the rest of the Introduction.  A
+closed Hamiltonian acts on the brane through one CE coordinate, and is
+measured on the brane through a different CE coordinate.  The boundary
+observable is the image of the second, never the first.  This is the
+type-discipline lemma; every later use of the symbols
+\(c_f,u_f,\theta_f,O_f\) refers back to it.
+
+\begin{lem}[Type discipline: a Hamiltonian has two avatars]\label{lem:type-discipline}
+  A Hamiltonian \(f\in\mathfrak h\) has two algebraic avatars on the
+  closed shifted-cotangent BV side.
+  \begin{itemize}
+    \item As generator of canonical transformations:
+      \(c_f\in\mathfrak h^\vee[-1]\) is the Hamiltonian-dual CE
+      coordinate, and
+      \(\Phi_{\mathrm{coord}}(c_f)=\theta_f\), the Schouten vector
+      field on the boundary observable algebra.
+    \item As closed cotangent insertion:
+      \(u_f\in\mathfrak h\subset\mathfrak g[1]\) is the
+      shifted-cotangent-dual coordinate, and
+      \(\Phi_{\mathrm{coord}}(u_f)=O_f\), the boundary observable
+      measured on the brane as
+      \(J(f)=\overline{\operatorname{Tr}f(\phi_1,\phi_2)}\).
+  \end{itemize}
+  The assignment \(c_f\mapsto O_f\) collapses operations onto
+  observables and is forbidden by the CE/PV ladder
+  (Theorem~\ref{thm:universal-ce-pv-koszul-criterion},
+  Theorem~\ref{thm:reduced-ce-pv-central-operation}).  Closed
+  Hamiltonians act through their \(c\)-avatar; brane measurements
+  record their \(u\)-avatar.  The two are dual, not equal.
+\end{lem}
+
+\begin{proof}
+  Theorem~\ref{thm:coordinate-free-cotangent-ce-pv} fixes the generator
+  signs in the finite-dimensional case:
+  \(\Phi_{\mathfrak l}(c^\xi)=\theta^\xi\),
+  \(\Phi_{\mathfrak l}(u_x)=O_x\).
+  Theorem~\ref{thm:coordinate-free-closed-open-synthesis} extends this
+  generator assignment to the formal-polydisk coordinate envelope.
+  Equating \(c_f\) with \(O_f\) breaks the coordinate
+  bracket-compatibility
+  \([\theta^I,O_J]_S=\delta^I_J\), which is what every
+  \(P_0\)-centrality homotopy uses
+  (clause~(2) of
+  Theorem~\ref{thm:universal-ce-pv-koszul-criterion}).  No central
+  extension or kernel datum can repair the collision: the failure is
+  already at the bracket on generators.
+\end{proof}
+
 \paragraph{The CE/PV dictionary.}
 On generators the cochain CE/PV identification of
 Theorem~\ref{thm:reduced-ce-pv-central-operation} is
 \[
   c^I\longmapsto\theta^I,\qquad u_I\longmapsto O_I.
 \]
-The Hamiltonian-dual coordinate \(c^I\) lifts to the Schouten
-vector-field coordinate \(\theta^I\); the cotangent-dual coordinate
-\(u_I\) lifts to the polyvector function \(O_I\).  The brane substitution
-is the image of \(u_f\): the open trace observable \(J(f)\) is the
-Schouten function avatar of the cotangent CE coordinate, not of the
-Hamiltonian ghost.  The forbidden assignment \(c_f\mapsto O_f\)
-collapses the type distinction of
-Remark~\ref{rmk:intro-symbol-separation}~(i) and breaks the bracket
-compatibility \([\theta^I,O_J]_S=\delta^I_J\) underlying every
-\(P_0\)-centrality homotopy.
+This is Lemma~\ref{lem:type-discipline} written on a basis: the
+Hamiltonian-dual CE coordinate produces a Schouten vector field, the
+shifted-cotangent-dual CE coordinate produces a boundary Hamiltonian
+observable.  The brane substitution is the image of \(u_f\), not of
+\(c_f\).
 
 \paragraph{Word ordering is BRST-exact, the bracket records the symbol.}
 At finite \(N\), \(J(f)=\overline{\operatorname{Tr}f(\phi_1,\phi_2)}\)
@@ -1108,7 +1216,7 @@ product.
   obstruction of Problem~\ref{prob:formal-factorization-center}.
 \end{proof}
 
-\subsection{Scalar reduction and the U(1) center anomaly}\label{subsec:scalar-anomaly}
+\subsection{The brane center of mass remembers what Hamiltonian reduction forgets}\label{subsec:scalar-anomaly}
 
 A constant Hamiltonian \(c\in\C\subset\C[z_1,z_2]\) acts trivially on the
 polydisk: its Hamiltonian vector field vanishes, so it sits in the kernel of
@@ -1157,6 +1265,37 @@ multidegree \((k+m-1,l+n-1)\) lands at \((0,0)\): the constant-Taylor
 direction the canonical-transformation reduction
 \eqref{eq:hbar-Lie-algebra} discards.  This is the direction on which
 the closed and open sides disagree.
+
+\begin{ex}[Linear Hamiltonians and the brane centre of mass]\label{ex:linear-hamiltonian-com}
+  The two linear Hamiltonians \(f_1=z_1\) and \(f_2=z_2\) measure
+  \[
+    J(z_1)=\overline{\operatorname{Tr}\phi_1},
+    \qquad
+    J(z_2)=\overline{\operatorname{Tr}\phi_2},
+  \]
+  the brane centre of mass in the two transverse directions.  On the
+  unreduced phase space the matrix Poisson bracket of these two
+  observables is
+  \[
+    \{\operatorname{Tr}\phi_1,\operatorname{Tr}\phi_2\}
+      =\operatorname{Tr}(I\cdot I)=N,
+  \]
+  so the brane centre-of-mass pair is a Heisenberg pair with charge
+  \(N\): the open-side image of the unique cocycle bidegree
+  \(\omega(z_1,z_2)=1\).  Closed-side, \(\{z_1,z_2\}=1\equiv0\) in
+  \(\bar A\) by quotient.  Moyal quantisation returns the same scalar
+  at order \(\hbar\): on Weyl quantisations the commutator
+  \[
+    [\Phi_\hbar(z_1),\Phi_\hbar(z_2)]_\star=\hbar N
+  \]
+  truncates exactly at first order because the Moyal expansion needs
+  at least one second derivative on each tensor factor and the linear
+  Hamiltonian has none (Theorem~\ref{thm:quantum-classical-anomaly}).
+  The same anomalous scalar is detected three times: on the closed
+  Lie cohomology side, on the open trace algebra side, and on the
+  Moyal/Weyl side.  These are the three faces of \([\bar c]\) of
+  Remark~\ref{rmk:three-faces-one-class}.
+\end{ex}
 
 \begin{lem}[Closed--open mismatch lemma]\label{lem:omega-cocycle}
   The form $\omega$ is a Lie 2-cocycle on $\mathfrak h_{\mathrm{poly}}$:
@@ -1292,8 +1431,24 @@ side.
   $[\bar c]$.
 \end{rmk}
 
-Deformation quantisation of the formal polydisk returns $[\bar c]$ at
-order $\hbar$ as the leading Capelli shift, with no higher-order
+Quantisation tests measurement compatibility.  Two operations close
+in on the brane: Weyl/Moyal quantization \(\Phi_\hbar\) of the formal
+symplectic polydisk, and the matrix-trace measurement \(J\) of the
+quantized symbol on the probe pair.  They commute exactly when the
+Moyal commutator \([\Phi_\hbar(z_1),\Phi_\hbar(z_2)]_\star\) and the
+measured commutator
+\([\overline{\operatorname{Tr}\phi_1^\hbar},
+\overline{\operatorname{Tr}\phi_2^\hbar}]\) agree.  Linear Hamiltonians
+expose the first quantum obstruction.  The Moyal expansion truncates
+because each higher-order term \(P^r\) requires \(r\) derivatives in
+each tensor factor and the second derivative of a linear function
+vanishes; the surviving leading term is the open-side scalar
+\([\Phi_\hbar(z_1),\Phi_\hbar(z_2)]_\star=\hbar N\), exactly the
+order-\(\hbar\) image of \(\omega(z_1,z_2)=1\) on the unreduced
+algebra.  The classical class \([\bar c]\) and its order-\(\hbar\)
+Capelli shift are one Lie 2-cocycle, read on the closed Lie side, on
+the unreduced trace algebra side, and on the Moyal/Weyl side; this is
+the quantum face of the brane-measurement test, with no higher-order
 modification on linear trace generators.
 
 \begin{thm}[Moyal survival of $\bar c$: the order-$\hbar$ Capelli shift]\label{thm:quantum-classical-anomaly}
@@ -1434,41 +1589,89 @@ cochain-level CE/PV identity on generators
 \[
   c^f\longmapsto\theta^f,\qquad u_f\longmapsto O_f,
 \]
-of \S\ref{subsec:scalar-anomaly}--\S\ref{ssec:intro-notation-index}:
-the boundary observable \(O_f=\overline{\operatorname{Tr}
-f(\phi_1,\phi_2)}\) is the image of the shifted-cotangent CE
-coordinate \(u_f\), while the Hamiltonian CE coordinate \(c^f\) maps
-to the Schouten vector-field coordinate \(\theta^f\).  The wrong
-assignment \(c_f\mapsto O_f\) collapses operations onto observables
-and breaks the cotangent-side homotopies; the cotangent module is
-the Grothendieck--Matlis principal-part \(\mathcal P\), not a
+of Lemma~\ref{lem:type-discipline}: closed Hamiltonians act through
+\(c\), boundary observables are read off \(u\).  The cotangent module
+is the Grothendieck--Matlis principal-part \(\mathcal P\), not a
 polynomial substitute, and the Moyal coadjoint action acts on the
 residue side and does not lift to the polynomial shadow
 (Theorem~\ref{thm:app-defect-polarization}).
 
-The universal CE/PV ladder of
-Theorem~\ref{thm:universal-ce-pv-koszul-criterion} promotes this
-dictionary to a recognition criterion: at the coordinate envelope the
-generator map extends to the dg graded-commutative isomorphism
+The recognition criterion is a five-level ladder
+(Theorem~\ref{thm:universal-ce-pv-koszul-criterion}).  Each level
+adjoins one extra structure to the level beneath; failure at level
+\(k\) lives in a single named obstruction.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{@{}p{0.05\textwidth}p{0.36\textwidth}p{0.27\textwidth}p{0.24\textwidth}@{}}
+\hline
+\textbf{Level} & \textbf{Comparison} & \textbf{Hypothesis} & \textbf{Status}\\
+\hline
+1 &
+\(C^\bullet_{\mathrm{CE}}(T^*[1]\mathfrak l)\cong
+\mathrm{PV}(\mathbf S\mathfrak l)\) on a finite-dim Lie algebra
+\(\mathfrak l\) &
+none beyond char.\ zero &
+theorem
+(Theorem~\ref{thm:coordinate-free-cotangent-ce-pv})\\
+\hline
+2 &
 \(\Phi_{\mathrm{coord}}\colon
-C^\bullet_{\mathrm{CE},\mathrm{coord}}(\mathfrak g)\xrightarrow{\sim}
-\mathrm{PV}_{\mathrm{coord}}(A_{\partial,\mathrm{coord}})\); on a
-bracket-admissible sub-PV model it upgrades to a \(P_0\)-isomorphism;
-on a kernel-admissible target the diagonal tensor satisfies
-Maurer--Cartan; on an admissible Tate/nilpotent/relative/weighted
-replacement the closed-side cochain identity upgrades to the
-bar-cobar/enveloping statement; and an open-trace
-\(A_\infty\)-Koszul acceptance datum supplies the matched dual on the
-\(\mathcal A_N\)-side.  The minimal RG-stable analytic completion
-forced by the brane microscope --- closed under the Schouten bracket
-and pointwise product, with heat-kernel propagator extension and
-Casimir convergence --- is the weighted-Tate habitat \(B_w\)
-(Theorem~\ref{thm:wt-canonical-habitat}).  A pair \((\mathcal A_N(I),\mathcal B)\) is a
-CE/PV pair to a specified depth exactly when the corresponding
-admissibility hypothesis is verified.  The brane-line
-factorization-current comparison
-(Theorem~\ref{thm:hamiltonian-current-factorization}) is the depth-1
-application: it identifies the reduced Hamiltonian sector of
+C^\bullet_{\mathrm{CE},\mathrm{coord}}(\mathfrak g)
+\xrightarrow{\sim}
+\mathrm{PV}_{\mathrm{coord}}(A_{\partial,\mathrm{coord}})\) on
+the formal-polydisk coordinate envelope &
+coordinatewise finiteness only &
+theorem
+(Theorem~\ref{thm:coordinate-free-closed-open-synthesis})\\
+\hline
+3 &
+\(P_0\)-bracket lift on a sub-PV model
+\(B\subset\mathrm{PV}_{\mathrm{coord}}\) &
+\(B\) bracket-admissible
+(Definition~\ref{defn:bracket-kernel-admissible}) &
+conditional on \(B\)\\
+\hline
+4 &
+Maurer--Cartan diagonal kernel
+\(\Theta_B\in\mathcal K_B\) &
+\((B,\mathcal K_B)\) kernel-admissible; diagonal converges &
+conditional on convergence\\
+\hline
+5 &
+Bar-cobar/enveloping
+\((C^\bullet_{\mathrm{CE},\mathrm{cont}}(\mathfrak g_{\mathrm{adm}}))^!
+\simeq\widehat U(\mathfrak g_{\mathrm{adm}})\) and matched
+\(A_\infty\)-Koszul on \(\mathcal A_N\)-side &
+admissible Tate/nilpotent/relative/weighted replacement;
+conilpotent endpoint; \(\varprojlim^1\)-vanishing; open-trace
+acceptance datum &
+conditional on admissibility\\
+\hline
+\end{tabular}
+\end{center}
+
+Level~1 is independent.  Level~2 is the formal-polydisk lift of
+level~1 by coefficientwise finite tests.  Level~3 chooses a
+topologised subalgebra in which the Schouten bracket converges; the
+strict ambient product completion fails this and supports no
+\(P_0\)-bracket.  Level~4 chooses a kernel-admissible target in which
+the diagonal Casimir converges to a Maurer--Cartan element.  Level~5
+adds an admissible bar-cobar replacement on the closed Lie side and a
+matched \(A_\infty\)-Koszul acceptance datum on the open trace side;
+the named five obstructions of clause~(4) of
+Theorem~\ref{thm:universal-ce-pv-koszul-criterion} block the strict
+ambient product from satisfying it.  The minimal RG-stable analytic
+completion forced by the brane microscope --- closed under the
+Schouten bracket and pointwise product, with heat-kernel propagator
+extension and Casimir convergence --- is the weighted-Tate habitat
+\(B_w\) (Theorem~\ref{thm:wt-canonical-habitat}); it satisfies levels
+3 and 4, with level~5 conditional on the open-trace
+\(A_\infty\)-Koszul acceptance datum.
+
+The brane-line factorization-current comparison
+(Theorem~\ref{thm:hamiltonian-current-factorization}) is the
+level-3 application: it identifies the reduced Hamiltonian sector of
 \(\mathcal F^{\mathrm{mix}}_{\mathrm{Ham}}\big|_L\) with
 \(\mathrm Z^{P_0}_{\mathrm{red,Ham}}(\mathcal A_N)\) on each interval.
 
@@ -1957,7 +2160,31 @@ The local geometric datum is
   \qquad \omega=dz_1\wedge dz_2,
 \]
 completed at \(L\) and replaced by its formal Darboux normal polydisk
-\((\widehat{\C^2}_0,\omega)\).  Three measurement principles fix the
+\((\widehat{\C^2}_0,\omega)\).  Each factor is forced.
+
+\paragraph{Why this is the minimal habitat.}
+\(\R_t\) is the brane worldline: the cyclic open BV theory and its
+trace observables \(J(f)(t)\) live as currents on it.  \(\R_s\) is the
+topological normal/propagator direction along which BV ghosts move
+and the moment-map multiplier becomes a one-form; without it the
+brane sits as a line in a plane with no transverse propagator and the
+bulk-to-brane locality mechanism collapses, since the mixed-locality
+homotopy \(L_v=[Q,\iota_v]\) of
+Proposition~\ref{prop:three-localities}~(b) requires a topological
+direction transverse to the worldline.  \(\C^2\) is the formal
+holomorphic-symplectic normal disk: a single complex coordinate would
+carry no Hamiltonian bracket on it, and a higher-dimensional
+holomorphic factor would not be uniformized by a single Darboux pair.
+Formal completion at \(L\) is forced by the matrix-probe microscope:
+the brane sees only the formal holomorphic transverse geometry,
+because \(\phi_1,\phi_2\) live in \(\mathfrak{gl}_N^2\) and the
+substitution \(z_i\mapsto\phi_i\) is a formal substitution into a
+power series.  Removing the formal completion forces the brane to see
+irrelevant global geometry of the holomorphic factor and breaks the
+scalar-reduced trace identification of
+Lemma~\ref{lem:probe-trace-microscope}.
+
+Three measurement principles fix the
 algebraic content of this geometry.  Dirac (the brane is a constrained
 matrix probe) selects the open BV sector and its first-class boundary
 action.  Witten's source convention (closed insertions act through
@@ -2717,6 +2944,23 @@ unimodular datum is the residue/cyclic pairing on this exterior
 algebra: a holomorphic volume input on the Darboux polydisk.
 
 \subsection{Hamiltonian sector and stable large N}
+
+The matrix microscope produces an open trace algebra at every finite
+\(N\); the closed Hamiltonian algebra
+\(\bar A=\C[z_1,z_2]/\C\cdot1\) is its image under the substitution
+map \(J\) only after a stable trace stabilization is performed.  Four
+hypotheses control that stabilization: stable invariant theory, BRST
+symmetrization, primitive cyclic projection, and a finite-\(N\)
+window in which the projection is a chain map.  Inside that window the
+Procesi--Razmyslov trace algebra collapses to commutative monomials,
+the connected primitive class is read by Loday--Quillen--Tsygan, and
+the resulting completed coefficient ring is the formal Hamiltonian
+envelope of \(\mathfrak h\).  Outside the window finite-\(N\) trace
+identities re-enter and break the projection.  Strict identification
+of the raw finite-\(N\) operator algebras with the formal envelope
+requires an open-trace \(A_\infty\)-Koszul acceptance datum
+(level~5 of the recognition ladder of \S\ref{ssec:two-algebras}),
+which is conditional, not granted by the stable hypotheses.
 
 Coefficient algebras: \(\bar A=\C[z_1,z_2]/\C\cdot1\) on the
 polynomial side and
