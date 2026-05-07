@@ -2933,6 +2933,152 @@ obstruction vector, and lifts if and only if that vector vanishes
   \(\varprojlim^1H^0\) obstruction.
 \end{proof}
 
+\begin{thm}[First non-scalar finite-window \(H^1\) at the
+  \(\theta_3\) row]
+\label{thm:app-theta-three-finite-window-H1}
+  Work in the full-equivariant marked finite-window habitat with
+  \(V=\C^{N|N}\) and the supplied minimal seed list at order \(\le2\)
+  of Theorem~\ref{thm:app-minimal-full-equivariant-all-order-vanishing}.
+  Adjoin only the order-three CE-source row \(\theta_3\) of
+  Proposition~\ref{prop:app-closed-rows-and-theta-three-source-face}.
+  The non-scalar kernel subcomplex at \(\theta_3\) is the supplied
+  finite row complex
+  \[
+    \mathcal K^0_{\theta_3,M}=0,\qquad
+    \mathcal K^1_{\theta_3,M}=\C\,\mathsf E_{\theta_3,M},\qquad
+    d_{\theta_3,M}=0.
+  \]
+  Two verdicts are recorded as theorems on this finite-window subcomplex.
+  \begin{enumerate}[label=(\alph*)]
+    \item \emph{Bare theorem (no counterterm supplied).}  In the
+      one-row complex above, the \(d_{\mathrm{ns},M}\)-cohomology in
+      degree one is
+      \[
+        H^1(\mathcal K^\bullet_{\theta_3,M},d_{\theta_3,M})
+          =\C\cdot\mathsf E_{\theta_3,M}\neq0,
+      \]
+      and the obstruction class is the basis vector itself,
+      \[
+        [\operatorname{Ob}^{\mathrm{red}}_{w,\partial,\hbar}]
+          \big|_{\theta_3,M}
+          =[\mathsf E_{\theta_3,M}]\neq0,
+      \]
+      detected by the unique covector
+      \(\ell_{\theta_3}(\mathsf E_{\theta_3,M})=1\) on the row basis.
+      No degree-zero row in the supplied finite complex maps to
+      \(-\mathsf E_{\theta_3,M}\); the linear system
+      \(A^M c=-r^M\) of
+      Theorem~\ref{thm:app-constructive-nonscalar-costello-qme-realization}
+      has empty column matrix and residual
+      \(r^M=\mathsf E_{\theta_3,M}\), so it is unsolvable.
+    \item \emph{Counterterm theorem (supplied scalar-zero local
+      counterterm \(C_{\theta_3,M}\)).}  Suppose a degree-zero local
+      functional \(C_{\theta_3,M}\in\mathcal K^0_{\theta_3,M}\) with
+      \(\widehat\sigma_{\mathrm{sc},M}(C_{\theta_3,M})=0\) is supplied
+      so that, in the enlarged finite complex
+      \[
+        \widetilde{\mathcal K}^0_{\theta_3,M}
+          =\C\,C_{\theta_3,M},\qquad
+        \widetilde{\mathcal K}^1_{\theta_3,M}
+          =\C\,\mathsf E_{\theta_3,M},\qquad
+        \widetilde d\,C_{\theta_3,M}=-\mathsf E_{\theta_3,M},
+      \]
+      the differential matrix is the scalar \(-1\).  Then
+      \[
+        H^1(\widetilde{\mathcal K}^\bullet_{\theta_3,M},\widetilde d)
+          =0,\qquad
+        [\operatorname{Ob}^{\mathrm{red}}_{w,\partial,\hbar}]
+          \big|_{\theta_3,M}=0,
+      \]
+      and the unique counterterm \(c=1\) (i.e.\ adopting
+      \(C_{\theta_3,M}\) with coefficient one in the QME expansion)
+      solves the row equation \(\widetilde A^M c=-r^M=
+      -\mathsf E_{\theta_3,M}\).  Tower compatibility holds with the
+      identity primitive transport
+      \(P^{M,N}=1\), zero Roos class
+      \([P^{M,N}c_M-c_N]=0\), and zero Bianchi tower obstruction
+      \(\Delta^1_{M,N}=0\) when the same \(C_{\theta_3,M}\) is
+      retained at all windows containing \(\theta_3\).
+  \end{enumerate}
+
+  Both verdicts are computational facts about the supplied finite-row
+  complex, not heuristic statements: they are the two outputs of the
+  fixed-window matrix solver of
+  Theorem~\ref{thm:app-constructive-nonscalar-costello-qme-realization}.
+
+  Cross-check: this theorem matches the explicit verdicts of
+  \texttt{scripts/finite\_window\_graph\_array.py}, which in the
+  current data package returns
+  \(\texttt{primitive\_exists}=\mathrm{false}\) with covector
+  \(\ell(\mathsf E_{\theta_3,M})=1\) for verdict (a), and
+  \(\texttt{primitive\_exists}=\mathrm{true}\) with primitive
+  coefficient \(c=1\) on \(C_{\theta_3,M}\) for verdict (b).
+\end{thm}
+
+\begin{proof}
+  Verdict (a).  The supplied finite complex has empty
+  \(\mathcal K^0_{\theta_3,M}=0\), so the differential matrix
+  \(\bigl(d_{\mathrm{ns},M}\big|_{\mathcal K^0_{\theta_3,M}}\bigr)\)
+  is the empty \(1\times0\) matrix and the residual is
+  \(r^M=\mathsf E_{\theta_3,M}\).  The scalar gate
+  \(S_{\theta_3,M}=0\) holds by
+  Proposition~\ref{prop:app-closed-rows-and-theta-three-source-face},
+  so the row lives in the kernel complex.  Since
+  \(d_{\theta_3,M}=0\) on the one-element basis, the row is closed.
+  Its cohomology class equals the basis vector itself, and the unique
+  covector \(\ell_{\theta_3}(\mathsf E_{\theta_3,M})=1\) annihilates
+  the (empty) image of \(d_{\theta_3,M}\) but is nonzero on
+  \(\mathsf E_{\theta_3,M}\).  This is the cokernel separation of
+  Theorem~\ref{thm:app-constructive-nonscalar-costello-qme-realization}.
+
+  Verdict (b).  Adjoining the degree-zero \(C_{\theta_3,M}\) with
+  \(\widehat\sigma_{\mathrm{sc},M}(C_{\theta_3,M})=0\) keeps both rows
+  in the non-scalar kernel.  The differential matrix is now the
+  scalar \(\widetilde A^M=(-1)\), so
+  \(\widetilde A^M c=-1\cdot c\) and \(\widetilde A^M c=-r^M=-1\)
+  has unique solution \(c=1\).  The H¹ class is therefore zero.
+  Tower compatibility: with identity transport
+  \(\pi_{M,N}C_{\theta_3,M}=C_{\theta_3,N}\) on every window
+  containing \(\theta_3\), the Roos cocycle
+  \(P^{M,N}c_M-c_N=1-1=0\), and the Bianchi tower obstruction
+  \(\Delta^1_{M,N}=-\pi_{M,N}\mathfrak b^M+\mathfrak b^N=0\) by the
+  same identity transport on \(\mathsf E_{\theta_3}\).
+
+  Both verdicts are stable under finite-window truncation since the
+  scalar gate \(S_{\theta_3,N}=0\) is preserved (the cyclic supertrace
+  vanishes at every window), and the residual transports as
+  \(\pi_{M,N}\mathsf E_{\theta_3,M}=\mathsf E_{\theta_3,N}\) when both
+  windows contain \(\theta_3\) and as \(0\) otherwise.
+\end{proof}
+
+\begin{rmk}[Verdict (a) versus verdict (b): which is the theorem]
+\label{rmk:app-theta-three-verdict-which-is-theorem}
+  Verdict (a) is the theorem of the \emph{minimal seed list} at
+  order three: under the strict hypothesis that no order-three
+  scalar-zero counterterm \(C_{\theta_3,M}\) is supplied, the
+  finite-window H¹ class is nonzero, with explicit covector
+  representative.  Verdict (b) is the theorem of the
+  \emph{counterterm-extended} package: under the strict hypothesis
+  that \(C_{\theta_3,M}\) with \(\widehat\sigma_{\mathrm{sc},M}=0\)
+  and \(d_{\mathrm{ns},M}C_{\theta_3,M}=-\mathsf E_{\theta_3,M}\) is
+  supplied, the H¹ class vanishes.  In the manuscript's current data
+  package only verdict (a) is the certified theorem; verdict (b) is
+  the theorem on the supplied
+  \texttt{theta3\_counterterm\_supplied\_exact\_payload} fixture.
+  Whichever way the supplied data goes, the result is a stated
+  theorem.
+
+  This is what the manuscript means by "first certified larger
+  non-scalar row": \(\theta_3\) is the smallest order-\(n\) row whose
+  finite-window H¹ is computed exactly to two verdicts, and any named
+  coefficient \(C_{\theta_3}\) is admissible only when verdict (b)
+  holds with one of the three named data --- a CE ancestor with
+  controlled boundary, a supplied scalar-zero local counterterm
+  \(C_{\theta_3,M}\), or a complete companion-face table whose signed
+  sum moves the residual into the image of \(\widetilde A^M\)
+  (Proposition~\ref{prop:app-closed-rows-and-theta-three-source-face}).
+\end{rmk}
+
 \begin{defn}[Normal \(\Omega\)-equivariant Costello kernel datum]
 \label{def:app-normal-omega-costello-kernel-datum}
   Let
