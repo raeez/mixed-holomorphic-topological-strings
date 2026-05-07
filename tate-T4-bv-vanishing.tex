@@ -637,68 +637,160 @@ in which the obstruction tuple is computed.
   \(\Cat{TateChain}_{\geq0}^{\mathrm{adm}}\) (\ref{stmt:tate-model-envelope}).
 \end{proof}
 
-\subsection*{Costello--Li extension criterion}
+\subsection*{Four-input extension criterion}
 
-\begin{thm}[Costello--Li extension criterion for the mixed coefficient endpoint]\label{thm:t4-four-missing}
-  Any Costello--Li type theorem that proves an endpoint-admissible
-  coefficient module for the setup here must supply the following four
-  components simultaneously:
+\begin{thm}[Costello--Li extension criterion for the mixed coefficient
+   endpoint]\label{thm:t4-four-missing}
+  Let \(\mathfrak o_{\mathrm{BV,end}}\) be the obstruction tuple of
+  Definition~\ref{defn:bv-endpoint-obstruction-tuple}.  A Costello--Li
+  type BV-cohomology theorem certifies vanishing of \(\mathfrak
+  o_{\mathrm{BV,end}}\) on the formal local geometry
+  \(X=\R^2_{\mathrm{top}}\times\widehat{\C^2}_{0,\mathrm{hol}}\), brane
+  \(L=\R_{\mathrm{brane}}\times\{0\}\times\{p\}\), gauge \(\lie{gl}_N\),
+  if and only if it supplies the following four classical and one
+  quantum data simultaneously, each addressing a distinct cocycle
+  representative in
+  \(\mathfrak o_{\mathrm{BV,end}}\):
   \begin{enumerate}
-    \item \emph{Non-compact / Omega-background BV-cohomology
-      vanishing.} A version of \ref{stmt:costello-li-2012-restated}
-      on $\R^2\times\C^2$, either via a separately anchored
-      Omega-background route or via a compactification with Lagrangian
-      boundary at infinity.
-    \item \emph{Topological--holomorphic mixed kinematics.} The
-      vanishing must hold on the kinematic differential
-      $D=d_{\R^2}+\bar\partial_{\C^2}$, with the linearized
-      complex of \ref{rmk:linear-heat-versus-bv-kernel}, and on
-      the Hamiltonian sector with cotangent $[1]$ extension.
-    \item \emph{Brane-defect extension.} The vanishing must allow
-      the transverse one-real-dimensional defect \(L\) on
-      which open gauge data $\lie{gl}_N$ live; not the flat-$\C^d$
-      $\lie{gl}(N\mid N)$ setup of
-      \cite{costello-li-open-closed-bcov}. It must also decide the
-      scalar contact class of
-      Theorem~\ref{thm:app-scalar-contact-qme-class}: closed
-      exchange cancellation, supertrace removal, central-character
-      normalization, or renormalized boundary generators.
-    \item \emph{Coefficient-system Tate completion.} The
-      coefficient direction
-      $\widehat{\mathfrak h}\,\widehat\otimes\,
-      \widehat{\mathfrak h}^{\vee}_{\mathrm{cont}}$ must support the
-      Casimir as a convergent kernel. By
-      \ref{lem:tate-casimir-obstruction} this is a category-level
-      change, not a damping factor.
+    \item[\emph{(I1)}] \emph{Non-compact / \(\Omega\)-background
+      BV-cohomology vanishing} replacing (S1).  A vanishing theorem
+      for the BV operator \(\Delta\) on
+      \(\bigl(\mathcal O_{\mathrm{loc}}(\mathcal E_w),\Delta\bigr)\)
+      over the non-compact base
+      \(\R^2_{\mathrm{top}}\times\C^2_{\mathrm{hol}}\), either via a
+      separately anchored \(\Omega\)-background route in the normal
+      bundle \(N_LX=\R_s\oplus\C_{z_1}\oplus\C_{z_2}\) (with the
+      vector field, equivariant differential
+      \(Q_\Omega=Q+\iota_{V_\Omega}\), inverted normal weights, and
+      stratification of the Repo-local CLAUDE
+      ``Normal \(\Omega\)-background discipline''), or via
+      compactification with Lagrangian boundary at infinity preserving
+      the brane \(L\) as a fixed locus.
+    \item[\emph{(I2)}] \emph{Topological--holomorphic mixed kinematics}
+      replacing (S2).  The vanishing must hold for
+      \(D=d_{\R^2}+\bar\partial_{\C^2}\) on
+      \(\Omega^\bullet_{\R^2}(I)\widehat\otimes
+        \Omega^{0,\bullet}_{\C^2}\widehat\otimes
+        (\mathfrak h\ltimes\mathfrak h^\vee_{\mathrm{cont}}[1])\),
+      together with its linearized BV-kernel complex of
+      \ref{rmk:linear-heat-versus-bv-kernel} and the cotangent
+      \([1]\)-extension of the Hamiltonian sector
+      (\ref{def:app-unreduced-bv-degrees}).
+    \item[\emph{(I3)}] \emph{Brane-defect extension with ordinary
+      \(\lie{gl}_N\) scalar contact decision} replacing (S3)--(S4).
+      The vanishing must allow the transverse one-real-dimensional
+      defect \(L\) carrying open gauge \(\lie{gl}_N\) (not the
+      flat-\(\C^d\) \(\lie{gl}(N\mid N)\) setup of
+      \cite{costello-li-open-closed-bcov}), and must decide the scalar
+      contact class
+      \[
+        \hbar N\,\omega(f,g)\,\gamma_{\mathbf 1}\in
+        H^2_{\mathrm{Lie}}(\bar A,\C),
+        \qquad\omega(z_1,z_2)=1,
+      \]
+      of \ref{thm:app-scalar-contact-qme-class} by one of the four
+      named cancellations:
+      closed-exchange cancellation,
+      \(\C^{N|N}\) supertrace removal
+      (\ref{thm:app-balanced-supertrace-qme-cancellation}),
+      central-character normalization
+      (\ref{thm:app-central-character-qme-cancellation}), or
+      renormalized boundary generators.
+    \item[\emph{(I4)}] \emph{Coefficient-system Tate completion}
+      replacing (S5).  The coefficient direction
+      \(\widehat{\mathfrak h}\,\widehat\otimes\,
+        \widehat{\mathfrak h}^{\vee}_{\mathrm{cont}}\)
+      must support the Casimir
+      \(C_{\mathfrak h}=\sum_{d\ge1}\sum_ie_{d,i}\otimes e^i_d\)
+      as a convergent represented kernel; by
+      \ref{lem:tate-casimir-obstruction} this requires a coefficient
+      category change, supplied for example by the weighted Tate pair
+      \((\mathfrak h_w,\mathfrak h^{\vee,w}_{\mathrm{cont}})\) of T1.
+    \item[\emph{(I5)}] \emph{Quantum endpoint vanishing}.  A primitive
+      for the degree-\(+1\) cocycle
+      \(\mathfrak o_{\mathrm{QME}}=
+        \bigl[QI_0+\hbar\Delta_LI_0+\tfrac12\{I_0,I_0\}_L\bigr]\)
+      in \(H^1\!\bigl(\mathcal O_{\mathrm{loc}}(\mathcal E_w),
+        \Delta\bigr)\), with the Costello-2011 counterterm subtraction
+      of \ref{rmk:t4-costello-renorm-datum} compatible with the
+      strict-window Mittag-Leffler tower of
+      \ref{defn:strict-ml-tate-habitat}.  Casimir-balanced equivariant
+      data of
+      \ref{defn:super-balanced-equivariant-qme-datum} kill the scalar
+      component
+      \(\mathfrak o_{\mathrm{QME}}^{\mathrm{sc}}\); the non-scalar
+      residual is the obstruction class of
+      \ref{thm:wt-nonscalar-counterterm-criterion} in
+      \(H^1(\ker\widehat\sigma_{\mathrm{sc}},d_{\mathrm{QME}})\)
+      together with the secondary
+      \(\varprojlim^1H^0\) primitive class.
   \end{enumerate}
-  These four inputs are the coefficient data of
-  \ref{prob:formal-factorization-center}.  They are the necessary data
-  for turning the Costello--Li convention template into the mixed
-  brane-defect coefficient theorem used here.
+  Equivalently, (I1)--(I5) are exactly the data of
+  Problem~\ref{prob:formal-factorization-center} for the present
+  brane-defect endpoint.
 \end{thm}
 
 \begin{proof}
-  Component (1) supplies the compactness/Hodge-theoretic replacement
-  needed in (S1).  Component (2) supplies the mixed
-  topological--holomorphic complex required by (S2).  Component (3)
-  supplies the line-defect transport and ordinary \(\lie{gl}_N\) scalar
-  anomaly decision required by (S3)--(S4).  Component (4) is precisely
-  condition (E2) of
-  Definition~\ref{defn:endpoint-admissible-coefficient-module}; together
-  with the transport and RG requirements in (E3) and (E5), it is the
-  coefficient endpoint datum.  Proposition~\ref{prop:bv-endpoint-obstruction-tuple}
-  identifies these requirements with vanishing of the obstruction tuple.
+  By Proposition~\ref{prop:costello-li-2012-hypothesis-separation},
+  axes (S1)--(S5) name pairwise distinct cocycle representatives in
+  \(\mathfrak o_{\mathrm{BV,end}}\) that the Costello--Li hypotheses do
+  not control: (S1)+(S2) for the kinematic side of
+  \(\mathfrak o_{\mathrm{QME}}\), (S3) for
+  \(\mathfrak o_{\mathrm{def}}\), (S4) for the residual
+  \(\hbar N[\bar c]\) summand of \(\mathfrak o_{\mathrm{QME}}\), and
+  (S5) for \(\mathfrak o_{\mathrm{Cas}}\); the
+  algebraic-coefficient direction governs
+  \(\mathfrak o_{\mathrm{RG}}\).  Components (I1)--(I4) supply
+  primitives, in turn, for the cocycle representatives forced by
+  (S1)+(S2), (S3)+(S4)\(_{\mathrm{transport}}\), the strict-window
+  Mittag-Leffler preservation of \(W(P_{\epsilon,L},-)\), and the
+  Casimir convergence; (I5) supplies the quantum primitive.  By
+  Proposition~\ref{prop:bv-endpoint-obstruction-tuple} this is exactly
+  vanishing of \(\mathfrak o_{\mathrm{BV,end}}\), with primitives
+  compatible with
+  \(\Cat{MLTateChain}_{\geq0}^{\mathrm{str}}\) of
+  \ref{defn:strict-ml-tate-habitat}.
+
+  For necessity: dropping (I1) leaves the kinematic representative of
+  \(\mathfrak o_{\mathrm{QME}}\) unprimitivated; dropping (I2) leaves
+  \(D\) without a vanishing theorem; dropping (I3) leaves
+  \(\mathfrak o_{\mathrm{def}}\) and the scalar contact summand of
+  \(\mathfrak o_{\mathrm{QME}}\) unaddressed; dropping (I4) leaves
+  \(\mathfrak o_{\mathrm{Cas}}\) nonzero in the cokernel by
+  \ref{lem:tate-casimir-obstruction}; dropping (I5) leaves the
+  degree-\(+1\) anomaly primitive unsupplied.  The chain-level
+  primitive shadow of \ref{thm:chain-level-primitive-projection}
+  closes the classical indecomposable shadow without analytic input
+  but does not by itself supply (I3) or (I5); the Quillen envelope of
+  \ref{thm:tate-bar-cobar-quillen} promotes the strict habitat of
+  (I4) to an admissible Tate model envelope.
 \end{proof}
 
-\begin{rmk}[Costello--Li convention boundary]\label{rmk:t4-external-comparison-boundary}
-  The local Hamiltonian BF sector supplies the formal-disk coefficient
-  normalization.  Costello--Li 2012 supplies the convention template
-  used to state the coefficient problem.  No theorem from the cited
-  sources is imported as a closure of the present coefficient
+\begin{rmk}[Costello--Li convention boundary and downstream cross-references]
+\label{rmk:t4-external-comparison-boundary}
+  Costello--Li 2012 \cite{costello-li-quantum-bcov} supplies the
+  convention template used to state the coefficient problem; the local
+  Hamiltonian BF sector of
+  \ref{def:app-sign-hamiltonian-cyclic}--\ref{cor:app-sign-universal-dual-normalization}
+  supplies the formal-disk coefficient normalization.  No theorem from
+  the cited sources is imported as a closure of the present coefficient
   endpoint; the closure data are precisely the named obstruction
   components in
   Definition~\ref{defn:bv-endpoint-obstruction-tuple}, and the
   endpoint-admissible coefficient module of
-  Definition~\ref{defn:endpoint-admissible-coefficient-module} exists
-  if and only if all four components vanish.
+  Definition~\ref{defn:endpoint-admissible-coefficient-module} exists if
+  and only if all four classical components together with the quantum
+  endpoint of
+  \(\mathfrak o_{\mathrm{QME}}\) vanish
+  (Proposition~\ref{prop:bv-endpoint-obstruction-tuple} and
+  Theorem~\ref{thm:t4-four-missing}).  The model-categorical setting
+  is fixed by T2--T3
+  (\ref{defn:strict-ml-tate-habitat},
+  \ref{stmt:tate-model-envelope},
+  \ref{thm:tate-bar-cobar-quillen}); the chain-level primitive shadow
+  closing the classical indecomposable side without analytic input is
+  T5 (\ref{thm:chain-level-primitive-projection}).  The Repo-local
+  CLAUDE invariant ``BCOV / Kodaira-Spencer gravity supplies motivation
+  and convention checks only'' is enforced here as: T4 is a
+  hypothesis-separation theorem, not an importation theorem.
 \end{rmk}
