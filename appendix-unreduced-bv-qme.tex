@@ -3013,12 +3013,25 @@ obstruction vector, and lifts if and only if that vector vanishes
   Theorem~\ref{thm:app-constructive-nonscalar-costello-qme-realization}.
 
   Cross-check: this theorem matches the explicit verdicts of
-  \texttt{scripts/finite\_window\_graph\_array.py}, which in the
-  current data package returns
-  \(\texttt{primitive\_exists}=\mathrm{false}\) with covector
-  \(\ell(\mathsf E_{\theta_3,M})=1\) for verdict (a), and
-  \(\texttt{primitive\_exists}=\mathrm{true}\) with primitive
-  coefficient \(c=1\) on \(C_{\theta_3,M}\) for verdict (b).
+  \texttt{scripts/finite\_window\_graph\_array.py}.  Verdict (a)
+  corresponds to the script cases
+  \texttt{theta\_3\_current\_finite\_row\_subcomplex},
+  \texttt{theta3\_ce\_ancestor\_absent\_payload},
+  \texttt{theta3\_counterterm\_absent\_payload}, all returning
+  \(\texttt{primitive\_exists}=\mathrm{false}\) with cokernel covector
+  \(\ell(\mathsf E_{\theta_3,M})=1\).  Verdict (b) corresponds to
+  three named alternative repair payloads --- the supplied
+  scalar-zero counterterm
+  \texttt{theta3\_counterterm\_supplied\_exact\_payload} returning
+  \(\texttt{primitive\_coefficients}=[\![C_{\theta_3,M}^{\mathrm{ct}},1]\!]\),
+  the supplied CE ancestor
+  \texttt{theta3\_ce\_ancestor\_supplied\_exact\_payload} returning
+  \(\texttt{primitive\_coefficients}=[\![C_{\theta_3,M}^{\mathrm{CE}},1]\!]\),
+  and the supplied complete companion-face table
+  \texttt{theta3\_complete\_companion\_faces\_supplied\_exact\_payload}
+  --- each returning
+  \(\texttt{primitive\_exists}=\mathrm{true}\) with the corresponding
+  unit primitive coefficient.
 \end{thm}
 
 \begin{proof}
