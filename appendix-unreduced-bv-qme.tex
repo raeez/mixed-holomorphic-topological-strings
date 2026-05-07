@@ -4259,6 +4259,258 @@ obstruction vector, and lifts if and only if that vector vanishes
   counterterm cancels the ordinary scalar-reduced obstruction.
 \end{proof}
 
+\begin{thm}[Unreduced cotangent lift obstruction: necessary and
+  sufficient]
+\label{thm:app-unreduced-cotangent-lift-obstruction}
+  Fix a finite-window marked Costello system
+  \((I,w,M,\mathcal G_M,\mathcal G^{\mathrm{mk}}_M)\) for the local
+  mixed HT brane-defect theory and a filtered chain scalar projection
+  \(\widehat\sigma_{\mathrm{sc},M}\)
+  (Definition~\ref{def:app-native-finite-window-realization-habitat}).
+  Let
+  \(\Phi_{\mathrm{fact}}^{\mathrm{unred}}\colon
+  C^\bullet_{\mathrm{CE}}(\widetilde{\mathfrak g}_I)
+  \to
+  Z^{P_0}_{\mathrm{fact}}(\mathrm{Obs}_{\mathrm{open}})\)
+  be a candidate factorization-center morphism extending the
+  algebraic current presentation
+  \(\Phi_I^\chi\) of
+  Construction~\ref{constr:app-algebraic-factorization-centre-lift}
+  beyond the algebraic current target.  Define the obstruction
+  vector
+  \[
+    \operatorname{Ob}_{\mathrm{cent}/\mathrm{QME}/\mathrm{descent}}
+      =
+    (\operatorname{ob}^{\mathrm{prod}}_{\mathrm{cent}},
+     \operatorname{ob}^{P_0}_{\mathrm{cent}},
+     \operatorname{ob}^{\mathrm{bd}}_{\mathrm{QME}},
+     \delta^{\mathrm{Weiss}}_{\check C/R}),
+  \]
+  with components defined as follows.
+  \begin{enumerate}[label=(\roman*)]
+    \item \emph{Product/tensor-completion centrality.}
+      \(\operatorname{ob}^{\mathrm{prod}}_{\mathrm{cent}}\) is the
+      \(H^{|x|+|y|}\)-class of the product centrality defect
+      \(\Phi_{\mathrm{fact}}^{\mathrm{unred}}(x)\Phi_{\mathrm{fact}}^{\mathrm{unred}}(y)
+      -(-1)^{|x||y|}\Phi_{\mathrm{fact}}^{\mathrm{unred}}(y)\Phi_{\mathrm{fact}}^{\mathrm{unred}}(x)\)
+      in
+      \(\mathfrak Q^\bullet_{\mathcal G,M}(I)/\operatorname{im}(d_M)\).
+      In the algebraic current model
+      (Theorem~\ref{thm:app-algebraic-factorization-centre-zero-homotopies})
+      this defect is zero on generators by graded commutativity; the
+      obstruction records the degree to which this fails on the
+      enlarged unreduced target.
+    \item \emph{\(P_0\) / shifted-cotangent refinement.}
+      \(\operatorname{ob}^{P_0}_{\mathrm{cent}}\) is the
+      \(H^{|x|+|y|}\)-class of the \(P_0\)-bracket defect
+      \(\{\Phi_{\mathrm{fact}}^{\mathrm{unred}}(x),\Phi_{\mathrm{fact}}^{\mathrm{unred}}(y)\}-
+      \Phi_{\mathrm{fact}}^{\mathrm{unred}}(\delta_x y)\) in the same
+      cohomology, evaluated as a finite row sum
+      \[
+        R^{\mathrm{cent}}_{x,y,M}
+          =
+        \sum_{\Gamma\in\mathsf A_{x,y,M}^{d}}
+          \varepsilon_\Gamma\,d_M K^M_\Gamma
+          -\sum_{\Gamma\in\mathsf A_{x,y,M}^{\mathrm{CE}}}
+          \varepsilon^{\mathrm{CE}}_\Gamma
+          K^M_\Gamma(\zeta_{\Gamma,x,y})
+          + \tfrac12\sum_{(\Gamma_1,\Gamma_2)}
+          \varepsilon_{\Gamma_1,\Gamma_2}
+          \{K^M_{\Gamma_1},K^M_{\Gamma_2}\}_{\hbar,M}
+          + R^{\mathrm{ct}}_{x,y,M}
+      \]
+      of the row machinery
+      (Proposition~\ref{prop:app-marked-row-centrality-homotopy-test}).
+      A centrality homotopy \(H^M_{x,y}\) with
+      \(R^{\mathrm{cent}}_{x,y,M}+d_M H^M_{x,y}=0\) is the
+      construction-level witness; its absence is the obstruction.
+    \item \emph{Boundary QME obstruction.}
+      \(\operatorname{ob}^{\mathrm{bd}}_{\mathrm{QME}}\) is the
+      compatible inverse-system class
+      \[
+        \bigl(\mathfrak o^{\mathrm{ns}}_{n,M}\bigr)_M
+          =
+        \bigl([R^{\mathrm{ns}}_{n,M}]\bigr)_M
+        \in
+        \varprojlim_M
+        H^1\bigl(\mathcal K^\bullet_{\mathrm{ns},M}(I),
+                  d_{\mathrm{ns},M}\bigr)
+      \]
+      of Theorem~\ref{thm:app-constructive-nonscalar-costello-qme-realization},
+      together with the secondary
+      \(\varprojlim^1H^0\) primitive-compatibility class
+      \(\lambda_{n,M}\).  The first nontrivial finite-window value
+      occurs at the \(\theta_3\) row
+      (Theorem~\ref{thm:app-theta-three-finite-window-H1}).
+    \item \emph{Weiss-versus-Ran descent gap.}
+      \(\delta^{\mathrm{Weiss}}_{\check C/R}\) is the codimension-one
+      face class of the Weiss/Ran descent comparison: working over
+      the Weiss cover
+      \(\mathcal U^{\mathrm{Weiss}}\), the same factorization-center
+      lift descends to the Ran-space cover
+      \(\mathcal U^R\) iff the Č\v{e}ch difference
+      \(\delta^{\mathrm{Weiss}}_{\check C/R}\) vanishes in the
+      finite-window \(H^0\) of the corresponding boundary kernel.
+  \end{enumerate}
+
+  Then:
+  \[
+    \boxed{\;\Phi_{\mathrm{fact}}^{\mathrm{unred}}
+      \text{ lifts to an unreduced }
+      Z^{P_0}_{\mathrm{fact}}\text{-morphism}
+      \quad\Longleftrightarrow\quad
+      \operatorname{Ob}_{\mathrm{cent}/\mathrm{QME}/\mathrm{descent}}
+      =0.\;}
+  \]
+  At the associated-graded level, the primitive
+  indecomposable \(P_0\)-shadow of
+  Theorem~\ref{thm:chain-level-primitive-projection}
+  computes the first page \(E_1\) of the spectral sequence
+  converging to \(\operatorname{ob}^{P_0}_{\mathrm{cent}}\):
+  the \(E_1\) differential is the primitive Hamiltonian shadow
+  acting on the source one-\(\psi\) label, and its first nonzero
+  piece is the obstruction class to the strict centrality of the
+  primitive-shadow lift.
+
+  The four components are independent in the following sense.
+  Vanishing of (i) is a graded commutativity test on the unreduced
+  target and is automatic in the algebraic current model.  Vanishing
+  of (ii) is the centrality homotopy test of
+  Proposition~\ref{prop:app-marked-row-centrality-homotopy-test}.
+  Vanishing of (iii) is the boundary QME content of
+  Theorem~\ref{thm:app-constructive-nonscalar-costello-qme-realization},
+  whose first finite-window failure is
+  \(\theta_3\)
+  (Theorem~\ref{thm:app-theta-three-finite-window-H1}).
+  Vanishing of (iv) is the descent comparison; in the algebraic
+  current model this gap is zero by the same finite-list
+  axiomatization, but for genuine unreduced
+  \(Z^{P_0}_{\mathrm{fact}}\)-morphisms the Weiss/Ran comparison is
+  not automatic.
+\end{thm}
+
+\begin{proof}
+  Necessity in each component.
+
+  Component (i).  Any factorization-center morphism into
+  \(Z^{P_0}_{\mathrm{fact}}(\mathrm{Obs}_{\mathrm{open}})\) sends
+  every source generator to a graded center element by definition,
+  hence the product centrality defect is a \(d_M\)-boundary on every
+  generator pair.  The cohomology class
+  \(\operatorname{ob}^{\mathrm{prod}}_{\mathrm{cent}}\) of a candidate
+  lift is the obstruction to this strict graded centrality; its
+  vanishing is necessary.  In the algebraic current model with
+  graded-commutative target it is automatic
+  (Theorem~\ref{thm:app-algebraic-factorization-centre-zero-homotopies}).
+
+  Component (ii).  A factorization-center morphism into
+  \(Z^{P_0}_{\mathrm{fact}}\) intertwines the source
+  CE/Schouten bracket with the target
+  \(P_0\)-bracket.  The deviation from this intertwining is precisely
+  the row sum
+  \(R^{\mathrm{cent}}_{x,y,M}\) of
+  Proposition~\ref{prop:app-marked-row-centrality-homotopy-test}; its
+  cohomology class is the obstruction to choosing a centrality
+  homotopy.  Vanishing is necessary because, in the absence of the
+  homotopy, the source CE differential and the target
+  \(P_0\)-bracket fail to commute on the image of
+  \(\Phi_{\mathrm{fact}}^{\mathrm{unred}}\).
+
+  Component (iii).  A factorization-center morphism produces a
+  curved Maurer--Cartan element of the brane-defect kernel complex.
+  Its curvature class is exactly the residual
+  \(R^{\mathrm{ns}}_{n,M}\) of
+  Theorem~\ref{thm:app-constructive-nonscalar-costello-qme-realization},
+  in the inverse-limit version recorded as
+  \(\bigl(\mathfrak o^{\mathrm{ns}}_{n,M}\bigr)_M\).  Vanishing,
+  together with the \(\varprojlim^1H^0\) compatibility class, is the
+  unique condition making the curved Maurer--Cartan element actually
+  flat.  The first finite-window failure occurs at the \(\theta_3\)
+  row by Theorem~\ref{thm:app-theta-three-finite-window-H1}.
+
+  Component (iv).  The factorization-center construction depends
+  globally on the chosen Weiss/Ran cover; a different cover may give
+  a different value of the same morphism on overlapping
+  factorizations.  The codimension-one Č\v{e}ch difference between
+  Weiss and Ran covers is a class in the appropriate boundary kernel
+  H^0; its vanishing is the descent compatibility for the
+  factorization-center morphism.  In the algebraic current model
+  with the displayed finite-list axiomatization this difference is
+  zero, but the genuine unreduced \(Z^{P_0}_{\mathrm{fact}}\)-target
+  carries the comparison nontrivially in general.
+
+  Sufficiency.  Conversely, if all four components vanish, the
+  candidate \(\Phi_{\mathrm{fact}}^{\mathrm{unred}}\) extends to a
+  strict factorization-center morphism: (ii) supplies the centrality
+  homotopy, (iii) supplies the QME counterterms via the supplied
+  finite row machinery, (iv) makes the morphism descent-compatible,
+  and (i) is the graded commutativity certificate on the unreduced
+  target.  The obstructions are necessary and sufficient for the
+  \(Z^{P_0}_{\mathrm{fact}}\)-lift to exist.
+
+  The associated-graded statement.  Take the primitive shadow
+  filtration of Theorem~\ref{thm:chain-level-primitive-projection}.
+  At the associated-graded level, the source differential is the
+  CE differential and the target differential is the
+  Hamiltonian/Schouten bracket on primitive trace classes.  The
+  \(E_1\) page of the spectral sequence converging to
+  \(\operatorname{ob}^{P_0}_{\mathrm{cent}}\) is exactly this
+  primitive-shadow target; its differential is the
+  Hamiltonian shadow on one-\(\psi\) primitive trace classes, as
+  computed in Theorem~\ref{thm:chain-level-primitive-projection-P0}.
+  The first nonzero \(E_1\) class detects the failure of strict
+  primitive-shadow centrality on the unreduced source, which is the
+  classical primitive obstruction.
+\end{proof}
+
+\begin{rmk}[First nontrivial occurrence of each component]
+\label{rmk:app-cotangent-lift-first-nontrivial-occurrence}
+  By inspection of the manuscript and of the script outputs, the
+  first nontrivial occurrence of each component of
+  \(\operatorname{Ob}_{\mathrm{cent}/\mathrm{QME}/\mathrm{descent}}\)
+  is as follows.
+  \begin{itemize}
+    \item \(\operatorname{ob}^{\mathrm{prod}}_{\mathrm{cent}}\) is
+      first nontrivial when one leaves the graded-commutative
+      algebraic current target of
+      Definition~\ref{def:app-central-character-principal-part-current-algebra}
+      for a noncommutative \(\hbar\)-deformed target where the
+      product centrality defect carries a Capelli-type contribution.
+      Within the appendix, this is the polynomial-no-go boundary
+      (Theorem~\ref{thm:app-unreduced-polynomial-centrality-no-go}):
+      polynomial open BV observables cannot present the
+      principal-part module at all, and hence cannot satisfy strict
+      product centrality.
+    \item \(\operatorname{ob}^{P_0}_{\mathrm{cent}}\) is first
+      nontrivial when one of the centrality homotopy rows
+      \(R^{\mathrm{cent}}_{x,y,M}\) is supplied without a
+      corresponding \(H^M_{x,y}\); the row machinery of
+      Proposition~\ref{prop:app-marked-row-centrality-homotopy-test}
+      catches this in the smallest window where the
+      brane-defect bracket of two source generators carries a
+      nonzero scalar-zero contribution.  The script
+      \texttt{scripts/finite\_window\_graph\_array.py} reports this
+      as the centrality-homotopy fixture; in the minimal full-equivariant
+      branch the row is zero and the homotopy is zero.
+    \item \(\operatorname{ob}^{\mathrm{bd}}_{\mathrm{QME}}\) is first
+      nontrivial at \(\theta_3\)
+      (Theorem~\ref{thm:app-theta-three-finite-window-H1}), under
+      the strict hypothesis that no scalar-zero counterterm
+      \(C_{\theta_3,M}\) is supplied.  The supplied numerical
+      anchor is verdict (a) of that theorem.
+    \item \(\delta^{\mathrm{Weiss}}_{\check C/R}\) is first
+      nontrivial when the codimension-one face of the Weiss-versus-Ran
+      cover comparison is supplied with a non-vanishing boundary
+      kernel class; in the present manuscript this is recorded as
+      a separate descent comparison in the factorization current
+      conventions appendix and is not addressed here as a row.
+  \end{itemize}
+  Hence the manuscript's leading-edge obstruction in this appendix
+  is component (iii) at the \(\theta_3\) row, and the leading-edge
+  cancellation is the four-branch ledger of
+  Remark~\ref{rmk:app-scalar-anomaly-transgression-branches}.
+\end{rmk}
+
 \begin{rmk}[What supports what]
 \label{rmk:app-unreduced-bv-qme-support-map}
   The non-scalar QME criterion of
