@@ -1,16 +1,47 @@
 \section{Admissibility criteria and obstruction complexes}\label{sec:open-obligations}
 
-The coordinate CE/PV theorem and staged admissibility programme is
-governed by constructions, hypotheses, and obstruction complexes.  Each
-item below is either a construction already used in the local theorem, an
-admissibility criterion for a frontier extension, or an obstruction complex
-whose vanishing is the exact condition for the next theorem.
+\providecommand{\Status}[1]{\par\noindent\textsc{Status:}\ \emph{#1}}
+\providecommand{\Witness}[1]{\par\noindent\textsc{Witness location:}\ #1}
+\providecommand{\Gate}[1]{\par\noindent\textsc{Gate for advance:}\ #1}
+\providecommand{\Oblig}[1]{\par\noindent\textsc{Obligation (#1).}\ }
 
+\paragraph*{Typology.}
+Every entry below is one of three sharp objects.  A \emph{proved local
+fixture} is a construction already used in the body and recalled here
+for cross-reference.  An \emph{obstruction theorem} names the exact
+cohomology class, cokernel functional, Roos primitive, or finite-window
+matrix equation whose nonvanishing forbids the next theorem in a
+specified habitat.  A \emph{construction problem} names the
+mathematical ingredients --- habitat, kernel, propagator, primitive,
+counterterm, transition matrix, or source-face datum --- whose
+existence and explicit form would discharge the obligation.  Each
+entry carries a \textsc{Status} tag and a \textsc{Witness location}
+pointer to the load-bearing computation in the body or its
+satellites.  The status values used are \emph{proved fixture},
+\emph{partial} (the theorem closes on a certified subrange and an
+exact obstruction is named for the remainder), \emph{closed
+(no-go)} (an explicit obstruction class forbids the strict statement
+in a specified habitat, while the theorem may admit a constructive
+replacement in a changed habitat), \emph{open} (the obstruction
+vector is named componentwise and at least one component lacks a
+vanishing certificate), and \emph{external (target-data)} (the
+obligation belongs to an external target theorem, not to the local
+manuscript).
+
+\paragraph*{Discipline.}
 External compact Calabi--Yau, CoHA, quintic, OSV/GV, Abel--Jacobi, MNOP,
 Igusa, BKM, and global BCOV material is not a core local obligation.  It
 is a comparison surface only, and it cannot support the local QME, Ext,
 cyclic, Weyl/Moyal, radial-parts, or kernel theorems without a separate
-matched-conventions theorem and a vanishing obstruction vector.
+matched-conventions theorem and a vanishing obstruction vector.  An
+admissibility downgrade --- replacing a strict bracketed identity by a
+pro coordinate-window comparison, replacing a strict native current by
+a one-pair analytic retract, or replacing a closed-exchange Costello
+graph by a counterterm-only branch --- is admissible only when the
+sharper formulation has been seriously attacked and the load-bearing
+obstruction class has been named.  No entry below uses
+``conditional'', ``expected'', or ``external input'' as a substitute
+for a sharper construction problem or named obstruction class.
 
 \begin{enumerate}
   \item \emph{Finite cotangent CE/PV data.}
@@ -29,6 +60,9 @@ matched-conventions theorem and a vanishing obstruction vector.
     \mathrm{PV}(\mathbf S(\mathfrak l)),
     \qquad c\mapsto\theta,\quad u\mapsto O .
   \]
+  \Status{proved fixture.}
+  \Witness{Body, finite CE/PV comparison theorem and
+  Construction of the finite cotangent Lie algebra.}
 
   \item \emph{Completed formal-disk CE/PV admissibility.}
   The comparison for
@@ -98,6 +132,21 @@ matched-conventions theorem and a vanishing obstruction vector.
   ambient-product bracket, and bar-cobar/enveloping comparison in the unweighted
   product/direct-sum topology.  It is not an additional hypothesis for
   each coordinate-window CE/PV identity.
+  \Status{partial.  The pro coordinate-window comparison is proved.
+  Bracket-admissible \(B\), kernel-admissible \((B,\mathcal K_B)\), and
+  the Maurer--Cartan diagonal \(\Theta_B\) remain construction targets,
+  with obstruction \(\mathfrak o^{\mathrm{br}}_{M,N},
+  \mathfrak o^{\mathrm{coad}}_{M,N},\mathfrak o^{\mathrm{Cas}}_{M,N}\)
+  measuring failure on each coordinate window.}
+  \Witness{Body, completed formal-disk CE/PV admissibility theorem;
+  appendix-factorization-current-conventions for the coordinate
+  bracket calculation.}
+  \Gate{Construction of one bracket-admissible \(B\) closed under
+  \(d_\pi^{\mathrm{coord}}\) with \(\Theta_B\) satisfying the
+  Maurer--Cartan equation; the strict global kernel is then forbidden by
+  \(\mathfrak o^{\mathrm{Cas}}_{M,N}\ne0\) in the unweighted
+  product/direct-sum topology, so the gate is windowwise rather than
+  global.}
 
   \item \emph{Admissible Tate bar-cobar/Quillen envelope.}
   For an admissible Tate replacement
@@ -139,6 +188,19 @@ matched-conventions theorem and a vanishing obstruction vector.
   bracket-admissibility and transferred-model failure; and
   \(\mathcal O_{\mathrm{cyc}}\) is the cyclic trace compatibility
   obstruction.
+  \Status{open.  An admissible Tate replacement
+  \(\mathfrak g_{\mathrm{adm}}\) discharging
+  \(\mathcal O_{\mathrm{AdmTate}}\) componentwise is a frontier
+  construction.}
+  \Witness{tate-T1-weighted-completion through tate-T5-chain-level-primitive
+  for component-by-component progress; tate-P1-hadamard-mittag-leffler
+  for the topological obstruction \(\mathcal O_{\mathrm{top}}\).}
+  \Gate{For every component
+  \(\mathcal O_{\bullet}\in\mathcal O_{\mathrm{AdmTate}}\), supply
+  either a vanishing certificate in a chosen finite-window envelope or
+  a load-bearing functional certifying nonvanishing.  The first
+  unresolved component is \(\mathcal O_{P_0}\) on the strict
+  unweighted product/direct-sum target.}
 
   \item \emph{Finite-window dg LQT comparison.}
   The repaired finite-window comparison uses the quotient dg algebra
@@ -209,6 +271,16 @@ matched-conventions theorem and a vanishing obstruction vector.
     =
     \pm\Theta_1^N(ab-(-1)^{|a||b|}ba).
   \]
+  \Status{partial.  Same-rank multicycle deletion is forbidden by
+  \(\Gamma_N\); the separated-block stabilization on
+  \(B(K,L)=\max(K,L+2)\) supplies the strict idempotent
+  \(P^{\mathrm{sep}}_{M,K,L}\), so the finite-window comparison closes
+  in the stable range.  The same-rank no-go is exact.}
+  \Witness{Body, finite-window dg LQT theorem; tate-T5-chain-level-primitive.}
+  \Gate{For the finite-window comparison the obstruction vector
+  \(\mathcal O_{\mathrm{LQT},K,L}\) must vanish; the displayed identity
+  \(\Gamma_N\ne0\) is a no-go for the naive same-rank multicycle
+  bridge and forces the separated-block stabilization route.}
 
   \item \emph{Reduced CE/PV central-operation generator map.}
   The reduced formal central-operation map is determined on CE/PV
@@ -220,6 +292,8 @@ matched-conventions theorem and a vanishing obstruction vector.
   cotangent coordinate \(u_I\).  This type check is part of the theorem:
   \(c^I\) gives the vector-field operation, while \(u_I\) gives the
   Hamiltonian boundary coordinate.
+  \Status{proved fixture.}
+  \Witness{Body, reduced central-operation generator-map computation.}
 
   \item \emph{Constructed chiral algebra interface.}
   A constructed curve chiral algebra can enter the local mixed HT
@@ -252,6 +326,21 @@ matched-conventions theorem and a vanishing obstruction vector.
   zero-mode/Zhu multiplicativity, Capelli shift, and completed stable
   Hochschild/HKR/CE-PV comparison, and the comparison back to
   \(\mathcal F_{\mathrm{Ham}}^{\mathrm{hol}}\).
+  \Status{open.  The native \(\C^2\) holomorphic \(E_2\) factorization
+  algebra is the load-bearing object of the local theorem; a Vol II
+  curve chiral algebra or Zhu bridge enters only after
+  \(\operatorname{Ob}_{\mathfrak I_{\mathrm{ch}}}\) has been
+  discharged componentwise on the reduced surface.}
+  \Witness{tate-P5-cross-volume for the firewall against premature
+  Vol II import; CLAUDE.md ``Native versus reduced chiral structures''
+  and ``Late 2026-04-30 theorem-control predicates''.}
+  \Gate{Supply the reduction datum \(\mathcal R_{\C\times\R}\)
+  retaining the \(z_2\)-mode or two-index principal-part coefficient
+  system; verify each component of
+  \(\operatorname{Ob}_{\mathfrak I_{\mathrm{ch}}}\); produce the
+  comparison morphism back to \(\mathcal F_{\mathrm{Ham}}^{\mathrm{hol}}\)
+  and check that it preserves Hamiltonian bracket, Moyal bivector, and
+  scalar cocycle.}
 
   \item \emph{Matlis/local-cohomology cotangent source.}
   The continuous cotangent module is
@@ -270,6 +359,8 @@ matched-conventions theorem and a vanishing obstruction vector.
     =
     -(pb-qa+p-q)\rho_{a-p+1,b-q+1}.
   \]
+  \Status{proved fixture.}
+  \Witness{appendix-matlis-principal-parts.}
 
   \item \emph{BMK one-pair pro-Matlis retract and native all-window
   obstruction.}
@@ -307,6 +398,46 @@ matched-conventions theorem and a vanishing obstruction vector.
   sixth entries are nonzero in the native current/product topology; the
   collar and ternary entries are exact primitive construction targets.
 
+  \Oblig{BMK strict all-window transfer no-go}
+  In the native unweighted product/direct-sum topology, no continuous
+  factorization-current transfer realizes the all-window pro-Matlis
+  comparison.  The forced return block already produces
+  \[
+    \kappa_N(z_1^{N+2},\rho_{N+1,0})=-(N+2)\rho_{0,1},
+  \]
+  and the projected finite-window \(L_\infty\)-escape repair on
+  \((z_1^{N+2},z_2,\rho_{N,0})\) has Jacobiator
+  \[
+    \mathfrak J^{\mathrm{BM}}_N
+    =
+    (N+1)(N+2)\rho_{0,1}\ne0 .
+  \]
+  Since the escape-return image spans the retained finite Matlis window
+  \(\mathcal P_{\le N}\), absorbing these returns as unary boundaries
+  would collapse \(\mathcal P_{\le N}\) itself.  Hence
+  \(\operatorname{ob}_{\oplus},\operatorname{ob}_{I_\Pi},
+  \operatorname{ob}_{\mathfrak h,\Pi},\operatorname{ob}_{\mathrm{unif},\Pi}\)
+  cannot all vanish in the native topology: the first three are
+  detected by the divergent \(\rho_{0,1}\)-coefficient and the fourth by
+  \(\mathfrak J^{\mathrm{BM}}_N\not\to0\) as \(N\to\infty\).  This is a
+  strict no-go theorem in the native habitat.
+  \Status{closed (no-go).  The strict native all-window current transfer
+  is forbidden by the
+  \((N+1)(N+2)\rho_{0,1}\) Jacobiator.  The positive all-window theorem
+  available in a changed habitat is the one-pair analytic pro-Matlis
+  retract \(P_{\Pi}^{\mathrm{an}}\), constructed in tate-P1.}
+  \Witness{tate-P1-hadamard-mittag-leffler for the analytic retract;
+  body at the BMK obstruction theorem and the projected Jacobiator
+  computation; abstract paragraph on
+  \((N+1)(N+2)\rho_{0,1}\); claim-strength-ledger entry for the
+  \(L_\infty\)-escape repair Jacobiator.}
+  \Gate{The collar and ternary primitive entries
+  \(\operatorname{ob}_{\mathrm{collar},\Pi}\) and
+  \(\operatorname{ob}_{3,\Pi}\) remain construction targets in any
+  habitat that already replaces the strict native topology --- they are
+  not blocked by the Jacobiator; they are blocked by the
+  yet-to-be-supplied collar estimate and three-input homotopy.}
+
   \item \emph{Primitive higher-\(\psi\) Hamiltonian extraction.}
   The full primitive Koszul complex for \(Q\psi=[x,y]\) extracts the
   Hamiltonian sectors:
@@ -320,8 +451,11 @@ matched-conventions theorem and a vanishing obstruction vector.
   \]
   with negative targets zero and scalar targets killed in the
   Hamiltonian quotient.
+  \Status{proved fixture.}
+  \Witness{appendix-full-psi-homology;
+  scripts/check\_one\_psi\_homology.py for the numerical anchor.}
 
-  \item \emph{Principal-part versus polynomial-descendant criterion.}
+  \item \emph{Defect polarization no-go: principal-part versus polynomial descendant.}
   The polynomial one-\(\psi\) and principal-part modules have opposite
   linear-Hamiltonian behavior:
   \[
@@ -337,9 +471,49 @@ matched-conventions theorem and a vanishing obstruction vector.
     \qquad
     z_2\cdot\rho_{a,b}=(a+1)\rho_{a+1,b}.
   \]
-  This local-nilpotence obstruction is the necessary condition for any
-  proposed polynomial realization of \(\mathcal P\): it must change the
-  target, the action, or the category.
+  Linear Hamiltonians lower the index on the polynomial side and raise
+  it on the principal-part side; the actions cannot be intertwined by
+  any module isomorphism on the total module.  This local-nilpotence
+  obstruction is the necessary condition for any proposed polynomial
+  realization of \(\mathcal P\): it must change the target, the action,
+  or the category.
+
+  \Oblig{Defect polarization deformation-level no-go}
+  Let \(\operatorname{gr}\Phi\) denote the associated-graded
+  comparison between the PBW one-\(\psi\) descendant module and the
+  Matlis principal-parts module \(\mathcal P\) at the level of the
+  classical label shadow.  Then \(\operatorname{gr}\Phi\) does not
+  extend to a deformation-level isomorphism
+  \[
+    \mathrm{PBW}\langle\widetilde\Psi_{a,b}\rangle
+    \cong
+    \mathcal P
+    \qquad
+    (\text{deformation, as }\mathfrak h\text{-modules}).
+  \]
+  The witness is the Moyal coadjoint action: the linear-Hamiltonian
+  step on the polynomial side decreases the index, while the same step
+  on the principal-part side increases the index, and these signs
+  cannot be reversed by any rescaling, reparametrization, or
+  Koszul-grading shift on either factor.  Equivalently, the leading
+  obstruction
+  \[
+    z_1\cdot_0\widetilde\Psi_{1,0}=0,\qquad
+    z_1\cdot\rho_{1,0}=-\rho_{1,1}
+  \]
+  forbids a strict quantum descendant lift of the classical label
+  shadow.  Any proposed lift must either retain the descendant module
+  as a separate target, replace the target by a larger
+  homotopy-coherent object carrying the principal-part action, or
+  change the linear category in which the comparison is sought.
+  \Status{closed (no-go) for the strict deformation-level isomorphism;
+  a comparison in a larger category remains a construction target.}
+  \Witness{appendix-full-psi-homology and appendix-matlis-principal-parts
+  for the action computations; body for the same-action obstruction.}
+  \Gate{A larger homotopy-coherent target retaining
+  \(\widetilde\Psi_{a,b}\) and carrying the principal-part action with
+  matching coadjoint signs would satisfy the comparison; the strict
+  module isomorphism is forbidden by the displayed sign discrepancy.}
 
   \item \emph{\(\mathcal D_\hbar\) Fourier--Rees bridge.}
   With
@@ -366,6 +540,12 @@ matched-conventions theorem and a vanishing obstruction vector.
   obstruction forbids a flat Rees family that identifies polynomial
   one-\(\psi\) descendants with \(\mathcal P\) as modules for the
   original Hamiltonian action.
+  \Status{closed (no-go) for the strict flat Rees identification.  The
+  Fourier--Rees bridge realises only the Rees sublattice; the
+  identification with \(\mathcal P\) on the nose fails by the same
+  Moyal-sign witness that closes the defect-polarization no-go.}
+  \Witness{appendix-matlis-principal-parts;
+  appendix-full-psi-homology.}
 
   \item \emph{One-antifield Moyal target.}
   The reduced distributional principal-part target has bracket
@@ -382,6 +562,10 @@ matched-conventions theorem and a vanishing obstruction vector.
     z_1\cdot_0\widetilde\Psi_{1,0}=0,\qquad
     z_1\cdot\rho_{1,0}=-\rho_{1,1}.
   \]
+  \Status{proved fixture (target bracket); closed (no-go) for the
+  strict descendant lift.}
+  \Witness{appendix-radial-parts-moyal for the bracket;
+  appendix-matlis-principal-parts for the leading-term action.}
 
   \item \emph{Weighted finite-window regulator independence.}
   A regulator-admissible sector is a strict Mittag-Leffler family on
@@ -396,6 +580,11 @@ matched-conventions theorem and a vanishing obstruction vector.
   \]
   to \(\mathrm{Ob}_{w'}\).  Thus QME vanishing is invariant under
   admissible finite-window weight.
+  \Status{proved fixture inside the admissible weight class; \emph{not}
+  a cancellation mechanism, since the obstruction is transported, not
+  killed.}
+  \Witness{Body, weighted regulator-independence theorem;
+  appendix-factorization-current-conventions.}
 
   \item \emph{Endpoint admissibility.}
   An endpoint for \(w_q(d)=q^d\) is accepted by conditions (E1)--(E5):
@@ -415,6 +604,17 @@ matched-conventions theorem and a vanishing obstruction vector.
   The strict product/direct-sum pair fails the criterion because no
   tensor \(K\) projects to all finite Casimirs
   \(C^M_{\mathfrak h}\).
+  \Status{partial.  Conditions (E1)--(E5) define the criterion; the
+  strict product/direct-sum endpoint is forbidden by
+  \(\mathfrak o_{\mathrm{Cas}}\ne0\).  Construction of an admissible
+  endpoint discharging the full tuple is open.}
+  \Witness{Body, endpoint admissibility theorem;
+  appendix-factorization-current-conventions for the Casimir kernel
+  no-go.}
+  \Gate{Construct a weighted Mittag-Leffler endpoint with continuous
+  Casimir, bracket, coadjoint, propagator, and counterterm transport,
+  and verify each component of \(\mathfrak o_{\mathrm{BV,end}}\) on
+  the chosen endpoint.}
 
   \item \emph{Mixed brane-defect QME complex.}
   The local-functional obstruction lives in
@@ -493,6 +693,26 @@ matched-conventions theorem and a vanishing obstruction vector.
 	    \mu^{\mathrm{sc}}_{\mathrm{cl}},\quad
 	    \lambda^{\mathrm{sc}}_C .
 	  \]
+  \Status{open.  The scalar component
+  \(\operatorname{Ob}_{\mathrm{sc}}=\hbar N[\bar c]\) is a proved
+  obstruction class on the strict reduced \(\mathfrak{gl}_N\) lift; the
+  three admissible repair branches (extended Lie cocycle, opposite
+  central extension absorbing the symbol, balanced supertrace) replace
+  the source rather than kill the symbol, and the closed-exchange
+  branch class \(\beta^{\mathrm{sc}}_M\) plus its Roos primitives
+  remain construction targets.}
+  \Witness{Body, scalar QME computation and central-extension
+  branches; abstract paragraph on
+  \(\hbar N[\bar c]\); claim-strength-ledger entry for the scalar
+  comoment.}
+  \Gate{Either supply \(W_{\mathrm{ext}}\) with leading class
+  \(-\hbar N[\bar c]\) and verify finite-window/Roos compatibility;
+  or supply a genuine closed-exchange tower \((\mathcal X^\bullet,\Xi)\)
+  with vanishing
+  \(\beta^{\mathrm{sc}}_M,\mu^{\mathrm{sc}}_{\mathrm{cl}},
+  \lambda^{\mathrm{sc}}_C\); or adopt the balanced supertrace branch
+  with the reduced scalar representative zero, audited against the
+  Casimir and bulk-to-defect propagator data.}
 
   \item \emph{Componentwise quantum coefficient surface and non-scalar
   obstruction complex.}
@@ -794,6 +1014,47 @@ matched-conventions theorem and a vanishing obstruction vector.
 	  \(\Xi\), and a class \([W]\) mapping to
 	  \(-[\mathfrak o^{\mathrm{ns}}_{n_0}]\).
 
+  \Oblig{First non-scalar QME finite-window class}
+  Compute the first non-scalar cohomology class
+  \[
+    [\mathfrak o^{\mathrm{ns}}_{\theta_3,M}]
+      \in
+    H^1(\ker\widehat\sigma_{\mathrm{sc},M},d_{\mathrm{QME}})
+  \]
+  in the smallest non-scalar window \(\theta_3\); produce either an
+  explicit Costello local counterterm
+  \(C^{\mathrm{ct}}_{\theta_3,M}\) with
+  \(d_M C^{\mathrm{ct}}_{\theta_3,M}=-\mathsf E_{\theta_3,M}\) and
+  \(\widehat\sigma_{\mathrm{sc},M}(C^{\mathrm{ct}}_{\theta_3,M})=0\), or
+  an explicit cocycle representative certifying that the class is
+  nonzero in a chosen ambient envelope; verify tower compatibility
+  through the Bianchi transport
+  \(\Delta^1_{M,N}=-\pi_{M,N}\mathfrak b^M+\mathfrak b^N\) and the
+  secondary \(\varprojlim^1H^0\) primitive class.
+  \Status{partial.  The one-row finite-window package proves
+  \([\mathsf E_{\theta_3,M}]\ne0\) in the supplied subcomplex; the
+  ordinary pure two-\(u\) CE source envelope is forbidden by
+  \(q_{2u}\); the eight-face companion expression has
+  \(q_{2u}\)-value zero and leaves the transported residual
+  \(2E^2_{\nu_{02}}-2E^2_{\nu_{20}}\); the canonical source-coordinate
+  primitive \(\zeta^0_2\) reduces to a Bianchi transport cocycle
+  \(\Delta^1_{M,N}\) plus a secondary primitive class.  The finite
+  routes tested are all obstructed.}
+  \Witness{Body, scalar-anomaly and non-scalar lemma chain;
+  Lemma~\ref{lem:filtered-scalar-projection-obstruction};
+  Theorem~\ref{thm:wt-nonscalar-counterterm-criterion};
+  claim-strength-ledger entry on the
+  \((N+1)(N+2)\rho_{0,1}\) Jacobiator and the
+  \(\theta_3\) row; computations below.}
+  \Gate{Supply one of: a CE ancestor for \(\zeta_{M,\nu_3}\) outside
+  the ordinary pure two-\(u\) envelope; a scalar-zero Costello local
+  counterterm column \(A_B^M=(0,0,-1)^T\) (not a relabelling of the
+  source primitive); a marked companion relation closing the eight-face
+  table at \(N=2\); together with finite-window/Roos compatibility for
+  \(\Delta^1_{M,N}\) and its secondary primitive class.  Each route
+  changes the cocycle representative in a chosen larger envelope
+  rather than reweighting the supplied subcomplex.}
+
   The first certified larger-row test is the \(\theta_3\) row.  In the
   one-row finite-window package supplied by the graph-array
   calculation, the non-scalar scalar-zero subcomplex is
@@ -957,40 +1218,62 @@ matched-conventions theorem and a vanishing obstruction vector.
   \(\Delta^1_{M,N}\); after a choice of primitive, it must also kill the
   resulting secondary \(\varprojlim^1H^0\) class.  The tested finite
   routes do not close the row.
+  \Status{open.  The componentwise target surface is proved; the
+  closed-exchange Costello/QME construction
+  \((\mathcal X^\bullet,\Xi,[W])\), the marked Costello list
+  \(\mathcal G_M^{\mathrm{mk}}\), the Bianchi transport \(\Delta^1_{M,N}\),
+  and the secondary \(\varprojlim^1H^0\) primitive class are all
+  unconstructed.  The componentwise non-scalar QME class
+  \([\operatorname{Ob}^{\mathrm{red}}_{w,\partial,\hbar}]\in
+  H^1(\ker\widehat\sigma_{\mathrm{sc}},d_{\mathrm{QME}})\) is therefore
+  open in every habitat tested.}
+  \Witness{Body, componentwise quantum coefficient surface theorem
+  and the larger non-scalar Costello/QME theorem;
+  Theorem~\ref{thm:wt-nonscalar-counterterm-criterion};
+  Lemma~\ref{lem:filtered-scalar-projection-obstruction};
+  appendix-radial-parts-moyal for the algebraic Moyal coefficients;
+  appendix-unreduced-bv-qme for centrality and QME structure.}
+  \Gate{Supply the marked Costello list \(\mathcal G_M^{\mathrm{mk}}\),
+  the closed-exchange tower
+  \((\mathcal X^\bullet_{w,M}(I),\Xi_M,W_{n_0,M})\) with vanishing
+  branch class \(\beta^{\mathrm{cl}}_{n_0}\) and Roos compatibility
+  classes \(\mu^{\mathrm{cl}}_{n_0},\lambda^{\mathrm{cl}}_{n_0}\); or
+  the alternative counterterm-only branch
+  \(\mathcal X^\bullet=0\) with windowwise primitives.}
 
   \item \emph{Unreduced factorization-current lift.}
-	  The unreduced cotangent lift is a datum:
-	  distributional principal-part boundary fields, product centrality
-	  homotopies, \(P_0\)-bracket homotopies, a coefficient kernel, a
-	  brane-defect propagator, and a QME solution.  Polynomial boundary
-	  representatives are ruled out by the local-nilpotence theorem; the
-	  accepted target is the principal-part current sector; the centrality
-	  homotopies must be supplied as additional unreduced lift data.  In
-	  convolution form an unreduced coupling
-	  \[
-	    \kappa\colon C^\bullet_{\mathrm{CE}}(\mathfrak g)
-	    \longrightarrow Z^{P_0}_{\mathrm{fact}}(A_{\mathrm{BV}})
-	  \]
-	  must first satisfy
-	  \[
-	    \operatorname{Curv}(\kappa)
-	    =d\kappa+\frac12[\kappa,\kappa]=0,
-	  \]
-		  and then pass the descent and QME tests.  A chain-level
-		  normal-ordering lift is separate data: either a cut-dependent
-		  no-\(\psi\) straightening as in
-		  Theorem~\ref{thm:normal-ordering-straightening-homotopy}, or a
-		  genuinely larger target retaining the descendant module together with
-		  maps \(N,i,H\) satisfying the relevant deformation of
-		  \(QH+HQ=\mathrm{id}-iN\).  Only in such a larger target could one
-		  attempt to form a correction.  After matching the bracket convention of
-		  Construction~\ref{constr:boundary-local-dual-principal-parts}, the
-		  defect
-		  \[
-		    \{O_f,\Theta_\rho\}-\Theta_{f\cdot\rho}
-		  \]
-		  would have to be \(Q\)-exact; no fixed formula for that homotopy is
-		  asserted before the target and signs are constructed.
+  The unreduced cotangent lift is a datum:
+  distributional principal-part boundary fields, product centrality
+  homotopies, \(P_0\)-bracket homotopies, a coefficient kernel, a
+  brane-defect propagator, and a QME solution.  Polynomial boundary
+  representatives are ruled out by the local-nilpotence theorem; the
+  accepted target is the principal-part current sector; the centrality
+  homotopies must be supplied as additional unreduced lift data.  In
+  convolution form an unreduced coupling
+  \[
+    \kappa\colon C^\bullet_{\mathrm{CE}}(\mathfrak g)
+    \longrightarrow Z^{P_0}_{\mathrm{fact}}(A_{\mathrm{BV}})
+  \]
+  must first satisfy
+  \[
+    \operatorname{Curv}(\kappa)
+    =d\kappa+\frac12[\kappa,\kappa]=0,
+  \]
+  and then pass the descent and QME tests.  A chain-level
+  normal-ordering lift is separate data: either a cut-dependent
+  no-\(\psi\) straightening as in
+  Theorem~\ref{thm:normal-ordering-straightening-homotopy}, or a
+  genuinely larger target retaining the descendant module together with
+  maps \(N,i,H\) satisfying the relevant deformation of
+  \(QH+HQ=\mathrm{id}-iN\).  Only in such a larger target could one
+  attempt to form a correction.  After matching the bracket convention of
+  Construction~\ref{constr:boundary-local-dual-principal-parts}, the
+  defect
+  \[
+    \{O_f,\Theta_\rho\}-\Theta_{f\cdot\rho}
+  \]
+  would have to be \(Q\)-exact; no fixed formula for that homotopy is
+  asserted before the target and signs are constructed.
   Until these maps are constructed in the chosen target, the
   principal-part cotangent lift is an obligation rather than a theorem.
   The explicit normal-ordering straightening proved in the body
@@ -999,6 +1282,51 @@ matched-conventions theorem and a vanishing obstruction vector.
   impossible by Lemma~\ref{lem:no-full-cyclic-normal-ordering-contraction};
   any genuine unreduced lift must retain those descendant classes or
   replace the target by a larger homotopy-coherent object.
+
+  \Oblig{Unreduced cotangent lift componentwise obstruction}
+  Compute the obstruction vector
+  \[
+    \operatorname{Ob}_{\mathrm{unred}}
+    =
+    (\operatorname{Ob}_{\mathrm{cent}}^{\mathrm{prod}},
+     \operatorname{Ob}_{\mathrm{cent}}^{P_0},
+     \operatorname{Ob}_{\mathrm{QME}}^{\mathrm{bd}},
+     \operatorname{Ob}_{\mathrm{descent}})
+  \]
+  component by component on the chosen larger homotopy-coherent
+  target.  The first component
+  \(\operatorname{Ob}_{\mathrm{cent}}^{\mathrm{prod}}\) is the
+  obstruction to a product-centrality homotopy
+  \(H^{\mathrm{prod}}_{x,a}\) with
+  \(d_{\mathrm{QME}}H^{\mathrm{prod}}_{x,a}=\rho(x)a-(-1)^{|x||a|}a\rho(x)\)
+  for arbitrary unreduced open observables \(a\) and bulk insertions
+  \(x\); the second is its \(P_0\)-bracket analogue; the third is the
+  brane-defect QME curvature class
+  \(H^1(\ker\widehat\sigma_{\mathrm{sc}},d_{\mathrm{QME}})\); the
+  fourth is the stratified Weiss/descent defect.  Identify the first
+  nontrivial component.
+  \Status{open.  No component has a vanishing certificate.  The first
+  nontrivial component is
+  \(\operatorname{Ob}_{\mathrm{cent}}^{\mathrm{prod}}\): the reduced
+  current brackets \(\{B_f(a),B_g(b)\}_\hbar\) and
+  \(\{B_f(a),\Theta_\rho(B)\}_\hbar\) do not supply
+  \(H^{\mathrm{prod}}_{x,a}\), and no fixed formula is available
+  before the target and signs are chosen.  The full cyclic-contraction
+  primitive is forbidden by
+  Lemma~\ref{lem:no-full-cyclic-normal-ordering-contraction}, so any
+  candidate must retain the descendant classes.}
+  \Witness{appendix-unreduced-bv-qme for the centrality and QME
+  framework; Theorem~\ref{thm:normal-ordering-straightening-homotopy}
+  for the cut-dependent no-\(\psi\) lift;
+  Lemma~\ref{lem:no-full-cyclic-normal-ordering-contraction} for the
+  full-cyclic no-go.}
+  \Gate{Choose a larger homotopy-coherent target retaining the
+  descendant classes; supply
+  \(H^{\mathrm{prod}}_{x,a}\) and \(H^{P_0}_{x,a}\) as explicit chain
+  homotopies; verify the brane-defect QME equation and stratified
+  descent on the chosen target.  The cut-dependent no-\(\psi\)
+  straightening is partial data, not a discharge of
+  \(\operatorname{Ob}_{\mathrm{unred}}\).}
 
   \item \emph{Stratified brane prefactorization and module datum.}
   Let
@@ -1238,6 +1566,27 @@ matched-conventions theorem and a vanishing obstruction vector.
   theorem, verifies its hypotheses, and supplies a matched-conventions
   morphism to the local mixed HT pair \((X,L)\).  Without that fixture it is
   motivation, not theorem support.
+  \Status{open.  The stratified prefactorization datum
+  \(\mathcal F^{\mathrm{str}}_{\Omega,N}\), the collar module
+  \(\mathcal M_{\Omega,N}\), and every component of the obstruction
+  vector \(\operatorname{Ob}^{\mathrm{int}}_{\mathrm{str},\Omega,N}\)
+  are construction targets.  The two finite-\(N\) brane algebra
+  branches (quantum Hamiltonian reduction \(A^q_{N,\Omega}\) and stable
+  principal-part \(A^{\mathrm{pp},w}_{\partial,\Omega,\hbar_{\mathrm{W}}}\))
+  are proved targets; choosing one or constructing a comparison is part
+  of the data.  No external CFG-style source fixture is asserted.}
+  \Witness{Body, normal \(\Omega\)-background discipline and the
+  stratified factorization framework;
+  references/primary-sources/weiss-ran-stratified-descent-source-anchors-2026-04-30
+  for the descent obstruction; CLAUDE.md ``Normal \(\Omega\)-background
+  discipline'' for the equivariant data.}
+  \Gate{Construct \(\mathcal F^{\mathrm{str}}_{\Omega,N}\) on each
+  stratified disk; supply the collar module
+  \(\mathcal M_{\Omega,N}\); verify
+  \(\operatorname{Ob}^{\mathrm{int}}_{\mathrm{str},\Omega,N}=0\)
+  componentwise; if a CFG fixture is asserted, supply the
+  matched-conventions morphism to \((X,L)\) before any external
+  consequence is drawn.}
 
   \item \emph{Trace-state functional and physical large-\(N\) surface.}
   A protected brane trace is not produced by the algebraic stable trace
@@ -1353,6 +1702,21 @@ matched-conventions theorem and a vanishing obstruction vector.
   asymptotically there, and all external factorization-homology or
   Costello analogies have been audited against primary sources and
   matched to this local brane model.
+  \Status{open.  No component of \(\operatorname{Ob}_{\mathrm{tr},\Omega}\)
+  has a vanishing certificate.  The first nontrivial component is
+  \(\operatorname{ob}_{\mathrm{state}}\), which depends on the choice
+  of brane module branch.  Algebraic stable trace generators are
+  candidates only; they neither choose \(\omega_{N,\Omega}\) nor fix
+  the topology \(\mathcal T_\Omega\).}
+  \Witness{Body, trace-state functional theorem; abstract paragraph on
+  the Euler/residue normalization branches.}
+  \Gate{Choose the brane-module branch; declare
+  \(\nu_{\Omega,N},\hbar_{\mathrm{QME}},\hbar_{\mathrm{W}},\hbar_\omega,
+  N,\mathcal T_\Omega\); construct the state \(\omega_{N,\Omega}\) on
+  the chosen branch; verify the Ward identities for
+  \(d_{\mathrm{QME}},Q_\Omega,\widehat\mu(\xi)\), and
+  \(\operatorname{Curv}(K_{\Omega,N})\); identify the asymptotic
+  expansion regime in \(\mathcal T_\Omega\).}
 
   \item \emph{Radial/Weyl finite certificates and the
   dual-potential decorated-Stokes gate.}
@@ -1455,6 +1819,48 @@ matched-conventions theorem and a vanishing obstruction vector.
   theorem is the decorated PBW Stokes identity for
   \(D^\square_{a,b}=C^+_{a,b}\partial_2\).
 
+  \Oblig{All-bidegree radial PBW Stokes}
+  Construct a contracting homotopy of the radial bicomplex
+  \((R_{a,b},B_{a,b})\) for all interior bidegrees
+  \((a,b)\) with \(\min(a,b)\ge3\); equivalently,
+  the decorated PBW Stokes identity
+  \(D^\square_{a,b}H_{a,b}=R^{\mathrm{free}}_{a,b}\) for
+  \(D^\square_{a,b}=C^+_{a,b}\partial_2\).  Otherwise
+  identify the precise cohomology location
+  \[
+    \Omega^{\mathrm{rad}}_{a,b}
+      =[\eta_{a,b}]
+      \in\operatorname{coker}B_{a,b},
+    \qquad
+    \eta_{a,b}=(T_{a,b},E^+_{a,b}),
+  \]
+  where the obstruction lives, and produce a violating signed row
+  \((\phi,-\lambda)\in\ker B_{a,b}^*\) with
+  \(\lambda(E^+_{a,b})-\phi(T_{a,b})\ne0\) at some bidegree.
+  \Status{partial.  Closed bidegrees: edge families
+  \((2,b),(b,2)\) by Proposition~\ref{prop:app-edge-pbw-telescoping};
+  balanced diagonal through \((6,6)\); all non-edge bidegrees of total
+  degree at most \(13\); the total-degree \(14\) cases
+  \((3,11),(11,3),(4,10),(10,4),(5,9),(9,5)\).  Frontier (no signed
+  obstruction row, ordinary cyclic boundary closes, basis-timeout
+  computations): \((6,8),(8,6),(7,7)\) at total degree \(14\) and all
+  total degree \(\ge15\) interior cases.  No nonzero obstruction row
+  is known.}
+  \Witness{appendix-radial-parts-moyal for the dual-potential
+  obstruction theorem and the certificate range;
+  Proposition~\ref{prop:app-edge-pbw-telescoping} for the edge
+  families;
+  Remark~\ref{rmk:app-radial-open-bidegree-frontier} for the frontier.}
+  \Gate{Either supply a functorial splitting of the family
+  \(\mathcal C_{a,b}\), or an associated-graded Hodge homotopy on the
+  decorated two-colour necklace incidence graph
+  \([WXY]\to[WYX]\), giving the Stokes identity uniformly in
+  \((a,b)\); or produce one signed row
+  \((\phi,-\lambda)\in\ker B_{a,b}^*\) with nonzero
+  \(\lambda(E^+_{a,b})-\phi(T_{a,b})\), exhibiting a load-bearing
+  obstruction.  The frontier \((6,8),(8,6),(7,7)\) computation is the
+  first place to attempt either.}
+
   \item \emph{Moyal and graph normalization.}
   The Weyl/Moyal convention is
   \[
@@ -1477,6 +1883,12 @@ matched-conventions theorem and a vanishing obstruction vector.
   sign, orientation, automorphism, and counterterm conventions are fixed.
   These coefficients are necessary tests for a Costello realization, not
   sufficient data for analytic BV/QME existence.
+  \Status{proved fixture (convention + necessary test).  The
+  coefficients \(1,1/24\) are not sufficient data for analytic BV/QME
+  existence.}
+  \Witness{appendix-radial-parts-moyal;
+  scripts/check\_moyal\_coefficients.py for the numerical anchor;
+  appendix-sign-conventions for the orientation choice.}
 
   \item \emph{Global and cross-volume descent.}
   A target theorem supplies a matched-conventions datum
@@ -1518,4 +1930,16 @@ matched-conventions theorem and a vanishing obstruction vector.
   Missing source fixtures in those external lanes are not core local
   proof obligations and do not supply theorem support for the local QME,
   Ext, cyclic, Weyl/Moyal, radial-parts, or kernel theorem data.
+  \Status{external (target-data).  The transfer theorem is the target's
+  obligation; the formal-local restriction is one input.  No external
+  lane is a local obligation.}
+  \Witness{tate-P5-cross-volume for the cross-volume firewall;
+  CLAUDE.md ``Research constellation role'' for the quarantine of
+  external comparison surfaces.}
+  \Gate{The target theorem supplies
+  \(\mathfrak C_{\mathrm{tar}}\) and verifies
+  \(\operatorname{Ob}_{\mathfrak C_{\mathrm{tar}}}=0\) componentwise on
+  its own habitat.  No corresponding local construction is required;
+  the local theorem retains its stated reach independent of any
+  external lane.}
 \end{enumerate}
