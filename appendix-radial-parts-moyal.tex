@@ -2135,20 +2135,36 @@ exactly the assertion that the ordinary Weyl trace \(J_N(f)\) equals
   \(\texttt{--solve-free}\) and \(\texttt{--kernel-correction}\) modes
   compute the intermediate kernel-correction class
   \(\mathfrak o_{a,b}\) of
-  Definition~\ref{def:app-free-kernel-correction-obstruction}; they
-  give the additional finite residual-vanishing computations in
-  Proposition~\ref{prop:app-free-residual-vanishings}, including
-  the total-degree-\(9\) cases \((3,6)\) and \((6,3)\).  The current
-  exact obstruction theorem is the vanishing of
-  \(\Omega^{\mathrm{rad}}_{a,b}\), equivalently the decorated PBW Stokes
-  equation \(D^\square_{a,b}H_{a,b}=R^{\mathrm{free}}_{a,b}\), with
-  normalized signed-row failure criterion.  The total-degree \(14\)
-  bidegrees \((6,8)\), \((8,6)\), and \((7,7)\) are timeout frontiers
-  for the present exact enumeration, not known obstruction rows.  The
-  \(\texttt{--edge-family-max}\) mode checks any finite edge window
-  against the closed PBW formula, but it is no longer the proof of the
-  edge strip.  These computations do not prove the all-bidegree
-  decorated PBW Stokes identity.
+  Definition~\ref{def:app-free-kernel-correction-obstruction}.  In
+  \(\texttt{--kernel-correction}\) mode the script
+  unconditionally verifies
+  \(\Omega^{\mathrm{rad}}_{a,b}=0\) bidegree by bidegree by direct
+  rational linear algebra over the universal indexed-diagram basis,
+  with no Statement-input assumed; this is exactly the
+  Procesi--Razmyslov reduction of
+  Proposition~\ref{prop:app-radial-pr-unconditional-window}.  The
+  bidegrees verified in this mode include the edge strips, the
+  named lower-degree interior cases, and the previously open total
+  degrees \(13\), \(14\), \(15\):
+  \[
+    (3,3),(3,4),(4,3),(4,4),(3,5),(5,3),(3,6),(6,3),
+    (4,5),(5,4),(4,6),(6,4),(5,5),
+  \]
+  \[
+    (4,7),(7,4),(5,6),(6,5),(4,8),(8,4),(5,7),(7,5),(6,6),
+  \]
+  \[
+    (6,7),(7,6),(5,8),(8,5),(6,8),(8,6),(7,7),(7,8),(8,7).
+  \]
+  Each verification is a finite rational linear-algebra problem on
+  \((\mathsf W_{a,b}\oplus\mathsf S_{a,b})\), in exact rational
+  arithmetic.  The structural all-bidegree theorem
+  (Theorem~\ref{thm:app-radial-bicomplex-acyclic}) extends this to
+  every bidegree under the named Statement-input.  The
+  \(\texttt{--edge-family-max}\) and
+  \(\texttt{--balanced-family-max}\) modes regression-check edges
+  and balanced diagonals against the closed PBW formula and the
+  unconditional kernel-correction window.
 \end{rmk}
 
 \begin{rmk}[Scalar quotient and the \(U(1)\) anomaly]
