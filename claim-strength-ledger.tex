@@ -251,6 +251,87 @@ null-homotopies and comparison morphisms; missing fixtures stay external
 \end{longtable}
 
 \medskip
+\paragraph{Epistemic-status legend.}
+Each load-bearing claim of the manuscript is tagged once in this ledger
+by an epistemic-status token whose meaning is fixed:
+\begin{itemize}
+\item \emph{proved} -- a complete proof inside this manuscript at the
+named theorem/proposition/lemma label, with all habitat, signs, and
+convention data exhibited;
+\item \emph{computed} -- a finite-data verification (Moyal coefficient,
+Wick weight, Capelli normalization, certificate window, primitive
+matrix \(A^Mc=-r^M\)), proved as algebraic data and cross-checked
+against the named compute script in \texttt{scripts/};
+\item \emph{conjectured} -- a precise theorem statement together with
+a named obstruction class, cokernel functional, signed row, or
+Roos-cocycle whose vanishing is the construction target; the negation
+is testable;
+\item \emph{heuristic} -- a physical or convention-checking bridge to
+BCOV, KS gravity, OSV/GV, or the Igusa/BKM modular frontier; explicitly
+not a theorem of the local model and not used in any local proof;
+\item \emph{folklore} -- a standard structural fact (Lie--coComm Koszul,
+formal CE/PV in the finite-dimensional case, PBW for free graded Lie
+algebras) cited at full hypothesis from a named primary source.
+\end{itemize}
+
+\paragraph{Theorem-status anchors.}
+The named theorems, propositions, lemmas, and problems of the manuscript
+that the ledger references carry the following anchors and tags.
+
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.42\textwidth}
+  >{\raggedright\arraybackslash}p{0.16\textwidth}
+  >{\raggedright\arraybackslash}p{0.32\textwidth}@{}}
+\textbf{Anchor} & \textbf{Status} & \textbf{Where}\\
+\hline
+Theorem~\ref{thm:componentwise-quantum-coefficient-comparison}
+(componentwise quantum coefficient comparison) & proved &
+weighted BV kernel convergence, balanced-supertrace scalar QME zero,
+reduced weighted Moyal principal-part current bracket, and the
+finite-certificate-relative degree-zero Hamiltonian trace
+comparison\\
+Theorem~\ref{thm:app-minimal-full-equivariant-all-order-vanishing}
+(minimal full-equivariant finite-window non-scalar QME) & proved on
+named habitat &
+\(R^{\mathrm{ns}}_{n,M}=\mathfrak o^{\mathrm{ns}}_{n,M}=C_{n,M}=0\)
+for all \(n\geq1\) inside the minimal marked subset-deletion closure;
+silent on larger packages\\
+Problem~\ref{prob:quantum-p0-operation-realization}
+(quantum \(P_0\)-operation realization) & conjectured &
+the obstruction class is
+\([\operatorname{Ob}^{\mathrm{red}}_{w,\partial,\hbar}]
+\in H^1(\ker\widehat\sigma_{\mathrm{sc}},d_{\mathrm{QME}})\) preceded
+by the scalar-projection tower \(o_{\sigma,w}^{(r)}\)\\
+Proposition~\ref{prop:app-quantum-shear-suffices-radial-image}
+(quantum shear congruence) & proved &
+the all-\(N\) ordinary Weyl-trace comparison is controlled by quantum
+shear; reduces to the moment-ideal primitive problem\\
+Lemma~\ref{lem:app-quantum-shear-primitive-obstruction}
+(moment-ideal primitive obstruction) & proved with cokernel target &
+the explicit primitive problem
+\(E_{a,b,N}=\sum_{i,j}A^j{}_i(a,b,N)\widehat\mu^i{}_j\), promoted to
+the dual-potential cokernel obstruction
+\(\Omega^{\mathrm{rad}}_{a,b}\)\\
+Section~\ref{sec:open-obligations} certificate windows & computed &
+finite-bidegree Moyal coefficients and \(K_{4,4}\) verified by
+\texttt{scripts/check\_moyal\_coefficients.py}; one-\(\psi\) homology
+verified by \texttt{scripts/check\_one\_psi\_homology.py}\\
+Layer 0 Lie--coComm Koszul duality & folklore &
+\(\mathrm{Lie}^{!}\simeq\mathrm{coComm}[-1]\), Loday--Vallette
+operadic Koszul duality, cited at full hypothesis\\
+Layer 7 large-\(N\) bulk-boundary horizon & heuristic &
+trace-state construction surface; not evidence for any local QME, Ext,
+cyclic, Weyl/Moyal, radial-parts, or kernel claim\\
+Modular-form / Igusa \(\Delta_5\) bridge & heuristic &
+Borcherds/BKM convention-checking comparison; not a BKM consequence of
+the local Hamiltonian BF/Moyal calculation\\
+Compact-CY / OSV / GV / MNOP / CoHA / quintic / Vol III transfer &
+external comparison &
+quarantined; admissible only after
+\(\operatorname{Ob}_{\mathfrak C_{\mathrm{tar}}}\) vanishes with
+null-homotopies\\
+\end{longtable}
+
+\medskip
 \paragraph{Local graph/QME branch statuses.}
 
 \begin{center}
@@ -1428,5 +1509,217 @@ in the right-hand clause.  The statuses are:
   transfer and supplies no evidence for the local QME, Ext, cyclic,
   Weyl/Moyal, radial-parts, or kernel theorem surfaces.
 \end{enumerate}
+
+\medskip
+\paragraph{Falsifiability conditions.}
+The honest test of a theorem is the calculation that would refute it.
+The local theorem and its companion obstruction theorems would FAIL,
+each in a precisely named way, if any of the eight conditions
+\((F1)\)--\((F8)\) below were established.  Each condition states what
+the falsifying calculation looks like, in which named theorem the
+witness lives, and at which cohomological location it is detected.
+
+\begin{enumerate}
+\item[\((F1)\)] \emph{Habitat closure under the coordinate differential.}
+  If
+  \(d_\pi^{\mathrm{coord}}B_w\not\subset B_w\)
+  for an asserted weighted-Tate habitat
+  \(B_w\subset\mathrm{PV}_{\mathrm{coord}}\), the Stage A2
+  bracket-admissibility hypothesis fails and with it the coordinate
+  CE/PV \(P_0\)-comparison
+  Theorem~\ref{thm:componentwise-quantum-coefficient-comparison}
+  in the first factor.
+  Falsifying calculation: exhibit
+  \(\xi\in B_w\) and a continuity datum certifying
+  \(d_\pi^{\mathrm{coord}}\xi\in
+  \mathrm{PV}_{\mathrm{coord}}\setminus B_w\).
+  Cohomological location of the witness: a class in the kernel of the
+  inclusion
+  \(B_w\hookrightarrow\mathrm{PV}_{\mathrm{coord}}\) that survives
+  \(d_\pi^{\mathrm{coord}}\) outside \(B_w\); equivalently, a nonzero
+  matrix coefficient of the transition map
+  \(\mathfrak o^{\mathrm{br}}_{M,N}\) in the same window.
+  Status: condition has been ruled out for every certified
+  bracket-admissible weighted habitat used in the manuscript;
+  remains a precisely testable predicate on any future habitat.
+
+\item[\((F2)\)] \emph{Schouten closure of the habitat.}
+  If
+  \([B_w,B_w]_{\mathrm{Sch}}\not\subset B_w\) under the continuous
+  Schouten contraction bracket transported from
+  \(\mathrm{PV}_{\mathrm{coord}}\), the Stage A2 bracket-admissibility
+  data \(\Phi^B_{P_0}\) fails to land in \(B\) and the dg \(P_0\)
+  comparison
+  \(\Phi^B_{P_0}\colon\Phi_{\mathrm{coord}}^{-1}(B)\xrightarrow{\sim}B\)
+  ceases to be a chain map.
+  Falsifying calculation: exhibit \(\xi,\eta\in B_w\) and a continuous
+  test functional \(\lambda\notin B_w^*\) with
+  \(\lambda([\xi,\eta]_{\mathrm{Sch}})\ne0\).
+  Cohomological location of the witness: a nonzero class in
+  \(\operatorname{coker}(\mathrm{incl}_{B_w}\colon
+  [B_w,B_w]_{\mathrm{Sch}}\to B_w)\), equivalently a nonzero entry of
+  the strict-endpoint Casimir obstruction
+  \(\mathfrak o^{\mathrm{Cas}}_{M,N}\) restricted to \(B_w\).
+
+\item[\((F3)\)] \emph{Casimir convergence in the weighted habitat.}
+  If the Casimir tensor \(C_{\mathfrak h,w}\) fails to lie in the
+  completed tensor square \(\mathfrak h_w\widehat\otimes
+  \mathfrak h^\vee_{w,\mathrm{cont}}\) for an asserted weighted Tate
+  habitat, the kernel-admissibility hypothesis of Stage A3 fails and
+  the Maurer--Cartan tensor \(\Theta_B\) does not exist; the
+  Layer~1 Tate CE/bar-cobar identity degenerates in that habitat.
+  Falsifying calculation: exhibit a finite-window functional
+  \(\lambda\) on \(\mathfrak h_w\widehat\otimes
+  \mathfrak h^\vee_{w,\mathrm{cont}}\) for which the diagonal sum
+  \(\sum_I\lambda(H_I\otimes O_I)\) is not summable in the chosen
+  topology.
+  Cohomological location of the witness: a nonzero entry of the
+  strict-endpoint Casimir obstruction \(\mathfrak o^{\mathrm{Cas}}\),
+  which is the zeroth-order obstruction theorem for the
+  product/direct-sum endpoint and thus the prototype falsifier.
+  Status: \(\mathfrak o^{\mathrm{Cas}}\) is proved nonzero on the
+  strict endpoint; weighted habitats supply admissible replacements
+  whose Casimir convergence is part of the habitat datum.
+
+\item[\((F4)\)] \emph{Radial/Weyl normal form.}
+  If
+  \(\Omega^{\mathrm{rad}}_{a,b}\ne0\) in any bidegree \((a,b)\) within
+  the asserted finite-certificate range of
+  Section~\ref{sec:open-obligations}, the dual-potential obstruction
+  formulation of the radial/Weyl trace comparison fails at that
+  bidegree and the corresponding decorated PBW Stokes identity
+  \(D^\square_{a,b}=C^+_{a,b}\partial_2\) is broken; the
+  Lemma~\ref{lem:app-quantum-shear-primitive-obstruction} cokernel
+  target acquires a nonzero class at \((a,b)\).
+  Falsifying calculation: a signed row
+  \((\phi,-\lambda)\in\ker B_{a,b}^*\) with
+  \(\lambda(E^+_{a,b})-\phi(T_{a,b})\ne0\); equivalently, a weight
+  failing to vanish on a free trace-diagram normal form in the named
+  bidegree.
+  Cohomological location of the witness:
+  \(\Omega^{\mathrm{rad}}_{a,b}\in\operatorname{coker}B_{a,b}\), with
+  the dual witness in \(\ker B_{a,b}^*\).
+  Status: vanishing is proved by finite certificates inside the
+  recorded windows; the open targets \((6,8)\), \((8,6)\), \((7,7)\)
+  are exact-basis frontier computations in the solver, not nonzero
+  obstruction rows.
+
+\item[\((F5)\)] \emph{Reduced non-scalar Costello QME realization.}
+  If \([\operatorname{Ob}^{\mathrm{red}}_{w,\partial,\hbar}]\ne0\) in
+  \(H^1(\ker\widehat\sigma_{\mathrm{sc}},d_{\mathrm{QME}})\) after a
+  named non-scalar Costello brane-defect realization \(K_{\Omega,N}\)
+  is claimed in a window, the corresponding instance of
+  Problem~\ref{prob:quantum-p0-operation-realization} is falsified in
+  that window: the asserted realization fails the curvature equation
+  \(\operatorname{Curv}(K_{\Omega,N})=
+  d_{\mathrm{QME}}K_{\Omega,N}+\frac12[K_{\Omega,N},
+  K_{\Omega,N}]_{\hbar_{\mathrm{QME}}}=0\).
+  Falsifying calculation: a finite-window cocycle representing
+  \([\operatorname{Ob}^{\mathrm{red}}_{w,\partial,\hbar}]\) together
+  with a left-cokernel functional detecting it on the asserted
+  counterterm and centrality-homotopy datum; equivalently, a nonzero
+  entry of the obstruction pair
+  \(\mathfrak O_n^{\mathrm{ns}}=
+  (([\mathfrak o^{\mathrm{ns}}_{n,M}])_M,\lambda_n)\) at some
+  \(\hbar\)-order \(n\) and window \(M\).
+  Cohomological location of the witness:
+  \(H^1(\ker\widehat\sigma_{\mathrm{sc}},d_{\mathrm{QME}})\) inside the
+  filtered complex
+  \(\mathfrak Q^\bullet_{w,\partial,\hbar}(I)\); the dual witness is
+  in the corresponding cohomology of \(\operatorname{Hom}\)-complex
+  \(\operatorname{Hom}(\operatorname{gr}_F\mathfrak Q^\bullet_{w,
+  \partial,\hbar}(I),C^\bullet_{\mathrm{Lie}}(\bar A;
+  \C\gamma_{\mathbf 1})[1][[\hbar]])_{-r}\) at the surviving order.
+  Status: the named obstruction class is precisely the gate; the
+  minimal full-equivariant finite-window branch
+  Theorem~\ref{thm:app-minimal-full-equivariant-all-order-vanishing}
+  proves vanishing only inside its named minimal marked habitat.
+
+\item[\((F6)\)] \emph{Unreduced cotangent lift.}
+  If \(\operatorname{ob}^{P_0}_{\mathrm{cent}}\ne0\) after an unreduced
+  cotangent center lift is claimed for the open BV factorization, the
+  asserted full open BV identification is falsified: the
+  \(P_0\)-bracket centrality homotopy fails on the lifted pair, so the
+  full \(Z^{P_0}_{\mathrm{fact}}\) is not the open BV center.
+  Falsifying calculation: a finite-window pair \((F,G)\) of lifted
+  observables and a counterterm-tower realization \(h^{P_0}\) for which
+  \(d_{P_0}h^{P_0}+h^{P_0}d_{P_0}-[F,G]_{P_0,\mathrm{cent}}\ne0\) on a
+  named test current; equivalently a nonzero obstruction-vector entry
+  \(\operatorname{ob}^{P_0}_{\mathrm{cent}}\) inside the full vector
+  \((\operatorname{ob}^{\mathrm{prod}}_{\mathrm{cent}},
+  \operatorname{ob}^{P_0}_{\mathrm{cent}},
+  \operatorname{ob}^{\mathrm{bd}}_{\mathrm{QME}},
+  \delta_{\mathrm{Weiss}}^{\check C/R})\).
+  Cohomological location of the witness:
+  \(H^1\) of the centrality homotopy complex on the unreduced lift,
+  paired with a left-cokernel functional from the same complex.
+
+\item[\((F7)\)] \emph{Strict native all-window BMK transfer.}
+  If a strict native all-window support-local current transfer
+  succeeds, then the BMK no-go obstruction
+  \(\operatorname{Ob}^{\Pi}_{\mathrm{BM}}=
+  (\operatorname{ob}_\oplus,\operatorname{ob}_{I_\Pi},
+  \operatorname{ob}_{\mathfrak h,\Pi},\operatorname{ob}_{\mathrm{collar},\Pi},
+  \operatorname{ob}_{3,\Pi},\operatorname{ob}_{\mathrm{unif},\Pi})\)
+  has a positive solution.  Such a solution would PROMOTE the present
+  no-go obstruction theorem to a constructive theorem and would
+  refute the present claim that the first, second, third, and sixth
+  entries are nonzero in the native current/product topology; the
+  one-pair analytic pro-Matlis retract would then be exhibited as a
+  shadow of a stronger native all-window theorem.
+  Falsifying calculation: construct cutoff kernels, a direct-sum
+  moment map, a compact-current section of the pro-product tower, a
+  full formal Hamiltonian action on the chosen target, collar
+  estimates, ternary homotopy, and uniform inverse-limit control;
+  exhibit them as a single functorial datum in the native
+  \(\C^2\)-factorization category.
+  Cohomological location of the witness: a degree-zero null-homotopy of
+  \(\operatorname{Ob}^{\Pi}_{\mathrm{BM}}\) inside the inverse-limit
+  cohomology \(\varprojlim^*\) of the projected tower, with explicit
+  uniform-bound certificate.
+  Status: the BMK obstruction class is explicitly conjectured nonzero
+  in the native current/product topology; the falsifier would not
+  break the local theorem but would upgrade the strongest currently
+  available all-window theorem from the analytic pro-Matlis retract
+  to a strict native current transfer.
+
+\item[\((F8)\)] \emph{Defect polarization.}
+  If the associated graded \(\operatorname{gr}\Phi\) of an asserted
+  comparison map identifies the PBW one-\(\psi\) primitives
+  \(\Psi_{a,b}\) with the Matlis principal-part classes \(\rho_{a,b}\)
+  in the deformation-level cotangent module \(\mathcal P\), the
+  polynomial-descendant obstruction is falsified: the Polynomial
+  one-\(\psi\) action is locally nilpotent on linear Hamiltonians,
+  while the principal-part action
+  \(z_1\cdot\rho_{a,b}=-(b+1)\rho_{a,b+1}\),
+  \(z_2\cdot\rho_{a,b}=(a+1)\rho_{a+1,b}\) is not locally nilpotent;
+  any polarization map that intertwined the two actions on a
+  finite-window subobject would refute the no-\(\hbar\)-adic
+  same-action intertwiner statement.
+  Falsifying calculation: a finite-bidegree window in which a
+  polarization map carries the PBW one-\(\psi\) action onto the
+  Matlis coadjoint action without changing target, action, or
+  category; equivalently, an \(\hbar\)-adic same-action Rees family
+  from \(\Psi_{a,b}\) to \(\rho_{a,b}\).
+  Cohomological location of the witness: an isomorphism class in
+  \(\operatorname{Hom}_{\mathfrak h}
+  (\Psi^{\mathrm{poly}}_{\le a+b},\mathcal P_{\le a+b})\) that
+  intertwines the two actions, hence a nonzero element of the
+  presently empty obstruction set
+  \(\mathcal O_{\Psi-\rho}\) inside the open \(A_\infty\) tuple
+  \(\mathcal O_{\mathrm{open}}\).
+
+\end{enumerate}
+
+\paragraph{Use of the falsifiability table.}
+Each condition \((F1)\)--\((F8)\) names the falsifying calculation,
+the asserted theorem it would refute, the cohomological location of
+the witness, and the dual functional that detects it.  A success at
+\((F1)\)--\((F6)\) or \((F8)\) falsifies the named theorem and shifts
+the proof obligation to the theorem of which it is a corollary; a
+success at \((F7)\) does not falsify the local theorem but promotes
+the BMK obstruction theorem to a constructive all-window theorem.
+The handle by which each theorem can be tested is exhibited in the
+ledger row.
 
 \endgroup
