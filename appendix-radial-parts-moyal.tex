@@ -1423,23 +1423,56 @@ exactly the assertion that the ordinary Weyl trace \(J_N(f)\) equals
   \(\mathcal W_N\widehat\mu(\lie{sl}_N)\).  Since
   \(E_{a,b,N}\) is \(GL_N\)-invariant and has zero radial image,
   \[
-    E_{a,b,N}\in\mathcal W_N\widehat\mu(\lie{sl}_N).
+    E_{a,b,N}\in\mathcal W_N\widehat\mu(\lie{sl}_N)\qquad
+    (\text{all }N\geq1).
   \]
-  Lemma~\ref{lem:app-quantum-shear-primitive-obstruction} translates
-  this membership to the existence of a moment-ideal primitive
-  \(\sum A^j{}_i(a,b,N)\widehat\mu^i{}_j\), which equates with
-  \(E_{a,b,N}\) inside \(\mathcal W_N\) for every \(N\).  Stable
-  Procesi--Razmyslov injectivity for free indexed normal diagrams
-  (Lemma~\ref{lem:app-free-trace-diagram-stable-injectivity}) lifts
-  this all-\(N\) finite-rank identity to a free trace-diagram identity
-  in bidegree \((a,b)\).  The free identity is exactly the
-  decorated PBW Stokes equation
-  \(D^\square_{a,b}H_{a,b}=R^{\mathrm{free}}_{a,b}\) with
-  \(H_{a,b}\) reconstructed from the moment-ideal coefficients via
-  the necklace square-cell decomposition of any cycle in
-  \(\ker\partial\) (Lemma~\ref{lem:app-ordinary-necklace-stokes}).
-  Hence \(\Omega^{\mathrm{rad}}_{a,b}=0\) and no signed dual row of
-  the failure type can exist.
+  By Lemma~\ref{lem:app-quantum-shear-primitive-obstruction} this
+  membership is equivalent to the existence of coefficients
+  \(A^j{}_i(a,b,N)\in\mathcal W_N\) with
+  \(E_{a,b,N}=\sum A^j{}_i\widehat\mu^i{}_j\).  After choosing a
+  free-word ansatz
+  \(A^j{}_i(a,b,N)=\sum_{W} c_W(a,b)\,W^j{}_i\) where \(W\) ranges
+  over words of bidegree \((a-1,b-1)\), the membership becomes
+  \[
+    E_{a,b,N}=\sum_{W\in\mathsf W_{a,b}}c_W\operatorname{Tr}(WM)
+    \qquad(\text{all }N\geq1),
+  \]
+  with rational coefficients \(c_W=c_W(a,b)\) independent of \(N\).
+  Existence of such \(N\)-independent coefficients is supplied by the
+  free indexed normal-diagram polarization
+  argument: the matrix-trace identity in
+  \(\mathcal W_N\) holds for every \(N\), and stable
+  Procesi--Razmyslov injectivity
+  (Lemma~\ref{lem:app-free-trace-diagram-stable-injectivity}) extracts
+  rational coefficients on the universal free indexed normal-diagram
+  side.
+
+  Project the resulting free identity through the cyclic-word target.
+  At contraction degree \(0\),
+  \(\sum_W c_W \pi_0\mathcal N_{\mathrm{free}}\operatorname{Tr}(WM)
+   =\sum_W c_W([WYX]-[WXY])
+   =\partial(\sum_W c_W W)\), so the underlying word
+  \(c=\sum_W c_W W\in\mathsf W_{a,b}\) is a classical lift,
+  \(\partial c=T_{a,b}\).  Subtracting any preferred classical lift
+  \(c^{\mathrm{cl}}_{a,b}\), the difference
+  \(K_{a,b}=c-c^{\mathrm{cl}}_{a,b}\) is a cycle in
+  \(\ker\partial\), and on the decorated side
+  \(\pi_+\mathcal N_{\mathrm{free}}(\sum_W c_W\operatorname{Tr}(WM))
+   =E^+_{a,b}=C^+_{a,b}(c^{\mathrm{cl}}_{a,b})+C^+_{a,b}(K_{a,b})\),
+  so \(C^+_{a,b}(K_{a,b})=R^{\mathrm{free}}_{a,b}\).  By the
+  ordinary necklace Stokes
+  Lemma~\ref{lem:app-ordinary-necklace-stokes}, every cycle in
+  \(\ker\partial\) lies in
+  \(\operatorname{im}\partial_2\), so there exists
+  \(H_{a,b}\in\mathsf S_{a,b}\) with
+  \(\partial_2H_{a,b}=K_{a,b}\); hence
+  \(D^\square_{a,b}H_{a,b}
+   =C^+_{a,b}\partial_2H_{a,b}
+   =C^+_{a,b}(K_{a,b})
+   =R^{\mathrm{free}}_{a,b}\).
+  By Proposition~\ref{prop:app-radial-dual-potential-obstruction},
+  \(\Omega^{\mathrm{rad}}_{a,b}=0\) and no signed dual row of the
+  failure type can exist.
 \end{proof}
 
 \begin{rmk}[The structural mechanism: Cartan one-particle Moyal lift]
