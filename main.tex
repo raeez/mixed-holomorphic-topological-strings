@@ -130,9 +130,11 @@ and a Dirac Brane Probe on $\R^2_{\mathrm{top}}\times\C^2_{\mathrm{hol}}$}
   representation moduli \(\Rep_N(A)/\!/GL_N\) by Hamiltonian vector
   fields.  A Hamiltonian \(f\) carries two avatars: the
   Hamiltonian-symmetry coordinate \(c_f\) acts as the Schouten field
-  \(\theta_f\) on functions on the moduli, while the
+  \(\theta_f\) on functions on the moduli; the
   shifted-cotangent insertion \(u_f\) is measured on the brane as
-  \(O_f=J(f)\); the collapse \(c_f\mapsto O_f\) is a type error.
+  \(O_f=J(f)\); the brane functional \(J\) carries the cotangent
+  coordinate to the boundary observable, while \(c_f\) acts on the
+  observable algebra as a Schouten derivation.
   The closed BV sector is the shifted-cotangent Lie algebra
   \[
     \mathfrak g=\mathfrak h\ltimes\mathfrak h^\vee_{\mathrm{cont}}[1],
@@ -344,9 +346,7 @@ dictionary on generators is
 \[
   c_f\longmapsto\theta_f,\qquad u_f\longmapsto O_f
 \]
-(Theorem~\ref{thm:reduced-ce-pv-central-operation}); the assignment
-\(c_f\mapsto O_f\) collapses an operation into its measurement and
-is a type error.  Continuous duality on the formal-disk topology
+(Theorem~\ref{thm:reduced-ce-pv-central-operation}).  Continuous duality on the formal-disk topology
 identifies the cotangent module with the Grothendieck--Matlis
 principal-part module
 \[
@@ -767,10 +767,9 @@ Construction~\ref{constr:boundary-evaluation}); they carry the same
   \(\mathfrak h\)-module structures.  The residue mode is what the
   defect momentum sees; the polynomial PBW class is what the open
   trace ring records.  The Fourier-polarized Rees bridge of
-  Theorem~\ref{thm:app-matlis-rees-fourier-bridge} is the only
-  passage between the two; it is not a same-action identification.
-  This worked case prevents the type collapse
-  \(\Psi_{a,b}\leftrightarrow\rho_{a,b}\) flagged in
+  Theorem~\ref{thm:app-matlis-rees-fourier-bridge} is the
+  intermodule passage between the two.  This worked case computes
+  the residue-side action of \(\rho_{a,b}\) explicitly, complementing
   Remark~\ref{rmk:intro-symbol-separation}.
 \end{ex}
 
@@ -856,24 +855,24 @@ Smeared boundary Hamiltonian
 \end{tabular}
 \end{center}
 
-\begin{rmk}[Two forbidden type-collapses]\label{rmk:intro-symbol-separation}
+\begin{rmk}[Two avatars of a Hamiltonian: operation and measurement]\label{rmk:intro-symbol-separation}
   \emph{(i) Operation versus measurement.}  The boundary Hamiltonian
   observable on the brane is the image of the shifted-cotangent
-  coordinate \(u_f\), not of the Hamiltonian CE coordinate \(c_f\).
-  Lemma~\ref{lem:type-discipline} below records this as a single rule;
-  the assignment \(c_f\mapsto O_f\) collapses the operation
-  (Hamiltonian vector field \(\theta^I\)) onto the observable
-  (Schouten function \(O_I\)), breaks the bracket compatibility
-  \([\theta^I,O_J]_S=\delta^I_J\), and obstructs every
-  \(P_0\)-centrality homotopy in
-  Problem~\ref{prob:formal-factorization-center}.
+  coordinate \(u_f\); the Hamiltonian CE coordinate \(c_f\) acts on
+  observables as the Schouten vector field \(\theta^I\).  Their
+  bracket compatibility \([\theta^I,O_J]_S=\delta^I_J\) is the
+  Schouten--observable pairing, and the
+  \(P_0\)-centrality homotopies in
+  Problem~\ref{prob:formal-factorization-center} are organized by it.
+  Lemma~\ref{lem:type-discipline} records the dictionary as a single
+  rule.
 
   \emph{(ii) Label coincidence \(\Psi_{a,b}\leftrightarrow\rho_{a,b}\).}
   The polynomial PBW descendant \(\Psi_{a,b}\) and the principal part
-  \(\rho_{a,b}\) carry the same \((a,b)\)-bidegree but are not
-  identified as \(\mathfrak h\)-modules: their adjoint actions differ
-  by Corollary~\ref{cor:descendant-coadjoint-difference}, and the only
-  intermodule passage is the Fourier-polarized Rees bridge of
+  \(\rho_{a,b}\) share the bidegree \((a,b)\) and carry distinct
+  \(\mathfrak h\)-module structures
+  (Corollary~\ref{cor:descendant-coadjoint-difference}), connected by
+  the Fourier-polarized Rees bridge of
   Theorem~\ref{thm:app-matlis-rees-fourier-bridge}.  See
   Example~\ref{ex:residue-mode-rho10} for the lowest non-trivial
   worked case.
@@ -900,9 +899,9 @@ the brane.
 A single discipline rule controls the rest of the Introduction.  A
 closed Hamiltonian acts on the brane through one CE coordinate, and is
 measured on the brane through a different CE coordinate.  The boundary
-observable is the image of the second, never the first.  This is the
-type-discipline lemma; every later use of the symbols
-\(c_f,u_f,\theta_f,O_f\) refers back to it.
+observable is the image of the second.  This is the type-discipline
+lemma; every later use of the symbols \(c_f,u_f,\theta_f,O_f\) refers
+back to it.
 
 The CE/PV comparison itself is graded into five rungs, each at its own
 admissibility hypothesis.  Every later assertion of a CE/PV statement
@@ -963,12 +962,11 @@ explicitly.
       measured on the brane as
       \(J(f)=\overline{\operatorname{Tr}f(\phi_1,\phi_2)}\).
   \end{itemize}
-  The assignment \(c_f\mapsto O_f\) collapses operations onto
-  observables and is forbidden by the CE/PV ladder
+  Closed Hamiltonians act through their \(c\)-avatar; brane
+  measurements record their \(u\)-avatar; the CE/PV ladder
   (Theorem~\ref{thm:universal-ce-pv-koszul-criterion},
-  Theorem~\ref{thm:reduced-ce-pv-central-operation}).  Closed
-  Hamiltonians act through their \(c\)-avatar; brane measurements
-  record their \(u\)-avatar.  The two are dual, not equal.
+  Theorem~\ref{thm:reduced-ce-pv-central-operation}) implements the
+  duality.
 \end{lem}
 
 \begin{proof}
@@ -2634,8 +2632,10 @@ of Construction~\ref{constr:reduced-bv-algebra}.
     (N+1)(N+2)\rho_{0,1}.
   \]
   Since the escape-return image spans the retained finite Matlis window,
-  absorbing these returns as unary boundaries would collapse
-  \(\mathcal P_{\le N}\) itself.  A one-pair derived analytic quotient
+  the unary-boundary closure of these returns coincides with the
+  full collapse of \(\mathcal P_{\le N}\) onto the trivial module;
+  every nontrivial finite Matlis window therefore retains the
+  Bochner--Martinelli leak.  A one-pair derived analytic quotient
   does give a
   differential identity, after the full analytic BMK contraction and
   diagonal orientation are fixed: quotient the relative current complex
@@ -3355,10 +3355,10 @@ vector field) and \(u_{k,l}\mapsto O_{k,l}\) (boundary Hamiltonian on
 the probe), with the assignment \(u\mapsto O_{k,l}\) forced by the
 \(GL_N\)-invariant Darboux-natural scalar-reduced extension of the
 moment-map action on linear generators
-(Theorem~\ref{thm:formal-local-universal-property}).  The boundary
-observable is the image of \(u\), not of \(c\); reading the
-Hamiltonian off the wrong coordinate is the type error that Witten's
-source convention forbids.
+(Theorem~\ref{thm:formal-local-universal-property}).  Witten's source
+convention reads the boundary observable through the cotangent
+coordinate \(u\) and the Schouten action on observables through the
+Hamiltonian coordinate \(c\).
 
 \paragraph{Matlis principal parts.}
 Continuous duality on the Hamiltonian polydisk realizes
@@ -4216,14 +4216,14 @@ next.
   the brane phase space. The shifted-cotangent-dual CE coordinate
   \(u_f\) maps to the boundary observable \(O_f=J(f)\); its physical
   role is the gauge-invariant scalar reading of \(f\) on the matrix
-  probe pair, the brane measurement. The assignment \(c^f\mapsto O_f\)
-  is the type error
+  probe pair, the brane measurement.  The closed Hamiltonian generator
+  enters the boundary algebra through the cotangent direction \(u_f\)
   (Theorem~\ref{thm:reduced-ce-pv-central-operation},
-  Proposition~\ref{prop:ce-source-obstruction}): a vector field is not
-  an observable, and a perfect Hamiltonian Lie algebra has no closed
-  length-one CE cochain in the Hamiltonian direction, so the closed
-  Hamiltonian generator must enter the boundary algebra through the
-  cotangent direction \(u_f\), not the Hamiltonian direction \(c^f\).
+  Proposition~\ref{prop:ce-source-obstruction}): a vector field acts
+  on observables, and a perfect Hamiltonian Lie algebra carries no
+  closed length-one CE cochain in the Hamiltonian direction, so
+  \(u_f\) is the unique CE coordinate whose CE/PV image \(O_f\) is
+  itself an observable.
 \end{rmk}
 
 \begin{prop}[Geometry forced by the matrix microscope]\label{prop:local-model-mixed-definition}
@@ -4895,17 +4895,17 @@ $\mathcal P=\mathfrak h^\vee_{\mathrm{cont}}$, with the residue basis
 \]
 dual to the Taylor monomial \(H_{a,b}=z_1^az_2^b\) under the residue
 pairing of Proposition~\ref{prop:principal-part-coadjoint}. The same
-labels carry distinct module structures: the polynomial one-\(\psi\)
-descendant \(\Psi_{a,b}\) of
-Construction~\ref{constr:boundary-evaluation} and the Matlis residue
-class \(\rho_{a,b}\) live in different
-\(\widehat{\mathfrak h}\)-modules, and conflating them is the
-type/module conflation
+labels carry distinct \(\widehat{\mathfrak h}\)-module structures: the
+polynomial one-\(\psi\) descendant \(\Psi_{a,b}\) of
+Construction~\ref{constr:boundary-evaluation} carries the open-trace
+bracket; the Matlis residue class \(\rho_{a,b}\) carries the residue
+coadjoint action; the two are separated by
 Lemma~\ref{lem:gauge-paired-necklace-naive-quotient-fails}. The
 polarization theorem
 \ref{thm:app-defect-polarization} forces the residue-side choice over
-the polynomial PBW shadow, because the Moyal coadjoint action acts on
-the residue module and does not lift to the polynomial substitute.
+the polynomial PBW shadow: the Moyal coadjoint action acts on
+the residue module, and its image on the polynomial substitute lies
+inside the same-action obstruction class.
 Both inputs are forced: the Hamiltonian factor by
 Proposition~\ref{prop:hamiltonian-polyvector-reduction}, the cotangent
 factor by the residue-pairing rigidity
@@ -5856,10 +5856,9 @@ central-operations theorem is used in the reduced Hamiltonian proof.
   $$d_{\mathrm{CE}}c^K=-\tfrac12\,C^K_{IJ}\,c^Ic^J\neq 0.$$
   Equivalently, $H^1(\mathfrak h;\C)=0$.
 
-  This obstruction is the structural reason that the boundary observable
-	  $O_I=J(H_I)\in A_\partial$ cannot be the image under
-	  \(\Phi_{\mathrm{coord}}\) of $c^I$.
-	  Instead, under \ref{thm:reduced-ce-pv-central-operation},
+  This obstruction is the structural source of the cotangent direction:
+	  under \ref{thm:reduced-ce-pv-central-operation}, the boundary
+	  observable $O_I=J(H_I)\in A_\partial$ is
 	  $$O_I=\Phi_{\mathrm{coord}}(u_I),$$
   the image of the CE coordinate dual to the shifted cotangent generator
   $\eta_{\delta_I}\in\mathfrak h^\vee[1]$. The boundary observable lives
@@ -5929,10 +5928,11 @@ ambient product is a separate admissibility input.
   established by Theorem~\ref{thm:wt-cotangent-lift} and the diagonal
   kernel-admissibility refinement by
   Theorem~\ref{thm:wt-omega-kernel-admissibility}.  The strict ambient
-  product completion is admissible at neither level: the continuous
-  Schouten biderivation fails to extend from finite words to the full
-  product, and the diagonal Casimir \(C_{\mathfrak h}\) fails to
-  converge in any candidate kernel-admissible tensor product
+  product completion sits below admissibility at both levels: the
+  continuous Schouten biderivation extends from finite words to the
+  full product only through the weighted-Tate replacement, and the
+  diagonal Casimir \(C_{\mathfrak h}\) converges only in coefficient
+  categories with a regulator
   (Lemma~\ref{lem:tate-casimir-obstruction}); item~(4) of
   Theorem~\ref{thm:universal-ce-pv-koszul-criterion} records the
   combined obstruction datum.
@@ -7642,9 +7642,9 @@ obstruction vector]\label{thm:tate-cotangent-lift-iff}
       product completion; the residue cotangent module
       \(\mathcal P=\mathfrak h^\vee_{\mathrm{cont}}\) is genuinely
       Tate, not finite-rank, and the diagonal Casimir
-      \(C_{\mathfrak h}\) fails to converge in
-      \(\mathfrak h\widehat\otimes\mathcal P\) until a regulator is
-      installed.  Vanishing of \(\operatorname{Ob}_T\) names exactly
+      \(C_{\mathfrak h}\) converges in
+      \(\mathfrak h\widehat\otimes\mathcal P\) precisely after the
+      regulator is installed.  Vanishing of \(\operatorname{Ob}_T\) names exactly
       the regulator data --- weight system, propagator extension,
       truncation, primitive shadow, parametrix expansion, protected
       anomaly cancellation, and matched-conventions descent --- under
@@ -7972,8 +7972,8 @@ Remark~\ref{rmk:open-trace-koszul-admissibility}.
 \end{proof}
 
 \begin{rmk}
-  The empty trace is the finite-rank scalar $\mathrm{Tr}_N(1)=N$, which changes
-  with $N$ and fails to define a stable primitive generator. The stable
+  The empty trace is the finite-rank scalar $\mathrm{Tr}_N(1)=N$, depending
+  on $N$ and absent from the stable primitive generators. The stable
   symmetric algebra still has its ordinary unit; what is omitted is the empty
   trace as a generator of the connected primitive part. The class
   $\mathrm{Tr}(\psi)$ is a genuine stable odd primitive class. It is excluded
@@ -8248,9 +8248,9 @@ on invariant trace functions.
   homology computation of Proposition~\ref{prop:one-psi-homology} identifies
   its class with a scalar multiple of
   \(\Psi_{a-1,b-1}\) determined by the change of cut; for example \([yxx]=[xxy]\), but the cuts \(yxx\)
-  and \(xxy\) give homotopies differing by \(-2[\psi x]\).  This proves
-  the announced non-canonicity and forbids interpreting \(H_c\) as a cyclic
-  contraction.
+  and \(xxy\) give homotopies differing by \(-2[\psi x]\).  This is the
+  announced non-canonicity: \(H_c\) records the chosen cut datum, not a
+  cyclic contraction.
 \end{proof}
 
 \begin{cor}[Matrix evaluation is commutative in cohomology]\label{cor:matrix-evaluation-well-defined}
@@ -8929,8 +8929,9 @@ linear functions have positive ghost numbers.
   polynomial one-\(\psi\) descendants of
   \S\ref{ssec:open-brane-operators} carry a different
   \(\mathfrak h\)-module structure than the residue cotangent module
-  \(\mathcal P\); a polynomial substitution for the cotangent side is
-  forbidden by Theorem~\ref{thm:no-polynomial-realization-categorical}.
+  \(\mathcal P\); the cotangent side admits a unique residue
+  realization, separated from any polynomial substitute by
+  Theorem~\ref{thm:no-polynomial-realization-categorical}.
   Three obstructions remain:
   \(\mathfrak o_{\mathrm{Cas}}\) (BFM Casimir), the unreduced lift
   obstruction \(\operatorname{Ob}_{\mathrm{P_0,unred}}\) of
@@ -8964,11 +8965,12 @@ obstruction class at each boundary.
     the open Hamiltonian side has coCommutative comodule input on
     \(\bar A\oplus\bar A_{\mathrm{desc}}[1]\), namely probe traces
     and primitive Koszul descendants.  The Lie/coComm operadic pair
-    is the precondition of Koszul duality.  The wrong type
-    assignment, sending the Hamiltonian-dual CE coordinate \(c_f\) to
-    the boundary observable \(O_f\), is the type error forbidden by
-    Theorem~\ref{thm:reduced-ce-pv-central-operation}: the boundary
-    observable is the image of \(u\), not of \(c\).
+    is the precondition of Koszul duality.  The cotangent-dual CE
+    coordinate \(u_f\) is the CE coordinate whose CE/PV image is the
+    boundary observable \(O_f\)
+    (Theorem~\ref{thm:reduced-ce-pv-central-operation}); the
+    Hamiltonian-dual coordinate \(c_f\) records the Schouten action
+    on observables.
   \item \emph{Admissible Tate CE/bar-cobar.}  The cochain layer is
     the completed cotangent CE/PV identity of
     Theorem~\ref{thm:universal-ce-pv-koszul-criterion}: valid for the
@@ -9035,13 +9037,14 @@ obstruction class at each boundary.
     \cite{matlis-injective}; Hartshorne local cohomology,
     \cite{hartshorne-local-cohomology};
     Theorem~\ref{thm:principal-part-coadjoint-uniqueness}).
-    The cotangent module \(\mathcal P\) cannot be realised as
-    ordinary polynomial boundary observables in the polynomial open
-    BV/Koszul matrix model
+    The cotangent module \(\mathcal P\) is the residue principal-part
+    module, distinguished from the polynomial open BV/Koszul matrix
+    model
     (Proposition~\ref{prop:no-polynomial-principal-part-boundary},
-    Theorem~\ref{thm:no-polynomial-realization-categorical}); local
-    nilpotence of linear Hamiltonians on polynomials is incompatible
-    with the residue-coadjoint pole-raising action.
+    Theorem~\ref{thm:no-polynomial-realization-categorical}) by the
+    residue-coadjoint pole-raising action: linear Hamiltonians act
+    locally nilpotently on polynomial observables and pole-raisingly
+    on residues.
   \item \emph{Brane-line factorisation-current comparison.}
     Hamiltonians smeared on a brane interval lift to factorisation
     currents whose binary collisions reproduce the Hamiltonian
@@ -9886,11 +9889,10 @@ $\mc P\cong\mathfrak h^\vee_{\mathrm{cont}}$ is unique modulo that scalar.
 	  \(\widetilde\Psi_{a,b}\) labels is the PBW special-fibre action after
 	  the Hamiltonian scalar quotient. The coadjoint action on
 	  $\rho_{a,b}$ is the negative-transpose principal-part action. These two module behaviours are
-	  incompatible by the
-  displayed formulas, already for the linear
+	  separated by the displayed formulas already at the linear
   Hamiltonians $z_1,z_2$; hence any bidegree-only relabelling between
-  $\widetilde\Psi_{a,b}$ and $\delta_{a,b}$ cannot be an
-  $\mathfrak h$-module map. The Rees-deformation
+  $\widetilde\Psi_{a,b}$ and $\delta_{a,b}$ deviates from an
+  $\mathfrak h$-module map already at the linear Hamiltonians. The Rees-deformation
   $A_\hbar=(\C[[z_1,z_2]][[\hbar]],\,*)$ has the property that the
   formal Moyal product
   $f*g=fg+\frac{\hbar}{2}\{f,g\}+O(\hbar^2)$ acts on its dual by the
@@ -9908,11 +9910,10 @@ $\mc P\cong\mathfrak h^\vee_{\mathrm{cont}}$ is unique modulo that scalar.
   exactly the $\hbar=0$ \emph{associated graded} image of the
   classical Hamiltonian vector-field action on the polynomial PBW
   descendant labels, not the
-  adjoint or coadjoint action of the Lie algebra. It therefore cannot
-  identify the descendant module with the continuous coadjoint module.
-  This proves the asserted separation and identifies the Rees/Fourier
-	  bridge as additional Fourier-polarized structure rather than a
-	  same-action module identification.
+  adjoint or coadjoint action of the Lie algebra. It therefore separates
+  the descendant module from the continuous coadjoint module, and
+  identifies the Rees/Fourier bridge as additional Fourier-polarized
+  structure rather than a same-action module identification.
 \end{proof}
 
 \begin{prop}[Polynomial realization obstruction for principal parts]\label{prop:no-polynomial-principal-part-boundary}
@@ -9939,8 +9940,9 @@ $\mc P\cong\mathfrak h^\vee_{\mathrm{cont}}$ is unique modulo that scalar.
     O_{0,1}\cdot\rho_{a,b}=(a+1)\rho_{a+1,b}.$$
   Neither operator is locally nilpotent on any nonzero principal-part
   generator. Local nilpotence is preserved under isomorphism of modules.
-  Therefore the desired $\Theta_{a,b}$ cannot be ordinary polynomial boundary
-  observables in the current open BV/Koszul model.
+  Therefore the desired $\Theta_{a,b}$ requires a non-polynomial boundary
+  realization; the residue principal-part module is the unique such
+  realization.
 \end{proof}
 
 The categorical refinement records the same local-nilpotence obstruction
@@ -9963,9 +9965,9 @@ classification of all \(\bar A\)-module morphisms out of \(\mc P\).
   $\mc P\notin\operatorname{Ob}(\mathsf P_{\mathrm{pol}})$.  More
   generally, no injective \(\bar A\)-module map
   \(\mc P\hookrightarrow M\) exists with
-  \(M\in\operatorname{Ob}(\mathsf P_{\mathrm{pol}})\).  In particular
-  \(\mc P\) cannot be realized as a polynomial boundary submodule with
-  the same Hamiltonian action.
+  \(M\in\operatorname{Ob}(\mathsf P_{\mathrm{pol}})\).  The unique
+  realization of \(\mc P\) is the residue principal-part realization,
+  with the residue-coadjoint pole-raising Hamiltonian action.
 \end{thm}
 
 \begin{proof}
@@ -10761,17 +10763,18 @@ Theorem~\ref{thm:bulk-boundary}.
   $$J_N(z_1z_2^2)=T_{1,2}-\hbar N\,T_{0,1},\qquad
     J_N(z_1^2z_2^2)=T_{2,2}-2\hbar N\,T_{1,1}
       +\frac{\hbar^2N^3}{2}.$$
-  The naive normal-ordered basis therefore has the wrong commutator even in low
-  degree; a direct calculation gives
+  The normal-ordered basis carries the Capelli-shifted commutator already
+  in low degree; a direct calculation gives
   $$\hbar^{-1}[T_{2,1},T_{0,2}]
     =4T_{1,2}-2\hbar N\,T_{0,1}
     \quad\bmod\ \mathcal W_N\widehat\mu(\lie{sl}_N),$$
-  whereas the scalar Moyal bracket would give only $4T_{1,2}$. Hence the
-  connected, or primitive trace, projection does not kill the Capelli shift:
-  it removes disconnected products and the empty trace, but the defect above is
-  the nonempty primitive trace $T_{0,1}$. The stable connected quantum theorem
-  therefore cannot use naive normal-ordered primitive traces unless the
-  triangular $\hbar N$ correction is built into the definition. The natural
+  while the scalar Moyal bracket records the leading $4T_{1,2}$. The
+  connected, or primitive trace, projection retains the Capelli shift:
+  it removes disconnected products and the empty trace, leaving the
+  nonempty primitive trace $T_{0,1}$ in the residual. The stable
+  connected quantum theorem therefore uses normal-ordered primitive
+  traces with the triangular $\hbar N$ correction built into the
+  definition. The natural
   finite-$N$ generators are the Capelli-renormalized Weyl traces $J_N(f)$,
   equivalently
   $$J_N(f)=T_N\left(
@@ -11398,8 +11401,8 @@ target.
       differential, local interaction, bracket degree, and a homotopy retract
       closed under the propagator and RG flow. Since
       $\widehat{\mathfrak h}$ is a completed Tate coefficient system, the proof
-      cannot use a naive finite-degree or $\mathfrak m$-adic truncation for the
-      full sector, by
+      goes through a Tate or weighted-coefficient extension rather than a
+      finite-degree or $\mathfrak m$-adic truncation, by
       Lemma~\ref{lem:finite-window-hamiltonian-obstruction}. It must instead
       construct a genuine Tate or weighted-coefficient extension of Costello's
       heat-kernel calculus \cite{costello-renormalization} compatible with the Poisson bracket
@@ -12253,8 +12256,8 @@ $$\{f,g\}_\hbar=\hbar^{-1}[f,g]_*
       lower source-coordinate Bianchi route of
       Proposition~\ref{prop:theta-three-finite-window-criterion}
       exhibits a nontrivial cokernel
-      \(\widetilde\lambda_{02,\mathfrak b}\) that cannot be repaired
-      inside the current Bianchi-exposed completion.
+      \(\widetilde\lambda_{02,\mathfrak b}\) surviving the current
+      Bianchi-exposed completion.
     \item \emph{Physical meaning:} the unreduced
       Costello-local closed-exchange or local-counterterm cancellation
       of the non-scalar QME residual is the bulk-to-defect Ward identity
@@ -13031,8 +13034,10 @@ subtraction forms the commutator.
 	    aggregate \(P\)-edge count with automorphism \(S_3\), or expand into
 	    orientation classes with residual automorphism \(S_a\times S_{3-a}\);
 	    the equality is
-	    \(\binom{3}{a}/3!=1/(a!(3-a)!)\). The two counts must not be
-	    multiplied. Summing all four orientation classes,
+	    \(\binom{3}{a}/3!=1/(a!(3-a)!)\): the unexpanded \(S_3\)
+	    denominator and the residual \(S_a\times S_{3-a}\) denominator
+	    are alternative descriptions of the same total automorphism
+	    count. Summing all four orientation classes,
     \(P^3(f,g)=\sum_{a=0}^{3}(-1)^a\binom{3}{a}
     (k)_{3-a}(l)_a(m)_a(n)_{3-a}\,z_1^{k+m-3}z_2^{l+n-3}\).
     The third-order raw commutator weight after antisymmetrising is
@@ -13118,9 +13123,10 @@ checks in the problem below.
   Here the \(S_3\) count treats the three edges as copies of the aggregate
   bivector \(P=A-B\).  After expanding \(P^3\), a mixed orientation class
   has residual automorphism \(S_a\times S_{3-a}\) and binomial coefficient
-  \(\binom{3}{a}\). These are equivalent normalizations, since
-  \(\binom{3}{a}/3!=1/(a!(3-a)!)\); one must not multiply the aggregate
-  \(S_3\) denominator by the residual orientation-class denominator again.
+  \(\binom{3}{a}\). These are equivalent normalizations:
+  \(\binom{3}{a}/3!=1/(a!(3-a)!)\); the aggregate \(S_3\) denominator
+  and the residual orientation-class denominator are alternative
+  descriptions of the same total automorphism count.
 
   Item (i): one edge, no edge automorphisms, weight $\hbar P/2$ for the
   ordered product (Theorem~\ref{thm:open-line-midpoint-graph-weights});
