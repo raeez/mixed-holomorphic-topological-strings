@@ -1,22 +1,13 @@
-\section*{Seven organizing principles}\label{sec:organizing-principles}
-\addcontentsline{toc}{section}{Seven organizing principles}
-
-The local theorem is governed by seven principles. The first five fix
-the geometry, the locality structure, the type discipline, the
-distributional dual, and the scalar-anomaly transgression of the
-matrix microscope; the sixth states what quantization is and is not in
-this setting; the seventh recasts the entire obstruction calculus as
-the deformation theory of upgrading the local Maurer--Cartan datum
-into a stronger global, quantum, factorization, modular, or
-CY-categorical target.
+\section*{Seven principles}\label{sec:organizing-principles}
+\addcontentsline{toc}{section}{Seven principles}
 
 \subsection*{Principle 1 (Matrix-Probe Measurement)}
 
 \emph{A stack of \(N\) Dirac branes on the topological line is a
 finite Chan--Paton microscope for the formal holomorphic-symplectic
-polydisk; its measured observables are the stable scalar-reduced traces
-\(J(f)=\overline{\operatorname{Tr}f(\phi_1,\phi_2)}\), and these
-exhaust the gauge-invariant content of the probe pair.}
+polydisk; its observables are the stable scalar-reduced traces
+\(J(f)=\overline{\operatorname{Tr}f(\phi_1,\phi_2)}\), which exhaust
+the gauge-invariant content of the probe pair.}
 
 The substitution \(z_i\rightsquigarrow\phi_i\) of normal coordinates
 into a commuting pair of \(\mathfrak{gl}_N\)-valued matrices is the
@@ -106,7 +97,7 @@ pairing makes the identification canonical, and the residue-coadjoint
 formula
 \(z_1^p z_2^q\cdot\rho_{a,b}=-(pb-qa+p-q)\,\rho_{a-p+1,b-q+1}\) is its
 closed-form fingerprint.  The polynomial PBW one-\(\psi\) descendants
-\(\widetilde\Psi_{a,b}\) carry the same labels but a strictly different
+\(\Psi_{a,b}\) carry the same labels but a strictly different
 \(\mathfrak h\)-module structure: linear Hamiltonians act locally
 nilpotently on the polynomial side and never locally nilpotently on
 \(\mathcal P\), so no relabelling of bases interpolates -- the PBW
@@ -147,11 +138,10 @@ identities has dg Lie input
 
 \subsection*{Principle 6 (Quantization is a Brane-Measurement Test)}
 
-\emph{Moyal/Weyl quantization is presented as a measurement
-compatibility test, not a complete quantum theory: it asks whether
-Weyl ordering and brane trace measurement commute, bidegree by
-bidegree.  Componentwise compatibility is the conclusion in the
-finite certificate range; outside it the obstruction is the
+\emph{Moyal/Weyl quantization is the measurement compatibility test
+between Weyl ordering on the polydisk and brane trace measurement: do
+they commute, bidegree by bidegree?  Componentwise compatibility is the conclusion in the
+verified range; outside it the obstruction is the
 all-bidegree decorated PBW Stokes class
 \(\Omega^{\mathrm{rad}}_{a,b}\in\operatorname{coker}B_{a,b}\); the
 first quantum sighting of the scalar-anomaly cocycle is the linear
@@ -164,17 +154,19 @@ controlling counterterm obstruction beyond the scalar shift.}
 The diagram to read is the bidegree square
 \[
   f\xrightarrow{\;J\;}J(f)\qquad
-  f\xrightarrow{\;\mathrm{Weyl}\;}\Phi_\hbar(f)\xrightarrow{\;\mathrm{Tr}\;}J_\hbar(f),
+  f\xrightarrow{\;\mathrm{Weyl}\;}\Phi_\hbar(f)
+   \xrightarrow{\;\overline{\operatorname{Tr}}\;}
+   J_\hbar(f)\coloneq\overline{\operatorname{Tr}\,\Phi_\hbar(f)},
 \]
 and quantization compatibility is the question of whether
-\(\mathrm{Weyl}\) and \(\mathrm{Tr}\) commute up to a controlled
-counterterm.  The finite-certificate range
+\(\mathrm{Weyl}\) and the reduced trace \(\overline{\operatorname{Tr}}\)
+commute up to a controlled counterterm.  The verified range
 (Theorem~\ref{thm:componentwise-quantum-coefficient-comparison})
 covers the balanced diagonal through \((6,6)\), all non-edge
 bidegrees through total degree \(13\), selected total-degree-\(14\)
 cases, and one-moving-letter edge strips; the first undecided
 total-degree-\(14\) systems are \((6,8)\), \((8,6)\), \((7,7)\).
-Outside the certificate range, the obstruction is the per-bidegree
+Outside the verified range, the obstruction is the per-bidegree
 class \(\Omega^{\mathrm{rad}}_{a,b}\), equivalently the decorated
 Stokes failure for \(D^\square_{a,b}=C^+_{a,b}\partial_2\).  At
 order \(\hbar^1\), the scalar shift \(\hbar N[\bar c]\) of
@@ -182,12 +174,14 @@ Principle~2 is the universal Capelli term; at higher graph order, the
 controlling reduced non-scalar class is
 \([\operatorname{Ob}^{\mathrm{red}}_{w,\partial,\hbar}]
 \in H^1(\ker\widehat\sigma_{\mathrm{sc}},d_{\mathrm{QME}})\), with
-the \(\theta_3\) finite-window prototype:
-bare \(H^1=\C\!\cdot\!E_{\theta_3}\ne0\), supplied-counterterm
-\(H^1=0\) under the unique local counterterm \(dC=-E\), \(c=1\).
-Quantization is therefore not declared complete: it is presented as a
-compatibility test whose passes are componentwise theorems and whose
-failures are named obstruction classes.
+\(\widehat\sigma_{\mathrm{sc}}\) the filtered scalar projection and
+\(d_{\mathrm{QME}}\) the QME differential on the
+admissible-counterterm complex.  The \(\theta_3\) finite-window
+prototype exhibits the cancellation: bare
+\(H^1=\C\!\cdot\!E_{\theta_3}\ne0\), supplied-counterterm \(H^1=0\)
+under the unique local counterterm \(dC=-E\), \(c=1\).
+Quantization is a compatibility test: passes are componentwise
+theorems, failures are named obstruction classes.
 
 \subsection*{Principle 7 (Obstruction Classes are Curvature Coordinates for Stronger Targets)}
 
@@ -244,22 +238,17 @@ is the descent twist promoting strict global Hamiltonians to sections
 of a \(\C^\times\)-Hamiltonian gerbe.  Some classes are integrable
 twists; others are no-go selectors that force replacement of
 \(\mathcal T\); not every class can be twisted away inside its
-original target.  The deformation-theoretic stance is that the
-obstruction calculus is simultaneously the boundary of what the local
-theorem proves and the deformation complex of possible global quantum
-completions; an obstruction is the memory of structure erased by an
-over-strict target.  The master schema is
+original target.  The obstruction calculus is simultaneously the
+boundary of what the local theorem proves and the deformation complex
+of possible global quantum completions.  The master schema is
 Theorem~\ref{thm:obstruction-twist-dichotomy} of
 Appendix~\ref{app:master-deformation-complex}; every named obstruction
-class of the manuscript is a clause of that schema, and stronger
-constructions live in the spaces
-\(\mathrm{TwGlob}_{\mathcal T}(\Theta_{\mathrm{loc}})\) of admissible
-twists.
+class is a clause of that schema, and stronger constructions live in
+the spaces \(\mathrm{TwGlob}_{\mathcal T}(\Theta_{\mathrm{loc}})\) of
+admissible twists.
 
-\emph{The supremum form.} Conditional, external, or expected are not
-stopping categories: every frontier obstruction of the model is a
-named cohomology class or a named contracting-homotopy obligation, and
-the admissible repair on every frontier surface is the smallest
-enlargement of the ambient algebra in which the intended mechanism is
-a theorem, or else the proved obstruction theorem naming the exact
-class that prevents it.
+Every frontier obstruction is a named cohomology class or a named
+contracting-homotopy obligation; the corresponding repair is either
+the smallest enlargement of the ambient algebra in which the intended
+mechanism is a theorem, or the proved obstruction theorem naming the
+exact class that prevents it.

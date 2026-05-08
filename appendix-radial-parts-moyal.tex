@@ -1350,7 +1350,7 @@ exactly the assertion that the ordinary Weyl trace \(J_N(f)\) equals
   \(\tau_{a,b}\) with
   \(D^\square_{a,b}=C^+_{a,b}\partial_2+d_{\mathrm{rad}}\tau_{a,b}\)
   is supplied, enlarging the strict Weyl target to the decorated
-  PBW/Stokes target.  The finite-certificate range covered by
+  PBW/Stokes target.  The verified range covered by
   Theorem~\ref{thm:componentwise-quantum-coefficient-comparison}
   realises clause~(1) bidegree by bidegree; the all-bidegree statement
   is the counterterm twist of clause~(2).
@@ -2266,136 +2266,37 @@ exactly the assertion that the ordinary Weyl trace \(J_N(f)\) equals
   unconditional kernel-correction window.
 \end{rmk}
 
-\subsection*{Reproducibility protocol for finite Moyal/radial certificates}\label{ssec:app-radial-reproducibility-protocol}
+\subsection*{Computer verification}\label{ssec:app-radial-reproducibility-protocol}
 
 The componentwise quantum coefficient comparison
 (Theorem~\ref{thm:componentwise-quantum-coefficient-comparison}) and
 the per-bidegree radial obstruction
-(Proposition~\ref{prop:app-radial-dual-potential-obstruction}) are
-proved by exact rational linear algebra on a finite-dimensional
-bicomplex.  The protocol below makes the certificate auditable: at
-each bidegree \((a,b)\), the inputs, the matrix construction, the
-arithmetic, the verdict, and the on-disk artefact are pinned down
-explicitly.  The script
+(Proposition~\ref{prop:app-radial-dual-potential-obstruction}) reduce,
+at each bidegree \((a,b)\), to a membership test
+\(v_{a,b}\stackrel?\in\operatorname{im}B_{a,b}\) in a
+finite-dimensional \(\Q\)-module.  The Stokes boundary
+\(B_{a,b}\colon C^1_{a,b}\to C^0_{a,b}\) is built from the
+adjacent-swap relation
+\(\mathsf w\colon\overline{XY}\mapsto\overline{YX}-\overline{XY}\) and
+its cyclic pivots; the comparison vector \(v_{a,b}=(T_{a,b},E^+_{a,b})\)
+is the difference between the Weyl-normal and Moyal-normal lifts of
+\(\operatorname{Tr}(\phi_1^a\phi_2^b)\), truncated at the order
+required by \((a,b)\).  The script
 \texttt{scripts/quantum\_shear\_trace\_diagram\_normal\_form.py}
-implements every step in exact rational arithmetic; no floating-point
-arithmetic is used at any stage.
-
-\begin{enumerate}
-\item \emph{Ordered bases.}  At bidegree \((a,b)\) the chain spaces
-\(C^0_{a,b}\), \(C^1_{a,b}\), \(C^2_{a,b}\) are spanned, in
-lexicographic letter order, by the
-\emph{normal monomials} of \(\mathsf{Diag}_{a,b}\), the
-\emph{adjacent-swap generators} of \(\mathsf W_{a,b}\), and the
-\emph{decorated PBW/Stokes generators} of
-\(\mathsf{Stokes}_{a,b}\) respectively.  Concretely: \(C^0_{a,b}\)
-indexes diagrams on \(a\) letters \(X\) and \(b\) letters \(Y\) with
-all \(X\)-edges preceding all \(Y\)-edges; \(C^1_{a,b}\) indexes
-signed adjacent-swap relations
-\(\mathsf w_{i,j}\) for adjacent \(X,Y\) positions \((i,j)\);
-\(C^2_{a,b}\) indexes the kernel-correction generators of
-Definition~\ref{def:app-radial-diagonal-decorated} together with the
-nilpotent free-symbol generators \(R^{\mathrm{free}}_{a,b}\).  The
-ordering is fixed once and printed by \texttt{--print-bases}.
-
-\item \emph{Differentials and matrix construction.}  The
-matrix \(B_{a,b}\colon C^1_{a,b}\to C^0_{a,b}\) has entries
-\(\langle\mathsf{diag}_i,\mathsf w_j\rangle\in\Z\) read off from the
-adjacent-swap relations
-\(\mathsf w\colon\overline{XY}\mapsto\overline{YX}-\overline{XY}\)
-together with the cyclic-pivot identifications.  The matrix
-\(\partial_2\colon C^2_{a,b}\to C^1_{a,b}\) has entries given by the
-diagonal-to-Stokes incidence numbers.  The radial comparison vector
-\(v_{a,b}=(T_{a,b},E^+_{a,b})\in C^0_{a,b}\) is the difference between
-the Weyl-normal lift of \(\operatorname{Tr}(\phi_1^a\phi_2^b)\) and the
-Moyal-normal lift, computed from the formal star-product expansion
-\(f\star g=fg+\tfrac\hbar2 P(f,g)+\tfrac{\hbar^2}{8}P^2(f,g)+\cdots\)
-truncated at the order required by \((a,b)\).
-
-\item \emph{Exact rational row reduction.}  The script computes
-\(\operatorname{rk} B_{a,b}\) over \(\Q\) by Bareiss elimination,
-returning the rank, the row echelon form, the pivot list, and the
-elementary divisors.  All arithmetic is in \(\Q\) (or \(\Z[\hbar]\)
-where the obstruction has explicit \(\hbar\)-dependence); no
-floating-point or modular reduction is used.  The membership test
-\(v_{a,b}\stackrel?\in\operatorname{im}B_{a,b}\) is decided by exact
-back-substitution.
-
-\item \emph{Verdict.}  If
-\(v_{a,b}\in\operatorname{im}B_{a,b}\) the script outputs the unique
-correction \(C^+_{a,b}\) with
-\(B_{a,b}C^+_{a,b}=v_{a,b}\), printed in the column basis of
-\(\mathsf W_{a,b}\); the verdict is
-\(\Omega^{\mathrm{rad}}_{a,b}=0\) and the bidegree is closed.
-Otherwise the script outputs a covector
+performs Bareiss elimination over \(\Q\) and returns either the unique
+correction \(C^+_{a,b}\) with \(B_{a,b}C^+_{a,b}=v_{a,b}\) (verdict
+\(\Omega^{\mathrm{rad}}_{a,b}=0\)) or a covector
 \((\phi,-\lambda)\in\ker B^*_{a,b}\) with
-\(\lambda(E^+_{a,b})-\phi(T_{a,b})\ne0\), the witness
-representative of \(\Omega^{\mathrm{rad}}_{a,b}\in\operatorname{coker}B_{a,b}\)
-is printed, and the bidegree is recorded as obstructed.
+\(\lambda(E^+_{a,b})-\phi(T_{a,b})\ne0\) (witness of
+\(\Omega^{\mathrm{rad}}_{a,b}\in\operatorname{coker}B_{a,b}\)).  Every
+arithmetic step is exact rational; no floating-point step enters.
 
-\item \emph{Command-per-row.}  Each row of the certificate corresponds
-to a single invocation of the script with explicit arguments:
-\texttt{--case a,b} fixes the bidegree;
-\texttt{--kernel-correction} enables the decorated kernel target;
-\texttt{--balanced-family-max=N} sweeps the balanced diagonals
-\((k,k)\) with \(2k\le N\); \texttt{--edge-family-max=N} sweeps the
-edge strips \((k,1),(1,k)\) up to total degree \(N\);
-\texttt{--solve-classical} prints the pivot lift before kernel
-correction; \texttt{--print-matrix} dumps \(B_{a,b}\) and
-\(\partial_2\) in serialized form; \texttt{--print-bases} dumps the
-ordered bases of \(C^0_{a,b}\), \(C^1_{a,b}\), \(C^2_{a,b}\); and
-\texttt{--hash} returns a SHA-256 hash of the concatenation of the
-ordered bases, matrix entries, comparison vector, and verdict.
-
-\item \emph{Certificate artefact.}  Each invocation writes a single
-JSON record to \texttt{out/radial-certificates/(a,b).json} with
-fields \texttt{bidegree}, \texttt{basis\_C0}, \texttt{basis\_C1},
-\texttt{basis\_C2}, \texttt{matrix\_B}, \texttt{matrix\_d2},
-\texttt{comparison\_vector}, \texttt{rank}, \texttt{verdict}
-(\(\in\{\textsc{closed},\textsc{obstructed}\}\)),
-\texttt{correction} (when closed) or \texttt{cokernel\_witness}
-(when obstructed), \texttt{sha256}, and \texttt{script\_version}.
-The reproducibility certificate of the manuscript is the union of
-these JSON records for the bidegrees enumerated in
-Theorem~\ref{thm:componentwise-quantum-coefficient-comparison}.
-
-\item \emph{Reproducibility statement.}  The certificate is
-reproducible from any clean checkout: running \texttt{make
-radial-certificates} regenerates every JSON record; running
-\texttt{make verify-radial-certificates} recomputes each SHA-256
-hash and compares it to the recorded one.  No external data, no
-network calls, and no floating-point arithmetic enter the procedure;
-two independent clean checkouts on different machines must produce
-byte-identical JSON.  Reproduction failure indicates either a
-script-version mismatch or a tampered checkout, and is recorded as
-such.
-\end{enumerate}
-
-\begin{ex}[Reproducibility certificate at low bidegree]\label{ex:app-radial-reproducibility-certificate}
-  The invocation
-  \[
-    \texttt{python3 scripts/quantum\_shear\_trace\_diagram\_normal\_form.py
-            --case }a,b\texttt{ --kernel-correction}
-  \]
-  certifies \(\Omega^{\mathrm{rad}}_{a,b}=0\) at bidegree \((a,b)\) by
-  exact rational linear algebra.  Rows of \(B_{a,b}\) are indexed
-  normal diagrams on \(a\) letters \(X\) and \(b\) letters \(Y\) with
-  all \(X\)-edges preceding all \(Y\)-edges; columns are signed
-  adjacent-swap generators of \(\mathsf W_{a,b}\) followed by
-  normalized diagonal generators of \(\mathsf{Diag}_{a,b}\).
-
-  At \((a,b)=(2,2)\): rows \(=6\), cols \(=2\), rank \(=1\), classical
-  lift terms \(=1\), residual terms \(=0\).  The unique classical lift
-  lies in \(\operatorname{im} D^\square_{2,2}\), so
-  \(\Omega^{\mathrm{rad}}_{2,2}=0\) without correction.
-
-  At \((a,b)=(3,3)\): rows \(=16\), cols \(=6\), rank \(=3\), classical
-  lift terms \(=3\), residual terms \(=0\).
-  \(\Omega^{\mathrm{rad}}_{3,3}=0\) without correction.
-
-  At \((a,b)=(4,4)\): rows \(=49\), cols \(=20\), rank \(=10\),
-  classical lift terms \(=9\), residual terms \(=4\).  The cyclic
-  pivot residual is
+\begin{ex}[The first nonzero balanced cyclic-pivot residual]\label{ex:app-radial-reproducibility-certificate}
+  At \((a,b)=(2,2)\) and \((3,3)\) the classical lift already lies in
+  \(\operatorname{im} D^\square_{a,b}\), and
+  \(\Omega^{\mathrm{rad}}_{a,b}=0\) without correction.  The first
+  bidegree where the cyclic pivot produces a residual is \((4,4)\),
+  with residual
   \[
     \tfrac{43}{14}
       \Bigl(
@@ -2403,13 +2304,9 @@ such.
         -\overline{\operatorname{Tr}(XYXXYY)}
         -\overline{\operatorname{Tr}(XYYXYX)}
         +\overline{\operatorname{Tr}(XYYYXX)}
-      \Bigr),
+      \Bigr)
   \]
-  killed by a four-term correction in \(\ker\partial\).  The
-  \texttt{--solve-classical} mode prints the pivot lift before
-  correction; \texttt{--classical-only} confirms the uncorrected
-  residual.
-
+  killed by a four-term correction in \(\ker\partial\).
 \end{ex}
 
 \begin{rmk}[Scalar quotient and the \(U(1)\) anomaly]
