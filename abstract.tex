@@ -1,73 +1,95 @@
 \begin{abstract}
 
 \noindent
-Around any holomorphic-symplectic brane point of any Calabi--Yau
-threefold, the B-model topological string of
-Bershadsky--Cecotti--Ooguri--Vafa \cite{bcov}, in its renormalized BV
-form
-\cite{costello-renormalization,costello-li-quantum-bcov,costello-li-open-closed-bcov},
-reduces to a single universal local model: the
-holomorphic-topological BF theory on $X=\R^2_{t,s}\times\C^2_{z_1,z_2}$
-with BV fields
+At an admissible formal Darboux Hamiltonian sector around a
+holomorphic-symplectic brane point---the protected local datum that
+the B-model topological string of Bershadsky--Cecotti--Ooguri--Vafa
+\cite{bcov} produces in its renormalized BV form
+\cite{costello-renormalization,costello-li-quantum-bcov,costello-li-open-closed-bcov}---the
+formal local closed-open theory is the holomorphic-topological BF
+theory on $X=\R^2_{t,s}\times\C^2_{z_1,z_2}$ with BV connection
+$\mathcal A$ and cotangent partner $\mathcal B$,
 \[
-  (\mathcal A,\mathcal B)\in
-  \Omega^\bullet(\R^2)\widehat\otimes\Omega^{0,\bullet}(\C^2)
-   \widehat\otimes
-   \bigl(\mathfrak h\ltimes\mathfrak h^\vee_{\mathrm{cont}}[1]\bigr),
-   \qquad
-   \mathfrak h=\C[[z_1,z_2]]/\C,
+  \mathcal A\in\Omega^\bullet(\R^2)\widehat\otimes
+    \Omega^{0,\bullet}(\C^2)\widehat\otimes\mathfrak h,
+  \quad
+  \mathcal B\in\Omega^\bullet(\R^2)\widehat\otimes
+    \Omega^{0,\bullet}(\C^2)\widehat\otimes
+    \mathfrak h^\vee_{\mathrm{cont}}[1],
+   \quad
+   \mathfrak h=\C[[z_1,z_2]]/\C\cdot 1,
 \]
 and BF action
 \(S=\int_X\langle\mathcal B,(d+\bar\partial)\mathcal A
-+\tfrac12[\mathcal A,\mathcal A]\rangle\).  We work in the category of
-Tate $\C$-vector spaces; the residue pairing
-$\langle f,\omega\rangle=\Res_0\,f\omega$ realizes
++\tfrac12[\mathcal A,\mathcal A]_{\mathfrak h}\rangle\).  The residue pairing
+$\langle f,\omega\rangle=\operatorname{Res}_0\,f\omega$ realizes
 $\mathfrak h^\vee_{\mathrm{cont}}$ as the Grothendieck--Matlis
 principal-part module
-$\mathcal P=H^2_{\mathfrak m}(A)\otimes\omega_A$ --- the
-holomorphic-surface analog of the Beilinson--Drinfeld Heisenberg
-current.
+$\mathcal P=H^2_{\mathfrak m}(A)\otimes\omega_A$,
+$\omega_A=dz_1\wedge dz_2$ --- the holomorphic-surface analog of the
+Beilinson--Drinfeld Heisenberg current on the formal disk.
 
 \medskip\noindent
 A stack of $N$ Dirac branes is the boundary condition along
-$\R_t\subset X$ pinning $z_i\mapsto\phi_i\in\mathfrak{gl}_N$; the
-conjugation moment-map antifield $\psi\in\mathfrak{gl}_N[1]$ realizes
-$[\phi_1,\phi_2]=0$ as a derived zero fibre, the framed Hilbert
-scheme $\Hilb^N(\C^2)$ in its noncommutative Moyal deformation.  The
-universal local probe of bulk Hamiltonians is the gauge-invariant
-trace character
+$\R_t\subset X$ pinning a Chan--Paton matrix probe pair
+$(\phi_1,\phi_2)\in\mathfrak{gl}_N^2$ with substitution
+$z_i\mapsto\phi_i$.  The moment-map antifield
+$\psi\in\mathfrak{gl}_N[1]$, $Q\psi=[\phi_1,\phi_2]$, realizes the
+relations $[\phi_1,\phi_2]=0$ as a derived zero fibre; the substitution
+$\rho_\phi\colon A=\C[[z_1,z_2]]\to\End(\C^N)$ is therefore an algebra
+homomorphism modulo the Koszul ideal, and the open ghost-zero
+classical brane moduli is the derived commuting-pair stack
+$[\mu^{-1}_{\mathrm{der}}(0)/GL_N]$; its cyclic framed stable locus,
+after a framing vector $v\in\C^N$ with $\C[\phi_1,\phi_2]\cdot v=\C^N$,
+is the Hilbert scheme $\Hilb^N(\C^2)$, and the Moyal/Weyl deformation
+restricts to its noncommutative incarnation on this branch.  A
+Hamiltonian $f\in\mathfrak h=A/\C\cdot 1$ is measured on the brane as
+the gauge-invariant trace character of its representation,
 \[
-  J(f)=\overline{\operatorname{Tr}\,f(\phi_1,\phi_2)}.
+  J(f)(\rho_\phi)
+   =\overline{\operatorname{Tr}_V\,\rho_\phi(f)}
+   =\overline{\operatorname{Tr}\,f(\phi_1,\phi_2)} ,
 \]
-We prove $J$ is the unique $GL$-equivariant Tate-cyclic-trace
-functional $\mathfrak h\to\operatorname{HC}_0(\End\C^N)^{GL_N}$ that is
-Darboux-natural, block-additive on stacking, and linear-normalized
-$J(z_i)=\operatorname{Tr}\phi_i$.  The closed-to-open derived-centre
+a regular function on the derived stack; the value at a fixed
+representation factors through
+$\operatorname{HC}_0(\End\C^N)\cong\C$.  We prove $J$ is the unique
+linear $GL_N$-equivariant Darboux-natural primitive single-trace map
+$\mathfrak h\to\mathcal O\bigl(\mu^{-1}_{\mathrm{der}}(0)\bigr)^{GL_N}$
+satisfying scalar reduction, the Dirac descent, and linear
+normalization $J(z_i)=\overline{\operatorname{Tr}\phi_i}$.  The closed-to-open derived-centre
 map
-\(\Phi_N\colon\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}\to
+\(\Phi_N\colon\mathcal A^{\mathrm{cl}}_{\mathrm{bulk},0}\to
 Z^{\mathrm{der}}_{E_1}(A^{\mathrm{cl}}_{\partial,N})\)
 is Koszul duality between the bulk holomorphic $E_2$-algebra and the
 brane $E_1$-algebra in the Costello sense, with reduced-coordinate
-shadow $c_f\mapsto\theta_f$, $u_f\mapsto O_f=J(f)$.
+shadow on the CE generators of
+$\mathfrak g=\mathfrak h\ltimes\mathfrak h^\vee_{\mathrm{cont}}[1]$:
+$c_f\mapsto\theta_f$ (Hamiltonian Schouten field), $u_f\mapsto
+O_f=J(f)$ (boundary observable).
 
 \medskip\noindent
-Closed Hamiltonian reduction kills $\operatorname{Tr}\,1=N$; the brane
-records it as the trace-$U(1)$ centre-of-mass cocycle of $N$
-coincident D-branes on noncommutative $\C^2_\hbar$.  The same class
-$\hbar N[\bar c]\in H^2_{\mathrm{Lie}}(\bar A,\C)[[\hbar]]$ is detected
-as a Lie 2-cocycle, the unreduced bracket
-$\{\operatorname{Tr}\phi_1,\operatorname{Tr}\phi_2\}=N$, and the
-Moyal commutator
-$[\Phi_\hbar(z_1),\Phi_\hbar(z_2)]_\star=\hbar N$.  The strict
-scalar-reduced Hamiltonian action upgrades to a projective action on
-the Capelli central extension
-$0\to\C\to\mathfrak h_{\hbar,N}\to\bar A\to 0$.
+Closed Hamiltonian reduction quotients the constant Hamiltonian line
+$\C\cdot 1$, on which $\operatorname{Tr}\,1=N$; the brane retains it
+as the trace-$U(1)$ centre-of-mass cocycle of $N$ coincident D-branes
+on noncommutative $\C^2_\hbar$.  The class
+$\hbar N[\bar c]\in H^2_{\mathrm{Lie}}(\bar A,\C)[[\hbar]]$ has four
+equivalent realizations: the Lie 2-cocycle
+$\omega(f,g)=[\{f,g\}]_0$ on $\bar A$, the unreduced Poisson bracket
+$\{\operatorname{Tr}\phi_1,\operatorname{Tr}\phi_2\}=N$, the Moyal
+commutator
+$[\Phi_\hbar(z_1),\Phi_\hbar(z_2)]_\star=\hbar N\cdot I$ in
+$M_N(\C)$, and the trace-$U(1)$ central charge of the noncommutative
+D-brane stack on $\C^2_\hbar$.  The strict scalar-reduced Hamiltonian
+action upgrades to a projective action on the Capelli central
+extension $0\to\C\to\mathfrak h_{\hbar,N}\to\bar A\to 0$.
 
 \medskip\noindent
-The local model is formal: the filtered $L_\infty$ algebra
-$\mathfrak K_{\mathrm{loc}}$ controlling deformations of $\Phi_N$ has
-a minimal model whose only nonzero higher brackets are four named
-curvature classes:
+The four upgrade directions investigated here---all-bidegree
+Weyl/radial normal form, chain-level $P_0$-factorization-centre lift,
+reduced non-scalar Costello QME, and strict all-window
+Bochner--Martinelli current transfer---each carry a named curvature
+component in the filtered $L_\infty$ algebra $\mathfrak K_{\mathrm{loc}}$
+controlling deformations of $\Phi_N$:
 \begin{itemize}
   \item $\Omega^{\mathrm{rad}}_{a,b}\in\operatorname{coker}B_{a,b}$,
     the radial Weyl cokernel governing all-bidegree Weyl/trace
@@ -77,28 +99,35 @@ curvature classes:
     $P_0$-centre lift of $\Phi_N$;
   \item
     $[\operatorname{Ob}^{\mathrm{red}}_{w,\partial,\hbar}]\in
-     H^1\bigl(\mathcal O^{\mathrm{loc}}[[\hbar]],\,
-              Q+\hbar\Delta_L+\{S_\infty,-\}\bigr)$,
-    the reduced Costello QME class in local-functional cohomology,
-    with cubic finite window $\theta_3$ exhibiting the prototype
-    $H^1_{\mathrm{bare}}=\C\!\cdot\!E_{\theta_3}$ killed by the unique
-    counterterm $dC=-E$, $c=1$;
-  \item $\operatorname{Ob}^\Pi_{\mathrm{BM}}\in
-        \varprojlim^1_N\operatorname{HH}^\bullet(\mathcal P_{\le N})$,
-    the Bochner--Martinelli class, nonzero in every finite Matlis
-    window; the Hamiltonian factorization current acts coherently on
-    the derived pro-Matlis tower
-    $\widehat{\mathcal P}_\Pi=\mathbf{R}\!\varprojlim_N\mathcal P_{\le N}$.
+     H^1\bigl(\mathfrak Q^\bullet_{w,\partial,\hbar}(I),\,d_{\mathrm{QME}}\bigr)$,
+    the reduced Costello QME class in the filtered weighted
+    brane-defect local-functional complex
+    (Problem~\ref{prob:quantum-p0-operation-realization}), with
+    order-three CE-source row $\theta_3$ exhibiting the prototype
+    $H^1_{\mathrm{bare}}=\C\!\cdot\!\mathsf E_{\theta_3,M}$ killed by
+    the unique counterterm $d_M C_{\theta_3,M}=-\mathsf E_{\theta_3,M}$,
+    $c=1$, in any finite window $M\ni\theta_3$;
+  \item $\operatorname{Ob}^\Pi_{\mathrm{BM}}$, the
+    Bochner--Martinelli class, with non-vanishing per-window
+    representative in every finite Matlis window $\mathcal P_{\le N}$
+    (Theorem~\ref{thm:bmk-finite-window-no-go}); the Hamiltonian
+    factorization current acts coherently on the substituted target
+    $\widehat{\mathcal P}_\Pi=\varprojlim_N\mathcal P_{\le N}$
+    (Theorem~\ref{thm:promatlis-universal-property}).
 \end{itemize}
 
 \medskip\noindent
 The local matrix microscope is the holomorphic-2-dimensional analog
-of the Heisenberg chiral algebra of Beilinson--Drinfeld, the
-formal-symplectic local fixture of the Costello--Yagi
-twisted-M-theory family, and the universal local probe of
-$\Hilb^N(\C^2)$ in its noncommutative Moyal deformation.  It is the
-local model in which the BCOV holomorphic anomaly equations and the
-Gopakumar--Vafa / Donaldson--Thomas correspondences become tractable
-in a future global theorem.
+of the Heisenberg chiral algebra of Beilinson--Drinfeld, with
+$\mathcal P$ in the role of the Kac--Moody central pairing module
+$\Omega_K$ for a curve $K$ and $\mathfrak h$ in the role of regular
+functions; the formal-symplectic local fixture of the Costello
+twisted-M-theory family \cite{costello-twistedM}; and, on its cyclic framed stable branch, the
+universal local probe of $\Hilb^N(\C^2)$ in its noncommutative Moyal
+deformation.  Global compact-target lifts---BCOV holomorphic anomaly,
+Gopakumar--Vafa, Donaldson--Thomas---proceed by transporting the local
+Maurer--Cartan element $\Theta_{\mathrm{loc}}$ into the corresponding
+compact-target deformation complex; the obstruction calculus given
+above is the formal-Darboux input.
 
 \end{abstract}

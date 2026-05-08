@@ -2266,7 +2266,7 @@ exactly the assertion that the ordinary Weyl trace \(J_N(f)\) equals
   unconditional kernel-correction window.
 \end{rmk}
 
-\subsection*{Computer verification}\label{ssec:app-radial-reproducibility-protocol}
+\subsection*{Exact rational reduction}\label{ssec:app-radial-reproducibility-protocol}
 
 The componentwise quantum coefficient comparison
 (Theorem~\ref{thm:componentwise-quantum-coefficient-comparison}) and
@@ -2281,17 +2281,45 @@ adjacent-swap relation
 its cyclic pivots; the comparison vector \(v_{a,b}=(T_{a,b},E^+_{a,b})\)
 is the difference between the Weyl-normal and Moyal-normal lifts of
 \(\operatorname{Tr}(\phi_1^a\phi_2^b)\), truncated at the order
-required by \((a,b)\).  The script
-\texttt{scripts/quantum\_shear\_trace\_diagram\_normal\_form.py}
-performs Bareiss elimination over \(\Q\) and returns either the unique
-correction \(C^+_{a,b}\) with \(B_{a,b}C^+_{a,b}=v_{a,b}\) (verdict
+required by \((a,b)\).  Bareiss elimination over \(\Q\) returns either
+the unique correction \(C^+_{a,b}\) with
+\(B_{a,b}C^+_{a,b}=v_{a,b}\) (giving
 \(\Omega^{\mathrm{rad}}_{a,b}=0\)) or a covector
 \((\phi,-\lambda)\in\ker B^*_{a,b}\) with
-\(\lambda(E^+_{a,b})-\phi(T_{a,b})\ne0\) (witness of
+\(\lambda(E^+_{a,b})-\phi(T_{a,b})\ne0\) (representing
 \(\Omega^{\mathrm{rad}}_{a,b}\in\operatorname{coker}B_{a,b}\)).  Every
-arithmetic step is exact rational; no floating-point step enters.
+arithmetic step is exact rational.  The script
+\texttt{scripts/quantum\_shear\_trace\_diagram\_normal\_form.py}
+exposes the per-bidegree data: basis ordering of
+\(\beta_{a,b}\) on \(\mathsf W_{a,b}\oplus\mathsf S_{a,b}\), the
+matrix entries of \(B_{a,b}\), the comparison vector \(v_{a,b}\), the
+row-reduced echelon form, the rank \(\operatorname{rank}B_{a,b}\),
+\(\dim\ker B^*_{a,b}\), \(\dim\operatorname{coker}B_{a,b}\), and the
+correction \(C^+_{a,b}\) when membership holds.
 
-\begin{ex}[The first nonzero balanced cyclic-pivot residual]\label{ex:app-radial-reproducibility-certificate}
+\begin{rmk}[Verified range]\label{rmk:app-radial-quantum-shear-script-verified-range}
+  The exact rational reduction returns
+  \(v_{a,b}\in\operatorname{im}B_{a,b}\) for the following bidegrees:
+  the balanced diagonal through \((6,6)\); all non-edge bidegrees of
+  total degree at most \(13\); the total-degree-\(14\) cases
+  \((3,11),(11,3),(4,10),(10,4),(5,9),(9,5)\); and the
+  one-moving-letter edge strips
+  \(\mathfrak o_{2,b}=\mathfrak o_{a,2}=0\) of
+  Proposition~\ref{prop:app-edge-pbw-telescoping}.  The first
+  undecided total-degree-\(14\) systems are \((6,8),(8,6),(7,7)\).
+  Within the verified range the unique correction \(C^+_{a,b}\) is
+  output by the row reduction, and
+  \(\dim\operatorname{coker}B_{a,b}\) records the codimension of the
+  decorated PBW Stokes target inside its enveloping
+  \((\mathsf W_{a,b}\oplus\mathsf S_{a,b})\)-side.  Outside the
+  verified range the row reduction is the same algorithm and would
+  return either a correction or an obstruction covector; the
+  all-bidegree statement \(\Omega^{\mathrm{rad}}_{a,b}=0\) is the
+  obstruction problem of
+  Proposition~\ref{prop:app-radial-dual-potential-obstruction}.
+\end{rmk}
+
+\begin{ex}[The first nonzero balanced cyclic-pivot residual]\label{ex:app-radial-first-balanced-residual}
   At \((a,b)=(2,2)\) and \((3,3)\) the classical lift already lies in
   \(\operatorname{im} D^\square_{a,b}\), and
   \(\Omega^{\mathrm{rad}}_{a,b}=0\) without correction.  The first
@@ -2347,7 +2375,7 @@ arithmetic step is exact rational; no floating-point step enters.
   is reproducible bit-for-bit.
 \end{thm}
 
-\begin{cor}[Verdict table on the verified range]\label{cor:app-radial-verdict-table}
+\begin{cor}[Per-bidegree row-reduction table on the verified range]\label{cor:app-radial-verdict-table}
   For every bidegree \((a,b)\) listed in
   Remark~\ref{rmk:app-radial-quantum-shear-script-verified-range},
   the rational reduction of
