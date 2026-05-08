@@ -4,21 +4,28 @@
 \subsection*{Principle 1 (Matrix-Probe Measurement)}
 
 \emph{A stack of \(N\) Dirac branes on the topological line is a
-finite Chan--Paton microscope for the formal holomorphic-symplectic
-polydisk; its observables are the stable scalar-reduced traces
-\(J(f)=\overline{\operatorname{Tr}f(\phi_1,\phi_2)}\), which exhaust
-the gauge-invariant content of the probe pair.}
+finite Chan--Paton representation
+\(\rho_\phi\colon A=\C[[z_1,z_2]]\to\End(\C^N)\),
+\(z_i\mapsto\phi_i\), forced onto the commuting variety
+\([\phi_1,\phi_2]=0\) by the conjugation moment map; a Hamiltonian
+\(f\) on the formal symplectic normal polydisk is measured on the
+brane as the gauge-invariant trace character of its representation,
+\(J(f)=\overline{\operatorname{Tr}\,\rho_\phi(f)}=
+\overline{\operatorname{Tr}\,f(\phi_1,\phi_2)}\).}
 
-The substitution \(z_i\rightsquigarrow\phi_i\) of normal coordinates
-into a commuting pair of \(\mathfrak{gl}_N\)-valued matrices is the
-only datum.  The \(GL_N\)-symplectic potential
-\(\operatorname{Tr}(\phi_1\,d\phi_2)\), the moment map
-\(-\operatorname{Tr}(\epsilon[\phi_1,\phi_2])\), the Dirac constraint
-\([\phi_1,\phi_2]=0\), and the Koszul derived zero-fibre model
-\(Q\psi=[\phi_1,\phi_2]\) follow.  The closed Hamiltonian Lie algebra
-\(\bar A=\C[z_1,z_2]/\C\cdot1\) acts on the brane through nothing
-other than \(J\); cyclic invariance and adjacent-swap \(Q\)-exactness
-collapse every trace word to the symmetric symbol family
+The substitution \(z_i\rightsquigarrow\phi_i\) into a pair of
+\(\mathfrak{gl}_N\)-valued matrices is the only datum.  The
+\(GL_N\)-symplectic potential \(\operatorname{Tr}(\phi_1\,d\phi_2)\),
+the moment map \(-\operatorname{Tr}(\epsilon[\phi_1,\phi_2])\), the
+Dirac constraint \([\phi_1,\phi_2]=0\), and the Koszul derived
+zero-fibre model \(Q\psi=[\phi_1,\phi_2]\) follow.  The brane
+represents the commutative coordinate ring \(A\); the Hamiltonian
+Lie algebra \(\mathfrak h=A/\C\) does not act on the Chan--Paton
+space \(\C^N\) by commuting operators, but on the representation
+moduli \(\Rep_N(A)/\!/GL_N\) by Hamiltonian vector fields, and the
+closed-to-open measurement is the trace character above.  Cyclic
+invariance and adjacent-swap \(Q\)-exactness collapse every trace
+word to the symmetric symbol family
 \(\operatorname{Tr}(\phi_1^k\phi_2^l)=J(z_1^kz_2^l)\).  After formal
 Darboux normalization at any brane point of any connected
 holomorphic-symplectic surface, every admissible protected
@@ -131,10 +138,28 @@ identities; shifted-cotangent currents exhibit support and topological
 locality but \emph{not} formal-holomorphic locality, and the gap is
 precisely the cotangent centrality homotopy that no single identity
 supplies.  The unique factorization algebra compatible with the three
-identities has dg Lie input
-\(\Omega_c^\bullet(U)\widehat\otimes
-\Omega_c^{0,\bullet}(B)\widehat\otimes
-(\mathfrak h\ltimes\mathfrak h^\vee_{\mathrm{cont}}[1])\).
+identities is the closed mixed-HT current factorization algebra
+\(\mathcal F^{\mathrm{cl}}_{\mathrm{Ham}}(O)
+=C^{\mathrm{CE}}_\bullet\bigl(\Omega_c^\bullet(U)\widehat\otimes
+\Omega_c^{0,\bullet}(B)\widehat\otimes\mathfrak g\bigr)\) on
+\(O=U\times B\subset\R^2_{\mathrm{top}}\times\C^2_{\mathrm{hol}}\),
+\(\mathfrak g=\mathfrak h\ltimes\mathfrak h^\vee_{\mathrm{cont}}[1]\)
+(Theorem~\ref{thm:mixed-HT-factorization-theorem}).  Local
+constancy on a topological disk gives the bulk \(E_2\)-algebra
+\(\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}(B)
+=\mathcal F^{\mathrm{cl}}_{\mathrm{Ham}}(D^2\times B)\)
+(Corollary~\ref{cor:E2-bulk-algebra}); local constancy on the
+brane worldline gives the brane \(E_1\)-algebra
+\(A^{\mathrm{cl}}_{\partial,N}=
+C^\bullet_{\mathrm{CE}}(\mathfrak{gl}_N,\mathrm{Kosz}_N)\)
+(Definition~\ref{def:E1-brane-algebra}); the closed-to-open
+derived-centre map
+\(\Phi_N\colon\mathcal A^{\mathrm{cl}}_{\mathrm{bulk},0}\to
+Z^{\mathrm{der}}_{E_1}(A^{\mathrm{cl}}_{\partial,N})\) has
+reduced-coordinate shadow the CE/PV dictionary
+(Theorem~\ref{thm:closed-to-open-derived-centre-map}).  The native
+bulk object is a holomorphic factorization algebra on \(\C^2\)
+valued in \(E_2\)-algebras, not a curve vertex algebra.
 
 \subsection*{Principle 6 (Quantization is a Brane-Measurement Test)}
 

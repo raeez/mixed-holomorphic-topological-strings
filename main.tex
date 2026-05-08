@@ -89,228 +89,182 @@ and a Dirac Brane Probe on $\R^2_{\mathrm{top}}\times\C^2_{\mathrm{hol}}$}
   \section*{The matrix microscope}
   \addcontentsline{toc}{section}{The matrix microscope}
 
-  A stack of \(N\) Dirac branes on the topological line is a
-  finite-matrix microscope for the formal symplectic polydisk
-  \((\widehat{\C^2}_0,dz_1\wedge dz_2)\), and a closed Hamiltonian on
-  the polydisk is measured on the brane stack by literal substitution
-  into a matrix-valued transverse coordinate:
+  A stack of \(N\) Dirac branes on the topological line of
+  \(X=\R_t\times\R_s\times\C^2_{z_1,z_2}\) is a finite Chan--Paton
+  representation
   \[
-    z_1\rightsquigarrow\phi_1,\qquad z_2\rightsquigarrow\phi_2,\qquad
-    \mu(\epsilon)=-\operatorname{Tr}(\epsilon[\phi_1,\phi_2]),\qquad
+    \rho_\phi\colon A=\C[[z_1,z_2]]\longrightarrow\End(\C^N),
+    \qquad z_i\longmapsto\phi_i\in\mathfrak{gl}_N.
+  \]
+  The closed-string symplectic form pulls back to the brane phase
+  space \(\mathcal P_N=\mathfrak{gl}_N^{\oplus2}\) as
+  \[
+    \theta_N=\operatorname{Tr}(\phi_1\,d\phi_2),\qquad
+    \Omega_N=\operatorname{Tr}(d\phi_1\wedge d\phi_2);
+  \]
+  \(GL_N\)-conjugation acts symplectically with moment map
+  \[
+    \mu(\epsilon)=-\operatorname{Tr}\epsilon[\phi_1,\phi_2],
+  \]
+  so Dirac reduction imposes
+  \[
     [\phi_1,\phi_2]=0,
   \]
+  factoring \(\rho_\phi\) through the commuting variety.  A
+  Hamiltonian \(f\) on the formal symplectic normal polydisk
+  \((\widehat{\C^2}_0,dz_1\wedge dz_2)\) is measured on the brane as
+  the gauge-invariant trace character of its representation,
   \[
-    J(f)=\overline{\operatorname{Tr}f(\phi_1,\phi_2)},\qquad
-    f\in\C[[z_1,z_2]] .
+    J(f)=\overline{\operatorname{Tr}\,\rho_\phi(f)}
+        =\overline{\operatorname{Tr}\,f(\phi_1,\phi_2)}\in
+        A_\partial=\widehat{\mathbf S}_{\mathrm{Tate}}(\mathfrak h),
+        \qquad
+        \mathfrak h=A/\C\cdot1.
   \]
-  A brane is a finite-dimensional module over the Hamiltonian algebra.
-  The generators \(z_1,z_2\) act as the commuting Chan--Paton pair
-  \((\phi_1,\phi_2)\in\mathfrak{gl}_N^{\oplus 2}\), exhibiting the brane
-  as a noncommutative point of the formal symplectic disk.  A closed
-  Hamiltonian \(f\) is evaluated at that point in the only stable
-  \(GL_N\)-invariant, Dirac-constrained, Darboux-natural way available ---
-  by trace substitution
-  \(f\mapsto\overline{\operatorname{Tr}f(\phi_1,\phi_2)}\)
-  (Theorem~\ref{thm:formal-local-universal-property}).  The closed
-  Hamiltonian algebra acts on itself; the brane is where its values
-  are read.  The local geometry is
-  \(X=\R_t\times\R_s\times\C^2_{z_1,z_2}\) with brane line
-  \(L=\R_t\times\{s=z_1=z_2=0\}\); the measurement is \(J\).
-
-  \medskip
-  \noindent
-  The closed BV sector is the shifted cotangent extension
-  \(\mathfrak g=\mathfrak h\ltimes\mathfrak h^\vee_{\mathrm{cont}}[1]\)
-  with \(\mathfrak h=\C[[z_1,z_2]]/\C\cdot1\); the CE/PV cochain
-  dictionary \(c^I\!\mapsto\!\theta^I,\,u_I\!\mapsto\!O_I\) discriminates
-  the two roles a Hamiltonian plays --- \(c_f\) moves the closed sector
-  through the Schouten field \(\theta_f\), \(u_f\) is measured on the
-  brane as \(O_f=J(f)\) --- and the assignment \(c_f\!\mapsto\!O_f\) is
-  a type error.  The cotangent module is the Grothendieck--Matlis
-  principal-part bundle \(\mathcal P\), not a polynomial copy; the
-  RG-stable analytic completion is the weighted-Tate completion \(B_w\)
-  of Theorem~\ref{thm:wt-canonical-habitat}.  The named obstructions
-  appear as cohomology classes, kernels, and matrix equations: the
-  scalar anomaly \(\hbar N[\bar c]\); the radial cokernel
-  \(\Omega^{\mathrm{rad}}_{a,b}\); the four-component unreduced
-  cotangent-lift obstruction vector; the \(\theta_3\) finite-window
-  \(H^1\); the strict all-window Bochner--Martinelli no-go.
+  This is the brane microscope.
 
   \medskip\noindent
-  The open BV theory of the probe stack is the derived zero-fibre of
-  the \(GL_N\)-conjugation moment map.  Its ghost-zero invariant ring
-  is the commutative Procesi--Razmyslov trace ring of two commuting
-  matrices, computed by the Koszul derived zero-fibre model for the
-  moment-map equation \([\phi_1,\phi_2]=0\); the matrix entries of
-  \([\phi_1,\phi_2]\) are not a regular sequence for \(N\geq2\), so
-  this is the derived zero fibre, not a regularity assertion.  On the
-  closed-string subalgebra
-  \(\bar A=\C[z_1,z_2]/\C\cdot1\) of polynomial Hamiltonians modulo
-  constants this ring is the trace family \(J(f)\).  Stable connected
-  \(GL_N\)-invariants are traces of cyclic words in
-  \(\phi_1,\phi_2\); the moment-map constraint
-  \([\phi_1,\phi_2]=0\) collapses cyclic words to commutative
-  monomials; Darboux naturality kills any dependence on the chosen
-  symplectic coordinate presentation; agreement with the moment-map
-  action on \(z_1,z_2\) fixes the scalar-reduced extension; and only
-  literal substitution \(f\!\mapsto\!\overline{\operatorname{Tr}
-  f(\phi_1,\phi_2)}\) survives
-  (Lemma~\ref{lem:dirac-probe-reduction},
-  Proposition~\ref{prop:open-bv-truncation},
-  Theorem~\ref{thm:formal-local-universal-property}).
-
-  \medskip\noindent
-  Constants generate the zero Hamiltonian vector field, so the closed
-  symmetry algebra is \(\mathfrak h=\C[[z_1,z_2]]/\C\cdot1\); on the
-  unreduced brane phase space the same constants survive as the brane
-  centre-of-mass motion, and the unreduced Poisson bracket is
-  \(\{\operatorname{Tr}\phi_1,\operatorname{Tr}\phi_2\}=N\).  Reduction
-  on one side and survival on the other is a single distinguished
-  class
+  The brane represents the commutative coordinate ring \(A\); the
+  Hamiltonian Lie algebra \(\mathfrak h\) does not act on the
+  Chan--Paton space \(\C^N\) by commuting operators, but on the
+  representation moduli \(\Rep_N(A)/\!/GL_N\) by Hamiltonian vector
+  fields.  A Hamiltonian \(f\) carries two avatars: the
+  Hamiltonian-symmetry coordinate \(c_f\) acts as the Schouten field
+  \(\theta_f\) on functions on the moduli, while the
+  shifted-cotangent insertion \(u_f\) is measured on the brane as
+  \(O_f=J(f)\); the collapse \(c_f\mapsto O_f\) is a type error.
+  The closed BV sector is the shifted-cotangent Lie algebra
   \[
-    [\bar c]\in H^2_{\mathrm{Lie}}(\bar A,\C),
-    \qquad
-    \bar A=\C[z_1,z_2]/\C\cdot1.
+    \mathfrak g=\mathfrak h\ltimes\mathfrak h^\vee_{\mathrm{cont}}[1],
   \]
-  Moyal quantization \cite{kontsevich-dq} in the ordinary
-  scalar-reduced \(\mathfrak{gl}_N\) branch returns the same scalar as
-  the Capelli term \cite{capelli,howe-capelli}, namely
-  \(\hbar N[\bar c]\), and the first quantum example is the linear
-  brane commutator
-  \([\Phi_\hbar(z_1),\Phi_\hbar(z_2)]_\star=\hbar N\).  Four detections
-  of one cocycle --- algebraic central extension on the closed Taylor
-  ring, Lie central extension on \(\bar A\), trace-algebraic boundary
-  central extension on the unreduced phase space, and quantum Weyl
-  commutator at order \(\hbar\) --- are the four faces of the same
-  scalar-reduction step transgressed against the brane probe
-  (Theorems~\ref{thm:u1-center-anomaly},
-  \ref{thm:u1-center-anomaly-open},
-  \ref{thm:quantum-classical-anomaly},
-  \ref{thm:app-scalar-anomaly-transgression}).
-
-  \medskip\noindent
-  A Hamiltonian \(f\in\bar A\) has two avatars on the brane probe.  As
-  a generator of canonical transformations it is represented in the
-  closed BV algebra by the CE coordinate \(c_f\) and acts as the
-  Schouten vector field \(\theta_f\); as a closed cotangent insertion
-  it is represented by the shifted-cotangent coordinate \(u_f\) and is
-  measured on the brane as the boundary observable
-  \(O_f=J(f)\).  The closed BV algebra is the shifted cotangent Lie
-  algebra
-  \(\mathfrak g=\mathfrak h\ltimes\mathfrak h^\vee_{\mathrm{cont}}[1]\)
-  and the CE/PV cochain dictionary on generators is
+  and continuous duality on the formal-disk topology identifies
+  \(\mathfrak h^\vee_{\mathrm{cont}}\) with the Grothendieck--Matlis
+  principal-part module
   \[
-    c^I\longmapsto\theta^I,\qquad u_I\longmapsto O_I :
-  \]
-  the boundary observable is the image of \(u\), not of \(c\), and the
-  wrong assignment \(c_f\!\mapsto\!O_f\) collapses the operation
-  \(\theta_f\) into its measurement \(O_f\) and is a type error.  The
-  weighted-Tate completion \(B_w\) is minimal in the category of
-  \(w\)-weighted bracket-admissible RG-stable Tate completions
-  (Theorem~\ref{thm:wt-canonical-habitat}): the smallest filtered
-  subspace generated by \(\{O_f,\theta_f\}_{f\in\bar A}\) under Schouten
-  bracket and pointwise product in which the heat-kernel propagator
-  extends and the Casimir converges
-  (Theorem~\ref{thm:reduced-ce-pv-central-operation}). Canonicity is
-  relative to \(w\); the same construction at a cofinally equivalent
-  admissible weight gives a filtered-quasi-isomorphic target.
-
-  \medskip\noindent
-  A Taylor Hamiltonian is what the brane samples; a principal part is
-  the dual distributional momentum concentrated at the brane.  It is
-  not another polynomial mode, but a residue functional that detects a
-  Taylor coefficient.  The continuous dual of Taylor functions at the
-  brane point is therefore the Grothendieck--Matlis principal-part
-  module \cite{matlis-injective}
-  \[
-    \mathfrak h^\vee_{\mathrm{cont}}\cong\mathcal P
-     =\bigoplus_{a+b>0}\C\,\rho_{a,b},\qquad
+    \mathcal P=\bigoplus_{a+b>0}\C\rho_{a,b},\qquad
     \rho_{a,b}=z_1^{-a-1}z_2^{-b-1}\,dz_1dz_2,
   \]
-  paired with Taylor Hamiltonians by residue.  The polynomial PBW
-  classes \(\Psi_{a,b}\) carry the same labels \((a,b)\) and a
-  different \(\mathfrak h\)-module structure: the residue and PBW
-  shadows are not relabellings of each other, and the Moyal coadjoint
-  action acts on the residue side and does not lift to the polynomial
-  shadow
-  (Theorem~\ref{thm:principal-part-coadjoint-uniqueness},
-  Corollary~\ref{cor:descendant-coadjoint-difference},
-  Theorem~\ref{thm:app-defect-polarization}).
+  paired with Taylor Hamiltonians by residue.  Residues are defect
+  momenta conjugate to sampling, not polynomial PBW shadows.
 
   \medskip\noindent
-  A measurement at the brane line travels along three independent
-  axes --- the topological time \(t\) on the brane line, the
-  topological propagator direction \(s\) transverse to the brane, and
-  the holomorphic normal coordinates \(\bar z_i\) --- and the locality
-  of the factorization theory must record each axis with its own
-  homotopy.  Three differentials carry the load (with \((t,t')\) two
-  brane-time points and \(s\) reserved for the transverse direction):
+  Stable polynomial \(GL\)-invariance, Dirac descent, scalar
+  reduction, Darboux equivariance under the formal symplectomorphism
+  group, primitive block-sum additivity under brane stacking, and
+  linear normalization on \(z_1,z_2\) make the trace character
+  \(J\) the unique linear measurement
+  \(\widetilde J\colon\mathfrak h\to A_\partial\)
+  (Theorem~\ref{thm:Jf-coordinate-uniqueness}).  Procesi--Razmyslov
+  on cyclic words, adjacent-swap collapse on the moment-map
+  zero-fibre, and Loday--Quillen--Tsygan single-trace primitivity
+  fix the answer monomial-by-monomial
+  (Lemma~\ref{lem:no-natural-correction}).  Among admissible
+  protected Hamiltonian sectors at a holomorphic-symplectic brane
+  point, the matrix microscope is the terminal datum
+  (Theorem~\ref{thm:formal-local-universal-property}).  An odd matrix
+  antifield \(\psi\in\mathfrak{gl}_N[1]\) with BV differential
+  \(Q\phi_i=0,\ Q\psi=[\phi_1,\phi_2]\) realizes the moment-map ideal
+  as the Koszul derived zero fibre, and the matrix entries of
+  \([\phi_1,\phi_2]\) are not a regular sequence for \(N\ge2\): the
+  open sector is the derived zero fibre, not an ordinary smooth
+  quotient.
+
+  \medskip\noindent
+  The local-string-theoretic content of the model is exhausted by
+  three factorization objects.  The bulk
+  \(E_2\)-algebra
   \[
-    \delta(t-t'),\qquad
-    L_v=[Q,\iota_v]\quad(v\in T\R^2_{\mathrm{top}}),\qquad
-    L_{\partial/\partial\bar z_i}
-     =[Q,\iota_{\partial/\partial\bar z_i}],
+    \mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}(B)=
+    \mathcal F^{\mathrm{cl}}_{\mathrm{Ham}}(D^2\times B)
   \]
-  registering contact between two points on the brane line,
-  cohomological triviality of topological translations, and residue
-  support in the holomorphic normal direction.  None of the three implies the others, and none
-  of them by itself supplies the unreduced cotangent centrality
-  homotopies; together they force the factorization-current model on
-  the brane line, with the trace observables exhibiting all three and
-  the shifted-cotangent currents only the first two
-  (Proposition~\ref{prop:three-localities},
-  Theorem~\ref{thm:dict-kinematic-locality}).
+  is the value of the closed mixed-HT factorization algebra
+  \(\mathcal F^{\mathrm{cl}}_{\mathrm{Ham}}\in
+  \mathrm{Fact}_{\mathrm{HT}}(\R^2_{\mathrm{top}}\times\C^2_{\mathrm{hol}})\)
+  on a topological disk times a holomorphic polydisk
+  (Theorem~\ref{thm:mixed-HT-factorization-theorem},
+  Corollary~\ref{cor:E2-bulk-algebra}).  The brane
+  \(E_1\)-algebra
+  \[
+    A^{\mathrm{cl}}_{\partial,N}=
+    C^\bullet_{\mathrm{CE}}(\mathfrak{gl}_N,\mathrm{Kosz}_N)
+  \]
+  is the BRST algebra of the Dirac matrix model on a small interval
+  of the worldline (Definition~\ref{def:E1-brane-algebra}).  The
+  closed-to-open derived-centre map
+  \[
+    \Phi_N\colon\mathcal A^{\mathrm{cl}}_{\mathrm{bulk},0}
+    \longrightarrow Z^{\mathrm{der}}_{E_1}\!\bigl(A^{\mathrm{cl}}_{\partial,N}\bigr)
+  \]
+  has reduced-coordinate shadow
+  \(c_f\mapsto\theta_f,\ u_f\mapsto O_f=J(f)\)
+  (Theorem~\ref{thm:closed-to-open-derived-centre-map}).  The native
+  bulk object is a holomorphic factorization algebra on \(\C^2\)
+  valued in \(E_2\)-algebras, not a curve vertex algebra
+  (Remark~\ref{rmk:not-a-curve-voa}).
 
   \medskip\noindent
-  Moyal quantization tests whether Weyl ordering on the formal
-  symplectic polydisk and the brane trace measurement \(J\) commute.
-  The first quantum example is the linear scalar anomaly
-  \([\Phi_\hbar(z_1),\Phi_\hbar(z_2)]_\star=\hbar N\) of the
-  closed--open mismatch above:
-  Weyl quantization on the closed side and brane measurement on the
-  open side return the same scalar \(\hbar N\), so the comparison
-  closes at linear order in the ordinary scalar-reduced
-  \(\mathfrak{gl}_N\) branch
-  (Theorem~\ref{thm:quantum-classical-anomaly}).  At general bidegree
-  \((a,b)\) the obstruction to closing the comparison is a single
-  cohomology class
+  The centre of mass remembers the constant killed by Hamiltonian
+  reduction.  The unreduced linear bracket
+  \(\{\operatorname{Tr}\phi_1,\operatorname{Tr}\phi_2\}=N\) and the
+  Weyl/Moyal commutator
+  \([\Phi_\hbar(z_1),\Phi_\hbar(z_2)]_\star=\hbar N\) detect the
+  same Lie 2-cocycle
+  \(\hbar N[\bar c]\in H^2_{\mathrm{Lie}}(\bar A,\C)[[\hbar]]\) on
+  four faces -- algebraic central extension, Lie cocycle,
+  trace-algebraic boundary extension, and Weyl/Moyal commutator
+  (Theorem~\ref{thm:app-scalar-anomaly-transgression}); the strict
+  scalar-reduced Hamiltonian action is replaced by a projective
+  action on the central extension
+  \(0\to\C\to\mathfrak h_{\hbar,N}\to\bar A\to0\).
+
+  \medskip\noindent
+  Quantization, globalization, and chain-level upgrades are
+  transport problems for the local matrix-microscope Maurer--Cartan
+  datum into a filtered \(L_\infty\) target
+  \(\mathfrak K_{\mathcal T}\) controlling the proposed upgrade,
+  with master equation
+  \(F_{\mathcal T}(\Theta_{\mathrm{loc}}+\tau)=0\)
+  (Theorem~\ref{thm:obstruction-twist-dichotomy}).  Vanishing
+  curvature gives strict coherence; null-homotopy gives counterterm
+  coherence; central closed curvature gives projective or
+  gerbe-valued coherence; non-absorptive curvature forces target
+  replacement.  The named curvature classes are: the radial cokernel
   \(\Omega^{\mathrm{rad}}_{a,b}\in\operatorname{coker}B_{a,b}\)
-  (Proposition~\ref{prop:app-radial-dual-potential-obstruction}).  The
-  decorated-PBW Stokes script
-  Theorem~\ref{thm:componentwise-quantum-coefficient-comparison}
-  proves vanishing of \(\Omega^{\mathrm{rad}}_{a,b}\) on the
-  balanced diagonal through \((6,6)\), every non-edge bidegree of
-  total degree at most \(13\), and the total-degree-\(14\) bidegrees
-  \((3,11),(11,3),(4,10),(10,4),(5,9),(9,5)\), reproduced by the
-  decorated-PBW Stokes script in
-  \S\ref{ssec:tate-residual-resolution}.  Conditional on
-  Theorem~\ref{thm:app-radial-bicomplex-acyclic} the radial bicomplex
-  is interior-acyclic; unconditionally, every interior bidegree closes
-  through total degree~15 by stable Procesi--Razmyslov reduction.
+  governing all-bidegree Weyl/trace compatibility
+  (Theorem~\ref{thm:componentwise-quantum-coefficient-comparison};
+  Theorem~\ref{thm:app-radial-bidegree-rational-reduction}); the
+  unreduced factorization-centre vector
+  \(\operatorname{Ob}_{\mathrm{cent/QME/desc}}\) governing the
+  chain-level lift of \(\Phi_N\) to a strict \(P_0\)-centre map
+  (Theorem~\ref{thm:app-unreduced-cotangent-lift-obstruction}); the
+  reduced Costello QME class
+  \([\operatorname{Ob}^{\mathrm{red}}_{w,\partial,\hbar}]\) of which
+  the cubic row \(\theta_3\) is the prototype counterterm twist
+  (\(H^1_{\mathrm{bare}}=\C\!\cdot\!E_{\theta_3}\), killed by the
+  unique counterterm \(dC=-E,\,c=1\),
+  Theorem~\ref{thm:app-theta-three-finite-window-H1}); and the
+  strict Bochner--Martinelli current-transfer class
+  \(\operatorname{Ob}^{\Pi}_{\mathrm{BM}}\), non-absorptive in every
+  finite Matlis window and selecting the pro-Matlis tower as the
+  coherent target replacement
+  (Theorems~\ref{thm:bmk-finite-window-no-go},
+  \ref{thm:promatlis-universal-property}).
 
   \medskip\noindent
-  The unreduced \(P_0\)-factorization-centre lift exists exactly when
-  the four-component obstruction vector
-  \((\mathrm{ob}^{\mathrm{prod}}_{\mathrm{cent}},
-  \mathrm{ob}^{P_0}_{\mathrm{cent}},
-  \mathrm{ob}^{\mathrm{bd}}_{\mathrm{QME}},
-  \delta^{\mathrm{Weiss}}_{\check C/R})\) vanishes
-  (Theorem~\ref{thm:app-unreduced-cotangent-lift-obstruction},
-  Problem~\ref{prob:formal-factorization-center}).  The smallest
-  non-scalar Costello quantum master equation window
-  \(\theta_3\) carries the bare verdict
-  \(H^1=\C\!\cdot\!E_{\theta_3}\ne0\) and the supplied-counterterm
-  verdict \(H^1=0\) under the unique counterterm \(dC=-E\), \(c=1\)
-  (Theorem~\ref{thm:app-theta-three-finite-window-H1}).  The strict
-  all-window Bochner--Martinelli current transfer fails for
-  every \(N\) by the residue-coadjoint computation
-  \(z_1^{N+2}\!\cdot\!\rho_{N+1,0}=-(N+2)\rho_{0,1}\) and the
-  projected Jacobiator \((N+1)(N+2)\rho_{0,1}\ne0\)
-  (Theorem~\ref{thm:bmk-finite-window-no-go}).  The all-bidegree
-  decorated PBW Stokes identity is the family of cokernel classes
-  \(\Omega^{\mathrm{rad}}_{a,b}\), realised as the radial-parts
-  bicomplex
-  (Problem~\ref{prob:quantum-p0-operation-realization}).
+  The local theorem is the formal-Darboux brane-probe restriction of
+  the derived chiral centre \(Z^{\mathrm{der}}_{\mathrm{ch}}(A)\) of
+  the companion programme: Vol~I builds
+  \(Z^{\mathrm{der}}_{\mathrm{ch}}(A)\) by ordered bar-cobar duality
+  and modular Maurer--Cartan calculus; Vol~II identifies the pair
+  \((Z^{\mathrm{der}}_{\mathrm{ch}}(A),A)\) as the bulk-boundary
+  datum of a 3d holomorphic--topological boundary-bulk system;
+  Vol~III supplies the Calabi--Yau categorical source through the
+  two-stage functor
+  \(\Phi_d=\mathrm{Sp}_{\Sigma_{d-1},C}\circ\Phi^{\mathrm{FA}}_d\),
+  \(A=\Phi_d(\mathcal C)\); the present paper computes the last
+  arrow.  Cross-volume use passes through the matched-conventions
+  obstruction \(\operatorname{Ob}_{\mathrm{UKD}}\) of
+  Theorem~\ref{thm:matched-conventions-transfer}.
 
   \tableofcontents
   \mbox{}
@@ -336,51 +290,74 @@ voids the bulk-to-boundary propagator; omission of
 relaxation of the formal completion admits global geometry into the
 brane stalk.
 
-\(N\) Dirac branes on
+A stack of \(N\) Dirac branes on
 \(L=\R_t\times\{s=z_1=z_2=0\}\subset X=\R_t\times\R_s\times\C^2\)
-carry a Chan--Paton normal coordinate
-\((\phi_1,\phi_2)\in\mathfrak{gl}_N^{\oplus2}\).  The holomorphic
-symplectic form \(dz_1\wedge dz_2\) pulls back along
-\(z_i\rightsquigarrow\phi_i\) and traces to
+is a finite Chan--Paton representation
+\[
+  \rho_\phi\colon A=\C[[z_1,z_2]]\longrightarrow\End(\C^N),
+  \qquad z_i\longmapsto\phi_i\in\mathfrak{gl}_N.
+\]
+The holomorphic symplectic form \(dz_1\wedge dz_2\) pulls back along
+this substitution and traces to
 \[
   \theta_N=\operatorname{Tr}(\phi_1\,d\phi_2),\qquad
-  \Omega_N=\operatorname{Tr}(d\phi_1\wedge d\phi_2).
+  \Omega_N=\operatorname{Tr}(d\phi_1\wedge d\phi_2),
 \]
-\(GL_N\)-conjugation acts symplectically with moment map
-\(\mu(\epsilon)=-\operatorname{Tr}(\epsilon[\phi_1,\phi_2])\), so the
-Dirac first-class constraint is \([\phi_1,\phi_2]=0\): the simultaneous
-spectrum of \((\phi_1,\phi_2)\) is the configuration of \(N\) points
-in the polydisk.  Substitution into a closed Hamiltonian followed by
-trace and stable scalar reduction is the brane measurement
+and \(GL_N\)-conjugation acts symplectically with moment map
+\(\mu(\epsilon)=-\operatorname{Tr}\epsilon[\phi_1,\phi_2]\), so Dirac
+reduction imposes the first-class constraint
+\([\phi_1,\phi_2]=0\): \(\rho_\phi\) factors through the commuting
+variety, and the simultaneous spectrum of \((\phi_1,\phi_2)\) is the
+configuration of \(N\) points in the polydisk.  A Hamiltonian
+\(f\in A\) is measured on the brane as the gauge-invariant trace
+character of its representation,
 \[
-  z_i\rightsquigarrow\phi_i,\qquad
-  J(f)=\overline{\operatorname{Tr}f(\phi_1,\phi_2)}\in
-    \widehat{\mathbf S}(\bar A),\qquad
-  \bar A=\C[z_1,z_2]/\C\cdot1,
+  J(f)=\overline{\operatorname{Tr}\,\rho_\phi(f)}
+       =\overline{\operatorname{Tr}\,f(\phi_1,\phi_2)}
+       \in A_\partial=\widehat{\mathbf S}_{\mathrm{Tate}}(\mathfrak h),
+       \qquad
+       \mathfrak h=A/\C\cdot 1.
 \]
-into the completed symmetric algebra \(\widehat{\mathbf S}(\bar A)\)
-on the polynomial Hamiltonian subalgebra \(\bar A\).  An odd matrix
-antifield \(\psi\in\mathfrak{gl}_N[1]\) and BV differential \(Q\) with
-\(Q\phi_i=0\), \(Q\psi=[\phi_1,\phi_2]\) realize the moment-map ideal
-as the Koszul derived zero fibre
-(\S\ref{ssec:open-mixed-bft}).  The closed shifted-cotangent extension
+The brane represents the commutative coordinate ring \(A\); the
+Hamiltonian Lie algebra \(\mathfrak h\) does not act on the
+Chan--Paton space \(\C^N\) by commuting operators, but on the
+representation moduli \(\Rep_N(A)/\!/GL_N\) by Hamiltonian vector
+fields.
+
+An odd matrix antifield \(\psi\in\mathfrak{gl}_N[1]\) and BV
+differential \(Q\) with \(Q\phi_i=0,\ Q\psi=[\phi_1,\phi_2]\) realize
+the moment-map ideal as the Koszul derived zero fibre, and the
+matrix entries of \([\phi_1,\phi_2]\) are not a regular sequence for
+\(N\ge2\): the open sector is the derived zero fibre, not an
+ordinary smooth quotient
+(\S\ref{ssec:open-mixed-bft}).  The closed BV sector takes its
+fields in the shifted-cotangent extension
 \[
-  \mathfrak g=\mathfrak h\ltimes\mathfrak h^\vee_{\mathrm{cont}}[1],
-  \qquad
-  \mathfrak h=\C[[z_1,z_2]]/\C\cdot 1,
+  \mathfrak g=\mathfrak h\ltimes\mathfrak h^\vee_{\mathrm{cont}}[1].
 \]
-supplies the canonical closed sector
-(\S\ref{ssec:closed-mixed-hamiltonian}).  A Hamiltonian
-\(f\in\mathfrak h\) carries two Chevalley--Eilenberg coordinates on
-\(\mathfrak g\): the generator-dual \(c_f\) producing the Hamiltonian
-Schouten vector field \(\theta_f\), and the cotangent-dual \(u_f\)
-producing the boundary observable \(O_f=J(f)\); the CE/PV cochain
+A Hamiltonian \(f\in\mathfrak h\) carries two Chevalley--Eilenberg
+coordinates on \(\mathfrak g\): the generator-dual \(c_f\) acting as
+the Hamiltonian Schouten vector field \(\theta_f\) on the
+representation moduli, and the cotangent-dual \(u_f\) measured on the
+brane as the boundary observable \(O_f=J(f)\); the CE/PV cochain
 dictionary on generators is
-\(c_f\mapsto\theta_f,\;u_f\mapsto O_f\)
-(Theorem~\ref{thm:reduced-ce-pv-central-operation}).  The continuous
-dual is the Grothendieck--Matlis principal-part module
-\(\mathfrak h^\vee_{\mathrm{cont}}\cong\mathcal P\)
-(Theorem~\ref{thm:principal-part-coadjoint-uniqueness}).
+\[
+  c_f\longmapsto\theta_f,\qquad u_f\longmapsto O_f
+\]
+(Theorem~\ref{thm:reduced-ce-pv-central-operation}); the assignment
+\(c_f\mapsto O_f\) collapses an operation into its measurement and
+is a type error.  Continuous duality on the formal-disk topology
+identifies the cotangent module with the Grothendieck--Matlis
+principal-part module
+\[
+  \mathfrak h^\vee_{\mathrm{cont}}\cong\mathcal P
+   =\bigoplus_{a+b>0}\C\rho_{a,b},
+   \qquad
+   \rho_{a,b}=z_1^{-a-1}z_2^{-b-1}\,dz_1dz_2,
+\]
+paired with Taylor Hamiltonians by residue
+(Theorem~\ref{thm:principal-part-coadjoint-uniqueness}); residues are
+defect momenta conjugate to sampling, not polynomial PBW shadows.
 
 \begin{ex}[Classical point probe, \(N=1\)]\label{exa:point-probe-N1}
   For \(N=1\) the matrices commute automatically, and
@@ -2284,6 +2261,211 @@ formal-local claim.
   Theorem~\ref{thm:dict-kinematic-locality}.
 \end{proof}
 
+\subsubsection{The mixed HT factorization spine: \texorpdfstring{\(E_2\)}{E2} bulk, \texorpdfstring{\(E_1\)}{E1} brane, derived-centre map}\label{sssec:mixed-ht-factorization-spine}
+
+The local-string-theoretic content of the model is exhausted by three
+factorization objects and the morphism between them.  All three are
+constructed from the same dg Lie input
+\(\mathfrak g=\mathfrak h\ltimes\mathfrak h^\vee_{\mathrm{cont}}[1]\)
+of \S\ref{ssec:hamiltonian-bf-algebra} together with the Dirac
+brane-stack data
+\(\mathrm{Kosz}_N=\bigl(\C[\mathfrak{gl}_N^{\oplus 2}]\otimes
+ \Lambda^\bullet\mathfrak{gl}_N[1],\,Q\psi=[\phi_1,\phi_2]\bigr)\)
+of Construction~\ref{constr:reduced-bv-algebra}.
+
+\begin{defn}[Closed mixed-HT current factorization algebra]\label{def:closed-mixed-HT-factorization}
+  For a product open
+  \(O=U\times B\subset\R^2_{\mathrm{top}}\times\C^2_{\mathrm{hol}}\),
+  the compactly supported local dg Lie algebra is
+  \[
+    \mathcal L_{\mathrm{Ham},c}(O)
+     =\Omega^\bullet_c(U)\widehat\otimes
+       \Omega^{0,\bullet}_c(B)\widehat\otimes\mathfrak g,
+  \]
+  with differential \(D=d_{\R^2}+\bar\partial_{\C^2}+d_{\mathfrak g}\)
+  and bracket
+  \([\alpha\otimes x,\beta\otimes y]=
+    (\alpha\wedge\beta)\otimes[x,y]_{\mathfrak g}\).  The closed
+  classical mixed-HT factorization algebra is its CE chain complex,
+  \[
+    \mathcal F^{\mathrm{cl}}_{\mathrm{Ham}}(O)
+      =C^{\mathrm{CE}}_\bullet\bigl(\mathcal L_{\mathrm{Ham},c}(O)\bigr),
+  \]
+  with factorization product induced by extension by zero
+  \(\bigoplus_i\mathcal L_{\mathrm{Ham},c}(O_i)\to
+   \mathcal L_{\mathrm{Ham},c}(O)\) for disjoint \(O_i\subset O\).
+\end{defn}
+
+\begin{thm}[Mixed-HT factorization theorem]\label{thm:mixed-HT-factorization-theorem}
+  The assignment \(O\mapsto \mathcal F^{\mathrm{cl}}_{\mathrm{Ham}}(O)\)
+  is a prefactorization algebra on
+  \(\R^2_{\mathrm{top}}\times\C^2_{\mathrm{hol}}\) satisfying:
+  \begin{enumerate}
+    \item (\emph{Topological locality.}) For every \(v\in T\R^2\),
+      \(L_v=[D,\iota_v]\) on \(\mathcal F^{\mathrm{cl}}_{\mathrm{Ham}}\);
+      hence the assignment \(U\mapsto\mathcal F^{\mathrm{cl}}_{\mathrm{Ham}}(U\times V)\)
+      is locally constant in the topological directions for every
+      fixed holomorphic open \(V\).
+    \item (\emph{Holomorphic locality.})
+      \(L_{\partial/\partial\bar z_i}=[D,\iota_{\partial/\partial\bar z_i}]\)
+      on \(\mathcal F^{\mathrm{cl}}_{\mathrm{Ham}}\); hence the assignment
+      \(V\mapsto\mathcal F^{\mathrm{cl}}_{\mathrm{Ham}}(U\times V)\) is a
+      holomorphic factorization algebra on \(\C^2\) via Dolbeault
+      descent.
+    \item (\emph{Factorization product.}) For pairwise disjoint
+      \(O_1,\ldots,O_k\subset O\),
+      \(\bigotimes_i\mathcal F^{\mathrm{cl}}_{\mathrm{Ham}}(O_i)
+      \to\mathcal F^{\mathrm{cl}}_{\mathrm{Ham}}(O)\) is a chain map and
+      Weiss-cosheaf descent over hypercovers holds.
+  \end{enumerate}
+  Equivalently,
+  \(\mathcal F^{\mathrm{cl}}_{\mathrm{Ham}}\in
+  \mathrm{Fact}_{\mathrm{HT}}(\R^2_{\mathrm{top}}\times\C^2_{\mathrm{hol}})\)
+  in the sense of
+  Definition~\ref{def:local-th-string}.
+\end{thm}
+
+\begin{proof}
+  \emph{Topological locality.}  Cartan's homotopy
+  \([d_{\R^2},\iota_v]=L_v\) on \(\Omega^\bullet_c(U)\) lifts to
+  \([D,\iota_v]=L_v\) on
+  \(\mathcal L_{\mathrm{Ham},c}(O)\), since \(\iota_v\) commutes with
+  \(\bar\partial_{\C^2}\) and \(d_{\mathfrak g}\).  The CE functor
+  carries this homotopy to
+  \(\mathcal F^{\mathrm{cl}}_{\mathrm{Ham}}\).
+  \emph{Holomorphic locality.}  Identical argument with \(\iota_v\)
+  replaced by \(\iota_{\partial/\partial\bar z_i}\) and \(d_{\R^2}\) by
+  \(\bar\partial_{\C^2}\).  \emph{Factorization product.}
+  Extension-by-zero
+  \(\Omega^\bullet_c(O_i)\hookrightarrow\Omega^\bullet_c(O)\) on each
+  factor of \(\mathcal L_{\mathrm{Ham},c}\) is a dg Lie injection for
+  disjoint supports; CE chains of a coproduct of dg Lie algebras is the
+  tensor product of CE chains, giving the factorization product.  The
+  Weiss-cosheaf condition is the standard de Rham/Dolbeault descent for
+  compactly supported forms.
+\end{proof}
+
+\begin{cor}[$E_2$-bulk algebra]\label{cor:E2-bulk-algebra}
+  Fix a holomorphic polydisk \(B\subset\C^2\) and a topological disk
+  \(D^2\subset\R^2\). The bulk classical algebra
+  \[
+    \mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}(B)
+      =\mathcal F^{\mathrm{cl}}_{\mathrm{Ham}}(D^2\times B)
+  \]
+  is naturally an \(E_2\)-algebra; the assignment
+  \(B\mapsto\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}(B)\) is a holomorphic
+  factorization algebra on \(\C^2\) valued in \(E_2\)-algebras.
+\end{cor}
+
+\begin{proof}
+  Theorem~\ref{thm:mixed-HT-factorization-theorem}~(1) says that
+  \(U\mapsto\mathcal F^{\mathrm{cl}}_{\mathrm{Ham}}(U\times B)\) is a
+  locally constant factorization algebra on \(\R^2\); the value on a
+  topological disk is therefore an \(E_2\)-algebra by the
+  Lurie--Costello--Gwilliam classification of locally constant
+  factorization algebras on \(\R^n\).  Holomorphic factorization in
+  \(B\) is item~(2) of the same theorem.
+\end{proof}
+
+\begin{defn}[$E_1$-brane algebra]\label{def:E1-brane-algebra}
+  Let \(\mathrm{Kosz}_N\) be the Dirac BV complex of
+  Construction~\ref{constr:reduced-bv-algebra}.  The classical brane
+  factorization algebra on \(L=\R_t\) assigns to an interval
+  \(I\subset\R_t\) the CE complex
+  \[
+    \mathrm{Obs}^{\mathrm{cl}}_{\partial,N}(I)
+      =C^\bullet_{\mathrm{CE},\mathrm{cont}}\bigl(
+       \Omega^\bullet_c(I)\otimes\mathfrak{gl}_N,\,
+       \Omega^\bullet_c(I)\otimes\mathrm{Kosz}_N\bigr),
+  \]
+  with factorization product extension by zero on
+  \(\Omega^\bullet_c\) and multiplication of \(\mathrm{Kosz}_N\)-valued
+  cochains.  Local constancy on \(\R_t\) makes the value on a small
+  interval an \(E_1\)-algebra:
+  \[
+    A^{\mathrm{cl}}_{\partial,N}
+      =C^\bullet_{\mathrm{CE}}\bigl(\mathfrak{gl}_N,\,\mathrm{Kosz}_N\bigr)
+      \in\mathrm{Alg}_{E_1}.
+  \]
+  Its ghost-zero \(Q\)-cohomology is the stable trace ring of
+  Theorem~\ref{thm:Jf-coordinate-uniqueness}:
+  \(H^0(A^{\mathrm{cl}}_{\partial,N})\simeq
+   H^0(\mathcal O(\mu^{-1}_{\mathrm{der}}(0))^{GL_N},Q)\).
+\end{defn}
+
+\begin{thm}[Closed-to-open derived-centre map and CE/PV reduction]\label{thm:closed-to-open-derived-centre-map}
+  There is a closed-to-open chain map
+  \[
+    \Phi_N\colon\mathcal A^{\mathrm{cl}}_{\mathrm{bulk},0}
+     \longrightarrow Z^{\mathrm{der}}_{E_1}\!\bigl(A^{\mathrm{cl}}_{\partial,N}\bigr),
+    \qquad
+    Z^{\mathrm{der}}_{E_1}(A^{\mathrm{cl}}_{\partial,N})
+     \simeq HH^\bullet(A^{\mathrm{cl}}_{\partial,N},
+                       A^{\mathrm{cl}}_{\partial,N}),
+  \]
+  whose reduced-coordinate shadow on Hamiltonian generators is the
+  CE/PV dictionary
+  \[
+    c_f\longmapsto\theta_f,\qquad
+    u_f\longmapsto O_f=J(f)=\overline{\operatorname{Tr}\,f(\phi_1,\phi_2)}
+    \qquad(f\in\mathfrak h),
+  \]
+  matching the cochain identity of
+  Theorem~\ref{thm:reduced-ce-pv-central-operation} on
+  \(c^{a,b},u_{a,b}\).  The full chain-level lift to the strict
+  factorization-centre morphism
+  \(\Phi^{\mathrm{cl}}\colon\mathrm{Obs}^{\mathrm{cl}}_{\mathrm{closed},H}|_L
+   \to Z^{P_0}_{\mathrm{fact}}(\mathrm{Obs}^{\mathrm{cl}}_{\mathrm{open},N})\)
+  is governed by the four-component obstruction vector
+  \(\operatorname{Ob}_{\mathrm{cent/QME/desc}}\) of
+  Theorem~\ref{thm:app-unreduced-cotangent-lift-obstruction}.
+  The hierarchy is
+  \[
+    \underbrace{\bigl(c_f\mapsto\theta_f,\,u_f\mapsto O_f\bigr)}_{\text{reduced CE/PV coordinate map}}
+    \;\subset\;
+    \underbrace{\Phi_N\colon\mathcal A^{\mathrm{cl}}_{\mathrm{bulk},0}
+     \to Z^{\mathrm{der}}_{E_1}(A^{\mathrm{cl}}_{\partial,N})}_{\text{derived }E_1\text{-centre map}}
+    \;\subset\;
+    \underbrace{\Phi^{\mathrm{cl}}\colon\mathrm{Obs}^{\mathrm{cl}}_{\mathrm{closed},H}\to Z^{P_0}_{\mathrm{fact}}(\mathrm{Obs}^{\mathrm{cl}}_{\mathrm{open},N})}_{\text{full chain-level }P_0\text{-centre map}}
+  \]
+  with the rightmost inclusion conditional on
+  \(\operatorname{Ob}_{\mathrm{cent/QME/desc}}=0\) (with compatible
+  null-homotopies).
+\end{thm}
+
+\begin{proof}
+  Existence of \(\Phi_N\) at the derived-\(E_1\)-centre level follows
+  from \(\mathcal A^{\mathrm{cl}}_{\mathrm{bulk},0}\) being an
+  \(E_2\)-algebra (Corollary~\ref{cor:E2-bulk-algebra}) acting on the
+  \(E_1\)-algebra \(A^{\mathrm{cl}}_{\partial,N}\) through the universal
+  bulk-to-boundary map of the Lurie--Francis classification of pairs
+  \((E_2,E_1)\) with central action.  The reduced-coordinate shadow is
+  the matrix-microscope shadow of the BV pairing on
+  \(\mathfrak g\)-cochains read on monomial generators
+  \(c^{a,b},u_{a,b}\) of
+  Corollary~\ref{cor:ce-pv-formal-disk}; uniqueness of the boundary
+  values \(u_f\mapsto J(f)\) is
+  Theorem~\ref{thm:Jf-coordinate-uniqueness}.  The chain-level
+  \(P_0\)-factorization-centre upgrade requires the obstruction-vanishing
+  data of Theorem~\ref{thm:app-unreduced-cotangent-lift-obstruction};
+  this is a strictly stronger statement than the derived-\(E_1\)-centre
+  map, and the difference is the curvature class
+  \(\operatorname{Ob}_{\mathrm{cent/QME/desc}}\) in the master
+  deformation complex.
+\end{proof}
+
+\begin{rmk}[The native object is not a curve VOA]\label{rmk:not-a-curve-voa}
+  The native bulk object is the holomorphic factorization algebra
+  \(B\mapsto\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}(B)\) on
+  \(\C^2_{\mathrm{hol}}\) valued in \(E_2\)-algebras, not a curve
+  vertex/OPE algebra.  A one-dimensional vertex algebra arises only
+  after a separate restriction datum: a holomorphic curve
+  \(C\hookrightarrow\C^2\) with transverse boundary condition or
+  factorization-homology pushforward, which singles out a
+  one-complex-dimensional holomorphic factorization shadow on which
+  Zhu/finite-Laurent OPE applies.
+\end{rmk}
+
 \begin{prop}[Bochner--Martinelli current data and finite-window obstruction for $E_2$ transfer]\label{prop:finite-window-bm-native-e2-transfer}
   Let
   \(B_0\Subset B_1\Subset B_2\Subset B\subset\C^2\) be nested polydisks
@@ -3909,13 +4091,20 @@ skyscraper sheaf \(\mc O_p\). The mixed brane is therefore
 \]
 the unique mixed brane on which the matrix microscope is unobstructed.
 
-A brane is a finite-dimensional module over the Hamiltonian algebra. The
-generators \(z_1,z_2\) act as the commuting Chan--Paton pair
-\((\phi_1,\phi_2)\in\mathfrak{gl}_N^{\oplus 2}\), exhibiting the brane as
-a noncommutative point of the formal symplectic disk. A bulk Hamiltonian
-\(f\in\widehat{\mathfrak h}=\C[[z_1,z_2]]/\C\cdot1\) is read at that
-point by the unique stable \(GL_N\)-invariant Darboux-natural evaluation
-map
+A brane stack is an \(N\)-dimensional Chan--Paton representation
+\(\rho_\phi\colon A\to\End(\C^N)\) of the formal coordinate algebra
+\(A=\C[[z_1,z_2]]\), with \(\rho_\phi(z_i)=\phi_i\) and the moment-map
+constraint \([\phi_1,\phi_2]=0\) factoring it through the commuting
+variety. Equivalently, after gauge fixing it is a class in
+\([\Rep_N(A)^{\mathrm{comm}}/GL_N]\) with Chan--Paton pair
+\((\phi_1,\phi_2)\in\mathfrak{gl}_N^{\oplus 2}\). The Hamiltonian Lie
+algebra \(\mathfrak h=A/\C\) acts on this representation moduli by
+Hamiltonian vector fields, not by commuting operators on \(\C^N\); the
+\(c_f\mapsto\theta_f\) avatar of a Hamiltonian is its motion on the
+moduli. A bulk Hamiltonian
+\(f\in\widehat{\mathfrak h}=\C[[z_1,z_2]]/\C\cdot1\) is measured at the
+representation by the gauge-invariant trace character of the
+shifted-cotangent avatar \(u_f\):
 \begin{equation}\label{eq:setup-Jf-flagship}
   J(f)=\overline{\operatorname{Tr}\,f(\phi_1,\phi_2)},
 \end{equation}
@@ -6389,6 +6578,69 @@ ambient product is a separate admissibility input.
   for linear Poisson structures.
 \end{proof}
 
+\begin{lem}[No-natural-correction]\label{lem:no-natural-correction}
+  Let \(\widetilde J\colon\mathfrak h\to A_\partial\) be a linear map
+  satisfying stable polynomial \(GL_\infty\)-invariance
+  (Proposition~\ref{prop:stable-trace-invariants}), descent through
+  the Dirac ideal \([\phi_1,\phi_2]=0\), the scalar quotient
+  \(\overline{\operatorname{Tr}(1)}=0\), and primitive block-sum
+  additivity:
+  \[
+    \widetilde J_{N_1+N_2}(f)\big|_{\phi_i=\phi_i'\oplus\phi_i''}
+     =\widetilde J_{N_1}(f)
+       +\widetilde J_{N_2}(f),
+  \]
+  the value at the block-diagonal stacking
+  \((\phi_1,\phi_2)=(\phi_1',\phi_2')\oplus(\phi_1'',\phi_2'')\) on
+  \(\lie{gl}_{N_1}\oplus\lie{gl}_{N_2}\subset\lie{gl}_{N_1+N_2}\)
+  reading on the right as a vector-space sum in \(A_\partial\).
+  Equivalently, \(\widetilde J(f)\) is primitive for the block-sum
+  coproduct \(\Delta_\oplus\) on \(A_\partial\) sending each
+  single-trace generator
+  \(\overline{\operatorname{Tr}}\) to
+  \(\overline{\operatorname{Tr}}\otimes 1+1\otimes
+   \overline{\operatorname{Tr}}\).  Then for every \(a+b>0\),
+  \[
+    \widetilde J(z_1^az_2^b)
+     =c_{a,b}\,\overline{\operatorname{Tr}(\phi_1^a\phi_2^b)},
+    \qquad c_{a,b}\in\C.
+  \]
+\end{lem}
+
+\begin{proof}
+  Stable invariant theory
+  (Proposition~\ref{prop:stable-trace-invariants}) writes
+  \(\widetilde J(z_1^az_2^b)\) as a polynomial in nonempty cyclic
+  trace words on the free pair, of total bidegree \((a,b)\); scalar
+  reduction kills empty traces.  Restriction to the moment-map
+  zero-fibre with adjacent-swap exactness
+  (Lemma~\ref{lem:adjacent-swaps}) collapses each cyclic word at
+  bidegree \((p,q)\) to the commutative monomial trace
+  \(\overline{\operatorname{Tr}(\phi_1^p\phi_2^q)}\)
+  (Corollary~\ref{cor:matrix-evaluation-well-defined}), so
+  \[
+    \widetilde J(z_1^az_2^b)
+     =\sum_{\lambda\vdash(a,b)}
+       c_\lambda
+       \prod_{i=1}^{\ell(\lambda)}
+        \overline{\operatorname{Tr}(\phi_1^{p_i}\phi_2^{q_i})},
+  \]
+  summed over partitions of \((a,b)\) into \(\ell(\lambda)\)
+  nonempty parts \((p_i,q_i)\).
+  Block-sum stacking sends the single-trace generator
+  \(\overline{\operatorname{Tr}(\phi_1^p\phi_2^q)}\) to its
+  block-diagonal sum
+  \(\overline{\operatorname{Tr}((\phi_1')^p(\phi_2')^q)}
+   +\overline{\operatorname{Tr}((\phi_1'')^p(\phi_2'')^q)}\)
+  --- this is the Loday--Quillen--Tsygan primitive on
+  \(H^{\mathrm{CE}}_*(\lie{gl}_\infty(A_{\bar f}))\) --- and a
+  length-\(\ell\) product to a sum of \(2^\ell\) terms with
+  \(2^\ell-2\) cross-block products outside the LQT primitive.  The
+  primitive block-sum identity therefore vanishes the
+  \(\ell\ge2\) coefficients, leaving the single-part partition
+  \(\lambda=((a,b))\).
+\end{proof}
+
 \begin{thm}[Matrix-microscope measurement theorem: uniqueness of \(J\)]\label{thm:Jf-coordinate-uniqueness}
   Let \(\mathfrak h=\C[[z_1,z_2]]/\C\cdot1\) be the reduced Hamiltonian
   Lie algebra of the formal symplectic polydisk and let
@@ -6416,7 +6668,18 @@ ambient product is a separate admissibility input.
       action on \(A_\partial\);
     \item (\emph{Linear normalization})
       \(\widetilde J(z_1)=\overline{\operatorname{Tr}\phi_1}\),
-      \(\widetilde J(z_2)=\overline{\operatorname{Tr}\phi_2}\),
+      \(\widetilde J(z_2)=\overline{\operatorname{Tr}\phi_2}\);
+    \item (\emph{Primitive block-sum additivity}) under the
+      block-diagonal stacking
+      \((\phi_1,\phi_2)=(\phi_1',\phi_2')\oplus(\phi_1'',\phi_2'')\)
+      on \(\lie{gl}_{N_1}\oplus\lie{gl}_{N_2}\subset
+       \lie{gl}_{N_1+N_2}\),
+      \[
+        \widetilde J_{N_1+N_2}(f)\big|_{\phi_i=\phi_i'\oplus\phi_i''}
+         =\widetilde J_{N_1}(f)
+           +\widetilde J_{N_2}(f)
+        \qquad\text{in }A_\partial,
+      \]
   \end{enumerate}
   the brane substitution
   \(J(f)=\overline{\operatorname{Tr}\,f(\phi_1,\phi_2)}\) is the unique
@@ -6424,7 +6687,7 @@ ambient product is a separate admissibility input.
   \(\{\widetilde J(f),\widetilde J(g)\}_\partial=
   \widetilde J(\{f,g\}_{\bar A})\) holds for every solution
   (Theorem~\ref{thm:bulk-boundary}); uniqueness is the content of
-  (U1)--(U5).  The categorical terminal-object refinement, including
+  (U1)--(U6).  The categorical terminal-object refinement, including
   protected admissibility, is
   Theorem~\ref{thm:formal-local-universal-property} of
   \S\ref{ssec:tate-residual-resolution}.
@@ -6448,75 +6711,51 @@ ambient product is a separate admissibility input.
 \end{rmk}
 
 \begin{proof}
-  \emph{Invariant theory (U1).}  Proposition~\ref{prop:stable-trace-invariants}
-  restricts \(\widetilde J(f)\) to a polynomial in cyclic words on
-  \((\phi_1,\phi_2)\) modulo finite-rank trace identities, with stable
-  representative an element of
-  \(\mathbf S(\operatorname{Cyc}(F)_{\mathrm{nonempty}})\).
+  Lemma~\ref{lem:no-natural-correction}, drawing on (U1), (U2), (U3),
+  (U6), gives
+  \(\widetilde J(z_1^az_2^b)=c_{a,b}\,
+   \overline{\operatorname{Tr}(\phi_1^a\phi_2^b)}\) on every bidegree
+  \(a+b>0\) with scalars \(c_{a,b}\in\C\).  Linear normalization (U5)
+  gives \(c_{1,0}=c_{0,1}=1\).
 
-  \emph{Dirac collapse (U2).}  Restriction to the moment-map zero-fibre
-  with adjacent-swap exactness (Lemma~\ref{lem:adjacent-swaps})
-  collapses every cyclic word to a commutative monomial trace
-  \(\overline{\operatorname{Tr}(\phi_1^a\phi_2^b)}\)
-  (Corollary~\ref{cor:matrix-evaluation-well-defined}); hence
-  \(\widetilde J(f)\in\mathbf S(V_H)\subset A_\partial\), the symmetric
-  algebra on the connected single-trace generators \(V_H\) of
-  Proposition~\ref{prop:brane-ops}.
-
-  \emph{Scalar reduction (U3).}  \(A_\partial\) is the quotient of
-  \(\mathbf S(V_H)\oplus\C\cdot\overline{\operatorname{Tr}(1)}\) by
-  \(\C\cdot\overline{\operatorname{Tr}(1)}\); multi-trace products of
-  nonempty generators are unaffected.
-
-  \emph{Darboux naturality and single-trace forcing (U4).}  The formal
-  Darboux symplectomorphism group
+  Darboux naturality (U4) propagates the scale to every bidegree.
+  The formal Darboux symplectomorphism group
   \(G_{\mathrm{Darb}}=\operatorname{Symp}_{\mathrm{form}}(\widehat{\C^2}_0)\)
-  acts on \(A_\partial\) through matrix substitution
-  \(\phi_i\mapsto\Phi_i(\phi_1,\phi_2)\), an algebra homomorphism with
+  acts on \(A_\partial\) through the algebra-homomorphism matrix
+  substitution
   \(\Phi_*\overline{\operatorname{Tr}\,f(\phi_1,\phi_2)}
-   =\overline{\operatorname{Tr}\,(\Phi^*f)(\phi_1,\phi_2)}\), so
-  \(V_H\) and \(\mathbf S^{\ge2}(V_H)\) are both
-  \(G_{\mathrm{Darb}}\)-stable.  By (U5), \(\widetilde J(z_i)\in V_H\);
-  by (U4),
-  \(\widetilde J(\Phi^*z_i)=\Phi_*\widetilde J(z_i)\in V_H\) for every
-  \(\Phi\in G_{\mathrm{Darb}}\).  The Hamiltonian flows generated by
-  \(H_k^{(1)}=-z_2^{k+1}/(k+1)\) and \(H_k^{(2)}=-z_1^{k+1}/(k+1)\)
-  act by
+   =\overline{\operatorname{Tr}\,(\Phi^*f)(\phi_1,\phi_2)}\).  The
+  Hamiltonian flow generated by \(H_1^{(2)}=-z_1^2/2\) acts by
+  \(\Phi^*_{H_1^{(2)}}z_2=z_2+tz_1\), and on \(z_2^k\) gives
   \[
-    \Phi^*_{H_k^{(1)}}z_1=z_1-tz_2^k,\qquad
-    \Phi^*_{H_k^{(2)}}z_2=z_2+tz_1^k,
+    \widetilde J\bigl((z_2+tz_1)^k\bigr)
+     =\sum_{a+b=k}\binom{k}{a}t^a c_{a,b}\,
+       \overline{\operatorname{Tr}(\phi_1^a\phi_2^b)},
+    \qquad
+    \Phi_*\widetilde J(z_2^k)
+     =c_{0,k}\,\overline{\operatorname{Tr}(\phi_2+t\phi_1)^k}
+     =\sum_{a+b=k}\binom{k}{a}t^a c_{0,k}\,
+       \overline{\operatorname{Tr}(\phi_1^a\phi_2^b)}.
   \]
-  with matrix substitutions \(\phi_1\mapsto\phi_1-t\phi_2^k\),
-  \(\phi_2\mapsto\phi_2+t\phi_1^k\) on the Dirac-reduced commuting
-  pair.  Coefficients of \(t\) in the (U4) identity yield
-  \(\widetilde J(z_i^k)=\overline{\operatorname{Tr}\phi_i^k}\) for every
-  \(k\ge1\), and the composite flow
-  \(\Phi^*_{H_1^{(2)}}z_2^k=(z_2+tz_1)^k=
-   \sum_{a+b=k}\binom{k}{a}t^az_1^az_2^{b}\) matched against
-  \(\overline{\operatorname{Tr}(\phi_2+t\phi_1)^k}=
-   \sum_{a+b=k}\binom{k}{a}t^a\overline{\operatorname{Tr}(\phi_1^a\phi_2^b)}\)
-  yields
-  \(\widetilde J(z_1^az_2^b)=\overline{\operatorname{Tr}(\phi_1^a\phi_2^b)}\)
-  at every bidegree.  Continuity in the
-  \(\widehat{\mathfrak h}\)-topology extends to formal power series.
-
-  \emph{Linear normalization (U5).}  By Procesi--Razmyslov on the
-  commuting variety
-  (Proposition~\ref{prop:stable-trace-invariants},
-  Lemma~\ref{lem:adjacent-swaps}),
-  \(V_H\) at bidegree \((a,b)\) is the line
-  \(\C\cdot\overline{\operatorname{Tr}(\phi_1^a\phi_2^b)}\); the (U5)
-  values give scalar \(1\) at degree one, and (U4) gives \(1\) at
-  every bidegree.  \(\widetilde J=J\).
+  Equality at each \(t^a\) gives \(c_{a,b}=c_{0,k}\) for \(a+b=k\).
+  The reverse flow \(z_1\mapsto z_1-tz_2\) on \(z_1^k\) gives
+  \(c_{a,b}=c_{k,0}\); chained against the linear values \(c_{1,0}=
+   c_{0,1}=1\), \(c_{a,b}=1\) on every bidegree.  Continuity in the
+  \(\widehat{\mathfrak h}\)-topology extends to formal power series,
+  so \(\widetilde J=J\).
 \end{proof}
 
 \begin{thm}[Hypothesis rigidity for the matrix-microscope measurement]\label{thm:Jf-uniqueness-rigidity}
-  Only (U4) and (U5) are substantive in
-  Theorem~\ref{thm:Jf-coordinate-uniqueness}: removing either admits a
-  positive-dimensional family of solutions \(\widetilde J\ne J\).
-  Hypotheses (U1), (U2), (U3) are codomain specifications, each
-  implied by (U4)+(U5) on an enlarged ambient: on
-  \(\C[\lie{gl}_N^2]/\langle[\phi_1,\phi_2]\rangle\),
+  The substantive hypotheses are (U4) and (U5): removing either
+  admits a positive-dimensional family of solutions \(\widetilde J
+  \ne J\).  Primitive block-sum additivity (U6) is the
+  Loday--Quillen--Tsygan-explicit form of single-trace forcing;
+  given (U1)--(U5), it is automatic, but separating it from (U4)
+  rebalances the proof, with (U6) carrying shape (single-trace) and
+  (U4)+(U5) carrying scale (Lemma~\ref{lem:no-natural-correction}
+  monomial-by-monomial).  Hypotheses (U1), (U2), (U3) are codomain
+  specifications, each implied by (U4)+(U5) on an enlarged ambient:
+  on \(\C[\lie{gl}_N^2]/\langle[\phi_1,\phi_2]\rangle\),
   \(\widetilde J\) takes values in the trace algebra; on
   \(\mathbf S(\operatorname{Cyc}(F)_{\mathrm{nonempty}})\),
   \(\widetilde J\) equals the symmetrized cyclic trace, which Dirac
@@ -6526,34 +6765,40 @@ ambient product is a separate admissibility input.
 \end{thm}
 
 \begin{proof}
-  \emph{Removing (U4).}  Set
-  \[
-    \widetilde J^{\mathrm{mt}}_\alpha(z_1z_2)
-     =\overline{\operatorname{Tr}(\phi_1\phi_2)}
-       +\alpha\,\overline{\operatorname{Tr}\phi_1}\,
-        \overline{\operatorname{Tr}\phi_2},
-    \qquad
-    \widetilde J^{\mathrm{mt}}_\alpha(z_1^az_2^b)=
-     \overline{\operatorname{Tr}(\phi_1^a\phi_2^b)}
-    \text{ for }(a,b)\ne(1,1).
-  \]
-  For every \(\alpha\in\C\) this satisfies (U1), (U2), (U3), (U5):
-  \(\overline{\operatorname{Tr}\phi_1}\,\overline{\operatorname{Tr}\phi_2}
-   \in\mathbf S^{\ge2}(V_H)\) is \(GL_N\)-invariant, Dirac-reduced,
-  scalar-reduced; bidegree \((1,1)\) lies outside (U5).  Under
-  \(z_2\mapsto z_2+tz_1\) acting on \(z_2^2\), the source-side
-  \(t^1\)-coefficient is
-  \(2\,\overline{\operatorname{Tr}(\phi_1\phi_2)}
-   +2\alpha\,\overline{\operatorname{Tr}\phi_1}\,
-    \overline{\operatorname{Tr}\phi_2}\)
-  while the matrix-side gives
-  \(2\,\overline{\operatorname{Tr}(\phi_1\phi_2)}\); equality requires
-  \(\alpha=0\).
+  \emph{Removing (U4).}  Choose any sequence
+  \(\{c_{a,b}\}_{a+b\ge2}\subset\C\) and set
+  \(\widetilde J(z_1^az_2^b)=c_{a,b}\,
+   \overline{\operatorname{Tr}(\phi_1^a\phi_2^b)}\) for \(a+b\ge2\),
+  \(\widetilde J(z_i)=\overline{\operatorname{Tr}\phi_i}\).  The
+  family satisfies (U1)--(U3), (U5), (U6); Darboux flow
+  \(z_2\mapsto z_2+tz_1\) on \(z_2^k\) forces \(c_{a,k-a}=c_{0,k}\)
+  and the reverse forces \(c_{0,k}=1\), pinning every \(c_{a,b}=1\).
 
   \emph{Removing (U5).}  The family
   \(\widetilde J^{\mathrm{rs}}_\lambda=\lambda\,J\),
-  \(\lambda\in\C^\times\), satisfies (U1)--(U4); (U5) requires
-  \(\lambda=1\).
+  \(\lambda\in\C^\times\), satisfies (U1)--(U4) and (U6); (U5)
+  requires \(\lambda=1\).
+
+  \emph{Removing (U6) with (U4) intact.}  The two-trace correction
+  \(\widetilde J^{\mathrm{mt}}_\alpha(z_1z_2)
+   =\overline{\operatorname{Tr}(\phi_1\phi_2)}
+     +\alpha\,\overline{\operatorname{Tr}\phi_1}\,
+      \overline{\operatorname{Tr}\phi_2}\),
+  \(\widetilde J^{\mathrm{mt}}_\alpha(z_1^az_2^b)
+   =\overline{\operatorname{Tr}(\phi_1^a\phi_2^b)}\) elsewhere,
+  satisfies (U1), (U2), (U3), (U5) for every \(\alpha\); Darboux flow
+  \(z_2\mapsto z_2+tz_1\) on \(z_2^2\) reads source-side
+  \(t^1\)-coefficient
+  \(2\,\overline{\operatorname{Tr}(\phi_1\phi_2)}
+   +2\alpha\,\overline{\operatorname{Tr}\phi_1}\,
+    \overline{\operatorname{Tr}\phi_2}\) against matrix-side
+  \(2\,\overline{\operatorname{Tr}(\phi_1\phi_2)}\), forcing
+  \(\alpha=0\).  The same Darboux propagation kills every higher
+  multi-trace correction inductively: any
+  \(M\colon V_H\to\mathbf S^{\ge2}(V_H)\) compatible with the full
+  Hamiltonian flow algebra reduces to \(M=0\).  Hence (U6) is
+  implied by (U4)+(U5)+(U1)--(U3); inside the full hypothesis set
+  \(\widetilde J=J\).
 
   \emph{(U1) reduction.}  On
   \(\C[\lie{gl}_N^2]/\langle[\phi_1,\phi_2]\rangle\), (U5) gives
@@ -13015,7 +13260,12 @@ bypasses the functorial gates between volumes.
 
 \[
   \boxed{\;
-  \text{The brane does not represent the Hamiltonian algebra; it evaluates Hamiltonians on its matrix-valued transverse coordinate.}
+  \begin{aligned}
+    &\text{The brane is a finite Chan--Paton representation of the formal}\\
+    &\text{coordinate algebra; the Hamiltonian Lie algebra acts on the}\\
+    &\text{representation moduli by vector fields, and the closed-to-open}\\
+    &\text{measurement is the gauge-invariant trace character.}
+  \end{aligned}
   \;}
 \]
 An obstruction is the memory of structure erased by an over-strict

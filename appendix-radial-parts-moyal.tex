@@ -2309,6 +2309,60 @@ arithmetic step is exact rational; no floating-point step enters.
   killed by a four-term correction in \(\ker\partial\).
 \end{ex}
 
+\begin{thm}[Per-bidegree exact rational reduction]\label{thm:app-radial-bidegree-rational-reduction}
+  Each bidegree datum is the triple
+  \[
+    \bigl(\,
+        \beta_{a,b},\;
+        B_{a,b}\in M_{r_0\times r_1}(\Q),\;
+        v_{a,b}\in\Q^{r_0}
+      \,\bigr),
+  \]
+  where \(\beta_{a,b}\) is the indexed-diagram basis ordering,
+  \(r_1=\dim\mathsf W_{a,b}=\binom{a+b-2}{a-1}\),
+  \(r_0=\dim\bigl(\mathsf W_{a,b}\oplus\mathsf S_{a,b}\bigr)\),
+  \(B_{a,b}\) is the Stokes boundary in the basis \(\beta_{a,b}\), and
+  \(v_{a,b}=(T_{a,b},E^+_{a,b})\) is the radial comparison vector.
+  Bareiss elimination over \(\Q\) decides
+  \(v_{a,b}\stackrel?\in\operatorname{im}B_{a,b}\) in exact rational
+  arithmetic and outputs the dual data
+  \[
+    \operatorname{rank}B_{a,b},\quad
+    \dim\ker B^*_{a,b},\quad
+    \dim\operatorname{coker}B_{a,b}.
+  \]
+  When \(v_{a,b}\in\operatorname{im}B_{a,b}\), the elimination returns
+  the unique correction
+  \(C^+_{a,b}\in\Q^{r_1}\) with
+  \(B_{a,b}C^+_{a,b}=v_{a,b}\), giving
+  \(\Omega^{\mathrm{rad}}_{a,b}=0\) at that bidegree.  When
+  \(v_{a,b}\notin\operatorname{im}B_{a,b}\), the elimination returns
+  the obstruction covector
+  \((\phi,-\lambda)\in\ker B^*_{a,b}\) with the strict pairing
+  \(\lambda(E^+_{a,b})-\phi(T_{a,b})\ne0\); the obstruction class
+  \(\Omega^{\mathrm{rad}}_{a,b}\in\operatorname{coker}B_{a,b}\) is its
+  equivalence class.  Every arithmetic step is exact rational; the
+  same row reduction repeated on the same basis ordering returns the
+  same matrix entries to the last digit, and the row-reduction trace
+  is reproducible bit-for-bit.
+\end{thm}
+
+\begin{cor}[Verdict table on the verified range]\label{cor:app-radial-verdict-table}
+  For every bidegree \((a,b)\) listed in
+  Remark~\ref{rmk:app-radial-quantum-shear-script-verified-range},
+  the rational reduction of
+  Theorem~\ref{thm:app-radial-bidegree-rational-reduction} returns
+  \(v_{a,b}\in\operatorname{im}B_{a,b}\): the comparison vector lies in
+  the image of the Stokes boundary, with explicit correction
+  \(C^+_{a,b}\) and the dual data
+  \(\dim\ker B^*_{a,b},\,\dim\operatorname{coker}B_{a,b}\) read off from
+  the row reduction.  In particular
+  \(\Omega^{\mathrm{rad}}_{a,b}=0\) on the verified range.  Outside the
+  verified range, the per-bidegree class
+  \(\Omega^{\mathrm{rad}}_{a,b}\in\operatorname{coker}B_{a,b}\) is the
+  exact obstruction whose vanishing is the all-bidegree statement.
+\end{cor}
+
 \begin{rmk}[Scalar quotient and the \(U(1)\) anomaly]
 \label{rmk:app-radial-scalar-quotient}
   Constants are central in the Moyal Lie algebra and are killed in

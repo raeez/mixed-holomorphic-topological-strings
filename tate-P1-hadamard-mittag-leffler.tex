@@ -100,8 +100,9 @@ transfer: high transverse holomorphic modes leak back into low brane
 momentum modes under Hamiltonian flow, and no finite-window cutoff
 absorbs the leak.  The unique surviving structure is the one-pair
 analytic pro-Matlis retract
-(Corollary~\ref{cor:promatlis-retract-as-supremum}), the supremum form
-of the BMK lane structurally selected by the no-go.  The Hadamard / QME
+(Corollary~\ref{cor:promatlis-retract-as-supremum}), terminal among
+Bochner--Martinelli admissible current targets
+(Theorem~\ref{thm:promatlis-universal-property}).  The Hadamard / QME
 residual \(\operatorname{Ob}^{\mathrm{HML}}_{w}\) and the BMK no-go
 live in independent sectors of the local theorem and admit no transfer
 of formula between them.
@@ -2927,6 +2928,68 @@ Theorem~\ref{thm:theta-three-companion-face-obstruction}.
   which proves the necessity of the pro-Matlis category in place of
   every finite-Matlis target.
 \end{cor}
+
+\begin{thm}[Pro-Matlis universal property]\label{thm:promatlis-universal-property}
+  Let \(\mathsf{Curr}^{BM}\) be the category whose objects are
+  \(\mathfrak h\)-equivariant \(\C\)-linear pairs
+  \((Q,Q^{\mathrm{an}})\) with \(Q^{\mathrm{an}}\subset Q\), equipped
+  with:
+  \begin{enumerate}[label=(\alph*)]
+    \item compatible projections \(\pi_N\colon Q\to\mathcal P_{\le N}\)
+      satisfying \(\pi_M=\pi_N\circ\pi_{M,N}\) for \(M\ge N\);
+    \item a Hamiltonian \(\mathfrak h\)-action through full residue-coadjoint
+      operators with no truncation (no finite-window restriction of
+      \(\mathfrak h\to\End(Q)\));
+    \item a Dolbeault chain homotopy
+      \(H\colon Q\to Q[-1]\) with \(\bar\partial H+H\bar\partial
+       =\operatorname{id}-I\circ P\) for an analytic-submodule
+      retraction
+      \(P\colon Q\to Q^{\mathrm{an}},\ I\colon Q^{\mathrm{an}}
+       \hookrightarrow Q\);
+    \item uniform \(\mathfrak m\)-adic moment bounds: for every
+      \(f\in\mathfrak h\) and every \(\xi\in Q\) of \(\mathfrak m\)-adic
+      order \(\ge n\), \(f\cdot\xi\) has \(\mathfrak m\)-adic order
+      \(\ge n-r(f)\) for an \(f\)-dependent constant \(r(f)\).
+  \end{enumerate}
+  Morphisms are \(\mathfrak h\)-equivariant \(\C\)-linear maps
+  \((Q,Q^{\mathrm{an}})\to(Q',Q'^{\mathrm{an}})\) commuting with all
+  finite projections \(\pi_N,\pi'_N\) and with the analytic-submodule
+  retractions.  Then the pro-Matlis pair
+  \(\bigl(\widehat{\mathcal P}_\Pi,\mathcal P_{\mathrm{an}}(B_1)\bigr)\)
+  with the analytic moment map \(P^{\mathrm{an}}_\Pi\) of
+  Theorem~\ref{thm:app-finite-window-bmk-current-transfer} is terminal
+  in \(\mathsf{Curr}^{BM}\): for every object
+  \((Q,Q^{\mathrm{an}})\) there is a unique morphism
+  \[
+    (Q,Q^{\mathrm{an}})\longrightarrow
+    \bigl(\widehat{\mathcal P}_\Pi,\mathcal P_{\mathrm{an}}(B_1)\bigr).
+  \]
+\end{thm}
+
+\begin{proof}
+  Existence: condition~(a) gives a compatible system
+  \(\pi_N\colon Q\to\mathcal P_{\le N}\), defining a unique
+  \(\mathfrak h\)-equivariant map
+  \(Q\to\varprojlim_N\mathcal P_{\le N}=\widehat{\mathcal P}_\Pi\) by
+  the universal property of the inverse limit.  Condition~(c) sends
+  the analytic retraction onto
+  \(\mathcal P_{\mathrm{an}}(B_1)=\tau(\mathcal O(B_1)^\vee_{\mathrm{red}})\)
+  by Theorem~\ref{thm:app-finite-window-bmk-current-transfer}, and
+  condition~(d) ensures the lift is convergent in the
+  \(\mathfrak m\)-adic topology of \(\widehat{\mathcal P}_\Pi\).
+  Uniqueness: any two such morphisms agree on every
+  \(\mathcal P_{\le N}\)-component by compatibility with \(\pi_N\),
+  hence on \(\varprojlim_N\mathcal P_{\le N}\).  Hamiltonian
+  equivariance, the chain-homotopy compatibility, and the moment
+  bounds are preserved by the inverse limit.
+  Theorem~\ref{thm:bmk-finite-window-no-go} excludes every
+  finite-rank target (those have a strict finite-window restriction of
+  \(\mathfrak h\), violating~(b)), and
+  Corollary~\ref{cor:promatlis-retract-as-supremum} verifies the
+  pro-Matlis pair structure, the normalized Dolbeault contraction
+  \(H^0_\chi\), and the analytic moment map \(P^{\mathrm{an}}_\Pi\)
+  on \(\bigl(\widehat{\mathcal P}_\Pi,\mathcal P_{\mathrm{an}}(B_1)\bigr)\).
+\end{proof}
 
 \begin{rmk}[Routing through the obstruction--twist schema]\label{rmk:bm-route-Gschema}
   Under Theorem~\ref{thm:obstruction-twist-dichotomy} of
