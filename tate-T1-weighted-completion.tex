@@ -388,6 +388,61 @@ Mittag--Leffler-coevaluating for the heat-kernel propagator.
   hence to contain the closure $B_w$.
 \end{proof}
 
+\begin{defn}[Category of admissible weighted-Tate completions]\label{defn:wt-Adm-category}
+  Fix a degree weight $w$ as in Definition~\ref{defn:wt-degree-weight}.
+  The category $\mathsf{Adm}_w$ has objects: complete filtered subspaces
+  $B'\subset\mathrm{PV}_{\mathrm{coord}}(A_{\partial,\mathrm{coord}})$
+  satisfying
+  \begin{enumerate}[label=(A\arabic*)]
+    \item\label{adm:gen} \emph{(generation)} $B'$ contains the
+      brane-side generators $\{O_f,\theta_f\}_{f\in\bar A}$;
+    \item\label{adm:schouten} \emph{(Schouten closure)}
+      $B'\cdot B'\subset B'$, $d_\pi B'\subset B'$, and
+      $[B',B']_{\mathrm{Sch}}\subset B'$;
+    \item\label{adm:casimir} \emph{(Casimir convergence)} the weighted
+      Casimir $C_{\mathfrak h,w}$ of
+      \eqref{eq:wt-casimir-weighted} converges in
+      $B'\widehat\otimes B'$ in the weighted Tate topology;
+    \item\label{adm:propagator} \emph{(heat-kernel propagator
+      extension)} the Costello heat-kernel propagator
+      $P^w_{\epsilon,L}=P^{\mathrm{base}}_{\epsilon,L}\widehat\otimes
+      C_{\mathfrak h\oplus\mathfrak h^\vee[1],w}$ extends to a continuous
+      family for $0<\epsilon\le L<\infty$ on $B'$ satisfying
+      $[Q,P^w_{\epsilon,L}]=K^w_\epsilon-K^w_L$;
+    \item\label{adm:rg} \emph{(graphwise RG boundedness)} for every
+      Costello graph $\Gamma$ and every vertexwise polynomial-degree
+      bounded interaction
+      $I\in\mathcal O_{\mathrm{loc}}(\mathcal E_w)$, the contribution
+      $W_\Gamma(P^w_{\epsilon,L},I)$ stays in $B'$ with constants
+      supplied by \ref{w:W1} and \ref{w:W2}.
+  \end{enumerate}
+  Morphisms $B'\hookrightarrow B''$ are continuous filtered inclusions
+  containing the generators on the nose and intertwining $d_\pi$,
+  $[-,-]_{\mathrm{Sch}}$, the pointwise product, the weighted Casimir,
+  and the heat-kernel propagator.
+\end{defn}
+
+\begin{cor}[$B_w$ is initial in $\mathsf{Adm}_w$]\label{cor:wt-Bw-initial}
+  $B_w$ of Definition~\ref{defn:wt-Bw-envelope} is the initial object
+  of $\mathsf{Adm}_w$: every $B'\in\mathsf{Adm}_w$ admits a unique
+  morphism $\iota_{B'}\colon B_w\hookrightarrow B'$.
+\end{cor}
+
+\begin{proof}
+  By Theorem~\ref{thm:wt-canonical-habitat}, $B_w\subset B'$ for every
+  $B'\in\mathsf{Adm}_w$, and the inclusion is an
+  $\mathsf{Adm}_w$-morphism.  A morphism $B_w\to B'$ is determined on
+  $\{O_f,\theta_f\}_{f\in\bar A}$, hence on the
+  Schouten-bracket-product envelope, hence by Tate continuity on
+  $B_w$.
+\end{proof}
+
+\begin{rmk}\label{rmk:wt-canonical-as-initiality}
+  $\mathsf{Adm}_w$ depends on $w$; its admissibility conditions are
+  intrinsic to $(\mathfrak h_w,\mathfrak h^{\vee,w}_{\mathrm{cont}},
+  P^w_{\epsilon,L})$.
+\end{rmk}
+
 \begin{prop}[Casimir convergence]\label{prop:wt-casimir-convergence}
   In the weighted Tate coefficient pair
   $(\mathfrak h_w,\mathfrak h^{\vee,w}_{\mathrm{cont}})$ of

@@ -1,75 +1,127 @@
 \begin{abstract}
 
 \noindent
-A stack of \(N\) Dirac branes on the topological line
+\(N\) Dirac branes on the topological line
 \(L=\R_t\times\{s=z_1=z_2=0\}\subset
-X=\R_t\times\R_s\times\C^2_{z_1,z_2}\) measures formal Hamiltonians
-\(f\in\C[[z_1,z_2]]\) on the symplectic normal polydisk
-\((\widehat{\C^2}_0,dz_1\wedge dz_2)\) by substituting them into the
-brane's matrix-valued transverse coordinate
-\((\phi_1,\phi_2)\in\mathfrak{gl}_N^{\oplus 2}\):
+X=\R_t\times\R_s\times\C^2_{z_1,z_2}\) probe the formal symplectic
+normal polydisk \((\widehat{\C^2}_0,dz_1\wedge dz_2)\) through a
+matrix-valued transverse Chan--Paton coordinate
+\((\phi_1,\phi_2)\in\mathfrak{gl}_N^{\oplus 2}\).  A formal Hamiltonian
+\(f\in\C[[z_1,z_2]]\) is measured by literal substitution and trace,
 \[
   J(f)=\overline{\operatorname{Tr}\,f(\phi_1,\phi_2)}
     \in\widehat{\mathbf S}(\bar A),\qquad
-  \bar A=\C[z_1,z_2]/\C\cdot1.
+  \bar A=\C[z_1,z_2]/\C\cdot 1,
 \]
-This measurement is the unique \(GL_N\)-invariant, Dirac-constrained,
-scalar-reduced, Darboux-natural, linearly-normalized map
-\(\mathfrak h\to\widehat{\mathbf S}(\bar A)\)
-(Theorem~\ref{thm:Jf-coordinate-uniqueness}; categorical refinement
-Theorem~\ref{thm:formal-local-universal-property}).
+where \(\widehat{\mathbf S}\) is the completed symmetric algebra and
+\(\bar A\) the polynomial Hamiltonian subalgebra modulo constants.  A
+constant Hamiltonian generates the zero Hamiltonian vector field and
+substitutes to a multiple of \(\operatorname{Tr}I=N\), killed by the
+scalar bar; \(J\) factors through the reduced Hamiltonian Lie algebra
+\(\mathfrak h=\C[[z_1,z_2]]/\C\cdot 1\), and the descended map is
+characterised at two distinct levels.  \emph{Theorem~A (algebraic
+uniqueness)}: among linear maps
+\(\mathfrak h\to\widehat{\mathbf S}(\bar A)\) satisfying stable
+\(GL_N\)-invariance, the Dirac constraint \([\phi_1,\phi_2]=0\),
+scalar reduction, Darboux equivariance under the formal
+symplectomorphism group of \((\widehat{\C^2}_0,dz_1\wedge dz_2)\),
+and linear normalization on \(z_1,z_2\), trace substitution is the
+only admissible map (Theorem~\ref{thm:Jf-coordinate-uniqueness}),
+forced monomial-by-monomial by stable invariant theory plus the
+no-natural-correction lemma rather than by an algebra-homomorphism
+extension.  \emph{Theorem~B (terminal protected sector)}: the same
+datum is terminal in the category of admissible protected Hamiltonian
+sectors at a holomorphic-symplectic brane point, and the obstruction
+to membership of an external ambient datum is the named four-class
+universal-property class \(\operatorname{Ob}^{\mathrm{univ}}_{p,X}\)
+(Theorem~\ref{thm:formal-local-universal-property}).  Theorem~B
+sharpens Theorem~A by elevating the trace formula to a categorical
+universal property; the dependency runs A~\(\Longrightarrow\)~B, never
+the reverse.
 
 \medskip
 \noindent
 The conjugation moment map
 \(\mu(\epsilon)=-\operatorname{Tr}(\epsilon[\phi_1,\phi_2])\) imposes
-\([\phi_1,\phi_2]=0\); the Dirac antifield
-\(\psi\in\mathfrak{gl}_N[1]\) with \(Q\psi=[\phi_1,\phi_2]\) is the
-Koszul derived zero-fibre model for the moment-map equation.  The
-closed sector takes its fields in the shifted-cotangent extension
-\(\mathfrak g=\mathfrak h\ltimes\mathfrak h^\vee_{\mathrm{cont}}[1]\)
-with \(\mathfrak h=\C[[z_1,z_2]]/\C\cdot1\); a Hamiltonian \(f\) acts
-through \(c_f\mapsto\theta_f\) and is measured through
-\(u_f\mapsto O_f=J(f)\)
-(Theorem~\ref{thm:reduced-ce-pv-central-operation}); continuous
-duality identifies
-\(\mathfrak h^\vee_{\mathrm{cont}}\cong\mathcal P=
- \bigoplus_{a+b>0}\C\rho_{a,b}\) with the
-Grothendieck--Matlis principal-part module
-(Theorem~\ref{thm:principal-part-coadjoint-uniqueness}); and the
+\([\phi_1,\phi_2]=0\).  An odd matrix antifield
+\(\psi\in\mathfrak{gl}_N[1]\) and BV differential \(Q\) with
+\(Q\phi_i=0\), \(Q\psi=[\phi_1,\phi_2]\) realize the moment-map ideal
+as the Koszul derived zero fibre.  The closed BV sector takes its
+fields in the shifted-cotangent extension
+\[
+  \mathfrak g=\mathfrak h\ltimes\mathfrak h^\vee_{\mathrm{cont}}[1],
+\]
+on which a Hamiltonian \(f\in\mathfrak h\) carries two
+Chevalley--Eilenberg coordinates: the generator-dual
+\(c_f\in\mathfrak h^\vee[-1]\), producing the Hamiltonian Schouten
+vector field \(\theta_f\) on \(\widehat{\mathbf S}(\bar A)\); and the
+cotangent-dual \(u_f\in(\mathfrak h^\vee_{\mathrm{cont}}[1])^\vee\),
+producing the boundary observable \(O_f=J(f)\).  The CE/PV cochain
+dictionary on generators is
+\(c_f\mapsto\theta_f,\ u_f\mapsto O_f\)
+(Theorem~\ref{thm:reduced-ce-pv-central-operation}).  Continuous
+duality on the formal-disk topology identifies the cotangent module
+with the Grothendieck--Matlis principal-part module
+\[
+  \mathfrak h^\vee_{\mathrm{cont}}\cong\mathcal P
+    =\bigoplus_{a+b>0}\C\,\rho_{a,b},\qquad
+  \rho_{a,b}=z_1^{-a-1}z_2^{-b-1}\,dz_1\,dz_2,
+\]
+paired with Taylor Hamiltonians by residue
+(Theorem~\ref{thm:principal-part-coadjoint-uniqueness}).  The
 weighted-Tate completion \(B_w\) of
-Theorem~\ref{thm:wt-canonical-habitat} is the minimal RG-stable
-completion in which the heat-kernel propagator extends and the
-Casimir converges.
+Theorem~\ref{thm:wt-canonical-habitat} is minimal in the category of
+\(w\)-weighted bracket-admissible RG-stable Tate completions: the
+smallest such completion in which the heat-kernel propagator extends
+and the Casimir converges.
 
 \medskip
 \noindent
-\(\{\operatorname{Tr}\phi_1,\operatorname{Tr}\phi_2\}=N\) on the
-unreduced phase space is one Lie cocycle
-\(\hbar N[\bar c]\in H^2_{\mathrm{Lie}}(\bar A,\C)[[\hbar]]\) detected
-on four faces (algebraic central extension, Lie cocycle, trace-algebraic
-boundary, Weyl commutator
-\([\Phi_\hbar(z_1),\Phi_\hbar(z_2)]_\star=\hbar N\))
-\cite{capelli,howe-capelli,kontsevich-dq,matlis-injective}; under
-Moyal quantization it is the first scalar QME obstruction
-\(W_1^{\mathrm{sc,ord}}=\hbar N[\bar c]\) in the
-\(\mathfrak{gl}_N\) branch
-(Theorem~\ref{thm:app-scalar-anomaly-transgression}).  The Moyal star,
-the matrix Weyl algebra, and the brane trace agree componentwise on a
-weighted target
-(Theorem~\ref{thm:componentwise-quantum-coefficient-comparison});
-mismatches outside this product are exact obstruction theorems --- the
-radial/Weyl normal form
-\(\Omega^{\mathrm{rad}}_{a,b}\in\operatorname{coker}B_{a,b}\), the
-reduced non-scalar Costello QME class
-\([\operatorname{Ob}^{\mathrm{red}}_{w,\partial,\hbar}]\) with first
-exposed row \(\theta_3\) (\(H^1=\C\!\cdot\!E_{\theta_3}\) bare,
-vanishing under supplied counterterm), the unreduced
-\(P_0\)-factorization-centre vector
-\(\operatorname{Ob}_{\mathrm{cent/QME/desc}}\), and the strict
-all-window Bochner--Martinelli current-transfer obstruction
-\(\operatorname{Ob}^{\Pi}_{\mathrm{BM}}\) --- each named cohomology
-class blocking a stronger global, chain-level, or all-bidegree
-quantum claim.
+The unreduced linear-Hamiltonian Poisson bracket
+\(\{\operatorname{Tr}\phi_1,\operatorname{Tr}\phi_2\}=N\) records a
+single Lie 2-cocycle: the closed--open mismatch class
+\([\bar c]\in H^2_{\mathrm{Lie}}(\bar A,\C)\) attached to the constant
+Hamiltonian line, which generates the zero vector field closed-side
+and the brane center-of-mass open-side.  The class \(\hbar N[\bar c]
+\in H^2_{\mathrm{Lie}}(\bar A,\C)[[\hbar]]\) is detected on four
+faces --- algebraic central extension on the closed Taylor ring, Lie
+cocycle on \(\bar A\), trace-algebraic boundary central extension on
+the unreduced phase space, and the order-\(\hbar\) Weyl/Moyal
+commutator
+\([\Phi_\hbar(z_1),\Phi_\hbar(z_2)]_\star=\hbar N\), with
+\(\Phi_\hbar\) the Weyl-symmetric quantization map and \(\star\) the
+Kontsevich--Moyal star product
+\cite{capelli,howe-capelli,kontsevich-dq,matlis-injective}.  It
+appears as the first scalar quantum-master-equation obstruction
+\(W_1^{\mathrm{sc,ord}}=\hbar N[\bar c]\) of the ordinary
+scalar-reduced \(\mathfrak{gl}_N\) branch
+(Theorem~\ref{thm:app-scalar-anomaly-transgression}).
+
+\medskip
+\noindent
+The Moyal star, the matrix Weyl algebra, and the brane trace agree
+componentwise on a weighted target
+(Theorem~\ref{thm:componentwise-quantum-coefficient-comparison}).
+Outside this product four obstructions remain.  The decorated PBW
+Stokes operator \(B_{a,b}\) carries a per-bidegree radial/Weyl
+normal-form cokernel
+\(\Omega^{\mathrm{rad}}_{a,b}\in\operatorname{coker}B_{a,b}\)
+(all-bidegree radial Stokes); the unreduced
+\(P_0\)-factorization-centre lift is obstructed by the four-component
+vector \(\operatorname{Ob}_{\mathrm{cent/QME/desc}}\); strict
+all-window support-local current transfer to the brane is obstructed
+by \(\operatorname{Ob}^{\Pi}_{\mathrm{BM}}\); and the reduced
+non-scalar Costello quantum-master-equation lane carries the class
+\([\operatorname{Ob}^{\mathrm{red}}_{w,\partial,\hbar}]\in
+ H^1(\ker\widehat\sigma_{\mathrm{sc}},d_{\mathrm{QME}})\), with
+\(\widehat\sigma_{\mathrm{sc}}\) the filtered scalar projection and
+\(d_{\mathrm{QME}}\) the QME differential on the
+admissible-counterterm complex.  The QME class acquires its ambient
+complex only after counterterm data is supplied; its first
+non-scalar finite window is the cubic row \(\theta_3\), which
+carries the bare verdict
+\(H^1=\C\!\cdot\!E_{\theta_3}\) on the bare obstruction generator
+\(E_{\theta_3}\), killed by the unique supplied counterterm
+(Theorem~\ref{thm:app-theta-three-finite-window-H1}).
 
 \end{abstract}

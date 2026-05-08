@@ -1,0 +1,310 @@
+\section{Master deformation complex of local-to-global coherence}\label{app:master-deformation-complex}
+
+The local matrix microscope produces one Maurer--Cartan datum.
+Quantization, globalization, factorization-centre lift, modular
+clutching, and CY-categorical specialisation are not separate
+theorems: they are five transport problems for that single datum into
+five filtered \(L_\infty\) targets.  This appendix records the
+deformation complex governing each transport, identifies the local
+datum as a controlled element of the lowest filtration of every such
+target, and reads each named obstruction class of the manuscript as a
+curvature component of that transport.  The presentation is
+deliberately self-contained: every appearance of
+\(F_{\mathcal T}(\Theta_{\mathrm{loc}}+\tau)=0\) elsewhere in the
+manuscript refers back to the schema of this appendix, and every
+named obstruction class
+(\(\hbar N[\bar c]\), \(\Omega^{\mathrm{rad}}_{a,b}\),
+\([\operatorname{Ob}^{\mathrm{red}}_{w,\partial,\hbar}]\),
+\(\operatorname{Ob}_{\mathrm{cent/QME/desc}}\),
+\(\operatorname{Ob}^{\Pi}_{\mathrm{BM}}\),
+\(\operatorname{per}_X(v)\)) is the image of \(\Theta_{\mathrm{loc}}\)
+under the corresponding curvature decomposition.
+
+\subsection{Filtered \texorpdfstring{$L_\infty$}{Linfty} target deformation complex}\label{ssec:master-deformation-target}
+
+The data of a target deformation problem are
+\((\mathfrak K_{\mathcal T}^\bullet,F^\bullet,d,\ell_2,\ell_3,\dots)\):
+a filtered \(L_\infty\)-algebra in cohomological degree, with
+filtration
+\(\mathfrak K_{\mathcal T}=F^0\supseteq F^1\supseteq F^2\supseteq\cdots\)
+that is exhaustive and complete in the sense that
+\(\mathfrak K_{\mathcal T}\xrightarrow{\sim}\varprojlim_n
+\mathfrak K_{\mathcal T}/F^n\), with each \(\ell_k\) of weight at
+least \(k-1\) for the filtration so that the curvature series of an
+element of \(F^1\) converges in the filtered topology.
+
+Given a degree-one element \(\Theta\in F^1\mathfrak K_{\mathcal T}^1\),
+the curvature is the formal series
+\[
+  F_{\mathcal T}(\Theta)
+  =d\Theta
+   +\tfrac12\ell_2(\Theta,\Theta)
+   +\tfrac1{3!}\ell_3(\Theta,\Theta,\Theta)+\cdots,
+\]
+convergent in the filtered topology.  The Maurer--Cartan equation
+\(F_{\mathcal T}(\Theta)=0\) cuts out the strict
+\(\mathcal T\)-coherences.  Twists are filtered cochains
+\(\tau\in F^1\mathfrak K_{\mathcal T}^1\) (or, when the necessary
+extension is structural rather than first-order, central extensions of
+\(\mathfrak K_{\mathcal T}\) by an abelian filtered cochain
+complex):
+\[
+  \mathrm{TwGlob}_{\mathcal T}(\Theta)
+  =\bigl\{\,\tau\in F^1\mathfrak K_{\mathcal T}^1
+   \,:\,F_{\mathcal T}(\Theta+\tau)=0
+   \,\bigr\}\big/\mathrm{gauge} .
+\]
+A morphism of target deformation complexes
+\(\mathfrak K_{\mathcal T}\to\mathfrak K_{\mathcal T'}\) is a filtered
+\(L_\infty\)-morphism, sending Maurer--Cartan elements to
+Maurer--Cartan elements.
+
+\subsection{The transported local datum}\label{ssec:master-deformation-local-datum}
+
+The local matrix microscope produces canonical degree-one elements in
+five complexes.  In each case the construction is forced by the
+matrix-microscope hypotheses of
+Theorem~\ref{thm:formal-local-universal-property}: the Chan--Paton
+substitution \(z_i\rightsquigarrow\phi_i\), the Dirac constraint
+\([\phi_1,\phi_2]=0\), and the trace measurement
+\(J(f)=\overline{\operatorname{Tr}f(\phi_1,\phi_2)}\) determine the
+underlying datum; the choice of target adds the controlling
+deformation algebra.
+
+\paragraph{Global Hamiltonian descent.}  For a holomorphic-symplectic
+ambient \((X,\omega)\) with a brane \(L\) and a Darboux cover
+\(\{U_i\}\) symplectomorphic to \(\widehat{\C^2}_0\), the local data
+are charts \(\Phi_i:U_i\to\widehat{\C^2}_0\) with local Hamiltonians
+\(h_i\); the deformation complex is
+\(\mathfrak K_{\mathrm{glob}}=
+\mathrm{Tot}\,C^\bullet_{\check C/\mathrm{WR}}(\{U_i\},
+\mathfrak K_{\mathrm{loc}})\) -- the totalization of the
+\v{C}ech--Weiss--Ran complex of local matrix-microscope coefficients.
+The transported element is
+\(\Theta_{\mathrm{glob}}=(\Theta_i,\alpha_{ij},\beta_{ijk},\dots)\),
+with curvature
+\(F_{\mathrm{glob}}(\Theta_{\mathrm{glob}})\) carrying the Hamiltonian
+period \(\operatorname{per}_X(v)=[h_i-h_j]\in H^1(X,\C_X)\) as one
+named component.
+
+\paragraph{Costello quantum master equation.}  The Costello
+deformation complex is the filtered local-functional complex
+\(\mathfrak Q^\bullet_{w,\partial,\hbar}(I)\) with differential
+\(d_{\mathrm{QME}}=Q+\{I,-\}+\hbar\Delta\); the transported element is
+the classical interaction \(I_{\mathrm{loc}}\) of the open Hamiltonian
+BF theory, completed in the weighted-Tate envelope of
+Theorem~\ref{thm:wt-canonical-habitat}.  After scalar-symbol
+projection \(\widehat\sigma_{\mathrm{sc}}\), the reduced non-scalar
+curvature is
+\([F_{\mathrm{QME}}(\Theta_{\mathrm{loc}})]
+ =[\operatorname{Ob}^{\mathrm{red}}_{w,\partial,\hbar}]
+ \in H^1(\ker\widehat\sigma_{\mathrm{sc}},d_{\mathrm{QME}})\).
+
+\paragraph{Unreduced \(P_0\)-factorization-centre lift.}  The
+deformation complex is the mapping complex
+\(\mathfrak J_{\mathrm{fact}}=\mathrm{RHom}(\mathrm{Obs}^{\mathrm{cl}}_{\mathrm{closed},H}\big|_L,
+Z^{P_0}_{\mathrm{fact}}(\mathrm{Obs}^{\mathrm{cl}}_{\mathrm{open},N}))\),
+augmented by BV/QME and stratified Weiss--\v{C}ech--Roos descent
+directions.  The transported element is the reduced CE/PV cochain
+morphism of Theorem~\ref{thm:reduced-ce-pv-central-operation}
+restricted to the brane.  The curvature decomposes as the four-component
+vector
+\(\operatorname{Ob}_{\mathrm{cent/QME/desc}}=
+(\mathrm{ob}^{\mathrm{prod}}_{\mathrm{cent}},
+\mathrm{ob}^{P_0}_{\mathrm{cent}},
+\mathrm{ob}^{\mathrm{bd}}_{\mathrm{QME}},
+\delta^{\mathrm{Weiss}}_{\check C/R})\) of
+Theorem~\ref{thm:app-unreduced-cotangent-lift-obstruction}.
+
+\paragraph{Decorated radial Stokes / Weyl normal form.}  The
+deformation complex is the finite-dimensional radial bicomplex of
+Definition~\ref{def:radial-bicomplex} with decoration generators for
+PBW/Stokes corrections.  At each bidegree \((a,b)\) the transported
+element is the radial comparison vector
+\(v_{a,b}=(T_{a,b},E^+_{a,b})\); the curvature is the per-bidegree class
+\(\Omega^{\mathrm{rad}}_{a,b}=[(T_{a,b},E^+_{a,b})]\in
+\operatorname{coker}B_{a,b}\), and the failure dual is
+\((\phi,-\lambda)\in\ker B^*_{a,b}\) with
+\(\lambda(E^+_{a,b})-\phi(T_{a,b})\ne0\).
+
+\paragraph{Strict all-window Bochner--Martinelli current transfer.}
+The deformation complex is the tower of finite Matlis windows
+\(P_{\le N}=\bigoplus_{a+b\le N}\C\rho_{a,b}\) with action of
+\(\mathfrak h\) by Hamiltonian vector fields; the transported element
+is the brane current pair
+\((P_{\le N},\rho_{0,1})\).  The curvature is the residue-coadjoint
+leak \(z_1^{N+2}\cdot\rho_{N+1,0}=-(N+2)\rho_{0,1}\), encoded as the
+obstruction \(\operatorname{Ob}^{\Pi}_{\mathrm{BM}}\).
+
+\paragraph{Modular open-closed clutching.}  The deformation complex is
+the cyclic factorization dg category
+\(\mathcal C^{\mathrm{op}}\) of the brane line, equipped with cyclic
+trace \(\mathrm{Tr}_{\mathcal C}\) and modular twisting morphism
+\(\Theta_{\mathcal C}^{oc,\log}\); the transported element is the
+local CE/PV cochain on the formal Darboux disk; the curvature is the
+modular determinant-line class \(\Omega_{\mathrm{mod}}\) appearing in
+\(\mathrm{Cl}^*\mathrm{Tr}=\mathrm{contract}(\mathrm{Tr}\otimes\mathrm{Tr})
+\otimes e^{\Omega_{\mathrm{node}}}\).  The local manuscript proves no
+modular curvature theorem; this transport problem is recorded here as
+a target deformation problem and is solved only when an admissible
+modular trace and clutching law are supplied.
+
+\subsection{Twist taxonomy: three mechanisms}\label{ssec:master-deformation-twist}
+
+A nonvanishing curvature class is repaired in exactly three
+mechanically distinct ways.  Conflating them is the source of every
+``magic-word'' overclaim that the critique of the manuscript flagged.
+
+\begin{description}
+\item[Null-homotopy twist.]  The class is exact in the original target:
+\(F_{\mathcal T}(\Theta)=d_\Theta\tau\).  The corrected element
+\(\Theta+\tau\) satisfies the strict Maurer--Cartan equation in the
+same target.  This is the language of QME counterterms,
+homotopy-centrality witnesses, decorated radial Stokes corrections,
+Weiss/Ran descent homotopies, and many finite-window radial
+adjustments.  The model example in this manuscript is the
+\(\theta_3\) finite-window
+\(H^1\): bare \(H^1=\C\!\cdot\!E_{\theta_3}\ne0\) under the cleared
+QME differential, but supplied-counterterm \(H^1=0\) under the unique
+local counterterm \(dC=-E\), \(c=1\)
+(Theorem~\ref{thm:app-theta-three-finite-window-H1}).
+\item[Structural / central twist.]  The class is closed and central:
+\(F_{\mathcal T}(\Theta)=\omega\), \(d\omega=0\), \(\omega\) central.
+The repair is to enlarge \(\mathfrak K_{\mathcal T}\) by a central
+extension carrying \(\omega\) on the trace line.  The corrected
+element satisfies the master equation in the extended target, and
+\(\Theta\) becomes a section of a projective rather than a strict
+structure.  The scalar anomaly
+\(\hbar N[\bar c]\in H^2_{\mathrm{Lie}}(\bar A,\C)[[\hbar]]\) is the
+prototype: no internal counterterm cancels the ordinary
+scalar-reduced Costello obstruction in the \(\mathfrak{gl}_N\)
+branch, and the only admissible repair is the central extension
+\(0\to\C\!\cdot\!\mathbf 1\to\mathfrak h_{\hbar,N}\to\bar A\to 0\)
+under which the brane carries a projective Hamiltonian action
+\([\Phi_\hbar(f),\Phi_\hbar(g)]_\star
+ =\hbar\Phi_\hbar(\{f,g\})+\hbar N\bar c(f,g)\mathbf 1\).  The same
+mechanism produces the global gerbe-valued descent of Hamiltonian
+sections in the period class \(\operatorname{per}_X(v)\), where the
+gerbe is the central extension of the \v{C}ech--Weiss--Ran complex by
+the descent cocycle.
+\item[Target-replacement twist.]  The class is neither exact nor
+central: no admissible \(\tau\) lies in any extension of
+\(\mathfrak K_{\mathcal T}\) for which the corrected curvature is
+zero.  The strict target is wrong; coherence is restored only by
+replacing \(\mathcal T\) with a different target along a forced
+substitution.  The strict all-window Bochner--Martinelli current
+transfer is the prototype: in every fixed finite Matlis window
+\(P_{\le N}\), the residue-coadjoint Jacobiator
+\((N+1)(N+2)\rho_{0,1}\ne 0\) is non-absorptive in the strict
+multiplication structure, so no internal counterterm restores
+coherence.  The pro-Matlis tower \(P^\Pi=\varprojlim_N P_{\le N}\)
+(Corollary~\ref{cor:promatlis-retract-as-supremum}) is the supremum
+form selected by the leak: the modified coherence law is
+\(\pi_N(f\cdot\xi)=\pi_N(f\cdot\pi_{N+r(f)}\xi)\), Hamiltonian action
+is coherent only in the pro-tower, and any fixed finite current
+window is a measurement truncation, not a closed dynamical
+subsystem.
+\end{description}
+
+\subsection{Theorem schema: obstruction--twist dichotomy}\label{ssec:master-deformation-dichotomy}
+
+\begin{thm}[Obstruction--twist dichotomy schema]\label{thm:obstruction-twist-dichotomy}
+Let \(\mathcal T\) be a target deformation problem with filtered
+\(L_\infty\) algebra
+\((\mathfrak K_{\mathcal T},F^\bullet,d,\ell_k)\), and let
+\(\Theta_{\mathrm{loc}}\in F^1\mathfrak K_{\mathcal T}^1\) be the
+transported local matrix-microscope datum.  Exactly one of the
+following four cases obtains.
+\begin{enumerate}
+\item \emph{Strict coherence.}  \(F_{\mathcal T}(\Theta_{\mathrm{loc}})=0\)
+in \(\mathfrak K_{\mathcal T}^2\).  The strict
+\(\mathcal T\)-coherence exists and is unique up to gauge.
+\item \emph{Counterterm coherence.}  The class
+\([F_{\mathcal T}(\Theta_{\mathrm{loc}})]\) is exact in
+\(H^2(\mathfrak K_{\mathcal T},\Theta_{\mathrm{loc}})\): there exists
+\(\tau\in F^1\mathfrak K_{\mathcal T}^1\) with
+\(F_{\mathcal T}(\Theta_{\mathrm{loc}}+\tau)=0\) in
+\(\mathfrak K_{\mathcal T}\).  The corrected element gives a
+\(\tau\)-twisted \(\mathcal T\)-coherence in the same target.
+\item \emph{Projective / gerbe coherence.}  The class is central but
+not exact: \([F_{\mathcal T}(\Theta_{\mathrm{loc}})]=[\omega]\) with
+\(\omega\) central in \(\mathfrak K_{\mathcal T}\).  The corrected
+element gives a coherence in a central extension of
+\(\mathfrak K_{\mathcal T}\) by \(\omega\); the global structure is
+projective rather than strict.
+\item \emph{Target replacement.}  The class is neither exact nor
+central in any admissible extension of \(\mathfrak K_{\mathcal T}\).
+The strict target is wrong; coherence exists only after a forced
+substitution \(\mathcal T\rightsquigarrow\mathcal T'\) supplied as
+external data.
+\end{enumerate}
+The local manuscript theorems decompose as follows.
+\[
+  \renewcommand{\arraystretch}{1.25}
+  \begin{array}{l|l|l}
+    \text{Class} & \text{Curvature meaning} & \text{Mechanism}\\\hline
+    \hbar N[\bar c]
+      & \text{scalar-reduced Hamiltonian action}
+      & \text{central extension, projective}\\
+    \Omega^{\mathrm{rad}}_{a,b}
+      & \text{Weyl/radial all-bidegree normal form}
+      & \text{decorated PBW/Stokes counterterm}\\
+    [\operatorname{Ob}^{\mathrm{red}}_{w,\partial,\hbar}]
+      & \text{reduced non-scalar QME}
+      & \text{Costello local counterterm}\\
+    \operatorname{Ob}_{\mathrm{cent/QME/desc}}
+      & \text{unreduced factorization-centre lift}
+      & \text{derived centre, homotopy-centrality}\\
+    \operatorname{Ob}^{\Pi}_{\mathrm{BM}}
+      & \text{strict finite-current transfer}
+      & \text{target replacement, pro-Matlis}\\
+    \operatorname{per}_X(v)
+      & \text{global Hamiltonian descent}
+      & \text{Hamiltonian gerbe, projective}\\
+  \end{array}
+\]
+The mechanism column is read off the schema, not declared by fiat:
+each entry is the corresponding clause of (1)--(4) under the named
+obstruction theorem of \S\ref{ssec:tate-residual-resolution} and the
+appendices.
+\end{thm}
+
+\subsection{What this appendix replaces}\label{ssec:master-deformation-replaces}
+
+Three rhetorical patterns in the manuscript should now route through
+this appendix rather than appearing as freestanding declarations.
+
+\emph{``Twisting restores coherence''} is replaced by the precise
+sentence: the curvature class
+\([F_{\mathcal T}(\Theta_{\mathrm{loc}})]\) admits a representative
+in a specified extension of \(\mathfrak K_{\mathcal T}\), and the
+extension is built by case (2) or case (3) of
+Schema~\ref{schema:obstruction-twist-dichotomy}; in case (4) the
+sentence is forbidden until a replacement target is supplied.
+
+\emph{``This obstruction is structural''} is replaced by: the
+curvature class is closed and central in
+\(\mathfrak K_{\mathcal T}\), and the corrected coherence lives in
+the central extension by the cocycle representative.  No claim of
+structural inevitability is made without naming the central element.
+
+\emph{``The next theory absorbs this class''} is replaced by: there
+is a target replacement \(\mathcal T\rightsquigarrow\mathcal T'\)
+with a specified \(L_\infty\)-morphism
+\(\mathfrak K_{\mathcal T'}\to\mathfrak K_{\mathcal T}\) under which
+the local datum lifts to a Maurer--Cartan element of
+\(\mathfrak K_{\mathcal T'}\).  In every other situation the class
+is recorded as a no-go selector and the substitution is named as
+external input rather than ``absorption''.
+
+The deformation-theoretic stance unifies the obstruction calculus of
+\S\ref{ssec:tate-residual-resolution} with the cross-volume firewall
+of Appendix~\ref{app:convention-contract}: the local theorem
+constructs \(\Theta_{\mathrm{loc}}\); each named obstruction class
+of the manuscript is a curvature component of a transport problem in
+the sense of \S\ref{ssec:master-deformation-target}; and stronger
+global, quantum, modular, or CY-categorical statements live in the
+spaces \(\mathrm{TwGlob}_{\mathcal T}(\Theta_{\mathrm{loc}})\) of
+admissible twists.  An obstruction is the memory of structure erased
+by an over-strict target; the master deformation complex is the
+language in which that memory is computed.

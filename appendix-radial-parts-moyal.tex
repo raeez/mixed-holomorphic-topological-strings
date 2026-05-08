@@ -2246,6 +2246,47 @@ exactly the assertion that the ordinary Weyl trace \(J_N(f)\) equals
   unconditional kernel-correction window.
 \end{rmk}
 
+\begin{ex}[Reproducibility certificate at low bidegree]\label{ex:app-radial-reproducibility-certificate}
+  The invocation
+  \[
+    \texttt{python3 scripts/quantum\_shear\_trace\_diagram\_normal\_form.py
+            --case }a,b\texttt{ --kernel-correction}
+  \]
+  certifies \(\Omega^{\mathrm{rad}}_{a,b}=0\) at bidegree \((a,b)\) by
+  exact rational linear algebra.  Rows of \(B_{a,b}\) are indexed
+  normal diagrams on \(a\) letters \(X\) and \(b\) letters \(Y\) with
+  all \(X\)-edges preceding all \(Y\)-edges; columns are signed
+  adjacent-swap generators of \(\mathsf W_{a,b}\) followed by
+  normalized diagonal generators of \(\mathsf{Diag}_{a,b}\).
+
+  At \((a,b)=(2,2)\): rows \(=6\), cols \(=2\), rank \(=1\), classical
+  lift terms \(=1\), residual terms \(=0\).  The unique classical lift
+  lies in \(\operatorname{im} D^\square_{2,2}\), so
+  \(\Omega^{\mathrm{rad}}_{2,2}=0\) without correction.
+
+  At \((a,b)=(3,3)\): rows \(=16\), cols \(=6\), rank \(=3\), classical
+  lift terms \(=3\), residual terms \(=0\).
+  \(\Omega^{\mathrm{rad}}_{3,3}=0\) without correction.
+
+  At \((a,b)=(4,4)\): rows \(=49\), cols \(=20\), rank \(=10\),
+  classical lift terms \(=9\), residual terms \(=4\).  The cyclic
+  pivot residual is
+  \[
+    \tfrac{43}{14}
+      \Bigl(
+        \overline{\operatorname{Tr}(XXYXYY)}
+        -\overline{\operatorname{Tr}(XYXXYY)}
+        -\overline{\operatorname{Tr}(XYYXYX)}
+        +\overline{\operatorname{Tr}(XYYYXX)}
+      \Bigr),
+  \]
+  killed by a four-term correction in \(\ker\partial\).  The
+  \texttt{--solve-classical} mode prints the pivot lift before
+  correction; \texttt{--classical-only} confirms the uncorrected
+  residual.
+
+\end{ex}
+
 \begin{rmk}[Scalar quotient and the \(U(1)\) anomaly]
 \label{rmk:app-radial-scalar-quotient}
   Constants are central in the Moyal Lie algebra and are killed in
