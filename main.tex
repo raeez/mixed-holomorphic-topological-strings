@@ -6680,6 +6680,23 @@ ambient product is a separate admissibility input.
   \S\ref{ssec:tate-residual-resolution}.
 \end{thm}
 
+\begin{rmk}[Worked instances]\label{rmk:Jf-uniqueness-running-examples}
+  The three running examples of
+  \S\ref{ssec:brane-microscope-one-calculation} pin the theorem
+  concretely.  Example~\ref{exa:point-probe-N1} is the \(N=1\) case:
+  the matrices commute automatically, scalar reduction is trivial, and
+  \(J(f)=f(\phi_1,\phi_2)\) is the classical evaluation map at a
+  point of \(\C^2\).  Example~\ref{exa:linear-hamiltonians-anomaly}
+  shows the linear Hamiltonian normalisation
+  \(z_i\mapsto\overline{\operatorname{Tr}\phi_i}\) at work and exhibits
+  the scalar reduction killing the constant-Hamiltonian line.
+  Example~\ref{exa:single-matlis-residue} contrasts the Taylor side
+  (what \(J\) samples) with the residue side (the Matlis dual that
+  pairs with Taylor coefficients), which is why the no-natural-correction
+  step below works monomial-by-monomial rather than by an algebra-homomorphism
+  extension.
+\end{rmk}
+
 \begin{proof}
   \emph{Invariant theory (U1).}  Proposition~\ref{prop:stable-trace-invariants}
   restricts \(\widetilde J(f)\) to a polynomial in cyclic words on
@@ -13236,6 +13253,53 @@ checks in the problem below.
   invariants in this setting.
 \end{rmk}
 
+\section*{Closing thesis}
+\addcontentsline{toc}{section}{Closing thesis}
+
+A Dirac brane stack is a finite-matrix microscope for a formal
+holomorphic-symplectic disk.  Its protected local measurement theorem
+says that a Hamiltonian is measured by trace substitution into the
+brane's matrix-valued transverse coordinate:
+\[
+  f\longmapsto J(f)=\overline{\operatorname{Tr}f(\phi_1,\phi_2)} .
+\]
+The shifted-cotangent closed BV theory separates canonical motion from
+measurement: ghosts move, cotangent coordinates measure
+(\(c_f\mapsto\theta_f,\ u_f\mapsto O_f\)).  Continuous duality turns
+cotangent modes into Grothendieck--Matlis principal parts.  Scalar
+reduction leaves a centre-of-mass cocycle \(\hbar N[\bar c]\).  Moyal
+quantization tests, bidegree by bidegree, whether Weyl ordering
+commutes with brane trace measurement.  Every stronger global,
+quantum, chain-level, all-bidegree, modular, or CY-categorical claim is
+a transport problem for the local Maurer--Cartan datum
+\(\Theta_{\mathrm{loc}}\) into a larger target deformation complex
+\(\mathfrak K_{\mathcal T}\).  The named obstruction classes
+\(\hbar N[\bar c]\), \(\Omega^{\mathrm{rad}}_{a,b}\),
+\([\operatorname{Ob}^{\mathrm{red}}_{w,\partial,\hbar}]\),
+\(\operatorname{Ob}_{\mathrm{cent/QME/desc}}\),
+\(\operatorname{Ob}^{\Pi}_{\mathrm{BM}}\), and
+\(\operatorname{per}_X(v)\) are the curvature components of those
+transports.  Vanishing gives strict coherence; null-homotopy gives
+counterterm coherence; central exactness gives projective or
+gerbe-valued coherence; non-absorptive curvature forces target
+replacement.  Volumes I, II, and III supply the algebraic, physical,
+and Calabi--Yau categorical arenas in which these transports live;
+the local theorem of this manuscript is the formal Hamiltonian
+Darboux brane-probe chart of the last arrow of that chain, and never
+bypasses the functorial gates between volumes.
+
+The deepest sentence is the same in every voice the manuscript is
+written in:
+\[
+  \boxed{\;
+  \text{The brane does not represent the Hamiltonian algebra; it evaluates Hamiltonians on its matrix-valued transverse coordinate.}
+  \;}
+\]
+Everything above is the deformation theory of making that sentence
+global, quantum, and coherent.  An obstruction is the memory of
+structure erased by an over-strict target; the master deformation
+complex is the language in which that memory is computed.
+
 \section*{Acknowledgements}
 This work belongs to the lineage of Bershadsky--Cecotti--Ooguri--Vafa
 1993, Witten 1988, Costello 2011, and Beilinson--Drinfeld 2004; the
@@ -13262,6 +13326,7 @@ extending this principle are the named classes
 \input{appendix-unreduced-bv-qme}
 \input{appendix-radial-parts-moyal}
 \input{appendix-master-deformation-complex}
+\input{appendix-algorithms}
 \input{tate-P5-cross-volume}
 
 
