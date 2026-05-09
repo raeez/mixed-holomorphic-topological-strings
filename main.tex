@@ -91,10 +91,14 @@ and a Dirac Brane Formal-Stalk Chart on $\R^2_{\mathrm{top}}\times\C^2_{\mathrm{
 
   Mixed holomorphic-topological string theory on
   \(\R^2_{\mathrm{top}}\times\C^2_{\mathrm{hol}}\) has, at each formal
-  holomorphic-symplectic brane point, a closed sector that coincides
-  with the chiral Hochschild cohomology of the boundary algebra; this
-  manuscript computes the formal-Darboux coordinate expression of that
-  coincidence at \(N\) Dirac branes.
+  holomorphic-symplectic brane point, a closed sector conjectured
+  to coincide with the chiral Hochschild cohomology of the boundary
+  algebra: the Mixed Holomorphic--Topological Deligne conjecture, the
+  two-complex-dimensional extension of the chiral Deligne theorem
+  proved at \(d=1\) for chiral algebras factorising over curves.
+  This manuscript proves the conjecture's formal-Darboux stalk at \(N\)
+  Dirac branes; the coordinate expression is the trace character
+  \(J(f)=\overline{\operatorname{Tr}\,f(\phi_1,\phi_2)}\).
 
   \medskip\noindent
   The B-model topological string is governed at all loops by the
@@ -219,12 +223,14 @@ and a Dirac Brane Formal-Stalk Chart on $\R^2_{\mathrm{top}}\times\C^2_{\mathrm{
   cyclic framed stable branch.
 
   \medskip\noindent
-  \emph{The trace map \(J\).}  A Hamiltonian
-  \(f\in\mathfrak h\) is measured on the brane as the gauge-invariant
-  trace character
+  \emph{The trace map \(J\).}  At \(N\) Dirac branes the trace map
   \[
-    J(f)=\overline{\operatorname{Tr}\,f(\phi_1,\phi_2)}.
+    J\colon\mathfrak h\to\mathcal O\bigl(\mu^{-1}_{\mathrm{der}}(0)\bigr)^{GL_N},
+    \qquad
+    J(f)=\overline{\operatorname{Tr}\,f(\phi_1,\phi_2)},
   \]
+  is the gauge-invariant trace character of a Hamiltonian
+  \(f\in\mathfrak h\).
   \(J\) is the unique linear \(GL_N\)-equivariant primitive
   single-trace map
   \(\mathfrak h\to\mathcal O\bigl(\mu^{-1}_{\mathrm{der}}(0)\bigr)^{GL_N}\)
@@ -242,10 +248,10 @@ and a Dirac Brane Formal-Stalk Chart on $\R^2_{\mathrm{top}}\times\C^2_{\mathrm{
   (Theorem~\ref{thm:formal-local-universal-property}).
 
   \medskip\noindent
-  \emph{Closed-open coupling.}  The bulk factorization algebra of
-  classical observables admits two equivalent presentations: a
-  Costello--Gwilliam holomorphic factorization algebra on \(\C^2\)
-  valued in \(E_2\)-algebras
+  \emph{Closed-open coupling.}  The closed-string sector classical
+  observables factorization algebra on $\C^2$ admits two equivalent
+  presentations: a Costello--Gwilliam holomorphic factorization algebra
+  on \(\C^2\) valued in \(E_2\)-algebras
   \[
     \mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}(B)=
     \mathcal F^{\mathrm{cl}}_{\mathrm{Ham}}(D^2\times B),
@@ -286,9 +292,12 @@ and a Dirac Brane Formal-Stalk Chart on $\R^2_{\mathrm{top}}\times\C^2_{\mathrm{
     \Phi_N\colon\mathcal A^{\mathrm{cl}}_{\mathrm{bulk},0}
     \longrightarrow Z^{\mathrm{der}}_{E_1}\!\bigl(A^{\mathrm{cl}}_{\partial,N}\bigr)
   \]
-  into the derived $E_1$-centre of the brane $E_1$-algebra
-  identified by Lurie--Francis additivity; the chain-level lift is
-  conditional on vanishing of the obstruction vector
+  into the derived $E_1$-centre of the brane $E_1$-algebra,
+  identified with the Hochschild cochain $E_2$-algebra by Deligne's
+  $E_1$-Hochschild theorem and matched with the formal-Darboux stalk
+  of the closed-string sector classical observables by the
+  Costello--Gwilliam bulk--boundary correspondence; the chain-level
+  lift is conditional on vanishing of the obstruction vector
   $\operatorname{Ob}_{\mathrm{cent/QME/desc}}$
   (Theorem~\ref{thm:app-unreduced-cotangent-lift-obstruction}) with
   chosen null-homotopies, supplied by the supremum constructions of
@@ -381,13 +390,15 @@ and a Dirac Brane Formal-Stalk Chart on $\R^2_{\mathrm{top}}\times\C^2_{\mathrm{
   of \(\Hilb^N(\C^2)\) in its noncommutative Moyal deformation.
 
   \medskip\noindent
-  The local theorem is the formal-Darboux stalk chart restriction of
-  the derived chiral centre \(Z^{\mathrm{der}}_{\mathrm{ch}}(A)\)
-  (the chiral Hochschild cochain centre of a chiral algebra \(A\)),
-  constructed by ordered bar-cobar duality and modular Maurer--Cartan
-  calculus, identified with the bulk-boundary datum of a 3d
-  holomorphic--topological boundary-bulk system, and sourced from a
-  Calabi--Yau category through the two-stage functor
+  The local theorem is the formal-Darboux stalk chart
+  (Definition~\ref{def:formal-darboux-stalk-chart}) restriction of the
+  derived chiral centre \(Z^{\mathrm{der}}_{\mathrm{ch}}(A)\) (the
+  chiral Hochschild cochain centre at \(d=1\); at \(d=2\) the
+  conjectural Mixed HT Deligne identification of
+  \S\ref{ssec:binding-convention-layer}), identified with the
+  bulk-boundary datum of a 3d holomorphic--topological boundary-bulk
+  system, and sourced from a Calabi--Yau category through the two-stage
+  functor
   \(\Phi_d=\mathrm{Sp}_{\Sigma_{d-1},C}\circ\Phi^{\mathrm{FA}}_d\)
   (factorization-algebra functor \(\Phi^{\mathrm{FA}}_d\) of a
   Calabi--Yau \(d\)-category followed by Lurie--Ayala--Francis
@@ -415,7 +426,9 @@ matched-conventions theorem
 
 \paragraph{Geometric and algebraic conventions.}
 The complex target dimension is \(d=\dim_\C X\); the manuscript proves
-the formal-Darboux stalk at the Dirac brane stack on
+the formal-Darboux stalk
+(Definition~\ref{def:formal-darboux-stalk-chart}) at the Dirac brane
+stack on
 \(\R^2_{\mathrm{top}}\times\widehat{\C^2}_{0,\mathrm{hol}}\), with
 \(d=\dim_\C\widehat{\C^2}_0=2\).  The local geometry is
 \(\R^2_{\mathrm{top}}\times\C^2_{\mathrm{hol}}\) at a brane:
@@ -485,9 +498,20 @@ pairing of Vol III.  Drinfeld centre \(Z(\mathcal C)\), derived
 centre \(Z^{\mathrm{der}}\), and chiral derived centre
 \(Z^{\mathrm{der}}_{\mathrm{ch}}\) are distinguished: the bar
 construction \(\mathrm{Bar}(A)\) is the twisting coalgebra and is not
-the bulk; the bulk is
-\(Z^{\mathrm{der}}_{\mathrm{ch}}(A)\simeq C^\bullet_{\mathrm{ch}}(A,A)\),
-the chiral Hochschild cochain centre.
+the bulk.  The chiral derived centre at \(d=1\) is
+\(Z^{\mathrm{der}}_{\mathrm{ch}}(A)\simeq C^\bullet_{\mathrm{ch}}(A,A)\)
+(Beilinson--Drinfeld chiral algebras factorising over curves; Vol I).
+At \(d=2\) the analogous identification of the bulk with the chiral
+derived centre of the open category is the Mixed
+Holomorphic--Topological Deligne conjecture; this manuscript
+proves its formal-Darboux stalk at the brane vacuum.  Throughout, when
+\(C^\bullet_{\mathrm{ch}}(A_b,A_b)\) appears at \(d=2\), \(A_b\) carries
+the chiral algebra structure inherited as the formal-Darboux stalk
+of the closed-string sector classical observables factorization
+algebra on \(\C^2\); the local identification at the stalk reduces to
+the derived \(E_1\)-centre of the open-string \(E_1\)-brane algebra by
+Costello--Gwilliam bulk--boundary correspondence and Deligne's
+\(E_1\)-Hochschild theorem.
 
 \paragraph{Constellation-anchored objects.}
 The boundary open category on the Kato--Nakayama (KN) log boundary is
@@ -646,16 +670,17 @@ and \(GL_N\)-conjugation acts symplectically with moment map
 reduction imposes the first-class constraint
 \([\phi_1,\phi_2]=0\): \(\rho_\phi\) factors through the commuting
 variety, and the simultaneous spectrum of \((\phi_1,\phi_2)\) is the
-configuration of \(N\) points in the polydisk.  A Hamiltonian
-\(f\in A\) is measured on the brane as the gauge-invariant trace
-character of its representation,
+configuration of \(N\) points in the polydisk.  The trace character
+map at the Chan--Paton brane \(\rho_\phi\) is
 \[
+  J\colon\mathfrak h\to A_\partial=\widehat{\mathbf S}_{\mathrm{Tate}}(\mathfrak h),
+  \qquad
   J(f)=\overline{\operatorname{Tr}\,\rho_\phi(f)}
-       =\overline{\operatorname{Tr}\,f(\phi_1,\phi_2)}
-       \in A_\partial=\widehat{\mathbf S}_{\mathrm{Tate}}(\mathfrak h),
-       \qquad
-       \mathfrak h=A/\C\cdot 1.
+       =\overline{\operatorname{Tr}\,f(\phi_1,\phi_2)},
+  \qquad
+  \mathfrak h=A/\C\cdot 1,
 \]
+the gauge-invariant trace character of a Hamiltonian \(f\in A\).
 The brane represents the commutative coordinate ring \(A\); the
 Hamiltonian Lie algebra \(\mathfrak h\) acts on the representation
 moduli \(\Rep_N(A)/\!/GL_N\) by Hamiltonian vector fields.
@@ -1491,22 +1516,24 @@ the level of generators.
   Proposition~\ref{prop:first-order-bracket}.
 
   Continuous extension across the graded-commutative coordinate algebra
-  is Theorem~\ref{thm:reduced-ce-pv-central-operation}.  Lurie--Francis
-  additivity \(E_2\otimes E_1\to E_1\) glues the generator data into
-  the universal bulk-to-boundary map landing in
-  \(Z^{\mathrm{der}}_{E_1}(A^{\mathrm{cl}}_{\partial,N})\simeq
-  HH^\bullet(A^{\mathrm{cl}}_{\partial,N})\); uniqueness of the
-  boundary values \(u_f\mapsto J(f)\) is
-  Theorem~\ref{thm:Jf-coordinate-uniqueness}.
+  is Theorem~\ref{thm:reduced-ce-pv-central-operation}.
+  Deligne's \(E_1\)-Hochschild theorem identifies
+  \(Z^{\mathrm{der}}_{E_1}(A^{\mathrm{cl}}_{\partial,N})\) with
+  \(HH^\bullet(A^{\mathrm{cl}}_{\partial,N})\) as
+  \(E_2\)-algebras; the Costello--Gwilliam factorization-algebra
+  bulk--boundary correspondence glues the generator data into the
+  universal bulk-to-boundary chain map landing in this
+  \(E_2\)-algebra.  Uniqueness of the boundary values
+  \(u_f\mapsto J(f)\) is Theorem~\ref{thm:Jf-coordinate-uniqueness}.
 
   An explicit Hochschild-cochain model for \(\Phi_N\) at every cochain
   degree is the conditional upgrade \(\Phi^{\mathrm{cl}}\) to the
   strict \(P_0\)-factorization-centre, governed by the obstruction
   \(\operatorname{Ob}_{\mathrm{cent/QME/desc}}\) of
   Theorem~\ref{thm:app-unreduced-cotangent-lift-obstruction}; the
-  curvature class is the difference between Lurie--Francis
-  derived-\(E_1\)-centre additivity and the strict
-  \(P_0\)-factorization-centre.
+  curvature class is the difference between the derived
+  \(E_1\)-centre \(E_2\)-structure of Deligne's theorem and the
+  strict \(P_0\)-factorization-centre.
 \end{proof}
 
 \begin{rmk}[Native bulk object on $\C^2$]\label{rmk:not-a-curve-voa}
@@ -5342,10 +5369,10 @@ field.
 The open BV brane sector is the derived commuting variety
 \([\mu^{-1}_{\mathrm{der}}(0)/\mathrm{GL}_N]\) with Koszul antifield
 \(\psi\) and BV differential \(Q\psi=[\phi_1,\phi_2]\), with stable
-trace observables generating the open factorization algebra on the
-brane line.  The closed Hamiltonian
-\(f\in\mathfrak h\) is read on this brane sector as the
-\(\mathrm{GL}_N\)-invariant trace functional
+trace observables generating the open-string sector classical
+observables factorization algebra on the brane line.  The trace
+functional of a closed Hamiltonian \(f\in\mathfrak h\) on this brane
+sector is the \(\mathrm{GL}_N\)-invariant
 \(J(f)=\overline{\operatorname{Tr}\,f(\phi_1,\phi_2)}\); its
 universal property and CE-coordinate expression are the content of
 the section below.
@@ -5363,13 +5390,16 @@ the boundary category
 Kato--Nakayama log boundary \(\partial X^{\mathrm{KN}}\) of
 \((X,D,\tau)\)), the formal-Darboux stalk
 \(C^\bullet_{\mathrm{ch}}(A_b,A_b)\) is computed through the trace
-map \(J\) below.  The closed BV theory has two coordinate types, and
-the chart \(A_b\) reads
-only one of them.  Hamiltonian ghosts \(c^I\)---dual to generators
+map \(J\) below; the chiral algebra structure on \(A_b\) is the one
+inherited as the formal-Darboux stalk of the closed-string sector
+classical observables factorization algebra
+(\S\ref{ssec:binding-convention-layer}).  The closed BV theory has
+two coordinate types and the chart \(A_b\) carries only one of them.
+Hamiltonian ghosts \(c^I\)---dual to generators
 \(H_I\in\widehat{\mathfrak h}\)---generate the closed motion on the
 polydisk; cotangent coordinates \(u_I\)---dual to the shifted antifield
 generators in \(\mathfrak h^\vee_{\mathrm{cont}}[1]\)---are the
-boundary observables the chart \(A_b\) reads.
+boundary observables on the chart \(A_b\).
 Lemma~\ref{lem:formal-stalk-trace} gives the trace map
 \[
   J(f)=\mathrm{Tr}\,f(\phi_1,\phi_2)
@@ -5656,7 +5686,8 @@ with kernel the constants; any polynomial \(GL_N\)-invariant
 Darboux-natural scalar-reduced map agreeing with the moment-map
 action on linear generators must equal \(J\)
 (Theorem~\ref{thm:formal-local-universal-property}).  On a brane interval \(I\) the smeared
-trace observables generate the open factorization algebra
+trace observables generate the open-string sector classical
+observables factorization algebra
 \[
   \mathcal A_N(I)
    =\widehat{\mathbf S}\bigl(\Omega^0_c(I)\widehat\otimes\bar A\bigr),
@@ -7121,7 +7152,8 @@ The trace map
 linear \(\mathrm{GL}_N\)-equivariant Darboux-natural primitive
 single-trace map satisfying scalar reduction, Dirac descent, and
 \(J(z_i)=\overline{\operatorname{Tr}\,\phi_i}\); its image generates
-the open factorization algebra on the brane line.  The CE/PV
+the open-string sector classical observables factorization algebra
+on the brane line.  The CE/PV
 dictionary \(c_f\mapsto\theta_f\), \(u_f\mapsto J(f)\) on
 \(\mathfrak g=\mathfrak h\ltimes\mathfrak h^\vee_{\mathrm{cont}}[1]\)
 identifies the closed CE coordinates with Schouten polyvectors and

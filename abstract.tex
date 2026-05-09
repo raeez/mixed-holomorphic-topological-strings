@@ -24,17 +24,21 @@ At a brane vacuum $b\in\C^2$ the formal Darboux polydisk
 $(\widehat{\C^2}_b,\,\omega_b=dz_1\wedge dz_2)$ has chart algebra
 $A_b=\widehat{\mc O}_{\C^2,b}\cong\C[[z_1,z_2]]=\End(b)$
 (Definition~\ref{def:formal-darboux-stalk-chart}).  A stack of $N$
-Dirac branes along $\R_t\subset X$ over $b$ substitutes
+Dirac branes along the worldline $\R_t\subset X$ over $b$ substitutes
 $z_i\mapsto\phi_i\in\mathfrak{gl}_N$, $[\phi_1,\phi_2]=0$, antifield
-$\psi\in\mathfrak{gl}_N[1]$ with $Q\psi=[\phi_1,\phi_2]$, and brane
-$E_1$-algebra
+$\psi\in\mathfrak{gl}_N[1]$ with $Q\psi=[\phi_1,\phi_2]$.  The
+open-string $E_1$-brane algebra of classical observables on the
+worldline is
 \[
   A^{\mathrm{cl}}_{\partial,N}
    =C^\bullet_{\mathrm{CE}}\bigl(\mathfrak{gl}_N,\,
        \mathrm{Sym}(\mathfrak{gl}_N\oplus\mathfrak{gl}_N
-                    \oplus\mathfrak{gl}_N[1])\bigr).
+                    \oplus\mathfrak{gl}_N[1])\bigr),
 \]
-The trace map at the brane stack is
+the Chevalley--Eilenberg cochain complex of the Chan--Paton gauge Lie
+algebra with values in the symmetric algebra on the matrix coordinates,
+its antifield, and the moment-map antifield (Koszul differential
+$Q\psi=[\phi_1,\phi_2]$).  The trace map at the brane stack is
 \[
   J\colon\mathfrak h\to\mc O\bigl(\mu^{-1}_{\mathrm{der}}(0)\bigr)^{GL_N},
    \qquad
@@ -47,11 +51,22 @@ $J(z_i)=\overline{\operatorname{Tr}\phi_i}$
 (Theorem~\ref{thm:formal-local-universal-property}).
 
 \medskip\noindent
-Lurie--Francis additivity $E_2\otimes E_1\to E_1$ identifies the
-formal-Darboux stalk of the closed factorization algebra with the
-derived $E_1$-centre,
+The closed-string sector classical observables on $\C^2$ form the
+holomorphic factorization algebra $\mc A^{\mathrm{cl}}_{\mathrm{bulk}}$
+valued in $E_2$-algebras --- a two-complex-dimensional chiral algebra
+of holomorphic-symplectic Hamiltonians factorising over holomorphic
+surfaces.  The Mixed Holomorphic--Topological Deligne conjecture
+identifies it with the chiral derived centre of the open-string
+sector at $d=2$, generalising the chiral Deligne conjecture proved at
+$d=1$ for chiral algebras factorising over curves.  This manuscript
+proves its formal-Darboux stalk at $N$ Dirac branes.  The
+formal-Darboux stalk equips $A_b$ with chiral algebra structure
+inherited as $\mc A^{\mathrm{cl}}_{\mathrm{bulk}}|_b$.  Costello--Gwilliam
+factorization-algebra bulk--boundary correspondence and Deligne's
+$E_1$-Hochschild theorem identify the formal-Darboux stalk with the
+derived $E_1$-centre of the open-string $E_1$-brane algebra,
 \[
-  C^\bullet_{\mathrm{ch}}(A_b,A_b)
+  \mc A^{\mathrm{cl}}_{\mathrm{bulk}}|_b
    \simeq Z^{\mathrm{der}}_{E_1}\bigl(A^{\mathrm{cl}}_{\partial,N}\bigr)
    \simeq HH^\bullet\bigl(A^{\mathrm{cl}}_{\partial,N},A^{\mathrm{cl}}_{\partial,N}\bigr),
 \]
@@ -63,10 +78,14 @@ the closed-to-open dictionary is the Koszul resolution
   c_f\longmapsto\theta_f\in HH^1,\qquad
   u_f\longmapsto J(f)\cdot(\,\cdot\,)\in HH^0,
 \]
-$\theta_f$ the Hamiltonian Schouten field on the brane observable
-algebra.  The chain-level lift
-$\Phi_N\colon\mc A^{\mathrm{cl}}_{\mathrm{bulk},0}\to
-Z^{\mathrm{der}}_{E_1}(A^{\mathrm{cl}}_{\partial,N})$ is conditional on
+$\theta_f$ the Hamiltonian Schouten field on
+$A^{\mathrm{cl}}_{\partial,N}$.  The chain-level lift from the
+ghost-zero closed-string sector classical observables,
+\[
+  \Phi_N\colon\mc A^{\mathrm{cl}}_{\mathrm{bulk},0}
+   \longrightarrow Z^{\mathrm{der}}_{E_1}\bigl(A^{\mathrm{cl}}_{\partial,N}\bigr),
+\]
+is conditional on
 $\operatorname{Ob}_{\mathrm{cent}/\mathrm{QME}/\mathrm{desc}}=0$ with
 chosen null-homotopies
 (Theorem~\ref{thm:app-unreduced-cotangent-lift-obstruction}).
