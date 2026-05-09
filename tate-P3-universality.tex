@@ -2,6 +2,12 @@
 
 \subsection{Universality of the formal-local Hamiltonian sector}\label{ssec:twistedM-universality}
 
+The CE/PV Koszul resolution of the chiral Hochschild cohomology
+\(C^\bullet_{\mathrm{ch}}(A_b,A_b)\) of
+\S\ref{ssec:coordinate-free-ce-pv-synthesis} is the formal-Darboux
+stalk; the universal property of that Koszul resolution is the
+universality theorem of this section, stated as a corollary of the
+Koszul-resolution identification rather than as an independent theorem.
 The local theorem of \S\ref{ssec:local-theorem} lives at one brane
 point of the formal symplectic polydisk \(\widehat{\C^2}_0\).  An
 ambient theory on a connected holomorphic-symplectic surface
@@ -25,8 +31,11 @@ exactly when its protected datum lies in the category
   \widehat{\mathfrak h}=\C[[z_1,z_2]]/\C\cdot1,
 \]
 is the terminal object of \(\mathsf{ProtHam}\)
-(Theorem~\ref{thm:formal-local-universal-property}).  A candidate
-datum lies in \(\mathsf{ProtHam}\) iff the four-coordinate class
+(Theorem~\ref{thm:formal-local-universal-property}); equivalently, it is
+the universal property of the Koszul resolution of
+\(C^\bullet_{\mathrm{ch}}(A_b,A_b)\) at the formal-Darboux stalk.  A
+candidate datum lies in \(\mathsf{ProtHam}\) iff the four-coordinate
+class
 \[
   \operatorname{Ob}^{\mathrm{univ}}_{p,X}
     =
@@ -40,10 +49,17 @@ with chosen null-homotopies; the four coordinates lie in independent
 cohomology groups (the de Rham extension on \(X\), the
 closed-comparison cone, \(H^2_{\mathrm{Lie}}(\bar A,\C)\), and the
 weighted protected local-functional complex), and a single nonzero
-coordinate names the exact ambient mechanism that fails.
+coordinate names the exact ambient mechanism that fails.  In Koszul
+language, \(\operatorname{Ob}^{\mathrm{univ}}_{p,X}\) is the obstruction
+to convergence of the Koszul resolution on a non-formal target: each
+coordinate measures a precise mode of failure of the formal-Darboux
+Koszul resolution to extend along the ambient datum at \((X,\omega,p)\).
 
-External acceptance of an admissible datum into a compact-CY, MNOP,
-GV, OSV, DT, PT, Vol III, Igusa, or BKM target is a separate
+External acceptance of an admissible datum into a compact-CY,
+Maulik--Nekrasov--Okounkov--Pandharipande (MNOP),
+Gopakumar--Vafa (GV), Ooguri--Strominger--Vafa (OSV),
+Donaldson--Thomas (DT), Pandharipande--Thomas (PT), Vol III, Igusa,
+or Borcherds--Kac--Moody (BKM) target is a separate
 matched-conventions descent class
 (Corollary~\ref{cor:protected-matched-conventions-interface},
 \S\ref{app:convention-contract}); vanishing of
@@ -223,7 +239,8 @@ conclusion.
   Theorem~\ref{thm:formal-local-universal-property}.
 \end{proof}
 
-\begin{thm}[Universal property of the formal-local Hamiltonian sector]\label{thm:formal-local-universal-property}
+\begin{thm}[Universal property of the formal-local Hamiltonian sector;
+corollary of the CE/PV Koszul resolution identification]\label{thm:formal-local-universal-property}
   Let \(\mathsf{ProtHam}\) denote the category whose objects are
   triples \((X,\omega,p)\) with \((X,\omega)\) a connected
   holomorphic-symplectic surface and \(p\in X\) a brane point,
@@ -313,6 +330,18 @@ conclusion.
 \end{thm}
 
 \begin{proof}
+  Terminality of \(\mathfrak M^{\mathrm{Ham}}_{\mathrm{loc}}\) is the
+  universal property of the CE/PV Koszul resolution of
+  \(C^\bullet_{\mathrm{ch}}(A_b,A_b)\) of
+  \S\ref{ssec:coordinate-free-ce-pv-synthesis}: any protected datum on a
+  connected holomorphic-symplectic surface restricts to that Koszul
+  resolution at \(p\in X^{\mathrm{KN}}\) once the four coordinates of
+  \(\operatorname{Ob}^{\mathrm{univ}}_{p,X}\) vanish, since the
+  Koszul-resolution map is canonical on the formal-Darboux stalk and
+  uniqueness up to inner Darboux symplectomorphism is the
+  Darboux--Weinstein rigidity of the stalk.  The detailed verification
+  follows.
+
   Existence of \(\mu_{(X,\omega,p,\Theta)}\) is read off the three
   clauses of
   Definition~\ref{defn:admissible-protected-hamiltonian-restriction}.
@@ -393,6 +422,37 @@ conclusion.
   precisely measure failure of the four admissibility clauses
   (Darboux Hamiltonian reduction, closed-field protected comparison,
   scalar anomaly compatibility, brane-defect QME locality).
+\end{proof}
+
+\begin{cor}[Restriction to the formal-Darboux Koszul resolution]\label{cor:protham-koszul-restriction}
+  Any protected datum \((X,\omega,p,\Theta)\in\mathsf{ProtHam}\)
+  restricts at the Kato--Nakayama log point \(p\in X^{\mathrm{KN}}\) to
+  the formal-Darboux CE/PV Koszul resolution
+  \(\Phi_{\mathrm{coord}}\) of
+  \S\ref{ssec:coordinate-free-ce-pv-synthesis} of the chiral Hochschild
+  cohomology \(C^\bullet_{\mathrm{ch}}(A_b,A_b)\), with bulk-to-boundary
+  evaluation \(u_f\mapsto J(f)=\overline{\operatorname{Tr}f(\phi_1,\phi_2)}\)
+  and \(c_f\mapsto\theta_f\), uniquely up to inner formal Darboux
+  symplectomorphism.  Equivalently,
+  \(\operatorname{Ob}^{\mathrm{univ}}_{p,X}\) is the obstruction to
+  convergence of that Koszul resolution along the ambient datum at
+  \((X,\omega,p)\): a single nonzero coordinate is the precise mode of
+  failure (period, closed-field comparison cone, scalar anomaly,
+  brane-defect QME) of the formal-Darboux Koszul resolution to extend
+  along \(\Theta\).
+\end{cor}
+
+\begin{proof}
+  Theorem~\ref{thm:formal-local-universal-property} gives the morphism
+  \(\mu_{(X,\omega,p,\Theta)}\) and its uniqueness up to inner Darboux
+  symplectomorphism; \S\ref{ssec:coordinate-free-ce-pv-synthesis}
+  identifies the formal-Darboux stalk of
+  \(\mathfrak M^{\mathrm{Ham}}_{\mathrm{loc}}\) with the CE/PV Koszul
+  resolution of \(C^\bullet_{\mathrm{ch}}(A_b,A_b)\) under
+  \(c_f\mapsto\theta_f\), \(u_f\mapsto J(f)\).  Composing supplies the
+  corollary; the obstruction reading is
+  Lemma~\ref{lem:protected-primary-obstruction-test} restated for the
+  Koszul resolution.
 \end{proof}
 
 \paragraph*{The QME coordinate of \(\operatorname{Ob}^{\mathrm{univ}}_{p,X}\): Casimir-balance and the queer counterexample.}
@@ -811,7 +871,7 @@ brane stack.
   Hamiltonian algebra at the brane point with
   $\C[[z_1,z_2]]/\C\cdot 1$, after choosing formal Darboux
   coordinates.  The point-brane Ext algebra and its cyclic trace give
-  the open coefficient data of the Dirac probe model.
+  the open coefficient data of the Dirac brane formal-stalk model.
 
   Brane-defect locality supplies the factorization-algebraic
   restriction to the brane line and matches it with the local
@@ -963,20 +1023,22 @@ brane stack.
   the protected closed fields with
   \(\widehat{\mathfrak h}\ltimes
   \widehat{\mathfrak h}^{\vee}_{\mathrm{cont}}[1]\).  The Ext-algebra
-  identification gives the Dirac brane probe, and scalar compatibility
+  identification gives the Dirac brane formal-stalk chart, and scalar compatibility
   fixes the same class \([\bar c]\).  These are exactly the inputs of
   Proposition~\ref{prop:formal-local-global-restriction}.
 \end{proof}
 
 \begin{rmk}[Dirac language inside the protected sector]
   For an admissible protected Hamiltonian sector, the Dirac-thesis
-  language --- the brane as a constrained
-  matrix probe whose stable scalar-reduced measurement is the unique
+  language --- the Dirac brane formal-stalk chart as the constrained
+  Chan--Paton pair \((\phi_1,\phi_2)\) whose stable scalar-reduced
+  trace measurement is the unique
   \(GL_N\)-invariant Darboux-natural extension of the moment-map
   action on linear generators
   (Theorem~\ref{thm:formal-local-universal-property}) --- is a
-  shorthand for the already identified formal local model.  The brane stack probes the
-  formal symplectic normal polydisk; Dirac reduction gives the open trace
+  shorthand for the already identified formal local model.  The Dirac
+  brane stack measures the
+  formal symplectic normal polydisk through trace; Dirac reduction gives the open trace
   algebra; the closed Hamiltonian BF theory is the shifted cotangent
   theory of canonical transformations of that polydisk; and the closed
   observables identify with derived Poisson-central operations on the

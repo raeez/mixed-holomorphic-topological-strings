@@ -1,5 +1,15 @@
 \section*{Nilpotent truncation of the cotangent module}
 
+The CE/PV Koszul resolution of the chiral Hochschild cohomology
+\(C^\bullet_{\mathrm{ch}}(A_b,A_b)\) is constructed unconditionally on
+the cubic ideal \(\mathfrak m^3\subset\mathfrak h\); its extension to
+the full reduced Hamiltonian Lie algebra
+\(\mathfrak h=\mathfrak m=(z_1,z_2)\C[[z_1,z_2]]\) is
+Problem~\ref{prob:linear-sector-lift}, an open problem whose obstruction
+to convergence is the explicit triple
+\(\bigl(\mathfrak o^{\mathrm{lin}}_N,\mathfrak o^{\mathrm{ss}},
+\mathfrak o^{\mathrm{Cas}}_{\leq2}\bigr)\).
+
 For every $N\geq 1$,
 \[
   \{z_1,z_2^{N+1}\}=(N+1)z_2^N\notin\mathfrak m^{N+1},\qquad
@@ -22,19 +32,21 @@ obstruction triple is silent, the finite cotangent CE/PV identity
 $\Phi_{\leq N}\colon
 C^\bullet_{\mathrm{CE},\mathrm{cont}}(\mathfrak g_{\leq N,I})
 \xrightarrow{\sim}
-\mathrm{PV}(\widehat{\mathbf S}(\mathfrak h_{\leq N,I}))$ is
-unconditional in the classical sector
+\mathrm{PV}(\widehat{\mathbf S}(\mathfrak h_{\leq N,I}))$ is the
+Koszul resolution of \(C^\bullet_{\mathrm{ch}}(A_b,A_b)\) on the cubic
+truncation, unconditional in the classical sector
 (Theorem~\ref{thm:phi-trunc-classical}).
 Theorem~\ref{thm:phi-hbar-trunc} excludes the all-order Moyal lift on
 the same finite truncation;
 Remark~\ref{rmk:colim-does-not-recover-full} shows the inverse limit
 recovers $\mathfrak m^3\subsetneq\mathfrak h$, not the whole.
-Problem~\ref{prob:linear-sector-lift} extends
-$\Phi_{\mathfrak m^3}$ to $\mathfrak h=\mathfrak m$ by supplying a
-coefficient category in which $\mathfrak o^{\mathrm{Cas}}_{\leq2}$
-converges and a relative or reductive replacement for the
-lower-central Tate-pronilpotent route handling the semisimple
-$H_2\cong\mathfrak{sl}_2$ direction.
+Problem~\ref{prob:linear-sector-lift} is the open problem of extending
+the Koszul resolution
+$\Phi_{\mathfrak m^3}$ from $\mathfrak m^3$ to $\mathfrak h=\mathfrak m$
+by supplying a coefficient category in which
+$\mathfrak o^{\mathrm{Cas}}_{\leq2}$ converges and a relative or
+reductive replacement for the lower-central Tate-pronilpotent route
+handling the semisimple $H_2\cong\mathfrak{sl}_2$ direction.
 
 \subsection*{The truncation}
 
@@ -140,7 +152,7 @@ expansion, vanishes.
 
 \subsection*{The classical truncated cotangent CE/PV identification}
 
-\begin{thm}[Classical truncated cotangent CE/PV identification]\label{thm:phi-trunc-classical}
+\begin{thm}[Classical truncated CE/PV identification: Koszul resolution on the cubic ideal]\label{thm:phi-trunc-classical}
 Set
 $\mathfrak g_{\leq N}=\mathfrak h_{\leq N}\ltimes
 \mathfrak h_{\leq N}^\vee[1]$. For every interval $I\subset\R$ let
@@ -148,24 +160,22 @@ $\mathfrak g_{\leq N,I}=
 \Omega^\bullet_c(I)\,\widehat\otimes\,\mathfrak h_{\leq N}\,\ltimes\,
 \mathcal D'_c(I)\,\widehat\otimes\,\mathfrak h_{\leq N}^\vee[1]$.
 Then, after the Poisson, residue, and interval-smearing conventions fixed
-above, there is a filtered cochain isomorphism of completed
-dg graded-commutative $P_0$-algebras
+above, the dictionary $c^I\mapsto\theta^I$, $u_I\mapsto O_I$ is the
+Koszul resolution of the chiral Hochschild cohomology
+\(C^\bullet_{\mathrm{ch}}(A_b,A_b)\) on the cubic truncation: a
+filtered cochain isomorphism of completed dg graded-commutative
+$P_0$-algebras
 $$\Phi_{\leq N}:
   C^\bullet_{\mathrm{CE},\mathrm{cont}}(\mathfrak g_{\leq N,I})
   \xrightarrow{\ \sim\ }
   \mathrm{PV}\bigl(\widehat{\mathbf S}(\mathfrak h_{\leq N,I})\bigr)$$
-on every interval \(I\subset\R\). This is the finite nilpotent
-CE/PV cotangent identification of the reduced Hamiltonian model; it
-is not an unreduced open BV factorization-centre morphism. The
-isomorphism is determined on generators by
-$\Phi_{\leq N}(c^I)=\theta^I$, $\Phi_{\leq N}(u_I)=O_I$, with the
-same Schouten/Lichnerowicz convention as in
-\ref{thm:reduced-ce-pv-central-operation}. It is compatible with extension
-by zero and with disjoint-interval products in this reduced finite
-model, and on the Hamiltonian generators it recovers the stalkwise
-operation \(f\mapsto L_{B_f}\). The cotangent generators are finite
-principal-part labels in the CE/PV identification; their unreduced
-boundary centrality homotopies remain part of
+on every interval \(I\subset\R\), with the same Schouten/Lichnerowicz
+convention as in \ref{thm:reduced-ce-pv-central-operation}. It is
+compatible with extension by zero and with disjoint-interval products in
+this reduced finite model, and on the Hamiltonian generators it recovers
+the stalkwise operation \(f\mapsto L_{B_f}\). The cotangent generators
+are finite principal-part labels; their unreduced boundary centrality
+homotopies remain part of
 Problem~\ref{prob:formal-factorization-center}.
 \end{thm}
 
@@ -670,11 +680,12 @@ relative or reductive model for the \(H_2\)-sector.
   These are precisely the listed remaining requirements.
 \end{proof}
 
-\begin{prob}[Low-degree-sector lift from the cubic ideal to the maximal ideal]
+\begin{prob}[Open problem: extension of the Koszul resolution from
+\(\mathfrak m^3\) to \(\mathfrak h\)]
 \label{prob:linear-sector-lift}
-Extend the coordinate-window cotangent lift datum $\Phi_{\mathfrak m^3}$
-of \ref{prop:colim-recovery} from $\mathfrak m^3$ to all of
-$\mathfrak h=\mathfrak m$ by supplying:
+Extend the coordinate-window Koszul-resolution datum
+$\Phi_{\mathfrak m^3}$ of \ref{prop:colim-recovery} from
+$\mathfrak m^3$ to all of $\mathfrak h=\mathfrak m$ by supplying:
 (D1) a Tate or weighted-coefficient extension in which the degree-$1$
 and degree-$2$ Casimir components converge as kernels for the BV
 propagator; (D2) a relative or reductive replacement for the
@@ -689,11 +700,13 @@ terms are the triple
 by \ref{lem:tate-casimir-obstruction} (D1) is the same
 coefficient-category problem as
 \ref{prob:formal-factorization-center}.  The nilpotent-truncation route
-closes the classical nilpotent cotangent identification on
-$\mathfrak m^3$,
-and the residual moves from \ref{prob:formal-factorization-center} as
-stated to its restricted form on the low-degree sector
-$\mathfrak m/\mathfrak m^3=H_1\oplus H_2$ alone.
+closes the Koszul resolution of
+\(C^\bullet_{\mathrm{ch}}(A_b,A_b)\) on the cubic ideal
+$\mathfrak m^3$; this open problem is the precise obstruction to the
+full \(\mathfrak h\) Koszul resolution, and the residual moves from
+\ref{prob:formal-factorization-center} as stated to its restricted form
+on the low-degree sector $\mathfrak m/\mathfrak m^3=H_1\oplus H_2$
+alone.
 \end{prob}
 
 \begin{thm}[Semisimple obstruction to lower-central Tate-pronilpotence]
