@@ -25,7 +25,26 @@ the residual non-scalar QME obstruction is a single cohomology class
 paired with its finite-window
 \(\varprojlim^1H^0\)-primitive-compatibility class
 (the secondary Roos cohomology obstruction tracking compatibility of
-window-by-window primitives across the truncation tower).
+window-by-window primitives across the truncation tower).  The
+scalar projection at the U(1) centre-of-mass slice has explicit value
+\[
+  \widehat\sigma_{\mathrm{sc}}\bigl(
+    [\operatorname{Ob}^{\mathrm{red}}_{w,\partial,\hbar}]\bigr)
+    =\hbar N[\bar c]
+    =\Omega_{\mathrm{central}}\bigm|_{J(f)},
+\]
+the Capelli class of Chapter~6
+(Theorem~\ref{thm:capelli-equals-modular-curvature}); equivalently,
+the scalar projection of the non-scalar Costello QME residual is the
+projective curvature of the modular line bundle evaluated at the
+trace generator \(J(f)=\operatorname{Tr}f(\phi_1,\phi_2)\), with sign
+and convention fixed by
+Appendix~\ref{sec:app-factorization-current-conventions} and the
+canonical scheme
+\(z_1z_2\mapsto\tfrac12(\phi_1\phi_2+\phi_2\phi_1)\) of the Moyal
+star product.  Verification of the Moyal coefficient
+\(\hbar N\) is supplied by
+\texttt{scripts/check\_moyal\_coefficients.py}.
 
 The scalar anomaly is one cohomology class realized in four
 cohomologies.  The algebraic central extension of
@@ -885,7 +904,15 @@ vector vanishes
   \(X_f\) annihilates the constant line in \(A\) (Proposition~\ref
   {prop:app-local-geometry-scalar-shadow}), but the open trace pairs
   the same constant line against \(\operatorname{Tr}(\mathbf 1)=N\) and
-  produces the Capelli shift \(\hbar N[\bar c]\).
+  produces the Capelli shift \(\hbar N[\bar c]\).  Equivalently, the
+  same class is the projective curvature of the modular line bundle
+  \(\Omega_{\mathrm{central}}\) evaluated at the trace generator
+  \(J(f)=\operatorname{Tr}f(\phi_1,\phi_2)\) by
+  Theorem~\ref{thm:capelli-equals-modular-curvature}: the four named
+  sightings are the four ways the local-stalk curvature value enters
+  the formal-Darboux computation, with the determinant-line
+  interpretation of the central extension supplied by
+  Remark~\ref{rmk:determinant-line-scheme}.
 \end{thm}
 
 \begin{proof}
@@ -938,78 +965,6 @@ vector vanishes
   with the open trace, the source CE differential, the Lie bracket,
   or the boundary Weyl commutator.
 \end{proof}
-
-\begin{rmk}[Modular-curvature reading of the scalar anomaly class]
-\label{rmk:app-scalar-anomaly-omega-central}
-  The four sightings of
-  Theorem~\ref{thm:app-scalar-anomaly-transgression} have a fifth,
-  geometric reading: the class
-  \(\hbar N[\bar c]\in H^2(\bar A;\C)[[\hbar]]\) is the projective
-  curvature of the modular line bundle on the period domain
-  \(\overline{\mathcal A}_g\) evaluated at the trace generator.  By
-  Theorem~\ref{thm:capelli-omega-central-identification} of the body,
-  \(\hbar N[\bar c]=J^*\Omega_{\mathrm{central}}\) where
-  \(J(f)=\overline{\operatorname{Tr}f(\phi_1,\phi_2)}\) is the trace
-  generator of the formal-Darboux stalk and
-  \(\Omega_{\mathrm{central}}\) is the projective curvature of the
-  modular line bundle on \(\overline{\mathcal A}_g\) (Igusa
-  \(\Phi_{10}\) at level \(g=2\); \(\Delta_5=\Phi_{10}^{1/2}\)).  The
-  four cocycle representatives of (i)--(iv) above and the geometric
-  representative \(J^*\Omega_{\mathrm{central}}\) lie in a single
-  cohomology class; their cocycle representatives differ by CE
-  coboundaries depending on the quantization scheme
-  (Remark~\ref{rmk:capelli-scheme-dependence} of the body), with the
-  Moyal/Weyl scheme of \cite{kontsevich-dq} and the canonical
-  normalization \(\omega(z_1,z_2)=1\) of
-  Corollary~\ref{cor:app-sign-universal-dual-normalization} fixing the
-  binding choice.  The determinant-line interpretation
-  (Remark~\ref{rmk:capelli-determinant-line} of the body) records this
-  class as the Atiyah class of the determinant line
-  \(\det^{1/2}\rho_\phi\) of the trace representation.
-\end{rmk}
-
-\begin{rmk}[Scalar projection of the residual non-scalar Costello QME
-  class]\label{rmk:app-residual-qme-scalar-projection}
-  The residual non-scalar QME class
-  \([\operatorname{Ob}^{\mathrm{red}}_{w,\partial,\hbar}]\in
-  H^1(\ker\widehat\sigma_{\mathrm{sc}},d_{\mathrm{QME}})\) lives by
-  construction in the kernel of the scalar projection
-  \(\widehat\sigma_{\mathrm{sc}}\) (the filtered scalar-symbol
-  projection killing the scalar-contact filtration; see opening of
-  this section).  The full local-functional QME class
-  \(\mathfrak o_{\mathrm{QME}}\in
-  H^1(\mathcal O_{\mathrm{loc}}(\mathcal E_w),\Delta)\) of
-  \ref{defn:bv-endpoint-obstruction-tuple} splits as
-  \[
-    \mathfrak o_{\mathrm{QME}}
-    \;=\;
-    \mathfrak o_{\mathrm{QME}}^{\mathrm{sc}}
-    \;\oplus\;
-    [\operatorname{Ob}^{\mathrm{red}}_{w,\partial,\hbar}],
-  \]
-  where the scalar component is the U(1) centre-of-mass slice of
-  Theorem~\ref{thm:app-scalar-contact-qme-class}, with class
-  \[
-    \mathfrak o_{\mathrm{QME}}^{\mathrm{sc}}
-      \;=\;
-      \hbar N[\bar c]
-      \;=\;
-      \Omega_{\mathrm{central}}\big|_{J(f)}
-  \]
-  in the ordinary \(\lie{gl}_N\) branch (and zero on the balanced
-  \(\C^{N|N}\) branch by
-  Theorem~\ref{thm:app-balanced-supertrace-qme-cancellation}), and the
-  non-scalar residual is
-  \([\operatorname{Ob}^{\mathrm{red}}_{w,\partial,\hbar}]\).  The
-  scalar component is named the Capelli scalar of
-  Theorem~\ref{thm:capelli-omega-central-identification} of the body;
-  the non-scalar residual is the higher-bidegree QME obstruction
-  computed window-by-window through the linear-algebra problem
-  \(A^Mc^M=-r^M\) of
-  Theorem~\ref{thm:app-constructive-nonscalar-costello-qme-realization},
-  with primary verification through
-  \texttt{scripts/check\_moyal\_coefficients.py}.
-\end{rmk}
 
 \begin{rmk}[Action of the four cancellation branches on the scalar
   anomaly class]
