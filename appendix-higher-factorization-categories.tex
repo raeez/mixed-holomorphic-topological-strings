@@ -1,0 +1,439 @@
+\section{Higher factorization categories and chiral derived centres at \texorpdfstring{$d\geq 2$}{d>=2}}\label{app:higher-factorization-categories}
+
+The local theorem (Theorem~\ref{thm:main-local}) computes the brane-side
+derived $E_1$-Hochschild
+$HH^\bullet(A^{\mathrm{cl}}_{\partial,N},A^{\mathrm{cl}}_{\partial,N})$
+at the Heisenberg-core vacuum
+$b_p\in\mathcal{C}^{\mathrm{op}}_\partial$.  The Mixed
+Holomorphic--Topological Deligne conjecture identifies the same object
+with the chiral derived centre of the closed-string sector at $d=2$.
+This appendix constructs the higher factorization-categorical machinery
+in which both sides live: the category of mixed-HT chiral algebras at
+arbitrary $d$, the chiral derived centre as a functor on it, and the
+formal-Darboux stalk as a restriction functor.  At $d=1$ the
+constructions reduce to the Beilinson--Drinfeld chiral algebra theory
+of \cite{beilinson-drinfeld-chiral}; at $d=2$ they support the
+manuscript's local theorem as the formal-Darboux stalk of the
+conjecture.
+
+\subsection{Factorization $E_d$-algebras on smooth complex
+\texorpdfstring{$d$}{d}-folds}\label{app:hfc:fact-Ed}
+
+Let $X$ be a smooth complex variety of complex dimension $d$.  Write
+$\mathrm{Ran}(X)$ for the Ran space of finite subsets of $X$.  Let
+$\mathrm{Mfd}^{\mathrm{lc}}(X)$ be the symmetric monoidal $\infty$-category
+whose objects are open subsets $U\subset X$ and whose monoidal product
+is disjoint union of subsets with disjoint closures.
+
+\begin{defn}[Holomorphic factorization $E_d$-algebra]\label{app:defn:hol-fact-Ed}
+A \emph{holomorphic factorization $E_d$-algebra} on $X$ is a symmetric
+monoidal $\infty$-functor
+\[
+  \mathcal F\colon\mathrm{Mfd}^{\mathrm{lc}}(X)\longrightarrow E_d\text{-}\mathrm{Alg},
+\]
+i.e.\@ an assignment $U\mapsto\mathcal F(U)\in E_d\text{-}\mathrm{Alg}$,
+factorisation isomorphisms
+\[
+  \mathcal F(U_1\sqcup\cdots\sqcup U_n)
+   \;\xrightarrow{\sim}\;
+   \mathcal F(U_1)\otimes\cdots\otimes\mathcal F(U_n)
+\]
+for finite collections of opens with pairwise disjoint closures, and
+extension-by-zero structure maps
+$\mathcal F(U)\to\mathcal F(V)$ for $U\subset V$ open, satisfying the
+factorization axioms of Costello--Gwilliam
+\cite{costello-gwilliam}*{Vol.~I, Defn.~3.1.4}.  The
+\emph{holomorphic} condition is that $\mathcal F$ is locally constant in
+the $C^\infty$ direction and varies holomorphically in the complex
+direction: for any holomorphic embedding
+$\iota\colon U\hookrightarrow V$, the structure map
+$\mathcal F(\iota)$ is a quasi-isomorphism, and the family
+$\mathcal F$ on $X$ is presented by a $\mathcal D$-module on
+$\mathrm{Ran}(X)$.
+\end{defn>
+
+\begin{rmk}[Equivalent presentations]
+A holomorphic factorization $E_d$-algebra on $X$ admits three
+equivalent presentations
+\cite{beilinson-drinfeld-chiral,francis-thesis,lurie-ha}*{\S 5.5}:
+\begin{enumerate}
+  \item \emph{Costello--Gwilliam.}  A factorization algebra in the sense
+    of \cite{costello-gwilliam}*{Vol.~I, \S 3} valued in $E_d$-algebras,
+    with the holomorphic locality differential.
+  \item \emph{Beilinson--Drinfeld $\mathcal D$-module on
+    $\mathrm{Ran}(X)$.}  A factorisable $\mathcal D$-module
+    $\mathcal A$ on $\mathrm{Ran}(X)$ (in the sense of
+    \cite{beilinson-drinfeld-chiral}*{\S 3}) valued in $E_d$-algebras.
+  \item \emph{Lurie--Ayala--Francis.}  An $E_d$-algebra object of the
+    $\infty$-category of factorisation algebras on $X$ in the sense of
+    \cite{ayala-francis,lurie-ha}*{\S 5.5.4}.
+\end{enumerate}
+At $d=1$ all three reduce to the Beilinson--Drinfeld chiral algebra of
+\cite{beilinson-drinfeld-chiral}*{\S 3}.  The $d\geq 2$ case is the
+\emph{higher chiral algebra}; for $d=2$ the manuscript invokes this
+construction as the closed-string sector classical observables.
+\end{rmk}
+
+\begin{defn}[Category of holomorphic factorization $E_d$-algebras]\label{app:defn:HolFA-d-cat}
+Let $\mathrm{HolFA}_d(X)$ denote the symmetric monoidal $\infty$-category
+whose objects are holomorphic factorization $E_d$-algebras on $X$ in the
+sense of Definition~\ref{app:defn:hol-fact-Ed}, and whose morphisms are
+natural transformations of symmetric monoidal $\infty$-functors that
+intertwine the factorisation isomorphisms.  Its monoidal product is
+the pointwise tensor product of $E_d$-algebras.
+\end{defn>
+
+\subsection{Mixed holomorphic-topological refinement}\label{app:hfc:mixed-HT}
+
+The manuscript's local geometry is
+$X=\R^k_{\mathrm{top}}\times M_{\mathrm{hol}}$ with $M$ a smooth
+complex variety of complex dimension $d$ ($k=2$, $d=2$ in the body).
+The factorization algebra carries three independent locality
+differentials: support locality on $\R^k$, holomorphic locality on
+$M$, and topological / locally constant in $\R^k$.
+
+\begin{defn}[Mixed-HT factorization $E_d^{\mathrm{HT}}$-algebra]\label{app:defn:mixed-HT-fact}
+A \emph{mixed-HT factorization $E_d^{\mathrm{HT}}$-algebra} on
+$X=\R^k_{\mathrm{top}}\times M_{\mathrm{hol}}$ is a symmetric monoidal
+$\infty$-functor
+\[
+  \mathcal F\colon\mathrm{Mfd}^{\mathrm{lc}}(X)\longrightarrow E_d\text{-}\mathrm{Alg}
+\]
+satisfying the factorization axioms together with the three locality
+data:
+\begin{enumerate}[label=(\roman*)]
+  \item \emph{Support locality on $\R^k$.}  For any compact embedding
+    $K\subset U\subset\R^k$, the section $\mathcal F$ is supported on
+    $K$ when restricted to $U\setminus K$ extends to zero.
+  \item \emph{Topological locality on $\R^k$.}  For any open
+    $U\subset\R^k$ and any inclusion $U_0\subset U$ with
+    $\pi_0(U_0)\to\pi_0(U)$ a bijection, the structure map
+    $\mathcal F(U_0\times B)\to\mathcal F(U\times B)$ is a
+    quasi-isomorphism for every $B\subset M$.
+  \item \emph{Holomorphic locality on $M$.}  Restriction to the
+    holomorphic factor is a holomorphic factorization $E_d$-algebra
+    in the sense of Definition~\ref{app:defn:hol-fact-Ed}.
+\end{enumerate}
+\end{defn>
+
+\begin{defn}[Category $\mathrm{ChirAlg}^{\mathrm{HT}}_{k,d}(X)$]\label{app:defn:ChirAlg-HT}
+Let $\mathrm{ChirAlg}^{\mathrm{HT}}_{k,d}(X)$ denote the symmetric
+monoidal $\infty$-category whose objects are mixed-HT factorization
+$E_d^{\mathrm{HT}}$-algebras on $X$ in the sense of
+Definition~\ref{app:defn:mixed-HT-fact}, and whose morphisms intertwine
+all three locality structures.  At $k=0$ this reduces to
+$\mathrm{HolFA}_d(M)$; at $d=0$ it reduces to topological factorization
+algebras on $\R^k$.  The manuscript's local geometry is $k=2$, $d=2$.
+\end{defn>
+
+\subsection{The chiral derived centre functor}\label{app:hfc:chiral-Z-der}
+
+\begin{defn}[Chiral derived centre at $d=1$]\label{app:defn:Z-der-ch-d1}
+For a Beilinson--Drinfeld chiral algebra $\mathcal A\in\mathrm{HolFA}_1(C)$
+on a smooth curve $C$, the \emph{chiral derived centre}
+$Z^{\mathrm{der}}_{\mathrm{ch}}(\mathcal A)$ is the chiral Hochschild
+cochain complex
+\[
+  Z^{\mathrm{der}}_{\mathrm{ch}}(\mathcal A)
+   =C^\bullet_{\mathrm{ch}}(\mathcal A,\mathcal A)
+   :=\mathrm{RHom}_{\mathcal A\otimes\mathcal A^{\mathrm{op}}}(\mathcal A,\mathcal A)
+\]
+in the chiral monoidal structure of
+\cite{beilinson-drinfeld-chiral}*{\S 3.4}.  It carries a natural
+$E_2$-algebra structure (chiral Deligne theorem; Beilinson--Drinfeld
+\cite{beilinson-drinfeld-chiral}*{\S 4}, Lurie HA
+\cite{lurie-ha}*{Thm.~5.3.1.14}, Costello--Gwilliam
+\cite{costello-gwilliam}*{Vol.~I, \S 6}).  This is the proved $d=1$
+chiral Deligne theorem of Vol I.
+\end{defn>
+
+\begin{defn}[Chiral derived centre at $d\geq 2$]\label{app:defn:Z-der-ch-dgeq2}
+For a holomorphic factorization $E_d$-algebra
+$\mathcal A\in\mathrm{HolFA}_d(X)$ on a smooth complex variety $X$ of
+complex dimension $d$, the \emph{chiral derived centre at $d$} is
+\[
+  Z^{\mathrm{der}}_{E_d^{\mathrm{ch}}}(\mathcal A)
+   =C^\bullet_{\mathrm{ch}}(\mathcal A,\mathcal A)
+   :=\mathrm{RHom}_{\mathcal A\otimes\mathcal A^{\mathrm{op}}}(\mathcal A,\mathcal A)
+\]
+in the higher chiral monoidal structure on $\mathrm{HolFA}_d(X)$.  At
+$d=1$ this is Definition~\ref{app:defn:Z-der-ch-d1}.  At $d\geq 2$ the
+$\mathrm{RHom}$ is taken in the $\infty$-category of factorization
+$E_d$-algebra bimodules on $X$.
+
+\emph{Status at $d\geq 2$.}  The conjectural $E_{d+1}^{\mathrm{ch}}$-structure
+on $Z^{\mathrm{der}}_{E_d^{\mathrm{ch}}}(\mathcal A)$ extending the
+$E_2$-structure of the $d=1$ case is the chiral $E_d$-Deligne
+conjecture
+(\S\ref{ssec:open-chiral-Ed-Deligne}; Lurie
+\cite{lurie-ha}*{\S 5.3.1}); partial constructions are due to
+Hennion (chiral Lie algebroids on smooth schemes) and Francis
+(factorisable co-operads).  The Mixed Holomorphic--Topological Deligne
+conjecture at $d=2$ is the corresponding statement for
+$\mathrm{ChirAlg}^{\mathrm{HT}}_{2,2}(\R^2\times\C^2)$.
+\end{defn>
+
+\begin{defn}[Mixed-HT chiral derived centre]\label{app:defn:Z-der-HT}
+For $\mathcal F\in\mathrm{ChirAlg}^{\mathrm{HT}}_{k,d}(X)$, the
+\emph{mixed-HT chiral derived centre} is
+\[
+  Z^{\mathrm{der}}_{E_d^{\mathrm{HT}}}(\mathcal F)
+   =C^\bullet_{\mathrm{ch},\mathrm{HT}}(\mathcal F,\mathcal F),
+\]
+the $\mathrm{RHom}$ of $\mathcal F$ with itself in the bimodule
+$\infty$-category over $\mathcal F\otimes\mathcal F^{\mathrm{op}}$ inside
+$\mathrm{ChirAlg}^{\mathrm{HT}}_{k,d}(X)$.  The mixed-HT structure on
+the output is the natural lift of the $E_{d+1}$-structure expected at
+$d\geq 2$ (chiral $E_d$-Deligne conjecture).
+\end{defn>
+
+\subsection{The formal-Darboux stalk functor}\label{app:hfc:darboux-stalk-functor}
+
+For $X=\R^k_{\mathrm{top}}\times\C^d_{\mathrm{hol}}$ and a closed point
+$p\in\C^d$, the formal-Darboux stalk operation is restriction to the
+formal completion at $p$.
+
+\begin{defn}[Formal-Darboux stalk functor]\label{app:defn:Darboux-stalk-functor}
+The \emph{formal-Darboux stalk functor} at $p$ is the symmetric monoidal
+$\infty$-functor
+\[
+  (-)|_{p}\colon
+  \mathrm{ChirAlg}^{\mathrm{HT}}_{k,d}(\R^k\times\C^d)
+   \longrightarrow
+  \mathrm{ChirAlg}^{\mathrm{HT}}_{k,d}(\R^k\times\widehat{\C^d}_p),
+\]
+sending $\mathcal F\mapsto\mathcal F|_{\R^k\times\widehat{\C^d}_p}$, the
+restriction of the factorisable structure to the formal neighbourhood
+$\widehat{\C^d}_p=\operatorname{Spf}\widehat{\mathcal O}_{\C^d,p}$.  The
+holomorphic Darboux theorem trivialises the germ of $\C^d$ at $p$ to
+the formal symplectic polydisk in coordinates $(z_1,\ldots,z_d)$, so
+the value at $p$ depends on $p$ only through its formal isomorphism
+class --- equivalently, only through the formal Darboux coordinates.
+\end{defn>
+
+\begin{prop}[Equivariance under formal symplectomorphism]\label{app:prop:Darboux-equivariance}
+The formal-Darboux stalk functor of
+Definition~\ref{app:defn:Darboux-stalk-functor} is equivariant under the
+formal symplectomorphism group $\mathrm{Symp}^{\mathrm{form}}(\C^d)$
+acting on the source category by formal coordinate change at $p$ and
+on the target by the same change of formal Darboux coordinates.  At
+$d=2$ on the holomorphic-symplectic factor, the stalk is canonical up
+to formal Darboux change.
+\end{prop>
+
+\begin{proof}
+The Darboux theorem in formal coordinates trivialises any holomorphic
+symplectic form to $\omega_p=\sum_i dz_{2i-1}\wedge dz_{2i}$, with the
+trivialisation defined uniquely up to the formal symplectomorphism
+group.  The factorisation structure pulls back along this
+trivialisation by symmetric monoidal naturality.
+\end{proof>
+
+\subsection{The bulk closed-string sector as an
+\texorpdfstring{$E_2^{\mathrm{HT}}$-factorization}{E2-HT-factorization}
+algebra}\label{app:hfc:bulk-as-fact-cat}
+
+\begin{constr}[Bulk classical observables on $\R^2\times\C^2$]\label{app:constr:bulk-fact-Ed}
+Let $X=\R^2_{\mathrm{top}}\times\C^2_{\mathrm{hol}}$ and
+$\mathfrak g=\mathfrak h\ltimes\mathfrak h^\vee_{\mathrm{cont}}[1]$ as
+in \S\ref{ssec:hamiltonian-bf-algebra}.  The closed-string sector
+classical observables factorization algebra
+$\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}\in
+\mathrm{ChirAlg}^{\mathrm{HT}}_{2,2}(X)$ is the assignment
+\[
+  U\times B\longmapsto
+   C^\bullet_{\mathrm{CE},\mathrm{cont}}\bigl(
+     \Omega^\bullet_c(U)\widehat\otimes
+     \Omega^{0,\bullet}_c(B)\widehat\otimes\mathfrak g\bigr),
+\]
+for $U\subset\R^2$ and $B\subset\C^2$ open, with $E_2$-algebra structure
+from the symmetric algebra structure of the continuous CE cochains and
+factorisation isomorphisms inherited from extension-by-zero on
+disjoint opens.  The three locality differentials of
+Definition~\ref{app:defn:mixed-HT-fact} are the de Rham differential
+on $U$, the Dolbeault differential $\bar\partial$ on $B$, and the
+internal CE differential dual to the $\mathfrak g$-bracket.
+\end{constr>
+
+\begin{prop}[Formal-Darboux stalk of the bulk]\label{app:prop:bulk-stalk}
+At a closed point $p\in\C^2$, the formal-Darboux stalk of
+$\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}$ is the continuous CE cochain
+algebra of the shifted-cotangent BF Lie algebra at the formal polydisk:
+\[
+  \mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}|_p
+   =C^\bullet_{\mathrm{CE},\mathrm{cont}}(\mathfrak g),
+   \qquad
+   \mathfrak g=\mathfrak h\ltimes\mathfrak h^\vee_{\mathrm{cont}}[1],
+   \quad
+   \mathfrak h=\C[[z_1,z_2]]/\C\cdot 1.
+\]
+This is the chart algebra
+$A_{b_p}=\widehat{\mathcal O}_{\C^2,p}\cong\C[[z_1,z_2]]$ in formal
+Darboux coordinates equipped with the inherited $E_2$-algebra and
+chiral factorisation structure of
+Construction~\ref{app:constr:bulk-fact-Ed}.
+\end{prop>
+
+\begin{proof}
+Apply Definition~\ref{app:defn:Darboux-stalk-functor} to
+Construction~\ref{app:constr:bulk-fact-Ed}: the de Rham and Dolbeault
+Poincar\'e contractions on the formal polydisk reduce the compactly
+supported sheaf data to the continuous CE cochains of $\mathfrak g$ at
+$p$.  The factorisation structure restricts to the trivial
+factorisation on the formal completion (every pair of opens in the
+formal neighbourhood has overlapping closure).
+\end{proof>
+
+\subsection{The brane open category as factorization
+\texorpdfstring{$E_1^{\mathrm{HT}}$}{E1-HT}-module}\label{app:hfc:brane-as-fact-cat}
+
+\begin{defn}[Boundary open category]\label{app:defn:brane-cat}
+The \emph{boundary open category} of the local theory is
+\[
+  \mathcal{C}^{\mathrm{op}}_\partial
+   =\Phi^{\mathrm{FA}}_d(\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}})\big|_{\partial X^{\mathrm{KN}}},
+\]
+the restriction of the bulk factorization algebra to the
+Kato--Nakayama log boundary $\partial X^{\mathrm{KN}}$ along the brane
+worldline $\R_t$.  Its objects are factorisation $E_1$-modules over
+$\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}|_{\partial X^{\mathrm{KN}}}$
+(boundary states); its morphisms are factorisation-compatible
+$E_1$-bimodule morphisms.
+\end{defn>
+
+\begin{constr}[Heisenberg-core vacuum and brane $E_1$-algebra]\label{app:constr:brane-vacuum-E1}
+The \emph{Heisenberg-core vacuum} at the closed point $p\in\C^2$ is
+the object $b_p\in\mathcal{C}^{\mathrm{op}}_\partial$ whose
+endomorphism algebra is the formal-completion endomorphism algebra
+\[
+  A_{b_p}
+   =\End_{\mathcal{C}^{\mathrm{op}}_\partial}(b_p)
+   =\widehat{\mathcal O}_{\C^2,p}\cong\C[[z_1,z_2]]
+\]
+of the brane skyscraper $\mathcal O_p$ at $p$.  At $N$ Dirac branes
+over $b_p$ the brane $E_1$-algebra of classical observables on the
+worldline $\R_t$ is
+\[
+  A^{\mathrm{cl}}_{\partial,N}
+   =C^\bullet_{\mathrm{CE}}\bigl(\mathfrak{gl}_N,\,
+       \mathrm{Sym}(\mathfrak{gl}_N\oplus\mathfrak{gl}_N
+                    \oplus\mathfrak{gl}_N[1])\bigr),
+   \qquad
+   Q\psi=[\phi_1,\phi_2],
+\]
+with Chan--Paton substitution $\rho_\phi\colon A_{b_p}\to M_N(\C)$,
+$z_i\mapsto\phi_i$, $[\phi_1,\phi_2]=0$
+(Definition~\ref{def:formal-darboux-stalk-chart}).  Augmented brane
+vacua $b\in\mathcal{C}^{\mathrm{op}}_\partial$ with chart algebra
+$A_b\neq\widehat{\mathcal O}_{\C^2,p}$ are governed by their
+Heisenberg core via matched-conventions transfer.
+\end{constr>
+
+\begin{prop}[Brane $E_1$-Hochschild as $E_2$-algebra]\label{app:prop:brane-HH-E2}
+The derived $E_1$-centre
+$Z^{\mathrm{der}}_{E_1}(A^{\mathrm{cl}}_{\partial,N})$ is naturally an
+$E_2$-algebra, equivalent to the Hochschild cochain complex
+$HH^\bullet(A^{\mathrm{cl}}_{\partial,N},A^{\mathrm{cl}}_{\partial,N})$
+with Gerstenhaber bracket and cup product.  This is Deligne's
+$E_1$-Hochschild theorem
+(Tamarkin~\cite{tamarkin-deligne},
+McClure--Smith~\cite{mcclure-smith},
+Kontsevich--Soibelman~\cite{kontsevich-soibelman-deformation},
+Lurie~\cite{lurie-ha}*{Thm.~5.3.1.14}).
+\end{prop>
+
+\subsection{The Mixed Holomorphic--Topological Deligne conjecture as a
+functorial statement}\label{app:hfc:mixed-HT-Deligne}
+
+\begin{conj}[Mixed Holomorphic--Topological Deligne, functorial form]\label{app:conj:mixed-HT-Deligne}
+For the bulk closed-string sector
+$\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}\in\mathrm{ChirAlg}^{\mathrm{HT}}_{2,2}(\R^2\times\C^2)$
+of Construction~\ref{app:constr:bulk-fact-Ed} and the boundary open
+category $\mathcal{C}^{\mathrm{op}}_\partial$ of
+Definition~\ref{app:defn:brane-cat}, there is a canonical equivalence
+\[
+  \mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}
+   \;\simeq\;
+   Z^{\mathrm{der}}_{E_2^{\mathrm{HT}}}\bigl(\mathcal{C}^{\mathrm{op}}_\partial\bigr)
+\]
+of mixed-HT chiral algebras at $d=2$, where the right-hand side is the
+mixed-HT chiral derived centre of the open category in the sense of
+Definition~\ref{app:defn:Z-der-HT}.
+
+\emph{Status.}
+\begin{itemize}
+  \item At $d=1$ (replacing $\C^2$ by a smooth curve $C$): proved
+    (Beilinson--Drinfeld chiral Deligne theorem,
+    Vol I~\cite{lorgat-vol1}; \cite{beilinson-drinfeld-chiral}).
+  \item At $d\geq 2$: open.  The chiral $E_d$-Deligne conjecture in the
+    sense of Lurie~\cite{lurie-ha}*{\S 5.3.1} is the underlying purely
+    chiral statement, of which the mixed-HT form is the
+    holomorphic-topological enhancement.  Partial cases are recorded
+    in Hennion (chiral Lie algebroids on smooth schemes) and Francis
+    (factorisable co-operads).
+  \item \emph{This manuscript:} proves the formal-Darboux stalk of
+    Conjecture~\ref{app:conj:mixed-HT-Deligne} at $N$ Dirac branes
+    over the Heisenberg-core vacuum $b_p$.  At the formal-Darboux
+    stalk, the bulk reduces to its $E_2$-algebra value
+    $\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}|_p=C^\bullet_{\mathrm{ch}}(A_{b_p},A_{b_p})$
+    of Proposition~\ref{app:prop:bulk-stalk}, and Lurie--Francis
+    additivity / Costello--Gwilliam bulk--boundary correspondence
+    identifies it with the brane-side derived $E_1$-centre
+    $Z^{\mathrm{der}}_{E_1}(A^{\mathrm{cl}}_{\partial,N})\simeq
+    HH^\bullet(A^{\mathrm{cl}}_{\partial,N})$ as $E_2$-algebras
+    (Theorem~\ref{thm:closed-to-open-derived-centre-map}).
+\end{itemize}
+\end{conj>
+
+\begin{thm}[Formal-Darboux stalk of Conjecture~\ref{app:conj:mixed-HT-Deligne}]\label{app:thm:stalk-of-conj}
+At $N$ Dirac branes over the Heisenberg-core vacuum
+$b_p\in\mathcal{C}^{\mathrm{op}}_\partial$, the formal-Darboux stalk
+of Conjecture~\ref{app:conj:mixed-HT-Deligne} holds:
+\[
+  \mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}|_p
+   \;\simeq\;
+   Z^{\mathrm{der}}_{E_1}\bigl(A^{\mathrm{cl}}_{\partial,N}\bigr)
+   \;\simeq\;
+   HH^\bullet\bigl(A^{\mathrm{cl}}_{\partial,N},A^{\mathrm{cl}}_{\partial,N}\bigr)
+\]
+as $E_2$-algebras, with formal Darboux coordinate expression
+$J(f)=\overline{\operatorname{Tr}\,f(\phi_1,\phi_2)}$ on
+$\mathfrak h=A_{b_p}/\C\cdot 1$, and reduced closed-to-open dictionary
+$c_f\mapsto\theta_f\in HH^1$, $u_f\mapsto J(f)\cdot(-)\in HH^0$ on
+Chevalley--Eilenberg generators of
+$\mathfrak g=\mathfrak h\ltimes\mathfrak h^\vee_{\mathrm{cont}}[1]$.
+The chain-level lift $\Phi_N$ to a strict $P_0$-factorization-centre
+morphism is conditional on
+$\operatorname{Ob}_{\mathrm{cent}/\mathrm{QME}/\mathrm{desc}}=0$
+(Theorem~\ref{thm:app-unreduced-cotangent-lift-obstruction}).
+\end{thm>
+
+\begin{proof}
+Combine Proposition~\ref{app:prop:bulk-stalk} (formal-Darboux stalk of
+the bulk),
+Proposition~\ref{app:prop:brane-HH-E2} (Deligne's $E_1$-Hochschild
+theorem for the brane $E_1$-algebra), and
+Theorem~\ref{thm:closed-to-open-derived-centre-map} (Costello--Gwilliam
+bulk--boundary correspondence at the formal-Darboux stalk).  The
+trace-map computation is
+Theorem~\ref{thm:formal-local-universal-property} (Procesi--Razmyslov +
+Loday--Quillen--Tsygan); the dictionary is
+Theorem~\ref{thm:reduced-ce-pv-central-operation}; the conditional
+chain-level lift is
+Theorem~\ref{thm:app-unreduced-cotangent-lift-obstruction}.
+\end{proof>
+
+\begin{rmk}[What this manuscript does and does not prove]
+Theorem~\ref{app:thm:stalk-of-conj} computes the formal-Darboux stalk
+of Conjecture~\ref{app:conj:mixed-HT-Deligne} at the Heisenberg-core
+vacuum $b_p$.  The conjecture itself --- the global equivalence on
+$\R^2\times\C^2$ between the bulk
+$\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}$ and the mixed-HT chiral
+derived centre of the boundary open category at $d=2$ --- remains
+open.  The $d=2$ chiral $E_d$-Deligne theorem on which it depends is
+itself open (\S\ref{ssec:open-chiral-Ed-Deligne}).  At augmented
+vacua $b\in\mathcal{C}^{\mathrm{op}}_\partial$ with chart algebra
+$A_b\neq\widehat{\mathcal O}_{\C^2,p}$, identification beyond the
+Heisenberg core requires matched-conventions transfer
+(Theorem~\ref{thm:matched-conventions-transfer}).
+\end{rmk>
