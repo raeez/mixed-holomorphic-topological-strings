@@ -399,11 +399,11 @@ and a Dirac Brane Formal-Stalk Chart on $\R^2_{\mathrm{top}}\times\C^2_{\mathrm{
   bulk-boundary datum of a 3d holomorphic--topological boundary-bulk
   system, and sourced from a Calabi--Yau category through the two-stage
   functor
-  \(\Phi_d=\mathrm{Sp}_{\Sigma_{d-1},C}\circ\Phi^{\mathrm{FA}}_d\)
+  \(\Phi_d=\mathrm{Sp}^{\mathrm{ch}}_{\Sigma_{d-1},C}\circ\Phi^{\mathrm{FA}}_d\)
   (factorization-algebra functor \(\Phi^{\mathrm{FA}}_d\) of a
   Calabi--Yau \(d\)-category followed by Lurie--Ayala--Francis
   factorization-homology specialization
-  \(\mathrm{Sp}_{\Sigma_{d-1},C}(\mathcal F)
+  \(\mathrm{Sp}^{\mathrm{ch}}_{\Sigma_{d-1},C}(\mathcal F)
   =\int_{\Sigma_{d-1}}\mathcal F|_C\)),
   \(A=\Phi_d(\mathcal C)\).  Conventions match the global theorem
   through the obstruction class
@@ -2255,15 +2255,14 @@ variety. Equivalently, after gauge fixing it is a class in
 algebra \(\mathfrak h=A/\C\) acts on this representation moduli by
 Hamiltonian vector fields, not by commuting operators on \(\C^N\); the
 \(c_f\mapsto\theta_f\) avatar of a Hamiltonian is its motion on the
-moduli. A bulk Hamiltonian
-\(f\in\widehat{\mathfrak h}=\C[[z_1,z_2]]/\C\cdot1\) is measured at the
-representation by the gauge-invariant trace character of the
-shifted-cotangent avatar \(u_f\):
+moduli. The trace character of a bulk Hamiltonian
+\(f\in\widehat{\mathfrak h}=\C[[z_1,z_2]]/\C\cdot1\) at the
+shifted-cotangent avatar \(u_f\) is
 \begin{equation}\label{eq:setup-Jf-flagship}
   J(f)=\overline{\operatorname{Tr}\,f(\phi_1,\phi_2)},
 \end{equation}
-the trace of \(f\) evaluated on the Chan--Paton pair, projected to the
-stable scalar-reduced quotient. Under the formal-stalk-chart hypotheses
+the gauge-invariant trace of \(f\) evaluated on the Chan--Paton pair,
+projected to the stable scalar-reduced quotient. Under the formal-stalk-chart hypotheses
 of Proposition~\ref{prop:local-model-mixed-definition} together with
 \(GL_N\)-invariance, formal Darboux naturality, and stable scalar
 reduction, three independent inputs force \(J\). First,
@@ -5953,7 +5952,7 @@ Tate-coefficient cotangent lift --- is the obstruction calculus of
   reduction it is killed and \eqref{eq:Bf-bracket} survives.
 \end{proof}
 
-The shifted-cotangent partner $\beta$ is read at the brane as the
+The shifted-cotangent partner $\beta$ on the brane is the
 principal-part defect current of
 Theorem~\ref{thm:reduced-principal-part-boundary-current}.  Together
 with Theorem~\ref{thm:brane-measurement-principle} the trace map \(J\)
@@ -7282,16 +7281,20 @@ not the unreduced quantum boundary observable.
 Corollary~\ref{cor:descendant-coadjoint-difference} records the exact
 deformation-level mismatch.
 
-\subsection{The CE/PV Koszul resolution of the chiral Hochschild cohomology}
+\subsection{The CE/PV Koszul resolution of the brane $E_1$-Hochschild}
 \label{ssec:coordinate-free-ce-pv-synthesis}
 
 The dictionary \(c_f\mapsto\theta_f,\ u_f\mapsto J(f)\) is the Koszul
-resolution of the chiral Hochschild cohomology \(C^\bullet_{\mathrm{ch}}(A_b,A_b)\)
-at the formal-Darboux stalk of the Dirac brane vacuum \(b\): closed CE
+resolution of the brane-side derived \(E_1\)-Hochschild
+\(HH^\bullet(A^{\mathrm{cl}}_{\partial,N})\) at the formal-Darboux
+stalk of the Dirac brane vacuum \(b_p\): closed CE
 cochains of the shifted cotangent Hamiltonian Lie algebra are Schouten
 polyvectors of the boundary Hamiltonian polynomial algebra, on the
 coordinate window, and a closed Hamiltonian becomes a brane observable
-through the cotangent coordinate, not the Hamiltonian one.  The
+through the cotangent coordinate, not the Hamiltonian one.  The Mixed
+Holomorphic--Topological Deligne conjecture identifies the resolution
+target with the chiral derived centre
+\(C^\bullet_{\mathrm{ch}}(A_{b_p},A_{b_p})\) at \(d=2\).  The
 Schouten/cotangent bracket carrying the comparison has degree \(-1\);
 the reduced Hamiltonian boundary bracket on \(O_I\) is the degree-zero
 Poisson bracket induced by the matrix Poisson form.  Completion at the
@@ -13292,9 +13295,13 @@ checks in the problem below.
 \end{rmk}
 
 The dictionary \(c_f\mapsto\theta_f\), \(u_f\mapsto J(f)\) is the
-Koszul resolution of \(C^\bullet_{\mathrm{ch}}(A_b,A_b)\) at the
-formal-Darboux stalk of the Dirac brane vacuum
-(Theorem~\ref{thm:main-local}).  Scalar reduction kills the constant
+Koszul resolution of the brane-side derived \(E_1\)-Hochschild
+\(HH^\bullet(A^{\mathrm{cl}}_{\partial,N})\) at the formal-Darboux
+stalk of the Dirac brane vacuum \(b_p\)
+(Theorem~\ref{thm:main-local}); the Mixed Holomorphic--Topological
+Deligne conjecture identifies this at the formal-Darboux stalk with
+the chiral derived centre \(C^\bullet_{\mathrm{ch}}(A_{b_p},A_{b_p})\)
+at \(d=2\).  Scalar reduction kills the constant
 Hamiltonian on the closed side and retains a \(\mathrm{U}(1)\)
 centre-of-mass anomaly on the open side: a single Lie 2-cocycle
 \([\bar c]\in H^2_{\mathrm{Lie}}(\bar A,\C)\) classified in the
@@ -14240,19 +14247,34 @@ vacua of the central families.
 
 \section{Examples}\label{sec:examples}\label{ssec:examples}
 
-The formal-Darboux stalk identification
+The brane-side computation
 \(A^{\mathrm{cl}}_{\partial,N}=
 C^\bullet_{\mathrm{CE}}(\mathfrak{gl}_N,\,
 \mathrm{Kosz}([\phi_1,\phi_2]))\),
 \(J(f)=\overline{\operatorname{Tr}f(\phi_1,\phi_2)}\),
-\(c_f\mapsto\theta_f\), \(u_f\mapsto J(f)\) is tested below at the
-brane vacua of the central families. Each example records: the brane
-vacuum \(b\); the chart algebra \(A_b=\mathrm{End}(b)\); the trace
-\(J(f)\); the chiral Hochschild target
-\(C^\bullet_{\mathrm{ch}}(A_b,A_b)\); status. The local theorem of
-\S\ref{ssec:local-theorem} is the formal-Darboux stalk; identification
-beyond the stalk passes through descent, QME, anomaly, and locality
-on the target geometry.
+\(c_f\mapsto\theta_f\), \(u_f\mapsto J(f)\) is tested below as a
+compatibility check against the well-defined \(d=1\) chiral derived
+centres of the central families.  At \(d=1\) the chiral derived
+centre \(Z^{\mathrm{der}}_{\mathrm{ch}}(A)\simeq
+C^\bullet_{\mathrm{ch}}(A,A)\) of a chiral algebra factorising over a
+curve is the Beilinson--Drinfeld theorem of Vol I; at \(d=2\) the
+analogous identification is the Mixed Holomorphic--Topological
+Deligne conjecture, whose formal-Darboux stalk at the Heisenberg-core
+vacuum \(b_p\in\mathcal{C}^{\mathrm{op}}_\partial\) is the local
+theorem of \S\ref{ssec:local-theorem}.
+
+Each example records: the brane vacuum
+\(b\in\mathcal{C}^{\mathrm{op}}_\partial\); the chart algebra
+\(A_b=\End_{\mathcal{C}^{\mathrm{op}}_\partial}(b)\) and its
+reduction to the Heisenberg core
+\(A_{b_p}=\widehat{\mathcal O}_{\C^2,p}\) along the chosen abelian
+subalgebra (Definition~\ref{def:formal-darboux-stalk-chart}); the
+trace \(J(f)\); the \(d=1\) chiral derived centre target where
+applicable; status --- proved (at the Heisenberg core), conditional
+(matched-conventions transfer through the chosen reduction), or open
+(global compact-target identification beyond the formal-Darboux
+stalk, requiring descent, QME, anomaly, and locality data on the
+target geometry).
 
 \subsubsection{Heisenberg current on the formal disk}\label{sssec:ex-heisenberg}
 
@@ -14425,19 +14447,56 @@ the four hypotheses listed.
 
 \subsubsection{Toric \texorpdfstring{$\C^3$}{C\^{}3}}\label{sssec:ex-c3}
 
+\paragraph{Chart, brane line, \texorpdfstring{$\Omega$}{Omega}-background.}
 Target \(X=\C^3\) with the toric Calabi--Yau holomorphic volume
 \(\Omega=dz_1\wedge dz_2\wedge dz_3\); \(b=\) the origin
-\(0\in\C^3\). The mixed-HT formal-Darboux stalk sees only the formal
-holomorphic-symplectic stalk
-\((\widehat{\C^2}_0,dz_1\wedge dz_2)\) inside the
-\(\C^3\)-target, with the third direction supplying the
-twisted-M-theory equivariant scaling of
-\cite{costello-twistedM}. The chart algebra is the
-matrix-Chan--Paton completion at the brane vacuum; the trace
-\(J(f)=\overline{\operatorname{Tr}f(\phi_1,\phi_2)}\) reads
-through the Nekrasov vertex on the cyclic framed stable branch
-of the Hilbert scheme \(\Hilb^N(\C^2)\). The
-formal-Darboux stalk identification is proved at the
+\(0\in\C^3\). The mixed-HT formal-Darboux stalk sees only the
+formal holomorphic-symplectic stalk
+\((\widehat{\C^2}_0,dz_1\wedge dz_2)\) inside the \(\C^3\)-target.
+The third direction supplies the twisted-M-theory equivariant
+scaling of \cite{costello-twistedM} through the brane-preserving
+\(\Omega\)-background torus
+\(T_\Omega=\C^*_{\varepsilon_s}\times\C^*_{\varepsilon_1}
+\times\C^*_{\varepsilon_2}\) acting by normal scaling on
+\(N_LX=\R_s\oplus\C_{z_1}\oplus\C_{z_2}\) with the brane line
+\(t\) fixed and the deformed BV operator
+\(Q_\Omega=Q+\iota_{V_\Omega}\), \(Q_\Omega^2=L_{V_\Omega}\)
+(theorem-control predicate seven of the convention layer).
+
+\paragraph{Trace and the Hilbert-scheme chart.}
+The chart algebra is the matrix-Chan--Paton completion
+\(A_b=M_N(\C[[z_1,z_2]])^{T_\Omega}\) on the brane-preserving
+torus-fixed locus; the trace
+\(J(f)=\overline{\operatorname{Tr}\,f(\phi_1,\phi_2)}\) reads on
+the cyclic framed stable branch
+\(\C[\phi_1,\phi_2]\cdot v=\C^N\) the formal-Darboux stalk chart
+of \(\Hilb^N(\C^2)\) in its Nekrasov--Schwarz noncommutative
+Moyal deformation \cite{nekrasov-instanton-counting,
+costello-twistedM}, the brane reading of the Nekrasov vertex.
+
+\paragraph{Capelli scalar at \texorpdfstring{$\C^3$}{C^3}.}
+The Capelli identification of \S\ref{sec:capelli-scalar} reads at
+\(\C^3\) under matched-conventions transfer to twisted M-theory:
+\(\Omega_{\mathrm{central}}|_{J(f)}\) localises on the
+\(T_\Omega\)-fixed tower of \(\Hilb^N(\C^2)\) with equivariant
+weights \(\varepsilon_1,\varepsilon_2\), recovering the
+\(N\)-instanton chart-multiplicity scaling
+\([\hbar N\bar c]_{\C^3}=\hbar N\cdot
+(\varepsilon_1+\varepsilon_2)/(\varepsilon_1\varepsilon_2)\) under
+the Nekrasov normalisation, the Costello--Gaiotto twisted-M-theory
+match \cite{costello-twistedM}.
+
+\paragraph{Cross-volume bridge.}
+The \(\C^3\) global reading through twisted M-theory is the
+matched-conventions transfer to
+\(\sim/\mathrm{calabi\text{-}yau\text{-}quantum\text{-}groups}/\)
+(Vol.~III; CY-to-chiral two-stage
+\(\Phi_3=\mathrm{Sp}^{\mathrm{ch}}_{\Sigma_2,C}\circ
+\Phi^{\mathrm{FA}}_3\)); the formal-Darboux stalk at the brane
+chart agrees with the Vol.~III \(d=3\) chart on the cyclic framed
+stable branch.
+
+The formal-Darboux stalk identification is proved at the
 two-complex-dimensional brane chart
 (\S\ref{ssec:local-theorem}); the global \(\C^3\)-toric reading
 through twisted M-theory is matched-conventions external to the
@@ -14445,19 +14504,52 @@ local theorem.
 
 \subsubsection{\texorpdfstring{$K3$}{K3}}\label{sssec:ex-k3}
 
+\paragraph{Chart and trace.}
 Target \(X=K3\); at every formal holomorphic-symplectic point
 \(p\in K3\) the holomorphic Darboux theorem trivialises the germ
 to \((\widehat{\C^2}_0,dz_1\wedge dz_2)\), so \(K3\) contributes
-only its formal symplectic polydisk to the brane chart. The
+only its formal symplectic polydisk to the brane chart.  The
 chart algebra at \(b=p\) is
-\(A_b=\C[[z_1,z_2]]\) and the trace is the formal-Darboux
-\(J(f)\) of \S\ref{ssec:local-theorem}. The elliptic genus
-\(\mathrm{Ell}(K3;\tau,z)\) of \cite{witten-elliptic-genus}
-is the global modular consequence: the closed shadow at level 2
-of the modular line on \(\overline{\mathcal A}_g\). 
+\(A_b=\widehat{\mc O}_{K3,p}\cong\C[[z_1,z_2]]\) and the trace is
+the formal-Darboux
+\(J(f)=\overline{\operatorname{Tr}\,f(\phi_1,\phi_2)}\) of
+\S\ref{ssec:local-theorem}.
+
+\paragraph{Capelli scalar and the elliptic genus.}
+The Capelli class \([\hbar N\bar c]_{K3}\) at the \(K3\)-chart
+agrees pointwise with the Heisenberg core
+(\S\ref{sssec:ex-heisenberg}); under global descent through the
+Mukai pairing the protected scalar trace of
+\(\Omega_{\mathrm{central}}\)-twisted operators recovers the
+elliptic genus
+\(\mathrm{Ell}(K3;\tau,z)=\sum_{n,\ell}c(n,\ell)q^ny^\ell\) of
+\cite{witten-elliptic-genus} as the level-\(2\) modular section
+of the modular line on \(\overline{\mathcal A}_g\) at \(K3\):
+\([\mathrm{Ell}(K3;\tau,z)]=[\Omega_{\mathrm{central}}]|_{K3}\)
+under the Borcherds--Kac--Moody product expansion of
+\cite{gritsenko-nikulin-paramodular} on the Mukai lattice.
+
+\paragraph{Four-curvature cell.}
+The class \([\hbar N\bar c]_{K3}\) lies on the projective
+\((\Omega_{\mathrm{central}})\)-cell of
+Theorem~\ref{thm:four-curvature-taxonomy}: under matched
+identification of \(\Omega_{\mathrm{central}}\) with the modular
+line at \(K3\) the curvature class is the Atiyah class of the
+\(\det^{1/2}\) of the trace representation, and the elliptic
+genus is its level-\(2\) section.
+
+\paragraph{Cross-volume bridge.}
+The \(K3\)-fibre data of the \(K3\times E\) example
+(\S\ref{sssec:ex-k3-times-e}) is exactly this: the
+\(\kappa_{\mathrm{fiber}}=24\) elliptic-genus fibre rank of the
+five-layer \(\kappa\)-stratification and the \(\Delta_5\)
+denominator at \(K3\times E\) reduce to the elliptic genus of
+\(K3\) on the elliptic-fibre limit \(\tau\to i\infty\) at fixed
+\(z\).
+
 The formal-Darboux stalk identification is proved pointwise on
-\(K3\) (\S\ref{ssec:local-theorem}); the global identification
-of the chiral Hochschild target with the elliptic genus is a
+\(K3\) (\S\ref{ssec:local-theorem}); the global identification of
+the chiral Hochschild target with the elliptic genus is a
 matched-conventions transfer through descent, QME, anomaly, and
 locality.
 
@@ -15065,10 +15157,16 @@ the formal-Darboux stalk theorem.
 \paragraph{The closing identification.}
 The trace map
 $J(f)=\overline{\operatorname{Tr}\,f(\phi_1,\phi_2)}$ is the formal
-coordinate of the universal closed--open identification at one
-Dirac brane vacuum; the global identification, the operator-level
-lift of the modular line, and the chiral $E_d$ Deligne theorem at
-$d\geq 2$ are the open problems the formal-Darboux stalk has now
+Darboux coordinate expression of the brane-side derived
+$E_1$-Hochschild $HH^\bullet(A^{\mathrm{cl}}_{\partial,N})$ at one
+Dirac brane vacuum.  The Mixed Holomorphic--Topological Deligne
+conjecture identifies this at the formal-Darboux stalk with the
+chiral derived centre $C^\bullet_{\mathrm{ch}}(A_{b_p},A_{b_p})$ at
+$d=2$, generalising the Beilinson--Drinfeld chiral Deligne theorem
+proved at $d=1$ for chiral algebras factorising over curves.  The
+global identification at $d=2$, the operator-level lift of the
+modular line on $K3\times E$, and the chiral $E_d$ Deligne theorem
+at $d\geq 2$ are the open problems the formal-Darboux stalk has now
 made well-posed.
 
 \section*{Acknowledgements}
