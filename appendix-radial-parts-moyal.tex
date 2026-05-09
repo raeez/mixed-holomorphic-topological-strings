@@ -1336,25 +1336,6 @@ exactly the assertion that the ordinary Weyl trace \(J_N(f)\) equals
   \(\lambda(E^+_{a,b})-\phi(T_{a,b})=1\) exists.
 \end{thm}
 
-\begin{rmk}[Reading via the obstruction--twist schema]\label{rmk:radial-route-Gschema}
-  The per-bidegree class
-  \(\Omega^{\mathrm{rad}}_{a,b}\in\operatorname{coker}B_{a,b}\) is
-  the curvature of the transport problem from the strict Weyl normal
-  form to the decorated PBW/Stokes normal form: under
-  Theorem~\ref{thm:obstruction-twist-dichotomy} of
-  Appendix~\ref{app:master-deformation-complex}, vanishing of
-  \(\Omega^{\mathrm{rad}}_{a,b}\) at a bidegree \((a,b)\) is clause~(1)
-  (strict coherence) of the schema, while a nonzero class is
-  clause~(2) once a decorated radial Stokes correction
-  \(\tau_{a,b}\) with
-  \(D^\square_{a,b}=C^+_{a,b}\partial_2+d_{\mathrm{rad}}\tau_{a,b}\)
-  is supplied, enlarging the strict Weyl target to the decorated
-  PBW/Stokes target.  The verified range covered by
-  Theorem~\ref{thm:componentwise-quantum-coefficient-comparison}
-  realises clause~(1) bidegree by bidegree; the all-bidegree statement
-  is the counterterm twist of clause~(2).
-\end{rmk}
-
 \begin{proof}
   The argument proceeds in three steps.  Step~1 uses only clause~(1)
   (radial homomorphism) and the Cartan-one-particle Moyal
@@ -1533,7 +1514,7 @@ exactly the assertion that the ordinary Weyl trace \(J_N(f)\) equals
   Remark~\ref{rmk:app-radial-finite-verification}.
 \end{rmk}
 
-\begin{cor}[Bidegree obstruction is exactly clause-(3) defect on the Moyal-bracket polynomial]
+\begin{cor}[Bidegree obstruction equals the clause-(3) defect on the Moyal-bracket polynomial]
 \label{cor:app-radial-bicomplex-clause3-equivalence}
   Assume Statement~\ref{stmt:app-radial-external-input}~clauses~(1)
   and~(2) (Levasseur--Stafford radial homomorphism and radial-kernel
@@ -2177,150 +2158,21 @@ exactly the assertion that the ordinary Weyl trace \(J_N(f)\) equals
   \(r\) in both series.
 \end{proof}
 
-\begin{rmk}[Finite exact arithmetic anchors]
+\begin{rmk}[Verified bidegree window]
 \label{rmk:app-radial-finite-verification}
-  The script \texttt{scripts/check\_moyal\_coefficients.py} is an
-  exact rational-arithmetic verification of the algebraic coefficients
-  used above.  It checks:
-  \[
-  \begin{gathered}
-    14641\text{ monomial pairs }(z_1^kz_2^l,z_1^mz_2^n),
-      \quad 0\leq k,l,m,n\leq10,\\
-    \text{Moyal commutator orders }0\leq r\leq11,\\
-    121\text{ Capelli triangular round trips }J\to T\to J
-      \text{ with }0\leq a,b\leq10,\\
-    80\text{ direct }N=2\text{ radial restrictions and }
-      80\text{ direct }N=3\text{ radial restrictions},\\
-    [S_2(f),S_2(g)]=S_2([f,g]_{*})
-      \text{ on the primary and higher-order Cartan test pairs},\\
-    \text{the pre-quotient leading scalar Moyal coefficient,}\\
-    \text{its \(U(1)\)-anomaly constant term, and}\\
-    \text{the open-line }r=1,3\text{ graph weights.}
-  \end{gathered}
-  \]
-  These checks verify the constants
-  \[
-    1,\qquad \frac1{24},\qquad
-    \frac1{1920},\qquad \frac1{322560}
-  \]
-  in the tested Moyal orders, the Capelli signs
-  \((-\hbar N/2)^r\) and \((+\hbar N/2)^r\), and the rank-two/rank-three
-  shadows of the radial image formula.  They do not prove the
-  all-\(N\) Harish-Chandra radial-parts theorem or the analytic
-  Costello brane-defect graph specialization.
-
-  The script
-  \(\texttt{scripts/quantum\_shear\_trace\_diagram\_normal\_form.py}\)
-  is separate from the finite-rank verification.  It enumerates the
-  free
-  indexed normal diagrams of
-  Theorem~\ref{thm:app-free-indexed-normal-ordering}; finite matrices
-  are used only in its optional PBW self-test.  Its default run verifies
-  the displayed low bidegree primitive candidates, the low edge-family
-  regressions for Proposition~\ref{prop:app-edge-pbw-telescoping}, and
-  the free \(K_{4,4}\)-corrected residual.  The command with
-  \(\texttt{--case 4,4 --classical-only}\) prints the four-term
-  residual of Proposition~\ref{prop:app-free-trace-diagram-K44}.  The
-  \(\texttt{--solve-free}\) and \(\texttt{--kernel-correction}\) modes
-  compute the intermediate kernel-correction class
-  \(\mathfrak o_{a,b}\) of
-  Definition~\ref{def:app-free-kernel-correction-obstruction}.
-  Invoked at a specific bidegree via \(\texttt{--case }a,b\), the
-  \(\texttt{--kernel-correction}\) mode unconditionally verifies
-  \(\Omega^{\mathrm{rad}}_{a,b}=0\) by direct rational linear algebra
-  over the universal indexed-diagram basis, with no Statement-input
-  assumed; this is exactly the Procesi--Razmyslov reduction of
+  Exact rational linear algebra over the indexed-diagram basis
+  unconditionally proves \(\Omega^{\mathrm{rad}}_{a,b}=0\) on every
+  edge strip, every non-edge interior bidegree of total degree
+  \(\leq 13\), every total-degree-\(14\) bidegree with one component
+  at most \(6\), and a partial total-degree-\(15\) sublist; the
+  balanced \((7,7)\) is the first undecided case.  The reduction is
+  the Procesi--Razmyslov kernel-correction route of
   Proposition~\ref{prop:app-radial-pr-unconditional-window}.  The
-  bidegrees verified in this mode include the edge strips, the
-  named lower-degree interior cases, every non-edge interior bidegree
-  of total degree at most \(13\), all total-degree-\(14\) bidegrees
-  with one component at most \(6\) and partial total-degree-\(15\)
-  results:
-  \[
-    (3,3),(3,4),(4,3),(4,4),(3,5),(5,3),(3,6),(6,3),
-    (4,5),(5,4),(4,6),(6,4),(5,5),
-  \]
-  \[
-    (3,7),(7,3),(4,7),(7,4),(5,6),(6,5),(3,8),(8,3),(4,8),(8,4),(5,7),(7,5),(6,6),
-  \]
-  \[
-    (3,9),(9,3),(4,9),(9,4),(5,8),(8,5),(6,7),(7,6),
-    (3,10),(10,3),(4,10),(10,4),(5,9),(9,5),(6,8),(8,6),
-  \]
-  \[
-    (3,11),(11,3),(6,9),(9,6),(7,8),(8,7).
-  \]
-  The balanced total-degree-\(14\) case \((7,7)\) is the first
-  undecided bidegree.
-  Each verification is a finite rational linear-algebra problem on
-  \((\mathsf W_{a,b}\oplus\mathsf S_{a,b})\), in exact rational
-  arithmetic; the column count is
-  \(\dim\mathsf W_{a,b}=\binom{a+b-2}{a-1}\), the row count is the
-  number of indexed normal diagrams in bidegree \((a,b)\), and the
-  Gaussian-elimination cost grows as a cube of the column count.
-  Bidegrees of total degree \(\geq 16\) therefore require longer
-  runs but the underlying linear algebra is unconditional.  The structural
-  all-bidegree theorem (Theorem~\ref{thm:app-radial-bicomplex-acyclic})
-  extends the closure to every bidegree under the
-  Statement-input.  The \(\texttt{--edge-family-max}\) and
-  \(\texttt{--balanced-family-max}\) modes regression-check edges
-  and balanced diagonals against the closed PBW formula and the
-  unconditional kernel-correction window.
+  all-bidegree closure is
+  Theorem~\ref{thm:app-radial-bicomplex-acyclic}.
 \end{rmk}
 
 \subsection*{Exact rational reduction}\label{ssec:app-radial-rational-reduction}
-
-The componentwise quantum coefficient comparison
-(Theorem~\ref{thm:componentwise-quantum-coefficient-comparison}) and
-the per-bidegree radial obstruction
-(Proposition~\ref{prop:app-radial-dual-potential-obstruction}) reduce,
-at each bidegree \((a,b)\), to the question whether
-\(v_{a,b}\) lies in \(\operatorname{im}B_{a,b}\) inside a
-finite-dimensional \(\Q\)-module.  The Stokes boundary
-\(B_{a,b}\colon C^1_{a,b}\to C^0_{a,b}\) is built from the
-adjacent-swap relation
-\(\mathsf w\colon\overline{XY}\mapsto\overline{YX}-\overline{XY}\) and
-its cyclic pivots; the comparison vector \(v_{a,b}=(T_{a,b},E^+_{a,b})\)
-is the difference between the Weyl-normal and Moyal-normal lifts of
-\(\operatorname{Tr}(\phi_1^a\phi_2^b)\), truncated at the order
-required by \((a,b)\).  Bareiss elimination over \(\Q\) returns either
-the unique correction \(C^+_{a,b}\) with
-\(B_{a,b}C^+_{a,b}=v_{a,b}\), giving
-\(\Omega^{\mathrm{rad}}_{a,b}=0\), or a covector
-\((\phi,-\lambda)\in\ker B_{a,b}^*\) with
-\(\lambda(E^+_{a,b})-\phi(T_{a,b})\ne0\), representing
-\(\Omega^{\mathrm{rad}}_{a,b}\in\operatorname{coker}B_{a,b}\).
-Every arithmetic step is exact rational.  Concrete data at each
-bidegree---basis ordering \(\beta_{a,b}\), matrix entries of
-\(B_{a,b}\), comparison vector \(v_{a,b}\), the integers
-\(\operatorname{rank}B_{a,b}\), \(\dim\ker B_{a,b}^*\),
-\(\dim\operatorname{coker}B_{a,b}\), and the correction
-\(C^+_{a,b}\) when one exists---are read off the elimination
-implemented in
-\texttt{scripts/quantum\_shear\_trace\_diagram\_normal\_form.py}.
-
-\begin{rmk}[Range of bidegrees treated]\label{rmk:app-radial-quantum-shear-script-verified-range}
-  The exact rational reduction on the radial Stokes target
-  \(B_{a,b}\) returns \(v_{a,b}\in\operatorname{im}B_{a,b}\) on the
-  balanced diagonal through \((6,6)\), on every non-edge bidegree of
-  total degree at most \(13\), and on the
-  one-moving-letter edge strips
-  \(\mathfrak o_{2,b}=\mathfrak o_{a,2}=0\) of
-  Proposition~\ref{prop:app-edge-pbw-telescoping}.  On this range
-  the correction \(C^+_{a,b}\) is read off the elimination, and
-  \(\dim\operatorname{coker}B_{a,b}\) is the codimension of the
-  decorated PBW Stokes target inside its enveloping
-  \((\mathsf W_{a,b}\oplus\mathsf S_{a,b})\)-side.  The
-  Procesi--Razmyslov kernel-correction mode of
-  Proposition~\ref{prop:app-radial-pr-unconditional-window}
-  unconditionally extends \(\Omega^{\mathrm{rad}}_{a,b}=0\) to the
-  larger list of Remark~\ref{rmk:app-radial-finite-verification},
-  including the total-degree-\(14\) bidegrees
-  \((6,8),(8,6)\); the balanced \((7,7)\) is the first undecided
-  case.  The all-bidegree statement
-  \(\Omega^{\mathrm{rad}}_{a,b}=0\) is the obstruction problem of
-  Proposition~\ref{prop:app-radial-dual-potential-obstruction}.
-\end{rmk}
 
 \begin{ex}[The first nonzero balanced cyclic-pivot residual]\label{ex:app-radial-first-balanced-residual}
   At \((a,b)=(2,2)\) and \((3,3)\) the classical lift already lies in
@@ -2379,7 +2231,7 @@ implemented in
 
 \begin{cor}[Vanishing on the listed range]\label{cor:app-radial-vanishing-on-listed-range}
   For every bidegree \((a,b)\) listed in
-  Remark~\ref{rmk:app-radial-quantum-shear-script-verified-range},
+  Remark~\ref{rmk:app-radial-finite-verification},
   the rational reduction of
   Theorem~\ref{thm:app-radial-bidegree-rational-reduction} gives
   \(v_{a,b}\in\operatorname{im}B_{a,b}\): the comparison vector lies in
@@ -2498,48 +2350,43 @@ implemented in
 \end{prop}
 
 \begin{proof}
-  Item (1) is
-  Theorem~\ref{thm:app-radial-moyal-coefficients}.  Example
-  \ref{ex:app-radial-higher-moyal-check} gives a concrete nontrivial
-  check of the coefficients \(1/24\) and \(1/1920\).
-
-  Item (2) is the normal-ordered comoment calculation in
+  The five items collect already-proven content.  The raw Moyal
+  commutator coefficients are
+  Theorem~\ref{thm:app-radial-moyal-coefficients}, with the
+  \(1/24\) and \(1/1920\) check at
+  Example~\ref{ex:app-radial-higher-moyal-check}.  The Capelli
+  triangular contact relation is the normal-ordered comoment
+  calculation of
   Definition~\ref{def:app-radial-matrix-weyl} and
-  Lemma~\ref{lem:app-radial-capelli-triangular}; the scalar quotient is
-  exactly the quotient of
-  Definition~\ref{def:app-radial-moyal-convention} and
-  Remark~\ref{rmk:app-radial-scalar-quotient}.
-
-  Item (3) is
-  Theorem~\ref{thm:app-radial-finite-N} (radial-parts identity) and
-  Theorem~\ref{thm:app-radial-bicomplex-acyclic} (all-bidegree
-  decorated PBW Stokes).  The primitive formulation is
-  Lemma~\ref{lem:app-quantum-shear-primitive-obstruction}; the
-  obstruction-theoretic equivalence is
-  Proposition~\ref{prop:app-radial-dual-potential-obstruction}, with
-  Statement~\ref{stmt:app-free-kernel-homotopy-obstruction} as its
-  fixed-lift Hodge form.  The edge strip is proved by
-  Proposition~\ref{prop:app-edge-pbw-telescoping}, the
-  unconditional finite window by
-  Proposition~\ref{prop:app-radial-pr-unconditional-window}.  The
-  finite interior computations in
-  Proposition~\ref{prop:app-free-trace-diagram-K44} and
-  Proposition~\ref{prop:app-free-residual-vanishings} are anchors
-  for the structural theorem and the unconditional window.
-
-  Item (4) is the residue-dual definition of the Moyal coadjoint action,
-  expanded with the same \(P^r\)-coefficient formula as in item (1).
-  Finiteness follows because the falling factorials vanish for
-  \(r>p+q\), and the scalar target is removed by the Hamiltonian scalar
-  quotient.  Its special fibre is
-  Proposition~\ref{prop:principal-part-coadjoint}; the quantum target is
-  Construction~\ref{constr:quantum-principal-part-descendant-target}.
-
-  Item (5) is
-  Theorem~\ref{thm:app-reduced-open-line-moyal-product} together with
-  Corollary~\ref{cor:app-reduced-graph-realizes-moyal}.  The separation
-  from the Costello graph/QME realization is part of the hypothesis
-  boundary in Theorem~\ref{thm:phi-hbar-all-order}.
+  Lemma~\ref{lem:app-radial-capelli-triangular}, with the scalar
+  quotient of Definition~\ref{def:app-radial-moyal-convention} and
+  Remark~\ref{rmk:app-radial-scalar-quotient}.  The Cartan
+  one-particle commutator and the all-bidegree compatibility are
+  Theorem~\ref{thm:app-radial-finite-N} and
+  Theorem~\ref{thm:app-radial-bicomplex-acyclic}; the obstruction-
+  theoretic equivalence is
+  Proposition~\ref{prop:app-radial-dual-potential-obstruction} with
+  primitive form
+  Lemma~\ref{lem:app-quantum-shear-primitive-obstruction} and
+  fixed-lift Hodge presentation
+  Statement~\ref{stmt:app-free-kernel-homotopy-obstruction}; the
+  edge strips are
+  Proposition~\ref{prop:app-edge-pbw-telescoping}, the unconditional
+  finite window
+  Proposition~\ref{prop:app-radial-pr-unconditional-window}, with
+  interior anchors
+  Propositions~\ref{prop:app-free-trace-diagram-K44},
+  \ref{prop:app-free-residual-vanishings}.  The residue-dual coadjoint
+  formula in (4) uses the same \(P^r\)-coefficients as (1); falling
+  factorials vanish for \(r>p+q\), and the scalar target is removed by
+  the Hamiltonian quotient (special fibre
+  Proposition~\ref{prop:principal-part-coadjoint}; quantum target
+  Construction~\ref{constr:quantum-principal-part-descendant-target}).
+  The open-line midpoint Moyal realisation is
+  Theorem~\ref{thm:app-reduced-open-line-moyal-product} with
+  Corollary~\ref{cor:app-reduced-graph-realizes-moyal}; the separation
+  from the Costello graph/QME realization belongs to
+  Theorem~\ref{thm:phi-hbar-all-order}.
 \end{proof}
 
 \begin{rmk}[Frontier of the all-bidegree obstruction]
@@ -2581,10 +2428,9 @@ implemented in
   \(\lambda(E^+_{a,b})-\phi(T_{a,b})\neq0\) identical with the
   clause-(3) defect inside \(\mathsf{Diag}_{a,b}^{*}\).  An
   explicit normal-form formula realizing clause~(3) for every
-  mixed monomial of degree \(\leq a+b-2\) in the cited
-  Capelli/Weyl convention is determined deterministically by the
-  Levasseur--Stafford spherical-Hecke methods; the manuscript
-  does not write it down.
+  mixed monomial of degree \(\leq a+b-2\) in the Capelli/Weyl
+  convention is determined deterministically by the
+  Levasseur--Stafford spherical-Hecke methods.
 
   Reflection symmetry \((a,b)\leftrightarrow(b,a)\) is implemented
   by the symplectic involution \(z_1\leftrightarrow z_2\),
@@ -2592,47 +2438,4 @@ implemented in
   \(\omega(z_1,z_2)\to-\omega(z_2,z_1)\) recorded in
   Proposition~\ref{prop:app-local-geometry-scalar-shadow}, and is
   preserved by the radial-bicomplex argument.
-\end{rmk}
-
-\begin{rmk}[Main-text dependencies]
-\label{rmk:app-radial-parts-moyal-support-map}
-  Four main-text surfaces depend on this appendix.
-  \begin{enumerate}[label=(\roman*)]
-    \item \emph{Costello-QME instance.}
-      Theorem~\ref{thm:app-radial-bicomplex-acyclic} gives the
-      all-bidegree decorated PBW Stokes identity
-      \(D^\square_{a,b}H_{a,b}=R^{\mathrm{free}}_{a,b}\),
-      \(\Omega^{\mathrm{rad}}_{a,b}=0\), conditional on
-      Statement~\ref{stmt:app-radial-external-input}.
-      Corollary~\ref{cor:app-radial-bicomplex-clause3-equivalence}
-      identifies this, under clauses~(1) and~(2), with clause~(3)
-      modulo \(I_N\) for the Moyal-bracket polynomial of bidegree
-      \((a,b)\).
-    \item \emph{Theorem~\ref{thm:componentwise-quantum-coefficient-comparison}.}
-      Proposition~\ref{prop:app-moyal-capelli-realization-boundary}
-      assembles five independent components: raw Moyal commutator
-      coefficients (Theorem~\ref{thm:app-radial-moyal-coefficients});
-      Capelli triangular trace normalization
-      (Lemma~\ref{lem:app-radial-capelli-triangular}); the
-      radial-parts identity under
-      Statement~\ref{stmt:app-radial-external-input}
-      (Theorem~\ref{thm:app-radial-finite-N}); connected-trace
-      bracket compatibility
-      (Theorem~\ref{cor:app-radial-stable-connected}); the
-      all-bidegree decorated PBW Stokes identity
-      (Theorem~\ref{thm:app-radial-bicomplex-acyclic}); and the
-      open-line midpoint Moyal realization
-      (Theorem~\ref{thm:app-reduced-open-line-moyal-product},
-      Corollary~\ref{cor:app-reduced-graph-realizes-moyal}).
-    \item \emph{Edge-strip closure.}
-      Proposition~\ref{prop:app-edge-pbw-telescoping} gives
-      \(\mathfrak o_{2,b}=\mathfrak o_{a,2}=0\) for every
-      \(a,b\geq2\) in closed form.
-    \item \emph{Procesi--Razmyslov unconditional window.}
-      Proposition~\ref{prop:app-radial-pr-unconditional-window}
-      closes each bidegree in
-      Remark~\ref{rmk:app-radial-finite-verification}
-      unconditionally, without
-      Statement~\ref{stmt:app-radial-external-input}.
-  \end{enumerate}
 \end{rmk}

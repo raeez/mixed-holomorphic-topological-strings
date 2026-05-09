@@ -1,10 +1,4 @@
 % !TEX root = main.tex
-%
-% Universal summation residual.  Named residual class:
-% \operatorname{Ob}^{\mathrm{HML}}_{w}, the obstruction to commuting
-% the Hadamard parametrix / Hörmander wave-front machinery with the
-% strict Mittag-Leffler inverse limit on the weighted Tate coefficient
-% module.
 
 \subsection*{Hadamard parametrix on the Mittag-Leffler coefficient module}
 
@@ -360,29 +354,19 @@ of formula between them.
   brane-defect interaction.
 \end{proof}
 
-\begin{rmk}[Why the Hörmander commutation works]\label{rmk:hormander-commutation}
-  The deciding technical point is whether the Mittag-Leffler limit
-  in the coefficient direction commutes with Hörmander's
-  wave-front-set analysis on the bulk. Three facts make this work:
-
-  (a) The propagator factorization
-  \eqref{eq:wt-propagator-factor} is exact (not asymptotic), so
-  the bulk wave-front set is computed once and tensored.
-
-  (b) The coefficient factor $C_{\mathfrak h,w}$ is not a
-  distribution on any spacetime: it is an algebraic tensor in the
-  weighted Tate category. Wave-front analysis on a smooth/algebraic
-  tensor is trivial ($\mathrm{WF}=\emptyset$).
-
-  (c) The Hadamard parametrix coefficients $a_k(x,y)$ are universal
-  in the bulk (depend only on the bulk Riemannian/Hermitian data of
-  $\R^2\times\C^2$); they do not see the coefficient direction.
-
-  Consequently, the wave-front bound of
-  Lemma~\ref{lem:windowwise-parametrix}~(3) is exact and
-  $w_0$-uniform; passing to the Mittag-Leffler limit preserves the
-  local-functional class graph-by-graph at every order $\hbar^n$ once
-  the windowwise counterterm system is compatible.
+\begin{rmk}\label{rmk:hormander-commutation}
+  The Mittag-Leffler limit in the coefficient direction commutes with
+  Hörmander's wave-front analysis because the propagator factorization
+  \eqref{eq:wt-propagator-factor} is exact (the bulk wave-front set is
+  computed once and tensored), the coefficient factor
+  $C_{\mathfrak h,w}$ is an algebraic tensor in the weighted Tate
+  category with $\mathrm{WF}=\emptyset$, and the Hadamard parametrix
+  coefficients $a_k(x,y)$ depend only on the bulk Riemannian/Hermitian
+  data of $\R^2\times\C^2$.  The wave-front bound of
+  Lemma~\ref{lem:windowwise-parametrix}~(3) is therefore exact and
+  $w_0$-uniform; the Mittag-Leffler limit preserves the
+  local-functional class graph by graph at every order $\hbar^n$
+  whenever the windowwise counterterm system is compatible.
 \end{rmk}
 
 \begin{cor}[Hadamard coefficient criterion for the weighted QME lift]\label{cor:wt-cotangent-lift-hadamard-criterion}
@@ -2994,27 +2978,7 @@ Theorem~\ref{thm:theta-three-companion-face-obstruction}.
   on \(\bigl(\widehat{\mathcal P}_\Pi,\mathcal P_{\mathrm{an}}(B_1)\bigr)\).
 \end{proof}
 
-\begin{rmk}[Reading via the obstruction--twist schema]\label{rmk:bm-route-Gschema}
-  Under Theorem~\ref{thm:obstruction-twist-dichotomy} of
-  Appendix~\ref{app:master-deformation-complex}, the strict all-window
-  Bochner--Martinelli current transfer is the canonical instance of
-  clause~(4) (target replacement) of the schema: the residue-coadjoint
-  computation
-  \(z_1^{N+2}\!\cdot\!\rho_{N+1,0}=-(N+2)\rho_{0,1}\) and the projected
-  finite-window Jacobiator \((N+1)(N+2)\rho_{0,1}\ne0\) show that the
-  curvature \([F_{\mathcal T}(\Theta_{\mathrm{loc}})]\) in any fixed
-  finite Matlis target \(P_{\le N}\) is non-absorptive --- neither
-  exact nor central in any admissible extension of the target ---
-  and no counterterm internal to a finite current window restores
-  coherence.  The corollary above identifies the substituted target:
-  the pro-Matlis tower
-  \(P^{\Pi}=\varprojlim_N P_{\le N}\), with modified coherence law
-  \(\pi_N(f\!\cdot\!\xi)=\pi_N\bigl(f\!\cdot\!\pi_{N+r(f)}\xi\bigr)\),
-  is the unique target in which the Hamiltonian action becomes
-  coherent.  This is target replacement, not counterterm absorption.
-\end{rmk}
-
-\begin{proof}
+\begin{proof}[Proof of Corollary~\ref{cor:promatlis-retract-as-supremum}]
   The first sentence is Theorem~\ref{thm:bmk-finite-window-no-go}: no
   finite-Matlis quotient supports the Hamiltonian action.  The
   positive constructions of the pro-Matlis pair \((\widehat{\mc

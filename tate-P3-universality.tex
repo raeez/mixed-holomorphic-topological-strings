@@ -1,143 +1,54 @@
 % !TEX root = main.tex
-%
-% Universality of the formal-local Hamiltonian sector across natural
-% embeddings.  Named residual class:
-% \operatorname{Ob}^{\mathrm{univ}}_{p,X}, the four-coordinate
-% protected twist obstruction datum whose vanishing identifies every
-% admissible protected Hamiltonian sector at every brane point of
-% every connected holomorphic-symplectic surface with the same formal
-% local Hamiltonian BF / CE--PV model.
 
 \subsection{Universality of the formal-local Hamiltonian sector}\label{ssec:twistedM-universality}
 
-\paragraph*{Organizing question.}  The local theorem of
-\S\ref{ssec:local-theorem} is stated at one chosen brane point of the
-formal symplectic polydisk \(\widehat{\C^2}_0\).  An ambient theory --
-Costello's perturbative twisted-M-theory~\cite{costello-twistedM},
-or any other admissible source on a connected holomorphic-symplectic
-surface \((X,\omega)\) with brane point \(p\) -- carries its own open
-fields, closed fields, and bulk-to-boundary evaluation.  Is the
-restriction of that ambient datum to the formal polydisk
-\(\widehat X_p\) the \emph{same} formal Hamiltonian model, for every
-\((X,\omega)\), every \(p\), and every admissible ambient source?  And
-if so, by which class does the comparison fail when an ambient
-datum is rejected?
-
-\paragraph*{Unique survivor.}  The word \emph{universal} earns a
-single precise meaning here.  The formal-local Hamiltonian model is
-the terminal object in the category whose objects are admissible
-protected Hamiltonian sectors at brane points of connected
-holomorphic-symplectic surfaces and whose morphisms are formal
-Darboux symplectomorphisms intertwining the protected
-bulk-to-boundary structure
-(Theorem~\ref{thm:formal-local-universal-property} below).
-Concretely, every admissible protected sector \emph{factors uniquely
-up to canonical isomorphism} through the triple
+The local theorem of \S\ref{ssec:local-theorem} lives at one brane
+point of the formal symplectic polydisk \(\widehat{\C^2}_0\).  An
+ambient theory on a connected holomorphic-symplectic surface
+\((X,\omega)\) with brane point \(p\) — Costello's perturbative
+twisted-M-theory \cite{costello-twistedM}, or any source supplying
+its own open fields, closed fields, and bulk-to-boundary evaluation —
+restricts to \(\widehat X_p\) as the same formal Hamiltonian model
+exactly when its protected datum lies in the category
+\(\mathsf{ProtHam}\) defined below.  The formal Darboux model
 \[
   \mathfrak M^{\mathrm{Ham}}_{\mathrm{loc}}
    =
   \bigl(
     \widehat{\mathfrak h}\ltimes
-    \widehat{\mathfrak h}^\vee_{\mathrm{cont}}[1],
-    \,
+    \widehat{\mathfrak h}^\vee_{\mathrm{cont}}[1],\
     \Omega^*(\R)\otimes\Lambda(\varepsilon_1,\varepsilon_2)
-      \otimes\lie{gl}_N[1],
-    \,
+      \otimes\lie{gl}_N[1],\
     [\bar c]
   \bigr),
-  \qquad
-  \widehat{\mathfrak h}=\C[[z_1,z_2]]/\C\cdot1.
+  \quad
+  \widehat{\mathfrak h}=\C[[z_1,z_2]]/\C\cdot1,
 \]
-Whether a candidate ambient datum lies in this category at all is
-the obstruction theorem: it lies in the category iff the
-four-coordinate \emph{universality residual class}
+is the terminal object of \(\mathsf{ProtHam}\)
+(Theorem~\ref{thm:formal-local-universal-property}).  A candidate
+datum lies in \(\mathsf{ProtHam}\) iff the four-coordinate class
 \[
   \operatorname{Ob}^{\mathrm{univ}}_{p,X}
     =
-  \bigl(
-    \operatorname{per}(v),\,
-    [\mc C_{\mathrm{cl},p}],\,
-    \operatorname{ob}_{\mathrm{scal}},\,
-    \operatorname{ob}_{\mathrm{QME}}
-  \bigr)
-  \in
-  H^1(X,\C_X)
-    \oplus H^\bullet(\mc C_{\mathrm{cl},p})
-    \oplus H^2_{\mathrm{Lie}}(\bar A,\C)
-    \oplus H^1\!\bigl(\mathcal O_{\mathrm{loc}}(\mc E_{\mathrm{prot},w}),
-        Q+\{I_{0,\mathrm{prot}},-\}\bigr)
+  \bigl(\operatorname{per}(v),\,
+        [\mc C_{\mathrm{cl},p}],\,
+        \operatorname{ob}_{\mathrm{scal}},\,
+        \operatorname{ob}_{\mathrm{QME}}\bigr)
 \]
 of Definition~\ref{defn:protected-twist-obstruction-datum} vanishes
-with chosen null-homotopies
-(Lemma~\ref{lem:protected-primary-obstruction-test},
-Theorem~\ref{thm:protected-twist-hamiltonian-criterion}).  A single
-nonzero coordinate names the exact ambient mechanism that fails;
-universality without a vanishing proof or a named nonzero
-coordinate is not a theorem of this paper.
+with chosen null-homotopies; the four coordinates lie in independent
+cohomology groups (the de Rham extension on \(X\), the
+closed-comparison cone, \(H^2_{\mathrm{Lie}}(\bar A,\C)\), and the
+weighted protected local-functional complex), and a single nonzero
+coordinate names the exact ambient mechanism that fails.
 
-\paragraph*{Habitat.}  The four coordinates of
-\(\operatorname{Ob}^{\mathrm{univ}}_{p,X}\) lie in independent
-cohomology groups, so no coordinate is implied by the others.  The
-period class \(\operatorname{per}(v)\) sits in the de Rham extension
-\(0\to\C_X\to\mc O_X\to\Omega^1_{X,\mathrm{cl}}\to0\); the
-closed-field comparison cone \(\mc C_{\mathrm{cl},p}\) measures
-field-level mismatch on the protected closed sector; the scalar
-anomaly mismatch \(\operatorname{ob}_{\mathrm{scal}}\) lives on
-\(\bar A=\C[z_1,z_2]/\C\cdot1\); the brane-defect QME class
-\(\operatorname{ob}_{\mathrm{QME}}\) lives on the weighted protected
-local-functional complex.  A connected compact surface with
-vanishing period need not have an acyclic comparison cone; a
-balanced scalar anomaly need not produce a QME-flat brane
-interaction; a QME-flat sector need not match the local scalar
-class.  The universal-property statement is therefore not the
-assertion that all four classes are tied --- it is the assertion
-that, when all four vanish, the protected sector \emph{is}
-\(\mathfrak M^{\mathrm{Ham}}_{\mathrm{loc}}\) up to canonical
-isomorphism, and when one is nonzero the precise coordinate records
-what the ambient datum carries beyond what the formal local model
-has absorbed.
-
-\paragraph*{Closure.}  Three closures separate four claims.  First,
-the universal property
-(Theorem~\ref{thm:formal-local-universal-property}) is a categorical
-statement: terminality under the admissibility-respecting
-morphisms.  Second, the obstruction theorem
-(Theorem~\ref{thm:protected-twist-hamiltonian-criterion}) is the
-iff-vanishing statement converting universality into a four-class
-criterion on candidate ambient data.  Third, the cross-volume
-firewall
+External acceptance of an admissible datum into a compact-CY, MNOP,
+GV, OSV, DT, PT, Vol III, Igusa, or BKM target is a separate
+matched-conventions descent class
 (Corollary~\ref{cor:protected-matched-conventions-interface},
-\S\ref{app:convention-contract}) blocks any compact, modular,
-automorphic, or virtual-cycle conclusion from following from
-\(\operatorname{Ob}^{\mathrm{univ}}_{p,X}=0\) alone: external
-acceptance into a compact CY, MNOP, GV, OSV, DT, PT, Vol III, Igusa,
-or BKM target is a separate matched-conventions descent class with
-its own obstruction vector.  Together these three closures
-say that universality of the formal-local Hamiltonian sector is a
-universal-property theorem with a measurable failure class and a
-firewalled cross-volume use; nothing more, and nothing less.
-
-\paragraph*{Cross-volume hook for Measurement Universality.}  The
-universal-property formulation here is the formal-local image of a
-broader Measurement Universality statement at the principle layer.
-The principle-layer envelope characterizes the GL\(_N\)-invariant
-trace evaluation
-\(f\mapsto\overline{\operatorname{Tr}f(\phi_1,\phi_2)}\) by
-characterizing axioms (Darboux-natural, polynomial,
-GL\(_N\)-invariant, scalar-reduced, with linear part sending
-\(z_i\) to \(\operatorname{Tr}\phi_i\) modulo the killed scalar
-trace, and Hamiltonian variation matching the moment-map action)
-and asserts existence and uniqueness up to canonical
-isomorphism on the stable connected trace algebra
-\(H^0(\mathcal R_N^{GL_N},Q)_{\mathrm{conn,st}}\) of
-\S\ref{ssec:open-brane-operators}; its formal-local image is the
-bulk-to-boundary evaluation triple of
-Corollary~\ref{cor:protected-formal-uniformity}.  This file does not
-assert the principle-layer Measurement Universality Theorem; it
-records the formal-local universal-property image and the obstruction
-class \(\operatorname{Ob}^{\mathrm{univ}}_{p,X}\) that a
-principle-layer formulation must control under formal-disk
-restriction.
+\S\ref{app:convention-contract}); vanishing of
+\(\operatorname{Ob}^{\mathrm{univ}}_{p,X}\) alone licenses no such
+conclusion.
 
 \begin{defn}[Protected Hamiltonian sector at a brane point]\label{defn:protected-hamiltonian-sector-brane-point}
   Let $(X,\omega)$ be a connected holomorphic-symplectic surface, let
@@ -493,9 +404,8 @@ the protected closed sector, and the Lie cohomology of \(\bar A\)
 respectively, and their vanishing is a structural statement about
 the ambient datum.  The fourth coordinate
 \(\operatorname{ob}_{\mathrm{QME}}\) is a quantum BV class that
-depends on the Chan-Paton matrix factor.  The next two theorems
-sharpen this coordinate.  The Casimir-balanced equivariant scalar
-QME criterion
+depends on the Chan-Paton matrix factor.  The Casimir-balanced
+equivariant scalar QME criterion
 (Theorem~\ref{thm:joint-super-balanced-symp-qme-vanishing} below)
 identifies an explicit locus
 \(\kappa_{\mathfrak s}=0\) on which the scalar component of the
@@ -1096,40 +1006,5 @@ brane stack.
   then supplies the \(d=2\) formal-disk normalization functorially in the
   chosen Darboux chart.
 \end{proof}
-
-\paragraph*{Universality residual.}  Three statements together
-\emph{are} universality of the formal-local Hamiltonian sector, and
-nothing else in this file is.  First, the universal property
-(Theorem~\ref{thm:formal-local-universal-property}) identifies the
-formal-local Hamiltonian model
-\(\mathfrak M^{\mathrm{Ham}}_{\mathrm{loc}}\) as the terminal object
-of \(\mathsf{ProtHam}\), giving existence and uniqueness up to
-canonical isomorphism of the morphism
-\(\mu_{(X,\omega,p,\Theta)}\) for each admissible object.  Second,
-the obstruction iff
-(Lemma~\ref{lem:protected-primary-obstruction-test},
-Theorem~\ref{thm:protected-twist-hamiltonian-criterion}) is the
-membership criterion for \(\mathsf{ProtHam}\): a candidate ambient
-datum supplies an object of \(\mathsf{ProtHam}\) iff
-\(\operatorname{Ob}^{\mathrm{univ}}_{p,X}=0\) with chosen
-null-homotopies; a single nonzero coordinate names the exact ambient
-mechanism that fails.  Third, the matched-conventions firewall
-(Corollary~\ref{cor:protected-matched-conventions-interface},
-\S\ref{app:convention-contract}) is the cross-volume gate: the
-formal-local image of an admissible ambient datum is accepted by a
-compact BCOV, MNOP, GV, OSV, DT, PT, Vol III, Igusa, or BKM target
-only after a separate matched-conventions descent class vanishes,
-component by component, in the target convention complex.
-
-The universal property is therefore inscribed as a categorical
-statement, not a heuristic, and the word \emph{universal} is reserved
-in this file for precisely this terminal-object characterization and
-its explicit obstruction class
-\(\operatorname{Ob}^{\mathrm{univ}}_{p,X}\).  No compact-target,
-modular, automorphic, or virtual-cycle conclusion is licensed by
-\(\operatorname{Ob}^{\mathrm{univ}}_{p,X}=0\) alone; that conclusion
-is the cross-volume gate of
-Corollary~\ref{cor:protected-matched-conventions-interface}, which
-this file does not assert.
 
 % --- End of fragment.

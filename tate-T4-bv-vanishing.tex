@@ -1,108 +1,61 @@
 \section*{BV-cohomology vanishing and the unreduced cotangent lift}
 
-\paragraph*{Organizing question.}  Which finite-window
-homological vanishing of the BV operator
-\(\Delta=Q+\{I_0,-\}\), in degree \(+1\) on the local-functional
-complex \(\mathcal O_{\mathrm{loc}}(\mathcal E_w)\) of the formal
-mixed geometry
+The BV operator \(\Delta=Q+\{I_0,-\}\) of degree \(+1\) acts on
+\(\mathcal O_{\mathrm{loc}}(\mathcal E_w)\) for the mixed geometry
 \(X=\R^2_{\mathrm{top}}\times\widehat{\C^2}_{0,\mathrm{hol}}\) with
 brane \(L=\R_{\mathrm{brane}}\times\{0\}\times\{p\}\) and ordinary
-\(\lie{gl}_N\) gauge data, would supply an endpoint-admissible
-coefficient module for
-Problem~\ref{prob:formal-factorization-center}, and to what extent does
-the closed BCOV vanishing of \cite{costello-li-quantum-bcov}, or its
-open-closed extension \cite{costello-li-open-closed-bcov}, control any
-of those four named cocycle classes in this geometry?
-
-\paragraph*{Named obstruction tuple.}
-The endpoint obstruction is the four-component class
+\(\lie{gl}_N\) gauge data.  An endpoint-admissible coefficient module
+for Problem~\ref{prob:formal-factorization-center} exists if and only
+if the four-component class
 \[
   \mathfrak o_{\mathrm{BV,end}}
-    =\bigl(
-      \mathfrak o_{\mathrm{Cas}},\,
-      \mathfrak o_{\mathrm{def}},\,
-      \mathfrak o_{\mathrm{RG}},\,
-      \mathfrak o_{\mathrm{QME}}
-     \bigr)
+    =\bigl(\mathfrak o_{\mathrm{Cas}},\
+            \mathfrak o_{\mathrm{def}},\
+            \mathfrak o_{\mathrm{RG}},\
+            \mathfrak o_{\mathrm{QME}}\bigr)
 \]
-of Definition~\ref{defn:bv-endpoint-obstruction-tuple}.  Component by
-component: \(\mathfrak o_{\mathrm{Cas}}\) is the residual class of the compatible
-finite Casimir family
-\((C^M_{\mathfrak h})_{M\ge1}\),
-\(C^M_{\mathfrak h}=\sum_{d\le M}\sum_ie_{d,i}\otimes e^i_d\), in the
-cokernel of the represented-kernel map into the strict pair
-\(\mathfrak h_\Pi\widehat\otimes D_\oplus\)
-(\ref{lem:tate-casimir-obstruction});
-\(\mathfrak o_{\mathrm{def}}\) is the obstruction to a brane-line
-extension of the bulk Costello propagator
-\(P_{\epsilon,L}\) of \cite{costello-renormalization}*{Ch.~2 \S2,
-Ch.~5 \S6} and of bracket transport with ordinary \(\lie{gl}_N\)
-boundary observables, equivalently the Hadamard locality class of
-\ref{thm:hadamard-mittag-leffler}~item~(2);
-\(\mathfrak o_{\mathrm{RG}}\) is the obstruction to preservation of the
-strict finite-window Mittag-Leffler tower
-\(\Cat{MLTateChain}_{\geq0}^{\mathrm{str}}\) of
-\ref{defn:strict-ml-tate-habitat} under the Costello recursion
-\[
-  W(P_{\epsilon,L},I)
-    =\sum_{\Gamma\text{ connected}}
-      \frac{\hbar^{\mathrm{loops}(\Gamma)}}{\lvert\mathrm{Aut}(\Gamma)\rvert}
-      W_\Gamma(P_{\epsilon,L},I)
-\]
-of \cite{costello-renormalization}*{Ch.~2 \S6}; and
-\(\mathfrak o_{\mathrm{QME}}\) is the degree-\(+1\) BV cocycle class
-\[
-  \mathfrak o_{\mathrm{QME}}
-    \in
-    H^1\!\bigl(\mathcal O_{\mathrm{loc}}(\mathcal E_w),
-      Q+\{I_0,-\}\bigr)
-\]
-representing the local-functional anomaly of the mixed brane-defect
-QME of Problem~\ref{prob:weighted-rg-locality}.  The BV degree
-convention is the cotangent-coordinate grading of
-\ref{def:app-unreduced-bv-degrees} together with the sign data of
-\ref{def:app-sign-hamiltonian-cyclic} and
+of Definition~\ref{defn:bv-endpoint-obstruction-tuple} vanishes
+(Proposition~\ref{prop:bv-endpoint-obstruction-tuple}): the
+strict-pair Casimir cokernel
+\(\mathfrak o_{\mathrm{Cas}}\)
+(\ref{lem:tate-casimir-obstruction}), the brane-line propagator
+extension obstruction \(\mathfrak o_{\mathrm{def}}\)
+(\ref{thm:hadamard-mittag-leffler}~(2)), the strict-window
+Mittag--Leffler preservation class \(\mathfrak o_{\mathrm{RG}}\)
+(\ref{defn:strict-ml-tate-habitat}), and the local-functional QME
+anomaly class \(\mathfrak o_{\mathrm{QME}}\in
+H^1(\mathcal O_{\mathrm{loc}}(\mathcal E_w),Q+\{I_0,-\})\) of
+Problem~\ref{prob:weighted-rg-locality}.
+
+The BV grading is the cotangent-coordinate grading of
+\ref{def:app-unreduced-bv-degrees} together with the signs of
+\ref{def:app-sign-hamiltonian-cyclic},
 \ref{cor:app-sign-universal-dual-normalization}: \(|\Delta|=+1\), the
-reduced Hamiltonian boundary \(P_0\)-bracket has degree \(0\), and the
-Schouten/cotangent bracket has degree \(-1\).
+reduced boundary \(P_0\)-bracket has degree \(0\), the Schouten
+bracket has degree \(-1\).
 
-\paragraph*{Hypothesis comparison.}  The cited theorems and the
-present local model differ along five independent axes which are
-verified cocycle-wise below:
-(S1)~compact Hodge-theoretic geometry vs.\ the formal
-\(\widehat{\C^2}_0\) jet model;
-(S2)~pure holomorphic-volume kinematics
-\(\bar\partial+t\,\partial_\Omega\) vs.\ mixed kinematics
-\(D=d_{\R^2}+\bar\partial_{\C^2}\);
-(S3)~no brane vs.\ topological line defect
-\(L\subset\R^2_{\mathrm{top}}\times\C^2\);
-(S4)~the \cite{costello-li-open-closed-bcov} cancellation
-\(\mathrm{str}(I)=N-N=0\) on \(\lie{gl}(N\mid N)\) vs.\ ordinary
-\(\lie{gl}_N\) carrying the residual scalar contact class
-\(\hbar N[\bar c]\) of \ref{thm:app-scalar-contact-qme-class};
-(S5)~the BCOV worldsheet \(t\)-Tate direction vs.\ the
-coefficient-system Tate direction
-\(\widehat{\mathfrak h}\widehat\otimes\widehat{\mathfrak
-h}^{\vee}_{\mathrm{cont}}\) in which the Casimir must converge.
-
-\paragraph*{Unique survivor.}
-Theorem~\ref{thm:costello-li-no-coefficient-endpoint}: the closed BCOV
-vanishing of \cite{costello-li-quantum-bcov} and the open-closed
-extension of \cite{costello-li-open-closed-bcov}, in their stated
-geometries, supply vanishing of none of \(\mathfrak
-o_{\mathrm{Cas}}\), \(\mathfrak o_{\mathrm{def}}\), \(\mathfrak
-o_{\mathrm{RG}}\), \(\mathfrak o_{\mathrm{QME}}\) for the present
-brane-defect coefficient endpoint.  Equivalently
-(Proposition~\ref{prop:bv-endpoint-obstruction-tuple}), an
-endpoint-admissible coefficient module exists if and only if all four
-classes vanish; the four-input extension criterion of
-Theorem~\ref{thm:t4-four-missing} names exactly the data that must be
-supplied along (S1)--(S5).  The chain-level primitive shadow of
+The closed BCOV vanishing of \cite{costello-li-quantum-bcov} and the
+open-closed extension of \cite{costello-li-open-closed-bcov} differ
+from the present geometry along five independent axes: compact Hodge
+geometry against the formal jet \(\widehat{\C^2}_0\); pure
+holomorphic-volume kinematics \(\bar\partial+t\,\partial_\Omega\)
+against mixed \(D=d_{\R^2}+\bar\partial_{\C^2}\); empty bulk against
+the transverse line defect \(L\); the
+\(\lie{gl}(N\mid N)\) supertrace cancellation
+\(\mathrm{str}(I)=N-N=0\) against the ordinary
+\(\lie{gl}_N\) scalar contact \(\hbar N[\bar c]\) of
+\ref{thm:app-scalar-contact-qme-class}; the worldsheet \(t\)-Tate
+direction against the coefficient-system Tate direction
+\(\widehat{\mathfrak h}\widehat\otimes
+\widehat{\mathfrak h}^{\vee}_{\mathrm{cont}}\) carrying
+\(\mathfrak o_{\mathrm{Cas}}\).  Each axis names a distinct uncontrolled
+component of \(\mathfrak o_{\mathrm{BV,end}}\) under the cited
+hypotheses (Theorem~\ref{thm:costello-li-no-coefficient-endpoint}); the
+data needed to close them is enumerated in
+Theorem~\ref{thm:t4-four-missing}.  The chain-level primitive shadow
 \ref{thm:chain-level-primitive-projection} closes the classical
-indecomposable shadow without analytic input, and the
-model-categorical Quillen envelope of
-\ref{thm:tate-bar-cobar-quillen} provides the admissible Tate envelope
-in which the obstruction tuple is computed.
+indecomposable shadow with no analytic input, inside the admissible
+Tate envelope of \ref{thm:tate-bar-cobar-quillen}.
 
 \subsection*{BV degree convention and Costello renormalization datum}
 
@@ -455,7 +408,7 @@ in which the obstruction tuple is computed.
   \(\mathfrak o_{\mathrm{QME}}\) of
   Definition~\ref{defn:bv-endpoint-obstruction-tuple}.  Equivalently:
   none of the four cocycle representatives in
-  \(\mathfrak o_{\mathrm{BV,end}}\) is forced to vanish by either
+  \(\mathfrak o_{\mathrm{BV,end}}\) is required to vanish by either
   Costello--Li theorem on this geometry.
 \end{thm}
 

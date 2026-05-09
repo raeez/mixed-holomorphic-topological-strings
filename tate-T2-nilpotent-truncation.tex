@@ -54,22 +54,16 @@ $$\mathfrak h_{\leq N}:=\mathfrak h_{\leq N}^{(3)}=
 Concretely, $\mathfrak h_{\leq N}$ is the finite-dimensional vector
 space spanned by monomials $z_1^az_2^b$ with $3\leq a+b\leq N$.
 
-\begin{rmk}[Why degree three and not degree two]
-The choice $k=2$ retains the conformal-symplectic $\mathfrak{sl}_2$:
-the degree-$2$ piece $H_2=\mathrm{span}\{z_1^2,z_1z_2,z_2^2\}$ is
-Poisson-closed, $\{H_2,H_2\}\subset H_{2+2-2}=H_2$, with explicit
-semisimple structure
+The cutoff lies at $k=3$.  At $k=2$, the degree-$2$ piece
+$H_2=\mathrm{span}\{z_1^2,z_1z_2,z_2^2\}$ closes under the Poisson
+bracket and carries the $\mathfrak{sl}_2$-relations
 $$\{z_1^2,z_2^2\}=4z_1z_2,\quad
   \{z_1^2,z_1z_2\}=2z_1^2,\quad
-  \{z_1z_2,z_2^2\}=2z_2^2.$$
-Thus $\mathfrak m^2/\mathfrak m^{N+1}$ contains a nonabelian
-semisimple subalgebra and is not nilpotent, hence does not satisfy
-the lower-central Tate-pronilpotence hypothesis of
-\ref{lem:continuous-bar-cobar}. The truncation $k=3$ removes the
-$H_2$ direction; the bracket on $\mathfrak m^3$ raises
-$\mathfrak m$-adic degree strictly, making the truncation
-nilpotent.
-\end{rmk}
+  \{z_1z_2,z_2^2\}=2z_2^2,$$
+so $\mathfrak m^2/\mathfrak m^{N+1}$ contains a nonabelian semisimple
+subalgebra and is not nilpotent, violating the lower-central
+Tate-pronilpotence hypothesis of \ref{lem:continuous-bar-cobar}.  At
+$k=3$ the bracket raises $\mathfrak m$-adic degree strictly.
 
 \begin{lem}[Truncation is a finite-dimensional nilpotent Lie algebra]
 \label{lem:trunc-is-nilpotent-lie}
@@ -133,36 +127,16 @@ is nilpotent of class at most $N-2$.
 exclusion $a+b\leq 2$.
 \end{proof}
 
-\begin{rmk}[Why the maximal-ideal-adic obstruction does not apply]
-\label{rmk:why-no-finite-window-obstruction}
-\ref{lem:finite-window-hamiltonian-obstruction} shows that
-$\mathfrak h/\mathfrak m^{N+1}$ is \emph{not} a Lie quotient of the
-full Hamiltonian algebra $\mathfrak h_{\mathrm{poly}}$: the linear
-Hamiltonian $z_1$ acting on $z_2^{N+1}\in\mathfrak m^{N+1}$ produces
-$\{z_1,z_2^{N+1}\}=(N+1)z_2^N\notin\mathfrak m^{N+1}$. The
-nilpotent truncation $\mathfrak h_{\leq N}=\mathfrak m^3/
-\mathfrak m^{N+1}$ \emph{kills the linear Hamiltonian} and the
-conformal $\mathfrak{sl}_2$ direction from the
-algebra. The obstruction lemma is then irrelevant: no element of
-$\mathfrak h_{\leq N}$ has $\mathfrak m$-adic degree below $3$, so the
-displayed counterexample $\{z_1,\,z_2^{N+1}\}$ never occurs in
-$\mathfrak h_{\leq N}$.
-\end{rmk}
-
-\begin{rmk}[Why the Tate Casimir obstruction does not apply]
-\label{rmk:why-no-tate-casimir}
-The product/direct-sum support obstruction of
-\ref{lem:tate-casimir-obstruction} is a feature of the unbounded
-expansion $\mathfrak h=\prod_{d\geq 1}H_d$: the Casimir
-$C_{\mathfrak h}=\sum_d\sum_i e_{d,i}\otimes e_d^i$ has nonzero
-component in every $H_d^\vee$, and $\bigoplus_d H_d^\vee$ admits no
-infinite-support element. On the truncation $\mathfrak h_{\leq N}$
-the Casimir is the finite sum
-$C_{\mathfrak h_{\leq N}}=\sum_{d=3}^N\sum_i e_{d,i}\otimes e_d^i$
-in the finite-dimensional vector space
-$\mathfrak h_{\leq N}\otimes\mathfrak h_{\leq N}^\vee$. There is
-no convergence question.
-\end{rmk}
+The truncation kills the linear and conformal-symplectic sectors:
+the obstruction
+$\{z_1,z_2^{N+1}\}=(N+1)z_2^N\notin\mathfrak m^{N+1}$ of
+\ref{lem:finite-window-hamiltonian-obstruction} requires $z_1\in H_1$,
+absent from $\mathfrak m^3$.  The Casimir is the finite sum
+$C_{\mathfrak h_{\leq N}}=\sum_{d=3}^N\sum_i e_{d,i}\otimes e_d^i\in
+\mathfrak h_{\leq N}\otimes\mathfrak h_{\leq N}^\vee$; the
+product/direct-sum support obstruction of
+\ref{lem:tate-casimir-obstruction}, which depends on infinite degree
+expansion, vanishes.
 
 \subsection*{The classical truncated cotangent CE/PV identification}
 
@@ -420,7 +394,7 @@ bracket-admissibility data named above.
 
 \begin{proof}
 The Lie-side inverse limit is the usual \(\mathfrak m\)-adic completion
-of \(\mathfrak m^3\).  The variance warning is forced already at
+of \(\mathfrak m^3\).  The variance failure appears already at
 \(M=4\), \(N=3\).  In \(\mathfrak h_{\leq4}\),
 \[
   \{z_1^3,z_2^3\}=9z_1^2z_2^2,
@@ -731,11 +705,11 @@ used in Lemma~\ref{lem:continuous-bar-cobar} because
 $[H_2,H_2]=H_2$ is its own descending Lie series. Even if the
 degree-$1$ and degree-$2$ Casimir components converged in some
 weighted Tate completion, the pronilpotent bar-cobar route would not
-apply directly to the resulting Lie algebra.  This does not say that
-ordinary finite-dimensional bar-cobar or PBW formalism fails for
-\(\mathfrak{sl}_2\); it says that the manuscript's chosen lower-central
-Tate-pronilpotent criterion must be replaced by a relative or reductive
-model that builds in semisimple subalgebras separately.
+apply directly to the resulting Lie algebra.  Ordinary finite-dimensional
+bar-cobar and PBW formalism do not fail for \(\mathfrak{sl}_2\); the
+lower-central Tate-pronilpotent criterion must be replaced, on a
+\(L\) containing \(H_2\), by a relative or reductive model that builds in
+semisimple subalgebras separately.
 \end{thm}
 
 \begin{proof}
