@@ -462,9 +462,12 @@ modulo \(\mathfrak m_R^k\); the formal measurement is
 \(J\colon\mathfrak h\to
 \mathcal O(\Rep_N^{\wedge}(A))^{GL_N}\), and the Tate completion
 \(A_\partial=\widehat{\mathbf S}_{\mathrm{Tate}}(\mathfrak h)\)
-records its image at the universal Artin base.  The
-polynomial layer is the special fibre of the formal layer at
-\(R=\C\).
+records its image at the universal Artin base.  The polynomial
+commuting variety \(\Rep_N(A_{\mathrm{poly}})\subset\mathfrak{gl}_N^2\)
+is the uncompleted algebraic model; the formal functor
+\(\Rep_N^{\wedge}(A)\) is its formal completion at the closed point
+\(\{\phi_1=\phi_2=0\}\) inside the commuting variety, and on polynomial
+Hamiltonians the two evaluations agree.
 
 An odd matrix antifield \(\psi\in\mathfrak{gl}_N[1]\) and BV
 differential \(Q\) with \(Q\phi_i=0,\ Q\psi=[\phi_1,\phi_2]\) realize
@@ -647,10 +650,12 @@ ordering: adjacent letters in any trace word commute up to a
 so a trace adjacent-swap is the BRST image of an antifield insertion.
 Cyclic invariance and iterated \(Q\)-exact swaps reduce every cyclic
 word in \(\phi_1,\phi_2\) to a symmetric symbol \(z_1^kz_2^l\): the
-gauge-invariant content of the probe pair is the trace family
-\(\{J(f)\}\), and the closed sector
-\(\bar A=\C[z_1,z_2]/\C\cdot1\) acts on the brane through nothing
-else.
+trace family \(\{J(f)\}\) is the connected single-trace primitive
+content of the probe pair, the full stable \(GL_N\)-invariant ring is
+the polynomial algebra on this primitive (Procesi--Razmyslov first
+fundamental theorem), and the closed sector
+\(\bar A=\C[z_1,z_2]/\C\cdot 1\) acts on the brane through \(J\)
+alone.
 
 \begin{lem}[Trace realisation of the formal polydisk]\label{lem:probe-trace-microscope}
   In the stable connected ghost-zero open observables
@@ -661,10 +666,13 @@ else.
     f\longmapsto\overline{\operatorname{Tr}f(\phi_1,\phi_2)},
   \]
   is surjective with kernel exactly the constant line
-  \(\C\cdot1\subset\C[z_1,z_2]\).  The trace family \(\{J(f):f\in\bar A\}\)
-  is therefore the entire gauge-invariant content of the probe pair;
-  the closed sector \(\bar A=\C[z_1,z_2]/\C\cdot1\) acts on the brane
-  exclusively through \(J\).
+  \(\C\cdot 1\subset\C[z_1,z_2]\).  Procesi--Razmyslov first
+  fundamental theorem identifies the full stable \(GL_N\)-invariant
+  ring with the polynomial algebra on the trace family
+  \(\{J(f):f\in\bar A\}\), so every gauge-invariant operator is a
+  polynomial in trace observables and the closed sector
+  \(\bar A=\C[z_1,z_2]/\C\cdot 1\) acts on the brane through
+  \(J\) alone.
 \end{lem}
 
 \begin{proof}
@@ -2176,10 +2184,15 @@ differentials]\label{def:local-th-string}
   balanced scalar-contact zero projection on its completion, reduced
   weighted Moyal principal-part current brackets, and a degree-zero
   Hamiltonian trace comparison controlled by the radial/Weyl
-  normal-form criterion.  The finite normal-form
-  computations close the balanced diagonal through \((6,6)\), all
-  non-edge bidegrees of total degree at most \(13\), and the
-  total-degree \(14\) cases \((3,11),(11,3),(4,10),(10,4),(5,9),(9,5)\);
+  normal-form criterion.  The finite normal-form computations close
+  the balanced diagonal through \((6,6)\), all non-edge bidegrees of
+  total degree at most \(13\), and every total-degree-\(14\) case
+  with one component at most \(6\):
+  \[
+    (3,11),(11,3),(4,10),(10,4),(5,9),(9,5),(6,8),(8,6).
+  \]
+  The balanced \((7,7)\) is the first undecided case in the
+  unconditional kernel-correction window.
   Proposition~\ref{prop:app-edge-pbw-telescoping} closes the
   one-moving-letter edge strips
   \(\mathfrak o_{2,b}=\mathfrak o_{a,2}=0\).  The all-interior
@@ -2608,58 +2621,85 @@ the level of generators.
      \simeq HH^\bullet(A^{\mathrm{cl}}_{\partial,N},
                        A^{\mathrm{cl}}_{\partial,N}),
   \]
-  whose action on Hamiltonian CE generators is the dictionary
+  whose value on Hamiltonian CE generators is the explicit Hochschild
+  cochain assignment
   \[
-    c_f\longmapsto\theta_f,\qquad
-    u_f\longmapsto O_f=J(f)=\overline{\operatorname{Tr}\,f(\phi_1,\phi_2)}
-    \qquad(f\in\mathfrak h),
+    c_f\longmapsto\theta_f\in\mathrm{Der}(A^{\mathrm{cl}}_{\partial,N})=HH^1(A^{\mathrm{cl}}_{\partial,N}),
+    \quad
+    u_f\longmapsto O_f=J_f\cdot(\,\cdot\,)\in A^{\mathrm{cl}}_{\partial,N}=HH^0(A^{\mathrm{cl}}_{\partial,N})
+    \quad(f\in\mathfrak h),
   \]
-  matching the cochain identity of
-  Theorem~\ref{thm:reduced-ce-pv-central-operation} on
-  \(c^{a,b},u_{a,b}\).  The full chain-level lift to the strict
+  with \(J_f=J(f)=\overline{\operatorname{Tr}\,f(\phi_1,\phi_2)}\) acting
+  by multiplication and \(\theta_f\) the Hamiltonian vector field of
+  Lemma~\ref{lem:hamiltonian-vector-field-on-Rep}; this matches the
+  cochain identity of Theorem~\ref{thm:reduced-ce-pv-central-operation}
+  on \(c^{a,b},u_{a,b}\).  The full chain-level lift to the strict
   factorization-centre morphism
   \(\Phi^{\mathrm{cl}}\colon\mathrm{Obs}^{\mathrm{cl}}_{\mathrm{closed},H}|_L
    \to Z^{P_0}_{\mathrm{fact}}(\mathrm{Obs}^{\mathrm{cl}}_{\mathrm{open},N})\)
   is governed by the four-component obstruction vector
   \(\operatorname{Ob}_{\mathrm{cent/QME/desc}}\) of
   Theorem~\ref{thm:app-unreduced-cotangent-lift-obstruction}.
-  The CE/PV coordinate map $c_f\mapsto\theta_f,\,u_f\mapsto O_f$ is
-  the action of $\Phi_N$ on generators; $\Phi_N$ is in turn the
-  generator-level part of the chain-level $P_0$-centre map
-  $\Phi^{\mathrm{cl}}$, whose existence is conditional on
-  $\operatorname{Ob}_{\mathrm{cent/QME/desc}}=0$ with compatible
+  The CE/PV coordinate map \(c_f\mapsto\theta_f,\,u_f\mapsto O_f\) is
+  the generator action of \(\Phi_N\); \(\Phi_N\) is in turn the
+  Hochschild-cochain shadow of the chain-level \(P_0\)-centre map
+  \(\Phi^{\mathrm{cl}}\), whose existence is conditional on
+  \(\operatorname{Ob}_{\mathrm{cent/QME/desc}}=0\) with compatible
   null-homotopies.
 \end{thm}
 
 \begin{proof}
-  The chain map \(\Phi_N\) is constructed explicitly on generators:
-  for $f\in\mathfrak h$, the Hamiltonian-dual coordinate $c_f$ is sent
-  to the derivation $\theta_f\in\mathrm{Der}(A^{\mathrm{cl}}_{\partial,N})$
-  of Lemma~\ref{lem:hamiltonian-vector-field-on-Rep}, and the
-  cotangent-dual coordinate $u_f$ is sent to multiplication by the
-  trace character $J_f=\overline{\operatorname{Tr}\,f(\phi_1,\phi_2)}$.
-  Compatibility with the CE differential matches the bracket identity
-  $\theta_f(J_g)=J_{\{f,g\}_{\bar A}}$ of
-  Lemma~\ref{lem:hamiltonian-vector-field-on-Rep}: the CE relations
-  $d_{\mathrm{CE}}c^K=-\frac12 C^K_{IJ}c^Ic^J$,
-  $d_{\mathrm{CE}}u_K=C^L_{KJ}u_L c^J$ go to
-  $[\theta_f,\theta_g]=\theta_{\{f,g\}_{\bar A}}$ and
-  $\theta_f(J_g)=J_{\{f,g\}_{\bar A}}$ on the right by
-  Proposition~\ref{prop:first-order-bracket}, completing the chain map
-  on generators.  Continuous extension across the
-  graded-commutative coordinate algebra is the statement of
-  Theorem~\ref{thm:reduced-ce-pv-central-operation}.  At the
-  $(E_2,E_1)$-pair level, this construction realises the universal
-  bulk-to-boundary map of the Lurie--Francis classification on
-  $(\mathcal A^{\mathrm{cl}}_{\mathrm{bulk},0},A^{\mathrm{cl}}_{\partial,N})$;
-  uniqueness of the boundary values \(u_f\mapsto J(f)\) is
-  Theorem~\ref{thm:Jf-coordinate-uniqueness}.  The chain-level
-  \(P_0\)-factorization-centre upgrade requires the obstruction-vanishing
-  data of Theorem~\ref{thm:app-unreduced-cotangent-lift-obstruction};
-  this is a strictly stronger statement than the derived-\(E_1\)-centre
-  map, and the difference is the curvature class
-  \(\operatorname{Ob}_{\mathrm{cent/QME/desc}}\) in the master
-  deformation complex.
+  The boundary algebra \(A^{\mathrm{cl}}_{\partial,N}\) is an
+  \(E_1\)-algebra, and the bulk algebra
+  \(\mathcal A^{\mathrm{cl}}_{\mathrm{bulk},0}\) is an
+  \(E_2\)-algebra of Chevalley--Eilenberg coordinates on
+  \(\mathfrak g=\mathfrak h\ltimes\mathfrak h^\vee_{\mathrm{cont}}[1]\).
+  The Hochschild complex
+  \(C^\bullet(A^{\mathrm{cl}}_{\partial,N},A^{\mathrm{cl}}_{\partial,N})\)
+  carries the Gerstenhaber bracket of degree \(-1\); its cohomology is
+  the derived \(E_1\)-centre, with \(HH^0\) the centre (multiplications)
+  and \(HH^1\) the outer derivations.
+
+  We construct \(\Phi_N\) on CE generators as Hochschild cochains.  For
+  \(f\in\mathfrak h\), the Hamiltonian-dual coordinate \(c_f\) is sent
+  to the Hamiltonian vector field
+  \(\theta_f\in\mathrm{Der}(A^{\mathrm{cl}}_{\partial,N})=HH^1(A^{\mathrm{cl}}_{\partial,N})\)
+  of Lemma~\ref{lem:hamiltonian-vector-field-on-Rep} (the classical
+  brane algebra is graded-commutative with odd antifield generator
+  \(\psi\), so \(HH^1\) is the full module of graded derivations);
+  the cotangent-dual coordinate \(u_f\) is sent to the Hochschild
+  \(0\)-cochain \(J_f\cdot(\,\cdot\,)\in
+  HH^0(A^{\mathrm{cl}}_{\partial,N})=A^{\mathrm{cl}}_{\partial,N}\),
+  multiplication by the trace character
+  \(J_f=\overline{\operatorname{Tr}\,f(\phi_1,\phi_2)}\).
+  Compatibility with the CE differential is the Hochschild
+  Gerstenhaber identity
+  \[
+    [\theta_f,\theta_g]_G=\theta_{\{f,g\}_{\bar A}},\qquad
+    \theta_f(J_g)=J_{\{f,g\}_{\bar A}},
+  \]
+  matching \(d_{\mathrm{CE}}c^K=-\tfrac12 C^K_{IJ}c^Ic^J\) and
+  \(d_{\mathrm{CE}}u_K=C^L_{KJ}u_Lc^J\) on generators by
+  Lemma~\ref{lem:hamiltonian-vector-field-on-Rep} and
+  Proposition~\ref{prop:first-order-bracket}.
+
+  Continuous extension across the graded-commutative coordinate algebra
+  is Theorem~\ref{thm:reduced-ce-pv-central-operation}.  Lurie--Francis
+  additivity \(E_2\otimes E_1\to E_1\) glues the generator data into
+  the universal bulk-to-boundary map landing in
+  \(Z^{\mathrm{der}}_{E_1}(A^{\mathrm{cl}}_{\partial,N})\simeq
+  HH^\bullet(A^{\mathrm{cl}}_{\partial,N})\); uniqueness of the
+  boundary values \(u_f\mapsto J(f)\) is
+  Theorem~\ref{thm:Jf-coordinate-uniqueness}.
+
+  An explicit Hochschild-cochain model for \(\Phi_N\) at every cochain
+  degree is the conditional upgrade \(\Phi^{\mathrm{cl}}\) to the
+  strict \(P_0\)-factorization-centre, governed by the obstruction
+  \(\operatorname{Ob}_{\mathrm{cent/QME/desc}}\) of
+  Theorem~\ref{thm:app-unreduced-cotangent-lift-obstruction}; the
+  curvature class is the difference between Lurie--Francis
+  derived-\(E_1\)-centre additivity and the strict
+  \(P_0\)-factorization-centre.
 \end{proof}
 
 \begin{rmk}[Native bulk object on $\C^2$]\label{rmk:not-a-curve-voa}
@@ -6917,12 +6957,39 @@ ambient product is a separate admissibility input.
      =\sum_{a+b=k}\binom{k}{a}t^a c_{0,k}\,
        \overline{\operatorname{Tr}(\phi_1^a\phi_2^b)}.
   \]
-  Equality at each \(t^a\) gives \(c_{a,b}=c_{0,k}\) for \(a+b=k\).
-  The reverse flow \(z_1\mapsto z_1-tz_2\) on \(z_1^k\) gives
-  \(c_{a,b}=c_{k,0}\); chained against the linear values \(c_{1,0}=
-   c_{0,1}=1\), \(c_{a,b}=1\) on every bidegree.  Continuity in the
-  \(\widehat{\mathfrak h}\)-topology extends to formal power series,
-  so \(\widetilde J=J\).
+  Equality at each \(t^a\) gives \(c_{a,b}=c_{0,k}\) for \(a+b=k\);
+  the symmetric linear flow \(z_1\mapsto z_1-tz_2\) on \(z_1^k\) gives
+  \(c_{a,b}=c_{k,0}\) and hence \(c_{0,k}=c_{k,0}\) within total
+  degree \(k\).  Linear shears preserve total degree, so they cannot
+  by themselves chain back to the linear normalisation
+  \(c_{1,0}=c_{0,1}=1\).  The required cross-degree input is the
+  nonlinear flow generated by \(H_k^{(1)}=-z_2^{k+1}/(k+1)\),
+  \[
+    \Phi^*_{H_k^{(1)}}z_1=z_1-tz_2^k,\qquad
+    \Phi^*_{H_k^{(1)}}z_2=z_2,
+  \]
+  which raises the Taylor degree of \(z_1\) from \(1\) to \(k\) and
+  acts on the matrix substitution as
+  \((\phi_1,\phi_2)\mapsto(\phi_1-t\phi_2^k,\phi_2)\).  Naturality
+  (U4) on the linear monomial \(z_1\) reads
+  \[
+    \widetilde J(z_1-tz_2^k)
+     =\widetilde J(z_1)-t\,\widetilde J(z_2^k)
+     =\overline{\operatorname{Tr}\phi_1}
+       -tc_{0,k}\,\overline{\operatorname{Tr}\phi_2^k}
+  \]
+  on the source against
+  \[
+    \Phi_*\widetilde J(z_1)
+     =\overline{\operatorname{Tr}(\phi_1-t\phi_2^k)}
+     =\overline{\operatorname{Tr}\phi_1}
+       -t\,\overline{\operatorname{Tr}\phi_2^k}
+  \]
+  on the matrix side.  Equality at \(t^1\) forces \(c_{0,k}=1\) for
+  every \(k\geq 1\); the linear-shear identity then propagates
+  \(c_{a,b}=1\) on every bidegree of total degree \(k\).  Continuity
+  in the \(\widehat{\mathfrak h}\)-topology extends to formal power
+  series, so \(\widetilde J=J\).
 \end{proof}
 
 \begin{thm}[Hypothesis rigidity for \(J\)]\label{thm:Jf-uniqueness-rigidity}
