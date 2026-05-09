@@ -1,112 +1,100 @@
 \begin{abstract}
 
 \noindent
-The B-model topological string of
-Bershadsky--Cecotti--Ooguri--Vafa~\cite{bcov} produces, under
+The Bershadsky--Cecotti--Ooguri--Vafa B-model topological string
+\cite{bcov} on $X=\R^2_{\mathrm{top}}\times\C^2_{\mathrm{hol}}$ under
 Costello--Li renormalization
-\cite{costello-renormalization,costello-li-quantum-bcov,costello-li-open-closed-bcov},
-a holomorphic-topological BF theory on a formal Darboux neighborhood
-of a brane point.  On
-$X=\R^2_{t,s}\times\C^2_{z_1,z_2}$ the field and antifield are
+\cite{costello-renormalization,costello-li-quantum-bcov,costello-li-open-closed-bcov}
+is the holomorphic-topological BF theory with action
 \[
-  \mathcal A\in\Omega^\bullet(\R^2)\widehat\otimes
-    \Omega^{0,\bullet}(\C^2)\widehat\otimes\mathfrak h,
-  \quad
-  \mathcal B\in\Omega^\bullet(\R^2)\widehat\otimes
-    \Omega^{0,\bullet}(\C^2)\widehat\otimes
-    \mathfrak h^\vee_{\mathrm{cont}}[1],
-   \quad
-   \mathfrak h=\C[[z_1,z_2]]/\C\cdot 1,
+  S=\int_X\bigl\langle\mc B,\,(d+\bar\partial)\mc A
+    +\tfrac12[\mc A,\mc A]_{\mathfrak h}\bigr\rangle,
 \]
-with action
-$S=\int_X\langle\mathcal B,(d+\bar\partial)\mathcal A
-+\tfrac12[\mathcal A,\mathcal A]_{\mathfrak h}\rangle$ and Grothendieck--Matlis
-principal-part dual
-$\mathfrak h^\vee_{\mathrm{cont}}=\mathcal P=H^2_{\mathfrak m}(A)\otimes
-dz_1\wedge dz_2$, $A=\C[[z_1,z_2]]$, $\mathfrak m=(z_1,z_2)$, paired by
-$\langle f,\omega\rangle=\operatorname{Res}_0 f\omega$.  This is the
-holomorphic-surface analog of the Beilinson--Drinfeld Heisenberg
-current on the formal disk.
+field
+$\mc A\in\Omega^\bullet(\R^2)\widehat\otimes
+\Omega^{0,\bullet}(\C^2)\widehat\otimes\mathfrak h$
+valued in the reduced Hamiltonian Lie algebra
+$\mathfrak h=\C[[z_1,z_2]]/\C\cdot 1$, antifield $\mc B$ in the
+Grothendieck--Matlis principal-part dual
+$\mathfrak h^\vee_{\mathrm{cont}}=\mc P=H^2_{(z_1,z_2)}(\C[[z_1,z_2]])\otimes
+dz_1\wedge dz_2$ paired by $\langle f,\omega\rangle=\Res_0 f\omega$.
 
 \medskip\noindent
-A stack of $N$ Dirac branes along $\R_t\subset X$ pins a
-Chan--Paton substitution
-$(\phi_1,\phi_2)\in(\mathfrak m_R\otimes\mathfrak{gl}_N)^2$ over an
-Artin-local base $R$, $z_i\mapsto\phi_i$, with moment-map antifield
-$\psi\in\mathfrak{gl}_N[1]$, $Q\psi=[\phi_1,\phi_2]$.
-The open ghost-zero classical brane moduli is the derived
-commuting-pair stack $[\mu^{-1}_{\mathrm{der}}(0)/GL_N]$; adjoining a
-cyclic framing vector $v$ with $\C[\phi_1,\phi_2]\cdot v=\C^N$ cuts out
-$\Hilb^N(\C^2)$, on which the Moyal/Weyl deformation specialises to the
-Nekrasov--Schwarz noncommutative Hilbert scheme.  A Hamiltonian
-$f\in\mathfrak h$ is read on the brane as the cyclic trace
+At a brane vacuum $b\in\C^2$ the formal Darboux polydisk
+$(\widehat{\C^2}_b,\,\omega_b=dz_1\wedge dz_2)$ has chart algebra
+$A_b=\widehat{\mc O}_{\C^2,b}\cong\C[[z_1,z_2]]=\End(b)$
+(Definition~\ref{def:formal-darboux-stalk-chart}).  A stack of $N$
+Dirac branes along $\R_t\subset X$ over $b$ substitutes
+$z_i\mapsto\phi_i\in\mathfrak{gl}_N$, $[\phi_1,\phi_2]=0$, antifield
+$\psi\in\mathfrak{gl}_N[1]$ with $Q\psi=[\phi_1,\phi_2]$, and brane
+$E_1$-algebra
 \[
-  J(f)(\rho_\phi)
-   =\overline{\operatorname{Tr}\,f(\phi_1,\phi_2)},
+  A^{\mathrm{cl}}_{\partial,N}
+   =C^\bullet_{\mathrm{CE}}\bigl(\mathfrak{gl}_N,\,
+       \mathrm{Sym}(\mathfrak{gl}_N\oplus\mathfrak{gl}_N
+                    \oplus\mathfrak{gl}_N[1])\bigr).
 \]
-the unique linear $GL_N$-equivariant Darboux-natural primitive
-single-trace map
-$\mathfrak h\to\mathcal O\bigl(\mu^{-1}_{\mathrm{der}}(0)\bigr)^{GL_N}$
-satisfying scalar reduction, the Dirac descent, and
-$J(z_i)=\overline{\operatorname{Tr}\phi_i}$.  On
-Chevalley--Eilenberg (CE) generators of
+The trace map at the brane stack is
+\[
+  J\colon\mathfrak h\to\mc O\bigl(\mu^{-1}_{\mathrm{der}}(0)\bigr)^{GL_N},
+   \qquad
+  J(f)=\overline{\operatorname{Tr}\,f(\phi_1,\phi_2)},
+\]
+the unique $\C$-linear, $GL_N$-equivariant map intertwining the formal
+symplectomorphism action, descending through the moment-map ideal,
+single-trace primitive, and pinned by
+$J(z_i)=\overline{\operatorname{Tr}\phi_i}$
+(Theorem~\ref{thm:formal-local-universal-property}).
+
+\medskip\noindent
+Lurie--Francis additivity $E_2\otimes E_1\to E_1$ identifies the
+formal-Darboux stalk of the closed factorization algebra with the
+derived $E_1$-centre,
+\[
+  C^\bullet_{\mathrm{ch}}(A_b,A_b)
+   \simeq Z^{\mathrm{der}}_{E_1}\bigl(A^{\mathrm{cl}}_{\partial,N}\bigr)
+   \simeq HH^\bullet\bigl(A^{\mathrm{cl}}_{\partial,N},A^{\mathrm{cl}}_{\partial,N}\bigr),
+\]
+of which $J$ is the formal Darboux coordinate expression.  On
+Chevalley--Eilenberg generators of
 $\mathfrak g=\mathfrak h\ltimes\mathfrak h^\vee_{\mathrm{cont}}[1]$
-the reduced closed-to-open dictionary is
-$c_f\mapsto\theta_f$, $u_f\mapsto O_f=J(f)$; Lurie--Francis additivity
-identifies the target as the derived $E_1$-centre
-$Z^{\mathrm{der}}_{E_1}(A^{\mathrm{cl}}_{\partial,N})$.  The chain-level
-lift
-$\Phi_N\colon\mathcal A^{\mathrm{cl}}_{\mathrm{bulk},0}\to
-Z^{\mathrm{der}}_{E_1}(A^{\mathrm{cl}}_{\partial,N})$
-is conditional on vanishing of
-$\operatorname{Ob}_{\mathrm{cent/QME/desc}}$ with chosen null-homotopies.
+the closed-to-open dictionary is the Koszul resolution
+\[
+  c_f\longmapsto\theta_f\in HH^1,\qquad
+  u_f\longmapsto J(f)\cdot(\,\cdot\,)\in HH^0,
+\]
+$\theta_f$ the Hamiltonian Schouten field on the brane observable
+algebra.  The chain-level lift
+$\Phi_N\colon\mc A^{\mathrm{cl}}_{\mathrm{bulk},0}\to
+Z^{\mathrm{der}}_{E_1}(A^{\mathrm{cl}}_{\partial,N})$ is conditional on
+$\operatorname{Ob}_{\mathrm{cent}/\mathrm{QME}/\mathrm{desc}}=0$ with
+chosen null-homotopies
+(Theorem~\ref{thm:app-unreduced-cotangent-lift-obstruction}).
 
 \medskip\noindent
 The constant Hamiltonian line $\C\cdot 1$, on which
-$\operatorname{Tr}1=N$, is removed from the closed Lie algebra and
-retained on the brane as the diagonal-$U(1)$ centre-of-mass cocycle
-of $N$ coincident D-branes on $\C^2_\hbar$.  The class
-$\hbar N[\bar c]\in H^2_{\mathrm{Lie}}(\bar A,\C)[[\hbar]]$,
-$\bar A=\C[z_1,z_2]/\C\cdot 1$, is at once
-the Lie cocycle $\omega(f,g)=[\{f,g\}]_0$ on $\bar A$, the unreduced
-bracket $\{\operatorname{Tr}\phi_1,\operatorname{Tr}\phi_2\}=N$, and
-the Moyal commutator
-$[\Phi_\hbar(z_1),\Phi_\hbar(z_2)]_\star=\hbar N\cdot I$ in $M_N(\C)$.
-The strict scalar-reduced Hamiltonian action upgrades to a projective
-action on the Capelli central extension
-$0\to\C\to\mathfrak h_{\hbar,N}\to\bar A\to 0$.
+$\operatorname{Tr}1=N$, leaves $\mathfrak h$ and lifts on the brane to
+the Capelli central extension.  The three faces of one class
+$\hbar N[\bar c]\in H^2_{\mathrm{Lie}}(\bar A,\C)[[\hbar]]$ on
+$\bar A=\C[z_1,z_2]/\C\cdot 1$ are
+\[
+  \omega(f,g)=[\{f,g\}]_0,\qquad
+  \{\operatorname{Tr}\phi_1,\operatorname{Tr}\phi_2\}=N,\qquad
+  [\Phi_\hbar(z_1),\Phi_\hbar(z_2)]_\star=\hbar N\cdot I:
+\]
+Lie 2-cocycle on $\bar A$, Poisson bracket of trace coordinates, Moyal
+commutator in $M_N(\C)$.  The number $N$ is the trace-$U(1)$
+centre-of-mass cocycle of $N$ coincident D-branes on $\C^2_\hbar$,
+equivalently the projective curvature
+$\Omega_{\mathrm{central}}|_{J(f)}$ of $\Phi_N$.
 
 \medskip\noindent
-All-bidegree Weyl/trace compatibility is the radial Weyl cokernel
-$\Omega^{\mathrm{rad}}_{a,b}\in\operatorname{coker}B_{a,b}$ on the
-decorated Poincar\'e--Birkhoff--Witt (PBW) Stokes operator, vanishing
-on every bidegree under a Harish-Chandra / Levasseur--Stafford
-radial-image input
-(Statement~\ref{stmt:app-radial-external-input}).  The reduced
-non-scalar Costello quantum-master-equation (QME) class
-$[\operatorname{Ob}^{\mathrm{red}}_{w,\partial,\hbar}]\in
-H^1\bigl(\mathfrak Q^\bullet_{w,\partial,\hbar}(I),d_{\mathrm{QME}}\bigr)$
-has order-three row $\theta_3$ with $H^1_{\mathrm{bare}}=
-\C\!\cdot\!\mathsf E_{\theta_3,M}$, killed in every finite window
-$M\ni\theta_3$ by the unique counterterm
-$d_M C_{\theta_3,M}=-\mathsf E_{\theta_3,M}$
-(Theorem~\ref{thm:app-theta-three-finite-window-H1}).  The strict
-all-window Bochner--Martinelli current transfer
-$\operatorname{Ob}^\Pi_{\mathrm{BM}}$ is nonzero on every finite Matlis
-window $\mathcal P_{\le N}$
-(Theorem~\ref{thm:bmk-finite-window-no-go}); coherence is restored on
-the pro-Matlis substituted target
-$\widehat{\mathcal P}_\Pi=\varprojlim_N\mathcal P_{\le N}$
-(Theorem~\ref{thm:promatlis-universal-property}).
-
-\medskip\noindent
-The local model is the two-complex-dimensional analog of the
-Beilinson--Drinfeld Heisenberg chiral algebra, with
-$\mathcal P$ playing the role of the Kac--Moody central pairing module
-$\Omega_K$ and $\mathfrak h$ the regular functions; it is the formal
-local sector of the Costello twisted-M-theory family
-\cite{costello-twistedM} and, on its cyclic framed stable branch, the
-formal-Darboux stalk chart of $\Hilb^N(\C^2)$ in its noncommutative Moyal
+The local model is the two-complex-dimensional Beilinson--Drinfeld
+Heisenberg chiral algebra with $\mc P$ the central pairing module; the
+formal local sector of the Costello twisted-M-theory family
+\cite{costello-twistedM}; and on the cyclic framed stable branch
+$\C[\phi_1,\phi_2]\cdot v=\C^N$ the formal-Darboux stalk chart of
+$\Hilb^N(\C^2)$ in its Nekrasov--Schwarz noncommutative Moyal
 deformation.
 
 \end{abstract}

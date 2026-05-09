@@ -246,10 +246,10 @@ formal symplectomorphism group of \((\C^2,dz_1\wedge dz_2)\).  Then
 \end{thm}
 
 \begin{proof}
-By stable invariant theory \cite{procesi-trace-identities,
-razmyslov-trace-identities}, primitive block-additivity, and
+By stable invariant theory \cite{procesi,
+razmyslov}, primitive block-additivity, and
 adjacent-swap exactness on the moment-map zero fibre
-(Lemma~\ref{lem:closed-J-cyclic-traces}),
+(Lemma~\ref{lem:formal-stalk-trace}),
 \[
   J(z_1^az_2^b)=c_{a,b}\overline{\Tr(\phi_1^a\phi_2^b)}
 \]
@@ -291,7 +291,7 @@ degree.
 The hypothesis ``primitive single-trace'' is the
 Loday--Quillen--Tsygan condition that the Lie algebra map \(J\) lands
 in the connected primitive sector of the cyclic invariant algebra
-\cite{loday-quillen,tsygan-cyclic-homology}; this is the structural
+\cite{loday-quillen,tsygan}; this is the structural
 input that produces the trace word for an arbitrary monomial.  The
 ``no natural correction'' lemma
 (\S\ref{ssec:completion-trace-uniqueness}) is then the assertion that
@@ -323,7 +323,7 @@ contracting homotopy, is the construction.
 \label{def:completion-pbw-stokes}
 Fix \(a,b\ge 0\) with \(a+b>0\).  Let \(\mathcal W_N\) be the matrix
 Weyl algebra on \(X^i_j,Y^k_\ell\) of
-Definition~\ref{def:matrix-weyl-algebra}, with quantum moment-map
+Definition~\ref{def:app-radial-matrix-weyl}, with quantum moment-map
 ideal \(I_N=\mathcal W_N\,\mu(\mathfrak{sl}_N)\).  Let
 \(C^0_{a,b}=\bigl(\Omega^{a+b+2}_{\mathrm{PBW}}(X,Y;\hbar)\bigr)
 \oplus\C\), the rank-\(b+2\) free \(\mathcal W_N\)-module of PBW
@@ -437,7 +437,7 @@ clauses~(1)--(2).  The contracting-homotopy formulation
 (Route~A of Remark~\ref{rmk:completion-dual-kernel}) and the dual
 kernel formulation (Route~B) are equivalent, and the manuscript's
 finite exact-rational checks
-(Appendix~\ref{app:radial-parts-moyal} exact-rational verification table)
+(Appendix~\ref{sec:app-radial-parts-moyal} exact-rational verification table)
 verify both routes through the recorded ranges of \((a,b)\); the
 all-\((a,b)\) statement is the uniform existence of these
 primitives on the entire decorated bicomplex.
@@ -473,7 +473,7 @@ constructible primitive-existence problem on a finite-rank
 decorated bicomplex.  The remaining input is the uniform
 construction of \((A^{(j)}_{a,b,N},\tau_{a,b})\) for all
 \((a,b)\); the manuscript's finite exact-rational reproducibility
-protocol (Appendix~\ref{app:radial-parts-moyal} exact-rational
+protocol (Appendix~\ref{sec:app-radial-parts-moyal} exact-rational
 verification table) supplies these primitives in the recorded ranges, and
 the all-\((a,b)\) statement is the assertion that the bicomplex
 has a Lagrangian splitting compatible with the shears.  This
@@ -551,7 +551,7 @@ every \(\xi\in\mathcal P^\Pi_q\).
 The residue coadjoint action is
 \(z_1^pz_2^q\cdot\rho_{a,b}=-(pb-qa+p-q)\rho_{a-p+1,b-q+1}\) with
 negative-index terms zero
-(Lemma~\ref{lem:reduced-coadjoint-action}).  For \(f,\rho\) of
+(Theorem~\ref{thm:principal-part-coadjoint-uniqueness}).  For \(f,\rho\) of
 bidegree \((p,q)\) and \((a,b)\), the coefficient of
 \((f\cdot\rho)_{m,n}\) is
 \(-(pb-qa+p-q)f_{p,q}\rho_{a,b}\delta_{m,a-p+1}\delta_{n,b-q+1}\),
@@ -766,7 +766,7 @@ quasi-isomorphism in \(\mathsf C\).
 Each \(\mathfrak g_M\) is finite nilpotent, hence the bar-cobar
 comparison \(\Omega C^{\mathrm{CE}}_\bullet(\mathfrak g_M)\to
 U(\mathfrak g_M)\) is a quasi-isomorphism of dg algebras
-\cite{quillen-rational-homotopy,kontsevich-soibelman-deformation}.
+\cite{quillen-htpy,kontsevich-soibelman-deformation}.
 The Milnor sequence of
 Lemma~\ref{lem:completion-milnor-ce} preserves the quasi-isomorphism
 under inverse limit because the connecting maps in the long exact
@@ -801,7 +801,7 @@ cochain is
 \(\tau_{\mathrm{op}}:C_{\mathrm{op}}\to A_{\mathrm{op}}\), defined
 on \(C_{\mathrm{op}}\) by composing the bar-cobar comparison
 \(\tau:BA\to A\) with the cyclic structure (Loday--Quillen--Tsygan
-\cite{loday-quillen,tsygan-cyclic-homology}).
+\cite{loday-quillen,tsygan}).
 \end{defn}
 
 \begin{thm}[Twisting cochain \(\tau_{\mathrm{op}}\) satisfies MC]
@@ -911,7 +911,7 @@ On \(B_q\) the Schouten bracket
 \(\{f,g\}\) is computed by the trace observable
 \(J(\{f,g\})=\overline{\Tr\{f,g\}(\phi_1,\phi_2)}\), and the
 adjacent-swap exactness on the moment-map zero fibre
-(Lemma~\ref{lem:closed-J-cyclic-traces}) supplies the explicit
+(Lemma~\ref{lem:formal-stalk-trace}) supplies the explicit
 \(H_{f,g}\) as the trace of the Koszul antifield insertion in the
 Wick contraction of \(\theta_f\) with \(\theta_g\).  The mixed
 bracket \([\Theta^{(1)}_f,M_{J(g)}]_G\) is computed by the same
@@ -1284,7 +1284,7 @@ by local counterterms in
 renormalized limit converges in the weighted Tate topology because
 the K\"othe weights \(p_n\) of
 Definition~\ref{def:completion-weighted-kothe} dominate the heat
-kernel decay (Lemma~\ref{lem:weighted-tate-heat-kernel}, applied
+kernel decay (Theorem~\ref{thm:wt-canonical-habitat}, applied
 to the brane-defect restriction).  Wavefront control is
 Theorem~\ref{thm:completion-wavefront-control}.  The QME after
 counterterms is the standard Costello effective-action calculus
@@ -1320,7 +1320,7 @@ the order-three row.
 The closed-open object is not a pair of unrelated factorization
 algebras but a stratified factorization algebra
 \(\mathrm{Obs}^{\mathrm{str}}(X,L)\); Weiss descent relates the
-prefactorization datum (Appendix~\ref{app:factorization-current-conventions})
+prefactorization datum (Appendix~\ref{sec:app-factorization-current-conventions})
 to the full factorization theory.
 
 \begin{thm}[Stratified factorization on \((X,L)\)]
@@ -1343,7 +1343,7 @@ The Weiss-cover descent
   \xrightarrow{\sim}\mathrm{Obs}^{\mathrm{str}}(O)
 \]
 holds for every admissible open \(O\subset X\), at the
-prefactorization level (Appendix~\ref{app:factorization-current-conventions})
+prefactorization level (Appendix~\ref{sec:app-factorization-current-conventions})
 and after quantization.
 \end{thm}
 
@@ -1713,7 +1713,7 @@ classified by its realization mode in the table below.
 \hbar N[\bar c]
  & \text{scalar Capelli cocycle on \(\bar A\)}
  & \text{projective}
- & \text{Thm.~\ref{thm:scalar-anomaly-existence-restated}, this app.~\S\ref{ssec:completion-summary}}\\
+ & \text{Theorem~\ref{thm:app-scalar-anomaly-transgression}, this app.~\S\ref{ssec:completion-summary}}\\
 \Omega^{\mathrm{rad}}_{a,b}
  & \text{decorated PBW-Stokes contracting homotopy}
  & \text{counterterm (vanishing)}
