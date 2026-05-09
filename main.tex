@@ -841,9 +841,9 @@ Lie extensions of \(\widehat{\mathfrak h}\) by an abelian odd ideal
 carrying a non-degenerate equivariant pairing of cohomological
 degree~\(-1\) (Theorem~\ref{thm:hbf-cotangent-uniqueness-summary}).
 The Hamiltonian BF action is the unique compatible local classical
-master equation action on this BV pair
+master equation (CME) action on this BV pair
 (Theorem~\ref{thm:bf-action-uniqueness-qme}). The remainder of the
-subsection records the three steps: the Lie algebra by Cartan magic
+subsection records the three steps: the Lie algebra by Cartan's magic
 formula and divergence reduction; the cotangent extension by the BV
 canonical-transformation principle; the cotangent module by residue
 duality.
@@ -13759,6 +13759,149 @@ checks in the problem below.
   identifies derived algebraic invariants of functions with ordinary
   invariants in this setting.
 \end{rmk}
+
+\subsection{The \texorpdfstring{$\mathcal{W}_\infty[\lambda]/E_\infty$}{W-infty[lambda]/E-infty} admissible endpoint}\label{ssec:w-infinity-endpoint}
+
+On the admissible locus defined by hypotheses (H1)--(H4) below, the
+$\mathcal W_N\to\mathcal W_\infty[\lambda]$ family of two-parameter
+$\mathcal W$-algebras converges to an $E_\infty$-algebra carrying the
+formal-Darboux stalk identification of
+Theorem~\ref{thm:main-local}.  The locus is named
+$\Lambda_{\mathrm{adm}}\subset\{(N,k,\lambda)\}$; the limit
+$\lim_{N\to\infty}A^{\mathrm{cl}}_{\partial,N}|_{\Lambda_{\mathrm{adm}}}$
+is taken in the Yamada admissible-weight topology.  The statement is
+\emph{conditional}: each of the four hypotheses corresponds to a
+proved structural input in the cited literature whose composite
+gives the named limit.
+
+\paragraph{The four hypotheses.}
+\begin{description}
+  \item[(H1) Prochazka triangular truncation
+    \cite{prochazka-w-infinity}.]  The two-parameter algebra
+    $\mathcal W_\infty[\mu,\lambda]$ admits a quadratic basis of
+    primary generators $W_s$ for spin $s\geq 2$, with structure
+    constants polynomial in $(\lambda,c)$ that organise into a
+    triangular truncation pattern: the level-$s$ closure ideal
+    $\mathcal I_s\subset\mathcal W_\infty[\mu,\lambda]$ is generated
+    by the spin-$s$ primaries, and the quotient is
+    $\mathcal W_s[\lambda]\simeq\mathcal W_N$ at the integer
+    truncation $\lambda=N$.  At the family level this is the
+    triangular spectral data on which the $N\to\infty$ direction
+    limit is defined.
+  \item[(H2) Creutzig--Kanade--Linshaw parafermion compatibility
+    \cite{creutzig-kanade-linshaw-coset}.]  The level-rank coset
+    realisation
+    $\mathcal W_N\simeq\bigl(\widehat{\mathfrak{sl}}_N{}_k
+      \otimes\widehat{\mathfrak{sl}}_N{}_1\bigr)/\widehat{\mathfrak{sl}}_N{}_{k+1}$
+    is compatible with the $N\to\infty$ truncation of (H1) at the
+    level of generalised parafermion cosets.  The compatibility
+    statement is a quasi-isomorphism of vertex algebras in admissible
+    weight; outside admissible weight the comparison fails.
+  \item[(H3) Pope--Romans--Shen / Bakas closed-form OPE
+    \cites{pope-romans-shen,bakas-w-infinity}.]  The OPE of
+    $\mathcal W_\infty[\lambda]$ generators
+    $W_s\cdot W_t$ admits a closed-form spin-summation kernel
+    parametrised by $\lambda$, derived in the $w_\infty$ contraction
+    limit and quantum-corrected to $\mathcal W_\infty[\lambda]$.  The
+    structure constants compatible with (H1)--(H2) are recorded in
+    the closed-form generating function.
+  \item[(H4) Yamada admissible-weight window
+    \cite{arakawa-admissible-w}.]  The admissible-weight locus
+    $\Lambda_{\mathrm{adm}}$ for $\mathcal W_N$ at level $k$ is
+    Arakawa's admissible-weight window for the affine vertex algebra
+    at level $k$, whose $\mathcal W_N$-image carries a
+    finite-dimensional space of conformal blocks in each spin window.
+    The window is the topology in which the $N\to\infty$ limit is
+    taken; the limit is a topological vector-space limit indexed by
+    spin truncation.
+\end{description}
+
+\begin{thm}[Conditional $\mathcal W_\infty[\lambda]/E_\infty$ admissible
+  endpoint]\label{thm:w-infty-e-infty-admissible}
+  Assume (H1)--(H4).  On the admissible locus
+  $\Lambda_{\mathrm{adm}}$, the formal-Darboux stalk identification
+  of Theorem~\ref{thm:main-local} extends to a limit
+  identification
+  \[
+    \lim_{N\to\infty}A^{\mathrm{cl}}_{\partial,N}\Big|_{\Lambda_{\mathrm{adm}}}
+      \;\simeq\;
+      C^\bullet_{\mathrm{ch}}\bigl(A_b,A_b\bigr)\Big|_{\Lambda_{\mathrm{adm}}}
+  \]
+  as $E_\infty$-algebras over the Yamada window, with chart the
+  CE/PV dictionary
+  \[
+    c_f \;\longmapsto\; \theta_f,\qquad
+    u_f \;\longmapsto\; J(f)\;=\;\Tr f(\phi_1,\phi_2),
+  \]
+  and Capelli scalar transported to the higher-spin central
+  extension of $w_\infty$:
+  \[
+    \hbar N[\bar c]\;=\;\Omega_{\mathrm{central}}\Big|_{J(f)}
+    \quad\rightsquigarrow\quad
+    c_{w_\infty}(\lambda)\;=\;\Omega_{\mathrm{central}}\Big|_{J_{\mathcal W_\infty}(f)},
+  \]
+  where $c_{w_\infty}(\lambda)$ is the Pope--Romans--Shen central
+  parameter at the spin-tower limit and $J_{\mathcal W_\infty}$ the
+  trace-tower limit of $J$ along the admissible truncation.
+\end{thm}
+
+The load-bearing identification is the trace map: the
+$\mathcal W_N$-trace
+$J_N(f)=\Tr f(\phi_1,\phi_2)$ becomes, under the (H1)--(H4)
+admissible truncation, the $\mathcal W_\infty[\lambda]$-trace at
+spin-tower limit; the Capelli scalar is transported to the
+higher-spin central charge of $w_\infty$.  The CE/PV dictionary
+$c_f\mapsto\theta_f$, $u_f\mapsto J(f)$ is the formal Darboux
+chart; on $\Lambda_{\mathrm{adm}}$ the chart is preserved by the
+spin-tower limit.
+
+\paragraph{Spin-$\leq 8$ OPE checks as evidence.}  Pope--Romans--Shen
+and Bakas verify the closed-form spin-summation kernel by direct
+computation through spin~$8$.  Per the seventeen-site catalogue
+(row~14): \emph{spin-$\leq 8$ OPE checks are evidence within
+$\Lambda_{\mathrm{adm}}$}, not proof of $E_\infty$.  The
+$E_\infty$-algebra structure of
+Theorem~\ref{thm:w-infty-e-infty-admissible} is the conditional
+content of (H1)--(H4); the spin-tower convergence to that
+$E_\infty$-structure is hypothesis (H4).
+
+\paragraph{Open obligations.}  Three open obligations sharpen the
+admissible endpoint to an unconditional theorem.
+
+\begin{enumerate}
+  \item[(O1)] \emph{Closed-form OPE on $\Lambda_{\mathrm{adm}}$.}
+    Prove (H3) directly on the admissible locus, supplying a
+    closed-form generating function for the structure constants of
+    $\mathcal W_\infty[\lambda]$ valid at all spins compatible with
+    the (H1)--(H2) truncation pattern.  Pope--Romans--Shen and
+    Bakas provide the spin-$\leq 8$ check; the residual obligation
+    is the all-spin closed form.
+  \item[(O2)] \emph{Spin-tower convergence in the Yamada window.}
+    Prove (H4) as a topological convergence theorem: identify the
+    space of conformal blocks at admissible weight as a
+    Fr\'echet-type vector space and prove that the $N\to\infty$
+    limit of the (H1) triangular truncation converges in this
+    topology.  Outside admissible weight the convergence fails.
+  \item[(O3)] \emph{Costello--Paquette twisted-holography
+    matched-conventions comparison.}  Twisted holography
+    \cite{costello-paquette-twisted-holography} identifies a
+    $\mathcal W_\infty$-bulk algebra with a chiral Hochschild
+    cohomology of a boundary algebra in a related but distinct
+    convention layer.  The matched-conventions transfer of
+    Theorem~\ref{thm:matched-conventions-transfer} delivers the
+    formal-Darboux stalk to the twisted-holography
+    $\mathcal W_\infty$ at the cost of an obstruction class
+    $\operatorname{Ob}_{\mathrm{CP}}\in\mathfrak K_T$ in the
+    cross-volume convention contract; identify
+    $\operatorname{Ob}_{\mathrm{CP}}$ explicitly to make the
+    comparison structural.
+\end{enumerate}
+
+The admissible endpoint of
+Theorem~\ref{thm:w-infty-e-infty-admissible}, conditional on
+(H1)--(H4) and the open obligations (O1)--(O3), is the
+$\mathcal W$-algebra fibre of the formal-Darboux stalk; it forces
+the frontier problems of the next section.
 
 \section{The frontier}\label{sec:frontier}
 
