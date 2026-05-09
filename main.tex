@@ -1863,6 +1863,89 @@ modification on linear trace generators.
   components.
 \end{rmk}
 
+\begin{thm}[Capelli scalar = projective curvature of the modular line bundle]
+\label{thm:capelli-equals-modular-curvature}\label{thm:capelli-omega-central-identification}
+  Let \(J(f)=\overline{\operatorname{Tr}\,f(\phi_1,\phi_2)}\) be the
+  trace generator of \S\ref{ssec:two-algebras} and let
+  \(\Omega_{\mathrm{central}}\) denote the canonical curvature of the
+  determinant line bundle on the moduli stack of the closed chiral
+  algebra
+  \(\Phi^{\mathrm{FA}}_2(\mathcal A)\big|_{\partial X^{\mathrm{KN}}}\)
+  for the formal local geometry
+  \(\R^2_{\mathrm{top}}\times\widehat{\C^2}_{0,\mathrm{hol}}\) with
+  \(N\) Dirac branes.  Then
+  \[
+    \hbar N[\bar c]=\Omega_{\mathrm{central}}\bigm|_{J(f)}
+    \quad\text{in }H^2_{\mathrm{Lie}}(\bar A,\C)[[\hbar]],
+  \]
+  where the left-hand side is the Lie 2-cocycle of
+  Lemma~\ref{lem:omega-cocycle} multiplied by the Chan--Paton scalar
+  \(\hbar N\), and the right-hand side is the value of the modular
+  line curvature at the local trace coordinate.  Equivalently, the
+  central extension
+  \[
+    0\longrightarrow\C\longrightarrow\mathfrak h_{\hbar,N}
+      \longrightarrow\bar A\longrightarrow 0
+  \]
+  carrying the cocycle \(\hbar N\omega\) lifts canonically to the
+  square root of the determinant line of the trace representation
+  \(\bar A\to\mathfrak{gl}_N\); the class \([\bar c]\) is the Atiyah
+  class of this determinant line, in the sense of
+  \cite{beilinson-drinfeld-chiral}*{\S2.5}.
+\end{thm}
+
+\begin{proof}
+  The cocycle identity is the content of
+  Theorem~\ref{thm:app-scalar-anomaly-transgression}: the four
+  sightings of \([\bar c]\) coincide under the canonical scalar
+  projection, with the multiplier \(\hbar N\) supplied by the open
+  Chan--Paton trace pairing.  The right-hand side is identified as
+  follows.  The closed chiral algebra
+  \(A^{\mathrm{cl}}_{\partial,N}=
+    C^\bullet_{\mathrm{CE}}(\mathfrak{gl}_N,
+                            \mathrm{Kosz}([\phi_1,\phi_2]))\)
+  has trace coordinate \(u_f\mapsto J(f)\) and CE coordinate
+  \(c_f\mapsto\theta_f\) by \S\ref{ssec:reduced-ce-pv-measurement};
+  under this identification the Capelli normal-ordered shift
+  \(Y_\hbar X_\hbar-X_\hbar Y_\hbar+\hbar N\,I\equiv 0\)
+  (Theorem~\ref{thm:quantum-classical-anomaly}) is the formal-Darboux
+  expression of the projective curvature of the determinant line of
+  the trace representation \(\bar A\to\mathfrak{gl}_N\).  The linear
+  Hamiltonian generators \(z_1,z_2\) act on the trace representation
+  with classical Capelli identity \cites{capelli,howe-capelli};
+  its order-\(\hbar\) deformation is the Tate central extension
+  associated with the continuous endomorphism algebra of
+  \cite{beilinson-drinfeld-chiral}*{\S2.5}.  Pulling the Atiyah class
+  of \(\det^{1/2}\) back to \(H^2_{\mathrm{Lie}}\) gives the cocycle
+  \(\hbar N\omega\) with \(\omega(z_1,z_2)=1\) by
+  Corollary~\ref{cor:app-sign-universal-dual-normalization}; the
+  class is therefore \(\hbar N[\bar c]\), and the equality with
+  \(\Omega_{\mathrm{central}}|_{J(f)}\) is the
+  Beilinson--Drinfeld central-extension identification at the trace
+  generator.
+\end{proof}
+
+\begin{rmk}[Determinant line and scheme dependence]\label{rmk:determinant-line-scheme}
+  The central extension lifts canonically to the square root of the
+  determinant line of the trace representation
+  \(\bar A\to\mathfrak{gl}_N\): the Capelli shift \(\hbar N\,I\) is the
+  curvature of the canonical connection on \(\det^{1/2}\) at the
+  linear trace generators, so \([\bar c]\) is the Atiyah class of
+  this determinant line in the sense of
+  \cite{beilinson-drinfeld-chiral}*{\S2.5}.  The numerical
+  coefficient \(\hbar N\) is scheme-dependent in the sense of the
+  factorization-current convention table
+  \S\ref{sec:app-factorization-current-conventions}: the canonical
+  scheme is the symmetric Weyl ordering
+  \(z_1z_2\mapsto\tfrac12(\phi_1\phi_2+\phi_2\phi_1)\) with Moyal
+  parameter \(\hbar\) and Chan--Paton trace
+  \(\operatorname{Tr}I=N\); changing scheme by an inner automorphism
+  shifts \([\bar c]\) by a coboundary and leaves the class invariant.
+  Reordering by an outer automorphism (e.g.\ a triangular Capelli
+  splitting versus normal ordering) shifts the trace coefficient by
+  a central character but preserves the modular-line identification.
+\end{rmk}
+
 \subsection{The two algebras}\label{ssec:two-algebras}
 
 The trace substitution \(J\) produces the open algebra.  The probe
