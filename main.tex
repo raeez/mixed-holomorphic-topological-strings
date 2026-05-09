@@ -414,6 +414,176 @@ and a Dirac Brane Formal-Stalk Chart on $\R^2_{\mathrm{top}}\times\C^2_{\mathrm{
 
 \input{local-dictionary}
 
+\subsection*{Conventions and notation for the local theorem}\label{ssec:binding-convention-layer}
+\addcontentsline{toc}{subsection}{Conventions and notation for the local theorem}
+
+The convention layer below binds throughout the body, the appendices,
+and every cross-volume statement; deviation requires an explicit
+matched-conventions theorem
+(Theorem~\ref{thm:matched-conventions-transfer},
+Appendix~\ref{app:convention-contract}).
+
+\paragraph{Geometric and algebraic conventions.}
+The complex target dimension is \(d=\dim_\C X\); the manuscript proves
+the formal-Darboux stalk at the Dirac brane stack on
+\(\R^2_{\mathrm{top}}\times\widehat{\C^2}_{0,\mathrm{hol}}\), with
+\(d=\dim_\C\widehat{\C^2}_0=2\).  The local geometry is
+\(\R^2_{\mathrm{top}}\times\C^2_{\mathrm{hol}}\) at a brane:
+the only Calabi--Yau datum is the trivial holomorphic symplectic
+\(\Omega_{\mathrm{loc}}=dz_1\wedge dz_2\) on \(\widehat{\C^2}_0\), used
+for the BV pairing, divergence-free Hamiltonian fields, and cyclic
+trace densities of Definition~\ref{def:app-sign-hamiltonian-cyclic}; it
+is not a compact CY\(_3\) assumption, not a BCOV theorem, not a license
+to import quintic / OSV / GV / MNOP / Abel--Jacobi / CoHA / Igusa / BKM
+material into the core local theorem surface
+(Theorem~\ref{thm:cross-volume-firewall}).
+The native bulk object is the holomorphic
+\(E_2\) / factorization algebra on \(\C^2\),
+\(\Omega^{0,\bullet}_c(B)\,\widehat\otimes\,\mathfrak g\), with shifted-cotangent
+BF Lie algebra
+\(\mathfrak g=\mathfrak h\ltimes\mathfrak h^\vee_{\mathrm{cont}}[1]\),
+\(\mathfrak h=\C[[z_1,z_2]]/\C\cdot 1\)
+(\S\ref{ssec:hamiltonian-bf-algebra},
+Theorem~\ref{thm:bf-action-uniqueness-qme}).
+Curve vertex operator algebra (VOA), Zhu algebra, and Vol II
+\(\C\times\R\) chiral-topological theorems enter only after a
+controlled reduction with explicit \(z_2\)-mode or principal-part data,
+pushed-forward bracket, BV pairing, brane image, and anomaly matching;
+a curve VOA is a one-dimensional restriction of the native
+two-complex-dimensional factorization algebra, not the native object
+(Remark~\ref{rmk:not-a-curve-voa}).
+The worldsheet \(\Sigma\) is a complex curve, possibly with boundary
+or marked points; framing on \(S^3\) is stated when invoked, with
+deviation flagged.
+
+\paragraph{Sign, degree, and renormalization conventions.}
+BV degree, ghost number, and form degree are tracked separately,
+none identified with another: BV degree is cohomological, ghost
+number is the antifield/ghost grading of the classical fields
+\((\phi_1,\phi_2,\psi)\) and \((\mathcal A,\mathcal B)\), and form
+degree is the de Rham/Dolbeault exterior grading on
+\(\Omega^\bullet(\R^2)\widehat\otimes\Omega^{0,\bullet}(\C^2)\).
+Koszul, Chevalley--Eilenberg, polyvector, and Gerstenhaber bracket
+signs are fixed in
+Appendix~\ref{app:sign-conventions}, with cyclic trace conventions
+fixed in Definition~\ref{def:app-sign-hamiltonian-cyclic} and the
+CE/PV cochain comparison signs in Lemma~\ref{lem:app-sign-ce-pv}.
+The propagator weight in heat-kernel renormalization is the explicit
+Costello \(\bigl(K_L-K_\epsilon\bigr)\) interval kernel of
+\cite{costello-renormalization}, recorded in
+Appendix~\ref{sec:app-factorization-current-conventions}.
+The QFT loop parameter \(\hbar\) and the string-genus parameter
+\(g_s\) are distinguished at every reference: \(\hbar\) controls the
+local BV / Moyal expansion of the matrix Koszul algebra, while \(g_s\)
+controls the string genus expansion of the ambient closed-open
+theory.  The BCOV holomorphic-anomaly equation enters with the
+BCOV-strict sign of \cite{bcov} preserved by the matched-conventions
+divergence row of Theorem~\ref{thm:divergence-bcov}; the local theorem
+of this manuscript does not assert the holomorphic-anomaly equation,
+only its compatibility with the local convention layer.
+
+\paragraph{Homological taxonomy.}
+Hochschild homology \(HH_\bullet\), cyclic homology, and
+negative-cyclic homology \(HC^-_\bullet\) are distinguished at every
+reference (Appendix~\ref{app:sign-conventions}): the cyclic trace
+symbol \(\operatorname{Tr}\) is the graded cyclic quotient, the
+Hochschild trace is its image under the Connes \(B\)-operator, and
+the negative-cyclic class is the constellation-level Calabi--Yau
+pairing of Vol III.  Drinfeld centre \(Z(\mathcal C)\), derived
+centre \(Z^{\mathrm{der}}\), and chiral derived centre
+\(Z^{\mathrm{der}}_{\mathrm{ch}}\) are distinguished: the bar
+construction \(\mathrm{Bar}(A)\) is the twisting coalgebra and is not
+the bulk; the bulk is
+\(Z^{\mathrm{der}}_{\mathrm{ch}}(A)\simeq C^\bullet_{\mathrm{ch}}(A,A)\),
+the chiral Hochschild cochain centre.
+
+\paragraph{Constellation-anchored objects.}
+The boundary open category on the Kato--Nakayama log boundary is
+\(\mathcal C^{\mathrm{op}}_\partial=\Phi^{\mathrm{FA}}_d(\mathcal A)\big|_{\partial X^{\mathrm{KN}}}\);
+factorization-homology specialization is
+\(\mathrm{Sp}^{\mathrm{ch}}_{\Sigma_{d-1},C}(\mathcal F)
+   =\int_{\Sigma_{d-1}}\mathcal F\big|_C\)
+(Lurie--Ayala--Francis).  The Dirac brane stack at \(N\) branes is
+the derived commuting variety
+\([\mu^{-1}_{\mathrm{der}}(0)/\mathrm{GL}_N]\)
+with \(Q\psi=[\phi_1,\phi_2]\), \(Q\phi_i=0\); the brane reading is
+the physical realization.  The Capelli scalar identification
+\(\hbar N[\bar c]=\Omega_{\mathrm{central}}|_{J(f)}\) is the
+projective curvature evaluation at the trace generator
+(Theorem~\ref{thm:capelli-omega-central-identification}).  The
+modular line bundle on
+\(\overline{\mathcal A}_g\) coincides with \(\Omega_{\mathrm{central}}\)
+at level \(g\); the Igusa cusp form \(\Phi_{10}\) is its level-2
+section, and \(\Delta_5=\Phi_{10}^{1/2}\) is a level-2 modular section,
+not a compact BPS Hilbert space.  The CE/PV dictionary
+\(c_f\mapsto\theta_f\), \(u_f\mapsto J(f)\) of
+Lemma~\ref{lem:app-sign-ce-pv} is the Koszul resolution of
+\(C^\bullet_{\mathrm{ch}}(A_b,A_b)\) at the brane vacuum
+(Theorem~\ref{thm:formal-local-universal-property}).
+
+\paragraph{Theorem-control predicates.}
+Every theorem in the manuscript is stated within the following
+control surface:
+\begin{enumerate}
+\item Native \(\C^2\) holomorphic \(E_2\) / factorization-algebra
+  taxonomy is retained before any curve-chiral reduction; a curve VOA
+  result is invoked only after a controlled reduction with
+  pushed-forward bracket, brane image, and anomaly matching.
+\item BMK lane: the one-pair analytic pro-Matlis retract of
+  Theorem~\ref{thm:promatlis-universal-property} is not a strict
+  native all-window support-local current transfer; the obstruction
+  on every fixed finite Matlis window is
+  \(\operatorname{Ob}^\Pi_{\mathrm{BM}}\)
+  (Theorem~\ref{thm:bmk-finite-window-no-go}), and the pro-tower
+  \(\widehat{\mathcal P}_\Pi=\varprojlim_N\mathcal P_{\le N}\) is the
+  supremum form selected by that obstruction.
+\item Larger non-scalar \(\theta_3\) row is evidence only with
+  one of: a Chevalley--Eilenberg ancestor, a scalar-zero Costello
+  local counterterm, or a complete companion-face table
+  (Theorem~\ref{thm:app-theta-three-finite-window-H1}); tower
+  compatibility passes through
+  \(\Delta^1_{M,N}=-\pi_{M,N}\mathfrak b^M+\mathfrak b^N\) together
+  with the secondary \(\varprojlim^1 H^0\) primitive class.
+\item The radial / Weyl theorem surface is
+  \(\Omega^{\mathrm{rad}}_{a,b}\in\operatorname{coker}B_{a,b}\),
+  equivalently the decorated PBW Stokes obstruction for
+  \(D^\square_{a,b}=C^+_{a,b}\partial_2\), with failure exactly a
+  signed row \((\phi,-\lambda)\in\ker B^*_{a,b}\) such that
+  \(\lambda(E^+_{a,b})-\phi(T_{a,b})\ne 0\)
+  (Theorem~\ref{thm:app-radial-bidegree-rational-reduction}).
+\item Larger non-scalar Costello / QME theorem requires the data
+  tuple: filtered scalar projection \(\widehat\sigma_{\mathrm{sc}}\),
+  finite row arrays, primitive matrix \(A^M c=-r^M\), transition
+  matrices, Roos compatibility, centrality homotopies, and the
+  curved bulk-to-defect kernel
+  (Theorem~\ref{thm:app-unreduced-cotangent-lift-obstruction}).
+\item The brane-preserving \(\Omega\)-background uses the normal
+  scaling on \(N_L X=\R_s\oplus\C_{z_1}\oplus\C_{z_2}\) with the
+  brane time \(t\) fixed, torus
+  \(T_\Omega=\C^*_{\varepsilon_s}\times\C^*_{\varepsilon_1}\times\C^*_{\varepsilon_2}\),
+  twisted differential
+  \(Q_\Omega=Q+\iota_{V_\Omega}\) with \(Q_\Omega^2=L_{V_\Omega}\),
+  inverted normal weights, residue-vs-Euler normalization, and
+  stratified factorization data; literal \((t,s)\)-rotation does
+  not preserve the brane line and is not native unless a different
+  fixed-locus problem is defined.
+\end{enumerate}
+
+\paragraph{Cross-volume firewall.}  No compact, global, modular,
+automorphic, specialization, framing, descent, virtual-cycle,
+attractor, or operadic structure of the seven external programmes
+(BCOV / Kodaira--Spencer; Vol III CY-to-chiral; Igusa / BKM;
+GW / DT / PT / MNOP; OSV; mixed-Dunn / six-relation; global
+Hamiltonian descent on a compact holomorphic-symplectic surface)
+follows from the local theorem
+(Theorem~\ref{thm:cross-volume-firewall}); cross-volume use is
+governed by the matched-conventions theorem
+(Theorem~\ref{thm:matched-conventions-transfer}) and the universal
+Koszul-descent acceptance class
+\(\operatorname{Ob}_{\mathrm{UKD}}(\mathfrak C_{\mathrm{tar}})\),
+with a nonzero coordinate the precise mechanism that prevents
+acceptance.
+
 \section{Introduction}
 
 \subsection{The Dirac brane formal-stalk chart in one calculation}\label{ssec:formal-darboux-stalk-one-calculation}\label{ssec:brane-microscope-one-calculation}
@@ -13831,7 +14001,7 @@ gives the named limit.
   CE/PV dictionary
   \[
     c_f \;\longmapsto\; \theta_f,\qquad
-    u_f \;\longmapsto\; J(f)\;=\;\Tr f(\phi_1,\phi_2),
+    u_f \;\longmapsto\; J(f)\;=\;\operatorname{Tr} f(\phi_1,\phi_2),
   \]
   and Capelli scalar transported to the higher-spin central
   extension of $w_\infty$:
@@ -13847,7 +14017,7 @@ gives the named limit.
 
 The load-bearing identification is the trace map: the
 $\mathcal W_N$-trace
-$J_N(f)=\Tr f(\phi_1,\phi_2)$ becomes, under the (H1)--(H4)
+$J_N(f)=\operatorname{Tr} f(\phi_1,\phi_2)$ becomes, under the (H1)--(H4)
 admissible truncation, the $\mathcal W_\infty[\lambda]$-trace at
 spin-tower limit; the Capelli scalar is transported to the
 higher-spin central charge of $w_\infty$.  The CE/PV dictionary
@@ -14764,6 +14934,79 @@ Moyal target.
    number={3},
    pages={689--703},
    doi={10.1007/s002200050490},
+}
+
+\bib{prochazka-w-infinity}{article}{
+   author={Proch\'azka, Tom\'a\v{s}},
+   title={On the structure of the {$\mathcal W$}-algebra},
+   journal={J. High Energy Phys.},
+   date={2015},
+   number={10},
+   pages={077, 38},
+   doi={10.1007/JHEP10(2015)077},
+   note={arXiv:1411.7697},
+}
+
+\bib{creutzig-kanade-linshaw-coset}{article}{
+   author={Creutzig, Thomas},
+   author={Kanade, Shashank},
+   author={Linshaw, Andrew R.},
+   title={Simple current extensions beyond semi-simplicity},
+   journal={Commun. Contemp. Math.},
+   volume={22},
+   date={2020},
+   number={1},
+   pages={1850007, 49},
+   doi={10.1142/S0219199718500074},
+}
+
+\bib{pope-romans-shen}{article}{
+   author={Pope, C. N.},
+   author={Romans, L. J.},
+   author={Shen, X.},
+   title={A new higher-spin algebra and the lone-star product},
+   journal={Phys. Lett. B},
+   volume={242},
+   date={1990},
+   number={3-4},
+   pages={401--406},
+   doi={10.1016/0370-2693(90)91783-9},
+}
+
+\bib{bakas-w-infinity}{article}{
+   author={Bakas, I.},
+   title={The large-{$N$} limit of extended conformal symmetries},
+   journal={Phys. Lett. B},
+   volume={228},
+   date={1989},
+   number={1},
+   pages={57--63},
+   doi={10.1016/0370-2693(89)90525-X},
+}
+
+\bib{arakawa-admissible-w}{article}{
+   author={Arakawa, Tomoyuki},
+   title={Rationality of admissible affine vertex algebras in the category {$\mathcal O$}},
+   journal={Duke Math. J.},
+   volume={165},
+   date={2016},
+   number={1},
+   pages={67--93},
+   doi={10.1215/00127094-3165113},
+   note={arXiv:1207.4857},
+}
+
+\bib{costello-paquette-twisted-holography}{article}{
+   author={Costello, Kevin},
+   author={Paquette, Natalie M.},
+   title={Twisted supergravity and Koszul duality: a case study in {AdS}$_3$},
+   journal={Comm. Math. Phys.},
+   volume={384},
+   date={2021},
+   number={1},
+   pages={279--339},
+   doi={10.1007/s00220-021-04065-3},
+   note={arXiv:2001.02177},
 }
 
 \end{biblist}
