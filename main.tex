@@ -586,7 +586,7 @@ acceptance.
 
 \section{Introduction}
 
-\subsection{The Dirac brane formal-stalk chart in one calculation}\label{ssec:formal-darboux-stalk-one-calculation}\label{ssec:brane-microscope-one-calculation}
+\subsection{The Dirac brane formal-stalk chart in one calculation}\label{ssec:brane-microscope-one-calculation}\label{ssec:formal-darboux-stalk-one-calculation}
 
 A Hamiltonian \(f\in\C[[z_1,z_2]]\) on the formal symplectic normal
 polydisk is read on the brane stack as a single
@@ -955,7 +955,7 @@ morphism from closed observables on \(L\) to the open factorization
 centre fails for a structural reason.
 
 \begin{rmk}[Cotangent obstruction beyond \(J\)]\label{rmk:formal-stalk-obstruction}\label{rmk:microscope-obstruction}
-  Lemma~\ref{lem:probe-trace-microscope} resolves the scalar-trace
+  Lemma~\ref{lem:formal-stalk-trace} resolves the scalar-trace
   generator question: scalar closed insertions \(F=J(f)\) commute with
   every open trace class up to the moment-map operation
   \(\{J(f),J(g)\}=J(\{f,g\})\) of
@@ -969,7 +969,7 @@ centre fails for a structural reason.
   \(\mathrm Z^{P_0}_{\mathrm{fact}}\) of a factorization algebra is its
   centralizer for the shifted Poisson bracket and the factorization
   product (Problem~\ref{prob:formal-factorization-center}).  The
-  strengthening sought beyond Lemma~\ref{lem:probe-trace-microscope}
+  strengthening sought beyond Lemma~\ref{lem:formal-stalk-trace}
   is a chain-level morphism
   \[
     \Phi_{\mathrm{cl}}\colon
@@ -1282,7 +1282,7 @@ one of them.  Hamiltonian ghosts \(c^I\)---dual to generators
 \(H_I\in\widehat{\mathfrak h}\)---generate the closed motion on the
 polydisk; cotangent coordinates \(u_I\)---dual to the shifted antifield
 generators in \(\mathfrak h^\vee_{\mathrm{cont}}[1]\)---are the
-measurable boundary observables.  Lemma~\ref{lem:probe-trace-microscope}
+measurable boundary observables.  Lemma~\ref{lem:formal-stalk-trace}
 gives the trace substitution
 \[
   J(f)=\overline{\operatorname{Tr}f(\phi_1,\phi_2)}
@@ -1521,7 +1521,7 @@ product.
   \(ab\); contraction of the matrix derivatives of
   \(\operatorname{Tr}f(\phi_1,\phi_2)\) and
   \(\operatorname{Tr}g(\phi_1,\phi_2)\) returns the constant Poisson
-  bracket on the symbols, evaluated again on the probe pair.  This
+  bracket on the symbols, evaluated again on the Chan--Paton pair.  This
   produces the moment-map identity
   \(\{B_f(a),B_g(b)\}=B_{\{f,g\}}(ab)\); on monomials the explicit
   coefficient \(kn-lm\) is the open trace bracket
@@ -1767,7 +1767,7 @@ side.
 Quantisation tests measurement compatibility.  Two operations close
 in on the brane: Weyl/Moyal quantization \(\Phi_\hbar\) of the formal
 symplectic polydisk, and the matrix-trace measurement \(J\) of the
-quantized symbol on the probe pair.  They commute exactly when the
+quantized symbol on the Chan--Paton pair.  They commute exactly when the
 Moyal commutator \([\Phi_\hbar(z_1),\Phi_\hbar(z_2)]_\star\) and the
 measured commutator
 \([\overline{\operatorname{Tr}\phi_1^\hbar},
@@ -1948,11 +1948,11 @@ modification on linear trace generators.
 
 \subsection{The two algebras}\label{ssec:two-algebras}
 
-The trace substitution \(J\) produces the open algebra.  The probe
-stack is the Dirac-reduced first-order action
+The trace substitution \(J\) produces the open algebra.  The Dirac
+brane stack is the Dirac-reduced first-order action
 \eqref{eq:open-action-derived}; its ghost-zero invariant ring is
 \(H^0(\mathcal R_N^{GL_N},Q)\).  By
-Lemma~\ref{lem:probe-trace-microscope} the stable connected
+Lemma~\ref{lem:formal-stalk-trace} the stable connected
 \(GL_N\)-invariants are exactly the trace family
 \(\{J(f)=\overline{\operatorname{Tr}f(\phi_1,\phi_2)}:f\in\bar A\}\),
 with kernel the constants; any polynomial \(GL_N\)-invariant
@@ -2597,9 +2597,9 @@ because \(\phi_1,\phi_2\) live in \(\mathfrak{gl}_N^2\) and the
 substitution \(z_i\mapsto\phi_i\) is formal substitution into a
 power series.  Removing the formal completion forces the brane to
 see irrelevant global geometry and breaks the scalar-reduced trace
-identification of Lemma~\ref{lem:probe-trace-microscope}.
+identification of Lemma~\ref{lem:formal-stalk-trace}.
 
-The Dirac brane is a constrained matrix probe, fixing the open BV
+The Dirac brane is the formal-stalk chart, fixing the open BV
 sector and its first-class boundary action.  Closed insertions act
 through central operations in Witten's source convention, fixing the
 closed-side target as a derived \(P_0\)-centre with reduced
@@ -4403,7 +4403,7 @@ the Casimir converges (Theorem~\ref{thm:wt-canonical-habitat}).
   \]
   There are canonical constructions of:
   \begin{enumerate}
-    \item the Dirac matrix probe with
+    \item the Dirac brane formal-stalk chart with
       \(Q\psi=[\phi_1,\phi_2]\) and scalar-reduced connected trace
       observables;
     \item the closed Hamiltonian BF factorization algebra with fields
@@ -4619,14 +4619,15 @@ of holomorphic conjugate matrix coordinates carried by the brane
 worldvolume.
 
 The pair \((\phi_1,\phi_2)\) realizes a
-\(\lie{gl}_N\otimes\lie{gl}_N\)-valued holomorphic symplectic probe;
-its scalar reduction is two complex coordinates conjugate under one
-holomorphic two-form.  The transverse data is therefore a single
-holomorphic symplectic surface \((Y,\omega)\) at the brane point.
+\(\lie{gl}_N\otimes\lie{gl}_N\)-valued holomorphic symplectic
+Chan--Paton pair; its scalar reduction is two complex coordinates
+conjugate under one holomorphic two-form.  The transverse data is
+therefore a single holomorphic symplectic surface \((Y,\omega)\) at
+the brane point.
 
-The brane probe sees only the local behaviour at the brane, never
-global topology of \(Y\); the relevant datum is the formal completion
-of \(Y\) at the brane point. A holomorphic Darboux theorem trivialises
+The formal-stalk chart sees only the local behaviour at the brane,
+never global topology of \(Y\); the relevant datum is the formal
+completion of \(Y\) at the brane point. A holomorphic Darboux theorem trivialises
 the germ to \((\widehat{\C^2}_0,dz_1\wedge dz_2)\), so \(Y\) contributes
 only its formal symplectic polydisk.
 
@@ -4639,7 +4640,7 @@ moment-map multiplier becomes a one-form. A topological factor of real
 dimension two is therefore the minimal completion in which the Dirac
 moment-map measurement and the bulk-to-brane locality coexist.
 
-Under the brane-probe hypotheses --- a brane stack carrying the
+Under the formal-stalk-chart hypotheses --- a brane stack carrying the
 \(\lie{gl}_N\)-valued holomorphic-symplectic pair
 \((\phi_1,\phi_2)\), open trace observables along a one-dimensional
 brane worldline, a propagator direction transverse to that worldline
@@ -4686,8 +4687,8 @@ shifted-cotangent avatar \(u_f\):
 \begin{equation}\label{eq:setup-Jf-flagship}
   J(f)=\overline{\operatorname{Tr}\,f(\phi_1,\phi_2)},
 \end{equation}
-the trace of \(f\) evaluated on the matrix probe pair, projected to the
-stable scalar-reduced quotient. Under the brane-probe hypotheses
+the trace of \(f\) evaluated on the Chan--Paton pair, projected to the
+stable scalar-reduced quotient. Under the formal-stalk-chart hypotheses
 of Proposition~\ref{prop:local-model-mixed-definition} together with
 \(GL_N\)-invariance, formal Darboux naturality, and stable scalar
 reduction, three independent inputs force \(J\). First,
@@ -4792,7 +4793,7 @@ records which level is reached and which obstruction blocks the next.
   infinitesimal canonical motion as a vector field on the brane phase
   space.  The shifted-cotangent-dual CE coordinate \(u_f\) maps to
   the boundary observable \(O_f=J(f)\), the gauge-invariant scalar
-  reading of \(f\) on the matrix probe pair.  The closed Hamiltonian
+  reading of \(f\) on the Chan--Paton pair.  The closed Hamiltonian
   generator enters the boundary algebra through \(u_f\)
   (Theorem~\ref{thm:reduced-ce-pv-central-operation},
   Proposition~\ref{prop:ce-source-obstruction}): a vector field acts
@@ -4802,9 +4803,9 @@ records which level is reached and which obstruction blocks the next.
   itself an observable.
 \end{rmk}
 
-\begin{prop}[Geometry determined by the brane probe]\label{prop:local-model-mixed-definition}
+\begin{prop}[Geometry determined by the formal-stalk chart]\label{prop:local-model-mixed-definition}
   The geometry \eqref{eq:setup-X-L} is the unique formal local mixed
-  completion carrying the brane-probe datum
+  completion carrying the formal-stalk-chart datum
   \((\Omega_N,\operatorname{Tr})\) of the brane stack: the open
   observable family equals
   \(J(f)=\overline{\operatorname{Tr}f(\phi_1,\phi_2)}\) by the
@@ -4820,7 +4821,7 @@ records which level is reached and which obstruction blocks the next.
   BF sector of Definition~\ref{def:local-th-string}, with classical
   master equation; its mixed locality is the Cartan/Dolbeault
   homotopy. The brane open observable theory is the cyclic Dirac
-  brane-probe theory of \S\ref{ssec:open-mixed-brane-states} and
+  formal-stalk-chart theory of \S\ref{ssec:open-mixed-brane-states} and
   \S\ref{ssec:open-mixed-bft}; the constructed bulk-to-brane operation
   is the degree-zero Hamiltonian boundary evaluation
   (Construction~\ref{constr:boundary-evaluation},
@@ -4907,7 +4908,7 @@ records which level is reached and which obstruction blocks the next.
   is the trace on \(\lie{gl}_N\) tensored with the Berezin trace on the
   exterior algebra; \S\ref{ssec:open-mixed-bft} derives both the action
   and the Koszul differential of this open theory directly from the
-  brane-probe premise. The bulk-to-brane evaluation
+  formal-stalk-chart premise. The bulk-to-brane evaluation
   \(f\mapsto\overline{\operatorname{Tr}\,f(\phi_1,\phi_2)}\) is
   Construction~\ref{constr:boundary-evaluation} and its bracket
   compatibility is Theorem~\ref{thm:bulk-boundary}; the unreduced
@@ -4929,12 +4930,9 @@ two odd derived normal coordinates.  The matrix entries of
 \([\phi_1,\phi_2]\) are not a regular sequence for \(N\geq2\); this is
 the derived zero fibre, not a regularity assertion.
 
-\subsubsection*{Koszul reduction on the derived commuting variety chart}
+\subsubsection*{Koszul reduction of the formal-stalk chart}
 
-The Dirac brane stack
-\([\mu^{-1}_{\mathrm{der}}(0)/GL_N]\)
-\cite{ptvv-shifted-symplectic, calaque-derived-branes} carries the
-polynomial Chan--Paton ring
+The Dirac brane stack carries the polynomial coordinate ring
 \[
   \mc R^{\mathrm{poly}}_N=
     \C[(\phi_1)^i{}_j,(\phi_2)^i{}_j],\qquad 1\le i,j\le N,
@@ -5126,7 +5124,7 @@ the Dirac first-class action
 The variation of \(A\) imposes the moment-map zero-fibre, and the
 variation of \(\phi_i\) imposes the Hamiltonian flow generated by
 \(\mu_A\) along the brane line; this is the Dirac constraint
-reduction of the Chan--Paton pair.
+reduction of the formal-stalk chart.
 
 \subsubsection*{BV differential: Koszul derived zero-fibre model for the moment-map equation}
 
@@ -5173,7 +5171,7 @@ and a single first-order Chern-Simons action records all three pieces
 at once: the Liouville term, the moment-map multiplier, and the
 Koszul antifield.
 
-\begin{prop}[Open BV action of the Dirac brane stack]\label{prop:open-bv-action-derived}
+\begin{prop}[Open BV action from the formal-stalk chart]\label{prop:open-bv-action-derived}
   The open BV theory of the mixed brane is the formal first-order
   Chern-Simons theory
   \begin{equation}\label{eq:open-CS}
@@ -7279,7 +7277,7 @@ ambient product is a separate admissibility input.
 
 \begin{rmk}[Worked instances]\label{rmk:Jf-uniqueness-running-examples}
   The three running examples of
-  \S\ref{ssec:brane-microscope-one-calculation} pin the theorem
+  \S\ref{ssec:formal-darboux-stalk-one-calculation} pin the theorem
   concretely.  Example~\ref{exa:point-probe-N1} is the \(N=1\) case:
   the matrices commute automatically, scalar reduction is trivial, and
   \(J(f)=f(\phi_1,\phi_2)\) is the classical evaluation map at a
@@ -8559,14 +8557,14 @@ counterterm tower that null-homotopes the corresponding class.
 
 \subsection{Open-brane operators and the large $N$ limit}\label{ssec:open-brane-operators}
 
-A stack of \(N\) Dirac branes carries a finite-matrix probe of the
+A stack of \(N\) Dirac branes carries a finite-matrix trace measurement of the
 formal symplectic polydisk: its operator algebra is generated by
-cyclic words in two \(\mathfrak{gl}_N\)-valued probe matrices, and
+cyclic words in two \(\mathfrak{gl}_N\)-valued Chan--Paton matrices, and
 its Weyl quantisation produces a scalar shift \(\hbar N\) that the
 connected single-trace projection cannot absorb.  Procesi--Razmyslov
 1976 (\cites{procesi,razmyslov};
 Proposition~\ref{prop:stable-trace-invariants}) fixes the classical
-content of the brane-probe operator side; Capelli
+content of the formal-stalk-chart operator side; Capelli
 1890 (\cites{capelli,howe-capelli};
 Remark~\ref{rmk:normal-ordering-obstruction}) forces the quantum scalar.
 Theorem~\ref{thm:main-local} reads its operator side off the
@@ -9553,7 +9551,7 @@ field.
 On the closed side of the local mixed model, Hamiltonian-dual CE
 coordinates produce Schouten vector-field operations on the brane
 polynomial algebra, while shifted-cotangent-dual CE coordinates
-produce boundary Hamiltonian observables on the probe pair.  The
+produce boundary Hamiltonian observables on the Chan--Paton pair.  The
 closed local operator algebra is, after one kinematic contraction
 and one BRST identification, the continuous CE cochains
 \[
@@ -9597,7 +9595,7 @@ the coordinate window, Hamiltonian-dual CE coordinates \(c^I\) map
 to Schouten polyvector coordinates \(\theta^I\) on
 \(\widehat{\mathbf S}(\bar A)\), and shifted-cotangent-dual CE
 coordinates \(u_I\) map to boundary Hamiltonian observables \(O_I\)
-on the probe pair.  The assignment \(c_f\mapsto O_f\) is a type
+on the Chan--Paton pair.  The assignment \(c_f\mapsto O_f\) is a type
 error
 (Theorem~\ref{thm:reduced-ce-pv-central-operation}).  The full
 stratified comparison is \S\ref{ssec:stratified-koszul} below.
@@ -9802,7 +9800,7 @@ obstruction class at each boundary.
     On the coordinate window the CE/PV identity matches
     Hamiltonian-dual CE coordinates to Schouten polyvector
     coordinates, and shifted-cotangent-dual CE coordinates to
-    boundary Hamiltonian functions on the probe pair
+    boundary Hamiltonian functions on the Chan--Paton pair
     (Theorem~\ref{thm:reduced-ce-pv-central-operation}).
     This is a cochain-level reduced morphism, not a strict
     factorisation \(P_0\)-centre morphism on the unreduced cotangent
@@ -10145,7 +10143,7 @@ one is the Hamiltonian trace bracket proved below.
 
 \subsubsection{First-order Poisson identification}
 
-The brane probe evaluates a closed Hamiltonian on the matrix-valued
+The formal-stalk chart evaluates a closed Hamiltonian on the matrix-valued
 transverse coordinate \((\phi_1,\phi_2)\); Dirac reduction forces
 \([\phi_1,\phi_2]=0\); the surviving algebra of cyclic single traces
 is the first nontrivial test.  The question is whether the closed
@@ -10567,7 +10565,7 @@ $\mc P\cong\mathfrak h^\vee_{\mathrm{cont}}$ is unique modulo that scalar.
   $\Phi_{\mathrm{coad}}$-image of
   $\bigoplus_{a+b\le N}\C\,\rho_{a,b}$.
 
-  \emph{Verification on three test cases.} With the convention
+  \emph{Verification on three instances.} With the convention
   $\{z_1,z_2\}=1$, the Hamiltonian vector field is
   $X_f=(\partial_{z_1}f)\partial_{z_2}-(\partial_{z_2}f)\partial_{z_1}$.
   \begin{enumerate}
@@ -11895,7 +11893,7 @@ Theorem~\ref{thm:bulk-boundary}.
 \end{proof}
 
 \begin{rmk}[Explicit second- and fourth-order corrections]
-  For higher-order test cases that exercise nontrivial $P^3$ and $P^5$:
+  For higher-order instances that exercise nontrivial $P^3$ and $P^5$:
   \begin{align*}
     [z_1^3z_2,z_1z_2^3]_*
       &=8\hbar\,z_1^3z_2^3-3\hbar^3\,z_1z_2+O(\hbar^5),\\
@@ -14517,7 +14515,7 @@ made well-posed.
 This work belongs to the lineage of Bershadsky--Cecotti--Ooguri--Vafa
 1993, Witten 1988, Costello 2011, and Beilinson--Drinfeld 2004.  The
 Capelli--Howe scalar identities, Procesi--Razmyslov trace relations,
-and Harish-Chandra radial-parts theorem supply the brane-probe side;
+and Harish-Chandra radial-parts theorem supply the formal-stalk-chart side;
 Matlis 1958 and Hartshorne local cohomology supply the principal-part
 dual; Kontsevich's deformation quantisation supplies the all-order
 Moyal target.
