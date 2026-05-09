@@ -107,7 +107,7 @@ factorization algebra \(F^{\mathrm{mix}}_{\mathrm{Ham}}\) on
 \item[Input.]  The shifted cotangent Lie algebra
 \(\mathfrak g=\mathfrak h\ltimes\mathfrak h^\vee_{\mathrm{cont}}[1]\)
 of Algorithm~2; an admissibility class (Tate / nilpotent / weighted /
-relative) for higher rungs of the comparison ladder.
+relative) for the higher levels of the comparison.
 \item[Steps.]
 \begin{enumerate}
 \item Choose ordered bases \(\{e_i\}\) of \(\mathfrak h\) (e.g.\
@@ -131,15 +131,15 @@ ring) for the polyvector complex
 identity yielding the decisive computation
 \(\theta_f(O_g)=O_{\{f,g\}}\).
 \item Complete in the chosen coordinate window or weighted-Tate
-topology.  The cochain identity (Rung~1) holds unconditionally; the
-\(P_0\)-bracket clause (Rung~2) holds on a bracket-admissible
-sub-target \(B\); the Maurer--Cartan kernel clause (Rung~3) holds on
+topology.  The cochain identity (level~1) holds unconditionally; the
+\(P_0\)-bracket clause (level~2) holds on a bracket-admissible
+sub-target \(B\); the Maurer--Cartan kernel clause (level~3) holds on
 a kernel-admissible datum \((B,\mathcal K_B)\); the bar-cobar /
-enveloping clause (Rung~4) holds on a Tate / nilpotent / weighted
+enveloping clause (level~4) holds on a Tate / nilpotent / weighted
 admissibility datum with conilpotent endpoint and
 \(\varprojlim^1\)-vanishing; the open-trace \(A_\infty\)-Koszul clause
-(Rung~5) holds on an acceptance datum.
-\item Record which rungs converge in the chosen completion; the
+(level~5) holds on an acceptance datum.
+\item Record which levels converge in the chosen completion; the
 remainder is the obstruction vector
 \(\operatorname{Ob}_T\) of \S\ref{ssec:tate-residual-resolution}.
 \end{enumerate}
@@ -205,20 +205,19 @@ of adjacent-swap relations and the radial comparison vector
 \(v_{a,b}=(T_{a,b},E^+_{a,b})\) (Weyl-normal lift minus Moyal-normal
 lift).
 \item Compute \(v_{a,b}\) over \(\Q\) by exact rational arithmetic.
-\item Decide membership: \(v_{a,b}\stackrel?\in\operatorname{im}B_{a,b}\)
-by Bareiss row reduction.
-\item Output: if yes, output the unique correction \(C^+_{a,b}\) with
-\(B_{a,b}C^+_{a,b}=v_{a,b}\); if no, output a covector
-\((\phi,-\lambda)\in\ker B^*_{a,b}\) with
+\item Decide whether \(v_{a,b}\in\operatorname{im}B_{a,b}\) by
+Bareiss row reduction.
+\item Output: if yes, the unique correction \(C^+_{a,b}\) with
+\(B_{a,b}C^+_{a,b}=v_{a,b}\); if no, a covector
+\((\phi,-\lambda)\in\ker B_{a,b}^*\) with
 \(\lambda(E^+_{a,b})-\phi(T_{a,b})\ne 0\) representing
 \(\Omega^{\mathrm{rad}}_{a,b}\in\operatorname{coker}B_{a,b}\).
-\item Compute the SHA-256 hash of the verification JSON for
-reproducibility (\S\ref{ssec:app-radial-reproducibility-protocol}).
+The same data are read by the exact rational reduction of
+\S\ref{ssec:app-radial-rational-reduction}.
 \end{enumerate}
-\item[Output.]  The verdict
-\(\Omega^{\mathrm{rad}}_{a,b}=0\) (with explicit correction) or
-\(\Omega^{\mathrm{rad}}_{a,b}\ne 0\) (with explicit cokernel
-witness).
+\item[Output.]  Either
+\(\Omega^{\mathrm{rad}}_{a,b}=0\), with explicit correction, or
+\(\Omega^{\mathrm{rad}}_{a,b}\ne 0\), with explicit cokernel witness.
 \end{description}
 
 \subsection*{Algorithm 6 (Global transport)}\label{algo:global-transport}

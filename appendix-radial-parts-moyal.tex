@@ -1336,7 +1336,7 @@ exactly the assertion that the ordinary Weyl trace \(J_N(f)\) equals
   \(\lambda(E^+_{a,b})-\phi(T_{a,b})=1\) exists.
 \end{thm}
 
-\begin{rmk}[Routing through the obstruction--twist schema]\label{rmk:radial-route-Gschema}
+\begin{rmk}[Reading via the obstruction--twist schema]\label{rmk:radial-route-Gschema}
   The per-bidegree class
   \(\Omega^{\mathrm{rad}}_{a,b}\in\operatorname{coker}B_{a,b}\) is
   the curvature of the transport problem from the strict Weyl normal
@@ -2180,8 +2180,8 @@ exactly the assertion that the ordinary Weyl trace \(J_N(f)\) equals
 \begin{rmk}[Finite exact arithmetic anchors]
 \label{rmk:app-radial-finite-verification}
   The script \texttt{scripts/check\_moyal\_coefficients.py} is an
-  exact rational-arithmetic falsification harness for the algebraic
-  coefficients used above.  It checks:
+  exact rational-arithmetic verification of the algebraic coefficients
+  used above.  It checks:
   \[
   \begin{gathered}
     14641\text{ monomial pairs }(z_1^kz_2^l,z_1^mz_2^n),
@@ -2211,7 +2211,8 @@ exactly the assertion that the ordinary Weyl trace \(J_N(f)\) equals
 
   The script
   \(\texttt{scripts/quantum\_shear\_trace\_diagram\_normal\_form.py}\)
-  is separate from the finite-rank harness.  It enumerates the free
+  is separate from the finite-rank verification.  It enumerates the
+  free
   indexed normal diagrams of
   Theorem~\ref{thm:app-free-indexed-normal-ordering}; finite matrices
   are used only in its optional PBW self-test.  Its default run verifies
@@ -2265,7 +2266,7 @@ exactly the assertion that the ordinary Weyl trace \(J_N(f)\) equals
   unconditional kernel-correction window.
 \end{rmk}
 
-\subsection*{Exact rational reduction}\label{ssec:app-radial-reproducibility-protocol}
+\subsection*{Exact rational reduction}\label{ssec:app-radial-rational-reduction}
 
 The componentwise quantum coefficient comparison
 (Theorem~\ref{thm:componentwise-quantum-coefficient-comparison}) and
@@ -2288,11 +2289,11 @@ the unique correction \(C^+_{a,b}\) with
 \(\lambda(E^+_{a,b})-\phi(T_{a,b})\ne0\), representing
 \(\Omega^{\mathrm{rad}}_{a,b}\in\operatorname{coker}B_{a,b}\).
 Every arithmetic step is exact rational.  Concrete data at each
-bidegree---basis ordering \(\beta_{a,b}\), matrix entries of
+bidegree\textemdash{}basis ordering \(\beta_{a,b}\), matrix entries of
 \(B_{a,b}\), comparison vector \(v_{a,b}\), the integers
 \(\operatorname{rank}B_{a,b}\), \(\dim\ker B_{a,b}^*\),
 \(\dim\operatorname{coker}B_{a,b}\), and the correction
-\(C^+_{a,b}\) when one exists---are read off the elimination
+\(C^+_{a,b}\) when one exists\textemdash{}are read off the elimination
 implemented in
 \texttt{scripts/quantum\_shear\_trace\_diagram\_normal\_form.py}.
 
@@ -2373,7 +2374,7 @@ implemented in
   matrix entries.
 \end{thm}
 
-\begin{cor}[Vanishing on the listed range]\label{cor:app-radial-verdict-table}
+\begin{cor}[Vanishing on the listed range]\label{cor:app-radial-vanishing-on-listed-range}
   For every bidegree \((a,b)\) listed in
   Remark~\ref{rmk:app-radial-quantum-shear-script-verified-range},
   the rational reduction of
