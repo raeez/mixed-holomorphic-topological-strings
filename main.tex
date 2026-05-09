@@ -14384,13 +14384,59 @@ locality.
 
 \subsubsection{\texorpdfstring{$K3\times E$}{K3 x E}}\label{sssec:ex-k3-times-e}
 
-Target \(X=K3\times E\); the brane chart at any formal point
-\((p,q)\in K3\times E\) sees the formal-Darboux stalk in the
-\(K3\)-direction (Theorem \S\ref{ssec:local-theorem}), with the
-\(E\)-direction supplying the elliptic-fibre data of the
-modular line. Five distinct construction layers attach five
-\(\kappa\)-numbers to this target, none of which collapses to
-another:
+\paragraph{Chart and trace.}
+Target \(X=K3\times E\) (3 complex dimensions); brane vacuum
+\(b=(p,q)\in K3\times E\).  Holomorphic Darboux on
+\(K3\) trivialises the germ \(\widehat{K3}_p\) to
+\((\widehat{\C^2}_0,dz_1\wedge dz_2)\); the elliptic factor
+\(\widehat E_q\) supplies one transverse complex coordinate
+\(\tau\).  The formal-Darboux stalk of
+\S\ref{ssec:local-theorem} applies to the two-complex-dimensional
+\(\widehat{K3}_p\)-factor; \(\tau\) parametrises the family of
+formal-Darboux stalks along the elliptic fibre.  The chart algebra at
+\(b\) is
+\(A_b=\widehat{\mc O}_{K3,p}\,\widehat\otimes\,\widehat{\mc O}_{E,q}
+\cong\C[[z_1,z_2]][[\tau]]\), and the trace map of
+\S\ref{ssec:reduced-ce-pv-measurement} reads a Hamiltonian
+\(f\in\mathfrak h\) on the brane chart through the Chan--Paton pair
+\((\phi_1,\phi_2)\) of the \(K3\) directions:
+\(J(f)=\overline{\operatorname{Tr}\,f(\phi_1,\phi_2)}\), with
+\(\tau\)-dependence inherited from the elliptic moduli.
+
+\paragraph{Capelli scalar and four-curvature cell.}
+The Capelli identification of \S\ref{sec:capelli-scalar},
+\(\hbar N[\bar c]=\Omega_{\mathrm{central}}|_{J(f)}\), places the
+class \(\hbar N[\bar c]\) on the
+\((\Omega_{\mathrm{central}})\)-cell of the four-curvature taxonomy
+of Theorem~\ref{thm:four-curvature-taxonomy}: at \(K3\times E\) the
+modular line bundle \(\Omega_{\mathrm{central}}\) on
+\(\overline{\mathcal A}_2\) has level-\(2\) section the Igusa cusp
+form \(\Phi_{10}\in S_{10}(\mathrm{Sp}(2,\Z))\) of
+\cite{igusa-cusp-form}; the paramodular Borcherds product is
+\(\Delta_5=\Phi_{10}^{1/2}\) on the paramodular cover
+\cite{gritsenko-nikulin-paramodular}.  Pointwise on the brane chart
+the Capelli scalar identification is the statement
+\([\hbar N\bar c]=[\Phi_{10}]|_{J(f)}\) at the trace generator,
+modulo the Atiyah class of \(\det^{1/2}\) of the trace
+representation.
+
+\paragraph{Pro-Matlis residue.}
+The cotangent module of the \(K3\)-factor is
+\(\mathfrak h^\vee_{\mathrm{cont}}=\mathcal P=\bigoplus_{a+b>0}
+\C\,\rho_{a,b}\) with
+\(\rho_{a,b}=z_1^{-a-1}z_2^{-b-1}dz_1dz_2\); the elliptic factor
+contributes the elliptic period lattice through \(\tau\).  The
+pro-Matlis target \(\widehat{\mathcal P}_\Pi\) along the \(N\)-tower
+of finite Matlis windows is the categorical home of the
+four-curvature taxonomy at this example
+(Theorem~\ref{thm:promatlis-universal-property}); the
+Bochner--Martinelli no-go on each finite window
+(Theorem~\ref{thm:bmk-finite-window-no-go}) forces the inverse
+limit.
+
+\paragraph{Five-layer \texorpdfstring{$\kappa$}{kappa} stratification.}
+Five distinct construction layers attach five \(\kappa\)-numbers,
+none of which collapses to another:
 \(\kappa_{\mathrm{cat}}=\chi(\mathcal O_{K3\times E})=0\) by
 K\"unneth multiplicativity;
 \(\kappa^{\mathrm{Hodge}}_{\mathrm{ch}}
@@ -14399,25 +14445,39 @@ K\"unneth multiplicativity;
 Heisenberg--Mukai chart;
 \(\kappa_{\mathrm{BKM}}(\Delta_5)=c_1(0)/2=5\) of
 Borcherds--Gritsenko--Nikulin; and the fibre rank
-\(\kappa_{\mathrm{fiber}}=24\). The Igusa cusp form
-\(\Phi_{10}\in S_{10}(\mathrm{Sp}(2,\Z))\) of
-\cite{igusa-cusp-form} is the level-2 modular section of the
-modular line bundle on \(\overline{\mathcal A}_2\), and
-\(\Delta_5=\Phi_{10}^{1/2}\) is the Borcherds product on the
-paramodular cover \cite{gritsenko-nikulin-paramodular}. The
+\(\kappa_{\mathrm{fiber}}=24\) of the extended Mukai lattice.  The
 spectral-sequence collapse of these five layers through the
-Hall--Drinfeld--Borcherds spectral sequence is conjectural;
-cross-volume bridge to \(\sim/\mathrm{calabi\text{-}yau\text{-}quantum\text{-}groups}\)
-(Vol III; CY-to-chiral two-stage \(\Phi_d=
-\mathrm{Sp}^{\mathrm{ch}}_{\Sigma_{d-1},C}\circ\Phi^{\mathrm{FA}}_d\))
-and \(\sim/\mathrm{igusa\text{-}cusp\text{-}form}\) (Borcherds lift
-\(\Phi_{10}\), denominator
-\(\Delta_5\)). Pointwise formal-Darboux stalk
-proved (\S\ref{ssec:local-theorem}); the five-layer
-\(\kappa\)-stratification is named, not collapsed; the modular
-section \(\Delta_5\) is the Borcherds--Gritsenko--Nikulin
-datum; spectral-sequence collapse and operator-level lift are
-open.
+Hall--Drinfeld--Borcherds comparison sequence is conjectural per
+seventeen-site row 6
+(\S\ref{ssec:cross-volume-firewall}, Vol.~III matched-conventions
+data).  Cross-volume bridges:
+\(\sim/\mathrm{calabi\text{-}yau\text{-}quantum\text{-}groups}\)
+(Vol III; CY-to-chiral two-stage
+\(\Phi_d=\mathrm{Sp}^{\mathrm{ch}}_{\Sigma_{d-1},C}\circ
+\Phi^{\mathrm{FA}}_d\)) and
+\(\sim/\mathrm{igusa\text{-}cusp\text{-}form}\) (Borcherds lift
+\(\Phi_{10}\), denominator \(\Delta_5\)).
+
+\paragraph{Open problems forced by this example.}
+(i) The operator-level lift of the modular line on \(K3\times E\)
+(\S\ref{ssec:open-modular-lift}): the candidate operator-valued
+cocycle on the chiral Hochschild bulk module
+\(C^\bullet_{\mathrm{ch}}(A_b,A_b)\) at the \(K3\times E\) brane
+vacuum, twisted by \(\Omega_{\mathrm{central}}\) at level 2, whose
+protected scalar trace at paramodular CM points recovers
+\(\Phi_{10}\); its construction is the cross-volume firewall
+acceptance class \(\mathrm{ob}_{\mathrm{Igusa/BKM}}\) of
+Theorem~\ref{thm:cross-volume-firewall}.  (ii) The
+Hall--Drinfeld--Borcherds comparison spectral sequence
+(\S\ref{ssec:open-hall-drinfeld-borcherds}): five-layer collapse
+to a single \(\kappa\)-invariant; the comparison residual is the
+Hall--Drinfeld--Borcherds obstruction class.
+
+Pointwise formal-Darboux stalk: proved
+(\S\ref{ssec:local-theorem}); five-layer \(\kappa\)-stratification:
+named, not collapsed; modular section \(\Delta_5\): the
+Borcherds--Gritsenko--Nikulin datum; spectral-sequence collapse
+and operator-level lift: the two open problems above.
 
 \subsubsection{Generic compact CY\(_3\)}\label{sssec:ex-generic-cy3}
 
