@@ -11,7 +11,7 @@ six procedures as explicit algorithms.  None replaces the body proofs;
 each renders the construction reproducible to the level of the
 inputs, the steps, and the output.
 
-\subsection*{Algorithm 1 (Build the local matrix microscope)}\label{algo:local-model}
+\subsection*{Algorithm 1 (Build the local trace substitution \(J\))}\label{algo:local-model}
 
 \begin{description}
 \item[Input.]  A Chan--Paton rank \(N\in\Z_{\ge 1}\); the formal
@@ -47,7 +47,7 @@ where the bar denotes scalar reduction.
 formal Hamiltonian \(f=\sum f_{a,b}z_1^az_2^b\):
 \(J(f)=\sum f_{a,b}\overline{\operatorname{Tr}(\phi_1^a\phi_2^b)}\).
 \end{enumerate}
-\item[Output.]  The matrix-microscope measurement
+\item[Output.]  The trace substitution
 \(J\colon\mathfrak h\to\widehat{\mathbf S}(\bar A)\),
 \(f\mapsto\overline{\operatorname{Tr}f(\phi_1,\phi_2)}\), with
 \(\mathfrak h=\C[[z_1,z_2]]/\C\cdot 1\).
@@ -140,7 +140,7 @@ admissibility datum with conilpotent endpoint and
 \(\varprojlim^1\)-vanishing; the open-trace \(A_\infty\)-Koszul clause
 (Rung~5) holds on an acceptance datum.
 \item Record which rungs converge in the chosen completion; the
-remainder is the named obstruction
+remainder is the obstruction vector
 \(\operatorname{Ob}_T\) of \S\ref{ssec:tate-residual-resolution}.
 \end{enumerate}
 \item[Output.]  The cochain CE/PV map
@@ -235,7 +235,7 @@ specialisation.
 \item Choose a Darboux cover \(\{U_i\}\) of the brane neighbourhood
 such that each completed normal patch is symplectomorphic to
 \(\mathrm{Spf}\,\C[[z_1,z_2]]\).
-\item On each \(U_i\), build the local matrix microscope
+\item On each \(U_i\), build the local trace substitution
 \(J_i(f_i)=\overline{\operatorname{Tr}f_i(\phi_{1,i},\phi_{2,i})}\)
 by Algorithm~1.
 \item On overlaps \(U_{ij}\), compute transition symplectomorphisms
@@ -247,9 +247,9 @@ to local Hamiltonians \(h_{ij}\) where possible:
 \mathrm{Tot}\,C^\bullet_{\check C/\mathrm{WR}}(\{U_i\},\mathfrak K_{\mathrm{loc}})\).
 \item Insert the local Maurer--Cartan element
 \(\Theta_{\mathrm{loc}}=(\Theta_i,\alpha_{ij},\beta_{ijk},\dots)\),
-where \(\Theta_i\) is the Algorithm~1 microscope datum on \(U_i\),
-\(\alpha_{ij}\) is the lift to local Hamiltonians, and higher
-components encode descent homotopies.
+where \(\Theta_i\) is the Algorithm~1 trace-substitution datum on
+\(U_i\), \(\alpha_{ij}\) is the lift to local Hamiltonians, and
+higher components encode descent homotopies.
 \item Compute the curvature
 \(F_{\mathcal T}(\Theta_{\mathrm{loc}})=d\Theta_{\mathrm{loc}}+
 \tfrac12\ell_2(\Theta_{\mathrm{loc}},\Theta_{\mathrm{loc}})+\cdots\)
@@ -274,5 +274,5 @@ replacement and record the matched-conventions data.
 \end{enumerate}
 \item[Output.]  Either a strict or twisted global \(\mathcal T\)-coherence
 together with its supplied null-homotopy data, or a no-go obstruction
-together with the named curvature class blocking the target.
+together with the curvature class blocking the target.
 \end{description}

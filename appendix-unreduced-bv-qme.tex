@@ -3010,18 +3010,18 @@ vector vanishes
       retained at all windows containing \(\theta_3\).
   \end{enumerate}
 
-  Each verdict is the output of the fixed-window matrix solver of
+  Each case is the output of the fixed-window matrix solver of
   Theorem~\ref{thm:app-constructive-nonscalar-costello-qme-realization}
   on the corresponding row complex.
 
   The script \texttt{scripts/finite\_window\_graph\_array.py} returns
-  the same outputs.  Verdict (a) corresponds to the cases
+  the same outputs.  Case (a) corresponds to the rows
   \texttt{theta\_3\_current\_finite\_row\_subcomplex},
   \texttt{theta3\_ce\_ancestor\_absent\_payload}, and
   \texttt{theta3\_counterterm\_absent\_payload}, each returning
   \(\texttt{primitive\_exists}=\mathrm{false}\) with cokernel covector
-  \(\ell(\mathsf E_{\theta_3,M})=1\).  Verdict (b) corresponds to
-  three repair payloads --- the supplied scalar-zero counterterm
+  \(\ell(\mathsf E_{\theta_3,M})=1\).  Case (b) corresponds to
+  three repair data --- the supplied scalar-zero counterterm
   \texttt{theta3\_counterterm\_supplied\_exact\_payload} returning
   \(\texttt{primitive\_coefficients}=[\![C_{\theta_3,M}^{\mathrm{ct}},1]\!]\),
   the supplied CE ancestor
@@ -3035,7 +3035,7 @@ vector vanishes
 \end{thm}
 
 \begin{rmk}[Routing through the obstruction--twist schema]\label{rmk:theta3-route-Gschema}
-  The \(\theta_3\) finite-window verdict is the prototype of clause~(2)
+  The \(\theta_3\) finite-window dichotomy is the prototype of clause~(2)
   (counterterm coherence) of
   Theorem~\ref{thm:obstruction-twist-dichotomy} of
   Appendix~\ref{app:master-deformation-complex}: bare
@@ -3053,7 +3053,7 @@ vector vanishes
 \end{rmk}
 
 \begin{proof}
-  Verdict (a).  The supplied finite complex has empty
+  Case (a).  The supplied finite complex has empty
   \(\mathcal K^0_{\theta_3,M}=0\), so the differential matrix
   \(\bigl(d_{\mathrm{ns},M}\big|_{\mathcal K^0_{\theta_3,M}}\bigr)\)
   is the empty \(1\times0\) matrix and the residual is
@@ -3068,7 +3068,7 @@ vector vanishes
   \(\mathsf E_{\theta_3,M}\).  This is the cokernel separation of
   Theorem~\ref{thm:app-constructive-nonscalar-costello-qme-realization}.
 
-  Verdict (b).  Adjoining the degree-zero \(C_{\theta_3,M}\) with
+  Case (b).  Adjoining the degree-zero \(C_{\theta_3,M}\) with
   \(\widehat\sigma_{\mathrm{sc},M}(C_{\theta_3,M})=0\) keeps both rows
   in the non-scalar kernel.  The differential matrix is now the
   scalar \(\widetilde A^M=(-1)\), so
@@ -3081,7 +3081,7 @@ vector vanishes
   \(\Delta^1_{M,N}=-\pi_{M,N}\mathfrak b^M+\mathfrak b^N=0\) by the
   same identity transport on \(\mathsf E_{\theta_3}\).
 
-  Both verdicts are stable under finite-window truncation since the
+  Both cases are stable under finite-window truncation since the
   scalar gate \(S_{\theta_3,N}=0\) is preserved (the cyclic supertrace
   vanishes at every window), and the residual transports as
   \(\pi_{M,N}\mathsf E_{\theta_3,M}=\mathsf E_{\theta_3,N}\) when both
@@ -3089,21 +3089,21 @@ vector vanishes
 \end{proof}
 
 \begin{rmk}[Sub-theorem dichotomy at \(\theta_3\)]
-\label{rmk:app-theta-three-verdict-which-is-theorem}
-  The two verdicts of
+\label{rmk:app-theta-three-dichotomy-sub-theorem}
+  The two cases of
   Theorem~\ref{thm:app-theta-three-finite-window-H1} apply under
   disjoint fixture conditions on the order-three finite-row complex
-  at \(\theta_3\).  Verdict (a) is the sub-theorem of the minimal
+  at \(\theta_3\).  Case (a) is the sub-theorem of the minimal
   seed list: when no order-three scalar-zero counterterm
   \(C_{\theta_3,M}\) is supplied, the finite-window
   \(d_{\mathrm{ns},M}\)-cohomology in degree one is
   \(\C\,\mathsf E_{\theta_3,M}\), with explicit covector
-  representative \(\ell_{\theta_3}\).  Verdict (b) is the sub-theorem
+  representative \(\ell_{\theta_3}\).  Case (b) is the sub-theorem
   of the counterterm-extended complex: when \(C_{\theta_3,M}\) with
   \(\widehat\sigma_{\mathrm{sc},M}(C_{\theta_3,M})=0\) and
   \(d_{\mathrm{ns},M}C_{\theta_3,M}=-\mathsf E_{\theta_3,M}\) is
   supplied, the finite-window \(H^1\) vanishes.  A named coefficient
-  \(C_{\theta_3}\) is admissible exactly under verdict (b), with one
+  \(C_{\theta_3}\) is admissible exactly in case (b), with one
   of the three repair data --- CE ancestor with controlled boundary,
   scalar-zero local counterterm \(C_{\theta_3,M}\), or complete
   companion-face table whose signed sum moves the residual into the
@@ -4584,10 +4584,10 @@ vector vanishes
   in the centrality-homotopy fixture.
 
   The component \(\operatorname{ob}^{\mathrm{bd}}_{\mathrm{QME}}\) is
-  nonzero at \(\theta_3\) under verdict (a) of
-  Theorem~\ref{thm:app-theta-three-finite-window-H1} --- the
-  counterterm-absent sub-theorem.  Verdict (b) of the same theorem
-  gives \(\operatorname{ob}^{\mathrm{bd}}_{\mathrm{QME}}=0\) at
+  nonzero at \(\theta_3\) in case (a) of
+  Theorem~\ref{thm:app-theta-three-finite-window-H1}, the
+  counterterm-absent sub-theorem; case (b) of the same theorem gives
+  \(\operatorname{ob}^{\mathrm{bd}}_{\mathrm{QME}}=0\) at
   \(\theta_3\) under the supplied counterterm
   \(C_{\theta_3,M}\).
 
