@@ -397,11 +397,14 @@
     {30}
 \fi
 \ifPDFTeX
+  % NOTE: Adding extra kerning to \textemdash / \textendash here breaks
+  % the TFM ligature chain "---" -> en-dash + "-" -> em-dash in
+  % EBGaramond (microtype interposes the kern after the first stage,
+  % preventing the second).  Leave the dash glyphs to the font's own
+  % kerning so that "---" produces a proper em-dash.
   \SetExtraKerning[unit=space]
    {encoding={*}, family={*}, series={*}, size={footnotesize,small,normalsize}}
-   {\textemdash={210,210},
-    \textendash={105,105},
-    \textquoteleft={,70},
+   {\textquoteleft={,70},
     \textquoteright={70,},
     \textquotedblleft={,95},
     \textquotedblright={95,},
