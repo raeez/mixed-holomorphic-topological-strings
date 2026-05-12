@@ -451,3 +451,22 @@ If any gate fails: re-enter the rectification loop.
 ## The structural law
 
 Every section answers one question, forced by what came before, in service of the single climax. Every theorem either constructs the local centre, identifies an obstruction, or computes an example. No sentence that fails to state mathematics or physics survives.
+
+---
+
+## Code-writing discipline — repo application
+
+Per `~/ecosystem/INVARIANTS.md §XIII`. Twelve rules instantiated for mixed-holomorphic-topological-strings (mixed holomorphic–topological SFT on $\mathbb{R}^2_{\mathrm{top}} \times \mathbb{C}^2_{\mathrm{hol}}$; BCOV / Kodaira–Spencer / holomorphic-anomaly / $L_\infty$ renormalization; seventeen-site catalogue):
+
+1. **Think Before Coding.** Every $L_\infty$-renormalization-edit names the affected BCOV / Kodaira–Spencer / holomorphic-anomaly equation, the mixed-signature factor (topological vs holomorphic), and the claim-status macro. Every new term passes the four-part coining test.
+2. **Simplicity First.** Mixed-signature is the scope; no speculative pure-holomorphic or pure-topological digressions outside the named split. No new objects beyond what the seventeen-site catalogue authorises. Do not spend proof budget on compact-CY / quintic / OSV / GV / Abel–Jacobi / CoHA / Igusa / BKM fixtures without explicit reopening.
+3. **Surgical Changes.** A holomorphic-anomaly equation edit does not opportunistically rewrite the Kodaira–Spencer setup. A $L_\infty$ renormalization step is local to its diagrammatic level. The five-gate termination criteria bound the rectification loop — do not exceed.
+4. **Goal-Driven Execution.** Success = `pdflatex main.tex` clean, theorem ledger consistent, all five Termination Gates pass (mathematical content, define-before-use, voice register, motivation + example + crystallisation, platonic architecture, sister catalogues clear, four-part test passed). Build session-end only.
+5. **Use the model only for judgment calls.** Cross-references and bibliography deterministic. Renormalization counterterm-bookkeeping is deterministic — verify, do not LLM-approximate.
+6. **Token budgets are not advisory.** Monograph; checkpoint between renormalization levels and between chapters. Supremum discipline: take the harder route first — reconstruct the strongest true theorem rather than lowering one.
+7. **Surface conflicts, don't average them.** Cross-volume vertical equivalences with the chiral-bar-cobar constellation are canonical at the chiral side where shared; flag drift here. A figure disagreeing with prose halts and reports — figure usually wins (the computation).
+8. **Read before you write.** Read the affected BCOV / KS / holomorphic-anomaly setup before editing a renormalization step. Cross-reference primary literature for any BV / Ext / cyclic-homology / OPE / Feynman-integral formula.
+9. **Tests verify intent.** Claim-status macros honest; mixed-signature calculation checks verify computed counterterms, not just symbolic shapes. The five-gate termination criteria are the load-bearing tests. Heuristic physics motivation is marked separately from proved algebraic statements.
+10. **Checkpoint after every significant step.** Between renormalization levels, summarize counterterm-bookkeeping delta. Between rectification iterations, restate which of the five gates remain open.
+11. **Match the codebase's conventions, even if you disagree.** raeez-math-template per `INVARIANTS.md §XII`. The `thm` environment guard per `repo-roster.sh::MATH_TEMPLATE_CONSUMERS`. Vol II $\mathbb{C} \times \mathbb{R}$ chiral-topological apparatus is not the native geometry — controlled reduction required.
+12. **Fail loud.** Surface every failed counterterm-cancellation; never silently substitute heuristic for verified. Any seventeen-site failure pattern in a draft halts and replaces. Any new term that has not passed the four-part test halts and replaces. Repair upward to a proved theorem or a proved obstruction — never demote.
