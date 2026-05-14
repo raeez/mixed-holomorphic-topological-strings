@@ -269,87 +269,60 @@ Holomorphic--Topological Deligne conjecture}
   (Theorem~\ref{thm:formal-local-universal-property}).
 
   \medskip\noindent
-  \emph{Closed-open coupling.}  The classical local observables of the
-  BV theory form the mixed holomorphic-topological factorization algebra
-  \[
-    \mathcal F^{\mathrm{cl}}_{\mathrm{Ham}}(U\times B)
-     =C^{\mathrm{CE}}_\bullet\bigl(
-       \Omega^\bullet_c(U)\widehat\otimes
-       \Omega^{0,\bullet}_c(B)\widehat\otimes\mathfrak g\bigr),
-     \qquad
-     \mathfrak g=\mathfrak h\ltimes\mathfrak h^\vee_{\mathrm{cont}}[1],
-  \]
-  on $X$, with $\mathfrak g$ the shifted-cotangent BV Lie algebra of
-  fields and antifields (Definition~\ref{def:local-th-string},
-  Proposition~\ref{prop:three-localities}).  Pushforward along the
-  projection $\pi\colon X\to\C^2_{\mathrm{hol}}$ integrates out
-  $\R^2_{\mathrm{top}}$:
-  \[
-    \mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}
-      =\pi_*\mathcal F^{\mathrm{cl}}_{\mathrm{Ham}},
-    \qquad
-    \mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}(B)
-      =\mathcal F^{\mathrm{cl}}_{\mathrm{Ham}}(D^2\times B)
-      \in\mathrm{Alg}_{E_2}
-  \]
+  Concretely the closed observables are the
+  Chevalley--Eilenberg chains of the local Lie algebra
+  $\Omega^\bullet_c(U)\widehat\otimes\Omega^{0,\bullet}_c(B)
+  \widehat\otimes\mathfrak g$ on $U\subset\R^2_{\mathrm{top}}$,
+  $B\subset\C^2_{\mathrm{hol}}$
+  (Definition~\ref{def:local-th-string},
+  Proposition~\ref{prop:three-localities}); pushforward along
+  $\pi\colon X\to\C^2_{\mathrm{hol}}$ integrates out the topological
+  factor and gives
+  $\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}(B)
+  =\mathcal F^{\mathrm{cl}}_{\mathrm{Ham}}(D^2\times B)
+  \in\mathrm{Alg}_{E_2}$
   (Theorem~\ref{thm:mixed-HT-factorization-theorem},
-  Corollary~\ref{cor:E2-bulk-algebra}).  The $E_2$-valuation is the
-  $\R^2_{\mathrm{top}}$ factor: locally constant factorization algebras
-  on $\R^2$ are $E_2$-algebras (Lurie--Costello--Gwilliam).  In the
-  Ran-space algebraic-geometric presentation
-  $\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}$ is the holomorphic
-  factorization object on $\mathrm{Ran}(\C^2)$ valued in
-  $E_2$-algebras, related to the analytic presentation above by the
-  de Rham complex.  Restriction along a holomorphic curve
-  $C\hookrightarrow\C^2$ produces a chiral algebra on \(C\), equivalently
-  a vertex algebra after choosing a formal coordinate, with generators and relations the
-  one-variable specialisation of the two-dimensional OPE
-  (Remark~\ref{rmk:not-a-curve-voa}).
-
-  The native two-dimensional holomorphic OPE of
-  $\mc A^{\mathrm{cl}}_{\mathrm{bulk}}$ on $\C^2$ is computed in
-  Theorem~\ref{thm:formal-two-dimensional-holomorphic-ope}: at two
-  insertion points $z,w\in\C^2$, the singular part is governed by
-  the Grothendieck local-cohomology principal-part module of the
-  diagonal $\Delta\subset\C^2_z\times\C^2_w$ and the two-variable
-  Cauchy kernel
+  Corollary~\ref{cor:E2-bulk-algebra}); the $E_2$-valuation arises
+  from the locally constant factorization-algebra structure on
+  $\R^2_{\mathrm{top}}$ (Lurie--Costello--Gwilliam).  The native
+  holomorphic OPE of $\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}$ is a
+  two-variable expansion on the diagonal
+  $\Delta\subset\C^2_z\times\C^2_w$: the singular coefficient
+  module is the Grothendieck local-cohomology principal-part module
+  $H^2_\Delta(\C[[z_1,z_2,w_1,w_2]])\,d\zeta_1d\zeta_2$, with
+  arity-two Cauchy kernel
   $K^{(2)}_\Delta(z,w)=d\zeta_1\,d\zeta_2/(\zeta_1\zeta_2)$ in formal
-  diagonal coordinates $\zeta_i=z_i-w_i$.  Restricting the bulk
-  factorisation algebra along a holomorphic curve
-  $C\hookrightarrow\C^2$ recovers a chiral algebra on \(C\), equivalently
-  a vertex algebra after choosing a formal coordinate, with generators and relations the one-variable
-  specialisation of the two-dimensional OPE
-  (Remark~\ref{rmk:not-a-curve-voa},
-  \S\ref{sssec:formal-two-dimensional-holomorphic-ope}).
+  diagonal coordinates $\zeta_i=z_i-w_i$
+  (Theorem~\ref{thm:formal-two-dimensional-holomorphic-ope}).
+  Restriction along a holomorphic curve $C\hookrightarrow\C^2$
+  specialises this kernel to the one-variable curve Cauchy kernel
+  $K^{(1)}_C(z,w)=dz/(z-w)$ and produces a chiral algebra on $C$
+  whose generators and relations are the one-variable specialisation
+  of the two-dimensional OPE; the specific brane chart $A_b$ at a
+  chosen vacuum $b$ specialises to a known vertex algebra (Heisenberg,
+  affine Kac--Moody $V_k(\mathfrak g_0)$, $\beta\gamma$, Virasoro
+  $\mathrm{Vir}_c$, or $W_N(\mathfrak{sl}_N)_k$ via Drinfeld--Sokolov;
+  \S\ref{sec:examples}).
 
-  The brane is the $E_1$-module
-  \(A^{\mathrm{cl}}_{\partial,N}=
-   C^\bullet_{\mathrm{CE}}(\mathfrak{gl}_N,\mathrm{Kosz}_N)\),
-  with $\mathrm{Kosz}_N=\mathrm{Sym}\bigl(\mathfrak{gl}_N\oplus
-  \mathfrak{gl}_N\oplus\mathfrak{gl}_N[1]\bigr)$ and Koszul
-  differential $Q\psi=[\phi_1,\phi_2]$, on a small interval of the
-  worldline (Definition~\ref{def:E1-brane-algebra}).  A Hamiltonian
-  $f\in\mathfrak h$ has two CE coordinate avatars on $\mathfrak g$:
-  the generator-dual $c_f$ acts on observables as the Hamiltonian
-  Schouten field $\theta_f$, and the cotangent-dual $u_f$ is measured
-  on the brane as $O_f=J(f)$.  The reduced closed-to-open dictionary
-  on these generators,
-  $c_f\mapsto\theta_f$, $u_f\mapsto O_f=J(f)$
-  (Theorem~\ref{thm:closed-to-open-derived-centre-map}), is the
-  generator-level part of a putative chain map
+  \medskip\noindent
+  The closed-to-open dictionary on Chevalley--Eilenberg generators of
+  $\mathfrak g$ assigns to each generator-dual coordinate $c_f$ the
+  Hamiltonian Schouten derivation
+  $\theta_f\in HH^1(A^{\mathrm{cl}}_{\partial,N})$ and to each
+  cotangent-dual coordinate $u_f$ the brane observable
+  $O_f=J(f)\in HH^0(A^{\mathrm{cl}}_{\partial,N})$
+  (Theorem~\ref{thm:closed-to-open-derived-centre-map}).  Lifted to
+  factorisation algebras, this is the chain map
   \[
     \Phi_N\colon\mathcal A^{\mathrm{cl}}_{\mathrm{bulk},0}
-    \longrightarrow Z^{\mathrm{der}}_{E_1}\!\bigl(A^{\mathrm{cl}}_{\partial,N}\bigr)
+    \longrightarrow Z^{\mathrm{der}}_{E_1}
+       \bigl(A^{\mathrm{cl}}_{\partial,N}\bigr)
   \]
-  into the derived $E_1$-centre of the brane $E_1$-algebra,
-  identified with the Hochschild cochain $E_2$-algebra by Deligne's
-  $E_1$-Hochschild theorem and matched with the formal-Darboux stalk
-  of $\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}$ by the
-  Costello--Gwilliam bulk--boundary correspondence; the chain-level
-  lift is conditional on vanishing of the obstruction vector
-  $\operatorname{Ob}_{\mathrm{cent/QME/desc}}$
+  whose existence at the chain level is conditional on vanishing of
+  the obstruction vector
+  $\operatorname{Ob}_{\mathrm{cent}/\mathrm{QME}/\mathrm{desc}}$
   (Theorem~\ref{thm:app-unreduced-cotangent-lift-obstruction}) with
-  chosen null-homotopies, supplied by the completion constructions of
+  null-homotopies supplied by the completion constructions of
   Appendix~\ref{app:completion-blueprint}.
 
   \medskip\noindent
@@ -8128,7 +8101,7 @@ controlled by a cohomology or matrix-equation obstruction:
 
 \begin{rmk}[Worked instances]\label{rmk:Jf-uniqueness-running-examples}
   The three running examples of
-  \S\ref{ssec:formal-darboux-stalk-one-calculation} pin the theorem
+  \S\ref{ssec:formal-darboux-stalk-one-calculation} determine the theorem
   concretely.  Example~\ref{exa:point-evaluation-N1} is the \(N=1\) case:
   the matrices commute automatically, scalar reduction is trivial, and
   \(J(f)=f(\phi_1,\phi_2)\) is the classical evaluation map at a
@@ -9776,7 +9749,7 @@ three notions of locality on the brane line $\R$ to remain distinct.
   projection gives the displayed formula.
 \end{proof}
 
-Two rigidity statements pin the principal-part identification after the
+Two rigidity statements determine the principal-part identification after the
 residue scalar is fixed: among continuous total-degree-zero pairings the
 residue pairing is unique up to a single nonzero scalar, and among
 continuous total-degree-zero \(\mathfrak h\)-module isomorphisms the
