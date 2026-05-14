@@ -1,206 +1,158 @@
 \begin{abstract}
 
 \noindent
-The Bershadsky--Cecotti--Ooguri--Vafa B-model topological string
-\cite{bcov} on $X=\R^2_{\mathrm{top}}\times\C^2_{\mathrm{hol}}$ under
-Costello--Li renormalization
-\cite{costello-renormalization,costello-li-quantum-bcov,costello-li-open-closed-bcov}
-is the holomorphic-topological BF theory with action
+The local target is
+\[
+  X=\R^2_{\mathrm{top}}\times\C^2_{\mathrm{hol}} .
+\]
+In this formal neighbourhood the Costello--Li renormalized
+Bershadsky--Cecotti--Ooguri--Vafa B-model is the
+holomorphic-topological BF theory
 \[
   S=\int_X\bigl\langle\mc B,\,(d+\bar\partial)\mc A
-    +\tfrac12[\mc A,\mc A]_{\mathfrak h}\bigr\rangle,
+    +\tfrac12[\mc A,\mc A]_{\mathfrak h}\bigr\rangle .
 \]
-field
-$\mc A\in\Omega^\bullet(\R^2)\widehat\otimes
-\Omega^{0,\bullet}(\C^2)\widehat\otimes\mathfrak h$
-valued in the reduced Hamiltonian Lie algebra
-$\mathfrak h=\C[[z_1,z_2]]/\C\cdot 1$, antifield $\mc B$ in the
-Grothendieck--Matlis principal-part dual
-$\mathfrak h^\vee_{\mathrm{cont}}=\mc P=H^2_{(z_1,z_2)}(\C[[z_1,z_2]])\otimes
-dz_1\wedge dz_2$ paired by $\langle f,\omega\rangle=\Res_0 f\omega$.
+Here
+\[
+  \mc A\in
+  \Omega^\bullet(\R^2)\widehat\otimes
+  \Omega^{0,\bullet}(\C^2)\widehat\otimes\mathfrak h,
+  \qquad
+  \mathfrak h=\C[[z_1,z_2]]/\C\cdot1,
+\]
+and \(\mc B\) takes values in the continuous Grothendieck--Matlis dual
+\[
+  \mathfrak h^\vee_{\mathrm{cont}}
+   =
+  H^2_{(z_1,z_2)}(\C[[z_1,z_2]])\,dz_1dz_2 .
+\]
+The pairing is the residue pairing.
 
 \medskip\noindent
-At a brane vacuum $b\in\C^2$ the formal Darboux polydisk
-$(\widehat{\C^2}_b,\,\omega_b=dz_1\wedge dz_2)$ has chart algebra
-$A_b=\widehat{\mc O}_{\C^2,b}\cong\C[[z_1,z_2]]=\End(b)$
-(Definition~\ref{def:formal-darboux-stalk-chart}).  A stack of $N$
-Dirac branes along the worldline $\R_t\subset X$ at $b$ has transverse
-position $(\phi_1,\phi_2)\in\mathfrak{gl}_N\oplus\mathfrak{gl}_N$ ---
-the matrix coordinates of the $N$-brane stack on the holomorphic-symplectic
-factor, Chan--Paton substitution $z_i\mapsto\phi_i$ --- constrained by
-$[\phi_1,\phi_2]=0$ (Dirac / moment-map reduction), with antifield
-$\psi\in\mathfrak{gl}_N[1]$, $Q\psi=[\phi_1,\phi_2]$.  The
-open-string $E_1$-brane algebra of classical observables on the
-worldline is
+Fix a brane vacuum \(b\in\C^2\).  Its formal Darboux chart is
+\[
+  A_b=\widehat{\mathcal O}_{\C^2,b}\cong\C[[z_1,z_2]],
+  \qquad \omega_b=dz_1\wedge dz_2 .
+\]
+For \(N\) Dirac branes at \(b\), the Chan--Paton fields are
+\[
+  \phi_1,\phi_2\in\mathfrak{gl}_N,\qquad
+  z_i\longmapsto\phi_i .
+\]
+The derived moment-map equation is imposed by an antifield
+\(\psi\in\mathfrak{gl}_N[1]\) with
+\[
+  Q\psi=[\phi_1,\phi_2].
+\]
+Thus the classical open-string algebra on the worldline is
 \[
   A^{\mathrm{cl}}_{\partial,N}
-   =C^\bullet_{\mathrm{CE}}\bigl(\mathfrak{gl}_N,\,
+   =
+   C^\bullet_{\mathrm{CE}}\bigl(\mathfrak{gl}_N,\,
        \mathrm{Sym}(\mathfrak{gl}_N\oplus\mathfrak{gl}_N
                     \oplus\mathfrak{gl}_N[1])\bigr),
 \]
-the Chevalley--Eilenberg cochain complex of the Chan--Paton gauge Lie
-algebra with values in the symmetric algebra on the matrix coordinates,
-its antifield, and the moment-map antifield (Koszul differential
-$Q\psi=[\phi_1,\phi_2]$).  The trace map at the brane stack is
-\[
-  J\colon\mathfrak h\to\mc O\bigl(\mu^{-1}_{\mathrm{der}}(0)\bigr)^{GL_N},
-   \qquad
-  J(f)=\overline{\operatorname{Tr}\,f(\phi_1,\phi_2)},
-\]
-the unique $\C$-linear, $GL_N$-equivariant map intertwining the formal
-symplectomorphism action, descending through the moment-map ideal,
-single-trace primitive, and pinned by
-$J(z_i)=\overline{\operatorname{Tr}\phi_i}$
-(Theorem~\ref{thm:formal-local-universal-property}).
+with Koszul differential \(Q\psi=[\phi_1,\phi_2]\).
 
 \medskip\noindent
-The classical local observables of the BV theory form the mixed
+The brane trace is the map
+\[
+  J\colon\mathfrak h\longrightarrow
+  \mathcal O(\mu^{-1}_{\mathrm{der}}(0))^{GL_N},
+  \qquad
+  J(f)=\overline{\operatorname{Tr}f(\phi_1,\phi_2)} .
+\]
+It is the unique \(GL_N\)-equivariant, single-trace, moment-map
+compatible formal-coordinate expression of the closed generator at the
+brane vacuum.
+
+\medskip\noindent
+The closed classical observables form the mixed
 holomorphic-topological factorization algebra
 \[
   \mc F^{\mathrm{cl}}_{\mathrm{Ham}}(U\times B)
-   =C^{\mathrm{CE}}_\bullet\bigl(
-     \Omega^\bullet_c(U)\,\widehat\otimes\,
-     \Omega^{0,\bullet}_c(B)\,\widehat\otimes\,
-     \mathfrak g\bigr),\qquad
-  \mathfrak g=\mathfrak h\ltimes\mathfrak h^\vee_{\mathrm{cont}}[1],
+   =
+  C^{\mathrm{CE}}_\bullet\bigl(
+     \Omega^\bullet_c(U)\widehat\otimes
+     \Omega^{0,\bullet}_c(B)\widehat\otimes\mathfrak g\bigr),
+  \qquad
+  \mathfrak g=\mathfrak h\ltimes\mathfrak h^\vee_{\mathrm{cont}}[1].
 \]
-on $X$, with $\mathfrak g$ the shifted-cotangent BV Lie algebra of
-fields and antifields, carrying three independent locality
-structures --- support on $\R^2_{\mathrm{top}}$, de Rham contraction
-on $\R^2_{\mathrm{top}}$, Dolbeault contraction on
-$\C^2_{\mathrm{hol}}$ (Definition~\ref{def:local-th-string},
-Proposition~\ref{prop:three-localities}).  Pushforward along
-$\pi\colon X\to\C^2_{\mathrm{hol}}$ integrates out
-$\R^2_{\mathrm{top}}$:
+Pushing forward along
+\(\pi\colon\R^2_{\mathrm{top}}\times\C^2_{\mathrm{hol}}\to\C^2_{\mathrm{hol}}\)
+gives a holomorphic factorization algebra on \(\C^2\) valued in
+\(E_2\)-algebras:
 \[
-  \mc A^{\mathrm{cl}}_{\mathrm{bulk}}
-   =\pi_*\mc F^{\mathrm{cl}}_{\mathrm{Ham}},\qquad
   \mc A^{\mathrm{cl}}_{\mathrm{bulk}}(B)
-   =\mc F^{\mathrm{cl}}_{\mathrm{Ham}}(D^2\times B)
-   \in\mathrm{Alg}_{E_2}
+   =
+  \mc F^{\mathrm{cl}}_{\mathrm{Ham}}(D^2\times B).
 \]
-(Theorem~\ref{thm:mixed-HT-factorization-theorem},
-Corollary~\ref{cor:E2-bulk-algebra}).  The $E_2$-valuation is the
-$\R^2_{\mathrm{top}}$ factor: locally constant factorization algebras
-on $\R^2$ are $E_2$-algebras (Lurie--Costello--Gwilliam).
-$\mc A^{\mathrm{cl}}_{\mathrm{bulk}}$ is the two-complex-dimensional
-holomorphic factorization algebra on the surface $\C^2$, the
-higher-codimension analogue of the Beilinson--Drinfeld curve chiral
-algebra.  Its native two-dimensional holomorphic OPE has singular
-coefficient module the Grothendieck local-cohomology principal-part
-module of the diagonal $\Delta\subset\C^2_z\times\C^2_w$ and
-two-variable Cauchy kernel $d\zeta_1\,d\zeta_2/(\zeta_1\zeta_2)$ in
-formal diagonal coordinates $\zeta_i=z_i-w_i$
-(Theorem~\ref{thm:formal-two-dimensional-holomorphic-ope}).
-Restricting $\mc A^{\mathrm{cl}}_{\mathrm{bulk}}$ along a holomorphic
-line $C\hookrightarrow\C^2$ produces the Beilinson--Drinfeld curve
-chiral algebra $U^{\mathrm{ch}}_0(\mathfrak g_C)$ --- the chiral
-envelope at level zero of
-$\mathfrak g_C=\mathfrak g\otimes\C((z))$, the formal-Laurent loop
-algebra of the shifted-cotangent BF Lie algebra
-$\mathfrak g=\mathfrak h\ltimes
-\mathfrak h^\vee_{\mathrm{cont}}[1]$ along $C$ --- with generators
-$\mathsf J_x(z)$ for $x\in\mathfrak g$ and OPE
-$\mathsf J_x(z)\mathsf J_y(w)\sim
-K^{(1)}_C(z,w)\mathsf J_{[x,y]_{\mathfrak g}}(w)$ the one-variable
-specialisation of the two-dimensional OPE through the Cauchy kernel
-$K^{(1)}_C(z,w)=dz/(z-w)$ of $C$
-(Remark~\ref{rmk:not-a-curve-voa}).  This is the
-two-complex-dimensional analogue of the Beilinson--Drinfeld
-Heisenberg chiral algebra in the sense that $\mathcal P$ plays the
-role of the Kac--Moody central pairing module $\Omega_K$ on a curve
-$K$ and $\mathfrak h$ that of regular functions; specific brane
-vacua $b\in\mathcal C^{\mathrm{op}}_\partial$ specialise the chart
-$A_b$ to the affine Kac--Moody $V_k(\mathfrak g_0)$, the
-$\beta\gamma$ vertex algebra, the Virasoro $\mathrm{Vir}_c$, the
-$W_N(\mathfrak{sl}_N)_k$ via Drinfeld--Sokolov, and the
-Heisenberg--Mukai vertex algebra on the Heisenberg-core polydisk.
+Before any curve restriction, its holomorphic OPE is a
+two-variable diagonal expansion.  For
+\(\Delta\subset\C^2_z\times\C^2_w\) and
+\(\zeta_i=z_i-w_i\), the singular coefficient module is
+\[
+  H^2_\Delta(\C[[z_1,z_2,w_1,w_2]])\,d\zeta_1d\zeta_2,
+\]
+with Cauchy kernel
+\[
+  K^{(2)}_\Delta(z,w)=\frac{d\zeta_1d\zeta_2}{\zeta_1\zeta_2}.
+\]
+For \(x\in\mathfrak g\), write \(\mathsf J_x(z)\) for the linear
+holomorphic current determined by \(x\) in the
+Chevalley--Eilenberg factorization algebra
+\(B\mapsto C^\bullet_{\mathrm{CE},\mathrm{cont}}(\Omega^{0,\bullet}_c(B)
+\widehat\otimes\mathfrak g)\); then
+\[
+  \mathsf J_x(z)\mathsf J_y(w)
+  \sim
+  K^{(2)}_\Delta(z,w)\mathsf J_{[x,y]_{\mathfrak g}}(w),
+  \qquad x,y\in\mathfrak g.
+\]
+Restricting along a holomorphic curve \(C\hookrightarrow\C^2\)
+produces a Beilinson--Drinfeld curve chiral algebra (a vertex
+algebra) with generators and relations the one-variable
+specialisation of this two-dimensional OPE through the curve Cauchy
+kernel \(K^{(1)}_C(z,w)=dz/(z-w)\).
 
 \medskip\noindent
-The Mixed Holomorphic--Topological Deligne conjecture identifies
-$\mc A^{\mathrm{cl}}_{\mathrm{bulk}}$ with the mixed-HT chiral derived
-$E_2$-centre of the boundary open factorisation category
-$\mc C^{\mathrm{op}}_\partial$ on the Kato--Nakayama log boundary
-$\partial X^{\mathrm{KN}}$, defined as the $\infty$-category of
-factorisation $E_1$-modules over the bulk restriction
-$\mc A^{\mathrm{cl}}_{\mathrm{bulk}}|_{\partial X^{\mathrm{KN}}}$ ---
-chiral by restriction of the bulk factorisation, so the chiral
-derived centre is well-defined
-(\S\ref{ssec:binding-convention-layer},
-\S\ref{ssec:cross-volume-firewall}).  This is the $d=2$ link of the
-chiral $E_d$ Deligne ladder, above the Beilinson--Drinfeld $d=1$
-chiral Deligne theorem
-\cite{beilinson-drinfeld-chiral}*{\S 4} for chiral algebras
-factorising over an algebraic curve.  The brane-vacuum chart
-$A^{\mathrm{cl}}_{\partial,N}$ on the worldline $\R_t$, by contrast, is
-$E_1$, not chiral on a curve; chirality at the chart is inherited from
-the bulk's holomorphic $E_2$ factorisation on $\C^2$ transverse to the
-brane, and Deligne's $E_1$-Hochschild theorem matches the $E_2$ structure
-on $Z^{\mathrm{der}}_{E_1}(A^{\mathrm{cl}}_{\partial,N})$ to
-$\mc A^{\mathrm{cl}}_{\mathrm{bulk}}|_b$ at the formal-Darboux stalk.
-This manuscript proves the equivalence
-$\mc A^{\mathrm{cl}}_{\mathrm{bulk}}|_b\simeq
-Z^{\mathrm{der}}_{E_1}(A^{\mathrm{cl}}_{\partial,N})\simeq
-HH^\bullet(A^{\mathrm{cl}}_{\partial,N},A^{\mathrm{cl}}_{\partial,N})$
-as $E_2$-algebras at $N$ Dirac branes: the formal-Darboux stalk of
-the Mixed Holomorphic--Topological Deligne conjecture.
-The formal-Darboux stalk equips $A_b$ with the two-dimensional chiral
-algebra structure inherited as $\mc A^{\mathrm{cl}}_{\mathrm{bulk}}|_b$,
-with arity-two singular product the two-dimensional holomorphic OPE
-of the bulk.  Costello--Gwilliam
-factorization-algebra bulk--boundary correspondence and Deligne's
-$E_1$-Hochschild theorem identify the formal-Darboux stalk with the
-derived $E_1$-centre of the open-string $E_1$-brane algebra,
+The main theorem is the formal-Darboux stalk of the mixed
+holomorphic-topological Deligne conjecture:
 \[
   \mc A^{\mathrm{cl}}_{\mathrm{bulk}}|_b
-   \simeq Z^{\mathrm{der}}_{E_1}\bigl(A^{\mathrm{cl}}_{\partial,N}\bigr)
-   \simeq HH^\bullet\bigl(A^{\mathrm{cl}}_{\partial,N},A^{\mathrm{cl}}_{\partial,N}\bigr),
+   \simeq
+  Z^{\mathrm{der}}_{E_1}(A^{\mathrm{cl}}_{\partial,N})
+   \simeq
+  HH^\bullet(A^{\mathrm{cl}}_{\partial,N},A^{\mathrm{cl}}_{\partial,N})
 \]
-of which $J$ is the formal Darboux coordinate expression.  On
-Chevalley--Eilenberg generators of $\mathfrak g$ the closed-to-open
-dictionary is the Koszul resolution
+as \(E_2\)-algebras.  Under this identification
 \[
-  c_f\longmapsto\theta_f\in HH^1,\qquad
-  u_f\longmapsto J(f)\cdot(\,\cdot\,)\in HH^0,
+  c_f\longmapsto\theta_f,\qquad
+  u_f\longmapsto J(f).
 \]
-$\theta_f$ the Hamiltonian Schouten field on
-$A^{\mathrm{cl}}_{\partial,N}$.  The chain-level lift from the
-ghost-zero closed-string sector classical observables,
-\[
-  \Phi_N\colon\mc A^{\mathrm{cl}}_{\mathrm{bulk},0}
-   \longrightarrow Z^{\mathrm{der}}_{E_1}\bigl(A^{\mathrm{cl}}_{\partial,N}\bigr),
-\]
-is conditional on
-$\operatorname{Ob}_{\mathrm{cent}/\mathrm{QME}/\mathrm{desc}}=0$ with
-chosen null-homotopies
-(Theorem~\ref{thm:app-unreduced-cotangent-lift-obstruction}).
+Here \(\theta_f\) is the Hamiltonian Schouten derivation determined by
+\(f\), and \(J(f)\) acts by multiplication.  Thus the trace map
+\(J(f)=\overline{\operatorname{Tr}f(\phi_1,\phi_2)}\) is the formal
+Darboux coordinate of the brane-side derived Hochschild centre.
 
 \medskip\noindent
-The constant Hamiltonian line $\C\cdot 1$, on which
-$\operatorname{Tr}1=N$, leaves $\mathfrak h$ and lifts on the brane to
-the Capelli central extension.  The three faces of one class
-$\hbar N[\bar c]\in H^2_{\mathrm{Lie}}(\bar A,\C)[[\hbar]]$ on
-$\bar A=\C[z_1,z_2]/\C\cdot 1$ are
+The constant Hamiltonian produces the finite-\(N\) central term.  Its
+three equivalent expressions are
 \[
   \omega(f,g)=[\{f,g\}]_0,\qquad
   \{\operatorname{Tr}\phi_1,\operatorname{Tr}\phi_2\}=N,\qquad
-  [\Phi_\hbar(z_1),\Phi_\hbar(z_2)]_\star=\hbar N\cdot I:
+  [\Phi_\hbar(z_1),\Phi_\hbar(z_2)]_\star=\hbar N\,I .
 \]
-Lie 2-cocycle on $\bar A$, Poisson bracket of trace coordinates, Moyal
-commutator in $M_N(\C)$.  The number $N$ is the trace-$U(1)$
-centre-of-mass cocycle of $N$ coincident D-branes on $\C^2_\hbar$,
-equivalently the projective curvature
-$\Omega_{\mathrm{central}}|_{J(f)}$ of $\Phi_N$.
+This is the Capelli scalar
+\[
+  \hbar N[\bar c]=\Omega_{\mathrm{central}}|_{J(f)} .
+\]
 
 \medskip\noindent
-The local model is the two-dimensional chiral algebra of Hamiltonian
-currents on $\C^2$ with $\mc P$ the central pairing module --- the
-two-complex-dimensional analogue of the Heisenberg vertex algebra,
-factorising over holomorphic surfaces rather than curves; the formal
-local sector of the Costello twisted-M-theory family
-\cite{costello-twistedM}; and on the cyclic framed stable branch
-$\C[\phi_1,\phi_2]\cdot v=\C^N$ the formal-Darboux stalk chart of
-$\Hilb^N(\C^2)$ in its Nekrasov--Schwarz noncommutative Moyal
-deformation.
+The theorem is local.  It does not prove the global chiral
+\(E_d\)-Deligne theorem at \(d\ge2\), a compact Calabi--Yau theorem, or
+an operator-level modular lift.  Those require descent, quantum master
+equation data, anomaly cancellation, and matched-conventions
+comparison.  The paper records the corresponding obstruction classes.
 
 \end{abstract}
