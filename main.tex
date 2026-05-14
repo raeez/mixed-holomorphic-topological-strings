@@ -178,55 +178,41 @@ Holomorphic--Topological Deligne conjecture}
   stalk, is the open chiral $E_d$-Deligne conjecture at $d=2$.
 
   \medskip\noindent
-  \emph{The classical BV theory.}  The BV fields are an
-  $\mathfrak h$-connection $\mathcal A$ and antifield $\mathcal B$,
+  The classical BV pair is the field $\mathcal A$ valued in
+  $\Omega^\bullet(\R^2)\widehat\otimes\Omega^{0,\bullet}(\C^2)
+  \widehat\otimes\mathfrak h$ and antifield $\mathcal B$ valued in
+  $\Omega^\bullet(\R^2)\widehat\otimes\Omega^{0,\bullet}(\C^2)
+  \widehat\otimes\mathfrak h^\vee_{\mathrm{cont}}[1]$, paired by the
+  $(-1)$-shifted symplectic form
+  $\int_X\langle\mathcal B,\mathcal A\rangle$ obtained from the
+  residue pairing on
+  $\mathfrak h\otimes\mathfrak h^\vee_{\mathrm{cont}}$ and integration
+  of mixed-HT forms against $dz_1\,dz_2$.  The BV differential is
+  $Q=d+\bar\partial+d_{\mathrm{CE}}$, with $d_{\mathrm{CE}}$ the
+  Chevalley--Eilenberg differential of $\mathfrak g$; the master
+  equation $\{S,S\}=0$ holds because the BF interaction
+  $I=\tfrac12\int_X\langle\mathcal B,
+  [\mathcal A,\mathcal A]_{\mathfrak h}\rangle$ encodes the Lie
+  bracket on $\mathfrak h$.  Renormalisation proceeds in the
+  heat-kernel scheme of Costello--Gwilliam: a gauge-fixing operator
+  $Q^{\mathrm{GF}}=d^*+\bar\partial^*$ for chosen flat and Hermitian
+  metrics gives the Laplacian $D=[Q,Q^{\mathrm{GF}}]$, heat kernel
+  $K_t=e^{-tD}$, and propagator
+  $P_{\varepsilon,L}=\int_\varepsilon^L
+  \tfrac12(Q^{\mathrm{GF}}\!\otimes\!1+1\!\otimes\!Q^{\mathrm{GF}})\,
+  K_t\,dt$.  At RG scale $L$ the effective interaction is the
+  Costello transform $I[L]=W(P_{\varepsilon,L},I)$, and the quantum
+  master equation
   \[
-    \mathcal A\in
-    \Omega^\bullet(\R^2)\widehat\otimes\Omega^{0,\bullet}(\C^2)
-    \widehat\otimes\mathfrak h,
-    \qquad
-    \mathcal B\in
-    \Omega^\bullet(\R^2)\widehat\otimes\Omega^{0,\bullet}(\C^2)
-    \widehat\otimes\mathfrak h^\vee_{\mathrm{cont}}[1],
+    QI[L]+\tfrac12\{I[L],I[L]\}_L+\hbar\Delta_L\,I[L]=0
   \]
-  with $(-1)$-shifted symplectic pairing
-  $\int_X\langle\mathcal B,\mathcal A\rangle$ given by integration of
-  mixed-HT forms against the holomorphic volume $dz_1\,dz_2$ and the
-  residue pairing
-  $\langle f,\omega\rangle=\operatorname{Res}_0\,f\omega$ between
-  $\mathfrak h$ and $\mathfrak h^\vee_{\mathrm{cont}}$.  The classical
-  action is the BF action
-  \[
-    S=\int_X\langle\mathcal B,
-      (d+\bar\partial)\mathcal A
-      +\tfrac12[\mathcal A,\mathcal A]_{\mathfrak h}\rangle,
-    \qquad
-    Q=d+\bar\partial+d_{\mathrm{CE}},\qquad
-    \{S,S\}=0.
-  \]
-  The total classical interaction is
-  $S=S_{\mathrm{free}}+I$ with kinetic term
-  $S_{\mathrm{free}}=\int_X\langle\mathcal B,(d+\bar\partial)\mathcal A\rangle$
-  and interaction
-  $I=\tfrac12\int_X\langle\mathcal B,[\mathcal A,\mathcal A]_{\mathfrak h}\rangle$.
-  Gauge fixing $Q^{\mathrm{GF}}=d^*+\bar\partial^*$ for a flat metric
-  on \(\R^2\) and a Hermitian metric on \(\C^2\) gives the
-  generalized Laplacian \(D=[Q,Q^{\mathrm{GF}}]\), symmetric heat
-  kernel $K_t=e^{-tD}$, and propagator
-  \(P_{\varepsilon,L}=\int_\varepsilon^L\tfrac12(Q^{\mathrm{GF}}\!\otimes\!1
-    +1\!\otimes\!Q^{\mathrm{GF}})\,K_t\,dt\).  The Costello effective
-  interaction at scale \(L\) is \(I[L]=W(P_{\varepsilon,L},I)\); the
-  quantum master equation (QME)
-  \[
-    Q I[L]+\tfrac12\{I[L],I[L]\}_L+\hbar\Delta_L\,I[L]=0
-  \]
-  is the constraint on the quantization, and its failure in the
-  reduced non-scalar lane is the class
-  \([\operatorname{Ob}^{\mathrm{red}}_{w,\partial,\hbar}]\)
-  (Theorem~\ref{thm:app-theta-three-finite-window-H1}).  Costello
-  deformation cohomology of \(I[L]\) is the obstruction theory of the
-  closed-to-open coupling \(\Phi_N\)
-  (Theorem~\ref{thm:closed-to-open-derived-centre-map}).
+  is the consistency condition for renormalised quantisation.
+  Costello deformation cohomology of $I[L]$ is the obstruction
+  theory governing the closed-to-open coupling $\Phi_N$
+  (Theorem~\ref{thm:closed-to-open-derived-centre-map}); its
+  failure in the reduced non-scalar sector is the class
+  $[\operatorname{Ob}^{\mathrm{red}}_{w,\partial,\hbar}]$
+  (Theorem~\ref{thm:app-theta-three-finite-window-H1}).
 
   \medskip\noindent
   \emph{Tate setup and the residue pairing.}  Throughout, $\mathfrak h$
@@ -253,60 +239,33 @@ Holomorphic--Topological Deligne conjecture}
   with $\varprojlim^1$-data tracked.
 
   \medskip\noindent
-  \emph{The brane.}  A stack of \(N\) Dirac branes is the boundary
-  condition on the worldline \(\R_t\subset X\).  Its two holomorphic
-  transverse coordinates become Chan--Paton matrices
-  \[
-    \phi_1,\phi_2\in\mathfrak{gl}_N .
-  \]
-  Equivalently, the stack determines the substitution
-  \[
-    \rho_\phi\colon A\longrightarrow\End(\C^N),
-    \qquad z_i\longmapsto\phi_i,
-  \]
-  with worldline kinetic term
-  \(\int_{\R_t}\operatorname{Tr}(\phi_1\dot\phi_2)\).  The open BV
-  complex adds the Koszul antifield
-  \(\psi\in\mathfrak{gl}_N[1]\) and differential
-  \[
-    Q\phi_i=0,\qquad Q\psi=[\phi_1,\phi_2].
-  \]
-  This realizes the conjugation moment-map ideal as a derived zero
-  fibre.  Since the entries of \([\phi_1,\phi_2]\) are not a regular
-  sequence for \(N\ge2\), the ghost-zero brane moduli is the derived
-  commuting-pair stack
-  \[
-    [\mu^{-1}_{\mathrm{der}}(0)/GL_N].
-  \]
-  The Hilbert scheme \(\Hilb^N(\C^2)\) appears only after adding a
-  cyclic framing vector \(v\in\C^N\) with
-  \(\C[\phi_1,\phi_2]\cdot v=\C^N\).  On that framed branch, the
-  Moyal/Weyl deformation gives the Nekrasov--Schwarz
-  noncommutative Hilbert scheme.
+  The moment-map equation $[\phi_1,\phi_2]=0$ defines a singular
+  variety on $\mathfrak{gl}_N\oplus\mathfrak{gl}_N$, since the
+  entries of $[\phi_1,\phi_2]$ are not a regular sequence for
+  $N\ge 2$.  The Koszul resolution
+  $\C[\phi_1,\phi_2,\psi]$ with $Q\psi=[\phi_1,\phi_2]$ produces a
+  derived enhancement: the ghost-zero brane moduli is the derived
+  commuting-pair stack $[\mu^{-1}_{\mathrm{der}}(0)/GL_N]$.  The
+  classical Hilbert scheme $\Hilb^N(\C^2)$ is recovered on the
+  cyclic framed stable branch obtained by adjoining a framing
+  vector $v\in\C^N$ with $\C[\phi_1,\phi_2]\cdot v=\C^N$; the
+  Moyal--Weyl deformation on that branch produces the
+  Nekrasov--Schwarz noncommutative Hilbert scheme
+  \cite{nekrasov-schwarz-noncommutative}.
 
   \medskip\noindent
-  \emph{The trace map \(J\).}  At \(N\) Dirac branes the trace map
-  \[
-    J\colon\mathfrak h\to\mathcal O\bigl(\mu^{-1}_{\mathrm{der}}(0)\bigr)^{GL_N},
-    \qquad
-    J(f)=\overline{\operatorname{Tr}\,f(\phi_1,\phi_2)},
-  \]
-  is the gauge-invariant trace character of a Hamiltonian
-  \(f\in\mathfrak h\).
-  \(J\) is the unique linear \(GL_N\)-equivariant primitive
-  single-trace map
-  \(\mathfrak h\to\mathcal O\bigl(\mu^{-1}_{\mathrm{der}}(0)\bigr)^{GL_N}\)
-  that is Darboux-natural under the formal symplectomorphism group,
-  Dirac-descended through the moment-map ideal, scalar-reduced, and
-  linear-normalized \(J(z_i)=\overline{\operatorname{Tr}\phi_i}\); its
-  value at a fixed representation is the cyclic trace, a scalar
-  (Theorem~\ref{thm:Jf-coordinate-uniqueness}).  The forcing is
-  monomial-by-monomial through Procesi--Razmyslov, adjacent-swap
-  exactness on the moment-map zero fibre, and
-  Loday--Quillen--Tsygan single-trace primitivity
-  (Lemma~\ref{lem:no-natural-correction}).  Among admissible
-  protected Hamiltonian sectors at a holomorphic-symplectic brane
-  point, \(J\) is the terminal datum
+  Uniqueness of $J$.  Procesi--Razmyslov \cites{procesi,razmyslov}
+  identifies the polynomial $GL_N$-invariants on
+  $\mathfrak{gl}_N\oplus\mathfrak{gl}_N$ with the algebra generated
+  by mixed traces of words in $\phi_1,\phi_2$;
+  Loday--Quillen--Tsygan \cite{loday-quillen-tsygan} identifies the
+  primitive part with the cyclic-word trace classes.  Combined with
+  Dirac descent through the moment-map ideal, formal-Darboux
+  naturality, and the linear normalisation
+  $J(z_i)=\overline{\operatorname{Tr}\phi_i}$, $J$ is forced
+  monomial-by-monomial (Theorem~\ref{thm:Jf-coordinate-uniqueness});
+  among admissible protected Hamiltonian sectors at a
+  holomorphic-symplectic brane point, $J$ is the terminal datum
   (Theorem~\ref{thm:formal-local-universal-property}).
 
   \medskip\noindent
@@ -3501,7 +3460,7 @@ on \(\widehat{\C^2}_0\) with fields valued in the shifted-cotangent
 Lie algebra \(\mathfrak g=\mathfrak h\ltimes\mathfrak h^\vee_{\mathrm{cont}}[1]\)
 and master action \(S=\int\langle\beta,D\alpha+\tfrac12\{\alpha,\alpha\}\rangle dz_1dz_2\),
 forced by Darboux + cyclic trace + linearity in the cotangent partner.
-The open boundary at a stack of \(N\) Dirac branes pins the
+The open boundary at a stack of \(N\) Dirac branes fixes the
 Chan--Paton substitution \(z_i\mapsto\phi_i\in\mathfrak{gl}_N\) with
 moment map \(\mu(\phi_1,\phi_2)=[\phi_1,\phi_2]\); the open BV theory
 is the derived commuting variety
@@ -8273,7 +8232,7 @@ controlled by a cohomology or matrix-equation obstruction:
   \(\widetilde J(z_i)=\overline{\operatorname{Tr}\phi_i}\).  The
   family satisfies (U1)--(U3), (U5), (U6); Darboux flow
   \(z_2\mapsto z_2+tz_1\) on \(z_2^k\) forces \(c_{a,k-a}=c_{0,k}\)
-  and the reverse forces \(c_{0,k}=1\), pinning every \(c_{a,b}=1\).
+  and the reverse forces \(c_{0,k}=1\), hence every \(c_{a,b}=1\).
 
   \emph{Removing (U5).}  The family
   \(\widetilde J^{\mathrm{rs}}_\lambda=\lambda\,J\),
@@ -9208,7 +9167,7 @@ obstruction class at each boundary.
     This is a cochain-level reduced morphism, not a strict
     factorisation \(P_0\)-centre morphism on the unreduced cotangent
     side; the unreduced lift obstruction is
-    Remark~\ref{rmk:unreduced-lift-obstruction}, pinned to
+    Remark~\ref{rmk:unreduced-lift-obstruction}, recorded in
     Problem~\ref{prob:formal-factorization-center}.
   \item \emph{PBW/Rees special fibre.}  The Rees enveloping
     algebra \(U_\hbar(\mathfrak g)\) has PBW special fibre at
@@ -12110,7 +12069,7 @@ $$\{f,g\}_\hbar=\hbar^{-1}[f,g]_*
   restriction of $\Phi$ in Theorem~\ref{thm:main-local}. The descendant
   ($\mathfrak h^\vee$, one-antifield Koszul) sector remains governed by
   Problem~\ref{prob:formal-factorization-center}; see
-  Problem~\ref{prob:tate-coefficient-descendant-lift} below for the pinned
+  Problem~\ref{prob:tate-coefficient-descendant-lift} below for the corresponding
   obstruction.
 \end{thm}
 
@@ -12254,7 +12213,7 @@ $$\{f,g\}_\hbar=\hbar^{-1}[f,g]_*
   H^0_{\mathrm{Ham,conn}}(\mc O^{\mathrm q}_{\mathrm{brane},\infty})_{\mathrm{ren}}\)
   be the stable connected Hamiltonian trace target of
   Theorem~\ref{thm:phi-hbar-all-order}.  Its formal Moyal and Capelli
-  pieces are proved there; the ordinary-trace Lie comparison is pinned
+  pieces are proved there; the ordinary-trace Lie comparison is reduced
   to the dual-potential radial obstruction
   \(\Omega^{\mathrm{rad}}_{a,b}\), equivalently the decorated PBW Stokes
   identity \(D^\square_{a,b}=C^+_{a,b}\partial_2\), with all edge strips
@@ -12961,7 +12920,7 @@ $$\{f,g\}_\hbar=\hbar^{-1}[f,g]_*
 
 \begin{prob}[Tate-coefficient lift of the descendant cochain isomorphism]\label{prob:tate-coefficient-descendant-lift}
   In the unweighted Tate pair, the diagnosis of
-  Lemma~\ref{lem:tate-casimir-obstruction} pins the obstruction to the
+  Lemma~\ref{lem:tate-casimir-obstruction} identifies the obstruction as the
   failure of the coefficient kernel; the resolution requires a
   category-level change of coefficient module.  The classical Tate
   obstruction is closed by the weighted Tate completion of
@@ -14018,7 +13977,7 @@ linear functions have positive ghost numbers.
   factorisation \(P_0\)-centre morphism on the unreduced cotangent
   side; the obstruction tuple is
   Problem~\ref{prob:formal-factorization-center}, with classical
-  Tate-coefficient closure pinned to
+  Tate-coefficient closure reduced to
   Problem~\ref{prob:tate-coefficient-descendant-lift}, and Roos/Cech-descent
   compatibility recorded in
   Remark~\ref{rmk:weiss-ran-descent-obstruction}.  The PBW
