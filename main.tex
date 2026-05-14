@@ -296,15 +296,16 @@ Holomorphic--Topological Deligne conjecture}
   $K^{(2)}_\Delta(z,w)=d\zeta_1\,d\zeta_2/(\zeta_1\zeta_2)$ in formal
   diagonal coordinates $\zeta_i=z_i-w_i$
   (Theorem~\ref{thm:formal-two-dimensional-holomorphic-ope}).
-  Restriction along a holomorphic curve $C\hookrightarrow\C^2$
-  specialises this kernel to the one-variable curve Cauchy kernel
-  $K^{(1)}_C(z,w)=dz/(z-w)$ and produces a chiral algebra on $C$
-  whose generators and relations are the one-variable specialisation
-  of the two-dimensional OPE; the specific brane chart $A_b$ at a
-  chosen vacuum $b$ specialises to a known vertex algebra (Heisenberg,
-  affine Kac--Moody $V_k(\mathfrak g_0)$, $\beta\gamma$, Virasoro
-  $\mathrm{Vir}_c$, or $W_N(\mathfrak{sl}_N)_k$ via Drinfeld--Sokolov;
-  \S\ref{sec:examples}).
+  A one-dimensional chiral algebra is obtained only after an
+  additional restriction or pushforward to a curve
+  $C\hookrightarrow\C^2$ has been constructed.  Such a construction
+  must specify the transverse modes, the pushed-forward bracket, the
+  BV pairing, the image of the brane chart, and the anomaly
+  normalisation.  The formal-Darboux theorem by itself does not turn
+  the chart \(A_b\cong\C[[z_1,z_2]]\) into a Heisenberg, affine
+  Kac--Moody, \(\beta\gamma\), Virasoro, or \(W\)-algebra vertex
+  algebra; \S\ref{sec:examples} records these as comparison targets
+  with their extra hypotheses.
 
   \medskip\noindent
   The closed-to-open dictionary on Chevalley--Eilenberg generators of
@@ -473,14 +474,13 @@ BF Lie algebra
 (\S\ref{ssec:hamiltonian-bf-algebra},
 Theorem~\ref{thm:bf-action-uniqueness-qme}).
 The native bulk object is the two-complex-dimensional factorization
-algebra on $\C^2$; restricting it along a holomorphic curve
-$C\hookrightarrow\C^2$ produces a curve vertex operator algebra
-(VOA) whose generators and relations are the one-variable
-specialisation of the two-dimensional OPE, with the Zhu algebra and
-the Vol.~II $\C\times\R$ chiral-topological theorems applying to the
-restricted curve theory after the controlled reduction supplies
+algebra on $\C^2$.  A curve vertex operator algebra (VOA) is a
+separate one-dimensional object.  It can be compared with the native
+factorization algebra only after a controlled reduction supplies
 explicit $z_2$-mode or principal-part data, pushed-forward bracket,
-BV pairing, brane image, and anomaly matching
+BV pairing, brane image, and anomaly matching.  Only then do the Zhu
+algebra and the Vol.~II $\C\times\R$ chiral-topological theorems
+apply to the restricted curve theory
 (Remark~\ref{rmk:not-a-curve-voa}).
 The worldsheet \(\Sigma\) is a complex curve, possibly with boundary
 or marked points; framing on \(S^3\) is stated when invoked, with
@@ -699,17 +699,11 @@ the \(\mathfrak{gl}_N\)-valued pair
 matrix coordinate pair of the \(N\)-brane stack on the holomorphic-symplectic
 factor (its transverse position), and Dirac/moment-map reduction
 imposes \([\phi_1,\phi_2]=0\).
-For an augmented brane vacuum
-\(b\in\mathcal{C}^{\mathrm{op}}_\partial\) with chart algebra
-\(A_b=\End_{\mathcal{C}^{\mathrm{op}}_\partial}(b)\) other than the
-formal-completion endomorphism (level-\(k\) affine Kac--Moody, free
-\(\beta\gamma\), Virasoro at central charge \(c\), \(W_N\), of
-\S\ref{sec:examples}), the formal-Darboux stalk chart of this
-manuscript governs the Heisenberg core of \(A_b\) along the chosen
-abelian subalgebra; the matched-conventions transfer
-(Theorem~\ref{thm:matched-conventions-transfer}) identifies that core
-with \(A_{b_p}\) for the closed point \(p\) carrying the geometric data
-of the chosen vacuum.  For a factorization algebra \(\mathcal X\) on
+Affine Kac--Moody, free \(\beta\gamma\), Virasoro, and \(W_N\)
+vertex algebras are not alternative formal-Darboux chart algebras.
+They are curve chiral algebras which may be compared with the
+Hamiltonian formal disk only after a separate curve reduction and
+anomaly matching.  For a factorization algebra \(\mathcal X\) on
 \(\R^2_t\times\C^2_{z_1,z_2}\), the \emph{formal-Darboux stalk of
 \(\mathcal X\) at \(p\)} is the restriction
 \(\mathcal X|_{\R^2_t\times\widehat{\C^2}_p}\) in these coordinates.
@@ -14376,547 +14370,269 @@ vacua of the central families.
 
 \section{Examples}\label{sec:examples}\label{ssec:examples}
 
-At \(d=1\), for a chiral algebra on a curve, the chiral derived
-centre \(Z^{\mathrm{der}}_{\mathrm{ch}}(A)\simeq
-C^\bullet_{\mathrm{ch}}(A,A)\) is the theorem of
-\cite{beilinson-drinfeld-chiral}*{\S 4} (recapped in Vol I).  At
-\(d=2\) the
-analogous identification is the Mixed Holomorphic--Topological
-Deligne conjecture, whose formal-Darboux stalk at the Heisenberg-core
-vacuum \(b_p\in\mathcal{C}^{\mathrm{op}}_\partial\) is the local
-theorem of \S\ref{ssec:local-theorem}.  Every example below therefore
-inherits the two-dimensional diagonal OPE
+The examples are consistency checks on the formal-Darboux stalk
+theorem.  They do not enlarge the theorem.  The theorem proved in
+\S\ref{ssec:local-theorem} has three objects:
 \[
-  \mathsf{J}_x(z)\mathsf{J}_y(w)
-  \sim
-  K^{(2)}_\Delta(z,w)\mathsf{J}_{[x,y]_{\mathfrak g}}(w)
+  \mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}|_{b_p},\qquad
+  A^{\mathrm{cl}}_{\partial,N}
+    =C^\bullet_{\mathrm{CE}}
+      \bigl(\mathfrak{gl}_N,\mathrm{Kosz}([\phi_1,\phi_2])\bigr),
+  \qquad
+  J(f)=\overline{\operatorname{Tr}f(\phi_1,\phi_2)} .
 \]
-of Theorem~\ref{thm:formal-two-dimensional-holomorphic-ope}.  After
-restriction to a holomorphic curve, or after an affine chart,
-Drinfeld--Sokolov reduction, or large-\(N\) spin limit, the
-one-variable OPEs in the examples are restrictions or
-matched-conventions transfers of this diagonal contact algebra.
-
-The chart algebra at any brane vacuum $b\in\mathcal C^{\mathrm{op}}_\partial$
-is uniformly the formal coordinate ring
-$A_b=\End_{\mathcal C^{\mathrm{op}}_\partial}(b)\cong\C[[z_1,z_2]]$
-(Definition~\ref{def:formal-darboux-stalk-chart}); each example below
-specifies (i) the Chan--Paton substitution
-$\rho_\phi\colon A_b\to M_N(\C)\otimes\mathfrak g_0$ implanting a
-chosen flavour Lie algebra $\mathfrak g_0$ on the brane stack, (ii)
-the holomorphic curve $C\hookrightarrow\C^2$ along which the bulk
-factorisation algebra
-$\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}$ is restricted, and
-(iii) the specific vertex algebra produced by that restriction
-(Heisenberg, $V_k(\mathfrak g_0)$, $V^{\beta\gamma}$,
-$\mathrm{Vir}_c$, $W_N(\mathfrak{sl}_N)_k$) with its $d=1$ chiral
-derived centre target.  Status: proved at the Heisenberg core
-(\S\ref{ssec:local-theorem}); conditional on matched-conventions
-transfer through the chosen reduction; or open at the global
-compact-target identification beyond the formal-Darboux stalk,
-requiring descent, QME, anomaly, and locality data on the target
-geometry.
+Its native singular product is the two-variable diagonal
+local-cohomology operation of
+Theorem~\ref{thm:formal-two-dimensional-holomorphic-ope}.  A
+one-dimensional vertex algebra appears only after a separate
+restriction or pushforward to a curve, together with a choice of
+fields, conformal weights, invariant form, stress tensor, and anomaly
+normalisation.  The formal-Darboux theorem by itself does not produce
+an affine Kac--Moody algebra, a \(\beta\gamma\) system, a Virasoro
+algebra, or a \(W\)-algebra.
 
 \subsubsection{Heisenberg current on the formal disk}\label{sssec:ex-heisenberg}
 
-\(N=1\), \(b=\) the formal-disk vacuum at the brane point
-\(p\in\widehat{\C^2}_0\).  The chart algebra is
-\(A_b=\C[[z_1,z_2]]\) with the canonical pair
-\((\phi_1,\phi_2)=(z_1,z_2)\) and
-\(\overline{\operatorname{Tr}}=\mathrm{ev}_p\).  The trace
-\(J(z_1^k z_2^l)=z_1^k z_2^l\) is the evaluation map; the closed
-generator dictionary is \(c_f\mapsto\theta_f\),
-\(u_f\mapsto J(f)\).  The Capelli scalar \(\hbar N[\bar c]\) vanishes at \(N=1\): the
-trace becomes evaluation, the U(1) centre-of-mass charge is one
-unit and the scalar quotient kills the central extension on the
-single brane, so
-\([\bar c]=0\in H^2_{\mathrm{Lie}}(\bar A,\C)[[\hbar]]\) after
-scalar reduction.  The order-\(\hbar\) Heisenberg commutator
-\([\Phi_\hbar(z_1),\Phi_\hbar(z_2)]_\star=\hbar\)
-(cf.\ Example~\ref{ex:linear-hamiltonian-com}) carries no
-nontrivial extension class for \(N=1\): this is the strict cell
-(case~1) of Theorem~\ref{thm:four-curvature-taxonomy}.  The
-formal-Darboux stalk reads
-\(\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}|_{b_p}\simeq
-\mathrm{PV}(\C[[z_1,z_2]])\)
-at \(N=1\) via the bulk-boundary correspondence, with
-\(\C[[z_1,z_2]]\) carrying the chiral $E_2$ structure restricted from
-the bulk; the polyvector reading is Costello--Gwilliam
-\cite{costello-gwilliam}*{Vol.~II, \S 5} on the formal
-disk.  Proved (the local theorem of~\S\ref{ssec:local-theorem}
-at \(N=1\)).
+For \(N=1\) the brane chart is the formal disk
+\[
+  A_b=\widehat{\mc O}_{\C^2,p}\cong\C[[z_1,z_2]],
+  \qquad
+  (\phi_1,\phi_2)=(z_1,z_2).
+\]
+The trace is evaluation of the formal Hamiltonian:
+\[
+  J(z_1^a z_2^b)=z_1^a z_2^b .
+\]
+The closed-to-open dictionary is
+\[
+  c_f\mapsto\theta_f,\qquad u_f\mapsto J(f).
+\]
+Classically this is the strict formal-Darboux stalk of
+Theorem~\ref{thm:main-local}.  After Weyl quantisation the relation
+\[
+  [\Phi_\hbar(z_1),\Phi_\hbar(z_2)]_\star=\hbar
+\]
+is the one-pair Heisenberg relation.  Thus the central class is
+\(\hbar[\bar c]\) if the central extension is retained; it vanishes
+only after projecting to the scalar-reduced Hamiltonian algebra.  The
+\(N\)-brane case multiplies this scalar by \(N\).  No vertex algebra
+has been introduced at this stage.
 
 \subsubsection{Affine Kac--Moody current
 \texorpdfstring{\(\widehat{\mathfrak g}_k\)}{ghat\_k}}\label{sssec:ex-affine-km}
 
-Take $\mathfrak g_0$ a finite-dimensional simple complex Lie algebra,
-$N=\dim\mathfrak g_0$, and brane vacuum $b=b_p$ at $p\in\C^2$ with
-chart algebra $A_b=\widehat{\mathcal O}_{\C^2,b}\cong\C[[z_1,z_2]]$.
-The Chan--Paton substitution
-$\rho_\phi\colon A_b\to M_N(\C)$, $z_1\mapsto\phi_1$,
-$z_2\mapsto\phi_2$ valued in $\mathfrak g_0\otimes\mathfrak{gl}_N$
-implants $\mathfrak g_0$-flavour on the brane stack; the trace
-$J(f)=\overline{\operatorname{Tr}\,\rho_\phi(f)}$ becomes the
-Sugawara projection of the polynomial Hamiltonian.  Restricting
-the bulk factorisation algebra
-$\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}$ along a holomorphic curve
-$C\hookrightarrow\C^2$ transverse to the brane line produces the
-affine Kac--Moody vertex algebra $V_k(\mathfrak g_0)$ at level $k=N$,
-with affine current $J^a(z)$ in the standard
-Knizhnik--Zamolodchikov form on $C$
-(\cite{frenkel-ben-zvi}*{\S 2.4}).  The Capelli identification
-$\hbar N[\bar c]=\Omega_{\mathrm{central}}|_{J(f)}$ specialises along
-this curve restriction to the Kac--Moody central charge: the
-projective $(\Omega_{\mathrm{central}})$-cell of
-Theorem~\ref{thm:four-curvature-taxonomy} with chart-multiplicity
-formula $[\hbar N\bar c]_{\widehat{\mathfrak g}_k}=[\hbar k]$.  On
-the curve $C$ the chiral derived centre is
-$Z^{\mathrm{der}}_{\mathrm{ch}}(V_k(\mathfrak g_0))\simeq
-C^\bullet_{\mathrm{ch},d=1}(V_k(\mathfrak g_0),
-V_k(\mathfrak g_0))$ by the $d=1$ chiral Deligne theorem
-\cite{beilinson-drinfeld-chiral}*{\S 4}; the $d=2$ formal-Darboux
-stalk identifies $\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}|_{b_p}\simeq
-Z^{\mathrm{der}}_{E_1}(A^{\mathrm{cl}}_{\partial,N})$ by
-Costello--Gwilliam bulk--boundary correspondence, and the curve
-restriction recovers the $d=1$ statement on $C$.  Identification at
-the Heisenberg core is proved (\S\ref{ssec:local-theorem}); the
-Sugawara reading to the full $\widehat{\mathfrak g}_k$ curve
-specialisation is the standard Frenkel--Ben-Zvi datum, pending a
-matched-conventions transfer at the joint level/multiplicity scaling
-$(k,N)\to\hbar k N[\bar c]$.
+An affine Kac--Moody vertex algebra is not a brane chart of the
+formal-Darboux stalk.  To obtain \(V_k(\mathfrak g_0)\) one must
+choose a smooth curve \(C\), a finite-dimensional simple Lie algebra
+\(\mathfrak g_0\), an invariant bilinear form \(\kappa\), and the
+standard one-dimensional local cocycle
+\[
+  [J^a_m,J^b_n]
+   = f^{ab}_{\ \ c}J^c_{m+n}
+     +k\,m\,\kappa^{ab}\delta_{m+n,0}.
+\]
+These data are the defining data of the affine current algebra
+\cite{frenkel-ben-zvi}*{\S 2.4}; they are not contained in the
+formal coordinate ring \(\C[[z_1,z_2]]\) or in the trace map
+\(J(f)=\overline{\operatorname{Tr}f(\phi_1,\phi_2)}\).
+
+Consequently the manuscript does not identify the brane number \(N\)
+with the affine level \(k\), and it does not identify the Capelli
+scalar \(\hbar N[\bar c]\) with the Kac--Moody cocycle.  Such an
+identification would require a curve restriction functor from the
+two-dimensional holomorphic factorization algebra, a pushforward of
+the bracket, and an anomaly calculation comparing the residue
+cocycle with \(k\kappa\).  Those data are outside the
+formal-Darboux theorem.
 
 \subsubsection{\texorpdfstring{\(\beta\gamma\)}{beta-gamma} system}\label{sssec:ex-betagamma}
 
-Take $N=1$ and brane vacuum $b=b_p$ at $p\in\C^2$ with chart
-algebra $A_b=\widehat{\mathcal O}_{\C^2,b}\cong\C[[z_1,z_2]]$.  The
-Chan--Paton substitution $(\phi_1,\phi_2)=(z_1,z_2)$ is the
-two-variable formal Heisenberg pair, with contact term
-$\hbar K^{(2)}_\Delta(z,w)\mathbf 1$ in the native
-two-dimensional OPE
-(Corollary~\ref{cor:quantum-brane-trace-two-dimensional-ope}).
-Restricting the bulk factorisation algebra
-$\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}$ along a holomorphic curve
-$C\hookrightarrow\C^2$ on which $z_1$ becomes a weight-$1$
-holomorphic field and $z_2$ a weight-$0$ partner produces the free
-$\beta\gamma$ vertex algebra $V^{\beta\gamma}$ at central charge
-$c=2$, with $\beta(z)=z_1|_C$, $\gamma(z)=z_2|_C$ satisfying the
-standard $\beta\gamma$ OPE $\beta(z)\gamma(w)\sim 1/(z-w)$
-(\cite{costello-gwilliam}*{Vol.~II, \S 5.4}); the trace
-$J(z_1^k z_2^l)=\overline{\operatorname{Tr}}(\beta^k\gamma^l)$
-collapses on $C$ to the Wick-ordered monomial.  The Capelli
-scalar $\hbar N[\bar c]$ equals $\hbar c$ with $c=2$ on this curve
-restriction: the projective $(\Omega_{\mathrm{central}})$-cell of
-Theorem~\ref{thm:four-curvature-taxonomy} with chart-multiplicity
-formula $[\hbar N\bar c]_{\beta\gamma}=[\hbar\cdot 2]=[\hbar c]$.
-On $C$ the $d=1$ chiral derived centre is
-$C^\bullet_{\mathrm{ch},d=1}(V^{\beta\gamma},V^{\beta\gamma})$, the
-chiral derived centre of the free $\beta\gamma$ factorization
-algebra of \cite{costello-gwilliam}*{Vol.~II~\S 5.4}.  Proved at
-$c=2$ on the curve restriction; the $d=2$ formal-Darboux stalk
-identification at the brane vacuum is the local theorem of
-\S\ref{ssec:local-theorem} with the same Heisenberg cocycle
-controlling the brane centre-of-mass
-(Example~\ref{ex:linear-hamiltonian-com}).
+The free \(\beta\gamma\) system is a chiral algebra on a curve.  For
+a vector space \(V\), its fields are
+\[
+  \gamma\in V,\qquad \beta\in V^\vee\otimes K_C,
+  \qquad
+  \beta_i(z)\gamma^j(w)\sim \frac{\delta_i^j}{z-w}.
+\]
+This is a one-dimensional chiral construction.  The formal-Darboux
+stalk supplies instead the two formal Hamiltonian coordinates
+\((z_1,z_2)\) and their Weyl commutator after quantisation.  A
+comparison with the rank-one \(\beta\gamma\) system requires a
+polarisation, a curve \(C\hookrightarrow\C^2\), and a proof that the
+two-variable diagonal principal part pushes forward to the Cauchy
+kernel on \(C\).
+
+Under such extra data one may compare the canonical pair
+\((z_1,z_2)\) with \((\beta,\gamma)\).  The standard central charge
+of a rank-\(r\) \(\beta\gamma\) system is \(2r\) after a choice of
+stress tensor.  It is not the Capelli scalar
+\(\hbar N[\bar c]\) of the formal-Darboux trace algebra.
 
 \subsubsection{Virasoro at central charge
 \texorpdfstring{\(c\)}{c}}\label{sssec:ex-virasoro}
 
-\paragraph{Chart and trace.}
-Brane vacuum $b=b_p$ at $p\in\C^2$ with chart algebra
-$A_b=\widehat{\mathcal O}_{\C^2,b}\cong\C[[z_1,z_2]]$ and
-Chan--Paton pair $(\phi_1,\phi_2)$.  Restricting the bulk
-factorisation algebra
-$\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}$ along a holomorphic curve
-$C\hookrightarrow\C^2$ on which the Sugawara composite of the
-Heisenberg-core fields specialises to the stress tensor produces
-the Virasoro vertex algebra $\mathrm{Vir}_c$ at central charge $c$,
-with generators $L_n$, $n\in\Z$, and Virasoro relations
-$[L_n,L_m]=(n-m)L_{n+m}+\tfrac{c}{12}(n^3-n)\delta_{n+m,0}$
-\cite{frenkel-ben-zvi}*{\S 2.5}.  For a Hamiltonian
-$f\in\mathfrak h$ admitting a Sugawara presentation
-$L_n=\tfrac12\sum_{k\in\Z}{:}a_{n-k}a_k{:}$ with
-$a_n\in\widehat{\mathfrak{gl}}_1$, the trace specialises on $C$ to
+The Virasoro algebra is the central extension of the Witt algebra:
 \[
-  J(f)|_C=\overline{\operatorname{Tr}\,f(L_n)}
-   =\overline{\operatorname{Tr}\,
-     f\!\left(\tfrac12\sum_{k\in\Z}{:}a_{n-k}a_k{:}\right)},
+  [L_n,L_m]=(n-m)L_{n+m}
+    +\frac{c}{12}(n^3-n)\delta_{n+m,0}.
 \]
-the Wick-ordered Sugawara composite of the Heisenberg trace
-generators of \S\ref{sssec:ex-heisenberg}.
+It is not a chart algebra \(A_b\) of the formal-Darboux brane.  A
+Virasoro field appears only after a one-dimensional chiral theory has
+been supplied with a stress tensor.  For example, a Heisenberg or
+affine Kac--Moody algebra gives a Virasoro field by the Sugawara
+construction under its usual hypotheses
+\cite{frenkel-ben-zvi}*{\S\S 2.5, 3.4}.
 
-\paragraph{Capelli scalar and four-curvature cell.}
-The Capelli identification of \S\ref{sec:capelli-scalar},
-\(\hbar N[\bar c]=\Omega_{\mathrm{central}}|_{J(f)}\), reads at
-\(A_b=\mathrm{Vir}_c\) as the Virasoro central charge:
-\(\Omega_{\mathrm{central}}|_{J(L_n)J(L_m)}=
-\tfrac{c}{12}(n^3-n)\delta_{n+m,0}\) at the
-\((L_n,L_m)\)-trace generator pair.
-Theorem~\ref{thm:four-curvature-taxonomy} places the Virasoro
-chart on the projective \((\Omega_{\mathrm{central}})\)-cell:
-\(c\) is the projective curvature of the chiral central extension
-of the Witt algebra \(\mathfrak h_W=\C[z,z^{-1}]\partial_z\) by
-\(\C\cdot 1\), Lie 2-cocycle
-\(\bar c(L_n,L_m)=\tfrac1{12}(n^3-n)\delta_{n+m,0}\); under the
-Sugawara presentation through the Heisenberg core the chart
-multiplicity is \(c=N\) (one boson per brane), the
-chart-multiplicity formula of the Capelli identification.
-
-\paragraph{Cross-volume bridge: algebraic-HT 3d-gravity.}
-The $d=1$ chiral derived centre
-\(C^\bullet_{\mathrm{ch},d=1}(\mathrm{Vir}_c,\mathrm{Vir}_c)\)
-of the Virasoro vertex algebra at central charge \(c\) on a curve
-restriction (Remark~\ref{rmk:not-a-curve-voa}); under
-matched-conventions transfer to
-\(\sim/\mathrm{chiral\text{-}bar\text{-}cobar\text{-}vol2/}\)
-(Vol.~II; \(d=1\) algebraic 3d-gravity HT sector at
-\(A=\mathrm{Vir}_c\)) the formal-Darboux stalk at the Virasoro
-chart agrees with the Vol.~II 3d-gravity HT sector at
-\(A=\mathrm{Vir}_c\): the Brown--Henneaux boundary asymptotic
-symmetry algebra
-\(\mathrm{Vir}_{c_{\mathrm{BH}}}\oplus\mathrm{Vir}_{c_{\mathrm{BH}}}\)
-at central charge \(c_{\mathrm{BH}}=3\ell/2G_N\) recovers as the
-double-Virasoro chart at \(N=c_{\mathrm{BH}}\).  The identification
-is of HT sectors --- the algebraic-HT lane of the seventeen-site
-row 13 catalogue --- not a construction of the dynamical-metric
-path integral on \(\mathrm{AdS}_3\).
-
-\paragraph{Open: operator-level BTZ lift.}
-The operator-level lift of the modular line at the Virasoro chart,
-identifying \(\Omega_{\mathrm{central}}|_{\mathrm{Vir}_c}\)-twisted
-operators with BTZ--CFT\(_2\) Cardy data at central charge
-\(c=c_{\mathrm{BH}}\), is the Virasoro analogue of the
-\(K3\times E\) operator-level lift problem
-(\S\ref{sssec:ex-k3-times-e}) and is open.
-
-Identification of the formal-Darboux stalk: proved at the
-Heisenberg core (\S\ref{ssec:local-theorem}); promotion to the
-Virasoro chart through Sugawara: standard Frenkel--Ben-Zvi datum
-\cite{frenkel-ben-zvi}*{\S\S 2.5, 3.4}; the Capelli identification
-\([\hbar N\bar c]_{\mathrm{Vir}_c}=[c]\) is forced by the
-projective central extension; algebraic-HT bridge to BTZ open at
-the operator level.
+The formal-Darboux theorem therefore proves no equality
+\[
+  \hbar N[\bar c]=c .
+\]
+The left-hand side is the finite-\(N\) scalar central extension of
+the Hamiltonian trace algebra.  The right-hand side is the central
+charge of a chosen curve chiral algebra.  A comparison between them
+is an anomaly-matching problem, not a consequence of the local
+stalk theorem.  The Brown--Henneaux central charge belongs to the
+asymptotic symmetry algebra of three-dimensional gravity and is not
+obtained by setting \(N=c_{\mathrm{BH}}\).
 
 \subsubsection{\texorpdfstring{\(W_N\)}{W\_N} via
 Drinfeld--Sokolov}\label{sssec:ex-wN}
 
-\paragraph{Chart and trace.}
-Brane vacuum $b=b_p$ at $p\in\C^2$ with chart algebra
-$A_b=\widehat{\mathcal O}_{\C^2,b}\cong\C[[z_1,z_2]]$ and
-Chan--Paton pair $(\phi_1,\phi_2)$ valued in
-$\mathfrak{sl}_N\otimes\mathfrak{gl}_N$.  Restricting the bulk
-factorisation algebra
-$\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}$ along a holomorphic curve
-$C\hookrightarrow\C^2$, then applying principal Drinfeld--Sokolov
-reduction to the affine $\widehat{\mathfrak{sl}}_N$ current algebra
-produced on $C$, gives the $W_N(\mathfrak{sl}_N)_k$ vertex algebra
-\cite{frenkel-ben-zvi}*{\S 15.6} with generating currents
-$W^{(s)}(z)$ of conformal weights $s=2,3,\dots,N$: the stress
-tensor $W^{(2)}=L$ at $s=2$ plus higher-spin currents
-$W^{(3)},\dots,W^{(N)}$ at integer weights up to $s=N$.  The trace
-specialises on $C$ to
-$J(f)|_C=\overline{\operatorname{Tr}\,\rho_\phi(f)}$ on polynomial
-Hamiltonians in the $W^{(s)}$-currents, the iterated Sugawara
-projection from the Heisenberg core (\S\ref{sssec:ex-heisenberg})
-through the $\widehat{\mathfrak{sl}}_N$ parafermion at level $k$.
-On $C$ the $d=1$ chiral derived centre is
-$C^\bullet_{\mathrm{ch},d=1}(W_N,W_N)$.
+The \(W_N\)-algebra is obtained from an affine
+\(\widehat{\mathfrak{sl}}_N\) algebra by Drinfeld--Sokolov reduction
+\cite{frenkel-ben-zvi}*{\S 15.6}.  This construction requires a
+curve chiral algebra before the reduction is applied.  It is not a
+restriction of the formal coordinate ring
+\(\C[[z_1,z_2]]\), and the rank \(N\) of \(W_N\) is not the brane
+number unless a separate comparison fixes that identification.
 
-\paragraph{Capelli scalar at the \texorpdfstring{$W_N$}{W\_N}-chart.}
-The Capelli identification of \S\ref{sec:capelli-scalar} reads at
-the \(W_N\)-chart as the level-multiplicity scaling of the
-parafermion central extension: under matched-conventions transfer
-through Drinfeld--Sokolov, the projective curvature
-\(\Omega_{\mathrm{central}}|_{J(W^{(s)}(z)W^{(s')}(w))}\) on the
-diagonal \(s=s'\) recovers the parafermion central charge
-\(c_{W_N}=N-1+(2N(N+1)-N)/(k+N)\) as the chart-multiplicity
-formula \([\hbar N\bar c]_{W_N}=[c_{W_N}]\); the off-diagonal
-\(s\neq s'\) blocks are higher-spin Atiyah classes
-\([\bar c]^{(s,s')}\) on the Drinfeld--Sokolov chart.
-
-\paragraph{The \texorpdfstring{$N\to\infty$}{N -> infinity} admissible endpoint.}
-The conditional admissible endpoint
-\(W_\infty[\lambda]\Rightarrow E_\infty\) of the four-hypothesis
-ladder (\S\ref{ssec:w-infinity-endpoint}; Prochazka triangular
-truncation, Creutzig--Kanade--Linshaw parafermion compatibility,
-Pope--Romans--Shen/Bakas, Yamada weight-window) governs the
-\(N\to\infty\) limit: under (H1)--(H4) the \(N\to\infty\) Capelli
-scaling
-\([\hbar N\bar c]_{W_\infty[\lambda]}=
-[\hbar c_{W_\infty[\lambda]}]\) lifts to the
-\(\Omega_{\mathrm{central}}\)-cell of the four-curvature taxonomy
-on the \(E_\infty\)-target.
-
-\paragraph{Cross-volume bridge.}
-The \(W_N\)-chart at the Drinfeld--Sokolov reduction transports
-under matched-conventions transfer to
-\(\sim/\mathrm{chiral\text{-}bar\text{-}cobar/}\) (Vol.~I; \(d=1\)
-chiral Koszul; bar/cobar/centre distinction at \(A=W_N\)) and to
-\(\sim/\mathrm{chiral\text{-}bar\text{-}cobar\text{-}vol2/}\)
-(Vol.~II; \(d=1\) algebraic 3d-gravity HT sector at the
-\(W\)-algebra chart) on the asymptotic-symmetry side of higher-spin
-\(\mathrm{AdS}_3\).
-
-The \(W_N\)-chart identification is proved at the Heisenberg core
-(\S\ref{ssec:local-theorem}); promotion to the chiral Hochschild
-target through Drinfeld--Sokolov is the standard construction of
-\cite{frenkel-ben-zvi}*{\S 15.6}; the \(N\to\infty\) admissible
-\(E_\infty\) endpoint is conditional on the four hypotheses
-listed.
+Thus the formal-Darboux theorem supplies only the Hamiltonian trace
+sector which a later curve-chiral construction may compare with a
+chosen Heisenberg or affine subalgebra.  It does not compute the
+\(W_N\) central charge, the higher-spin OPE constants, or the
+Drinfeld--Sokolov BRST cohomology.  Any proposed equality between
+\(\hbar N[\bar c]\) and a \(W_N\) central parameter is an additional
+normalisation theorem to be proved.
 
 \subsubsection{Toric \texorpdfstring{$\C^3$}{C\^{}3}}\label{sssec:ex-c3}
 
-\paragraph{Chart, brane line, \texorpdfstring{$\Omega$}{Omega}-background.}
-Target \(X=\C^3\) with the toric Calabi--Yau holomorphic volume
-\(\Omega=dz_1\wedge dz_2\wedge dz_3\); \(b=\) the origin
-\(0\in\C^3\). The mixed-HT formal-Darboux stalk sees only the
-formal holomorphic-symplectic stalk
-\((\widehat{\C^2}_0,dz_1\wedge dz_2)\) inside the \(\C^3\)-target.
-The third direction supplies the twisted-M-theory equivariant
-scaling of \cite{costello-twistedM} through the brane-preserving
-\(\Omega\)-background torus
-\(T_\Omega=\C^*_{\varepsilon_s}\times\C^*_{\varepsilon_1}
-\times\C^*_{\varepsilon_2}\) acting by normal scaling on
-\(N_LX=\R_s\oplus\C_{z_1}\oplus\C_{z_2}\) with the brane line
-\(t\) fixed and the deformed BV operator
-\(Q_\Omega=Q+\iota_{V_\Omega}\), \(Q_\Omega^2=L_{V_\Omega}\)
-(theorem-control predicate seven of the convention layer).
+The local theorem is two-complex-dimensional.  For a toric
+Calabi--Yau threefold \(X=\C^3\) with volume form
+\(\Omega=dz_1\wedge dz_2\wedge dz_3\), it applies only after a
+two-dimensional holomorphic symplectic normal sector has been chosen,
+for instance the formal \((z_1,z_2)\)-plane with
+\(dz_1\wedge dz_2\).  The third complex direction and any
+\(\Omega\)-background data are extra structure.
 
-\paragraph{Trace and the Hilbert-scheme chart.}
-The chart algebra is the matrix-Chan--Paton completion
-\(A_b=M_N(\C[[z_1,z_2]])^{T_\Omega}\) on the brane-preserving
-torus-fixed locus; the trace
-\(J(f)=\overline{\operatorname{Tr}\,f(\phi_1,\phi_2)}\) on the
-cyclic framed stable branch \(\C[\phi_1,\phi_2]\cdot v=\C^N\) is
-the formal-Darboux stalk chart of \(\Hilb^N(\C^2)\) in its
-Nekrasov--Schwarz noncommutative Moyal deformation
-\cite{nekrasov-schwarz-noncommutative,costello-twistedM}, the brane
-form of the Nekrasov vertex.
-
-\paragraph{Capelli scalar at \texorpdfstring{$\C^3$}{C^3}.}
-The Capelli identification of \S\ref{sec:capelli-scalar} reads at
-\(\C^3\) under matched-conventions transfer to twisted M-theory:
-\(\Omega_{\mathrm{central}}|_{J(f)}\) localises on the
-\(T_\Omega\)-fixed tower of \(\Hilb^N(\C^2)\) with equivariant
-weights \(\varepsilon_1,\varepsilon_2\), recovering the
-\(N\)-instanton chart-multiplicity scaling
-\([\hbar N\bar c]_{\C^3}=\hbar N\cdot
-(\varepsilon_1+\varepsilon_2)/(\varepsilon_1\varepsilon_2)\) under
-the Nekrasov normalisation, the Costello--Gaiotto twisted-M-theory
-match \cite{costello-twistedM}.
-
-\paragraph{Cross-volume bridge.}
-The \(\C^3\) global reading through twisted M-theory is the
-matched-conventions transfer to
-\(\sim/\mathrm{calabi\text{-}yau\text{-}quantum\text{-}groups}/\)
-(Vol.~III; CY-to-chiral two-stage
-\(\Phi_3=\mathrm{Sp}^{\mathrm{ch}}_{\Sigma_2,C}\circ
-\Phi^{\mathrm{FA}}_3\)); the formal-Darboux stalk at the brane
-chart agrees with the Vol.~III \(d=3\) chart on the cyclic framed
-stable branch.
-
-The formal-Darboux stalk identification is proved at the
-two-complex-dimensional brane chart
-(\S\ref{ssec:local-theorem}); the global \(\C^3\)-toric reading
-through twisted M-theory is matched-conventions external to the
-local theorem.
+The brane chart remains
+\[
+  A_b=\widehat{\mc O}_{\C^2,p}\cong\C[[z_1,z_2]],
+  \qquad
+  J(f)=\overline{\operatorname{Tr}f(\phi_1,\phi_2)} .
+\]
+The Hilbert scheme \(\Hilb^N(\C^2)\) appears only after adjoining a
+framing vector \(v\) and imposing the cyclic stability condition
+\(\C[\phi_1,\phi_2]\cdot v=\C^N\).  Nekrasov--Schwarz deformation and
+twisted-M-theory comparisons
+\cite{nekrasov-schwarz-noncommutative,costello-twistedM} are
+external matched-conventions problems.  The formal-Darboux theorem
+does not prove the equivariant formula
+\((\varepsilon_1+\varepsilon_2)/(\varepsilon_1\varepsilon_2)\) for
+the Capelli scalar.
 
 \subsubsection{\texorpdfstring{$K3$}{K3}}\label{sssec:ex-k3}
 
-\paragraph{Chart and trace.}
-Target \(X=K3\); at every formal holomorphic-symplectic point
-\(p\in K3\) the holomorphic Darboux theorem trivialises the germ
-to \((\widehat{\C^2}_0,dz_1\wedge dz_2)\), so \(K3\) contributes
-only its formal symplectic polydisk to the brane chart.  The
-chart algebra at \(b=p\) is
-\(A_b=\widehat{\mc O}_{K3,p}\cong\C[[z_1,z_2]]\) and the trace is
-the formal-Darboux
-\(J(f)=\overline{\operatorname{Tr}\,f(\phi_1,\phi_2)}\) of
-\S\ref{ssec:local-theorem}.
+For \(X=K3\), the holomorphic symplectic form gives a formal
+Darboux chart at each point \(p\):
+\[
+  \widehat{\mc O}_{K3,p}\cong\C[[z_1,z_2]],
+  \qquad
+  \omega=dz_1\wedge dz_2 .
+\]
+At this point the local theorem applies literally, with the same
+trace map \(J\) and the same Capelli class as in the formal
+polydisk.  This is a pointwise statement.
 
-\paragraph{Capelli scalar and the elliptic genus.}
-The Capelli class \([\hbar N\bar c]_{K3}\) at the \(K3\)-chart
-agrees pointwise with the Heisenberg core
-(\S\ref{sssec:ex-heisenberg}); under global descent through the
-Mukai pairing the protected scalar trace of
-\(\Omega_{\mathrm{central}}\)-twisted operators recovers the
-elliptic genus
-\(\mathrm{Ell}(K3;\tau,z)=\sum_{n,\ell}c(n,\ell)q^ny^\ell\) of
-\cite{witten-elliptic-genus} as the level-\(2\) modular section
-of the modular line on \(\overline{\mathcal A}_g\) at \(K3\):
-\([\mathrm{Ell}(K3;\tau,z)]=[\Omega_{\mathrm{central}}]|_{K3}\)
-under the Borcherds--Kac--Moody product expansion of
-\cite{gritsenko-nikulin-paramodular} on the Mukai lattice.
-
-\paragraph{Four-curvature cell.}
-The class \([\hbar N\bar c]_{K3}\) lies on the projective
-\((\Omega_{\mathrm{central}})\)-cell of
-Theorem~\ref{thm:four-curvature-taxonomy}: under matched
-identification of \(\Omega_{\mathrm{central}}\) with the modular
-line at \(K3\) the curvature class is the Atiyah class of the
-\(\det^{1/2}\) of the trace representation, and the elliptic
-genus is its level-\(2\) section.
-
-\paragraph{Cross-volume bridge.}
-The \(K3\)-fibre data of the \(K3\times E\) example
-(\S\ref{sssec:ex-k3-times-e}) is exactly this: the
-\(\kappa_{\mathrm{fiber}}=24\) elliptic-genus fibre rank of the
-five-layer \(\kappa\)-stratification and the \(\Delta_5\)
-denominator at \(K3\times E\) reduce to the elliptic genus of
-\(K3\) on the elliptic-fibre limit \(\tau\to i\infty\) at fixed
-\(z\).
-
-The formal-Darboux stalk identification is proved pointwise on
-\(K3\) (\S\ref{ssec:local-theorem}); the global identification of
-the chiral Hochschild target with the elliptic genus is a
-matched-conventions transfer through descent, QME, anomaly, and
-locality.
+The elliptic genus of \(K3\) is a weak Jacobi form.  Its occurrence
+in the second-quantised \(K3\) story and in Borcherds products is a
+global statement, not a consequence of the pointwise
+formal-Darboux stalk.  A theorem identifying a protected trace of
+\(\Omega_{\mathrm{central}}\)-twisted operators with
+\(\mathrm{Ell}(K3;\tau,z)\) would require global descent, a trace
+theory, and anomaly cancellation.  It is not proved by the local
+chart calculation.
 
 \subsubsection{\texorpdfstring{$K3\times E$}{K3 x E}}\label{sssec:ex-k3-times-e}
 
-\paragraph{Chart and trace.}
-Target \(X=K3\times E\) (3 complex dimensions); brane vacuum
-\(b=(p,q)\in K3\times E\).  Holomorphic Darboux on
-\(K3\) trivialises the germ \(\widehat{K3}_p\) to
-\((\widehat{\C^2}_0,dz_1\wedge dz_2)\); the elliptic factor
-\(\widehat E_q\) supplies one transverse complex coordinate
-\(\tau\).  The formal-Darboux stalk of
-\S\ref{ssec:local-theorem} applies to the two-complex-dimensional
-\(\widehat{K3}_p\)-factor; \(\tau\) parametrises the family of
-formal-Darboux stalks along the elliptic fibre.  The chart algebra at
-\(b\) is
-\(A_b=\widehat{\mc O}_{K3,p}\,\widehat\otimes\,\widehat{\mc O}_{E,q}
-\cong\C[[z_1,z_2]][[\tau]]\), and the trace map of
-\S\ref{ssec:reduced-ce-pv-measurement} reads a Hamiltonian
-\(f\in\mathfrak h\) on the brane chart through the Chan--Paton pair
-\((\phi_1,\phi_2)\) of the \(K3\) directions:
-\(J(f)=\overline{\operatorname{Tr}\,f(\phi_1,\phi_2)}\), with
-\(\tau\)-dependence inherited from the elliptic moduli.
+For \(X=K3\times E\), the formal-Darboux theorem applies to the
+\(K3\) holomorphic symplectic factor at a point \(p\in K3\).  If
+\(q\in E\), the coordinate on \(\widehat E_q\) is an additional
+one-dimensional parameter; it is not part of the two-dimensional
+Hamiltonian formal disk unless a separate reduction includes it.
+Thus the local chart used by the theorem is
+\[
+  \widehat{\mc O}_{K3,p}\cong\C[[z_1,z_2]],
+\]
+not the three-dimensional completed local ring of \(K3\times E\).
 
-\paragraph{Capelli scalar and four-curvature cell.}
-The Capelli identification of \S\ref{sec:capelli-scalar},
-\(\hbar N[\bar c]=\Omega_{\mathrm{central}}|_{J(f)}\), places the
-class \(\hbar N[\bar c]\) on the
-\((\Omega_{\mathrm{central}})\)-cell of the four-curvature taxonomy
-of Theorem~\ref{thm:four-curvature-taxonomy}: at \(K3\times E\) the
-modular line bundle \(\Omega_{\mathrm{central}}\) on
-\(\overline{\mathcal A}_2\) has level-\(2\) section the Igusa cusp
-form \(\Phi_{10}\in S_{10}(\mathrm{Sp}(2,\Z))\) of
-\cite{igusa-cusp-form}; the paramodular Borcherds product is
-\(\Delta_5=\Phi_{10}^{1/2}\) on the paramodular cover
-\cite{gritsenko-nikulin-paramodular}.  Pointwise on the brane chart
-the Capelli scalar identification is the statement
-\([\hbar N\bar c]=[\Phi_{10}]|_{J(f)}\) at the trace generator,
-modulo the Atiyah class of \(\det^{1/2}\) of the trace
-representation.
+The Igusa cusp form \(\Phi_{10}\) and the Borcherds product
+\(\Delta_5=\Phi_{10}^{1/2}\) belong to the global modular and
+Borcherds--Kac--Moody comparison problem
+\cite{igusa-cusp-form,gritsenko-nikulin-paramodular}.  The local
+Capelli scalar is not equal to \(\Phi_{10}\), to \(\Delta_5\), or
+to a section of a Siegel modular line bundle without a separate
+operator-level lift and a protected trace.  The manuscript therefore
+records these as open comparison targets, not as outputs of the
+formal-Darboux theorem.
 
-\paragraph{Pro-Matlis residue.}
-The cotangent module of the \(K3\)-factor is
-\(\mathfrak h^\vee_{\mathrm{cont}}=\mathcal P=\bigoplus_{a+b>0}
-\C\,\rho_{a,b}\) with
-\(\rho_{a,b}=z_1^{-a-1}z_2^{-b-1}dz_1dz_2\); the elliptic factor
-contributes the elliptic period lattice through \(\tau\).  The
-pro-Matlis target \(\widehat{\mathcal P}_\Pi\) along the \(N\)-tower
-of finite Matlis windows is the categorical home of the
-four-curvature taxonomy at this example
-(Theorem~\ref{thm:promatlis-universal-property}); the
-Bochner--Martinelli no-go on each finite window
-(Theorem~\ref{thm:bmk-finite-window-no-go}) forces the inverse
-limit.
-
-\paragraph{Five-layer \texorpdfstring{$\kappa$}{kappa} stratification.}
-Five distinct construction layers attach five \(\kappa\)-numbers,
-none of which collapses to another:
-\(\kappa_{\mathrm{cat}}=\chi(\mathcal O_{K3\times E})=0\) by
-K\"unneth multiplicativity;
-\(\kappa^{\mathrm{Hodge}}_{\mathrm{ch}}
-=\sum_q(-1)^q h^{0,q}(K3\times E)=0\);
-\(\kappa^{\mathrm{Heis}}_{\mathrm{ch}}=3\) on the
-Heisenberg--Mukai chart;
-\(\kappa_{\mathrm{BKM}}(\Delta_5)=c_1(0)/2=5\) of
-Borcherds--Gritsenko--Nikulin; and the fibre rank
-\(\kappa_{\mathrm{fiber}}=24\) of the extended Mukai lattice.  The
-spectral-sequence collapse of these five layers through the
-Hall--Drinfeld--Borcherds comparison sequence is conjectural per
-seventeen-site row 6
-(\S\ref{ssec:cross-volume-firewall}, Vol.~III matched-conventions
-data).  Cross-volume bridges:
-\(\sim/\mathrm{calabi\text{-}yau\text{-}quantum\text{-}groups}\)
-(Vol III; CY-to-chiral two-stage
-\(\Phi_d=\mathrm{Sp}^{\mathrm{ch}}_{\Sigma_{d-1},C}\circ
-\Phi^{\mathrm{FA}}_d\)) and
-\(\sim/\mathrm{igusa\text{-}cusp\text{-}form}\) (Borcherds lift
-\(\Phi_{10}\), denominator \(\Delta_5\)).
-
-\paragraph{Open problems forced by this example.}
-(i) The operator-level lift of the modular line on \(K3\times E\)
-(\S\ref{ssec:open-modular-lift}): the candidate operator-valued
-cocycle on the bulk
-\(\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}|_b\) at the \(K3\times E\)
-brane vacuum (the chiral \(E_2\) factorization algebra restricted to
-the formal neighbourhood of \(b\)), twisted by
-\(\Omega_{\mathrm{central}}\) at level 2, whose
-protected scalar trace at paramodular CM points recovers
-\(\Phi_{10}\); its construction is the cross-volume firewall
-acceptance class \(\mathrm{ob}_{\mathrm{Igusa/BKM}}\) of
-Theorem~\ref{thm:cross-volume-firewall}.  (ii) The
-Hall--Drinfeld--Borcherds comparison spectral sequence
-(\S\ref{ssec:open-hall-drinfeld-borcherds}): five-layer collapse
-to a single \(\kappa\)-invariant; the comparison residual is the
-Hall--Drinfeld--Borcherds obstruction class.
-
-Pointwise formal-Darboux stalk: proved
-(\S\ref{ssec:local-theorem}); five-layer \(\kappa\)-stratification:
-named, not collapsed; modular section \(\Delta_5\): the
-Borcherds--Gritsenko--Nikulin datum; spectral-sequence collapse
-and operator-level lift: the two open problems above.
+The five numbers
+\[
+  0,\quad 0,\quad 3,\quad 5,\quad 24
+\]
+belong to distinct construction layers: holomorphic Euler
+characteristic, Hodge-theoretic index, Heisenberg chart rank,
+Borcherds denominator weight, and Mukai-lattice fibre rank.  They do
+not form one invariant.  Any spectral sequence relating these layers
+is conjectural.
 
 \subsubsection{Generic compact CY\(_3\)}\label{sssec:ex-generic-cy3}
 
-Target \(X=\) compact Calabi--Yau threefold of generic type;
-\(b=\) any formal holomorphic-symplectic point in a chosen
-two-complex-dimensional slice transverse to the holomorphic
-volume. The mixed-HT formal-Darboux stalk sees only the
-\((\widehat{\C^2}_0,dz_1\wedge dz_2)\) of
-\S\ref{ssec:local-theorem}. The full closed-sector
-identification on \(X\) requires:
-formal Darboux on the two-complex-dimensional slice; descent
-across the Weiss/Cech--Roos open cover with the Cech
-cone~\eqref{eq:setup-X-L} converging; QME closure of the
-brane-defect propagator at every loop order with the Costello
-counterterm chosen and the \(\theta_3\) graph-row obstruction
-\(\mathfrak O_{\theta_3}\) of
-Theorem~\ref{thm:first-third-costello-normalizations} resolved;
-anomaly cancellation through the Capelli scalar
-\(\hbar N[\bar c]\) on the global complex with
-\([\bar c]_{\mathrm{glob}}\) vanishing; and locality of
-the bulk-to-defect kernel. Joint vanishing of the
-matched-conventions cross-volume obstruction
-\(\mathfrak o_{\mathrm{cv}}\) of \S\ref{ssec:tate-residual-resolution}
-transports the formal-Darboux stalk into a global identification on
-\(X\); pointwise the identification is the local theorem of
-\S\ref{ssec:local-theorem}.
+A generic compact Calabi--Yau threefold has a holomorphic volume form,
+not a holomorphic symplectic form.  The formal-Darboux theorem of
+this manuscript applies to a two-dimensional holomorphic symplectic
+formal sector.  Therefore it does not apply to an arbitrary compact
+Calabi--Yau threefold without additional data selecting such a sector
+and proving that the mixed holomorphic-topological theory reduces to
+the Hamiltonian BF model used here.
 
-Each example of \S\ref{sec:examples} records its four-curvature
-cell, its Capelli scalar value, and its cross-volume bridge.  The
-\(N\to\infty\) direction of the
-\(W_N\to W_\infty[\lambda]/E_\infty\) family lifts the
-chart-multiplicity formula
-\([\hbar N\bar c]_{W_N}=[c_{W_N}]\) to a conditional admissible
-endpoint on \(\Lambda_{\mathrm{adm}}\subset\{(N,k,\lambda)\}\).
+A global compact-target theorem would require descent, the quantum
+master equation, anomaly cancellation, and locality for the
+bulk-to-defect kernel.  Those are separate obligations.  The local
+formal-Darboux theorem supplies the model for a formal
+holomorphic-symplectic two-plane; it is not a compact
+Calabi--Yau threefold theorem.
 
-\section{The \texorpdfstring{$\mathcal{W}_\infty[\lambda]/E_\infty$}{W-infty[lambda]/E-infty} admissible endpoint}\label{sec:w-infinity-endpoint}\label{ssec:w-infinity-endpoint}
+Thus each example records one of three statuses: proved pointwise by
+the formal-Darboux stalk theorem; available only after a specified
+curve-chiral construction; or open as a global matched-conventions
+comparison.
 
-On the admissible locus defined by hypotheses (H1)--(H4) below, the
-$\mathcal W_N\to\mathcal W_\infty[\lambda]$ family of two-parameter
-$\mathcal W$-algebras converges to an $E_\infty$-algebra carrying the
-formal-Darboux stalk identification of
-Theorem~\ref{thm:main-local}.  The locus is named
-$\Lambda_{\mathrm{adm}}\subset\{(N,k,\lambda)\}$; the limit
-$\lim_{N\to\infty}A^{\mathrm{cl}}_{\partial,N}|_{\Lambda_{\mathrm{adm}}}$
-is taken in the Yamada admissible-weight topology.  The statement is
-\emph{conditional}: each of the four hypotheses is a proved
-structural input in the cited literature, whose composite gives the
-named limit.
+\section{The \texorpdfstring{$\mathcal{W}_\infty[\lambda]$}{W-infty[lambda]} comparison problem}\label{sec:w-infinity-endpoint}\label{ssec:w-infinity-endpoint}
+
+The family \(\mathcal W_N\) and its large-rank limits are
+one-dimensional vertex-algebra objects.  They are not obtained from
+the formal-Darboux stalk theorem without a curve chiral construction.
+The purpose of this section is therefore a comparison problem: state
+what must be supplied before the Hamiltonian trace sector of
+Theorem~\ref{thm:main-local} can be compared with a
+\(\mathcal W_\infty[\lambda]\) spin tower.
+
+Let \(\Lambda_{\mathrm{adm}}\subset\{(N,k,\lambda)\}\) denote an
+admissible locus on which the standard \(\mathcal W\)-algebra
+constructions below are defined.  The hypotheses (H1)--(H4) concern
+the \(\mathcal W\)-algebras themselves.  They do not imply a
+formal-Darboux comparison until the additional conditions (C1)--(C3)
+below are imposed.
 
 \paragraph{The four hypotheses.}
 \begin{description}
@@ -14960,47 +14676,44 @@ named limit.
     spin truncation.
 \end{description}
 
-\begin{thm}[{Conditional $\mathcal W_\infty[\lambda]/E_\infty$ admissible endpoint}]\label{thm:w-infty-e-infty-admissible}
-  Assume (H1)--(H4).  On the admissible locus
-  $\Lambda_{\mathrm{adm}}$, the formal-Darboux stalk identification
-  of Theorem~\ref{thm:main-local} extends to a limit
-  identification
+\begin{thm}[{Conditional \(\mathcal W_\infty[\lambda]\) comparison criterion}]\label{thm:w-infty-e-infty-admissible}
+  Assume (H1)--(H4).  A comparison between the formal-Darboux stalk
+  of Theorem~\ref{thm:main-local} and a
+  \(\mathcal W_\infty[\lambda]\) limit requires the following extra
+  data.
+  \begin{enumerate}
+    \item[(C1)] A curve restriction or pushforward of the
+      two-dimensional holomorphic factorization algebra
+      \(\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}\) to a curve \(C\),
+      with pushed-forward bracket, BV pairing, brane image, and
+      anomaly normalisation.
+    \item[(C2)] A vertex-algebra morphism from the restricted curve
+      theory to the Drinfeld--Sokolov system whose cohomology is the
+      chosen \(\mathcal W_N\)-algebra, compatible with the
+      \(N\to\infty\) spin truncations on \(\Lambda_{\mathrm{adm}}\).
+    \item[(C3)] An anomaly-matching identity identifying the local
+      Capelli class \(\hbar N[\bar c]\) with the central parameter
+      of the chosen \(\mathcal W\)-algebra under the morphism of
+      (C2).
+  \end{enumerate}
+  Under (C1)--(C3), the trace sector
   \[
-    \lim_{N\to\infty}A^{\mathrm{cl}}_{\partial,N}\Big|_{\Lambda_{\mathrm{adm}}}
-      \;\simeq\;
-      \mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}\Big|_{b,\,\Lambda_{\mathrm{adm}}}
+    c_f\longmapsto\theta_f,\qquad
+    u_f\longmapsto J(f)=\overline{\operatorname{Tr}f(\phi_1,\phi_2)}
   \]
-  as $E_\infty$-algebras over the Yamada window (the chiral $E_2$
-  factorization algebra restricted to the formal neighbourhood of $b$,
-  with native diagonal OPE
-  Theorem~\ref{thm:formal-two-dimensional-holomorphic-ope}, evaluated
-  on the admissible locus), with chart the
-  CE/PV dictionary
-  \[
-    c_f \;\longmapsto\; \theta_f,\qquad
-    u_f \;\longmapsto\; J(f)\;=\;\operatorname{Tr} f(\phi_1,\phi_2),
-  \]
-  and Capelli scalar transported to the higher-spin central
-  extension of $w_\infty$:
-  \[
-    \hbar N[\bar c]\;=\;\Omega_{\mathrm{central}}\Big|_{J(f)}
-    \quad\rightsquigarrow\quad
-    c_{w_\infty}(\lambda)\;=\;\Omega_{\mathrm{central}}\Big|_{J_{\mathcal W_\infty}(f)},
-  \]
-  where $c_{w_\infty}(\lambda)$ is the Pope--Romans--Shen central
-  parameter at the spin-tower limit and $J_{\mathcal W_\infty}$ the
-  trace-tower limit of $J$ along the admissible truncation.
+  has a trace-compatible image in the
+  \(\mathcal W_\infty[\lambda]\) spin tower on
+  \(\Lambda_{\mathrm{adm}}\).  Without (C1)--(C3), no
+  \(\mathcal W_\infty[\lambda]\) or \(E_\infty\) conclusion follows
+  from the formal-Darboux theorem.
 \end{thm}
 
-The load-bearing identification is the trace map: the
-$\mathcal W_N$-trace
-$J_N(f)=\operatorname{Tr} f(\phi_1,\phi_2)$ becomes, under the (H1)--(H4)
-admissible truncation, the $\mathcal W_\infty[\lambda]$-trace at
-spin-tower limit; the Capelli scalar is transported to the
-higher-spin central charge of $w_\infty$.  The CE/PV dictionary
-$c_f\mapsto\theta_f$, $u_f\mapsto J(f)$ is the formal Darboux
-chart; on $\Lambda_{\mathrm{adm}}$ the chart is preserved by the
-spin-tower limit.
+The load-bearing local object remains the trace map \(J\).  A
+\(\mathcal W_N\)-trace is meaningful only after a curve chiral
+algebra and a Drinfeld--Sokolov reduction have been supplied.  The
+Capelli scalar is not transported to a higher-spin central charge by
+(H1)--(H4) alone; it is transported only if the anomaly identity
+(C3) is proved.
 
 \paragraph{Spin-$\leq 8$ OPE checks as evidence.}  Pope--Romans--Shen
 and Bakas verify the closed-form spin-summation kernel by direct
@@ -15010,11 +14723,9 @@ two-dimensional diagonal OPE, which is fixed by
 Theorem~\ref{thm:formal-two-dimensional-holomorphic-ope}.  Per the
 seventeen-site catalogue
 (row~14): \emph{spin-$\leq 8$ OPE checks are evidence within
-$\Lambda_{\mathrm{adm}}$}, not proof of $E_\infty$.  The
-$E_\infty$-algebra structure of
-Theorem~\ref{thm:w-infty-e-infty-admissible} is the conditional
-content of (H1)--(H4); the spin-tower convergence to that
-$E_\infty$-structure is hypothesis (H4).
+$\Lambda_{\mathrm{adm}}$}, not proof of an \(E_\infty\) structure and
+not proof of a formal-Darboux comparison.  The missing link is the
+curve restriction and anomaly matching in (C1)--(C3).
 
 \paragraph{Remaining hypotheses.}  Three inputs would remove the
 conditional clauses from the admissible endpoint.
@@ -15048,16 +14759,15 @@ conditional clauses from the admissible endpoint.
     comparison structural.
 \end{enumerate}
 
-The admissible endpoint of
-Theorem~\ref{thm:w-infty-e-infty-admissible}, conditional on
-(H1)--(H4) and the inputs (O1)--(O3), is the
-$\mathcal W$-algebra fibre of the formal-Darboux stalk; it forces
-the frontier problems of the next section.
+The admissible \(\mathcal W_\infty[\lambda]\) comparison is therefore
+open until (C1)--(C3) are constructed.  It is not a fibre of the
+formal-Darboux stalk without those data.  The remaining frontier
+problems are global comparison problems of the same kind.
 
 \section{The frontier}\label{sec:frontier}
 
-The formal-Darboux stalk theorem is the tangent vector to the global
-Mixed Holomorphic--Topological Deligne identification
+The formal-Darboux stalk theorem is the formal local model for the
+global Mixed Holomorphic--Topological Deligne identification
 $Z^{\mathrm{der}}_{E_d^{\mathrm{ch}}}(\mathcal{C}^{\mathrm{op}}_\partial)
 \simeq\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}$.  Three open problems
 follow: the chiral $E_d$ Deligne theorem at $d\geq 2$
@@ -15342,8 +15052,8 @@ the theorem ``DT/PT factorisation on the quintic'' in that volume;
 Bridgeland's
 Hall-algebra theorem; Behrend--Fantechi).
 
-The formal-Darboux stalk supplies the tangent vector at one Dirac
-brane vacuum: the local trace identification
+The formal-Darboux stalk supplies the formal local trace at one Dirac
+brane vacuum: the identification
 $J(f)=\overline{\operatorname{Tr}\,f(\phi_1,\phi_2)}$ of
 Theorem~\ref{thm:main-local} feeds the chain-level trace data on a
 formal neighbourhood of a brane chart on $X$.  The global gluing
