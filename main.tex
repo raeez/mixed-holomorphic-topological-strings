@@ -14397,18 +14397,25 @@ Drinfeld--Sokolov reduction, or large-\(N\) spin limit, the
 one-variable OPEs in the examples are restrictions or
 matched-conventions transfers of this diagonal contact algebra.
 
-Each example records: the brane vacuum
-\(b\in\mathcal{C}^{\mathrm{op}}_\partial\); the chart algebra
-\(A_b=\End_{\mathcal{C}^{\mathrm{op}}_\partial}(b)\) and its
-reduction to the Heisenberg core
-\(A_{b_p}=\widehat{\mathcal O}_{\C^2,p}\) along the chosen abelian
-subalgebra (Definition~\ref{def:formal-darboux-stalk-chart}); the
-trace \(J(f)\); the \(d=1\) chiral derived centre target where
-applicable; status --- proved (at the Heisenberg core), conditional
-(matched-conventions transfer through the chosen reduction), or open
-(global compact-target identification beyond the formal-Darboux
-stalk, requiring descent, QME, anomaly, and locality data on the
-target geometry).
+The chart algebra at any brane vacuum $b\in\mathcal C^{\mathrm{op}}_\partial$
+is uniformly the formal coordinate ring
+$A_b=\End_{\mathcal C^{\mathrm{op}}_\partial}(b)\cong\C[[z_1,z_2]]$
+(Definition~\ref{def:formal-darboux-stalk-chart}); each example below
+specifies (i) the Chan--Paton substitution
+$\rho_\phi\colon A_b\to M_N(\C)\otimes\mathfrak g_0$ implanting a
+chosen flavour Lie algebra $\mathfrak g_0$ on the brane stack, (ii)
+the holomorphic curve $C\hookrightarrow\C^2$ along which the bulk
+factorisation algebra
+$\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}$ is restricted, and
+(iii) the specific vertex algebra produced by that restriction
+(Heisenberg, $V_k(\mathfrak g_0)$, $V^{\beta\gamma}$,
+$\mathrm{Vir}_c$, $W_N(\mathfrak{sl}_N)_k$) with its $d=1$ chiral
+derived centre target.  Status: proved at the Heisenberg core
+(\S\ref{ssec:local-theorem}); conditional on matched-conventions
+transfer through the chosen reduction; or open at the global
+compact-target identification beyond the formal-Darboux stalk,
+requiring descent, QME, anomaly, and locality data on the target
+geometry.
 
 \subsubsection{Heisenberg current on the formal disk}\label{sssec:ex-heisenberg}
 
@@ -14442,86 +14449,95 @@ at \(N=1\)).
 \subsubsection{Affine Kac--Moody current
 \texorpdfstring{\(\widehat{\mathfrak g}_k\)}{ghat\_k}}\label{sssec:ex-affine-km}
 
-\(\mathfrak g_0\) finite-dimensional simple complex; \(b=\) the
-level-\(k\) vacuum module \(V_k(\mathfrak g_0)\) of
-\cite{frenkel-ben-zvi}*{\S 2.4}.  The chart algebra is
-\(A_b=V_k(\mathfrak g_0)\); the Chan--Paton pair is the affine
-current \(J^a(z)\) and its conjugate, with the Heisenberg core
-recovered along the Cartan.  The trace
-\(J(f)=\overline{\operatorname{Tr}\rho_\phi(f)}\) on the chart is
-the Sugawara projection of the polynomial Hamiltonian.  The
-Capelli scalar reads
-\([\Phi_\hbar(z_1),\Phi_\hbar(z_2)]_\star=\hbar k\cdot I\): the
-brane multiplicity \(N\) is replaced by the affine level \(k\);
-the central extension \([\bar c]\) is the Kac--Moody central
-charge --- the projective \((\Omega_{\mathrm{central}})\)-cell of
-Theorem~\ref{thm:four-curvature-taxonomy} at the
-\(\widehat{\mathfrak g}_k\)-chart, with chart-multiplicity formula
-  \([\hbar N\bar c]_{\widehat{\mathfrak g}_k}=[\hbar k]\).  After
-restricting to a holomorphic curve
-\(C\hookrightarrow\C^2\) (Remark~\ref{rmk:not-a-curve-voa}), the
-$d=1$ chiral Hochschild target is
-\(C^\bullet_{\mathrm{ch},d=1}(V_k(\mathfrak g_0),V_k(\mathfrak g_0))
-\simeq Z^{\mathrm{der}}_{\mathrm{ch}}(V_k(\mathfrak g_0))\) along
-the chiral Deligne theorem at \(d=1\)
-\cite{beilinson-drinfeld-chiral}; the $d=2$ formal-Darboux stalk
-identifies $\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}|_{b_p}$ with
-$Z^{\mathrm{der}}_{E_1}(A^{\mathrm{cl}}_{\partial,N})$ by
-Costello--Gwilliam bulk--boundary correspondence.  Identification of the
-formal-Darboux stalk is proved on the Heisenberg core
-(\S\ref{ssec:local-theorem}); the Sugawara reading to the full
-\(\widehat{\mathfrak g}_k\) chart is the standard
-Frenkel--Ben-Zvi datum, pending a matched-conventions transfer at
-the joint level/multiplicity scaling
-\((k,N)\to\hbar k N[\bar c]\).
+Take $\mathfrak g_0$ a finite-dimensional simple complex Lie algebra,
+$N=\dim\mathfrak g_0$, and brane vacuum $b=b_p$ at $p\in\C^2$ with
+chart algebra $A_b=\widehat{\mathcal O}_{\C^2,b}\cong\C[[z_1,z_2]]$.
+The Chan--Paton substitution
+$\rho_\phi\colon A_b\to M_N(\C)$, $z_1\mapsto\phi_1$,
+$z_2\mapsto\phi_2$ valued in $\mathfrak g_0\otimes\mathfrak{gl}_N$
+implants $\mathfrak g_0$-flavour on the brane stack; the trace
+$J(f)=\overline{\operatorname{Tr}\,\rho_\phi(f)}$ becomes the
+Sugawara projection of the polynomial Hamiltonian.  Restricting
+the bulk factorisation algebra
+$\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}$ along a holomorphic curve
+$C\hookrightarrow\C^2$ transverse to the brane line produces the
+affine Kac--Moody vertex algebra $V_k(\mathfrak g_0)$ at level $k=N$,
+with affine current $J^a(z)$ in the standard
+Knizhnik--Zamolodchikov form on $C$
+(\cite{frenkel-ben-zvi}*{\S 2.4}).  The Capelli identification
+$\hbar N[\bar c]=\Omega_{\mathrm{central}}|_{J(f)}$ specialises along
+this curve restriction to the Kac--Moody central charge: the
+projective $(\Omega_{\mathrm{central}})$-cell of
+Theorem~\ref{thm:four-curvature-taxonomy} with chart-multiplicity
+formula $[\hbar N\bar c]_{\widehat{\mathfrak g}_k}=[\hbar k]$.  On
+the curve $C$ the chiral derived centre is
+$Z^{\mathrm{der}}_{\mathrm{ch}}(V_k(\mathfrak g_0))\simeq
+C^\bullet_{\mathrm{ch},d=1}(V_k(\mathfrak g_0),
+V_k(\mathfrak g_0))$ by the $d=1$ chiral Deligne theorem
+\cite{beilinson-drinfeld-chiral}*{\S 4}; the $d=2$ formal-Darboux
+stalk identifies $\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}|_{b_p}\simeq
+Z^{\mathrm{der}}_{E_1}(A^{\mathrm{cl}}_{\partial,N})$ by
+Costello--Gwilliam bulk--boundary correspondence, and the curve
+restriction recovers the $d=1$ statement on $C$.  Identification at
+the Heisenberg core is proved (\S\ref{ssec:local-theorem}); the
+Sugawara reading to the full $\widehat{\mathfrak g}_k$ curve
+specialisation is the standard Frenkel--Ben-Zvi datum, pending a
+matched-conventions transfer at the joint level/multiplicity scaling
+$(k,N)\to\hbar k N[\bar c]$.
 
 \subsubsection{\texorpdfstring{\(\beta\gamma\)}{beta-gamma} system}\label{sssec:ex-betagamma}
 
-\(N=1\), \(b=\) the \(\beta\gamma\) vacuum on the formal disk;
-the Chan--Paton pair \((\phi_1,\phi_2)\) realises the canonical
-commutation \([\beta(z),\gamma(w)]=(z-w)^{-1}\) at the brane
-point as the Heisenberg pair of weight \((1,0)\) and \((0,1)\)
-fields after restricting to a holomorphic curve.  In the two-variable
-formal neighbourhood, the same Heisenberg pair has the contact term
-\(\hbar K^{(2)}_\Delta(z,w)\mathbf1\) of
-Corollary~\ref{cor:quantum-brane-trace-two-dimensional-ope}.  The chart
-algebra is the \(\beta\gamma\) vertex algebra
-\(A_b=V^{\beta\gamma}\); the trace
-\(J(z_1^k z_2^l)=\overline{\operatorname{Tr}}(\beta^k\gamma^l)\)
-collapses to the Wick-ordered monomial.  The central charge
-\(c=2\) equals \(\hbar N[\bar c]\) with \(N=1\) and the doubled
-Heisenberg cocycle: the projective
-\((\Omega_{\mathrm{central}})\)-cell of
-Theorem~\ref{thm:four-curvature-taxonomy} at the
-\(\beta\gamma\)-chart with chart-multiplicity formula
-\([\hbar N\bar c]_{\beta\gamma}=[\hbar\cdot 2]=[\hbar c]\).  After
-restricting to a holomorphic curve (Remark~\ref{rmk:not-a-curve-voa}), the $d=1$
-chiral Hochschild target is
-\(C^\bullet_{\mathrm{ch},d=1}(V^{\beta\gamma},V^{\beta\gamma})\),
-the $d=1$ chiral derived centre of the free \(\beta\gamma\)
-factorization algebra of
-\cite{costello-gwilliam}*{Vol.~II~\S 5.4}.  Proved at
-\(c=2\); the chart matches the formal-Darboux stalk by the same
-Heisenberg cocycle that controls the brane centre-of-mass
+Take $N=1$ and brane vacuum $b=b_p$ at $p\in\C^2$ with chart
+algebra $A_b=\widehat{\mathcal O}_{\C^2,b}\cong\C[[z_1,z_2]]$.  The
+Chan--Paton substitution $(\phi_1,\phi_2)=(z_1,z_2)$ is the
+two-variable formal Heisenberg pair, with contact term
+$\hbar K^{(2)}_\Delta(z,w)\mathbf 1$ in the native
+two-dimensional OPE
+(Corollary~\ref{cor:quantum-brane-trace-two-dimensional-ope}).
+Restricting the bulk factorisation algebra
+$\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}$ along a holomorphic curve
+$C\hookrightarrow\C^2$ on which $z_1$ becomes a weight-$1$
+holomorphic field and $z_2$ a weight-$0$ partner produces the free
+$\beta\gamma$ vertex algebra $V^{\beta\gamma}$ at central charge
+$c=2$, with $\beta(z)=z_1|_C$, $\gamma(z)=z_2|_C$ satisfying the
+standard $\beta\gamma$ OPE $\beta(z)\gamma(w)\sim 1/(z-w)$
+(\cite{costello-gwilliam}*{Vol.~II, \S 5.4}); the trace
+$J(z_1^k z_2^l)=\overline{\operatorname{Tr}}(\beta^k\gamma^l)$
+collapses on $C$ to the Wick-ordered monomial.  The Capelli
+scalar $\hbar N[\bar c]$ equals $\hbar c$ with $c=2$ on this curve
+restriction: the projective $(\Omega_{\mathrm{central}})$-cell of
+Theorem~\ref{thm:four-curvature-taxonomy} with chart-multiplicity
+formula $[\hbar N\bar c]_{\beta\gamma}=[\hbar\cdot 2]=[\hbar c]$.
+On $C$ the $d=1$ chiral derived centre is
+$C^\bullet_{\mathrm{ch},d=1}(V^{\beta\gamma},V^{\beta\gamma})$, the
+chiral derived centre of the free $\beta\gamma$ factorization
+algebra of \cite{costello-gwilliam}*{Vol.~II~\S 5.4}.  Proved at
+$c=2$ on the curve restriction; the $d=2$ formal-Darboux stalk
+identification at the brane vacuum is the local theorem of
+\S\ref{ssec:local-theorem} with the same Heisenberg cocycle
+controlling the brane centre-of-mass
 (Example~\ref{ex:linear-hamiltonian-com}).
 
 \subsubsection{Virasoro at central charge
 \texorpdfstring{\(c\)}{c}}\label{sssec:ex-virasoro}
 
 \paragraph{Chart and trace.}
-\(b=\) the Virasoro vacuum module \(V_{\mathrm{Vir},c}\) at
-central charge \(c\); chart algebra \(A_b=\mathrm{Vir}_c\) with
-generators \(L_n\), \(n\in\Z\), and Virasoro relations
-\([L_n,L_m]=(n-m)L_{n+m}+\tfrac{c}{12}(n^3-n)\delta_{n+m,0}\)
-\cite{frenkel-ben-zvi}*{\S 2.5}.  The trace map reads polynomial
-Hamiltonians on the Virasoro generators through the Sugawara
-projection from the Heisenberg core (\S\ref{sssec:ex-heisenberg}):
-on a Hamiltonian \(f\in\mathfrak h\) admitting a Sugawara
-presentation
-\(L_n=\tfrac12\sum_{k\in\Z}{:}a_{n-k}a_k{:}\) with
-\(a_n\in\widehat{\mathfrak{gl}}_1\),
+Brane vacuum $b=b_p$ at $p\in\C^2$ with chart algebra
+$A_b=\widehat{\mathcal O}_{\C^2,b}\cong\C[[z_1,z_2]]$ and
+Chan--Paton pair $(\phi_1,\phi_2)$.  Restricting the bulk
+factorisation algebra
+$\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}$ along a holomorphic curve
+$C\hookrightarrow\C^2$ on which the Sugawara composite of the
+Heisenberg-core fields specialises to the stress tensor produces
+the Virasoro vertex algebra $\mathrm{Vir}_c$ at central charge $c$,
+with generators $L_n$, $n\in\Z$, and Virasoro relations
+$[L_n,L_m]=(n-m)L_{n+m}+\tfrac{c}{12}(n^3-n)\delta_{n+m,0}$
+\cite{frenkel-ben-zvi}*{\S 2.5}.  For a Hamiltonian
+$f\in\mathfrak h$ admitting a Sugawara presentation
+$L_n=\tfrac12\sum_{k\in\Z}{:}a_{n-k}a_k{:}$ with
+$a_n\in\widehat{\mathfrak{gl}}_1$, the trace specialises on $C$ to
 \[
-  J(f)=\overline{\operatorname{Tr}\,f(L_n)}
+  J(f)|_C=\overline{\operatorname{Tr}\,f(L_n)}
    =\overline{\operatorname{Tr}\,
      f\!\left(\tfrac12\sum_{k\in\Z}{:}a_{n-k}a_k{:}\right)},
 \]
@@ -14584,21 +14600,26 @@ the operator level.
 Drinfeld--Sokolov}\label{sssec:ex-wN}
 
 \paragraph{Chart and trace.}
-\(b=\) the principal Drinfeld--Sokolov reduction of
-\(\widehat{\mathfrak{sl}}_N\) at level \(k\); the chart algebra is
-\(A_b=W_N(\mathfrak{sl}_N)_k\)
+Brane vacuum $b=b_p$ at $p\in\C^2$ with chart algebra
+$A_b=\widehat{\mathcal O}_{\C^2,b}\cong\C[[z_1,z_2]]$ and
+Chan--Paton pair $(\phi_1,\phi_2)$ valued in
+$\mathfrak{sl}_N\otimes\mathfrak{gl}_N$.  Restricting the bulk
+factorisation algebra
+$\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}$ along a holomorphic curve
+$C\hookrightarrow\C^2$, then applying principal Drinfeld--Sokolov
+reduction to the affine $\widehat{\mathfrak{sl}}_N$ current algebra
+produced on $C$, gives the $W_N(\mathfrak{sl}_N)_k$ vertex algebra
 \cite{frenkel-ben-zvi}*{\S 15.6} with generating currents
-\(W^{(s)}(z)\) of conformal weights \(s=2,3,\dots,N\): the stress
-tensor \(W^{(2)}=L\) at \(s=2\) plus higher-spin currents
-\(W^{(3)},\dots,W^{(N)}\) at integer weights up to \(s=N\).  The
-trace map at the Drinfeld--Sokolov chart is
-\(J(f)=\overline{\operatorname{Tr}\rho_\phi(f)}\) on polynomial
-Hamiltonians in the \(W^{(s)}\)-currents, the iterated Sugawara
+$W^{(s)}(z)$ of conformal weights $s=2,3,\dots,N$: the stress
+tensor $W^{(2)}=L$ at $s=2$ plus higher-spin currents
+$W^{(3)},\dots,W^{(N)}$ at integer weights up to $s=N$.  The trace
+specialises on $C$ to
+$J(f)|_C=\overline{\operatorname{Tr}\,\rho_\phi(f)}$ on polynomial
+Hamiltonians in the $W^{(s)}$-currents, the iterated Sugawara
 projection from the Heisenberg core (\S\ref{sssec:ex-heisenberg})
-through the \(\widehat{\mathfrak{sl}}_N\) parafermion at level
-\(k\).  After restricting to a holomorphic curve
-(Remark~\ref{rmk:not-a-curve-voa}), the $d=1$ chiral Hochschild
-target is \(C^\bullet_{\mathrm{ch},d=1}(W_N,W_N)\).
+through the $\widehat{\mathfrak{sl}}_N$ parafermion at level $k$.
+On $C$ the $d=1$ chiral derived centre is
+$C^\bullet_{\mathrm{ch},d=1}(W_N,W_N)$.
 
 \paragraph{Capelli scalar at the \texorpdfstring{$W_N$}{W\_N}-chart.}
 The Capelli identification of \S\ref{sec:capelli-scalar} reads at
