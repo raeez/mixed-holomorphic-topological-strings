@@ -64,8 +64,8 @@ or Borcherds--Kac--Moody (BKM) target is a separate
 matched-conventions descent class
 (Corollary~\ref{cor:protected-matched-conventions-interface},
 \S\ref{app:convention-contract}); vanishing of
-\(\operatorname{Ob}^{\mathrm{univ}}_{p,X}\) alone licenses no such
-conclusion.
+\(\operatorname{Ob}^{\mathrm{univ}}_{p,X}\) supplies only the formal-local
+input.
 
 \begin{defn}[Protected Hamiltonian sector at a brane point]\label{defn:protected-hamiltonian-sector-brane-point}
   Let $(X,\omega)$ be a connected holomorphic-symplectic surface, let
@@ -193,8 +193,8 @@ conclusion.
 \begin{lem}[Coordinate-free objects of \(\mathsf{ProtHam}\)]\label{lem:protham-non-tautology}
   Definition~\ref{defn:admissible-protected-hamiltonian-restriction}
   imposes on an object \((X,\omega,p,\Theta)\) of \(\mathsf{ProtHam}\)
-  no a priori expression of \(\Theta\) in Darboux coordinates and no
-  a priori realization of the bulk-to-boundary evaluation as
+  coordinate-free data for \(\Theta\) and treats the Darboux expression
+  and the bulk-to-boundary evaluation by
   trace substitution.  An admissible protected Hamiltonian restriction
   \(\Theta\) at \(\widehat p\) is a quadruple of independent data:
   a sheaf of dgla brackets on \(\widehat p\), a brane-defect open BV
@@ -211,23 +211,22 @@ conclusion.
       \(A_\infty\)-deformation of the structure sheaf;
     \item \((X,\omega)\) a holomorphic-symplectic surface with
       coordinate-free symplectic form, \(\Theta\) the
-      protected Hamiltonian sector of an arbitrary Darboux choice.
+  protected Hamiltonian sector of an arbitrary Darboux choice.
   \end{enumerate}
-  None of (1)--(3) is presented in the form of
-  \(\mathfrak M^{\mathrm{Ham}}_{\mathrm{loc}}\); the Darboux
+  The objects (1)--(3) are presented coordinate-free; the Darboux
   symplectomorphism, the trace-substitution evaluation, and the
   identification of \([\bar c]_\Theta\) with \([\bar c]\) are
   conclusions of
-  Theorem~\ref{thm:formal-local-universal-property}, not assumptions
-  of \(\mathsf{ProtHam}\)-membership.
+  Theorem~\ref{thm:formal-local-universal-property}; \(\mathsf{ProtHam}\)
+  membership is coordinate-free.
 \end{lem}
 
 \begin{proof}
   The four pieces of an admissible protected Hamiltonian restriction
   are listed in
   Definition~\ref{defn:admissible-protected-hamiltonian-restriction}
-  without reference to a coordinate choice.  The functorial datum
-  \(\mathrm{ev}_\Theta\) need not factor through trace substitution:
+  independent of a coordinate choice.  The functorial datum
+  \(\mathrm{ev}_\Theta\) may be supplied by other evaluations:
   the cotangent example (1) admits the de Rham residue evaluation as
   \(\mathrm{ev}_\Theta\); the Hochschild example (2) admits the
   Connes--Tsygan evaluation; the symplectic-surface example (3)
@@ -477,7 +476,7 @@ exhibits a complementary locus where unsigned parity-equivariance
 breaks down and a nonzero odd scalar class
 \(\hbar N[\bar c]^{\mathrm{otr}}\) survives, showing that the
 algebraic spin-Hecke coefficient input governs the cohomology layer
-but does not by itself supply a chain-level QME cancellation.
+while chain-level QME cancellation requires the additional homotopy data.
 Together these two theorems give the precise dichotomy controlling
 the QME coordinate: scalar QME-vanishing is ruled by a single matrix
 coefficient \(\kappa_{\mathfrak s}\), and a target null-homotopy of
@@ -589,10 +588,10 @@ brane stack.
   \]
   has zero degree-one cohomology after the chosen weighted regulator
   and interval-factorization null-homotopies are imposed, then the
-  complete degree-one brane-defect QME obstruction class in
-  \(H^1(\mathfrak Q_{\mathfrak s})\) vanishes.  Without the
-  non-scalar vanishing hypothesis the theorem controls only the
-  scalar channel.
+	  complete degree-one brane-defect QME obstruction class in
+	  \(H^1(\mathfrak Q_{\mathfrak s})\) vanishes.  The non-scalar
+	  vanishing hypothesis is the additional condition extending the result
+	  beyond the scalar channel.
 \end{thm}
 
 \begin{proof}
@@ -614,9 +613,9 @@ brane stack.
   Passing to the scalar associated graded keeps only the Hamiltonian
   cocycle \([\bar c]\) and the matrix coefficient
   \(\kappa_{\mathfrak s}\), giving the displayed cohomology class.
-  Casimir-balance sets this coefficient to
-  zero, so the degree-one representative is the zero cochain, not
-  merely an exact cochain.  The \(P_{(z_1)}\)-equivariance follows because
+	  Casimir-balance sets this coefficient to
+	  zero, so the degree-one representative is the zero cochain itself.
+	  The \(P_{(z_1)}\)-equivariance follows because
   \(\kappa_{\mathfrak s}\) is matrix-factor data and \(\omega\) is the
   symplectic Poisson cocycle on the target
   factor.  The completion at the brane axis is functorial only under
@@ -697,8 +696,8 @@ brane stack.
   on the target or a target null-homotopy of the odd line
   \(\Pi\C\cdot[\bar c]^{\mathrm{otr}}\) is supplied; the class itself
   is the precise residual obstruction.  Third, the spin-Hecke input
-  fixes the coefficient identity at the cohomology layer but supplies
-  no chain-level QME cancellation, since
+	  fixes the coefficient identity at the cohomology layer; chain-level
+	  QME cancellation has the parity obstruction
   \[
     P^{\mathfrak q}J(P^{\mathfrak q})^{-1}=-J
   \]
@@ -745,18 +744,18 @@ brane stack.
   direct summands
   \(H^2_{\mathrm{Lie}}(\bar A,\C)\oplus
   H^2_{\mathrm{Lie}}(\bar A,\Pi\C)\).
-  Since \(N\ge1\) in the datum and \(\hbar\) is formal, the displayed
-  odd class is not killed inside
-  \(H^2_{\mathrm{Lie}}(\bar A,\Pi\C)[[\hbar]]\).  Killing it requires an
-  additional target quotient or null-homotopy; it is not a consequence
-  of the spin-Hecke coefficient comparison.
+	  Since \(N\ge1\) in the datum and \(\hbar\) is formal, the displayed
+	  odd class survives inside
+	  \(H^2_{\mathrm{Lie}}(\bar A,\Pi\C)[[\hbar]]\).  Killing it requires an
+	  additional target quotient or null-homotopy beyond the spin-Hecke
+	  coefficient comparison.
 
   Finally,
   \(P^{\mathfrak q}J(P^{\mathfrak q})^{-1}=-J\) is an explicit matrix
-  computation.  Thus the queer channel has signed parity, not the
+  computation.  Thus the queer channel has signed parity rather than the
   unsigned parity condition used in the super-balanced cancellation.
-  The algebraic spin-Hecke input gives the coefficient class, but not a
-  null-homotopy of this odd obstruction.
+  The algebraic spin-Hecke input gives the coefficient class; a
+  null-homotopy of this odd obstruction is separate data.
 \end{proof}
 
 \begin{lem}[Primary obstruction test]\label{lem:protected-primary-obstruction-test}
@@ -790,8 +789,8 @@ brane stack.
   cone \(\mc C_{\mathrm{cl},p}=\operatorname{Cone}(\chi_{\mathrm{cl}})\)
   is acyclic on the protected summand: a nonzero cohomology class in
   the cone is either a protected closed field invisible to the
-  formal Hamiltonian model, or a Hamiltonian BF field not produced by
-  the protected sector, and either witness blocks the field-level
+  formal Hamiltonian model, or a Hamiltonian BF field outside the
+  protected-sector image, and either witness blocks the field-level
   identification.
 
   Scalar compatibility is the equality
@@ -931,7 +930,7 @@ brane stack.
   protected-sector equivalence.
 \end{proof}
 
-\begin{lem}[Formal-restriction external acceptance criterion]\label{lem:admissibility-not-globalization}
+\begin{lem}[Formal-restriction external acceptance criterion]\label{lem:formal-restriction-external-acceptance}
   An admissible protected Hamiltonian restriction contributes precisely
   the formal Hamiltonian polydisk, the Dirac brane Ext algebra, the brane-line
   factorization restriction, and the scalar anomaly class \( [\bar c] \).
@@ -959,8 +958,8 @@ brane stack.
     \bigr)
     \in H^1(\mathfrak K_T),
   \]
-  with a component omitted only when \(T\) does not assert the
-  corresponding structure.  A non-zero component is the exact obstruction
+	  with a component included exactly when \(T\) asserts the
+	  corresponding structure.  A non-zero component is the exact obstruction
   to the corresponding external theorem.
 \end{lem}
 
@@ -1058,7 +1057,7 @@ brane stack.
 \end{cor}
 
 \begin{proof}
-  Lemma~\ref{lem:admissibility-not-globalization} identifies the
+  Lemma~\ref{lem:formal-restriction-external-acceptance} identifies the
   external acceptance class
   \(\operatorname{Ob}^{\mathrm{ext}}_T\in H^1(\mathfrak K_T)\).  A
   morphism of convention data and null-homotopies for this class supply

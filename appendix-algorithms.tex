@@ -175,7 +175,7 @@ by support.
 \(f\cdot\rho_{a,b}\in\mathcal P\) as a finite linear combination of
 basis residues.  This is the calculation that detects the
 Bochner--Martinelli finite-window leak
-(Theorem~\ref{thm:bmk-finite-window-no-go}) at the canonical row
+(Theorem~\ref{thm:bmk-finite-window-obstruction}) at the canonical row
 \((p,q,a,b)=(N+2,0,N+1,0)\):
 \(z_1^{N+2}\cdot\rho_{N+1,0}=-(N+2)\rho_{0,1}\).
 \end{description}
@@ -201,8 +201,8 @@ lift).
 \item Compute \(v_{a,b}\) over \(\Q\) by exact rational arithmetic.
 \item Decide whether \(v_{a,b}\in\operatorname{im}B_{a,b}\) by
 Bareiss row reduction.
-\item Output: if yes, the unique correction \(C^+_{a,b}\) with
-\(B_{a,b}C^+_{a,b}=v_{a,b}\); if no, a covector
+\item Output: either the unique correction \(C^+_{a,b}\) with
+\(B_{a,b}C^+_{a,b}=v_{a,b}\), or a covector
 \((\phi,-\lambda)\in\ker B_{a,b}^*\) with
 \(\lambda(E^+_{a,b})-\phi(T_{a,b})\ne 0\) representing
 \(\Omega^{\mathrm{rad}}_{a,b}\in\operatorname{coker}B_{a,b}\).
@@ -266,6 +266,6 @@ non-absorptive curvature \(\Rightarrow\) clause~(4), force target
 replacement and record the matched-conventions data.
 \end{enumerate}
 \item[Output.]  Either a strict or twisted global \(\mathcal T\)-coherence
-together with its supplied null-homotopy data, or a no-go obstruction
+together with its supplied null-homotopy data, or an obstruction theorem
 together with the curvature class blocking the target.
 \end{description}

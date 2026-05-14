@@ -42,8 +42,8 @@ truncation, unconditional in the classical sector
 (Theorem~\ref{thm:phi-trunc-classical}).
 Theorem~\ref{thm:phi-hbar-trunc} excludes the all-order Moyal lift on
 the same finite truncation;
-Remark~\ref{rmk:colim-does-not-recover-full} shows the inverse limit
-recovers $\mathfrak m^3\subsetneq\mathfrak h$, not the whole.
+Remark~\ref{rmk:colim-obstruction-full-h} shows that the inverse limit
+recovers the proper subalgebra \(\mathfrak m^3\subsetneq\mathfrak h\).
 Problem~\ref{prob:linear-sector-lift} is the open problem of extending
 the Koszul resolution
 $\Phi_{\mathfrak m^3}$ from $\mathfrak m^3$ to $\mathfrak h=\mathfrak m$
@@ -77,7 +77,7 @@ $$\{z_1^2,z_2^2\}=4z_1z_2,\quad
   \{z_1^2,z_1z_2\}=2z_1^2,\quad
   \{z_1z_2,z_2^2\}=2z_2^2,$$
 so $\mathfrak m^2/\mathfrak m^{N+1}$ contains a nonabelian semisimple
-subalgebra and is not nilpotent, violating the lower-central
+subalgebra and violates nilpotence, hence the lower-central
 Tate-pronilpotence hypothesis of \ref{lem:continuous-bar-cobar}.  At
 $k=3$ the bracket raises $\mathfrak m$-adic degree strictly.
 
@@ -96,12 +96,12 @@ For every $N\geq 3$:
     $C_{\mathfrak h_{\leq N}}=\sum_{3\leq d\leq N}\sum_i
      e_{d,i}\otimes e_d^i$
     is a convergent element of
-    $\mathfrak h_{\leq N}\otimes\mathfrak h_{\leq N}^\vee$ (a finite
-    sum, no Tate completion required).
+    $\mathfrak h_{\leq N}\otimes\mathfrak h_{\leq N}^\vee$ as a finite
+    sum in the ordinary tensor product.
   \item The linear Hamiltonians $z_1,z_2\in\mathfrak m\setminus
     \mathfrak m^3$, the conformal-symplectic generators
     $H_2=\mathrm{span}\{z_1^2,z_1z_2,z_2^2\}\cong\mathfrak{sl}_2$,
-    and the constant Hamiltonian $1\notin\mathfrak m$ are absent
+    and the constant Hamiltonian $1\notin\mathfrak m$ are omitted
     from $\mathfrak h_{\leq N}$ by construction.
 \end{enumerate}
 \end{lem}
@@ -147,7 +147,7 @@ The truncation kills the linear and conformal-symplectic sectors:
 the obstruction
 $\{z_1,z_2^{N+1}\}=(N+1)z_2^N\notin\mathfrak m^{N+1}$ of
 \ref{lem:finite-window-hamiltonian-obstruction} requires $z_1\in H_1$,
-absent from $\mathfrak m^3$.  The Casimir is the finite sum
+which the cubic cutoff omits.  The Casimir is the finite sum
 $C_{\mathfrak h_{\leq N}}=\sum_{d=3}^N\sum_i e_{d,i}\otimes e_d^i\in
 \mathfrak h_{\leq N}\otimes\mathfrak h_{\leq N}^\vee$; the
 product/direct-sum support obstruction of
@@ -191,8 +191,8 @@ constant filtration. It is lower-central Tate-pronilpotent in the sense of
 \ref{lem:continuous-bar-cobar}: by
 \ref{lem:trunc-is-nilpotent-lie}(ii) the descending Lie powers of
 $\mathfrak h_{\leq N}$ vanish after at most $N-2$ brackets.  The
-cotangent summand is abelian, but this alone would not imply nilpotence
-of the semidirect product.  The needed point is the degree-lowering
+cotangent summand is abelian, and nilpotence of the semidirect product
+uses the degree-lowering
 coadjoint action: since \([H_p,H_q]\subset H_{p+q-2}\), an element
 \(f\in H_p\), \(p\geq3\), sends \(H_d^\vee\) to
 \(H_{d-p+2}^\vee\), hence lowers dual degree by at least one.  Repeated
@@ -225,11 +225,11 @@ $\{(\phi_1)^i{}_j(t),(\phi_2)^k{}_l(t')\}=\delta^i_l\delta^k_j\delta(t-t')$
 on two brane-time points is unchanged, the smearing
   $\mathfrak h_{\leq N,I}=\Omega^\bullet_c(I)\,\widehat\otimes\,
   \mathfrak h_{\leq N}$ is canonical because $\mathfrak h_{\leq N}$
-is finite-dimensional (no Tate completion), and the strict $P_0$
+is finite-dimensional in the ordinary tensor category, and the strict $P_0$
 bracket follows from the delta-function locality.
 
-In this finite truncated classical sector, the cotangent factor has no
-Tate-Casimir convergence problem. The principal-part sub-factorization algebra
+In this finite truncated classical sector, the cotangent factor has a finite
+Tate-Casimir kernel. The principal-part sub-factorization algebra
 $$\widetilde{\mathrm{Obs}}^{\mathrm{cl,pp}}_{\partial,\leq N}(I)
   =\mathrm{Obs}^{\mathrm{cl}}_{\mathrm{open},\leq N}(I)
    \,\widehat\otimes\,
@@ -240,8 +240,8 @@ $$\widetilde{\mathrm{Obs}}^{\mathrm{cl,pp}}_{\partial,\leq N}(I)
 is a finite sum, hence a literal element of the (uncompleted) tensor
 product $\mathfrak h_{\leq N}\otimes\mathfrak h_{\leq N}^\vee$. The
 $Q$-compatibility, factorization compatibility, and $P_0$-bracket
-homotopies are then formal, since at no step does one need an
-infinite-support tensor in the direct-sum dual.
+homotopies are then formal, since every step uses finite-support tensors
+in the direct-sum dual.
 
 The bracket compatibility and graded Leibniz extension to the completed
 finite CE/PV algebra is the same argument as in
@@ -260,21 +260,20 @@ stalkwise limit follow as in
   The classical finite truncation
   \ref{thm:phi-trunc-classical} is unconditional.  The same finite
   Lie algebra
-  $\mathfrak h_{\leq N}=\mathfrak m^3/\mathfrak m^{N+1}$ does
-  \emph{not} carry an all-order Moyal deformation for $N\geq4$:
-  it is not closed under the reduced Moyal bracket. Consequently the
-  nilpotent truncation
-  supplies no all-order quantum descendant theorem on the strict
-  finite truncation unless an additional Moyal-flat replacement or a
-  projected bracket with Jacobi and cochain compatibility is supplied.
+  $\mathfrak h_{\leq N}=\mathfrak m^3/\mathfrak m^{N+1}$ has an
+  obstruction to an all-order Moyal deformation for $N\geq4$: the
+  reduced Moyal bracket has a closure obstruction. Consequently an all-order quantum
+  descendant theorem on the strict finite truncation requires an additional
+  Moyal-flat replacement or a projected bracket with Jacobi and cochain
+  compatibility.
 
   What remains true at quantum level is the restriction of the
   full-sector degree-zero map
   \ref{thm:phi-hbar-all-order} to the finite set of generators of
   $\mathfrak h_{\leq N}$, viewed inside the full
   $\mathfrak h_\hbar$.  This is a restriction of a proved map on the
-  full Hamiltonian source, not a closed CE theorem for a finite
-  quantum Lie subalgebra.
+  full Hamiltonian source. A closed CE theorem for a finite quantum Lie
+  subalgebra requires the additional data above.
 \end{thm}
 
 \begin{proof}
@@ -287,29 +286,30 @@ stalkwise limit follow as in
   order-$\hbar^{2j}$ summand lies in
   $\mathfrak m^{p+q-2(2j+1)}$ when nonzero.  The Poisson term
   $j=0$ preserves $\mathfrak m^3$ as a Lie subalgebra, but the
-  higher Moyal terms need not.  For $N\geq4$,
+  higher Moyal terms can leave the ideal.  For $N\geq4$,
   $$P^3(z_1^4,z_2^4)=24z_1\cdot24z_2=576z_1z_2,$$
   so
   $$\{z_1^4,z_2^4\}_\hbar
     =16z_1^3z_2^3+24\hbar^2 z_1z_2+\cdots.$$
   The term $24\hbar^2z_1z_2$ has $\mathfrak m$-adic degree $2$.
-  It is neither in $\mathfrak m^3$ nor a constant killed by the
-  reduction modulo $\C\cdot1$.  Thus
-  $\mathfrak m^3/\mathfrak m^{N+1}$ is not a Moyal Lie subalgebra
-  for $N\geq4$.
+  It has degree \(2\) and lies outside both the cubic ideal
+  \(\mathfrak m^3\) and the constants killed by the reduction modulo
+  \(\C\cdot1\).  Thus \(\mathfrak m^3/\mathfrak m^{N+1}\) has a
+  Moyal-closure obstruction for \(N\geq4\).
 
   Therefore the CE differential for a hypothetical finite quantum
   source
   $\mathfrak h_{\leq N,\hbar}\ltimes
-  \mathfrak h_{\leq N,\hbar}^\vee[1]$ is not defined by restriction
-  of the Moyal bracket.  Any projected bracket would require a new
+  \mathfrak h_{\leq N,\hbar}^\vee[1]$ is incompatible with simple
+  restriction of the Moyal bracket.  Any projected bracket would require a new
   Jacobi proof; the projected-degree warning of
   \ref{lem:finite-window-hamiltonian-obstruction} shows that this is
-  a real condition, not a formality.  The all-order theorem
+  a genuine Jacobi condition.  The all-order theorem
   \ref{thm:phi-hbar-all-order} remains valid on the full
   Hamiltonian algebra $\mathfrak h_\hbar$, and its map can be
-  evaluated on generators of degrees $3,\ldots,N$.  That operation does not
-  make those generators a finite quantum CE source.  The descendant
+  evaluated on generators of degrees $3,\ldots,N$.  That operation yields
+  restricted values; a finite quantum CE source requires the additional
+  Moyal-flat structure above.  The descendant
   cotangent sector at $\hbar=0$ is exactly
   \ref{thm:phi-trunc-classical}; at $\hbar\neq0$ it is the named
   Moyal-flat truncation problem.
@@ -334,7 +334,7 @@ data from the local theorem \ref{thm:main-local}:
     The constant Hamiltonian $1\notin\mathfrak m$, on which the
     $\hbar$-normalization of the Moyal product depends. The
     central element $\C\cdot 1\subset\mathfrak h_{\mathrm{poly}}$
-    is absent from $\mathfrak m^3$ a fortiori, so the
+    is omitted from $\mathfrak m^3$ a fortiori, so the
     $\hbar$-normalization in the truncated theorem is conventional.
   \item\label{lost:u1-anomaly}
     The U(1) center anomaly cohomology class
@@ -345,8 +345,8 @@ data from the local theorem \ref{thm:main-local}:
     is concentrated on multidegree $(1,1)$, with both arguments of
     total $\mathfrak m$-adic degree $1$, hence the cocycle pairs
     only elements outside $\mathfrak h_{\leq N}=\mathfrak m^3/
-    \mathfrak m^{N+1}$. There is no central anomaly to anchor on
-    the truncation.
+    \mathfrak m^{N+1}$. The central anomaly has support outside the
+    truncation.
   \item\label{lost:colim}
     The stable connected limit $N\to\infty$ on the full
     $\mathfrak h$. The inverse system
@@ -356,16 +356,15 @@ data from the local theorem \ref{thm:main-local}:
     induced by the $\mathfrak m$-adic projection
     $\mathfrak m^{N+1}\subset\mathfrak m^{N+2}$. The inverse limit
     is $\varprojlim_N\mathfrak h_{\leq N}=\mathfrak m^3$, the
-    $\mathfrak m^3$-truncation of the Hamiltonian Lie algebra, not
-    the full $\mathfrak h=\mathfrak m$.
+    $\mathfrak m^3$-truncation of the Hamiltonian Lie algebra.
 \end{enumerate}
 What remains classically: the third-order and higher canonical
 transformations, which form a nilpotent Lie subalgebra
 $\mathfrak m^3\subset\mathfrak h$, a Lie ideal in $\mathfrak m^2$,
 admitting the classical finite cotangent CE/PV identification
 unconditionally.
-The unreduced open BV factorization-centre morphism is not constructed
-by this truncation. The all-order Moyal descendant lift is excluded by
+The unreduced open BV factorization-centre morphism requires additional
+data beyond this truncation. The all-order Moyal descendant lift is excluded by
 \ref{thm:phi-hbar-trunc} unless extra quantum truncation data are
 added.
 \end{prop}
@@ -391,14 +390,15 @@ recover the complete cubic Lie algebra
 \(\varprojlim_N\mathfrak h_{\leq N}=\mathfrak m^3\).  The finite
 cotangent maps \(\Phi_{\leq N}\) of
 \ref{thm:phi-trunc-classical} form a compatible family of coordinate
-tests.  They do not, however, form an inverse system of dg CE cochain
-projections.  A Lie quotient
+tests.  Their functoriality is contravariant: it is pullback along Lie
+quotients, with additional data required for an inverse system of dg CE
+cochain projections.  A Lie quotient
 \(\mathfrak h_{\leq M}\twoheadrightarrow\mathfrak h_{\leq N}\) induces CE
 cochain maps by pullback in the opposite direction.  Consequently
 \(\Phi_{\mathfrak m^3}\) denotes the coordinate-window family
 \(\{\Phi_{\leq N}\}_N\) together with the chain-side inverse limit and an
-exact continuous-dualization datum; it is not an unconditional formula
-\(\varprojlim_N\Phi_{\leq N}\) on CE cochains.
+exact continuous-dualization datum; the expression
+\(\varprojlim_N\Phi_{\leq N}\) on CE cochains requires those additional data.
 
 This is the maximal survivor of the nilpotent tower only in that precise
 sense: the Lie-side tower recovers \(\mathfrak m^3\), while a completed
@@ -408,7 +408,7 @@ bracket-admissibility data named above.
 
 \begin{proof}
 The Lie-side inverse limit is the usual \(\mathfrak m\)-adic completion
-of \(\mathfrak m^3\).  The variance failure appears already at
+of \(\mathfrak m^3\).  The variance obstruction appears already at
 \(M=4\), \(N=3\).  In \(\mathfrak h_{\leq4}\),
 \[
   \{z_1^3,z_2^3\}=9z_1^2z_2^2,
@@ -416,12 +416,12 @@ of \(\mathfrak m^3\).  The variance failure appears already at
   d_{\mathrm{CE}}c^{2,2}\supset -9c^{3,0}c^{0,3}.
   \]
 The coordinate projection to the \(N=3\) cochain window kills
-\(c^{2,2}\) but not \(c^{3,0}c^{0,3}\), so
+\(c^{2,2}\) and leaves \(c^{3,0}c^{0,3}\), so
 \[
   p(d_{\mathrm{CE}}c^{2,2})=-9c^{3,0}c^{0,3}
   \neq0=d_{\mathrm{CE}}p(c^{2,2}).
   \]
-Thus projection of CE cochains is not a dg map.  The correct finite
+Thus projection of CE cochains has a nonzero dg defect.  The correct finite
 functoriality is contravariant pullback along Lie quotients, while a
 completed cochain theorem must be obtained either from a chain-side
 inverse limit followed by exact continuous dualization or from a
@@ -444,8 +444,8 @@ as in \ref{lem:tate-casimir-obstruction}, but on the smaller
 \(\Phi_{\leq N}\) at every finite \(N\) use only the finite Casimir
 \(\sum_{3\leq d\leq N}\sum_i e_{d,i}\otimes e_d^i\).  Passing from these
 finite identities to a completed cochain identity is exactly the
-continuous-dualization and variance datum isolated in the statement, not
-a formal inverse-limit consequence.
+continuous-dualization and variance datum isolated in the statement, rather
+than a formal inverse-limit consequence.
 \end{proof}
 
 \begin{defn}[Low-degree obstruction datum for the nilpotent tower]
@@ -510,7 +510,7 @@ a formal inverse-limit consequence.
   The displayed value
   \(\{z_1,z_2^{N+1}\}=(N+1)z_2^N\notin\mathfrak m^{N+1}\)
   shows that this ideal condition is exactly the vanishing of
-  \(\mathfrak o^{\mathrm{lin}}_N\), and it fails.
+  \(\mathfrak o^{\mathrm{lin}}_N\), and the displayed value is nonzero.
 
   If \(H_2\) is included, then its bracket remains inside \(H_2\) and
   equals the nonabelian \(\mathfrak{sl}_2\) bracket displayed in
@@ -529,17 +529,17 @@ a formal inverse-limit consequence.
 \end{proof}
 
 \begin{thm}[Low-degree obstruction datum for full Hamiltonian recovery]
-\label{rmk:colim-does-not-recover-full}
+\label{rmk:colim-obstruction-full-h}
 The coordinate-window family
   $\Phi_{\mathfrak m^3}$ of \ref{prop:colim-recovery} is the
-  classical cotangent lift datum on $\mathfrak m^3$, not on
-$\mathfrak h=\mathfrak m$. To extend to all of $\mathfrak h$ one must
+  classical cotangent lift datum on $\mathfrak m^3$. Extension to all of
+$\mathfrak h=\mathfrak m$ must
 include the low-degree sectors
 $\mathfrak m/\mathfrak m^3=H_1\oplus H_2=\C\cdot z_1\oplus
 \C\cdot z_2\oplus\mathrm{span}\{z_1^2,z_1z_2,z_2^2\}$, which by
 \ref{lem:finite-window-hamiltonian-obstruction}(iii) and
-\ref{lem:nilpotent-obstructions-exact} is not stable
-under any $\mathfrak m$-adic cutoff: the bracket
+\ref{lem:nilpotent-obstructions-exact} has a stability obstruction under
+any $\mathfrak m$-adic cutoff: the bracket
 $\{z_1,z_2^{N+1}\}=(N+1)z_2^N$ is the explicit obstruction.
 Equivalently, the obstruction datum is
 \[
@@ -562,13 +562,13 @@ $\sum_i e_{2,i}\otimes e_2^i\in H_2\otimes H_2^\vee$
 that the truncation removes; the degree-$1$ component is the source
 of the linear-Hamiltonian translation, and the degree-$2$ component
 is the source of the conformal-symplectic $\mathfrak{sl}_2$ direction,
-where the truncation is semisimple rather than nilpotent. Recovering the full
+where semisimplicity replaces nilpotence. Recovering the full
 $\mathfrak h$ requires a coefficient category in which
 $C_{\mathfrak h}$ converges \emph{including} both low-degree
 components, which is exactly the Casimir support obstruction of
-\ref{lem:tate-casimir-obstruction}. The truncation route does not
-solve that obstruction; it removes the sector on which the
-obstruction is felt.  A full recovery theorem must therefore supply
+\ref{lem:tate-casimir-obstruction}. The truncation route leaves that
+obstruction intact; it removes the sector supporting the
+obstruction.  A full recovery theorem must therefore supply
 both a coefficient category in which \(C_{\mathfrak h}\) converges and a
 relative or reductive model for the \(H_2\)-sector.
 \end{thm}
@@ -584,29 +584,28 @@ relative or reductive model for the \(H_2\)-sector.
   \]
   as a complete filtered Lie algebra.  The homogeneous pieces
   \(H_1\) and \(H_2\) have zero image in every term of this tower;
-  hence no element of the inverse limit can recover them.
+  hence the inverse limit misses them.
 
-  The failure is not an artefact of the chosen notation.  If one tries
-  to include \(H_1\) while keeping the same \(\mathfrak m\)-adic
-  finite windows, the tails are not Lie ideals: for every \(N\),
+  The obstruction is intrinsic to the chosen finite windows.  Including
+  \(H_1\) while keeping the same \(\mathfrak m\)-adic finite windows gives
+  a Lie-ideal obstruction in the tails: for every \(N\),
   \[
     z_2^{N+1}\in\mathfrak m^{N+1},\qquad
     \{z_1,z_2^{N+1}\}=(N+1)z_2^N\notin\mathfrak m^{N+1}.
   \]
-  Therefore the quotient by the tail does not carry the full
-  Hamiltonian bracket.  If one includes \(H_2\), the degree-two
+  Therefore the quotient by the tail carries a full-Hamiltonian bracket
+  obstruction.  If one includes \(H_2\), the degree-two
   Hamiltonians contain the \(\mathfrak{sl}_2\) bracket
-  \([H_2,H_2]=H_2\), so the finite quotient is not nilpotent.  Thus a
-  finite nilpotent \(\mathfrak m\)-adic tower cannot contain the
+  \([H_2,H_2]=H_2\), so the finite quotient violates nilpotence.  Thus a
+  finite nilpotent \(\mathfrak m\)-adic tower is incompatible with the
   low-degree sector \(H_1\oplus H_2\).
 
   Finally, the full Casimir \(C_{\mathfrak h}\) has nonzero components
   in \(H_1\otimes H_1^\vee\), \(H_2\otimes H_2^\vee\), and in every
   higher \(H_d\otimes H_d^\vee\).  The nilpotent tower sees only the
   \(d\geq3\) part.  Hence the inverse-limit cotangent lift on
-  \(\mathfrak m^3\) cannot be promoted to the full Hamiltonian sector
-  without an additional coefficient category in which the full Casimir
-  converges.
+  \(\mathfrak m^3\) promotes to the full Hamiltonian sector only after
+  an additional coefficient category makes the full Casimir converge.
 \end{proof}
 
 \begin{cor}[Full maximal-ideal universal obstruction class]
@@ -657,8 +656,8 @@ relative or reductive model for the \(H_2\)-sector.
   projections, so the generator substitution
   \(c\mapsto\theta,\ u\mapsto O\) is a completed dg commutative cochain
   isomorphism.  The \(P_0\)-algebra reading is finite-level or
-  bracket-admissible data; it is not supplied by an unqualified inverse
-  limit of ambient coordinate products.
+  bracket-admissible data; an unqualified inverse limit of ambient
+  coordinate products supplies a different object.
 
   The filtered-cobar recognition theorem asks for more.  The linear
   obstruction is the same computation as in
@@ -716,14 +715,14 @@ alone.
 \begin{thm}[Semisimple obstruction to lower-central Tate-pronilpotence]
 \label{rmk:conilpotency-essential}
 A second obstruction to extending $\Phi_{\mathfrak m^3}$ to all of
-$\mathfrak h$ is structural rather than analytic: the inclusion of
+$\mathfrak h$ is structural: the inclusion of
 $H_2=\mathfrak{sl}_2$ violates the lower-central Tate-pronilpotence route
 used in Lemma~\ref{lem:continuous-bar-cobar} because
 $[H_2,H_2]=H_2$ is its own descending Lie series. Even if the
 degree-$1$ and degree-$2$ Casimir components converged in some
-weighted Tate completion, the pronilpotent bar-cobar route would not
-apply directly to the resulting Lie algebra.  Ordinary finite-dimensional
-bar-cobar and PBW formalism do not fail for \(\mathfrak{sl}_2\); the
+weighted Tate completion, direct application of the pronilpotent
+bar-cobar route would still be obstructed.  Ordinary finite-dimensional
+bar-cobar and PBW formalism remain valid for \(\mathfrak{sl}_2\); the
 lower-central Tate-pronilpotent criterion must be replaced, on a
 \(L\) containing \(H_2\), by a relative or reductive model that builds in
 semisimple subalgebras separately.
@@ -740,10 +739,10 @@ semisimple subalgebras separately.
   \]
   The intersection of the descending Lie powers is therefore nonzero.
   This contradicts the lower-central Tate-pronilpotence condition used in
-  Lemma~\ref{lem:continuous-bar-cobar}.  The bar-cobar argument may be
-  applied to the nilpotent radical \(\mathfrak m^3\), but it cannot be
-  applied unchanged to a Lie source containing the semisimple
-  \(H_2\)-sector.
+  Lemma~\ref{lem:continuous-bar-cobar}.  The bar-cobar argument applies
+  to the nilpotent radical \(\mathfrak m^3\).  A Lie source containing
+  the semisimple \(H_2\)-sector requires a relative or reductive
+  replacement.
 \end{proof}
 
 \subsection*{Costello--Li precedent}
@@ -778,8 +777,9 @@ U(1)-anomaly). The structural analogy with the truncation here:
   \item The colimit $N\to\infty$ converges on the Costello--Li side
     to the full $\mathfrak{gl}(\infty\mid\infty)$, providing the
     stable connected single-trace algebra. Here the inverse limit
-    converges to $\mathfrak m^3\subsetneq\mathfrak h$, not to all
-    of $\mathfrak h$, by \ref{rmk:colim-does-not-recover-full}.
+    converges to the proper subalgebra
+    $\mathfrak m^3\subsetneq\mathfrak h$ by
+    \ref{rmk:colim-obstruction-full-h}.
 \end{enumerate}
 The structural difference: the
 $\mathfrak{gl}(N\mid N)$ system is graded by matrix size, with

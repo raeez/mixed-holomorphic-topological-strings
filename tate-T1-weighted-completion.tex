@@ -39,7 +39,7 @@ $C_{\mathfrak h}$ has nonzero $H_d^\vee$-component in every degree, so
   C_{\mathfrak h}\notin\mathfrak h_\Pi\widehat\otimes D_\oplus
 \)
 (Lemma~\ref{lem:tate-casimir-obstruction};
-Theorem~\ref{thm:strict-unweighted-no-go} sharpens this to the
+Theorem~\ref{thm:strict-unweighted-obstruction} sharpens this to the
 finite-window form).  The coefficient category itself must change: the
 second factor must be a product, dualized through an intermediate
 Mittag--Leffler inverse-limit weight system.  The smallest complete
@@ -50,7 +50,7 @@ bracket $[-,-]_{\mathrm{Sch}}$, and the pointwise product, and complete
 in such a weighted topology is the weighted Tate envelope $B_w$ of
 Theorem~\ref{thm:wt-canonical-habitat}.
 
-\subsection*{Strict Tate pair: failure of the Casimir kernel}
+\subsection*{Strict Tate pair: Casimir-kernel obstruction}
 
 \begin{rmk}[Strict Tate continuous duality]\label{rmk:diagnosis-unweighted-casimir}
   In the strict Tate pair
@@ -63,8 +63,9 @@ Theorem~\ref{thm:wt-canonical-habitat}.
   continuous dual of a Tate product is the strict direct sum of duals,
   and \emph{vice versa}.  The second tensor factor of the formal Casimir
   $C_{\mathfrak h}=\sum_{d\geq1}\sum_i e_{d,i}\otimes e^i_d$ has nonzero
-  $H_d^\vee$-component in every $d$, hence lies in $\prod_d H_d^\vee$,
-  not in $\bigoplus_d H_d^\vee=D_\oplus$.
+  $H_d^\vee$-component in every $d$, hence lies in $\prod_d H_d^\vee$.
+  The direct sum $\bigoplus_d H_d^\vee=D_\oplus$ contains only finitely
+  supported dual-degree expansions.
 \end{rmk}
 
 \begin{rmk}[Costello's coefficient requirements]\label{rmk:costello-coefficient-requirements}
@@ -119,8 +120,7 @@ Theorem~\ref{thm:wt-canonical-habitat}.
   \end{enumerate}
   The strict Tate pair \eqref{eq:wt-strict-tate-pair} has the
   obstruction to \ref{costello:CC1}.  Requirement~\ref{costello:CC3} is
-  not a formal consequence of any coefficient enlargement; it is the
-  residual locality/QME problem of
+  the residual locality/QME problem attached to coefficient enlargement:
   Problem~\ref{prob:weighted-rg-locality}.
 \end{rmk}
 
@@ -159,8 +159,8 @@ Mittag--Leffler-coevaluating for the heat-kernel propagator.
 \begin{lem}[Existence of weights]\label{lem:wt-weights-exist}
   Every exponential weight $w(d)=q^d$ with $q>1$ satisfies
   \ref{w:W1}--\ref{w:W3}.  The proof uses only finite-window maxima
-  for the coadjoint action; there is no uniform bound in the
-  unbounded principal-part degree.
+  for the coadjoint action; the unbounded principal-part degree prevents
+  a uniform bound.
 \end{lem}
 
 \begin{proof}
@@ -170,8 +170,7 @@ Mittag--Leffler-coevaluating for the heat-kernel propagator.
   $a+b-p-q+2\leq w_0$, then $a+b\leq w_0+R-2$.  Hence the set of
   possible triples $(p,q,a+b)$ is finite, and the corresponding
   ratios of powers of $q$ admit a finite maximum; the bound depends on
-  the finite-window restriction, and a uniform inequality without it
-  is false.
+  the finite-window restriction.
   Condition~\ref{w:W3} is the strict Mittag-Leffler compatibility of
   finite-window Casimirs under truncation.  The transition maps are
   surjective, hence the system is Mittag-Leffler.
@@ -181,7 +180,8 @@ Mittag--Leffler-coevaluating for the heat-kernel propagator.
   The exponential weight $w(d)=q^d$ is the working choice, with $q>1$
   formally an element of $\R_{>0}$ and concretely set to $q=2$ for
   the proofs below. The choice is a grading weight on the coefficient
-  module, not a symplectic automorphism of the formal polydisk.  Thus the
+  module.  It acts on coefficients, with the formal polydisk fixed.
+  Thus the
   Poisson bracket and the counterterm representatives are compared
   between two weights only after transport by the diagonal map
   \(R_{w,w'}\) below.  In coordinates, the bracket constants in the
@@ -189,8 +189,8 @@ Mittag--Leffler-coevaluating for the heat-kernel propagator.
   \(w(p)w(q)/w(p+q-2)\), and condition~\ref{w:W1} is exactly the
   boundedness condition needed for this transported bracket on each
   finite graph.  The weight is therefore a controlled coefficient
-  regulator, not an assertion that rescaling the variables
-  \(z_1,z_2\) preserves the original Hamiltonian bracket.
+  regulator; rescaling the variables \(z_1,z_2\) is a different
+  operation on the original Hamiltonian bracket.
 \end{rmk}
 
 \begin{defn}[Weighted Tate coefficient pair]\label{defn:wt-coefficient-pair}
@@ -216,20 +216,18 @@ Mittag--Leffler-coevaluating for the heat-kernel propagator.
   $\langle w(d)^{-1}e^i_d,w(d)e_{d,j}\rangle=\delta^i_j$.
   The weighted Tate coefficient pair is
   $(\mathfrak h_w,\mathfrak h^{\vee,w}_{\mathrm{cont}})$.  The second
-  factor is a product coefficient module, not the strict continuous
+  factor is a product coefficient module replacing the strict continuous
   dual of the first product Tate space.
 \end{defn}
 
 \begin{rmk}[Topological content]\label{rmk:wt-topology-content}
   Both $\mathfrak h_w$ and $\mathfrak h^{\vee,w}_{\mathrm{cont}}$ are
   Mittag-Leffler inverse limits of finite-dimensional Tate windows,
-  and both are products in the degree direction. The two are no
-  longer in strict Tate duality (one product, one direct sum); the
-  point is precisely to replace the direct-sum dual by a symmetric
-  Mittag-Leffler product coefficient module.  This is an additional
-  coefficient category for the BV kernel.  It does not identify
-  $\mathfrak h^{\vee,w}_{\mathrm{cont}}$ with the ordinary continuous
-  dual of $\mathfrak h_w$.
+  and both are products in the degree direction. The construction
+  replaces the direct-sum dual by a symmetric Mittag-Leffler product
+  coefficient module.  This is an additional coefficient category for
+  the BV kernel; the ordinary continuous dual of $\mathfrak h_w$ remains
+  the strict Tate dual.
 \end{rmk}
 
 \begin{defn}[The weighted-Tate envelope \(B_w\)]\label{defn:wt-Bw-envelope}
@@ -306,7 +304,7 @@ Mittag--Leffler-coevaluating for the heat-kernel propagator.
       weighted Tate topology, and existence of the
       $L\to\infty,\epsilon\to0^+$ limit as a distributional kernel after
       the standard bulk counterterm subtraction. The coefficient piece
-      $C_{\mathfrak h,w}$ requires no counterterm; it is the fixed
+      $C_{\mathfrak h,w}$ is counterterm-free; it is the fixed
       Mittag-Leffler kernel of \ref{wt:canon:casimir}.
     \item\label{wt:canon:rg}
       \emph{Graphwise RG stability.} For every fixed Costello graph
@@ -483,7 +481,7 @@ Mittag--Leffler-coevaluating for the heat-kernel propagator.
 
 \begin{rmk}[Independence of basis]\label{rmk:wt-basis-independence}
   Definition~\eqref{eq:wt-casimir-weighted} is written in a basis
-  $\{e_{d,i}\}$ of $H_d$, but does not depend on the choice. The dual basis
+  $\{e_{d,i}\}$ of $H_d$, and the tensor is basis-independent. The dual basis
   $\{e^i_d\}$ is fixed by $\langle e_{d,i},e^j_d\rangle=\delta_i^j$.
   An orthogonal change of basis $e_{d,i}\mapsto\sum_j O_i^je_{d,j}$
   with $O\in GL(H_d)$ shifts the dual by the inverse transpose,
@@ -518,10 +516,10 @@ Mittag--Leffler-coevaluating for the heat-kernel propagator.
     \item Costello regularity \ref{costello:CC2}: the family is
       continuous in $(\epsilon,L)$ in the weighted Tate topology;
     \item the limit $L\to\infty$, $\epsilon\to0^+$ exists as a
-      distributional kernel after the standard spacetime counterterm
-      subtraction in Costello's heat-kernel renormalization-group construction
-      \cite{costello-renormalization}*{Chs.~5--7}; the coefficient
-      direction introduces no additional spacetime singular support.
+	      distributional kernel after the standard spacetime counterterm
+	      subtraction in Costello's heat-kernel renormalization-group construction
+	      \cite{costello-renormalization}*{Chs.~5--7}; the coefficient
+	      direction leaves the spacetime singular support unchanged.
       Locality and QME counterterm compatibility for the mixed
       brane-defect theory remain the content of
       Problem~\ref{prob:weighted-rg-locality}.
@@ -580,8 +578,7 @@ Mittag--Leffler-coevaluating for the heat-kernel propagator.
   propagator $G(t,s)=\frac12\,\mathrm{sgn}(t-s)$ of
   Proposition~\ref{prop:conditional-boundary-product-normalization}.
   The weighted Casimir $C_{\mathfrak h,w}$ is the same on the boundary
-  as in the bulk; the weight $w$ does not interact with the
-  coordinate $t$.
+  as in the bulk; the weight $w$ is independent of the coordinate $t$.
 \end{rmk}
 
 \subsection*{Normal \(\Omega\)-weights and equivariant kernel admissibility}
@@ -643,16 +640,16 @@ contraction.
   \((\epsilon_s,\epsilon_1,\epsilon_2)\) is
   \((N,M)\)-nonresonant if every \(\chi\in\mathsf X_{N,M}\) remains
   nonzero.  It is all-window nonresonant if this holds for every
-  \((N,M)\).  If one imposes an analytic Kothe norm rather than the
-  algebraic Mittag--Leffler product topology, the stronger
+  \((N,M)\).  An analytic Kothe norm in place of the algebraic
+  Mittag--Leffler product topology requires the stronger
   \(q\)-moderate nonresonance condition is required:
   there are constants \(A,Q\) such that
   \[
     |\chi_{n,a,b}|^{-1}\leq A\,Q^{n+a+b}
   \]
-  for every inverted character.  Without this quantitative bound,
-  nonresonance still gives every finite-window algebraic kernel, but not
-  an analytic all-window bounded homotopy in a fixed normed scale.
+  for every inverted character.  This quantitative bound upgrades the
+  finite-window algebraic kernels from nonresonance to an analytic
+  all-window bounded homotopy in a fixed normed scale.
 \end{defn}
 
 \begin{thm}[Equivariant weighted-kernel admissibility]\label{thm:wt-omega-kernel-admissibility}
@@ -705,12 +702,12 @@ contraction.
       =
     \operatorname{id}-\operatorname{pr}_{\chi=0}
   \]
-  on that window.  A character with specialized value zero is not a small
-  denominator to be regularized; it is a genuine resonant summand.  It must
-  be retained in \(\operatorname{pr}_{\chi=0}\), or the contraction does not
-  exist.
+  on that window.  A character with specialized value zero is a genuine
+  resonant summand.  It is retained in
+  \(\operatorname{pr}_{\chi=0}\), and the contraction is defined on the
+  moving summand.
 
-  The residue and Euler normalizations do not change the diagonal Casimir.
+  The residue and Euler normalizations leave the diagonal Casimir fixed.
   They change the brane pushforward/scalar-contact normalization.  With
   orientation sign \(\sigma_s=\pm1\),
   \[
@@ -727,8 +724,9 @@ contraction.
       \longmapsto
     \nu_\Omega^{\mathrm{Eu}}K_{\Omega,w,\mathrm{res}}^{N,M}.
   \]
-  Using both conventions in one scalar-contact or trace statement without
-  this factor is exactly the normalization obstruction.
+  This factor is required when both conventions appear in one
+  scalar-contact or trace statement; omitting it is exactly the
+  normalization obstruction.
 \end{thm}
 
 \begin{proof}
@@ -751,12 +749,11 @@ contraction.
   over the finite set of moving labels gives~\eqref{eq:wt-omega-normal-kernel}
   and the homotopy identity with the
   unmoved zero-character projection.  If a specialized character vanishes,
-  \(\chi_\alpha^{-1}\) is not an element of the specialized coefficient
-  ring; the same equation cannot be written.  Thus resonance is precisely
-  the obstruction to moving that summand.
+  \(\chi_\alpha^{-1}\) lies outside the specialized coefficient ring, so
+  resonance is precisely the obstruction to moving that summand.
 
-  The residue convention fixes the formal residue density and inserts no
-  smooth normal Euler factor; the Euler convention pushes along the
+  The residue convention fixes the formal residue density; the Euler
+  convention pushes along the
   normal bundle with inverse equivariant Euler class
   \(\sigma_s(\epsilon_s\epsilon_1\epsilon_2)^{-1}\). The coefficient
   Casimir pairs dual bases before either pushforward is applied, so it is
@@ -793,8 +790,8 @@ contraction.
       \mid \chi_\alpha=0\}
   \]
   is the resonance obstruction to the normal contraction,
-  \(\operatorname{ob}_{\Omega,\nu}\) is the failure to use one named
-  residue/Euler normalization, \(\mathfrak s_{n,\Omega,M}\) is the scalar
+  \(\operatorname{ob}_{\Omega,\nu}\) is the residue/Euler normalization
+  obstruction, \(\mathfrak s_{n,\Omega,M}\) is the scalar
   condition
   \[
     \widehat\sigma_{\mathrm{sc},\Omega,M}
@@ -873,10 +870,9 @@ category.
   changes the total weight by at most the finite constant attached to
   the degrees present in that graph.  Coadjoint legs are controlled
   windowwise by \ref{w:W2}.  Hence the graph contribution is a
-  well-defined element of the weighted completion.  No assertion is
-  made that the full effective interaction preserves the original
-  degree bound $D_0$; Costello's expansion is a completed sum over
-  graph degrees.
+  well-defined element of the weighted completion.  The assertion is
+  graphwise; the full effective interaction is Costello's completed sum
+  over graph degrees.
 \end{proof}
 
 \begin{thm}[Weighted RG flow, graphwise compatibility]\label{thm:wt-rg-compatibility}
@@ -935,10 +931,10 @@ category.
   \ref{wt:canon:casimir}--\ref{wt:canon:phi}, evaluated at the
   exponential weight $w(d)=q^d$, $q>1$. The
   $P_0$-algebra reading of $\Phi^w$ uses the bracket-admissible envelope
-  of Definition~\ref{defn:bracket-kernel-admissible}; it is not the
-  strict continuous duality statement of
-  Lemma~\ref{lem:continuous-bar-cobar} for a product/direct-sum Tate
-  pair. The needed dual generators are inserted by the symmetric
+  of Definition~\ref{defn:bracket-kernel-admissible}.  The strict
+  continuous duality statement of
+  Lemma~\ref{lem:continuous-bar-cobar} applies to the product/direct-sum
+  Tate pair. The needed dual generators are inserted by the symmetric
   Mittag-Leffler coefficient pairing of
   Remark~\ref{rmk:wt-topology-content}.
 \end{proof}
@@ -962,7 +958,7 @@ category.
   The displayed isomorphism is a theorem in the weighted-continuous
   sector with vanishing QME obstruction.  The original unweighted Tate
   pair is governed by the endpoint obstruction of
-  Theorem~\ref{thm:strict-unweighted-no-go}.
+  Theorem~\ref{thm:strict-unweighted-obstruction}.
 \end{prop}
 
 \begin{proof}
@@ -971,7 +967,7 @@ category.
   decomposes the cotangent action $\mathrm{ad}^\vee$ into Costello
   graphs in $\mathcal E_w$, and
   Theorem~\ref{thm:wt-rg-compatibility} keeps each fixed graph inside
-  the weighted category.  What is not formal is the cancellation
+  the weighted category.  The nonformal point is the cancellation
   between Costello-locality counterterms and the bulk-boundary kernel
   at the brane defect.  The proposition assumes exactly that weighted
   QME compatibility and the vanishing of the obstruction class named in
@@ -980,8 +976,8 @@ category.
   Theorem~\ref{thm:phi-hbar-all-order} applies in the weighted
   coefficient envelope.  The graphwise finite-scale assertions of
   Theorem~\ref{thm:wt-rg-compatibility} are anterior to this obstruction
-  and to the principal-part current extension; on their own they do not
-  decide compatibility with
+  and to the principal-part current extension; that extension is the
+  additional datum for compatibility with
   \(\mathcal D'_c(I)\widehat\otimes\mathcal P[1]\).
 \end{proof}
 
@@ -1050,9 +1046,9 @@ category.
   weighted Mittag-Leffler inverse-limit completion. Hence the
   weighted lift extends the cochain map continuously from the strict
   polynomial sector to the weighted product completion. This recovers
-  only the weighted-continuous Hamiltonian identities, not an
-  unweighted regulator-independence statement and not an identification
-  of the weighted product with the original strict continuous dual.
+  the weighted-continuous Hamiltonian identities. Unweighted
+  regulator-independence and identification of the weighted product with
+  the original strict continuous dual are separate statements.
 \end{rmk}
 
 \subsection*{Regulator independence and its boundary}
@@ -1082,16 +1078,17 @@ category.
         R_{w,w'}^{w_0}(w(d)e_{d,i})=w'(d)e_{d,i},\qquad
         R_{w,w'}^{w_0}(w(d)^{-1}e^i_d)=w'(d)^{-1}e^i_d
       \]
-      transports the interaction, differential, bracket, propagator
-      contraction, and counterterm representative from the
-      \(w\)-window to the \(w'\)-window.  The bracket is the transported
-      bracket; comparison of two weights is made after this transport,
-      not with the raw unweighted structure constants held fixed.
+	      transports the interaction, differential, bracket, propagator
+	      contraction, and counterterm representative from the
+	      \(w\)-window to the \(w'\)-window.  The bracket is the transported
+	      bracket; comparison of two weights is made after this transport,
+	      while raw unweighted structure constants are held outside the
+	      comparison.
     \item The cohomology being computed is the admissible filtered
-      cohomology detected on finite quotients and associated graded
-      pieces in the envelope of Statement~\ref{stmt:tate-model-envelope};
-      no observable is allowed to detect an infinite product tail
-      invisible in every finite quotient.
+	      cohomology detected on finite quotients and associated graded
+	      pieces in the envelope of Statement~\ref{stmt:tate-model-envelope};
+	      observables are restricted to data visible in finite quotients or
+	      associated graded pieces.
   \end{enumerate}
 \end{defn}
 
@@ -1419,7 +1416,8 @@ category.
   where
   \(d_M=Q+\{I^w_{0,M},-\}_{\hbar,M}\).  The bracket, interaction, and
   differential are the transported finite-window structures supplied by
-	  the weighted RG criterion; they are not naive projected Hamiltonian brackets.
+	  the weighted RG criterion; naive projected Hamiltonian brackets are
+  replaced by this transported structure.
   The inverse system
   \(\{\mathcal Q^\bullet_{w,M}(I)\}_{M\geq1}\) uses degree truncation
   \(\pi_{M,N}\) for \(M\geq N\), together with the \(\hbar\)-adic
@@ -1575,8 +1573,8 @@ category.
   \[
     d^{X,\mathrm{reg}}_M=d_M|_{\mathcal X^{\bullet,\mathrm{reg}}_{w,M}(I)}.
   \]
-  This is a finite-window graph complex, not the naive finite-dimensional
-  Hamiltonian Lie quotient ruled out by
+  This is a finite-window graph complex.  The naive finite-dimensional
+  Hamiltonian Lie quotient is the obstruction of
   Lemma~\ref{lem:finite-window-hamiltonian-obstruction}.  The window is a
   coefficient-support and graph-locality condition on already constructed
   regular-density local functionals.
@@ -1917,8 +1915,8 @@ category.
   the two-term Roos complex computing the first derived inverse limit of
   the tower \(H^0(\mathcal X^\bullet_{w,M}(I))\), its vanishing is exactly
   the equation needed to absorb these differences by changing
-  \(w_M\).  This gives compatible cocycles \(W_{n,M}\), and no weaker
-  condition gives such a family.
+  \(w_M\).  This is the exact condition for compatible cocycles
+  \(W_{n,M}\).
 
   With compatible \(W_{n,M}\), the cochains
   \(r_M=\mathfrak o^{\mathrm{ns}}_{n,M}+\Xi_M(W_{n,M})\) are compatible
@@ -2182,9 +2180,9 @@ category.
 \begin{prop}[First regular-density residual criterion]
 \label{prop:wt-first-regular-density-residual-criterion}
   The first non-scalar residual used in the closed-exchange criterion is
-  not an additional symbol.  For the chosen scalar-contact chain
+  the curvature coefficient determined by the chosen scalar-contact chain
   projection, the chosen lower-order counterterms, and the finite window
-  \(M\), it is the curvature coefficient
+  \(M\):
   \[
     \mathfrak o^{\mathrm{ns}}_{n_0,M}
       =
@@ -2195,8 +2193,8 @@ category.
       \right)
       \in Z^1\bigl(\mathcal Q^\bullet_{w,M}(I)\bigr),
   \]
-  where \(n_0\) is the first order at which this compatible family is not
-  killed by the lower-order choices.  Thus the residual lies in the
+  where \(n_0\) is the first order at which this compatible family
+  survives the lower-order choices.  Thus the residual lies in the
   saturated regular-density subhabitat
   \[
     \mathcal Q^{\bullet,\mathrm{rd}}_{w,M}(I)
@@ -2271,8 +2269,8 @@ category.
   \]
   for this saturated branch.
 
-  If the criterion does not hold, the regular-density branch is not
-  decided.  The exact computable obstruction is
+  When the criterion is unmet, the regular-density branch remains
+  undecided.  The exact computable obstruction is
   \[
   \begin{aligned}
     \eta^{\mathrm{reg}}_{n_0,M}
@@ -2361,8 +2359,7 @@ category.
   differences vanish.  This proves the displayed vanishing of
   \(\eta\), \(\kappa\), \(\beta\), \(\mu\), and \(\lambda\).
 
-  Without this criterion, the only invariant operation supplied by the
-  constructed regular-density tower is quotienting by
+  This criterion supplies the invariant operation beyond quotienting by
   \(\mathcal X^{\bullet,\mathrm{reg}}\).  Applying
   Proposition~\ref{prop:wt-Xi-reg-first-residual-quotient-obstruction} to
   the explicit curvature coefficient gives the displayed
@@ -2597,9 +2594,8 @@ category.
   a regular counterterm, and the purely non-regular bracket.  The
   wavefront-admissible graph layer of
   Proposition~\ref{prop:app-wavefront-admissible-costello-graph-kernel}
-  is proved as a distributional graph layer, but it is not a
-  regular-density layer when some \(B_j\notin
-  \mathcal D^{\mathrm{reg}}_c(I)\).  Such a term can enter the
+  is proved as a distributional graph layer.  When some
+  \(B_j\notin\mathcal D^{\mathrm{reg}}_c(I)\), the term can enter the
   regular-density branch only if its displayed quotient class is killed
   by an explicit degree-zero primitive in the ambient distributional
   quotient complex.  This proves the obstruction formula.
@@ -2617,10 +2613,9 @@ category.
     \mathcal D'_c(I)/\mathcal D^{\mathrm{reg}}_c(I).
   \]
   A non-smooth label \(B\in\mathcal D'_c(I)\) with
-  non-empty wavefront has nonzero class in \(\mathcal S_c(I)\).  Hence no
-  smoothing or finite-part prescription can give a canonical
-  regular-density representative of \(B\) modulo
-  \(\mathcal D^{\mathrm{reg}}_c(I)\): if
+  non-empty wavefront has nonzero class in \(\mathcal S_c(I)\).  This
+  quotient class obstructs a canonical regular-density representative of
+  \(B\) modulo \(\mathcal D^{\mathrm{reg}}_c(I)\): if
   \(B-B^{\mathrm{sm}}\in\mathcal D^{\mathrm{reg}}_c(I)\) for some
   \(B^{\mathrm{sm}}\in\mathcal D^{\mathrm{reg}}_c(I)\), then \(B\) was
   already regular.
@@ -2735,20 +2730,20 @@ category.
   obstruction is the Roos class
   \(\kappa^{\mathrm{reg}}_{n_0}\) of
   Proposition~\ref{prop:wt-Xi-reg-first-residual-quotient-obstruction}.
-  If no such distributional primitive exists, then
+  If every such distributional primitive is obstructed, then
   \[
     \eta^{\mathrm{reg}}_{n_0,M}\neq0,
   \]
-  and the regular-density closed-exchange branch cannot be repaired by a
-  smoothing prescription.  The only honest enlargement is a new
-  wavefront-labelled closed-exchange complex; it is not
+  and the regular-density closed-exchange branch has a smoothing
+  obstruction.  The honest enlargement is a new wavefront-labelled
+  closed-exchange complex distinct from
   \(\mathcal X^{\bullet,\mathrm{reg}}\).
 \end{thm}
 
 \begin{proof}
   A compactly supported smooth density has empty wavefront set.  Therefore
-  a compactly supported distribution with non-empty wavefront cannot differ
-  from a smooth density by another smooth density.  This proves the
+  a compactly supported distribution with non-empty wavefront has nonzero
+  class modulo smooth densities.  This proves the
   label-level obstruction to canonical smoothing.  The zero-internal-edge
   generator shows that this obstruction is already visible in the current
   target: \(\Theta^w_\rho(B)\) records the distribution \(B\) linearly in
@@ -2786,7 +2781,7 @@ category.
   \(\mathfrak s^{\mathrm{WF}}_{n_0,M}\) vanishes exactly when it is a
   \(\bar d_M\)-boundary, equivalently exactly when a degree-zero
   distributional counterterm \(C^{\mathrm{sing}}_{n_0,M}\) with the
-  displayed equation exists.  If it is not a boundary, the quotient
+  displayed equation exists.  For a non-boundary class, the quotient
   obstruction \(\eta^{\mathrm{reg}}_{n_0,M}\) is nonzero and the
   regular-density branch is obstructed.
 \end{proof}
@@ -2883,9 +2878,9 @@ category.
   \(\widetilde{\mathcal C}^{\bullet,\mathrm{reg}}\).
 
   The new generator \(p^{\mathrm{WF}}_{n_0,M}\) lives in the extended
-  complex; it is not an element of the original Costello counterterm
-  complex \(\mathcal Q^\bullet_{w,M}(I)\), and the construction does
-  not identify a singular current with a smooth density.  A primitive
+  complex, outside the original Costello counterterm
+  complex \(\mathcal Q^\bullet_{w,M}(I)\), and the construction keeps a
+  singular current distinct from a smooth density.  A primitive
   inside \(\mathcal Q^\bullet_{w,M}(I)\) exists exactly under the
   vanishing condition \(\eta^{\mathrm{reg}}_{n_0,M}=0\) of
   Theorem~\ref{thm:wt-wavefront-singular-current-eta-obstruction}.
@@ -2954,42 +2949,43 @@ category.
   degree-zero generator whose differential is the closed wavefront
   residual.  It leaves the quotient
   \(\mathcal D'_c(I)/\mathcal D^{\mathrm{reg}}_c(I)\) unchanged on the
-  original current labels, and therefore does not smooth a singular
-  distribution.  If the new generator is not adjoined, the primitive
-  equation is precisely the statement that
+  original current labels, and therefore leaves singular distributions
+  singular.  In the original complex alone, the primitive equation is
+  precisely the statement that
   \(\mathfrak s^{\mathrm{WF}}_{n_0,M}\) is a boundary in the original
   quotient complex, i.e. that
   \(\eta^{\mathrm{reg}}_{n_0,M}\) vanishes.
 \end{proof}
 
 \begin{thm}[Strict unweighted endpoint obstruction]
-\label{thm:strict-unweighted-no-go}
+\label{thm:strict-unweighted-obstruction}
   Let
-  \[
-    \mathfrak h_{\Pi}=\prod_{d\geq1}H_d,\qquad
-    D_{\oplus}=\bigoplus_{d\geq1}H_d^\vee
-  \]
-  be the original product/direct-sum Tate pair.  There is no tensor
-  \(K\in\mathfrak h_{\Pi}\widehat\otimes D_{\oplus}\), and no tensor
-  in \(D_{\oplus}\widehat\otimes\mathfrak h_{\Pi}\), whose projection
-  to every finite window \(d\leq w_0\) is the finite Casimir
+	  \[
+	    \mathfrak h_{\Pi}=\prod_{d\geq1}H_d,\qquad
+	    D_{\oplus}=\bigoplus_{d\geq1}H_d^\vee
+	  \]
+	  be the original product/direct-sum Tate pair.  The support
+	  obstruction excludes a tensor
+	  \(K\in\mathfrak h_{\Pi}\widehat\otimes D_{\oplus}\), and likewise a
+	  tensor in \(D_{\oplus}\widehat\otimes\mathfrak h_{\Pi}\), whose
+	  projection to every finite window \(d\leq w_0\) is the finite Casimir
   \[
     C^{w_0}_{\mathfrak h}=\sum_{d\leq w_0}\sum_i e_{d,i}\otimes e^i_d .
   \]
-  Consequently the strict unweighted pair cannot be the endpoint of a
-  finite-window Costello regulator theory satisfying the coefficient
-  kernel requirement \ref{costello:CC1} and the windowwise compatibility
-  used in Theorem~\ref{thm:wt-regulator-independence-admissible}.
-  Equivalently, no \(q\to1^+\) family of weighted finite-window
-  kernels has a strict endpoint in
-  \(\mathfrak h_{\Pi}\widehat\otimes D_{\oplus}\) whose projections
-  are the \(C^{w_0}_{\mathfrak h}\).
+	  Consequently the strict unweighted pair has the endpoint obstruction
+	  for a finite-window Costello regulator theory satisfying the
+	  coefficient kernel requirement \ref{costello:CC1} and the windowwise
+	  compatibility used in
+	  Theorem~\ref{thm:wt-regulator-independence-admissible}. Equivalently,
+	  the support obstruction persists for every \(q\to1^+\) family of
+	  weighted finite-window kernels in
+	  \(\mathfrak h_{\Pi}\widehat\otimes D_{\oplus}\) with projections
+	  \(C^{w_0}_{\mathfrak h}\).
 
   Moreover, for any admissible weight \(w\), the inclusion
-  \(D_{\oplus}\hookrightarrow
-  D_{\Pi,w}:=\prod_{d\geq1}w(d)^{-1}H_d^\vee\) is only an admissible
-  filtered weak equivalence.  It is not an ordinary quasi-isomorphism
-  of chain complexes with zero differential.  Thus any observable or
+	  \(D_{\oplus}\hookrightarrow
+	  D_{\Pi,w}:=\prod_{d\geq1}w(d)^{-1}H_d^\vee\) is only an admissible
+	  filtered weak equivalence.  Its cofiber has nonzero \(H^0\), so any observable or
   obstruction class detecting the quotient
   \(D_{\Pi,w}/D_{\oplus}\) is outside the proved regulator-independent
   sector.
@@ -3005,12 +3001,12 @@ category.
   infinite support in the direct-sum direction, a contradiction.  The
   same argument applies after reversing the tensor factors.
 
-  Costello's heat-kernel BV propagator for the cotangent coefficient
-  field is \(P_{\epsilon,L}^{\mathrm{base}}\widehat\otimes K\).  Since
-  no such \(K\) exists in the strict product/direct-sum pair, the
-  strict pair has an operator-level heat homotopy but no coefficient
-  distributional inverse pairing and hence no graphwise regulator
-  endpoint satisfying the displayed finite-window Casimir condition.
+	  Costello's heat-kernel BV propagator for the cotangent coefficient
+	  field is \(P_{\epsilon,L}^{\mathrm{base}}\widehat\otimes K\).  Since
+	  the support obstruction removes \(K\) from the strict
+	  product/direct-sum pair, the strict pair has an operator-level heat
+	  homotopy while the coefficient distributional inverse pairing and
+	  graphwise regulator endpoint are obstructed.
 
   Suppose a \(q\to1^+\) endpoint existed in the strict pair.  Its
   finite-window projection would have to be the limit of the weighted
@@ -3027,7 +3023,7 @@ category.
   The class of any sequence with one nonzero covector in every degree
   is nonzero in this quotient.  Therefore the completion changes
   ordinary cohomology even though finite quotients and associated
-  graded pieces cannot see the tail.  This proves the asserted
+  graded pieces have zero image of the tail.  This proves the asserted
   boundary of regulator independence.
 \end{proof}
 
@@ -3087,9 +3083,9 @@ category.
   \]
   and is independent of \(q\) after the common finite-window
   identification with \(H_{\leq M}\oplus H^\vee_{\leq M}\).  The notation
-  \(q\to1^+\) is therefore stabilization of this finite-window
-  representative, not convergence in the strict product/direct-sum
-  topology.  In particular
+	  \(q\to1^+\) is therefore stabilization of this finite-window
+	  representative inside the endpoint module.  It is a finite-window
+  stabilization in place of strict product/direct-sum convergence.  In particular
   \[
     R_{q,\ast}(\mathrm{Ob}_{q})=\mathrm{Ob}_{\ast},
     \qquad
@@ -3112,9 +3108,9 @@ category.
 
   For a representative supported in \(d\leq M\), the endpoint statement is
   already finite-dimensional: \(R^M_{q,\ast}\) is the diagonal map from
-  the \(q\)-basis to the endpoint basis, and the endpoint transport
-  commutes with the unweighting maps by condition (E3).  Thus the
-  finite-window coefficient array has no remaining dependence on \(q\).
+	  the \(q\)-basis to the endpoint basis, and the endpoint transport
+	  commutes with the unweighting maps by condition (E3).  Thus the
+	  finite-window coefficient array is \(q\)-independent.
   The inverse-limit assertion adds exactly the strict Mittag-Leffler
   compatibility required by (E1) and exactness in the admissible envelope.
 \end{proof}
@@ -3165,9 +3161,9 @@ category.
   transported by the same diagonal conjugation, the generator check
   gives the equality of dg \(P_0\)-algebra maps.
 
-  The displayed equality says that the finite-window map, after being
-  written in the unweighted basis, is exactly the finite CE/PV map
-  \(\Phi^{0,M}\); it has no remaining \(q\)-dependence.  Hence the
+	  The displayed equality says that the finite-window map, after being
+	  written in the unweighted basis, is exactly the finite CE/PV map
+	  \(\Phi^{0,M}\); it is \(q\)-independent.  Hence the
   \(q\to1^+\) limit exists on every finite window.
 
   Under Definition~\ref{defn:endpoint-admissible-coefficient-module},
@@ -3175,25 +3171,25 @@ category.
   carry the CE/PV generator assignment to the endpoint assignment.
   Exactness of the strict Mittag-Leffler inverse limit then passes the
   finite-window identity to the endpoint.  In the original
-  product/direct-sum pair, condition (E2) is violated by
-  Theorem~\ref{thm:strict-unweighted-no-go}; the obstruction is
-  the compatible family of finite Casimirs with no global tensor in
-  \(\mathfrak h_\Pi\widehat\otimes D_\oplus\).
+	  product/direct-sum pair, condition (E2) is violated by
+	  Theorem~\ref{thm:strict-unweighted-obstruction}; the obstruction is
+	  the compatible family of finite Casimirs whose global tensor is obstructed in
+	  \(\mathfrak h_\Pi\widehat\otimes D_\oplus\).
 \end{proof}
 
 \begin{cor}[Strict direct-sum endpoint obstruction criterion]
 \label{cor:strict-endpoint-obstruction-criterion}
-  The strict product/direct-sum pair
-  \((\mathfrak h_{\Pi},D_{\oplus})\) violates the
-  endpoint-admissibility criterion exactly at condition (E2): the
-  compatible family of finite Casimirs has no representing coefficient
-  kernel in
-  \(\mathfrak h_{\Pi}\widehat\otimes D_{\oplus}\).
+	  The strict product/direct-sum pair
+	  \((\mathfrak h_{\Pi},D_{\oplus})\) violates the
+	  endpoint-admissibility criterion exactly at condition (E2): the
+	  compatible family of finite Casimirs has an obstructed representing
+	  coefficient kernel in
+	  \(\mathfrak h_{\Pi}\widehat\otimes D_{\oplus}\).
 \end{cor}
 
 \begin{proof}
   Condition (E2) is exactly the coefficient-kernel condition ruled out
-  by Theorem~\ref{thm:strict-unweighted-no-go}.
+  by Theorem~\ref{thm:strict-unweighted-obstruction}.
 \end{proof}
 
 \begin{prop}[The completion changes ordinary cohomology]\label{ex:weighted-completion-changes-cohomology}
@@ -3205,32 +3201,31 @@ category.
   with zero differential.  The finite-window inclusion
   \(D_{\oplus}\hookrightarrow D_{\Pi,w}\) induces an isomorphism on
   every quotient by the tail \(d>w_0\), and therefore is a weak
-  equivalence in the admissible filtered sense of
-  Statement~\ref{stmt:tate-model-envelope}.  It is not a
-  quasi-isomorphism in the ordinary category of chain complexes:
+	  equivalence in the admissible filtered sense of
+	  Statement~\ref{stmt:tate-model-envelope}.  Its ordinary cofiber has
+	  nonzero degree-zero cohomology:
   \[
     H^0(D_{\Pi,w}/D_{\oplus})
       =D_{\Pi,w}/D_{\oplus}\neq0,
   \]
-  for example the class of any sequence with one nonzero covector in
-  every degree is nonzero.  Thus the weighted product contains
-  tail states absent from the strict continuous dual.  Any observable
+	  for example the class of any sequence with one nonzero covector in
+	  every degree is nonzero.  Thus the weighted product contains
+  tail states omitted by the strict continuous dual.  Any observable
   detecting such a tail is outside the regulator-admissible sector of
   Definition~\ref{defn:regulator-admissible-sector}.
 \end{prop}
 
-\begin{ex}[Super-exponential bracket obstruction]\label{ex:bad-weight-not-regulator}
-  The super-exponential function \(w(d)=\exp(d^2)\) is not a degree
-  weight: the ratio
+\begin{ex}[Super-exponential bracket obstruction]\label{ex:super-exponential-bracket-obstruction}
+  The super-exponential function \(w(d)=\exp(d^2)\) violates the degree
+  weight condition: the ratio
   \[
     \frac{w(p+q-2)}{w(p)w(q)}
       =\exp\bigl((p+q-2)^2-p^2-q^2\bigr)
   \]
   is unbounded along \(p=q\to\infty\), so condition
-  \ref{w:W1} is violated.  The Poisson bracket is not bracket-tame in
-  that coefficient topology, and the graphwise constants in
-  Proposition~\ref{prop:wt-rg-tame} need not be finite uniformly in the
-  degrees used by the interaction.  Theorem~\ref{thm:wt-regulator-independence-admissible}
-  does not compare such a topology with the admissible weighted theory.
+  \ref{w:W1} is violated.  The Poisson bracket violates bracket-tameness
+  in that coefficient topology, and the graphwise constants in
+  Proposition~\ref{prop:wt-rg-tame} can be unbounded in the degrees used
+  by the interaction.  Theorem~\ref{thm:wt-regulator-independence-admissible}
+  applies to the admissible weighted theory.
 \end{ex}
-

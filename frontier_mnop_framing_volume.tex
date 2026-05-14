@@ -70,8 +70,8 @@ The PT/GW leg \(Z_{\PT}(Q;q)=Z_{\GW}(Q;u)|_{-q=e^{iu}}\) is conditional
 on KKV integrality for \(Q\); finite-genus evidence on the quintic
 requires the Huang--Klemm--Quackenbush bootstrap.
 
-The substitution \(-q=e^{iu}\) is not a tautology between two notations
-for the same generating function.  At chain level, the DT, PT, and GW
+The substitution \(-q=e^{iu}\) is an analytic continuation datum between
+distinct generating functions.  At chain level, the DT, PT, and GW
 sides come from three a priori distinct dualisable modules over a
 factorisation-algebra image of \(\Perf(Q)\), each carrying its own
 partition function; a single chain-level automorphism must respect all
@@ -178,7 +178,7 @@ the obstruction class
   H^0\bigl(\Omega^\bullet(L)\otimes\End_{\mathrm{BV}}\bigr)
 \]
 to the equivariant lift of the brane propagator over the chosen
-framing.  Framing on \(S^3\) is a choice, not canonical: each \([f]\)
+framing.  Framing on \(S^3\) is a choice: each \([f]\)
 defines a different chain-level brane.
 
 \section{Chiral-volume finite evidence on the quintic}\label{sec:chiral-volume}
@@ -294,15 +294,15 @@ Three numerical values stand together: the tail-fit intercept
 \(|t(z_c)|\approx 7.5909\), and the OSV attractor comparison value
 \(5\log 5\approx 8.05\).  The fitted correction \(\alpha\approx
 -3.32<0\) forces approach to \(L\) from below, so the conjectural
-chiral-volume limit is not bounded above by \(\{a_1,a_2,a_3\}\); those
+chiral-volume limit lies above \(\{a_1,a_2,a_3\}\); those
 low-degree points sit on the Schubert--Katz--Ellingsrud--Str\o mme
 Fano-geometric branch, below the large-\(N\) BPS regime.
 
 The chiral-volume limit \(\lim a_N=(2\pi)^{-1}|\AJ(C_H)|\) is stated
 against the Hodge metric on \(J^2(Q)\).  The raw CDGP mirror ratio
-\(t(z_c)=\omega_1(z_c)/\omega_0(z_c)\) is not an Abel--Jacobi norm:
+\(t(z_c)=\omega_1(z_c)/\omega_0(z_c)\) is a period-coordinate ratio:
 \(\omega_0,\omega_1\) sit in a CDGP basis of solutions of
-\eqref{eq:picard-fuchs-cdgp} that has not been Hodge-normalised, and
+\eqref{eq:picard-fuchs-cdgp} before Hodge normalization, and
 the \(2\pi i\) monodromy factor is absent.  Bridging the two requires
 a normalisation datum
 \[
@@ -310,9 +310,8 @@ a normalisation datum
   \;\longmapsto\;\bigl(\varpi_0,\varpi_1,\varpi_2,\varpi_3\bigr)
 \]
 matching the CDGP period basis to the Hodge filtration on \(H^3\) and
-fixing the \(2\pi i\) monodromy convention.  Without \(\NAJ\), the
-finite agreement \(L\approx|t(z_c)|\) is a normalisation check, not a
-proof of the limit.
+fixing the \(2\pi i\) monodromy convention.  The finite agreement
+\(L\approx|t(z_c)|\) is a normalisation check until \(\NAJ\) is supplied.
 
 \section{Serre pairing as compact-CY categorical input}\label{sec:serre-nccr}
 
@@ -322,8 +321,8 @@ module, tilting, or Hall-algebra structure is built.  Van den Bergh's
 noncommutative crepant resolution (NCCR) is defined for singular
 Gorenstein CY\(_3\) via an Azumaya-like generator of \(D^b\); it is
 Iyama--Wemyss in the toric case and a consequence of the Orlov blow-up
-equivalence at \(K3\times E\).  On the smooth quintic there is no
-crepant resolution to resolve, and the NCCR question degenerates to
+equivalence at \(K3\times E\).  On the smooth quintic the crepant
+resolution input is vacuous, and the NCCR question degenerates to
 the bare Serre datum.
 
 \begin{prop}[Serre pairing on smooth compact CY$_3$]
@@ -364,7 +363,7 @@ indecomposability theorem (Bridgeland 1999) constrains the only
 semiorthogonal decomposition to the trivial one.  Both \(D^b(K3)\) and \(D^b(E)\) are
 indecomposable, so the Lefschetz input on \(K3\times E\) is the
 trivial rectangular structure \(\mathcal A_0=D^b(K3\times E)\), and
-Kuznetsov Fano HPD does not apply.  The derived-equivalence statement
+Kuznetsov Fano HPD lacks the required non-trivial Lefschetz input.  The derived-equivalence statement
 on \(K3\times E\) takes a different shape: Fourier--Mukai partner
 construction governed by Mukai-vector coprimality.
 
@@ -406,12 +405,12 @@ construction governed by Mukai-vector coprimality.
 \begin{proof}
   (1) Under $(\star)$ and $v$-genericity of $H_S$, every
   $H_S$-semistable sheaf with Mukai vector $v$ is stable
-  (no strictly semistables); the moduli $M$ is then a smooth projective
+  (strict semistables are absent); the moduli $M$ is then a smooth projective
   holomorphic symplectic variety of dimension
   \(\langle v,v\rangle+2=2\).  Hence \(M\) is a \(K3\) surface.  For
   positive Mukai square the moduli space is higher-dimensional
-  hyperk\"ahler and the product with \(E\) is no longer a CY$_3$ of the
-  required form.
+  hyperk\"ahler and the product with \(E\) leaves the required CY$_3\)
+  form.
 
   (2) The universal sheaf $\mathcal{U}$ exists on $S \times M$ under
   $(\star)$: $\gcd(r, \ell \cdot H_S, s) = 1$ kills the Brauer
@@ -420,7 +419,7 @@ construction governed by Mukai-vector coprimality.
   $\mathcal{U} \in D^b(S \times M)$ satisfies the
   Bridgeland--Maciocia orthogonality criterion
   (Bridgeland--Maciocia 2001, \S 1) and induces an equivalence.
-  Without $(\star)$, $\mathcal{U}$ exists only as a
+  Under failure of $(\star)$, $\mathcal{U}$ exists as a
   $p_M^*\alpha$-twisted sheaf for a Brauer class $\alpha \in
   \mathrm{Br}(M)$, yielding instead $D^b(S) \simeq D^b(M, \alpha)$
   (Huybrechts--Stellari 2005).
@@ -468,9 +467,9 @@ construction governed by Mukai-vector coprimality.
 \end{proof}
 
 The Kuznetsov--Perry 2019 categorical-join / rectangular-HPD machinery
-does not upgrade Fourier--Mukai to Fano HPD here, precisely because
-neither $D^b(K3)$ nor $D^b(E)$ admits a non-trivial Lefschetz
-decomposition to feed into the rectangular construction.
+requires a non-trivial Lefschetz decomposition as input; here
+$D^b(K3)$ and $D^b(E)$ are indecomposable, so the Fourier--Mukai
+statement remains the relevant equivalence.
 
 \begin{rmk}[Distinct $\kappa$ values on $K3\times E$ and its anchors]
   Coprimality \((\star)\) is the primitive Mukai-vector hypothesis
@@ -489,7 +488,7 @@ decomposition to feed into the rectangular construction.
       \(\kappa_{\mathrm{BKM}}(\Phi_1)=5\) in the paramodular Igusa
       \(\Delta_5\) row.
   \end{itemize}
-  No equality among these values follows from
+  These values are pairwise distinct under
   Theorem~\ref{thm:fm-self-duality-k3e}.
 \end{rmk}
 
@@ -562,13 +561,13 @@ description.
 
 Clause (i) applies the Pandharipande--Thomas leg of MNOP
 (Theorem~\ref{thm:mnop-quintic}) to the BCOV genus-\(g\) amplitudes
-determined by the holomorphic anomaly recursion and boundary data;
-this is not a compact-CY\(_3\) Costello--Li all-genus theorem, and the
+determined by the holomorphic anomaly recursion and boundary data; the
 CDGP prepotential, HKQ genus-\(22\) bootstrap, GV sine expansion, and
 PT/GW matching enter as inputs.  Clause (ii) is a convergence problem
-for the genus-zero BPS series: Castelnuovo-type genus bounds do not
-control the number \(n_\beta^0\) of rational curves, so finite-genus
-and finite-degree data alone cannot bound the coefficient growth of
+for the genus-zero BPS series: Castelnuovo-type genus bounds control
+arithmetic genus rather than the number \(n_\beta^0\) of rational
+curves, so finite-genus and finite-degree data alone leave the
+coefficient growth of
 \(\sum_\beta n_\beta^0 e^{-\beta t}\); the open analytic object is a
 coefficient-growth theorem.  Clause (iii) is the local conifold Stokes
 match: the leading factorial growth
@@ -644,7 +643,7 @@ CY\(_3\) generalisation.
     \frac{1}{\varpi_0^{\,2}}\bigl(\varpi_0\varpi_3-\varpi_1\varpi_2\bigr)
     + \text{(classical polynomial)},
   \]
-  with no instanton corrections beyond those encoded in
+  with instanton corrections encoded exactly in
   \(\{n_\beta^0\}_\beta\).  The first three BPS values
   \(n_1^0=2875,\;n_2^0=609\,250,\;n_3^0=317\,206\,375\) come from the
   BCOV table; the CDGP period/prepotential row and the

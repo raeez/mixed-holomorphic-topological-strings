@@ -51,7 +51,7 @@ of the Weyl/cyclic-trace comparison) lies entirely in this positive
 part.  Its vanishing is proved by testing on the Cartan
 (Lemmas~\ref{lem:app-radial-cartan-moyal-representation}
 and~\ref{lem:app-radial-dunkl-calogero-cancellation}) against the
-Levasseur--Stafford radial-kernel input.  A signed-row failure
+Levasseur--Stafford radial-kernel input.  A signed-row obstruction
 \((\phi,-\lambda)\in\ker B_{a,b}^*\) (a covector pairing a
 cyclic-word functional \(\phi\in\mathsf V_{a,b}^*\) with a
 diagonal-target functional \(\lambda\in\mathsf{Diag}_{a,b}^*\)) of the
@@ -112,7 +112,8 @@ equivariant under it.
   \[
     \bar A_\hbar=\C[[z_1,z_2]][[\hbar]]/\C[[\hbar]]
   \]
-  as a Lie algebra.  It is not used as an associative quotient.
+  as a Lie algebra.  The construction uses this quotient only in the
+  Lie-algebra sense.
 \end{defn}
 
 \begin{thm}[Exact formal Weyl/Moyal coefficients]
@@ -144,8 +145,8 @@ equivariant under it.
     \hbar P(f,g),\qquad \frac{\hbar^3}{24}P^3(f,g),
   \]
   and all even raw commutator coefficients vanish.  This is a theorem
-  inside the formal Weyl algebra of the constant symplectic plane.  It
-  uses no finite-\(N\) radial-parts theorem and no Costello graph
+  inside the formal Weyl algebra of the constant symplectic plane,
+  independent of finite-\(N\) radial-parts input and Costello graph
   specialization.
 \end{thm}
 
@@ -169,7 +170,7 @@ equivariant under it.
 
 \begin{cor}[All odd Moyal coefficients]
 \label{cor:app-radial-all-odd-moyal-coefficients}
-  The Weyl/Moyal commutator has no even raw powers of \(\hbar\).  Its
+  The Weyl/Moyal commutator has only odd raw powers of \(\hbar\).  Its
   odd raw and normalized coefficients are
   \[
     [f,g]_{\mathrm{raw}}^{(2s+1)}
@@ -240,7 +241,7 @@ equivariant under it.
   \]
   The third coefficient is \(-960/24=-40\).  The fifth coefficient is
   \(11520/1920=6\).  This example checks the numerical normalization
-  beyond the first nontrivial term without using radial parts.
+  beyond the first nontrivial term, independently of radial parts.
 \end{ex}
 
 \begin{proof}
@@ -297,8 +298,8 @@ equivariant under it.
       (\mathcal W_N\widehat\mu(\lie{sl}_N))/
     \mathcal W_N\widehat\mu(\lie{sl}_N).
   \]
-  The scalar Hamiltonian line is not killed by this moment ideal itself;
-  below it is removed by quotienting the empty trace before connected
+  The scalar Hamiltonian line survives this moment ideal; below it is
+  removed by quotienting the empty trace before connected
   large-\(N\) extraction.
 \end{defn}
 
@@ -365,10 +366,11 @@ equivariant under it.
   The cited radial-parts literature sources the Harish-Chandra
   homomorphism, regular-Cartan landing, and kernel statement.  The
   exact Weyl-trace image in item~(3) is the matched normalization datum
-  used in the formal-local comparison.  It is not supplied by the cited radial-parts
-  sources in this exact Weyl/Capelli convention.  The finite exact checks
-  below test it in ranks \(2\) and \(3\), but they do not replace the
-  all-\(N\) radial-parts input.
+  used in the formal-local comparison.  The cited radial-parts sources
+  supply the Harish-Chandra kernel theorem; the exact Weyl/Capelli
+  convention enters here as an additional normalization.  The finite
+  exact checks below test it in ranks \(2\) and \(3\); the all-\(N\)
+  radial-parts input remains the structural hypothesis.
 
   The input consists of the following three assertions.
   \begin{enumerate}
@@ -388,9 +390,9 @@ equivariant under it.
   The nonlinear-shear test in
   Lemma~\ref{lem:app-radial-nonlinear-shear-obstruction} shows that
   pure \(z_1\)- and \(z_2\)-power images together with classical
-  symbol-level shear compatibility do not determine item~(3).  A smaller
-  weaker input data would need a genuine quantum-corrected Egorov theorem in
-  the Weyl algebra.
+  symbol-level shear compatibility determine only the pure-power datum.
+  Item~(3) requires a genuine quantum-corrected Egorov theorem in the
+  Weyl algebra.
 \end{stmt}
 
 \begin{defn}[Radially normalized Weyl trace class]
@@ -465,9 +467,8 @@ exactly the assertion that the ordinary Weyl trace \(J_N(f)\) equals
   their curvature is zero because the unconjugated partial derivatives
   commute.  Hence the \(i\)-th summand is again a one-particle Weyl
   representation of the formal Moyal algebra, and different summands
-  commute.  This gives the displayed commutator identity.  No separate
-  Calogero potential remains after the computation is kept in
-  Vandermonde-conjugated form.
+  commute.  This gives the displayed commutator identity.  The
+  Vandermonde-conjugated form absorbs the Calogero potential.
 \end{proof}
 
 \begin{lem}[Radial-map injectivity on the reduced quotient]
@@ -493,7 +494,7 @@ exactly the assertion that the ordinary Weyl trace \(J_N(f)\) equals
 \begin{lem}[Nonlinear shear obstruction to weaker radial-parts input]
 \label{lem:app-radial-nonlinear-shear-obstruction}
   Pure-power radial images plus classical symbol-level compatibility
-  with nonlinear shears do not determine the mixed Weyl-trace image
+  with nonlinear shears determine only the pure-power Weyl-trace image
   normalization.  In the one-particle Weyl algebra
   \([\lambda,y]=\hbar\), the coefficient of \(t\) in
   \[
@@ -509,10 +510,9 @@ exactly the assertion that the ordinary Weyl trace \(J_N(f)\) equals
     =
     4\lambda^2y^3-12\hbar\lambda y^2+6\hbar^2 y.
   \]
-  The difference \(2\hbar^2y\) is non-scalar.  Thus a proof of
-  Statement~\ref{stmt:app-radial-external-input}(3) cannot be reduced to
-  classical nonlinear shear covariance without adding the missing
-  quantum Egorov correction.
+  The difference \(2\hbar^2y\) is non-scalar.  Thus
+  Statement~\ref{stmt:app-radial-external-input}(3) requires the quantum
+  Egorov correction in addition to classical nonlinear shear covariance.
 \end{lem}
 
 \begin{proof}
@@ -527,8 +527,8 @@ exactly the assertion that the ordinary Weyl trace \(J_N(f)\) equals
   Weyl symmetrisation of \(z_1^2z_2^3\) gives
   \(\lambda^2y^3-3\hbar\lambda y^2+\frac32\hbar^2y\), hence the
   displayed value after multiplication by \(4\).  The discrepancy is a
-  nonconstant one-particle operator, so it cannot be removed by the
-  scalar Hamiltonian quotient.
+  nonconstant one-particle operator, hence survives the scalar
+  Hamiltonian quotient.
 \end{proof}
 
 \begin{prop}[Quantum shear congruence suffices for the all-\(N\) image]\label{prop:app-quantum-shear-suffices-radial-image}
@@ -663,7 +663,8 @@ exactly the assertion that the ordinary Weyl trace \(J_N(f)\) equals
     =
     \mathcal N_{\mathrm{free}}(E_{a,b,N}).
   \]
-  The cyclic equation alone does not imply this quantum equation.
+  The cyclic equation is the associated-graded part of this quantum
+  equation.
 
   In bidegree \((a,b)=(4,4)\), the lexicographic pivot solution of the
   cyclic equation is
@@ -736,9 +737,8 @@ exactly the assertion that the ordinary Weyl trace \(J_N(f)\) equals
   Unconditionally, the
   bidegrees in Remark~\ref{rmk:app-radial-finite-verification} are
   closed by Procesi--Razmyslov verification
-  (Proposition~\ref{prop:app-radial-pr-unconditional-window}); a
-  signed dual row \((\phi,-\lambda)\in\ker B_{a,b}^*\) with
-  \(\lambda(E^+_{a,b})-\phi(T_{a,b})=1\) cannot exist there.
+  (Proposition~\ref{prop:app-radial-pr-unconditional-window}); the
+  normalized signed-dual-row obstruction set is empty there.
 \end{stmt}
 
 \begin{proof}
@@ -760,7 +760,7 @@ exactly the assertion that the ordinary Weyl trace \(J_N(f)\) equals
   cyclic word with opposite signs, so \(K_{4,4}\in\ker\partial\).  The
   finite computation proves the obstruction to the uncorrected cyclic
   lift.  The all-\(N\) identity for \(K_{4,4}\) is supplied by the free
-  trace-diagram normal form below, not by finite-rank specialization.
+  trace-diagram normal form below.
 \end{proof}
 
 \begin{defn}[Free indexed normal diagrams]
@@ -842,9 +842,8 @@ exactly the assertion that the ordinary Weyl trace \(J_N(f)\) equals
   with coefficients in \(\Q[\hbar,N]\).  The joint specialization map
   to \(N\times N\) matrices for all ranks \(N\ge d\) is injective.  Thus
   a free normal-form equality in \(\mathsf{Diag}_{\le d}\) is an all-\(N\)
-  matrix Weyl identity, and a nonzero free residual cannot be killed by
-  a theorem which only checks finitely many ranks below the stable
-  Procesi--Razmyslov range.
+  matrix Weyl identity.  A nonzero free residual remains visible until
+  the stable Procesi--Razmyslov range is reached.
 \end{lem}
 
 \begin{proof}
@@ -853,8 +852,8 @@ exactly the assertion that the ordinary Weyl trace \(J_N(f)\) equals
   identity for generic matrices of degree at most \(d\).  The
   Procesi--Razmyslov second fundamental theorem says that the trace
   identities are generated by the fundamental antisymmetrizer on
-  \(N+1\) index lines.  Hence no nonzero identity of degree at most
-  \(d\) exists in ranks \(N\ge d\).  Since the coefficients are
+  \(N+1\) index lines.  Hence every identity of degree at most
+  \(d\) is zero in ranks \(N\ge d\).  Since the coefficients are
   polynomials in the formal scalar \(N\), vanishing in every rank
   \(N\ge d\) forces each coefficient polynomial to vanish.  Depolarizing
   gives the stated injectivity.
@@ -894,14 +893,14 @@ exactly the assertion that the ordinary Weyl trace \(J_N(f)\) equals
       (E_{4,4,N}-C^{\mathrm{cl}}_{4,4}-K_{4,4})=0.
   \]
   This is an all-\(N\) identity in the free indexed normal-diagram
-  algebra.  It is not inferred from ranks \(2\) and \(3\).
+  algebra, proved before any rank specialization.
 \end{prop}
 
 \begin{proof}
   Apply Theorem~\ref{thm:app-free-indexed-normal-ordering} to the nine
   trace words in \(C^{\mathrm{cl}}_{4,4}\) and to the Weyl-trace
   expression defining \(E_{4,4,N}\).  The finite matching enumeration is
-  rational and contains no finite-rank specialization.  It leaves exactly
+  rational and takes place in the free diagram algebra.  It leaves exactly
   the four displayed normal diagrams.  Applying the same formula to the
   four trace words in \(K_{4,4}\) gives the same four-diagram vector.
   The script
@@ -1166,8 +1165,8 @@ exactly the assertion that the ordinary Weyl trace \(J_N(f)\) equals
     \quad\Longleftrightarrow\quad
     D^\square_{a,b}H_{a,b}=R^{\mathrm{free}}_{a,b}
   \]
-  for one, equivalently every, classical lift.  Failure in bidegree
-  \((a,b)\) is exactly a signed dual row
+  for one, equivalently every, classical lift.  The obstruction in
+  bidegree \((a,b)\) is exactly a signed dual row
   \[
     (\phi,-\lambda)\in\ker B_{a,b}^*
   \]
@@ -1217,9 +1216,10 @@ exactly the assertion that the ordinary Weyl trace \(J_N(f)\) equals
   decomposition of
   Statement~\ref{stmt:app-free-kernel-homotopy-obstruction}.
 
-  Finally, finite-dimensional duality for \(D^\square_{a,b}\) says that
-  \(R^{\mathrm{free}}_{a,b}\notin\operatorname{im}D^\square_{a,b}\) if
-  and only if some \(\lambda\in\ker(D^\square_{a,b})^*\) has
+  Finally, finite-dimensional duality for \(D^\square_{a,b}\) identifies
+  the cokernel of \(D^\square_{a,b}\) with \(\ker(D^\square_{a,b})^*\).
+  A nonzero residual class therefore has a row
+  \(\lambda\in\ker(D^\square_{a,b})^*\) with
   \(\lambda(R^{\mathrm{free}}_{a,b})\ne0\).  Rescale the row to make the
   value \(1\).  The equality
   \(\lambda C^+_{a,b}(W)=\phi(\partial W)\) identifies this row with the
@@ -1228,7 +1228,7 @@ exactly the assertion that the ordinary Weyl trace \(J_N(f)\) equals
   \(\phi(T_{a,b})-\lambda(E^+_{a,b})\).
 \end{proof}
 
-\begin{rmk}[Potential form and the failure of the bare graph Green operator]
+\begin{rmk}[Potential form and the bare graph Green operator]
 \label{rmk:app-decorated-hodge-potential-form}
   A functional \(\lambda\in\mathsf{Diag}_{a,b}^{*}\) satisfies
   \(\lambda C^+_{a,b}|_{\ker\partial}=0\) precisely when the edge cochain
@@ -1276,10 +1276,10 @@ exactly the assertion that the ordinary Weyl trace \(J_N(f)\) equals
   \(A_{a,b}K_{a,b}=R^{\mathrm{free}}_{a,b}\), equivalently
   \(D^\square_{a,b}H_{a,b}=R^{\mathrm{free}}_{a,b}\), inside the positive
   PBW diagram target, where contraction diagrams, split traces, and the
-  Capelli term are visible.  No canonical inverse from an arbitrary
-  positive diagram residual to a necklace edge cochain has been
-  constructed here.  The correct finite-dimensional Green operator is
-  the decorated square-cell one attached to
+  Capelli term are visible.  A canonical inverse from an arbitrary
+  positive diagram residual to a necklace edge cochain is extra data.
+  The finite-dimensional Green operator used here is the decorated
+  square-cell one attached to
   \(D^\square_{a,b}(D^\square_{a,b})^{*}\).
 \end{rmk}
 
@@ -1331,9 +1331,8 @@ exactly the assertion that the ordinary Weyl trace \(J_N(f)\) equals
   at the residual class \(R^{\mathrm{free}}_{a,b}\) on the decorated
   side: every element of \(\mathsf{Diag}_{a,b}\) of the form
   \(R^{\mathrm{free}}_{a,b}\) lies in
-  \(\operatorname{im}D^\square_{a,b}\).  No signed dual row
-  \((\phi,-\lambda)\in\ker B_{a,b}^*\) with
-  \(\lambda(E^+_{a,b})-\phi(T_{a,b})=1\) exists.
+  \(\operatorname{im}D^\square_{a,b}\).  Equivalently, the normalized
+  signed-dual-row obstruction set is empty.
 \end{thm}
 
 \begin{proof}
@@ -1353,7 +1352,7 @@ exactly the assertion that the ordinary Weyl trace \(J_N(f)\) equals
   \(\hbar^{-1}[J_N(z_1^{a+1}/(a+1)),J_N(z_2^{b+1})]\).  Pure-power
   Weyl traces equal normal-ordered traces, so
   \(J_N(z_1^{a+1})=\operatorname{Tr}(X^{a+1})\) and
-  \(J_N(z_2^{b+1})=\operatorname{Tr}(Y^{b+1})\) without contractions;
+  \(J_N(z_2^{b+1})=\operatorname{Tr}(Y^{b+1})\) with zero contractions;
   clause~(3) for pure powers is therefore tautological:
   \[
     \operatorname{Rad}_0(J_N(z_1^{a+1}))
@@ -1397,7 +1396,7 @@ exactly the assertion that the ordinary Weyl trace \(J_N(f)\) equals
       \{z_1^{a+1}/(a+1),z_2^{b+1}\}_\hbar
     \bigr)\Delta .
   \]
-  No clause-(3) input on mixed monomials has been used so far.
+  Up to this point only the pure-power part of clause~(3) has entered.
 
   \emph{Step 2 (Spherical-reduction equality).}  By
   Statement~\ref{stmt:app-radial-external-input}~clause~(3)
@@ -1482,8 +1481,8 @@ exactly the assertion that the ordinary Weyl trace \(J_N(f)\) equals
    =C^+_{a,b}(K_{a,b})
    =R^{\mathrm{free}}_{a,b}\).
   By Proposition~\ref{prop:app-radial-dual-potential-obstruction},
-  \(\Omega^{\mathrm{rad}}_{a,b}=0\) and no signed dual row of the
-  failure type can exist.
+  \(\Omega^{\mathrm{rad}}_{a,b}=0\) and the normalized
+  signed-dual-row obstruction set is empty.
 \end{proof}
 
 \begin{rmk}[Cartan one-particle Moyal lift]
@@ -1588,8 +1587,9 @@ exactly the assertion that the ordinary Weyl trace \(J_N(f)\) equals
   unconditionally by the script
   \(\texttt{scripts/quantum\_shear\_trace\_diagram\_normal\_form.py}\)
   in \(\texttt{--kernel-correction}\) mode.  This verification
-  closes \(\Omega^{\mathrm{rad}}_{a,b}=0\) without any
-  Statement~\ref{stmt:app-radial-external-input} input for the
+  closes \(\Omega^{\mathrm{rad}}_{a,b}=0\) by exact rational
+  normal-form computation, independently of
+  Statement~\ref{stmt:app-radial-external-input}, for the
   bidegrees in
   Remark~\ref{rmk:app-radial-finite-verification}.
 \end{prop}
@@ -1645,7 +1645,7 @@ exactly the assertion that the ordinary Weyl trace \(J_N(f)\) equals
     \mathfrak o_{2,b}=0,\qquad
     \mathfrak o_{a,2}=0
   \]
-  with no separate kernel correction in this edge gauge.
+  with zero separate kernel correction in this edge gauge.
 \end{prop}
 
 \begin{proof}
@@ -1684,15 +1684,15 @@ exactly the assertion that the ordinary Weyl trace \(J_N(f)\) equals
     -\operatorname{Tr}(W_rXY)
     +\hbar N\operatorname{Tr}(W_r).
   \]
-  PBW matchings in the first two trace words which do not use the
+  PBW matchings in the first two trace words away from the
   adjacent crossing supplied by \(M\) cancel in pairs.  The matchings
   using that adjacent crossing are cancelled, including their secondary
   contractions, by the scalar term \(\hbar N\operatorname{Tr}(W_r)\).
   The uncontracted part leaves the boundary
   \(\Theta_r^{(b)}-\Theta_{r+1}^{(b)}\).  The two endpoint contraction
   families are the left and reflected right blocks, giving
-  \(-\hbar\Phi_r^{(b)}\) and \(+\hbar\Phi_{b-1-r}^{(b)}\).  No further
-  term survives the pairing.
+  \(-\hbar\Phi_r^{(b)}\) and \(+\hbar\Phi_{b-1-r}^{(b)}\).  These are
+  exactly the surviving terms.
 
   The target \(E_{2,b,N}\) contains only the first and third Moyal
   terms:
@@ -1840,9 +1840,9 @@ exactly the assertion that the ordinary Weyl trace \(J_N(f)\) equals
 \begin{proof}
   Apply Theorem~\ref{thm:app-free-indexed-normal-ordering}.  For
   \((3,5)\) and \((5,3)\), the displayed coefficients solve the cyclic
-  equation and the free normal-form residual has no terms.  The
+  equation and the free normal-form residual is zero.  The
   total-degree-\(9\) formulas for \((3,6)\) and \((6,3)\) are checked in
-  the same way; their residual also has no terms, so \(K_{3,6}=K_{6,3}=0\)
+  the same way; their residual is also zero, so \(K_{3,6}=K_{6,3}=0\)
   in this pivot gauge.  The normal-form script reproduces these
   rational enumerations, and separately re-checks the edge
   theorem, in the modes
@@ -1857,8 +1857,8 @@ exactly the assertion that the ordinary Weyl trace \(J_N(f)\) equals
       \texttt{--kernel-correction}.
   \end{gathered}
   \]
-  The calculation is in the free diagram basis; finite-rank trace
-  identities are not used.
+  The calculation takes place in the free diagram basis before
+  finite-rank trace identities enter.
 \end{proof}
 
 \begin{lem}[Cartan one-particle Moyal representation]
@@ -1940,15 +1940,15 @@ exactly the assertion that the ordinary Weyl trace \(J_N(f)\) equals
   \(D_N(f,g)\) in the quantum moment-map ideal.
 
   Lemma~\ref{lem:app-radial-nonlinear-shear-obstruction} marks the
-  exact theorem target behind the full displayed formula: classical
-  nonlinear shear covariance is not enough to recover mixed Weyl
-  images in this convention.  The all-bidegree decorated PBW Stokes
+  exact theorem target behind the full displayed formula: mixed Weyl
+  images in this convention require the quantum correction beyond
+  classical nonlinear shear covariance.  The all-bidegree decorated PBW Stokes
   closure \(\Omega^{\mathrm{rad}}_{a,b}=0\) is supplied uniformly by
   Theorem~\ref{thm:app-radial-bicomplex-acyclic} under the same
   Statement-input and unconditionally on the bidegrees of
   Remark~\ref{rmk:app-radial-finite-verification} by
   Proposition~\ref{prop:app-radial-pr-unconditional-window}; a
-  genuine failure would be a normalized signed row
+  nonzero obstruction is a normalized signed row
   \((\phi,-\lambda)\in\ker B_{a,b}^*\), structurally excluded under
   Statement~\ref{stmt:app-radial-external-input} and unconditionally
   excluded on the verified bidegrees.
@@ -2020,8 +2020,8 @@ exactly the assertion that the ordinary Weyl trace \(J_N(f)\) equals
   \]
   have a stable connected large-\(N\) limit after removing the empty
   trace and disconnected products.  This limit is the renormalized
-  associated-graded connected transition system, not a naive inverse
-  limit of finite-rank normal-ordered trace algebras over
+  associated-graded connected transition system associated to the
+  finite-rank normal-ordered trace algebras over
   \(\C[[\hbar]]\).  In that limit,
   \[
     \hbar^{-1}[\partial_{\mathrm{bb},\hbar}(f),
@@ -2126,7 +2126,7 @@ exactly the assertion that the ordinary Weyl trace \(J_N(f)\) equals
     =\frac{\hbar}{2}P.
   \]
   Wick expansion of the free first-order model exponentiates the
-  cross-contraction operator.  With Weyl vertices there are no
+  cross-contraction operator.  Weyl vertices have zero
   self-contractions; hence a connected two-vertex graph is determined
   by its number \(r\) of cross-edges.  The exponential supplies the
   symmetry factor \(1/r!\), and the ordered propagator supplies
@@ -2177,7 +2177,7 @@ exactly the assertion that the ordinary Weyl trace \(J_N(f)\) equals
 \begin{ex}[The first nonzero balanced cyclic-pivot residual]\label{ex:app-radial-first-balanced-residual}
   At \((a,b)=(2,2)\) and \((3,3)\) the classical lift already lies in
   \(\operatorname{im} D^\square_{a,b}\), and
-  \(\Omega^{\mathrm{rad}}_{a,b}=0\) without correction.  The first
+  \(\Omega^{\mathrm{rad}}_{a,b}=0\) with zero correction.  The first
   bidegree where the cyclic pivot produces a residual is \((4,4)\),
   with residual
   \[
@@ -2218,9 +2218,8 @@ exactly the assertion that the ordinary Weyl trace \(J_N(f)\) equals
   the unique correction
   \(C^+_{a,b}\in\Q^{r_1}\) with
   \(B_{a,b}C^+_{a,b}=v_{a,b}\), giving
-  \(\Omega^{\mathrm{rad}}_{a,b}=0\) at that bidegree.  When
-  \(v_{a,b}\notin\operatorname{im}B_{a,b}\), the elimination returns
-  the obstruction covector
+  \(\Omega^{\mathrm{rad}}_{a,b}=0\) at that bidegree.  In the obstruction
+  case, the elimination returns the obstruction covector
   \((\phi,-\lambda)\in\ker B_{a,b}^*\) with the strict pairing
   \(\lambda(E^+_{a,b})-\phi(T_{a,b})\ne0\); the obstruction class
   \(\Omega^{\mathrm{rad}}_{a,b}\in\operatorname{coker}B_{a,b}\) is its
@@ -2239,8 +2238,8 @@ exactly the assertion that the ordinary Weyl trace \(J_N(f)\) equals
   \(C^+_{a,b}\) and dimensions
   \(\dim\ker B_{a,b}^*,\,\dim\operatorname{coker}B_{a,b}\) read off from
   the elimination.  In particular
-  \(\Omega^{\mathrm{rad}}_{a,b}=0\) on the listed bidegrees.  Outside
-  the listed range, the per-bidegree class
+  \(\Omega^{\mathrm{rad}}_{a,b}=0\) on the listed bidegrees.  For an
+  unlisted bidegree, the per-bidegree class
   \(\Omega^{\mathrm{rad}}_{a,b}\in\operatorname{coker}B_{a,b}\) is the
   exact obstruction whose vanishing is the all-bidegree statement.
 \end{cor}
@@ -2338,14 +2337,14 @@ exactly the assertion that the ordinary Weyl trace \(J_N(f)\) equals
       \]
       and terms with negative indices or scalar target \((0,0)\) are
       zero.  The \(r=1\) part is the classical Matlis coadjoint action.
-      The \(r\ge3\) terms are genuine Moyal corrections and are not the
-      polynomial one-\(\psi\) PBW action.
+      The \(r\ge3\) terms are genuine Moyal corrections; the polynomial
+      one-\(\psi\) PBW action records only the \(r=1\) term.
     \item The reduced open-line Wick graph computation realizes the same
-      formal Moyal product with midpoint propagator.  It does not prove
-      an unreduced Costello graph/QME theorem.  Such a theorem would
-      require the brane-defect propagator, counterterms, anomaly
-      cancellation, and \(d_{\mathrm{QME}}\)-homotopies in the local BV
-      complex; those data are outside the algebraic Weyl/Moyal target.
+      formal Moyal product with midpoint propagator.  An unreduced
+      Costello graph/QME theorem additionally requires the brane-defect
+      propagator, counterterms, anomaly cancellation, and
+      \(d_{\mathrm{QME}}\)-homotopies in the local BV complex; those data
+      belong to the unreduced BV target.
   \end{enumerate}
 \end{prop}
 
@@ -2409,20 +2408,20 @@ exactly the assertion that the ordinary Weyl trace \(J_N(f)\) equals
   Independently of clause~(3),
   Proposition~\ref{prop:app-radial-pr-unconditional-window}
   closes \(\Omega^{\mathrm{rad}}_{a,b}=0\) by exact rational
-  linear algebra against the moment ideal, with no
-  Statement-input assumed.  The bidegrees enumerated in
+  linear algebra against the moment ideal, independently of
+  Statement-input.  The bidegrees enumerated in
   Remark~\ref{rmk:app-radial-finite-verification} (edges and
   interior cases through total degree \(15\)) are closed by this
   route, executed by the \(\texttt{--kernel-correction}\) mode of
   \(\texttt{scripts/quantum\_shear\_trace\_diagram\_normal\_form.py}\).
 
   In the bidegrees verified by the unconditional route, the
-  signed-row alternative of
+  signed-row obstruction set of
   Proposition~\ref{prop:app-radial-dual-potential-obstruction}
-  cannot exist; in the remaining bidegrees, its exclusion is
+  is empty; in the remaining bidegrees, its vanishing is
   conditional on
   Statement~\ref{stmt:app-radial-external-input}~clause~(3) for
-  the corresponding Moyal-bracket polynomial.  Failure of that
+  the corresponding Moyal-bracket polynomial.  A defect in that
   clause produces a signed dual row
   \((\phi,-\lambda)\in\ker B_{a,b}^*\) with
   \(\lambda(E^+_{a,b})-\phi(T_{a,b})\neq0\) identical with the

@@ -29,8 +29,8 @@ negative-index targets zero.  The polynomial PBW one-\(\psi\)
 descendants \(\widetilde\Psi_{a,b}\) carry the same labels \((a,b)\) and
 a strictly different \(\mathfrak h\)-module structure: linear
 Hamiltonians act locally nilpotently on the polynomial side and never
-locally nilpotently on \(\mc P\), so no relabelling of bases
-interpolates.  Fourier--Rees conjugation supplies the only universal
+locally nilpotently on \(\mc P\), giving the basis-relabeling
+obstruction.  Fourier--Rees conjugation supplies the only universal
 label bridge, and only after a polarization change: it sends
 \(\mathcal O_\hbar=\mathcal D_\hbar/(\partial_1,\partial_2)\) to
 \(\Delta^{\mathsf F}_\hbar=\mathcal D_\hbar/(z_1,z_2)\), whose \v{C}ech
@@ -63,8 +63,8 @@ with Hamiltonian observables to a scalar; it is continuous for the
 \(\mathfrak m\)-adic topology on \(\mathfrak h\), where
 \(\mathfrak m=(z_1,z_2)\); it intertwines the Hamiltonian coadjoint
 action coming from the Poisson bracket on the polydisk.  Those three
-constraints together select a polarization that is \emph{not} a copy of
-polynomials: the cotangent direction is residue-valued.
+constraints together select the residue-valued cotangent polarization
+rather than a polynomial copy.
 
 \begin{thm}[Defect Polarization]
 \label{thm:app-defect-polarization}
@@ -110,17 +110,16 @@ polynomials: the cotangent direction is residue-valued.
       \(\rho^\Delta_{a,b}\); its \((0,0)\) generator is the kernel
       \(K^{(2)}_\Delta\) in the native singular product.
   \end{enumerate}
-  The two sides are not two bases of one \(\mathfrak h\)-module.  The
+  The two sides are distinct \(\mathfrak h\)-modules.  The
   bidegree relabelling
   \(\widetilde\Psi_{a,b}\leftrightarrow\rho_{a,b}\) carries the same
-  index set \((a,b)\) but does not intertwine the two Hamiltonian
-  actions: linear-Hamiltonian local nilpotence holds on the polynomial
-  side and fails on the residual side, so any same-action module
-  isomorphism is impossible
+  index set \((a,b)\) and has the local-nilpotence obstruction to
+  intertwining the two Hamiltonian actions: linear-Hamiltonian local
+  nilpotence holds on the polynomial side and fails on the residual side
   (Theorem~\ref{thm:app-matlis-polynomial-descendant-obstruction}).  The
   Moyal coadjoint deformation acts on the residual side; the polynomial
-  one-\(\psi\) shadow does not intertwine that action even after
-  inverting \(\hbar\), and the Fourier--Rees label bridge of
+  one-\(\psi\) shadow has the same obstruction after inverting
+  \(\hbar\), and the Fourier--Rees label bridge of
   Theorem~\ref{thm:app-matlis-rees-fourier-bridge} is the unique
   universal interpolation, available only after a Fourier polarization
   change of the action itself.
@@ -162,12 +161,12 @@ polynomials: the cotangent direction is residue-valued.
   excluding local nilpotence.
 
   Linear Hamiltonians act locally nilpotently on the polynomial side and
-  not on the residual side, by the same theorem, so no same-action
-  module isomorphism interpolates.  The unique universal label bridge
+  have infinite orbits on the residual side, by the same theorem, so the
+  same-action module isomorphism is obstructed.  The unique universal label bridge
   between the two sides is Theorem~\ref{thm:app-matlis-rees-fourier-bridge};
   that the bridge requires a Fourier polarization change of action is
   the obstruction clause of the same theorem and
-  Corollary~\ref{cor:app-matlis-no-flat-same-action-interpolation}.
+  Corollary~\ref{cor:app-matlis-same-action-interpolation-obstruction}.
   The residue-coadjoint pairing is unique up to one scalar by
   Theorem~\ref{thm:app-matlis-residue-rigidity}.
 \end{proof}
@@ -182,11 +181,11 @@ polynomials: the cotangent direction is residue-valued.
   \(-(pb-qa+p-q)\rho_{a-p+1,b-q+1}\) on every quadruple \((p,q,a,b)\)
   with exponents \(\le 5\) and \(p+q,a+b>0\): \(1225\) cases, all match.
   The same script evaluates the candidate label map
-  \(\widetilde\Psi_{a,b}\mapsto\rho_{a,b}\) by the exact Moyal coadjoint
-  action: \(1200\) of \(1225\) cases register a PBW-vs-Moyal mismatch,
-  and \(958\) cases carry genuine higher Moyal coadjoint terms which the
-  polynomial one-\(\psi\) action does not produce at any order in
-  \(\hbar\).  The smallest explicit obstruction is the pair
+	  \(\widetilde\Psi_{a,b}\mapsto\rho_{a,b}\) by the exact Moyal coadjoint
+	  action: \(1200\) of \(1225\) cases register a PBW-vs-Moyal mismatch,
+	  and \(958\) cases carry genuine higher Moyal coadjoint terms which the
+	  polynomial one-\(\psi\) action lacks at every order in
+	  \(\hbar\).  The smallest explicit obstruction is the pair
   \[
     \operatorname{ad}^\vee_{z_1^4}(\delta_{1,1})
       =-24\,\hbar^2\,\delta_{0,4},
@@ -201,7 +200,7 @@ polynomials: the cotangent direction is residue-valued.
   orders \(\le 11\), with the antisymmetric odd-order tower
   \(1,\ \tfrac1{24},\ \tfrac1{1920},\ \tfrac1{322560},\ \dots\) matching
   the closed-form \(\tfrac{1}{2^{r-1}\,r!}\) for odd \(r\).  Both
-  scripts run from the command line with no external dependencies.
+  scripts run from the command line with zero external dependencies.
 \end{rmk}
 
 \subsection{Construction of the residual side}
@@ -232,8 +231,8 @@ polynomials: the cotangent direction is residue-valued.
   \]
   followed by projection modulo constants.  The adjoint maps are continuous
   for this topology: if \(f\in\mathfrak m\), then
-  \(\{f,\mathfrak m^{N+1}\}\subset \mathfrak m^N\).  The constant class
-  acts by zero and is not part of \(\mathfrak h\).
+  \(\{f,\mathfrak m^{N+1}\}\subset \mathfrak m^N\).  The quotient
+  \(\mathfrak h\) removes the constant class, which acts by zero.
 \end{defn}
 
 \begin{lem}[Continuous dual]
@@ -277,8 +276,8 @@ polynomials: the cotangent direction is residue-valued.
   after multiplication by \(dz_1dz_2\); the displayed direct sum is
   the standard representative basis in which both exponents are
   strictly negative.
-  The basis vector \(\rho_{0,0}=z_1^{-1}z_2^{-1}dz_1dz_2\) is not zero in
-  \(H^2_{\mathfrak m}(R)\,dz_1dz_2\); it is the functional which evaluates
+  The basis vector \(\rho_{0,0}=z_1^{-1}z_2^{-1}dz_1dz_2\) is the nonzero
+  functional in \(H^2_{\mathfrak m}(R)\,dz_1dz_2\) which evaluates
   the constant coefficient.  The reduced principal-part module is the
   \(\C\)-linear residue annihilator of constants,
   \[
@@ -296,9 +295,10 @@ polynomials: the cotangent direction is residue-valued.
   and give \(\mathfrak h^\vee_{\mathrm{cont}}\) the corresponding
   inductive-limit topology through the basis \(\delta_{a,b}\). Thus the
   residue identification below is a continuous map of the declared
-  locally finite topological vector spaces, not a bare algebraic
-  relabelling.  The space \(\mc P\) is a Hamiltonian-coadjoint module; it is
-  not an \(R\)-submodule of \(H^2_{\mathfrak m}(R)\,dz_1dz_2\), since
+  locally finite topological vector spaces, rather than a bare algebraic
+  relabelling.  The space \(\mc P\) is a Hamiltonian-coadjoint module;
+  the \(R\)-submodule structure of \(H^2_{\mathfrak m}(R)\,dz_1dz_2\) is
+  obstructed on \(\mc P\), since
   multiplication by \(z_i\) can hit the excluded scalar-residue line.
   The residue pairing is
   \[
@@ -324,8 +324,8 @@ polynomials: the cotangent direction is residue-valued.
   \(\mc P=\operatorname{Ann}_{\mathrm{res}}(\C\cdot1)\) is the
   \(\C\)-linear scalar-annihilator dual to
   \(\mathfrak h=R/\C\cdot1\).  The \(R\)-module structure on
-  \(E_R(\C)\) does not restrict to \(\mc P\); multiplication can hit the
-  excluded scalar residue line.  The Hamiltonian coadjoint action is
+  \(E_R(\C)\) can hit the excluded scalar residue line under
+  multiplication.  The Hamiltonian coadjoint action is
   transported separately by the residue pairing
   (Proposition~\ref{prop:app-matlis-coadjoint-action}) and is the
   structure used by the brane cotangent sector.
@@ -361,7 +361,8 @@ polynomials: the cotangent direction is residue-valued.
   \end{equation}
   with the convention that any term with a negative index is zero.  If the
   displayed target is \(\rho_{0,0}\), then the coefficient \(pb-qa+p-q\)
-  is zero; hence the scalar residue line is not produced from \(\mc P\),
+  is zero; hence the action preserves \(\mc P\) and avoids the scalar
+  residue line,
   and the action preserves the scalar-annihilator subspace.  The
   coefficient \(-(pb-qa+p-q)\) is the residue side of the defect
   polarization (Theorem~\ref{thm:app-defect-polarization}); on the
@@ -526,11 +527,10 @@ polynomials: the cotangent direction is residue-valued.
 \label{thm:app-matlis-polynomial-descendant-obstruction}
   Let \(M\) be a polynomial boundary descendant module on which the
   linear Hamiltonians \(z_1,z_2\) act locally nilpotently.  Then
-  \(\mc P\) is not isomorphic to any nonzero submodule of \(M\) as an
-  \(\mathfrak h\)-module.  In particular the polynomial PBW
-  one-\(\psi\) descendants \(\widetilde\Psi_{a,b}\) cannot be identified
-  with the principal parts \(\rho_{a,b}\) by an ordinary
-  \(\mathfrak h\)-module isomorphism.
+  every \(\mathfrak h\)-module map from \(\mc P\) to \(M\) has zero image.
+  In particular the polynomial PBW one-\(\psi\) descendants
+  \(\widetilde\Psi_{a,b}\) and the principal parts \(\rho_{a,b}\) have a
+  nonzero ordinary \(\mathfrak h\)-module identification obstruction.
 \end{thm}
 
 \begin{proof}
@@ -554,9 +554,10 @@ polynomials: the cotangent direction is residue-valued.
   \]
   for every \(N\geq0\); the same holds for \(z_2\).  Local nilpotence is
   preserved by module isomorphism and by restriction to submodules.
-  Therefore no polynomial descendant module with locally nilpotent
-  linear Hamiltonians realizes \(\mc P\), nor any nonzero submodule of
-  \(\mc P\).  The obstruction is independent of \(\hbar\) and survives
+  Therefore a polynomial descendant module with locally nilpotent
+  linear Hamiltonians has the local-nilpotence obstruction to realizing
+  \(\mc P\), or any nonzero submodule of \(\mc P\).  The obstruction is
+  independent of \(\hbar\) and survives
   every label relabelling between the two alphabets.
 
   For the primitive PBW labels \(\widetilde\Psi_{a,b}\) the obstruction
@@ -569,9 +570,9 @@ polynomials: the cotangent direction is residue-valued.
     z_2\cdot\widetilde\Psi_{a,b}=-a\,\widetilde\Psi_{a-1,b}.
   \]
   Thus \(z_1\) kills \(\widetilde\Psi_{a,0}\) for every \(a>0\), whereas
-  on the residual side \(z_1\cdot\rho_{a,0}=-\rho_{a,1}\neq0\).  No
+  on the residual side \(z_1\cdot\rho_{a,0}=-\rho_{a,1}\neq0\).  Every
   rescaling \(\widetilde\Psi_{a,b}\mapsto\lambda_{a,b}\rho_{a,b}\) with
-  \(\lambda_{a,b}\neq0\) intertwines the two actions: the linear
+  \(\lambda_{a,b}\neq0\) preserves the obstruction: the linear
   Hamiltonian \(z_1\) lowers the second index on the polynomial side
   and raises it on the residual side.
 \end{proof}
@@ -627,8 +628,8 @@ polynomials: the cotangent direction is residue-valued.
     \Delta^{\mathrm{std}}_\hbar .
   \]
   This inclusion becomes an isomorphism after tensoring with
-  \(\C((\hbar))\), but it is not an isomorphism of the two
-  \(\C[[\hbar]]\)-lattices.  The Rees Fourier
+  \(\C((\hbar))\).  At the \(\C[[\hbar]]\)-lattice level it is the
+  displayed Rees sublattice.  The Rees Fourier
   automorphism
   \[
     \mathsf F(z_i)=\partial_i,\qquad
@@ -659,8 +660,8 @@ polynomials: the cotangent direction is residue-valued.
   \(\partial_1^a\partial_2^be_0\); the \v{C}ech inclusion into
   \(\Delta^{\mathrm{std}}_\hbar\) sends the positive-degree labels into
   \(\hbar\Delta^{\mathrm{std}}_\hbar\).  Thus the comparison is an
-  associated-graded label match, not an isomorphism of ordinary
-  local-cohomology lattices.
+  associated-graded label match; ordinary local-cohomology lattices
+  retain the displayed Rees shift.
 
   The obstruction for the original Hamiltonian action is exact.  The
   Hamiltonian action on polynomial descendants is by vector fields
@@ -687,7 +688,7 @@ polynomials: the cotangent direction is residue-valued.
     \hbar X_{z_1}\rho_{a,b}=-(b+1)\hbar\rho_{a,b+1},\qquad
     \hbar X_{z_2}\rho_{a,b}=(a+1)\hbar\rho_{a+1,b}
   \]
-  are not locally nilpotent on any nonzero reduced principal part after
+  have infinite orbits on every nonzero reduced principal part after
   inverting \(\hbar\).  Dividing by \(\hbar\) gives the same conclusion
   for the unnormalized Hamiltonian vector fields.  The
   Fourier--Rees construction therefore identifies the polynomial
@@ -742,7 +743,7 @@ polynomials: the cotangent direction is residue-valued.
   sends the Rees-normalized operators to multiplication by \(-z_2\) and
   \(z_1\) on \(\Delta^{\mathsf F}_\hbar\); multiplication by \(z_i\)
   lowers pole order and is again locally nilpotent.  The coadjoint
-  Matlis action is not the Fourier-transformed action.  It keeps the
+  Matlis action is distinct from the Fourier-transformed action.  It keeps the
   same vector fields, now acting on Laurent principal parts:
   \[
     \hbar X_{z_1}\rho_{a,b}
@@ -752,28 +753,28 @@ polynomials: the cotangent direction is residue-valued.
       =-\hbar\partial_{z_1}\rho_{a,b}
       =(a+1)\hbar\rho_{a+1,b}.
   \]
-  After tensoring with \(\C((\hbar))\), no nonzero vector in
-  \(\mc P((\hbar))\) is killed by a high power of either linear
+  After tensoring with \(\C((\hbar))\), every nonzero vector in
+  \(\mc P((\hbar))\) has an infinite orbit under either linear
   Hamiltonian: for a finite nonzero linear combination, every power of
   \(X_{z_1}\) shifts each nonzero basis summand to a distinct
   \(\rho_{a,b+N}\), with nonzero rising-factorial coefficient, and the
   same argument applies to \(X_{z_2}\).  Local nilpotence is invariant
   under module isomorphism.
-  Thus any Fourier--Rees comparison that preserves the original
-  Hamiltonian action is impossible; the positive construction
+  Thus a Fourier--Rees comparison preserving the original Hamiltonian
+  action has the same-action obstruction; the positive construction
   changes the polarization and is a flat \( \mathcal D_\hbar \)-module
-  bridge only for the Fourier-conjugated action stated above.
+  bridge for the Fourier-conjugated action stated above.
 \end{proof}
 
 \begin{cor}[Same-action obstruction criterion]
-\label{cor:app-matlis-no-flat-same-action-interpolation}
+\label{cor:app-matlis-same-action-interpolation-obstruction}
   Let \(M_\hbar\) be a \(\C[[\hbar]]\)-flat family whose generic fibre
   carries the polynomial descendant action of the linear Hamiltonians
   \(z_1,z_2\), so that \(X_{z_1}\) and \(X_{z_2}\) act locally
   nilpotently after tensoring with \(\C((\hbar))\).  Then
-  \(M_\hbar((\hbar))\) is not isomorphic, as a module for the same
-  Hamiltonian Lie algebra, to \(\mc P((\hbar))\) with the Matlis
-  coadjoint action.  The same statement holds for the Rees-normalized
+  \(M_\hbar((\hbar))\) and \(\mc P((\hbar))\) with the Matlis
+  coadjoint action have a same-action module-isomorphism obstruction.
+  The same statement holds for the Rees-normalized
   operators \(\hbar X_{z_i}\), since \(\hbar\) is invertible on the
   generic fibre.  Equivalently, local nilpotence of the two linear
   Hamiltonians on the generic fibre is a necessary condition for a flat
@@ -791,7 +792,7 @@ polynomials: the cotangent direction is residue-valued.
   locally nilpotent on the polynomial descendant generic fibre and
   remain non-locally-nilpotent on every nonzero element of
   \(\mc P((\hbar))\).  Multiplication by the invertible scalar
-  \(\hbar\) cannot change local nilpotence.
+  \(\hbar\) preserves local nilpotence.
 \end{proof}
 
 \begin{rmk}[Lattice content of the Fourier--Rees bridge]
@@ -800,8 +801,8 @@ polynomials: the cotangent direction is residue-valued.
   associated-graded convention, with explicit factorial and
   \(\hbar^{a+b}\) normalization.  The Fourier twist gives
   \(\mathcal D_\hbar/(z_1,z_2)\), whose \v{C}ech realization is the Rees
-  sublattice \(\bigoplus\hbar^{a+b}\C[[\hbar]]\rho_{a,b}\), not the full
-  \(\bigoplus\C[[\hbar]]\rho_{a,b}\) before \(\hbar\) is inverted.
+  sublattice \(\bigoplus\hbar^{a+b}\C[[\hbar]]\rho_{a,b}\).  The full
+  \(\bigoplus\C[[\hbar]]\rho_{a,b}\) appears after \(\hbar\) is inverted.
   Fourier sends the Hamiltonian vector fields to Fourier-transformed
   operators on \(\Delta^{\mathsf F}_\hbar\); the Matlis cotangent module
   uses the original coadjoint vector fields on principal parts.

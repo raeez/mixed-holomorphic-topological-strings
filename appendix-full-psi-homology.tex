@@ -16,13 +16,13 @@ morphism
 bidegree-only special-fibre relabelling.
 
 The universal primitive single-trace Koszul complex is attached to the
-moment-map equation \([x,y]=0\).  Universal means that no
+moment-map equation \([x,y]=0\).  Its universality is independent of any
 choice of Matlis target, PBW model, finite \(N\) trace identity, or quantum
-deformation is used: after stable trace invariant theory has identified
+deformation: after stable trace invariant theory has identified
 primitive traces with graded cyclic words, the answer is the cellular homology
 of a chip-moving state complex.  Every finite-bidegree stable primitive
-descendant calculation over \(\C\), with \(d\psi=xy-yx\) and no trace
-relations beyond graded cyclicity, is obtained from this one.  Passage to
+descendant calculation over \(\C\), with \(d\psi=xy-yx\) and graded
+cyclicity as the trace relation, is obtained from this one.  Passage to
 completed coefficient systems requires an exact coefficient functor, or an
 explicit condition excluding new \(\varprojlim^1\) classes.
 
@@ -100,8 +100,8 @@ explicit condition excluding new \(\varprojlim^1\) classes.
   projection is exact.  Interchanging two marked occurrences contributes the
   sign of the transposition, and rotating a block with \(a\) marked letters
   past a block with \(b\) marked letters contributes \((-1)^{ab}\).  This is
-  precisely the graded cyclic rule for a single odd letter \(\psi\).  No other
-  stable trace relation remains in word length \(d\).
+  precisely the graded cyclic rule for a single odd letter \(\psi\).  This
+  is the complete stable trace relation in word length \(d\).
 \end{proof}
 
 \begin{lem}[Boundary signs and \(\partial^2=0\)]
@@ -150,7 +150,7 @@ explicit condition excluding new \(\varprojlim^1\) classes.
   This is the boundary of Definition~\ref{def:app-full-psi-complex} applied
   to the representative \(\psi u_1\psi u_2\cdots\psi u_p\).  The \(j\)-th
   displayed \(\psi\) has \(j-1\) preceding odd letters, and replacing it by
-  the even word \(xy-yx\) produces no further Koszul sign.
+  the even word \(xy-yx\) contributes sign \(+1\) from the replacement.
 \end{proof}
 
 \begin{lem}[Two-\(\psi\) boundary sign]
@@ -178,7 +178,7 @@ explicit condition excluding new \(\varprojlim^1\) classes.
     [(xy)u\psi v]=[\psi vxyu],\qquad
     [(yx)u\psi v]=[\psi vyxu].
   \]
-  The moved block is even, so no Koszul sign is produced.  The second
+  The moved block is even, so the Koszul sign is \(+1\).  The second
   replacement already has the surviving \(\psi\) in front, and its overall
   sign is the sign \(-1\) from the preceding odd letter.  Expanding gives the
   displayed formula.
@@ -247,7 +247,7 @@ explicit condition excluding new \(\varprojlim^1\) classes.
   \(\widetilde Y_{R,S}\) as follows.  A \(p\)-cell is a state with
   \(R-p\) stationary indistinguishable chips on vertices and \(p\) moving
   chips in the interiors of \(p\) distinct edges.  Several stationary chips
-  may occupy the same vertex.  No edge contains more than one moving chip.
+  may occupy the same vertex.  Each edge contains at most one moving chip.
 
   Encode such a state by traversing \(\mathscr C_S\).  At a vertex write one
   \(x\) for each stationary chip sitting there.  Then write \(y\) if the
@@ -294,8 +294,8 @@ explicit condition excluding new \(\varprojlim^1\) classes.
   marker \(y\) or \(\psi\).  This representative is unique after a starting
   edge has been chosen.  The remaining ambiguity is rotation of the \(S\) edge
   markers, hence quotienting by \(\Gamma_S\) is exactly passage to graded
-  cyclic words.  No further relation is introduced: in the labelled complex
-  the \(S\) edge markers are ordered, and in the coinvariant complex the only
+  cyclic words.  The labelled complex orders the \(S\) edge markers, and
+  in the coinvariant complex the only
   identifications are their rotations with the orientation character below.
 
   The sign is determined as follows.  Suppose a rotation moves a block containing
@@ -525,7 +525,7 @@ explicit condition excluding new \(\varprojlim^1\) classes.
   \(\Psi\to\rho\) projection.  The displayed homology lines and the
   separation in
   Theorem~\ref{thm:pbw-vs-deformation} are therefore proved at the
-  bidegree level by an independent finite computation, and not by a
+  bidegree level by an independent finite computation rather than by a
   symbolic shortcut.
 \end{rmk}
 
@@ -618,8 +618,8 @@ explicit condition excluding new \(\varprojlim^1\) classes.
   \(\Psi\)-presentation of
   Construction~\ref{constr:app-full-pbw-special-fibre-basis}.
 
-  This morphism is \emph{not} an \(\mathfrak h\)-module isomorphism.
-  More precisely, on the linear Hamiltonians,
+  This morphism is a bigraded vector-space isomorphism with an
+  \(\mathfrak h\)-module obstruction. More precisely, on the linear Hamiltonians,
   \[
     z_1\cdot\widetilde\Psi_{a,b}
       =b\,\widetilde\Psi_{a,b-1},
@@ -637,12 +637,12 @@ explicit condition excluding new \(\varprojlim^1\) classes.
   \]
   The two actions have opposite shift directions and unequal scalars; in
   particular the polynomial PBW action is locally nilpotent on every
-  \(\widetilde\Psi_{a,b}\), whereas the principal-part coadjoint action
-  is not locally nilpotent on any nonzero \(\rho_{a,b}\).  The
+  \(\widetilde\Psi_{a,b}\), whereas every nonzero \(\rho_{a,b}\) has an
+  infinite principal-part coadjoint orbit.  The
   obstruction to an \(\hbar\)-adic same-action lift of
   \(\operatorname{gr}\Phi\) is the local-nilpotence dichotomy of
   Theorem~\ref{thm:app-matlis-polynomial-descendant-obstruction} and
-  Corollary~\ref{cor:app-matlis-no-flat-same-action-interpolation}.
+  Corollary~\ref{cor:app-matlis-same-action-interpolation-obstruction}.
 \end{prop}
 
 \begin{proof}
@@ -672,15 +672,15 @@ explicit condition excluding new \(\varprojlim^1\) classes.
   of \(\rho_{a,b}\) and produces a nonzero rising-factorial coefficient
   \((-1)^N(b+1)(b+2)\cdots(b+N)\rho_{a,b+N}\), which is never zero.  The
   same dichotomy holds for \(z_2\).  Local nilpotence is an isomorphism
-  invariant; therefore no module isomorphism with the displayed
-  \(\mathfrak h\)-actions can exist.
+  invariant; therefore the displayed \(\mathfrak h\)-actions have a
+  module-isomorphism obstruction.
 
   The obstruction to extending \(\operatorname{gr}\Phi\) to an
   \(\hbar\)-adic same-action map is exactly this local-nilpotence
   dichotomy, and is recorded as
   Theorem~\ref{thm:app-matlis-polynomial-descendant-obstruction} together
   with the deformation-level
-  Corollary~\ref{cor:app-matlis-no-flat-same-action-interpolation}.
+  Corollary~\ref{cor:app-matlis-same-action-interpolation-obstruction}.
   Theorem~\ref{thm:app-matlis-rees-fourier-bridge} supplies the
   positive Fourier--Rees bridge that does identify the two label sets,
   but only after the Fourier twist of the Hamiltonian action.
@@ -705,9 +705,9 @@ explicit condition excluding new \(\varprojlim^1\) classes.
       =-24\,\hbar^2\,\delta_{0,4},
   \]
   the only nonzero term of order \(\leq3\) in the formal Moyal expansion.
-  No Fourier-untwisted relabelling of the bidegree pair \((1,1)\to(0,4)\)
-  versus \((1,1)\to(4,0)\) carries the polynomial PBW action onto the
-  Moyal coadjoint action.  Replacing the Moyal coadjoint by its classical
+  Fourier-untwisted relabelling has the bidegree obstruction
+  \((1,1)\to(0,4)\) versus \((1,1)\to(4,0)\), so the polynomial PBW action
+  and the Moyal coadjoint action remain distinct.  Replacing the Moyal coadjoint by its classical
   truncation \((\hbar^0)\) gives
   \(\operatorname{ad}^*_{z_1^4}(\rho_{1,1})=0\) by the principal-part
   formula at this exponent, again disagreeing with the polynomial PBW
@@ -736,9 +736,9 @@ explicit condition excluding new \(\varprojlim^1\) classes.
   \[
     \mathsf K_{\mathrm{univ}}\longrightarrow E_\bullet
   \]
-  factors on homology through the displayed two-line module.  Hence there
-  are no hidden universal primitive higher-\(\psi\) classes from which a
-  further cotangent or descendant bridge can be built.
+  factors on homology through the displayed two-line module.  Hence the
+  universal primitive higher-\(\psi\) classes are exactly the displayed
+  degree-zero polynomial line and degree-one \(\Psi\)-line.
 \end{thm}
 
 \begin{proof}
@@ -792,10 +792,11 @@ explicit condition excluding new \(\varprojlim^1\) classes.
   reduced Hamiltonian algebra is \(\bar A=\C[x,y]/\C\cdot1\) degree by
   degree.  This removes the degree-zero scalar class \([1]\).  The odd
   scalar \(\Psi_{0,0}\) is the one-\(\psi\) descendant of the same removed
-  constant direction; it is a stable primitive trace class, but it has no
-  partner in \(\bar A_{\mathrm{desc}}[1]\).
-  Theorem~\ref{thm:app-full-primitive-psi-homology} proves that no
-  primitive classes remain in \(\psi\)-degree at least two.  What remains
+  constant direction; it is a stable primitive trace class in the removed
+  scalar sector.
+  Theorem~\ref{thm:app-full-primitive-psi-homology} proves that
+  primitive homology is concentrated in \(\psi\)-degrees \(0\) and \(1\).
+  What remains
   is exactly the positive-degree Hamiltonian and one-\(\psi\) PBW label
   sector displayed above.  The identification with the special-fibre
   Rees lattice is
@@ -804,10 +805,8 @@ explicit condition excluding new \(\varprojlim^1\) classes.
   of \(\mathfrak h\), and the one-\(\psi\) descendant copy is the
   bidegree-graded \(\widetilde\Psi_{a,b}\) sector of the
   cotangent-shifted \(\mathfrak h^\vee[1]\) tensor.  This is a
-  vector-space homology statement; it does not identify
-  \(\Psi_{a,b}\) or its symmetrised normalisation
-  \(\widetilde\Psi_{a,b}\) with Matlis principal parts as
-  \(\mathfrak h\)-modules.
+  vector-space homology statement.  The Matlis principal-part module
+  comparison is the separate \(\mathfrak h\)-module obstruction.
 \end{proof}
 
 \begin{cor}[Special-fibre defect polarization]
@@ -825,7 +824,7 @@ explicit condition excluding new \(\varprojlim^1\) classes.
   cotangent module itself.  The formal-stalk chart measures positions
   polynomially through \(\bar A\), and its cotangent momenta live as
   residues through \(\mc P\); the shared bidegree label is
-  associated-graded data, not module data.
+  associated-graded data rather than module data.
 \end{cor}
 
 \begin{proof}
@@ -835,7 +834,7 @@ explicit condition excluding new \(\varprojlim^1\) classes.
   in bidegree \((a,b)\).  The bidegree-only relabelling
   \(\operatorname{gr}\Phi\) of
   Proposition~\ref{prop:app-full-gr-Phi} is an isomorphism of bigraded
-  vector spaces and not of \(\mathfrak h\)-modules; the obstruction is
+  vector spaces with the \(\mathfrak h\)-module obstruction of
   Theorem~\ref{thm:app-matlis-polynomial-descendant-obstruction}.
   The Matlis side is the continuous coadjoint module
   identified by Theorem~\ref{thm:app-matlis-residue-rigidity} as the

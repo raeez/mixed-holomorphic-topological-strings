@@ -5,7 +5,7 @@ The conditional rungs of the local theorem each name a curvature class
 in a filtered \(L_\infty\) target deformation complex
 (Theorem~\ref{thm:obstruction-twist-dichotomy}).  Each conditional is
 either an upgrade obstruction with a constructed null-homotopy
-(counterterm, structural twist) or a no-go selector forcing a target
+(counterterm, structural twist) or an obstruction selector forcing a target
 replacement.  This appendix supplies the constructions: the host
 category in which all infinite-dimensional operations are legal; the
 classical master equation of the local Hamiltonian BF theory in that
@@ -93,8 +93,8 @@ the same projective topology.
   \(\C\to V\widehat\otimes V^\vee_{\mathrm{cont}}\) exists in a
   weighted or kernel-admissible completion (Casimir convergence,
   \S\ref{ssec:completion-bracket-kernel-admissible}); perfect
-  pairing and convergent Casimir are distinguished, and the second
-  map is not asserted in the bare category.
+  pairing and convergent Casimir are distinguished; the second
+  map belongs to the completed category.
 \item[\textnormal{C3 (local-functional subcategory)}]
   A subspace
   \(\mathcal O_{\mathrm{loc}}(\mathcal E)\subset\mathcal O(\mathcal E)\)
@@ -110,9 +110,9 @@ the same projective topology.
   The reduced principal-part current sector uses
   \(\mathcal D'_c(I)\widehat\otimes\mathcal P\) with multiplication
   \(C^\infty_c(I)\times\mathcal D'_c(I)\to\mathcal D'_c(I)\),
-  \((a,B)\mapsto aB\), but no product
+  \((a,B)\mapsto aB\), while the product
   \(\mathcal D'_c(I)\times\mathcal D'_c(I)\to\mathcal D'_c(I)\) is
-  admitted.  The reduced principal-part bracket of the manuscript
+  excluded from the admissible operations.  The reduced principal-part bracket of the manuscript
   factors through this restricted multiplication; the unreduced
   brane-defect QME requires a wavefront condition
   (\S\ref{ssec:completion-graph-qme}).
@@ -133,8 +133,8 @@ the Costello effective-action calculus and closure under counterterm
 subtraction follows from the regulator-independence of local
 divergences.  C4 is H\"ormander's product theorem
 \cite[Thm.~8.2.10]{hormander-vol1}: the smooth-times-distribution
-product is everywhere defined, while two distributions multiply only
-when their wavefront sets do not collide.  The reduced
+product is everywhere defined, while two distributions multiply under the
+standard wavefront transversality condition.  The reduced
 principal-part bracket of the manuscript respects exactly this
 restriction.
 \end{proof}
@@ -146,8 +146,8 @@ The remainder of this appendix is performed in \(\mathsf C\).
 
 The classical master equation \(\{S_H,S_H\}_{\mathrm{BV}}=0\) of the
 formal-local Hamiltonian BF theory holds in the completed
-local-functional space, not merely formally.  The proof is short and
-does not require either the Costello renormalization layer or the
+local-functional space as an honest local-functional identity.  The proof
+uses the classical BV bracket and avoids the Costello renormalization layer and the
 brane-defect propagator; it is the foundation on which every quantum
 construction below depends.
 
@@ -218,7 +218,7 @@ manuscript are those of \(d=\dim_\C\C^2=2\) holomorphic dimensions and
 \(\deg_{\mathrm{BV}}\mathcal A=1\), \(\deg_{\mathrm{BV}}\mathcal B=2\)
 following Costello \cite{costello-renormalization}; the propagator
 \(P_{\varepsilon,L}\) has BV degree \(-1\); the holomorphic volume
-form is \(dz_1\,dz_2\) (no antiholomorphic factor); the worldline
+form is \(dz_1\,dz_2\) (purely holomorphic); the worldline
 \(L=\R_t\subset X\) is unframed in the local model and acquires the
 \(S^3\)-framing only after a matched-conventions transfer
 (\S\ref{app:convention-contract}).
@@ -286,20 +286,20 @@ Since \(k\ge 1\) is arbitrary the claim follows for every total
 degree.
 \end{proof}
 
-\begin{rmk}[Multiplicativity is forced, not assumed]
-\label{rmk:completion-no-multiplicativity}
+\begin{rmk}[Multiplicativity Is Forced]
+\label{rmk:completion-multiplicativity-forced}
 The hypothesis ``primitive single-trace'' is the
 Loday--Quillen--Tsygan condition that the Lie algebra map \(J\) lands
 in the connected primitive sector of the cyclic invariant algebra
 \cite{loday-quillen,tsygan}; this is the structural
 input that produces the trace word for an arbitrary monomial.  The
-``no natural correction'' lemma
+natural-correction obstruction lemma
 (\S\ref{ssec:completion-trace-uniqueness}) is then the assertion that
 once the linear normalization \(c_{1,0}=c_{0,1}=1\) is fixed and
-nonlinear shears have propagated this to every total degree, no
-admissible CE/PV-natural correction term remains.  Multiplicativity
+nonlinear shears have propagated this to every total degree, admissible
+CE/PV-natural correction terms are exhausted.  Multiplicativity
 in the sense ``\(J(z_1^az_2^b)\) is the trace of a product of
-matrices'' is not an extra hypothesis but the conclusion of the
+matrices'' is the conclusion of the
 Procesi trace word, the Koszul adjacent-swap exactness, and the
 single-trace primitivity.
 \end{rmk}
@@ -480,8 +480,8 @@ has a Lagrangian splitting compatible with the shears.  This
 reformulation is mathematically stronger than the bare external
 normalization because it identifies the obstruction with a
 \(\operatorname{coker}\)-class on a concrete finite-rank Weyl
-target, but it does not bypass the need for an all-\(N\)
-construction; it makes that construction the existence of a
+target and leaves the all-\(N\) construction as a separate theorem; it
+makes that construction the existence of a
 contracting homotopy or a dual-kernel certification at each
 bidegree.
 \end{rmk}
@@ -505,7 +505,7 @@ homomorphism and injectivity hypotheses.
 The strict all-window Bochner--Martinelli current transfer fails
 for every \(N\) by the residue-coadjoint leak
 \(z_1^{N+2}\cdot\rho_{N+1,0}=-(N+2)\rho_{0,1}\)
-(Theorem~\ref{thm:bmk-finite-window-no-go}).  The supremum target is
+(Theorem~\ref{thm:bmk-finite-window-obstruction}).  The supremum target is
 the pro-Matlis tower; its analytic content is a continuous
 Hamiltonian action, which requires a topology stronger than the bare
 inverse limit of the finite Matlis windows.
@@ -609,7 +609,8 @@ map follows from the universal property of the K\"othe completion.
 \(W\) are also valid targets, but they fail the truncation
 compatibility that singles out the \(\rho_N\)-system.  This is the
 content of ``\(\mathcal P^\Pi_q\) is terminal in
-\(\mathrm{Curr}_{\mathrm{BM}}\), not absolutely terminal.''
+\(\mathrm{Curr}_{\mathrm{BM}}\). Absolute terminality is a different
+claim.''
 \end{rmk}
 
 \subsection{Bracket-admissible \(B\) and kernel-admissible \(\mathcal K_B\)}
@@ -828,7 +829,7 @@ The twisting-cochain equation is the Maurer--Cartan condition for
 the bar-cobar pair \((BA,A)\) in the convolution dg Lie algebra
 \(\mathrm{Conv}(BA,A)\) \cite{loday-vallette}; for
 the cyclic-augmented case the cyclic compatibility adds the higher
-Koszul terms but does not change the Maurer--Cartan condition.
+Koszul terms while preserving the Maurer--Cartan condition.
 The bar-cobar comparison is the standard Koszul duality
 quasi-isomorphism for the cyclic \(A_\infty\) operad
 \cite{getzler-jones-aoperad}, transported through the filtration
@@ -848,7 +849,7 @@ Z^{\mathrm{der}}_{E_1}(A^{\mathrm{cl}}_{\partial,N})\).  The
 derived \(E_1\)-centre is
 \(Z^{\mathrm{der}}_{E_1}(A)\simeq CC^\bullet(A,A)\), so the chain
 map must produce actual Hochschild cochains and centrality
-homotopies, not only derivations and multiplications.
+homotopies, extending the derivation and multiplication data.
 
 \begin{defn}[Centre-map cochains and homotopies]
 \label{def:completion-centre-cochains}
@@ -1029,8 +1030,8 @@ Theorem~\ref{thm:completion-prot-sector-obstruction} gives the
 obstruction calculus once an SDR exists.  Existence of an
 admissible protected SDR for a specific compact CY\(_3\) target
 is itself an external input controlled by the matched-conventions
-firewall (\S\ref{app:convention-contract}); it is not proved
-here.  The local theorem is the formal Hamiltonian normal-slice
+firewall (\S\ref{app:convention-contract}); proof of existence belongs
+to the target theory.  The local theorem is the formal Hamiltonian normal-slice
 test of the bulk produced by such an SDR.
 \end{rmk}
 
@@ -1040,7 +1041,7 @@ test of the bulk produced by such an SDR.
 The reduced non-scalar Costello QME class
 \([\operatorname{Ob}^{\mathrm{red}}_{w,\partial,\hbar}]\) is defined
 on \(\ker\sigma_{\mathrm{sc}}\) for a filtered chain map
-\(\sigma_{\mathrm{sc}}\), not merely the associated graded scalar
+\(\sigma_{\mathrm{sc}}\), refining the associated graded scalar
 symbol.  The construction below supplies \(\sigma_{\mathrm{sc}}\) and
 the counterterm tower.
 
@@ -1222,8 +1223,8 @@ distributional kernel with wavefront set
 diagonal in \(L\times L\).  In particular
 \(\mathrm{WF}(P_{\varepsilon,L}|_{L\times L})\) is compatible with
 distributional current insertions in
-\(\mathcal D'_c(L)\widehat\otimes\mathcal P^\Pi_q\) by axiom C4: no
-product of two uncontrolled defect distributions appears.
+\(\mathcal D'_c(L)\widehat\otimes\mathcal P^\Pi_q\) by axiom C4: products
+of two uncontrolled defect distributions are excluded.
 \end{thm}
 
 \begin{proof}
@@ -1317,8 +1318,8 @@ the order-three row.
 \subsection{Stratified factorization algebra on \((X,L)\)}
 \label{ssec:completion-stratified-factorization}
 
-The closed-open object is not a pair of unrelated factorization
-algebras but a stratified factorization algebra
+The closed-open object is a stratified factorization algebra rather than a
+pair of unrelated factorization algebras:
 \(\mathrm{Obs}^{\mathrm{str}}(X,L)\); Weiss descent relates the
 prefactorization datum (Appendix~\ref{sec:app-factorization-current-conventions})
 to the full factorization theory.
@@ -1373,9 +1374,8 @@ plus compatibility of the structure maps with the \(j_*\)/
 \subsection{Large-\(N\) trace state and connected cumulants}
 \label{ssec:completion-large-N}
 
-The stable primitive trace algebra is not yet a physical large-\(N\)
-string state; the latter requires an actual state and connected
-cumulants.
+The stable primitive trace algebra becomes a physical large-\(N\)
+string state only after an actual state and connected cumulants are supplied.
 
 \begin{defn}[Large-\(N\) trace state]
 \label{def:completion-large-N-state}
@@ -1631,8 +1631,8 @@ through the two-stage Calabi--Yau-to-chiral functor
 normal-slice restriction of that bulk to a finite Chan--Paton
 brane stack via the trace map
 \(J(f)=\overline{\Tr f(\phi_1,\phi_2)}\).
-On that normal slice the holomorphic collision product is not left
-implicit: Theorem~\ref{thm:formal-two-dimensional-holomorphic-ope}
+On that normal slice the holomorphic collision product is explicit:
+Theorem~\ref{thm:formal-two-dimensional-holomorphic-ope}
 computes the diagonal OPE with kernel \(K^{(2)}_\Delta\).  The
 cross-volume comparison below must preserve this arity-two local
 cohomology operation before adding descent, QME, or compact-target
@@ -1693,20 +1693,19 @@ firewall (\S\ref{app:convention-contract}).
 
 \begin{rmk}[Modular and Borcherds/BKM bridges]
 \label{rmk:completion-modular-bkm}
-The local Hamiltonian scalar cocycle \(\hbar N[\bar c]\) is not the
+The local Hamiltonian scalar cocycle \(\hbar N[\bar c]\) and the
 Borcherds weight \(\kappa_{\mathrm{BKM}}\) of the companion
-\(\Delta_5\) construction
+\(\Delta_5\) construction are distinct data
 (\(\sim\)\texttt{igusa-cusp-form}); they are stage-2 shadow traces
 of a stage-1 centre, and the comparison passes through the
-Volume~III universal trace identity at operator level, not at the
+Volume~III universal trace identity at operator level rather than at the
 level of scalar numbers.  The Borcherds/BKM bridge is heuristic
 here, supplied as convention checks rather than a theorem of the
 local manuscript.  Likewise, the BCOV holomorphic anomaly,
 Gopakumar--Vafa, Donaldson--Thomas, and MNOP claims are external
 target data transported through
 Theorem~\ref{thm:completion-cross-volume-slice} and
-\S\ref{app:convention-contract}; no such globalization is proved
-here.
+\S\ref{app:convention-contract}; globalization is a separate theorem.
 \end{rmk}
 
 \subsection{Summary: the curvature decomposition}
@@ -1781,8 +1780,8 @@ parent target.
 
 \begin{rmk}[External data]
 \label{rmk:completion-what-remains-external}
-After the constructions of this appendix, the data not internally
-constructed by the local theorem are: (i) the parent BV theory
+After the constructions of this appendix, the remaining external data are:
+(i) the parent BV theory
 \((\mathcal E_{\mathcal T},Q_{\mathcal T},\omega_{\mathcal T},
 S_{\mathcal T})\) and the protected supercharge \(\mathcal Q\) for
 a specific compact target \(\mathcal T\); (ii) the
@@ -1810,25 +1809,25 @@ its input data, and its remaining obstruction class.
 \item[Theorem~\ref{thm:completion-cme} (classical master equation).]
   Proved from first principles, in the host category
   \(\mathsf C\), using \(D^2=0\), graded Leibniz, Jacobi in
-  \(\mathfrak h\), and continuity of the residue pairing.  No
-  external input.
+  \(\mathfrak h\), and continuity of the residue pairing.  The proof is
+  internal to the host category.
 
 \item[Theorem~\ref{thm:completion-shear-forcing} (trace
   uniqueness).]  Proved unconditionally given the linear
   normalization \(c_{1,0}=c_{0,1}=1\) and Darboux-naturality.  The
   nonlinear Hamiltonian shear \(H_k=z_2^{k+1}/(k+1)\) closes the
-  proof; multiplicativity is forced, not assumed.
+  proof; multiplicativity is forced.
 
 \item[Theorem~\ref{thm:completion-omega-rad-vanishes} (decorated
-  radial reformulation).]  This is a reformulation, not a
+  radial reformulation).]  This is a reformulation toward
   first-principles closure.  The all-bidegree statement is
   converted into a primitive-existence problem on a finite-rank
   decorated bicomplex; the manuscript's exact-rational protocol
   verifies the primitives at recorded bidegrees, and the
   all-\((a,b)\) statement is the assertion that this
   verification is uniform.
-  Status: stronger than the original conditional, but not
-  unconditional.
+  Status: stronger than the original conditional, with uniformity as the
+  remaining obstruction.
 
 \item[Theorem~\ref{thm:completion-native-promatlis} (pro-Matlis
   target).]  Proved unconditionally as a universal property in

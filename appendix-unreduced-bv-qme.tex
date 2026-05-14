@@ -102,8 +102,8 @@ compatibility passes through truncation matrices \(T^{M,N}\) on rows
 (restriction-of-graphs from window \(M\) to a smaller window \(N\)) and
 \(P^{M,N}\) on primitive candidates (the matched counterterm projector)
 and the Roos class \([P^{M,N}c^M-c^N]\in H^0(\mathcal K^\bullet_{\mathrm{ns},N}(I))\)
-(the cohomology class measuring failure of windowwise primitives to
-agree across truncation).
+(the cohomology class measuring compatibility of windowwise primitives
+across truncation).
 
 The order-three row \(\theta_3=\mathrm{CE}(\Theta_3,\nu_3)\) is the
 first scalar-zero source-face row beyond the order-one one-cross
@@ -150,8 +150,9 @@ vector vanishes
   \[
     |c_f|=1,\qquad |u_\rho|=0 .
   \]
-  This is the cotangent-coordinate grading of the CE/PV block; it is
-  not the ordinary graded dual of the BV degree of \(\rho[1]\).  The
+  This is the cotangent-coordinate grading of the CE/PV block.  The
+  ordinary graded dual of the BV degree of \(\rho[1]\) is a separate
+  convention.  The
   CE/PV cotangent--Schouten bracket has degree \(-1\).  The reduced
   Hamiltonian boundary \(P_0\) bracket has degree \(0\).  The QME
   obstruction differential \(Q+\{I_0,-\}\) has degree \(1\).  The
@@ -193,8 +194,8 @@ vector vanishes
     \qquad
     \operatorname{div}_{\Omega_{\mathrm{loc}}}X_f=0 .
   \]
-  Thus no divergence or volume-form anomaly is present in the scalar
-  shadow.  The Hamiltonian scalar cocycle entering every calculation
+  Thus the scalar shadow has zero divergence and zero volume-form anomaly.
+  The Hamiltonian scalar cocycle entering every calculation
   below is
   \[
     \omega(f,g)
@@ -219,10 +220,10 @@ vector vanishes
     \hbar\,\operatorname{Str}_{\mathrm{cyc}}(\mathfrak m)\,
     \omega(f,g)\gamma_{\mathbf 1}.
   \]
-  A finite window \(M\) only restricts the polynomial Hamiltonian labels,
+  A finite window \(M\) restricts only the polynomial Hamiltonian labels,
   graph labels, and counterterm table to a finite local coefficient
-  system; it does not change
-  \(\Omega_{\mathrm{loc}}\), the Hamiltonian bracket, or the
+  system; it preserves
+  \(\Omega_{\mathrm{loc}}\), the Hamiltonian bracket, and the
   divergence-free condition.
 \end{prop}
 
@@ -235,7 +236,7 @@ vector vanishes
   \]
   after writing \(X_f=-(\partial_{z_2}f)\partial_{z_1}
   +(\partial_{z_1}f)\partial_{z_2}\).  Therefore the local volume form
-  is preserved and cannot contribute an additional scalar contact term.
+  is preserved and contributes zero additional scalar contact term.
   Taking the constant Taylor coefficient of the displayed Poisson bracket
   gives the cocycle \(\omega\), with \(\omega(z_1,z_2)=1\).
 
@@ -286,8 +287,8 @@ vector vanishes
     C^\bullet_{\mathrm{Lie}}(\bar A;\C\gamma_{\mathbf 1})[1]
   \]
   whose associated graded is the displayed \(\sigma_{\mathrm{sc}}\).
-  Without this extra projection, the assertion below is only an
-  associated-graded scalar obstruction statement.
+  The assertion below is an associated-graded scalar obstruction statement
+  until this extra projection is supplied.
   Thus a degree-one QME representative with two Hamiltonian inputs maps to
   a Lie two-cocycle.  Explicitly,
   \[
@@ -370,9 +371,9 @@ vector vanishes
     \operatorname{ev}_{z_1,z_2}\bigl(o_{\sigma,w}^{(1)}\bigr)
       =\hbar N\,\gamma_{\mathbf 1}\neq0 .
   \]
-  Hence the scalar-symbol projection has no filtered chain lift in the
-  ordinary scalar-reduced branch unless one supplies additional data whose
-  leading scalar class is \(-\hbar N[\bar c]\), or replaces the source or
+  Hence a filtered chain lift of the scalar-symbol projection in the
+  ordinary scalar-reduced branch requires additional data whose leading
+  scalar class is \(-\hbar N[\bar c]\), or a replacement of the source or
   open trace model before scalar reduction.
 \end{prop}
 
@@ -407,7 +408,7 @@ vector vanishes
   The obstruction is detected in the finite window containing \(z_1\) and
   \(z_2\).  The admissible weight transports of
   Theorem~\ref{thm:wt-regulator-independence-admissible} identify this
-  finite-window class, so changing \(w\) does not affect its vanishing.
+  finite-window class, so changing \(w\) preserves its vanishing criterion.
   The primitive exists on the unreduced source \(A\), where
   \(\eta(f)=-[f]_0\), and the central-character replacement uses exactly
   this primitive.  In the balanced supertrace branch the displayed
@@ -420,19 +421,19 @@ vector vanishes
   problem.
 \end{proof}
 
-\begin{thm}[Polynomial unreduced centrality no-go]
-\label{thm:app-unreduced-polynomial-centrality-no-go}
+\begin{thm}[Polynomial unreduced centrality obstruction]
+\label{thm:app-unreduced-polynomial-centrality-obstruction}
   Let \(M_{\mathrm{pol}}\) be any \(Q\)-stable subcomplex of the
   unreduced polynomial open BV observables in which every element has
-  finite polynomial degree in \(\phi_1,\phi_2,\psi\).  There is no
-  assignment
+  finite polynomial degree in \(\phi_1,\phi_2,\psi\).  Any assignment
   \[
     \rho_{a,b}[1]\longmapsto \Theta_{a,b}\in H^\bullet(M_{\mathrm{pol}},Q)
   \]
-  and no system of centrality homotopies in \(M_{\mathrm{pol}}\) whose
-  induced \(Q\)-cohomology action realizes the principal-part module
-  \(\mc P\).  Equivalently, the reduced map
-  \(\rho_{a,b}[1]\mapsto\Theta_{a,b}\) cannot be lifted to unreduced
+  together with centrality homotopies in \(M_{\mathrm{pol}}\) has locally
+  nilpotent linear Hamiltonian action on \(Q\)-cohomology, whereas the
+  principal-part module \(\mc P\) has non-locally-nilpotent linear
+  Hamiltonian action.  Equivalently, an unreduced polynomial lift of the
+  reduced map \(\rho_{a,b}[1]\mapsto\Theta_{a,b}\) would require
   polynomial boundary representatives with homotopies satisfying
   \[
     \{O_f,\Theta_\rho\}\simeq\Theta_{f\cdot\rho},
@@ -466,16 +467,17 @@ vector vanishes
     z_1^r\cdot\rho_{a,b}
       =(-1)^r(b+1)\cdots(b+r)\rho_{a,b+r}\neq0,
   \]
-  and similarly for \(z_2\), for every \(r\geq1\).  Thus no nonzero
-  principal part is locally nilpotent for the linear Hamiltonian action.
+  and similarly for \(z_2\), for every \(r\geq1\).  Thus every nonzero
+  principal part has non-locally-nilpotent linear Hamiltonian orbit.
 
   If the stated homotopies existed in \(M_{\mathrm{pol}}\), then after
   passing to \(Q\)-cohomology the action of \(O_{1,0}\) and \(O_{0,1}\)
   on the classes \([\Theta_{a,b}]\) would be isomorphic to the displayed
   principal-part action.  Local nilpotence is invariant under module
-  isomorphism and under passage to a submodule. This contradicts the
-  previous paragraph. Therefore the unreduced lift cannot live in the
-  polynomial open BV/Koszul category.
+  isomorphism and under passage to a submodule. This is incompatible with
+  the non-locally-nilpotent principal-part action above. Therefore the
+  unreduced lift requires a category beyond polynomial open BV/Koszul
+  observables.
 \end{proof}
 
 \begin{lem}[Distributional locality of principal-part currents]
@@ -547,9 +549,9 @@ vector vanishes
   \]
   Constants act trivially on \(\mc P\).  The product is the ordinary
   graded-commutative factorization product after extension by zero on
-  intervals.  This is an algebraic current model; it is not the
-  finite polynomial open BV/Koszul complex of
-  Theorem~\ref{thm:app-unreduced-polynomial-centrality-no-go}.
+  intervals.  This is an algebraic current model.  The finite polynomial
+  open BV/Koszul complex is governed by
+  Theorem~\ref{thm:app-unreduced-polynomial-centrality-obstruction}.
 \end{defn}
 
 \begin{constr}[Algebraic current presentation map]
@@ -603,13 +605,12 @@ vector vanishes
   \]
   Thus the unreduced source with central character constructs the
   \(P_0\) current presentation as far as the distributional algebraic
-  current model permits.  This is not constructed as a morphism into
+  current model permits.  A morphism into
   \(Z^{P_0}_{\mathrm{fact}}(\mathrm{Obs}_{\mathrm{open}})\) for the
-  genuine unreduced open BV factorization algebra.  It does not
-  contradict the polynomial no-go
+  genuine unreduced open BV factorization algebra requires the additional
+  unreduced graph/QME data.  This is compatible with the polynomial obstruction
   theorem: the image of \(\Theta_\rho(B)\) lives in the added
-  principal-part current sector, not in finite polynomial open
-  observables.
+  principal-part current sector.
 \end{thm}
 
 \begin{proof}
@@ -644,7 +645,8 @@ vector vanishes
   \(H_{\mathrm{fact}}\) and \(H_{P_0}\) may both be chosen to be zero.
 
   The same statement holds against arbitrary monomials in the added
-  algebraic current target, not only against length-one generators.  Let
+  algebraic current target, including monomials beyond length-one
+  generators.  Let
   \(Y=Y_1\cdots Y_r\) be a homogeneous source monomial and put
   \(W=\Phi_I^\chi(Y)\), a monomial in the target generators
   \(B_g^\chi(b)\) and \(\Theta_\sigma(C)\).  For a source generator
@@ -667,10 +669,9 @@ vector vanishes
   algebra.  Thus the centrality homotopies against arbitrary algebraic
   current-target monomials are strict zero homotopies in this model.
   Here ``arbitrary'' means arbitrary monomial in the freely adjoined
-  algebraic current target.  It does not mean arbitrary element of the
-  genuine unreduced open BV observable factorization algebra, and it
-  does not supply the unreduced
-  \(Z^{P_0}_{\mathrm{fact}}\)-morphism.
+  algebraic current target.  The genuine unreduced open BV observable
+  factorization algebra and the unreduced
+  \(Z^{P_0}_{\mathrm{fact}}\)-morphism require the additional graph/QME data.
 \end{proof}
 
 \begin{lem}[Unreduced scalar primitive]
@@ -686,8 +687,8 @@ vector vanishes
   \]
   With the convention
   \((d_{\mathrm{CE}}\eta)(f,g)=-\eta(\{f,g\})\), one has
-  \(d_{\mathrm{CE}}\eta=\omega\).  The primitive does not descend to
-  \(\bar A=A/\C\cdot1\).
+  \(d_{\mathrm{CE}}\eta=\omega\).  The primitive lives on the unreduced
+  algebra \(A\); scalar reduction to \(\bar A=A/\C\cdot1\) removes it.
 \end{lem}
 
 \begin{proof}
@@ -753,10 +754,10 @@ vector vanishes
   \]
   Its associated graded CE class is the formal scalar multiple
   \(\hbar N[\bar c]\in H^2_{\mathrm{Lie}}(\bar A;\C)[[\hbar]]\).  This
-  class is not exact in the scalar-reduced Hamiltonian source.  Hence the
-  ordinary scalar-reduced \(\lie{gl}_N\) brane-defect model has no
-  internal scalar counterterm whose leading symbol cancels this
-  obstruction.
+  class is a nonzero scalar-reduced Hamiltonian cohomology class.  Hence an
+  internal scalar counterterm in the ordinary scalar-reduced
+  \(\lie{gl}_N\) brane-defect model would require a leading symbol
+  primitive for \(\hbar N[\bar c]\).
 \end{thm}
 
 \begin{proof}
@@ -795,9 +796,9 @@ vector vanishes
   \]
   Equivalently, Lemma~\ref{lem:app-unreduced-scalar-primitive} gives
   the unreduced scalar primitive used here.  It lives on the unreduced
-  polynomial Hamiltonian algebra and does not descend to \(\bar A\).
-  Thus the scalar-reduced source has no counterterm whose associated
-  graded kills the class.
+  polynomial Hamiltonian algebra; scalar reduction to \(\bar A\) removes
+  that primitive.  Thus a scalar-reduced counterterm would require an
+  associated-graded primitive for the class.
 \end{proof}
 
 \begin{thm}[Scalar anomaly transgression: four equivalent sightings]
@@ -919,7 +920,7 @@ vector vanishes
   Sighting (i) is the content of
   Lemma~\ref{lem:app-unreduced-scalar-primitive}: \(\omega\) is the
   CE coboundary of \(\eta(f)=-[f]_0\) on the unreduced \(A\), and
-  \(\eta\) does not descend to \(\bar A\).  Hence \([\omega]\) is
+  scalar reduction to \(\bar A\) removes \(\eta\).  Hence \([\omega]\) is
   nonzero on \(\bar A\); the central extension presented in (i) is
   this nontrivial class.
 
@@ -993,9 +994,8 @@ vector vanishes
   By Theorem~\ref{thm:app-ordinary-glN-scalar-obstruction-criterion},
   any internal local counterterm in the ordinary scalar-reduced
   \(\lie{gl}_N\) branch must contribute leading scalar class
-  \(-\hbar N[\bar c]\); since \([\bar c]\neq0\), no internal
-  counterterm exists, and the four external branch replacements above
-  exhaust the cancellations.
+  \(-\hbar N[\bar c]\).  The class \([\bar c]\neq0\), so the four branch
+  replacements above are exactly the scalar cancellations available here.
 \end{rmk}
 
 \begin{thm}[Central-character source replacement for the scalar QME symbol]
@@ -1030,8 +1030,8 @@ vector vanishes
   \]
   Thus the local scalar QME symbol is absorbed after replacing the
   scalar-reduced source by the unreduced source with central character
-  \(\chi_N\).  This is a source replacement before scalar reduction, not a
-  null-homotopy inside the original scalar-reduced QME complex.
+  \(\chi_N\).  This is a source replacement before scalar reduction.  The
+  original scalar-reduced QME complex would require its own null-homotopy.
   Equivalently, if \(\eta(f)=-[f]_0\), then
   \[
     d_{\mathrm{CE}}\eta=\omega,\qquad
@@ -1112,8 +1112,8 @@ vector vanishes
              \widehat\mu(\lie{gl}(V)).
   \]
   Consequently the scalar part of the local mixed brane-defect QME
-  vanishes in the balanced \(\lie{gl}(N|N)\) supertrace model without
-  adding a central-character counterterm.
+  vanishes in the balanced \(\lie{gl}(N|N)\) supertrace model by the
+  supertrace calculation.
 \end{thm}
 
 \begin{proof}
@@ -1171,9 +1171,9 @@ vector vanishes
   \]
   for a continuous \(\C[[\hbar]]\)-linear extractor
   \(\tau_{\mathrm{sc}}\).  Third, the same factorization holds after
-  applying \(d_{\mathrm{QME}}\): no scalar-contact symbol is
-  present in this subcomplex except those obtained by contracting a single
-  identity endomorphism in the supertrace pairing.
+  applying \(d_{\mathrm{QME}}\): every scalar-contact symbol in this
+  subcomplex is obtained by contracting a single identity endomorphism in
+  the supertrace pairing.
 \end{defn}
 
 \begin{prop}[Balanced scalar-contact projection]
@@ -1243,11 +1243,11 @@ vector vanishes
 \begin{rmk}[Extension obstruction outside the balanced subcomplex]
 \label{rmk:app-balanced-projection-extension-obstruction}
   Proposition~\ref{prop:app-balanced-scalar-contact-projection} kills
-  the scalar-contact projection tower, not the full non-scalar
-  graph/QME residual.  Enlarging
+  the scalar-contact projection tower.  The full non-scalar graph/QME
+  residual is a separate obstruction problem.  Enlarging
   \(\mathfrak H^\bullet_{\mathrm{bal,sc}}(I)\) to a complete filtered
-  subcomplex \(\mathfrak H'\) carrying scalar symbols not known to
-  factor through \(\operatorname{sdim}(V)\), the obstruction to
+  subcomplex \(\mathfrak H'\) carrying scalar symbols with unspecified
+  \(\operatorname{sdim}(V)\)-factorization, the obstruction to
   extending the scalar projection is the first nonzero homogeneous
   component of
   \[
@@ -1335,8 +1335,8 @@ vector vanishes
   \(\mathfrak H^\bullet_{\mathrm{bal,sc}}(I)\) by
   Proposition~\ref{prop:app-balanced-scalar-contact-projection}.  The
   same factorization after applying \(d_{\mathrm{QME}}\) says that the
-  differential does not create a new scalar-contact symbol outside the
-  identity-loop class.  Therefore
+  differential creates scalar-contact symbols only in the identity-loop
+  class.  Therefore
   \[
     d_{\mathrm{CE}}\widehat\sigma_{\mathrm{bal,Cost}}
       -
@@ -1447,8 +1447,8 @@ vector vanishes
       \sum_{\Gamma'}\varepsilon_{\Gamma,\Gamma'}s(X_{\Gamma',M})
     \right]}_{F^{p-r}/F^{p-r+1}} .
   \]
-  Thus a graph or counterterm term outside the identity-loop
-  superdimension class is not admitted by the balanced theorem unless
+  Thus a graph or counterterm term beyond the identity-loop
+  superdimension class is admitted by the balanced theorem exactly after
   this displayed relative Hom class is killed by an explicit compatible
   counterterm correction.
 \end{thm}
@@ -1460,8 +1460,9 @@ vector vanishes
   scalar-contact subcomplex.  If
   \(d_{\mathrm{CE}}\bar\sigma_{\mathrm{Cost}}
     -\bar\sigma_{\mathrm{Cost}}d_{\operatorname{gr}}\)
-  is nonzero, then the associated-graded scalar extractor is not a chain
-  map; no filtered chain lift can have it as associated graded.  This is
+  is nonzero, then the associated-graded scalar extractor has a chain-map
+  defect, and every filtered chain lift carries that defect in its
+  associated graded.  This is
   the zeroth defect
   \(\delta^{(0)}_{\mathrm{Cost},\sigma}(I)\).
 
@@ -1507,8 +1508,8 @@ vector vanishes
   \(X_{\Gamma^{T_\bullet}_{1,M}}(a,f;b,g)\).
 
   Then
-  \(X_{\Gamma^{T_\bullet}_{1,M}}(a,f;b,g)\in F^1\), its leading term is
-  not in \(F^2\) unless the displayed coefficient vanishes, and
+  \(X_{\Gamma^{T_\bullet}_{1,M}}(a,f;b,g)\in F^1\), its leading term has
+  \(F^1/F^2\) coefficient equal to the displayed scalar, and
   \[
     X_{\Gamma^{T_\bullet}_{1,M}}(a,f;b,g)
       =
@@ -1547,7 +1548,7 @@ vector vanishes
       =
     \hbar\,\gamma_{\mathbf 1}\neq0.
   \]
-  Thus this is the first scalar symbol not killed by the identity-loop
+  Thus this is the first scalar symbol beyond the identity-loop
   computation.  Its associated CE class is
   \[
     \hbar\,\operatorname{Str}\!\bigl(M(T_\bullet)\bigr)
@@ -1563,8 +1564,8 @@ vector vanishes
 
 \begin{proof}
   The graph has one local scalar contact on the brane line, so it lies in
-  \(F^1\).  There is no second scalar contact in the one-edge graph, hence
-  its associated graded is read in \(F^1/F^2\).  The boundary Wick
+  \(F^1\).  The one-edge graph has exactly one scalar contact, hence its
+  associated graded is read in \(F^1/F^2\).  The boundary Wick
   normalization fixed in
   Theorem~\ref{thm:open-line-midpoint-graph-weights} gives the one-edge
   antisymmetrized coefficient \(\hbar P(f,g)\).  Taking the scalar
@@ -1626,8 +1627,7 @@ vector vanishes
     \operatorname{Str}(\operatorname{id}_V)=0 .
   \]
   The word is supertraceless if \(\operatorname{st}(T_\bullet)=0\).
-  This condition is imposed on the ordered product \(T_1\cdots T_m\),
-  not on the individual letters.
+  This condition is imposed on the ordered product \(T_1\cdots T_m\).
 
   Fix a complete \(d_{\mathrm{QME}}\)-stable finite-window
   graph/counterterm enlargement of the local balanced supertrace
@@ -1694,7 +1694,7 @@ vector vanishes
       X_{\Gamma'^{\,U_\bullet},M},
   \]
   where \(U_\bullet\) runs over scalar-loop monodromy words appearing in
-  the boundary terms.  The first possible failure of preservation is the
+  the boundary terms.  The first possible preservation obstruction is the
   quotient class
   \[
     \mathcal B^{(r)}_{\operatorname{st}=0}(X_{\Gamma,M})
@@ -1733,10 +1733,10 @@ vector vanishes
   Definition~\ref{def:app-balanced-costello-graph-subhabitat}, the
   obstruction \(\mathcal B_{\operatorname{st}=0}\) vanishes.  These
   generators carry only the empty monodromy word, and the displayed
-  differential \(Q+\{I_0,-\}\) contains no fixed noncentral
-  \(\operatorname{End}(V)\)-marker.  Therefore applying
-  \(d_{\mathrm{QME}}\) to this displayed Hamiltonian generator set cannot
-  create a non-supertraceless marked word.  Preservation holds on the
+  differential \(Q+\{I_0,-\}\) contains only the identity-loop marker.
+  Therefore applying
+  \(d_{\mathrm{QME}}\) to this displayed Hamiltonian generator set
+  preserves supertraceless monodromy.  Preservation holds on the
   unmarked Hamiltonian generator set.  A larger Costello specialization
   with additional marked idempotents, holonomies, or counterterm
   tensors is governed by \(\mathcal B_{\operatorname{st}=0}\) on those
@@ -1784,12 +1784,12 @@ vector vanishes
   Theorem~\ref{thm:app-scalar-contact-qme-class}.
 
   For the unmarked Hamiltonian boundary generators, the open index loop
-  contains no inserted label; its word is \(\varnothing\), so its
+  carries the empty word \(\varnothing\), so its
   coefficient is
   \(\operatorname{Str}(\operatorname{id}_V)=0\).  The differential
   \(Q+\{I_0,-\}\) acts on BV fields and takes brackets with the
-  unmarked classical interaction; it introduces no external even
-  endomorphism marker on an open scalar loop.
+  unmarked classical interaction; it preserves the empty marker word on an
+  open scalar loop.
   Thus the image of the unmarked Hamiltonian generator set again has only
   empty loop words.  The identity-loop graph subhabitat has the same
   property by
@@ -1869,12 +1869,12 @@ vector vanishes
     \mathcal B_{\operatorname{st}=0}=0
   \]
   on that generator set.  For any larger marked Costello
-  specialization not equipped with an oriented finite-window marked
+  specialization equipped with an oriented finite-window marked
   boundary complex as in
-  Definition~\ref{def:app-oriented-full-equivariant-marked-boundary-complex},
-  the missing datum blocking a scalar computation is exactly
-  equation~\eqref{eq:app-marked-differential-datum}, including its signs and
-  invariant marker tensors.
+  Definition~\ref{def:app-oriented-full-equivariant-marked-boundary-complex}
+  has the scalar computation below.  For a larger marked specialization,
+  the missing datum is exactly equation~\eqref{eq:app-marked-differential-datum},
+  including its signs and invariant marker tensors.
 
   In particular, a single fixed marker \(T\in\operatorname{End}(V){}_{\bar0}\)
   can occur in a full \(\lie{gl}(V)\)-equivariant marked differential only
@@ -1886,8 +1886,9 @@ vector vanishes
   Thus the nonzero \(P_+\) test of
   Proposition~\ref{prop:app-first-nonidentity-loop-scalar-symbol} is a
   genuine obstruction to a non-equivariant or externally marked
-  enlargement, but it is not an allowed single-marker term in the full
-  \(\lie{gl}(N|N)\)-equivariant Costello differential.  If one imposes
+  enlargement.  In the full
+  \(\lie{gl}(N|N)\)-equivariant Costello differential, an allowed
+  single-marker term is a scalar multiple of the identity.  If one imposes
   only the even block-diagonal group, or supplies external marker
   tensors, the admissible datum is the invariant tensor family above, and
   the first nonzero scalar shadow is detected exactly by the displayed
@@ -1923,7 +1924,7 @@ vector vanishes
   \(\lambda\operatorname{sdim}(V)=0\) for \(V=\C^{N|N}\).
 
   On the unmarked Hamiltonian generator set the differential
-  \(d_{\mathrm{QME}}=Q+\{I_0,-\}\) carries no external endomorphism
+  \(d_{\mathrm{QME}}=Q+\{I_0,-\}\) carries the empty endomorphism
   label; together with
   Definition~\ref{def:app-balanced-costello-graph-subhabitat}, which
   requires identity-loop factorization after applying
@@ -1931,8 +1932,8 @@ vector vanishes
   \(\operatorname{Str}(\operatorname{id}_V)=0\), so their
   \(\mathcal B_{\operatorname{st}=0}\)-class vanishes.  Any further
   marked graph/counterterm term is governed by its chosen oriented marked
-  boundary complex; without that data,
-  equation~\eqref{eq:app-marked-differential-datum} remains the residual.
+  boundary complex; equation~\eqref{eq:app-marked-differential-datum}
+  records the residual data.
 \end{proof}
 
 \begin{defn}[Finite-window marked Costello list]
@@ -2032,15 +2033,14 @@ vector vanishes
   For the Hom-valued graph kernel one adjoins one further operation:
   the source differential face \(-\kappa d_{\mathrm{CE}}\), with the CE
   bracket coefficient included in \(\varepsilon_{\beta_i}\).  After
-  evaluation on fixed CE cycles this extra face is absent.
+  evaluation on fixed CE cycles this extra face evaluates to zero.
 
   The finite list is required to contain every output of (B1)--(B4) that
   appears in the chosen system, and also the source face when the
   Hom-valued kernel table is used.  If an output graph, coefficient,
-  marker transport, or counterterm vertex is not supplied in
-  \(\mathcal G^{\mathrm{mk}}_M\), the missing datum is exactly that
-  omitted boundary entry; the larger specialization stays a
-  construction target.
+  marker transport, or counterterm vertex lies outside
+  \(\mathcal G^{\mathrm{mk}}_M\), that boundary entry is the omitted datum;
+  the larger specialization stays a construction target.
 
   The orientation line used for signs is
   \[
@@ -2090,8 +2090,8 @@ vector vanishes
   \]
   Here \(\mathcal S_M\) is the finite seed set of graph and
   counterterm graphs, and the codimension-two closure equations make
-  \(\partial_J\) independent of the chosen order of \(J\).  Failure of this
-  displayed equality is precisely failure to supply the finite graph list.
+  \(\partial_J\) independent of the chosen order of \(J\).  A defect in
+  this displayed equality is precisely the finite graph-list obstruction.
 \end{defn}
 
 \begin{defn}[Oriented full-equivariant marked boundary complex]
@@ -2261,9 +2261,8 @@ vector vanishes
   degree-zero kernel this is \(-\kappa d_{\mathrm{CE}}\).
 
   The inclusion of the graph kernel and counterterms is tautological from
-  the same finite label list.  If a graph component or counterterm face is
-  absent, the equality with \(d_M\) fails at that named face, which is the
-  exact missing datum.  The finite-window system requires compatibility of
+  the same finite label list.  Each omitted graph component or counterterm
+  face is an explicit missing datum for the equality with \(d_M\).  The finite-window system requires compatibility of
   graph weights, counterterms, scalar projections, and kernels with
   \(\pi_{M,N}\) and \(R^M_{w,w'}\); applying this requirement to each entry
   of the finite boundary table gives the stated preservation criterion.
@@ -2507,7 +2506,7 @@ vector vanishes
       =
     d_{\mathbf K,M}\kappa+\frac12[\kappa,\kappa]_{\mathbf K,M}.
   \]
-  Thus the source-face term is not optional.  For a degree-zero kernel it
+  Thus the source-face term is part of the Hom differential.  For a degree-zero kernel it
   contributes \(-\kappa d_{\mathrm{CE}}\).
 
   Third, the kernel has a fixed zero-edge part:
@@ -2525,8 +2524,8 @@ vector vanishes
   finite row, and \(f,\rho\) lie in the window \(M\).  Positive-edge
   components are exactly the renormalized graph weights
   \(K^M_\Gamma=W^{R,M}_{\Gamma,L,w}(B^\Gamma_\bullet)\) supplied by the
-  system.  No graph theorem for arbitrary \(B\in\mathcal D'_c(I)\) is
-  included in this definition.
+  system.  A graph theorem for arbitrary \(B\in\mathcal D'_c(I)\) is
+  additional analytic input.
 
   Fourth, one supplies a filtered chain scalar projection
   \[
@@ -2552,8 +2551,8 @@ vector vanishes
       =
     \ker\widehat\sigma_{\mathrm{sc},M}.
   \]
-  If this projection is not a chain map, the non-scalar kernel complex
-  is not formed.
+  The non-scalar kernel complex is formed after this projection is a
+  chain map.
 \end{defn}
 
 \begin{thm}[Constructive non-scalar Costello/QME realization criterion]
@@ -2605,8 +2604,8 @@ vector vanishes
     \sum_{\alpha\in\mathsf A^{\mathrm{fw}}_{n,M}}S_{\alpha,M}=0.
     \label{eq:app-native-scalar-condition}
   \]
-  If \eqref{eq:app-native-scalar-condition} fails, the non-scalar problem has
-  not started at order \(n\).  If it holds, then
+  The non-scalar problem at order \(n\) begins after
+  \eqref{eq:app-native-scalar-condition} holds.  Then
   \[
     R^{\mathrm{ns}}_{n,M}
       =
@@ -2637,7 +2636,7 @@ vector vanishes
     A^M c=-r^M
     \label{eq:app-native-counterterm-linear-system}
   \]
-  is solvable.  If it is not solvable, any covector
+  is solvable.  In the obstruction case, any covector
   \[
     \ell A^M=0,\qquad \ell(r^M)\neq0
   \]
@@ -2667,7 +2666,7 @@ vector vanishes
   in the completed brane-defect kernel complex.  A larger
   Costello specialization requires its missing graph weight, source
   face, scalar condition, primitive candidate, or truncation matrix
-  to be supplied; the criterion is not extended by analogy.
+  as explicit input to the criterion.
 \end{thm}
 
 \begin{proof}
@@ -2684,10 +2683,10 @@ vector vanishes
   last displayed family is the order-\(n\) contribution of lower
   counterterms to the same curved Maurer--Cartan equation.
 
-  Applying the chain scalar projection gives the scalar condition.  If the
-  condition is nonzero, the residual is not in
-  \(\ker\widehat\sigma_{\mathrm{sc},M}\).  If the condition is zero, the
-  residual is in the kernel complex.  Codimension-two closure is exactly
+  Applying the chain scalar projection gives the scalar condition.  A
+  nonzero scalar condition places the residual outside
+  \(\ker\widehat\sigma_{\mathrm{sc},M}\).  A zero scalar condition places the
+  residual in the kernel complex.  Codimension-two closure is exactly
   the finite-row form of the Bianchi identity: the two ways of taking two
   elementary faces have opposite incidence signs and the same output graph,
   coefficient, and marker transport.  Since lower orders are solved, this
@@ -2696,13 +2695,13 @@ vector vanishes
   A counterterm \(C_{n,M}\) changes the residual by
   \(d_{\mathrm{ns},M}C_{n,M}\).  Expanding \(C_{n,M}\) in the supplied
   degree-zero row basis gives the linear system
-  \eqref{eq:app-native-counterterm-linear-system}.  Failure of solvability
-  is equivalent to the residual vector being outside the image of \(A^M\);
+  \eqref{eq:app-native-counterterm-linear-system}.  The solvability
+  obstruction is the residual vector class in the cokernel of \(A^M\);
   a left-null covector with nonzero value on \(r^M\) is precisely the
   finite-dimensional cokernel separation.  The two truncation identities
   say that both residuals and boundaries commute with finite-window
-  projection.  After windowwise primitives are chosen, their failure to
-  commute with truncation is the displayed Roos \(1\)-cocycle in
+  projection.  After windowwise primitives are chosen, their compatibility
+  with truncation is measured by the displayed Roos \(1\)-cocycle in
   \(H^0\).  Thus the fixed-window \(H^1\) class and the Roos primitive
   class are exactly the obstruction pair.  Passing to all orders gives the
   completed curvature equation.
@@ -2775,8 +2774,8 @@ vector vanishes
       =-\mathsf E_{\theta_3,M},
   \]
   compatible under finite-window truncation, or additional Hom-valued
-  companion rows whose sum changes the residual vector.  Without one of
-  these data the order-three larger system is not a solved QME row.
+  companion rows whose sum changes the residual vector.  These data make
+  the order-three larger system a solved QME row.
 \end{prop}
 
 \begin{proof}
@@ -2799,10 +2798,11 @@ vector vanishes
   with the concrete row labels of
   Proposition~\ref{prop:concrete-order-three-enlarged-system-row}.  Its
   scalar condition is zero in the full-equivariant marked complex.  In the
-  one-row finite complex, there is no degree-zero candidate primitive, so
-  the boundary matrix is the \(1\times0\) zero matrix and the residual
+  one-row finite complex, the degree-zero candidate primitive space is zero,
+  so the boundary matrix is the \(1\times0\) zero matrix and the residual
   vector is the basis vector \(\mathsf E_{\theta_3,M}\).  The displayed
-  covector annihilates the image of the differential and not the residual.
+  covector annihilates the image of the differential and pairs
+  nontrivially with the residual.
   This proves nonvanishing only in the supplied finite row subcomplex.
   The displayed \(C_{\theta_3,M}\) or companion-row datum is exactly what
   enlarges the complex enough to kill the row.
@@ -2846,7 +2846,7 @@ vector vanishes
   \[
     A_D^2c=-r_2
   \]
-  has no solution in the supplied lower local-functional row complex.  The
+  has a cokernel obstruction in the supplied lower local-functional row complex.  The
   normalized cokernel
   \[
     \widetilde\lambda_{02,\mathfrak b}
@@ -2864,7 +2864,7 @@ vector vanishes
   \[
     -\mathfrak b^2_{02,20}=(0,0,-1)^T,
   \]
-  and it is not in the image of the current column \(A_D^2\), since
+  and it has nonzero cokernel pairing against the current column \(A_D^2\), since
   \[
     \widetilde\lambda_{02,\mathfrak b}((0,0,-1)^T)=-1 .
   \]
@@ -2909,15 +2909,15 @@ vector vanishes
     \varprojlim\nolimits^1_N
     H^0(\mathcal K^\bullet_{\mathrm{ns},N}(I))
   \]
-  must vanish next.  Without these two conditions, the lower \(\theta_3\)
-  Bianchi repair is only a fixed-window matrix target, not a solved
+  must vanish next.  These two conditions promote the lower \(\theta_3\)
+  Bianchi repair from a fixed-window matrix target to a solved
   Costello/QME counterterm tower.
 \end{prop}
 
 \begin{proof}
   The source differential gives the two lower source-face rows with
-  coefficients \(2\) and \(-2\).  Applying \(K^2_{\Theta_3}\) is not a
-  chain map until its Hom-valued Bianchi defect is killed, so
+  coefficients \(2\) and \(-2\).  Applying \(K^2_{\Theta_3}\) becomes a
+  chain map after its Hom-valued Bianchi defect is killed, and
   \[
     d_{\mathrm{ns},2}D^2_{02,20}
       =
@@ -2929,12 +2929,13 @@ vector vanishes
   If \(A_D^2c=-r_2=(-2,2,0)^T\), the first two coordinates force
   \(c=1\), while the Bianchi coordinate forces \(c=0\).  Thus the equation
   is inconsistent.  The same conclusion is the cokernel calculation:
-  \(\widetilde\lambda_{02,\mathfrak b}\) annihilates \(A_D^2\) and does
-  not annihilate \(r_2\).
+  \(\widetilde\lambda_{02,\mathfrak b}\) annihilates \(A_D^2\) and pairs
+  nontrivially with \(r_2\).
 
   The target \((0,0,-1)^T\) is the boundary column required to remove
   only the Bianchi coordinate.  Since the same cokernel evaluates to
-  \(-1\) on it, the current complex does not contain such a boundary.
+  \(-1\) on it, this boundary is a new scalar-zero local-functional
+  column.
   Adding a scalar-zero local functional \(B^2_{02,20}\) with the displayed
   boundary produces
   \(A_D^2+A_B^2=(-2,2,0)^T=-r_2\), hence the lower residual is killed.
@@ -2945,9 +2946,9 @@ vector vanishes
   \(\pi_{M,N}B^M-B^N\) gives the difference between the transported
   Bianchi boundary and the \(N\)-window Bianchi boundary, namely
   \(-\pi_{M,N}\mathfrak b^M+\mathfrak b^N\).  Therefore the transported
-  family exists only after this degree-one class vanishes in
+  family exists after this degree-one class vanishes in
   \(H^1(\mathcal K^\bullet_{\mathrm{ns},N}(I))\); after choosing
-  primitives, their failure to be compatible is the usual Roos
+  primitives, their compatibility is measured by the usual Roos
   \(\varprojlim^1H^0\) obstruction.
 \end{proof}
 
@@ -2968,7 +2969,7 @@ vector vanishes
   \]
   The finite-window \(H^1\) splits into two cases.
   \begin{enumerate}[label=(\alph*)]
-    \item \emph{No counterterm supplied.}  In the
+    \item \emph{Counterterm omitted.}  In the
       one-row complex above, the \(d_{\mathrm{ns},M}\)-cohomology in
       degree one is
       \[
@@ -2983,8 +2984,7 @@ vector vanishes
       \]
       detected by the unique covector
       \(\ell_{\theta_3}(\mathsf E_{\theta_3,M})=1\) on the row basis.
-      No degree-zero row in the supplied finite complex maps to
-      \(-\mathsf E_{\theta_3,M}\); the linear system
+      The supplied finite complex has zero degree-zero row space; the linear system
       \(A^M c=-r^M\) of
       Theorem~\ref{thm:app-constructive-nonscalar-costello-qme-realization}
       has empty column matrix and residual
@@ -3026,8 +3026,8 @@ vector vanishes
   The script \texttt{scripts/finite\_window\_graph\_array.py} returns
   the same outputs.  Case (a) corresponds to the rows
   \texttt{theta\_3\_current\_finite\_row\_subcomplex},
-  \texttt{theta3\_ce\_ancestor\_absent\_payload}, and
-  \texttt{theta3\_counterterm\_absent\_payload}, each returning
+  the omitted-CE-ancestor payload, and
+  the omitted-counterterm payload, each returning
   \(\texttt{primitive\_exists}=\mathrm{false}\) with cokernel covector
   \(\ell(\mathsf E_{\theta_3,M})=1\).  Case (b) corresponds to
   three repair data --- the supplied scalar-zero counterterm
@@ -3085,8 +3085,8 @@ vector vanishes
   Theorem~\ref{thm:app-theta-three-finite-window-H1} apply under
   disjoint fixture conditions on the order-three finite-row complex
   at \(\theta_3\).  Case (a) is the sub-theorem of the minimal
-  seed list: when no order-three scalar-zero counterterm
-  \(C_{\theta_3,M}\) is supplied, the finite-window
+  seed list: when the order-three scalar-zero counterterm
+  \(C_{\theta_3,M}\) is omitted, the finite-window
   \(d_{\mathrm{ns},M}\)-cohomology in degree one is
   \(\C\,\mathsf E_{\theta_3,M}\), with explicit covector
   representative \(\ell_{\theta_3}\).  Case (b) is the sub-theorem
@@ -3133,7 +3133,7 @@ vector vanishes
   \]
   All complexes below are taken in the \(T_\Omega\)-invariant, or
   equivalently basic Cartan, subcomplex.  Before this restriction the
-  displayed operator is not a differential.
+  displayed operator is a curved Cartan operator with square \(L_{V_\Omega}\).
 
   Put
   \[
@@ -3170,9 +3170,9 @@ vector vanishes
   The first counts Costello/BV graph order; the second deforms the
   boundary Weyl/Moyal algebra; the third scalarizes the equivariant
   Hamiltonian bracket.  A Weyl branch may identify
-  \(\hbar_{\mathrm{W}}=\hbar_\omega\).  No branch identifies
-  \(\hbar_{\mathrm{QME}}\) with either parameter unless a theorem states
-  that extra specialization.  The equivariant Hamiltonian bracket is the
+  \(\hbar_{\mathrm{W}}=\hbar_\omega\).  Identification of
+  \(\hbar_{\mathrm{QME}}\) with either parameter is an explicit theorem
+  specialization.  The equivariant Hamiltonian bracket is the
   \(R_\Omega^{N,M}\)-linear bracket
   \[
     \{f,g\}_\Omega
@@ -3225,8 +3225,8 @@ vector vanishes
         \operatorname{id}-\operatorname{pr}_{\chi=0}
       \]
       on the corresponding \(\chi\)-weight summand, after inverting
-      \(\chi\).  This is the normal-mode acyclicity datum.  It is not a
-      QME counterterm and does not decide any graph curvature class.
+      \(\chi\).  This is the normal-mode acyclicity datum.  Graph
+      curvature classes and QME counterterms are separate data.
 
     \item An equivariant finite-scale gauge fixing and propagator
       \[
@@ -3260,10 +3260,10 @@ vector vanishes
       \]
       after the corresponding Euler denominators have been admitted in the
       chosen localized ring.  Scalar-contact rows, graph weights, and trace
-      normalizations are always read with the selected branch.  The residue
-      branch, Euler branch, and Euler-rescaled residue branch are not
-      silently identified; a comparison map must state the real orientation
-      sign \(\sigma_s\) and every denominator.
+      normalizations are always read with the selected branch.  A comparison
+      between the residue branch, Euler branch, and Euler-rescaled residue
+      branch must state the real orientation sign \(\sigma_s\) and every
+      denominator.
 
     \item Equivariant local counterterm representatives
       \[
@@ -3488,9 +3488,8 @@ vector vanishes
   Theorem~\ref{thm:wt-nonscalar-counterterm-criterion}.  The final
   sentence follows because the normal contraction datum appears only in
   the construction of the equivariant propagator and localized coefficient
-  complex; it does not identify the curvature residual with a boundary,
-  does not produce scalar-projection chain data, and does not supply the
-  centrality homotopies required for source rows.
+  complex.  The curvature residual boundary, scalar-projection chain data,
+  and source-row centrality homotopies are additional QME data.
 \end{proof}
 
 \begin{thm}[Minimal full-equivariant kernel vanishing]
@@ -3501,10 +3500,12 @@ vector vanishes
   marked list be the minimal codimension-two closed list generated by the
   strict current-interface rows and by the one-cross two-Hamiltonian
   scalar-contact row of
-  Proposition~\ref{prop:first-finite-window-array-rows}.  Assume that no
-  further \(|\Gamma|_\hbar=1\) graph row, no genuine
-  \(|\Gamma|_\hbar=2\) seed graph, no order-\(2\) CE-source face, and no
-  order-\(2\) graph counterterm face is added.
+  Proposition~\ref{prop:first-finite-window-array-rows}.  Assume that the
+  list consists exactly of these rows through codimension two: it contains
+  the \(|\Gamma|_\hbar=1\) scalar-contact row and its codimension-two
+  closure, and it has zero additional \(|\Gamma|_\hbar=1\) graph rows,
+  zero genuine \(|\Gamma|_\hbar=2\) seed graphs, zero order-\(2\) CE-source
+  faces, and zero order-\(2\) graph counterterm faces.
 
   Then the first kernel residuals are
   \[
@@ -3515,7 +3516,7 @@ vector vanishes
   \[
     C_{1,M}=0,\qquad C_{2,M}=0 .
   \]
-  Thus the minimal full-equivariant finite-window array has no genuinely
+  Thus the minimal full-equivariant finite-window array has zero genuinely
   non-scalar QME obstruction through the first codimension-two closure
   level.  Its first possible non-scalar obstruction can only appear after
   a larger finite marked list supplies an additional scalar-zero row.
@@ -3540,9 +3541,9 @@ vector vanishes
   identified by Equation~\eqref{eq:app-codim-two-marked-closure}.  This
   gives the pairwise cancellation of the marked differential.  In the
   full-equivariant branch each scalar-loop factor is already zero by the
-  same cyclic supertrace calculation.  Since no genuine order-\(2\) seed graph,
-  CE-source face, or counterterm face is present, there is no remaining
-  row in the kernel complex.  Thus \(R^{\mathrm{ns}}_{2,M}=0\), and the
+  same cyclic supertrace calculation.  The minimal list has zero genuine
+  order-\(2\) seed graph, CE-source face, or counterterm face, so the
+  kernel complex has zero remaining row.  Thus \(R^{\mathrm{ns}}_{2,M}=0\), and the
   zero counterterm is compatible under every finite-window truncation.
 \end{proof}
 
@@ -3551,7 +3552,7 @@ vector vanishes
   Let \(\mathcal G^{\mathrm{mk}}_M\) be any larger finite marked list in
   the same full-equivariant local branch, with scalar projection killed as
   in Theorem~\ref{thm:app-full-equivariant-marked-shadow-vanishing}.  The
-  first genuinely non-scalar obstruction not detected by the scalar
+  first genuinely non-scalar obstruction beyond scalar
   projection is the least order \(n\) for which the row sum of
   Definition~\ref{def:app-nonscalar-kernel-row-complex} is nonzero in
   cohomology:
@@ -3587,8 +3588,8 @@ vector vanishes
   marker tensor, incidence sign, scalar condition, and truncation coefficients
   \(t^{M,N}_{\alpha\alpha'}\).
 
-  If the finite marked list explicitly has no such order-\(1\) row, the
-  next missing datum is the order-\(2\) scalar-zero row sum
+  If the finite marked list explicitly has zero such order-\(1\) rows, the
+  next required datum is the order-\(2\) scalar-zero row sum
   \[
   \begin{aligned}
     R^{\mathrm{ns}}_{2,M}
@@ -3608,9 +3609,9 @@ vector vanishes
         \{C_{<2,M},C_{<2,M}\}_{\hbar,M}.
   \end{aligned}
   \]
-  Without these row values, signs, scalar conditions, and truncation
-  coefficients, no non-scalar obstruction class or
-  counterterm is defined beyond the minimal vanishing theorem above.
+  These row values, signs, scalar conditions, and truncation coefficients
+  define the non-scalar obstruction class and counterterm problem beyond
+  the minimal vanishing theorem above.
 \end{prop}
 
 \begin{proof}
@@ -3633,11 +3634,10 @@ vector vanishes
   its labels, signs, marker transport, scalar condition, and truncation
   coefficients.
 
-  If there is no order-\(1\) row, the next possible residual is the
+  With zero order-\(1\) rows, the next possible residual is the
   order-\(2\) curvature expansion, including genuine order-\(2\) graph
   components, CE-source faces, brackets of order-\(1\) components, and
-  lower-counterterm terms.  These data are not determined by the scalar
-  shadow theorem.  They are exactly the row entries required by
+  lower-counterterm terms.  These data are exactly the row entries required by
   Definition~\ref{defn:finite-window-graph-array}.
 \end{proof}
 
@@ -3705,8 +3705,8 @@ vector vanishes
   \]
   and the required counterterm contribution is \(C_{1,M}=0\).
 
-  Thus the finite closed graph-list axioms do not support an absence
-  theorem for literal scalar-zero order-one rows beyond
+  Thus the finite closed graph-list axioms support explicit scalar-zero
+  order-one rows beyond
   \(\alpha_{\mathrm{sc}}\).  The first explicit such row is harmless:
   it is zero before cohomology.  If the row convention retains only
   nonzero summands, then \(\alpha_{11}\) is omitted, and a nonzero
@@ -3725,8 +3725,8 @@ vector vanishes
       =
     \bigl[\{z_1,z_1\}_{\Omega_{\mathrm{loc}}}\bigr]_0=0.
   \]
-  Multiplying by the transported full-equivariant cyclic supertrace cannot
-  change this zero coefficient.  Hence both the local functional row and
+  Multiplying by the transported full-equivariant cyclic supertrace
+  preserves this zero coefficient.  Hence both the local functional row and
   its scalar projection vanish.
 
   Since the row value is zero, \(d_{\mathrm{ns},M}\)-closedness is
@@ -3735,15 +3735,14 @@ vector vanishes
   lower windows containing \(z_1\), and both sides of the row and scalar
   truncation identities are zero.  The zero counterterm solves the row
   equation.  The final assertion is logical: the finite-list axioms allow
-  this added labelled zero row, so they cannot prove that no scalar-zero
-  order-one row exists; they can only decide a nonzero order-one class after
+  this added labelled zero row; a nonzero order-one class is decided after
   the nonzero order-one row values have been supplied.
 \end{proof}
 
-\begin{rmk}[Order two after no nonzero order-one row]
-\label{rmk:app-order-two-after-no-nonzero-order-one-row}
+\begin{rmk}[Order two after zero nonzero order-one rows]
+\label{rmk:app-order-two-after-zero-nonzero-order-one-rows}
   If zero rows such as \(\alpha_{11}\) are suppressed and the finite marked
-  list supplies no nonzero order-one row outside
+  list supplies zero nonzero order-one rows outside
   \(\alpha_{\mathrm{sc}}\), then \(C_{1,M}=0\) and every order-two bracket
   row containing \(\alpha_{\mathrm{sc}}\) is zero by
   Proposition~\ref{prop:universal-scalar-contact-bracket-rows}.  The
@@ -3780,9 +3779,9 @@ vector vanishes
   the strict current-interface rows, the two-Hamiltonian scalar-contact
   boundary row \(\alpha_{\mathrm{sc}}\), and its subset-deletion closure in
   the sense of
-  Definition~\ref{def:app-finite-window-marked-costello-list}.  Assume that no
-  further positive-order seed graph, CE-source face, graph counterterm face,
-  or nonzero scalar-zero row is added to the finite-window system.
+  Definition~\ref{def:app-finite-window-marked-costello-list}.  Assume that
+  the finite-window system adds zero further positive-order seed graphs,
+  CE-source faces, graph counterterm faces, or nonzero scalar-zero rows.
 
   Then for every \(n\geq1\)
   \[
@@ -3805,8 +3804,8 @@ vector vanishes
 \begin{proof}
   Proposition~\ref{prop:first-finite-window-array-rows} proves that the
   one-cross scalar-contact component satisfies
-  \(K^M_{\alpha_{\mathrm{sc}}}=0\) as a local functional, not only after
-  scalar projection.  The proof is the cyclic-supertrace calculation of
+  \(K^M_{\alpha_{\mathrm{sc}}}=0\) as a local functional before scalar
+  projection.  The proof is the cyclic-supertrace calculation of
   Lemma~\ref{lem:app-full-equivariant-cyclic-supertrace}: every transported
   full-equivariant marker on a scalar open loop has cyclic supertrace zero,
   including the empty marker word.
@@ -3817,8 +3816,9 @@ vector vanishes
   rows in the minimal system have at least one positive-order factor of this
   form, so bilinearity of the BV/convolution bracket gives zero.  Lower
   counterterm rows vanish inductively because the chosen lower counterterms
-  are zero.  Genuine \(dK\), CE-source, and graph-counterterm rows are absent
-  by the minimality hypothesis.  Therefore the order-\(n\) scalar-zero row sum
+  are zero.  The minimality hypothesis sets the genuine \(dK\), CE-source,
+  and graph-counterterm row spaces to zero.  Therefore the order-\(n\)
+  scalar-zero row sum
   is zero for all \(n\geq1\), its class in
   \(H^1(\mathcal K^\bullet_{\mathrm{ns},M}(I),d_{\mathrm{ns},M})\) is zero,
   and the zero counterterm is a compatible primitive.  Truncation sends zero
@@ -3828,9 +3828,9 @@ vector vanishes
 \begin{prop}[First order-three enlarged-system datum]\label{prop:app-first-order-three-enlarged-row}
   Keep the full-equivariant local branch, and suppose the minimal system has
   been closed through order two with
-  \(C_{1,M}=C_{2,M}=0\) and no nonzero order-one or order-two row outside the
-  scalar-contact closure.  Then the finite graph-list axioms do not by
-  themselves supply a nonzero order-three obstruction.  A nonzero order-three
+  \(C_{1,M}=C_{2,M}=0\) and zero nonzero order-one or order-two rows outside
+  the scalar-contact closure.  Then a nonzero order-three obstruction
+  requires row data beyond the finite graph-list axioms.  A nonzero order-three
   cochain exists only after the finite-window system supplies at least one
   of the following row data:
   \[
@@ -3924,10 +3924,10 @@ vector vanishes
   Proposition~\ref{prop:universal-scalar-contact-bracket-rows}, and rows
   containing any retained labelled zero scalar-contact row vanish by the same
   bilinearity argument.  Since \(C_{1,M}=C_{2,M}=0\), the lower-counterterm
-  contribution is zero in the minimal system.  Therefore no nonzero
-  order-three cochain is produced unless the system supplies a genuine
-  order-three graph row, an order-three CE-source row, or a bracket row between
-  already supplied nonzero lower-order components.  The displayed formulas are
+  contribution is zero in the minimal system.  Every nonzero order-three
+  cochain in this system therefore comes from a genuine order-three graph
+  row, an order-three CE-source row, or a bracket row between already
+  supplied nonzero lower-order components.  The displayed formulas are
   precisely the row values and scalar conditions required by
   Definition~\ref{defn:finite-window-graph-array}.  The final assertions are
   the kernel obstruction criterion of
@@ -3997,25 +3997,24 @@ vector vanishes
     R^{\mathrm{cent}}_{x,y,M}+d_M H^M_{x,y}=0,
   \]
   and these rows satisfy the truncation and weight identities of
-  Theorem~\ref{thm:app-curved-kernel-centrality-homotopy-criterion}.  If
-  such a row or compatibility identity is absent from the table, the
-  missing datum is exactly the omitted centrality-homotopy row, not a
-  consequence of scalar-shadow vanishing.
+  Theorem~\ref{thm:app-curved-kernel-centrality-homotopy-criterion}.  The
+  centrality-homotopy row and its compatibility identities are additional
+  data beyond scalar-shadow vanishing.
 
   In the minimal full-equivariant branch of
   Theorem~\ref{thm:app-minimal-full-equivariant-all-order-vanishing},
   every positive-order row contains the zero scalar-contact factor
-  \(K^M_{\alpha_{\mathrm{sc}}}=0\), and no additional positive-order seed
-  graph, CE-source face, graph counterterm face, or nonzero scalar-zero
-  row is present.  Hence
+  \(K^M_{\alpha_{\mathrm{sc}}}=0\), and the marked table contains zero
+  additional positive-order seed graph, CE-source face, graph counterterm
+  face, or nonzero scalar-zero row.  Hence
   \[
     R^{\mathrm{cent}}_{x,y,M}=0,\qquad H^M_{x,y}=0
   \]
   is a valid homotopy inside that minimal finite marked complex.  This
-  does not construct the centrality homotopy for an enlarged unreduced
-  Costello graph/counterterm target; any larger system must supply the
-  displayed row values, scalar condition, primitive \(H^M_{x,y}\), and
-  transition coefficients.
+  constructs the homotopy only for the minimal system.  An enlarged
+  unreduced Costello graph/counterterm target must supply the displayed
+  row values, scalar condition, primitive \(H^M_{x,y}\), and transition
+  coefficients.
 \end{prop}
 
 \begin{proof}
@@ -4036,16 +4035,16 @@ vector vanishes
   homotopy
   equation~\eqref{eq:app-centrality-homotopy-equation}.  The transition
   identities are necessary because the local kernel is the inverse limit
-  over finite windows and admissible weights.  Thus a row not present in
-  the marked table cannot be inferred from the scalar projection; it is
-  the missing graph, source-face, counterterm, or homotopy datum.
+  over finite windows and admissible weights.  Thus a row omitted from
+  the marked table is additional graph, source-face, counterterm, or
+  homotopy data beyond the scalar projection.
 
   In the minimal full-equivariant system all positive-order scalar-contact
   rows are zero before cohomology by
   Theorem~\ref{thm:app-minimal-full-equivariant-all-order-vanishing}.
-  Since no other positive-order row is allowed by the minimal hypothesis,
-  the centrality row is zero and the zero primitive is compatible with
-  all truncation maps.  The final assertion is the contrapositive of the
+  Since the minimal hypothesis allows zero other positive-order rows, the
+  centrality row is zero and the zero primitive is compatible with all
+  truncation maps.  The final assertion is the contrapositive of the
   row formula: once an enlarged system adds a nonzero graph, source,
   bracket, or counterterm row, the corresponding scalar condition and primitive
   must be supplied explicitly.
@@ -4167,8 +4166,8 @@ vector vanishes
 
   The displayed equation is precisely the centrality homotopy equation in
   the invariant \(Q_\Omega\)-complex.  Since \(Q_\Omega^2=L_{V_\Omega}\),
-  \(T_\Omega\)-invariance of the primitive is required separately, and
-  is not derivable from scalar-shadow vanishing.  The inverse-limit
+  \(T_\Omega\)-invariance of the primitive is an independent condition
+  beyond scalar-shadow vanishing.  The inverse-limit
   assertion is the same primitive-compatibility argument as in
   Theorem~\ref{thm:app-curved-kernel-centrality-homotopy-criterion}.  If
   a primitive is chosen outside the basic subcomplex, applying
@@ -4261,7 +4260,8 @@ vector vanishes
   \]
   In particular, with \(W_{\mathrm{ext}}=0\), or with
   \(w_{\mathrm{ext}}\) exact, the ordinary scalar-reduced
-  \(\lie{gl}_N\) brane-defect model has no scalar QME cancellation.
+  \(\lie{gl}_N\) brane-defect model carries the scalar QME obstruction
+  \(\hbar N[\bar c]\).
 \end{thm}
 
 \begin{proof}
@@ -4281,10 +4281,10 @@ vector vanishes
   necessary condition.  If \(W_{\mathrm{ext}}=0\), or if
   \(w_{\mathrm{ext}}\) is exact, this condition would force
   \(\hbar N[\bar c]=0\) in \(H^2_{\mathrm{Lie}}(\bar A;\C)[[\hbar]]\).
-  For \(N>0\) and formal \(\hbar\), this
-  contradicts Theorem~\ref{thm:app-scalar-contact-qme-class}, which
-  identifies \([\bar c]\neq0\) on \(\bar A\).  Thus no internal local
-  counterterm cancels the ordinary scalar-reduced obstruction.
+  For \(N>0\) and formal \(\hbar\),
+  Theorem~\ref{thm:app-scalar-contact-qme-class} identifies
+  \([\bar c]\neq0\) on \(\bar A\).  Thus the ordinary scalar-reduced
+  obstruction survives every internal local counterterm.
 \end{proof}
 
 \begin{thm}[Unreduced cotangent lift obstruction: necessary and
@@ -4326,8 +4326,8 @@ vector vanishes
       In the algebraic current model
       (Theorem~\ref{thm:app-algebraic-factorization-centre-zero-homotopies})
       this defect is zero on generators by graded commutativity; the
-      obstruction records the degree to which this fails on the
-      enlarged unreduced target.
+      obstruction measures the corresponding product-centrality defect
+      on the enlarged unreduced target.
     \item \emph{\(P_0\) / shifted-cotangent refinement.}
       \(\operatorname{ob}^{P_0}_{\mathrm{cent}}\) is the
       \(H^{|x|+|y|}\)-class of the \(P_0\)-bracket defect
@@ -4351,7 +4351,8 @@ vector vanishes
       (Proposition~\ref{prop:app-marked-row-centrality-homotopy-test}).
       A centrality homotopy \(H^M_{x,y}\) with
       \(R^{\mathrm{cent}}_{x,y,M}+d_M H^M_{x,y}=0\) is the
-      construction-level witness; its absence is the obstruction.
+      construction-level witness; the obstruction is the cohomology
+      class of the row before such a witness is supplied.
     \item \emph{Boundary QME obstruction.}
       \(\operatorname{ob}^{\mathrm{bd}}_{\mathrm{QME}}\) is the
       compatible inverse-system class
@@ -4407,14 +4408,14 @@ vector vanishes
   Proposition~\ref{prop:app-marked-row-centrality-homotopy-test}.
   Vanishing of (iii) is the boundary QME content of
   Theorem~\ref{thm:app-constructive-nonscalar-costello-qme-realization},
-  whose first finite-window failure is
+  whose first finite-window obstruction is
   \(\theta_3\)
   (Theorem~\ref{thm:app-theta-three-finite-window-H1}).
   Vanishing of (iv) is the descent comparison; in the algebraic
   current model this gap is zero by the same finite-list
-  axiomatization, but for genuine unreduced
-  \(Z^{P_0}_{\mathrm{fact}}\)-morphisms the Weiss/Ran comparison is
-  not automatic.
+  axiomatization.  For genuine unreduced
+  \(Z^{P_0}_{\mathrm{fact}}\)-morphisms the Weiss/Ran comparison
+  requires its own descent datum.
 \end{thm}
 
 
@@ -4440,9 +4441,9 @@ vector vanishes
   \(R^{\mathrm{cent}}_{x,y,M}\) of
   Proposition~\ref{prop:app-marked-row-centrality-homotopy-test}; its
   cohomology class is the obstruction to choosing a centrality
-  homotopy.  Vanishing is necessary because, in the absence of the
-  homotopy, the source CE differential and the target
-  \(P_0\)-bracket fail to commute on the image of
+  homotopy.  Vanishing is necessary because the homotopy is exactly the
+  datum making the source CE differential commute with the target
+  \(P_0\)-bracket on the image of
   \(\Phi_{\mathrm{fact}}^{\mathrm{unred}}\).
 
   Component (iii).  A factorization-center morphism produces a
@@ -4454,7 +4455,7 @@ vector vanishes
   \(\bigl(\mathfrak o^{\mathrm{ns}}_{n,M}\bigr)_M\).  Vanishing,
   together with the \(\varprojlim^1H^0\) compatibility class, is the
   unique condition making the curved Maurer--Cartan element actually
-  flat.  The first finite-window failure occurs at the \(\theta_3\)
+  flat.  The first finite-window obstruction occurs at the \(\theta_3\)
   row by Theorem~\ref{thm:app-theta-three-finite-window-H1}.
 
   Component (iv).  The factorization-center construction depends
@@ -4516,7 +4517,7 @@ vector vanishes
   primitive-shadow target; its differential is the
   Hamiltonian shadow on one-\(\psi\) primitive trace classes, as
   computed in Theorem~\ref{thm:chain-level-primitive-projection-P0}.
-  The first nonzero \(E_1\) class detects the failure of strict
+  The first nonzero \(E_1\) class is the obstruction to strict
   primitive-shadow centrality on the unreduced source, which is the
   classical primitive obstruction.
 \end{proof}
@@ -4530,17 +4531,17 @@ vector vanishes
   Definition~\ref{def:app-central-character-principal-part-current-algebra},
   on a noncommutative \(\hbar\)-deformed target where the product
   centrality defect carries a Capelli-type contribution.  The
-  polynomial-no-go boundary
-  (Theorem~\ref{thm:app-unreduced-polynomial-centrality-no-go})
+  polynomial-obstruction boundary
+  (Theorem~\ref{thm:app-unreduced-polynomial-centrality-obstruction})
   exhibits the same obstruction in the polynomial open BV/Koszul
-  category: polynomial open BV observables cannot present the
-  principal-part module, hence cannot satisfy strict product
-  centrality.
+  category: polynomial open BV observables have locally nilpotent
+  translation action, while the principal-part module requires
+  non-locally-nilpotent action for strict product centrality.
 
   The component \(\operatorname{ob}^{P_0}_{\mathrm{cent}}\) is
   detected at the smallest window where the brane-defect bracket of
-  two source generators carries a nonzero scalar-zero contribution
-  without a compatible centrality homotopy
+  two source generators carries a nonzero scalar-zero contribution whose
+  primitive requires a compatible centrality homotopy
   \(H^M_{x,y}\)
   (Proposition~\ref{prop:app-marked-row-centrality-homotopy-test}).
   In the minimal full-equivariant branch the row vanishes and the
@@ -4551,7 +4552,7 @@ vector vanishes
   The component \(\operatorname{ob}^{\mathrm{bd}}_{\mathrm{QME}}\) is
   nonzero at \(\theta_3\) in case (a) of
   Theorem~\ref{thm:app-theta-three-finite-window-H1}, the
-  counterterm-absent sub-theorem; case (b) of the same theorem gives
+  counterterm-omitted sub-theorem; case (b) of the same theorem gives
   \(\operatorname{ob}^{\mathrm{bd}}_{\mathrm{QME}}=0\) at
   \(\theta_3\) under the supplied counterterm
   \(C_{\theta_3,M}\).
@@ -4559,6 +4560,6 @@ vector vanishes
   The component \(\delta^{\mathrm{Weiss}}_{\check C/R}\) is nonzero
   when the codimension-one face of the Weiss-versus-Ran cover
   comparison carries a non-vanishing boundary-kernel class; this is a
-  separate descent comparison in the factorization-current
-  conventions appendix and is not pursued here as a row.
+  separate descent comparison treated in the factorization-current
+  conventions appendix.
 \end{rmk}

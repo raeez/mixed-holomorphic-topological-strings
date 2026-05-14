@@ -132,9 +132,8 @@ the BV pairing is the compactly supported local pairing obtained by
 wedging the form factors, integrating against
 \(\Omega_{\mathrm{loc}}\), and applying the continuous evaluation
 \(\mathfrak h^\vee_{\mathrm{cont}}\otimes\mathfrak h\to\C\).  It has
-degree \(-1\).  This abstract pairing is not a Costello coefficient
-coevaluation kernel unless a Tate/weighted category makes the Casimir
-converge.\\
+degree \(-1\).  A Costello coefficient coevaluation kernel additionally
+requires a Tate/weighted category in which the Casimir converges.\\
 \hline
 Residue / cyclic trace density &
 The same orientation fixes the principal-part residue pairing
@@ -190,9 +189,9 @@ Trace observables
 bracket of the matrix-model fields, topological locality from the
 \(Q\)-exact \(t\)-direction, formal-holomorphic locality from the
 \(\bar\partial\)-exact transverse direction.  Shifted-cotangent
-currents \(\Theta_\rho(B)\) satisfy (i) and (ii) but not (iii):
-\(\rho\in\mathcal P\) is a residue current at the brane point, not a
-polynomial jet.
+currents \(\Theta_\rho(B)\) satisfy (i) and (ii), and their
+formal-holomorphic content is the residue current
+\(\rho\in\mathcal P\) at the brane point.
 
 The dg Lie input of an acceptable factorization algebra is therefore
 locally constant in \(\R^2_{\mathrm{top}}\) and holomorphic in
@@ -223,11 +222,11 @@ algebra on a holomorphic curve.
 \begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.25\textwidth}
   >{\raggedright\arraybackslash}p{0.67\textwidth}@{}}
 \hline
-\textbf{Object} & \textbf{Definition and exclusions}\\
+\textbf{Object} & \textbf{Definition and scope}\\
 \hline
 \endfirsthead
 \hline
-\textbf{Object} & \textbf{Definition and exclusions}\\
+\textbf{Object} & \textbf{Definition and scope}\\
 \hline
 \endhead
 Formal Hamiltonian holomorphic factorization algebra on \(\C^2\) &
@@ -253,9 +252,10 @@ The formal stalk of observables is the completed CE/PV object
   \simeq
   \mathrm{PV}_{\mathrm{coord}}(A_{\partial,\mathrm{coord}})
 \]
-in the coordinate/admissible sense recorded below.  This is a
-two-complex-dimensional holomorphic factorization algebra, not a
-one-complex-dimensional vertex-algebra specialization.\\
+in the coordinate/admissible sense recorded below.  This object is the
+two-complex-dimensional holomorphic factorization algebra; a
+one-complex-dimensional vertex algebra appears only after specifying a
+curve restriction.\\
 \hline
 Native two-dimensional holomorphic singular product &
 For two points \(z,w\in\C^2\), set \(\zeta_i=z_i-w_i\).  The singular
@@ -290,8 +290,8 @@ K^{(2)}_\Delta\mathsf{\Theta}_{f\cdot\rho}\), and
 The quantum brane trace adds
 \(\hbar N\,\omega(f,g)K^{(2)}_\Delta\mathbf1\), with
 \(\omega(f,g)=[\{f,g\}]_0\).  This is the formal-coordinate
-two-complex-dimensional OPE; it is not a one-variable Laurent VOA
-expansion.\\
+two-complex-dimensional OPE.  A one-variable Laurent expansion is the
+additional curve-restriction datum recorded below.\\
 \hline
 Mixed topological-current enhancement over \(\R^2\) &
 For a topological open \(U\subset\R^2_{\mathrm{top}}\) and holomorphic
@@ -417,11 +417,10 @@ with \(a_{(n)}b=0\) for \(n\gg0\), a vacuum
   [Y_L(a,w_1),Y_L(b,w_2)]=0
 \]
 for \(N\gg0\).  These Laurent modes and finite singular orders belong
-to the restricted curve object, not to the two-complex-dimensional
-holomorphic factorization algebra or the real interval current
-algebra.  The two-complex-dimensional singular coefficient before
-restriction is \(H^2_\Delta(\C[[z,w]])\,d\zeta_1d\zeta_2\), not
-\(\C((w))/\C[[w]]\,dw\).\\
+to the restricted curve object.  The two-complex-dimensional
+holomorphic factorization algebra uses the singular coefficient
+\(H^2_\Delta(\C[[z,w]])\,d\zeta_1d\zeta_2\); after curve restriction the
+one-variable coefficient module is \(\C((w))/\C[[w]]\,dw\).\\
 \hline
 Compatibility with the Weyl/Moyal brane algebra &
 A one-dimensional vertex/OPE restriction must also specify how the
@@ -493,15 +492,16 @@ comparison, and anomaly transport.  The obstruction vector is
    \operatorname{Ob}_{\mathrm{nat}}).
 \]
 \(V_{\mathrm{red}}\) is a reduced shadow of
-\(\mathcal F_{\mathrm{Ham}}^{\mathrm{hol}}\) on a holomorphic curve,
-not the two-complex-dimensional algebra itself.\\
+\(\mathcal F_{\mathrm{Ham}}^{\mathrm{hol}}\) on a holomorphic curve; the
+two-complex-dimensional algebra remains
+\(\mathcal F_{\mathrm{Ham}}^{\mathrm{hol}}\).\\
 \hline
 \end{longtable}
 
 \paragraph{Normal \(\Omega\)-background.}
 The brane-preserving equivariant deformation scales the normal bundle
-\(N_LX=\R_s\oplus\C_{z_1}\oplus\C_{z_2}\) with \(t\) fixed; a rotation
-in the \((t,s)\)-plane does not preserve \(L\) as fixed locus.  The
+\(N_LX=\R_s\oplus\C_{z_1}\oplus\C_{z_2}\) with \(t\) fixed; the fixed
+locus condition singles out this normal scaling.  The
 objects and identities below define the deformation in the mixed de
 Rham/Dolbeault coefficient category: the Cartan differential
 \(Q_\Omega=Q+\iota_{V_\Omega}\), the localized normal contraction, the
@@ -537,8 +537,8 @@ Write
    \C^*_{\epsilon_2}.
 \]
 The parameters \(\epsilon_s,\epsilon_1,\epsilon_2\) are equivariant
-weights.  They are not the Ext generators
-\(\varepsilon_1,\varepsilon_2\) used in the open trace orientation.
+weights.  The open trace orientation uses the separate Ext generators
+\(\varepsilon_1,\varepsilon_2\).
 The action is
 \[
   (s,z_1,z_2)\mapsto
@@ -563,8 +563,7 @@ The Cartan differential on the local mixed complex is
 Thus \(Q_\Omega\) is an honest differential on the
 \(T_\Omega\)-invariant subcomplex.  Away from invariants the correct
 object is the \(T_\Omega\)-equivariant curved/Cartan package with
-curvature \(L_{V_\Omega}\), not an ordinary dg complex with
-\(Q_\Omega^2=0\).\\
+curvature \(L_{V_\Omega}\).\\
 \hline
 Normal-weight localization ring &
 For a finite \((N,M)\)-window let \(\mathsf X_{N,M}\) be the finite set
@@ -584,12 +583,12 @@ coefficient ring is
 \]
 Equivalently, one inverts only the nonzero weights present in the finite
 normal window.  This is the algebra in which moving normal
-modes may be contracted.  There is no default inversion of
-\(\epsilon_s\epsilon_1\epsilon_2\) unless the Euler-localization branch
-has been declared.  The self-dual branch is a specialization with its own
-allowed inversions; base-change first, then invert only the surviving
-nonzero characters, so \(\epsilon_1+\epsilon_2\) is not inverted on the
-self-dual branch.\\
+modes may be contracted.  The factor
+\(\epsilon_s\epsilon_1\epsilon_2\) is inverted in the Euler-localization
+branch after that branch has been declared.  The self-dual branch is a
+specialization with its own allowed inversions: base-change first, then
+invert only the surviving nonzero characters, leaving
+\(\epsilon_1+\epsilon_2\) as a zero character on the self-dual branch.\\
 \hline
 Normal contraction datum &
 A localized deformation retract
@@ -646,11 +645,11 @@ The Omega convention distinguishes three formal parameters:
 Here \(\hbar_{\mathrm{QME}}\) is the Costello/BV loop-counting parameter
 in graph and curvature equations; \(\hbar_{\mathrm{W}}\) is the
 Weyl/Moyal deformation parameter in the open brane algebra; and
-\(\hbar_\omega\) is the equivariant line parameter of weight
-\(\chi_\omega\) used to scalarize the Poisson bracket.  A Weyl branch may
-identify \(\hbar_{\mathrm{W}}=\hbar_\omega\).  No branch identifies
-\(\hbar_{\mathrm{QME}}\) with either parameter unless the theorem states
-that convention explicitly.\\
+	\(\hbar_\omega\) is the equivariant line parameter of weight
+	\(\chi_\omega\) used to scalarize the Poisson bracket.  A Weyl branch may
+	identify \(\hbar_{\mathrm{W}}=\hbar_\omega\).  Identification of
+	\(\hbar_{\mathrm{QME}}\) with another parameter is an explicit theorem
+	convention.\\
 \hline
 Self-dual bracket &
 On the self-dual locus
@@ -674,9 +673,10 @@ line parameter \(\hbar_\omega\) of weight
   [f,g]_\Omega=\hbar_\omega\{f,g\}.
 \]
 In the Weyl/Moyal specialization
-\(\hbar_\omega=\hbar_{\mathrm{W}}\).  Without this line or parameter, the refined
-Hamiltonian algebra is line-valued, not the old scalar Hamiltonian Lie
-algebra.\\
+\(\hbar_\omega=\hbar_{\mathrm{W}}\).  Before this scalarization, the
+refined Hamiltonian algebra is valued in the inverse
+symplectic-character line; after adjoining \(\hbar_\omega\) it becomes a
+scalar equivariant Hamiltonian Lie algebra.\\
 \hline
 Equivariant CE/PV generator rule &
 The equivariant CE/PV map keeps the same generator labels
@@ -722,9 +722,9 @@ and the open top Ext coefficient
   \nu_\Omega^{\mathrm{res}}=1.
 \]
 In this convention the brane trace is
-normalized by the residue/cyclic density and no smooth normal Euler
-denominator is silently inserted.  Any \(\epsilon_s\epsilon_1\epsilon_2\)
-factor must be written explicitly as a comparison constant.\\
+normalized by the residue/cyclic density.  Any
+\(\epsilon_s\epsilon_1\epsilon_2\) factor is written explicitly as a
+comparison constant.\\
 \hline
 Euler-localization normalization &
 The smooth equivariant localization convention pushes from \(X\) to \(L\)
@@ -849,9 +849,9 @@ Shifted cotangent generator
 the CE/PV map.\\
 \hline
 \(\mathfrak U_{\mathfrak h}\) &
-Admissible formal-local interface datum, not a categorical universal
-object unless a category of admissible completions and a universal
-property are supplied,
+Admissible formal-local interface datum.  A categorical universal object
+requires a category of admissible completions and a stated universal
+property,
 \[
   \mathfrak U_{\mathfrak h}
   =(\Phi_{\mathrm{coord}},\{\Phi^B_{P_0}\}_B,\{\Theta_B\}_B),
@@ -877,8 +877,9 @@ the pro/mixed coordinate CE/PV comparison.\\
 \hline
 \(\mathfrak o^{\mathrm{Cas}}\) &
 Strict product/direct-sum kernel obstruction for the Casimir,
-propagator, and Costello endpoint problem. It is not part of the
-coordinate CE/PV identity.\\
+propagator, and Costello endpoint problem.  It belongs to the endpoint
+coefficient problem; the coordinate CE/PV identity is the separate
+coordinate comparison.\\
 \hline
 \(\mathfrak o_{\mathrm{BV,end}}\) &
 Endpoint obstruction tuple
@@ -936,9 +937,9 @@ Filtered brane-defect local-functional complex
 \]
 The inverse limit is taken over finite Hamiltonian windows with the
 \(\hbar\)-adic, scalar-contact, and finite-window filtrations.  The
-differential has degree \(+1\).  This is the target complex for the
-bulk-to-defect kernel and QME obstruction; it is not the reduced current
-algebra \(A_{\partial,\hbar}^{\mathrm{pp},w}(I)\).\\
+	differential has degree \(+1\).  This is the target complex for the
+	bulk-to-defect kernel and QME obstruction; the reduced current algebra is
+	\(A_{\partial,\hbar}^{\mathrm{pp},w}(I)\).\\
 \hline
 \(F^\bullet\mathfrak Q^\bullet_{w,\partial,\hbar}(I)\) &
 Complete decreasing closed scalar-contact filtration preserved by
@@ -958,8 +959,9 @@ Associated-graded scalar-symbol extractor
   \longrightarrow
   C^\bullet_{\mathrm{Lie}}(\bar A;\C\gamma_{\mathbf 1})[1][[\hbar]] .
 \]
-It has cochain degree \(0\), but it is not by itself a projection of the
-filtered QME complex.  On a degree-one scalar contact with two
+It has cochain degree \(0\) as an associated-graded map.  A projection of
+the filtered QME complex is the lifted map
+\(\widehat\sigma_{\mathrm{sc}}\).  On a degree-one scalar contact with two
 Hamiltonian inputs it records the Lie two-cocycle coefficient of
 \(\gamma_{\mathbf 1}\).  In the ordinary branch this leading symbol is
 \(\hbar N[\bar c]\).\\
@@ -1058,8 +1060,9 @@ been constructed and the scalar component has been killed:
     d_{\mathrm{QME}}
   \right).
 \]
-This class is not defined from the scalar-symbol map alone and is not
-killed by the reduced principal-part bracket formulas.\\
+This class is defined after choosing the scalar-contact projection; the
+reduced principal-part bracket formulas leave it as a residual
+non-scalar obstruction.\\
 \hline
 \(\mathcal Q^\bullet_{w,M}(I)\) &
 Finite-window residual complex
@@ -1076,8 +1079,8 @@ Finite-window residual complex
   \right).
 \]
 The bracket, interaction, and differential are the transported
-finite-window structures supplied by the acceptance gate, not naive
-truncations of the unweighted Hamiltonian bracket.\\
+finite-window structures supplied by the acceptance gate.  The unweighted
+Hamiltonian bracket enters only through that transport.\\
 \hline
 \(C_{n,M}\), \(C_{\Gamma,w}^{w_0}(\epsilon)\) &
 Finite-window counterterms.  At order \(\hbar^n\),
@@ -1089,8 +1092,7 @@ Finite-window counterterms.  At order \(\hbar^n\),
 \]
 Graph representatives \(C_{\Gamma,w}^{w_0}(\epsilon)\) must also commute
 with window truncation and weight transport.  They are degree-zero local
-functionals; they are not arbitrary finite changes of the reduced current
-target.\\
+functionals in the filtered QME complex.\\
 \hline
 \(\mathfrak O^{\mathrm{ns}}_n\) &
 Order-\(n\) finite-window obstruction vector
@@ -1117,8 +1119,8 @@ primitive.  In the supplied one-row package,
 and the residual is \(\mathfrak o^{\mathrm{ns}}_{\theta_3,M}
 =\mathsf E_{\theta_3,M}\).  The covector
 \(\ell_{\theta_3}(\mathsf E_{\theta_3,M})=1\) proves that this class is
-nonzero in the supplied subcomplex.  A valid \(C_{\theta_3,M}\) is not a
-formal name: it must be one of three explicit witnesses,
+nonzero in the supplied subcomplex.  A valid \(C_{\theta_3,M}\) is one of
+three explicit witnesses,
 \[
   K^M_{\Theta_3}(\eta_{\theta_3,M}),\qquad
   C^{\mathrm{ct}}_{\theta_3,M},\qquad
@@ -1140,9 +1142,9 @@ source \(A=\C[z_1,z_2]\):
 \]
 Thus
 \(\hbar N\omega+d_{\mathrm{CE}}(\hbar\chi_N)=0\) before scalar
-reduction.  This primitive does not descend to
-\(\bar A=A/\C\cdot1\) and is not a counterterm in the original
-scalar-reduced QME complex.\\
+reduction.  This primitive lives on \(A\); after passage to
+\(\bar A=A/\C\cdot1\), the scalar-reduced QME complex requires its own
+counterterm data.\\
 \hline
 \(E_{a,b,N}\), \(A^j{}_i(a,b,N)\) &
 Quantum shear moment-ideal primitive datum in the matrix Weyl algebra.
@@ -1166,9 +1168,9 @@ equivalent to
   \sum_{i,j}A^j{}_i(a,b,N)\widehat\mu^i{}_j
 \]
 for coefficients \(A^j{}_i(a,b,N)\in\mathcal W_N\).  This is a
-degree-zero left-ideal primitive problem in the quantum moment-map ideal,
-not the scalar CE primitive \(\eta\), not a scalar-contact projection,
-and not a Costello QME counterterm.\\
+degree-zero left-ideal primitive problem in the quantum moment-map ideal.
+The scalar CE primitive \(\eta\), scalar-contact projection, and Costello
+QME counterterms are separate data.\\
 \hline
 Reduced principal-part brackets &
 Target-side brackets in
@@ -1182,10 +1184,10 @@ de Rham-current contraction:
 \[
   \{\Theta_\rho(B),\Theta_\sigma(C)\}_\hbar=0 .
 \]
-They use multiplication of a distribution by a smooth test function,
-never a product of two distributions.  They prove the reduced current
-interface and do not supply Costello wavefront estimates, unreduced
-centrality homotopies, or the non-scalar QME.\\
+They use multiplication of a distribution by a smooth test function.
+They prove the reduced current interface.  Costello wavefront estimates,
+unreduced centrality homotopies, and the non-scalar QME are additional
+analytic and homotopical data.\\
 \hline
 Unreduced non-scalar QME realization &
 The full graph theorem is the construction of
@@ -1235,22 +1237,23 @@ Strict shifted cotangent Hamiltonian Lie algebra
 \]
 Its Hamiltonian side is a product completion and its cotangent side is
 continuous dual/direct-sum in residue coordinates.  This is the
-formal-local CE/PV object, but not by itself a Costello coefficient
-kernel.\\
+formal-local CE/PV object.  A Costello coefficient kernel additionally
+requires the endpoint Casimir data.\\
 \hline
 \(\mathfrak g_w\) &
 Weighted finite-window Tate replacement used as a regulator.  It carries
 the same coordinate-window CE/PV formulas after passage through the
-admissible tower, but its weight topology is auxiliary data and is not
-the strict cotangent completion.\\
+admissible tower.  Its weight topology is auxiliary data for the
+admissible tower; the strict cotangent completion is
+\(\mathfrak g_{\mathrm{str}}\).\\
 \hline
 \(\bar A=\C[z_1,z_2]/\C\cdot1\) &
 Polynomial Hamiltonian sector used in explicit trace and Moyal
 calculations.\\
 \hline
 \(\bar A_{\mathrm{desc}}\) &
-Abstract polynomial label space for PBW one-\(\psi\) descendants. It
-is not the Matlis principal-part module.\\
+Abstract polynomial label space for PBW one-\(\psi\) descendants.  The
+Matlis principal-part module is \(\mathcal P\).\\
 \hline
 \([\bar c]\) &
 Distinguished scalar \(U(1)\) anomaly class in
@@ -1263,7 +1266,7 @@ formed at fixed total word degree and then for \(N\) in the stable range.\\
 \hline
 \(D\) &
 Taylor truncation degree when a finite quotient
-\(\mathfrak m/\mathfrak m^{D+1}\) is used. It is not the brane rank
+\(\mathfrak m/\mathfrak m^{D+1}\) is used.  The brane rank is denoted
 \(N\).\\
 \hline
 \end{tabular}
@@ -1299,7 +1302,7 @@ generators. The unit of the symmetric algebra remains.\\
 PBW special-fibre labels \(H_{a,b},O_{a,b},\Psi_{a,b}\), CE/PV labels
 \(c^I,u_I,\theta^I,O_I\), and Matlis labels \(\rho_{a,b}\) carry
 different \(\mathfrak h\)-actions and different polarizations.  Shared
-indices are labels, not module identifications.
+indices are labels for separate modules.
 
 The Fourier--Rees theorem
 (Theorem~\ref{thm:app-matlis-rees-fourier-bridge}) is the only
@@ -1308,8 +1311,8 @@ associated-graded labels through the Fourier delta Rees lattice
 \(\mathcal D_\hbar/(z_1,z_2)\), with \v{C}ech realization carrying the
 factor \((-1)^{a+b}\hbar^{a+b}a!b!\).  Before \(\hbar\) is inverted
 this is a Rees sublattice; as a module statement it uses a
-Fourier-twisted polarization, not the original Hamiltonian coadjoint
-action.  Outside the Fourier--Rees theorem the spans of
+Fourier-twisted polarization.  The Hamiltonian coadjoint action is the
+action on \(\mathcal P\).  Beyond the Fourier--Rees theorem the spans of
 \(\Psi_{a,b}\) and \(\rho_{a,b}\) carry distinct
 \(\mathfrak h\)-module structures.
 
@@ -1322,13 +1325,13 @@ action.  Outside the Fourier--Rees theorem the spans of
 \hline
 \textbf{Source (algebraic)} & \textbf{Target (physical)} &
 \textbf{Comparison morphism} &
-\textbf{Excluded identification}\\
+\textbf{Scope}\\
 \hline
 \endfirsthead
 \hline
 \textbf{Source (algebraic)} & \textbf{Target (physical)} &
 \textbf{Comparison morphism} &
-\textbf{Excluded identification}\\
+\textbf{Scope}\\
 \hline
 \endhead
 coordinate-window tower / mixed-continuous replacement attached to
@@ -1336,72 +1339,68 @@ coordinate-window tower / mixed-continuous replacement attached to
 \(\mathrm{PV}_{\mathrm{coord}}(A_{\partial,\mathrm{coord}})\) &
 coordinate dg identity; bracketed comparison only after choosing a
 bracket-admissible \(B\) &
-not the full unreduced factorization centre without additional centrality
-and descent data\\
+full unreduced factorization centre requires centrality and descent data\\
 \hline
 bracket-admissible \(B\subset\mathrm{PV}_{\mathrm{coord}}\) &
 \(P_0\) realization \(\Phi^B_{P_0}\) &
 restriction of \(\Phi_{\mathrm{coord}}\) when \(B\) supplies completeness,
 \(d_\pi^{\mathrm{coord}}\)-stability, product stability, and a
 continuous contraction bracket &
-not the strict product/direct-sum completion\\
+bracket-admissible subalgebra inside the chosen completion\\
 \hline
 kernel-admissible \(B\) &
 Maurer--Cartan kernel \(\Theta_B\) &
 diagonal-convergent kernel in the chosen completed tensor product &
-not a strict Casimir kernel for the ambient product completion\\
+strict ambient product completion requires separate Casimir convergence\\
 \hline
 \(C^\bullet_{\mathrm{CE}}(\mathfrak g)\) / \(\mathrm{PV}(A)\) &
 reduced \(P_0\) central-operation model &
 local Poisson cochain model &
-not the ordinary centre and not the unreduced
-\(Z^{P_0}_{\mathrm{fact}}\) without centrality homotopies\\
+unreduced \(Z^{P_0}_{\mathrm{fact}}\) requires centrality homotopies\\
 \hline
 \(U_\hbar(\mathfrak g)/(\hbar)\) PBW special fibre &
 \(\mathbf S(\mathfrak h\oplus\mathfrak h^\vee[1])\) and then selected
 \(\mathbf S(\bar A\oplus\bar A_{\mathrm{desc}}[1])\) labels &
 associated-graded label comparison &
-not a same-action identification of \(\Psi_{a,b}\) with
-\(\rho_{a,b}\)\\
+PBW and Matlis labels carry different actions\\
 \hline
 admissible Tate / relative bar-cobar envelope &
 \(\widehat U(\mathfrak g_{\mathrm{adm}})\) &
 PBW envelope under conilpotent CE chains, exact continuous duality,
 PBW completeness, and strong convergence &
-not available for the raw full formal polydisk without admissibility data\\
+available after specifying admissibility data for the formal polydisk\\
 \hline
 \(c^I\) &
 \(\theta^I\) &
 generator rule \(c^I\mapsto\theta^I\) of \(\Phi_{\mathrm{coord}}\) &
-not a boundary Hamiltonian coordinate\\
+CE ghost coordinate\\
 \hline
 \(u_I\) &
 \(O_I\) and brane-line Hamiltonian coordinates \(B_f(a)\) &
 generator rule \(u_I\mapsto O_I\) of \(\Phi_{\mathrm{coord}}\) &
-not a Hamiltonian CE ghost\\
+boundary Hamiltonian coordinate\\
 \hline
 \(C^\bullet_{\mathrm{CE}}(\mathfrak g_I)\) on intervals &
 reduced brane-line factorization target &
 cofactorization/\allowbreak{}opposite-interval source; factorization only after the
 CE coproduct is paired with target multiplication &
-not a same-variance morphism of raw factorization algebras\\
+variance reversal handled by the CE coproduct and target multiplication\\
 \hline
 \(\Psi_{a,b}\) &
 stable primitive one-\(\psi\) PBW special-fibre class &
 stable-trace identification in the trace complex &
-not \(\mathfrak h^\vee_{\mathrm{cont}}\), not \(\mathcal P\), and not a
-principal-part current\\
+PBW trace label with polynomial action\\
 \hline
 \(\rho_{a,b}\) &
 \(\mathcal P=\operatorname{Ann}_{\mathrm{res}}(\C\cdot1)\) &
 residue/Matlis pairing
 \(f\otimes\rho\mapsto\operatorname{Res}_0(f\rho)\) &
-not a polynomial descendant and not an \(R\)-submodule quotient\\
+Matlis principal-part label with Hamiltonian coadjoint action\\
 \hline
 \(\mathsf F_{\mathrm{Rees}}\) &
 \(\bigoplus\hbar^{a+b}\C[[\hbar]]\rho_{a,b}\) &
 Fourier-polarized Rees label bridge &
-not a same-action bridge \(\Psi_{a,b}\cong\rho_{a,b}\)\\
+polarization-changing Rees comparison\\
 \hline
 \(\Omega_c^\bullet(I)\otimes\mathfrak h\) &
 brane-line Hamiltonian currents &
@@ -1411,12 +1410,12 @@ reduced current model &
 \(\mathcal D'_c(I)\widehat\otimes\mathcal P[1]\) &
 principal-part current sector \(\Theta_\rho(B)\) &
 post-de-Rham-current contraction &
-does not require a product of two distributions\\
+uses multiplication of a distribution by a smooth test function\\
 \hline
 formal Moyal algebra \(\bar A_\hbar\) &
 degree-zero Weyl coefficient target &
 reduced algebraic Moyal map with raw weights \(1\) and \(1/24\) &
-not a finite-\(N\) radial-parts theorem by itself\\
+finite-\(N\) radial-parts theorem requires the radial image data\\
 \hline
 finite-\(N\) radial-parts target &
 stable connected trace realization of the Moyal coefficients &
@@ -1424,20 +1423,21 @@ finite verified relative datum: formal coefficients, Capelli
 normalization, free normal-diagram obstruction
 \(\mathfrak o^{\mathrm{rad}}_{a,b}\), edge PBW strip, and the
 remaining uniform splitting or left-cokernel theorem &
-not supplied by formal Moyal coefficients or by the cited radial-parts
-sources alone; not a Costello analytic graph/QME realization\\
+requires formal Moyal coefficients, radial-parts input, and the
+normal-diagram obstruction calculation; Costello analytic graph/QME
+realization is a separate target\\
 \hline
 Costello brane-defect kernel &
 closed-open BV/QME specialization &
 obstruction datum
 \(\operatorname{Ob}_{w,\partial,\hbar}\) of bulk-to-defect curvature &
-not inferred from the formal Moyal or reduced open-line computation\\
+requires bulk-to-defect curvature and counterterm data\\
 \hline
 scalar cocycle \([\bar c]\) &
 \(U(1)\) anomaly / Capelli contact line &
 distinguished class in
 \(H^2_{\mathrm{Lie}}(\bar A,\C)\) &
-not an exhaustive classification of unreduced QME cancellation\\
+one scalar contact class inside the unreduced QME problem\\
 \hline
 \end{longtable}
 
@@ -1481,16 +1481,16 @@ polynomial label \(z_1^az_2^b\) to the Fourier-delta label
 \((-1)^{a+b}\hbar^{a+b}a!b!\rho_{a,b}\).  After inverting
 \(\hbar\), division by this Rees factor gives the
 principal-part label \(\rho_{a,b}\).  It changes polarization and is
-not an \(\mathfrak h\)-module identification between \(\Psi_{a,b}\)
-and \(\rho_{a,b}\).\\
+the comparison between the PBW label \(\Psi_{a,b}\) and the Matlis label
+\(\rho_{a,b}\).\\
 \hline
 \end{tabular}
 \end{center}
 
 The shared indices on \(H_{a,b}\), \(\Psi_{a,b}\), and
-\(\rho_{a,b}\) are labels, not an \(\mathfrak h\)-module
-identification: the span of the \(\Psi_{a,b}\) is not
-\(\mathfrak h^\vee_{\mathrm{cont}}\), not \(\mathcal P\), and not a
+\(\rho_{a,b}\) are labels for separate modules: the span of the
+\(\Psi_{a,b}\) is the PBW special-fibre trace label space, while
+\(\mathfrak h^\vee_{\mathrm{cont}}\cong\mathcal P\) is the
 principal-part current module.  The Fourier--Rees bridge
 \(\mathsf F_{\mathrm{Rees}}\) is the only comparison morphism between
 PBW and Matlis sectors.
@@ -1527,7 +1527,7 @@ Chevalley--Eilenberg coordinate dual to a Hamiltonian generator
 \(u_I\) &
 Chevalley--Eilenberg coordinate dual to the shifted cotangent generator.
 Under \(\Phi_{\mathrm{coord}}\), \(u_I\mapsto O_I\). Boundary Hamiltonian observables
-come from \(u_I\), not from \(c^I\).\\
+come from \(u_I\).\\
 \hline
 \(\theta^I\) &
 Polyvector coordinate corresponding to \(c^I\) under the coordinate CE/PV
@@ -1576,8 +1576,8 @@ coadjoint action.\\
 \(z_1^p z_2^q\cdot\rho_{a,b}\) &
 Coadjoint action
 \(-(pb-qa+p-q)\rho_{a-p+1,b-q+1}\). This is the Hamiltonian coadjoint
-principal-part action, not the Matlis \(R\)-module action and not the
-PBW action on \(\Psi_{a,b}\).\\
+principal-part action.  The Matlis \(R\)-module action and the PBW action
+on \(\Psi_{a,b}\) are separate structures.\\
 \hline
 \(\mathcal P_I\) &
 \(\mathcal P_I=\mathcal D'_c(I)\widehat\otimes\mathcal P\), the
@@ -1596,9 +1596,8 @@ As stated in the separation rule above,
 live in different modules.  The only comparison morphism between them
 is the Fourier--Rees label bridge \(\mathsf F_{\mathrm{Rees}}\) of
 Theorem~\ref{thm:app-matlis-rees-fourier-bridge}, which acts on
-associated-graded labels through Fourier-twisted polarization, not on
-the original Hamiltonian coadjoint action.  No \(\mathfrak h\)-module
-isomorphism between the two spans is used or asserted.
+associated-graded labels through Fourier-twisted polarization.  The
+Hamiltonian coadjoint action remains the action on the Matlis module.
 
 \paragraph{Interval-current and boundary labels.}
 Algebraic side: the brane-line objects produced by the support-locality
@@ -1608,7 +1607,7 @@ principal-part current observable \(\Theta_\rho(B)\).  Comparison
 morphism: the de Rham-current contraction
 \(u_{a(t)dt\otimes f}\mapsto B_f(a)\),
 \(c_{B,\rho}\mapsto\Theta_\rho(B)\); a smooth test function multiplies
-a distribution, no product of two distributions appears.
+a distribution.
 \begin{center}
 \begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.25\textwidth}
   >{\raggedright\arraybackslash}p{0.67\textwidth}@{}}

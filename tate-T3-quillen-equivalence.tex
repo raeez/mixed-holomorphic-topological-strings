@@ -84,8 +84,8 @@ complexes in $\Cat{TateVec}$, large enough to contain every CE chain
 coalgebra and completed enveloping algebra used here.  The exact
 finite-window Mittag-Leffler category is constructed first.  The
 model-categorical statements add transfer, smallness, and monoid
-axioms to this exact category; they are not statements about the raw
-category of all Tate spaces.
+axioms to this exact category; their scope is the exact category
+constructed here, rather than the raw category of all Tate spaces.
 
 \begin{defn}[Strict finite-window Mittag-Leffler Tate category]
 \label{defn:strict-ml-tate-habitat}
@@ -128,9 +128,9 @@ category of all Tate spaces.
   The only universal property asserted for this category is the ordinary
   inverse-limit one: a compatible family \(x_M\in V_{\leq M}\) determines
   a unique element \(x\in |V|\), and every map out of a test strict tower
-  is exactly a compatible family of finite-window maps.  No initial or
-  terminal property among all completions of a Tate vector space is
-  asserted.
+  is exactly a compatible family of finite-window maps.  Initial and
+  terminal properties among all completions of a Tate vector space lie
+  outside this assertion.
 \end{defn}
 
 \begin{prop}[Exactness and kernels in the strict ML category]
@@ -272,8 +272,9 @@ category of all Tate spaces.
   vanish for all \(M\geq N\).  It is
   \emph{kernel-admissible} only after the additional Casimir term
   \(\mathfrak o^{\mathrm{Cas}}\) vanishes in the chosen completed tensor
-  category.  The Casimir condition is not part of the coordinate CE/PV
-  cochain identity.
+  category.  The coordinate CE/PV cochain identity contains the bracket
+  and coadjoint transition equations; kernel-admissibility adds the
+  Casimir equation.
 \end{defn}
 
 \begin{lem}[Closed CE/PV finite-window compatibility and variance boundary]
@@ -291,8 +292,8 @@ category of all Tate spaces.
   \]
   Then the \(\Phi_M\) are compatible as finite coordinate tests under the
   contravariant CE pullbacks and the corresponding PV coordinate maps.
-  They do not by themselves form an inverse system of dg cochain
-  projections.  A completed admissible filtered quasi-isomorphism
+  These maps form compatible finite coordinate tests.  A completed
+  admissible filtered quasi-isomorphism
   \[
     \Phi\colon
     C^\bullet_{\mathrm{CE},\mathrm{cont}}
@@ -318,7 +319,7 @@ category of all Tate spaces.
   Therefore the finite squares with \(\Phi_M\) and \(\Phi_N\) commute in
   the variance appropriate to cochains.  A quotient
   \(\mathfrak h_{\leq M}\twoheadrightarrow\mathfrak h_{\leq N}\) induces
-  CE cochain maps by pullback, not by projection from \(M\) to \(N\).
+  CE cochain maps by pullback rather than by projection from \(M\) to \(N\).
   Thus inverse-limit language on cochains requires the additional
   continuous-dualization or topology hypothesis stated above.  Vanishing
   of \(\mathfrak o^{\mathrm{Cas}}_{M,N}\) is the separate statement that
@@ -354,8 +355,8 @@ category of all Tate spaces.
   vanish for all sufficiently large \(r\).  Equivalently, the
   conilpotence obstruction in
   Definition~\ref{defn:universal-koszul-obstruction-complex} is zero.
-  Without this condition the Maurer--Cartan curvature below is not a
-  continuous map and no twisting-cochain datum has been constructed.
+  This condition makes the Maurer--Cartan curvature below a continuous
+  map and supplies the twisting-cochain datum.
 
   An open-side twisting cochain is a continuous degree-one map
   \[
@@ -581,8 +582,8 @@ category of all Tate spaces.
   Maurer--Cartan equation in the continuous convolution dg Lie algebra.
   It is equivalent to the statement that the adjoint map
   \(\kappa_\tau\) commutes with the completed cobar differential and the
-  \(A_\infty\)-operations.  Without this equality there is no morphism
-  to test.
+  \(A_\infty\)-operations.  This equality supplies the morphism tested
+  below.
 
   After the Maurer--Cartan equation holds, filter
   \(\Omega C_{\mathrm{op}}\) and \(B_{\mathrm{cl}}\) by tensor length
@@ -670,8 +671,8 @@ category of all Tate spaces.
   the composite of $E_1$-pages of $V\to W$ and $W\to U$ in each
   window, so two-out-of-three on each window propagates to the
   global filtered class. This proves the model structure in the
-  chosen envelope only. No assertion is made for arbitrary unbounded
-  Tate complexes outside it.
+  chosen envelope. Arbitrary unbounded Tate complexes outside the
+  envelope require a separate construction.
 \end{proof}
 
 \begin{lem}[Tail quotient obstruction invisible to finite-window weak equivalence]
@@ -686,8 +687,7 @@ category of all Tate spaces.
   \(V_{\oplus}\hookrightarrow V_{\Pi}\) is an admissible filtered weak
   equivalence in the sense of
   Statement~\ref{stmt:tate-model-envelope}: it is an isomorphism on
-  every finite quotient and on associated graded pieces.  It is not an
-  ordinary quasi-isomorphism of chain complexes.  Its cofiber has
+  every finite quotient and on associated graded pieces.  Its cofiber has
   \[
     H^0(V_{\Pi}/V_{\oplus})=V_{\Pi}/V_{\oplus}\neq0 .
   \]
@@ -709,8 +709,9 @@ category of all Tate spaces.
   Since the differential is zero, ordinary cohomology is the underlying
   vector space.  A sequence with one nonzero component in every degree
   defines a nonzero class of \(V_{\Pi}/V_{\oplus}\).  Hence the cofiber
-  has nonzero \(H^0\), and the inclusion is not an ordinary
-  quasi-isomorphism.
+  has nonzero \(H^0\).  An ordinary quasi-isomorphism of chain complexes
+  would have acyclic cofiber, so the inclusion is only a filtered weak
+  equivalence in the admissible envelope.
 \end{proof}
 
 
@@ -766,9 +767,9 @@ in $\Cat{TateChain}_{\geq 0}^{\mathrm{adm}}$.
   Mittag-Leffler exactness (\alpharef\ item~1).
 \end{proof}
 
-The dual coalgebra side requires more care: Hinich's transfer
-applies to algebra categories, not coalgebra categories, because
-the cofree coalgebra functor is not a left adjoint in general.
+The dual coalgebra side requires more care. Hinich's transfer
+applies to algebra categories; the coalgebra case is governed instead
+by conilpotence and the bar-cobar adjunction.
 The substitute is the Aubry-Lemaire-Smirnov \cite{loday-vallette}
 \S 11.4 model structure on conilpotent dg coalgebras transferred
 through the bar-cobar adjunction itself.
@@ -921,7 +922,7 @@ through the bar-cobar adjunction itself.
   class of weak equivalences. The equivalence is induced by
   $L\Omega$ and $R\,\mathrm{Bar}$ at the cofibrant-fibrant level.
   Presentability is an attribute of the chosen locally presentable
-  envelope, not of the raw Tate category.
+  envelope.
 \end{cor}
 
 \begin{proof}
@@ -1034,9 +1035,9 @@ gives the cochain-level equivalence used in the CE/PV theorem.
   The obstruction terms \(\mathfrak o^{\mathrm{br}}\) and
   \(\mathfrak o^{\mathrm{coad}}\) are the cochain CE/PV transition
   obstructions; \(\mathfrak o^{\mathrm{Cas}}\) is the additional
-  kernel/\(P_0\)-pairing obstruction.  Their vanishing does not by itself
-  make \(\Phi=\varprojlim_M\Phi_M\) a cochain inverse limit; the
-  admissible envelope supplies that extra datum.
+  kernel/\(P_0\)-pairing obstruction.  Their vanishing supplies the
+  finite-window compatibility; the admissible envelope supplies the
+  cochain inverse-limit datum for \(\Phi=\varprojlim_M\Phi_M\).
 
   For the Koszul output, hypotheses (K1)--(K4) put
   \(C_*^{\mathrm{CE}}(\mathfrak g)\) and
@@ -1091,11 +1092,11 @@ gives the cochain-level equivalence used in the CE/PV theorem.
       \bigr)\text{-mod},W\bigr)$$
   in the framework of Lurie's \emph{Higher Algebra} \S 5.5.  The
   hypotheses (M1)--(M3) presuppose an already constructed admissible
-  \(P_0\)-algebra envelope; the conclusion is the algebraic
-  $\infty$-categorical equivalence inside that envelope, not a
-  construction of a completed dg \(P_0\) model structure and not a
-  factorization-centre theorem for the full untruncated formal
-  Hamiltonian algebra.
+  \(P_0\)-algebra envelope. The conclusion is the algebraic
+  $\infty$-categorical equivalence inside that envelope. The completed
+  dg \(P_0\) model structure and the factorization-centre theorem for
+  the full untruncated formal Hamiltonian algebra are separate
+  constructions.
 \end{thm}
 
 \begin{proof}
@@ -1121,9 +1122,9 @@ gives the cochain-level equivalence used in the CE/PV theorem.
   admissible interval objects
   \(\mathfrak h_{\mathrm{adm},I}=
   \Omega^\bullet_c(I)\otimes\mathfrak h_{\mathrm{adm}}\) when these
-  interval objects remain in the same admissible envelope.  This is
-  interval-wise categorical compatibility, not an independent Weiss
-  descent theorem and not an unreduced open-BV centrality theorem.
+  interval objects remain in the same admissible envelope.  This gives
+  interval-wise categorical compatibility. Weiss descent and unreduced
+  open-BV centrality are separate theorems.
 \end{proof}
 
 \begin{rmk}[Relation to Lurie's higher-algebraic Koszul
@@ -1155,9 +1156,10 @@ gives the cochain-level equivalence used in the CE/PV theorem.
   complexes $C^\bullet_{\mathrm{CE},\mathrm{cont}}(\mathfrak g)$
   and $\mathrm{PV}\bigl(\widehat S_{\mathrm{Tate}}(\mathfrak h)
   \bigr)$ are equivalent in the model category of
-  \ref{lem:transferred-model} only after the same conilpotent
-  admissibility hypotheses are imposed. Casimir convergence is not one
-  of those hypotheses; conilpotence is.
+  \ref{lem:transferred-model} after imposing the same conilpotent
+  admissibility hypotheses. The required hypothesis here is
+  conilpotence; Casimir convergence belongs to the analytic kernel
+  problem.
 \end{prop}
 
 \begin{proof}
@@ -1172,15 +1174,14 @@ gives the cochain-level equivalence used in the CE/PV theorem.
   isolated in Lemma~\ref{lem:tate-casimir-obstruction}.  Such a kernel is
   required for the Costello \cite{costello-renormalization} heat-kernel
   propagator construction at the analytic /
-  factorization-algebra-with-non-strict-bracket level.  It is \emph{not}
-  required for the algebraic bar-cobar comparison: the cochain-level
-  $\Phi$ promotes, in the admissible model envelope, to an
-  $\infty$-categorical equivalence under the conilpotent admissibility
-  hypotheses alone.
+  factorization-algebra-with-non-strict-bracket level.  The algebraic
+  bar-cobar comparison uses only the conilpotent admissibility
+  hypotheses: the cochain-level $\Phi$ promotes, in the admissible model
+  envelope, to an $\infty$-categorical equivalence.
 \end{proof}
 
-\begin{prop}[No universal strict product/direct-sum kernel completion]
-\label{prop:no-universal-strict-kernel-habitat}
+\begin{prop}[Strict product/direct-sum kernel obstruction]
+\label{prop:strict-product-direct-sum-kernel-obstruction}
   Let \(\mathcal C_{\mathrm{ker}}\) be the category whose objects are
   complete coefficient pairs \((H,D)\), equipped with finite quotients
   \((H_{\leq M},D_{\leq M})\), compatible transition maps, and a tensor
@@ -1192,14 +1193,15 @@ gives the cochain-level equivalence used in the CE/PV theorem.
     H_\Pi=\prod_{d\geq1}H_d,\qquad
     D_\oplus=\bigoplus_{d\geq1}H_d^\vee
   \]
-  is not an object of \(\mathcal C_{\mathrm{ker}}\).  More strongly, no
-  object of \(\mathcal C_{\mathrm{ker}}\) can map to the strict pair by a
-  morphism inducing the identity on every finite window.
+  lies outside \(\mathcal C_{\mathrm{ker}}\).  More strongly, any object
+  of \(\mathcal C_{\mathrm{ker}}\) mapping to the strict pair by a
+  finite-window identity morphism would have to produce the obstructed
+  infinite-support tensor in \(H_\Pi\widehat\otimes D_\oplus\).
 
-  Hence the strict product/direct-sum pair has no initial, terminal, or
-  representing universal property for kernel-admissible completions.  A
-  weighted product completion is a constructed regulator, not a
-  universal endpoint for tail-sensitive ordinary cohomology classes.
+  Thus initial, terminal, and representing universal properties for
+  kernel-admissible completions pass through a genuine kernel object.  A
+  weighted product completion is a constructed regulator for
+  tail-sensitive ordinary cohomology classes.
 \end{prop}
 
 \begin{proof}
@@ -1211,9 +1213,9 @@ gives the cochain-level equivalence used in the CE/PV theorem.
   support in the degree direction, while the compatible family
   \((C_M)_M\) has a nonzero \(H_d^\vee\)-component for every \(d\).
   This is exactly the support obstruction of
-  Theorem~\ref{thm:strict-unweighted-no-go}.  Therefore the strict pair
-  is outside \(\mathcal C_{\mathrm{ker}}\), and no universal property
-  through it is available.
+  Theorem~\ref{thm:strict-unweighted-obstruction}.  Therefore the strict
+  pair lies outside \(\mathcal C_{\mathrm{ker}}\), and universal-property
+  assertions must pass through a kernel-admissible completion.
 \end{proof}
 
 \begin{prop}[Residual Weiss-cosheaf condition]
@@ -1221,23 +1223,25 @@ gives the cochain-level equivalence used in the CE/PV theorem.
   The $\infty$-categorical equivalence of
   \ref{thm:admissible-envelope-module-reconstruction} on stalks and on
   the locally-constant interval-factorization $\mathcal F_{\mathrm{cl}}$
-  of \ref{thm:hamiltonian-current-factorization} does not,
-  by itself, give the Weiss-cosheaf condition for the
+  of \ref{thm:hamiltonian-current-factorization} gives the cochain-level
+  categorical comparison.  The Weiss-cosheaf condition for the
   \emph{unreduced} factorization algebra
-  $\mathrm{Obs}^{\mathrm{cl}}_{\mathrm{closed},H}$ on $\R^2\times\C^2$.
+  $\mathrm{Obs}^{\mathrm{cl}}_{\mathrm{closed},H}$ on $\R^2\times\C^2$
+  requires the additional descent check below.
   The Weiss / descent condition for an unreduced factorization
   algebra on a higher-dimensional manifold requires checking
   \v{C}ech descent for Weiss covers, which is a separate
   cosheaf-theoretic statement.  Costello--Gwilliam Vol.~I
   \S\S 6.1, 6.5, 7.2 provide the factorization, cosheaf, and
-  basis-extension vocabulary; no theorem from those sections is used
-  here to close the unreduced descent obligation.  The admissible Tate
+  basis-extension vocabulary; the present argument uses them as
+  vocabulary and leaves the unreduced descent obligation open.  The
+  admissible Tate
   Quillen-equivalence promotion closes the cochain-level
   $\infty$-categorical comparison; the Weiss upgrade on the unreduced
   factorization algebra remains a separate cosheaf-theoretic
   obligation requiring the heat-kernel propagator extension of
-  Problem~\ref{prob:formal-factorization-center}.  It is not the
-  two-dimensional formal singular product calculation, which is already fixed by
+  Problem~\ref{prob:formal-factorization-center}.  The two-dimensional
+  formal singular product calculation is the separate result of
   Theorem~\ref{thm:formal-two-dimensional-holomorphic-ope}.
 \end{prop}
 
@@ -1251,6 +1255,6 @@ gives the cochain-level equivalence used in the CE/PV theorem.
   cover $\{U_\alpha\}$ has structure-map descent independent of
   the algebraic bar-cobar; in particular the heat-kernel
   propagator on $\R^2\times\C^2$ enters the analytic check.
-  Without that propagator the bar-cobar identity is consistent
-  but does not trivialize Weiss descent.
+  This heat-kernel propagator is the analytic input relating the
+  bar-cobar identity to Weiss descent.
 \end{proof}
