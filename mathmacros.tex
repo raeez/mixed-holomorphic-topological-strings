@@ -1,16 +1,8 @@
-%%%%%%%%%%%%%%%%%%%%%%%%
-%% Markup Readability %%
-%%
-%% macros
 \newcommand\nc{\newcommand}
 \newcommand\rc{\renewcommand}
 
-%% nomenclature
-%\newcommand\nm{\nomenclature}
-\newcommand\nm{} % temporarily disable standard \nomenclature
-%\newcommand\mathnm[2]{\nm[#1]{}}
+\newcommand\nm{}
 
-%% shorten the macro syntax
 \newcommand\mc[1]{\mathcal{#1}}
 \newcommand\mbb[1]{\mathbb{#1}}
 \newcommand\mbf[1]{\mathbb{#1}}
@@ -23,7 +15,7 @@
     \includegraphics[scale=.5]{#1}
   \end{figure}
 }
-\newcommand\imageopt[3]{ % \imageopt #1-filename #2-scale #3-caption
+\newcommand\imageopt[3]{
   \begin{figure}[H]
     \centering
     \ifstrequal{#2}{}
@@ -37,35 +29,19 @@
 \providecommand{\Prim}{\operatorname{Prim}}
 \providecommand{\Conn}{\operatorname{Conn}}
 
-%% common symbols
-\newcommand\lb{\left[}  \newcommand\rb{\right]}  % [ ]
-\newcommand\llb{\lb\lb}  \newcommand\rrb{\rb\rb} % [[ ]]
+\newcommand\lb{\left[}  \newcommand\rb{\right]}
+\newcommand\llb{\lb\lb}  \newcommand\rrb{\rb\rb}
 
-\newcommand\lp{\left(}  \newcommand\rp{\right)} % ( )
-\newcommand\llp{\lp\lp} \newcommand\rrp{\rp\rp} % (( ))
+\newcommand\lp{\left(}  \newcommand\rp{\right)}
+\newcommand\llp{\lp\lp} \newcommand\rrp{\rp\rp}
 
-\newcommand\twotuple[2]{\lp #1,#2\rp}   % TODO implement variable number of args
-\newcommand\setpresent[2]{\{ #1 | #2\}} % TODO typeset correctly
+\newcommand\twotuple[2]{\lp #1,#2\rp}
+\newcommand\setpresent[2]{\{ #1 \mid #2\}}
 
-%% Index into Symbols and Notation
-%% We collect all notation utilized throughouth this lecture series
-%% we the hope their collation facillitates future functional/aesthetic changes
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% TODO
-%% - clarify class formation group k
-%%    * little/big, more readable
-%%    * visually distinguish notation for C_L / element
-%% - Generate a glossary
-%% - mark up structure for nomenclature / glossary inline
-%%
-
-\nc\Cat[1]{\mathbf{#1}} % typeset name of category
-% TODO fit these in
-\nc\G{G}           % reductive group
-% algebraic fields, formal power series and their fraction fields
-\nc\ringint{\mathcal{O}}           % abstract ring of integers
-\nc\grk{k}                         %abstract ground field
+\nc\Cat[1]{\mathbf{#1}}
+\nc\G{G}
+\nc\ringint{\mathcal{O}}
+\nc\grk{k}
 \nc\N{\mathbb{N}}
 \nc\Z{\mathbb{Z}}
 \nc\Q{\mathbb{Q}}
@@ -77,27 +53,16 @@
 \nc\fpowerser{\llb~z\rrb}
 \nc\klocint{\grk\fpowerser}
 \nc\Klocfrac{K\laurentser}
-\nc\tensor{\otimes} % algebraic tensor product
-
-%\nc\Spec[1]{\mathrm{Spec} (#1)}
-%\nc\Specf[1]{\mathrm{Specf} (#1)}
-
-% TODO figure out optimal manner of handling infix macros
-% something like \infixnewcommand{\T}{{bunewcommandhofstuff} {#1} {bunewcommandhofstuff} {#2} {bunewcommandhofstuff}}
-
-% TODO read more about macros
-% https://en.wikibooks.org/wiki/LaTeX/Macros
-
-% relations, operations, unitary and binary symbols etc.
-\nc\isom{\simeq} % TODO find optimal
+\nc\tensor{\otimes}
+\nc\isom{\simeq}
 
 \nc\ov[1]{/ {#1}}%'over' as in Scheme over k or galois extension over k
 
-\nc\restr[2]{{% we make the whole thing an ordinary symbol
-  \left.\kern-\nulldelimiterspace% automatically resize the bar with \right
-  #1% the funewcommandtion
-  \vphantom{\big|} % pretend it's a little taller at normal size
-  \right|_{#2} % this is the delimiter
+\nc\restr[2]{{
+  \left.\kern-\nulldelimiterspace
+  #1
+  \vphantom{\big|}
+  \right|_{#2}
   }}
 
 \nc\shf[1]{\mathcal{#1}}
@@ -114,7 +79,7 @@
 \nc\idealgenby[1]{\langle#1\rangle}
 \nc\D{\mathbf{d}}
 \nc\pt{\mathbf{pt}}
-\nc\Gr{\textrm{Gr}} % affine grassmannian.
+\nc\Gr{\textrm{Gr}}
 
   \nc\Ga{\mathbb{G}_a}
 
@@ -123,18 +88,6 @@
 \nc\lpgrass{\mathcal{G}}
 \nc\glpgrass{\mathcal{G}^P (I,Q)}
 
-%, commonly denoted $\Gr_a$ or $G_{ K / {\ringint}$.}
-% TODO = \mathbb{G}_{\mathcal{G}} = \mathcal{G}_{\mathcal{K}} \textrm{
-% mod } \mathcal{G}_{\mathcal{O}}
-% TODO structure nomenclature pre-amble by
-% TODO 1. generality / importanewcommande
-% TODO 2. chapter/lecture
-
-% TODO group + order intro
-
-%%%%%%%%%%%%%%%%%%%%%
-%% classformations %%
-%%
 \nc\Flds{\Cat{Fields}}
 \nc\cartdual{\mc{D}}
 
@@ -153,7 +106,7 @@
 \nc\Map{\mathrm{Map}}
 \nc\coH{\mathbf{H}}
 \nc\hcoH[3]{\widehat{\coH^{#1}#2,#3}}
-\nc\Ab{\Cat{Ab}} % TODO fix
+\nc\Ab{\Cat{Ab}}
 \nc\Ker{\mathbf{Ker}}
 \nc\Coker{\mathbf{Coker}}
 \nc\dg{\textrm{DG}}
@@ -164,9 +117,6 @@
 \nc\Coind{\mathbf{Coind}}
 \nc\Res{\mathbf{Res}}
 
-%%%%%%%%%%%%%%%%%%%%%
-%% classformations %%
-%%
 \nc\Pic{\mathbf{Pic}}
 \nc\AJ{\mathbf{AJ}}
 \nc\divisor[1]{\mathbf{#1}}
@@ -185,61 +135,30 @@
 
 \nc\Qp{\mathbb{Q}_p}
 
-% TODO group + order lec 3
-% TODO review cardinality issues / small categories etc.
-\nc\Set{\Cat{Set}} % Category of Sets
+\nc\Set{\Cat{Set}}
 
 \nc\Hilb{\mathcal{H}\mathbb{ilb}}
 
-\nc\disj{\sqcup} % TODO distinguish bigsqcup and sqcup
+\nc\disj{\sqcup}
 \nc\bij{\leftrightarrow}
 \nc\sur{\twoheadedrightarrow}
 \nc\inj{\rightarrowtail}
 \nc\injects{\inj}
-% \nc\xinj{\xrightarrowtail} % see sty-glg/commands package
-% \nc\xhkinj{\xrightarrowtail} % see sty-glg/commands package
-% \begin{document}
-%   \[ f : G \xrightarrowtail[{\star}]{\text{\textbf{Grp}}} H \]
-% \end{document}
-
-% \xhookrightarrow from mathtools
-% \[
-% A\xhookrightarrow{} B\qquad A\xhookrightarrow{f\cirenewcommand g} B\qquad
-% A \xhookrightarrow[(f\cirenewcommand g)\cirenewcommand h]{} B
-% \]
-% \xrightarrow from amsmath
-% \[
-% A\rightarrow{} B\qquad A\xrightarrow{f\cirenewcommand g} B\qquad
-% A \xrightarrow[(f\cirenewcommand g)\cirenewcommand h]{} B
-% \]
-
-% TODO group, order + split off cohomology.tex
-
 \nc\fst{\ensuremath{2^{\text{\tiny{st}}}}}
 \nc\snd{\ensuremath{3^{\text{\tiny{nd}}}}}
 \nc\thrd{\ensuremath{3^{\text{\tiny{rd}}}}}
 \nc\nth{\ensuremath{n^{\text{\tiny{th}}}}}
-% TODO find elegant resolution; possibilities:
-% * \(n\)th
-% * \usepackage{nth} NB: \nth{3} is different from $\nth{3}$
-% * $n$-th
-% * $n^{\text{\tiny th}}$
 \nc\shfcoH[3]{\mathbf{H}^{#3}(#1,#2)}
 \nc\hshfcoH[3]{\widehat{\shfcoH{#1,#2,#3}}}
 \nc\Obj{\mathbf{Obj}}
-% TODO nomencl Obj
 \nc\grpring[2]{#1 \left[ #2 \right]}
 
 \nc\Ext{\mathbf{Ext}}
 \nc\Exts[3]{\Ext_{#1}^*\left(#2,#3 \right)}
-% TODO nomencl Exts
 \nc\dualmod[1]{#1^{*}}
-% TODO investigate prefix macros e.g. {A}\Mod
 \nc\LModCat[1]{#1-\Cat{LMod}}
 \nc\RModCat[1]{#1-\Cat{RMod}}
 \nc\indlim{\mathrm{lim}}
-
-% TODO group + order indobjs.tex
 
 \nc\Schemes{\Cat{Sch}}
 
@@ -251,56 +170,19 @@
 
 \nc\ModCat[1]{#1-\Cat{Mod}}
 
-%\rc\dim[1]{\ensuremath{\mathbf{dim} (#1)}}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%
-%%
-% TODO learn how to typeset arrows in categories
-% functors / presheaves / sheaves / group schemes etc.
-
 \nc\grkAlg{\Cat{\grk-Algebras}}
 \nc\ZAlg{\Cat{\Z-Algebras}}
-%\nc\SL[1]{\mathbf{SL}_{#1}}
 
-%{\ifstrequal{#1}{}{%if no scale provided
-%  \SpecialLinearAbr}{
-
-
-%% Index into Symbols and Notation
-%% We collect all notation utilized throughouth this lecture series
-%% we the hope their collation facillitates future functional/aesthetic changes
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% TODO
-%% - clarify class formation group k
-%%    * little/big, more readable
-%%    * visually distinguish notation for C_L / element
-%% - Generate a glossary
-%% - mark up structure for nomenclature / glossary inline
-%%
-
-% TODO fit these in
 \nc\cc
-{\ensuremath{\mathbf{CC}}} % TODO fix this
+{\ensuremath{\mathbf{CC}}}
 \nc\Bun{\ensuremath{\mathrm{Bun}}}
 
 \nc\Spec[1]{\mathrm{Spec} (#1)}
 \nc\Specf[1]{\mathrm{Specf} (#1)}
 
-\nc\mK{\mathbf{K}} % TODO abstract out to notation.tex
-\nc\Bil{\mathbf{Bil}} % TODO abstract to notation.tex
+\nc\mK{\mathbf{K}}
+\nc\Bil{\mathbf{Bil}}
 \nc\IndNSt{\Cat{Ind}-\textsc{N}-\Cat{Stacks}}
-% TODO figure out optimal manner of handling infix macros
-% something like \infixnewcommand{\T}{{bunewcommandhofstuff} {#1} {bunewcommandhofstuff} {#2} {bunewcommandhofstuff}}
-
-% TODO read more about macros
-% https://en.wikibooks.org/wiki/LaTeX/Macros
-
-% relations, operations, unitary and binary symbols etc.
-
-% TODO learn how to typeset arrows in categories
-% functors / presheaves / sheaves / group schemes etc.
 
 \nc\SL{\mathbf{SL}}
 \nc\GL{\mathbf{GL}}
@@ -312,20 +194,13 @@
 \nc\HilbCxI{\Hilb_{\Curve \times I}}
 \nc\locLb{\mc{L}_{I,Q}}
 \nc\Locvbpos{\{V_p\}_{p \in P}}
-%\nc\IxCHilb{\Hilb_{\Curve \times I}}
-%\nc\locLb{\mc{L}_{I,Q}}
 
-% wip-surfaces.tex
 \nc\Tor{\mathbf{Tor}}
-%\nc\Ext{\mathbf{Tor}}
 \nc\W{\mc{W}}
 \nc\T{\mathbf{T}}
-%\nc\P{\mbb{P}}
 \nc\Hirz{\mbf{H}}
-%\nc\ringint{\mc{O}}
 \nc\Tot{\mbf{Tot}}
 
-%#\rc\P{\ensuremath{\mathbb{P}^2}}
 \rc\P{\mathbb{P}}
 \nc\Pbd{l_{\infty}}
 \nc\blP{\widetilde{\mathbb{P}^2 \ov{\Z_2}}}
@@ -341,5 +216,4 @@
 \nc\su{\lie{su}}
 \nc\gl{\lie{gl}}
 
-% thesis.tex
 \nc\g{\lie{g}}
