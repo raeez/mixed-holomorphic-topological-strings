@@ -178,7 +178,7 @@ Theorem~\ref{thm:same-action-rees-fourier-descendants-obstruction} identifies th
 as a local-nilpotence mismatch, which the Fourier-twisted Rees
 construction
 Theorem~\ref{thm:T5-fourier-rees-positive-construction} sidesteps by
-changing polarization rather than module action.
+changing polarization with the module action fixed.
 
 \begin{constr}[Trace-count filtration on the open observables]\label{constr:trace-count-filtration}
   Let $\mc R_N$ be as in Construction~\ref{constr:reduced-bv-algebra}.
@@ -544,8 +544,8 @@ $P_0$ bracket]\label{lem:filtration-preservation}
   \]
   The Hamiltonian comparison uses the nonconstant sum \(k+l>0\); the
   scalar class \(\Psi_{0,0}=\operatorname{Tr}(\psi)\) lies in the
-  removed constant-Hamiltonian sector rather than in
-  \(\bar A_{\mathrm{desc}}\).
+  removed constant-Hamiltonian sector; \(\bar A_{\mathrm{desc}}\)
+  contains the nonconstant classes.
 \end{thm}
 
 \begin{proof}
@@ -596,7 +596,7 @@ $P_0$ bracket]\label{lem:filtration-preservation}
   \(G\)-fixed point and straight-line contraction to it descends to a
   contraction of the quotient fibre.  Therefore the cyclic quotient still
   has the homology of \(S^1\).  Finally, attaching cells of dimension
-  at least three cannot change \(H_1\), because \(H_1\) only sees
+  at least three preserves \(H_1\), because \(H_1\) only sees
   \(C_2\to C_1\to C_0\).  Hence \(H_1(X_{k,l};\C)\cong\C\).
 
   The symmetrised trace
@@ -833,7 +833,7 @@ $P_0$ bracket]\label{lem:filtration-preservation}
   \]
   The sectors outside that comparison are precisely:
   the scalar degree-zero class \([1]\), the scalar odd class
-  \(\Psi_{0,0}=\operatorname{Tr}(\psi)\), and the absent higher
+  \(\Psi_{0,0}=\operatorname{Tr}(\psi)\), and the zero higher
   primitive \(\psi\)-sectors \(H_p(K_{R,S})=0\) for \(p\ge2\).
   Identifying the remaining \(\Psi_{a,b}\) line with principal parts
   \(\rho_{a,b}\) as an \(\mathfrak h\)-module, or after Moyal
@@ -1150,8 +1150,8 @@ $P_0$ bracket]\label{lem:filtration-preservation}
   principal-part realization.  The two answers have different
   \(\hbar\)-order and different primitive label.  Since both sides have
   already been projected to the linear indecomposable summand, adding
-  decomposable multi-trace terms cannot repair this square after
-  applying \(\pi_{\mathrm{prim}}^{\mathrm{cot}}\).
+  decomposable multi-trace terms have zero image under
+  \(\pi_{\mathrm{prim}}^{\mathrm{cot}}\) and leave this square unchanged.
 
 	  The finite exact-arithmetic computation verifies the same
 	  obstruction through exponents \(\leq5\) and Moyal order \(\leq5\):
@@ -1168,8 +1168,7 @@ $P_0$ bracket]\label{lem:filtration-preservation}
 \begin{constr}[Reduced Moyal principal-part descendant target]
   \label{constr:quantum-principal-part-descendant-target}
   The corrected quantum descendant target is obtained by changing the
-  target rather than by correcting the polynomial one-\(\psi\)
-  representatives.
+  target, with the polynomial one-\(\psi\) representatives fixed.
   For an interval \(I\subset\R\) put
   \[
     \mathfrak h_{\hbar,I}
@@ -1407,8 +1406,8 @@ $P_0$ bracket]\label{lem:filtration-preservation}
   Equivalently, matching the local-nilpotence profile of \(z_1,z_2\) on
   the generic fibre is a necessary condition for any flat same-action
   Rees bridge from polynomial one-\(\psi\) descendants to principal parts,
-  and that necessary condition fails.  Thus the universal bridge exists
-  only after the Fourier twist of polarization in
+  and that necessary condition has a nonzero obstruction.  Thus the
+  universal bridge exists only after the Fourier twist of polarization in
   Theorem~\ref{thm:T5-fourier-rees-positive-construction}; the
   same-action Rees family is obstructed.
 \end{thm}
@@ -1436,8 +1435,8 @@ $P_0$ bracket]\label{lem:filtration-preservation}
   element of \(\C((\hbar))\).  Thus \(z_1^Nv\neq0\) for all \(N\).  The
   same argument using \(z_2\) shifts \(a\) upward and proves
   non-local-nilpotence for \(z_2\).  Hence
-  \(M_\hbar((\hbar))\) cannot be isomorphic to \(\mc P((\hbar))\) under
-  the same Hamiltonian action.
+  \(M_\hbar((\hbar))\) is incompatible with
+  \(\mc P((\hbar))\) under the same Hamiltonian action.
 \end{proof}
 
 \begin{rmk}\label{rmk:chain-level-primitive-algebraic-input}
@@ -1522,5 +1521,5 @@ $P_0$ bracket]\label{lem:filtration-preservation}
   in degree \(1\) for an open interval \(I\), represented by
 	  \(\lambda_I(t)\,dt\) with integral \(1\); the degree-zero notation in
 	  the primitive shadow is the shifted BV/cotangent coordinate paired
-	  against this density rather than point-evaluation in \(H_c^0(I)\).
+	  against this density in place of point-evaluation in \(H_c^0(I)\).
 \end{rmk}
