@@ -360,7 +360,8 @@ Holomorphic--Topological Deligne conjecture}
   (Lemma~\ref{lem:omega-cocycle}),
   the Poisson bracket of trace coordinates
   $\{\operatorname{Tr}\phi_1,\operatorname{Tr}\phi_2\}=N$, and the
-  Moyal commutator
+  Moyal commutator (with $\Phi_\hbar\colon\C[z_1,z_2]\to M_N(\C)$
+  the Weyl-symmetric quantisation map of \S\ref{ssec:two-algebras})
   $[\Phi_\hbar(z_1),\Phi_\hbar(z_2)]_\star=\hbar N\cdot I$ in $M_N(\C)$
   (Theorem~\ref{thm:app-scalar-anomaly-transgression}).  The number
   $N$ is the trace-$U(1)$ central charge of the noncommutative D-brane
@@ -420,16 +421,15 @@ Holomorphic--Topological Deligne conjecture}
   exact count of nonzero higher brackets is a separate theorem.
 
   \medskip\noindent
-  The local model is a two-dimensional chiral algebra of Hamiltonian
-  currents on $\C^2$ --- a holomorphic factorisation algebra over the
-  holomorphic surface $\C^2$, the two-complex-dimensional analogue of
-  the Heisenberg vertex algebra --- with $\mathcal P$ playing the role
-  of the Kac--Moody central pairing module $\Omega_K$ on a curve $K$
-  and $\mathfrak h$ that of regular functions; it is the formal local
-  sector of the Costello twisted M-theory family
-  \cite{costello-twistedM}; and on its cyclic framed stable branch
-  the universal formal-Darboux stalk chart of $\Hilb^N(\C^2)$ in its
-  noncommutative Moyal deformation.
+  The local model is the holomorphic factorization algebra of
+  Hamiltonian currents on \(\C^2\).  Its coefficient dual is the
+  Matlis principal-part module \(\mathcal P\).  In the curve analogy,
+  \(\mathcal P\) replaces the Kac--Moody central-pairing module
+  \(\Omega_K\), and \(\mathfrak h\) replaces the regular functions on
+  the curve.  The same formal local sector appears in Costello's
+  twisted M-theory family \cite{costello-twistedM}.  On the cyclic
+  framed stable branch it is the formal-Darboux chart of
+  \(\Hilb^N(\C^2)\) in its Moyal deformation.
 
   \medskip\noindent
   The local theorem is the formal-Darboux stalk chart
@@ -506,30 +506,16 @@ or marked points; framing on \(S^3\) is stated when invoked, with
 deviation flagged.
 
 \paragraph{Sign, degree, and renormalization conventions.}
-BV degree, ghost number, and form degree are tracked separately,
-none identified with another: BV degree is cohomological, ghost
-number is the antifield/ghost grading of the classical fields
-\((\phi_1,\phi_2,\psi)\) and \((\mathcal A,\mathcal B)\), and form
-degree is the de Rham/Dolbeault exterior grading on
-\(\Omega^\bullet(\R^2)\widehat\otimes\Omega^{0,\bullet}(\C^2)\).
-Koszul, Chevalley--Eilenberg, polyvector, and Gerstenhaber bracket
-signs are fixed in
-Appendix~\ref{app:sign-conventions}, with cyclic trace conventions
-fixed in Definition~\ref{def:app-sign-hamiltonian-cyclic} and the
-CE/PV cochain comparison signs in Lemma~\ref{lem:app-sign-ce-pv}.
-The propagator weight in heat-kernel renormalization is the explicit
-Costello \(\bigl(K_L-K_\epsilon\bigr)\) interval kernel of
-\cite{costello-renormalization}, recorded in
-Appendix~\ref{sec:app-factorization-current-conventions}.
-The QFT loop parameter \(\hbar\) and the string-genus parameter
-\(g_s\) are distinguished at every reference: \(\hbar\) controls the
-local BV / Moyal expansion of the matrix Koszul algebra, while \(g_s\)
-controls the string genus expansion of the ambient closed-open
-theory.  The BCOV holomorphic-anomaly equation enters with the
-BCOV-strict sign of \cite{bcov} preserved by the matched-conventions
-divergence row of Theorem~\ref{thm:divergence-bcov}; the local theorem
-of this manuscript does not assert the holomorphic-anomaly equation,
-only its compatibility with the local convention layer.
+BV degree, ghost number, form degree, Koszul / CE / PV / Gerstenhaber
+bracket signs, cyclic trace, CE/PV cochain comparison, and the
+heat-kernel propagator $(K_L-K_\epsilon)$ are fixed in
+Appendix~\ref{app:sign-conventions} and
+Appendix~\ref{sec:app-factorization-current-conventions}.  The QFT
+loop $\hbar$ controls the local BV/Moyal expansion; the string-genus
+$g_s$ is the parameter of the ambient theory, not used by the local
+theorem.  The local theorem is compatible with the BCOV holomorphic-anomaly
+equation in the matched-conventions sense
+(Theorem~\ref{thm:divergence-bcov}) but does not assert it.
 
 \paragraph{Homological taxonomy.}
 Hochschild homology \(HH_\bullet\), cyclic homology, and
@@ -2303,26 +2289,27 @@ The trace functional of a Hamiltonian \(f\in\mathfrak h\) on the brane
 is
 \(J(f)=\overline{\operatorname{Tr}\,f(\phi_1,\phi_2)}\).
 
-The pair \((\phi_1,\phi_2)\) realizes a
-\(\lie{gl}_N\otimes\lie{gl}_N\)-valued holomorphic symplectic
-Chan--Paton pair; its scalar reduction is two complex coordinates
-conjugate under one holomorphic two-form.  The transverse data is
-therefore a single holomorphic symplectic surface \((Y,\omega)\) at
-the brane point.
+The pair \((\phi_1,\phi_2)\) is a Chan--Paton representation of the two
+formal holomorphic coordinates.  Its scalar reduction is one
+holomorphic symplectic pair.  Thus the transverse local geometry is a
+single holomorphic symplectic surface \((Y,\omega)\) at the brane
+point.
 
-The formal-stalk chart carries only the local behaviour at the brane,
-never global topology of \(Y\); the relevant datum is the formal
-completion of \(Y\) at the brane point. A holomorphic Darboux theorem trivialises
-the germ to \((\widehat{\C^2}_0,dz_1\wedge dz_2)\), so \(Y\) contributes
-only its formal symplectic polydisk.
+The formal-stalk chart uses only the germ of \(Y\) at that point.  It
+does not use the global topology of \(Y\).  Holomorphic Darboux
+trivialises the germ to
+\[
+  (\widehat{\C^2}_0,dz_1\wedge dz_2),
+\]
+so the target contributes only its formal symplectic polydisk.
 
 The brane stack carries an open trace observable
-\(\operatorname{Tr}f(\phi_1,\phi_2)\) for every Hamiltonian \(f\); the
-trace is supported on a one-dimensional brane worldline. A second
-direction transverse to that worldline, but inside the topological
-factor, is the propagator direction along which BV ghosts move and the
-moment-map multiplier becomes a one-form. A topological factor of real
-dimension two is therefore the minimal completion in which the Dirac
+\(\operatorname{Tr}f(\phi_1,\phi_2)\) for every Hamiltonian \(f\).  The
+trace is supported on the one-dimensional brane worldline.  A second
+topological direction supplies the transverse propagator direction for
+the BV ghosts, and the moment-map multiplier becomes a one-form there.
+Thus a real two-dimensional topological factor is the minimal
+completion in which the Dirac
 moment-map evaluation and the bulk-to-brane locality coexist.
 
 Under the formal-stalk-chart hypotheses --- a brane stack carrying the
@@ -3501,10 +3488,12 @@ line
 \]
 realises the Dirac brane stack as the derived commuting variety stack
 \([\mu^{-1}_{\mathrm{der}}(0)/GL_N]\) with moment map
-\(\mu(\phi_1,\phi_2)=[\phi_1,\phi_2]\) on the transverse position pair
-\((\phi_1,\phi_2)\in\lie{gl}_N\oplus\lie{gl}_N\) --- the
-\(\lie{gl}_N\)-valued matrix coordinates of the \(N\)-brane stack on
-the holomorphic-symplectic factor
+\(\mu(\phi_1,\phi_2)=[\phi_1,\phi_2]\).  The transverse position is the
+Chan--Paton pair
+\[
+  (\phi_1,\phi_2)\in\lie{gl}_N\oplus\lie{gl}_N
+\]
+on the holomorphic-symplectic factor
 (Pantev--To\"en--Vaqui\'e--Vezzosi shifted symplectic structures
 \cite{ptvv-shifted-symplectic}; the brane realization is
 Calaque \cite{calaque-derived-branes}; the BV/Koszul realisation of
@@ -3514,24 +3503,23 @@ A Hamiltonian \(f\) has trace evaluation
 \[
   J(f)=\overline{\operatorname{Tr}f(\phi_1,\phi_2)}
 \]
-on the chart: the formal Darboux coordinate of the brane-side
-\(E_1\)-Hochschild
+on this chart.  This is the formal Darboux coordinate of the
+brane-side \(E_1\)-Hochschild complex
 \(HH^\bullet(A^{\mathrm{cl}}_{\partial,N},A^{\mathrm{cl}}_{\partial,N})\),
 identified at the formal-Darboux stalk with the bulk
 \(\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}|_{b_p}\) (the chiral
 \(E_2\) factorization algebra restricted to the formal neighbourhood
 of \(b_p\)) by Costello--Gwilliam bulk--boundary correspondence and
-Deligne's \(E_1\)-Hochschild theorem.  The data are the formal Darboux
-polydisk at the brane point and the Chan--Paton substitution
+Deligne's \(E_1\)-Hochschild theorem.  The input data are the formal
+Darboux polydisk at the brane point and the Chan--Paton substitution
 \[
   z_1\rightsquigarrow\phi_1,\qquad z_2\rightsquigarrow\phi_2,\qquad
   \phi_i\in\mathfrak{gl}_N,
 \]
-sending the holomorphic coordinate functions on the polydisk to the
-matrix-valued transverse positions of the brane stack.  Every other
-piece of open-side structure---symplectic potential, moment map,
-Dirac constraint, BV differential, gauge-invariant operator
-algebra---follows from this substitution.
+sending holomorphic coordinates to transverse Chan--Paton matrices.
+The symplectic potential, moment map, Dirac constraint, BV
+differential, and gauge-invariant operator algebra are all determined
+by this substitution.
 
 \paragraph{The substitution forces the open BV theory.}
 The pullback of \(dz_1\wedge dz_2\) along the substitution, traced over
@@ -3540,14 +3528,17 @@ Chan--Paton, is
   \Omega_N=\operatorname{Tr}(d\phi_1\wedge d\phi_2),\qquad
   \theta_N=\operatorname{Tr}(\phi_1\,d\phi_2).
 \]
-\(GL_N\)-conjugation acts symplectically with moment map
+\(GL_N\)-conjugation acts symplectically.  Its moment map is
 \[
   \mu(\epsilon)=-\operatorname{Tr}(\epsilon[\phi_1,\phi_2]),\qquad
   \epsilon\in\mathfrak{gl}_N,
 \]
-so the first-class constraint is \([\phi_1,\phi_2]=0\): the locus on
-which the Chan--Paton pair commutes and the \(N\)
-branes sit at \(N\) points of the polydisk.  With multiplier
+so the first-class constraint is
+\[
+  [\phi_1,\phi_2]=0.
+\]
+On this locus the Chan--Paton pair commutes and the \(N\) branes sit at
+\(N\) points of the polydisk.  With multiplier
 \(A\in\Omega^1(\R)\otimes\mathfrak{gl}_N\) the Dirac first-order action is
 \begin{equation}\label{eq:open-action-derived}
 S_\partial
@@ -3555,12 +3546,13 @@ S_\partial
 \end{equation}
 and the constraint is realized by the Koszul derived zero-fibre model
 for the moment-map equation~\cite{costello-renormalization}*{Ch.~5}.
-Introduce a fresh odd matrix-valued
-antifield
-\(\psi\in\mathfrak{gl}_N[1]\) --- the BV antifield \(\psi=A^*\) of the
-Lagrange multiplier \(A\), independent of \(\phi_1,\phi_2\) and not a
-function of them --- and let \(Q\) be the unique derivation defined on
-generators by
+Introduce the odd matrix-valued antifield
+\[
+  \psi\in\mathfrak{gl}_N[1].
+\]
+It is the BV antifield \(\psi=A^*\) of the Lagrange multiplier \(A\).
+It is independent of \(\phi_1,\phi_2\).  Let \(Q\) be the derivation
+defined on generators by
 \begin{equation}\label{eq:open-Q}
 Q\phi_1=Q\phi_2=0,\qquad Q\psi=[\phi_1,\phi_2].
 \end{equation}
