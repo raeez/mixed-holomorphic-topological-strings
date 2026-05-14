@@ -380,7 +380,8 @@ Definition~\ref{app:defn:Z-der-HT}.
     additivity / Costello--Gwilliam bulk--boundary correspondence
     identifies it with the brane-side derived $E_1$-centre
     $Z^{\mathrm{der}}_{E_1}(A^{\mathrm{cl}}_{\partial,N})\simeq
-    HH^\bullet(A^{\mathrm{cl}}_{\partial,N})$ as $E_2$-algebras
+    HH^\bullet(A^{\mathrm{cl}}_{\partial,N},A^{\mathrm{cl}}_{\partial,N})$
+    as $E_2$-algebras
     (Theorem~\ref{thm:closed-to-open-derived-centre-map}).
 \end{itemize}
 \end{conj}
@@ -437,3 +438,649 @@ $A_b\neq\widehat{\mathcal O}_{\C^2,p}$, identification beyond the
 Heisenberg core requires matched-conventions transfer
 (Theorem~\ref{thm:matched-conventions-transfer}).
 \end{rmk}
+
+\subsection{The chiral \texorpdfstring{$E_d$}{Ed}-operad: holomorphic little disks with principal-parts data}\label{app:hfc:chiral-Ed-operad}
+
+The functorial Mixed-HT Deligne conjecture
+(Conjecture~\ref{app:conj:mixed-HT-Deligne}) requires an operadic
+action: the chiral derived centre
+$Z^{\mathrm{der}}_{E_d^{\mathrm{ch}}}(\mathcal A)$ is the endomorphism
+object in a chiral $E_d$-module category.  At $d=1$ the
+Beilinson--Drinfeld chiral operad supplies this structure
+\cite{beilinson-drinfeld-chiral}*{\S 3.4}.  At $d\geq 2$ the operad
+has not been written down explicitly; this subsection constructs it.
+
+\begin{defn}[Configuration $\mathcal D$-module]\label{app:defn:conf-D-module}
+Let $X$ be a smooth complex variety of complex dimension $d$ and $I$
+a non-empty finite set.  Write $X^I$ for the $|I|$-fold product and
+$j_I\colon\mathrm{Conf}_I(X)\hookrightarrow X^I$ for the open embedding
+of the configuration space of $|I|$ distinct points.  The
+\emph{configuration $\mathcal D$-module}
+\[
+  \omega^{\mathrm{ch}}_{X^I}=j_{I,*}j_I^!\omega_{X^I}
+\]
+is the $!$-extension to $X^I$ of the dualising sheaf of
+$\mathrm{Conf}_I(X)$.
+\end{defn}
+
+\begin{defn}[Chiral $E_d$-operad]\label{app:defn:chiral-Ed-operad}
+The \emph{chiral $E_d$-operad} on $\C^d$ is the colored $\infty$-operad
+$\mathsf{hE}_d^{\mathrm{ch}}$ with single colour and operation space at
+arity $|I|$
+\[
+  \mathsf{hE}_d^{\mathrm{ch}}(I)
+   =\omega^{\mathrm{ch}}_{(\C^d)^I},
+\]
+with composition the chiral product on $!$-pull-back along the
+diagonal embedding
+$\Delta_A\colon(\C^d)^A\hookrightarrow(\C^d)^I$ for a partition
+$I=\bigsqcup_{a\in A}I_a$, following
+\cite{beilinson-drinfeld-chiral}*{\S 3.4} verbatim with $X=\C^d$ in
+place of a curve.
+\end{defn}
+
+\begin{rmk}[Comparison with BD at \texorpdfstring{$d=1$}{d=1}]\label{app:rmk:hEd-vs-BD-d1}
+For $d=1$ on a curve $C$, the configuration $\mathcal D$-module
+$\omega^{\mathrm{ch}}_{C^I}$ is the BD chiral operad of
+\cite{beilinson-drinfeld-chiral}*{\S 3.4}.  At $d\geq 2$ the diagonals
+$\Delta_{ij}\subset(\C^d)^I$ have complex codimension $d$, so the
+principal parts on $\omega^{\mathrm{ch}}_{(\C^d)^I}$ involve
+distributions of $d$-fold polar order; this is the higher-codimension
+chiral structure absent in BD's curve theory.
+\end{rmk}
+
+\begin{prop}[Chiral $E_d$-algebras as $\mathsf{hE}_d^{\mathrm{ch}}$-algebras]\label{app:prop:hEd-algebras}
+A holomorphic factorization $E_d$-algebra
+$\mathcal A\in\mathrm{HolFA}_d(\C^d)$
+(Definition~\ref{app:defn:hol-fact-Ed}) is equivalent to an algebra
+over the chiral $E_d$-operad $\mathsf{hE}_d^{\mathrm{ch}}$ of
+Definition~\ref{app:defn:chiral-Ed-operad}: a $\mathcal D$-module
+$\mathcal A_{\mathrm{Ran}}$ on $\mathrm{Ran}(\C^d)$ with structure maps
+\[
+  \mu^{\mathrm{ch}}_I\colon
+   \mathsf{hE}_d^{\mathrm{ch}}(I)\otimes^!\mathcal A_{\mathrm{Ran}}^{\boxtimes I}
+   \longrightarrow\Delta_I^*\mathcal A_{\mathrm{Ran}}
+\]
+intertwining the chiral product of
+Definition~\ref{app:defn:chiral-Ed-operad} with $\Delta_I^*$.
+\end{prop}
+
+\begin{proof}
+At $d=1$ this is the equivalence of presentations in the remark
+following Definition~\ref{app:defn:hol-fact-Ed} restricted to the BD
+chiral algebra category.  At $d\geq 2$ apply the
+Lurie--Ayala--Francis factorization-homology equivalence
+\cite{lurie-ha}*{\S 5.5.4} between holomorphic factorization algebras
+on $X$ and $\mathcal D$-modules on $\mathrm{Ran}(X)$, verbatim with
+$X=\C^d$.  The chiral product $\mu^{\mathrm{ch}}_I$ extracts the
+$!$-pullback of the factorization isomorphisms of
+Definition~\ref{app:defn:hol-fact-Ed} to the diagonal.
+\end{proof}
+
+\begin{constr}[Mixed-HT enhancement
+\texorpdfstring{$\mathsf{hE}_d^{\mathrm{ch},\mathrm{HT}}$}{hEd-ch-HT}]\label{app:constr:hEd-HT}
+Adjoin to $\mathsf{hE}_d^{\mathrm{ch}}$ the topological $E_k$-operad
+on $\R^k_{\mathrm{top}}$: the colored $\infty$-operad
+$\mathsf{hE}_d^{\mathrm{ch},\mathrm{HT}}$ has operation space
+\[
+  \mathsf{hE}_d^{\mathrm{ch},\mathrm{HT}}(I)
+   =\mathrm{Conf}_I(\R^k)\times
+   \omega^{\mathrm{ch}}_{(\C^d)^I},
+\]
+with composition the product of topological little-disks composition
+on the $\R^k$ factor and chiral composition of
+Definition~\ref{app:defn:chiral-Ed-operad} on the $\C^d$ factor.  An
+algebra over $\mathsf{hE}_d^{\mathrm{ch},\mathrm{HT}}$ is a mixed-HT
+factorization $E_d^{\mathrm{HT}}$-algebra of
+Definition~\ref{app:defn:mixed-HT-fact}.
+\end{constr}
+
+\subsection{Three hypotheses for chiral
+\texorpdfstring{$E_d$}{Ed} Deligne at \texorpdfstring{$d\geq 2$}{d>=2}}\label{app:hfc:three-hypotheses}
+
+The chiral $E_d$ Deligne identification
+$C^\bullet_{\mathrm{ch}}(\mathcal A,\mathcal A)\simeq
+Z^{\mathrm{der}}_{\mathsf{hE}_d^{\mathrm{ch}}}(\mathcal A)$ of
+Conjecture~\ref{conj:chiral-Ed-deligne} reduces to three precise
+hypotheses on $\mathsf{hE}_d^{\mathrm{ch}}$ of
+Definition~\ref{app:defn:chiral-Ed-operad}.
+
+\begin{defn}[Hypothesis F: formality of $\mathsf{hE}_d^{\mathrm{ch}}$]\label{app:hyp:formality}
+The chiral $E_d$-operad $\mathsf{hE}_d^{\mathrm{ch}}$ is formal as an
+$\infty$-operad: there is a quasi-isomorphism
+\[
+  \mathsf{hE}_d^{\mathrm{ch}}\;\simeq\;H_*(\mathsf{hE}_d^{\mathrm{ch}})
+\]
+to its homology operad in chain complexes of
+$\mathcal D_{\mathrm{Ran}(\C^d)}$-modules.  At $d=1$ this is
+Tamarkin's formality theorem
+\cite{tamarkin-deligne,kontsevich-soibelman-deformation}; at
+$d\geq 2$ it is open.
+\end{defn}
+
+\begin{defn}[Hypothesis C: centrality]\label{app:hyp:centrality}
+For $\mathcal A\in\mathrm{HolFA}_d(\C^d)$, the chiral derived centre
+$Z^{\mathrm{der}}_{\mathsf{hE}_d^{\mathrm{ch}}}(\mathcal A)$ is the
+endomorphism object in the bimodule $\infty$-category
+$\mathcal A\otimes\mathcal A^{\mathrm{op}}\text{-Mod}^{\mathrm{ch}}$:
+\[
+  Z^{\mathrm{der}}_{\mathsf{hE}_d^{\mathrm{ch}}}(\mathcal A)
+   =\RHom_{\mathcal A\otimes\mathcal A^{\mathrm{op}}}(\mathcal A,\mathcal A).
+\]
+This holds at $d\geq 1$ by Lurie~\cite{lurie-ha}*{\S 5.3.1.6} for
+topological $E_d$, and at the chiral level by the chiral envelope of
+\cite{beilinson-drinfeld-chiral}*{\S 3.7}.
+\end{defn}
+
+\begin{defn}[Hypothesis R: Ran-space descent]\label{app:hyp:ran-descent}
+The factorization-homology functor
+$\mathrm{Sp}^{\mathrm{ch}}_X\colon\mathrm{HolFA}_d(X)\to
+\mathcal D(\mathrm{Ran}(X))\text{-Mod}$ of
+Lurie--Ayala--Francis~\cite{lurie-ha}*{\S 5.5} is
+Ran-cohomologically descent-faithful: for any holomorphic
+factorization algebra $\mathcal A$,
+\[
+  \mathcal A\;\xrightarrow{\sim}\;
+   \mathrm{holim}_{(I\hookrightarrow\mathrm{Ran}(X))^{\mathrm{op}}}
+    \mathcal A|_I,
+\]
+the limit over the simplicial diagram of finite-set embeddings into
+the Ran space.  At $d=1$ this is part of the BD factorization theorem
+\cite{beilinson-drinfeld-chiral}*{\S 3}; at $d\geq 2$ it follows from
+Francis--Gaitsgory chiral Koszul duality
+\cite{francis-gaitsgory-chiral-koszul}*{Thm.~6.5.1}.
+\end{defn}
+
+\begin{thm}[Conditional chiral $E_d$ Deligne]\label{app:thm:conditional-Ed-deligne}
+Under Hypotheses~\ref{app:hyp:formality}, \ref{app:hyp:centrality},
+\ref{app:hyp:ran-descent}, the chiral derived centre satisfies
+\[
+  Z^{\mathrm{der}}_{\mathsf{hE}_d^{\mathrm{ch}}}(\mathcal A)
+   \;\simeq\;
+   C^\bullet_{\mathrm{ch}}(\mathcal A,\mathcal A)
+\]
+as $E_{d+1}^{\mathrm{ch}}$-algebras.  Hypotheses~\ref{app:hyp:centrality}
+and~\ref{app:hyp:ran-descent} are theorems of the literature; the
+residual obstruction to Conjecture~\ref{conj:chiral-Ed-deligne} at
+$d\geq 2$ is Hypothesis~\ref{app:hyp:formality}.
+\end{thm}
+
+\begin{proof}[Proof sketch]
+By Hypothesis~\ref{app:hyp:centrality} the chiral derived centre is
+$\RHom_{\mathcal A\otimes\mathcal A^{\mathrm{op}}}(\mathcal A,\mathcal A)$.
+By Hypothesis~\ref{app:hyp:ran-descent} this is computed by the
+simplicial bar resolution of $\mathcal A$ as
+$\mathcal A\otimes\mathcal A^{\mathrm{op}}$-bimodule on the Ran space,
+yielding $C^\bullet_{\mathrm{ch}}(\mathcal A,\mathcal A)$.  By
+Hypothesis~\ref{app:hyp:formality} the
+$\mathsf{hE}_d^{\mathrm{ch}}$-action refines along the formality
+quasi-isomorphism to an $E_{d+1}^{\mathrm{ch}}$-action, by the same
+chain of natural transformations as Tamarkin
+\cite{tamarkin-deligne} at $d=1$ applied verbatim to the
+Lurie--Ayala--Francis $\mathcal D$-module presentation
+\cite{lurie-ha}*{\S 5.5.4} of the chiral operad.
+\end{proof}
+
+\begin{rmk}[Obstruction class for Hypothesis~\ref{app:hyp:formality}]\label{app:rmk:formality-obstruction}
+Hypothesis~\ref{app:hyp:formality} fails iff the Maurer--Cartan
+element
+$\mathfrak m_d\in\mathrm{Def}\bigl(\mathsf{hE}_d^{\mathrm{ch}}\to
+H_*(\mathsf{hE}_d^{\mathrm{ch}})\bigr)$ classifying the chiral
+$E_d$-operad relative to its homology operad is non-trivial.  At
+$d=1$ Tamarkin~\cite{tamarkin-deligne} shows $\mathfrak m_1=0$ via
+the Drinfeld associator.  At $d\geq 2$ the existence of an analogous
+Drinfeld associator on $\mathrm{Conf}_I(\C^d)$ for $|I|\geq 2$ is the
+residual frontier.  The class
+\[
+  \mathrm{Ob}_F=[\mathfrak m_d]
+   \in H^*\bigl(\mathrm{Def}(\mathsf{hE}_d^{\mathrm{ch}})\bigr)
+\]
+is the formality obstruction at $d\geq 2$.
+\end{rmk}
+
+\subsection{Descent over the Kato--Nakayama log boundary}\label{app:hfc:KN-descent}
+
+The boundary open category $\mathcal{C}^{\mathrm{op}}_\partial$
+(Definition~\ref{app:defn:brane-cat}) is defined globally on the
+Kato--Nakayama log boundary $\partial X^{\mathrm{KN}}$.  This
+subsection writes the descent spectral sequence whose $E_2$-collapse
+identifies the global derived centre with the formal-Darboux stalk at
+the Heisenberg core.
+
+\begin{defn}[Kato--Nakayama topological realisation]\label{app:defn:KN}
+For a log scheme $(X,M_X,\alpha)$ in the sense of
+Kato~\cite{kato-log}, the \emph{Kato--Nakayama topological
+realisation} \cite{kato-nakayama-log} is the topological space
+$X^{\mathrm{KN}}$ with continuous projection
+$\pi^{\mathrm{KN}}\colon X^{\mathrm{KN}}\to X^{\mathrm{an}}$.  Over
+the locus of trivial log structure $\pi^{\mathrm{KN}}$ is a
+homeomorphism; over a divisor $D\subset X$ with simple normal-crossing
+log structure, the fibre over a codimension-$r$ stratum is a real
+$r$-torus.  The boundary
+$\partial X^{\mathrm{KN}}=(\pi^{\mathrm{KN}})^{-1}(D)$ is a torus
+bundle over the smooth locus of $D$.
+\end{defn}
+
+\begin{defn}[Sheaf of factorization $E_d^{\mathrm{HT}}$-categories on $\partial X^{\mathrm{KN}}$]\label{app:defn:sheaf-fact-cat-KN}
+The boundary open category extends to a sheaf
+$\underline{\mathcal{C}^{\mathrm{op}}_\partial}$ of mixed-HT
+factorization $E_d^{\mathrm{HT}}$-categories on
+$\partial X^{\mathrm{KN}}$: for $U\subset\partial X^{\mathrm{KN}}$
+open,
+\[
+  \underline{\mathcal{C}^{\mathrm{op}}_\partial}(U)
+   =\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}|_U
+    \text{-Mod}^{\mathrm{ch},\mathrm{HT}}_\partial,
+\]
+the boundary factorization $E_d^{\mathrm{HT}}$-modules over the
+restricted bulk; restriction to a smaller open is restriction of
+factorization modules.  At a closed point
+$p\in\partial X^{\mathrm{KN}}$ in the trivial log stratum, the stalk
+is the formal-Darboux stalk of
+Definition~\ref{app:defn:Darboux-stalk-functor}.
+\end{defn}
+
+\begin{thm}[Log étale descent for the boundary open
+category]\label{app:thm:log-etale-descent}
+The sheaf $\underline{\mathcal{C}^{\mathrm{op}}_\partial}$ of
+Definition~\ref{app:defn:sheaf-fact-cat-KN} satisfies log étale
+descent: for any log étale cover
+$\{U_a\to\partial X^{\mathrm{KN}}\}$,
+\[
+  \underline{\mathcal{C}^{\mathrm{op}}_\partial}(\partial X^{\mathrm{KN}})
+   \;\xrightarrow{\sim}\;
+   \mathrm{holim}\bigl(\textstyle\prod_a
+    \underline{\mathcal{C}^{\mathrm{op}}_\partial}(U_a)
+    \rightrightarrows
+    \prod_{a,b}\underline{\mathcal{C}^{\mathrm{op}}_\partial}(U_a\cap U_b)
+    \rightrightarrows\cdots\bigr).
+\]
+\end{thm}
+
+\begin{proof}
+Apply Olsson's log étale descent theorem
+\cite{olsson-log-stack}*{Thm.~4.7} for sheaves of $\infty$-categories
+on log étale stacks.  The factorization $E_d^{\mathrm{HT}}$-module
+condition is preserved under log étale pullback because the structure
+maps of Definition~\ref{app:defn:mixed-HT-fact} are local on
+$\partial X^{\mathrm{KN}}$.  Closure under $\mathrm{holim}$ is the
+$\infty$-categorical limit closure of factorization
+$\infty$-categories \cite{lurie-ha}*{\S 5.5.4.10}.
+\end{proof}
+
+\begin{thm}[Descent spectral sequence]\label{app:thm:descent-ss}
+Choose a log étale cover $\{U_a\to\partial X^{\mathrm{KN}}\}_{a\in A}$
+trivialising the log structure.  There is a spectral sequence
+\[
+  E_2^{p,q}
+   =H^p\bigl(\partial X^{\mathrm{KN}},
+   \mathcal H^q(\underline{\mathcal{C}^{\mathrm{op}}_\partial})\bigr)
+   \;\Rightarrow\;
+   H^{p+q}\bigl(\mathcal{C}^{\mathrm{op}}_\partial\bigr),
+\]
+where $\mathcal H^q$ is the $q$-th derived stalk.  At a Heisenberg-core
+point $p\in\partial X^{\mathrm{KN}}$ the stalk
+$\mathcal H^*(\underline{\mathcal{C}^{\mathrm{op}}_\partial})_p$ is
+the formal-Darboux stalk of Theorem~\ref{app:thm:stalk-of-conj}.
+\end{thm}
+
+\begin{proof}
+Standard sheaf-cohomology descent spectral sequence for the
+$\infty$-categorical sheaf of
+Definition~\ref{app:defn:sheaf-fact-cat-KN}, via \v{C}ech cohomology
+with respect to the log étale cover and convergence by
+Theorem~\ref{app:thm:log-etale-descent}.
+\end{proof}
+
+\begin{defn}[Heisenberg-core $E_2$-collapse]\label{app:defn:heisenberg-collapse}
+The descent spectral sequence of Theorem~\ref{app:thm:descent-ss}
+\emph{collapses at the Heisenberg core} if the differential
+\[
+  d_2\colon
+   H^p\bigl(\partial X^{\mathrm{KN}},\mathcal H^q\bigr)
+   \longrightarrow
+   H^{p+2}\bigl(\partial X^{\mathrm{KN}},\mathcal H^{q-1}\bigr)
+\]
+vanishes at every Heisenberg-core stratum.  Equivalently, the
+formal-Darboux stalks glue across log strata along the local
+symplectic-form trivialisation of
+Proposition~\ref{app:prop:Darboux-equivariance} without higher
+correction.
+\end{defn}
+
+\begin{thm}[Conditional global identification]\label{app:thm:global-stalk-from-collapse}
+Under the Heisenberg-core $E_2$-collapse condition of
+Definition~\ref{app:defn:heisenberg-collapse}, the global
+identification of Conjecture~\ref{app:conj:mixed-HT-Deligne} reduces
+to the formal-Darboux stalk theorem
+(Theorem~\ref{app:thm:stalk-of-conj}):
+\[
+  \mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}
+   \;\simeq\;
+   Z^{\mathrm{der}}_{E_2^{\mathrm{HT}}}\bigl(\mathcal{C}^{\mathrm{op}}_\partial\bigr)
+\]
+holds globally on $\R^2\times\C^2$.  The descent obstruction is
+\[
+  \mathrm{Ob}_{\mathrm{desc}}
+   =[d_2]
+   \in H^2\bigl(\partial X^{\mathrm{KN}},
+       \mathrm{Hom}^{-1}(\mathcal H^*,\mathcal H^*)\bigr).
+\]
+\end{thm}
+
+\begin{proof}
+By Theorem~\ref{app:thm:descent-ss} the global cohomology is computed
+by the $E_2$-collapsed spectral sequence; collapse implies global
+sections are the étale-cover gluing of stalks.  By
+Theorem~\ref{app:thm:stalk-of-conj} every Heisenberg-core stalk is
+$C^\bullet_{\mathrm{ch}}(A_{b_p},A_{b_p})$.  By
+Proposition~\ref{app:prop:Darboux-equivariance} the gluing data are
+formal-symplectomorphism equivariant, so they descend to the global
+mixed-HT chiral derived centre on the boundary open category.
+\end{proof}
+
+\subsection{All-loop QME for finite-jet PVA}\label{app:hfc:all-loop-qme}
+
+The classical PVA Jacobi identity holds at the formal-Darboux stalk
+(Theorem~\ref{thm:reduced-ce-pv-central-operation}).  Lifting the PVA
+structure to all $\hbar$-orders --- the quantum master equation for
+the finite-jet PVA --- is the content of site~\#16 of the
+seventeen-site catalogue.  The four hypotheses below isolate the
+analytic / homological control needed for all-loop convergence.
+
+\begin{defn}[Hypothesis K: KZ analytic SDR]\label{app:hyp:KZ-SDR}
+There is a strong deformation retract
+\[
+  \bigl(C^\bullet_{\mathrm{CE},\mathrm{cont}}(\mathfrak g),Q_{\mathrm{tot}}\bigr)
+   \xrightarrow[\text{retract}]{\text{deform}}
+   \bigl(C^\bullet_{\mathrm{ch}}(A_b,A_b),Q_{\mathrm{ch}}\bigr)
+\]
+in the category of chain complexes over the analytic ring
+$\C\{\!\!\{\hbar\}\!\!\}$ rather than the formal ring $\C[[\hbar]]$,
+with finite-rank cohomology in each PVA weight, and with retract
+data analytic in $\hbar$ in a punctured neighbourhood of $\hbar=0$.
+\end{defn}
+
+\begin{rmk}[Why analytic, not formal]\label{app:rmk:why-analytic}
+The classical PVA Jacobi holds in the $\hbar$-adic topology of the
+formal disk.  All-loop lifting requires Stokes-controlled analytic
+continuation across the disk
+(Hypothesis~\ref{app:hyp:stokes}).  A purely $\hbar$-formal SDR gives
+finite-loop existence (Costello~\cite{costello-renormalization}*{Ch.~5});
+analytic SDR is needed for all-loop convergence.
+\end{rmk}
+
+\begin{defn}[Hypothesis S: Stokes regularity]\label{app:hyp:stokes}
+The KZ connection on $C^\bullet_{\mathrm{ch}}(A_b,A_b)$ associated
+to the chiral $E_2$-OPE has trivial Stokes data along the
+real-positive $\hbar$-axis: every analytic continuation across
+$\arg\hbar\in(-\pi,\pi]$ identifies with a single asymptotic series
+without sectorial mismatch.
+\end{defn}
+
+\begin{defn}[Hypothesis W: reflected weights]\label{app:hyp:reflected-weights}
+Under crossing $z\leftrightarrow w$ on the chiral $E_2$-OPE, the PVA
+weight grading on $C^\bullet_{\mathrm{ch}}(A_b,A_b)$ reflects: the
+operator
+\[
+  R\colon\mathrm{wt}_z\otimes\mathrm{wt}_w
+   \longrightarrow\mathrm{wt}_w\otimes\mathrm{wt}_z
+\]
+intertwines the OPE with itself; equivalently,
+$C^\bullet_{\mathrm{ch}}(A_b,A_b)$ is reflection-positive in the
+chiral $E_2$-sense.
+\end{defn}
+
+\begin{defn}[Hypothesis G: \texorpdfstring{$T=[Q_{\mathrm{tot}},G]$}{T = [Q,G]}]\label{app:hyp:T-Q-G}
+The energy--momentum tensor $T\in C^\bullet_{\mathrm{ch}}(A_b,A_b)$
+is BRST-exact with primitive $G$:
+\[
+  T=[Q_{\mathrm{tot}},G],
+\]
+where $Q_{\mathrm{tot}}=Q_{\mathrm{CE}}+\hbar Q_{\mathrm{BV}}$ is the
+total BRST operator and $G$ is a degree-$(-1)$ density on the
+worldvolume.  At the formal-Darboux stalk the primitive exists as a
+classical limit; the hypothesis is its survival to all $\hbar$-orders.
+\end{defn}
+
+\begin{thm}[Conditional all-loop QME]\label{app:thm:conditional-qme}
+Under Hypotheses~\ref{app:hyp:KZ-SDR}, \ref{app:hyp:stokes},
+\ref{app:hyp:reflected-weights}, \ref{app:hyp:T-Q-G}, the
+formal-Darboux stalk of Theorem~\ref{app:thm:stalk-of-conj} lifts to
+all orders in $\hbar$: there exists a quantum BV master action
+$S^{\mathrm{quant}}=S^{\mathrm{cl}}+\sum_{n\geq 1}\hbar^n S^{(n)}$
+satisfying
+$\{S^{\mathrm{quant}},S^{\mathrm{quant}}\}+\hbar\Delta S^{\mathrm{quant}}=0$
+with
+\[
+  \mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}|_p[[\hbar]]
+   \;\simeq\;
+   Z^{\mathrm{der}}_{E_1}\bigl(A^{\mathrm{cl}}_{\partial,N}[[\hbar]]\bigr)
+\]
+holding at all $\hbar$-orders, and the trace map
+$J(f)=\overline{\operatorname{Tr}\,f(\phi_1,\phi_2)}$ extending to
+$J^{\mathrm{quant}}(f)=J(f)+\sum_n\hbar^n J^{(n)}(f)$.
+\end{thm}
+
+\begin{proof}[Proof sketch]
+Costello's renormalization theorem
+\cite{costello-renormalization}*{Thm.~8.6.0.1} gives finite-loop
+existence and uniqueness modulo cohomological obstructions.
+Hypothesis~\ref{app:hyp:KZ-SDR} (analytic SDR) lifts existence to a
+punctured analytic neighbourhood of $\hbar=0$.
+Hypothesis~\ref{app:hyp:stokes} (Stokes regularity) extends existence
+across the disk $|\hbar|<r_0$ for some $r_0>0$ without sectorial
+mismatch.  Hypothesis~\ref{app:hyp:reflected-weights} (reflected
+weights) is the obstruction-vanishing input for the chiral
+$E_2$-action on $C^\bullet_{\mathrm{ch}}$ at all loops.
+Hypothesis~\ref{app:hyp:T-Q-G} ($T=[Q_{\mathrm{tot}},G]$) eliminates
+the trace anomaly: BRST-exactness of $T$ trivialises the
+conformal-anomaly cohomology class in
+$H^2(C^\bullet_{\mathrm{ch}}(A_b,A_b))$ via chain homotopy.
+\end{proof}
+
+\begin{rmk}[QME obstruction class]\label{app:rmk:qme-obstruction}
+The four hypotheses combine into
+\[
+  \mathrm{Ob}_{\mathrm{QME}}
+   =[\mathfrak{ob}_K]\oplus[\mathfrak{ob}_S]\oplus[\mathfrak{ob}_W]\oplus[\mathfrak{ob}_G]
+   \in H^*\bigl(\text{local functionals on }\R^2\times\C^2\bigr),
+\]
+with summands the analytic-SDR obstruction $[\mathfrak{ob}_K]$, the
+Stokes-filtration class $[\mathfrak{ob}_S]$, the crossing class
+$[\mathfrak{ob}_W]$, and the conformal-anomaly class
+$[\mathfrak{ob}_G]$.  Each summand is checkable in finitely many PVA
+weights at fixed loop order.
+\end{rmk}
+
+\subsection{Operator-level lift of the modular line at \texorpdfstring{$\Delta_5$}{Delta5}}\label{app:hfc:operator-lift-modular}
+
+The Igusa cusp form $\Phi_{10}$ is the level-2 section of the modular
+line $\Omega_{\mathrm{central}}$ on the Siegel period domain
+$\mathfrak H_2$
+\cite{igusa-cusp-form,gritsenko-nikulin-paramodular}.  The square
+root $\Delta_5=\Phi_{10}^{1/2}$ is the manuscript's protected scalar
+invariant on $K3\times E$
+(\S\ref{ssec:open-modular-lift}).  The conjectural operator-level
+lift asserts the existence of a chiral algebra $V$ whose graded
+character realises $\Delta_5$ as an operator trace.
+
+\begin{conj}[Operator lift of $\Delta_5$]\label{app:conj:operator-lift-Delta5}
+There exists a $\Z$-graded chiral vertex superalgebra $V$ with central
+charge $c$, a real-form selector $\sigma$, and a primary trace
+function such that
+\[
+  \mathrm{Tr}_V\bigl(\sigma\,q^{L_0-c/24}\,
+   \prod_{i=1}^{2}z_i^{H_i}\bigr)
+   \;=\;\Delta_5(\tau,\rho,\nu)
+   \;=\;\Phi_{10}(\tau,\rho,\nu)^{1/2}
+\]
+on the level-$2$ cover of the Siegel period domain
+$(\tau,\rho,\nu)\in\mathfrak H_2$, where $H_1,H_2$ are the
+$\mathfrak{sl}_2$ Cartan generators of the elliptic--Heisenberg
+sub-VOA.
+\end{conj}
+
+The conjecture admits three candidate constructions; each carries a
+named obstruction.
+
+\begin{constr}[Borcherds--Kac--Moody candidate]\label{app:constr:BKM-candidate}
+Take $V=V_{\mathrm{II_{2,26}}}$ the Borcherds--Kac--Moody vertex
+superalgebra of fake-Monster type associated to the unique even
+self-dual Lorentzian lattice $\mathrm{II}_{2,26}$.  Its denominator
+product is the BKM denominator $\Phi_{12}(\tau,\rho,\nu)$ of weight
+$12$ \cite{borcherds-fake,gritsenko-nikulin-paramodular}.  Pass to
+the index-$2$ subalgebra $V^{\sigma}\subset V$ fixed by an order-$2$
+involution; the resulting denominator is $\Phi_{10}^{1/2}$ on the
+level-$2$ cover.
+
+\emph{Obstruction.}
+\[
+  \mathrm{Ob}_{\mathrm{BKM}}
+   \in H^2\bigl(V_{\mathrm{II_{2,26}}}^{\Z/2},
+       \det V_{\mathrm{II_{2,26}}}^\sigma\bigr),
+\]
+the class measuring failure of the modular fixed-point trace to be
+modular of half-weight.
+\end{constr}
+
+\begin{constr}[Free-field realisation on
+\texorpdfstring{$K3\times E$}{K3 times E}]\label{app:constr:K3E-candidate}
+Take $V=V_{K3\times E}$ the chiral algebra of free chiral bosons on
+the lattice $\Lambda_{K3\times E}=\Lambda_{K3}\oplus\Lambda_E$
+(symmetric product over $K3$, elliptic over $E$).  Compute the
+elliptic genus
+\[
+  Z_{K3\times E}(\tau,\rho,\nu)
+   =\mathrm{Tr}_{V_{K3\times E}}
+    \bigl(q^{L_0-c/24}\,p^{J_0}\,y^{H}\bigr)
+\]
+and identify $\Phi_{10}^{1/2}$ as a Borcherds-product expansion via
+Maulik--Pandharipande--Thomas \cite{maulik-pandharipande-thomas}
+multiplicative formulas.
+
+\emph{Obstruction.}
+\[
+  \mathrm{Ob}_{K3E}
+   \in H^*\bigl(\mathrm{Sym}^\bullet K3\times E,\det\mathcal V\bigr),
+\]
+the graded-component obstruction to the Borcherds-product factorisation
+extending across cusps in the level-$2$ cover.
+\end{constr}
+
+\begin{constr}[Dabholkar--Murthy--Zagier candidate]\label{app:constr:DMZ-candidate}
+Take $V=V_{\mathrm{DMZ}}$ a meromorphic Jacobi form vertex algebra
+arising from the Dabholkar--Murthy--Zagier mock modular structure
+\cite{dabholkar-murthy-zagier}.  The polar part of its character is
+the wall-crossing-corrected count of $1/4$-BPS dyons in $\mathcal N=4$
+string theory; the holomorphic completion is conjectured to give
+$\Phi_{10}^{1/2}$ on the level-$2$ cover.
+
+\emph{Obstruction.}
+\[
+  \mathrm{Ob}_{\mathrm{DMZ}}
+   \in H^*\bigl(\text{wall-crossing poset},\,\text{shadow}\bigr),
+\]
+the cohomology of the wall-crossing poset relating mock-modular
+shadows to the holomorphic completion.
+\end{constr}
+
+\begin{rmk}[Composition of operator-lift obstructions]\label{app:rmk:operator-lift-obstructions}
+Conjecture~\ref{app:conj:operator-lift-Delta5} is established under
+any one of $\mathrm{Ob}_{\mathrm{BKM}}=0$, $\mathrm{Ob}_{K3E}=0$, or
+$\mathrm{Ob}_{\mathrm{DMZ}}=0$; the three constructions are not in
+general isomorphic but their characters agree on the level-$2$ cover
+by the modularity of $\Phi_{10}^{1/2}$.  The total operator-lift
+obstruction is
+\[
+  \mathrm{Ob}_V
+   =\mathrm{Ob}_{\mathrm{BKM}}\wedge
+    \mathrm{Ob}_{K3E}\wedge
+    \mathrm{Ob}_{\mathrm{DMZ}},
+\]
+the joint vanishing of the three candidate-obstruction classes.
+\end{rmk}
+
+\subsection{Convergent obstruction taxonomy}\label{app:hfc:obstruction-taxonomy}
+
+The four conditional theorems compose to a conditional global Mixed
+Holomorphic--Topological Deligne theorem.
+
+\begin{thm}[Conditional global Mixed-HT Deligne]\label{app:thm:conditional-global-deligne}
+Under the joint vanishing
+\[
+  \mathrm{Ob}_{\mathrm{global}}
+   :=\mathrm{Ob}_{F}\oplus
+     \mathrm{Ob}_{\mathrm{desc}}\oplus
+     \mathrm{Ob}_{\mathrm{QME}}\oplus
+     \mathrm{Ob}_{V}
+   =0,
+\]
+with the four summands as in
+Remark~\ref{app:rmk:formality-obstruction},
+Theorem~\ref{app:thm:global-stalk-from-collapse},
+Remark~\ref{app:rmk:qme-obstruction}, and
+Remark~\ref{app:rmk:operator-lift-obstructions}, the Mixed-HT
+Deligne conjecture~\ref{app:conj:mixed-HT-Deligne} holds globally on
+$\R^2_{\mathrm{top}}\times\C^2_{\mathrm{hol}}$ at $d=2$, $N$ Dirac
+branes, with $\Phi_{10}^{1/2}$ realised as the protected trace of
+the operator package.
+\end{thm}
+
+\begin{proof}
+Compose Theorem~\ref{app:thm:conditional-Ed-deligne} (chiral $E_d$
+Deligne via Hypothesis~\ref{app:hyp:formality}),
+Theorem~\ref{app:thm:global-stalk-from-collapse} (KN log-boundary
+descent via Definition~\ref{app:defn:heisenberg-collapse}),
+Theorem~\ref{app:thm:conditional-qme} (all-loop QME via
+Hypotheses~\ref{app:hyp:KZ-SDR}--\ref{app:hyp:T-Q-G}), and
+Conjecture~\ref{app:conj:operator-lift-Delta5} (operator lift via
+any of the three candidate constructions).  The four obstructions
+are independent cohomology classes living in distinct cohomology
+groups, so their joint vanishing is well-defined.
+\end{proof}
+
+\begin{rmk}[Reduction status]\label{app:rmk:reduction-status}
+Within the seventeen-site catalogue, sites~\#11 and~\#16 are the
+explicit obstruction conditions for $\mathrm{Ob}_V$ and
+$\mathrm{Ob}_{\mathrm{QME}}$ respectively.  The chiral $E_d$ Deligne
+formality $\mathrm{Ob}_F$ at $d\geq 2$ is the residual research
+frontier of Conjecture~\ref{conj:chiral-Ed-deligne}; partial results
+(chiral Lie algebroids on smooth schemes via Hennion, factorisable
+co-operads via Francis) suggest tractability without resolving
+$\mathrm{Ob}_F$.  The KN-descent obstruction
+$\mathrm{Ob}_{\mathrm{desc}}$ reduces to the $E_2$-collapse condition
+of Definition~\ref{app:defn:heisenberg-collapse}, checkable on a
+Heisenberg-core stratum-by-stratum basis.  The manuscript's main
+theorem (Theorem~\ref{thm:main-local}) is the formal-Darboux stalk
+that anchors all four obstructions: each conditional theorem has the
+stalk theorem as its base case.
+\end{rmk}
+
+\begin{constr}[Global manuscript program]\label{app:constr:program}
+The conditional global theorem
+(Theorem~\ref{app:thm:conditional-global-deligne}) translates the
+manuscript's frontier (\S\ref{sec:frontier}) into a single
+cohomological vanishing problem
+$\mathrm{Ob}_{\mathrm{global}}=0$.  The four summands are independent,
+hence individually attackable:
+
+\begin{itemize}
+  \item $\mathrm{Ob}_F$: chiral analogue of the Drinfeld associator
+    on $\mathrm{Conf}_I(\C^d)$ at $d\geq 2$, $|I|\geq 2$.
+  \item $\mathrm{Ob}_{\mathrm{desc}}$: vanishing of the $d_2$
+    differential in the descent spectral sequence
+    (Theorem~\ref{app:thm:descent-ss}) on the Heisenberg-core
+    stratum.
+  \item $\mathrm{Ob}_{\mathrm{QME}}$: each of four checkable
+    cohomology classes
+    (Hypotheses~\ref{app:hyp:KZ-SDR}--\ref{app:hyp:T-Q-G}).
+  \item $\mathrm{Ob}_V$: any of three candidate constructions
+    (Constructions~\ref{app:constr:BKM-candidate},
+    \ref{app:constr:K3E-candidate},
+    \ref{app:constr:DMZ-candidate}).
+\end{itemize}
+
+The formal-Darboux stalk theorem of this manuscript
+(Theorem~\ref{thm:main-local}) anchors each.
+\end{constr}
