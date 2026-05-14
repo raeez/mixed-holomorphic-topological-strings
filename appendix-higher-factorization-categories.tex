@@ -15,7 +15,8 @@ constructions reduce to the theory of chiral algebras on curves
 \cite{beilinson-drinfeld-chiral}; at $d=2$ they support the
 manuscript's local theorem as the formal-Darboux stalk of the
 conjecture.  The stalk is not only an abstract $E_2$ value: the
-arity-two holomorphic collision is the diagonal local-cohomology OPE of
+arity-two holomorphic collision is the diagonal local-cohomology
+singular product of
 Theorem~\ref{thm:formal-two-dimensional-holomorphic-ope}.
 
 \subsection{Factorization $E_d$-algebras on smooth complex
@@ -283,7 +284,7 @@ $A_{b_p}=\widehat{\mathcal O}_{\C^2,p}\cong\C[[z_1,z_2]]$ in formal
 Darboux coordinates equipped with the inherited $E_2$-algebra and
 chiral factorisation structure of
 Construction~\ref{app:constr:bulk-fact-Ed}.  Its arity-two singular
-operation is the native diagonal OPE
+operation is the native diagonal singular product
 \[
   \mathsf{J}_x(z)\mathsf{J}_y(w)
   \sim
@@ -470,7 +471,6 @@ Theorem~\ref{thm:app-unreduced-cotangent-lift-obstruction}.
 
 \begin{rmk}[What this manuscript does and does not prove]
 Theorem~\ref{app:thm:stalk-of-conj} computes the formal-Darboux stalk
-of Conjecture~\ref{app:conj:mixed-HT-Deligne} at the Heisenberg-core
 of Conjecture~\ref{app:conj:mixed-HT-Deligne} at the
 formal-Darboux vacuum $b_p$.  The conjecture itself --- the global equivalence on
 $\R^2\times\C^2$ between the bulk
@@ -549,7 +549,7 @@ For $X=\C^2$ and $I=\{1,2\}$, the singular quotient of
 The generator \(\rho^\Delta_{0,0}=K^{(2)}_\Delta\) is the
 two-dimensional Cauchy kernel.  For the Hamiltonian BF algebra, the
 associated binary operation sends \(x\otimes y\) to
-\([x,y]_{\mathfrak g}\), giving the formal OPE of
+\([x,y]_{\mathfrak g}\), giving the formal singular product of
 Theorem~\ref{thm:formal-two-dimensional-holomorphic-ope}.
 \end{rmk}
 
@@ -737,9 +737,9 @@ theorem must restrict.
 The boundary open category $\mathcal{C}^{\mathrm{op}}_\partial$
 (Definition~\ref{app:defn:brane-cat}) is defined globally on the
 Kato--Nakayama log boundary $\partial X^{\mathrm{KN}}$.  This
-subsection writes the descent spectral sequence whose $E_2$-collapse
-identifies the global derived centre with the formal-Darboux stalk at
-the Heisenberg core.
+subsection writes the descent spectral sequence whose \(E_2\)-collapse
+removes one descent obstruction.  It does not by itself prove the
+global mixed-HT Deligne equivalence.
 
 \begin{defn}[Kato--Nakayama topological realisation]\label{app:defn:KN}
 For a log scheme $(X,M_X,\alpha)$ in the sense of
@@ -812,7 +812,8 @@ trivialising the log structure.  There is a spectral sequence
    \;\Rightarrow\;
    H^{p+q}\bigl(\mathcal{C}^{\mathrm{op}}_\partial\bigr),
 \]
-where $\mathcal H^q$ is the $q$-th derived stalk.  At a Heisenberg-core
+where $\mathcal H^q$ is the $q$-th derived stalk.  At a
+formal-Darboux
 point $p\in\partial X^{\mathrm{KN}}$ the stalk
 $\mathcal H^*(\underline{\mathcal{C}^{\mathrm{op}}_\partial})_p$ is
 the formal-Darboux stalk of Theorem~\ref{app:thm:stalk-of-conj}.
@@ -826,58 +827,62 @@ with respect to the log étale cover and convergence by
 Theorem~\ref{app:thm:log-etale-descent}.
 \end{proof}
 
-\begin{defn}[Heisenberg-core $E_2$-collapse]\label{app:defn:heisenberg-collapse}
+\begin{defn}[Formal-Darboux \(E_2\)-collapse]\label{app:defn:heisenberg-collapse}
 The descent spectral sequence of Theorem~\ref{app:thm:descent-ss}
-\emph{collapses at the Heisenberg core} if the differential
+\emph{collapses at the formal-Darboux strata} if the differential
 \[
   d_2\colon
    H^p\bigl(\partial X^{\mathrm{KN}},\mathcal H^q\bigr)
    \longrightarrow
    H^{p+2}\bigl(\partial X^{\mathrm{KN}},\mathcal H^{q-1}\bigr)
 \]
-vanishes at every Heisenberg-core stratum.  Equivalently, the
+vanishes at every formal-Darboux stratum.  Equivalently, the
 formal-Darboux stalks glue across log strata along the local
 symplectic-form trivialisation of
 Proposition~\ref{app:prop:Darboux-equivariance} without higher
 correction.
 \end{defn}
 
-\begin{thm}[Conditional global identification]\label{app:thm:global-stalk-from-collapse}
-Under the Heisenberg-core $E_2$-collapse condition of
-Definition~\ref{app:defn:heisenberg-collapse}, the global
-identification of Conjecture~\ref{app:conj:mixed-HT-Deligne} reduces
-to the formal-Darboux stalk theorem
-(Theorem~\ref{app:thm:stalk-of-conj}):
-\[
-  \mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}
-   \;\simeq\;
-   Z^{\mathrm{der}}_{E_2^{\mathrm{HT}}}\bigl(\mathcal{C}^{\mathrm{op}}_\partial\bigr)
-\]
-holds globally on $\R^2\times\C^2$.  The descent obstruction is
+\begin{thm}[Descent obstruction at the formal-Darboux strata]\label{app:thm:global-stalk-from-collapse}
+The formal-Darboux \(E_2\)-collapse condition of
+Definition~\ref{app:defn:heisenberg-collapse} is precisely the
+vanishing of the first descent obstruction to gluing the
+formal-Darboux stalks across the Kato--Nakayama boundary.  The
+obstruction is
 \[
   \mathrm{Ob}_{\mathrm{desc}}
    =[d_2]
    \in H^2\bigl(\partial X^{\mathrm{KN}},
        \mathrm{Hom}^{-1}(\mathcal H^*,\mathcal H^*)\bigr).
 \]
+When this class vanishes, the local stalk theorem survives this
+descent test.  The global equivalence
+\[
+  \mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}
+   \simeq
+   Z^{\mathrm{der}}_{E_2^{\mathrm{HT}}}
+   \bigl(\mathcal{C}^{\mathrm{op}}_\partial\bigr)
+\]
+still requires the remaining chiral \(E_d\), quantum master equation,
+and global comparison obstructions to vanish.
 \end{thm}
 
 \begin{proof}
-By Theorem~\ref{app:thm:descent-ss} the global cohomology is computed
-by the $E_2$-collapsed spectral sequence; collapse implies global
-sections are the étale-cover gluing of stalks.  By
-Theorem~\ref{app:thm:stalk-of-conj} every Heisenberg-core stalk is
-$C^\bullet_{\mathrm{ch}}(A_{b_p},A_{b_p})$.  By
-Proposition~\ref{app:prop:Darboux-equivariance} the gluing data are
-formal-symplectomorphism equivariant, so they descend to the global
-mixed-HT chiral derived centre on the boundary open category.
+By Theorem~\ref{app:thm:descent-ss}, the first possible obstruction
+to gluing the derived stalks through the chosen log etale cover is the
+\(d_2\)-differential.  Its cohomology class is the displayed
+\(\mathrm{Ob}_{\mathrm{desc}}\).  Vanishing of this class is exactly
+the stated \(E_2\)-collapse condition.  Theorem~\ref{app:thm:stalk-of-conj}
+identifies each formal-Darboux stalk; it does not identify the global
+bulk with the global chiral derived centre without the other
+obstruction classes.
 \end{proof}
 
 \subsection{All-loop QME for finite-jet PVA}\label{app:hfc:all-loop-qme}
 
 The classical PVA Jacobi identity holds at the formal-Darboux stalk
 (Theorem~\ref{thm:reduced-ce-pv-central-operation}) and is the Jacobi
-identity for the native two-dimensional OPE of
+identity for the native two-dimensional singular product of
 Theorem~\ref{thm:formal-two-dimensional-holomorphic-ope}.  Lifting the PVA
 structure to all $\hbar$-orders --- the quantum master equation for
 the finite-jet PVA --- is the content of site~\#16 of the
@@ -922,7 +927,7 @@ analytic SDR is needed for all-loop convergence.
 
 \begin{defn}[Hypothesis S: Stokes regularity]\label{app:hyp:stokes}
 The KZ connection on $C^\bullet_{\mathrm{ch}}(A_b,A_b)$ associated
-to the chiral $E_2$-OPE with kernel \(K^{(2)}_\Delta\) has trivial
+to the formal \(E_2\) singular product with kernel \(K^{(2)}_\Delta\) has trivial
 Stokes data along the
 real-positive $\hbar$-axis: every analytic continuation across
 $\arg\hbar\in(-\pi,\pi]$ identifies with a single asymptotic series
@@ -930,7 +935,7 @@ without sectorial mismatch.
 \end{defn}
 
 \begin{defn}[Hypothesis W: reflected weights]\label{app:hyp:reflected-weights}
-Under crossing $z\leftrightarrow w$ on the chiral $E_2$-OPE of
+Under crossing $z\leftrightarrow w$ on the formal \(E_2\) singular product of
 Theorem~\ref{thm:formal-two-dimensional-holomorphic-ope}, the PVA
 weight grading on $C^\bullet_{\mathrm{ch}}(A_b,A_b)$ reflects: the
 operator
@@ -938,7 +943,7 @@ operator
   R\colon\mathrm{wt}_z\otimes\mathrm{wt}_w
    \longrightarrow\mathrm{wt}_w\otimes\mathrm{wt}_z
 \]
-intertwines the OPE with itself; equivalently,
+intertwines the singular product with itself; equivalently,
 $C^\bullet_{\mathrm{ch}}(A_b,A_b)$ is reflection-positive in the
 chiral $E_2$-sense.
 \end{defn}
@@ -1011,16 +1016,17 @@ The Igusa cusp form $\Phi_{10}$ is the level-2 section of the modular
 line $\Omega_{\mathrm{central}}$ on the Siegel period domain
 $\mathfrak H_2$
 \cite{igusa-cusp-form,gritsenko-nikulin-paramodular}.  The square
-root $\Delta_5=\Phi_{10}^{1/2}$ is the manuscript's protected scalar
-invariant on $K3\times E$
-(\S\ref{ssec:open-modular-lift}).  The conjectural operator-level
-lift asserts the existence of a chiral algebra $V$ whose graded
-character realises $\Delta_5$ as an operator trace.
+root $\Delta_5=\Phi_{10}^{1/2}$ is a scalar modular form in the
+external \(K3\times E\) comparison problem
+(\S\ref{ssec:open-modular-lift}).  The formal-Darboux theorem does
+not construct an operator whose trace is \(\Delta_5\).  The
+operator-level lift asks whether such an object exists after the
+global compact-target theory and its trace have been constructed.
 
 \begin{conj}[Operator lift of $\Delta_5$]\label{app:conj:operator-lift-Delta5}
-There exists a $\Z$-graded chiral vertex superalgebra $V$ with central
-charge $c$, a real-form selector $\sigma$, and a primary trace
-function such that
+There exists a graded vertex-algebraic or factorization-algebraic
+object \(V\), an involution or real form \(\sigma\), and a protected
+trace such that
 \[
   \mathrm{Tr}_V\bigl(\sigma\,q^{L_0-c/24}\,
    \prod_{i=1}^{2}z_i^{H_i}\bigr)
@@ -1028,89 +1034,63 @@ function such that
    \;=\;\Phi_{10}(\tau,\rho,\nu)^{1/2}
 \]
 on the level-$2$ cover of the Siegel period domain
-$(\tau,\rho,\nu)\in\mathfrak H_2$, where $H_1,H_2$ are the
-$\mathfrak{sl}_2$ Cartan generators of the elliptic--Heisenberg
-sub-VOA.
+$(\tau,\rho,\nu)\in\mathfrak H_2\), with the trace compatible with
+the modular line \(\Omega_{\mathrm{central}}\).  This is an open
+operator-construction problem, not a consequence of the
+formal-Darboux stalk.
 \end{conj}
 
-The conjecture admits three candidate constructions; each carries a
-named obstruction.
+Three scalar theories give evidence for the desired trace.  None
+constructs the operator object by itself.
 
 \begin{constr}[Borcherds--Kac--Moody candidate]\label{app:constr:BKM-candidate}
-Take $V=V_{\mathrm{II_{2,26}}}$ the Borcherds--Kac--Moody vertex
-superalgebra of fake-Monster type associated to the unique even
-self-dual Lorentzian lattice $\mathrm{II}_{2,26}$.  Its denominator
-product is the BKM denominator $\Phi_{12}(\tau,\rho,\nu)$ of weight
-$12$ \cite{borcherds-fake,gritsenko-nikulin-paramodular}.  Pass to
-the index-$2$ subalgebra $V^{\sigma}\subset V$ fixed by an order-$2$
-involution; the resulting denominator is $\Phi_{10}^{1/2}$ on the
-level-$2$ cover.
+The Borcherds--Kac--Moody denominator formulas give automorphic
+products, including the fake-Monster denominator and the
+Gritsenko--Nikulin products
+\cite{borcherds-fake,gritsenko-nikulin-paramodular}.  These are
+scalar identities.  Passing from a scalar denominator formula to a
+vertex-algebraic object whose graded trace is \(\Delta_5\) requires an
+additional construction.
 
 \emph{Obstruction.}
-\[
-  \mathrm{Ob}_{\mathrm{BKM}}
-   \in H^2\bigl(V_{\mathrm{II_{2,26}}}^{\Z/2},
-       \det V_{\mathrm{II_{2,26}}}^\sigma\bigr),
-\]
-the class measuring failure of the modular fixed-point trace to be
-modular of half-weight.
+\(\mathrm{Ob}_{\mathrm{BKM}}\) is the obstruction to lifting the
+scalar Borcherds product to an operator trace with the required
+integral form, real structure, and modular covariance.
 \end{constr}
 
 \begin{constr}[Free-field realisation on
 \texorpdfstring{$K3\times E$}{K3 times E}]\label{app:constr:K3E-candidate}
-Take $V=V_{K3\times E}$ the chiral algebra of free chiral bosons on
-the lattice $\Lambda_{K3\times E}=\Lambda_{K3}\oplus\Lambda_E$
-(symmetric product over $K3$, elliptic over $E$).  Compute the
-elliptic genus
-\[
-  Z_{K3\times E}(\tau,\rho,\nu)
-   =\mathrm{Tr}_{V_{K3\times E}}
-    \bigl(q^{L_0-c/24}\,p^{J_0}\,y^{H}\bigr)
-\]
-and identify $\Phi_{10}^{1/2}$ as a Borcherds-product expansion via
-Maulik--Pandharipande--Thomas \cite{maulik-pandharipande-thomas}
-multiplicative formulas.
+The elliptic genus of \(K3\), its second-quantised product, and the
+Donaldson--Thomas / Pandharipande--Thomas comparison on
+\(K3\times E\) supply scalar modular data.  They do not construct a
+free-field chiral algebra on \(K3\times E\) whose trace is
+\(\Delta_5\).
 
 \emph{Obstruction.}
-\[
-  \mathrm{Ob}_{K3E}
-   \in H^*\bigl(\mathrm{Sym}^\bullet K3\times E,\det\mathcal V\bigr),
-\]
-the graded-component obstruction to the Borcherds-product factorisation
-extending across cusps in the level-$2$ cover.
+\(\mathrm{Ob}_{K3E}\) is the obstruction to constructing the compact
+target factorization object, its protected trace, and the descent of
+that trace to the level-\(2\) modular line.
 \end{constr}
 
 \begin{constr}[Dabholkar--Murthy--Zagier candidate]\label{app:constr:DMZ-candidate}
-Take $V=V_{\mathrm{DMZ}}$ a meromorphic Jacobi form vertex algebra
-arising from the Dabholkar--Murthy--Zagier mock modular structure
-\cite{dabholkar-murthy-zagier}.  The polar part of its character is
-the wall-crossing-corrected count of $1/4$-BPS dyons in $\mathcal N=4$
-string theory; the holomorphic completion is conjectured to give
-$\Phi_{10}^{1/2}$ on the level-$2$ cover.
+The Dabholkar--Murthy--Zagier decomposition of meromorphic Jacobi
+forms separates polar and finite parts in the \(1/\Phi_{10}\)
+dyonic counting problem \cite{dabholkar-murthy-zagier}.  This is a
+statement about mock modular and wall-crossing structures.  It is not
+an operator construction of \(\Delta_5\).
 
 \emph{Obstruction.}
-\[
-  \mathrm{Ob}_{\mathrm{DMZ}}
-   \in H^*\bigl(\text{wall-crossing poset},\,\text{shadow}\bigr),
-\]
-the cohomology of the wall-crossing poset relating mock-modular
-shadows to the holomorphic completion.
+\(\mathrm{Ob}_{\mathrm{DMZ}}\) is the obstruction to lifting the
+mock-modular wall-crossing package to an honest operator trace with
+the required holomorphic modular transformation law.
 \end{constr}
 
 \begin{rmk}[Composition of operator-lift obstructions]\label{app:rmk:operator-lift-obstructions}
-Conjecture~\ref{app:conj:operator-lift-Delta5} is established under
-any one of $\mathrm{Ob}_{\mathrm{BKM}}=0$, $\mathrm{Ob}_{K3E}=0$, or
-$\mathrm{Ob}_{\mathrm{DMZ}}=0$; the three constructions are not in
-general isomorphic but their characters agree on the level-$2$ cover
-by the modularity of $\Phi_{10}^{1/2}$.  The total operator-lift
-obstruction is
-\[
-  \mathrm{Ob}_V
-   =\mathrm{Ob}_{\mathrm{BKM}}\wedge
-    \mathrm{Ob}_{K3E}\wedge
-    \mathrm{Ob}_{\mathrm{DMZ}},
-\]
-the joint vanishing of the three candidate-obstruction classes.
+The three candidates are evidence for the same scalar modular form,
+not three completed operator constructions.  The symbol
+\(\mathrm{Ob}_V\) denotes the combined obstruction to constructing an
+operator-level lift from any of these scalar inputs.  It is not a
+wedge product of presently defined cohomology classes.
 \end{rmk}
 
 \subsection{Convergent obstruction taxonomy}\label{app:hfc:obstruction-taxonomy}
@@ -1118,7 +1098,7 @@ the joint vanishing of the three candidate-obstruction classes.
 The four conditional theorems compose to a conditional global Mixed
 Holomorphic--Topological Deligne theorem.
 
-\begin{thm}[Conditional global Mixed-HT Deligne]\label{app:thm:conditional-global-deligne}
+\begin{thm}[Conditional global Mixed-HT Deligne obstruction package]\label{app:thm:conditional-global-deligne}
 Under the joint vanishing
 \[
   \mathrm{Ob}_{\mathrm{global}}
@@ -1135,8 +1115,11 @@ Remark~\ref{app:rmk:qme-obstruction}, and
 Remark~\ref{app:rmk:operator-lift-obstructions}, the Mixed-HT
 Deligne conjecture~\ref{app:conj:mixed-HT-Deligne} holds globally on
 $\R^2_{\mathrm{top}}\times\C^2_{\mathrm{hol}}$ at $d=2$, $N$ Dirac
-branes, with $\Phi_{10}^{1/2}$ realised as the protected trace of
-the operator package.
+branes, provided the construction hypotheses named in those four
+inputs have been supplied.  This implication is conditional.  It does
+not identify a compact-target modular form with an operator trace.
+The appearance of \(\Phi_{10}\) or \(\Phi_{10}^{1/2}\) belongs to the
+separate \(K3\times E\) operator-lift problem.
 \end{thm}
 
 \begin{proof}
@@ -1147,10 +1130,10 @@ Theorem~\ref{app:thm:global-stalk-from-collapse} (KN log-boundary
 descent via Definition~\ref{app:defn:heisenberg-collapse}),
 Theorem~\ref{app:thm:conditional-qme} (all-loop QME via
 Hypotheses~\ref{app:hyp:KZ-SDR}--\ref{app:hyp:T-Q-G}), and
-Conjecture~\ref{app:conj:operator-lift-Delta5} (operator lift via
-any of the three candidate constructions).  The four obstructions
-are independent cohomology classes living in distinct cohomology
-groups, so their joint vanishing is well-defined.
+Conjecture~\ref{app:conj:operator-lift-Delta5} only in the external
+compact-target comparison where that datum is part of the input.  The
+four obstructions are independent cohomology classes living in
+distinct cohomology groups, so their joint vanishing is well-defined.
 \end{proof}
 
 \begin{rmk}[Reduction status]\label{app:rmk:reduction-status}
@@ -1164,12 +1147,12 @@ factorisable co-operads via Francis) give evidence for pieces of the
 package without proving the global theorem.  The KN-descent obstruction
 $\mathrm{Ob}_{\mathrm{desc}}$ reduces to the $E_2$-collapse condition
 of Definition~\ref{app:defn:heisenberg-collapse}, checkable on a
-Heisenberg-core stratum-by-stratum basis.  The manuscript's main
+formal-Darboux stratum-by-stratum basis.  The manuscript's main
 theorem (Theorem~\ref{thm:main-local}) is the formal-Darboux stalk
 that anchors all four obstructions, and
 Theorem~\ref{thm:formal-two-dimensional-holomorphic-ope} supplies its
-arity-two chiral operation: each conditional theorem has the stalk
-theorem, including this diagonal OPE, as its base case.
+arity-two formal diagonal operation: each conditional theorem has the stalk
+theorem, including this diagonal singular product, as its base case.
 \end{rmk}
 
 \begin{constr}[Global manuscript program]\label{app:constr:program}
@@ -1187,7 +1170,7 @@ hence individually attackable:
     Drinfeld associator on \(\mathrm{Conf}_I(\C^d)\), \(|I|\geq2\).
   \item $\mathrm{Ob}_{\mathrm{desc}}$: vanishing of the $d_2$
     differential in the descent spectral sequence
-    (Theorem~\ref{app:thm:descent-ss}) on the Heisenberg-core
+    (Theorem~\ref{app:thm:descent-ss}) on the formal-Darboux
     stratum.
   \item $\mathrm{Ob}_{\mathrm{QME}}$: each of four checkable
     cohomology classes
