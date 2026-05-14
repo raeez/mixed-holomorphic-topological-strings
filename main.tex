@@ -83,16 +83,81 @@ Holomorphic--Topological Deligne conjecture}
   \section*{Summary}
   \addcontentsline{toc}{section}{Summary}
 
-  Mixed holomorphic-topological string theory on
-  \(\R^2_{\mathrm{top}}\times\C^2_{\mathrm{hol}}\) has, at each formal
-  holomorphic-symplectic brane point, a closed sector conjectured to
-  coincide with the derived chiral \(E_2\)-centre of the boundary
-  open category \(\mathcal C^{\mathrm{op}}_\partial\): the Mixed
-  Holomorphic--Topological Deligne conjecture, the two-complex-dimensional
-  extension of the chiral Deligne theorem at \(d=1\) for chiral
-  algebras on curves.  This manuscript proves
-  the formal-Darboux stalk identification of that conjecture at \(N\)
-  Dirac branes over the Heisenberg-core vacuum \(b\): the equivalence
+  The B-model topological string of
+  Bershadsky--Cecotti--Ooguri--Vafa \cite{bcov}, renormalised by
+  Costello and Costello--Li
+  \cite{costello-renormalization,costello-li-quantum-bcov,costello-li-open-closed-bcov},
+  reduces near a holomorphic-symplectic brane point to a
+  holomorphic-topological Hamiltonian BF theory on the formal
+  neighbourhood
+  \(X=\R^2_{t,s}\times\widehat{\C^2}_{0,\mathrm{hol}}\), topological
+  in the worldvolume coordinates \((t,s)\) and holomorphic in the
+  transverse coordinates \((z_1,z_2)\).  The closed-string fields
+  $\mathcal A$ take values in the reduced Hamiltonian Lie algebra of
+  the formal symplectic polydisk,
+  $\mathfrak h=\C[[z_1,z_2]]/\C\cdot 1$ with Poisson bracket
+  $\{f,g\}=\partial_{z_1}f\,\partial_{z_2}g
+  -\partial_{z_2}f\,\partial_{z_1}g$; the antifields $\mathcal B$
+  take values in the continuous Grothendieck--Matlis residue dual
+  $\mathfrak h^\vee_{\mathrm{cont}}=
+  H^2_{(z_1,z_2)}(\C[[z_1,z_2]])\,dz_1dz_2$ paired by
+  $\langle f,\omega\rangle=\Res_0 f\omega$.  Together they form the
+  shifted-cotangent BF Lie algebra
+  $\mathfrak g=\mathfrak h\ltimes\mathfrak h^\vee_{\mathrm{cont}}[1]$
+  on the formal symplectic polydisk
+  $\widehat{\C^2}_0$, with classical action
+  \[
+    S=\int_X\langle\mathcal B,
+      (d+\bar\partial)\mathcal A
+      +\tfrac12[\mathcal A,\mathcal A]_{\mathfrak h}\rangle .
+  \]
+  The classical observables of this theory form a holomorphic
+  factorization algebra on $\C^2$ valued in $E_2$-algebras,
+  $\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}$ --- a
+  two-complex-dimensional chiral algebra of Hamiltonian currents,
+  factorising over the holomorphic surface in the sense of
+  Costello--Gwilliam \cite{costello-gwilliam}.
+
+  \medskip\noindent
+  An open boundary is supplied by a stack of $N$ Dirac branes on
+  the worldline $\R_t\subset X$.  Its two holomorphic transverse
+  coordinates become Chan--Paton matrices
+  $\phi_1,\phi_2\in\mathfrak{gl}_N$ under the substitution
+  $z_i\mapsto\phi_i$, subject to the moment-map constraint
+  $[\phi_1,\phi_2]=0$ resolved derivatively by a Koszul antifield
+  $\psi\in\mathfrak{gl}_N[1]$ with $Q\psi=[\phi_1,\phi_2]$.  The
+  classical open-string algebra on the worldline is the
+  Chevalley--Eilenberg cochain complex
+  \[
+    A^{\mathrm{cl}}_{\partial,N}=
+    C^\bullet_{\mathrm{CE}}\bigl(\mathfrak{gl}_N,\,
+       \mathrm{Sym}(\mathfrak{gl}_N\oplus\mathfrak{gl}_N
+                    \oplus\mathfrak{gl}_N[1])\bigr),
+  \]
+  with Koszul differential $Q\psi=[\phi_1,\phi_2]$.  A closed
+  Hamiltonian $f\in\mathfrak h$ acts on this brane sector through
+  the trace map
+  \[
+    J\colon\mathfrak h\longrightarrow
+        \mathcal O(\mu^{-1}_{\mathrm{der}}(0))^{GL_N},\qquad
+    J(f)=\overline{\operatorname{Tr}\,f(\phi_1,\phi_2)},
+  \]
+  the unique $GL_N$-equivariant primitive single-trace
+  Darboux-natural expression of $f$ on the derived commuting variety
+  $\mu^{-1}_{\mathrm{der}}(0)$ at the formal-Darboux stalk over the
+  Heisenberg-core vacuum $b\in\C^2$.
+
+  \medskip\noindent
+  The Mixed Holomorphic--Topological Deligne conjecture identifies
+  $\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}$ with the chiral derived
+  $E_2$-centre of the boundary open factorisation category
+  $\mathcal C^{\mathrm{op}}_\partial$ on the Kato--Nakayama log
+  boundary $\partial X^{\mathrm{KN}}$ --- the two-complex-dimensional
+  extension of the $d=1$ chiral Deligne theorem for chiral algebras
+  on algebraic curves
+  \cite{beilinson-drinfeld-chiral}*{\S 4}.  This manuscript proves
+  the formal-Darboux stalk identification of that conjecture: the
+  equivalence
   \[
     \mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}|_b
     \;\simeq\;
@@ -101,36 +166,16 @@ Holomorphic--Topological Deligne conjecture}
     HH^\bullet(A^{\mathrm{cl}}_{\partial,N},
                 A^{\mathrm{cl}}_{\partial,N})
   \]
-  as \(E_2\)-algebras between the bulk
-  \(\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}\) restricted to the
-  formal neighbourhood of \(b\) and the derived \(E_1\)-centre /
-  \(E_1\)-Hochschild cohomology of the brane \(E_1\)-algebra
-  \(A^{\mathrm{cl}}_{\partial,N}\) on the worldline \(\R_t\), with
-  formal-Darboux coordinate expression the trace character
-  \(J(f)=\overline{\operatorname{Tr}\,f(\phi_1,\phi_2)}\).
-
-  \medskip\noindent
-  The B-model topological string is governed at all loops by the
-  Kodaira--Spencer master action of
-  Bershadsky--Cecotti--Ooguri--Vafa (BCOV) \cite{bcov} in the
-  renormalized Batalin--Vilkovisky (BV) form of Costello and Costello--Li
-  \cite{costello-renormalization,costello-li-quantum-bcov,costello-li-open-closed-bcov}.
-  Fix a holomorphic-symplectic brane point in a Calabi--Yau target
-  and an admissible protected Hamiltonian restriction of the ambient
-  closed-open theory.  The local model is the holomorphic-topological
-  BF theory on
-  \(X=\R^2_{t,s}\times\C^2_{z_1,z_2}\), topological in \((t,s)\) and
-  holomorphic in \((z_1,z_2)\): the open sector is a stack of \(N\)
-  Dirac branes on the worldline \(\R_t\); the closed sector is the
-  shifted-cotangent local Lie algebra
-  \(\mathfrak g=\mathfrak h\ltimes\mathfrak h^\vee_{\mathrm{cont}}[1]\)
-  on \(\widehat{\C^2}_0\), \(\mathfrak h=\C[[z_1,z_2]]/\C\cdot 1\);
-  the trace map is
-  \(J(f)=\overline{\operatorname{Tr}\,f(\phi_1,\phi_2)}\).
-  Existence of an admissible protected restriction for a given compact
-  target is the matched-conventions theorem
-  \ref{thm:matched-conventions-transfer}, an external input controlled
-  across volumes.
+  as $E_2$-algebras --- the bulk restricted to the formal
+  neighbourhood of $b$, equated with the brane-side derived
+  $E_1$-centre (equivalently the $E_1$-Hochschild cochain complex) by
+  Costello--Gwilliam factorization-algebra bulk--boundary
+  correspondence and Deligne's $E_1$-Hochschild theorem.  The trace
+  map $J$ is the formal Darboux coordinate expression of this
+  equivalence; the formal-Darboux stalk theorem
+  (Theorem~\ref{thm:main-local}) is the tangent vector at one
+  Dirac brane vacuum to a global identification that, away from the
+  stalk, is the open chiral $E_d$-Deligne conjecture at $d=2$.
 
   \medskip\noindent
   \emph{The classical BV theory.}  The BV fields are an
