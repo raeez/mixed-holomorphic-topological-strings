@@ -7765,60 +7765,84 @@ the Casimir converges (Theorem~\ref{thm:wt-canonical-habitat}).
 		  precisely the two stated admissibility criteria.
 \end{proof}
 
-\begin{thm}[Formal-Darboux stalk identification at $N$ Dirac branes]\label{thm:main-local}
+\begin{thm}[Universal local mixed-HT Deligne theorem at $N$ Dirac branes]\label{thm:main-local}
   Fix the formal Darboux local model
   \[
     X=\R_t\times\R_s\times\widehat\C^2_{z_1,z_2},\qquad
-    L=\R_t\times\{s=z_1=z_2=0\},
+    L=\R_t\times\{s=z_1=z_2=0\},\qquad
+    R=\C[[z_1,z_2]],\qquad
+    \mathfrak h=R/\C\cdot 1,
   \]
-  the reduced Hamiltonian Lie algebra
-  $\mathfrak h=\C[[z_1,z_2]]/\C\cdot 1$ with Poisson bracket
-  $\{f,g\}=\partial_{z_1}f\,\partial_{z_2}g-\partial_{z_2}f\,\partial_{z_1}g$,
-  Grothendieck--Matlis residue dual
-  $P=\mathfrak h^\vee_{\mathrm{cont}}=
-  \bigoplus_{a+b>0}\C\,\rho_{a,b}$,
-  $\rho_{a,b}=z_1^{-a-1}z_2^{-b-1}\,dz_1dz_2$ paired by
-  $\langle\rho_{a,b},z_1^mz_2^n\rangle=\delta_{a,m}\delta_{b,n}$, and
-  shifted-cotangent BF Lie algebra
-  $\mathfrak g=\mathfrak h\ltimes P[1]$.  The Capelli scalar
-  $\hbar N[\bar c]=\Omega_{\mathrm{central}}|_{J(f)}\in
-  H^2_{\mathrm{Lie}}(\bar A,\C)[[\hbar]]$,
-  $\bar A=\C[z_1,z_2]/\C\cdot 1$
-  (Theorem~\ref{thm:capelli-equals-modular-curvature}), determines
-  the projective central extension
+  with Poisson bracket $\{f,g\}=\partial_{z_1}f\,\partial_{z_2}g
+  -\partial_{z_2}f\,\partial_{z_1}g$ and Grothendieck--Matlis residue
+  dual
   \[
+    P=\mathfrak h^\vee_{\mathrm{cont}}\simeq
+      H^2_{\mathfrak m}(R)\,dz_1dz_2
+      =\bigoplus_{a+b>0}\C\,\rho_{a,b},
+    \qquad
+    \rho_{a,b}=z_1^{-a-1}z_2^{-b-1}\,dz_1dz_2,
+    \quad\mathfrak m=(z_1,z_2),
+  \]
+  $\langle\rho_{a,b},z_1^mz_2^n\rangle=\delta_{a,m}\delta_{b,n}$.
+  The shifted-cotangent Hamiltonian Lie algebra
+  $\mathfrak g=\mathfrak h\ltimes P[1]$ admits, at a stack of $N$
+  Dirac branes, the Capelli-projective central extension
+  \begin{equation}\label{eq:cent-extension}
     0\longrightarrow\C\cdot K\longrightarrow
     \widehat{\mathfrak g}_{\mathrm{cent}}\longrightarrow
     \mathfrak g\longrightarrow 0,\qquad
     [(f,aK),(g,bK)]=\bigl(\{f,g\},\,\hbar N\,\omega(f,g)\,K\bigr),
-  \]
-  with $K$ mapping to the trace-$U(1)$ centre.  Write
+    \quad
+    \omega(f,g)=[\{f,g\}]_0,
+  \end{equation}
+  with central charge
+  $\hbar N[\bar c]=\Omega_{\mathrm{central}}|_{J(f)}\in
+  H^2_{\mathrm{Lie}}(\bar A,\C)[[\hbar]]$,
+  $\bar A=\C[z_1,z_2]/\C\cdot 1$
+  (Theorem~\ref{thm:capelli-equals-modular-curvature}), and with
+  $K$ mapping to the trace-$U(1)$ centre.  Let
   \[
     A^{\mathrm{cl}}_{\partial,N}=
     C^\bullet_{\mathrm{CE}}\bigl(\mathfrak{gl}_N,\,
-         \mathrm{Sym}(\mathfrak{gl}_N\oplus\mathfrak{gl}_N
-                      \oplus\mathfrak{gl}_N[1])\bigr),
-    \qquad Q\psi=[\phi_1,\phi_2],
+       \mathrm{Sym}(\mathfrak{gl}_N\oplus\mathfrak{gl}_N
+                    \oplus\mathfrak{gl}_N[1])\bigr),
+    \qquad
+    Q\phi_i=0,\quad Q\psi=[\phi_1,\phi_2],
   \]
-  for the finite-$N$ brane $E_1$-algebra retaining
-  $\operatorname{Tr}\mathbf 1=N$, and $\mathcal B^{\mathrm{adm}}$
-  for the admissible filtered nuclear Tate / pro-Matlis / Capelli-projective
-  derived-centre category of Appendix~\ref{app:completion-blueprint}:
-  the host coefficient category in which continuous duality is exact,
-  the Casimir of $\mathfrak h$ converges along the coordinate-window
-  filtration $W_n=\mathrm{span}_\C\{z_1^az_2^b:0<a+b\leq n\}$
-  (Theorem~\ref{thm:wt-cotangent-lift}), the cotangent side is
-  pro-Matlis, the singular kernel $K^{(2)}_\Delta$ is bracket-
-  and kernel-admissible, the chiral $E_2$-operadic centrality
-  homotopies act, and the trace-$U(1)$ centre is implemented as the
-  projective central charge $\hbar N[\bar c]$.  Inside
-  $\mathcal B^{\mathrm{adm}}$ the formal-Darboux stalk of the bulk
-  holomorphic factorization algebra
+  be the finite-$N$ brane $E_1$-algebra retaining
+  $\operatorname{Tr}\mathbf 1=N$, and $\mathcal B^{\mathrm{adm}}$ the
+  admissible filtered nuclear Tate / pro-Matlis / Capelli-projective
+  derived-centre category of Appendix~\ref{app:completion-blueprint},
+  characterised by:
+  \begin{enumerate}[label=\textup{(\roman*)}]
+    \item continuous duality is exact;
+    \item the residue pairing $\mathfrak h\otimes P\to\C$ is perfect;
+    \item the diagonal Casimir
+      $C=\sum_I H_I\otimes\eta_I\in\mathfrak h\widehat\otimes P$
+      converges in the weighted nuclear topology;
+    \item the Hamiltonian bracket on $\mathfrak h$ and the
+      coadjoint action on $P$ are continuous, with weighted
+      Köthe seminorms
+      $p_n(\{x,y\})\leq C_n\,p_{n+2}(x)\,p_{n+2}(y)$;
+    \item the diagonal local-cohomology kernel
+      $K^{(2)}_\Delta=d\zeta_1d\zeta_2/(\zeta_1\zeta_2)$ on
+      $\Delta\subset\C^2_z\times\C^2_w$ is bracket- and
+      kernel-admissible;
+    \item the chiral $E_2$ Hochschild centrality homotopy hierarchy
+      $\{h_{\alpha,a},h_{\alpha,a,b},\dots\}$ lives in the completed
+      convolution Lie algebra;
+    \item the scalar-contact and QME counterterm towers
+      $\{C_{n,M}\}$ are Milnor/Roos-compatible
+      $\pi_{M,N}C_{n,M}=C_{n,N}$.
+  \end{enumerate}
+  Then the formal-Darboux stalk of the bulk mixed-HT Hamiltonian
+  BF factorization algebra
   $\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}=\pi_*
   C^{\mathrm{CE}}_\bullet(\Omega^\bullet_c(\R^2)
   \widehat\otimes\Omega^{0,\bullet}_c(\C^2)
   \widehat\otimes\widehat{\mathfrak g}_{\mathrm{cent}})$ at the brane
-  vacuum $b$ satisfies
+  vacuum $b$ satisfies, as $E_2$-algebras in $\mathcal B^{\mathrm{adm}}$,
   \begin{equation}\label{eq:thm-A-equivalence}
     \mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}\big|_b
     \;\simeq\;
@@ -7829,83 +7853,167 @@ the Casimir converges (Theorem~\ref{thm:wt-canonical-habitat}).
     \;\simeq\;
     HH^\bullet_{\mathrm{adm}}\!\bigl(
       A^{\mathrm{cl}}_{\partial,N},
-      A^{\mathrm{cl}}_{\partial,N}\bigr)
+      A^{\mathrm{cl}}_{\partial,N}\bigr),
   \end{equation}
-  as $E_2$-algebras, where $Z^{\mathrm{der,adm}}_{E_1}$ and
-  $HH^\bullet_{\mathrm{adm}}$ are the derived $E_1$-centre and
-  Hochschild cochain complex computed in $\mathcal B^{\mathrm{adm}}$.
-  The closed-to-open dictionary on Chevalley--Eilenberg generators
-  reads
-  \[
+  determined on Chevalley--Eilenberg generators by
+  \begin{equation}\label{eq:ce-pv-dictionary-strong}
     c_f\;\longmapsto\;\theta_f\in HH^1_{\mathrm{adm}},\qquad
     u_f\;\longmapsto\;J(f)\cdot(-)\in HH^0_{\mathrm{adm}},\qquad
-    J(f)=\operatorname{Tr}\,f(\phi_1,\phi_2),
-  \]
-  with $\theta_f$ the Hamiltonian Schouten derivation and the
-  trace-$U(1)$ centre $K$ mapping to $\operatorname{Tr}\mathbf 1=N$.
-  The arity-two singular product is
-  \[
+    K\;\longmapsto\;\operatorname{Tr}\mathbf 1=N,
+  \end{equation}
+  with trace map $J(f)=\operatorname{Tr}\,f(\phi_1,\phi_2)$ and
+  Schouten derivation
+  \begin{equation}\label{eq:schouten-explicit}
+    \theta_f(\phi_1)=-\partial_{z_2}f(\phi_1,\phi_2),\qquad
+    \theta_f(\phi_2)=\;\partial_{z_1}f(\phi_1,\phi_2),\qquad
+    Q\theta_f(\psi)=\theta_f([\phi_1,\phi_2]).
+  \end{equation}
+  The arity-two holomorphic singular product on linear currents
+  $\mathsf J_x$, $x\in\widehat{\mathfrak g}_{\mathrm{cent}}$, is
+  \begin{equation}\label{eq:ope-linear}
     \mathsf J_x(z)\mathsf J_y(w)\;\sim\;
-    K^{(2)}_\Delta(z,w)\,\mathsf J_{[x,y]_{\widehat{\mathfrak g}_{\mathrm{cent}}}}(w),
-    \qquad
-    K^{(2)}_\Delta(z,w)=\frac{d\zeta_1\,d\zeta_2}{\zeta_1\zeta_2},
-    \quad\zeta_i=z_i-w_i,
-  \]
-  the diagonal local-cohomology residue class on
-  $\Delta\subset\C^2_z\times\C^2_w$.  The scalar-reduced shadow
-  $K=0$ recovers the equivalence with $A^{\mathrm{cl,red}}_{\partial,N}
-  =A^{\mathrm{cl}}_{\partial,N}/\C\cdot\operatorname{Tr}\mathbf 1$
-  and $J(f)\rightsquigarrow\overline{\operatorname{Tr}\,f(\phi_1,\phi_2)}$.
+    K^{(2)}_\Delta(z,w)\,
+      \mathsf J_{[x,y]_{\widehat{\mathfrak g}_{\mathrm{cent}}}}(w),
+    \qquad\zeta_i=z_i-w_i;
+  \end{equation}
+  on Hamiltonian generators $\mathsf J_f$, $f\in\mathfrak h$, the
+  finite-$N$ projective correction is
+  \begin{equation}\label{eq:ope-projective}
+    \mathsf J_f(z)\mathsf J_g(w)\;\sim\;
+    K^{(2)}_\Delta(z,w)\bigl(\mathsf J_{\{f,g\}}(w)
+      +\hbar N[\{f,g\}]_0\cdot\mathbf 1\bigr).
+  \end{equation}
+  The forgetful functor
+  $U_{\mathrm{sc}}\colon\mathcal B^{\mathrm{adm}}\to
+  \mathcal B^{\mathrm{red}}$ sending $K\mapsto 0$,
+  $\hbar N[\bar c]\mapsto 0$, the pro-Matlis tower
+  $\mathcal P_q^\Pi=\varprojlim P_{\leq N}\mapsto P_{\mathrm{coord}}$,
+  the centrality homotopy hierarchy to its cohomology class, and
+  the QME counterterm tower to the classical CE/PV differential
+  recovers the scalar-reduced equivalence
+  $\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}|_b^{\mathrm{red}}\simeq
+  C^\bullet_{\mathrm{CE,cont}}(\mathfrak g)\simeq
+  HH^\bullet_{\mathrm{red}}(A^{\mathrm{cl,red}}_{\partial,N},
+  A^{\mathrm{cl,red}}_{\partial,N})$,
+  $A^{\mathrm{cl,red}}_{\partial,N}=
+  A^{\mathrm{cl}}_{\partial,N}/\C\cdot\operatorname{Tr}\mathbf 1$,
+  $J(f)\rightsquigarrow\overline{\operatorname{Tr}\,f(\phi_1,\phi_2)}$.
 \end{thm}
 
 \begin{proof}
-  Inside $\mathcal B^{\mathrm{adm}}$, the coordinate-window filtration
-  $W_n$ is preserved by Schouten action
-  $\theta_{z_1}=\partial_{z_2}$, $\theta_{z_2}=-\partial_{z_1}$,
-  $\theta_f(W_n)\subset W_{n+\deg f-1}$, and
-  Theorem~\ref{thm:wt-cotangent-lift} identifies
-  $\widehat{\mathfrak g}_{\mathrm{cent}}$ as
-  $\varprojlim_n(\mathfrak h/W_n^\perp\ltimes(W_n)^\vee[1])
-  \oplus\C\cdot K$ with admissible duality and conilpotent CE chains.
+  Nine identifications inside $\mathcal B^{\mathrm{adm}}$.
+
+  \emph{(1) BV locality.}
+  The local Lie algebra
+  $\Omega^\bullet_c(U)\widehat\otimes\Omega^{0,\bullet}_c(B)
+  \widehat\otimes\widehat{\mathfrak g}_{\mathrm{cent}}$ with
+  differential $d+\bar\partial+d_{\mathrm{CE}}$ is a mixed-HT local
+  Lie algebra; topological translations $L_v=[Q,\iota_v]$ and
+  antiholomorphic translations
+  $L_{\partial/\partial\bar z_i}=[Q,\iota_{\partial/\partial\bar z_i}]$
+  are $Q$-exact, so $\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}$ is
+  locally constant on $\R^2_{\mathrm{top}}$ and holomorphic on
+  $\C^2_{\mathrm{hol}}$.
+
+  \emph{(2) Formal stalk contraction.}
+  Dolbeault contraction
+  $\Omega^{0,\bullet}_c(B)\to\C[[z_1,z_2]]$ and disk contraction
+  $\Omega^\bullet_c(D^2)\to\C[-2]$ give
+  $\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}|_b\simeq
+  C^\bullet_{\mathrm{CE,cont}}(\widehat{\mathfrak g}_{\mathrm{cent}})$.
+
+  \emph{(3) Trace descends through the Koszul complex.}
+  Adjacent-swap exactness
+  $\operatorname{Tr}(u\phi_1\phi_2v)-\operatorname{Tr}(u\phi_2\phi_1v)
+  =Q\operatorname{Tr}(\psi vu)$ (Lemma~\ref{lem:adjacent-swaps})
+  makes $J(f)=\operatorname{Tr}\,f(\phi_1,\phi_2)$ well defined on
+  the derived commuting stack $[\mu^{-1}_{\mathrm{der}}(0)/GL_N]$;
+  primitive single-trace Darboux-natural normalisation
+  $J(z_i)=\operatorname{Tr}\phi_i$ forces $J$ monomial by monomial
+  through Procesi--Razmyslov stable invariants \cites{procesi,razmyslov}
+  (Proposition~\ref{prop:stable-trace-invariants}) and
+  Loday--Quillen--Tsygan primitivity \cites{loday-quillen,tsygan}.
+
+  \emph{(4) Hamiltonian action preserves the constraint.}
+  The Schouten derivation \eqref{eq:schouten-explicit} satisfies
+  $\theta_f([\phi_1,\phi_2])\in([\phi_1,\phi_2])$, extends to $\psi$
+  with $[Q,\theta_f]=0$, and represents a class
+  $\theta_f\in HH^1_{\mathrm{adm}}(A^{\mathrm{cl}}_{\partial,N})$.
+
+  \emph{(5) Matrix bracket equals Hamiltonian bracket plus Capelli.}
+  Direct computation on monomials
+  $f=z_1^kz_2^\ell$, $g=z_1^mz_2^n$ gives
+  $\{J(f),J(g)\}_\partial=(kn-\ell m)J(z_1^{k+m-1}z_2^{\ell+n-1})
+  +N[\{f,g\}]_0$
+  (Lemma~\ref{lem:natural-correction-obstruction}); the noncentral
+  part is the Hamiltonian Lie bracket, the central part is
+  represented by $K\in\widehat{\mathfrak g}_{\mathrm{cent}}$.
+
+  \emph{(6) CE/PV identity.}
+  The shifted-cotangent CE/PV isomorphism
+  $C^\bullet_{\mathrm{CE}}(\mathfrak l\ltimes\mathfrak l^\vee[1])
+  \simeq PV(\mathbf S(\mathfrak l))$ for finite-dimensional
+  $\mathfrak l$ extends to the formal symplectic disk by finite
+  coordinate windows (Theorem~\ref{thm:wt-cotangent-lift}) and the
+  continuity estimate $p_n(\{x,y\})\leq
+  C_n\,p_{n+2}(x)\,p_{n+2}(y)$ in the weighted Köthe seminorms of
+  $\mathcal B^{\mathrm{adm}}$:
+  $C^\bullet_{\mathrm{CE,cont}}(\widehat{\mathfrak g}_{\mathrm{cent}})
+  \simeq PV_{\mathrm{adm}}(\mathrm{Sym}\,\mathfrak h)^{GL_N}$
+  (Theorem~\ref{thm:universal-ce-pv-koszul-criterion},
+  Theorem~\ref{thm:reduced-ce-pv-central-operation}).
+
+  \emph{(7) Continuous Hochschild--Kostant--Rosenberg.}
   The Tate bar-cobar Quillen equivalence
   (Theorem~\ref{thm:tate-bar-cobar-quillen}) and the universal
   filtered cobar recognition criterion
-  (Theorem~\ref{thm:universal-filtered-cobar-recognition}) supply
-  the continuous Hochschild--Kostant--Rosenberg isomorphism
+  (Theorem~\ref{thm:universal-filtered-cobar-recognition}) identify
   \[
-    HH^\bullet_{\mathrm{adm}}\!\bigl(A^{\mathrm{cl}}_{\partial,N},
-                    A^{\mathrm{cl}}_{\partial,N}\bigr)
+    PV_{\mathrm{adm}}\!\bigl(\mathrm{Sym}\,\mathfrak h\bigr)^{GL_N}
     \;\simeq\;
-    PV^\bullet_{\mathrm{adm}}\!\bigl(\mathrm{Sym}\,\mathfrak h\bigr)^{GL_N}
+    HH^\bullet_{\mathrm{adm}}\!\bigl(A^{\mathrm{cl}}_{\partial,N},
+                                     A^{\mathrm{cl}}_{\partial,N}\bigr)
   \]
-  on the formal symplectic disk, the right-hand side being polyvector
-  fields computed in $\mathcal B^{\mathrm{adm}}$.  The matrix Poisson
-  identity reads as cohomology class through adjacent-swap exactness
-  (Lemma~\ref{lem:adjacent-swaps}) and natural-correction primitivity
-  (Lemma~\ref{lem:natural-correction-obstruction}); the dictionary
-  $c_f\mapsto\theta_f$, $u_f\mapsto O_f$ is
-  Theorem~\ref{thm:reduced-ce-pv-central-operation}, realising the
-  Koszul resolution of $C^\bullet_{\mathrm{ch}}(A_b,A_b)$.  The
-  two-variable diagonal expansion
-  $K^{(2)}_\Delta=d\zeta_1d\zeta_2/(\zeta_1\zeta_2)$ on
-  $\Delta\subset\C^2_z\times\C^2_w$ is the chiral $E_2$-operadic
-  product supplied by the support-local principal-part current datum
-  (Theorem~\ref{thm:reduced-principal-part-boundary-current});
-  operadic associativity is local-factorization compatibility on
-  disjoint and nested polydisks, the higher operations inherited as
-  part of the chiral $E_2$ structure through the
+  inside $\mathcal B^{\mathrm{adm}}$; the $E_2$-Gerstenhaber bracket
+  on $HH^\bullet_{\mathrm{adm}}$ matches the Schouten bracket on
+  $PV_{\mathrm{adm}}$ on generators.
+
+  \emph{(8) $E_2$-compatibility.}
+  Local constancy on $\R^2_{\mathrm{top}}$ supplies the bulk
+  $E_2$-structure; the Lurie $E_1$-Hochschild theorem
+  \cite{lurie-ha}*{Theorem~5.5.3.11} supplies the brane
+  $E_2$-structure on $HH^\bullet_{\mathrm{adm}}$; the
   factorization-algebra bulk-boundary correspondence
-  \cite{costello-gwilliam}.  The $E_1$-Hochschild theorem
-  \cite{lurie-ha}*{Theorem~5.5.3.11} transports the $E_2$-structure
-  across $HH^\bullet_{\mathrm{adm}}$ through the chiral
-  Deligne--Tamarkin centrality
-  $A\rightsquigarrow Z^{\mathrm{der}}_{\mathrm{ch}}(A)$.  The
-  projective Capelli completion absorbs $K\mapsto\operatorname{Tr}
-  \mathbf 1$ into the central charge $\hbar N[\bar c]=
-  \Omega_{\mathrm{central}}|_{J(f)}$
-  (Theorem~\ref{thm:capelli-equals-modular-curvature}); the
-  finite-$N$ scalar anomaly is the curvature of the modular line
-  bundle at the trace generator.
+  \cite{costello-gwilliam} matches them.  Generators satisfy
+  $[\theta_f,\theta_g]=\theta_{\{f,g\}}$,
+  $\theta_f(J(g))=J(\{f,g\})$,
+  $[J(f),J(g)]_{\mathrm{proj}}=\hbar N[\{f,g\}]_0$; the chiral
+  Deligne--Tamarkin one-up
+  $A\rightsquigarrow Z^{\mathrm{der}}_{\mathrm{ch}}(A)$ and the
+  Hochschild centrality homotopies of $\mathcal B^{\mathrm{adm}}$
+  fix the higher operadic coherences.
+
+  \emph{(9) Singular holomorphic product.}
+  The diagonal local-cohomology class
+  $[d\zeta_1d\zeta_2/(\zeta_1\zeta_2)]\in
+  H^2_\Delta(\C[[z_1,z_2,w_1,w_2]])\,d\zeta_1d\zeta_2$
+  (Theorem~\ref{thm:reduced-principal-part-boundary-current}) is
+  the arity-two chiral $E_2$ singular product
+  \eqref{eq:ope-linear}; on Hamiltonian generators the central
+  cocycle $\omega(f,g)=[\{f,g\}]_0$ contributes the projective
+  correction $\hbar N[\{f,g\}]_0\cdot\mathbf 1$ of
+  \eqref{eq:ope-projective}.
+
+  The forgetful functor $U_{\mathrm{sc}}$ kills $K$, the central
+  charge $\hbar N[\bar c]$, the pro-Matlis tail, the centrality
+  homotopy hierarchy (modulo cohomology), and the QME counterterm
+  tower; the surviving image is the scalar-reduced CE/PV equivalence.
+  Strictness is detected by $\hbar N[\bar c]\neq 0$ in
+  $\mathcal B^{\mathrm{adm}}$ versus
+  $\hbar N[\bar c]=0$ in $\mathcal B^{\mathrm{red}}$, witnessed
+  classically by $\{\operatorname{Tr}\phi_1,\operatorname{Tr}\phi_2\}=N$
+  and quantum-mechanically by $[\Phi_\hbar(z_1),\Phi_\hbar(z_2)]_\star
+  =\hbar N\cdot I$.
 \end{proof}
 
 \begin{thm}[Hamiltonian trace generators exhaust the admissible $E_1$-Hochschild centre]\label{thm:protected-summand-exhausts}
@@ -7952,6 +8060,59 @@ the Casimir converges (Theorem~\ref{thm:wt-canonical-habitat}).
   Theorem~\ref{thm:universal-ce-pv-koszul-criterion} contains every
   $J(f)$, every $\theta_f$, and $K$, and is closed under cup product
   and Gerstenhaber bracket.
+\end{proof}
+
+\begin{prop}[Monotone strength tower of the formal-Darboux Deligne theorem]\label{prop:monotone-strength-tower}
+  The local theorem sits in a tower of theorem packages
+  $T=(\mathcal C,\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}},
+  A^{\mathrm{cl}}_\partial,Z,\Phi,\mathcal O,\mathcal H)$ connected
+  by conservative forgetful functors
+  \[
+    T_{\mathrm{compact}}
+    \xrightarrow{\,U_{\mathrm{target}}\,}
+    T_{\mathrm{KN,global}}
+    \xrightarrow{\,\mathrm{Stalk}_b\,}
+    T_{\mathrm{adm,Capelli}}
+    \xrightarrow{\,H_Q\,}
+    T_{P_0^B}
+    \xrightarrow{\,\mathrm{gr}_{\hbar,F}\,}
+    T_{\mathrm{coord}}
+    \xrightarrow{\,U_B\,}
+    T_{\mathrm{red}}.
+  \]
+  Each arrow is forgetful downward and structure-adding upward;
+  every $T_{i+1}\Rightarrow T_i$.  Strictness is witnessed at each
+  rung by data destroyed under the corresponding forgetful functor:
+  the Capelli projective curvature $\hbar N[\bar c]$; the pro-Matlis
+  residue tower $\mathcal P_q^\Pi=\varprojlim P_{\leq N}$; the
+  diagonal local-cohomology kernel $K^{(2)}_\Delta$; the Hochschild
+  centrality homotopy hierarchy
+  $\{h_{\alpha,a},h_{\alpha,a,b},\dots\}$; the all-loop QME
+  counterterm tower
+  $\{C_{n,M}\}\in\mathfrak Q^\bullet_{w,\partial,\hbar}$.
+  Theorem~\ref{thm:main-local} is the rung $T_{\mathrm{adm,Capelli}}$.
+\end{prop}
+
+\begin{proof}
+  $U_{\mathrm{target}}$ forgets compact-target comparison data of
+  Theorem~\ref{thm:matched-conventions-transfer}.  $\mathrm{Stalk}_b$
+  restricts to the formal Darboux neighbourhood: the descent class
+  $\operatorname{Ob}^{\mathrm{desc}}_{\mathrm{KN}}$ vanishes on a
+  contractible polydisk, and the global chiral $E_2$-Deligne datum
+  restricts to the arity-two kernel $K^{(2)}_\Delta$.  $H_Q$ takes
+  cohomology of the QME differential, retaining the induced
+  projective $E_2$-central action on $H^\bullet$.
+  $\mathrm{gr}_{\hbar,F}$ takes the associated graded for the
+  $\hbar$-adic and scalar-contact filtrations, turning the
+  projective quantum centre into its classical $P_0$-shadow with
+  the cocycle as leading scalar class.  $U_B$ forgets the topology,
+  convergence, and kernel admissibility of $\mathcal B^{\mathrm{adm}}$,
+  retaining the coordinate CE/PV identity
+  $c_f\mapsto\theta_f$, $u_f\mapsto O_f$.  The terminal arrow to
+  $T_{\mathrm{red}}$ quotients constants, killing $K$ and the
+  pro-Matlis tail.  Each kernel is detected by a named strictness
+  witness; conservativity follows from injectivity on the witness
+  classes.
 \end{proof}
 
 \begin{rmk}[Admissible CE/PV criterion and specialization]
