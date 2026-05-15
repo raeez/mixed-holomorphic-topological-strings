@@ -661,11 +661,6 @@ obstruction to acceptance.
 
 \section{The setup}\label{sec:setup}
 
-This section defines the formal-Darboux stalk chart and the
-Hamiltonian BF data on which the main local theorem
-(Theorem~\ref{thm:main-local}) and the global obstruction-vanishing
-theorem (Theorem~\ref{thm:main-global-conditional}) rest.
-
 \subsection{The Dirac brane formal-stalk chart in one calculation}\label{ssec:formal-darboux-stalk-one-calculation}
 
 \begin{defn}[Formal-Darboux stalk chart at a brane vacuum]
@@ -929,9 +924,15 @@ forced by item~(2) of Proposition~\ref{prop:three-localities}]
   \(L_v=[Q,\iota_v]\).  Attaching branes means specifying a cyclic
   open BV theory and the bulk-to-boundary central-operation data it
   carries.  In a de Rham model the closed fields carry \(d_M\) plus
-  the BV linearised differential, and the locally constant
-  factorization product records collision of operators up to
-  isotopy.
+  the BV linearised differential; for pairwise disjoint disks
+  \(U_1,\ldots,U_k\subset V\), the locally constant factorization
+  product
+  \(\bigotimes_i\mathrm{Obs}^{\mathrm{cl}}(U_i)\to
+  \mathrm{Obs}^{\mathrm{cl}}(V)\) is the operator product on disjoint
+  supports, depending only on the isotopy class of the embedding by
+  the translation homotopy \(L_v=[Q,\iota_v]\); equivalently the
+  Lurie--Costello--Gwilliam \(E_n\)-algebra structure on the value at a
+  single disk.
 \end{defn}
 
 \begin{rmk}[Canonical completion]
@@ -1343,7 +1344,7 @@ formal-local claim.
 
 \input{two-dimensional-holomorphic-ope}
 
-\subsubsection{The mixed HT factorization spine: \texorpdfstring{\(E_2\)}{E2} bulk, \texorpdfstring{\(E_1\)}{E1} brane, derived-centre map}\label{sssec:mixed-ht-factorization-spine}
+\subsubsection{The closed--open factorization triple: \texorpdfstring{\(E_2\)}{E2} bulk, \texorpdfstring{\(E_1\)}{E1} brane, derived-centre map}\label{sssec:mixed-ht-factorization-spine}
 
 The local-string-theoretic content of the model is exhausted by three
 factorization objects and the morphism between them.  All three are
@@ -1434,7 +1435,9 @@ of Construction~\ref{constr:reduced-bv-algebra}.
     \mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}(B)
       =\mathcal F^{\mathrm{cl}}_{\mathrm{Ham}}(D^2\times B)
   \]
-  is naturally an \(E_2\)-algebra; the assignment
+  is an \(E_2\)-algebra under the Lurie--Costello--Gwilliam
+  locally constant factorization structure on \(\R^2\);
+  the assignment
   \(B\mapsto\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}(B)\) is a holomorphic
   factorization algebra on \(\C^2\) valued in \(E_2\)-algebras.
 \end{cor}
@@ -7358,7 +7361,8 @@ coordinate \(u\) and the Schouten action on observables through the
 Hamiltonian coordinate \(c\).  The dictionary
 \(c_f\mapsto\theta_f,\ u_f\mapsto J(f)\) is the Koszul resolution of
 \(HH^\bullet(A^{\mathrm{cl}}_{\partial,N},A^{\mathrm{cl}}_{\partial,N})\) at the chart
-\(A_{b_p}\); the cotangent CE/PV reduced central-operation spine of
+\(A_{b_p}\); the cotangent CE/PV reduced central-operation
+construction of
 \S\ref{ssec:coordinate-free-ce-pv-synthesis} is the formal-Darboux
 stalk expression of that resolution.  The Mixed
 Holomorphic--Topological Deligne conjecture identifies the resolution
@@ -12027,7 +12031,7 @@ target.
       and BV Laplacian in this sector. The infrared limit $L\to\infty$ may be
       used only after the zero modes and harmonic projection have been fixed;
 	    \item compute the obstruction/anomaly class for this mixed Hamiltonian
-	      sector. Concretely, the obstruction should be represented as a local
+	      sector. Concretely, represent the obstruction as a local
 	      functional class in the chosen bulk-defect local-functional complex. If
 	      the defect cotangent sector is represented by principal-part currents,
 	      the target must either be replaced by a current-compatible complex

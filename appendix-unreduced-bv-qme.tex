@@ -3022,25 +3022,6 @@ vector vanishes
   Each case is the output of the fixed-window matrix solver of
   Theorem~\ref{thm:app-constructive-nonscalar-costello-qme-realization}
   on the corresponding row complex.
-
-  The script \texttt{scripts/finite\_window\_graph\_array.py} returns
-  the same outputs.  Case (a) corresponds to the rows
-  \texttt{theta\_3\_current\_finite\_row\_subcomplex},
-  the omitted-CE-ancestor payload, and
-  the omitted-counterterm payload, each returning
-  \(\texttt{primitive\_exists}=\mathrm{false}\) with cokernel covector
-  \(\ell(\mathsf E_{\theta_3,M})=1\).  Case (b) corresponds to
-  three repair data --- the supplied scalar-zero counterterm
-  \texttt{theta3\_counterterm\_supplied\_exact\_payload} returning
-  \(\texttt{primitive\_coefficients}=[\![C_{\theta_3,M}^{\mathrm{ct}},1]\!]\),
-  the supplied CE ancestor
-  \texttt{theta3\_ce\_ancestor\_supplied\_exact\_payload} returning
-  \(\texttt{primitive\_coefficients}=[\![C_{\theta_3,M}^{\mathrm{CE}},1]\!]\),
-  and the supplied complete companion-face table
-  \texttt{theta3\_complete\_companion\_faces\_supplied\_exact\_payload}
-  --- each returning
-  \(\texttt{primitive\_exists}=\mathrm{true}\) with the corresponding
-  unit primitive coefficient.
 \end{thm}
 
 \begin{proof}
@@ -3078,6 +3059,28 @@ vector vanishes
   \(\pi_{M,N}\mathsf E_{\theta_3,M}=\mathsf E_{\theta_3,N}\) when both
   windows contain \(\theta_3\) and as \(0\) otherwise.
 \end{proof}
+
+\begin{rmk}[Computer verification at the \(\theta_3\) row]
+\label{rmk:app-theta-three-script-verification}
+  The script \texttt{scripts/finite\_window\_graph\_array.py}
+  reproduces the case dichotomy of
+  Theorem~\ref{thm:app-theta-three-finite-window-H1}.  Case~(a) is
+  returned on the omitted-CE-ancestor and omitted-counterterm rows
+  of the row family \texttt{theta\_3\_current\_finite\_row\_subcomplex}:
+  each yields \(\texttt{primitive\_exists}=\mathrm{false}\) with
+  cokernel covector \(\ell(\mathsf E_{\theta_3,M})=1\).  Case~(b) is
+  returned on the three repair rows of the same family --- the
+  supplied scalar-zero counterterm
+  \texttt{theta3\_counterterm\_supplied\_exact\_payload}, the supplied
+  CE ancestor \texttt{theta3\_ce\_ancestor\_supplied\_exact\_payload},
+  and the supplied complete companion-face table
+  \texttt{theta3\_complete\_companion\_faces\_supplied\_exact\_payload}
+  --- each returning \(\texttt{primitive\_exists}=\mathrm{true}\) with
+  \(\texttt{primitive\_coefficients}\) equal to
+  \([\![C_{\theta_3,M}^{\mathrm{ct}},1]\!]\),
+  \([\![C_{\theta_3,M}^{\mathrm{CE}},1]\!]\), or the corresponding
+  unit-coefficient signed companion sum.
+\end{rmk}
 
 \begin{rmk}[Sub-theorem dichotomy at \(\theta_3\)]
 \label{rmk:app-theta-three-dichotomy-sub-theorem}
