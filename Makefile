@@ -26,6 +26,8 @@ ICLOUD_DIR :=/Users/raeez/Library/Mobile Documents/com~apple~CloudDocs/research
 # -- mathematics publish dir: release binary copied here under canonical name
 MATHEMATICS_DIR :=$(HOME)/mathematics
 PUBLISHED_PDF   :=mixed-holomorphic-topological-strings.pdf
+VOLUME_KEY      :=mixed
+PYTHON_BIN      :=python3
 
 # -- pdf config
 LTXDIR        :=$(shell kpsewhich -var-value=TEXMFHOME)
@@ -111,7 +113,7 @@ NOW := $(shell date +"%c" | tr ' :' '__')
 #
 .DEFAULT_GOAL := pdf
 
-.PHONY: all quick fast release standalone icloud help mathematics-publish
+.PHONY: all quick fast release standalone icloud help mathematics-publish root-publish architecture unified-architecture
 quick:
 	$(MKDIR) $(OUTDIR)
 	$(QUICKBUILDTEX)
@@ -128,16 +130,32 @@ release:
 	@echo "  -- COMPLETE BUILD (topological strings) --"
 	@echo "  =========================================="
 	@echo ""
-	@echo "  [1/2] Paper, standalone documents and iCloud"
+	@echo "  [1/4] Paper, standalone documents and iCloud"
 	@$(MAKE) --no-print-directory icloud
 	@echo ""
-	@echo "  [2/2] Publish to ~/mathematics"
+	@echo "  [2/4] Publish to repo root (canonical PDF name)"
+	@$(MAKE) --no-print-directory root-publish
+	@echo ""
+	@echo "  [3/4] Publish to ~/mathematics + per-volume architecture"
 	@$(MAKE) --no-print-directory mathematics-publish
+	@$(MAKE) --no-print-directory architecture
+	@echo ""
+	@echo "  [4/4] Cross-volume architecture aggregation"
+	@$(MAKE) --no-print-directory unified-architecture
 	@echo ""
 	@echo "  =========================================="
 	@echo "  Build complete. All output in out/:"
 	@ls -1 $(OUTDIR)/*.pdf 2>/dev/null | sed 's/^/    /'
 	@echo "  =========================================="
+
+## root-publish: Copy the release binary to repo root under its canonical name
+root-publish:
+	@if [ -f "$(OUTDIR)/$(TEXMAIN).pdf" ]; then \
+		$(CP) "$(OUTDIR)/$(TEXMAIN).pdf" "$(PUBLISHED_PDF)"; \
+		echo "    ok  $(PUBLISHED_PDF) (in repo root)"; \
+	else \
+		echo "    fail  $(OUTDIR)/$(TEXMAIN).pdf missing -- skipping root publish"; \
+	fi
 
 ## mathematics-publish: Copy the release binary to ~/mathematics under its canonical name
 mathematics-publish:
@@ -148,6 +166,19 @@ mathematics-publish:
 	else \
 		echo "    fail  $(OUTDIR)/$(TEXMAIN).pdf missing -- skipping ~/mathematics publish"; \
 	fi
+
+## architecture: Build interactive HTML + JSON of the manuscript architecture
+architecture:
+	@$(PYTHON_BIN) scripts/build_architecture.py --root . --volume $(VOLUME_KEY) --out $(OUTDIR) --quiet
+	@$(MKDIR) "$(MATHEMATICS_DIR)/architecture"
+	@$(CP) "$(OUTDIR)/architecture.json" "$(MATHEMATICS_DIR)/architecture/$(VOLUME_KEY).json"
+	@echo "    ok  $(OUTDIR)/architecture.html + .json"
+	@echo "    ok  $(MATHEMATICS_DIR)/architecture/$(VOLUME_KEY).json"
+
+## unified-architecture: Aggregate all per-volume architecture.json into the cross-volume HTML+JSON
+unified-architecture:
+	@$(PYTHON_BIN) scripts/build_unified_architecture.py --mathematics-dir "$(MATHEMATICS_DIR)" --quiet
+	@echo "    ok  $(MATHEMATICS_DIR)/architecture.html + .json"
 
 standalone:
 	@echo "  -- Building standalone documents --"
