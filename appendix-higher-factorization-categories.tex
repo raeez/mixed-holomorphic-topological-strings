@@ -321,14 +321,18 @@ its disjoint-open product is the extension-by-zero product.
 The \emph{boundary open category} of the local theory is
 \[
   \mathcal{C}^{\mathrm{op}}_\partial
-   =\Phi^{\mathrm{FA}}_d(\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}})\big|_{\partial X^{\mathrm{KN}}},
+   =\Phi^{\mathrm{FA}}_d(\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}})\big|_{\partial X},
 \]
-the restriction of the bulk factorization algebra to the
-Kato--Nakayama log boundary $\partial X^{\mathrm{KN}}$ along the brane
-worldline $\R_t$.  Its objects are factorisation $E_1$-modules over
-$\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}|_{\partial X^{\mathrm{KN}}}$
-(boundary states); its morphisms are factorisation-compatible
-$E_1$-bimodule morphisms.
+the Costello--Gwilliam bulk--boundary restriction of the bulk
+factorization algebra \cite{costello-gwilliam}*{Vol.~II} to the brane-link
+boundary $\partial X$ of the Dirac brane defect
+$L=\R_t\times\{p\}\subset X=\R^2_{\mathrm{top}}\times\C^2_{\mathrm{hol}}$
+--- the link sphere bundle over the worldline $\R_t$, equivalently the
+boundary of an excised tubular neighbourhood
+$X\setminus\nu(L)$.  Its objects are factorisation $E_1$-modules over
+$\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}|_{\partial X}$ (boundary
+states); its morphisms are factorisation-compatible $E_1$-bimodule
+morphisms.
 \end{defn}
 
 \begin{constr}[Formal-Darboux vacuum and brane $E_1$-algebra]\label{app:constr:brane-vacuum-E1}
@@ -731,35 +735,38 @@ any global theorem restricts; vanishing of
 \(\mathrm{Ob}_{\mathrm{ch}E_d}\) is the additional global condition.
 \end{rmk}
 
-\subsection{Descent over the Kato--Nakayama log boundary}\label{app:hfc:KN-descent}
+\subsection{Descent over the Costello--Gwilliam brane-link boundary}\label{app:hfc:CG-descent}
 
 The boundary open category $\mathcal{C}^{\mathrm{op}}_\partial$
 (Definition~\ref{app:defn:brane-cat}) is defined globally on the
-Kato--Nakayama log boundary $\partial X^{\mathrm{KN}}$.  This
-subsection writes the descent spectral sequence whose \(E_2\)-collapse
-removes one descent obstruction.  The global mixed-HT Deligne
-equivalence further requires the other obstruction classes to vanish.
+Costello--Gwilliam brane-link boundary $\partial X$.  This subsection
+writes the descent spectral sequence whose \(E_2\)-collapse removes
+one descent obstruction.  The global mixed-HT Deligne equivalence
+further requires the other obstruction classes to vanish.
 
-\begin{defn}[Kato--Nakayama topological realisation]\label{app:defn:KN}
-For a log scheme $(X,M_X,\alpha)$ in the sense of
-Kato~\cite{kato-log}, the \emph{Kato--Nakayama topological
-realisation} \cite{kato-nakayama-log} is the topological space
-$X^{\mathrm{KN}}$ with continuous projection
-$\pi^{\mathrm{KN}}\colon X^{\mathrm{KN}}\to X^{\mathrm{an}}$.  Over
-the locus of trivial log structure $\pi^{\mathrm{KN}}$ is a
-homeomorphism; over a divisor $D\subset X$ with simple normal-crossing
-log structure, the fibre over a codimension-$r$ stratum is a real
-$r$-torus.  The boundary
-$\partial X^{\mathrm{KN}}=(\pi^{\mathrm{KN}})^{-1}(D)$ is a torus
-bundle over the smooth locus of $D$.
+\begin{defn}[Costello--Gwilliam brane-link bundle]\label{app:defn:brane-link}
+For $X=\R^2_{\mathrm{top}}\times Y_{\mathrm{hol}}$ a mixed-HT
+spacetime and $L\subset X$ a Dirac brane defect, the
+\emph{Costello--Gwilliam brane-link boundary} $\partial X$ is the
+boundary of the excised tubular neighbourhood $\nu(L)$ of $L$ in $X$
+\cite{costello-gwilliam}*{Vol.~II},
+\[
+  \partial X
+   \;=\;\partial(X\setminus\nu(L))
+   \;\cong\;
+   L\times S^{c-1}_\epsilon,
+\]
+the unit sphere bundle of codimension $c=\mathrm{codim}_X L$ over $L$.
+At $L=\R_t\times\{p\}\subset\R^2_{\mathrm{top}}\times\C^2_{\mathrm{hol}}$
+the codimension is $c=5$ and
+$\partial X\cong\R_t\times S^4_\epsilon$.
 \end{defn}
 
-\begin{defn}[Sheaf of factorization $E_d^{\mathrm{HT}}$-categories on $\partial X^{\mathrm{KN}}$]\label{app:defn:sheaf-fact-cat-KN}
+\begin{defn}[Sheaf of factorization $E_d^{\mathrm{HT}}$-categories on $\partial X$]\label{app:defn:sheaf-fact-cat-CG}
 The boundary open category extends to a sheaf
 $\underline{\mathcal{C}^{\mathrm{op}}_\partial}$ of mixed-HT
-factorization $E_d^{\mathrm{HT}}$-categories on
-$\partial X^{\mathrm{KN}}$: for $U\subset\partial X^{\mathrm{KN}}$
-open,
+factorization $E_d^{\mathrm{HT}}$-categories on $\partial X$: for
+$U\subset\partial X$ open,
 \[
   \underline{\mathcal{C}^{\mathrm{op}}_\partial}(U)
    =\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}|_U
@@ -767,20 +774,19 @@ open,
 \]
 the boundary factorization $E_d^{\mathrm{HT}}$-modules over the
 restricted bulk; restriction to a smaller open is restriction of
-factorization modules.  At a closed point
-$p\in\partial X^{\mathrm{KN}}$ in the trivial log stratum, the stalk
-is the formal-Darboux stalk of
+factorization modules.  At a closed point $p\in\partial X$ the stalk is
+the formal-Darboux stalk of
 Definition~\ref{app:defn:Darboux-stalk-functor}.
 \end{defn}
 
-\begin{thm}[Log étale descent for the boundary open
-category]\label{app:thm:log-etale-descent}
+\begin{thm}[Étale descent for the boundary open
+category]\label{app:thm:cg-etale-descent}
 The sheaf $\underline{\mathcal{C}^{\mathrm{op}}_\partial}$ of
-Definition~\ref{app:defn:sheaf-fact-cat-KN} satisfies log étale
-descent: for any log étale cover
-$\{U_a\to\partial X^{\mathrm{KN}}\}$,
+Definition~\ref{app:defn:sheaf-fact-cat-CG} satisfies étale descent on
+the brane-link bundle $\partial X$: for any étale cover
+$\{U_a\to\partial X\}$,
 \[
-  \underline{\mathcal{C}^{\mathrm{op}}_\partial}(\partial X^{\mathrm{KN}})
+  \underline{\mathcal{C}^{\mathrm{op}}_\partial}(\partial X)
    \;\xrightarrow{\sim}\;
    \mathrm{holim}\bigl(\textstyle\prod_a
     \underline{\mathcal{C}^{\mathrm{op}}_\partial}(U_a)
@@ -791,39 +797,41 @@ $\{U_a\to\partial X^{\mathrm{KN}}\}$,
 \end{thm}
 
 \begin{proof}
-Apply Olsson's log étale descent theorem
-\cite{olsson-log-stack}*{Thm.~4.7} for sheaves of $\infty$-categories
-on log étale stacks.  The factorization $E_d^{\mathrm{HT}}$-module
-condition is preserved under log étale pullback because the structure
-maps of Definition~\ref{app:defn:mixed-HT-fact} are local on
-$\partial X^{\mathrm{KN}}$.  Closure under $\mathrm{holim}$ is the
+The Costello--Gwilliam bulk--boundary correspondence
+\cite{costello-gwilliam}*{Vol.~II, \S 4} presents
+$\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}|_{\partial X}$ as a
+factorization algebra on $\partial X$; factorization
+$\infty$-categories of modules satisfy étale descent by
+\cite{costello-gwilliam}*{Vol.~II, Thm.~4.6.1}.  The factorization
+$E_d^{\mathrm{HT}}$-module condition is preserved under étale pullback
+because the structure maps of Definition~\ref{app:defn:mixed-HT-fact}
+are local on $\partial X$.  Closure under $\mathrm{holim}$ is the
 $\infty$-categorical limit closure of factorization
 $\infty$-categories \cite{lurie-ha}*{\S 5.5.4.10}.
 \end{proof}
 
 \begin{thm}[Descent spectral sequence]\label{app:thm:descent-ss}
-Choose a log étale cover $\{U_a\to\partial X^{\mathrm{KN}}\}_{a\in A}$
-trivialising the log structure.  There is a spectral sequence
+Choose an étale cover $\{U_a\to\partial X\}_{a\in A}$ trivialising the
+local formal-Darboux structure.  There is a spectral sequence
 \[
   E_2^{p,q}
-   =H^p\bigl(\partial X^{\mathrm{KN}},
+   =H^p\bigl(\partial X,
    \mathcal H^q(\underline{\mathcal{C}^{\mathrm{op}}_\partial})\bigr)
    \;\Rightarrow\;
    H^{p+q}\bigl(\mathcal{C}^{\mathrm{op}}_\partial\bigr),
 \]
-where $\mathcal H^q$ is the $q$-th derived stalk.  At a
-formal-Darboux
-point $p\in\partial X^{\mathrm{KN}}$ the stalk
-$\mathcal H^*(\underline{\mathcal{C}^{\mathrm{op}}_\partial})_p$ is
-the formal-Darboux stalk of Theorem~\ref{app:thm:stalk-of-conj}.
+where $\mathcal H^q$ is the $q$-th derived stalk.  At a formal-Darboux
+point $p\in\partial X$ the stalk
+$\mathcal H^*(\underline{\mathcal{C}^{\mathrm{op}}_\partial})_p$ is the
+formal-Darboux stalk of Theorem~\ref{app:thm:stalk-of-conj}.
 \end{thm}
 
 \begin{proof}
 Standard sheaf-cohomology descent spectral sequence for the
 $\infty$-categorical sheaf of
-Definition~\ref{app:defn:sheaf-fact-cat-KN}, via \v{C}ech cohomology
-with respect to the log étale cover and convergence by
-Theorem~\ref{app:thm:log-etale-descent}.
+Definition~\ref{app:defn:sheaf-fact-cat-CG}, via \v{C}ech cohomology
+with respect to the étale cover and convergence by
+Theorem~\ref{app:thm:cg-etale-descent}.
 \end{proof}
 
 \begin{defn}[Formal-Darboux \(E_2\)-collapse]\label{app:defn:heisenberg-collapse}
@@ -831,13 +839,13 @@ The descent spectral sequence of Theorem~\ref{app:thm:descent-ss}
 \emph{collapses at the formal-Darboux strata} if the differential
 \[
   d_2\colon
-   H^p\bigl(\partial X^{\mathrm{KN}},\mathcal H^q\bigr)
+   H^p\bigl(\partial X,\mathcal H^q\bigr)
    \longrightarrow
-   H^{p+2}\bigl(\partial X^{\mathrm{KN}},\mathcal H^{q-1}\bigr)
+   H^{p+2}\bigl(\partial X,\mathcal H^{q-1}\bigr)
 \]
 vanishes at every formal-Darboux stratum.  Equivalently, the
-formal-Darboux stalks glue across log strata along the local
-symplectic-form trivialisation of
+formal-Darboux stalks glue across the brane-link bundle along the
+local symplectic-form trivialisation of
 Proposition~\ref{app:prop:Darboux-equivariance} with trivial higher
 correction.
 \end{defn}
@@ -846,12 +854,12 @@ correction.
 The formal-Darboux \(E_2\)-collapse condition of
 Definition~\ref{app:defn:heisenberg-collapse} is precisely the
 vanishing of the first descent obstruction to gluing the
-formal-Darboux stalks across the Kato--Nakayama boundary.  The
-obstruction is
+formal-Darboux stalks across the Costello--Gwilliam brane-link
+boundary.  The obstruction is
 \[
   \mathrm{Ob}_{\mathrm{desc}}
    =[d_2]
-   \in H^2\bigl(\partial X^{\mathrm{KN}},
+   \in H^2\bigl(\partial X,
        \mathrm{Hom}^{-1}(\mathcal H^*,\mathcal H^*)\bigr).
 \]
 When this class vanishes, the local stalk theorem survives this
@@ -868,7 +876,8 @@ and global comparison obstructions to vanish.
 
 \begin{proof}
 By Theorem~\ref{app:thm:descent-ss}, the first possible obstruction
-to gluing the derived stalks through the chosen log etale cover is the
+to gluing the derived stalks through the chosen étale cover of
+$\partial X$ is the
 \(d_2\)-differential.  Its cohomology class is the displayed
 \(\mathrm{Ob}_{\mathrm{desc}}\).  Vanishing of this class is exactly
 the stated \(E_2\)-collapse condition.  Theorem~\ref{app:thm:stalk-of-conj}
@@ -1127,8 +1136,9 @@ separate \(K3\times E\) operator-lift problem.
 Compose Theorem~\ref{app:thm:conditional-Ed-deligne} (chiral $E_d$
 Deligne via the operadic action and
 Hypotheses~\ref{app:hyp:formality}--\ref{app:hyp:ran-descent}),
-Theorem~\ref{app:thm:global-stalk-from-collapse} (KN log-boundary
-descent via Definition~\ref{app:defn:heisenberg-collapse}),
+Theorem~\ref{app:thm:global-stalk-from-collapse}
+(Costello--Gwilliam brane-link descent via
+Definition~\ref{app:defn:heisenberg-collapse}),
 Theorem~\ref{app:thm:conditional-qme} (all-loop QME via
 Hypotheses~\ref{app:hyp:KZ-SDR}--\ref{app:hyp:T-Q-G}), and
 Conjecture~\ref{app:conj:operator-lift-Delta5} only in the external
@@ -1145,8 +1155,9 @@ package obstruction $\mathrm{Ob}_{\mathrm{ch}E_d}$ at $d\geq 2$ is the
 residual research frontier of Conjecture~\ref{conj:chiral-Ed-deligne};
 partial results (chiral Lie algebroids on smooth schemes via Hennion,
 factorisable co-operads via Francis) give evidence for pieces of the
-package; the global theorem remains the conjectural target.  The KN-descent obstruction
-$\mathrm{Ob}_{\mathrm{desc}}$ reduces to the $E_2$-collapse condition
+package; the global theorem remains the conjectural target.  The brane-link
+descent obstruction $\mathrm{Ob}_{\mathrm{desc}}$ reduces to the
+$E_2$-collapse condition
 of Definition~\ref{app:defn:heisenberg-collapse}, checkable on a
 formal-Darboux stratum-by-stratum basis.  The manuscript's main
 theorem (Theorem~\ref{thm:main-local}) is the formal-Darboux stalk
