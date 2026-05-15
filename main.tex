@@ -8075,6 +8075,35 @@ the Casimir converges (Theorem~\ref{thm:wt-canonical-habitat}).
   $\operatorname{Res}_{u=u'}d(w-w')d(u-u')/((w-w')(u-u'))=d(w-w')/(w-w')$.
 \end{proof}
 
+\begin{defn}[Admissible Hochschild-centre lift]\label{defn:admissible-hochschild-centre-lift}
+  An admissible lift of the closed-to-open coupling
+  $\Phi_N\colon\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}\big|_b\to
+  Z^{\mathrm{der,adm}}_{E_1}\!\bigl(A^{\mathrm{cl}}_{\partial,N}\bigr)$
+  is a Maurer--Cartan element
+  \[
+    \mathcal C_{\Phi_N}\;=\;
+    \Phi_N+H^{\mathrm{prod}}+H^{P_0}+H^3+\cdots
+  \]
+  in the completed Hochschild-centrality convolution $L_\infty$-algebra
+  $\mathcal K^{\mathrm{cent}}_{\mathcal B^{\mathrm{adm}}}$ of
+  clause~(vi) of Theorem~\ref{thm:main-local} satisfying
+  \[
+    d\mathcal C_{\Phi_N}
+    +\tfrac12\bigl[\mathcal C_{\Phi_N},\mathcal C_{\Phi_N}\bigr]
+    +\tfrac{1}{3!}\ell_3\!\bigl(\mathcal C_{\Phi_N}^{\otimes 3}\bigr)
+    +\cdots\;=\;0,
+  \]
+  with $H^{\mathrm{prod}}$ the product centrality homotopy
+  $[\Phi_N(x),a]_G=dH^{\mathrm{prod}}_{x,a}$, $H^{P_0}$ the Poisson
+  centrality homotopy
+  $\{\Phi_N(x),a\}_{P_0}=dH^{P_0}_{x,a}$, $H^3$ the order-three
+  Jacobiator/associator
+  $dH^3_{x,a,b}=\mathrm{Jac}\bigl(H^{\mathrm{prod}},H^{P_0}\bigr)$,
+  and higher $H^n$ the Stasheff coherences.  The
+  $\mathcal C_{\Phi_N}$ datum is the difference between an action of
+  closed currents on open observables and a derived $E_1$-centre map.
+\end{defn}
+
 \begin{rmk}[Consistency probes]\label{rmk:consistency-probes}
   Theorem~\ref{thm:main-local} passes the following checks inside
   $\mathcal B^{\mathrm{adm}}$.
@@ -8108,7 +8137,8 @@ the Casimir converges (Theorem~\ref{thm:wt-canonical-habitat}).
     \item \emph{Hochschild centrality.}
       $[\Phi_N(x),a]_G=dH^{\mathrm{prod}}_{x,a}$ and
       $\{\Phi_N(x),a\}_{P_0}=dH^{P_0}_{x,a}$ for every closed
-      generator $x$ and open observable $a$.
+      generator $x$ and open observable $a$
+      (Definition~\ref{defn:admissible-hochschild-centre-lift}).
     \item \emph{QME recursion.}  At order $\hbar^n$ and window $M$,
       $d_MC_{n,M}=-o^{\mathrm{ns}}_{n,M}$ and
       $\pi_{M,N}C_{n,M}=C_{n,N}$.
