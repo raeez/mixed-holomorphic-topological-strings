@@ -23,6 +23,10 @@ OUTDIR:=out
 LOGDIR:=.build_logs
 ICLOUD_DIR :=/Users/raeez/Library/Mobile Documents/com~apple~CloudDocs/research
 
+# -- mathematics publish dir: release binary copied here under canonical name
+MATHEMATICS_DIR :=$(HOME)/mathematics
+PUBLISHED_PDF   :=mixed-holomorphic-topological-strings.pdf
+
 # -- pdf config
 LTXDIR        :=$(shell kpsewhich -var-value=TEXMFHOME)
 TEXFLAGS      :=-output-directory=out -interaction=nonstopmode
@@ -107,7 +111,7 @@ NOW := $(shell date +"%c" | tr ' :' '__')
 #
 .DEFAULT_GOAL := pdf
 
-.PHONY: all quick fast release standalone icloud help
+.PHONY: all quick fast release standalone icloud help mathematics-publish
 quick:
 	$(MKDIR) $(OUTDIR)
 	$(QUICKBUILDTEX)
@@ -124,13 +128,26 @@ release:
 	@echo "  -- COMPLETE BUILD (topological strings) --"
 	@echo "  =========================================="
 	@echo ""
-	@echo "  [1/1] Paper, standalone documents and iCloud"
+	@echo "  [1/2] Paper, standalone documents and iCloud"
 	@$(MAKE) --no-print-directory icloud
+	@echo ""
+	@echo "  [2/2] Publish to ~/mathematics"
+	@$(MAKE) --no-print-directory mathematics-publish
 	@echo ""
 	@echo "  =========================================="
 	@echo "  Build complete. All output in out/:"
 	@ls -1 $(OUTDIR)/*.pdf 2>/dev/null | sed 's/^/    /'
 	@echo "  =========================================="
+
+## mathematics-publish: Copy the release binary to ~/mathematics under its canonical name
+mathematics-publish:
+	@$(MKDIR) "$(MATHEMATICS_DIR)"
+	@if [ -f "$(OUTDIR)/$(TEXMAIN).pdf" ]; then \
+		$(CP) "$(OUTDIR)/$(TEXMAIN).pdf" "$(MATHEMATICS_DIR)/$(PUBLISHED_PDF)"; \
+		echo "    ok  $(MATHEMATICS_DIR)/$(PUBLISHED_PDF)"; \
+	else \
+		echo "    fail  $(OUTDIR)/$(TEXMAIN).pdf missing -- skipping ~/mathematics publish"; \
+	fi
 
 standalone:
 	@echo "  -- Building standalone documents --"
