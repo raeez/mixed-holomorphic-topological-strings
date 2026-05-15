@@ -8075,6 +8075,54 @@ the Casimir converges (Theorem~\ref{thm:wt-canonical-habitat}).
   $\operatorname{Res}_{u=u'}d(w-w')d(u-u')/((w-w')(u-u'))=d(w-w')/(w-w')$.
 \end{proof}
 
+\begin{rmk}[Consistency probes]\label{rmk:consistency-probes}
+  Theorem~\ref{thm:main-local} passes the following checks inside
+  $\mathcal B^{\mathrm{adm}}$.
+  \begin{enumerate}[label=\textup{(\arabic*)}]
+    \item \emph{$N=1$.}  $\phi_i=z_i$, $J(f)=f$, and
+      $[\Phi_\hbar(z_1),\Phi_\hbar(z_2)]_\star=\hbar$; the projective
+      curvature reduces to $\hbar[\bar c]$.
+    \item \emph{Finite-$N$ trace bracket.}
+      $\{\operatorname{Tr}\phi_1,\operatorname{Tr}\phi_2\}=N$;
+      vanishing of this datum signals an accidental downgrade to the
+      scalar-reduced shadow.
+    \item \emph{Adjacent-swap exactness.}
+      $\operatorname{Tr}(u\phi_1\phi_2v)-\operatorname{Tr}(u\phi_2\phi_1v)
+      =Q\operatorname{Tr}(\psi vu)$
+      (Lemma~\ref{lem:adjacent-swaps}).
+    \item \emph{Monomial bracket.}
+      $\{J(z_1^az_2^b),J(z_1^cz_2^d)\}=
+      (ad-bc)J(z_1^{a+c-1}z_2^{b+d-1})+N[\{f,g\}]_0$.
+    \item \emph{CE/PV differential.}  Under
+      $c^k\mapsto\partial_{\xi_k}$, $u_k\mapsto\xi_k$,
+      $d_{\mathrm{CE}}c^k=-\tfrac12 f^k_{ij}c^ic^j$ matches
+      $d_\pi(\partial_{\xi_k})$ and
+      $d_{\mathrm{CE}}u_k=f^j_{ik}u_jc^i$ matches $d_\pi(\xi_k)$
+      (Theorem~\ref{thm:reduced-ce-pv-central-operation}).
+    \item \emph{Köthe bracket continuity.}
+      $p_n(\{x,y\})\leq C_n\,p_{n+2}(x)\,p_{n+2}(y)$ in the
+      weighted seminorms of clause~(iv).
+    \item \emph{Kernel Maurer--Cartan.}
+      $d\Theta_B+\tfrac12[\Theta_B,\Theta_B]=0$
+      (Theorem~\ref{thm:universal-ce-pv-koszul-criterion}).
+    \item \emph{Hochschild centrality.}
+      $[\Phi_N(x),a]_G=dH^{\mathrm{prod}}_{x,a}$ and
+      $\{\Phi_N(x),a\}_{P_0}=dH^{P_0}_{x,a}$ for every closed
+      generator $x$ and open observable $a$.
+    \item \emph{QME recursion.}  At order $\hbar^n$ and window $M$,
+      $d_MC_{n,M}=-o^{\mathrm{ns}}_{n,M}$ and
+      $\pi_{M,N}C_{n,M}=C_{n,N}$.
+    \item \emph{Global descent first obstruction.}
+      $[d_2]\in H^2\bigl(\partial X^{\mathrm{KN}},
+      \underline{\mathrm{Hom}}^{-1}(\mathcal H^\bullet,
+                                    \mathcal H^\bullet)\bigr)$ from
+      Theorem~\ref{thm:main-global-conditional}.
+    \item \emph{Curve restriction.}
+      $R_{L,B_\perp}(K^{(2)}_\Delta)=dw/(w-w')$
+      (Proposition~\ref{prop:diagonal-cohomology-operad}).
+  \end{enumerate}
+\end{rmk}
+
 \begin{thm}[Hamiltonian trace generators exhaust the admissible $E_1$-Hochschild centre]\label{thm:protected-summand-exhausts}
   Inside $\mathcal B^{\mathrm{adm}}$,
   \[
