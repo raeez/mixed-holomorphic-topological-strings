@@ -41,7 +41,7 @@ A sentence that does not state mathematics or physics is a defect.
 | `~/igusa-cusp-form/` | level-2 modular section of $\Omega_{\mathrm{central}}$ on $K3 \times E$ |
 | `~/ecosystem/` | discipline layer; `INVARIANTS.md` binds |
 
-Cross-volume firewall: convention divergence is load-bearing — flag, do not silently reconcile. Every shared symbol matches across volumes; every shared concept has the same definition.
+Cross-volume firewall: convention divergence is load-bearing — flag, do not silently reconcile. Every shared symbol and every shared concept has the same definition.
 
 ---
 

@@ -458,7 +458,7 @@ volume firewall stays intact.
 (O3) **Vol III Heisenberg level $k$ identification (F2 in W16)**
 fails on scaling axis. Same reason as O2.
 
-(O4) **Worldsheet identifications across volumes (W3-W16-D5)**:
+(O4) **Worldsheet identifications (W3-W16-D5)**:
 the manuscript has *no* worldsheet $\Sigma_g$; Vol III at $d=2$
 has a reference algebraic curve $C \subset K3$; Igusa has Siegel
 period $\mathbb H_2$. Three different genus axes; no two-side

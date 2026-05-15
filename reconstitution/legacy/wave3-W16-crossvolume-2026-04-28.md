@@ -5,7 +5,7 @@
 **Wave.** 3, item W16.
 **Lens.** Polyakov primary (scaling, renormalization, anomaly,
 physical dimension, path-integral sanity) + Functoriality secondary
-(naturality of identifications across volumes, canonical vs chosen
+(naturality of identifications, canonical vs chosen
 data, intertwiner conditions).
 **Mission.** Independent fresh attack on the cross-volume firewall.
 Find invariants that **must agree** across `topological-strings`,
