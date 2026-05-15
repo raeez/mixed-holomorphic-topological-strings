@@ -7855,14 +7855,18 @@ the Casimir converges (Theorem~\ref{thm:wt-canonical-habitat}).
       A^{\mathrm{cl}}_{\partial,N},
       A^{\mathrm{cl}}_{\partial,N}\bigr),
   \end{equation}
-  determined on Chevalley--Eilenberg generators by
+  determined on Chevalley--Eilenberg generators by the assignment
+  carrying the full centrality homotopy hierarchy,
   \begin{equation}\label{eq:ce-pv-dictionary-strong}
-    c_f\;\longmapsto\;\theta_f\in HH^1_{\mathrm{adm}},\qquad
-    u_f\;\longmapsto\;J(f)\cdot(-)\in HH^0_{\mathrm{adm}},\qquad
-    K\;\longmapsto\;\operatorname{Tr}\mathbf 1=N,
+    \bigl(c_f,u_f,K\bigr)\;\longmapsto\;\Bigl(
+       \theta_f,\;J(f)\cdot(-),\;\operatorname{Tr}\mathbf 1,\;
+       H^{\mathrm{prod}}_{f,-},\,H^{P_0}_{f,-},\,
+       H^3_{f,-,-},\,\ldots\Bigr),
   \end{equation}
-  with trace map $J(f)=\operatorname{Tr}\,f(\phi_1,\phi_2)$ and
-  Schouten derivation
+  with $\theta_f\in HH^1_{\mathrm{adm}}$,
+  $J(f)\cdot(-)\in HH^0_{\mathrm{adm}}$,
+  $K\mapsto\operatorname{Tr}\mathbf 1=N$, trace map
+  $J(f)=\operatorname{Tr}\,f(\phi_1,\phi_2)$, Schouten derivation
   \begin{equation}\label{eq:schouten-explicit}
     \theta_f(\phi_1)=-\partial_{z_2}f(\phi_1,\phi_2),\qquad
     \theta_f(\phi_2)=\;\partial_{z_1}f(\phi_1,\phi_2),\qquad
@@ -8014,6 +8018,61 @@ the Casimir converges (Theorem~\ref{thm:wt-canonical-habitat}).
   classically by $\{\operatorname{Tr}\phi_1,\operatorname{Tr}\phi_2\}=N$
   and quantum-mechanically by $[\Phi_\hbar(z_1),\Phi_\hbar(z_2)]_\star
   =\hbar N\cdot I$.
+\end{proof}
+
+\begin{prop}[Diagonal local-cohomology chiral $E_2$-operad on $\C^2$]\label{prop:diagonal-cohomology-operad}
+  Let
+  \[
+    K_n=H^{2(n-1)}_{\Delta_n}\!\bigl(\C[[z^{(1)},\ldots,z^{(n)}]]\bigr)
+      \,\bigotimes_{i=1}^{n-1}\,d\zeta_{i,1}\,d\zeta_{i,2},
+    \qquad
+    \Delta_n=\{z^{(1)}=\cdots=z^{(n)}\},\quad
+    \zeta_i=z^{(i)}-z^{(n)},
+  \]
+  the arity-$n$ diagonal local-cohomology kernel on $\C^{2n}$.  The
+  collection $\{K_n\}_{n\geq 1}$ with residue composition
+  $\gamma\colon K_n\otimes K_{m_1}\otimes\cdots\otimes K_{m_n}
+  \to K_{m_1+\cdots+m_n}$ defined by pullback of singular principal
+  parts to nested diagonals followed by iterated Grothendieck residues
+  is a coloured dg operad in nuclear Tate vector spaces; it acts on
+  $\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}$ by
+  \[
+    \mu_n\colon
+    K_n\otimes\bigl(\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}\bigr)^{\boxtimes n}
+    \longrightarrow\Delta_{n,*}\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}},
+    \quad
+    \mu_n(K_n;\mathsf J_{x_1},\ldots,\mathsf J_{x_n})
+    =K_n\cdot\mathsf J_{\ell_n(x_1,\ldots,x_n)},
+  \]
+  with $\ell_2=[-,-]_{\widehat{\mathfrak g}_{\mathrm{cent}}}$ and the
+  higher $L_\infty$-brackets $\ell_{n\geq 3}$ transferred from the CE
+  factorization structure ($\ell_{n\geq 3}=0$ in the strict
+  Hamiltonian BF model, modulo quantum counterterm transfer).  The
+  arity-two component is $K_2=K^{(2)}_\Delta=d\zeta_1d\zeta_2/(\zeta_1\zeta_2)$
+  of \eqref{eq:ope-linear}.
+\end{prop}
+
+\begin{proof}
+  Arity-two: $K_2=H^2_\Delta(\C[[z,w]])\,d\zeta_1d\zeta_2$ is the
+  residue class of Theorem~\ref{thm:reduced-principal-part-boundary-current}.
+  Arity-three associativity: the iterated Grothendieck residue on
+  the nested diagonal
+  $\Delta_3\subset\Delta_2\subset\C^6$ factors as
+  $\operatorname{Res}_{z^{(2)}=z^{(3)}}\circ\operatorname{Res}_{z^{(1)}=z^{(3)}}
+  =\operatorname{Res}_{z^{(1)}=z^{(2)}=z^{(3)}}$, matching
+  $\gamma(K_2\otimes K_2)=K_3$; signs agree with Koszul signs of CE
+  cochains by the standard sign rule for nested residues.  Higher
+  arities $n\geq 4$ inherit the operadic associativity from the
+  factorization-algebra bulk-boundary correspondence
+  \cite{costello-gwilliam} applied to disjoint and nested polydisk
+  factorisations of $\C^{2n}$; continuity in $\mathcal B^{\mathrm{adm}}$
+  is the kernel-admissibility condition~(v) of
+  Theorem~\ref{thm:main-local}.  Curve restriction to a smooth
+  $C\hookrightarrow\C^2$ with transverse residue datum
+  $B_\perp\colon\Omega^{0,1}_c(\C)\to\C$ specialises
+  $K^{(2)}_\Delta$ to the one-dimensional Cauchy kernel
+  $K^{(1)}_C(z,w)=dw/(w-w')$ by direct residue computation
+  $\operatorname{Res}_{u=u'}d(w-w')d(u-u')/((w-w')(u-u'))=d(w-w')/(w-w')$.
 \end{proof}
 
 \begin{thm}[Hamiltonian trace generators exhaust the admissible $E_1$-Hochschild centre]\label{thm:protected-summand-exhausts}
