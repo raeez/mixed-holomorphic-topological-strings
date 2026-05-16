@@ -3662,22 +3662,92 @@ open trace cohomology generates the open sector as a trace algebra.
   the brane stack.
 \end{ex}
 
-\begin{rmk}[Cyclic framing branch and the Hilbert scheme]\label{rmk:cyclic-framing-hilbert-branch}
-  Adjoining a cyclic vector \(v\in\C^N\) with
-  \(\C[\phi_1,\phi_2]\cdot v=\C^N\) cuts out the stable cyclic locus of
-  the derived commuting variety stack
-  \([\mu^{-1}_{\mathrm{der}}(0)/GL_N]\); on this locus the underived
-  free \(GL_N\)-action gives the Hilbert scheme of points,
-  \(\bigl[(\mu^{-1}(0)\times\C^N_{\mathrm{cyc}})/GL_N\bigr]
-   =\Hilb^N(\C^2)\),
-  in its Nakajima ADHM-quiver presentation.  The Moyal/Weyl deformation of the
-  brane Poisson algebra restricts on this branch to the noncommutative
-  Hilbert scheme of Nekrasov--Schwarz~\cite{nekrasov-schwarz-noncommutative},
-  and the Capelli scalar \(\hbar N[\bar c]\) of
-  Example~\ref{exa:linear-hamiltonians-anomaly} is its centre-of-mass
-  \(U(1)\) charge.  The framing data selects a stable open substack of
-  the Dirac brane stack on which the derived fibre is underived.
-\end{rmk}
+\begin{lem}[Cyclic framing branch is the Hilbert scheme;
+Nekrasov--Schwarz noncommutative deformation]\label{lem:cyclic-framing-hilbert-branch}\label{rmk:cyclic-framing-hilbert-branch}
+  Let
+  \[
+    X^{\mathrm{cyc}}_N
+     =\bigl\{(\phi_1,\phi_2,v)\in\mathfrak{gl}_N
+                          \oplus\mathfrak{gl}_N\oplus\C^N
+            :[\phi_1,\phi_2]=0,\
+             \C[\phi_1,\phi_2]\cdot v=\C^N\bigr\}
+  \]
+  be the open locus of cyclic stable framed pairs.  The \(GL_N\)-action
+  on \(X^{\mathrm{cyc}}_N\) is free, and the underived quotient
+  \[
+    X^{\mathrm{cyc}}_N/GL_N
+     \;\cong\;\Hilb^N(\C^2)
+  \]
+  is the Nakajima ADHM presentation of the Hilbert scheme of \(N\)
+  points on \(\C^2\) \cite{nakajima-hilbert-lectures}.  The derived
+  fibre of \([\mu^{-1}_{\mathrm{der}}(0)/GL_N]\) over this locus is
+  underived: the Koszul antifield \(\psi\in\mathfrak{gl}_N[1]\) of the
+  Dirac brane stack is contractible there.  Turning on the
+  Fayet--Iliopoulos parameter \(\zeta=\hbar\cdot I\) deforms the
+  moment-map fibre
+  \(\mu^{-1}(0)\rightsquigarrow\mu^{-1}(\hbar\cdot I)\) and gives the
+  Nekrasov--Schwarz noncommutative Hilbert scheme
+  \cite{nekrasov-schwarz-noncommutative}
+  \[
+    \Hilb^N(\C^2)_\hbar
+     =\bigl[\mu^{-1}(\hbar\cdot I)\cap X^{\mathrm{cyc}}_N\bigr]/GL_N;
+  \]
+  equivalently, the Moyal--Weyl deformation of the brane Poisson
+  algebra \(\C[\phi_1,\phi_2]\) replaces \([\phi_1,\phi_2]=0\) by
+  \([\Phi_\hbar(z_1),\Phi_\hbar(z_2)]_\star=\hbar N\cdot I\)
+  (Theorem~\ref{thm:quantum-classical-anomaly}), so the Capelli
+  scalar \(\hbar N[\bar c]\) of
+  Example~\ref{exa:linear-hamiltonians-anomaly} is exactly the
+  \(U(1)\) centre-of-mass charge of the deformation.
+\end{lem}
+
+\begin{proof}
+  Freeness of the \(GL_N\)-action on \(X^{\mathrm{cyc}}_N\): if
+  \(g\in GL_N\) fixes \((\phi_1,\phi_2,v)\), then
+  \(g\phi_iv=\phi_iv\) and \(gv=v\), so by cyclicity
+  \(g\) fixes a spanning set of \(\C^N\), forcing \(g=I\)
+  \cite{nakajima-hilbert-lectures}*{Theorem~1.9}.  The identification
+  \(X^{\mathrm{cyc}}_N/GL_N=\Hilb^N(\C^2)\) sends
+  \([(\phi_1,\phi_2,v)]\) to the ideal
+  \(I_{(\phi,v)}=\{f\in\C[z_1,z_2]:f(\phi_1,\phi_2)v=0\}\), which has
+  colength \(N\) by cyclicity and is a point of the Hilbert scheme;
+  inversely, an ideal \(I\) gives \((\phi_1,\phi_2,v)\) on
+  \(\C[z_1,z_2]/I\) by multiplication and the class of \(1\)
+  \cite{nakajima-hilbert-lectures}*{Theorem~1.14}.
+
+  On \(X^{\mathrm{cyc}}_N\) the moment-map differential
+  \(d\mu\colon\mathfrak{gl}_N^{\oplus 2}\to\mathfrak{gl}_N\),
+  \((\delta\phi_1,\delta\phi_2)\mapsto
+  [\delta\phi_1,\phi_2]+[\phi_1,\delta\phi_2]\), is surjective: its
+  cokernel is the cyclic stabiliser of \((\phi_1,\phi_2)\), which is
+  trivial by freeness.  The Koszul resolution of
+  Definition~\ref{def:formal-darboux-stalk-chart}, with antifield
+  \(\psi\in\mathfrak{gl}_N[1]\) and differential
+  \(Q\psi=[\phi_1,\phi_2]\), has zero homology in positive degree on
+  this locus by surjectivity of \(d\mu\), so the derived fibre is
+  underived there.
+
+  Fayet--Iliopoulos deformation.  Replacing the moment-map equation
+  \([\phi_1,\phi_2]=0\) by \([\phi_1,\phi_2]=\hbar\cdot I\) requires
+  trace-anomaly cancellation: taking the trace,
+  \(\operatorname{Tr}[\phi_1,\phi_2]=0\) classically, but
+  \(\operatorname{Tr}(\hbar\cdot I)=\hbar N\), so the deformation
+  exists only after centre-of-mass twist by the \(U(1)\) charge
+  \(\hbar N\).  This is Nekrasov--Schwarz~\cite{nekrasov-schwarz-noncommutative}*{Theorem~1}.
+
+  Moyal--Weyl side.  Theorem~\ref{thm:quantum-classical-anomaly}
+  computes the Moyal commutator of Weyl-symmetric quantisations
+  $\Phi_\hbar(z_1)=\phi_1$, $\Phi_\hbar(z_2)=\phi_2$ on the
+  Chan--Paton pair: \([\Phi_\hbar(z_1),\Phi_\hbar(z_2)]_\star
+  =\hbar N\cdot I\).  This is exactly the FI deformation of the
+  moment map.  The class
+  \([\bar c]=[\omega(z_1,z_2)\,c_1\wedge c_2]\in H^2_{\mathrm{Lie}}
+  (\bar A,\C)[[\hbar]]\) of Theorem~\ref{thm:u1-center-anomaly} is the
+  pull-back of the Atiyah class of the trace representation
+  \(\bar A\to\mathfrak{gl}_N\) (Theorem~\ref{thm:capelli-equals-modular-curvature});
+  multiplied by \(\hbar N\), it is the centre-of-mass \(U(1)\) charge
+  of the deformed Hilbert scheme.
+\end{proof}
 
 \(J\) is exact at the level of the scalar trace algebra.  The full
 \(P_0\)-factorization centre requires additional cotangent centrality
@@ -15837,6 +15907,18 @@ Moyal target.
    date={2015},
    pages={1--23},
    doi={10.1090/conm/643/12894},
+}
+
+\bib{nakajima-hilbert-lectures}{book}{
+   author={Nakajima, Hiraku},
+   title={Lectures on Hilbert schemes of points on surfaces},
+   series={Univ. Lecture Ser.},
+   volume={18},
+   publisher={Amer. Math. Soc., Providence, RI},
+   date={1999},
+   pages={xii+132},
+   isbn={0-8218-1956-9},
+   doi={10.1090/ulect/018},
 }
 
 \bib{nekrasov-schwarz-noncommutative}{article}{
