@@ -1,55 +1,165 @@
 \begin{abstract}
 
-\noindent\textbf{Problem.}  Mixed holomorphic--topological closed
-strings near a Dirac brane should coincide, at each formal
-holomorphic-symplectic brane point, with the derived
-\(E_1\)-centre / Hochschild cochain complex of the open boundary
-algebra.
-
-\medskip\noindent\textbf{Local model.}  On
-\(X=\R^2_{\mathrm{top}}\times\C^2_{\mathrm{hol}}\), the closed sector
-is the Hamiltonian BF theory with shifted-cotangent dg Lie input
-\(\mathfrak g=\mathfrak h\ltimes\mathfrak h^\vee_{\mathrm{cont}}[1]\),
-\(\mathfrak h=\C[[z_1,z_2]]/\C\cdot 1\), and Grothendieck--Matlis
-residue dual.  The open sector is a stack of \(N\) Dirac branes with
-matrix coordinates \((\phi_1,\phi_2)\in\mathfrak{gl}_N^{\oplus 2}\),
-moment-map constraint \([\phi_1,\phi_2]=0\), antifield
-\(\psi\in\mathfrak{gl}_N[1]\), and Koszul differential
-\(Q\psi=[\phi_1,\phi_2]\); the classical brane algebra is
-\(A^{\mathrm{cl}}_{\partial,N}=
-C^\bullet_{\mathrm{CE}}\bigl(\mathfrak{gl}_N,\,
-\mathrm{Sym}(\mathfrak{gl}_N\oplus\mathfrak{gl}_N\oplus\mathfrak{gl}_N[1])\bigr)\).
-
-\medskip\noindent\textbf{Theorem.}  Inside the admissible filtered
-nuclear Tate / pro-Matlis / Capelli-projective derived-centre category
-\(\mathcal B^{\mathrm{adm}}\) (the canonical completion in which the
-diagonal Casimir converges and the principal-part residue pairing is
-perfect), the formal-Darboux stalk identification at \(N\) Dirac
-branes is unconditional:
+\noindent
+Mixed holomorphic--topological string theory on
+$X=\R^2_{\mathrm{top}}\times\C^2_{\mathrm{hol}}$ --- the Costello
+holomorphic-topological twist
+\cite{costello-twistedM} of the Bershadsky--Cecotti--Ooguri--Vafa
+B-twist
+\cite{bcov} of the $\mathcal N=(2,2)$ worldsheet sigma model in the
+Costello--Li BV / factorization renormalisation
+\cite{costello-renormalization}\cite{costello-li-quantum-bcov}\cite{costello-li-open-closed-bcov}
+--- has, at each formal holomorphic-symplectic Dirac brane point, a
+closed sector that coincides with the chiral Hochschild cochain
+complex of the boundary algebra.  Its closed sector is the
+holomorphic-topological Hamiltonian BF theory with fields
+$\mathcal A\in\Omega^\bullet(\R^2)\widehat\otimes
+\Omega^{0,\bullet}(\C^2)\widehat\otimes\mathfrak h$ valued in the
+reduced Hamiltonian Lie algebra
+$\mathfrak h=\C[[z_1,z_2]]/\C\cdot 1$ of the formal symplectic
+polydisk, antifields $\mathcal B$ valued in the Grothendieck--Matlis
+residue dual
+$\mathfrak h^\vee_{\mathrm{cont}}
+   =H^2_{(z_1,z_2)}(\C[[z_1,z_2]])\,dz_1dz_2$
+paired by $\langle f,\omega\rangle=\Res_0 f\omega$, and master action
 \[
-  \mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}\bigl|_{b}
+  S=\int_X\bigl\langle\mathcal B,\,
+        (d+\bar\partial)\mathcal A
+        +\tfrac12[\mathcal A,\mathcal A]_{\mathfrak h}\bigr\rangle .
+\]
+The open sector is a stack of $N$ Dirac branes on the worldline
+$\R_t\subset X$ with matrix transverse position
+$(\phi_1,\phi_2)\in\mathfrak{gl}_N\oplus\mathfrak{gl}_N$, Chan--Paton
+substitution $z_i\mapsto\phi_i$ subject to the moment-map constraint
+$[\phi_1,\phi_2]=0$, and antifield $\psi\in\mathfrak{gl}_N[1]$ with
+$Q\psi=[\phi_1,\phi_2]$, giving the Koszul resolution of the derived
+commuting variety.
+
+\medskip\noindent
+At a brane vacuum $b\in\C^2$ with formal Darboux chart
+$A_b=\widehat{\mathcal O}_{\C^2,b}\cong\C[[z_1,z_2]]$ and symplectic
+form $\omega_b=dz_1\wedge dz_2$, the classical open algebra on $\R_t$
+is the Chevalley--Eilenberg cochain complex
+\[
+  A^{\mathrm{cl}}_{\partial,N}
+   =C^\bullet_{\mathrm{CE}}\bigl(\mathfrak{gl}_N,\,
+       \mathrm{Sym}(\mathfrak{gl}_N\oplus\mathfrak{gl}_N
+                    \oplus\mathfrak{gl}_N[1])\bigr),
+\]
+and a closed Hamiltonian $f\in\mathfrak h$ acts on this brane sector
+through the trace
+\[
+  J\colon\mathfrak h\longrightarrow
+      \mathcal O\bigl(\mu^{-1}_{\mathrm{der}}(0)\bigr)^{GL_N},
+  \qquad
+  J(f)=\overline{\operatorname{Tr}\,f(\phi_1,\phi_2)},
+\]
+the unique $GL_N$-equivariant, primitive, single-trace,
+Darboux-natural expression of $f$ on the derived commuting variety.
+The closed observables form the mixed-HT factorization algebra of
+Hamiltonian currents valued in CE chains of the shifted-cotangent BF
+Lie algebra $\mathfrak g=\mathfrak h\ltimes\mathfrak h^\vee_{\mathrm{cont}}[1]$,
+with two-variable singular product on $\Delta\subset\C^2_z\times\C^2_w$,
+\[
+  \mathsf J_x(z)\mathsf J_y(w)
+   \sim K^{(2)}_\Delta(z,w)\,\mathsf J_{[x,y]_{\mathfrak g}}(w),
+  \qquad
+  K^{(2)}_\Delta(z,w)
+    =\frac{d\zeta_1\,d\zeta_2}{\zeta_1\zeta_2},
+\]
+the two-complex-dimensional refinement of the Cauchy kernel
+$K^{(1)}_C(z,w)=dz/(z-w)$ recovered from any chosen curve restriction
+$C\hookrightarrow\C^2$ with its pushed-forward bracket and anomaly
+matching.
+
+\medskip\noindent
+Inside the admissible filtered nuclear Tate / pro-Matlis /
+Capelli-projective derived-centre category $\mathcal B^{\mathrm{adm}}$,
+the formal-Darboux stalk identification at $N$ Dirac branes is
+unconditional:
+\[
+  \mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}|_b
+   \;\simeq\;
+  C^\bullet_{\mathrm{CE},\mathrm{cont}}\!\bigl(
+    \widehat{\mathfrak g}_{\mathrm{cent}}\bigr)
    \;\simeq\;
   Z^{\mathrm{der,adm}}_{E_1}\!\bigl(A^{\mathrm{cl}}_{\partial,N}\bigr)
    \;\simeq\;
-  HH^\bullet_{\mathrm{adm}}\bigl(A^{\mathrm{cl}}_{\partial,N},
-                                 A^{\mathrm{cl}}_{\partial,N}\bigr)
+  HH^\bullet_{\mathrm{adm}}\!\bigl(A^{\mathrm{cl}}_{\partial,N},
+                                   A^{\mathrm{cl}}_{\partial,N}\bigr)
 \]
-as \(E_2\)-algebras, with formal Darboux coordinate
-\(J(f)=\overline{\operatorname{Tr}\,f(\phi_1,\phi_2)}\) and CE/PV
-dictionary \(c_f\mapsto\theta_f\), \(u_f\mapsto J(f)\).  The
-finite-\(N\) scalar anomaly is the Capelli central charge
-\(\hbar N[\bar c]=\Omega_{\mathrm{central}}|_{J(f)}\), the projective
-curvature of the modular line bundle at the trace generator.
+as $E_2$-algebras --- the bulk restricted to the formal neighbourhood
+of $b$, equated with the brane-side derived $E_1$-centre by
+Costello--Gwilliam bulk--boundary correspondence and the $E_1$-Hochschild
+theorem.  The Capelli central extension
+$\widehat{\mathfrak g}_{\mathrm{cent}}$ absorbs the finite-$N$ scalar
+anomaly as the projective central charge $\hbar N[\bar c]$; the trace
+$J(f)$ is the formal Darboux coordinate expression of the
+identification; the closed-to-open dictionary is the Koszul resolution
+$c_f\mapsto\theta_f$, $u_f\mapsto J(f)$ with $\theta_f$ the Hamiltonian
+Schouten derivation.  This is the formal-Darboux stalk of the chiral
+$E_d$-Deligne conjecture at $d=2$
+\cite{beilinson-drinfeld-chiral}.
 
-\medskip\noindent\textbf{Boundary.}  Strict-product, unreduced
-cotangent, and global lifts are governed by named obstruction classes
-(Tate / pro-Matlis admissibility, weighted-Casimir convergence,
-filtered cobar acceptance, all-loop QME, descent on
-\(\partial X\)).  Compact targets and global modular claims (chiral
-\(E_d\) Deligne at \(d\geq 2\); Hall--Drinfeld--Borcherds on compact
-non-toric CY\(_3\); operator-level lift of \(\Phi_{10}\) on
-\(K3\times E\); \(W_\infty[\lambda]/E_\infty\) admissible endpoint) are
-explicitly conditional, with elaboration in
-\texttt{working\_notes/frontier.tex}.
+\medskip\noindent
+The constant Hamiltonian line $\C\cdot 1\subset\C[z_1,z_2]$, killed
+on the closed side, acts on the brane as $c\mapsto c\cdot I$,
+producing the finite-$N$ Capelli scalar in three equivalent forms
+--- the Lie $2$-cocycle on $\bar A=\C[z_1,z_2]/\C\cdot 1$, the Poisson
+bracket of trace coordinates, and the Moyal commutator with the
+Weyl-symmetric quantisation $\Phi_\hbar\colon\C[z_1,z_2]\to M_N(\C)$:
+\[
+  \omega(f,g)=[\{f,g\}]_0,\qquad
+  \{\operatorname{Tr}\phi_1,\operatorname{Tr}\phi_2\}=N,\qquad
+  [\Phi_\hbar(z_1),\Phi_\hbar(z_2)]_\star=\hbar N\cdot I.
+\]
+The three realise one class $\hbar N[\bar c]\in
+H^2_{\mathrm{Lie}}(\bar A,\C)[[\hbar]]$, equal to the projective
+curvature $\Omega_{\mathrm{central}}|_{J(f)}$ of the modular line
+bundle on the moduli stack at the trace generator,
+\[
+  \hbar N[\bar c]=\Omega_{\mathrm{central}}|_{J(f)}.
+\]
+
+\medskip\noindent
+The local model is the two-complex-dimensional residue-pairing
+analogue of the Heisenberg vertex algebra: the Kac--Moody central
+pairing module $\Omega_K$ of a curve $K$ is replaced by the Matlis
+principal-part module
+$\mathcal P=\mathfrak h^\vee_{\mathrm{cont}}$, regular functions on
+$K$ by $\mathfrak h$, and the curve residue $\Res_p$ by the
+two-variable Grothendieck residue $\langle f,\omega\rangle=\Res_0
+f\omega$, with central cocycle the Capelli scalar.  On the cyclic
+framed stable branch $\C[\phi_1,\phi_2]\cdot v=\C^N$ the formal-Darboux
+chart recovers the Nakajima ADHM presentation of $\mathrm{Hilb}^N(\C^2)$;
+the Moyal/Weyl deformation of the brane Poisson algebra restricts to
+the Nekrasov--Schwarz noncommutative Hilbert scheme
+\cite{nekrasov-schwarz-noncommutative} with FI parameter $\hbar\cdot
+I$ and $U(1)$ centre-of-mass charge $\hbar N$.  The construction is
+compatible with the Costello twisted-supergravity / M-theory family
+\cite{costello-twistedM} and supplies the protected closed-string
+algebra at a Dirac brane vacuum after an admissible Hamiltonian
+restriction.
+
+\medskip\noindent
+The formal-Darboux stalk theorem is the local fibre of a conjectured
+global identification on the Costello--Gwilliam brane-link boundary
+$\partial X$; the latter holds when the three-component obstruction
+\[
+  \operatorname{Ob}^{\mathrm{global}}=
+  \operatorname{Ob}^{\mathrm{ch}\,E_2}_{\mathrm{Deligne}}\oplus
+  \operatorname{Ob}^{\mathrm{desc}}_{\partial}\oplus
+  \operatorname{Ob}^{\mathrm{QME}}_{\mathrm{all\mbox{-}loop}}
+\]
+vanishes: the chiral $E_d$-Deligne extension of the arity-two diagonal
+kernel $K^{(2)}_\Delta$ to a chiral $E_2$-operad on all arities, the
+$d_2$-differential of the Costello--Gwilliam descent spectral sequence
+on an \'etale cover of $\partial X$, and the all-loop quantum
+master-equation class of the closed-to-open coupling.  Each
+component vanishes locally; the global gluing is conjectural.
+Operator-level lifts of the level-$2$ modular section $\Phi_{10}$ on
+$K3\times E$ (Borcherds square root $\Delta_5=\Phi_{10}^{1/2}$) and
+the Hall--Drinfeld--Borcherds comparison spectral sequence on
+compact non-toric Calabi--Yau threefolds remain open.
 
 \end{abstract}

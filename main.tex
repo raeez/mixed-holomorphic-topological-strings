@@ -663,9 +663,9 @@ Koszul-descent acceptance class
 nonzero coordinate of \(\operatorname{Ob}_{\mathrm{UKD}}\) is the
 obstruction to acceptance.
 
-\subsection*{Reader's compass: what is proved, what fails strictly, what is conditional}
+\subsection*{Summary of results: proved, conditional, open}
 \label{ssec:proof-boundary-table}
-\addcontentsline{toc}{subsection}{Reader's compass: what is proved, what fails strictly, what is conditional}
+\addcontentsline{toc}{subsection}{Summary of results: proved, conditional, open}
 
 The local theorem of this manuscript replaces strict-product
 realisations of the open--closed dictionary with the admissible
@@ -15228,20 +15228,21 @@ Theorem~\ref{thm:main-local} is the formal-Darboux stalk of the
 global Mixed Holomorphic--Topological Deligne identification
 \(\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}\simeq
 Z^{\mathrm{der}}_{E_2^{\mathrm{HT}}}\!(\mathcal{C}^{\mathrm{op}}_\partial)\)
-of Theorem~\ref{thm:main-global-conditional}.  The detailed
-elaboration of the frontier programmes governing the global
-identification --- the chiral \(E_d\) Deligne conjecture at
-\(d\geq 2\), the Hall--Drinfeld--Borcherds comparison spectral sequence
-on compact non-toric CY\(_3\), the operator-level lift of the modular
-line on \(K3\times E\), the \(W_\infty[\lambda]/E_\infty\) admissible
-endpoint, and the MNOP / framing / gravitational-lift frontier inputs
---- is collected in \texttt{working\_notes/frontier.tex}.  The main
-paper proves the formal-Darboux stalk; none of the frontier programmes
-is a consequence (Theorem~\ref{thm:cross-target-firewall}, the
-cross-target firewall).  We restate below the three load-bearing
-conjectures referenced from the main paper's conditional/unconditional
-ledger; their elaboration, plus the \(W_\infty[\lambda]/E_\infty\)
-conjecture and the seven frontier inputs, live in the working note.
+of Theorem~\ref{thm:main-global-conditional}.  By the cross-target
+firewall (Theorem~\ref{thm:cross-target-firewall}), none of the
+following frontier programmes is a consequence: the chiral \(E_d\)
+Deligne conjecture at \(d\geq 2\), the Hall--Drinfeld--Borcherds
+comparison spectral sequence on compact non-toric CY\(_3\), the
+operator-level lift of the modular line on \(K3\times E\), and the
+\(W_\infty[\lambda]/E_\infty\) admissible endpoint identification.  We
+state the three load-bearing conjectures here in their canonical form;
+the chiral $E_2$-Deligne conjecture supplies
+\(\operatorname{Ob}^{\mathrm{ch}\,E_2}_{\mathrm{Deligne}}\), the
+Hall--Drinfeld--Borcherds spectral sequence supplies the
+\(d_2\)-differential of
+\(\operatorname{Ob}^{\mathrm{desc}}_{\partial}\), and the operator
+lift of \(\Phi_{10}\) supplies the additional class
+\(\operatorname{Ob}^V_{\mathrm{mod}}\) on the modular line.
 
 \subsection{Open problem: chiral
   \texorpdfstring{$E_d$}{Ed} Deligne conjecture at
@@ -15259,19 +15260,20 @@ conjecture and the seven frontier inputs, live in the working note.
   topological Deligne conjecture of Lurie
   \cite{lurie-ha}*{Thm.~5.3.1.14} along the chiral refinement.
 \end{conj}
-The \(d=1\) case is proved (Beilinson--Drinfeld
-\cite{beilinson-drinfeld-chiral}; Costello--Gwilliam
-\cite{costello-gwilliam}*{Vol.~I}).  The \(d\geq 2\) case requires three
-constructions beyond the present literature: a chiral
-\(E_d\)-operad on \(\C^d\) extending the Cauchy kernel to all arities;
-a chiral \(E_d\)-operadic centre construction; a chiral
-\(E_d\)-Hochschild cochain complex with appropriate \(E_{d+1}\)
-structure.  The formal-Darboux stalk theorem
-(Theorem~\ref{thm:main-local}) supplies the arity-two \(d=2\)
-formal-coordinate operation as the diagonal kernel
+The \(d=1\) case is the chiral Deligne theorem of Beilinson--Drinfeld
+\cite{beilinson-drinfeld-chiral} in the factorization-algebra
+formulation of Costello--Gwilliam \cite{costello-gwilliam}*{Vol.~I}.
+At \(d\geq 2\) the topological \(E_d\)-centre is constructed by Lurie
+\cite{lurie-ha}*{\S 5.3}, but a chiral \(E_d\)-operad on \(\C^d\)
+realising the holomorphic factorization structure at all arities is
+not in the literature; nor is the corresponding chiral
+\(E_d\)-Hochschild cochain complex with its \(E_{d+1}\) structure.
+The formal-Darboux stalk theorem (Theorem~\ref{thm:main-local}),
+together with Theorem~\ref{thm:formal-two-dimensional-holomorphic-ope},
+supplies the arity-two \(d=2\) formal-coordinate operation as the
+diagonal kernel
 \(K^{(2)}_\Delta\,\mathfrak g^{\otimes 2}\to\mathfrak g\); the
-all-arity extension is the content of the conjecture.  Detailed
-discussion in \texttt{working\_notes/frontier.tex}.
+all-arity extension is the content of Conjecture~\ref{conj:chiral-Ed-deligne}.
 
 \subsection{\texorpdfstring{Open problem: Hall--Drinfeld--Borcherds comparison spectral sequence on compact non-toric CY$_3$}{Open problem: Hall-Drinfeld-Borcherds comparison spectral sequence on compact non-toric CY3}}\label{ssec:open-hall-drinfeld-borcherds}
 
@@ -15302,10 +15304,14 @@ discussion in \texttt{working\_notes/frontier.tex}.
   \(X=K3\times E\) the \(E_2\)-page reads \((0,0,3,5,24)\), and
   convergence to \(\kappa(K3\times E)\) is the conjectural content.
 \end{conj}
-Compact-target evidence (Fourier--Mukai partners, quintic DT/PT data,
-\(S^3\) framing, chiral-volume finite evidence, Gopakumar--Vafa
-closure) is in \texttt{frontier\_mnop\_framing\_volume.tex} and the
-elaboration in \texttt{working\_notes/frontier.tex}.
+On $X=K3\times E$ the $E_2$-page reads $(0,0,3,5,24)$, with the
+Borcherds--Kac--Moody weight $\kappa_{\mathrm{BKM}}(\Phi_{10})=5$
+matching the level-$2$ Gritsenko--Nikulin paramodular form
+\cite{gritsenko-nikulin-paramodular}, and convergence to
+$\kappa(K3\times E)$ is the conjectural content.  Compact-target
+evidence on the $S^3$ framing, quintic DT/PT data, and Gopakumar--Vafa
+closure is the subject of the companion volume
+\texttt{frontier\_mnop\_framing\_volume.tex}.
 
 \subsection{Open problem: operator-level lift of the modular line on
   \texorpdfstring{$K3\times E$}{K3 x E}}\label{ssec:open-modular-lift}
@@ -15331,9 +15337,14 @@ elaboration in \texttt{working\_notes/frontier.tex}.
 By Lemma~\ref{lem:scalar-non-faithfulness} the scalar identity
 \(Z^{K3\times E}_{\mathrm{BPS}}=\Phi_{10}^{-1}\) is the shadow of a
 not-yet-constructed chain-level object;
-\(\Delta_5=\Phi_{10}^{1/2}\) is the Borcherds square-root branch.
-Cross-target reference: the Igusa cusp form volume.  Detailed
-discussion in \texttt{working\_notes/frontier.tex}.
+\(\Delta_5=\Phi_{10}^{1/2}\) is the Borcherds square-root branch
+governing the paramodular product
+\cite{gritsenko-nikulin-paramodular}.  The
+formal-Darboux stalk supplies only the local fibre of such a
+construction; the cross-target firewall (Theorem~\ref{thm:cross-target-firewall})
+records the matched-conventions class
+\(\operatorname{ob}_{\mathrm{Igusa/BKM}}\) which must vanish for the
+lift to descend.  Cross-target reference: the Igusa cusp form volume.
 
 \input{tate-P5-cross-volume}
 
