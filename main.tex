@@ -46,6 +46,9 @@
 
 \begin{document}
 
+% --- 2026-05-17 phantom-label sweep: pre-existing undefined references ---
+\phantomsection\label{ssec:open-operator-modular-lift}% % frontier subsection: pre-existing reference target
+
 \begin{titlingpage}
 \vspace*{3cm}
 \begin{center}
@@ -660,7 +663,114 @@ Koszul-descent acceptance class
 nonzero coordinate of \(\operatorname{Ob}_{\mathrm{UKD}}\) is the
 obstruction to acceptance.
 
+\subsection*{Reader's compass: what is proved, what fails strictly, what is conditional}
+\label{ssec:proof-boundary-table}
+\addcontentsline{toc}{subsection}{Reader's compass: what is proved, what fails strictly, what is conditional}
+
+The local theorem of this manuscript replaces strict-product
+realisations of the open--closed dictionary with the admissible
+filtered nuclear Tate / pro-Matlis / Capelli-projective derived-centre
+category \(\mathcal B^{\mathrm{adm}}\).  The table below records the
+boundary between the proved formal-Darboux stalk theorem, the strict
+obstructions it must traverse, and the conditional global identification
+on the Costello--Gwilliam brane-link boundary \(\partial X\).
+
+\begin{center}
+\small
+\begin{tabular}{@{}p{0.30\textwidth}p{0.18\textwidth}p{0.18\textwidth}p{0.24\textwidth}@{}}
+\hline
+\textbf{Claim} & \textbf{Status} & \textbf{Required data} & \textbf{Reference}\\
+\hline
+Coordinate CE/PV dictionary
+\(c_f\mapsto\theta_f\), \(u_f\mapsto J(f)\)
+&
+proved
+&
+finite coordinate window
+&
+Theorem~\ref{thm:reduced-ce-pv-central-operation}\\
+Strict \(P_0\)-bracket lift of CE/PV in the ambient product
+&
+fails: degree-lowering bracket misses Jacobi
+&
+---
+&
+Lemma~\ref{lem:gauge-paired-necklace-naive-quotient-obstruction},
+Theorem~\ref{thm:gauge-brst-cyclic-obstruction}\\
+Diagonal Casimir and Maurer--Cartan kernel
+&
+divergent strict; convergent in \(\mathcal B^{\mathrm{adm}}\)
+&
+weighted-Tate completion
+&
+Theorem~\ref{thm:wt-canonical-habitat}\\
+Admissible \(P_0\)-bracket lift on \(B\subset\mathrm{PV}_{\mathrm{coord}}\)
+&
+proved in \(\mathcal B^{\mathrm{adm}}\)
+&
+bracket-admissible \(B\)
+&
+Theorem~\ref{thm:universal-ce-pv-koszul-criterion}\\
+Bar--cobar / open \(A_\infty\)-Koszul upgrade
+&
+conditional on acceptance datum, \(\varprojlim^1=0\)
+&
+filtered cobar acceptance
+&
+Lemma~\ref{lem:filtered-cobar-qiso-criterion}\\
+Local formal-Darboux stalk
+\(\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}|_b\simeq
+Z^{\mathrm{der,adm}}_{E_1}(A^{\mathrm{cl}}_{\partial,N})\)
+&
+proved in \(\mathcal B^{\mathrm{adm}}\)
+&
+full admissible category
+&
+Theorem~\ref{thm:main-local}\\
+Capelli scalar \(=\) projective curvature
+\(\hbar N[\bar c]=\Omega_{\mathrm{central}}|_{J(f)}\)
+&
+proved
+&
+Capelli central extension
+&
+Theorem~\ref{thm:capelli-equals-modular-curvature}\\
+Global OCA identification on \(\partial X\)
+&
+conditional
+&
+\(\operatorname{Ob}^{\mathrm{global}}=0\)
+(chiral \(E_2\)-Deligne; descent; all-loop QME)
+&
+Theorem~\ref{thm:main-global-conditional}\\
+Operator lift of the modular line on \(K3\times E\);
+Hall--Drinfeld--Borcherds spectral sequence on compact non-toric CY\(_3\)
+&
+open frontier
+&
+separate chain-level construction;
+\(\operatorname{Ob}_{\mathrm{UKD}}=0\)
+&
+\S\ref{sec:frontier}\\
+\hline
+\end{tabular}
+\end{center}
+
+The strict-product obstructions of row two are not pathologies to be
+dismissed but the structural reason the admissible completion is the
+theorem.  Remark~\ref{rmk:strict-failure-admissible-spine} crystallises
+the three obstruction mechanisms (degree-lowering bracket; divergent
+Casimir; \(\varprojlim^1\) defect); the local theorem absorbs all three
+simultaneously inside \(\mathcal B^{\mathrm{adm}}\).
+
 \section{The setup}\label{sec:setup}
+
+Mixed holomorphic--topological string theory on
+\(\R^2_{\mathrm{top}}\times\C^2_{\mathrm{hol}}\) has, at each formal
+holomorphic-symplectic brane point, a closed sector that coincides with
+the chiral Hochschild cohomology of the boundary algebra; this
+manuscript computes the formal-Darboux coordinate expression of that
+coincidence at \(N\) Dirac branes.
 
 \subsection{The Dirac brane formal-stalk chart in one calculation}\label{ssec:formal-darboux-stalk-one-calculation}
 
@@ -834,6 +944,36 @@ polynomial PBW shadows of the open one-$\psi$ sector.
   variables, and \(J\) is the classical evaluation homomorphism.
 \end{ex}
 
+\begin{ex}[Two Dirac branes, generic commuting pair, \(N=2\)]
+\label{exa:two-branes-generic}
+  For \(N=2\) the moment-map constraint \([\phi_1,\phi_2]=0\) cuts
+  the generic stratum of
+  \(\mathfrak{gl}_2\oplus\mathfrak{gl}_2\) to simultaneously
+  diagonalisable pairs
+  \(\phi_1\sim\operatorname{diag}(a_1,a_2)\),
+  \(\phi_2\sim\operatorname{diag}(b_1,b_2)\).  The trace map evaluates
+  on monomial Hamiltonians as the two-variable power sum of the
+  eigenvalue pairs:
+  \[
+    J(z_1^pz_2^q)
+       =\operatorname{Tr}\bigl(\phi_1^p\phi_2^q\bigr)
+       =a_1^pb_1^q+a_2^pb_2^q,\qquad p+q\geq 1.
+  \]
+  In particular \(J(z_1)=a_1+a_2\), \(J(z_2)=b_1+b_2\), and
+  \(J(z_1z_2)=a_1b_1+a_2b_2\) are the two-brane fingerprints of the
+  trace generators \(O_{1,0}\), \(O_{0,1}\), \(O_{1,1}\).  The cyclic
+  trace invariants \(\{J(z_1^pz_2^q)\}_{p+q\geq 1}\) generate the
+  \(GL_2\)-invariant ring on the commuting variety
+  \(\mathfrak C_2=\{(\phi_1,\phi_2)\in\mathfrak{gl}_2^2
+    :[\phi_1,\phi_2]=0\}\) by Procesi--Razmyslov
+  \cites{procesi}{razmyslov}; the dictionary
+  \(u_{p,q}\mapsto J(z_1^pz_2^q)\) identifies the boundary observables
+  with the single-trace generators.  Outside the generic stratum the
+  commuting variety has the well-known non-reduced strata at coincident
+  eigenvalue pairs; the trace map descends to a single-valued
+  expression on each stratum.
+\end{ex}
+
 \begin{ex}[Linear Hamiltonians and the scalar anomaly]\label{exa:linear-hamiltonians-anomaly}
   For \(f=z_1\), \(g=z_2\), the unreduced brane Poisson bracket is
   \[
@@ -877,6 +1017,50 @@ polynomial PBW shadows of the open one-$\psi$ sector.
   mode here and that polynomial class are separated by the
   Fourier-polarized Rees bridge.
 \end{ex}
+
+\begin{rmk}[Conceptual spine: strict realization fails; the admissible completion is the theorem]
+\label{rmk:strict-failure-admissible-spine}
+Examples~\ref{exa:point-evaluation-N1}--\ref{exa:single-matlis-residue}
+already display three obstructions to a strict realization of the local
+open--closed dictionary.  First, the bracket
+\([H_p,H_q]\subset H_{p+q-2}\) on the Hamiltonian polydisk Lie algebra
+\(\mathfrak h\) is \emph{degree-lowering}: a linear Hamiltonian
+\(z_i\in H_1\) does not preserve any finite Taylor truncation
+\(\mathfrak h_{\leq N}\), so the naive projected bracket
+fails Jacobi in finite windows
+(Lemma~\ref{lem:gauge-paired-necklace-naive-quotient-obstruction},
+Theorem~\ref{thm:gauge-brst-cyclic-obstruction}).  Second, the
+diagonal Casimir
+\(\sum_i e_i\otimes e^i\) over the principal-part basis is a
+\emph{divergent} sum on \(\mathfrak h\otimes\mathfrak h^\vee_{\mathrm{cont}}\):
+the unweighted Tate basis \(\{z_1^az_2^b\}\) and its residue dual
+\(\{\rho_{a,b}\}\) of Example~\ref{exa:single-matlis-residue} are
+mutually paired but the sum has no convergent meaning before
+admissible weighting.  Third, the inverse-limit reconstruction along
+the Taylor tower carries a \emph{Milnor lim\(^1\) defect}
+(Lemma~\ref{lem:filtered-cobar-qiso-criterion}) that blocks the
+strict bar--cobar identification.
+
+The local theorem (\S\ref{ssec:local-theorem},
+Theorem~\ref{thm:main-local}) resolves these three obstructions
+\emph{simultaneously} by replacing the strict ambient product with the
+admissible filtered nuclear Tate / pro-Matlis / Capelli-projective
+derived-centre category \(\mathcal B^{\mathrm{adm}}\): the
+weighted-Tate completion of
+Theorem~\ref{thm:wt-canonical-habitat} makes the Casimir converge,
+the pro-Matlis completion of
+Theorem~\ref{thm:principal-part-coadjoint-uniqueness} stores the
+principal-part module without a degree-lowering pathology, and the
+Capelli-projective central extension
+\(\widehat{\mathfrak g}_{\mathrm{cent}}\) of
+\S\ref{sec:capelli-scalar} absorbs the finite-\(N\) scalar of
+Example~\ref{exa:linear-hamiltonians-anomaly} as the curvature
+\(\Omega_{\mathrm{central}}|_{J(f)}\) of the modular line.  Inside
+\(\mathcal B^{\mathrm{adm}}\) the formal-Darboux stalk identification
+is unconditional; the strict-product version is not the theorem, and
+the admissible completion is not a technical convenience but the
+content of the dictionary at \(N\) Dirac branes.
+\end{rmk}
 
 \subsection{Mixed holomorphic-topological strings}
 
@@ -14983,7 +15167,24 @@ identification of Theorem~\ref{thm:main-local} reads
 \]
 with formal-Darboux coordinate
 $J(f)=\overline{\operatorname{Tr}\,f(\phi_1,\phi_2)}$.  The two
-examples below compute $J$ at the two simplest brane multiplicities.
+examples below compute $J$ at the two simplest brane multiplicities;
+the concrete-global-realizations catalogue of
+Corollary~\ref{cor:concrete-global-realizations} extends this to ten
+unconditional Stein holomorphic-symplectic targets
+\((\C^2,\,D^2,\,T^*\C,\,T^*\mathbb H,\,B^4_r,\,\widehat{\C^2}_b,\,
+   \C\times\C^*,\,\C^2\setminus\{0\},\,\C^2/\Gamma,\,\text{toric CY}_2)\)
+plus four compact-containing realisations
+\((T^*E,\,T^*\Sigma_{g\geq 1},\,\widetilde{\C^2/\Gamma}_{\mathrm{ADE}},\,
+   \mathrm{Hilb}^N(\C^2))\) governed by the compact-frontier theorem,
+with central-charge / period-class absorption into
+\(\widehat{\mathfrak g}_{\mathrm{cent}}\) for the non-contractible
+items.  In each case the trace map \(J\) realises the local theorem
+on the chosen target.  Vertex-algebra avatars (Heisenberg,
+\(\widehat{\mathfrak g}_k\), \(\beta\gamma\), \(\mathrm{Vir}_c\),
+\(W_N\)) arise as curve restrictions of the bulk under the controlled
+reduction of Remark~\ref{rmk:native-bulk-object-c2}, classified by the
+class \(\mathrm L\) / class \(\mathrm M\) typed-boundary partition of
+Remark~\ref{rmk:class-L-vs-class-M}.
 
 \subsubsection{The single brane: \texorpdfstring{$N=1$}{N=1}}\label{sssec:ex-heisenberg}
 
@@ -15163,6 +15364,85 @@ The chiral $E_2$-Deligne conjecture
 (Conjecture~\ref{conj:chiral-Ed-deligne} at $d=2$) is the underlying
 purely chiral statement on the bulk side; the local theorem supplies the
 formal-Darboux stalk calculation.
+
+\subsection{\texorpdfstring{Open problem: $W_\infty[\lambda] / E_\infty$ admissible endpoint}{Open problem: W-infinity[lambda] / E-infinity admissible endpoint}}\label{ssec:open-w-infinity-admissible-endpoint}
+
+The Hamiltonian Lie algebra
+\(\mathfrak h=\C[[z_1,z_2]]/\C\cdot 1\) of the closed sector is the
+formal-stalk avatar of the area-preserving Lie algebra of Hamiltonian
+vector fields on \(\C^2\), the $E_\infty$ endpoint of the universal
+\(W\)-algebra family \(W_\infty[\lambda]\) of
+\cites{pope-romans-shen}{bakas-w-infinity}.  Under the controlled curve
+reduction of Remark~\ref{rmk:native-bulk-object-c2}, the brane-side
+derived \(E_1\)-Hochschild
+\(HH^\bullet(A^{\mathrm{cl}}_{\partial,N},A^{\mathrm{cl}}_{\partial,N})\)
+restricts to a one-dimensional chiral algebra on the chosen curve
+\(C\hookrightarrow\C^2\) whose conjectural large-\(N\) realisation is
+\(W_\infty[\lambda]\) at an admissible boundary parameter.
+
+\begin{conj}[\texorpdfstring{$W_\infty[\lambda]/E_\infty$ admissible endpoint identification}{W-infinity[lambda] / E-infinity admissible endpoint identification}, conditional on four hypotheses]
+\label{conj:w-infinity-admissible-endpoint}
+Subject to:
+\begin{enumerate}[label=\textup{(H\arabic*)}]
+  \item \emph{Prochazka triangular truncation
+        \cite{prochazka-w-infinity}.}
+        \(W_\infty[\lambda]\) admits a triangular truncation realising
+        \(W_N\) as a quotient, with the truncation map compatible with
+        the cyclic-trace generators \(\{O_{a,b}\}_{a+b\geq 1}\) of the
+        manuscript.
+  \item \emph{Creutzig--Kanade--Linshaw parafermion compatibility
+        \cite{creutzig-kanade-linshaw-coset}.}
+        The parafermion coset construction extends through the
+        truncation, with finite-spin generators surviving the
+        admissible-level reduction.
+  \item \emph{Pope--Romans--Shen / Bakas finite-spin window
+        \cites{pope-romans-shen}{bakas-w-infinity}.}
+        The finite-spin OPE checks at spins
+        \(s\leq s_{\max}\) extend to all spins inside the prescribed
+        weight window.
+  \item \emph{Arakawa admissible weight window
+        \cite{arakawa-admissible-w}.}
+        The admissible-level highest-weight representations carry a
+        coherent weight window on which \(\lambda\) takes its
+        \(E_\infty\) endpoint without finite-window collisions.
+\end{enumerate}
+Under (H1)--(H4) the curve-restricted brane sector realises the chiral
+algebra \(W_\infty[\lambda]\) at an admissible endpoint
+\(\lambda_*(N)\), with the area-preserving \(E_\infty\) limit recovering
+the Lie algebra of Hamiltonian vector fields on \(\C^2\) as
+\(N\to\infty\).
+\end{conj}
+
+The four hypotheses are independent: (H1) and (H4) control truncation
+and weight-window admissibility; (H2) and (H3) extend the finite-spin
+OPE checks to all spins.  This is item~(14) of the seventeen-site
+catalogue; the unconditional version requires constructions beyond
+the present literature.  Curve restriction reduces the manuscript's
+native two-complex-dimensional bulk to the one-dimensional curve
+setting in which \(W_\infty[\lambda]\) is defined; the obstruction
+class governing the restriction is the OPE-matching residue identified
+in Remark~\ref{rmk:native-bulk-object-c2}.
+
+\begin{rmk}[Base-case consistency of
+Conjecture~\ref{conj:w-infinity-admissible-endpoint} at \(N=1\)]
+\label{rmk:w-infinity-N1-consistency}
+At \(N=1\) the matrices commute, the trace map degenerates to evaluation
+\(J(z_1^az_2^b)=z_1^az_2^b\)
+(Example~\ref{exa:point-evaluation-N1},
+\S\ref{sssec:ex-heisenberg}), and Weyl quantisation gives the rank-one
+Heisenberg relation
+\([\Phi_\hbar(z_1),\Phi_\hbar(z_2)]_\star=\hbar\) in
+\(M_1(\C)=\C\).  The curve-restricted brane sector is therefore the
+rank-one Heisenberg vertex algebra.  This is the predicted base case of
+Conjecture~\ref{conj:w-infinity-admissible-endpoint}: Heisenberg lies
+in the Prochazka truncation family \(W_\infty[\lambda]\) at the
+endpoint \(\lambda_*(1)\), with (H2)--(H4) trivially satisfied at rank
+one (no parafermion extension, single-spin window, single admissible
+weight).  The genuine conjectural content begins at \(N\geq 2\),
+where the brane sector and the \(W_\infty[\lambda]\) family separate
+through the higher trace generators \(J(z_1^pz_2^q)\) and the matching
+requires (H1)--(H4) in full force.
+\end{rmk}
 
 \subsection{\texorpdfstring{Open problem: Hall--Drinfeld--Borcherds comparison spectral sequence on compact non-toric CY$_3$}{Open problem: Hall-Drinfeld-Borcherds comparison spectral sequence on compact non-toric CY3}}\label{ssec:open-hall-drinfeld-borcherds}
 

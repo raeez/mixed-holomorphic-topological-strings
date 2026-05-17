@@ -117,7 +117,7 @@ NOW := $(shell date +"%c" | tr ' :' '__')
 quick:
 	$(MKDIR) $(OUTDIR)
 	$(QUICKBUILDTEX)
-	open $(OUTDIR)/$(TEXMAIN).pdf
+	-open $(OUTDIR)/$(TEXMAIN).pdf  # leading hyphen: tolerate headless / no-GUI failure
 
 fast: quick
 
