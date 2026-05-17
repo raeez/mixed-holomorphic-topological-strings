@@ -22,31 +22,6 @@ conditionally upgrades the mixed-HT operad to a topological
 \S\ref{ssec:local-theorem} factors through exactly one of the
 carriers; the typed framework forces this factorisation to be unique.
 
-\subsection{Status discipline header}\label{ssec:status-discipline}
-
-Every load-bearing theorem in this section carries a six-field header
-\[
-  \mathsf{Status}\;/\;
-  \mathsf{Ambient}\;/\;
-  \mathsf{Source}\;/\;
-  \mathsf{Target}\;/\;
-  \mathsf{Map}\;/\;
-  \mathsf{Residuals}.
-\]
-\(\mathsf{Status}\) is one of
-\(\mathrm{Proved}\), \(\mathrm{ProvedElsewhere}\), \(\mathrm{Conditional}\),
-\(\mathrm{Conjectural}\), \(\mathrm{Heuristic}\).
-\(\mathsf{Ambient}\) is the symmetric-monoidal \(\infty\)-category in
-which the equality holds (raw chain, weight-completed, pro-Matlis,
-coderived, Banach, nuclear Tate, Capelli-projective, etc.).
-\(\mathsf{Source}\) and \(\mathsf{Target}\) name the typed carriers
-between which the theorem produces a morphism.
-\(\mathsf{Map}\) is the actual morphism (or
-``not yet constructed'').  \(\mathsf{Residuals}\) names the obstruction
-classes or proof obligations.  Without this header three downgrades
-hide: a scalar-to-chain collapse, a bar-to-bulk collapse, and a
-candidate-to-theorem collapse.
-
 \subsection{The six carriers and their types}\label{ssec:six-carriers}
 
 \begin{defn}[Six holographic carriers]\label{defn:six-carriers}
@@ -142,8 +117,11 @@ with pairwise distinct roles; \((C_1)\) is a coalgebra,
       \text{not determined by }\chi
   \end{array}
 \]
-Each downgrade in the seventeen-site catalogue corresponds to a
-forbidden identification of two distinct columns of this table.
+Each forbidden identification of two distinct columns of this table
+is one of three structural collapses --- bar coalgebra confused with
+bulk centre, scalar shadow confused with chain-level object, or
+target algebra confused with the bar coalgebra of its own factorization
+--- excluded by the typed-carrier discipline.
 \end{prop}
 
 \begin{proof}
@@ -167,9 +145,9 @@ on \(\partial X\) whose construction is a separate problem
 (Corollary~\ref{cor:mandatory-chain-supplements}), and whose scalar
 \(\chi\) does not determine its chain-level structure
 (again Lemma~\ref{lem:scalar-non-faithfulness}).  Distinct roles are
-read off the column entries.  The forbidden identifications between
-the cells are sites~(2), (5), (6), (11), and~(12) of the
-seventeen-site catalogue.
+read off the column entries.  Confusing any two of the six cells reduces to one of the
+bar-to-bulk, scalar-to-chain, or algebra-to-shadow collapses
+already noted at the start of this subsection.
 \end{proof}
 
 \subsection{The boundary-holographic functor
@@ -757,8 +735,8 @@ construction of the relevant
 \(\mathrm{SC}^{\mathrm{HT}}_{(1,2)}\)-object and an explicit
 identification of its trace with the scalar invariant.  Without that
 construction the scalar identity is a shadow, and the promotion is
-the bar-to-bulk collapse forbidden by site~(11) of the seventeen-site
-catalogue.
+the scalar-shadow-to-chain-level-operator collapse forbidden by the
+typed discipline.
 \end{cor}
 
 \begin{proof}
@@ -894,8 +872,7 @@ manuscript draws this distinction at the level of finite-jet PVA
 models: the classical BV action is constructed, while the all-loop
 QME, the boundary vertex algebra, and the \(E_3^{\mathrm{top}}\)-lift
 remain conditional on the KZ analytic SDR, the image-choice Stokes,
-the reflected weights, and the lift \(T=[Q_{\mathrm{tot}},G]\);
-site~(16) of the seventeen-site catalogue makes this binding.
+the reflected weights, and the lift \(T=[Q_{\mathrm{tot}},G]\).
 \end{rmk}
 
 \subsection{The typed global mixed-HT Deligne theorem}
@@ -1942,7 +1919,8 @@ Lemma~\ref{lem:scalar-non-faithfulness}, the scalar identity
 \(Z^{K3\times E}_{\mathrm{BPS}}=\Phi_{10}^{-1}=\Delta_5^{-2}\) is the
 shadow of a not-yet-constructed chain-level
 \(\mathrm{SC}^{\mathrm{HT}}_{(1,2)}\)-object; its construction is
-the frontier problem in the seventeen-site catalogue.
+the open operator-level frontier problem
+(\S\ref{ssec:open-modular-lift}).
 \end{rmk}
 
 
@@ -2004,9 +1982,8 @@ falsifier-with-obstruction.
   \item \emph{Carrier-disjointness test.}  For each forbidden pair of
         carriers \((C_i,C_j)\) in the type table of
         Proposition~\ref{prop:carrier-type-table}, exhibit the
-        seventeen-site catalogue antipattern that would collapse them
-        and the corresponding replacement
-        (\S\ref{ssec:six-carriers}).
+        identification that would collapse them and the corresponding
+        replacement (\S\ref{ssec:six-carriers}).
 \end{enumerate}
 
 \subsection{Summary diagram}
@@ -2075,10 +2052,10 @@ twofold:
         Capelli-projective scalar of the local stalk.
 \end{enumerate}
 The theorem does \emph{not} substitute for, replace, or imply any of
-the following global K3\(\times E\) constructions, each of which is a
-separate chain-level theorem in Vol~II
-\texttt{chapters/connections/3d\_gravity.tex} and Vol~III
-\texttt{chapters/connections/hall\_borcherds.tex}:
+the following global K3\(\times E\) constructions, each of which
+is a separate chain-level theorem treated in the companion volumes
+on the $d=1$ algebraic-HT sector and the $d\geq 2$ Calabi-Yau-to-chiral
+frontier:
 \begin{itemize}
   \item the compact Hall descent
         \(\widehat{\mathrm{CoHA}}^{\mathrm{red}}_{\Lambda^{2,1}_{\mathrm{II}}}(K3\times E)\)
@@ -2096,8 +2073,8 @@ separate chain-level theorem in Vol~II
         Pentagon-face scalar.
 \end{itemize}
 The four items \((\beta,\delta,\varepsilon,\tau)\) above are the
-four-part chain comparison datum of Vol~II
-\texttt{conj:gravity-line-hall-borcherds-comparison}; each carries its
+four-part chain comparison datum of the gravity-line / Hall--Borcherds
+conjecture in the companion algebraic-HT volume; each carries its
 own finite-window check list \((W1)\)--\((W8)\), distinct from the
 seven admissibility conditions \((i)\)--\((vii)\) of
 Theorem~\ref{thm:main-local}.  Confusing the formal-Darboux local
