@@ -1,0 +1,1278 @@
+\section{The typed boundary-holographic master theorem}\label{sec:typed-master}
+
+The formal-Darboux stalk theorem of \S\ref{ssec:local-theorem} computes
+the universal local closed--open identification at one Dirac brane
+vacuum.  The global conditional theorem of
+\S\ref{ssec:local-theorem} packages that local fibre as the
+Costello--Gwilliam bulk--boundary correspondence on the brane-link
+boundary \(\partial X\) conditional on five obstruction classes.
+This section makes the typing discipline that organises both
+statements explicit: it distinguishes the six holographic carriers, each
+in its own type category, never to be collapsed; it states the typed
+boundary-holographic functor \(\Phi^{\mathrm{HT}}\) and the
+\emph{open--closed comparison morphism} (henceforth \(\mathrm{OCA}\))
+intertwining the carriers; it states the mixed-HT chiral
+Deligne--Swiss-cheese action on the open-closed pair; it records the
+scalar non-faithfulness lemma that prevents graded Euler characters
+from controlling chain-level structure; and it states the
+topologisation criterion \(T=[Q,G]\) (the stress-tensor null-homotopy
+formalised in Definition~\ref{defn:topologisation-datum}) that
+conditionally upgrades the mixed-HT operad to a topological
+\(E_d\)-operad.  Every load-bearing theorem of
+\S\ref{ssec:local-theorem} factors through exactly one of the
+carriers; the typed framework forces this factorisation to be unique.
+
+\subsection{Status discipline header}\label{ssec:status-discipline}
+
+Every load-bearing theorem in this section carries a six-field header
+\[
+  \mathsf{Status}\;/\;
+  \mathsf{Ambient}\;/\;
+  \mathsf{Source}\;/\;
+  \mathsf{Target}\;/\;
+  \mathsf{Map}\;/\;
+  \mathsf{Residuals}.
+\]
+\(\mathsf{Status}\) is one of
+\(\mathrm{Proved}\), \(\mathrm{ProvedElsewhere}\), \(\mathrm{Conditional}\),
+\(\mathrm{Conjectural}\), \(\mathrm{Heuristic}\).
+\(\mathsf{Ambient}\) is the symmetric-monoidal \(\infty\)-category in
+which the equality holds (raw chain, weight-completed, pro-Matlis,
+coderived, Banach, nuclear Tate, Capelli-projective, etc.).
+\(\mathsf{Source}\) and \(\mathsf{Target}\) name the typed carriers
+between which the theorem produces a morphism.
+\(\mathsf{Map}\) is the actual morphism (or
+``not yet constructed'').  \(\mathsf{Residuals}\) names the obstruction
+classes or proof obligations.  Without this header three downgrades
+hide: a scalar-to-chain collapse, a bar-to-bulk collapse, and a
+candidate-to-theorem collapse.
+
+\subsection{The six carriers and their types}\label{ssec:six-carriers}
+
+\begin{defn}[Six holographic carriers]\label{defn:six-carriers}
+Fix the formal-Darboux local model
+\(X=\R^2_{\mathrm{top}}\times\widehat{\C^2}_{\mathrm{hol}}\),
+brane line \(L=\R_t\times\{b\}\), reduced Hamiltonian Lie algebra
+\(\mathfrak h=\C[[z_1,z_2]]/\C\cdot 1\), residue dual
+\(P=\mathfrak h^\vee_{\mathrm{cont}}=
+H^2_{(z_1,z_2)}(\C[[z_1,z_2]])\,dz_1dz_2\), shifted-cotangent BF Lie
+algebra \(\mathfrak g=\mathfrak h\ltimes P[1]\), Capelli-projective
+extension \(\widehat{\mathfrak g}_{\mathrm{cent}}\), boundary algebra
+\(A^{\mathrm{cl}}_{\partial,N}=
+C^\bullet_{\mathrm{CE}}(\mathfrak{gl}_N,
+\mathrm{Sym}(\mathfrak{gl}_N\oplus\mathfrak{gl}_N\oplus\mathfrak{gl}_N[1]))\)
+with \(Q\psi=[\phi_1,\phi_2]\), and admissible category
+\(\mathcal B^{\mathrm{adm}}\) of
+Appendix~\ref{app:completion-blueprint}.  The six holographic
+carriers are:
+\begin{enumerate}[label=\textup{(C\arabic*)}]
+  \item \(\bar B^{E_1}(A^{\mathrm{cl}}_{\partial,N})
+        =T^{\mathrm{c}}(s^{-1}\bar A^{\mathrm{cl}}_{\partial,N})\),
+        the conilpotent \(E_1^{\mathrm{top}}\)-bar coalgebra of the
+        augmented brane algebra
+        \(\bar A^{\mathrm{cl}}_{\partial,N}\):
+        a coassociative conilpotent dg coalgebra in
+        \(\mathcal B^{\mathrm{adm}}\) with deconcatenation coproduct and
+        differential \(d_{\bar B}=d_{\mathrm{int}}+d_{\mathrm{OPE}}\)
+        of \eqref{eq:bar-differential-explicit};
+  \item \((A^{\mathrm{cl}}_{\partial,N})^!\), the Verdier/Koszul
+        dual algebra of \(A^{\mathrm{cl}}_{\partial,N}\) on the Koszul
+        locus, in the sense of
+        Theorem~\ref{thm:universal-ce-pv-koszul-criterion};
+  \item \(Z^{\mathrm{der}}_{E_2^{\mathrm{HT}}}\!\bigl(
+        \mathcal C^{\mathrm{op}}_\partial\bigr)\), the derived mixed-HT
+        \(E_2\)-centre of the open boundary factorisation category
+        \(\mathcal C^{\mathrm{op}}_\partial=
+        \Phi^{\mathrm{FA}}_2(\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}})
+        \big|_{\partial X}\) on the Costello--Gwilliam brane-link
+        boundary;
+  \item \(\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}\), the physical
+        bulk mixed-HT Hamiltonian BF factorisation algebra of
+        Definition~\ref{def:closed-mixed-HT-factorization};
+  \item the protected scalar trace
+        \(\chi=\operatorname{sTr}\,(-)\colon
+        \mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}\to\Z((q,\hbar))\),
+        equivalently the Capelli scalar
+        \(\hbar N[\bar c]=\Omega_{\mathrm{central}}|_{J(f)}\in
+        H^2_{\mathrm{Lie}}(\bar A,\C)[[\hbar]]\) of
+        Theorem~\ref{thm:capelli-equals-modular-curvature};
+  \item the candidate gravity-line algebra
+        \(\mathrm{Op}^{\mathrm{grav}}_{\partial X}\), a filtered
+        \(\mathrm{SC}^{\mathrm{HT}}\)-object on \(\partial X\)
+        (frontier; \S\ref{ssec:open-operator-modular-lift}).
+\end{enumerate}
+\end{defn}
+
+\begin{prop}[Binding type table]\label{prop:carrier-type-table}
+The six carriers occupy six distinct cells of the type table below,
+with pairwise distinct roles; \((C_1)\) is a coalgebra,
+\((C_2)\) is a Koszul-dual algebra, \((C_3)\) is a centre carrying an
+\(E_2\)-Gerstenhaber bracket distinct from any \((C_i)\),
+\((C_4)\) is a factorisation algebra not present without \(\mathrm{OCA}\),
+\((C_5)\) is a graded scalar invariant valued in
+\(\Z((q,\hbar))\), and \((C_6)\) is a separately constructed filtered
+\(\mathrm{SC}^{\mathrm{HT}}_{(1,2)}\)-object on \(\partial X\):
+\[
+  \renewcommand{\arraystretch}{1.25}
+  \begin{array}{l|l|l|l}
+    \mathsf{Carrier} & \mathsf{Type} & \mathsf{Role} & \mathsf{Not}\\\hline
+    \bar B^{E_1}(A^{\mathrm{cl}}_{\partial,N}) &
+      \text{conilpotent }E_1^{\mathrm{top}}\text{-coalgebra} &
+      \text{classifies twisting morphisms} &
+      \text{not the bulk}\\
+    (A^{\mathrm{cl}}_{\partial,N})^! &
+      \text{Verdier/Koszul dual algebra} &
+      \text{controls line/open dual modules} &
+      \text{not }Z^{\mathrm{der}}\\
+    Z^{\mathrm{der}}_{E_2^{\mathrm{HT}}}(\mathcal C^{\mathrm{op}}_\partial) &
+      \text{derived }E_2^{\mathrm{HT}}\text{-centre} &
+      \text{universal closed sector} &
+      \text{not automatically physical}\\
+    \mathcal A^{\mathrm{cl}}_{\mathrm{bulk}} &
+      \text{mixed-HT BF factorisation algebra} &
+      \text{physical bulk if realised} &
+      \text{not present without }\mathrm{OCA}\\
+    \chi=\operatorname{sTr}\,(-) &
+      \text{graded Euler / protected index} &
+      \text{shadow invariant} &
+      \text{not chain-level structure}\\
+    \mathrm{Op}^{\mathrm{grav}}_{\partial X} &
+      \text{filtered }\mathrm{SC}^{\mathrm{HT}}\text{-object} &
+      \text{chain-level physical target} &
+      \text{not determined by }\chi
+  \end{array}
+\]
+Each downgrade in the seventeen-site catalogue corresponds to a
+forbidden identification of two distinct columns of this table.
+\end{prop}
+
+\begin{proof}
+The six cells are pairwise distinct.  \((C_1)\) is a coalgebra by
+\eqref{eq:bar-differential-explicit} so cannot coincide with the
+algebra \((C_2)\), the centre \((C_3)\), or the bulk \((C_4)\);
+\((C_2)\) is the Verdier/Koszul dual algebra (different bracket from
+the Gerstenhaber bracket of \((C_3)\) by
+Theorem~\ref{thm:universal-ce-pv-koszul-criterion});
+\((C_3)\) is the derived \(E_2^{\mathrm{HT}}\)-centre carrying an
+\(E_2\)-Gerstenhaber bracket
+(Theorem~\ref{thm:main-local}, step (8) of its proof),
+which is distinct from \((C_4)\)'s factorisation product (Definition
+\ref{def:closed-mixed-HT-factorization}: \((C_4)\) acts on the
+boundary through \(\mathrm{OCA}\), \((C_3)\) is the abstract centre
+of the boundary category); \((C_5)\) is a graded scalar
+invariant in \(\Z((q,\hbar))\) (not a chain-level object) and is
+non-faithful by Lemma~\ref{lem:scalar-non-faithfulness}; \((C_6)\) is
+a chain-level filtered \(\mathrm{SC}^{\mathrm{HT}}_{(1,2)}\)-object
+on \(\partial X\) whose construction is a separate problem
+(Corollary~\ref{cor:mandatory-chain-supplements}), and whose scalar
+\(\chi\) does not determine its chain-level structure
+(again Lemma~\ref{lem:scalar-non-faithfulness}).  Distinct roles are
+read off the column entries.  The forbidden identifications between
+the cells are sites~(2), (5), (6), (11), and~(12) of the
+seventeen-site catalogue.
+\end{proof}
+
+\subsection{The boundary-holographic functor
+\texorpdfstring{$\Phi^{\mathrm{HT}}$}{Phi-HT}}
+\label{ssec:phi-ht-functor}
+
+\begin{defn}[Holographic-boundary datum]\label{defn:hol-bd-datum-HT}
+A \emph{holographic-boundary datum} on the mixed-HT brane line
+\(L\subset X\) is a tuple
+\[
+  \bigl(\bar B,\,\Theta,\,r(z),\,Z^{\mathrm{der}},\,\nabla\bigr),
+\]
+where \(\bar B\) is a conilpotent dg coalgebra in
+\(\mathcal B^{\mathrm{adm}}\); \(\Theta\in
+\mathrm{Hom}^1_{\mathrm{prim}}(\bar B,\bar B)\) is a primitive
+degree-one element satisfying the Maurer--Cartan equation
+\[
+  d_{\bar B}\Theta+\tfrac12[\Theta,\Theta]=0;
+\]
+\(r(z)\in
+H^2_{\Delta}\!\bigl(\C[[z,w]]\bigr)\,d\zeta_1d\zeta_2\otimes
+\bar B^{\otimes 2}\) is the binary collision residue of \(\Theta\) at
+the formal diagonal in \(\C^2\times\C^2\);
+\(Z^{\mathrm{der}}\) is a derived \(E_2^{\mathrm{HT}}\)-centre carrying
+a chiral-brace dg algebra structure; and \(\nabla\) is a flat
+Gauss--Manin connection on bar fibres along the formal Darboux moduli
+of \(b\), compatible with \(\Theta\) and inducing the Gauss--Manin
+connection on \(Z^{\mathrm{der}}\).
+\end{defn}
+
+\begin{thm}[Typed boundary-holographic realisation
+\texorpdfstring{$\Phi^{\mathrm{HT}}$}{Phi-HT} at \(N\) Dirac branes]
+\label{thm:typed-boundary-holographic-realisation}
+
+\noindent\textbf{Status:} Proved.\hfill
+\textbf{Ambient:} \(\mathcal B^{\mathrm{adm}}\).\\
+\textbf{Source:} \(A^{\mathrm{cl}}_{\partial,N}\), the
+\(E_1^{\mathrm{top}}\)-brane algebra on the worldline \(\R_t\) with
+Koszul differential \(Q\psi=[\phi_1,\phi_2]\).\hfill
+\textbf{Target:} the holographic-boundary datum of
+Definition~\ref{defn:hol-bd-datum-HT}.\\
+\textbf{Map:} the assignment of \eqref{eq:phi-ht-explicit}.\hfill
+\textbf{Residuals:} none.
+
+\smallskip
+There is a functor
+\begin{equation}\label{eq:phi-ht-functor}
+  \Phi^{\mathrm{HT}}\colon
+  \mathbf{E_1}^{\mathrm{top}}\text{-}\mathbf{Brane}_{\R_t,\mathrm{Kosz}}
+    \longrightarrow
+  \mathbf{HolBd}^{\mathrm{HT}}_{X}
+\end{equation}
+from the category of \(E_1^{\mathrm{top}}\)-algebras on \(\R_t\) with
+Koszul differential to the category of holographic-boundary data of
+Definition~\ref{defn:hol-bd-datum-HT},
+sending \(A^{\mathrm{cl}}_{\partial,N}\) to the holographic-boundary
+datum
+\begin{equation}\label{eq:phi-ht-explicit}
+  \Phi^{\mathrm{HT}}\!\bigl(A^{\mathrm{cl}}_{\partial,N}\bigr)
+  =\Bigl(\bar B^{E_1}\!\bigl(A^{\mathrm{cl}}_{\partial,N}\bigr),\,
+        \Theta_{A^{\mathrm{cl}}_{\partial,N}},\,
+        K^{(2)}_\Delta,\,
+        Z^{\mathrm{der}}_{E_2^{\mathrm{HT}}}\!\bigl(
+          \mathcal C^{\mathrm{op}}_\partial\bigr),\,
+        \nabla^{\mathrm{HT}}\Bigr),
+\end{equation}
+where
+\begin{enumerate}[label=\textup{(\roman*)}]
+  \item \(\bar B^{E_1}(A^{\mathrm{cl}}_{\partial,N})
+        =T^{\mathrm{c}}(s^{-1}\bar A^{\mathrm{cl}}_{\partial,N})\) is
+        the conilpotent \(E_1\)-bar coalgebra with deconcatenation
+        coproduct and differential
+\begin{equation}\label{eq:bar-differential-explicit}
+          d_{\bar B}=d_{\mathrm{int}}+d_{\mathrm{OPE}}
+\end{equation}
+        where \(d_{\mathrm{int}}\) is the internal differential of
+        \(A^{\mathrm{cl}}_{\partial,N}\) (the Koszul differential
+        \(Q\psi=[\phi_1,\phi_2]\) plus the Chevalley--Eilenberg
+        differential for \(\mathfrak{gl}_N\)) and \(d_{\mathrm{OPE}}\)
+        is the sum over binary OPE contractions with the diagonal
+        local-cohomology kernel
+        \(K^{(2)}_\Delta=d\zeta_1d\zeta_2/(\zeta_1\zeta_2)\) of
+        Proposition~\ref{prop:diagonal-cohomology-operad};
+  \item \(\Theta_{A^{\mathrm{cl}}_{\partial,N}}\in
+        \mathrm{Hom}^1_{\mathrm{prim}}\bigl(
+          \bar B^{E_1}(A^{\mathrm{cl}}_{\partial,N}),
+          \bar B^{E_1}(A^{\mathrm{cl}}_{\partial,N})\bigr)\) is the
+        primitive Maurer--Cartan element representing the
+        \(E_1\)-product on \(A^{\mathrm{cl}}_{\partial,N}\) inside its
+        bar:
+        \[
+          \Theta_{A^{\mathrm{cl}}_{\partial,N}}
+            =\sum_{n\ge 1}m_n^{A^{\mathrm{cl}}_{\partial,N}}
+              \colon\bar B^{E_1}(A^{\mathrm{cl}}_{\partial,N})^{\otimes n}
+              \to A^{\mathrm{cl}}_{\partial,N},
+        \]
+        with \(m_2\) the multiplication, \(m_3\) the associator
+        homotopy (zero in the strict case), and higher \(m_n\) the
+        \(A_\infty\) corrections coming from boundary OPE
+        contractions; \(\Theta\) satisfies
+\begin{equation}\label{eq:mc-bar-equation}
+          d_{\bar B}\Theta_{A^{\mathrm{cl}}_{\partial,N}}
+            +\tfrac12[\Theta_{A^{\mathrm{cl}}_{\partial,N}},
+                       \Theta_{A^{\mathrm{cl}}_{\partial,N}}]=0;
+\end{equation}
+  \item \(K^{(2)}_\Delta\in
+        H^2_\Delta(\C[[z_1,z_2,w_1,w_2]])\,d\zeta_1d\zeta_2\) is the
+        binary collision residue
+        \(\operatorname{Res}^{\mathrm{coll}}_{0,2}(\Theta)\); its
+        passage to the line/Koszul-dual side, through the universal
+        twisting morphism
+        \(\tau\colon\bar B^{E_1}(A^{\mathrm{cl}}_{\partial,N})\to
+        A^{\mathrm{cl}}_{\partial,N}\) of the bar/cobar adjunction
+        \cites{loday-vallette}{kontsevich-dq}{tamarkin-deligne},
+        is the rational solution of the classical Yang--Baxter equation,
+\begin{equation}\label{eq:cybe-from-mc-degree-three}
+          [r_{12}(z_1,z_2),r_{13}(z_1,z_3)]
+          +[r_{12}(z_1,z_2),r_{23}(z_2,z_3)]
+          +[r_{13}(z_1,z_3),r_{23}(z_2,z_3)]=0,
+\end{equation}
+        as a consequence of the degree-three component of the
+        Maurer--Cartan equation \eqref{eq:mc-bar-equation};
+  \item \(Z^{\mathrm{der}}_{E_2^{\mathrm{HT}}}(
+        \mathcal C^{\mathrm{op}}_\partial)\) is the derived
+        \(E_2^{\mathrm{HT}}\)-centre, characterised on the
+        formal-Darboux stalk by
+\begin{equation}\label{eq:bar-resolution-derived-centre}
+          Z^{\mathrm{der}}_{E_2^{\mathrm{HT}}}\!\bigl(
+            \mathcal C^{\mathrm{op}}_\partial\bigr)\big|_b
+          \;\simeq\;
+          \RHom_{A^{\mathrm{cl}}_{\partial,N}\otimes
+                 (A^{\mathrm{cl}}_{\partial,N})^{\mathrm{op}}}\!\bigl(
+            A^{\mathrm{cl}}_{\partial,N},
+            A^{\mathrm{cl}}_{\partial,N}\bigr)
+          \;\simeq\;
+          HH^\bullet_{\mathrm{adm}}\!\bigl(
+            A^{\mathrm{cl}}_{\partial,N},
+            A^{\mathrm{cl}}_{\partial,N}\bigr),
+\end{equation}
+        equivalently the chiral Hochschild brace dg algebra of
+        \(A^{\mathrm{cl}}_{\partial,N}\); the global object is obtained
+        by gluing this stalk along \(\partial X\) through
+        Theorem~\ref{thm:main-global-conditional}; and
+  \item \(\nabla^{\mathrm{HT}}\) is the flat Gauss--Manin connection on
+        bar fibres along the formal Darboux moduli of \(b\)
+        (parametrised by canonical transformations of \(\widehat{\C^2}\)),
+        compatible with \(\Theta_{A^{\mathrm{cl}}_{\partial,N}}\) and
+        inducing the Gauss--Manin connection on
+        \(Z^{\mathrm{der}}_{E_2^{\mathrm{HT}}}(\mathcal C^{\mathrm{op}}_\partial)\)
+        through \eqref{eq:bar-resolution-derived-centre}.
+\end{enumerate}
+The projection to \(\bar B^{E_1}(A^{\mathrm{cl}}_{\partial,N})\) is
+the bar construction; the projection to
+\((\bar B^{E_1}(A^{\mathrm{cl}}_{\partial,N}),\Theta)\) is the
+Maurer--Cartan / twisting datum; the projection to \(K^{(2)}_\Delta\)
+is the binary OPE hub; the projection to
+\(Z^{\mathrm{der}}_{E_2^{\mathrm{HT}}}(\mathcal C^{\mathrm{op}}_\partial)\)
+is the universal closed sector.  None of these projections produces
+the physical bulk \(\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}\); that
+identification is a separate theorem
+(Theorem~\ref{thm:oca-formal-darboux-fibre} below).
+\end{thm}
+
+\begin{proof}
+The proof is the assembly of \eqref{eq:phi-ht-explicit} from
+constructions already proved in this manuscript.
+
+\emph{(i) Cofree conilpotent bar coalgebra.}
+\(\bar B^{E_1}(A^{\mathrm{cl}}_{\partial,N})\) is the cofree
+conilpotent \(E_1\)-coalgebra on
+\(s^{-1}\bar A^{\mathrm{cl}}_{\partial,N}\) by the standard
+bar/cobar adjunction in \(\mathcal B^{\mathrm{adm}}\)
+(Lemma~\ref{lem:continuous-bar-cobar},
+Theorem~\ref{thm:tate-bar-cobar-quillen}).  The internal differential
+\(d_{\mathrm{int}}\) is the Koszul-CE differential of
+\(A^{\mathrm{cl}}_{\partial,N}\).  The OPE contribution
+\(d_{\mathrm{OPE}}\) is the sum over binary contractions through the
+diagonal local-cohomology kernel \(K^{(2)}_\Delta\) of
+\eqref{eq:ope-linear}: every pair \(x_i\otimes x_{i+1}\) in a
+deconcatenation factor contracts through \(K^{(2)}_\Delta\) to
+\(x_i\cdot x_{i+1}\) with the residue.
+
+\emph{(ii) \(d_{\bar B}^2=0\) via Arnold.}
+The quadratic term in \(d_{\bar B}^2=
+d_{\mathrm{int}}^2+\{d_{\mathrm{int}},d_{\mathrm{OPE}}\}
++d_{\mathrm{OPE}}^2\) reduces to the iterated three-point relation on
+\(\Delta_3\subset(\C^2)^3\):
+\[
+  \eta_{12}\wedge\eta_{23}+\eta_{23}\wedge\eta_{31}
+   +\eta_{31}\wedge\eta_{12}=0,\qquad
+  \eta_{ij}=K^{(2)}_\Delta(z_i,z_j),
+\]
+the two-complex-dimensional Arnold relation on three points, proved as
+the residue-form identity at \(\Delta_3\) by
+Proposition~\ref{prop:diagonal-cohomology-operad}.  The cross-term
+\(\{d_{\mathrm{int}},d_{\mathrm{OPE}}\}\) vanishes because the
+Koszul-CE differential \(Q\psi=[\phi_1,\phi_2]\) commutes with the
+\(GL_N\)-equivariant adjacent-swap exactness on traces
+(Lemma~\ref{lem:adjacent-swaps}).  Hence \(d_{\bar B}^2=0\) and the
+OPE residue data define a Maurer--Cartan element
+\(\Theta_{A^{\mathrm{cl}}_{\partial,N}}\) of
+\(\bar B^{E_1}(A^{\mathrm{cl}}_{\partial,N})\).
+
+\emph{(iii) Binary collision residue equals \(K^{(2)}_\Delta\).}
+The binary collision residue of \(\Theta\) at \(\Delta\subset
+\C^2\times\C^2\) is the arity-two OPE coefficient
+\(K^{(2)}_\Delta=d\zeta_1d\zeta_2/(\zeta_1\zeta_2)\) of
+\eqref{eq:ope-linear}.  The degree-three component of
+\eqref{eq:mc-bar-equation}, evaluated on three free generators
+\(x_1,x_2,x_3\) of \(\bar A^{\mathrm{cl}}_{\partial,N}\), produces the
+classical Yang--Baxter relation \eqref{eq:cybe-from-mc-degree-three}
+on the line/Koszul-dual side after passage through the universal
+twisting morphism \(\tau\colon\bar B^{E_1}(A^{\mathrm{cl}}_{\partial,N})
+\to A^{\mathrm{cl}}_{\partial,N}\) and projection to the rational
+quasi-classical limit.
+
+\emph{(iv) Derived centre via bar resolution.}
+The derived \(E_2^{\mathrm{HT}}\)-centre on the formal-Darboux stalk
+identifies with the chiral Hochschild cochain brace dg algebra by the
+bar resolution
+\(\Omega^{\mathrm{c}}\bar B^{E_1}(A^{\mathrm{cl}}_{\partial,N})
+\to A^{\mathrm{cl}}_{\partial,N}\), the Tate bar--cobar Quillen
+equivalence (Theorem~\ref{thm:tate-bar-cobar-quillen}), the universal
+filtered cobar recognition criterion
+(Theorem~\ref{thm:universal-filtered-cobar-recognition}), and the
+\(E_2\)-Gerstenhaber bracket match of
+\eqref{eq:ce-pv-dictionary-strong}.  Equation
+\eqref{eq:bar-resolution-derived-centre} is exactly the local form of
+the equivalence
+\(\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}|_b\simeq
+HH^\bullet_{\mathrm{adm}}\!\bigl(A^{\mathrm{cl}}_{\partial,N},
+A^{\mathrm{cl}}_{\partial,N}\bigr)\) of
+Theorem~\ref{thm:main-local}.
+
+\emph{(v) Gauss--Manin compatibility.}
+The flat Gauss--Manin connection \(\nabla^{\mathrm{HT}}\) is the
+Tate-continuous extension of the Kashiwara--Kawai connection on bar
+fibres along the formal-Darboux moduli of \(b\in\widehat{\C^2}\).
+Flatness follows from the integrability of canonical transformations
+of \(\widehat{\C^2}\) on
+\(\mathrm{Sym}\,\mathfrak h\subset A^{\mathrm{cl}}_{\partial,N}\)
+(Proposition~\ref{prop:stable-trace-invariants}) and the
+\(GL_N\)-equivariance of the Koszul-CE differential.  Compatibility
+with \(\Theta\) is the statement that
+\(\nabla^{\mathrm{HT}}\Theta\in\mathrm{Hom}^1_{\mathrm{prim}}(\bar B,
+\bar B)\) satisfies the linearised Maurer--Cartan equation, which is
+the Bianchi identity for the bulk current
+\(\mathsf J_x(z)\) of \eqref{eq:ope-linear}.
+
+\emph{(Functoriality.)}
+An \(E_1^{\mathrm{top}}\)-morphism
+\(f\colon A^{\mathrm{cl}}_{\partial,N}\to A^{\mathrm{cl}}_{\partial,N'}\)
+of brane algebras lifts to a coalgebra morphism
+\(\bar B(f)\colon\bar B^{E_1}(A^{\mathrm{cl}}_{\partial,N})\to
+\bar B^{E_1}(A^{\mathrm{cl}}_{\partial,N'})\) intertwining \(\Theta\),
+preserving the binary residue and the Gauss--Manin connection, and
+inducing the standard pushforward on derived centres.  Hence
+\(\Phi^{\mathrm{HT}}\) is a functor.
+\end{proof}
+
+\subsection{The open--closed comparison morphism}
+\label{ssec:oca}
+
+\begin{defn}[Open--closed comparison morphism]\label{defn:oca-comparison}
+The \emph{open--closed comparison morphism} (\(\mathrm{OCA}\)) at \(N\)
+Dirac branes is the structure morphism
+\begin{equation}\label{eq:oca-definition}
+  \mathrm{OCA}_N\colon
+    \mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}
+    \;\longrightarrow\;
+    Z^{\mathrm{der}}_{E_2^{\mathrm{HT}}}\!\bigl(
+      \mathcal C^{\mathrm{op}}_\partial\bigr)
+\end{equation}
+in \(\mathcal B^{\mathrm{adm}}\) defined as the composition
+\begin{equation}\label{eq:oca-composition}
+  \mathrm{OCA}_N
+   \;=\;
+   \iota_{\mathrm{cent}}\circ\widetilde{\rho}_{\mathrm{bulk}\to\partial},
+\end{equation}
+where:
+\begin{enumerate}[label=\textup{(\roman*)}]
+  \item \(\widetilde{\rho}_{\mathrm{bulk}\to\partial}\colon
+        \mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}\to
+        \underline{\mathrm{End}}_{\mathrm{SC}^{\mathrm{HT}}_{(1,2)}}\!
+          \bigl(\mathcal C^{\mathrm{op}}_\partial\bigr)\) is the
+        Costello--Gwilliam bulk--boundary factorisation pairing of
+        \cite{costello-gwilliam}*{Vol.~II~\S 4--5} adjointed to the
+        endomorphism algebra of \(\mathcal C^{\mathrm{op}}_\partial\)
+        as an \(\mathrm{SC}^{\mathrm{HT}}_{(1,2)}\)-module: for nested
+        \(U\supset V\subset\partial X\), the pairing
+        \(\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}(U)\otimes
+        \mathcal C^{\mathrm{op}}_\partial(V)\to
+        \mathcal C^{\mathrm{op}}_\partial(V)\) is the closed-acting-on-open
+        operation of Theorem~\ref{thm:sc-ht-deligne-swiss-cheese} item~(iii),
+        and \(\widetilde\rho\) is its currying to the endomorphism algebra;
+  \item \(\iota_{\mathrm{cent}}\colon
+        \underline{\mathrm{End}}_{\mathrm{SC}^{\mathrm{HT}}_{(1,2)}}\!
+          \bigl(\mathcal C^{\mathrm{op}}_\partial\bigr)\to
+        Z^{\mathrm{der}}_{E_2^{\mathrm{HT}}}\!\bigl(
+          \mathcal C^{\mathrm{op}}_\partial\bigr)\) is the universal
+        arrow into the derived centre, characterised by the universal
+        property that any \(\mathrm{SC}^{\mathrm{HT}}_{(1,2)}\)-equivariant
+        endomorphism of \(\mathcal C^{\mathrm{op}}_\partial\) factors
+        uniquely (up to coherent homotopy) through
+        \(Z^{\mathrm{der}}_{E_2^{\mathrm{HT}}}\).
+\end{enumerate}
+The composition is a morphism of
+\(\mathrm{SC}^{\mathrm{HT}}_{(1,2)}\)-algebras on \(\partial X\) by
+construction (i) intertwines the closed-colour operations and (ii) is
+\(\mathrm{SC}^{\mathrm{HT}}_{(1,2)}\)-equivariant; operadic
+associativity is checked on generators in the proof of
+Theorem~\ref{thm:sc-ht-deligne-swiss-cheese}.  When
+\(\mathrm{OCA}_N\) is a quasi-isomorphism, it is called the
+\emph{open--closed correspondence quasi-isomorphism}.
+\end{defn}
+
+\begin{thm}[\(\mathrm{OCA}\) at the formal-Darboux stalk]
+\label{thm:oca-formal-darboux-fibre}
+
+\noindent\textbf{Status:} Proved
+(\(=\) Theorem~\ref{thm:main-local}).\hfill
+\textbf{Ambient:} \(\mathcal B^{\mathrm{adm}}\).\\
+\textbf{Source:} \(\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}\big|_b\) of
+Definition~\ref{def:closed-mixed-HT-factorization}.\hfill
+\textbf{Target:} \(Z^{\mathrm{der}}_{E_2^{\mathrm{HT}}}(
+\mathcal C^{\mathrm{op}}_\partial)\big|_b\) of
+Definition~\ref{defn:six-carriers}~(C3).\\
+\textbf{Map:} the morphism \(\mathrm{OCA}_N|_b\) of
+Definition~\ref{defn:oca-comparison} evaluated at the brane vacuum
+\(b\).\hfill
+\textbf{Residuals:} none at the stalk.
+
+\smallskip
+The morphism \(\mathrm{OCA}_N|_b\) is a quasi-isomorphism of
+\(E_2\)-algebras in \(\mathcal B^{\mathrm{adm}}\), with formal
+expression \eqref{eq:thm-A-equivalence} of
+Theorem~\ref{thm:main-local}.  Its formal-Darboux coordinate is the
+trace map
+\(J(f)=\overline{\operatorname{Tr}\,f(\phi_1,\phi_2)}\) of
+\eqref{eq:ce-pv-dictionary-strong}, with Capelli central charge
+\(\hbar N[\bar c]=\Omega_{\mathrm{central}}|_{J(f)}\) of
+Theorem~\ref{thm:capelli-equals-modular-curvature}.
+\end{thm}
+
+\begin{proof}
+The morphism of Definition~\ref{defn:oca-comparison} evaluated at the
+formal-Darboux stalk \(b\) is, by construction, the bulk-boundary
+factorisation pairing of \cite{costello-gwilliam}*{Vol.~II} on the
+contractible polydisk neighbourhood of \(b\) in \(X\), composed with
+the universal arrow into the derived centre.  On the contractible
+polydisk every component of the global obstruction
+\(\operatorname{Ob}^{\mathrm{global}}\) of
+Theorem~\ref{thm:main-global-conditional} vanishes locally
+(Remark following~\ref{thm:main-global-conditional}: the chiral
+\(E_2\)-Deligne datum is supplied by \(K^{(2)}_\Delta\); the descent
+class is identically zero; the all-loop QME class collapses to the
+one-loop centrality datum absorbed by
+Theorem~\ref{thm:capelli-equals-modular-curvature}).  Theorem~\ref{thm:main-local}
+identifies this morphism with the universal local mixed-HT Deligne
+equivalence \eqref{eq:thm-A-equivalence}.
+\end{proof}
+
+\subsection{The mixed-HT chiral Deligne--Swiss-cheese action}
+\label{ssec:sc-ht-deligne}
+
+The mixed-HT setup carries an unconditional two-coloured
+Swiss-cheese operad structure: the open colour is \(E_1^{\mathrm{top}}\)
+along the brane line \(\R_t\subset L\); the closed colour is the
+mixed holomorphic-topological factorisation operad on the transverse
+\(\R_s\times\C^2\); the mixed operations record bulk-to-boundary
+insertion preserving the HT framing.
+
+\begin{defn}[Mixed-HT Swiss-cheese operad]
+\label{defn:sc-ht-operad}
+The \emph{mixed-HT Swiss-cheese operad of bidegree \((1,2)\)},
+denoted \(\mathrm{SC}^{\mathrm{HT}}_{(1,2)}\), is the two-coloured
+coloured dg operad with:
+\begin{itemize}
+  \item closed colour \(\mathsf c\): the \(\mathrm{HT}^{(1,2)}\)
+        framed little disks operad on \(\R^1_{\mathrm{top}}\times\C^2_{\mathrm{hol}}\),
+        equivalently \(E_1^{\mathrm{top}}\widehat\otimes E_2^{\mathrm{hol}}\),
+        modelled on the framed Fulton--MacPherson compactification of
+        configurations of disks in
+        \(\R^1_{\mathrm{top}}\times\C^2_{\mathrm{hol}}\);
+  \item open colour \(\mathsf o\): the \(E_1^{\mathrm{top}}\) little
+        intervals operad on the brane line \(\R_t\);
+  \item mixed operations recording configurations of closed disks in
+        the upper half-space \(\R_{s\ge 0}\times\C^2_{\mathrm{hol}}\)
+        approaching the boundary \(\R_{s=0}\) with marked open
+        intervals on \(\R_{s=0}\equiv\R_t\), with composition by
+        nesting closed disks and substitution of open intervals.
+\end{itemize}
+\(\mathrm{SC}^{\mathrm{HT}}_{(1,2)}\) is generated by binary closed
+operations carrying the diagonal local-cohomology kernel
+\(K^{(2)}_\Delta\) on \(\C^2\), binary open operations carrying the
+\(E_1\)-product on \(\R_t\), and binary mixed operations
+\(\mu^{\mathrm{mix}}_{\mathsf c,\mathsf o}\) realising bulk-to-boundary
+insertion.  It is not equivalent to \(E_3^{\mathrm{top}}\) without a
+topologisation datum (Theorem~\ref{thm:topologisation-by-stress-tensor}
+below).
+\end{defn}
+
+\begin{rmk}[Why not Dunn collapse]\label{rmk:no-dunn-collapse}
+Dunn additivity \cite{lurie-ha}*{Theorem~5.1.2.2} identifies
+\(E_p^{\mathrm{top}}\otimes E_q^{\mathrm{top}}\simeq E_{p+q}^{\mathrm{top}}\)
+in topological algebras.  The mixed-HT operad
+\(E_1^{\mathrm{top}}\otimes E_2^{\mathrm{hol}}\) is the tensor of a
+topological \(E_1\) factor with a holomorphic \(E_2\) factor, and
+holomorphic \(E_2\) is not equivalent to topological \(E_2\) without
+the topologisation \(T=[Q,G]\).  Hence
+\(\mathrm{SC}^{\mathrm{HT}}_{(1,2)}\) is unconditionally a
+\(2\)-coloured mixed-HT operad on which Dunn additivity is unavailable;
+identifying it with \(E_3^{\mathrm{top}}\) requires the conditional
+input of Theorem~\ref{thm:topologisation-by-stress-tensor}.
+\end{rmk}
+
+\begin{thm}[Mixed-HT chiral Deligne--Swiss-cheese action]
+\label{thm:sc-ht-deligne-swiss-cheese}
+
+\noindent\textbf{Status:} Proved at the formal-Darboux stalk; route to
+the global statement is Theorem~\ref{thm:main-global-conditional}.\hfill
+\textbf{Ambient:} \(\mathcal B^{\mathrm{adm}}\).\\
+\textbf{Source:} the open-closed pair
+\(\bigl(Z^{\mathrm{der}}_{E_2^{\mathrm{HT}}}(
+\mathcal C^{\mathrm{op}}_\partial),
+\mathcal C^{\mathrm{op}}_\partial\bigr)\) of
+Definition~\ref{defn:six-carriers}.\hfill
+\textbf{Target:}
+\(\mathrm{SC}^{\mathrm{HT}}_{(1,2)}\)-algebras in
+\(\mathcal B^{\mathrm{adm}}\).\\
+\textbf{Map:} the assignment
+\eqref{eq:sc-ht-action-on-pair} below.\hfill
+\textbf{Residuals:} the chiral \(E_2\)-Deligne obstruction
+\(\operatorname{Ob}^{\mathrm{ch}\,E_2}_{\mathrm{Deligne}}\) for the
+global form.
+
+\smallskip
+The pair
+\begin{equation}\label{eq:sc-ht-action-on-pair}
+  \bigl(Z^{\mathrm{der}}_{E_2^{\mathrm{HT}}}\!\bigl(
+    \mathcal C^{\mathrm{op}}_\partial\bigr),\,
+    \mathcal C^{\mathrm{op}}_\partial\bigr)
+\end{equation}
+is, at the formal-Darboux stalk, an algebra over
+\(\mathrm{SC}^{\mathrm{HT}}_{(1,2)}\) in \(\mathcal B^{\mathrm{adm}}\),
+with:
+\begin{enumerate}[label=\textup{(\roman*)}]
+  \item closed colour acting on
+        \(Z^{\mathrm{der}}_{E_2^{\mathrm{HT}}}(
+        \mathcal C^{\mathrm{op}}_\partial)\) by the chiral brace
+        operations on
+        \(HH^\bullet_{\mathrm{adm}}(A^{\mathrm{cl}}_{\partial,N},
+        A^{\mathrm{cl}}_{\partial,N})\) of
+        \eqref{eq:bar-resolution-derived-centre}, with binary singular
+        product \eqref{eq:ope-linear};
+  \item open colour acting on \(\mathcal C^{\mathrm{op}}_\partial\)
+        through the \(E_1^{\mathrm{top}}\)-product of
+        \(A^{\mathrm{cl}}_{\partial,N}\);
+  \item mixed binary operation
+        \(\mu^{\mathrm{mix}}_{\mathsf c,\mathsf o}\bigl(c\otimes a\bigr)
+        =c\cdot a\) realising the action of the closed sector on the
+        open sector, with higher mixed operations the centrality
+        homotopy hierarchy
+        \(\{H^{\mathrm{prod}}_{f,-},H^{P_0}_{f,-},H^3_{f,-,-},\ldots\}\)
+        of \eqref{eq:ce-pv-dictionary-strong}.
+\end{enumerate}
+The action is bulk--boundary compatible: closed
+operations \(c\in Z^{\mathrm{der}}_{E_2^{\mathrm{HT}}}\) act on the open
+algebra through the trace-pairing
+\(J(f)=\overline{\operatorname{Tr}\,f(\phi_1,\phi_2)}\), with central
+\(K\in\widehat{\mathfrak g}_{\mathrm{cent}}\) acting as
+\(\operatorname{Tr}\mathbf 1=N\).
+
+If, in addition, an open--closed correspondence quasi-isomorphism
+\(\mathrm{OCA}_N\colon\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}
+\xrightarrow{\sim}Z^{\mathrm{der}}_{E_2^{\mathrm{HT}}}(
+\mathcal C^{\mathrm{op}}_\partial)\)
+is supplied (Theorem~\ref{thm:main-global-conditional}, conditional
+on \(\operatorname{Ob}^{\mathrm{global}}=0\)), then
+\((\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}},
+\mathcal C^{\mathrm{op}}_\partial)\) is the physical
+\(\mathrm{SC}^{\mathrm{HT}}_{(1,2)}\)-bulk--boundary system of the
+mixed-HT theory on \(X\) at \(N\) Dirac branes.
+\end{thm}
+
+\begin{proof}
+The closed-colour action is the \(E_2\)-Gerstenhaber bracket on
+\(HH^\bullet_{\mathrm{adm}}\) of step (8) of the proof of
+Theorem~\ref{thm:main-local}, refined to the chiral brace dg algebra
+structure through the bar resolution
+\eqref{eq:bar-resolution-derived-centre}.  The binary singular product
+is the diagonal local-cohomology kernel \(K^{(2)}_\Delta\) of
+\eqref{eq:ope-linear}, established as a coloured dg operad action by
+Proposition~\ref{prop:diagonal-cohomology-operad}.  The open-colour
+action is the \(E_1^{\mathrm{top}}\)-product on
+\(A^{\mathrm{cl}}_{\partial,N}\) along the brane line.
+
+The mixed binary operation is the standard closed-acting-on-open
+bulk--boundary factorisation pairing
+\(\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}(U)\otimes
+\mathcal C^{\mathrm{op}}_\partial(V)\to
+\mathcal C^{\mathrm{op}}_\partial(V)\) of
+Costello--Gwilliam \cite{costello-gwilliam}*{Vol.~II~\S 4--5};
+restricted to the formal-Darboux stalk and post-composed with
+\(\mathrm{OCA}_N|_b\) of
+Theorem~\ref{thm:oca-formal-darboux-fibre}, it agrees with the
+universal arrow of the derived centre acting on
+\(A^{\mathrm{cl}}_{\partial,N}\).
+
+The higher mixed operations are the centrality homotopy hierarchy
+\(\{H^{\mathrm{prod}}_{f,-},H^{P_0}_{f,-},H^3_{f,-,-},\ldots\}\) of
+\eqref{eq:ce-pv-dictionary-strong}, supplied by the admissible chiral
+Deligne--Tamarkin one-up
+\(A^{\mathrm{cl}}_{\partial,N}\rightsquigarrow
+Z^{\mathrm{der}}_{E_2^{\mathrm{HT}}}\) in \(\mathcal B^{\mathrm{adm}}\):
+each higher coherence in
+\(\mathrm{SC}^{\mathrm{HT}}_{(1,2)}\) is realised by an explicit
+chain-level homotopy in \(HH^\bullet_{\mathrm{adm}}\), with the
+\(K\)-cocycle absorbing the projective correction.  Operadic
+associativity is checked on generators through the iterated
+three-point Arnold relation
+\(\eta_{12}\eta_{23}+\eta_{23}\eta_{31}+\eta_{31}\eta_{12}=0\) and the
+Jacobi identity for the Gerstenhaber bracket.
+
+The compatibility with the trace pairing is
+\eqref{eq:ce-pv-dictionary-strong}: \(c_f\mapsto\theta_f\) is the
+closed-on-open action, \(u_f\mapsto J(f)\) is the open evaluation, and
+\(K\mapsto\operatorname{Tr}\mathbf 1=N\) is the central residue.
+
+The conditional global upgrade follows from
+Theorem~\ref{thm:main-global-conditional}: if and only if
+\(\operatorname{Ob}^{\mathrm{global}}\) vanishes does
+\(\mathrm{OCA}_N\) extend from the stalk to a quasi-isomorphism on
+\(\partial X\), at which point
+\((\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}},
+\mathcal C^{\mathrm{op}}_\partial)\) becomes a global
+\(\mathrm{SC}^{\mathrm{HT}}_{(1,2)}\)-algebra realising the physical
+bulk--boundary system.
+\end{proof}
+
+\subsection{Scalar non-faithfulness}
+\label{ssec:scalar-non-faithfulness}
+
+The graded Euler character is the protected scalar trace
+\(\chi=\operatorname{sTr}\colon\mathrm{FiltCh}_{
+\mathrm{SC}^{\mathrm{HT}}_{(1,2)}}\to\Z((q,\hbar))\) defined on
+chain-level filtered \(\mathrm{SC}^{\mathrm{HT}}_{(1,2)}\)-algebras with
+a compatible homological grading and a filtration by charge / weight /
+height.  It is a shadow, not a chain-level invariant; the next lemma is
+the standing reminder that every automorphic-to-physical promotion in
+the manuscript must be preceded by a chain-level construction.
+
+\begin{lem}[Scalar non-faithfulness]\label{lem:scalar-non-faithfulness}
+
+\noindent\textbf{Status:} Proved.\hfill
+\textbf{Ambient:} \(\mathrm{FiltCh}_{
+\mathrm{SC}^{\mathrm{HT}}_{(1,2)}}\).\\
+\textbf{Source:} a filtered chain-level
+\(\mathrm{SC}^{\mathrm{HT}}_{(1,2)}\)-object \(C\).\hfill
+\textbf{Target:} \(\Z((q,\hbar))\).\\
+\textbf{Map:} \(\chi=\operatorname{sTr}\,(-)\).\hfill
+\textbf{Residuals:} none for the lemma; load-bearing for every
+scalar-to-chain promotion in the manuscript.
+
+\smallskip
+The graded Euler character
+\[
+  \chi\colon
+  \mathrm{FiltCh}_{\mathrm{SC}^{\mathrm{HT}}_{(1,2)}}
+  \longrightarrow\Z((q,\hbar))
+\]
+is not faithful.  In particular, the equality \(\chi(C)=\chi(C')\)
+does not determine:
+\begin{enumerate}[label=\textup{(\roman*)}]
+  \item a quasi-isomorphism \(C\simeq C'\);
+  \item a \(\mathrm{SC}^{\mathrm{HT}}_{(1,2)}\)-morphism
+        \(C\to C'\);
+  \item compatibility of Hall-style products, Drinfeld-double pairings,
+        current-envelope locality structures, derived-centre trace
+        maps, or open--closed comparison morphisms.
+\end{enumerate}
+\end{lem}
+
+\begin{proof}
+Let \(K\) be the filtered acyclic
+\(\mathrm{SC}^{\mathrm{HT}}_{(1,2)}\)-module
+\(K=(\C\to\C)\) in degrees \((0,1)\) with identity differential,
+filtered trivially.  Then \(\chi(K)=0\) and the direct sum
+\(C\oplus K\) has \(\chi(C\oplus K)=\chi(C)\) while
+\(C\oplus K\) carries a strictly larger filtered chain-level
+\(\mathrm{SC}^{\mathrm{HT}}_{(1,2)}\)-structure than \(C\): there are
+inequivalent choices of filtered products, coproducts, trace maps,
+and mixed open--closed operations on \(C\oplus K\) that all project
+to the same products on \(C\) modulo the acyclic summand.  More
+generally, replacing the filtered differential \(d\) on \(C\) by
+\(d+\sigma\) with \(\sigma\) preserving the associated graded
+preserves \(\chi(C)\) but produces an inequivalent filtered chain
+complex.  Hence \(\chi\) fails to detect quasi-isomorphism,
+\(\mathrm{SC}^{\mathrm{HT}}_{(1,2)}\)-morphism, Hall-pairing
+compatibility, Drinfeld-double extension, current-envelope locality,
+derived-centre trace, or open--closed comparison.
+\end{proof}
+
+\begin{cor}[Mandatory chain-level supplements]
+\label{cor:mandatory-chain-supplements}
+Every automorphic-to-physical promotion in the manuscript --- in
+particular every assertion that a scalar invariant such as the Igusa
+cusp form \(\Phi_{10}\) or its Borcherds square root
+\(\Delta_5=\Phi_{10}^{1/2}\) determines the chain-level gravity-line
+algebra \(\mathrm{Op}^{\mathrm{grav}}_{\partial X}\) of
+Definition~\ref{defn:six-carriers}~(C6) --- requires a chain-level
+construction of the relevant
+\(\mathrm{SC}^{\mathrm{HT}}_{(1,2)}\)-object and an explicit
+identification of its trace with the scalar invariant.  Without that
+construction the scalar identity is a shadow, and the promotion is
+the bar-to-bulk collapse forbidden by site~(11) of the seventeen-site
+catalogue.
+\end{cor}
+
+\begin{proof}
+Direct from Lemma~\ref{lem:scalar-non-faithfulness} applied to the
+candidate chain-level objects whose protected traces are the
+scalar invariants in question.
+\end{proof}
+
+\subsection{Topologisation criterion}
+\label{ssec:topologisation}
+
+The mixed-HT operad \(\mathrm{SC}^{\mathrm{HT}}_{(1,2)}\) of
+Definition~\ref{defn:sc-ht-operad} is unconditionally a
+two-coloured operad; its passage to a topological
+\(E_d^{\mathrm{top}}\)-operad on the closed sector is the
+\emph{topologisation} of the holomorphic factor, conditional on the
+stress-tensor null-homotopy datum \(T=[Q,G]\).
+
+\begin{defn}[Topologisation datum]\label{defn:topologisation-datum}
+A \emph{topologisation datum} for the mixed-HT closed sector
+\((\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}},
+\mathrm{SC}^{\mathrm{HT}}_{(1,2)})\) is a tuple
+\((\mathcal C_\rho,Q,G,T)\) where
+\(\mathcal C_\rho\) is a complete filtered ambient
+symmetric-monoidal \(\infty\)-category refining
+\(\mathcal B^{\mathrm{adm}}\) by a weight filtration \(\rho\); \(Q\) is
+the BRST/BV differential of
+Statement~\ref{stmt:costello-bv-construction}; \(G\) is a
+\(\rho\)-degree-\(-1\) operator on
+\(\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}\); \(T\) is the holomorphic
+stress tensor; and they satisfy
+\begin{equation}\label{eq:stress-tensor-null-homotopy}
+  T=[Q,G]\quad\text{in }\mathcal C_\rho.
+\end{equation}
+\end{defn}
+
+\begin{thm}[Topologisation by stress-tensor null-homotopy]
+\label{thm:topologisation-by-stress-tensor}
+
+\noindent\textbf{Status:} Conditional.\hfill
+\textbf{Ambient:} \(\mathcal C_\rho\) (complete filtered refinement of
+\(\mathcal B^{\mathrm{adm}}\)).\\
+\textbf{Source:}
+\((\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}},
+\mathrm{SC}^{\mathrm{HT}}_{(1,2)})\).\hfill
+\textbf{Target:}
+\((\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}},
+\mathrm{SC}^{\mathrm{top}}_{(1,2)})\) with topological closed colour
+\(E_3^{\mathrm{top}}\).\\
+\textbf{Map:} the operadic restructuring of
+Definition~\ref{defn:sc-ht-operad} along
+\eqref{eq:stress-tensor-null-homotopy}.\hfill
+\textbf{Residuals:} the five chain-level obligations
+\((\mathrm{T1})\)--\((\mathrm{T5})\) below.
+
+\smallskip
+Suppose a topologisation datum \((\mathcal C_\rho,Q,G,T)\) of
+Definition~\ref{defn:topologisation-datum} is given.  Then the closed
+sector \((\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}},
+\mathrm{SC}^{\mathrm{HT}}_{(1,2)})\) is locally constant in the
+holomorphic direction \(\C^2_{\mathrm{hol}}\) inside \(\mathcal C_\rho\)
+after completion, and carries an \(E_3^{\mathrm{top}}\)-algebra
+structure on the closed colour, intertwining the bulk currents
+\eqref{eq:ope-linear} with the topological binary operation on
+\(E_3^{\mathrm{top}}\) and the Capelli scalar
+\(\hbar N[\bar c]=\Omega_{\mathrm{central}}|_{J(f)}\) with the central
+charge of the Virasoro-type stress-tensor algebra.  The conditional
+status is that the topologisation requires the chain-level
+obligations:
+\begin{enumerate}[label=\textup{(T\arabic*)}]
+  \item the operator \(G\) is constructed and satisfies
+        \([Q,G]=T\) as an identity of chain-level operators in
+        \(\mathcal C_\rho\);
+  \item the identity \(T=[Q,G]\) is compatible with the weight
+        filtration \(\rho\) and with the completion in
+        \(\mathcal C_\rho\);
+  \item the topologisation has finite holomorphic propagation in
+        \(\mathcal C_\rho\) or, equivalently, the completed propagator
+        respects the open--closed correspondence
+        Definition~\ref{defn:oca-comparison};
+  \item the transferred \(E_3^{\mathrm{top}}\)-operations are
+        independent of the small-disks SDR transfer choices used to
+        carry \eqref{eq:stress-tensor-null-homotopy} across the bar
+        resolution;
+  \item the anomaly cancellation
+        \(\operatorname{Ob}^{\mathrm{anom}}=0\) holds in the
+        convolution complex of Definition~\ref{defn:convolution-complex},
+        \(\operatorname{Ob}^{\mathrm{anom}}\in
+        H^2\bigl(\mathrm{Conv}\!\bigl(
+          \mathcal A^{\mathrm{cl}}_{\mathrm{bulk}},
+          Z^{\mathrm{der}}_{E_2^{\mathrm{HT}}}\!\bigl(
+            \mathcal C^{\mathrm{op}}_\partial\bigr)\bigr)\bigr)=0\),
+        with secondary coherence class in
+        \(H^3\bigl(\mathrm{Conv}(\cdots)\bigr)\).
+\end{enumerate}
+\end{thm}
+
+\begin{proof}
+The local constancy in the holomorphic direction follows from
+\eqref{eq:stress-tensor-null-homotopy}: the holomorphic translation
+generator \(T=L_{-1}\) is \(Q\)-exact in \(\mathcal C_\rho\) under
+\([Q,G]=T\), so the bulk currents
+\(\mathsf J_x(z)\) of \eqref{eq:ope-linear} become locally constant in
+\(z\) in cohomology.  Constant holomorphic dependence collapses the
+holomorphic factor \(E_2^{\mathrm{hol}}\) to \(E_2^{\mathrm{top}}\) on
+the level of operad actions
+\cite{costello-li-quantum-bcov}*{\S 3--4}.  The full closed colour
+\(E_1^{\mathrm{top}}\otimes E_2^{\mathrm{top}}\) then identifies with
+\(E_3^{\mathrm{top}}\) by Dunn additivity
+\cite{lurie-ha}*{Theorem~5.1.2.2}.
+
+The Capelli scalar \(\hbar N[\bar c]\) of
+Theorem~\ref{thm:capelli-equals-modular-curvature} matches the central
+charge of the resulting Virasoro-type stress-tensor algebra by
+Theorem~\ref{thm:capelli-equals-modular-curvature} read at the
+topologisation: \(\Omega_{\mathrm{central}}|_{J(f)}\) is the
+projective curvature of the determinant line bundle on the modular
+stack, equivalently the central charge of the BCOV stress tensor.
+
+Conditions \((\mathrm{T1})\)--\((\mathrm{T5})\) are the standard
+homotopy-transfer obligations on a stress-tensor null-homotopy:
+\((\mathrm{T1})\) is the chain-level construction of \(G\);
+\((\mathrm{T2})\) is filtration compatibility; \((\mathrm{T3})\) is
+finite holomorphic propagation; \((\mathrm{T4})\) is independence of
+SDR choices in the small-disks operad transfer; \((\mathrm{T5})\) is
+the closed--open anomaly cancellation in the convolution complex,
+sufficient for the higher coherences of the topologised
+\(\mathrm{SC}^{\mathrm{top}}_{(1,2)}\)-action.
+\end{proof}
+
+\begin{rmk}[Class \(\mathrm L\) versus class \(\mathrm M\) topologisation]
+\label{rmk:class-L-vs-class-M}
+For class \(\mathrm L\) (affine Kac--Moody at non-critical level)
+boundary algebras the topologisation \(T=[Q,G]\) can be raw
+chain-level provided finite holomorphic propagation is proved.  For
+class \(\mathrm M\) (Virasoro / principal \(W\)-families) the safe
+topologisation is the weight-completed / pro / Banach ambient unless
+finite holomorphic propagation is separately verified.  The
+manuscript draws this distinction at the level of finite-jet PVA
+models: the classical BV action is constructed, while the all-loop
+QME, the boundary vertex algebra, and the \(E_3^{\mathrm{top}}\)-lift
+remain conditional on the KZ analytic SDR, the image-choice Stokes,
+the reflected weights, and the lift \(T=[Q_{\mathrm{tot}},G]\);
+site~(16) of the seventeen-site catalogue makes this binding.
+\end{rmk}
+
+\subsection{The typed global mixed-HT Deligne theorem}
+\label{ssec:typed-global-mixed-ht-deligne}
+
+The global theorem
+(Theorem~\ref{thm:main-global-conditional}) of
+\S\ref{ssec:local-theorem} states the OCA quasi-isomorphism
+conditional on a three-component obstruction.  The typed-discipline
+upgrade is to make the five-component obstruction explicit, route
+through OCA, and classify each obstruction in the four-curvature
+taxonomy of Theorem~\ref{thm:four-curvature-taxonomy}.
+
+\begin{defn}[Convolution complex]\label{defn:convolution-complex}
+The \emph{convolution complex} of \(\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}\)
+and \(Z^{\mathrm{der}}_{E_2^{\mathrm{HT}}}(\mathcal C^{\mathrm{op}}_\partial)\)
+is
+\begin{equation}\label{eq:convolution-complex-def}
+  \mathrm{Conv}\!\bigl(
+    \mathcal A^{\mathrm{cl}}_{\mathrm{bulk}},
+    Z^{\mathrm{der}}_{E_2^{\mathrm{HT}}}\!\bigl(
+      \mathcal C^{\mathrm{op}}_\partial\bigr)\bigr)
+   \;=\;
+   \underline{\mathrm{Hom}}_{\mathcal B^{\mathrm{adm}}}^\bullet\!\bigl(
+     \bar B^{E_1}\!\bigl(A^{\mathrm{cl}}_{\partial,N}\bigr),\,
+     Z^{\mathrm{der}}_{E_2^{\mathrm{HT}}}\!\bigl(
+       \mathcal C^{\mathrm{op}}_\partial\bigr)\bigr),
+\end{equation}
+with differential \(d_{\mathrm{Conv}}=d_{\bar B}^*+d_{Z}\) the sum of
+the bar-coalgebra dual differential and the chiral-brace differential
+on the derived centre, in \(\mathcal B^{\mathrm{adm}}\).  Its cohomology
+classifies obstructions to compatibility between the bulk and the
+derived centre as \(\mathrm{SC}^{\mathrm{HT}}_{(1,2)}\)-algebras.
+\end{defn}
+
+\begin{thm}[Typed global mixed-HT Deligne theorem]
+\label{thm:typed-global-mixed-ht-deligne}
+
+\noindent\textbf{Status:} Conditional, supremum form.\hfill
+\textbf{Ambient:} \(\mathcal B^{\mathrm{adm}}\) on
+\(\partial X\), with possible refinement to
+\(\mathcal C_\rho\) for topologisation.\\
+\textbf{Source:} \(\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}\) of
+Definition~\ref{def:closed-mixed-HT-factorization}.\hfill
+\textbf{Target:}
+\(Z^{\mathrm{der}}_{E_2^{\mathrm{HT}}}(\mathcal C^{\mathrm{op}}_\partial)\)
+of Definition~\ref{defn:six-carriers}~(C3).\\
+\textbf{Map:} the open--closed comparison morphism
+\(\mathrm{OCA}_N\) of Definition~\ref{defn:oca-comparison}.\hfill
+\textbf{Residuals:} the five-component obstruction
+\(\operatorname{Ob}^{\mathrm{global,5}}\) of
+\eqref{eq:obs-five-component} below.
+
+\smallskip
+The open--closed comparison
+\(\mathrm{OCA}_N\colon\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}
+\xrightarrow{\sim}Z^{\mathrm{der}}_{E_2^{\mathrm{HT}}}(
+\mathcal C^{\mathrm{op}}_\partial)\) is a quasi-isomorphism of
+\(\mathrm{SC}^{\mathrm{HT}}_{(1,2)}\)-algebras on \(\partial X\) if and
+only if
+\begin{equation}\label{eq:obs-five-component}
+  \operatorname{Ob}^{\mathrm{global,5}}
+   \;=\;
+   \operatorname{Ob}^{\mathrm{ch}\,E_2}_{\mathrm{Deligne}}
+   \;\oplus\;
+   \operatorname{Ob}^{\mathrm{desc}}_{\partial}
+   \;\oplus\;
+   \operatorname{Ob}^{\mathrm{QME}}_{\mathrm{all\mbox{-}loop}}
+   \;\oplus\;
+   \operatorname{Ob}^{\mathrm{anom}}
+   \;\oplus\;
+   \operatorname{Ob}^{\mathrm{loc}}
+   \;=\;0,
+\end{equation}
+where the first three components are those of
+Theorem~\ref{thm:main-global-conditional} and live in their own
+cohomology complexes, and the additional two are:
+\begin{itemize}
+  \item \(\operatorname{Ob}^{\mathrm{anom}}\in
+        H^2\bigl(\mathrm{Conv}\!\bigl(
+          \mathcal A^{\mathrm{cl}}_{\mathrm{bulk}},
+          Z^{\mathrm{der}}_{E_2^{\mathrm{HT}}}\!\bigl(
+            \mathcal C^{\mathrm{op}}_\partial\bigr)\bigr)\bigr)\),
+        the anomaly-cancellation class in the convolution complex of
+        Definition~\ref{defn:convolution-complex}, whose scalar-reduced
+        shadow is the Capelli central charge
+        \(\hbar N[\bar c]=\Omega_{\mathrm{central}}|_{J(f)}\) of
+        Theorem~\ref{thm:capelli-equals-modular-curvature};
+  \item \(\operatorname{Ob}^{\mathrm{loc}}=[d_{\mathrm{loc}}]\in
+        H^1\!\bigl(\partial X,
+        \underline{\mathrm{Hom}}^{0}_{\mathcal B^{\mathrm{adm}}}\!\bigl(
+        \mathcal A^{\mathrm{cl}}_{\mathrm{bulk}},
+        Z^{\mathrm{der}}_{E_2^{\mathrm{HT}}}\!\bigl(
+          \mathcal C^{\mathrm{op}}_\partial\bigr)\bigr)\bigr)\), the
+        locality class equal to the obstruction of \(\mathrm{OCA}_N\) to
+        commuting with disjoint-union extension in the factorisation
+        operad \(\mathrm{Fact}_{\mathrm{SC}^{\mathrm{HT}}_{(1,2)}}\),
+        as a Costello--Gwilliam Čech--Weiss--Ran cocycle on
+        \(\partial X\).
+\end{itemize}
+The five components are independently representable as cohomology
+classes in pairwise disjoint complexes,
+\begin{equation}\label{eq:five-component-complexes}
+\begin{array}{l|l}
+  \mathsf{Class} & \mathsf{Source\ complex}\\\hline
+  \operatorname{Ob}^{\mathrm{ch}\,E_2}_{\mathrm{Deligne}}
+    & H^2(\mathrm{ch\text{-}}E_2\text{-Deligne convolution complex on }\C^2)\\
+  \operatorname{Ob}^{\mathrm{desc}}_{\partial}
+    & H^2(\partial X,
+        \underline{\mathrm{Hom}}^{-1}(\mathcal H^\bullet,\mathcal H^\bullet))\\
+  \operatorname{Ob}^{\mathrm{QME}}_{\mathrm{all\mbox{-}loop}}
+    & H^1(\ker\widehat\sigma_{\mathrm{sc}},d_{\mathrm{QME}})\\
+  \operatorname{Ob}^{\mathrm{anom}}
+    & H^2(\mathrm{Conv}\!\bigl(\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}},
+       Z^{\mathrm{der}}_{E_2^{\mathrm{HT}}}\bigr))\\
+  \operatorname{Ob}^{\mathrm{loc}}
+    & H^1(\partial X,
+        \underline{\mathrm{Hom}}^{0}_{\mathcal B^{\mathrm{adm}}}(
+          \mathcal A^{\mathrm{cl}}_{\mathrm{bulk}},
+          Z^{\mathrm{der}}_{E_2^{\mathrm{HT}}}))
+\end{array}
+\end{equation}
+with the source complexes lying in different bidegrees and
+different graded pieces of the master obstruction complex
+\(\mathfrak K_{\mathcal T}\): vanishing of one component is logically
+independent of vanishing of any other.  Each component is classified
+in the four-curvature taxonomy of
+Theorem~\ref{thm:four-curvature-taxonomy}: the Deligne and descent
+classes lie in case (4) globally (target-replacement) and case (1) on
+the formal-Darboux stalk (strict coherence); the QME class lies in
+case (2) (counterterm coherence); the anomaly class lies in case (3)
+(projective coherence); and the locality class lies in case (2)
+(counterterm coherence).
+\end{thm}
+
+\begin{proof}
+\emph{Equivalence of the five-component and three-component
+obstructions.}  The original
+\(\operatorname{Ob}^{\mathrm{global}}=
+\operatorname{Ob}^{\mathrm{ch}\,E_2}_{\mathrm{Deligne}}\oplus
+\operatorname{Ob}^{\mathrm{desc}}_{\partial}\oplus
+\operatorname{Ob}^{\mathrm{QME}}_{\mathrm{all\mbox{-}loop}}\) of
+Theorem~\ref{thm:main-global-conditional} carries the all-loop QME
+class as a single graded piece in
+\(H^1(\ker\widehat\sigma_{\mathrm{sc}},d_{\mathrm{QME}})\); the typed
+splitting extracts two independent subclasses out of the QME piece by
+filtering the convolution complex of
+Definition~\ref{defn:convolution-complex} by ghost number and
+factorisation degree.  The ghost-number filtration projects onto the
+projective-curvature row, whose representative class is the
+scalar-reduced anomaly
+\(\operatorname{Ob}^{\mathrm{anom}}\in
+H^2(\mathrm{Conv}(\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}},
+Z^{\mathrm{der}}_{E_2^{\mathrm{HT}}}))\) with scalar shadow
+\(\hbar N[\bar c]=\Omega_{\mathrm{central}}|_{J(f)}\) of
+Theorem~\ref{thm:capelli-equals-modular-curvature}; the
+factorisation-degree filtration projects onto the
+disjoint-union-extension row, whose representative is the locality
+class
+\(\operatorname{Ob}^{\mathrm{loc}}\in
+H^1(\partial X,\underline{\mathrm{Hom}}^{0}(
+\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}},
+Z^{\mathrm{der}}_{E_2^{\mathrm{HT}}}))\), the Costello--Gwilliam
+Čech--Weiss--Ran cocycle measuring the failure of
+\(\mathrm{OCA}_N\) to commute with disjoint unions; the residual is
+the renormalisation-group filtered all-loop QME class in
+\(H^1(\ker\widehat\sigma_{\mathrm{sc}},d_{\mathrm{QME}})\).  This is an
+honest splitting: each piece is the cohomology class of a different
+graded summand of the master obstruction complex
+\(\mathfrak K_{\mathcal T}\) of
+Theorem~\ref{thm:four-curvature-taxonomy}, and the table
+\eqref{eq:five-component-complexes} records the five source complexes
+as pairwise disjoint.
+
+\emph{Independence.}  The five source complexes of
+\eqref{eq:five-component-complexes} lie in five different bidegrees
+of the master deformation complex
+\(\mathfrak K_{\mathcal T}\): the Deligne and descent classes are
+graded by their Čech--Weiss--Ran cover degree on \(\partial X\), the
+QME class by the renormalisation-group filtration in
+\(\ker\widehat\sigma_{\mathrm{sc}}\), the anomaly class by ghost
+number in the convolution complex, and the locality class by
+factorisation degree in
+\(\mathrm{Fact}_{\mathrm{SC}^{\mathrm{HT}}_{(1,2)}}\).  No two
+complexes share both bidegree and graded piece; the vanishing of any
+one class is therefore logically independent of the vanishing of any
+other, and the five-component obstruction
+\(\operatorname{Ob}^{\mathrm{global,5}}\) of
+\eqref{eq:obs-five-component} is a direct sum of independent
+cohomology classes.
+
+\emph{Costello--Li control.}  The Costello--Li package
+(Statement~\ref{stmt:costello-li-flat-bcov},
+Statement~\ref{stmt:costello-bv-construction}) supplies the
+chain-level renormalisation that controls the QME, anomaly, and
+locality classes, provided the homotopy-transfer conditions
+\((\mathrm{T1})\)--\((\mathrm{T5})\) of
+Theorem~\ref{thm:topologisation-by-stress-tensor} are met.  The Deligne
+and descent classes remain controlled by the chiral
+\(E_2\)-Deligne conjecture and the Costello--Gwilliam descent spectral
+sequence, respectively.
+
+\emph{Four-curvature classification.}
+\(\operatorname{Ob}^{\mathrm{ch}\,E_2}_{\mathrm{Deligne}}\) and
+\(\operatorname{Ob}^{\mathrm{desc}}_{\partial}\) are nonzero in
+\(H^2(\mathfrak K_{\mathcal T},\Theta_{\mathrm{loc}})\) globally and
+admit no central representative
+(Theorem~\ref{thm:four-curvature-taxonomy} case~(4)), but become
+strictly zero on the formal-Darboux contractible polydisk
+(Theorem~\ref{thm:four-curvature-taxonomy} case~(1)) by
+Remark following~\ref{thm:main-global-conditional};
+\(\operatorname{Ob}^{\mathrm{QME}}_{\mathrm{all\mbox{-}loop}}\) and
+\(\operatorname{Ob}^{\mathrm{loc}}\) are counterterm classes
+(case~(2)) supplied by the Costello local counterterm package;
+\(\operatorname{Ob}^{\mathrm{anom}}\) is the projective curvature
+class (case~(3)) absorbed by the Capelli central extension
+\(\widehat{\mathfrak g}_{\mathrm{cent}}\) of
+\eqref{eq:cent-extension}.
+\end{proof}
+
+\begin{rmk}[Local trivialisation as supremum form]
+\label{rmk:local-trivialisation-supremum-form}
+On the contractible formal-Darboux neighbourhood of a brane vacuum
+\(b\), every component of \(\operatorname{Ob}^{\mathrm{global,5}}\)
+vanishes by the same mechanism as in
+Theorem~\ref{thm:main-global-conditional}: the chiral
+\(E_2\)-Deligne datum is supplied by \(K^{(2)}_\Delta\); the descent
+class is identically zero; the all-loop QME, anomaly, and locality
+classes collapse to the one-loop centrality datum absorbed by
+Theorem~\ref{thm:capelli-equals-modular-curvature}.  The content of
+\(\operatorname{Ob}^{\mathrm{global,5}}\) is the global gluing of
+these locally trivialised classes along \(\partial X\); the
+formal-Darboux stalk theorem (Theorem~\ref{thm:oca-formal-darboux-fibre},
+\(=\) Theorem~\ref{thm:main-local}) is the OCA fibre at \(b\).
+\end{rmk}
+
+\subsection{Verification probes for the typed framework}
+\label{ssec:verification-probes}
+
+The typed framework is verified by chain-level probes against the
+six carriers.  Each probe is either proved in the manuscript, marked
+as the verifying-test name to which it is anchored, or stated as a
+falsifier-with-obstruction.
+
+\begin{enumerate}[label=\textup{(V\arabic*)}]
+  \item \emph{Type test.}  Every equality in the manuscript names its
+        source carrier, its target carrier, its ambient category, and
+        its comparison map.  Verified by inspection of the
+        Status/Ambient/Source/Target/Map/Residuals headers throughout
+        \S\ref{ssec:phi-ht-functor}--\S\ref{ssec:typed-global-mixed-ht-deligne}.
+  \item \emph{Scalar non-faithfulness test.}  For any candidate
+        chain-level
+        \(\mathrm{SC}^{\mathrm{HT}}_{(1,2)}\)-object, adjoin the
+        acyclic filtered summand \(K\) of the proof of
+        Lemma~\ref{lem:scalar-non-faithfulness}; the resulting object
+        has the same \(\chi\) but inequivalent chain-level structure.
+        The probe is the falsifier of any scalar-determines-chain
+        claim.
+  \item \emph{Maurer--Cartan test.}  The Maurer--Cartan identity
+        \(d_{\bar B}\Theta+\tfrac12[\Theta,\Theta]=0\) of
+        \eqref{eq:mc-bar-equation} is verified on the bar
+        \(\bar B^{E_1}(A^{\mathrm{cl}}_{\partial,N})\) by step~(ii) of
+        the proof of
+        Theorem~\ref{thm:typed-boundary-holographic-realisation}; the
+        Arnold relation
+        \(\eta_{12}\eta_{23}+\eta_{23}\eta_{31}+\eta_{31}\eta_{12}=0\)
+        is the falsifier of any putative non-zero MC defect.
+  \item \emph{Bar--cobar test.}  The bar--cobar Quillen equivalence
+        \(\Omega^{\mathrm{c}}\bar B^{E_1}(A^{\mathrm{cl}}_{\partial,N})
+        \xrightarrow{\sim}A^{\mathrm{cl}}_{\partial,N}\) is verified
+        on the Koszul locus by
+        Theorem~\ref{thm:tate-bar-cobar-quillen} and
+        Theorem~\ref{thm:universal-filtered-cobar-recognition}.  The
+        Milnor \(\varprojlim^1\) defect of
+        Theorem~\ref{thm:hadamard-mittag-leffler} is the falsifier
+        off the criterion's domain.
+  \item \emph{Derived-centre test.}  The bar-resolution computation
+        \(C^\bullet_{\mathrm{ch}}(A,A)=\RHom_{A\otimes A^{\mathrm{op}}}(A,A)\)
+        on the chiral side is realised on the formal-Darboux stalk by
+        \eqref{eq:bar-resolution-derived-centre}; comparison with any
+        proposed physical bulk \(\mathcal O^{\mathrm{phys}}_{\mathrm{bulk}}\)
+        is mediated by the open--closed comparison
+        \(\mathrm{OCA}\) of Definition~\ref{defn:oca-comparison}, with
+        falsifier the non-vanishing of any component of
+        \(\operatorname{Ob}^{\mathrm{global,5}}\).
+  \item \emph{Topologisation test.}  Exhibit \(T=[Q,G]\) of
+        \eqref{eq:stress-tensor-null-homotopy} chain-level in
+        \(\mathcal C_\rho\), then verify the five conditions
+        \((\mathrm{T1})\)--\((\mathrm{T5})\) of
+        Theorem~\ref{thm:topologisation-by-stress-tensor}.  The
+        falsifier is a non-zero anomaly class
+        \(\operatorname{Ob}^{\mathrm{anom}}\neq 0\) in the
+        convolution complex.
+  \item \emph{Carrier-disjointness test.}  For each forbidden pair of
+        carriers \((C_i,C_j)\) in the type table of
+        Proposition~\ref{prop:carrier-type-table}, exhibit the
+        seventeen-site catalogue antipattern that would collapse them
+        and the corresponding replacement
+        (\S\ref{ssec:six-carriers}).
+\end{enumerate}
+
+\subsection{Summary diagram}
+\label{ssec:typed-summary-diagram}
+
+The typed boundary-holographic master theorem assembles the six
+carriers into the following commutative diagram of
+Status/Ambient/Source/Target/Map data:
+\[
+  \begin{array}{ccc}
+    \bar B^{E_1}(A^{\mathrm{cl}}_{\partial,N})
+       & \xrightarrow{\;\;\mathrm{Verdier/Koszul}\;\;}
+       & (A^{\mathrm{cl}}_{\partial,N})^!\\
+    \downarrow\!{\scriptstyle \mathrm{Hochschild}}
+       & & \downarrow\!{\scriptstyle \mathrm{modules/lines}}\\
+    Z^{\mathrm{der}}_{E_2^{\mathrm{HT}}}(\mathcal C^{\mathrm{op}}_\partial)
+       & \xleftarrow{\;\;\mathrm{OCA}\;\;}
+       & \mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}\\
+    \downarrow\!{\scriptstyle \chi=\operatorname{sTr}}
+       & & \downarrow\!{\scriptstyle \text{topologisation }T=[Q,G]}\\
+    \mathrm{Op}^{\mathrm{grav}}_{\partial X}
+       & \xrightarrow[\text{conditional on (T1--T5) of}]
+                     {\text{Theorem~\ref{thm:topologisation-by-stress-tensor}}}
+       & (\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}},
+          E_3^{\mathrm{top}})
+  \end{array}
+\]
+The upper square is operadic, proved at the formal-Darboux stalk
+(Theorem~\ref{thm:oca-formal-darboux-fibre}) and conditional globally
+on \(\operatorname{Ob}^{\mathrm{global,5}}=0\) of
+Theorem~\ref{thm:typed-global-mixed-ht-deligne}.  The lower square is
+the topologisation passage, conditional on the topologisation datum
+of Definition~\ref{defn:topologisation-datum}.  The scalar character
+\(\chi\) is non-faithful by
+Lemma~\ref{lem:scalar-non-faithfulness}; the gravity-line carrier
+\(\mathrm{Op}^{\mathrm{grav}}_{\partial X}\) is a separate frontier
+object (\S\ref{ssec:open-operator-modular-lift}) whose chain-level
+construction is the Hall--Borcherds residual of the frontier section.
+
+The diagram is the typed expression of the global mixed-HT Deligne
+identification: every later claim factors through the named morphisms
+\(\Phi^{\mathrm{HT}}\), \(\mathrm{OCA}\), and the topologisation
+arrow; every scalar promotion factors through
+Lemma~\ref{lem:scalar-non-faithfulness}; every operator-level lift to
+the gravity-line carrier requires a separate chain-level
+construction.
