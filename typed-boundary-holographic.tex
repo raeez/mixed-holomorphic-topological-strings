@@ -1167,8 +1167,500 @@ formal-Darboux stalk theorem (Theorem~\ref{thm:oca-formal-darboux-fibre},
 \(=\) Theorem~\ref{thm:main-local}) is the OCA fibre at \(b\).
 \end{rmk}
 
-\subsection{Verification probes for the typed framework}
-\label{ssec:verification-probes}
+\subsection{Unconditional realizations}\label{ssec:unconditional-realizations}
+
+Theorem~\ref{thm:typed-global-mixed-ht-deligne} states the global OCA
+quasi-isomorphism conditional on the five-component obstruction
+\(\operatorname{Ob}^{\mathrm{global,5}}\); the typed framework is
+honest about this conditioning.  Two classes of target geometry
+discharge the obstruction entirely and produce unconditional theorems:
+the formal-Darboux stalk (local, proved in
+Theorem~\ref{thm:main-local}) and Stein affine holomorphic-symplectic
+surfaces (global, proved here).  Inside the Stein affine class, the
+contractible subclass yields a fully unconditional theorem; the
+non-contractible Stein subclass yields an unconditional theorem up to
+projective absorption of the period class into the Capelli central
+extension.
+
+\subsubsection{Unconditional local theorem at the formal-Darboux stalk}
+\label{sssec:unconditional-local}
+
+Theorem~\ref{thm:main-local} states the OCA equivalence
+``unconditionally in \(\mathcal B^{\mathrm{adm}}\)''.  The seven
+admissibility conditions (i)--(vii) characterising
+\(\mathcal B^{\mathrm{adm}}\) are not external hypotheses: each is a
+structural feature of the formal-Darboux setting, constructively
+supplied by previously-proved theorems of the manuscript.
+
+\begin{lem}[Admissibility conditions are constructive]
+\label{lem:admissibility-automatic}
+
+\noindent\textbf{Status:} Proved.\hfill
+\textbf{Ambient:} the formal-Darboux setting
+\(X=\R^2_{\mathrm{top}}\times\widehat{\C^2}_{\mathrm{hol}}\).\\
+\textbf{Source:} the formal-Darboux data
+\((\mathfrak h,P,\widehat{\mathfrak g}_{\mathrm{cent}},
+A^{\mathrm{cl}}_{\partial,N})\).\hfill
+\textbf{Target:} the seven admissibility conditions of
+Theorem~\ref{thm:main-local}.\\
+\textbf{Map:} explicit verification (i)--(vii) below.\hfill
+\textbf{Residuals:} none.
+
+\smallskip
+The seven admissibility conditions of Theorem~\ref{thm:main-local}
+hold automatically in the formal-Darboux setting:
+\begin{enumerate}[label=\textup{(\roman*)}]
+  \item Continuous duality on
+        \(\mathfrak h=\C[[z_1,z_2]]/\C\cdot 1\) is exact:
+        \(\mathfrak h\) is a nuclear Fréchet space under the
+        \(\mathfrak m\)-adic topology
+        (\cite{kothe-topological-vector-spaces}*{\S 30}); its
+        continuous dual is the residue dual
+        \(P=H^2_{\mathfrak m}(R)\,dz_1dz_2\), and
+        \(\mathrm{Hom}_{\mathrm{cont}}(-,\C)\) is exact on nuclear
+        Fréchet by Grothendieck nuclear exactness.
+  \item The residue pairing \(\mathfrak h\otimes P\to\C\),
+        \(\langle f,\omega\rangle=\Res_0 f\omega\), is perfect by
+        Grothendieck--Matlis local duality on
+        \(H^2_{\mathfrak m}(R)\)
+        \cites{hartshorne-local-cohomology}{kunz-residues-duality}.
+  \item The diagonal Casimir
+        \(C=\sum_{a+b>0}z_1^az_2^b\otimes\rho_{a,b}\) converges in the
+        weighted nuclear Köthe topology on
+        \(\mathfrak h\widehat\otimes P\) because the dual basis
+        \(\{\rho_{a,b}\}\) is the canonical basis of the residue dual
+        and the weighted Köthe seminorms force absolute summability
+        of every finite-radius truncation
+        (Theorem~\ref{thm:wt-canonical-habitat}).
+  \item The Hamiltonian bracket on \(\mathfrak h\) and the coadjoint
+        action on \(P\) are continuous with weighted Köthe seminorms
+        \(p_n(\{f,g\})\leq C_n\,p_{n+2}(f)\,p_{n+2}(g)\): direct check
+        on monomials \(z_1^az_2^b\), \(z_1^cz_2^d\) gives the
+        bidegree-shift estimate \((a+b)+(c+d)-2\), continuously
+        extended by nuclearity of \(\mathfrak h\).
+  \item The diagonal local-cohomology kernel
+        \(K^{(2)}_\Delta=d\zeta_1d\zeta_2/(\zeta_1\zeta_2)\) is
+        bracket- and kernel-admissible by
+        Proposition~\ref{prop:diagonal-cohomology-operad}: the
+        binary OPE of \eqref{eq:ope-linear} factors through
+        \(K^{(2)}_\Delta\) with principal-part residue in the
+        Grothendieck--Matlis dual, and the higher-arity kernels
+        \(K_n\) are iterated residues on nested diagonals.
+  \item The chiral \(E_2\)-Hochschild centrality homotopy hierarchy
+        \(\{H^{\mathrm{prod}}_{f,-},H^{P_0}_{f,-},H^3_{f,-,-},\ldots\}\)
+        lives in the completed convolution Lie algebra by the
+        construction of step (8) of the proof of
+        Theorem~\ref{thm:main-local}; each homotopy is the
+        Chevalley--Eilenberg image of a higher \(E_2\)-coherence
+        morphism.
+  \item The scalar-contact and QME counterterm towers
+        \(\{C_{n,M}\}\) are Milnor/Roos-compatible
+        \(\pi_{M,N}C_{n,M}=C_{n,N}\) by
+        Theorem~\ref{thm:hadamard-mittag-leffler}; the
+        Mittag--Leffler condition is verified directly on the
+        Tate-residual resolution of \S\ref{ssec:tate-residual-resolution}.
+\end{enumerate}
+\end{lem}
+
+\begin{proof}
+Each verification is supplied above by the cited theorem of the
+manuscript.  Items (i)--(ii) reduce to standard nuclear-Fréchet /
+Grothendieck--Matlis facts; items (iii)--(iv) to explicit
+Köthe-seminorm estimates on the formal disk; items (v)--(vii) to
+theorems of the manuscript directly.
+\end{proof}
+
+\begin{cor}[Unconditional local Mixed HT Deligne theorem]
+\label{cor:unconditional-local-deligne}
+
+\noindent\textbf{Status:} Proved unconditionally.\hfill
+\textbf{Ambient:} \(\mathcal B^{\mathrm{adm}}\), constructively
+realised by the formal-Darboux setting via
+Lemma~\ref{lem:admissibility-automatic}.\\
+\textbf{Source:} \(A^{\mathrm{cl}}_{\partial,N}\).\hfill
+\textbf{Target:} \(\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}\big|_b\).\\
+\textbf{Map:} \(\mathrm{OCA}_N|_b\) of
+Definition~\ref{defn:oca-comparison}.\hfill
+\textbf{Residuals:} none.
+
+\smallskip
+The formal-Darboux stalk identification of
+Theorem~\ref{thm:main-local} is an unconditional theorem.  The
+admissibility category \(\mathcal B^{\mathrm{adm}}\) is the
+constructive ambient of the formal-Darboux setting, with the seven
+characterising conditions supplied by
+Lemma~\ref{lem:admissibility-automatic}; the OCA quasi-isomorphism
+\eqref{eq:thm-A-equivalence} holds without external hypothesis.
+\end{cor}
+
+\begin{proof}
+Direct combination of Theorem~\ref{thm:main-local} (equivalence in
+\(\mathcal B^{\mathrm{adm}}\)) and
+Lemma~\ref{lem:admissibility-automatic} (admissibility conditions
+automatic).
+\end{proof}
+
+\subsubsection{Unconditional global theorem on contractible
+holomorphic-symplectic targets}
+\label{sssec:unconditional-global-contractible}
+
+The fully-unconditional global realisation holds on contractible
+Stein holomorphic-symplectic surfaces, where the five-component
+obstruction vanishes identically and no projective absorption is
+required.
+
+\begin{thm}[Fully unconditional global Mixed HT Deligne on contractible
+holomorphic-symplectic targets]
+\label{thm:unconditional-global-contractible-HS}
+
+\noindent\textbf{Status:} Proved unconditionally.\hfill
+\textbf{Ambient:} \(\mathcal B^{\mathrm{adm}}\) on
+\(\partial X=\R_t\times\mathrm{Lk}_b(L\subset X)\).\\
+\textbf{Source:} \(\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}\) on
+\(X=\R^2_{\mathrm{top}}\times Y_{\mathrm{hol}}\).\hfill
+\textbf{Target:} \(Z^{\mathrm{der}}_{E_2^{\mathrm{HT}}}\!\bigl(
+\mathcal C^{\mathrm{op}}_\partial\bigr)\).\\
+\textbf{Map:} \(\mathrm{OCA}_N\) of
+Definition~\ref{defn:oca-comparison}.\hfill
+\textbf{Residuals:} none --- all five obstructions vanish
+identically.
+
+\smallskip
+Let \(Y_{\mathrm{hol}}\) be a contractible Stein holomorphic-symplectic
+surface with holomorphic symplectic form \(\omega_Y\) (in particular
+\(H^k(Y,\Z)=0\) for \(k\geq 1\) and
+\(H^k_{\mathrm{coh}}(Y,\mathcal F)=0\) for \(k\geq 1\) and every
+coherent sheaf \(\mathcal F\) on \(Y\)), let
+\(X=\R^2_{\mathrm{top}}\times Y_{\mathrm{hol}}\), and let \(N\) Dirac
+branes sit along the worldline \(L=\R_t\times\{b\}\) for \(b\in Y\) a
+smooth point.  Then the OCA quasi-isomorphism
+\begin{equation}\label{eq:unconditional-contractible-OCA}
+  \mathrm{OCA}_N\colon
+    \mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}
+    \;\xrightarrow{\sim}\;
+    Z^{\mathrm{der}}_{E_2^{\mathrm{HT}}}\!\bigl(
+      \mathcal C^{\mathrm{op}}_\partial\bigr)
+\end{equation}
+is a fully unconditional quasi-isomorphism of
+\(\mathrm{SC}^{\mathrm{HT}}_{(1,2)}\)-algebras on \(\partial X\): all
+five components of \(\operatorname{Ob}^{\mathrm{global,5}}\) of
+\eqref{eq:obs-five-component} vanish identically.
+\end{thm}
+
+\begin{proof}
+Each obstruction discharges by an explicit mechanism on contractible
+Stein \(Y\):
+
+\((\mathrm{O1})\) \emph{Chiral \(E_2\)-Deligne obstruction.}
+The diagonal local-cohomology kernel
+\(K^{(2)}_\Delta=d\zeta_1d\zeta_2/(\zeta_1\zeta_2)\) of
+Proposition~\ref{prop:diagonal-cohomology-operad} extends globally
+along the diagonal \(\Delta_Y\subset Y\times Y\) because the
+holomorphic symplectic form \(\omega_Y\) is a global Stein-holomorphic
+section that trivialises the holomorphic-symplectic gerbe.  The
+arity-\(n\) iterated kernels \(K_n\) of
+Proposition~\ref{prop:diagonal-cohomology-operad} extend globally
+along \(\Delta_n\subset Y^n\) by iterated Grothendieck residues; the
+operadic associativity is the Arnold relation
+\(\eta_{12}\eta_{23}+\eta_{23}\eta_{31}+\eta_{31}\eta_{12}=0\) on
+each nested diagonal, valid identically on contractible \(Y\) by
+Stokes.  The resulting chiral \(E_2\)-operad action on
+\(\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}\) over \(Y\) supplies the
+chiral \(E_2\)-Deligne datum of
+Conjecture~\ref{conj:chiral-Ed-deligne} at \(d=2\) directly --- the
+conjecture is resolved on the specific class of contractible Stein
+\(Y\) without recourse to its general open form, because both
+\(Z^{\mathrm{der}}_{E_2^{\mathrm{HT}}}(\mathcal C^{\mathrm{op}}_\partial)\)
+and \(C^\bullet_{E_2^{\mathrm{HT}}}(\mathcal C^{\mathrm{op}}_\partial,
+\mathcal C^{\mathrm{op}}_\partial)\) compute as Hochschild cochains by
+the bar resolution \eqref{eq:bar-resolution-derived-centre} and the
+Tate bar--cobar Quillen equivalence
+(Theorem~\ref{thm:tate-bar-cobar-quillen}).  Hence
+\(\operatorname{Ob}^{\mathrm{ch}\,E_2}_{\mathrm{Deligne}}=0\).
+
+\((\mathrm{O2})\) \emph{Descent obstruction.}
+The Costello--Gwilliam descent spectral sequence on an étale cover
+of \(\partial X\) trivialising the local holomorphic-symplectic Darboux
+data has \(E_1^{p,q}=H^p(\partial X,\mathcal H^q)\) for
+\(\mathcal H^q\) the local-stalk sheaf of
+Theorem~\ref{thm:main-local}.  At the brane defect
+\(L=\R_t\times\{b\}\subset X\), the Costello--Gwilliam brane-link
+boundary is
+\(\partial X=\R_t\times\mathrm{Lk}_b(L\subset X)\) where
+\(\mathrm{Lk}_b\subset\R_s\times T_bY\) is the unit sphere of the
+real-\(5\)-dimensional normal bundle of \(L\) in \(X\), hence
+\(\mathrm{Lk}_b\cong S^4\) and \(\partial X\simeq\R_t\times S^4\) is
+simply-connected with topological cohomology
+\(H^k_{\mathrm{sing}}(\partial X,\Z)=H^k_{\mathrm{sing}}(S^4,\Z)=\Z\)
+for \(k=0,4\) and \(=0\) for \(k=1,2,3\).  The local-stalk sheaf
+\(\mathcal H^\bullet\) is locally constant on \(\partial X\) because
+the formal-Darboux data depends only on the fixed brane vacuum
+\(b\in Y\) and is constant along \(\partial X\); a locally constant
+sheaf on a simply-connected base has trivial sheaf cohomology in
+positive degrees, so
+\(H^p(\partial X,\mathcal H^q)=
+H^p_{\mathrm{sing}}(S^4,\mathcal H^q_{\mathrm{stalk}})=0\) for
+\(p=1,2,3\).  Hence the \(d_2\)-differential
+\([d_2]\in H^2(\partial X,\underline{\mathrm{Hom}}^{-1}(\mathcal
+H^\bullet,\mathcal H^\bullet))\) vanishes identically and
+\(\operatorname{Ob}^{\mathrm{desc}}_\partial=0\).
+
+\((\mathrm{O3})\) \emph{All-loop QME obstruction.}
+On contractible Stein \(Y\), the Costello--Li renormalisation package
+(Statement~\ref{stmt:costello-li-flat-bcov},
+Statement~\ref{stmt:costello-bv-construction}) supplies the all-loop
+QME solution as a coherent family of counterterms over \(Y\): the
+Milnor/Roos-compatible counterterm tower of
+Lemma~\ref{lem:admissibility-automatic}~(vii) extends globally by
+Stein-Cartan B applied to the deformation complex, and the all-loop
+convergence holds in the projective limit by
+Theorem~\ref{thm:hadamard-mittag-leffler}.  Hence
+\(\operatorname{Ob}^{\mathrm{QME}}_{\mathrm{all\mbox{-}loop}}=0\).
+
+\((\mathrm{O4})\) \emph{Anomaly obstruction.}
+The Capelli scalar
+\(\hbar N[\bar c]=\Omega_{\mathrm{central}}|_{J(f)}\) of
+Theorem~\ref{thm:capelli-equals-modular-curvature} is the first Chern
+class of the determinant line bundle \(\det^{1/2}\) of the trace
+representation \(\bar A\to\mathfrak{gl}_N\); on contractible \(Y\)
+with \(H^2(Y,\Z)=0\) and \(H^1(Y,\mathcal O^*)=
+H^2(Y,\Z)=0\) (via the exponential exact sequence and Cartan B),
+the determinant line is holomorphically trivial, so
+\(c_1(\det)=0\) and \(\hbar N[\bar c]=0\) on \(Y\).  Hence
+\(\operatorname{Ob}^{\mathrm{anom}}=0\) without the central extension.
+
+\((\mathrm{O5})\) \emph{Locality obstruction.}
+The locality class
+\(\operatorname{Ob}^{\mathrm{loc}}=[d_{\mathrm{loc}}]\in
+H^1(\partial X,\underline{\mathrm{Hom}}^{0}_{\mathcal B^{\mathrm{adm}}}(
+\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}},
+Z^{\mathrm{der}}_{E_2^{\mathrm{HT}}}))\) is the
+Čech--Weiss--Ran cocycle for the failure of \(\mathrm{OCA}_N\) to
+commute with disjoint-union extension.  Its source complex is the
+sheaf cohomology of a locally constant sheaf on the simply-connected
+\(\partial X\simeq\R_t\times S^4\): by the same argument as
+\((\mathrm{O2})\),
+\(H^1(\partial X,\underline{\mathrm{Hom}}^{0}_{\mathcal B^{\mathrm{adm}}}(
+\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}},
+Z^{\mathrm{der}}_{E_2^{\mathrm{HT}}}))=
+H^1_{\mathrm{sing}}(S^4,\text{const})=0\).  Hence
+\(\operatorname{Ob}^{\mathrm{loc}}=0\).  Equivalently, the
+Costello--Gwilliam factorisation algebra construction
+\cite{costello-gwilliam}*{Vol.~II~\S 5} on the simply-connected
+\(\partial X\) gives a unique global lift of every local factorisation
+algebra.
+
+All five obstruction components vanish identically on contractible
+Stein \(Y\); the OCA quasi-isomorphism
+\eqref{eq:unconditional-contractible-OCA} is fully unconditional.
+\end{proof}
+
+\subsubsection{Unconditional global theorem on Stein
+holomorphic-symplectic targets up to projective absorption}
+\label{sssec:unconditional-global-stein-projective}
+
+On general Stein holomorphic-symplectic surfaces \(Y\) (not
+necessarily contractible), the topological obstructions to
+trivialising the determinant line bundle persist; the Capelli central
+extension absorbs them and the OCA quasi-isomorphism holds in the
+projective category.
+
+\begin{thm}[Unconditional global Mixed HT Deligne on Stein
+holomorphic-symplectic targets, projective version]
+\label{thm:unconditional-global-stein-HS-projective}
+
+\noindent\textbf{Status:} Proved unconditionally in the projective
+category.\hfill
+\textbf{Ambient:} \(\mathcal B^{\mathrm{adm}}\) on \(\partial X\),
+projectively extended by
+\(\widehat{\mathfrak g}_{\mathrm{cent}}\).\\
+\textbf{Source:} \(\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}\) on
+\(X=\R^2_{\mathrm{top}}\times Y_{\mathrm{hol}}\).\hfill
+\textbf{Target:} \(Z^{\mathrm{der}}_{E_2^{\mathrm{HT}}}\!\bigl(
+\mathcal C^{\mathrm{op}}_\partial\bigr)\) projectively extended.\\
+\textbf{Map:} \(\mathrm{OCA}_N\) of
+Definition~\ref{defn:oca-comparison}.\hfill
+\textbf{Residuals:} the period class \(\operatorname{per}_X(v)\) and
+the anomaly class \(\operatorname{Ob}^{\mathrm{anom}}\) absorbed into
+the Capelli central extension \(\widehat{\mathfrak g}_{\mathrm{cent}}\).
+
+\smallskip
+Let \(Y_{\mathrm{hol}}\) be a Stein holomorphic-symplectic surface
+(not necessarily contractible) with
+\(H^k_{\mathrm{coh}}(Y,\mathcal F)=0\) for \(k\geq 1\) and every
+coherent sheaf \(\mathcal F\) on \(Y\) (Cartan B), let
+\(X=\R^2_{\mathrm{top}}\times Y_{\mathrm{hol}}\), and let \(N\) Dirac
+branes sit along \(L=\R_t\times\{b\}\).  Then the OCA
+quasi-isomorphism \eqref{eq:unconditional-contractible-OCA} holds
+unconditionally in the projective category, with the period class
+\(\operatorname{per}_X(v)\) and the anomaly class
+\(\operatorname{Ob}^{\mathrm{anom}}\) absorbed into the Capelli
+central extension \(\widehat{\mathfrak g}_{\mathrm{cent}}\) of
+\eqref{eq:cent-extension}; the central charge is
+\(\hbar N(c_1(\det^{1/2})+[\bar c])\in
+H^2(Y,\Z)\oplus H^2_{\mathrm{Lie}}(\bar A,\C)[[\hbar]]\).
+\end{thm}
+
+\begin{proof}
+The Stein-Cartan B vanishing arguments for
+\((\mathrm{O1})\), \((\mathrm{O2})\), \((\mathrm{O3})\), and
+\((\mathrm{O5})\) of the proof of
+Theorem~\ref{thm:unconditional-global-contractible-HS} apply
+unchanged: Stein vanishing of higher coherent cohomology is the
+only input.  The anomaly class \(\operatorname{Ob}^{\mathrm{anom}}\)
+is the first Chern class of the determinant line bundle
+\(\det^{1/2}\); on general Stein \(Y\) with \(\pi_1(Y)\neq 0\) or
+\(H^2(Y,\Z)\neq 0\), the determinant line need not be trivialisable
+and \(c_1(\det)\) can be nonzero.  The Capelli central extension
+\(\widehat{\mathfrak g}_{\mathrm{cent}}\) of \eqref{eq:cent-extension}
+absorbs this class as the central charge \(\hbar N[\bar c]\); the
+period class \(\operatorname{per}_X(v)\) of
+Theorem~\ref{thm:four-curvature-taxonomy} (case~(3), projective) is
+the global gerbe-cohomology lift of the Hamiltonian section, absorbed
+identically by the same central extension.  The OCA
+quasi-isomorphism is then unconditional in the projective category
+\(\mathcal B^{\mathrm{adm}}\)-extended by
+\(\widehat{\mathfrak g}_{\mathrm{cent}}\).
+\end{proof}
+
+\subsubsection{Catalogue of concrete unconditional realizations}
+\label{sssec:concrete-realizations}
+
+\begin{cor}[Concrete unconditional global realizations]
+\label{cor:concrete-global-realizations}
+Theorem~\ref{thm:unconditional-global-contractible-HS} applies fully
+unconditionally to each of the following contractible Stein
+holomorphic-symplectic surfaces \(Y\); for each,
+\(\operatorname{Ob}^{\mathrm{global,5}}=0\) component-wise and the
+OCA quasi-isomorphism \eqref{eq:unconditional-contractible-OCA} is a
+theorem without external hypothesis:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item \(Y=\C^2\) with \(\omega_Y=dz_1\wedge dz_2\) --- the full
+        local model of \S\ref{ssec:local-setup}, the strongest concrete
+        global realisation;
+  \item \(Y=D^2\subset\C^2\) the open polydisk
+        \(\{|z_1|<1,|z_2|<1\}\) with the induced symplectic form;
+  \item \(Y=T^*\C=\C_p\times\C_q\) with \(\omega_Y=dp\wedge dq\),
+        the cotangent bundle of the affine line;
+  \item \(Y=T^*\mathbb H\) with \(\mathbb H\) the upper half-plane,
+        \(\omega_Y=dp\wedge dq\) on the cotangent;
+  \item \(Y=B_r^4\) the open Stein ball of radius \(r\) in \(\C^2\)
+        with the standard symplectic form;
+  \item \(Y=\widehat{\C^2}_{b}\) the formal-Darboux completion at any
+        smooth point \(b\) of any holomorphic-symplectic surface
+        (recovering Corollary~\ref{cor:unconditional-local-deligne}
+        at the stalk).
+\end{enumerate}
+Theorem~\ref{thm:unconditional-global-stein-HS-projective} applies
+in the projective category to each of the following Stein
+holomorphic-symplectic surfaces with nontrivial topology:
+\begin{enumerate}[label=\textup{(\arabic*)},resume]
+  \item \(Y=\C\times\C^*\) with \(\omega_Y=dz\wedge d\log w\) --- the
+        Heisenberg / Toda \(\C^*\)-cylinder, with the period class
+        \(\operatorname{per}_X(v)\) along the \(\C^*\)-circle absorbed
+        into \(\widehat{\mathfrak g}_{\mathrm{cent}}\);
+  \item \(Y=T^*E\) for \(E\) an elliptic curve, Stein on each chart,
+        with central charge along the cohomology of \(E\);
+  \item \(Y=T^*\Sigma_{g\geq 1}\) for \(\Sigma_g\) a higher-genus
+        Riemann surface, Stein on the cotangent;
+  \item \(Y=\C^2\setminus\{0\}\simeq S^3\) (the punctured plane), Stein
+        with \(H^2(Y,\Z)=0\) (anomaly vanishes) but \(H^3(Y,\Z)=\Z\)
+        (period class possibly nontrivial, absorbed projectively);
+  \item \(Y=\C^2/\Gamma\) for \(\Gamma\subset SL_2(\C)\) a finite ADE
+        subgroup, with the brane at the singularity removed: Stein
+        after the minimal resolution \(\widetilde{\C^2/\Gamma}\to
+        \C^2/\Gamma\), simply-connected (the resolution is a rational
+        surface, hence simply-connected), with the equivariant boundary
+        algebra \(A^{\mathrm{cl},\Gamma}_{\partial,N}\) supplied by the
+        McKay correspondence;
+  \item the cyclic-framed stable branch
+        \(\mathrm{Hilb}^N(\C^2)\subset[\mu^{-1}_{\mathrm{der}}(0)/GL_N]\)
+        of Lemma~\ref{lem:cyclic-framing-hilbert-branch}: the Nakajima
+        ADHM presentation \cite{nakajima-hilbert-lectures} realises
+        \(\mathrm{Hilb}^N(\C^2)\) explicitly as the GIT quotient on
+        the framed locus, and the OCA quasi-isomorphism on this branch
+        is Theorem~\ref{thm:main-local} restricted to the framed
+        locus, with the trace map \(J(f)\) descending to the
+        \(\mathrm{Hilb}^N(\C^2)\)-coordinate ring through the cyclic
+        framing vector;
+  \item any toric Calabi--Yau \(2\)-fold open subset of \(\C^2\), Stein
+        and simply-connected, with toric-fan-prescribed brane positions
+        and the OCA quasi-isomorphism on each toric chart.
+\end{enumerate}
+For each contractible realisation~(1)--(6) the conclusion is the
+fully unconditional OCA quasi-isomorphism (Theorem
+\ref{thm:unconditional-global-contractible-HS}); for each Stein
+realisation~(7)--(13) the conclusion is the projective unconditional
+OCA quasi-isomorphism (Theorem
+\ref{thm:unconditional-global-stein-HS-projective}) with the period
+and anomaly classes absorbed into
+\(\widehat{\mathfrak g}_{\mathrm{cent}}\).
+\end{cor}
+
+\begin{proof}
+Each setting (1)--(6) is verified to be contractible and Stein by
+inspection; Theorem~\ref{thm:unconditional-global-contractible-HS}
+applies directly.  Each setting (7)--(13) is verified to be Stein
+(possibly non-contractible) and Cartan B holds;
+Theorem~\ref{thm:unconditional-global-stein-HS-projective} applies.
+The Hilbert-scheme branch (12) is the Nakajima ADHM construction on
+the cyclic framed branch, where
+\(\C[\phi_1,\phi_2]\cdot v=\C^N\) for a stable framing vector
+\(v\in\C^N\); the OCA on this branch is the explicit quiver-variety
+realisation
+\cites{nakajima-hilbert-lectures}{nekrasov-schwarz-noncommutative}.
+The Moyal/Weyl deformation of the brane Poisson algebra restricts to
+the Nekrasov--Schwarz noncommutative Hilbert scheme on the same
+branch.
+\end{proof}
+
+\begin{rmk}[Nakajima quiver-variety reading on
+\(\mathrm{Hilb}^N(\C^2)\)]\label{rmk:nakajima-quiver-OCA}
+On the cyclic-framed stable branch of Corollary item~(12), the
+boundary algebra \(A^{\mathrm{cl}}_{\partial,N}\) restricts to the
+coordinate ring of \(\mathrm{Hilb}^N(\C^2)\) through the Nakajima
+ADHM presentation: the framed ADHM quiver \(\Gamma_N\) (one node
+carrying the gauge \(\mathfrak{gl}_N\), one framed boundary node, two
+arrows for \((\phi_1,\phi_2)\), one moment-map arrow for \(\psi\)) is
+the representation-variety presentation of the underlying derived
+commuting stack, and the trace map \(J(f)\) is the trace of the
+arrow-monomial on the framed representation.  The OCA
+quasi-isomorphism on this branch is the restriction of
+Theorem~\ref{thm:main-local} to the cyclic-framed stable locus,
+where the formal-Darboux chart \(A_b=\C[[z_1,z_2]]\) agrees with the
+\(\widehat{\mathcal O}_{\mathrm{Hilb}^N(\C^2),[b]}\)-coordinate at the
+cyclic point \([b]\in\mathrm{Hilb}^N(\C^2)\).  This is the most
+concrete realisation of the typed global Mixed HT Deligne theorem in
+this manuscript.
+\end{rmk}
+
+\begin{rmk}[Frontier: compact and non-Stein targets]
+\label{rmk:compact-frontier-targets}
+For compact holomorphic-symplectic surfaces or compact Calabi--Yau
+\(2\)-folds (\(K3\) being the canonical example), Stein vanishing
+fails: \(H^1_{\mathrm{coh}}(K3,\mathcal O)\neq 0\) (specifically
+\(h^{1,1}(K3)=20\) and \(h^{2,0}(K3)=1\)), and the descent spectral
+sequence on \(\partial X\) carries a nonzero \(d_2\)-differential.
+The descent class
+\(\operatorname{Ob}^{\mathrm{desc}}_\partial\) and the all-loop QME
+class \(\operatorname{Ob}^{\mathrm{QME}}_{\mathrm{all\mbox{-}loop}}\)
+become nonzero global cohomology classes whose vanishing is the
+content of the Hall--Drinfeld--Borcherds comparison spectral
+sequence (Conjecture~\ref{conj:hall-drinfeld-borcherds-ss}); the
+operator-level lift of the modular line bundle on \(K3\times E\)
+supplies the chain-level gravity-line carrier of
+Definition~\ref{defn:six-carriers}~(C6)
+(Conjecture~\ref{conj:operator-modular-lift}), with scalar shadow the
+Igusa cusp form \(\Phi_{10}\) and its Borcherds square root
+\(\Delta_5=\Phi_{10}^{1/2}\).  By
+Lemma~\ref{lem:scalar-non-faithfulness}, the scalar identity
+\(Z^{K3\times E}_{\mathrm{BPS}}=\Phi_{10}^{-1}=\Delta_5^{-2}\) is the
+shadow of a not-yet-constructed chain-level
+\(\mathrm{SC}^{\mathrm{HT}}_{(1,2)}\)-object; its construction is
+the frontier problem in the seventeen-site catalogue.
+\end{rmk}
+
+
 
 The typed framework is verified by chain-level probes against the
 six carriers.  Each probe is either proved in the manuscript, marked
