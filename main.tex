@@ -105,6 +105,7 @@ Holomorphic--Topological Deligne conjecture}
   -\partial_{z_2}f\,\partial_{z_1}g$; the antifields $\mathcal B$
   take values in the continuous Grothendieck--Matlis residue dual
   $\mathfrak h^\vee_{\mathrm{cont}}=
+  \operatorname{Ann}_{\Res}(\C\cdot1)\subset
   H^2_{(z_1,z_2)}(\C[[z_1,z_2]])\,dz_1dz_2$ paired by
   $\langle f,\omega\rangle=\Res_0 f\omega$.  Together they form the
   shifted-cotangent BF Lie algebra
@@ -232,15 +233,16 @@ Holomorphic--Topological Deligne conjecture}
   $\mathfrak h^\vee_{\mathrm{cont}}$ with the Matlis principal-part
   module
   \[
-    \mathcal P=H^2_{\mathfrak m}(A)\otimes\omega_A
-     =\bigoplus_{a+b>0}\C\,\rho_{a,b},
-    \qquad
+    \mathcal P=\operatorname{Ann}_{\Res}(\C\cdot1)\subset H^2_{\mathfrak m}(A)\otimes\omega_A,
+    \quad
+    \mathcal P=\bigoplus_{a+b>0}\C\,\rho_{a,b},
+    \quad
     \omega_A=dz_1\wedge dz_2,
-    \qquad
+    \quad
     \rho_{a,b}=z_1^{-a-1}z_2^{-b-1}\,dz_1\,dz_2,
   \]
-  the holomorphic-surface analogue of the Heisenberg current on the
-  formal disk.  Inverse limits over Matlis windows
+  the holomorphic-surface two-variable refinement of the Heisenberg
+  current on the formal disk.  Inverse limits over Matlis windows
   \(\mathcal P_{\le N}=\bigoplus_{a+b\le N}\C\rho_{a,b}\) are read as
   derived limits \(\mathbf{R}\!\varprojlim_N\mathcal P_{\le N}\),
   with $\varprojlim^1$-data tracked.
@@ -406,10 +408,10 @@ Holomorphic--Topological Deligne conjecture}
   \medskip\noindent
   The local model is the holomorphic factorization algebra of
   Hamiltonian currents on \(\C^2\).  Its coefficient dual is the
-  Matlis principal-part module \(\mathcal P\).  In the curve analogy,
-  \(\mathcal P\) replaces the Kac--Moody central-pairing module
-  \(\Omega_K\), and \(\mathfrak h\) replaces the regular functions on
-  the curve.  The same formal local sector appears in Costello's
+  Matlis principal-part module \(\mathcal P\).  Under a curve
+  restriction \(C\hookrightarrow\C^2\), \(\mathcal P\) restricts to the
+  Kac--Moody central-pairing module \(\Omega_K\) and \(\mathfrak h\) to
+  the regular functions on the curve.  The same formal local sector appears in Costello's
   twisted M-theory family \cite{costello-twistedM}.  On the cyclic
   framed stable branch it is the formal-Darboux chart of
   \(\Hilb^N(\C^2)\) in its Moyal deformation.
@@ -424,7 +426,7 @@ Holomorphic--Topological Deligne conjecture}
   followed by Lurie--Ayala--Francis factorization-homology
   specialisation $\mathrm{Sp}^{\mathrm{ch}}_{\Sigma_{d-1},C}(\mathcal F)
   =\int_{\Sigma_{d-1}}\mathcal F|_C$; at $d=2$, $\mathcal C$ is the
-  Calabi--Yau category $\mathcal C$ of the holomorphic-symplectic
+  Calabi--Yau category of the holomorphic-symplectic
   target.  Conventions match a global theorem through the
   matched-conventions acceptance class $\operatorname{Ob}_{\mathrm{UKD}}$
   of Theorem~\ref{thm:matched-conventions-transfer}: a nonzero
@@ -473,9 +475,8 @@ BF Lie algebra
 \(\mathfrak g=\mathfrak h\ltimes\mathfrak h^\vee_{\mathrm{cont}}[1]\),
 \(\mathfrak h=\C[[z_1,z_2]]/\C\cdot 1\)
 (\S\ref{ssec:hamiltonian-bf-algebra},
-Theorem~\ref{thm:bf-action-uniqueness-qme}).
-The native bulk object is the two-complex-dimensional factorization
-algebra on $\C^2$.  A curve vertex operator algebra (VOA) is a
+Theorem~\ref{thm:bf-action-uniqueness-qme}); it is two-complex-dimensional.
+A curve vertex operator algebra (VOA) is a
 separate one-dimensional object.  It can be compared with the native
 factorization algebra only after a controlled reduction supplies
 explicit $z_2$-mode or principal-part data, pushed-forward bracket,
@@ -563,8 +564,11 @@ denotes \(Z^{\mathrm{der}}_{E_1}(A^{\mathrm{cl}}_{\partial,N})\)
 under Costello--Gwilliam.
 
 \paragraph{Cross-volume objects anchored to the present theorem.}
-The boundary open category on the Costello--Gwilliam brane-link
-boundary $\partial X$ of the Dirac brane defect $L\subset X$ is
+The boundary open category on the Kato--Nakayama log boundary
+$\partial X^{\mathrm{KN}}$ of the brane log structure on $X$
+(equivalently the Costello--Gwilliam brane-link boundary $\partial X$
+of the Dirac brane defect $L\subset X$, henceforth written $\partial X$)
+is
 $\mathcal C^{\mathrm{op}}_\partial=
 \Phi^{\mathrm{FA}}_d(\mathcal A)\big|_{\partial X}$,
 the bulk--boundary restriction of the bulk factorisation algebra to the
@@ -642,7 +646,7 @@ control surface:
 \item The brane-preserving \(\Omega\)-background uses the normal
   scaling on \(N_L X=\R_s\oplus\C_{z_1}\oplus\C_{z_2}\) with the
   brane time \(t\) fixed, torus
-  \(T_\Omega=\C^*_{\varepsilon_s}\times\C^*_{\varepsilon_1}\times\C^*_{\varepsilon_2}\),
+  \(T_\Omega=\C^*_{\epsilon_s}\times\C^*_{\epsilon_1}\times\C^*_{\epsilon_2}\),
   twisted differential
   \(Q_\Omega=Q+\iota_{V_\Omega}\) with \(Q_\Omega^2=L_{V_\Omega}\),
   inverted normal weights, residue-vs-Euler normalization, and
@@ -735,7 +739,7 @@ proved
 Capelli central extension
 &
 Theorem~\ref{thm:capelli-equals-modular-curvature}\\
-Global OCA identification on \(\partial X\)
+Global open--closed comparison (OCA) on \(\partial X\)
 &
 conditional
 &
@@ -1865,8 +1869,9 @@ the level of generators.
       =
       \bigoplus_{0<a+b\leq N}\C\rho_{a,b}.
   \]
-  The symbol \(\mathfrak h_{\leq N}=\mathfrak m/\mathfrak m^{N+1}\) is
-  the coordinate window; the full Hamiltonian Lie bracket requires
+  The coordinate window \(\mathfrak m/\mathfrak m^{N+1}\), dual to
+  \(\mathcal P_{\leq N}\), is the Hamiltonian counterpart of the
+  retained principal parts; the full Hamiltonian Lie bracket requires
   the completed algebra \(\mathfrak h\).
 
   On
@@ -2966,8 +2971,8 @@ one-dimensional VOA/OPE algebra is present only after a separate
 one-complex-dimensional reduction datum retaining the required transverse
 coefficient system.  If
 the local model arises as a protected sector of a larger unitary theory
-(for example, of a topological twist of a supersymmetric quantum field
-theory whose local observables for the local model arise as cohomology
+(for example, the topological twist of a supersymmetric quantum field
+theory whose local observables in the twisted sector arise as cohomology
 with respect to a supercharge), then unitarity is carried by the larger
 theory, and the local sector retains only the cohomological algebra of
 protected observables.  Lorentzian unitarity belongs to such a parent
@@ -4104,12 +4109,11 @@ transfer.
   \(\mathsf H^{\mathrm{st}}_{K,L}(A_\psi)\), with product induced by
   block diagonal sum and coproduct the CE coproduct, put
   \[
-    J=\operatorname{id}-u\epsilon,\qquad
     P_{1\mathrm{cyc}}
     =
     \log^*(\operatorname{id})
     =
-    \sum_{m=1}^{L}\frac{(-1)^{m-1}}{m}J^{*m}.
+    \sum_{m=1}^{L}\frac{(-1)^{m-1}}{m}(\operatorname{id}-u\epsilon)^{*m}.
   \]
   Then \(P_{1\mathrm{cyc}}\) is a chain idempotent whose image is the
   stable single-cycle trace span
@@ -4153,8 +4157,8 @@ transfer.
 
   The stable CE window is formed before projecting.  Block diagonal sum
   is a chain product, the CE coproduct is a chain coproduct, and
-  \(J=\operatorname{id}-u\epsilon\) is a chain map; hence every
-  convolution power \(J^{*m}\) and therefore \(P_{1\mathrm{cyc}}\) is a
+  \(\operatorname{id}-u\epsilon\) is a chain map; hence every
+  convolution power \((\operatorname{id}-u\epsilon)^{*m}\) and therefore \(P_{1\mathrm{cyc}}\) is a
   chain map.  Stable invariant CE tensors are indexed by permutations of
   the CE factors, and a permutation decomposes uniquely into cycles.  A
   single cycle is exactly a trace-cycle tensor in
@@ -5718,7 +5722,7 @@ field.
   the chip-moving necklace state complex and uses the circle-sum map to compute
   the state complex as \(H_\bullet(S^1;\C)\); see
   Theorem~\ref{thm:T5-full-primitive-psi-homology} and
-  Theorem~\ref{thm:app-full-primitive-psi-homology}.  The result does
+  Theorem~\ref{thm:app-full-primitive-psi-homology}.  The result
   identifies the polynomial one-\(\psi\) span as a PBW special-fibre
   object; Matlis principal parts and the Moyal coadjoint module are
   separate deformation-level objects.
@@ -6832,7 +6836,7 @@ explicit local central-operation model.
   For disjoint intervals \ref{prop:brane-bracket-locality} gives
   vanishing of the $P_0$ bracket between the two factors, so the
   factorization product of two such operations is the strict
-  multiplication by $I_\partial(a,f)I_\partial(b,g)$; this is the
+  multiplication by $B_f(a)B_g(b)$; this is the
   multiplicative extension from $\mathfrak h_I$ to
   $A_\partial^{\mathrm{Ham}}(I)=\widehat{\mathbf S}(\mathfrak h_I)$;
   the linear current bracket is its indecomposable part.
@@ -6841,8 +6845,8 @@ explicit local central-operation model.
   test functions $a,b$,
   \ref{cor:local-bulk-boundary-coupling} (the strict $P_0$ identity
   on the brane factorization algebra) gives
-  $$\{I_\partial(a,f),I_\partial(b,g)\}_{A_\partial^{\mathrm{Ham}}}
-    =I_\partial(ab,\{f,g\}_{\bar A}).$$
+  $$\{B_f(a),B_g(b)\}_{A_\partial^{\mathrm{Ham}}}
+    =B_{\{f,g\}_{\bar A}}(ab).$$
   Passing to the connected stable Hamiltonian quotient removes only
   the scalar Hamiltonian line, which is central for the bracket. Thus
   the current bracket is preserved. Taking $a$ and $b$ supported in a
@@ -8086,10 +8090,11 @@ Theorem~\ref{thm:typed-global-mixed-ht-deligne}.
   -\partial_{z_2}f\,\partial_{z_1}g$ and Grothendieck--Matlis residue
   dual
   \[
-    P=\mathfrak h^\vee_{\mathrm{cont}}\simeq
-      H^2_{\mathfrak m}(R)\,dz_1dz_2
-      =\bigoplus_{a+b>0}\C\,\rho_{a,b},
+    P=\mathfrak h^\vee_{\mathrm{cont}}=
+      \operatorname{Ann}_{\Res}(\C\cdot1)\subset H^2_{\mathfrak m}(R)\,dz_1dz_2,
     \qquad
+    P=\bigoplus_{a+b>0}\C\,\rho_{a,b},
+    \quad
     \rho_{a,b}=z_1^{-a-1}z_2^{-b-1}\,dz_1dz_2,
     \quad\mathfrak m=(z_1,z_2),
   \]
@@ -10164,11 +10169,11 @@ obstruction class at each boundary.
 \begin{prop}[Admissible Tate Koszul-duality criterion]\label{prop:ce-koszul}
   Let \(\mathfrak g_{\mathrm{adm}}\) be a Tate graded Lie algebra satisfying
   the lower-central Tate-pronilpotence hypothesis of
-  Lemma~\ref{lem:continuous-bar-cobar};
-	  for the formal-local setting this means one of the nilpotent
-	  bracket-compatible finite-window replacements,
-  the weighted admissible envelope where the hypothesis is explicitly
-  imposed, or another stated admissible replacement. Put
+  Lemma~\ref{lem:continuous-bar-cobar} ---
+  for the formal-local setting, a nilpotent
+  bracket-compatible finite-window replacement,
+  the weighted admissible envelope in which the hypothesis is explicitly
+  imposed, or another stated admissible replacement.  Put
   \[
     B_{\mathrm{adm}}
       =C^\bullet_{\mathrm{CE},\mathrm{cont}}(\mathfrak g_{\mathrm{adm}})
@@ -12338,8 +12343,8 @@ target.
 	      \]
 	      with wavefront and counterterm rules for \(\mathcal D'_c\)-coefficients,
 	      or the theorem must restrict \(B\) to regular compactly supported
-	      densities. In
-	      the weighted Tate category this means a class
+	      densities.  In
+	      the weighted Tate category the obstruction is a class
 	      \[
 	        \operatorname{Ob}_{w,n}\in
 	        H^1_{\mathrm{adm}}\bigl(\mathcal O_{\mathrm{loc}}(\mathcal E_w),
@@ -14086,8 +14091,8 @@ checks in the problem below.
   Statement~\ref{stmt:costello-bv-construction}, after solving the Hamiltonian
   specialization data of Problem~\ref{prob:analytic-graph-realization}. The
   first graph fixes the normalization; the third graph tests whether the
-  Costello specialization really lands on the Weyl/Moyal product, thereby
-  fixing the deformation-quantization convention. The analytic problem is reduced
+  Costello specialization lands on the Weyl/Moyal product, fixing the
+  deformation-quantization convention. The analytic problem is reduced
   to the following checks:
   \begin{enumerate}
     \item identify the connected one-propagator brane-defect ribbon graph whose
@@ -15225,7 +15230,7 @@ Theorem~\ref{thm:main-local} is the formal-Darboux stalk of the
 global Mixed Holomorphic--Topological Deligne identification
 \(\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}\simeq
 Z^{\mathrm{der}}_{E_2^{\mathrm{HT}}}\!(\mathcal{C}^{\mathrm{op}}_\partial)\)
-of Theorem~\ref{thm:main-global-conditional}.  By the cross-target
+of Theorem~\ref{thm:main-global-conditional}.  By the
 cross-target scope theorem (Theorem~\ref{thm:cross-target-firewall}),
 none of the
 following frontier programmes is a consequence: the chiral \(E_d\)
@@ -16022,13 +16027,14 @@ Moyal target.
    note={arXiv:2001.02177},
 }
 
-\bib{milnor-axiomatic-homology}{book}{
-   author={Eilenberg, Samuel},
-   author={Steenrod, Norman},
-   title={Foundations of algebraic topology},
-   publisher={Princeton University Press},
-   place={Princeton},
-   date={1952},
+\bib{milnor-axiomatic-homology}{article}{
+   author={Milnor, John},
+   title={On axiomatic homology theory},
+   journal={Pacific J. Math.},
+   volume={12},
+   date={1962},
+   pages={337--341},
+   doi={10.2140/pjm.1962.12.337},
 }
 
 \bib{kothe-topological-vector-spaces}{book}{
