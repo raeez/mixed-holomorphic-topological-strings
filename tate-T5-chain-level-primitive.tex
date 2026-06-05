@@ -2,19 +2,19 @@
 \label{ssec:chain-level-primitive}
 
 The chain-level primitive \(P_0\)-shadow is the cocycle representing
-the Koszul resolution of the brane-side derived \(E_1\)-Hochschild
-\(HH^\bullet(A^{\mathrm{cl}}_{\partial,N},A^{\mathrm{cl}}_{\partial,N})\),
-identified with the bulk stalk
-\(\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}|_b\) by
-Theorem~\ref{thm:main-local}, at the \(F_1/F_0\) layer of the
+the trace summand of the map from the bulk stalk
+\(\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}|_b\) to the brane-side
+derived \(E_1\)-Hochschild complex
+\(HH^\bullet(A^{\mathrm{cl}}_{\partial,N},A^{\mathrm{cl}}_{\partial,N})\)
+in Theorem~\ref{thm:main-local}, at the graded piece \(F_1/F_0\) of the
 trace-count filtration on the open observables.  The two-dimensional
 holomorphic singular product on this stalk is the diagonal OPE of
 Theorem~\ref{thm:formal-two-dimensional-holomorphic-ope}; this file
 constructs the primitive open-side shadow of the same stalk as a
-separate chain-level representative.
+chain-level representative in the primitive trace filtration.
 
 Item~(3) of
-Problem~\ref{prob:formal-factorization-center} asks for a chain-level
+Problem~\ref{prob:formal-factorization-center} is the chain-level
 projection
 \[
   \pi_{\mathrm{prim}}\colon
@@ -40,7 +40,7 @@ obstruction in the cotangent target
 \(\widehat{\mathbf S}(\mc M^{\mathrm{pp,unred}}_\partial(I))\),
 together with a one-antifield boundary realization datum.  The
 construction below kills the indecomposable-shadow part of
-\(\mathfrak o_{\mathrm{prim}}\) on the \(F_1/F_0\) layer; the residue is
+\(\mathfrak o_{\mathrm{prim}}\) on the graded piece \(F_1/F_0\); the residue is
 the secondary Koszul obstruction, the pair
 \((\operatorname{ob}_{\mathrm{cent}}^{\mathrm{prod}},
 \operatorname{ob}_{\mathrm{cent}}^{P_0})\) of centrality homotopies
@@ -58,7 +58,7 @@ needed for the Costello-renormalized one-loop and higher-loop
 counterterms. The chain-level construction below uses the algebraic
 primitive splitting.
 
-For the cyclic chip-moving Koszul complex \(K^\bullet_{R,S}\) of
+For the cyclic-word Koszul complex \(K^\bullet_{R,S}\) of
 Definition~\ref{def:T5-full-psi-complex},
 \[
   H_p(K_{R,S})\cong\begin{cases}
@@ -73,8 +73,8 @@ is the symmetrised one-\(\psi\) trace
 \ref{lem:T5-cellular-chain-identification},
 \ref{lem:T5-abel-cyclic-stabilizers}).  The displayed homology is the
 Abel-map Vietoris--Begle equivalence
-\(\widetilde Y_{R,S}\simeq_{\mathrm H}S^1\) of the cellular chip-moving
-state complex \(\widetilde Y_{R,S}\), passed to cyclic coinvariants by
+\(\widetilde Y_{R,S}\simeq_{\mathrm H}S^1\) of the cellular cyclic-word
+complex \(\widetilde Y_{R,S}\), passed to cyclic coinvariants by
 \(\C[C_S]\)-semisimplicity.  The chain-level primitive therefore lives
 exactly on the Hamiltonian sector
 \(\bar A\oplus\bar A_{\mathrm{desc}}[1]\), the closed Hamiltonian
@@ -83,7 +83,7 @@ copy
 \(\bar A_{\mathrm{desc}}=\bigoplus_{a+b>0}\C\cdot[\Psi_{a,b}]\); the
 homology contains exactly these two Hamiltonian summands.
 
-The unreduced cotangent factorization-centre morphism
+For the unreduced cotangent factorization-centre morphism
 \[
   \Phi_{\mathrm{fact}}^{\mathrm{unred}}:
   \mathrm{Obs}^{\mathrm{cl}}_{\mathrm{closed},H}\big|_L
@@ -91,15 +91,15 @@ The unreduced cotangent factorization-centre morphism
   \mathrm Z^{P_0}_{\mathrm{fact}}
     \bigl(\mathrm{Obs}^{\mathrm{cl}}_{\mathrm{open},N}\bigr)
 \]
-of Problem~\ref{prob:formal-factorization-center} exists, modulo the
+of Problem~\ref{prob:formal-factorization-center}, modulo the
 analytic and convention sublattice
 \((\mathfrak o_{\mathrm{Cas}},
 \mathfrak o_{\mathrm{nilp}},
 \mathfrak o_{\mathrm{Quil}},
 \mathfrak o_{\mathrm{Had}},
-\mathfrak o_{\mathrm{univ}},
-\mathfrak o_{\mathrm{cv}})=0\) of \(\operatorname{Ob}_T\), if and only
-if the joint centrality / QME / descent obstruction
+\mathfrak o_{\mathrm{univ}})=0\) of \(\operatorname{Ob}_T\), the first
+obstruction coordinates are given by the joint centrality / QME / descent
+tuple
 \[
   \operatorname{Ob}_{\mathrm{cent/QME/desc}}
     =
@@ -110,7 +110,9 @@ if the joint centrality / QME / descent obstruction
       \delta_{\check C/R}^{\mathrm{Weiss}}
     \bigr)
 \]
-also vanishes with chosen compatible null-homotopies: the
+whose vanishing is necessary, and sufficient only after the full
+filtered obstruction complex, all higher descent classes, and
+compatible null-homotopies have been constructed.  Its entries are the
 factorization-product centrality class
 \(\operatorname{ob}_{\mathrm{cent}}^{\mathrm{prod}}\), the
 \(P_0\)-bracket centrality class
@@ -118,16 +120,19 @@ factorization-product centrality class
 endpoint class \(\operatorname{ob}_{\mathrm{QME}}^{\mathrm{bd}}\), and
 the stratified Weiss \v{C}ech--Roos descent class
 \(\delta_{\check C/R}^{\mathrm{Weiss}}\) of
-Remark~\ref{rmk:weiss-ran-descent-obstruction}.  This biconditional is
-the restriction of Theorem~\ref{thm:tate-cotangent-lift-iff} to the
-two components
+Remark~\ref{rmk:weiss-ran-descent-obstruction}.  This tuple is the
+restriction of Theorem~\ref{thm:tate-cotangent-lift-iff} to the two components
 \(\mathfrak o_{\mathrm{prim}}\) and \(\mathfrak o_{\mathrm{BV,end}}\)
 of \(\operatorname{Ob}_T\), expanded into their centrality, QME, and
 descent constituents, under the displayed sublattice constraint.
-\(\mathfrak o_{\mathrm{prim}}\) supplies
+\(\mathfrak o_{\mathrm{cv}}\) is not set to zero here; its local Weiss
+component is the descent coordinate displayed above, while its compact
+comparison component belongs to the matched-conventions obstruction
+class.
+\(\mathfrak o_{\mathrm{prim}}\) gives
 \(\operatorname{ob}_{\mathrm{cent}}^{\mathrm{prod}}\) and
 \(\operatorname{ob}_{\mathrm{cent}}^{P_0}\); the QME endpoint
-component of \(\mathfrak o_{\mathrm{BV,end}}\) supplies
+component of \(\mathfrak o_{\mathrm{BV,end}}\) gives
 \(\operatorname{ob}_{\mathrm{QME}}^{\mathrm{bd}}\); the descent class
 \(\delta_{\check C/R}^{\mathrm{Weiss}}\) is the local stratification
 of the descent component of \(\mathfrak o_{\mathrm{cv}}\) of
@@ -139,12 +144,9 @@ vanishes.
 In this filtration the chain-level primitive shadow is the
 \emph{associated graded} of the unreduced lift problem on its
 zero-\(\psi\) Hamiltonian and one-\(\psi\) descendant generator
-subspaces, equivalently the \(E_1\)-page of the
-obstruction-filtration spectral sequence whose \(E_\infty\)-page is
-\(\Phi_{\mathrm{fact}}^{\mathrm{unred}}\) itself.  Strict \(Q\)-,
-factorization-, and \(P_0\)-bracket compatibilities are the
-\(d_1\)-vanishings; the four enumerated obstruction classes are the
-higher differentials.
+subspaces.  Strict \(Q\)-, factorization-, and \(P_0\)-bracket
+compatibilities are separate lift obstructions until a filtered
+obstruction complex and its spectral sequence are constructed.
 
 Theorem~\ref{thm:chain-level-primitive-projection} extracts the
 algebraic primitive/indecomposable projection on the free symmetric
@@ -167,7 +169,7 @@ contraction \(H^\bullet(\Omega^\bullet_c(I))\cong H^\bullet_c(I;\C)\)
 theory \(\mc R_\infty^{GL_\infty,\mathrm{st}}\cong
 \mathbf S(\mathrm{Cyc}(F)_{\mathrm{nonempty}})\)
 (Proposition~\ref{prop:stable-trace-invariants}). Analytic propagators
-and Tate-completion convergence enter later obstruction layers.
+and Tate-completion convergence enter the remaining obstruction groups.
 
 Beyond the indecomposable shadow, the quantum descendant label
 obstruction Proposition~\ref{prop:quantum-descendant-label-obstruction}
@@ -399,11 +401,11 @@ $P_0$ bracket]\label{lem:filtration-preservation}
 \end{thm}
 
 \begin{proof}
-  By trace-count stratum.  If both inputs have nonzero primitive
+  By trace-count stratum.  If both factors have nonzero primitive
   trace count, their factorization product has at least two nonempty
   traces and is killed by \(\pi_{\mathrm{prim}}\).  The right-hand side is
   also zero because \(\lambda_{V;I_1,I_2}\) kills the
-  primitive--primitive summand.  If both inputs lie in \(F_0\), the
+  primitive--primitive summand.  If both factors lie in \(F_0\), the
   product remains scalar and is killed by the final projection to
   \(\bar A\); \(\lambda_{V;I_1,I_2}\) kills the scalar--scalar summand.
 
@@ -411,7 +413,7 @@ $P_0$ bracket]\label{lem:filtration-preservation}
   The unit-retaining projections remember precisely those two summands.
   Applying the brane factorization product and then projecting to the
   exactly-one-primitive Hamiltonian component gives the same class as
-  first applying \(\pi_{\leq1}^{\mathrm{Ham}}\) on both inputs and then
+  first applying \(\pi_{\leq1}^{\mathrm{Ham}}\) on both factors and then
   applying \(\lambda_{V;I_1,I_2}\).  Positive-\(\psi\) primitive factors
   are killed on both sides of this zero-\(\psi\) Hamiltonian statement;
   their separate label shadow is treated below.  Hence the displayed
@@ -451,9 +453,9 @@ $P_0$ bracket]\label{lem:filtration-preservation}
 
 \begin{constr}[Primitive one-antifield chain complex]\label{constr:T5-one-psi-complex}
   The trace-count filtration places the one-\(\psi\) primitive
-  generators on the layer \(F_1/F_0\) below the multi-trace strata, and
+  generators on the graded piece \(F_1/F_0\) below the multi-trace strata, and
   Theorem~\ref{thm:chain-level-primitive-projection-Q} reduces strict
-  \(Q\)-compatibility on this layer to a finite combinatorial homology
+  \(Q\)-compatibility there to a finite combinatorial homology
   calculation: identify every closed one-\(\psi\) primitive cycle
   modulo \(Q\) of a two-\(\psi\) primitive.
 
@@ -491,8 +493,8 @@ $P_0$ bracket]\label{lem:filtration-preservation}
   and \(C_2(k,l)=0\) if \(k=0\) or \(l=0\).
   Thus the displayed complex is literally the cellular chain complex in
   dimensions \(2,1,0\): \(C_0\) is the necklace vertex set,
-  \(C_1\) is the one-moving-chip edge set, and \(C_2\) is the oriented
-  two-moving-chip square set.
+  \(C_1\) is the one-edge-interior-point edge set, and \(C_2\) is the
+  oriented two-edge-interior-point square set.
 \end{constr}
 
 \begin{lem}[Two-antifield boundary sign]\label{lem:T5-two-psi-boundary-sign}
@@ -566,28 +568,28 @@ $P_0$ bracket]\label{lem:filtration-preservation}
   \(X_{k,l}\).
 
   Put \(R=k+1\) and \(S=l+1\).  \(X_{k,l}\) is the two-skeleton of the
-  cyclic chip-moving state complex \(Y_{R,S}\).  Before cyclic
+  cyclic-word cellular complex \(Y_{R,S}\).  Before cyclic
   relabelling, a \(p\)-cell is a configuration of \(R-p\) stationary
-  indistinguishable chips on the vertices of an \(S\)-edge oriented
-  circle and \(p\) moving chips in distinct edge interiors.  The
-  orientation is the increasing order of the moving edge labels.
-  Traversing the labelled circle writes \(x\) for stationary chips, \(y\)
-  for an empty edge, and \(\psi\) for a moving edge.  Hence vertices are
+  indistinguishable points on the vertices of an \(S\)-edge oriented
+  circle and \(p\) points in distinct edge interiors.  The
+  orientation is the increasing order of the occupied edge labels.
+  Traversing the labelled circle writes \(x\) for stationary points, \(y\)
+  for an empty edge, and \(\psi\) for an occupied edge interior.  Hence vertices are
   \(\mathsf N_{R,S}\), one-cells are the words \(w\in\mathsf W_{k,l}\),
   and two-cells are exactly the alternating pairs \((u,v)\) above.
 
-  The Abel map sends a labelled configuration to the sum of its chip
+  The Abel map sends a labelled configuration to the sum of its point
   positions in \(\R/S\Z\) and is affine on every cell.  After lifting the
-  target to \(\R\) and fixing a cyclic order of the lifted chips, a fibre
+  target to \(\R\) and fixing a cyclic order of the lifted points, a fibre
   is the convex polytope cut out by
   \[
     t_1\leq\cdots\leq t_R\leq t_1+S,\qquad \sum_i t_i=\mathrm{constant},
   \]
-  together with the chip-cell inequalities.  The chip-moving cells
+    together with the cell inequalities.  The cells
   subdivide this polytope.  Thus the labelled Abel map is a homology
   equivalence with \(S^1\).
 
-  Cyclic relabelling by \(r\in C_S\) adds \(r\) to every chip position, so
+  Cyclic relabelling by \(r\in C_S\) adds \(r\) to every point position, so
   the Abel coordinate is translated by \(Rr\).  The action on the target
   circle is orientation-preserving and therefore trivial on \(H_0\) and
   \(H_1\).  Since \(\C[C_S]\) is semisimple, homology commutes with
@@ -668,7 +670,7 @@ $P_0$ bracket]\label{lem:filtration-preservation}
         \psi u_{j+1}\cdots\psi u_p]_{\mathrm{cyc}} .
   \end{aligned}
   \]
-  Under the chip-moving cellular model below, this is exactly the
+  Under the cyclic-word cellular model below, this is exactly the
   oriented cubical boundary of the corresponding \(p\)-cell.
 \end{lem}
 
@@ -677,8 +679,8 @@ $P_0$ bracket]\label{lem:filtration-preservation}
   it.  Replacing it by the even commutator \(xy-yx\) therefore contributes
   the Koszul sign \((-1)^{j-1}\), with sign \(+1\) from the remaining
   letters.  The cellular
-  \(p\)-cell is oriented by the increasing order of its \(p\) moving
-  chip-edges.  Its \(j\)-th coordinate has terminal face \(xy\) and
+  \(p\)-cell is oriented by the increasing order of its \(p\) occupied
+  \(\psi\)-edges.  Its \(j\)-th coordinate has terminal face \(xy\) and
   initial face \(yx\), with cubical sign \((-1)^{j-1}\).  These two
   formulae agree term by term.  If a cyclic rotation moves a block
   containing \(a\) odd letters past a block containing \(b\) odd letters,
@@ -686,14 +688,14 @@ $P_0$ bracket]\label{lem:filtration-preservation}
   sign.  Hence the formula descends to the cyclic quotient.
 \end{proof}
 
-\begin{constr}[Chip-moving cellular model]\label{constr:T5-chip-moving-cellular-model}
+\begin{constr}[Cyclic-word cellular model]\label{constr:T5-cyclic-word-cellular-model}
   Assume \(R,S>0\).  Let \(\widetilde Y_{R,S}\) be the labelled state
   complex on an oriented \(S\)-edge circle.  A \(p\)-cell consists of
-  \(R-p\) stationary indistinguishable chips on vertices and \(p\)
-  moving chips in the interiors of \(p\) distinct edges.  Traversing the
-  labelled circle writes \(x\) for each stationary chip at a vertex and
-  writes \(y\), respectively \(\psi\), for an empty, respectively moving,
-  following edge.  Thus \(p\)-cells are labelled words with
+  \(R-p\) stationary indistinguishable points on vertices and \(p\)
+  points in the interiors of \(p\) distinct edges.  Traversing the
+  labelled circle writes \(x\) for each stationary point at a vertex and
+  writes \(y\), respectively \(\psi\), for an empty edge, respectively an
+  edge containing an interior point.  Thus \(p\)-cells are labelled words with
   \(R-p\) \(x\)'s, \(S-p\) \(y\)'s, and \(p\) \(\psi\)'s.
 
   The cyclic group \(C_S\) rotates the labelled edge set.  The quotient
@@ -704,7 +706,7 @@ $P_0$ bracket]\label{lem:filtration-preservation}
 
 \begin{lem}[Cellular chain identification]\label{lem:T5-cellular-chain-identification}
   For \(R,S>0\), the cellular chains of
-  Construction~\ref{constr:T5-chip-moving-cellular-model}, after cyclic
+  Construction~\ref{constr:T5-cyclic-word-cellular-model}, after cyclic
   relabelling, identify with the full primitive cyclic Koszul complex:
   \[
     C_p(\widetilde Y_{R,S};\C)_{C_S}\cong K^p_{R,S}.
@@ -740,7 +742,7 @@ $P_0$ bracket]\label{lem:filtration-preservation}
 \begin{proof}
   Before cyclic relabelling, in the universal cover of the
   \(S\)-edge circle, a lifted configuration is described by weakly
-  ordered chip positions
+  ordered point positions
   \[
     t_1\leq\cdots\leq t_R\leq t_1+S.
   \]
@@ -748,7 +750,7 @@ $P_0$ bracket]\label{lem:filtration-preservation}
   \(\sum_i t_i\in\R/S\Z\) and is affine on every cell.  After lifting the
   target circle to \(\R\), each fibre is the convex polytope cut out by
   the displayed inequalities and by the fixed-sum equation.  The
-  chip-moving cells subdivide this polytope.  Every lifted fibre is
+  cells subdivide this polytope.  Every lifted fibre is
   therefore a contractible finite polyhedral complex, and the labelled
   Abel map is a proper PL map with acyclic fibres.  Vietoris--Begle
   gives a cellular homology equivalence
@@ -756,7 +758,7 @@ $P_0$ bracket]\label{lem:filtration-preservation}
     \widetilde Y_{R,S}\simeq_{\mathrm H} S^1 .
   \]
 
-  A cyclic relabelling by \(r\in C_S\) adds \(r\) to each chip position,
+  A cyclic relabelling by \(r\in C_S\) adds \(r\) to each point position,
   so the Abel coordinate is translated by \(Rr\) on \(\R/S\Z\);
   relabelling acts on the target by orientation-preserving rotations and
   trivially on \(H_0\) and \(H_1\).  Since \(\C[C_S]\) is
@@ -769,10 +771,10 @@ $P_0$ bracket]\label{lem:filtration-preservation}
 
   The fibre statement survives stabilizers.  If a subgroup \(G\subset C_S\)
   fixes a target Abel value, choose the lifted fibre before decomposing it
-  into chip cells.  It is a convex polytope preserved by the affine
+	  into cells.  It is a convex polytope preserved by the affine
   \(G\)-action.  Averaging any point of the fibre gives a \(G\)-fixed point,
   and the straight-line contraction to that fixed point is \(G\)-equivariant
-  and respects the chip-cell subdivision.  The stabilizer quotient of the
+	  and respects the cellular subdivision.  The stabilizer quotient of the
   fibre is therefore contractible.
 
   The cycle \(\Psi_{R-1,S-1}=\sum_w[\psi w]_{\mathrm{cyc}}\) is closed by
@@ -856,10 +858,11 @@ $P_0$ bracket]\label{lem:filtration-preservation}
   Theorem~\ref{thm:one-psi-label-hbar-obstruction}.
 \end{proof}
 
-\begin{thm}[Universal primitive descendant envelope]
+\begin{thm}[Primitive descendant homology]
   \label{thm:T5-universal-primitive-descendant-envelope}
-  The stable primitive source for the reduced cotangent comparison
-  is
+  The stable primitive cyclic Koszul complex generated by
+  \(x,y,\psi\), with \(Q\psi=xy-yx\) and only graded-cyclic trace
+  relations, has homology
   \[
     \bar A\oplus\bar A_{\mathrm{desc}}[1]
     =
@@ -867,12 +870,8 @@ $P_0$ bracket]\label{lem:filtration-preservation}
       \oplus
     \bigoplus_{a+b>0}\C\cdot[\Psi_{a,b}].
   \]
-  More precisely, every stable primitive chain-level construction generated
-  by \(x,y,\psi\), with \(Q\psi=xy-yx\) and with only graded-cyclic trace
-  relations, factors on homology through the two displayed summands.  Thus
-  the available descendant side of a Koszul-dual cotangent theory in
-  this statement is exactly the one-\(\psi\) line
-  \(\bar A_{\mathrm{desc}}[1]\).
+  Thus the descendant side computed in this statement is exactly the
+  one-\(\psi\) line \(\bar A_{\mathrm{desc}}[1]\).
 
   After the Matlis normalization
   \[
@@ -891,11 +890,11 @@ $P_0$ bracket]\label{lem:filtration-preservation}
   The first assertion is Theorem~\ref{thm:T5-full-primitive-psi-homology}
   together with the scalar removal in
   Theorem~\ref{thm:T5-hamiltonian-sector-extraction}.  The cellular proof
-  identifies the universal primitive complex with the chip-moving complex
-  and proves \(H_p(K_{R,S})=0\) for \(p\ge2\).  Therefore any stable
-  primitive construction satisfying the same trace and differential
-  hypotheses has vanishing higher homology, so every additional universal
-  cotangent correction is null in homology.
+  identifies this stable primitive cyclic Koszul complex with the
+	  cyclic-word cellular complex and proves \(H_p(K_{R,S})=0\) for \(p\ge2\).
+  The calculation computes the homology of this complex.  It does not
+  classify other primitive chain-level constructions unless a specified
+  chain equivalence identifies them with this complex.
 
   The Matlis pairing fixes the dual coefficient normalization up to the
   single scalar allowed by residue-pairing rigidity; the displayed formula
@@ -974,7 +973,8 @@ $P_0$ bracket]\label{lem:filtration-preservation}
 	  $\mathfrak h$-module structures. The map above is therefore an
 	  indecomposable shadow map after imposing the reduced current target
 	  $\mc P[1]$; the unreduced boundary-observable realization of
-	  $\mc P$ inside the polynomial BV/Koszul algebra is a separate target.
+	  $\mc P$ inside the polynomial BV/Koszul algebra is governed by an
+	  unreduced target.
 \end{constr}
 
 \begin{thm}[Primitive indecomposable \(P_0\)-shadow and one-\(\psi\) label shadow]\label{thm:chain-level-primitive-projection}
@@ -1019,7 +1019,7 @@ $P_0$ bracket]\label{lem:filtration-preservation}
 		      with the principal-part coadjoint action has the obstruction
 		      of Proposition~\ref{prop:quantum-descendant-label-obstruction}. The reduced
 	      target bracket
-	      $\{B_f(a),\Theta_\rho(B)\}=\Theta_{f\cdot\rho}(aB)$ is supplied
+	      $\{B_f(a),\Theta_\rho(B)\}=\Theta_{f\cdot\rho}(aB)$ is given
 	      separately by
 	      Theorem~\ref{thm:reduced-principal-part-boundary-current};
 	  \item \emph{(Cosheaf.)} $\pi_{\mathrm{prim}}^{\mathrm{cot}}$ is
@@ -1061,7 +1061,7 @@ $P_0$ bracket]\label{lem:filtration-preservation}
 	  Proposition~\ref{prop:quantum-descendant-label-obstruction}.  It kills the scalar
   \(\Psi_{0,0}\).  Primitive chains with \(p\ge2\) displayed
   \(\psi\)'s are killed by definition; after one application of
-  \(Q_{\mathrm{BV}}\) they land in the kernel just described, since the
+  \(Q_{\mathrm{BV}}\) they land in the kernel described above, since the
   all-\(\psi\) boundary is a signed sum of one fewer \(\psi\)-chains and
   the equal-weight functional cancels the two-\(\psi\) faces while higher
   faces still have positive \(\psi\)-count.  With the current
@@ -1117,9 +1117,9 @@ $P_0$ bracket]\label{lem:filtration-preservation}
 \end{prop}
 
 \begin{proof}
-  Compatibility would require the polynomial PBW descendant action
+  Compatibility is equality of the polynomial PBW descendant action
   of Proposition~\ref{prop:open-descendant-action}, after the label
-  replacement \(\widetilde\Psi_{a,b}\mapsto\rho_{a,b}\), to agree with
+  replacement \(\widetilde\Psi_{a,b}\mapsto\rho_{a,b}\), with
   the Moyal coadjoint action
   \[
     (\operatorname{ad}^{\vee}_{f,\hbar}\delta)(g)
@@ -1155,7 +1155,7 @@ $P_0$ bracket]\label{lem:filtration-preservation}
 
 	  The finite exact-arithmetic computation verifies the same
 	  obstruction through exponents \(\leq5\) and Moyal order \(\leq5\):
-  \(1200\) of \(1225\) nonzero instances disagree under the naive label
+  \(1200\) of \(1225\) nonzero instances disagree under the bidegree label
   map, and \(958\) cases have genuine higher Moyal coadjoint terms.  The
   same finite computation also checks the corrected principal-part target below in
   \(3375\) finite representation identities with exponents \(\leq3\),
@@ -1223,7 +1223,7 @@ $P_0$ bracket]\label{lem:filtration-preservation}
   of Theorem~\ref{thm:principal-part-coadjoint-uniqueness}; the
   \(r\geq3\) terms are the genuine Moyal corrections.
 
-	  This construction supplies a reduced distributional principal-part
+	  This construction gives a reduced distributional principal-part
 	  target for the quantum descendant sector.  The polynomial PBW classes
 	  \(\Psi_{a,b}\) remain on the source side.
 \end{constr}
@@ -1247,7 +1247,7 @@ $P_0$ bracket]\label{lem:filtration-preservation}
       \(\mathcal P_{\hbar,I}[1]\) from
       Construction~\ref{constr:quantum-principal-part-descendant-target},
       with the full Moyal coadjoint action;
-    \item a candidate comparison
+    \item a comparison map
 	      \(T_\hbar:M_{\Psi,\hbar}\to\mc P[[\hbar]][1]\) has the
 	      classical one-\(\psi\) label shadow as leading term:
       \[
@@ -1406,8 +1406,9 @@ $P_0$ bracket]\label{lem:filtration-preservation}
   Equivalently, matching the local-nilpotence profile of \(z_1,z_2\) on
   the generic fibre is a necessary condition for any flat same-action
   Rees bridge from polynomial one-\(\psi\) descendants to principal parts,
-  and that necessary condition has a nonzero obstruction.  Thus the
-  universal bridge exists only after the Fourier twist of polarization in
+  and that necessary condition has a nonzero obstruction.  The
+  polynomial-to-principal-part bridge considered here exists after the
+  Fourier change of polarization in
   Theorem~\ref{thm:T5-fourier-rees-positive-construction}; the
   same-action Rees family is obstructed.
 \end{thm}
@@ -1471,7 +1472,7 @@ $P_0$ bracket]\label{lem:filtration-preservation}
   \end{align*}
   The unreduced cotangent factorization-center morphism lifts the
   composite once the missing data of
-  Problem~\ref{prob:formal-factorization-center} are supplied: the
+  Problem~\ref{prob:formal-factorization-center} are fixed: the
   centrality homotopies for principal-part currents against arbitrary
   unreduced open observables, the Tate/weighted coefficient kernel,
   and the brane-defect propagator extension.  These three data are
@@ -1481,8 +1482,8 @@ $P_0$ bracket]\label{lem:filtration-preservation}
 \begin{proof}
   $\Phi_{\mathrm{cl}}$ is constructed at the cochain level by
   Theorem~\ref{thm:reduced-ce-pv-central-operation} on the reduced sector
-  after de Rham-current contraction.  Theorem~\ref{thm:hamiltonian-current-factorization}
-  promotes this to a $P_0$ factorization algebra equivalence
+	  after de Rham-current contraction.  Theorem~\ref{thm:hamiltonian-current-factorization}
+	  extends this to a $P_0$ factorization algebra equivalence
   in the Hamiltonian sector.
 	  Theorem~\ref{thm:chain-level-primitive-projection} gives the
 	  primitive indecomposable \(P_0\)-shadow and one-$\psi$ label shadow. The
@@ -1509,7 +1510,7 @@ $P_0$ bracket]\label{lem:filtration-preservation}
 	  Moyal-coadjoint intertwiner whose nonexistence is
 	  Proposition~\ref{prop:quantum-descendant-label-obstruction} together
 	  with Theorem~\ref{thm:same-action-rees-fourier-descendants-obstruction}.  The
-	  chain-level construction uses algebraic input
+	  chain-level construction uses algebraic data
 	  (\ref{rmk:chain-level-primitive-algebraic-input}); the renormalized BV homotopies
   remain Problem~\ref{prob:formal-factorization-center}~(1)--(2).
 \end{rmk}

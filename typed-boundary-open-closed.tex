@@ -1,0 +1,2127 @@
+\section{Boundary open--closed type theorem}\label{sec:typed-master}
+
+The formal-Darboux stalk theorem of \S\ref{ssec:local-theorem} gives
+one fibre of the mixed holomorphic--topological open--closed
+correspondence.  The Hamiltonian BF bulk, evaluated at a Dirac brane
+vacuum, acts on the boundary Koszul algebra through
+\(J(f)=\operatorname{Tr}f(\phi_1,\phi_2)\); the resulting
+Chevalley--Eilenberg/polyvector chart is the trace-sector coordinate of
+the local derived-centre comparison.  The global comparison of
+Theorem~\ref{thm:main-global-deligne-criterion} is the descent problem for
+these fibres over the Costello--Gwilliam brane-link boundary
+\(\partial X\).
+
+The descent problem separates six typed objects.  The \(E_1\)-bar coalgebra of
+the brane algebra, its Koszul dual algebra, the derived mixed-HT
+centre, the physical bulk factorization algebra, the protected scalar
+trace with Capelli anomaly, and the filtered boundary operator algebra
+live in different categories and are related by definite morphisms.
+The functor \(\Phi^{\mathrm{HT}}\), the open--closed comparison
+morphism \(\mathrm{OCA}\), the mixed-HT Deligne--Swiss-cheese action,
+scalar non-faithfulness, and the topologisation equations
+\(T_i=[Q,G_i]\) are the structure maps between these objects.  The
+type table records the category in which each object and map is
+defined.
+
+\subsection{The six objects and their ambient categories}\label{ssec:six-typed-objects}
+
+\begin{defn}[Six boundary open--closed objects]\label{defn:six-boundary-open-closed-objects}
+Fix the formal-Darboux local model
+\(X=\R^2_{\mathrm{top}}\times\widehat{\C^2}_{\mathrm{hol}}\),
+brane line \(L=\R_t\times\{b\}\), reduced Hamiltonian Lie algebra
+\(\mathfrak h=\C[[z_1,z_2]]/\C\cdot 1\), residue dual
+\[
+  P=\mathfrak h^\vee_{\mathrm{cont}}
+  =\operatorname{Ann}_{\operatorname{Res}}(\C\cdot1)
+  \subset H^2_{(z_1,z_2)}(\C[[z_1,z_2]])\,dz_1dz_2
+  =\bigoplus_{a+b>0}\C\,\rho_{a,b},
+\]
+shifted-cotangent BF Lie
+algebra \(\mathfrak g=\mathfrak h\ltimes P[1]\), Capelli-projective
+extension \(\widehat{\mathfrak g}_{\mathrm{cent}}\), boundary algebra
+\(A^{\mathrm{cl}}_{\partial,N}=
+C^\bullet_{\mathrm{CE}}(\mathfrak{gl}_N,
+\mathrm{Sym}(\mathfrak{gl}_N\oplus\mathfrak{gl}_N\oplus\mathfrak{gl}_N[1]))\)
+with \(Q\psi=[\phi_1,\phi_2]\), and admissible category
+\(\mathcal B^{\mathrm{adm}}\) of
+Definition~\ref{defn:admissible-host-category}.  The formal completion
+theorem is Appendix~\ref{app:completion-formal-local-theorem}.  The six boundary
+open--closed objects are:
+\begin{enumerate}[label=\textup{(C\arabic*)}]
+  \item \(\bar B^{E_1}(A^{\mathrm{cl}}_{\partial,N})
+        =T^{\mathrm{c}}(s^{-1}\bar A^{\mathrm{cl}}_{\partial,N})\),
+        the conilpotent \(E_1^{\mathrm{top}}\)-bar coalgebra of the
+        augmented brane algebra
+        \(\bar A^{\mathrm{cl}}_{\partial,N}\):
+        a coassociative conilpotent dg coalgebra in
+        \(\mathcal B^{\mathrm{adm}}\) with deconcatenation coproduct and
+        differential \(d_{\bar B}=d_{\mathrm{int}}+d_m\)
+        of \eqref{eq:bar-differential-explicit};
+  \item \((A^{\mathrm{cl}}_{\partial,N})^!\), the Verdier/Koszul
+        dual algebra of \(A^{\mathrm{cl}}_{\partial,N}\) on the Koszul
+        locus, in the sense of
+        Theorem~\ref{thm:universal-ce-pv-koszul-criterion};
+  \item \(Z^{\mathrm{der},\mathrm{Mor}}_{E_2^{\mathrm{HT}}}\!\bigl(
+        \mathcal C^{\mathrm{op}}_\partial\bigr)\), the derived mixed-HT
+        \(E_2\)-centre of the primitive open boundary factorization
+        category \(\mathcal C^{\mathrm{op}}_\partial\) on the
+        Costello--Gwilliam brane-link boundary; the bulk action or OCA
+        map is extra structure;
+  \item \(\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}\), the physical
+        bulk mixed-HT Hamiltonian BF factorisation algebra of
+        Definition~\ref{def:closed-mixed-HT-factorization};
+  \item the protected scalar trace together with the projective anomaly
+        class
+        \[
+          \bigl(\chi,\kappa_{\mathrm{Cap}}\bigr),\qquad
+          \chi=\operatorname{sTr}\,(-)\colon
+          \mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}\to\Z((q,\hbar)),
+          \quad
+          \kappa_{\mathrm{Cap}}=\hbar N[\bar c]\in
+          H^2_{\mathrm{Lie}}(\bar A,\C)[[\hbar]] .
+        \]
+        The Lie class controls the projective anomaly of the trace-sector
+        action; the scalar trace is its protected character.
+  \item the filtered boundary operator algebra
+        \(\mathrm{Op}^{\mathrm{HT}}_{\partial X}\), a filtered
+        \(\mathrm{SC}^{\mathrm{HT}}\)-object on \(\partial X\)
+        (\S\ref{ssec:open-modular-lift}).
+\end{enumerate}
+\end{defn}
+
+\begin{prop}[Boundary open--closed type table]\label{prop:boundary-open-closed-type-table}
+The six objects occupy six distinct cells of the type table below,
+with pairwise distinct roles; \((C_1)\) is a coalgebra,
+\((C_2)\) is a Koszul-dual algebra, \((C_3)\) is a centre carrying an
+\(E_2\)-Gerstenhaber bracket distinct from any \((C_i)\),
+\((C_4)\) is a factorisation algebra realised through \(\mathrm{OCA}\),
+\((C_5)\) is a graded scalar invariant valued in
+\(\Z((q,\hbar))\), and \((C_6)\) is a separately constructed filtered
+\(\mathrm{SC}^{\mathrm{HT}}_{(1,2)}\)-object on \(\partial X\):
+\[
+  \renewcommand{\arraystretch}{1.25}
+  \begin{array}{l|l|l|l}
+    \mathsf{Object} & \mathsf{Type} & \mathsf{Role} & \mathsf{Comparison}\\\hline
+    \bar B^{E_1}(A^{\mathrm{cl}}_{\partial,N}) &
+      \text{conilpotent }E_1^{\mathrm{top}}\text{-coalgebra} &
+      \text{classifies twisting morphisms} &
+      \Omega^c\bar B\simeq A^{\mathrm{cl}}_{\partial,N}\\
+    (A^{\mathrm{cl}}_{\partial,N})^! &
+      \text{Verdier/Koszul dual algebra} &
+      \text{controls line/open dual modules} &
+      \text{Koszul paired with }\bar B\\
+    Z^{\mathrm{der},\mathrm{Mor}}_{E_2^{\mathrm{HT}}}(\mathcal C^{\mathrm{op}}_\partial) &
+      \text{derived }E_2^{\mathrm{HT}}\text{-centre object} &
+      \text{closed centre before physical realisation} &
+      \text{realised by }\mathrm{OCA}\\
+    \mathcal A^{\mathrm{cl}}_{\mathrm{bulk}} &
+      \text{mixed-HT BF factorisation algebra} &
+      \text{physical bulk if realised} &
+      \mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}\xrightarrow{\mathrm{OCA}}Z^{\mathrm{der}}\\
+    (\chi,\kappa_{\mathrm{Cap}}) &
+      \text{protected index }\times\text{ Lie }2\text{-class} &
+      \text{scalar shadow and projective anomaly} &
+      \chi\text{ and }\kappa_{\mathrm{Cap}}\text{ lie in distinct targets}\\
+    \mathrm{Op}^{\mathrm{HT}}_{\partial X} &
+      \text{filtered }\mathrm{SC}^{\mathrm{HT}}\text{-object} &
+      \text{boundary operator object} &
+      \operatorname{sTr}(\mathrm{Op}^{\mathrm{HT}}_{\partial X})=\chi
+  \end{array}
+\]
+Each equality between two objects factors through the comparison
+column.  Bar coalgebras, derived centres, physical factorisation
+algebras, scalar traces, and filtered \(\mathrm{SC}^{\mathrm{HT}}\)
+objects occupy different ambient categories.
+\end{prop}
+
+\begin{proof}
+The six cells are pairwise distinct.  \((C_1)\) is a coalgebra by
+\eqref{eq:bar-differential-explicit} so cannot coincide with the
+algebra \((C_2)\), the centre \((C_3)\), or the bulk \((C_4)\);
+\((C_2)\) is the Verdier/Koszul dual algebra (different bracket from
+the Gerstenhaber bracket of \((C_3)\) by
+Theorem~\ref{thm:universal-ce-pv-koszul-criterion});
+	\((C_3)\) is the derived \(E_2^{\mathrm{HT}}\)-centre object whose
+	underlying formal-stalk endomorphism object carries the
+	\(E_2\)-Gerstenhaber bracket of the admissible Hochschild model
+	(Theorem~\ref{thm:main-local}),
+and it is distinct from \((C_4)\)'s factorisation product (Definition
+\ref{def:closed-mixed-HT-factorization}: \((C_4)\) acts on the
+boundary through \(\mathrm{OCA}\), \((C_3)\) is the abstract centre
+of the boundary category); \((C_5)\) is a graded scalar
+invariant in \(\Z((q,\hbar))\) and is non-faithful by
+Lemma~\ref{lem:scalar-non-faithfulness}; \((C_6)\) is
+a chain-level filtered \(\mathrm{SC}^{\mathrm{HT}}_{(1,2)}\)-object
+on \(\partial X\) determined by an independent filtered construction
+(Corollary~\ref{cor:mandatory-chain-supplements}), and whose scalar
+\(\chi\) is a non-faithful image
+(Lemma~\ref{lem:scalar-non-faithfulness}).  Distinct roles are read
+off the column entries, and the comparison column records the allowed
+maps between the six cells.
+\end{proof}
+
+\subsection{The boundary open--closed functor
+\texorpdfstring{$\Phi^{\mathrm{HT}}$}{Phi-HT}}
+\label{ssec:phi-ht-functor}
+
+\begin{defn}[Boundary open--closed datum]\label{defn:hol-bd-datum-HT}
+A \emph{boundary open--closed datum} on the mixed-HT brane line
+\(L\subset X\) is a tuple
+\[
+  \bigl(\bar B,\,\Theta,\,r(z),\,Z^{\mathrm{der}},\,\nabla\bigr),
+\]
+where \(\bar B\) is a conilpotent dg coalgebra in
+\(\mathcal B^{\mathrm{adm}}\); \(\Theta\in
+\mathrm{Hom}^1_{\mathrm{prim}}(\bar B,\bar B)\) is a primitive
+degree-one element satisfying the Maurer--Cartan equation
+\[
+  d_{\bar B}\Theta+\tfrac12[\Theta,\Theta]=0;
+\]
+\(r(z)\in
+H^2_{\Delta}\!\bigl(\C[[z,w]]\bigr)\,d\zeta_1d\zeta_2\otimes
+\bar B^{\otimes 2}\) is the binary collision residue of \(\Theta\) at
+the formal diagonal in \(\C^2\times\C^2\);
+\(Z^{\mathrm{der}}\) is a derived \(E_2^{\mathrm{HT}}\)-centre object
+whose formal-stalk endomorphism object carries a chiral-brace dg
+algebra structure; and \(\nabla\) is a flat
+Gauss--Manin connection on bar fibres along the formal Darboux moduli
+of \(b\), compatible with \(\Theta\) and inducing the Gauss--Manin
+connection on \(Z^{\mathrm{der}}\).
+\end{defn}
+
+\begin{thm}[Typed boundary open--closed realisation
+\texorpdfstring{$\Phi^{\mathrm{HT}}$}{Phi-HT} at \(N\) Dirac branes]
+\label{thm:typed-boundary-open-closed-realisation}
+
+In $\mathcal B^{\mathrm{adm}}$, suppose the bar--cobar admissibility,
+the diagonal-kernel compatibility, the chiral brace operations, the
+centrality hierarchy, and the flat connection datum of
+Definition~\ref{defn:hol-bd-datum-HT} are fixed.  Then the
+assignment \eqref{eq:phi-ht-explicit} extends from the
+$E_1^{\mathrm{top}}$-brane algebra
+$A^{\mathrm{cl}}_{\partial,N}$ on the worldline $\R_t$ (with Koszul
+differential $Q\psi=[\phi_1,\phi_2]$) to the corresponding boundary
+open--closed datum.
+
+There is a functor
+\begin{equation}\label{eq:phi-ht-functor}
+  \Phi^{\mathrm{HT}}\colon
+  \mathbf{E_1}^{\mathrm{top}}\text{-}\mathbf{Brane}^{\mathrm{HT}}_{\R_t,\mathrm{Kosz}}
+    \longrightarrow
+  \mathbf{BdOC}^{\mathrm{HT}}_{X}
+\end{equation}
+from the category of \(E_1^{\mathrm{top}}\)-algebras on \(\R_t\) with
+Koszul differential and HT decorations to the category of
+boundary open--closed data of Definition~\ref{defn:hol-bd-datum-HT},
+sending \(A^{\mathrm{cl}}_{\partial,N}\) to the boundary open--closed
+datum
+\begin{equation}\label{eq:phi-ht-explicit}
+  \Phi^{\mathrm{HT}}\!\bigl(A^{\mathrm{cl}}_{\partial,N}\bigr)
+  =\Bigl(\bar B^{E_1}\!\bigl(A^{\mathrm{cl}}_{\partial,N}\bigr),\,
+        \Theta_{A^{\mathrm{cl}}_{\partial,N}},\,
+        K^{(2)}_\Delta,\,
+        Z^{\mathrm{der},\mathrm{Mor}}_{E_2^{\mathrm{HT}}}\!\bigl(
+          \mathcal C^{\mathrm{op}}_\partial\bigr),\,
+        \nabla^{\mathrm{HT}}\Bigr),
+\end{equation}
+where
+\begin{enumerate}[label=\textup{(\roman*)}]
+  \item \(\bar B^{E_1}(A^{\mathrm{cl}}_{\partial,N})
+        =T^{\mathrm{c}}(s^{-1}\bar A^{\mathrm{cl}}_{\partial,N})\) is
+        the conilpotent \(E_1\)-bar coalgebra with deconcatenation
+        coproduct and differential
+\begin{equation}\label{eq:bar-differential-explicit}
+          d_{\bar B}=d_{\mathrm{int}}+d_m
+\end{equation}
+        where \(d_{\mathrm{int}}\) is the internal differential of
+        \(A^{\mathrm{cl}}_{\partial,N}\) (the Koszul differential
+        \(Q\psi=[\phi_1,\phi_2]\) plus the Chevalley--Eilenberg
+        differential for \(\mathfrak{gl}_N\)) and \(d_m\) is the
+        standard bar coderivation induced by the \(E_1\)-multiplication
+        of \(A^{\mathrm{cl}}_{\partial,N}\).  The diagonal
+        local-cohomology kernel
+        \(K^{(2)}_\Delta=d\zeta_1d\zeta_2/(\zeta_1\zeta_2)\) of
+        Proposition~\ref{prop:diagonal-cohomology-operad} is a
+        chiral-kernel decoration of the bar object; it becomes a
+        coderivation only after a coefficient action map
+        \(K^{(2)}_\Delta\otimes
+          (A^{\mathrm{cl}}_{\partial,N})^{\otimes2}\to
+          A^{\mathrm{cl}}_{\partial,N}\) is fixed;
+  \item \(\Theta_{A^{\mathrm{cl}}_{\partial,N}}\in
+        \mathrm{Hom}^1_{\mathrm{prim}}\bigl(
+          \bar B^{E_1}(A^{\mathrm{cl}}_{\partial,N}),
+          \bar B^{E_1}(A^{\mathrm{cl}}_{\partial,N})\bigr)\) is the
+        primitive Maurer--Cartan element representing the
+        \(E_1\)-product on \(A^{\mathrm{cl}}_{\partial,N}\) inside its
+        bar:
+        \[
+          \Theta_{A^{\mathrm{cl}}_{\partial,N}}
+            =\sum_{n\ge 1}m_n^{A^{\mathrm{cl}}_{\partial,N}}
+              \colon\bar B^{E_1}(A^{\mathrm{cl}}_{\partial,N})^{\otimes n}
+              \to A^{\mathrm{cl}}_{\partial,N},
+        \]
+        with \(m_2\) the multiplication, \(m_3\) the associator
+        homotopy (zero in the strict case), and higher \(m_n\) the
+        \(A_\infty\) corrections coming from boundary OPE
+        contractions; \(\Theta\) satisfies
+\begin{equation}\label{eq:mc-bar-equation}
+          d_{\bar B}\Theta_{A^{\mathrm{cl}}_{\partial,N}}
+            +\tfrac12[\Theta_{A^{\mathrm{cl}}_{\partial,N}},
+                       \Theta_{A^{\mathrm{cl}}_{\partial,N}}]=0;
+\end{equation}
+  \item \(K^{(2)}_\Delta\in
+        H^2_\Delta(\C[[z_1,z_2,w_1,w_2]])\,d\zeta_1d\zeta_2\) is the
+        scalar binary collision kernel.  It is not a residue of the
+        ordinary \(E_1\)-bar Maurer--Cartan element
+        \(\Theta_{A^{\mathrm{cl}}_{\partial,N}}\).  After a coefficient
+        action map
+        \(K^{(2)}_\Delta\otimes
+        (A^{\mathrm{cl}}_{\partial,N})^{\otimes2}\to
+        A^{\mathrm{cl}}_{\partial,N}\) has been fixed, its
+        line/Koszul-dual restriction gives the Arnold--Jacobi
+        degree-three relation
+\begin{equation}\label{eq:arnold-jacobi-from-mc-degree-three}
+          \eta_{12}\wedge\eta_{23}
+          +\eta_{23}\wedge\eta_{31}
+          +\eta_{31}\wedge\eta_{12}=0,\qquad
+          \eta_{ij}=K^{(2)}_\Delta(z_i,z_j),
+\end{equation}
+        as the scalar kernel-associativity constraint.  A
+        classical Yang--Baxter equation is a structure on a
+        Lie-coefficient \(r\)-matrix; the scalar diagonal-kernel datum
+        contains no such coefficient;
+  \item \(Z^{\mathrm{der},\mathrm{Mor}}_{E_2^{\mathrm{HT}}}(
+        \mathcal C^{\mathrm{op}}_\partial)\) denotes the derived
+        \(E_2^{\mathrm{HT}}\)-centre object.  On the formal-Darboux
+        stalk it carries only the trace-sector generator action into
+        the admissible Hochschild target
+\begin{equation}\label{eq:bar-resolution-derived-centre}
+        \begin{gathered}
+          \Theta_{\mathrm{tr}}(c_f)=\theta_f,\qquad
+          \Theta_{\mathrm{tr}}(u_f)=M_{J(f)},\\
+          \Theta_{\mathrm{tr}}\colon
+          \langle c_f,u_f:f\in\bar A\rangle_{\mathrm{CE/PV}}
+          \dashrightarrow
+          \RHom_{A^{\mathrm{cl}}_{\partial,N}\otimes
+                 (A^{\mathrm{cl}}_{\partial,N})^{\mathrm{op}}}\!\bigl(
+	            A^{\mathrm{cl}}_{\partial,N},
+	            A^{\mathrm{cl}}_{\partial,N}\bigr)
+	          \;\simeq\;
+	          C^\bullet_{\mathrm{Hoch},\mathrm{adm}}\!\bigl(
+	            A^{\mathrm{cl}}_{\partial,N},
+	            A^{\mathrm{cl}}_{\partial,N}\bigr),
+        \end{gathered}
+\end{equation}
+        A full centre identification requires the admissible centre-lift,
+        equivariance homotopies, chiral \(E_2\) operations, and descent data of
+        Theorem~\ref{thm:main-global-deligne-criterion}; and
+  \item \(\nabla^{\mathrm{HT}}\) is the flat Gauss--Manin connection on
+        bar fibres along the formal Darboux moduli of \(b\)
+        (parametrised by canonical transformations of \(\widehat{\C^2}\)),
+        compatible with \(\Theta_{A^{\mathrm{cl}}_{\partial,N}}\) and
+        inducing the Gauss--Manin connection on
+        \(Z^{\mathrm{der},\mathrm{Mor}}_{E_2^{\mathrm{HT}}}(\mathcal C^{\mathrm{op}}_\partial)\)
+        through \eqref{eq:bar-resolution-derived-centre}.
+\end{enumerate}
+The projection to \(\bar B^{E_1}(A^{\mathrm{cl}}_{\partial,N})\) is
+the bar construction; the projection to
+  \((\bar B^{E_1}(A^{\mathrm{cl}}_{\partial,N}),\Theta)\) is the
+  Maurer--Cartan twisting datum; the \(K^{(2)}_\Delta\)-component
+  is the external binary singular-product kernel; the projection to
+\(Z^{\mathrm{der},\mathrm{Mor}}_{E_2^{\mathrm{HT}}}(\mathcal C^{\mathrm{op}}_\partial)\)
+is the centre model.  None of these projections produces
+the physical bulk \(\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}\); that
+identification is Theorem~\ref{thm:oca-formal-darboux-fibre}
+below.
+\end{thm}
+
+\begin{proof}
+The construction of \eqref{eq:phi-ht-explicit} uses the HT decorations
+and the CE/PV trace-sector map of Theorem~\ref{thm:main-local}.
+
+\emph{(i) Cofree conilpotent bar coalgebra.}
+\(\bar B^{E_1}(A^{\mathrm{cl}}_{\partial,N})\) is the cofree
+conilpotent \(E_1\)-coalgebra on
+\(s^{-1}\bar A^{\mathrm{cl}}_{\partial,N}\) by the standard
+bar/cobar adjunction in \(\mathcal B^{\mathrm{adm}}\)
+(Lemma~\ref{lem:continuous-bar-cobar},
+Theorem~\ref{thm:tate-bar-cobar-quillen}).  The internal differential
+\(d_{\mathrm{int}}\) is the Koszul-CE differential of
+\(A^{\mathrm{cl}}_{\partial,N}\).  The term \(d_m\) is the standard bar
+coderivation determined by the \(E_1\)-multiplication.  The diagonal
+kernel \(K^{(2)}_\Delta\) enters as a chiral collision coefficient on
+the closed-colour action; an additional action map is required before
+it defines a coderivation of the bar coalgebra.
+
+\emph{(ii) \(d_{\bar B}^2=0\) and kernel associativity.}
+The identity \(d_{\bar B}^2=0\) is the usual bar identity: it is
+equivalent to \(d_{\mathrm{int}}^2=0\), the Leibniz rule for
+\(d_{\mathrm{int}}\) against \(m_2\), and associativity of the
+\(E_1\)-product, with the higher \(A_\infty\) terms included in
+\(\Theta\) when the boundary product is not strict.  The scalar
+chiral-kernel decoration separately satisfies the iterated three-point
+relation on \(\Delta_3\subset(\C^2)^3\):
+\[
+  \eta_{12}\wedge\eta_{23}+\eta_{23}\wedge\eta_{31}
+   +\eta_{31}\wedge\eta_{12}=0,\qquad
+  \eta_{ij}=K^{(2)}_\Delta(z_i,z_j),
+\]
+the two-complex-dimensional Arnold relation on three points, proved as
+the residue-form identity at \(\Delta_3\) by
+Proposition~\ref{prop:diagonal-cohomology-operad}.  The cross-term
+with the Koszul-CE differential is not a formal consequence of this
+scalar identity; it belongs to the chosen chiral-kernel action map.
+Under that action-map hypothesis, the Koszul homotopy for adjacent
+transpositions in traces (Lemma~\ref{lem:koszul-adjacent-transpositions})
+gives the required compatibility.  Hence \(d_{\bar B}^2=0\) for the
+ordinary bar coalgebra, and the OPE residue data define a
+Maurer--Cartan element
+\(\Theta_{A^{\mathrm{cl}}_{\partial,N}}\) of
+\(\bar B^{E_1}(A^{\mathrm{cl}}_{\partial,N})\).
+
+\emph{(iii) Binary collision residue equals \(K^{(2)}_\Delta\).}
+The binary collision residue of \(\Theta\) at \(\Delta\subset
+\C^2\times\C^2\) is the arity-two OPE coefficient
+\(K^{(2)}_\Delta=d\zeta_1d\zeta_2/(\zeta_1\zeta_2)\) of
+\eqref{eq:ope-linear}.  The degree-three component of
+\eqref{eq:mc-bar-equation}, evaluated on three free generators
+\(x_1,x_2,x_3\) of \(\bar A^{\mathrm{cl}}_{\partial,N}\), produces the
+Arnold--Jacobi relation
+\eqref{eq:arnold-jacobi-from-mc-degree-three}.  This is the scalar
+operadic associativity constraint for the diagonal kernel.  It becomes
+a classical Yang--Baxter equation only after an independent choice of
+a Lie-coefficient \(r\)-matrix.
+
+\emph{(iv) Derived centre via bar resolution.}
+The underlying bimodule endomorphism object of the derived
+\(E_2^{\mathrm{HT}}\)-centre on the formal-Darboux stalk
+identifies with the chiral Hochschild cochain brace dg algebra by the
+bar resolution
+\(\Omega^{\mathrm{c}}\bar B^{E_1}(A^{\mathrm{cl}}_{\partial,N})
+\to A^{\mathrm{cl}}_{\partial,N}\), the admissible Tate bar--cobar
+theorem (Theorem~\ref{thm:tate-bar-cobar-quillen}), the universal
+filtered cobar recognition criterion
+(Theorem~\ref{thm:universal-filtered-cobar-recognition}), and the
+\(E_2\)-Gerstenhaber bracket match of
+\eqref{eq:ce-pv-dictionary-strong}.  Equation
+\eqref{eq:bar-resolution-derived-centre} is the local form of
+the trace-sector Hochschild action
+	\(\operatorname{Obs}^{\mathrm{cl}}_b(\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}})\to
+	C^\bullet_{\mathrm{Hoch},\mathrm{adm}}\!\bigl(A^{\mathrm{cl}}_{\partial,N},
+	A^{\mathrm{cl}}_{\partial,N}\bigr)\) of
+Theorem~\ref{thm:main-local}; an equivalence with the whole derived
+centre requires the admissible centre-lift and descent data.
+
+\emph{(v) Gauss--Manin compatibility.}
+The flat Gauss--Manin connection \(\nabla^{\mathrm{HT}}\) is the
+Tate-continuous extension of the Kashiwara--Kawai connection on bar
+fibres along the formal-Darboux moduli of \(b\in\widehat{\C^2}\).
+Flatness follows from the integrability of canonical transformations
+of \(\widehat{\C^2}\) on
+\(\mathrm{Sym}\,\mathfrak h\subset A^{\mathrm{cl}}_{\partial,N}\)
+(Proposition~\ref{prop:stable-trace-invariants}) and the
+\(GL_N\)-equivariance of the Koszul-CE differential.  Compatibility
+with \(\Theta\) is the statement that
+\(\nabla^{\mathrm{HT}}\Theta\in\mathrm{Hom}^1_{\mathrm{prim}}(\bar B,
+\bar B)\) satisfies the linearised Maurer--Cartan equation, which is
+the Bianchi identity for the bulk current
+\(\mathsf J_x(z)\) of \eqref{eq:ope-linear}.
+
+\emph{(Functoriality.)}
+A morphism in
+\(\mathbf{E_1}^{\mathrm{top}}\text{-}\mathbf{Brane}^{\mathrm{HT}}_{\R_t,\mathrm{Kosz}}\)
+is an \(E_1^{\mathrm{top}}\)-morphism
+\(f\colon A^{\mathrm{cl}}_{\partial,N}\to A^{\mathrm{cl}}_{\partial,N'}\)
+together with homotopies identifying the pulled-back diagonal residue,
+centre lift, centrality hierarchy, and Gauss--Manin connection.  The bar
+functor sends \(f\) to a coalgebra morphism
+\(\bar B(f)\colon\bar B^{E_1}(A^{\mathrm{cl}}_{\partial,N})\to
+\bar B^{E_1}(A^{\mathrm{cl}}_{\partial,N'})\), and the chosen
+homotopies make it a morphism of boundary open--closed data.  Thus
+\(\Phi^{\mathrm{HT}}\) is a functor on the decorated category.  The
+decoration consists of the chiral \(E_2\), centrality, descent, and
+connection data attached to the underlying \(E_1\)-morphism.
+\end{proof}
+
+\subsection{The open--closed comparison morphism}
+\label{ssec:oca}
+
+\begin{defn}[Open--closed comparison datum]\label{defn:oca-comparison}
+At \(N\) Dirac branes a \emph{pre-open--closed comparison datum} is the
+bulk-to-boundary morphism
+\begin{equation}\label{eq:pre-oca-definition}
+  \mathrm{preOCA}_N=
+  \widetilde{\rho}_{\mathrm{bulk}\to\partial}\colon
+    \mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}
+    \;\longrightarrow\;
+    \underline{\mathrm{End}}_{\mathrm{SC}^{\mathrm{HT}}_{(1,2)}}\!
+      \bigl(\mathcal C^{\mathrm{op}}_\partial\bigr)
+\end{equation}
+in \(\mathcal B^{\mathrm{adm}}\), together with its formal-Darboux
+trace-sector fibre.  If a chiral \(E_2\) centrality morphism
+\[
+  \iota_{\mathrm{cent}}\colon
+    \underline{\mathrm{End}}_{\mathrm{SC}^{\mathrm{HT}}_{(1,2)}}\!
+      \bigl(\mathcal C^{\mathrm{op}}_\partial\bigr)
+    \longrightarrow
+    Z^{\mathrm{der},\mathrm{Mor}}_{E_2^{\mathrm{HT}}}\!\bigl(
+      \mathcal C^{\mathrm{op}}_\partial\bigr)
+\]
+and the required \(\mathrm{SC}^{\mathrm{HT}}_{(1,2)}\)-centrality
+homotopies are chosen, the datum is promoted to the
+\emph{open--closed comparison morphism}
+\begin{equation}\label{eq:oca-definition}
+  \mathrm{OCA}_N\colon
+    \mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}
+    \;\longrightarrow\;
+    Z^{\mathrm{der},\mathrm{Mor}}_{E_2^{\mathrm{HT}}}\!\bigl(
+      \mathcal C^{\mathrm{op}}_\partial\bigr),
+  \qquad
+  \mathrm{OCA}_N
+   =
+   \iota_{\mathrm{cent}}\circ\mathrm{preOCA}_N .
+\end{equation}
+Here
+\begin{enumerate}[label=\textup{(\roman*)}]
+  \item \(\widetilde{\rho}_{\mathrm{bulk}\to\partial}\) is the
+        Costello--Gwilliam bulk--boundary factorisation pairing of
+        \cite{costello-gwilliam}*{Vol.~II~\S 4--5} adjointed to the
+        endomorphism algebra of \(\mathcal C^{\mathrm{op}}_\partial\)
+        as an \(\mathrm{SC}^{\mathrm{HT}}_{(1,2)}\)-module: for nested
+        \(U\supset V\subset\partial X\), the pairing
+        \(\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}(U)\otimes
+        \mathcal C^{\mathrm{op}}_\partial(V)\to
+        \mathcal C^{\mathrm{op}}_\partial(V)\) is the closed-acting-on-open
+        operation of Theorem~\ref{thm:sc-ht-deligne-swiss-cheese} item~(iii),
+        and \(\widetilde\rho\) is its currying to the endomorphism algebra;
+  \item \(\iota_{\mathrm{cent}}\) is the centrality morphism into the
+        derived centre object.  Its universal property is part of the
+        chiral \(E_2\) centrality datum; the formal-Darboux trace
+        theorem gives its trace-sector coordinate.
+\end{enumerate}
+With these choices the composition is a morphism of
+\(\mathrm{SC}^{\mathrm{HT}}_{(1,2)}\)-algebras on \(\partial X\).  When
+this morphism is a quasi-isomorphism in \(\mathcal B^{\mathrm{adm}}\),
+it is the open--closed correspondence quasi-isomorphism.
+\end{defn}
+
+\begin{defn}[Open--closed comparison cone]
+\label{defn:oca-comparison-cone}
+For an open--closed comparison morphism
+\[
+  \mathrm{OCA}_N\colon
+  \mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}
+  \longrightarrow
+  Z_\partial,\qquad
+  Z_\partial=
+  Z^{\mathrm{der},\mathrm{Mor}}_{E_2^{\mathrm{HT}}}
+  (\mathcal C^{\mathrm{op}}_\partial),
+\]
+the \emph{open--closed comparison cone} is the object
+\[
+  \operatorname{Cone}(\mathrm{OCA}_N)
+  =
+  Z_\partial\oplus
+  \mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}[1]
+\]
+of \(\mathcal B^{\mathrm{adm}}\), with differential
+\[
+  d_{\operatorname{Cone}}(z,a)
+  =
+  \bigl(d_{Z_\partial}z+\mathrm{OCA}_N(a),\,
+        -d_{\mathcal A}a\bigr).
+\]
+The comparison-cone obstruction is the cohomology object
+\[
+  \operatorname{Ob}_{\operatorname{Cone}}
+  =
+  H^\bullet\!\left(\operatorname{Cone}(\mathrm{OCA}_N)\right).
+\]
+A contracting homotopy is a degree \(-1\) endomorphism
+\(\kappa\) satisfying
+\[
+  d_{\operatorname{Cone}}\kappa+\kappa d_{\operatorname{Cone}}
+  =\operatorname{id}_{\operatorname{Cone}}.
+\]
+The equation \(\operatorname{Ob}_{\operatorname{Cone}}=0\), together
+with such a \(\kappa\), is the datum that \(\mathrm{OCA}_N\) is a
+quasi-isomorphism in \(\mathcal B^{\mathrm{adm}}\).  It is not part of
+the definition of \(\mathrm{OCA}_N\).
+\end{defn}
+
+\begin{thm}[Filtered comparison-cone criterion]
+\label{thm:filtered-oca-cone-criterion}
+Let \(\mathrm{OCA}_N\colon\mathcal A\to Z_\partial\) be an
+open--closed comparison morphism in \(\mathcal B^{\mathrm{adm}}\).
+Assume \(\mathcal A\) and \(Z_\partial\) carry complete, separated,
+descending filtrations \(F^\bullet\) such that
+\[
+  d_{\mathcal A}F^r\mathcal A\subset F^r\mathcal A,\qquad
+  d_{Z_\partial}F^rZ_\partial\subset F^rZ_\partial,\qquad
+  \mathrm{OCA}_N(F^r\mathcal A)\subset F^rZ_\partial ,
+\]
+and the filtration is bounded below in each cohomological degree.  Put
+\[
+  F^r\operatorname{Cone}(\mathrm{OCA}_N)
+  =
+  F^rZ_\partial\oplus F^r\mathcal A[1].
+\]
+If the associated-graded cone
+\[
+  \operatorname{gr}\operatorname{Cone}(\mathrm{OCA}_N)
+  =
+  \operatorname{Cone}\bigl(
+    \operatorname{gr}\mathrm{OCA}_N\colon
+    \operatorname{gr}\mathcal A\to\operatorname{gr}Z_\partial\bigr)
+\]
+is acyclic, then \(\operatorname{Cone}(\mathrm{OCA}_N)\) is acyclic.
+
+If, in addition, \(\operatorname{gr}\operatorname{Cone}(\mathrm{OCA}_N)\)
+has a degree \(-1\) contracting homotopy \(\kappa_0\) whose components
+lift continuously to \(F^0\operatorname{Cone}(\mathrm{OCA}_N)\), and if
+the difference between the cone differential and its associated-graded
+lift raises filtration by at least one, then there is a continuous
+contracting homotopy
+\[
+  \kappa\colon
+  \operatorname{Cone}(\mathrm{OCA}_N)
+  \longrightarrow
+  \operatorname{Cone}(\mathrm{OCA}_N)[-1]
+  \]
+with
+\[
+  d_{\operatorname{Cone}}\kappa+\kappa d_{\operatorname{Cone}}
+  =\operatorname{id}_{\operatorname{Cone}} .
+\]
+Thus the open--closed comparison is a quasi-isomorphism precisely after
+the filtered cone data above have been supplied.
+\end{thm}
+
+\begin{proof}
+The cone filtration is complete and separated because the two summands
+are complete and separated in \(\mathcal B^{\mathrm{adm}}\), and
+\(\mathrm{OCA}_N\) is filtered.  The spectral sequence of the filtered
+cone has
+\[
+  E_1\cong
+  H^\bullet\!\left(
+    \operatorname{gr}\operatorname{Cone}(\mathrm{OCA}_N)
+  \right).
+\]
+The bounded-below hypothesis in each cohomological degree gives strong
+convergence to
+\(H^\bullet(\operatorname{Cone}(\mathrm{OCA}_N))\).  If the
+associated-graded cone is acyclic, \(E_1=0\), hence the cone cohomology
+vanishes.
+
+For the homotopy statement, write the cone differential as
+\(d=d_0+\delta\), where \(d_0\) is a filtered lift of the
+associated-graded differential and \(\delta(F^r)\subset F^{r+1}\).
+Let \(\tilde\kappa_0\) be a continuous lift of \(\kappa_0\).  On the
+associated graded,
+\[
+  d_0\tilde\kappa_0+\tilde\kappa_0d_0=\operatorname{id}
+  \quad\text{mod }F^1.
+\]
+The error
+\[
+  E=\operatorname{id}-
+  (d\tilde\kappa_0+\tilde\kappa_0d)
+\]
+raises filtration by at least one.  Completeness makes the Neumann
+series \(\sum_{n\ge0}E^n\) converge continuously.  Then
+\[
+  \kappa=\tilde\kappa_0\sum_{n\ge0}E^n
+  \]
+satisfies
+\(d\kappa+\kappa d=\operatorname{id}\).  This is the usual homological
+perturbation argument in a complete filtered complex.
+\end{proof}
+
+\begin{thm}[\(\mathrm{OCA}\) at the formal-Darboux stalk]
+\label{thm:oca-formal-darboux-fibre}
+
+This is Theorem~\ref{thm:main-local} viewed as the formal-Darboux
+trace-sector fibre of an open--closed comparison datum.  In
+\(\mathcal B^{\mathrm{adm}}\) the formal stalk assignment restricts on
+closed CE generators to
+\[
+  C^\bullet_{\mathrm{CE},\mathrm{cont}}(\mathfrak g)
+  \dashrightarrow
+  C^\bullet_{\mathrm{Hoch}}\!
+  (A^{\mathrm{cl}}_{\partial,N},A^{\mathrm{cl}}_{\partial,N}),\qquad
+  c_f\mapsto\theta_f,\quad u_f\mapsto J(f).
+\]
+After stable scalar reduction and admissible completion this
+  restriction is the CE/PV isomorphism.  At fixed finite \(N\) it is not
+the whole derived-centre equivalence.  Its formal-Darboux coordinate
+is \(J(f)=\overline{\operatorname{Tr}\,f(\phi_1,\phi_2)}\) for
+polynomial \(f\), extended to formal \(f\) only after completion, with
+Capelli projective anomaly class \(\hbar N[\bar c]\).
+\end{thm}
+
+\begin{proof}
+The pre-open--closed datum of Definition~\ref{defn:oca-comparison}, evaluated
+at the formal-Darboux stalk \(b\), contains the bulk-boundary factorisation
+pairing on the contractible polydisk neighbourhood of \(b\).  On the
+trace sector Theorem~\ref{thm:main-local} computes this pairing by the
+CE/PV map \(c_f\mapsto\theta_f,\ u_f\mapsto J(f)\).  The binary
+diagonal kernel and the Capelli class are local data.  The all-arity
+ chiral \(E_2\) extension, descent, and all-order QME are not produced
+by this local calculation.
+\end{proof}
+
+\subsection{The mixed-HT chiral Deligne--Swiss-cheese action}
+\label{ssec:sc-ht-deligne}
+
+The normal-defect geometry is encoded by a two-coloured mixed-HT
+Swiss-cheese operadic model.  The open colour is
+\(E_1^{\mathrm{top}}\) along the brane line \(\R_t\subset L\).  The
+normal closed colour is the
+mixed holomorphic-topological factorisation operad on
+\(\R_s\times\C^2\).  The full bulk colour on
+\(\R_t\times\R_s\times\C^2\) is the tensor of this normal operad with
+the tangential \(E_1^{\mathrm{top}}\) factor, equipped with the mixed
+coherence maps.
+
+\begin{defn}[Normal mixed-HT Swiss-cheese operad]
+\label{defn:sc-ht-operad}
+The \emph{normal mixed-HT Swiss-cheese operad of bidegree \((1,2)\)},
+denoted \(\mathrm{SC}^{\mathrm{HT}}_{(1,2)}\), is the two-coloured
+coloured dg operad with:
+\begin{itemize}
+  \item closed colour \(\mathsf c\): the \(\mathrm{HT}^{(1,2)}\)
+        framed little disks operad on \(\R^1_{\mathrm{top}}\times\C^2_{\mathrm{hol}}\),
+        equivalently \(E_1^{\mathrm{top}}\widehat\otimes E_2^{\mathrm{hol}}\),
+        modelled on the framed Fulton--MacPherson compactification of
+        configurations of disks in
+        \(\R^1_{\mathrm{top}}\times\C^2_{\mathrm{hol}}\);
+  \item open colour \(\mathsf o\): the \(E_1^{\mathrm{top}}\) little
+        intervals operad on the brane line \(\R_t\);
+  \item mixed operations recording configurations of normal closed disks
+        in \(\R_{s\ge 0}\times\C^2_{\mathrm{hol}}\), parametrised along
+        \(\R_t\), approaching the boundary
+        \(\R_t\times\{s=0\}\times\C^2_{\mathrm{hol}}\), with marked open
+        intervals on the brane line
+        \(\R_t\times\{s=z_1=z_2=0\}\), with composition by nesting
+        closed disks and substitution of open intervals.
+\end{itemize}
+\(\mathrm{SC}^{\mathrm{HT}}_{(1,2)}\) is generated by binary closed
+operations carrying the diagonal local-cohomology kernel
+\(K^{(2)}_\Delta\) on \(\C^2\), binary open operations carrying the
+\(E_1\)-product on \(\R_t\), and binary mixed operations
+\(\mu^{\mathrm{mix}}_{\mathsf c,\mathsf o}\) realising bulk-to-boundary
+insertion.  An equivalence with \(E_3^{\mathrm{top}}\) is precisely the
+topologisation datum of
+Theorem~\ref{thm:topologisation-by-stress-tensor}.
+\end{defn}
+
+\begin{rmk}[Dunn additivity and mixed holomorphicity]\label{rmk:no-dunn-collapse}
+Dunn additivity \cite{lurie-ha}*{Theorem~5.1.2.2} identifies
+\(E_p^{\mathrm{top}}\otimes E_q^{\mathrm{top}}\simeq E_{p+q}^{\mathrm{top}}\)
+in topological algebras.  The mixed-HT operad
+\(E_1^{\mathrm{top}}\otimes E_2^{\mathrm{hol}}\) is the tensor of a
+topological \(E_1\) factor with a holomorphic \(E_2\) factor, and
+the passage from holomorphic \(E_2\) to topological \(E_2\) is given by
+the two topologisations \(T_i=[Q,G_i]\).  Hence
+\(\mathrm{SC}^{\mathrm{HT}}_{(1,2)}\) is a two-coloured mixed-HT
+operadic model, and its \(E_3^{\mathrm{top}}\) form is the conclusion
+of Theorem~\ref{thm:topologisation-by-stress-tensor}.
+\end{rmk}
+
+\begin{thm}[Mixed-HT chiral Deligne--Swiss-cheese action]
+\label{thm:sc-ht-deligne-swiss-cheese}
+
+Assume that the chiral brace operations and the equivariance homotopy
+hierarchy
+\(\{H^{\mathrm{prod}}_{f,-},H^{P_0}_{f,-},H^3_{f,-,-},\ldots\}\)
+exist in \(\mathcal B^{\mathrm{adm}}\), compatibly with the
+binary trace-sector operation of Theorem~\ref{thm:main-local}.  Then
+the assignment \eqref{eq:sc-ht-action-on-pair} below endows the
+open--closed pair
+$\bigl(Z^{\mathrm{der},\mathrm{Mor}}_{E_2^{\mathrm{HT}}}(\mathcal C^{\mathrm{op}}_\partial),\;
+\mathcal C^{\mathrm{op}}_\partial\bigr)$ of
+Definition~\ref{defn:six-boundary-open-closed-objects} with the structure of an algebra
+over the mixed swiss-cheese operad
+$\mathrm{SC}^{\mathrm{HT}}_{(1,2)}$ at the formal-Darboux stalk; the
+global full-bulk form also requires the tangential \(E_1^{\mathrm{top}}\)
+coherence.  It is governed by the chiral $E_2$-Deligne obstruction
+$\operatorname{Ob}^{\mathrm{ch}\,E_2}_{\mathrm{Deligne}}\) and by the
+comparison-cone contraction of
+Definition~\ref{defn:oca-comparison-cone}.  The route to the global
+statement is Theorem~\ref{thm:main-global-deligne-criterion}.
+
+The pair
+\begin{equation}\label{eq:sc-ht-action-on-pair}
+  \bigl(Z^{\mathrm{der},\mathrm{Mor}}_{E_2^{\mathrm{HT}}}\!\bigl(
+    \mathcal C^{\mathrm{op}}_\partial\bigr),\,
+    \mathcal C^{\mathrm{op}}_\partial\bigr)
+\end{equation}
+is, at the formal-Darboux stalk, an algebra over
+\(\mathrm{SC}^{\mathrm{HT}}_{(1,2)}\) in \(\mathcal B^{\mathrm{adm}}\),
+with:
+\begin{enumerate}[label=\textup{(\roman*)}]
+  \item closed colour acting on
+        \(Z^{\mathrm{der},\mathrm{Mor}}_{E_2^{\mathrm{HT}}}(
+        \mathcal C^{\mathrm{op}}_\partial)\) by the chiral brace
+        operations on
+        \(C^\bullet_{\mathrm{Hoch},\mathrm{adm}}(A^{\mathrm{cl}}_{\partial,N},
+        A^{\mathrm{cl}}_{\partial,N})\) of
+        \eqref{eq:bar-resolution-derived-centre}, with binary singular
+        product \eqref{eq:ope-linear};
+  \item open colour acting on \(\mathcal C^{\mathrm{op}}_\partial\)
+        through the \(E_1^{\mathrm{top}}\)-product of
+        \(A^{\mathrm{cl}}_{\partial,N}\);
+  \item trace-sector mixed binary operation
+        \(\mu^{\mathrm{mix}}_{\mathsf c,\mathsf o}\bigl(c\otimes a\bigr)
+        =c\cdot a\) realising the action of the trace-sector closed
+        generators on the open sector; the higher mixed operations,
+        when a centre lift exists, are the equivariance homotopy hierarchy
+        \(\{H^{\mathrm{prod}}_{f,-},H^{P_0}_{f,-},H^3_{f,-,-},\ldots\}\)
+        of \eqref{eq:ce-pv-dictionary-strong}.
+\end{enumerate}
+The trace-sector action is bulk--boundary compatible: the Hochschild
+component sends \(c_f,u_f\) to \(\theta_f,J(f)\cdot(-)\), with
+\(J(f)=\overline{\operatorname{Tr}\,f(\phi_1,\phi_2)}\) for polynomial
+\(f\), and by completed formal evaluation for \(f\in\mathfrak h\).
+The scalar-contact component sends \(c_K\) to
+\(\gamma_{\mathbf 1}\), while the projective central character sends
+\(K\) to \(\operatorname{Tr}\mathbf 1=N\).  A full
+closed action of
+\(Z^{\mathrm{der},\mathrm{Mor}}_{E_2^{\mathrm{HT}}}\) requires the
+centrality hierarchy.
+
+If, in addition, an open--closed correspondence quasi-isomorphism
+\(\mathrm{OCA}_N\colon\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}
+\xrightarrow{\sim}Z^{\mathrm{der},\mathrm{Mor}}_{E_2^{\mathrm{HT}}}(
+\mathcal C^{\mathrm{op}}_\partial)\)
+exists (Theorem~\ref{thm:main-global-deligne-criterion}), with
+null-homotopies for \(\operatorname{Ob}^{\mathrm{global},5}\) and a
+contracting homotopy for \(\operatorname{Cone}(\mathrm{OCA}_N)\), then
+\((\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}},
+\mathcal C^{\mathrm{op}}_\partial)\) is the physical
+\(\mathrm{SC}^{\mathrm{HT}}_{(1,2)}\)-bulk--boundary system of the
+mixed-HT theory on \(X\) at \(N\) Dirac branes.
+\end{thm}
+
+\begin{proof}
+Under the chiral brace datum, the closed-colour action is the
+\(E_2\)-Gerstenhaber bracket on
+\(C^\bullet_{\mathrm{Hoch},\mathrm{adm}}\) of
+Theorem~\ref{thm:main-local}, refined to the chiral brace dg algebra
+structure through the bar resolution
+\eqref{eq:bar-resolution-derived-centre}.  The binary singular product
+is the diagonal local-cohomology kernel \(K^{(2)}_\Delta\) of
+\eqref{eq:ope-linear}, established as a coloured dg operad action by
+Proposition~\ref{prop:diagonal-cohomology-operad}.  The open-colour
+action is the \(E_1^{\mathrm{top}}\)-product on
+\(A^{\mathrm{cl}}_{\partial,N}\) along the brane line.
+
+The mixed binary operation is the standard closed-acting-on-open
+bulk--boundary factorisation pairing
+\(\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}(U)\otimes
+\mathcal C^{\mathrm{op}}_\partial(V)\to
+\mathcal C^{\mathrm{op}}_\partial(V)\) of
+Costello--Gwilliam \cite{costello-gwilliam}*{Vol.~II~\S 4--5};
+restricted to the formal-Darboux stalk and post-composed with
+\(\mathrm{OCA}_N|_b\) of
+Theorem~\ref{thm:oca-formal-darboux-fibre}, it agrees with the
+centrality arrow of the derived centre object acting on
+\(A^{\mathrm{cl}}_{\partial,N}\) in the trace sector.
+
+The higher mixed operations are the required equivariance homotopy
+hierarchy
+\(\{H^{\mathrm{prod}}_{f,-},H^{P_0}_{f,-},H^3_{f,-,-},\ldots\}\) of
+\eqref{eq:ce-pv-dictionary-strong}.  They are part of the admissible
+chiral Deligne--Tamarkin one-up
+\(A^{\mathrm{cl}}_{\partial,N}\rightsquigarrow
+Z^{\mathrm{der},\mathrm{Mor}}_{E_2^{\mathrm{HT}}}\) in \(\mathcal B^{\mathrm{adm}}\),
+not a consequence of the binary trace calculation alone.  When this
+datum exists, each higher coherence in
+\(\mathrm{SC}^{\mathrm{HT}}_{(1,2)}\) is represented by a chain-level
+homotopy in \(C^\bullet_{\mathrm{Hoch},\mathrm{adm}}\), with the \(K\)-cocycle
+giving the projective correction.  Operadic associativity is then
+checked on generators through the iterated three-point Arnold relation
+\(\eta_{12}\eta_{23}+\eta_{23}\eta_{31}+\eta_{31}\eta_{12}=0\) and the
+Jacobi identity for the Gerstenhaber bracket.
+
+The compatibility with the trace pairing is
+\eqref{eq:ce-pv-dictionary-strong}: \(c_f\mapsto\theta_f\) is the
+closed-on-open action, \(u_f\mapsto J(f)\) is the open evaluation,
+\(c_K\mapsto\gamma_{\mathbf 1}\) is the scalar-contact CE class, and
+the central character evaluates \(K\) by
+\(K\mapsto\operatorname{Tr}\mathbf 1=N\) only in the projective current
+algebra.
+
+The global comparison is the obstruction criterion of
+Theorem~\ref{thm:main-global-deligne-criterion} and its typed
+refinement Theorem~\ref{thm:typed-global-mixed-ht-deligne}.  Once the
+components of \(\operatorname{Ob}^{\mathrm{global},5}\) have been
+represented, killed by compatible null-homotopies, and supplemented by
+a comparison-cone contraction, \(\mathrm{OCA}_N\) extends from the
+stalk to a quasi-isomorphism on \(\partial X\); at that point
+\((\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}},
+\mathcal C^{\mathrm{op}}_\partial)\) becomes a global
+\(\mathrm{SC}^{\mathrm{HT}}_{(1,2)}\)-algebra realising the physical
+bulk--boundary system.
+\end{proof}
+
+\subsection{Scalar non-faithfulness}
+\label{ssec:scalar-non-faithfulness}
+
+The graded Euler character is the protected scalar trace
+\(\chi=\operatorname{sTr}\colon\mathrm{FiltCh}_{
+\mathrm{SC}^{\mathrm{HT}}_{(1,2)}}\to\Z((q,\hbar))\) defined on
+chain-level filtered \(\mathrm{SC}^{\mathrm{HT}}_{(1,2)}\)-algebras with
+a compatible homological grading and a filtration by charge / weight /
+height.  It is a shadow, not a chain-level invariant; scalar
+non-faithfulness is the elementary obstruction to recovering a chain-level
+\(\mathrm{SC}^{\mathrm{HT}}_{(1,2)}\)-object from its scalar trace.
+
+\begin{lem}[Scalar non-faithfulness]\label{lem:scalar-non-faithfulness}
+The graded Euler supertrace
+\[
+  \chi=\operatorname{sTr}(-)\colon
+  \mathrm{FiltCh}_{\mathrm{SC}^{\mathrm{HT}}_{(1,2)}}
+  \longrightarrow\Z((q,\hbar))
+\]
+has nontrivial fibres: equality of scalar traces is compatible with
+inequivalent quasi-isomorphism types, with inequivalent
+\(\mathrm{SC}^{\mathrm{HT}}_{(1,2)}\)-operations, and with distinct
+Hall-style products, Drinfeld-double pairings, current-envelope
+locality structures, derived-centre trace maps, and open--closed
+comparison morphisms.  Consequently every scalar-to-chain lift of
+automorphic data includes a chain-level
+\(\mathrm{SC}^{\mathrm{HT}}_{(1,2)}\)-object.
+\end{lem}
+
+\begin{proof}
+Let \(C=\C\) be concentrated in degree \(0\) with the trivial filtered
+\(\mathrm{SC}^{\mathrm{HT}}_{(1,2)}\)-structure.  Let
+\[
+  V=\C e_0\oplus \C e_1,\qquad |e_0|=0,\quad |e_1|=1,\quad d_V=0,
+\]
+and set \(C'=\C\oplus V\) with \(V^2=0\), unit \(1\in\C\), and all
+mixed operations on \(V\) square-zero.  Then
+\[
+  \chi(C')=1+\chi(V)=1+1-1=\chi(C),
+\]
+while \(H^\bullet(C')=\C\oplus \C e_0\oplus \C e_1\) is not
+isomorphic to \(H^\bullet(C)=\C\).  Thus the scalar trace takes the
+same value on two distinct quasi-isomorphism types.  Keeping the same graded
+complex and changing square-zero products, Hall pairings, current
+envelopes, or open--closed operations on \(V\) gives further points of
+the same scalar fibre with different chain-level structures.
+\end{proof}
+
+\begin{cor}[Mandatory chain-level supplements]
+\label{cor:mandatory-chain-supplements}
+Every lift from automorphic scalar to physical operator --- in
+particular of the Igusa
+		cusp form \(\Phi_{10}\) or its Borcherds square root
+		\(\Delta_5=\Phi_{10}^{1/2}\) --- consists of a chain-level
+filtered \(\mathrm{SC}^{\mathrm{HT}}_{(1,2)}\)-object, for example the
+filtered boundary operator algebra
+\(\mathrm{Op}^{\mathrm{HT}}_{\partial X}\) of
+Definition~\ref{defn:six-boundary-open-closed-objects}~(C6), together with an
+identification of its protected trace with the scalar invariant.  The
+scalar identity is the trace value; the chain-level operator is the
+filtered object whose trace it is.
+\end{cor}
+
+\begin{proof}
+Direct from Lemma~\ref{lem:scalar-non-faithfulness} applied to the
+chain-level objects whose protected traces are the
+scalar invariants in question.
+\end{proof}
+
+\subsection{Topologisation criterion}
+\label{ssec:topologisation}
+
+The normal mixed-HT operad \(\mathrm{SC}^{\mathrm{HT}}_{(1,2)}\) of
+Definition~\ref{defn:sc-ht-operad} is a two-coloured operad by
+construction; its passage to a topological
+\(E_d^{\mathrm{top}}\)-operad on the closed sector is the
+\emph{topologisation} of the holomorphic factor, under the
+two stress-tensor null-homotopies \(T_i=[Q,G_i]\), \(i=1,2\).
+
+\begin{defn}[Topologisation datum]\label{defn:topologisation-datum}
+A \emph{topologisation datum} for the mixed-HT closed sector
+\((\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}},
+\mathrm{SC}^{\mathrm{HT}}_{(1,2)})\) is a tuple
+\((\mathcal C_\rho,Q,G_1,G_2,T_1,T_2)\) where
+\(\mathcal C_\rho\) is a complete filtered ambient
+symmetric-monoidal \(\infty\)-category refining
+\(\mathcal B^{\mathrm{adm}}\) by a weight filtration \(\rho\); \(Q\) is
+the BRST/BV differential of
+Statement~\ref{stmt:costello-bv-construction}; \(G_i\) are
+\(\rho\)-degree-\(-1\) operators on
+\(\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}\); \(T_i\) are the two
+holomorphic translation stress-tensor components; and they satisfy
+\begin{equation}\label{eq:stress-tensor-null-homotopy}
+  T_i=[Q,G_i]\quad(i=1,2)\quad\text{in }\mathcal C_\rho.
+\end{equation}
+\end{defn}
+
+\begin{thm}[Topologisation by stress-tensor null-homotopy]
+\label{thm:topologisation-by-stress-tensor}
+Inside the complete filtered refinement $\mathcal C_\rho$ of
+$\mathcal B^{\mathrm{adm}}$, the operadic restructuring
+\eqref{eq:stress-tensor-null-homotopy} of
+Definition~\ref{defn:sc-ht-operad} turns the holomorphic-topological
+swiss-cheese closed colour
+$\mathrm{SC}^{\mathrm{HT}}_{(1,2)}$ on
+$\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}$ to a topological closed
+colour $\mathrm{SC}^{\mathrm{top}}_{(1,2)}$ with $E_3^{\mathrm{top}}$
+on the closed sector, under the six chain-level hypotheses
+$(\mathrm{T1})$--$(\mathrm{T6})$ below.
+
+Suppose a topologisation datum \((\mathcal C_\rho,Q,G_1,G_2,T_1,T_2)\)
+of
+Definition~\ref{defn:topologisation-datum} is given.  Then the closed
+sector \((\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}},
+\mathrm{SC}^{\mathrm{HT}}_{(1,2)})\) is locally constant in the
+two holomorphic directions of \(\C^2_{\mathrm{hol}}\) inside
+\(\mathcal C_\rho\)
+after completion, and carries an \(E_3^{\mathrm{top}}\)-algebra
+structure on the closed colour, intertwining the bulk currents
+\eqref{eq:ope-linear} with the topological binary operation on
+\(E_3^{\mathrm{top}}\).  The Capelli class \(\hbar N[\bar c]\) remains
+the trace-sector projective Lie anomaly.  The topologisation requires
+the chain-level hypotheses:
+\begin{enumerate}[label=\textup{(T\arabic*)}]
+  \item the operators \(G_1,G_2\) are constructed and satisfy
+        \([Q,G_i]=T_i\) as identities of chain-level operators in
+        \(\mathcal C_\rho\);
+  \item the identities \(T_i=[Q,G_i]\) are compatible with the weight
+        filtration \(\rho\) and with the completion in
+        \(\mathcal C_\rho\);
+  \item the two null-homotopies commute up to a specified secondary
+        homotopy compatible with the holomorphic \(E_2\)-operad;
+  \item the topologisation has finite holomorphic propagation in
+        \(\mathcal C_\rho\) or, equivalently, the completed propagator
+        respects the open--closed correspondence
+        Definition~\ref{defn:oca-comparison};
+  \item the transferred \(E_3^{\mathrm{top}}\)-operations are
+        independent of the small-disks SDR transfer choices used to
+        carry \eqref{eq:stress-tensor-null-homotopy} across the bar
+        resolution;
+  \item the anomaly class \(\operatorname{Ob}^{\mathrm{anom}}\) is
+        represented and killed by a null-homotopy in the
+        operadic convolution complex of
+        Definition~\ref{defn:convolution-complex},
+        \(\operatorname{Ob}^{\mathrm{anom}}\in
+        H^2\bigl(\mathrm{Conv}_{\mathrm{SC}}\!\bigl(
+          \mathcal A^{\mathrm{cl}}_{\mathrm{bulk}},
+          Z^{\mathrm{der},\mathrm{Mor}}_{E_2^{\mathrm{HT}}}\!\bigl(
+            \mathcal C^{\mathrm{op}}_\partial\bigr)\bigr)\bigr)=0\),
+        with secondary coherence class in
+        \(H^3\bigl(\mathrm{Conv}_{\mathrm{SC}}(\cdots)\bigr)\).
+\end{enumerate}
+\end{thm}
+
+\begin{proof}
+The local constancy in the two holomorphic directions follows from
+\eqref{eq:stress-tensor-null-homotopy}: the holomorphic translation
+generators \(T_i=\partial_{z_i}\) are \(Q\)-exact in \(\mathcal C_\rho\)
+under \([Q,G_i]=T_i\), so the bulk currents
+\(\mathsf J_x(z_1,z_2)\) of \eqref{eq:ope-linear} become locally constant
+in \((z_1,z_2)\) in cohomology.  Constant holomorphic dependence collapses the
+holomorphic factor \(E_2^{\mathrm{hol}}\) to \(E_2^{\mathrm{top}}\) on
+the level of operad actions
+\cite{costello-li-quantum-bcov}*{\S 3--4}.  The normal closed colour
+\(E_1^{\mathrm{top}}\otimes E_2^{\mathrm{top}}\) then identifies with
+\(E_3^{\mathrm{top}}\) by Dunn additivity
+\cite{lurie-ha}*{Theorem~5.1.2.2}.
+
+The Capelli class \(\hbar N[\bar c]\) is carried through the
+topologisation as a projective Lie central-extension class.  Identifying
+it with determinant-line curvature or with a BCOV stress-tensor anomaly
+requires the determinant-line construction.
+
+Conditions \((\mathrm{T1})\)--\((\mathrm{T6})\) are the standard
+homotopy-transfer equations for a stress-tensor null-homotopy:
+\((\mathrm{T1})\) is the chain-level construction of \(G_1,G_2\);
+\((\mathrm{T2})\) is filtration compatibility; \((\mathrm{T3})\) is
+the secondary commutation datum; \((\mathrm{T4})\) is finite
+holomorphic propagation; \((\mathrm{T5})\) is independence of
+SDR choices in the small-disks operad transfer; \((\mathrm{T6})\) is
+the closed--open anomaly cancellation in the operadic convolution complex,
+sufficient for the higher coherences of the topologised
+\(\mathrm{SC}^{\mathrm{top}}_{(1,2)}\)-action.
+\end{proof}
+
+\begin{rmk}[Class \(\mathrm L\) versus class \(\mathrm M\) topologisation]
+\label{rmk:class-L-vs-class-M}
+For class \(\mathrm L\) (affine Kac--Moody at non-critical level)
+boundary algebras the two topologisations \(T_i=[Q,G_i]\) can be raw
+chain-level provided finite holomorphic propagation is proved.  For
+class \(\mathrm M\) (Virasoro / principal \(W\)-families) the admissible
+topologisation is the weight-completed / pro / Banach ambient unless
+finite holomorphic propagation is separately verified.  The
+finite-jet PVA models realize this distinction: the classical BV action
+is constructed, while the all-order
+QME, the boundary vertex algebra, and the \(E_3^{\mathrm{top}}\)-lift
+remain governed by the filtered formal SDR, sectorial analytic
+regularity when analytic convergence is asserted, finite-window weight
+symmetry, and the local-functional lifts \(T_i=d_{\mathrm{QME}}^{L}G_i\).
+\end{rmk}
+
+\subsection{The typed global mixed-HT Deligne criterion}
+\label{ssec:typed-global-mixed-ht-deligne}
+
+Theorem~\ref{thm:main-global-deligne-criterion} states the OCA
+comparison on the Costello--Gwilliam brane-link boundary with the
+five-component obstruction
+\(\operatorname{Ob}^{\mathrm{global},5}\), the comparison cone, and the
+source complex in which each null-homotopy lives.
+
+\begin{defn}[Open--closed centrality convolution complexes]\label{defn:convolution-complex}
+Let
+\[
+  Z_\partial =
+  Z^{\mathrm{der},\mathrm{Mor}}_{E_2^{\mathrm{HT}}}\!\bigl(
+    \mathcal C^{\mathrm{op}}_\partial\bigr).
+\]
+For a source object
+\[
+  S\in\Bigl\{
+  \bar B^{E_1}(A^{\mathrm{cl}}_{\partial,N}),\,
+  \mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}\Bigr\}
+\]
+in \(\mathcal B^{\mathrm{adm}}\), its centrality convolution complex
+with the derived centre has underlying Hom complex
+\[
+  \mathrm{Conv}(S,Z_\partial)
+  =
+  \underline{\mathrm{Hom}}_{\mathcal B^{\mathrm{adm}}}^\bullet(S,Z_\partial),
+  \qquad
+  d_{\mathrm{Conv}}\varphi
+  =
+  d_{Z_\partial}\varphi-(-1)^{|\varphi|}\varphi d_S .
+\]
+For \(S=\bar B^{E_1}(A^{\mathrm{cl}}_{\partial,N})\) we write
+\begin{equation}\label{eq:convolution-complex-def}
+	  \mathrm{Conv}_{\bar B}\!\bigl(
+	    \bar B^{E_1}(A^{\mathrm{cl}}_{\partial,N}),
+    Z^{\mathrm{der},\mathrm{Mor}}_{E_2^{\mathrm{HT}}}\!\bigl(
+      \mathcal C^{\mathrm{op}}_\partial\bigr)\bigr)
+   \;=\;
+   \underline{\mathrm{Hom}}_{\mathcal B^{\mathrm{adm}}}^\bullet\!\bigl(
+     \bar B^{E_1}\!\bigl(A^{\mathrm{cl}}_{\partial,N}\bigr),\,
+     Z^{\mathrm{der},\mathrm{Mor}}_{E_2^{\mathrm{HT}}}\!\bigl(
+       \mathcal C^{\mathrm{op}}_\partial\bigr)\bigr),
+\end{equation}
+The obstruction theory for \(\mathrm{SC}^{\mathrm{HT}}_{(1,2)}\)-algebra
+morphisms is the corresponding operadic convolution dg Lie, or
+\(L_\infty\), complex
+\[
+  \mathrm{Conv}_{\mathrm{SC}}(S,Z_\partial),
+\]
+whose differential is the linearisation of the
+\(\mathrm{SC}^{\mathrm{HT}}_{(1,2)}\)-Maurer--Cartan equation at the
+chosen source and target algebra structures, and whose bracket is induced
+by the cooperadic decomposition.  The displayed Hom complex is its
+underlying graded mapping complex; obstruction classes for centrality,
+anomaly, and locality are taken in
+\(\mathrm{Conv}_{\mathrm{SC}}\) after the operadic deformation problem has
+been fixed.
+\end{defn}
+
+\begin{thm}[Typed global mixed-HT Deligne criterion]
+\label{thm:typed-global-mixed-ht-deligne}
+In $\mathcal B^{\mathrm{adm}}$ on the brane-link boundary $\partial X$
+(with possible refinement to $\mathcal C_\rho$ for topologisation), the
+pre-open--closed comparison datum \(\mathrm{preOCA}_N\) of
+Definition~\ref{defn:oca-comparison} is promoted to an
+open--closed comparison morphism
+\[
+  \mathrm{OCA}_N\colon\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}\to
+  Z^{\mathrm{der},\mathrm{Mor}}_{E_2^{\mathrm{HT}}}
+  (\mathcal C^{\mathrm{op}}_\partial)
+\]
+of \(\mathrm{SC}^{\mathrm{HT}}_{(1,2)}\)-algebras after the five native
+obstruction classes of \eqref{eq:obs-five-component} are represented in
+their governing complexes and killed by compatible null-homotopies.  It
+is a quasi-isomorphism after
+\(\operatorname{Cone}(\mathrm{OCA}_N)\) is equipped with a contracting
+homotopy in \(\mathcal B^{\mathrm{adm}}\) in the sense of
+Definition~\ref{defn:oca-comparison-cone}, equivalently after the
+filtered associated-graded acyclicity and contraction data of
+Theorem~\ref{thm:filtered-oca-cone-criterion} have been supplied.  A
+nonzero component, or a non-acyclic comparison cone, obstructs the typed
+OCA quasi-isomorphism.
+If topologisation of the holomorphic closed colour is included, the
+six hypotheses \((\mathrm{T1})\)--\((\mathrm{T6})\) and the secondary
+\(H^3\)-coherence class of
+Theorem~\ref{thm:topologisation-by-stress-tensor} are part of the
+same obstruction datum.
+
+The open--closed comparison
+\(\mathrm{OCA}_N\colon\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}
+\longrightarrow Z^{\mathrm{der},\mathrm{Mor}}_{E_2^{\mathrm{HT}}}(
+\mathcal C^{\mathrm{op}}_\partial)\) has native obstruction tuple
+\begin{equation}\label{eq:obs-five-component}
+  \operatorname{Ob}^{\mathrm{global},5}
+   \;:=\;
+  \Bigl(
+   \operatorname{Ob}^{\mathrm{ch}\,E_2}_{\mathrm{Deligne}}
+   ,
+   \operatorname{Ob}^{\mathrm{desc}}_{\partial}
+   ,
+   \operatorname{Ob}^{\mathrm{QME}}_{\mathrm{all\mbox{-}order}}
+   ,
+   \operatorname{Ob}^{\mathrm{anom}}
+   ,
+   \operatorname{Ob}^{\mathrm{loc}}
+  \Bigr),
+\end{equation}
+where the first three components are those of
+Theorem~\ref{thm:main-global-deligne-criterion} and live in their own
+cohomology complexes, and the additional two are:
+\begin{itemize}
+  \item \(\operatorname{Ob}^{\mathrm{anom}}\in
+        H^2\bigl(\mathrm{Conv}_{\mathrm{SC}}\!\bigl(
+          \mathcal A^{\mathrm{cl}}_{\mathrm{bulk}},
+          Z^{\mathrm{der},\mathrm{Mor}}_{E_2^{\mathrm{HT}}}\!\bigl(
+            \mathcal C^{\mathrm{op}}_\partial\bigr)\bigr)\bigr)\),
+        the anomaly-cancellation class in the operadic convolution complex of
+        Definition~\ref{defn:convolution-complex}, whose trace-sector
+        projective anomaly is the Capelli class \(\hbar N[\bar c]\);
+  \item \(\operatorname{Ob}^{\mathrm{loc}}=[d_{\mathrm{loc}}]\in
+        H^1\!\bigl(\partial X,
+        \underline{\mathrm{Hom}}^{0}_{\mathcal B^{\mathrm{adm}}}\!\bigl(
+        \mathcal A^{\mathrm{cl}}_{\mathrm{bulk}},
+        Z^{\mathrm{der},\mathrm{Mor}}_{E_2^{\mathrm{HT}}}\!\bigl(
+          \mathcal C^{\mathrm{op}}_\partial\bigr)\bigr)\bigr)\), the
+        locality class of the disjoint-union extension of
+        \(\mathrm{OCA}_N\) in the factorisation
+        operad \(\mathrm{Fact}_{\mathrm{SC}^{\mathrm{HT}}_{(1,2)}}\),
+        as a Costello--Gwilliam Čech--Weiss--Ran cocycle on
+        \(\partial X\).
+\end{itemize}
+The phrase ``represented and killed by compatible null-homotopies''
+means the following construction ledger.  Each row names an object in
+\(\mathcal B^{\mathrm{adm}}\), the equation it must satisfy, and the
+primitive whose existence is the vanishing statement.
+\begin{center}
+\scriptsize
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{}p{0.10\textwidth}|p{0.25\textwidth}|p{0.33\textwidth}|p{0.20\textwidth}@{}}
+\(\mathsf{Row}\) & \(\mathsf{Object}\) & \(\mathsf{Equation}\) &
+\(\mathsf{Primitive}\)\\\hline
+\(\mathrm{O1}\) &
+Morita \(E_2^{\mathrm{HT}}\)-centre
+\(Z_\partial\) with all chiral arities &
+Maurer--Cartan equation in
+\(\mathfrak{Def}^{\mathrm{HT}}_{\mathrm{Mor}\mbox{-}E_2}
+(\mathcal C^{\mathrm{op}}_\partial,b_p)\) &
+\(h_{E_2}\) with
+\(d h_{E_2}=-\operatorname{Ob}^{\mathrm{ch}\,E_2}_{\mathrm{Deligne}}\)\\
+\(\mathrm{O2}\) &
+Weiss/Ran descent datum on a brane-link cover \(\mathfrak U\) &
+\(\delta_{\check C}H+d_{\mathcal E}K=0\) in
+\(\operatorname{Tot}\check C^\bullet_{\mathrm{Weiss}}
+(\mathfrak U;\mathcal E^\bullet_{\mathrm{desc}})\) &
+\(h_{\mathrm{desc}}\) killing
+\(\operatorname{Ob}^{\mathrm{desc}}_{\partial}\) and its higher total
+classes\\
+\(\mathrm{O3}\) &
+Costello local-functional quantization
+\((Q^{\mathrm{GF}},K_t,P_{\varepsilon,L},\Delta_L,I[L])\) &
+\(QI[L]+\frac12\{I[L],I[L]\}_{L}+\hbar\Delta_LI[L]=0\) in the
+admissible local-functional complex &
+counterterms \(C_{w,r}\) and compatible inverse-limit primitives killing
+\(\operatorname{Ob}^{\mathrm{QME}}_{\mathrm{all\mbox{-}order}}\)\\
+\(\mathrm{O4}\) &
+Operadic anomaly representative in
+\(\mathrm{Conv}_{\mathrm{SC}}(\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}},
+Z_\partial)\) &
+\(\operatorname{Curv}_{\mathrm{anom}}(\mathrm{OCA}_N)=0\) modulo the
+trace-sector scalar \(\hbar N[\bar c]\) &
+\(h_{\mathrm{anom}}\) with scalar projection fixed by the Capelli
+cocycle\\
+\(\mathrm{O5}\) &
+Factorization-locality extension of \(\mathrm{OCA}_N\) on disjoint
+opens of \(\partial X\) &
+\(d_{\mathrm{loc}}(\mathrm{OCA}_N)=0\) in the
+Čech--Weiss--Ran locality complex &
+\(h_{\mathrm{loc}}\) killing
+\(\operatorname{Ob}^{\mathrm{loc}}\)\\
+\(\mathrm{O6}\) &
+Comparison cone in \(\mathcal B^{\mathrm{adm}}\) &
+\(d_{\operatorname{Cone}}\kappa_{\operatorname{Cone}}
++\kappa_{\operatorname{Cone}}d_{\operatorname{Cone}}
+=\operatorname{id}\) &
+\(\kappa_{\operatorname{Cone}}\), or equivalently the filtered
+associated-graded contraction of
+Theorem~\ref{thm:filtered-oca-cone-criterion}
+\end{tabular}
+\end{center}
+The formal-Darboux trace-sector theorem supplies only the formal fibre
+entering \(\mathrm{O2}\) and the scalar anomaly value in
+\(\mathrm{O4}\).  The remaining rows are independent construction
+problems in the displayed complexes.
+The vanishing of this tuple, together with chosen null-homotopies,
+is exactly the condition that \(\mathrm{OCA}_N\) be an
+\(\mathrm{SC}^{\mathrm{HT}}_{(1,2)}\)-morphism on \(\partial X\).
+Contractibility of its cone
+(Definition~\ref{defn:oca-comparison-cone};
+Theorem~\ref{thm:filtered-oca-cone-criterion}) gives the induced
+quasi-isomorphism.
+Before a common deformation complex is constructed, the five components
+are native cohomology classes in the following obstruction complexes.
+Here \(d_{\mathrm{QME}}^{L}=Q+\{I[L],-\}_{L}+\hbar\Delta_L\) is the
+Costello scale-\(L\) quantum master differential on local functionals,
+\begin{equation}\label{eq:five-component-complexes}
+\begin{array}{l|l}
+  \mathsf{Class} & \mathsf{Native\ source}\\\hline
+	  \operatorname{Ob}^{\mathrm{ch}\,E_2}_{\mathrm{Deligne}}
+	    & H^2\!\left(
+	        \mathfrak{Def}^{\mathrm{HT}}_{\mathrm{Mor}\mbox{-}E_2}
+	        (\mathcal C^{\mathrm{op}}_\partial,b_p)\right)\\
+	  \operatorname{Ob}^{\mathrm{desc}}_{\partial}
+	    & \check H^2_{\mathrm{Weiss}}\!\left(
+	        \mathfrak U;
+	        H^{-1}(\mathcal E^\bullet_{\mathrm{desc}})\right)\\
+  \operatorname{Ob}^{\mathrm{QME}}_{\mathrm{all\mbox{-}order}}
+    & \bigl(\{o_{\sigma,w}^{(r)}\}_r,\,
+       H^1(\ker\widehat\sigma_{\mathrm{sc}},d_{\mathrm{QME}}^{L}),\,
+       \varprojlim^1H^0\bigr)\\
+  \operatorname{Ob}^{\mathrm{anom}}
+    & H^2(\mathrm{Conv}_{\mathrm{SC}}\!\bigl(\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}},
+       Z^{\mathrm{der},\mathrm{Mor}}_{E_2^{\mathrm{HT}}}\bigr))\\
+  \operatorname{Ob}^{\mathrm{loc}}
+    & H^1(\partial X,
+        \underline{\mathrm{Hom}}^{0}_{\mathcal B^{\mathrm{adm}}}(
+          \mathcal A^{\mathrm{cl}}_{\mathrm{bulk}},
+          Z^{\mathrm{der},\mathrm{Mor}}_{E_2^{\mathrm{HT}}}))
+\end{array}
+\end{equation}
+Put
+\[
+  \mathrm{CE}_{\bar A}^{\mathbf 1}
+  =
+  C^\bullet_{\mathrm{Lie}}(\bar A;\C\gamma_{\mathbf 1}).
+\]
+The QME row in \eqref{eq:five-component-complexes} is the following
+filtered tower, not a single analytic theorem supplied by notation:
+\begin{center}
+\scriptsize
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{}p{0.16\textwidth}|p{0.23\textwidth}|p{0.09\textwidth}|p{0.23\textwidth}|p{0.09\textwidth}@{}}
+\(\mathsf{Entry}\) & \(\mathsf{Complex}\) & \(\mathsf{Degree}\) &
+\(\mathsf{Primitive}\) & \(\mathsf{Status}\)\\\hline
+scalar projection &
+\(\operatorname{Hom}(\operatorname{gr}_{F}\mathfrak Q^\bullet,
+\mathrm{CE}_{\bar A}^{\mathbf 1}[1])\) &
+\(1\) &
+filtration-lowering correction to \(\widehat\sigma_{\mathrm{sc}}\) &
+criterion\\
+non-scalar residual &
+\(\mathcal Q^\bullet_{w,M}(I)=\ker\widehat\sigma_{\mathrm{sc},M}\) &
+\(1\) &
+\(C_{n,M}\in\mathcal Q^0_{w,M}(I)\), \(d_MC_{n,M}=-\mathfrak o^{\mathrm{ns}}_{n,M}\) &
+criterion\\
+tower compatibility &
+\(\varprojlim\nolimits^1_MH^0(\mathcal Q^\bullet_{w,M}(I))\) &
+secondary &
+compatible inverse-limit primitives &
+required
+\end{tabular}
+\end{center}
+The scalar row is killed only after the successive classes
+\(o_{\sigma,w}^{(r)}\) vanish; in the ordinary scalar-reduced
+\(\lie{gl}_N\) branch the first scalar class is \(\hbar N[\bar c]\).
+The non-scalar row is killed precisely by the counterterm criterion of
+Theorem~\ref{thm:wt-nonscalar-counterterm-criterion}; a closed-exchange
+branch requires the additional complex and maps of
+Theorem~\ref{thm:wt-closed-exchange-counterterm-criterion}.
+The common direct-sum language is valid only after comparison maps from
+these native sources to a master deformation complex have been fixed.
+Each displayed source carries the native null-homotopy for its component.
+The four-case obstruction table of
+Theorem~\ref{thm:four-curvature-taxonomy} records the local curvature type
+only for components already represented in a fixed deformation complex:
+the formal all-arity Hamiltonian-current kernels on the polydisk are
+constructed in
+Theorem~\ref{app:thm:formal-polydisk-all-arity-current-operad}; the
+Deligne and descent classes remain target-construction obligations
+for the Morita \(E_2\)-extension complex
+\(\mathfrak{Def}^{\mathrm{HT}}_{\mathrm{Mor}\mbox{-}E_2}
+(\mathcal C^{\mathrm{op}}_\partial,b_p)\) and the
+Costello--Gwilliam descent object.  The QME class lies in
+case (2) (counterterm coherence); the anomaly class lies in case (3)
+(projective coherence); and the locality class lies in case (2)
+(counterterm coherence).
+\end{thm}
+
+\begin{proof}
+\emph{Relation with the three source obstructions.}  The three source
+obstructions of Theorem~\ref{thm:main-global-deligne-criterion} are the
+ordered triple
+\[
+ \bigl(
+ \operatorname{Ob}^{\mathrm{ch}\,E_2}_{\mathrm{Deligne}},
+ \operatorname{Ob}^{\mathrm{desc}}_{\partial},
+ \operatorname{Ob}^{\mathrm{QME}}_{\mathrm{all\mbox{-}order}}
+ \bigr).
+\]
+The QME entry is the scalar-contact reduction and non-scalar
+counterterm tower of the Costello local-functional obstruction problem:
+first the scalar projection must lift through the
+\(o_{\sigma,w}^{(r)}\) classes, then the residual classes
+\(\mathfrak O^{\mathrm{ns}}_n\) of
+Theorem~\ref{thm:wt-nonscalar-counterterm-criterion} must vanish.  When a common
+filtered obstruction complex has been constructed, the ghost-number
+filtration separates the projective-anomaly representative
+\[
+  \operatorname{Ob}^{\mathrm{anom}}\in
+  H^2(\mathrm{Conv}_{\mathrm{SC}}(
+  \mathcal A^{\mathrm{cl}}_{\mathrm{bulk}},
+  Z^{\mathrm{der},\mathrm{Mor}}_{E_2^{\mathrm{HT}}}))
+\]
+whose trace-sector scalar is the Capelli class \(\hbar N[\bar c]\), and
+the factorisation-degree filtration separates the locality representative
+\[
+  \operatorname{Ob}^{\mathrm{loc}}\in
+  H^1(\partial X,\underline{\mathrm{Hom}}^{0}(
+  \mathcal A^{\mathrm{cl}}_{\mathrm{bulk}},
+  Z^{\mathrm{der},\mathrm{Mor}}_{E_2^{\mathrm{HT}}})).
+\]
+The residual QME entry is a filtered tower: scalar-projection lift
+classes \(o_{\sigma,w}^{(r)}\), the reduced all-order
+renormalisation-group class in
+\(H^1(\ker\widehat\sigma_{\mathrm{sc}},d_{\mathrm{QME}}^{L})\), and the
+finite-window \(\varprojlim^1H^0\) primitive-compatibility class.  Thus
+\eqref{eq:five-component-complexes} records five native sources before
+comparison, and records five graded summands only after the comparison
+maps to \(\mathfrak K_{\mathcal T}\) have been fixed.
+
+\emph{Independence.}  The five source complexes of
+\eqref{eq:five-component-complexes} are native complexes.  They become
+bidegrees of a master deformation complex
+\(\mathfrak K_{\mathcal T}\) only after comparison maps into that
+complex have been fixed: the Deligne and descent classes are
+graded by their Čech--Weiss--Ran cover degree on \(\partial X\), the
+QME class by the renormalisation-group filtration in
+\(\ker\widehat\sigma_{\mathrm{sc}}\), the anomaly class by ghost
+number in the operadic convolution complex, and the locality class by
+factorisation degree in
+\(\mathrm{Fact}_{\mathrm{SC}^{\mathrm{HT}}_{(1,2)}}\).  After the
+comparison maps are fixed, no two complexes share both bidegree and
+graded piece, so the five-component obstruction
+\(\operatorname{Ob}^{\mathrm{global},5}\) of
+\eqref{eq:obs-five-component} is represented by a direct sum of
+cohomology classes in visible bidegrees.  A typed OCA datum is a
+compatible system of null-homotopies in these five summands together
+with a contracting homotopy of
+\(\operatorname{Cone}(\mathrm{OCA}_N)\).  The null-homotopies
+construct the typed comparison morphism; the cone contraction gives
+the quasi-isomorphism.
+
+\emph{Costello--Li control.}  The Costello--Li construction
+(Statement~\ref{stmt:costello-li-flat-bcov},
+Statement~\ref{stmt:costello-bv-construction}) gives the renormalised
+local-functional complex in which the QME obstruction class is defined.
+The anomaly and locality rows require the operadic convolution complex,
+the locality cocycle, and the corresponding null-homotopies.  If
+topologisation is imposed, the homotopy-transfer conditions are
+\((\mathrm{T1})\)--\((\mathrm{T6})\), including the secondary
+\(H^3\)-coherence class of
+Theorem~\ref{thm:topologisation-by-stress-tensor}.  The Deligne and
+descent classes remain governed by the chiral \(E_2\)-Deligne problem and
+the Costello--Gwilliam descent spectral sequence, respectively.
+
+\emph{Four obstruction mechanisms.}
+\(\operatorname{Ob}^{\mathrm{ch}\,E_2}_{\mathrm{Deligne}}\) and
+\(\operatorname{Ob}^{\mathrm{desc}}_{\partial}\) lie in the
+target-replacement cell
+(Theorem~\ref{thm:four-curvature-taxonomy} case~(4)) until the Morita
+mixed-HT chiral \(E_2\)-centre action and the Costello--Gwilliam descent
+datum have been constructed.  On a formal-Darboux polydisk the all-arity
+Hamiltonian-current kernel part is already the tree-kernel action of
+Theorem~\ref{app:thm:formal-polydisk-all-arity-current-operad}; the
+remaining representatives are the boundary values of the categorical
+global null-homotopy problem;
+\(\operatorname{Ob}^{\mathrm{QME}}_{\mathrm{all\mbox{-}order}}\) and
+\(\operatorname{Ob}^{\mathrm{loc}}\) are counterterm classes
+(case~(2)) only after the Costello local counterterm complex and its
+locality homotopies have been fixed;
+\(\operatorname{Ob}^{\mathrm{anom}}\) is the projective Lie-anomaly
+class (case~(3)) represented by the Capelli central extension
+\(\widehat{\mathfrak g}_{\mathrm{cent}}\) of
+\eqref{eq:cent-extension}.
+\end{proof}
+
+\begin{rmk}[Local trivialisation of the five-component obstruction]
+\label{rmk:local-trivialisation-five-component-obstruction}
+On the contractible formal-Darboux neighbourhood of a brane vacuum
+\(b\), the trace-sector part of \(\operatorname{Ob}^{\mathrm{global},5}\)
+is represented by explicit formal data: the all-arity tree-kernel
+current operad of
+Theorem~\ref{app:thm:formal-polydisk-all-arity-current-operad}, whose
+binary generator is \(K^{(2)}_\Delta\), the CE/PV map
+\(c_f\mapsto\theta_f,\ u_f\mapsto J(f)\), and the Capelli central
+class.  These are the formal current and trace-sector boundary values
+of the five global components.  The content of
+\(\operatorname{Ob}^{\mathrm{global},5}\) is the extension of these
+formal representatives along \(\partial X\), together with the
+Morita chiral \(E_2\)-centre Maurer--Cartan lift, the Costello--Gwilliam
+descent datum, and the all-order QME datum.  The
+formal-Darboux stalk theorem (Theorem~\ref{thm:oca-formal-darboux-fibre},
+\(=\) Theorem~\ref{thm:main-local}) is the trace-sector comparison
+fibre at \(b\).
+\end{rmk}
+
+\subsection{Local realization and descent under hypotheses}\label{ssec:local-relative-realizations}
+
+The formal-Darboux theorem fixes only the local fibre for a global
+comparison datum whose formal restriction at one brane vacuum is the
+trace-sector map.  A global open--closed quasi-isomorphism
+requires this fibre
+and five global data: a Morita chiral \(E_2\)-centre Maurer--Cartan lift
+extending the formal tree-kernel current operad, a Costello--Gwilliam descent
+null-homotopy on the brane-link boundary, an
+all-scale QME solution, anomaly and locality null-homotopies, and a
+contracting homotopy of \(\operatorname{Cone}(\mathrm{OCA}_N)\).  Stein
+or affine hypotheses simplify ordinary sheaf cohomology after these
+complexes have been constructed.
+
+\subsubsection{Local trace-sector theorem at the formal-Darboux stalk}
+\label{sssec:local-trace-sector-stalk}
+
+Theorem~\ref{thm:main-local} states the trace-sector generator
+boundary value and the scalar-stable CE/PV coordinate isomorphism
+inside the chosen admissible category \(\mathcal B^{\mathrm{adm}}\).
+The admissibility conditions are structural hypotheses on the
+completion, not consequences of the finite-\(N\) brane algebra.
+
+\begin{lem}[Admissible formal-Darboux data]
+\label{lem:admissibility-automatic}
+In the formal-Darboux setting
+\(X=\R^2_{\mathrm{top}}\times\widehat{\C^2}_{\mathrm{hol}}\), the
+data used in Theorem~\ref{thm:main-local} consist of the following
+admissible structures:
+\begin{enumerate}[label=\textup{(\roman*)}]
+  \item the residue dual
+        \(P=\mathfrak h^\vee_{\mathrm{cont}}\) and the pairing
+        \(\mathfrak h\otimes P\to\C\),
+        \(\langle f,\omega\rangle=\Res_0 f\omega\), identified by
+        Grothendieck--Matlis local duality on
+        \(H^2_{\mathfrak m}(R)\)
+        \cite{hartshorne-local-cohomology}\cite{kunz-residues-duality};
+  \item a weighted or pro-Matlis topology in which the diagonal Casimir
+        \(C=\sum_{a+b>0}z_1^az_2^b\otimes\rho_{a,b}\) and the
+        Hamiltonian coadjoint action are continuous;
+  \item the diagonal local-cohomology kernel
+        \(K^{(2)}_\Delta=d\zeta_1d\zeta_2/(\zeta_1\zeta_2)\) is
+        bracket- and kernel-admissible by
+        Proposition~\ref{prop:diagonal-cohomology-operad}: the
+        binary OPE of \eqref{eq:ope-linear} factors through
+        \(K^{(2)}_\Delta\) with principal-part residue in the
+        Grothendieck--Matlis dual;
+  \item a completed Hochschild-centrality convolution algebra in which
+        \(\{H^{\mathrm{prod}}_{f,-},H^{P_0}_{f,-},H^3_{f,-,-},\ldots\}\)
+        can be stated;
+  \item Milnor/Roos compatibility for any counterterm tower used in a
+        quantum or unreduced \(P_0\)-centrality extension.
+\end{enumerate}
+\end{lem}
+
+\begin{proof}
+The first item is Grothendieck--Matlis local duality.  The remaining
+items are the explicit hypotheses under which the coordinate CE/PV
+identity is promoted to a bracketed and completed trace-sector map.
+The strict finite-\(N\) polynomial model is the algebraic quotient
+before these completions, kernels, and Milnor/Roos compatibility
+classes are chosen.
+\end{proof}
+
+\begin{cor}[Local trace-sector formal-Darboux fibre]
+\label{cor:local-trace-sector-deligne}
+With the admissible data of
+Lemma~\ref{lem:admissibility-automatic}, the formal-Darboux stalk
+has the trace-sector generator boundary value of
+Theorem~\ref{thm:main-local}.  After stable scalar reduction and
+admissible completion it is the continuous CE/PV isomorphism; a
+Hochschild cochain map requires the centrality Maurer--Cartan lift
+of Definition~\ref{defn:admissible-hochschild-centre-lift}.
+\end{cor}
+
+\begin{proof}
+This is Theorem~\ref{thm:main-local} with the admissible data
+spelled out in Lemma~\ref{lem:admissibility-automatic}.
+\end{proof}
+
+\subsubsection{Global criterion under hypotheses on contractible
+holomorphic-symplectic targets}
+\label{sssec:global-contractible}
+
+Contractibility and Stein vanishing act on the sheaf-cohomological
+rows of the obstruction complex.  The chiral \(E_2\) all-arity
+operation, the QME solution, and the comparison-cone contraction of
+Definition~\ref{defn:oca-comparison-cone} are additional chain-level
+data.
+
+\begin{thm}[Contractible Stein descent criterion for the global
+Mixed HT Deligne map]
+\label{thm:contractible-stein-descent-criterion-HS}
+On a contractible Stein holomorphic-symplectic surface
+\(Y_{\mathrm{hol}}\), with brane-link boundary in
+\(X=\R^2_{\mathrm{top}}\times Y_{\mathrm{hol}}\), the open--closed
+comparison
+\[
+  \mathrm{OCA}_N\colon
+    \mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}
+    \longrightarrow
+    Z^{\mathrm{der},\mathrm{Mor}}_{E_2^{\mathrm{HT}}}
+      (\mathcal C^{\mathrm{op}}_\partial)
+\]
+is a quasi-isomorphism in a strict-filtered model of
+\(\mathcal B^{\mathrm{adm}}\) under the following five hypotheses:
+\begin{enumerate}[label=\textup{(\roman*)}]
+  \item an all-arity chiral \(E_2\) diagonal-kernel action extending
+        \(K^{(2)}_\Delta\);
+  \item a Costello--Gwilliam descent datum on the brane-link boundary
+        whose Čech--Weiss obstruction class is represented and killed
+        by a descent null-homotopy;
+  \item a renormalised closed-to-open coupling satisfying the QME at
+        all scales;
+  \item a null-homotopy of the anomaly class
+        \(\operatorname{Ob}^{\mathrm{anom}}\) and a locality homotopy
+        killing \(\operatorname{Ob}^{\mathrm{loc}}\);
+  \item a contracting homotopy for
+        \(\operatorname{Cone}(\mathrm{OCA}_N)\) in
+        \(\mathcal B^{\mathrm{adm}}\) after the preceding data have
+        been installed.
+\end{enumerate}
+Under these hypotheses all components of
+\(\operatorname{Ob}^{\mathrm{global},5}\) are null-homotopic in their
+governing complexes, and the comparison cone is acyclic.  Replacing
+the anomaly null-homotopy in the fourth hypothesis by the Capelli
+central extension gives the projective comparison of
+Theorem~\ref{thm:projective-stein-descent-criterion-HS}.
+\end{thm}
+
+\begin{proof}
+The first three hypotheses give the three source components of
+Theorem~\ref{thm:main-global-deligne-criterion}.  Contractibility
+removes monodromy for locally constant descent data, and Stein
+vanishing removes coherent sheaf cohomology obstructions once the
+relevant sheaves and counterterm complexes have been constructed.
+The Capelli class is not killed by contractibility; it is a Lie
+central extension.  The fourth hypothesis is therefore the strict
+trivialisation of the anomaly and locality rows.  The fifth
+hypothesis identifies the OCA map as a quasi-isomorphism.
+\end{proof}
+
+\subsubsection{Projective descent criterion on Stein
+holomorphic-symplectic targets}
+\label{sssec:projective-stein-descent-criterion}
+
+On a general Stein holomorphic-symplectic surface \(Y\), coherent
+cohomology vanishing controls the sheaf-theoretic rows after the
+chiral \(E_2\), descent, QME, and locality complexes have been
+constructed.  The Capelli central extension records the projective
+part of the trace anomaly.
+
+\begin{thm}[Projective Stein descent criterion]
+\label{thm:projective-stein-descent-criterion-HS}
+On a Stein holomorphic-symplectic surface $Y_{\mathrm{hol}}$
+(not necessarily contractible), let
+\(X=\R^2_{\mathrm{top}}\times Y_{\mathrm{hol}}\), and let \(N\) Dirac
+branes sit along \(L=\R_t\times\{b\}\).  Suppose the all-arity chiral
+\(E_2\) operation, the brane-link descent datum, the all-order QME
+solution, the locality homotopy for \(\operatorname{Ob}^{\mathrm{loc}}\),
+and the comparison-cone contraction of
+Definition~\ref{defn:oca-comparison-cone} are fixed.
+Then the OCA map is a quasi-isomorphism in the projective category
+obtained from \(\mathcal B^{\mathrm{adm}}\) by extension along the
+Capelli central extension
+  \(\widehat{\mathfrak g}_{\mathrm{cent}}\).  The projective residual is
+  the pair
+\[
+  \bigl(\operatorname{per}_X,\ \hbar N[\bar c]\bigr),
+  \qquad
+  \operatorname{per}_X\in H^1(X,\C_X),\quad
+  [\bar c]\in H^2_{\mathrm{Lie}}(\bar A,\C)[[\hbar]].
+\]
+This pair is a class of the common obstruction complex after the
+comparison map into that complex has been constructed.
+\end{thm}
+
+\begin{proof}
+With these global data fixed, the chiral \(E_2\), descent, QME,
+locality, and cone rows have the required null-homotopies or
+contractions.  Stein vanishing applies inside the relevant sheaves and
+renormalised complexes.  The residual scalar anomaly is the Lie
+central class \([\bar c]\) evaluated by the trace character, together
+with any period class of the chosen global Hamiltonian datum.  Passing
+to the projective category records this class as the projective
+curvature of the trace-sector action.
+\end{proof}
+
+\subsubsection{Concrete local realizations and global hypotheses}
+\label{sssec:concrete-realizations}
+
+\begin{cor}[Concrete local realizations and global hypotheses]
+\label{cor:concrete-global-realizations}
+The formal-Darboux theorem applies at every smooth point of each
+target listed below.  A global open--closed quasi-isomorphism is the conclusion
+of
+Theorem~\ref{thm:contractible-stein-descent-criterion-HS} or
+Theorem~\ref{thm:projective-stein-descent-criterion-HS} under their
+stated hypotheses.
+
+The following contractible Stein holomorphic-symplectic surfaces have
+no topological monodromy for the local trace-sector system:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item \(Y=\C^2\) with \(\omega_Y=dz_1\wedge dz_2\) --- the full
+        local model of \S\ref{ssec:local-setup};
+  \item \(Y=D^2\subset\C^2\) the open polydisk
+        \(\{|z_1|<1,|z_2|<1\}\) with the induced symplectic form;
+  \item \(Y=T^*\C=\C_p\times\C_q\) with \(\omega_Y=dp\wedge dq\),
+        the cotangent bundle of the affine line;
+  \item \(Y=T^*\mathbb H\) with \(\mathbb H\) the upper half-plane,
+        \(\omega_Y=dp\wedge dq\) on the cotangent;
+  \item \(Y=B_r^4\) the open Stein ball of radius \(r\) in \(\C^2\)
+        with the standard symplectic form;
+  \item \(Y=\widehat{\C^2}_{b}\) the formal-Darboux completion at any
+        smooth point \(b\) of any holomorphic-symplectic surface
+        (the stalk case of Corollary~\ref{cor:local-trace-sector-deligne}).
+\end{enumerate}
+
+The following Stein holomorphic-symplectic surfaces carry possible
+period or equivariant descent classes and therefore belong to the
+projective criterion:
+\begin{enumerate}[label=\textup{(\arabic*)},resume]
+  \item \(Y=\C\times\C^*\) with \(\omega_Y=dz\wedge d\log w\) --- the
+        \(\C^*\)-cylinder, with a period class along the circle;
+  \item an affine smooth toric holomorphic-symplectic surface, with
+        toric chart gluing recorded by the descent class.
+\end{enumerate}
+
+The punctured surface \(\C^2\setminus\{0\}\) is excluded from the
+Stein list: by Hartogs extension its holomorphic functions extend to
+\(\C^2\), so it is not Stein.
+The smooth locus of an affine ADE surface
+\(\mathrm{Spec}\,\C[z_1,z_2]^\Gamma\) is likewise a punctured quotient
+surface, not a Stein target for the global criterion.  The singular
+affine surface requires a derived or stacky target, and its minimal
+resolution is listed below as a chartwise local target with compact
+descent data.
+
+The following holomorphic-symplectic surfaces have compact analytic
+subvarieties or compact descent data.  The local theorem applies on
+Stein charts; the global statement requires compact descent:
+\begin{enumerate}[label=\textup{(\arabic*$'$)},start=7]
+  \item \(Y=T^*E\) for \(E\) an elliptic curve: holomorphic-symplectic
+        but globally non-Stein (compact zero section
+        \(E\hookrightarrow T^*E\));
+  \item \(Y=T^*\Sigma_{g\geq 1}\) for \(\Sigma_g\) a higher-genus
+        Riemann surface: holomorphic-symplectic but globally non-Stein
+        (compact zero section \(\Sigma_g\hookrightarrow T^*\Sigma_g\));
+  \item \(Y=\widetilde{\C^2/\Gamma}\) the minimal resolution of the
+        Kleinian quotient: smooth holomorphic-symplectic but globally
+        non-Stein (compact ADE exceptional divisor of \(\mathbb P^1\)
+        components);
+  \item \(Y=\mathrm{Hilb}^N(\C^2)\) the Hilbert scheme of \(N\) points
+        on \(\C^2\): smooth quasi-projective but globally non-Stein
+        for \(N\geq 2\) (compact punctual locus
+        \(\mathrm{Hilb}^N(\C^2)_0\hookrightarrow\mathrm{Hilb}^N(\C^2)\));
+        the cyclic-framed stable branch of
+        Lemma~\ref{lem:cyclic-framing-hilbert-branch} carries the
+        Nakajima ADHM presentation
+        \cite{nakajima-hilbert-lectures} as a GIT quotient on the
+        stable framed locus where \(\C[\phi_1,\phi_2]\cdot v=\C^N\);
+        on each Stein chart of the Hilbert--Chow morphism
+        \(\mathrm{Hilb}^N(\C^2)\to S^N(\C^2)\) the local theorem
+        gives the trace-sector chart; descent through the
+        exceptional stratum is measured by a central obstruction class
+        in \(\widehat{\mathfrak g}_{\mathrm{cent}}\).  The trace map
+        \(J(f)\) descends to the
+        \(\mathrm{Hilb}^N(\C^2)\)-coordinate ring through the cyclic
+        framing vector \cite{nakajima-hilbert-lectures}.
+\end{enumerate}
+Thus the catalogue gives local trace-sector realizations and the
+strict, projective, and compact-descent hypotheses for global
+comparisons.
+\end{cor}
+
+\begin{proof}
+Items (1)--(6) are formal or Stein contractible models.  Items
+(7)--(8) are Stein or affine only after the smooth-target and descent
+data are specified.  Hartogs extension excludes
+\(\C^2\setminus\{0\}\) and the smooth locus of the affine ADE
+surface from the Stein list.  Items (7')--(10') contain
+compact analytic subvarieties and therefore cannot be Stein; the
+formal theorem applies chartwise, and the descent classes carry the
+global obstruction.
+\end{proof}
+
+\begin{cor}[Stein-cover descent: explicit obstruction classes for the
+compact-containing realisations]\label{cor:compact-containing-descent}
+For each compact-containing realisation \((7')\)--\((10')\) of
+Corollary~\ref{cor:concrete-global-realizations}, choose the following
+Stein atlas or universal Stein cover and let \(\Gamma_Y\) denote its
+descent groupoid:
+\begin{center}
+\small
+\begin{tabular}{@{}p{0.05\textwidth}p{0.18\textwidth}p{0.36\textwidth}p{0.30\textwidth}@{}}
+\hline
+\textbf{Item} & \textbf{Target \(Y\)} & \textbf{Stein atlas or cover} & \textbf{Descent groupoid \(\Gamma_Y\)}\\
+\hline
+\((7')\) & \(T^*E\) & \(\C^2=T^*\C\) (universal cover of \(T^*E\)) & \(\Lambda\cong\Z^2\), translation by the lattice \(E=\C/\Lambda\)\\
+\((8')\) & \(T^*\Sigma_{g\geq 1}\) & \(T^*\widetilde\Sigma_g\) (\(\C^2\) for \(g=1\); \(\C\times\mathbb H\) for \(g\geq 2\)) & \(\pi_1(\Sigma_g)\)\\
+\((9')\) & \(\widetilde{\C^2/\Gamma}\) & affine Stein chart cover of the resolution & gluing groupoid on the ADE exceptional divisor\\
+\((10')\) & \(\mathrm{Hilb}^N(\C^2)\) & Bia\l ynicki-Birula chart cover indexed by partitions \(\lambda\vdash N\) & combinatorial gluing on the punctual stratum\\
+\hline
+\end{tabular}
+\end{center}
+Assume first that the chart-level chiral \(E_2\) operation and QME
+data of Theorem~\ref{thm:projective-stein-descent-criterion-HS}
+have been fixed on the Stein atlas.  The remaining obstruction to
+the OCA quasi-isomorphism on \(Y\) is the descent class
+\[
+  \operatorname{Ob}^{\mathrm{desc}}_{\Gamma_Y}
+   \;\in\;
+   \check H^2\bigl(\Gamma_Y;\widehat{\mathfrak g}_{\mathrm{cent}}\bigr)
+\]
+and the OCA descends after this class is represented and killed by a
+compatible descent null-homotopy; a nonzero class obstructs descent.
+The local theorem
+(Theorem~\ref{thm:projective-stein-descent-criterion-HS})
+applies on each Stein chart of the atlas after the stated data are
+        fixed; descent is the problem of gluing the chart-level OCA along the
+        descent groupoid.  After the coefficient groupoid and comparison
+  maps are fixed, the representatives are the period class on \(H^1(E)\) for
+  \((7')\), the period class on \(H^1(\Sigma_g)\) for \((8')\), the ADE
+  root-lattice gluing class of the exceptional divisor for \((9')\),
+  and the tautological gluing class along the Hilbert--Chow exceptional
+  stratum for \((10')\).  Each is recorded as a component of the compact comparison class
+\(\operatorname{Ob}_{\mathrm{comparison}}\) of
+Theorem~\ref{thm:cross-target-restriction}.
+\end{cor}
+
+\begin{proof}
+On each Stein chart \(U\subset\widetilde Y\), the projective descent
+criterion
+(Theorem~\ref{thm:projective-stein-descent-criterion-HS}) gives
+the local OCA quasi-isomorphism once the chiral \(E_2\), descent, and
+QME data are fixed.  The descent groupoid \(\Gamma_Y\) preserves the
+holomorphic-symplectic form on overlaps by construction; the class
+\(\operatorname{Ob}^{\mathrm{desc}}_{\Gamma_Y}\) is the obstruction
+to lifting the chart-level OCA quasi-isomorphisms to a
+\(\Gamma_Y\)-descent datum, equivalently the class in
+\(\check H^2(\Gamma_Y;\widehat{\mathfrak g}_{\mathrm{cent}})\)
+classifying central extensions of the descent groupoid by the
+Capelli centre.  Standard descent for the chosen Stein atlas gives
+the OCA quasi-isomorphism on \(Y\) after a
+null-homotopy of
+\(\operatorname{Ob}^{\mathrm{desc}}_{\Gamma_Y}\); a nonzero class
+  obstructs equivariant gluing.  The named period classes are proposed
+  cocycle representatives until the coefficient groupoid is fixed.
+\end{proof}
+
+\begin{rmk}[Nakajima quiver-variety reading on
+\(\mathrm{Hilb}^N(\C^2)\)]\label{rmk:nakajima-quiver-OCA}
+On the cyclic-framed stable branch of Corollary item~(10$'$), the
+boundary algebra \(A^{\mathrm{cl}}_{\partial,N}\) restricts to the
+coordinate ring of \(\mathrm{Hilb}^N(\C^2)\) through the Nakajima
+ADHM presentation: the framed ADHM quiver \(\Gamma_N\) (one node
+carrying the gauge \(\mathfrak{gl}_N\), one framed boundary node, two
+arrows for \((\phi_1,\phi_2)\), one moment-map arrow for \(\psi\)) is
+the representation-variety presentation of the underlying derived
+commuting stack, and the trace map \(J(f)\) is the trace of the
+arrow-monomial on the framed representation.  The OCA trace-sector
+map on this branch is the restriction of
+Theorem~\ref{thm:main-local} to the cyclic-framed stable locus,
+where \(N=1\) gives
+\(\widehat{\mathcal O}_{\mathrm{Hilb}^1(\C^2),[b]}\cong\C[[z_1,z_2]]\).
+For \(N>1\), the Hilbert scheme has dimension \(2N\), and its completed
+local ring is a \(2N\)-dimensional Darboux chart with tautological
+rank-\(N\) algebra; \(A_b^{\mathrm{coord}}=\C[[z_1,z_2]]\) remains the
+target formal disk acting through that tautological algebra.  The
+completed local ring of \(\mathrm{Hilb}^N(\C^2)\) is the corresponding
+tautological \(2N\)-dimensional deformation algebra.  This is a
+concrete chart-level realization of the trace map; global descent
+across the Hilbert--Chow exceptional locus is a compact comparison
+problem.
+\end{rmk}
+
+\begin{cor}[Concrete local comparison loci]
+\label{cor:additional-concrete-realizations}
+At every smooth holomorphic-symplectic point of the following spaces,
+Theorem~\ref{thm:main-local} gives the formal-Darboux trace-sector
+map:
+\begin{enumerate}[label=\textup{(\arabic*)},start=14]
+  \item \(T^*S\), for a contractible Stein open Riemann surface \(S\);
+  \item a contractible pseudoconvex Reinhardt domain in \(\C^2\);
+  \item \(K3\setminus C\), for an ample curve \(C\subset K3\);
+  \item a smooth two-dimensional character variety;
+  \item a smooth two-dimensional Coulomb or Higgs branch of a
+        \(3d\ \mathcal N=4\) gauge theory;
+  \item a smooth two-dimensional multiplicative quiver variety;
+  \item a smooth two-dimensional hypertoric variety;
+  \item a smooth affine wild character variety of complex dimension
+        \(2\).
+\end{enumerate}
+Items (14)--(15) fall under the contractible Stein criterion when the
+chiral \(E_2\), descent, QME, and comparison-cone data of
+Definition~\ref{defn:oca-comparison-cone} are fixed.
+Items (16)--(21) fall under the projective Stein criterion when the
+same data are fixed and the Capelli central character is retained.
+Singular quotients require a derived or stacky replacement of the
+smooth-target hypothesis.
+\end{cor}
+
+\begin{proof}
+The listed spaces are Stein or affine on the stated smooth loci under
+the standard hypotheses in their construction.  The local theorem is
+formal and depends only on the completed holomorphic-symplectic
+neighbourhood of the brane point.  A global theorem requires the
+  five hypotheses of Theorem~\ref{thm:contractible-stein-descent-criterion-HS};
+Steinness alone gives no chiral \(E_2\) operad, no all-order QME
+solution, and no comparison-cone contraction
+(Definition~\ref{defn:oca-comparison-cone}).
+\end{proof}
+
+\begin{rmk}[Compact comparison loci]\label{rmk:physical-interpretations}
+The comparison loci of
+Corollary~\ref{cor:additional-concrete-realizations} carry only the
+formal local conclusion unless the global comparison data exist:
+\begin{itemize}
+  \item (16) \(K3\setminus C\): the holomorphic-symplectic chart gives
+        only the local formal trace-sector map;
+  \item (17)--(21): the character, Coulomb, Higgs, multiplicative
+        quiver, hypertoric, and wild-character targets require their
+        own Stein atlas, OCA comparison, QME solution, and descent
+        null-homotopy.
+\end{itemize}
+In each case the formal-Darboux theorem is the local trace-sector
+closed-to-open map at a smooth brane point.  The full
+derived \(E_2^{\mathrm{HT}}\)-centre identification is the global problem
+under hypotheses.
+\end{rmk}
+
+\begin{rmk}[Slodowy slices and deformations of Kleinian
+singularities]\label{rmk:slodowy-slices}
+Slodowy slices \(\mathcal S_e=e+\ker\mathrm{ad}(f)\subset\mathfrak g\)
+at subregular nilpotent elements $e$ in semisimple Lie algebras
+$\mathfrak g$ intersected with the nilpotent cone produce the
+Kleinian surface singularities:
+\[
+  \mathcal S_e\cap\mathcal N \simeq \C^2/\Gamma_e ,
+\]
+where \(\Gamma_e\subset SL_2(\C)\) is the finite ADE subgroup
+McKay-corresponding to the Dynkin type of \(\mathfrak g\).  The
+singular surface is affine and Poisson; its smooth locus is
+holomorphic-symplectic, and the minimal resolution is the smooth
+holomorphic-symplectic target of item~(9$'$) of
+Corollary~\ref{cor:concrete-global-realizations}.  The formal theorem
+applies on smooth formal Darboux charts; the singular point requires a
+derived or stacky replacement.
+\end{rmk}
+
+\begin{rmk}[Compact and non-Stein targets]
+\label{rmk:compact-nonstein-targets}
+For compact holomorphic-symplectic surfaces or compact Calabi--Yau
+\(2\)-folds (\(K3\) being the canonical example), Serre duality
+replaces Stein vanishing: by simple-connectedness \(H^1(K3,\mathcal O)=0\), but Serre
+duality and the holomorphic symplectic class
+\(\sigma\in H^0(K3,\Omega^2)\) give
+\[
+  H^2(K3,\mathcal O)\;\cong\;H^0(K3,\Omega^2)^{\!\vee}\;\cong\;\C,
+\]
+the nonvanishing coherent class
+(\(h^{2,0}(K3)=h^{0,2}(K3)=1\); separately \(h^{1,1}(K3)=20\) sits in
+\(H^1(K3,\Omega^1)\), not \(H^1(\mathcal O)\)).  The descent
+obstruction complex on \(\partial X\) has a possible Čech class
+sourced by this \(H^2(\mathcal O)\)-class.
+The descent class
+\(\operatorname{Ob}^{\mathrm{desc}}_\partial\) and the all-order QME
+class \(\operatorname{Ob}^{\mathrm{QME}}_{\mathrm{all\mbox{-}order}}\)
+therefore live in global cohomology groups not killed by Stein
+vanishing; representing them and choosing null-homotopies is the
+content of the Hall--Drinfeld--Borcherds filtered comparison complex
+(Conjecture~\ref{conj:hall-drinfeld-borcherds-ss}).  A spectral
+sequence appears only after its filtration, bidegrees, differentials,
+and abutment have been fixed.
+Conjecture~\ref{conj:operator-modular-lift} asks for the chain-level
+filtered boundary operator algebra of
+Definition~\ref{defn:six-boundary-open-closed-objects}~(C6) whose
+protected trace has scalar shadow the Igusa cusp form \(\Phi_{10}\) and
+its Borcherds square root \(\Delta_5=\Phi_{10}^{1/2}\).  By
+Lemma~\ref{lem:scalar-non-faithfulness}, a scalar partition identity
+such as \(Z^{K3\times E}_{\mathrm{BPS,un}}=\Phi_{10}^{-1}=\Delta_5^{-2}\)
+or \(Z^{K3\times E}_{\mathrm{OP}}=-4096\,\Phi_{10}^{-1}\) acquires
+operator meaning only after its normalisation and such a chain-level
+\(\mathrm{SC}^{\mathrm{HT}}_{(1,2)}\)-object has been constructed; the
+required object is the operator-valued lift of the modular line
+(\S\ref{ssec:open-modular-lift}).
+\end{rmk}
+
+
+
+The six typed objects impose the following chain-level constraints.  Each
+constraint is either proved at the formal-Darboux stalk or represented
+by an obstruction class.
+
+\begin{enumerate}[label=\textup{(V\arabic*)}]
+  \item \emph{Object typing.}  Every equality names its
+        source object, its target object, its ambient category, and
+        its comparison map.
+  \item \emph{Scalar non-faithfulness.}  For any proposed
+        chain-level
+        \(\mathrm{SC}^{\mathrm{HT}}_{(1,2)}\)-object, adjoin the
+        acyclic filtered summand \(K\) of the proof of
+        Lemma~\ref{lem:scalar-non-faithfulness}; the resulting object
+        has the same \(\chi\) but inequivalent chain-level structure.
+        This is the obstruction to any scalar-determines-chain
+        assertion.
+  \item \emph{Maurer--Cartan identity.}  The Maurer--Cartan identity
+        \(d_{\bar B}\Theta+\tfrac12[\Theta,\Theta]=0\) of
+        \eqref{eq:mc-bar-equation} is the bar \(A_\infty\) identity on
+        \(\bar B^{E_1}(A^{\mathrm{cl}}_{\partial,N})\).  The
+        diagonal-kernel decoration also satisfies the Arnold relation
+        \(\eta_{12}\eta_{23}+\eta_{23}\eta_{31}+\eta_{31}\eta_{12}=0\)
+        after the chiral coefficient action map has been fixed.
+  \item \emph{Bar--cobar equivalence.}  The bar--cobar Quillen equivalence
+        \(\Omega^{\mathrm{c}}\bar B^{E_1}(A^{\mathrm{cl}}_{\partial,N})
+        \xrightarrow{\sim}A^{\mathrm{cl}}_{\partial,N}\) is verified
+        on the Koszul locus by
+        Theorem~\ref{thm:tate-bar-cobar-quillen} and
+        Theorem~\ref{thm:universal-filtered-cobar-recognition}.  The
+        Milnor \(\varprojlim^1\) defect of
+        Theorem~\ref{thm:hadamard-mittag-leffler} is the obstruction
+        off the criterion's domain.
+  \item \emph{Derived centre.}  The bar-resolution computation
+        \(C^\bullet_{\mathrm{ch}}(A,A)=\RHom_{A\otimes A^{\mathrm{op}}}(A,A)\)
+        on the chiral side is realised on the formal-Darboux stalk by
+        \eqref{eq:bar-resolution-derived-centre}; comparison with any
+        proposed physical bulk \(\mathcal O^{\mathrm{phys}}_{\mathrm{bulk}}\)
+        is mediated by the open--closed comparison
+        \(\mathrm{OCA}\) of Definition~\ref{defn:oca-comparison}, with
+        obstruction the non-vanishing of any component of
+        \(\operatorname{Ob}^{\mathrm{global},5}\).
+  \item \emph{Topologisation.}  Exhibit \(T_i=[Q,G_i]\) of
+        \eqref{eq:stress-tensor-null-homotopy} chain-level in
+        \(\mathcal C_\rho\), then verify the six conditions
+        \((\mathrm{T1})\)--\((\mathrm{T6})\) of
+        Theorem~\ref{thm:topologisation-by-stress-tensor}.  The
+        obstruction is a non-zero anomaly class
+        \(\operatorname{Ob}^{\mathrm{anom}}\neq 0\) in the
+        operadic convolution complex.
+  \item \emph{Object disjointness.}  For each forbidden pair of
+        objects \((C_i,C_j)\) in the type table of
+        Proposition~\ref{prop:boundary-open-closed-type-table}, exhibit the
+        identification that would collapse them and the corresponding
+        replacement (\S\ref{ssec:six-typed-objects}).
+\end{enumerate}
+
+\subsection{Summary diagram}
+\label{ssec:typed-summary-diagram}
+
+The six boundary open--closed objects fit into the following diagram;
+the upper square is the formal-Darboux operadic square, and the lower
+square is defined after the operator lift and topologisation data are
+fixed:
+\[
+  \begin{array}{ccc}
+    \bar B^{E_1}(A^{\mathrm{cl}}_{\partial,N})
+       & \xrightarrow{\;\;\mathrm{Verdier/Koszul}\;\;}
+       & (A^{\mathrm{cl}}_{\partial,N})^!\\
+    \downarrow\!{\scriptstyle \mathrm{Hochschild}}
+       & & \downarrow\!{\scriptstyle \mathrm{modules/lines}}\\
+    Z^{\mathrm{der},\mathrm{Mor}}_{E_2^{\mathrm{HT}}}(\mathcal C^{\mathrm{op}}_\partial)
+       & \xleftarrow{\;\;\mathrm{OCA}\;\;}
+       & \mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}\\
+    \downarrow\!{\scriptstyle \text{protected trace after operator lift}}
+       & & \downarrow\!{\scriptstyle \text{topologisation }T_i=[Q,G_i]}\\
+    \chi\bigl(\mathrm{Op}^{\mathrm{HT}}_{\partial X}\bigr)
+       & \xrightarrow[\text{under (T1--T6) of}]
+                     {\text{Theorem~\ref{thm:topologisation-by-stress-tensor}}}
+       & (\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}},
+          E_3^{\mathrm{top}})
+  \end{array}
+\]
+The upper square is operadic, proved at the formal-Darboux stalk
+(Theorem~\ref{thm:oca-formal-darboux-fibre}) and global under
+null-homotopies for \(\operatorname{Ob}^{\mathrm{global},5}\) of
+Theorem~\ref{thm:typed-global-mixed-ht-deligne} and for the
+comparison-cone contraction of
+Definition~\ref{defn:oca-comparison-cone}.  The lower square is the topologisation
+passage, under the operator lift and the topologisation datum
+of Definition~\ref{defn:topologisation-datum}.  The scalar character
+\(\chi\) is non-faithful by
+Lemma~\ref{lem:scalar-non-faithfulness}; the filtered boundary
+operator object
+\(\mathrm{Op}^{\mathrm{HT}}_{\partial X}\) is a separate filtered
+\(\mathrm{SC}^{\mathrm{HT}}\)-object
+(\S\ref{ssec:open-modular-lift}) whose chain-level
+construction is controlled by the Hall--Borcherds residual class.
+
+The diagram is the typed expression of the relative global mixed-HT
+Deligne problem: every assertion factors through the named morphisms
+\(\Phi^{\mathrm{HT}}\), \(\mathrm{OCA}\), and the topologisation
+arrow; every scalar-to-operator lift factors through
+Lemma~\ref{lem:scalar-non-faithfulness}; every operator-level lift to
+the filtered boundary operator object requires its chain-level
+construction.
+
+\begin{rmk}[Formal-Darboux fibre and global K3$\times E$ Hall--Borcherds comparison]
+\label{rmk:formal-darboux-stalk-scalar-nonfaithfulness}
+The formal-Darboux stalk theorem
+(Theorem~\ref{thm:main-local}, equivalently
+Theorem~\ref{thm:oca-formal-darboux-fibre} at the formal-Darboux
+fibre) is a \emph{local} trace-sector \(E_2\)-map in the
+admissible filtered nuclear Tate / pro-Matlis / Capelli-projective
+category \(\mathcal B^{\mathrm{adm}}\).  Its correct global role is
+twofold:
+\begin{enumerate}[label=\textup{(\roman*)}]
+  \item to give the \emph{local model} for the open--closed
+        comparison \(\mathrm{OCA}\) at every brane vacuum
+        \(b\in\widehat{\C^2}\), entering the global Costello--Gwilliam
+        bulk--boundary correspondence as the formal-Darboux fibre;
+  \item to give the \emph{trace map}
+        \(J(f) = \operatorname{Tr}\,f(\phi_1,\phi_2)\) of
+        Theorem~\ref{thm:capelli-equals-modular-curvature} as the
+        Capelli-projective scalar of the local stalk.
+\end{enumerate}
+The theorem contributes only the formal-Darboux fibre to the following
+global \(K3\times E\) constructions, each governed by its own
+chain-level theorem in the \(d=1\) algebraic-HT sector or the
+\(d\geq 2\) Calabi--Yau-to-chiral comparison:
+\begin{itemize}
+  \item the compact Hall descent
+        \(\widehat{\mathrm{CoHA}}^{\mathrm{red}}_{\Lambda^{2,1}_{\mathrm{II}}}(K3\times E)\)
+        on the polarized Borcherds source datum;
+  \item the completed Drinfeld-double extension
+        \(\mathbf{D}\bigl(\mathcal Y^{+}_{\mathrm{Hall}}(K3\times E)\bigr)\)
+        with Hall pairing non-degeneracy on every recognised window;
+  \item the current-envelope morphism
+        \(\mathrm{Cur}_E(\mathbf D(\mathcal Y^{+}_{\mathrm{Hall}}))
+        \to \mathrm{Op}^{\mathrm{HT}}_{K3\times E}\) along the
+        reference elliptic curve \(E\);
+  \item the \(\mathrm{SC}^{\mathrm{HT}}_{(1,2)}\)-trace compatibility
+        whose curvature-section trace is
+        \(\Phi_{10}\in H^0(\overline{\mathcal A}_2,\lambda^{10})\);
+        the unnormalised \(K3\times E\) BPS partition scalar is
+        \(Z^{K3\times E}_{\mathrm{BPS,un}}=\Phi_{10}^{-1}
+        =\Delta_5^{-2}\), and the OP convention inserts its separate
+        normalising factor.
+\end{itemize}
+The four items \((\beta,\delta,\varepsilon,\tau)\) above are the
+four-part chain comparison datum of the boundary-operator
+Hall--Borcherds conjecture in the \(d=1\) algebraic
+holomorphic-topological comparison;
+each carries its own finite-window hypotheses \((W1)\)--\((W8)\),
+distinct from the
+seven admissibility conditions \((i)\)--\((vii)\) of
+Theorem~\ref{thm:main-local}.  Confusing the formal-Darboux local
+\(\mathrm{OCA}\) at a single brane vacuum with the global Hall--Borcherds
+chain comparison at K3\(\times E\) is the precise collapse forbidden by
+the typed separation of source complexes: \(\mathrm{(C4)}\) at one stalk does
+not imply \(\mathrm{(C6)}\) on the whole target geometry.
+\end{rmk}

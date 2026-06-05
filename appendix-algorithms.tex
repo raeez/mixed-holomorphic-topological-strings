@@ -1,16 +1,16 @@
-\section{Algorithms}\label{app:algorithms}
+\section{Coordinate constructions}\label{app:algorithms}
 
-Six procedures recover the local trace substitution \(J\), the closed
+Six coordinate constructions recover the local trace substitution \(J\), the closed
 Hamiltonian BF theory, the CE/PV comparison, the Matlis coadjoint
 action, quantization at a fixed bidegree, and global transport along a
 \v{C}ech--Weiss--Ran cover.
 
-\subsection*{Algorithm 1 (Build the local trace substitution \(J\))}\label{algo:local-model}
+\subsection*{Construction 1 (The local trace substitution \(J\))}\label{algo:local-model}
 
 \begin{description}
-\item[Input.]  A Chan--Paton rank \(N\in\Z_{\ge 1}\); the formal
+\item[Data.]  A Chan--Paton rank \(N\in\Z_{\ge 1}\); the formal
 symplectic disk \((D,\omega)=(\mathrm{Spf}\,\C[[z_1,z_2]],dz_1\wedge dz_2)\).
-\item[Steps.]
+\item[Construction.]
 \begin{enumerate}
 \item Set the brane phase space \(\mathcal P_N=\mathfrak{gl}_N^{\oplus 2}\).
 \item Define the brane symplectic form
@@ -32,42 +32,45 @@ zero fibre is
 \item Take ghost-zero \(GL_N\)-invariant cohomology to obtain the
 stable trace ring \(R_N=H^0\bigl(\mathcal O(\mu^{-1}_{\mathrm{der}}(0))^{GL_N},Q\bigr)\).
 \item Reduce stable invariants to commutative monomial traces by
-adjacent-swap \(Q\)-exactness on the moment-map zero-fibre, obtaining
+the Koszul \(Q\)-exactness of adjacent transpositions on the
+moment-map zero-fibre, obtaining
 the basis \(\{\operatorname{Tr}(\phi_1^a\phi_2^b)\}_{a,b\ge 0}\).
 \item Define the trace map on monomials:
 \(J(z_1^az_2^b)=\overline{\operatorname{Tr}(\phi_1^a\phi_2^b)}\),
 where the bar denotes scalar reduction.
-\item Extend by linearity and \(\mathfrak m\)-adic continuity to a
-formal Hamiltonian \(f=\sum f_{a,b}z_1^az_2^b\):
+\item Extend by linearity to polynomial Hamiltonians.  Extend further
+by \(\mathfrak m\)-adic continuity only after completing the brane
+trace algebra at the formal Darboux point:
 \(J(f)=\sum f_{a,b}\overline{\operatorname{Tr}(\phi_1^a\phi_2^b)}\).
 \end{enumerate}
-\item[Output.]  The trace substitution
+\item[Result.]  The trace substitution on polynomials, and its
+completed formal extension
 \(J\colon\mathfrak h\to\widehat{\mathbf S}(\bar A)\),
 \(f\mapsto\overline{\operatorname{Tr}f(\phi_1,\phi_2)}\), with
 \(\mathfrak h=\C[[z_1,z_2]]/\C\cdot 1\).
 \end{description}
 
-\subsection*{Algorithm 2 (Build the closed Hamiltonian BF theory)}\label{algo:closed-BV}
+\subsection*{Construction 2 (The closed Hamiltonian BF theory)}\label{algo:closed-BV}
 
 \begin{description}
-\item[Input.]  The reduced Hamiltonian Lie algebra
+\item[Data.]  The reduced Hamiltonian Lie algebra
 \(\mathfrak h=\C[[z_1,z_2]]/\C\cdot 1\) with Poisson bracket
 \(\{f,g\}=\partial_{z_1}f\,\partial_{z_2}g-\partial_{z_2}f\,\partial_{z_1}g\).
-\item[Steps.]
+\item[Construction.]
 \begin{enumerate}
 \item Compute the continuous dual
 \(\mathfrak h^\vee_{\mathrm{cont}}=\mathcal P=\bigoplus_{a+b>0}\C\rho_{a,b}\)
 by the Matlis residue identification
 \(\rho_{a,b}=z_1^{-a-1}z_2^{-b-1}\,dz_1dz_2\) under the residue
 pairing \(\langle\rho_{a,b},z_1^cz_2^d\rangle=\delta_{a,c}\delta_{b,d}\)
-(Algorithm~4).
+(Construction~4).
 \item Form the shifted cotangent Lie algebra
 \(\mathfrak g=\mathfrak h\ltimes\mathfrak h^\vee_{\mathrm{cont}}[1]\)
 with bracket
 \([(f,\eta),(g,\xi)]
 =(\{f,g\},\,\mathrm{ad}^\vee_f\xi-(-1)^{|\eta||g|}\mathrm{ad}^\vee_g\eta)\)
 and \(\mathrm{ad}^\vee_f\) the Hamiltonian coadjoint action computed
-by Algorithm~4.
+by Construction~4.
 \item On a product open
 \(U\times B\subset\R^2_{\mathrm{top}}\times\C^2_{\mathrm{hol}}\)
 define the closed BV fields
@@ -90,19 +93,19 @@ with components
 \(D\)-derivation property of \(\{\cdot,\cdot\}\), Jacobi for
 \(\{\cdot,\cdot\}\), and coadjointness of \(\mathfrak h^\vee_{\mathrm{cont}}\).
 \end{enumerate}
-\item[Output.]  The mixed holomorphic-topological Hamiltonian BF
+\item[Result.]  The mixed holomorphic-topological Hamiltonian BF
 factorization algebra \(F^{\mathrm{mix}}_{\mathrm{Ham}}\) on
 \(\R^2_{\mathrm{top}}\times\C^2_{\mathrm{hol}}\), satisfying CME.
 \end{description}
 
-\subsection*{Algorithm 3 (CE/PV comparison)}\label{algo:CEPV}
+\subsection*{Construction 3 (CE/PV comparison)}\label{algo:CEPV}
 
 \begin{description}
-\item[Input.]  The shifted cotangent Lie algebra
+\item[Data.]  The shifted cotangent Lie algebra
 \(\mathfrak g=\mathfrak h\ltimes\mathfrak h^\vee_{\mathrm{cont}}[1]\)
-of Algorithm~2; an admissibility class (Tate / nilpotent / weighted /
+of Construction~2; an admissibility class (Tate / nilpotent / weighted /
 relative) for the higher levels of the comparison.
-\item[Steps.]
+\item[Construction.]
 \begin{enumerate}
 \item Choose ordered bases \(\{e_i\}\) of \(\mathfrak h\) (e.g.\
 \(e_{a,b}=z_1^az_2^b\)) and dual residues
@@ -125,31 +128,31 @@ ring) for the polyvector complex
 identity yielding the decisive computation
 \(\theta_f(O_g)=O_{\{f,g\}}\).
 \item Complete in the chosen coordinate window or weighted-Tate
-topology.  The cochain identity (level~1) holds unconditionally; the
+topology.  The cochain identity (level~1) uses no extra datum; the
 \(P_0\)-bracket clause (level~2) holds on a bracket-admissible
 sub-target \(B\); the Maurer--Cartan kernel clause (level~3) holds on
 a kernel-admissible datum \((B,\mathcal K_B)\); the bar-cobar /
 enveloping clause (level~4) holds on a Tate / nilpotent / weighted
 admissibility datum with conilpotent endpoint and
 \(\varprojlim^1\)-vanishing; the open-trace \(A_\infty\)-Koszul clause
-(level~5) holds on an acceptance datum.
+(level~5) holds on a homotopy datum.
 \item Record which levels converge in the chosen completion; the
 remainder is the obstruction vector
 \(\operatorname{Ob}_T\) of \S\ref{ssec:tate-residual-resolution}.
 \end{enumerate}
-\item[Output.]  The cochain CE/PV map
+\item[Result.]  The cochain CE/PV map
 \(\Phi_{\mathrm{coord}}\colon
 C^\bullet_{\mathrm{CE,coord}}(\mathfrak g)\to
-\mathrm{PV}_{\mathrm{coord}}(A_{\partial,\mathrm{coord}})\) with the
-ladder of admissibility-conditional upgrades.
+\mathrm{PV}_{\mathrm{coord}}(A_{\partial,\mathrm{coord}})\), together
+with its admissible extensions and obstruction classes.
 \end{description}
 
-\subsection*{Algorithm 4 (Compute the Matlis coadjoint action)}\label{algo:matlis}
+\subsection*{Construction 4 (The Matlis coadjoint action)}\label{algo:matlis}
 
 \begin{description}
-\item[Input.]  A Hamiltonian \(f=z_1^pz_2^q\in\mathfrak h\) and a
+\item[Data.]  A Hamiltonian \(f=z_1^pz_2^q\in\mathfrak h\) and a
 residue functional \(\rho_{a,b}\in\mathcal P\).
-\item[Steps.]
+\item[Construction.]
 \begin{enumerate}
 \item Compute the Hamiltonian vector field
 \(X_f=(\partial_{z_1}f)\partial_{z_2}-(\partial_{z_2}f)\partial_{z_1}
@@ -171,7 +174,7 @@ The result is a finite linear combination of residues
 \(\rho_{a-p+1,b-q+1}\); terms with \(a-p+1<0\) or \(b-q+1<0\) vanish
 by support.
 \end{enumerate}
-\item[Output.]  The Matlis coadjoint action
+\item[Result.]  The Matlis coadjoint action
 \(f\cdot\rho_{a,b}\in\mathcal P\) as a finite linear combination of
 basis residues.  This is the calculation that detects the
 Bochner--Martinelli finite-window leak
@@ -180,12 +183,12 @@ Bochner--Martinelli finite-window leak
 \(z_1^{N+2}\cdot\rho_{N+1,0}=-(N+2)\rho_{0,1}\).
 \end{description}
 
-\subsection*{Algorithm 5 (Quantization verification at bidegree \((a,b)\))}\label{algo:quantization}
+\subsection*{Construction 5 (Quantization at bidegree \((a,b)\))}\label{algo:quantization}
 
 \begin{description}
-\item[Input.]  A bidegree \((a,b)\); the formal Moyal star product on
+\item[Data.]  A bidegree \((a,b)\); the formal Moyal star product on
 the symplectic disk to the order required by \((a,b)\).
-\item[Steps.]
+\item[Construction.]
 \begin{enumerate}
 \item Generate the radial PBW basis of \(C^0_{a,b}\) (normal monomials
 on \(a\) letters \(X\) and \(b\) letters \(Y\)).
@@ -195,13 +198,13 @@ by Moyal-symmetrizing each PBW monomial.
 required by \((a,b)\) using
 \(f\star g=fg+\tfrac\hbar2P(f,g)+\tfrac{\hbar^2}{8}P^2(f,g)+\cdots\).
 \item Construct the matrix \(B_{a,b}\colon C^1_{a,b}\to C^0_{a,b}\)
-of adjacent-swap relations and the radial comparison vector
+of adjacent-transposition relations and the radial comparison vector
 \(v_{a,b}=(T_{a,b},E^+_{a,b})\) (Weyl-normal lift minus Moyal-normal
 lift).
 \item Compute \(v_{a,b}\) over \(\Q\) by exact rational arithmetic.
 \item Decide whether \(v_{a,b}\in\operatorname{im}B_{a,b}\) by
 Bareiss row reduction.
-\item Output: either the unique correction \(C^+_{a,b}\) with
+\item Obtain either the unique correction \(C^+_{a,b}\) with
 \(B_{a,b}C^+_{a,b}=v_{a,b}\), or a covector
 \((\phi,-\lambda)\in\ker B_{a,b}^*\) with
 \(\lambda(E^+_{a,b})-\phi(T_{a,b})\ne 0\) representing
@@ -209,28 +212,28 @@ Bareiss row reduction.
 The same data are read by the exact rational reduction of
 \nameref{ssec:app-radial-rational-reduction}.
 \end{enumerate}
-\item[Output.]  Either
+\item[Result.]  Either
 \(\Omega^{\mathrm{rad}}_{a,b}=0\), with explicit correction, or
 \(\Omega^{\mathrm{rad}}_{a,b}\ne 0\), with explicit cokernel witness.
 \end{description}
 
-\subsection*{Algorithm 6 (Global transport)}\label{algo:global-transport}
+\subsection*{Construction 6 (Global transport)}\label{algo:global-transport}
 
 \begin{description}
-\item[Input.]  A holomorphic-symplectic ambient \((X,\omega)\); a
-brane \(L\subset X\); a Chan--Paton rank \(N\); a target deformation
-problem \(\mathcal T\) -- global Hamiltonian descent, Costello QME,
+\item[Data.]  A holomorphic-symplectic ambient \((X,\omega)\); a
+brane \(L\subset X\); a Chan--Paton rank \(N\); a deformation
+functor \(\mathcal T\) -- global Hamiltonian descent, Costello QME,
 unreduced \(P_0\)-factorization-centre lift, decorated radial Stokes,
 BM current transfer, modular open-closed clutching, or CY-to-chiral
 specialisation.
-\item[Steps.]
+\item[Construction.]
 \begin{enumerate}
 \item Choose a Darboux cover \(\{U_i\}\) of the brane neighbourhood
 such that each completed normal patch is symplectomorphic to
 \(\mathrm{Spf}\,\C[[z_1,z_2]]\).
 \item On each \(U_i\), build the local trace substitution
 \(J_i(f_i)=\overline{\operatorname{Tr}f_i(\phi_{1,i},\phi_{2,i})}\)
-by Algorithm~1.
+by Construction~1.
 \item On overlaps \(U_{ij}\), compute transition symplectomorphisms
 \(g_{ij}\in\operatorname{Symp}_{\mathrm{formal}}(D)\) and lift them
 to local Hamiltonians \(h_{ij}\) where possible:
@@ -240,7 +243,7 @@ to local Hamiltonians \(h_{ij}\) where possible:
 \mathrm{Tot}\,C^\bullet_{\check C/\mathrm{WR}}(\{U_i\},\mathfrak K_{\mathrm{loc}})\).
 \item Insert the local Maurer--Cartan element
 \(\Theta_{\mathrm{loc}}=(\Theta_i,\alpha_{ij},\beta_{ijk},\dots)\),
-where \(\Theta_i\) is the Algorithm~1 trace-substitution datum on
+where \(\Theta_i\) is the Construction~1 trace-substitution datum on
 \(U_i\), \(\alpha_{ij}\) is the lift to local Hamiltonians, and
 higher components encode descent homotopies.
 \item Compute the curvature
@@ -256,16 +259,16 @@ and similar component lists for the chosen target.
 \(d_\Theta\tau_n=-F_n-\tfrac12\sum_{i+j=n}[\tau_i,\tau_j]-\cdots\),
 applying Theorem~\ref{thm:obstruction-twist-dichotomy} of
 \S~\ref{sec:obstruction-calculus}.
-\item Decide outcome:
+\item The curvature alternatives are:
 zero curvature \(\Rightarrow\) clause~(1), strict global theorem;
 exact curvature with chosen homotopy \(\Rightarrow\) clause~(2),
 counterterm coherence;
 central but inexact curvature \(\Rightarrow\) clause~(3), pass to
-gerbe-valued / projective target;
-non-absorptive curvature \(\Rightarrow\) clause~(4), force target
+gerbe-valued/projective deformation functor;
+non-absorptive curvature \(\Rightarrow\) clause~(4), force functor
 replacement and record the matched-conventions data.
 \end{enumerate}
-\item[Output.]  Either a strict or twisted global \(\mathcal T\)-coherence
-together with its supplied null-homotopy data, or an obstruction theorem
-together with the curvature class blocking the target.
+\item[Result.]  Either a strict or twisted global \(\mathcal T\)-coherence
+together with its given null-homotopy data, or an obstruction theorem
+together with the curvature class blocking the comparison.
 \end{description}

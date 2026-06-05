@@ -1,26 +1,24 @@
-\subsection[Tate Quillen equivalence and the infinity-categorical upgrade]{Tate Quillen equivalence and the $\infty$-categorical
-upgrade of the cochain bar-cobar identity}\label{sec:tate-quillen}
+\subsection[Tate bar-cobar admissibility and the infinity-categorical comparison]{Tate bar-cobar admissibility and the $\infty$-categorical
+comparison of the cochain bar-cobar identity}\label{sec:tate-quillen}
 
-Inside the admissible Tate envelope of
+Inside an admissible Tate envelope satisfying
 Statement~\ref{stmt:tate-model-envelope}, the bar-cobar adjunction
-\(\Omega\dashv\mathrm{Bar}\) is a Quillen equivalence
-(Theorem~\ref{thm:tate-bar-cobar-quillen}), and the CE/PV map
-\(c_f\mapsto\theta_f,\ u_f\mapsto J(f)\) descends to a
-quasi-isomorphism on cohomology between the closed CE cochain
-algebra and the Schouten polyvector algebra of the boundary
-Hamiltonian polynomial algebra.  This is the Loday--Vallette / Lurie
-Koszul-resolution identification of the brane-side derived
-\(E_1\)-Hochschild
-\(HH^\bullet(A^{\mathrm{cl}}_{\partial,N},A^{\mathrm{cl}}_{\partial,N})\),
-identified with the bulk stalk
-\(\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}|_b\) by
-Theorem~\ref{thm:main-local}; after restriction to a holomorphic curve,
-the \(d=1\) matching to the bulk side is the chiral-algebra theorem of
-\cite{beilinson-drinfeld-chiral}.  Its arity-two holomorphic collision is
-the two-dimensional diagonal singular product of
+\(\Omega\dashv\mathrm{Bar}\) is required to satisfy the admissible
+unit and counit weak-equivalence hypotheses
+(Theorem~\ref{thm:tate-bar-cobar-quillen}).  The CE/PV map
+\(c_f\mapsto\theta_f,\ u_f\mapsto J(f)\) then gives an admissible
+filtered equivalence between the closed CE cochain algebra and the
+Schouten polyvector algebra of the Hamiltonian formal disk.  This is a
+Koszul comparison for the trace sector.  It is not the construction of
+the full Hochschild cochain complex, nor of the derived chiral centre;
+those require the Hochschild-centre lift and its centrality homotopies.
+After restriction to a holomorphic curve, the \(d=1\) matching to the
+bulk side is the chiral-algebra theorem of
+\cite{beilinson-drinfeld-chiral}.  The arity-two holomorphic collision
+is the two-dimensional diagonal singular product of
 Theorem~\ref{thm:formal-two-dimensional-holomorphic-ope}; the Tate
-Quillen equivalence controls the bar-cobar/Hochschild algebraic
-realization of that stalk:
+bar-cobar comparison controls only the Koszul algebraic coordinate of
+that stalk:
 \(\Omega C_*^{\mathrm{CE}}(\mathfrak g)\xrightarrow{\sim}\widehat
 U(\mathfrak g)\) on the Lie side, dualized through exact continuous
 duality to
@@ -59,9 +57,12 @@ recognition criterion
     \oplus\mathcal O_{\mathrm{cobar}}(\tau)\bigr)=0
 \]
 is necessary and sufficient for filtered-cobar admissibility
-(Theorem~\ref{thm:universal-filtered-cobar-recognition}); equivalently,
-it is the precise vanishing condition for the CE/PV map to descend to a
-quasi-isomorphism of cohomology of the chiral Hochschild target.
+(Theorem~\ref{thm:universal-filtered-cobar-recognition}).  It is not,
+by itself, an ordinary cohomology equivalence of the chiral Hochschild
+target, since Lemma~\ref{lem:tate-envelope-tail-boundary} exhibits
+tail cohomology invisible to admissible weak equivalence.  An ordinary
+Hochschild-cohomology statement requires a tail-vanishing or
+Roos-acyclicity hypothesis.
 Theorem~\ref{thm:tate-bar-cobar-quillen} descends to an equivalence of
 associated \(\infty\)-categories
 (Corollary~\ref{cor:tate-bar-cobar-infinity}).  The Weiss-cosheaf
@@ -87,7 +88,7 @@ axioms to this exact category; their scope is the exact category
 constructed here.
 
 \begin{defn}[Strict finite-window Mittag-Leffler Tate category]
-\label{defn:strict-ml-tate-habitat}
+\label{defn:strict-ml-tate-category}
   Let \(\Cat{MLTateChain}_{\geq0}^{\mathrm{str}}\) be the category whose
   objects are inverse systems
   \[
@@ -133,7 +134,7 @@ constructed here.
 \end{defn}
 
 \begin{prop}[Exactness and kernels in the strict ML category]
-\label{prop:strict-ml-habitat-exactness}
+\label{prop:strict-ml-category-exactness}
   In \(\Cat{MLTateChain}_{\geq0}^{\mathrm{str}}\):
   \begin{enumerate}[label=(\roman*)]
     \item the filtration on \(|V|\) is complete and Hausdorff;
@@ -167,7 +168,7 @@ constructed here.
   element of the inverse limit
   \(\varprojlim_M(H_{\leq M}\otimes D_{\leq M})\), which is the completed
   tensor product by definition.  The uniqueness is the inverse-limit
-  universal property of Definition~\ref{defn:strict-ml-tate-habitat}.
+  universal property of Definition~\ref{defn:strict-ml-tate-category}.
 \end{proof}
 
 \begin{stmt}[Admissible Tate model envelope]\label{stmt:tate-model-envelope}
@@ -187,11 +188,14 @@ constructed here.
   associated graded.  The tensor product restricts to
   \(\widehat\otimes_{\mathrm{ML}}\) on strict Mittag-Leffler systems, and
   filtered inverse limits with surjective transition maps are exact by
-  Proposition~\ref{prop:strict-ml-habitat-exactness}.  The additional
+  Proposition~\ref{prop:strict-ml-category-exactness}.  The additional
   hypotheses are transfer and smallness for the bar-cobar adjunction, the
   monoid axiom for completed tensor products, and compatibility of
   \(\widehat\otimes\) with the finite-window model structures.  All
-  Quillen statements below are relative to such an envelope.
+  Quillen statements below are relative to such an envelope.  The strict
+  Mittag-Leffler category gives exact inverse limits; it does not by
+  itself give local presentability, Hovey recognition, the monoid axiom,
+  or operadic transfer.
 \end{stmt}
 
 \begin{lem}[Mittag-Leffler dictionary for closed Tate windows]
@@ -235,10 +239,10 @@ constructed here.
   killed.  Continuous linear functionals on \(V\) factor through a
   finite quotient \(V_{\leq M}\), giving the displayed direct limit of
   duals.  The completed tensor product in
-  Definition~\ref{defn:strict-ml-tate-habitat} is defined by the same
+  Definition~\ref{defn:strict-ml-tate-category} is defined by the same
   finite-window inverse system, so item (iii) is tautological inside the
   strict category.  Item (iv) is the definition of weak equivalence in
-  Definition~\ref{defn:strict-ml-tate-habitat} and
+  Definition~\ref{defn:strict-ml-tate-category} and
   Statement~\ref{stmt:tate-model-envelope}.
 \end{proof}
 
@@ -300,10 +304,10 @@ constructed here.
     \xrightarrow{\sim}
     \mathrm{PV}\bigl(\widehat{\mathbf S}_{\mathrm{Tate}}(\mathfrak h)\bigr)
   \]
-  follows only after one supplies either a chain-side inverse limit with
+  follows only after one gives either a chain-side inverse limit with
   exact continuous dualization or a topology whose cochain transition maps
   are dg maps.  If the kernel-admissible Casimir condition is also
-  supplied, the same finite windows carry compatible \(P_0\)-pairings and
+  given, the same finite windows carry compatible \(P_0\)-pairings and
   kernels in that chosen tensor category.
 \end{lem}
 
@@ -330,7 +334,7 @@ constructed here.
 
 \begin{defn}[Open-side twisting cochain datum]
 \label{defn:universal-open-side-twisting-cochain}
-  Fix a candidate admissible filtered-cobar datum
+  Fix an admissible filtered-cobar datum
   \[
     \mathfrak h=\varprojlim_M\mathfrak h_{\leq M},\qquad
     D=\varinjlim_M\mathfrak h_{\leq M}^{\vee},\qquad
@@ -348,14 +352,14 @@ constructed here.
   Put \(C_{\mathrm{op}}=\mathrm{Bar}(A_{\mathrm{op}})\), with reduced bar
   differential \(b_{\mathrm{op}}\), coproduct \(\Delta\), and iterated
   reduced coproducts \(\Delta^{(r)}\).  The bar coalgebra is required to
-  be locally conilpotent in the completed sense: for every finite output
-  window of \(B_{\mathrm{cl}}\) and every finite coaugmentation stage of
+  be locally conilpotent in the completed sense: for every finite codomain
+  window of \(B_{\mathrm{cl}}\) and every finite coaugmentation quotient of
   \(C_{\mathrm{op}}\), the iterated reduced coproducts \(\Delta^{(r)}\)
   vanish for all sufficiently large \(r\).  Equivalently, the
   conilpotence obstruction in
   Definition~\ref{defn:universal-koszul-obstruction-complex} is zero.
   This condition makes the Maurer--Cartan curvature below a continuous
-  map and supplies the twisting-cochain datum.
+  map and gives the twisting-cochain datum.
 
   An open-side twisting cochain is a continuous degree-one map
   \[
@@ -512,7 +516,7 @@ constructed here.
 
 \begin{thm}[Filtered-cobar admissibility criterion]
 \label{thm:universal-filtered-cobar-recognition}
-  Fix a candidate datum as in
+  Fix a datum as in
   Definitions~\ref{defn:universal-open-side-twisting-cochain} and
   \ref{defn:universal-koszul-obstruction-complex}.  Assume the
   filtrations on \(\Omega C_{\mathrm{op}}\) and \(B_{\mathrm{cl}}\) are
@@ -523,7 +527,7 @@ constructed here.
   continuous dualization is exact on the finite-window towers.
   Then the following conditions are equivalent.
   \begin{enumerate}[label=(A\arabic*)]
-    \item The datum is accepted: the generator substitution
+    \item The datum is admissible: the generator substitution
       \(c\mapsto\theta,\ u\mapsto O\) is the completed CE/PV identity,
       \(\tau\) is a twisting cochain, and
       \[
@@ -576,12 +580,12 @@ constructed here.
   the admissible finite-window calculation.
 
   The local conilpotence hypothesis makes the Maurer--Cartan sum finite
-  on each finite output window, hence a continuous curvature.  The
+  on each finite codomain window, hence a continuous curvature.  The
   equation \(\mathcal O_{\mathrm{MC}}(\tau)=0\) is then the
   Maurer--Cartan equation in the continuous convolution dg Lie algebra.
   It is equivalent to the statement that the adjoint map
   \(\kappa_\tau\) commutes with the completed cobar differential and the
-  \(A_\infty\)-operations.  This equality supplies the morphism tested
+  \(A_\infty\)-operations.  This equality gives the morphism tested
   below.
 
   After the Maurer--Cartan equation holds, filter
@@ -632,46 +636,28 @@ constructed here.
   \end{enumerate}
 \end{defn}
 
-\begin{thm}[Admissible-envelope model-structure existence criterion]
+\begin{thm}[Admissible-envelope model axiom]
   \label{thm:tate-model-structure}
-  Under Statement~\ref{stmt:tate-model-envelope}, the triple
-  \(\bigl(\Cat{TateChain}_{\geq 0}^{\mathrm{adm}},I,J\bigr)\)
-  is a cofibrantly generated model category. The class of weak equivalences is
-  closed under retracts and satisfies the two-out-of-three
-  property; cofibrations and fibrations form complementary lifting
-  classes; the small-object argument terminates after countably
-  many steps because every Tate window is finite-dimensional and
-  every generating cofibration changes only one window.
+  Under Statement~\ref{stmt:tate-model-envelope}, the category
+  \(\Cat{TateChain}_{\geq 0}^{\mathrm{adm}}\) is a cofibrantly generated
+  symmetric monoidal model category whose weak equivalences are
+  admissible filtered quasi-isomorphisms.  The sets \(I\) and \(J\) of
+  Definition~\ref{defn:tate-model} are the chosen generating
+  cofibrations and acyclic cofibrations.  The obstruction to replacing
+  this axiom by a construction is the simultaneous verification of
+  local presentability, smallness, Hovey recognition, the pushout-product
+  axiom, the monoid axiom, and compatibility with finite-window
+  truncations.
 \end{thm}
 
 \begin{proof}
-  Quillen's small-object argument (\cite{quillen-htpy}*{\S II.3})
-  applies in the admissible envelope once the following are
-  verified:
-  \begin{enumerate}[label=(\roman*)]
-    \item $I$ and $J$ permit the small-object argument:
-      the domains and codomains of the generating maps are small
-      with respect to relative $I$-cell complexes because each
-      generator lives in one finite-dimensional Tate window
-      $V_{\leq w}$, hence is $\aleph_0$-small in the admissible
-      envelope.
-    \item Every map in $J$-cell is a weak equivalence: pushouts of
-      acyclic generating cofibrations are levelwise acyclic by
-      finite-dimensional standard chain-complex theory in each
-      window, and the filtered colimit of windowwise acyclic
-      cofibrations is acyclic by Mittag-Leffler exactness in the
-      Tate filtration (\alpharef\ item~1).
-    \item Every map with the right lifting property against $I$ is
-      a trivial fibration: standard, levelwise.
-  \end{enumerate}
-  The two-out-of-three property for filtered quasi-isomorphisms
-  follows from the long exact sequence of the filtration: a
-  composite $V\to W\to U$ has filtered $E_1$-page agreeing with
-  the composite of $E_1$-pages of $V\to W$ and $W\to U$ in each
-  window, so two-out-of-three on each window propagates to the
-  global filtered class. This proves the model structure in the
-  chosen envelope. Arbitrary unbounded Tate complexes outside the
-  envelope require a separate construction.
+  The assertion is the model-category part of
+  Statement~\ref{stmt:tate-model-envelope}.  The strict
+  Mittag-Leffler category proves exactness of inverse limits with
+  surjective transition maps, but it does not prove smallness for
+  transfinite cell complexes, stability of acyclic cofibrations under
+  pushout, or the monoid axiom.  Hovey recognition gives the displayed
+  model category once those hypotheses are included in the envelope.
 \end{proof}
 
 \begin{lem}[Tail quotient obstruction invisible to finite-window weak equivalence]
@@ -731,10 +717,14 @@ in $\Cat{TateChain}_{\geq 0}^{\mathrm{adm}}$.
 
 \begin{lem}[Transferred model structures on Tate operad-algebras]
   \label{lem:transferred-model}
-  In the admissible envelope, the free-forget adjunction
+  Suppose the admissible envelope also satisfies operadic admissibility
+  for \(\mathcal P\in\{\mathrm{Lie}_{\Cat{TateVec}},
+  \mathrm{Ass}^+_{\Cat{TateVec}}\}\): path objects exist for free
+  \(\mathcal P\)-algebras, pushouts along generating acyclic
+  cofibrations are weak equivalences, and filtered assembly preserves
+  these weak equivalences.  Then the free-forget adjunction
   $\mathrm{Free}_{\mathcal P}\dashv\mathrm{Forget}$ for
-  $\mathcal P\in\{\mathrm{Lie}_{\Cat{TateVec}},
-  \mathrm{Ass}^+_{\Cat{TateVec}}\}$ transfers the cofibrantly
+  \(\mathcal P\) transfers the cofibrantly
   generated model structure of \ref{thm:tate-model-structure} to
   $\mathcal P\text{-alg}_{\geq 0}$ in the sense of
   Hinich~\cite{hinich-htpy-alg}*{\S 2.2}: the weak equivalences and
@@ -745,25 +735,17 @@ in $\Cat{TateChain}_{\geq 0}^{\mathrm{adm}}$.
 \end{lem}
 
 \begin{proof}
-  Hinich's transfer theorem requires:
+  Hinich's transfer theorem requires exactly the hypotheses listed above:
   \begin{enumerate}[label=(\arabic*)]
     \item a path object on every algebra of the form
       $\mathrm{Free}_{\mathcal P}(F^w D^n)$;
     \item that pushouts along generating acyclic cofibrations be
       weak equivalences.
   \end{enumerate}
-  Item~(1) follows because $\mathcal P=\mathrm{Lie}$ or
-  $\mathrm{Ass}^+$ is a $\Sigma$-cofibrant operad in
-  $\Cat{TateVec}$; the path object is constructed from the
-  cylinder object on chain complexes via the Berger-Moerdijk
-  path-functor lift~\cite{berger-moerdijk-axiomatic}, valid
-  whenever the operad is admissible and the ambient category is
-  cofibrantly generated and proper. Item~(2) follows because
-  $\mathcal P$ acts levelwise on each Tate window, and the windowwise
-  finite-dimensional pushout is a quasi-isomorphism by
-  Schwede-Shipley \cite{schwede-shipley-monoid}*{Lemma 2.3}.
-  Filtered-colimit assembly preserves quasi-isomorphism by
-  Mittag-Leffler exactness (\alpharef\ item~1).
+  Item~(1) is the path-object part of operadic admissibility.  Item~(2)
+  is the pushout-stability part.  Windowwise finite-dimensional
+  arguments are necessary tests, but they do not replace the transfer
+  hypothesis in the Tate envelope.
 \end{proof}
 
 The dual coalgebra side requires more care. Hinich's transfer
@@ -791,8 +773,13 @@ through the bar-cobar adjunction itself.
 
 \begin{lem}[Transferred model structure on Tate conilpotent
   coalgebras]\label{lem:tate-conilp-model}
-  $\mathrm{TateConilpCoAlg}$ admits, in the admissible envelope, a
-  model structure with
+  Suppose the conilpotent coalgebra transfer of
+  Lef\`evre--Hasegawa is valid in the chosen admissible Tate envelope:
+  \(\Omega\) preserves coalgebra cofibrations, detects the declared
+  weak equivalences, and the unit
+  \(C\to\mathrm{Bar}\,\Omega C\) is an admissible filtered weak
+  equivalence for every conilpotent Tate coalgebra.  Then
+  $\mathrm{TateConilpCoAlg}$ admits a model structure with
   \begin{itemize}
     \item weak equivalences = maps $f\colon C\to C'$ such that
       $\Omega(f)\colon\Omega(C)\to\Omega(C')$ is a weak
@@ -821,40 +808,43 @@ through the bar-cobar adjunction itself.
     \item the unit $\eta_C\colon C\to\mathrm{Bar}\,\Omega(C)$ is a
       weak equivalence for every conilpotent dg coalgebra.
   \end{enumerate}
-  Items~(i)-(iii) are checked windowwise (each Tate window is
-  finite-dimensional, so the standard Lefevre-Hasegawa proof
-  applies) and assemble by the transfer, smallness, monoid, completed
-  tensor, and Mittag-Leffler exactness hypotheses built into
-  Statement~\ref{stmt:tate-model-envelope}. The unit
-  weak-equivalence~(iii) is precisely \alpharef\ item~3
-  (admissible filtered qiso) inside that envelope.
+  Items~(i)--(iii) are precisely the transfer hypotheses in the Tate
+  envelope.  Each finite window is a necessary check against the
+  ordinary Lef\`evre--Hasegawa proof, but the passage to the completed
+  object uses the admissible filtered weak equivalence of the envelope.
 \end{proof}
 
-\subsubsection{Bar-cobar Quillen equivalence in the admissible envelope}
+\subsubsection{Bar-cobar comparison in the admissible envelope}
 
-\begin{thm}[Tate bar-cobar Quillen equivalence in the admissible envelope]
+\begin{thm}[Tate bar-cobar comparison in the admissible envelope]
   \label{thm:tate-bar-cobar-quillen}
+  Assume Statement~\ref{stmt:tate-model-envelope},
+  Lemma~\ref{lem:transferred-model}, and
+  Lemma~\ref{lem:tate-conilp-model}, and assume that the bar-cobar unit
+  and counit are admissible filtered weak equivalences on the
+  conilpotent and augmented objects under consideration.  Then
   The bar-cobar adjunction
   $$\Omega\colon\mathrm{TateConilpCoAlg}\rightleftarrows
     \mathrm{TateAssocAlg}^+\colon\mathrm{Bar}$$
-  is a Quillen equivalence with respect to the admissible-envelope
-  model structures
-  of \ref{lem:transferred-model} and \ref{lem:tate-conilp-model}.
+  gives a derived equivalence on the full subcategory generated by
+  those admissible cofibrant-fibrant objects.  A Quillen equivalence
+  of the entire Tate model categories requires the unit and counit
+  weak-equivalence hypotheses for all cofibrant and fibrant objects.
   In particular:
   \begin{enumerate}
     \item $\Omega$ is left Quillen: it preserves cofibrations and
       acyclic cofibrations.
     \item $\mathrm{Bar}$ is right Quillen: it preserves
       fibrations and acyclic fibrations.
-    \item For every cofibrant conilpotent coalgebra $C$ and every
-      fibrant augmented associative algebra $A$, the unit
+    \item For every admissible cofibrant conilpotent coalgebra \(C\)
+      and every admissible fibrant augmented associative algebra \(A\)
+      in the named subcategories, the unit
       $\eta_C\colon C\to\mathrm{Bar}\,\Omega(C)$ and the counit
       $\varepsilon_A\colon\Omega\,\mathrm{Bar}(A)\to A$ are weak
       equivalences.
-    \item The induced derived adjunction
-      $L\Omega\colon\mathrm{Ho}(\mathrm{TateConilpCoAlg})
-      \rightleftarrows\mathrm{Ho}(\mathrm{TateAssocAlg}^+)\colon
-      R\,\mathrm{Bar}$ is an equivalence of homotopy categories.
+    \item The induced derived adjunction restricts to an equivalence
+      on the homotopy subcategories generated by the admissible
+      objects satisfying the displayed unit and counit hypotheses.
   \end{enumerate}
 \end{thm}
 
@@ -901,49 +891,49 @@ through the bar-cobar adjunction itself.
   closed-side PBW form used later, but the Quillen counit above is the
   associative bar-cobar counit for general \(A\).
 
-  Item~(4) is formal from~(1)-(3) by Quillen's adjoint-functor
-  theorem (\cite{hovey}*{Th.~1.3.10}).
+  Item~(4) is formal from~(1)-(3) on the stated admissible
+  cofibrant-fibrant subcategory.  On the whole model categories,
+  Quillen's adjoint-functor criterion is the assertion that the same
+  unit and counit are weak equivalences for every cofibrant and fibrant
+  object.
 \end{proof}
 
 \subsubsection[Promotion to the associated infinity-categories]{Promotion to the associated $\infty$-categories}
 
-\begin{cor}[Infinity-categorical Tate bar-cobar equivalence]
+\begin{cor}[Infinity-categorical Tate bar-cobar comparison]
   \label{cor:tate-bar-cobar-infinity}
   Apply the Dwyer-Kan / Hammock-localization functor to the
-  Quillen equivalence of \ref{thm:tate-bar-cobar-quillen}:
-  $$N_\Delta\bigl(\mathrm{TateConilpCoAlg}^{\mathrm{cf}},W\bigr)
+  admissible subcategory comparison of \ref{thm:tate-bar-cobar-quillen}:
+  $$N_\Delta\bigl(\mathrm{TateConilpCoAlg}^{\mathrm{adm,cf}},W\bigr)
     \simeq
-    N_\Delta\bigl(\mathrm{TateAssocAlg}^{+,\mathrm{cf}},W\bigr)$$
+    N_\Delta\bigl(\mathrm{TateAssocAlg}^{+,\mathrm{adm,cf}},W\bigr)$$
   as the $\infty$-categories associated to the admissible model
-  envelope in the sense of Lurie's
+  subcategories in the sense of Lurie's
   \emph{Higher Algebra} \S A.3, where $\mathrm{cf}$ denotes the
-  full subcategory of cofibrant-fibrant objects and $W$ is the
-  class of weak equivalences. The equivalence is induced by
-  $L\Omega$ and $R\,\mathrm{Bar}$ at the cofibrant-fibrant level.
-  Presentability is an attribute of the chosen locally presentable
-  envelope.
+  cofibrant-fibrant objects satisfying the unit and counit
+  hypotheses, and \(W\) is the inherited class of weak equivalences.
+  The equivalence is induced by \(L\Omega\) and \(R\,\mathrm{Bar}\) on
+  this admissible subcategory.
 \end{cor}
 
 \begin{proof}
-  Lurie \cite{lurie-ha}*{A.3.7.6, A.3.7.10}: a Quillen equivalence
-  of model categories induces an equivalence of associated
-  $\infty$-categories. The presentability of both sides, inside the
-  envelope, is
-  inherited from the cofibrant generation of the model structures
-  (\ref{thm:tate-model-structure}, \ref{lem:transferred-model},
-  \ref{lem:tate-conilp-model}) by Lurie A.2.6.8.
+  Theorem~\ref{thm:tate-bar-cobar-quillen} gives inverse derived
+  functors on the admissible cofibrant-fibrant subcategories.  The
+  Dwyer--Kan localization of a relative equivalence of such
+  subcategories is an equivalence of the associated
+  \(\infty\)-categories.
 \end{proof}
 
 \subsubsection{Identification with the Lie operadic Koszul duality}
 
-The Quillen equivalence of \ref{thm:tate-bar-cobar-quillen} is
-\emph{associative} bar-cobar. Specialization to the Lie operad
-gives the cochain-level equivalence used in the CE/PV theorem.
+The bar-cobar comparison of \ref{thm:tate-bar-cobar-quillen} is
+\emph{associative} bar-cobar.  Specialization to the Lie operad
+gives the cochain-level comparison used in the CE/PV theorem.
 
 \begin{cor}[Tate Lie bar-cobar / CE Koszul duality]
   \label{cor:tate-lie-bar-cobar}
   For $\mathfrak g$ a lower-central Tate-pronilpotent graded Lie algebra in the
-  sense of \alpharef, the bar-cobar Quillen equivalence applied
+  sense of \alpharef, the admissible bar-cobar comparison applied
   to $A=\widehat U(\mathfrak g)\in\mathrm{TateAssocAlg}^+$ yields
   the equivalence in the homotopy category
   $$L\Omega\bigl(C_*^{\mathrm{CE}}(\mathfrak g)\bigr)
@@ -957,17 +947,11 @@ gives the cochain-level equivalence used in the CE/PV theorem.
   in the corresponding homotopy category of complete augmented
   Tate algebras.
 
-  Inside the admissible envelope, by the symmetric-monoidal-functoriality of the bar-cobar
-  Quillen equivalence \cite{loday-vallette}*{\S 13.2} and Lurie
-  \cite{lurie-ha}*{\S 5.5}, this lifts to an equivalence of
-  symmetric monoidal $\infty$-categories,
-  $$N_\Delta\bigl(\mathrm{TateConilpCoAlg}_{\mathrm{Lie}}^{\mathrm{cf}},
-    W\bigr)\simeq
-    N_\Delta\bigl(\mathrm{TateAssocAlg}_{\mathrm{Lie}}^{+,\mathrm{cf}},
-    W\bigr)$$
-  in the framework of Lurie \emph{Higher Algebra} \S 5.5
-  (locally constant factorization algebras over $\R$, applied
-  pointwise on the line; or directly the formal-disk version).
+	  No symmetric monoidal $\infty$-categorical lift is asserted from
+	  this corollary.  Such a lift requires a weak monoidal Quillen
+	  equivalence for the chosen Tate operadic model and a separate
+	  proof that the Lie-operadic base change preserves the completed
+	  Koszul duality.
 \end{cor}
 
 \begin{proof}
@@ -975,13 +959,10 @@ gives the cochain-level equivalence used in the CE/PV theorem.
   Lie-operadic Koszul-dual pair $(\mathrm{Lie},\mathrm{CoComm})$
   in $\Cat{TateVec}$. Loday-Vallette \cite{loday-vallette}*{Th.~13.4.6}
   identifies the operadic bar-cobar with the Lie-bar-cobar of
-  CE chains and completed enveloping algebra. The
-  symmetric-monoidal extension is direct because the operad
-  $\mathrm{Lie}$ is a symmetric-monoidal Hopf operad in
-  $\Cat{Vec}$, and base change to $\Cat{TateVec}$ via the strong
-  symmetric-monoidal functor $\Cat{Vec}\to\Cat{TateVec}$
-  preserves operadic Koszul duality
-  (\cite{loday-vallette}*{\S 13.5}).
+  CE chains and completed enveloping algebra.  The statement is
+  therefore an equivalence in the homotopy category determined by the
+  admissible envelope.  Monoidal functoriality is a further structure,
+  not a consequence of the associative bar-cobar counit.
 \end{proof}
 
 \begin{lem}[Closed-side Tate formalism]
@@ -1007,7 +988,7 @@ gives the cochain-level equivalence used in the CE/PV theorem.
         \widehat{\mathbf S}_{\mathrm{Tate}}(\mathfrak g).
       \]
   \end{enumerate}
-  Then the closed-side formalism has two compatible outputs:
+  Then the closed-side formalism has two compatible consequences:
   \[
     C^\bullet_{\mathrm{CE},\mathrm{cont}}(\mathfrak g)
       \xrightarrow{\ \Phi\ }
@@ -1024,21 +1005,21 @@ gives the cochain-level equivalence used in the CE/PV theorem.
       \simeq C_*^{\mathrm{CE}}(\mathfrak g)
   \]
   is the Tate Lie bar-cobar / CE Koszul duality of
-  Corollary~\ref{cor:tate-lie-bar-cobar}.  The two outputs are
+  Corollary~\ref{cor:tate-lie-bar-cobar}.  The two constructions are
   compatible with the same finite-window transition maps.
 \end{lem}
 
 \begin{proof}
-  The first output is Lemma~\ref{lem:closed-ce-pv-window-limit} plus the
+  The first assertion is Lemma~\ref{lem:closed-ce-pv-window-limit} plus the
   exact continuous-dualization and variance hypotheses included above.
   The obstruction terms \(\mathfrak o^{\mathrm{br}}\) and
   \(\mathfrak o^{\mathrm{coad}}\) are the cochain CE/PV transition
   obstructions; \(\mathfrak o^{\mathrm{Cas}}\) is the additional
-  kernel/\(P_0\)-pairing obstruction.  Their vanishing supplies the
-  finite-window compatibility; the admissible envelope supplies the
+  kernel/\(P_0\)-pairing obstruction.  Their vanishing gives the
+  finite-window compatibility; the admissible envelope gives the
   cochain inverse-limit datum for \(\Phi=\varprojlim_M\Phi_M\).
 
-  For the Koszul output, hypotheses (K1)--(K4) put
+  For the Koszul assertion, hypotheses (K1)--(K4) put
   \(C_*^{\mathrm{CE}}(\mathfrak g)\) and
   \(\widehat U(\mathfrak g)\) in the admissible model envelope with
   complete filtrations.  Conilpotency is the coalgebra hypothesis
@@ -1070,7 +1051,7 @@ gives the cochain-level equivalence used in the CE/PV theorem.
       is the admissible CE/PV quasi-isomorphism obtained from the
       finite-window family of Lemma~\ref{lem:closed-ce-pv-window-limit}
       after the required variance and exact continuous-dualization data
-      are supplied;
+      are given;
     \item the completed dg \(P_0\)-algebras on both sides lie in an
       admissible transferred \(P_0\)-algebra model structure inside
       \(\Cat{TateChain}_{\geq0}^{\mathrm{adm}}\), with weak
@@ -1089,7 +1070,8 @@ gives the cochain-level equivalence used in the CE/PV theorem.
     \xrightarrow{\sim}
     N_\Delta\bigl(\mathrm{PV}\bigl(\widehat S_{\mathrm{Tate}}(\mathfrak h_{\mathrm{adm}})
       \bigr)\text{-mod},W\bigr)$$
-  in the framework of Lurie's \emph{Higher Algebra} \S 5.5.  The
+  in the \(\infty\)-categorical setting of Lurie's \emph{Higher Algebra}
+  \S 5.5.  The
   hypotheses (M1)--(M3) presuppose an already constructed admissible
   \(P_0\)-algebra envelope. The conclusion is the algebraic
   $\infty$-categorical equivalence inside that envelope. The completed
@@ -1122,8 +1104,9 @@ gives the cochain-level equivalence used in the CE/PV theorem.
   \(\mathfrak h_{\mathrm{adm},I}=
   \Omega^\bullet_c(I)\otimes\mathfrak h_{\mathrm{adm}}\) when these
   interval objects remain in the same admissible envelope.  This gives
-  interval-wise categorical compatibility. Weiss descent and unreduced
-  open-BV centrality are separate theorems.
+	  interval-wise categorical compatibility. Weiss descent and unreduced
+	  open-BV centrality are governed by their own descent and centrality
+	  criteria.
 \end{proof}
 
 \begin{rmk}[Relation to Lurie's higher-algebraic Koszul
@@ -1147,7 +1130,7 @@ gives the cochain-level equivalence used in the CE/PV theorem.
 
 \begin{prop}[Bar-cobar conilpotence separated from Casimir convergence]
   \label{prop:quillen-vs-casimir}
-  The Quillen equivalence of \ref{thm:tate-bar-cobar-quillen}
+  The admissible bar-cobar comparison of \ref{thm:tate-bar-cobar-quillen}
   and the resulting $\infty$-categorical equivalence of
   \ref{thm:admissible-envelope-module-reconstruction}, when their
   admissible-envelope hypotheses hold, are independent
@@ -1174,9 +1157,9 @@ gives the cochain-level equivalence used in the CE/PV theorem.
   required for the Costello \cite{costello-renormalization} heat-kernel
   propagator construction at the analytic factorization-algebra level
   where the bracket is not strict.  The algebraic
-  bar-cobar comparison uses only the conilpotent admissibility
-  hypotheses: the cochain-level $\Phi$ promotes, in the admissible model
-  envelope, to an $\infty$-categorical equivalence.
+	  bar-cobar comparison uses only the conilpotent admissibility
+	  hypotheses: the cochain-level $\Phi$ extends, in the admissible model
+	  envelope, to an $\infty$-categorical equivalence.
 \end{proof}
 
 \begin{prop}[Strict product/direct-sum kernel obstruction]
@@ -1194,7 +1177,7 @@ gives the cochain-level equivalence used in the CE/PV theorem.
   \]
   lies outside \(\mathcal C_{\mathrm{ker}}\).  More strongly, any object
   of \(\mathcal C_{\mathrm{ker}}\) mapping to the strict pair by a
-  finite-window identity morphism would have to produce the obstructed
+  finite-window identity morphism produces the obstructed
   infinite-support tensor in \(H_\Pi\widehat\otimes D_\oplus\).
 
   Thus initial, terminal, and representing universal properties for
@@ -1228,15 +1211,16 @@ gives the cochain-level equivalence used in the CE/PV theorem.
   $\mathrm{Obs}^{\mathrm{cl}}_{\mathrm{closed},H}$ on $\R^2\times\C^2$
   requires the additional descent check below.
   The Weiss / descent condition for an unreduced factorization
-  algebra on a higher-dimensional manifold requires checking
-  \v{C}ech descent for Weiss covers, which is a separate
-  cosheaf-theoretic statement.  Costello--Gwilliam Vol.~I
-  \S\S 6.1, 6.5, 7.2 provide the factorization, cosheaf, and
-  basis-extension vocabulary; the present argument uses them as
-  vocabulary and leaves the unreduced descent obligation open.  The
+	  algebra on a higher-dimensional manifold requires checking
+	  \v{C}ech descent for Weiss covers, an independent
+	  cosheaf-theoretic statement.  Costello--Gwilliam Vol.~I
+	  \S\S 6.1, 6.5, 7.2 provide the factorization, cosheaf, and
+	  basis-extension vocabulary; the present argument uses them as
+	  vocabulary and records the unreduced descent obligation as a residual
+	  class.  The
   admissible Tate
-  Quillen-equivalence promotion closes the cochain-level
-  $\infty$-categorical comparison; the Weiss upgrade on the unreduced
+  Quillen equivalence closes the cochain-level
+  $\infty$-categorical comparison; the Weiss descent for the unreduced
   factorization algebra remains a separate cosheaf-theoretic
   obligation requiring the heat-kernel propagator extension of
   Problem~\ref{prob:formal-factorization-center}.  The two-dimensional
@@ -1249,11 +1233,11 @@ gives the cochain-level equivalence used in the CE/PV theorem.
   Costello-Gwilliam \cite{costello-gwilliam}*{Vol.~I \S 6.4}: a locally constant factorization
   algebra on $\R$ determines an $E_1$-algebra up to the standard
   contractible choice; the
-  Quillen equivalence of \ref{thm:tate-bar-cobar-quillen}
-  realizes this. On a higher-dimensional manifold, the Weiss
+  bar-cobar comparison of \ref{thm:tate-bar-cobar-quillen}
+  realizes this on the admissible subcategory.  On a higher-dimensional manifold, the Weiss
   cover $\{U_\alpha\}$ has structure-map descent independent of
   the algebraic bar-cobar; in particular the heat-kernel
   propagator on $\R^2\times\C^2$ enters the analytic check.
-  This heat-kernel propagator is the analytic input relating the
+  This heat-kernel propagator is the analytic datum relating the
   bar-cobar identity to Weiss descent.
 \end{proof}

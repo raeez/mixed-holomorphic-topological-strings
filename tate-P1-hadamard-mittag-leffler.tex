@@ -61,7 +61,8 @@ transition surjectivity -- to the algebraic remainder: graphwise QME
 in the local-functional class \(\operatorname{Ob}_{w}\) and an
 inverse-limit Roos primitive class \(\lambda^{\mathrm{fw}}_{n_0}\)
 controlled by Theorem~\ref{thm:finite-window-graph-qme-assembly}.
-Vanishing of both coordinates is necessary and sufficient for
+For the fixed graphwise extension problem under these hypotheses,
+vanishing of both coordinates is necessary and sufficient for
 compatible graphwise quantum extension on \(\mc E_w\); a single nonzero
 coordinate is the precise nonzero obstruction mechanism.  The \(\theta_3\) row
 of Proposition~\ref{prop:concrete-order-three-enlarged-system-row}
@@ -71,29 +72,29 @@ named datum (CE-ancestor, scalar-zero counterterm, or complete
 companion-face table).
 
 The construction completing the residual on a given graph system
-supplies four ingredients: the finite Hamiltonian window \(M\) and
+gives four ingredients: the finite Hamiltonian window \(M\) and
 graph list \(\mathcal G_M\); a chain projection
 \(\widehat\sigma_{\mathrm{sc},M}\) onto the scalar-symbol sector with
 vanishing image of the residual; primitives \(c_{n,M}\) of the
 non-scalar residual at every window; and Roos-compatible truncation
 coefficients across windows.  A violated ingredient names the corresponding
 nonzero coordinate of
-\(\operatorname{Ob}^{\mathrm{HML}}_{w}\).  The downstream finite-row
-machinery -- graph arrays, truncation matrices, scalar-condition
-projection, primitive search -- yields a finite cochain whose vanishing
+\(\operatorname{Ob}^{\mathrm{HML}}_{w}\).  The finite-row complex --
+graph arrays, truncation matrices, scalar projection, and primitives --
+yields a finite cochain whose vanishing
 is tested at every window \(M\) and every order \(\hbar^n\).
 
-The principal-part current sector carries the parallel scope
-constraint.  Theorem~\ref{thm:bmk-finite-window-obstruction} below
+The principal-part current sector carries the parallel finiteness
+condition.  Theorem~\ref{thm:bmk-finite-window-obstruction} below
 proves, by the single
 Tate-cohomology identity
 \(z_1^{N+2}\cdot\rho_{N+1,0}=-(N+2)\,\rho_{0,1}\), the obstruction to
 Hamiltonian-equivariant principal-part transfer into a finite Matlis
 target: high transverse holomorphic modes leak back into low brane
-momentum modes under Hamiltonian flow.  The unique surviving structure is the one-pair
-analytic pro-Matlis retract
-(Corollary~\ref{cor:promatlis-retract-as-supremum}), terminal among
-Bochner--Martinelli admissible current targets
+momentum modes under Hamiltonian flow.  The replacement structure used
+below is the one-pair analytic pro-Matlis retract
+(Corollary~\ref{cor:promatlis-retract-compatible-replacement}), with its fixed
+finite-window projections and Bochner--Martinelli moment map
 (Theorem~\ref{thm:promatlis-universal-property}).  The Hadamard / QME
 residual \(\operatorname{Ob}^{\mathrm{HML}}_{w}\) and the BMK
 finite-window obstruction live in independent sectors of the local
@@ -113,8 +114,8 @@ theorem, with separate formulas.
   heat-kernel/RG vocabulary for free elliptic complexes: local
   functionals admit Hadamard-parametrix expansions whose counterterms
   stay in the local-functional class $\mathcal O_{\mathrm{loc}}$ under
-  the hypotheses of that formalism.  The local input here is this
-  heat-kernel/RG framework.
+  the hypotheses of that formalism.  The local datum here is this
+  heat-kernel/RG formalism.
 
   In the weighted setting of \ref{eq:wt-propagator-factor}, the
   propagator factors as
@@ -189,8 +190,8 @@ theorem, with separate formulas.
   inverse system with surjective transition maps satisfies the
   Mittag-Leffler condition trivially, so the inverse limit is exact in
   the strict finite-window category of
-  Definition~\ref{defn:strict-ml-tate-habitat}, and
-  Proposition~\ref{prop:strict-ml-habitat-exactness} gives
+  Definition~\ref{defn:strict-ml-tate-category}, and
+  Proposition~\ref{prop:strict-ml-category-exactness} gives
   \(\varprojlim^1=0\) for this tower. Compatibility with
   $P_{\epsilon,L}^{w,w_0'}\mapsto P_{\epsilon,L}^{w,w_0}$ follows from
   the tensor factorization and the truncation of the Casimir.
@@ -237,7 +238,7 @@ theorem, with separate formulas.
       direction, every fixed Costello graph $\Gamma$ of order
       $\hbar^n$ contributes a compatible finite-window counterterm
       system whose weighted coefficient size is bounded, on every
-      finite output window, by a finite graph-dependent constant times
+      finite codomain window, by a finite graph-dependent constant times
       $|C_n^{\mathrm{base}}[\Gamma]|$, where
       $|C_n^{\mathrm{base}}[\Gamma]|$ is the bulk spacetime
       counterterm of Costello.
@@ -306,7 +307,7 @@ theorem, with separate formulas.
   \cite{costello-renormalization}*{Chs.~5--7}.
 
   This graph-dependent constant is finite for the fixed graph
-  \(\Gamma\) and the fixed finite output window under consideration.
+  \(\Gamma\) and the fixed finite codomain window under consideration.
   A summability statement over all graph topologies at a fixed
   \(\hbar\)-order belongs
   to the renormalized QME problem, together with the usual stability,
@@ -318,7 +319,7 @@ theorem, with separate formulas.
   are themselves compatible.
 
   (iii) The bulk Costello locality theorem at fixed window $w_0$
-  is used only as a finite-window input: the windowwise counterterm
+  is used only through a finite-window theorem: the windowwise counterterm
   $C_n[\Gamma]^{w_0}\in\mathcal O_{\mathrm{loc}}(\mathcal E_w^{w_0})$
   is a local functional with kernel supported on the diagonal of
   $\R^2\times\C^2$. By the wave-front bound of
@@ -333,14 +334,14 @@ theorem, with separate formulas.
   truncated kernel is the same diagonal). The inverse limit
   $\mathcal O_{\mathrm{loc}}(\mathcal E_w)=
   \varprojlim_{w_0}\mathcal O_{\mathrm{loc}}(\mathcal E_w^{w_0})$
-  exists in the weighted Tate category and is the candidate
+  exists in the weighted Tate category and is the
   local-functional class on $\mathcal E_w$. The windowwise counterterms
   $\{C_n[\Gamma]^{w_0}\}_{w_0}$ form a compatible inverse system,
   and their inverse limit
   $C_n[\Gamma]=\varprojlim_{w_0}C_n[\Gamma]^{w_0}$ lies in
   $\mathcal O_{\mathrm{loc}}(\mathcal E_w)$ with bound (ii).
   Its universal property is precisely the one proved in
-  Proposition~\ref{prop:strict-ml-habitat-exactness}: it is the unique
+  Proposition~\ref{prop:strict-ml-category-exactness}: it is the unique
   compatible strict ML element with these finite-window projections.
 
   The endpoint obstruction class
@@ -398,8 +399,8 @@ theorem, with separate formulas.
   Problem~\ref{prob:weighted-rg-locality}. By
   Theorem~\ref{thm:hadamard-mittag-leffler}, the Hadamard
   wave-front-set and Mittag-Leffler coefficient-topology pieces of
-  that identity are controlled.  The proposition therefore asks for
-  exactly the vanishing of the mixed brane-defect QME obstruction class.
+  that identity are controlled.  The proposition is exactly the
+  vanishing statement for the mixed brane-defect QME obstruction class.
 \end{proof}
 
 \begin{thm}[Weighted RG locality obstruction criterion]\label{thm:weighted-rg-locality-reduced}
@@ -477,7 +478,7 @@ order-\(n\) residual written as a finite cochain.
     \(\mathcal V\subset\mathcal D'_c(I)\), every finite tuple from
     \(\mathcal V\) must satisfy the corresponding graphwise relation.
     Otherwise the source is only the finite CE span of the specified
-    labelled inputs.  Denote the resulting source CE object by
+    labelled arguments.  Denote the resulting source CE object by
     \(C^\bullet_{\mathrm{lab}}(\mathcal G_M)\).
 
     \item The finite-scale regulator data
@@ -532,8 +533,8 @@ order-\(n\) residual written as a finite cochain.
     \]
     whose associated graded is the scalar-symbol projection.  Equivalently,
     either the graph data lie in the balanced graph/counterterm
-    subhabitat of
-    Definition~\ref{def:app-balanced-costello-graph-subhabitat}, or the
+    subcomplex of
+    Definition~\ref{def:app-balanced-costello-graph-subcomplex}, or the
     scalar-extension obstructions
     \[
       \delta^{(0)}_{\mathrm{Cost},\sigma}(I),
@@ -552,12 +553,12 @@ order-\(n\) residual written as a finite cochain.
     \]
     restricted to the chosen label set, whose zero-internal-edge part
     is \(\kappa^{\mathrm{coef},M}_{\hbar,w,I}\) of
-    Proposition~\ref{prop:app-bulk-defect-kernel-layer} and whose positive
+    Proposition~\ref{prop:app-bulk-defect-kernel-map} and whose positive
     graph components are the renormalized weights
     \(W^{R,M}_{\Gamma,L,w}\).
   \end{enumerate}
   Summation over graph topologies is part of the datum exactly when a
-  separate graph-summability hypothesis is supplied.
+  graph-summability hypothesis holds.
 \end{defn}
 
 \begin{thm}[Finite-window graph/QME assembly]\label{thm:finite-window-graph-qme-assembly}
@@ -587,7 +588,7 @@ order-\(n\) residual written as a finite cochain.
   \(\operatorname{Curv}_{\mathbf K}\).  Here
   \(\operatorname{Curv}_{\mathbf K}=d_{\mathbf K}
   +\frac12[-,-]_{\mathbf K}\) as in
-  Definition~\ref{def:app-bulk-defect-convolution-habitat}.  Suppose
+  Definition~\ref{def:app-bulk-defect-convolution-complex}.  Suppose
   counterterms have been chosen through order \(\hbar^{n-1}\), and write
   \(C_{<n,M}\in\mathfrak Q^0_{\mathcal G,M}(I)\) for their sum.  The
   order-\(n\) residual is
@@ -623,7 +624,7 @@ order-\(n\) residual written as a finite cochain.
     \]
     is nonzero in \(S^1\), the order-\(n\) graph/QME equation has a
     scalar obstruction before passage to the non-scalar kernel.  In the balanced graph/counterterm
-    subhabitat this scalar term is zero by
+    subcomplex this scalar term is zero by
     Proposition~\ref{prop:app-balanced-costello-graph-preservation}.
 
     \item If the scalar term vanishes through order \(n\) and the
@@ -650,10 +651,10 @@ order-\(n\) residual written as a finite cochain.
 \end{thm}
 
 \begin{proof}
-  The first assertion is exactly the analytic input supplied by the
+  The first assertion is exactly the analytic datum given by the
   regular-density and wavefront-admissible kernel propositions.  The
   finite-window hypothesis makes every coefficient factor finite rank, so
-  Theorem~\ref{thm:hadamard-mittag-leffler} supplies the Hadamard
+  Theorem~\ref{thm:hadamard-mittag-leffler} gives the Hadamard
   counterterm control for each fixed graph.  The label restriction is
   essential: outside
   \(\mathcal D'_{c,\mathrm{WF}}(I;\Gamma,M)\), the product of the graph
@@ -666,7 +667,7 @@ order-\(n\) residual written as a finite cochain.
   residual has nonzero scalar component outside
   \(\ker\widehat\sigma_{\mathrm{sc},M}\), so every counterterm inside that
   kernel leaves the scalar component unchanged.  In the balanced graph/counterterm
-  subhabitat the projection is the zero chain map, hence the scalar branch
+  subcomplex the projection is the zero chain map, hence the scalar branch
   vanishes before the non-scalar class is formed.
 
   Finally, the completed convolution Hom is a filtered dg Lie algebra.
@@ -699,8 +700,8 @@ order-\(n\) residual written as a finite cochain.
     and scalar projections commute with \(\pi_{M,N}\), and the same
     compatibility holds under admissible weight transport \(R^M_{w,w'}\).
     \item At the fixed \(\hbar\)-order under consideration the graph sum is
-    finite in each window, or a separate Costello graph-summability hypothesis
-    has been supplied.  This graph-summability hypothesis is separate
+    finite in each window, or a Costello graph-summability hypothesis
+    holds.  This graph-summability hypothesis is separate
     from the finite-window theorem.
     \item The residuals
     \(\mathfrak o^{\mathrm{fw}}_{n,M}\) of
@@ -978,11 +979,11 @@ every contribution in normal form.
       \omega(f_{\beta_j|\beta_i},g_{\beta_j|\beta_i})
       \gamma_{\mathbf 1}^{(2)}.
     \]
-    Here \(\mathfrak m'_L\) is the transported marker on the output scalar
+    Here \(\mathfrak m'_L\) is the transported marker on the resulting scalar
     loop \(L\), and \(\gamma_{\mathbf 1}^{(2)}\) denotes the ordered
     two-contact associated-graded scalar-contact symbol.  A surviving
     product \(\gamma_{\mathbf 1}^2\) in the target algebra is a separate
-    datum.  The equality of output graphs, coefficients, and marker
+    datum.  The equality of resulting graphs, coefficients, and marker
     transports in~\eqref{eq:app-codim-two-marked-closure} is exactly the
     order-\(2\) composite-face datum.
   \end{enumerate}
@@ -1014,10 +1015,10 @@ every contribution in normal form.
     R^{\mathrm{row}}_{0,M}=0,\qquad S_{0,M}=0.
   \]
 
-  For the ordered Hamiltonian inputs \((a,z_1)\), \((b,z_2)\), the
+  For the ordered Hamiltonian arguments \((a,z_1)\), \((b,z_2)\), the
   one-cross boundary row has graph type \(\mathrm{dK}\), one boundary Weyl
   edge \(E_{\mathrm{Weyl}}\), two external Hamiltonian vertices, one
-  scalar-contact output vertex \(\gamma_{\mathbf 1}\), and
+  scalar-contact vertex \(\gamma_{\mathbf 1}\), and
   \[
     \omega(z_1,z_2)=1,\qquad |\alpha_{\mathrm{sc}}|_\hbar=1.
   \]
@@ -1060,7 +1061,7 @@ every contribution in normal form.
       R^{\mathrm{row}}_{\alpha,M}
   \]
   after the scalar condition has vanished.  Its primitive is decided only
-  after supplying the remaining order-one rows of
+  after giving the remaining order-one rows of
   Definition~\ref{defn:finite-window-graph-array}.
 \end{prop}
 
@@ -1087,7 +1088,7 @@ every contribution in normal form.
   truncation maps.  If further order-one rows are present, the displayed sum
   is the definition of the remaining scalar-zero residual.  A primitive for
   it is a theorem exactly when the missing row values, signs, scalar conditions,
-  and truncation coefficients are supplied and the resulting \(H^1\)-class
+  and truncation coefficients are given and the resulting \(H^1\)-class
   vanishes.
 \end{proof}
 
@@ -1138,7 +1139,7 @@ every contribution in normal form.
   This proposition closes only the bracket family containing
   \(\alpha_{\mathrm{sc}}\).  Bracket rows \(b(\beta_1,\beta_2)\) with
   \(\beta_1,\beta_2\neq\alpha_{\mathrm{sc}}\) remain part of the chosen
-  graph system and must be supplied row by row.
+  graph system and must be fixed row by row.
 \end{prop}
 
 \begin{proof}
@@ -1173,7 +1174,7 @@ every contribution in normal form.
   for the normalized renormalized finite-window graph weight, and let
   \(\varepsilon_\Gamma\) be the coefficient with which this component
   occurs in \(d_M\kappa^M_{\mathcal G,w,I}\), including the orientation,
-  Koszul, and symmetry factors supplied by the finite graph system.
+  Koszul, and symmetry factors given by the finite graph system.
 
   The genuine order-two rows have the following form.
   \begin{enumerate}[label=(G\arabic*)]
@@ -1264,7 +1265,7 @@ every contribution in normal form.
   If this class is nonzero, it is the explicit finite-window obstruction
   carried by the genuine seed graphs.
 
-  Truncation is part of the row data.  For \(M\geq N\) one must supply
+  Truncation is part of the row data.  For \(M\geq N\) one must choose
   normalized coefficients
   \[
     \pi_{M,N}(\varepsilon_\Gamma K^M_\Gamma)
@@ -1276,7 +1277,7 @@ every contribution in normal form.
   \[
     t^{M,N}_{d\Gamma,d\Gamma'}=u^{M,N}_{\Gamma\Gamma'}.
   \]
-  For source rows one must likewise supply
+  For source rows one must likewise give
   \[
     \pi_{M,N}
       \bigl(
@@ -1309,7 +1310,7 @@ every contribution in normal form.
   \]
   In any larger system, vanishing, counterterms, and obstruction are
   decided by the following data:
-  the finite seed list \(\mathcal G^{\mathrm{gen}}_{2,M}\); the
+  the finite generator set \(\mathcal G^{\mathrm{gen}}_{2,M}\); the
   renormalized local weights \(K^M_\Gamma\) with regular-density or
   wavefront-admissible current labels; the full \(d_M K^M_\Gamma\)
   expansion with orientation signs; the CE-source decomposition and signs
@@ -1389,7 +1390,7 @@ every contribution in normal form.
       \gamma_{\mathbf 1}^{(2)}.
   \end{aligned}
   \]
-  The codimension-two closure equations identify the two output graphs,
+  The codimension-two closure equations identify the two resulting graphs,
   the two products of coefficients, and the transported marker tensors.
   Therefore the pair sum is zero.  In the full-equivariant branch it is
   stronger: every factor
@@ -1430,7 +1431,7 @@ every contribution in normal form.
   \end{aligned}
   \]
   Thus a nonzero order-\(2\) obstruction or its counterterm can be asserted
-  only after supplying the genuine two-cross/contact graph weights
+  only after giving the genuine two-cross/contact graph weights
   \(K^M_\Gamma\), the CE-source faces, the BV bracket rows between
   order-\(1\) graph components distinct from those containing
   \(\alpha_{\mathrm{sc}}\) or another retained zero local-functional row
@@ -1447,7 +1448,7 @@ every contribution in normal form.
   \(\beta_2|\beta_1\) contributes \(+1\), while the face \(\beta_2\)
   followed by \(\beta_1|\beta_2\) contributes \(-1\).  The
   codimension-two closure equations
-  Equation~\eqref{eq:app-codim-two-marked-closure} identifies the output graph,
+  Equation~\eqref{eq:app-codim-two-marked-closure} identifies the resulting graph,
   coefficient, and marker transport in the two composites, so the two
   boundary-composition rows cancel pairwise.
 
@@ -1512,7 +1513,7 @@ every contribution in normal form.
 
     \item The labelled scalar-zero row \(\alpha_{11}\) of
     Proposition~\ref{prop:app-first-scalar-zero-order-one-row}, with ordered
-    inputs \((z_1,z_1)\), has
+    arguments \((z_1,z_1)\), has
     \[
       R^{\mathrm{row}}_{\alpha_{11},M}=0,\qquad
       S_{\alpha_{11},M}=0,
@@ -1566,7 +1567,7 @@ every contribution in normal form.
 
     \item When genuine order-\(2\) seed rows are zero, as in the minimal
     full-equivariant system, their truncation matrices are empty.  If a
-    larger system supplies genuine seeds
+    larger system gives genuine seeds
     \(\Gamma\in\mathcal G^{\mathrm{gen}}_{2,M}\), then the graph-differential
     rows are transported by the normalized matrix \(u^{M,N}\):
     \[
@@ -1599,9 +1600,9 @@ every contribution in normal form.
     Under the projection-closed row-basis hypotheses of
     Proposition~\ref{prop:projection-defined-uvq-truncation-data}, these are
     the coordinate entries of the finite-window projection.  These
-    hypotheses supply exactly the lower-window entries
+    hypotheses give exactly the lower-window entries
     \(u^{M,N}_{\Gamma\Gamma'}\) and
-    \(v^{M,N}_{\Gamma,\nu;\Gamma',\nu'}\) for those supplied genuine rows.
+    \(v^{M,N}_{\Gamma,\nu;\Gamma',\nu'}\) for those given genuine rows.
 
     \item Bracket rows \(b(\beta_1,\beta_2)\) with
     \(\beta_i\notin\{\alpha_{\mathrm{sc}},\alpha_{11}\}\) require data
@@ -1658,13 +1659,13 @@ every contribution in normal form.
 
   The codimension-two rows use the same two degree-one Hamiltonian labels
   and the same transported marker words before and after projection.  The
-  finite-window marked-complex compatibility preserves the output graph,
+  finite-window marked-complex compatibility preserves the resulting graph,
   coefficient product, marker transport, and incidence signs.  Hence the two
   ordered composites truncate to the same labelled composites in the lower
   window, and their pair cancellation survives.
 
   If a bracket row contains \(\alpha_{\mathrm{sc}}\) or \(\alpha_{11}\), one
-  bracket input is zero as a local functional in the retained
+  bracket argument is zero as a local functional in the retained
   full-equivariant row family.  Bilinearity of the BV/convolution bracket
   gives \(R^{\mathrm{row}}_{b,M}=0\), and applying the scalar projection
   gives \(S_{b,M}=0\).  The zero truncation row is then compatible with the
@@ -1676,14 +1677,14 @@ every contribution in normal form.
   decompositions of the projected normalized row values in the chosen
   lower-window row basis.  Applying
   \(\pi_{N,P}\pi_{M,N}=\pi_{M,P}\) gives the displayed cocycle equations.
-  Conversely, those equations are exactly the statement that the supplied
+  Conversely, those equations are exactly the statement that the given
   matrices define a compatible finite-window row system.
 \end{proof}
 
 \begin{prop}[Projection formulas for the \(u\), \(v\), and \(q\) rows]\label{prop:projection-defined-uvq-truncation-data}
   Work in a larger finite-window graph system in the local
   \(\R^2_{\mathrm{top}}\times\C^2_{\mathrm{hol}}\) full-equivariant marked
-  branch.  Fix \(M\geq N\).  Suppose the system supplies ordered
+  branch.  Fix \(M\geq N\).  Suppose the system gives ordered
   lower-window row bases, or equivalently row presentations with chosen
   coordinate maps, for the following three finite-dimensional spans:
   \[
@@ -1756,8 +1757,8 @@ every contribution in normal form.
   These equations are the definitions of \(u^{M,N}\), \(v^{M,N}\), and
   \(q^{M,N}\) relative to the chosen lower-window coordinates.  If the
   displayed lower-window families are honest bases, the entries are unique.
-  If the system supplies only a spanning family with relations, the
-  coordinates are an additional presentation datum that fixes the
+  If the system has a spanning family with relations, the
+  coordinates are part of the presentation that fixes the
   canonical matrix entry.
 
   The \(u\)-entries also transport the differential rows:
@@ -1768,7 +1769,7 @@ every contribution in normal form.
       u^{M,N}_{\Gamma,\Gamma'}\,
       \varepsilon_{\Gamma'}d_NK^N_{\Gamma'}.
   \]
-  This is just the first coordinate equation after applying
+  This is the first coordinate equation after applying
   \(d_N\pi_{M,N}=\pi_{M,N}d_M\).
 
   For the bracket rows there is a useful factorized form.  Suppose the
@@ -1842,7 +1843,7 @@ every contribution in normal form.
 
   Consequently the enlarged-system order-\(2\) non-scalar residual belongs
   to the compatible finite-window tower only after
-  the following data are supplied: the genuine seed weights, source-face
+  the following data are fixed: the genuine seed weights, source-face
   values, nonzero order-\(1\) rows, all orientation/Koszul/symmetry signs,
   CE-source transport, lower-window row bases or presentations, scalar-condition
   vanishing or scalar projections, and the projection-closure identities
@@ -1860,7 +1861,7 @@ every contribution in normal form.
   Projection-closure is exactly the hypothesis that these coordinates
   exist.  If the lower rows are linearly independent, the coordinate
   expansion is unique.  If there are row relations, uniqueness is lost unless
-  the system supplies a presentation or a coordinate splitting.
+  the system gives a presentation or a coordinate splitting.
 
   The \(d\Gamma\)-row formula follows by applying the chain-map identity to
   \(\pi_{M,N}\mathbf K^M_\Gamma\).  The \(q\)-formula follows by applying the
@@ -1891,7 +1892,7 @@ every contribution in normal form.
   projected row in the same lower-window coordinates.  Equality of
   coordinates gives the three displayed matrix product formulas.  These
   compatibility identities are precisely the truncation part of
-  Definition~\ref{defn:finite-window-graph-array}.  Once they are supplied,
+  Definition~\ref{defn:finite-window-graph-array}.  Once they are fixed,
   the obstruction criterion is the non-scalar kernel criterion of
   Definition~\ref{def:app-nonscalar-kernel-row-complex} and
   Proposition~\ref{prop:finite-window-qme-limit-condition}.
@@ -1913,16 +1914,16 @@ every contribution in normal form.
   \[
     R_{n,M}=\sum_i r^M_i\rho^M_i.
   \]
-  Choose also an ordered finite list of degree-zero counterterm candidates
+  Choose also an ordered finite list of degree-zero counterterm primitives
   \[
     \eta^M_1,\ldots,\eta^M_b\in
     \mathcal K^0_{\mathrm{ns},M}(I)
   \]
-  supplied by the same finite system, and write
+  given by the same finite system, and write
   \[
     d_{\mathrm{ns},M}\eta^M_j=\sum_i A^M_{ij}\rho^M_i.
   \]
-  Then a counterterm in the supplied candidate span,
+  Then a counterterm in the given primitive span,
   \(C_{n,M}=\sum_j c_j\eta^M_j\), exists if and only if the finite linear
   system
   \[
@@ -1939,7 +1940,7 @@ every contribution in normal form.
 
   For a tower \(M\geq N\), let \(T^{M,N}\) be the row-truncation matrix on
   the \(\rho\)-presentation and \(P^{M,N}\) the chosen transport matrix on
-  the primitive candidates.  The row block \(T^{M,N}\) is the direct sum of
+  the primitive columns.  The row block \(T^{M,N}\) is the direct sum of
   the already computed identity or zero blocks, the \(u\)-block for genuine
   seed rows, the \(v\)-block for CE-source faces, and the \(q\)-block for
   nonzero bracket rows.  A compatible primitive search is defined only when
@@ -1962,7 +1963,7 @@ every contribution in normal form.
 
 \begin{proof}
   Once the scalar condition vanishes, the residual lies in the non-scalar kernel
-  complex.  Restricting the possible counterterm to the supplied degree-zero
+  complex.  Restricting the possible counterterm to the given degree-zero
   span turns the equation
   \(d_{\mathrm{ns},M}C_{n,M}=-R_{n,M}\) into the displayed matrix equation.
   Solvability is equivalent to \(-r^M\in\operatorname{im}A^M\).
@@ -1971,7 +1972,7 @@ every contribution in normal form.
   as written.
 
   The truncation identities say that the row residual and the boundaries of
-  candidate primitives commute with finite-window projection.  The computed
+  primitive columns commute with finite-window projection.  The computed
   blocks are those of
   Propositions~\ref{prop:computed-finite-window-truncation-matrices}
   and~\ref{prop:projection-defined-uvq-truncation-data}.  If \(c_M\) and \(c_N\)
@@ -2082,7 +2083,7 @@ Theorem~\ref{thm:theta-three-companion-face-obstruction}.
     d_{\mathrm{ns},M}\mathsf E_{\theta_3,M}=0.
   \]
   This equation is part of the valid obstruction-row data; with it
-  supplied, the row defines
+  given, the row defines
   \[
     \mathfrak o^{\mathrm{ns}}_{\theta_3,M}
       =
@@ -2127,7 +2128,7 @@ Theorem~\ref{thm:theta-three-companion-face-obstruction}.
 \begin{prop}[\(\theta_3\) finite-row obstruction criterion]\label{prop:theta-three-finite-row-obstruction}
   Keep the one-row order-three system of
   Proposition~\ref{prop:concrete-order-three-enlarged-system-row}.  In the
-  finite row complex supplied there, set
+  finite row complex given there, set
   \[
     \mathcal K^0_{\theta_3,M}=0,\qquad
     \mathcal K^1_{\theta_3,M}=\C\mathsf E_{\theta_3,M},\qquad
@@ -2152,14 +2153,14 @@ Theorem~\ref{thm:theta-three-companion-face-obstruction}.
     \quad\text{in}\quad
     H^1(\mathcal K^\bullet_{\theta_3,M}).
   \]
-  This is an exact obstruction statement for the supplied finite row
+  This is an exact obstruction statement for the given finite row
   subcomplex.  A primitive in a larger local-functional complex requires
   extra data.  To kill the row one must add either a
-  degree-zero candidate \(C_{\theta_3,M}\) with
+  degree-zero primitive \(C_{\theta_3,M}\) with
   \(d_{\mathrm{ns},M}C_{\theta_3,M}=-\mathsf E_{\theta_3,M}\), or additional
   Hom-valued companion rows whose sum changes the residual vector.
 
-  If such a candidate \(C_{\theta_3,M}\) is supplied and truncates by
+  If such a primitive \(C_{\theta_3,M}\) is given and truncates by
   \[
     \pi_{M,N}C_{\theta_3,M}=C_{\theta_3,N}\quad(N\geq3),
     \qquad
@@ -2176,7 +2177,7 @@ Theorem~\ref{thm:theta-three-companion-face-obstruction}.
   For the minimal order-two full-equivariant rows and for bracket rows
   containing \(\alpha_{\mathrm{sc}}\) or \(\alpha_{11}\), the same primitive
   search has residual vector \(0\), so the zero counterterm is the unique
-  supplied solution and its Roos class is zero.
+  given solution and its Roos class is zero.
 \end{prop}
 
 \begin{proof}
@@ -2194,8 +2195,8 @@ Theorem~\ref{thm:theta-three-companion-face-obstruction}.
   Keep the row \(\theta_3=\mathrm{CE}(\Theta_3,\nu_3)\) and the notation of
   Propositions~\ref{prop:concrete-order-three-enlarged-system-row}
   and~\ref{prop:theta-three-finite-row-obstruction}.  A proposed
-  degree-zero primitive for this row is accepted by the finite-row
-  theorem only after the row array supplies one of the following two
+  degree-zero primitive for this row is admissible for the finite-row
+  theorem only after the row array gives one of the following two
   primitive entries.
   \begin{enumerate}[label=(P\arabic*)]
     \item A CE-ancestor entry
@@ -2230,7 +2231,7 @@ Theorem~\ref{thm:theta-three-companion-face-obstruction}.
   \[
     \rho^M_1=\mathsf E_{\theta_3,M},\qquad r^M=(1),
   \]
-  the supplied candidate column \(C_{\theta_3,M}\) must have boundary-matrix
+  the given primitive column \(C_{\theta_3,M}\) must have boundary-matrix
   coefficient
   \[
     A^M_{\theta_3,C}=-1,
@@ -2239,9 +2240,9 @@ Theorem~\ref{thm:theta-three-companion-face-obstruction}.
       =
     -\mathsf E_{\theta_3,M}.
   \]
-  An accepted row-data input supplies the displayed differential entry
-  with coefficient \(-1\) for the candidate.  Any other input must first
-  be replaced by an explicitly supplied candidate whose differential
+  Admissible row data give the displayed differential entry
+  with coefficient \(-1\) for the primitive.  Any other datum must first
+  be replaced by an explicitly given primitive whose differential
   column is the one above.
 
   The scalar and tower conditions are part of the same datum:
@@ -2263,11 +2264,11 @@ Theorem~\ref{thm:theta-three-companion-face-obstruction}.
     [P^{M,N}c_M-c_N]=0
     \quad\text{for the solution }c_M=1.
   \]
-  Thus such an input kills the fixed-window row and has zero Roos
+  Thus such a primitive kills the fixed-window row and has zero Roos
   compatibility class.  The one-row complex here has
   \(K^0_{\theta_3,M}=0\), so
   Proposition~\ref{prop:theta-three-finite-row-obstruction} remains the
-  active claim.
+  active obstruction statement.
 
   A complete companion-face table is a different condition.  It replaces
   the one-face residual by a full
@@ -2279,7 +2280,7 @@ Theorem~\ref{thm:theta-three-companion-face-obstruction}.
     \nu_3\in F_{\Theta_3,M},
   \]
   whose \(\nu_3\)-summand is \(\mathsf E_{\theta_3,M}\).  Such a table is
-  accepted only if it supplies every face, every CE coefficient, every
+  admissible only if it gives every face, every CE coefficient, every
   scalar condition, the \(v^{M,N}\)-truncation matrices with their cocycle
   identity, and the codimension-two closure table, and if
   \[
@@ -2299,15 +2300,15 @@ Theorem~\ref{thm:theta-three-companion-face-obstruction}.
 \end{prop}
 
 \begin{proof}
-  For a primitive input, apply
+  For a primitive column, apply
   Proposition~\ref{prop:finite-row-primitive-search-interface} with
   degree-one basis \(\rho^M_1=\mathsf E_{\theta_3,M}\) and residual vector
-  \(r^M=(1)\).  The equation \(A^M c=-r^M\) is solved by the supplied
-  candidate with \(c=1\) exactly when the candidate column is
+  \(r^M=(1)\).  The equation \(A^M c=-r^M\) is solved by the given
+  primitive with \(c=1\) exactly when the primitive column is
   \(A^M_{\theta_3,C}=-1\).  The CE-ancestor and local-counterterm
   alternatives are precisely two ways of producing such a degree-zero
   column.  The displayed target differential, scalar projection, and
-  support proof supply the boundary matrix entry used by the finite row
+  support proof give the boundary matrix entry used by the finite row
   complex.
 
   The truncation assertion is the identity/zero transport already attached
@@ -2320,7 +2321,7 @@ Theorem~\ref{thm:theta-three-companion-face-obstruction}.
   For a companion-face table the residual vector itself is replaced by
   the signed row sum of all CE-source
   faces.  The finite-row theorem can test that new row sum only after the
-  table supplies its scalar conditions, truncation coordinates, and
+  table gives its scalar conditions, truncation coordinates, and
   codimension-two closure data.  A nonzero signed sum remains a
   residual; a zero signed sum cancels before the primitive search and
   leaves the primitive Roos class unformed.
@@ -2342,7 +2343,7 @@ Theorem~\ref{thm:theta-three-companion-face-obstruction}.
   \(\nu_3\)-row
   \(u_{a,H_{2,0}}u_{b,H_{0,1}}c_{B_\theta,\rho_{2,1}}\).  After truncation
   to Hamiltonian degree \(\leq3\), removal of constants, and cancellation of
-  the two \(\rho_{1,1}\)-terms, the nonzero candidate face set is the
+  the two \(\rho_{1,1}\)-terms, the nonzero face set is the
   following eight-face set.  With
   \[
     E^M_\nu=-K^M_{\Theta_3}(\zeta_{M,\nu}),
@@ -2431,12 +2432,12 @@ Theorem~\ref{thm:theta-three-companion-face-obstruction}.
       \mathcal C^{(2)}_{\nu,\nu'}
     \right)_{\nu,\nu'} .
   \]
-  Here \(\mu_\nu\) is the marked output and marker-transport entry, and
+  Here \(\mu_\nu\) is the marked result and marker-transport entry, and
   \(\mathcal C^{(2)}_{\nu,\nu'}\) is the codimension-two source-face
   incidence/weight table: the two orders of each pair of boundary
-  operations, the output graph, the orientation/Koszul coefficient, the
+  operations, the resulting graph, the orientation/Koszul coefficient, the
   transported marker, and the resulting renormalized row coordinate in the
-  declared degree-one basis.  Until this table is supplied and proves both
+  declared degree-one basis.  Until this table is given and proves both
   \(R^{\mathrm{cand}}_{\Theta_3,M}=0\) and its transported lower-window
   identities, the proved conclusion remains the one-row obstruction
   of Proposition~\ref{prop:theta-three-finite-row-obstruction}.
@@ -2455,7 +2456,7 @@ Theorem~\ref{thm:theta-three-companion-face-obstruction}.
   formula, with the \(\nu_3\)-summand equal to
   \(\mathsf E_{\theta_3,M}\).
 
-  The diagonal transport is just finite-window projection on the Hamiltonian
+  The diagonal transport is finite-window projection on the Hamiltonian
   degree of the \(c\)-label.  Such diagonal cutoffs compose, proving the
   cocycle identity.  Projecting to \(N=2\) deletes every degree-three face
   and leaves exactly the two degree-two summands.  Therefore the lower-window
@@ -2467,7 +2468,7 @@ Theorem~\ref{thm:theta-three-companion-face-obstruction}.
   marker transports, codimension-two closure signs, or lower-window row
   coordinates undetermined.  Those entries are the displayed missing
   datum.  They are the data by which
-  Definition~\ref{defn:finite-window-graph-array} supplies a zero
+  Definition~\ref{defn:finite-window-graph-array} gives a zero
   residual vector and Proposition~\ref{prop:finite-row-primitive-search-interface}
   still sees the current one-row obstruction.
 \end{proof}
@@ -2507,7 +2508,7 @@ Theorem~\ref{thm:theta-three-companion-face-obstruction}.
         \{K^M_{\Gamma_1},K^M_{\Gamma_2}\}_{\hbar,M}.
   \end{aligned}
   \]
-  The signs are the orientation signs of the supplied finite graph
+  The signs are the orientation signs of the given finite graph
   differential and the CE coproduct.  With lower counterterms
   \(C_{<n,M}\), the cochain tested at order \(n\) is
   \[
@@ -2556,7 +2557,7 @@ Theorem~\ref{thm:theta-three-companion-face-obstruction}.
     \mathfrak s^{\mathrm{mk}}_{1,M}=0.
   \]
   This is a scalar-condition vanishing.  A non-scalar primitive requires
-  a separate construction.
+  its graph-level construction.
 
   After the scalar condition vanishes, the first non-scalar order is the least
   \(n_0\) for which the cochain \(R_{n_0,M}\) is defined for the chosen
@@ -2590,11 +2591,11 @@ Theorem~\ref{thm:theta-three-companion-face-obstruction}.
   fixed-window classes \([\mathfrak o^{\mathrm{fw}}_{n_0,M}]\) vanish and
   \(\lambda^{\mathrm{fw}}_{n_0}=0\).
 
-  The abstract existence of \(\mathcal G_M\) supplies the graph list but
-  leaves the coefficient array open.  To decide \(n_0\), the class
-  \([\mathfrak o^{\mathrm{fw}}_{n_0,M}]\), or the Roos class
-  \(\lambda^{\mathrm{fw}}_{n_0}\), one must supply a valid finite-window
-  coefficient array in the sense of
+  The abstract existence of \(\mathcal G_M\) gives the graph list but
+  does not determine the coefficient array.  The integer \(n_0\), the
+  class \([\mathfrak o^{\mathrm{fw}}_{n_0,M}]\), and the Roos class
+  \(\lambda^{\mathrm{fw}}_{n_0}\) are determined only after a valid
+  finite-window coefficient array has been chosen in the sense of
   Definition~\ref{defn:finite-window-graph-array}:
   \[
     \mathsf A^{\mathrm{fw}}_{n,M}
@@ -2613,10 +2614,10 @@ Theorem~\ref{thm:theta-three-companion-face-obstruction}.
 \begin{proof}
   The first displayed formula is the definition of the convolution
   curvature in
-  Definition~\ref{def:app-bulk-defect-convolution-habitat}, evaluated on
+  Definition~\ref{def:app-bulk-defect-convolution-complex}, evaluated on
   \(\zeta_M\) and then projected to the \(\hbar^n\)-coefficient.  Expanding
   \(-\kappa d_{\mathrm{CE}}\) and the CE coproduct bracket gives the
-  three graph sums, with exactly the orientation signs supplied by the
+  three graph sums, with exactly the orientation signs given by the
   finite graph system.  Adding the lower counterterm terms gives
   \(R_{n,M}\), the residual of
   Theorem~\ref{thm:finite-window-graph-qme-assembly}.
@@ -2627,7 +2628,7 @@ Theorem~\ref{thm:theta-three-companion-face-obstruction}.
   Definition~\ref{def:app-oriented-full-equivariant-marked-boundary-complex}.
   The full-equivariant marker transport maps preserve the signed Brauer
   marker span.  Lemma~\ref{lem:app-full-equivariant-cyclic-supertrace}
-  computes the cyclic supertrace of every such output marker as a power
+  computes the cyclic supertrace of every such resulting marker as a power
   of \(\operatorname{sdim}\C^{N|N}=0\), and the empty marker word gives the
   same zero coefficient.  Therefore the scalar condition vanishes on the
   full-equivariant marked complex before any non-scalar cohomology class
@@ -2718,7 +2719,7 @@ Theorem~\ref{thm:theta-three-companion-face-obstruction}.
   remain separate: the Hadamard parametrix uses the bulk
   Riemannian/Hermitian heat data on \(\R^2\times\C^2\), the BMK kernel
   uses the holomorphic homotopy data on \(\C^2\) alone, and the local
-  theorem combines their separate finite-window outputs through the
+  theorem combines their separate finite-window classes through the
   obstruction vectors stated below.
 \end{rmk}
 
@@ -2764,7 +2765,7 @@ Theorem~\ref{thm:theta-three-companion-face-obstruction}.
   where the high transverse mode \(\rho_{N+1,0}\) lies in the killed
   window \(\ker\pi_N\) but the low brane-momentum mode \(\rho_{0,1}\)
   is retained in \(\mc P_{\leq N}\).  Equivalently, the projected
-  finite-window \(L_\infty\)-escape repair has nonzero unary block
+  finite-window \(L_\infty\)-extension has nonzero unary block
   \[
     \kappa_N(z_1^{N+2},\rho_{N+1,0})=-(N+2)\,\rho_{0,1},
   \]
@@ -2862,7 +2863,7 @@ Theorem~\ref{thm:theta-three-companion-face-obstruction}.
   is~\eqref{eq:bmk-bockstein-jacobiator}.  This is the projected
   escape-return Jacobiator recorded in
   Theorem~\ref{thm:app-finite-window-bmk-current-transfer} on the same
-  triple; any quotient \(q_N\) absorbing this return as a unary
+  triple; any quotient \(q_N\) making this return exact as a unary
   boundary would also collapse \(\rho_{0,1}\) and hence
   \(\mc P_{\leq N}\) itself.
 
@@ -2876,15 +2877,16 @@ Theorem~\ref{thm:theta-three-companion-face-obstruction}.
   recorded there.
 \end{proof}
 
-\begin{cor}[Pro-Matlis retract as the unique compatible target]\label{cor:promatlis-retract-as-supremum}
+\begin{cor}[Pro-Matlis retract as the compatible replacement target]\label{cor:promatlis-retract-compatible-replacement}
   Theorem~\ref{thm:bmk-finite-window-obstruction} forecloses every choice of
   finite-Matlis target for a Hamiltonian-equivariant principal-part
   transfer.  Inside the category \(\mathsf{Curr}^{BM}\) of compatible
   finite-window principal-part current systems with full
   \(\mathfrak h\)-coadjoint action, BMK homotopy data, and uniform
   \(\mathfrak m\)-adic moment bounds
-  (Theorem~\ref{thm:promatlis-universal-property}), the unique
-  surviving target is the one-pair analytic pro-Matlis retract
+  (Theorem~\ref{thm:promatlis-universal-property}), the compatible
+  replacement target used here is the one-pair analytic pro-Matlis
+  retract
   \[
     \widehat{\mc P}_{\Pi}
       =\prod_{\substack{a,b\geq0\\a+b>0}}\C\rho_{a,b},
@@ -2910,20 +2912,20 @@ Theorem~\ref{thm:theta-three-companion-face-obstruction}.
     \pi_{M,N}p_M=p_N
     \quad(M\geq N).
   \]
-  The pro-Matlis retract is therefore the terminal object of
-  $\mathsf{Curr}^{BM}$.  Theorem~\ref{thm:bmk-finite-window-obstruction}
-  establishes the necessity of the pro-Matlis category in place of
+  This gives the projection-compatible inverse-limit receiver for the
+  fixed BMK moment system.  Theorem~\ref{thm:bmk-finite-window-obstruction}
+  establishes the necessity of a pro-Matlis replacement in place of
   every finite-Matlis target.
 \end{cor}
 
-\begin{thm}[Pro-Matlis universal property]\label{thm:promatlis-universal-property}
+\begin{thm}[Pro-Matlis inverse-limit receiver property]\label{thm:promatlis-universal-property}
   Let \(\mathsf{Curr}^{BM}\) be the category whose objects are
-  \(\mathfrak h\)-equivariant \(\C\)-linear pairs
+  \(\C\)-linear pairs
   \((Q,Q^{\mathrm{an}})\) with \(Q^{\mathrm{an}}\subset Q\), equipped
   with:
   \begin{enumerate}[label=(\alph*)]
     \item compatible projections \(\pi_N\colon Q\to\mathcal P_{\le N}\)
-      satisfying \(\pi_M=\pi_N\circ\pi_{M,N}\) for \(M\ge N\);
+      satisfying \(\pi_N=\pi_{M,N}\circ\pi_M\) for \(M\ge N\);
     \item a Hamiltonian \(\mathfrak h\)-action through full residue-coadjoint
       operators on the untruncated map \(\mathfrak h\to\End(Q)\);
     \item a Dolbeault chain homotopy
@@ -2932,52 +2934,66 @@ Theorem~\ref{thm:theta-three-companion-face-obstruction}.
       retraction
       \(P\colon Q\to Q^{\mathrm{an}},\ I\colon Q^{\mathrm{an}}
        \hookrightarrow Q\);
+    \item a continuous analytic comparison
+      \(\pi^{\mathrm{an}}\colon Q^{\mathrm{an}}\to
+      \mathcal P_{\mathrm{an}}(B_1)\), compatible with the restrictions of
+      the finite-window projections to the analytic submodule;
     \item uniform \(\mathfrak m\)-adic moment bounds: for every
       \(f\in\mathfrak h\) and every \(\xi\in Q\) of \(\mathfrak m\)-adic
       order \(\ge n\), \(f\cdot\xi\) has \(\mathfrak m\)-adic order
       \(\ge n-r(f)\) for an \(f\)-dependent constant \(r(f)\).
   \end{enumerate}
-  Morphisms are \(\mathfrak h\)-equivariant \(\C\)-linear maps
+  Morphisms are \(\C\)-linear maps
   \((Q,Q^{\mathrm{an}})\to(Q',Q'^{\mathrm{an}})\) commuting with all
   finite projections \(\pi_N,\pi'_N\) and with the analytic-submodule
-  retractions.  Then the pro-Matlis pair
+  retractions and analytic comparisons.  A morphism is
+  \(\mathfrak h\)-equivariant only when the untruncated
+  residue-coadjoint actions commute with it.  Then the pro-Matlis pair
   \(\bigl(\widehat{\mathcal P}_\Pi,\mathcal P_{\mathrm{an}}(B_1)\bigr)\)
   with the analytic moment map \(P^{\mathrm{an}}_\Pi\) of
-  Theorem~\ref{thm:app-finite-window-bmk-current-transfer} is terminal
-  in \(\mathsf{Curr}^{BM}\): for every object
-  \((Q,Q^{\mathrm{an}})\) there is a unique morphism
+  Theorem~\ref{thm:app-finite-window-bmk-current-transfer} receives,
+  from every object \((Q,Q^{\mathrm{an}})\), a unique morphism
+  compatible with the fixed finite-window projections and analytic
+  retractions:
   \[
     (Q,Q^{\mathrm{an}})\longrightarrow
     \bigl(\widehat{\mathcal P}_\Pi,\mathcal P_{\mathrm{an}}(B_1)\bigr).
   \]
+  The assertion is an inverse-limit receiver property for the fixed
+  BMK system; it is not a terminality statement after the category is
+  enlarged by spectator summands or by changing the analytic
+  submodule.
 \end{thm}
 
 \begin{proof}
   Existence: condition~(a) gives a compatible system
   \(\pi_N\colon Q\to\mathcal P_{\le N}\), defining a unique
-  \(\mathfrak h\)-equivariant map
+  projection-compatible map
   \(Q\to\varprojlim_N\mathcal P_{\le N}=\widehat{\mathcal P}_\Pi\) by
-  the universal property of the inverse limit.  Condition~(c) sends
-  the analytic retraction onto
+  the universal property of the inverse limit.  Condition~(d) sends
+  the analytic submodule to
   \(\mathcal P_{\mathrm{an}}(B_1)=\tau(\mathcal O(B_1)^\vee_{\mathrm{red}})\)
-  by Theorem~\ref{thm:app-finite-window-bmk-current-transfer}, and
-  condition~(d) ensures the lift is convergent in the
+  compatibly with the finite-window maps, and condition~(e) ensures the
+  lift is convergent in the
   \(\mathfrak m\)-adic topology of \(\widehat{\mathcal P}_\Pi\).
   Uniqueness: any two such morphisms agree on every
   \(\mathcal P_{\le N}\)-component by compatibility with \(\pi_N\),
-  hence on \(\varprojlim_N\mathcal P_{\le N}\).  Hamiltonian
-  equivariance, the chain-homotopy compatibility, and the moment
-  bounds are preserved by the inverse limit.
+  hence on \(\varprojlim_N\mathcal P_{\le N}\).  Chain-homotopy
+  compatibility and the moment bounds are preserved by the inverse
+  limit.  Hamiltonian equivariance is a separate condition on the
+  untruncated actions, not a consequence of the finite projections.
+  This proves the
+  projection-compatible receiver property.
   Theorem~\ref{thm:bmk-finite-window-obstruction} excludes every
   finite-rank target (those have a strict finite-window restriction of
   \(\mathfrak h\), violating~(b)), and
-  Corollary~\ref{cor:promatlis-retract-as-supremum} verifies the
+  Corollary~\ref{cor:promatlis-retract-compatible-replacement} verifies the
   pro-Matlis pair structure, the normalized Dolbeault contraction
   \(H^0_\chi\), and the analytic moment map \(P^{\mathrm{an}}_\Pi\)
   on \(\bigl(\widehat{\mathcal P}_\Pi,\mathcal P_{\mathrm{an}}(B_1)\bigr)\).
 \end{proof}
 
-\begin{proof}[Proof of Corollary~\ref{cor:promatlis-retract-as-supremum}]
+\begin{proof}[Proof of Corollary~\ref{cor:promatlis-retract-compatible-replacement}]
   The first sentence is Theorem~\ref{thm:bmk-finite-window-obstruction}: the
   finite-Matlis quotient has the Hamiltonian-action obstruction.  The
   positive constructions of the pro-Matlis pair \((\widehat{\mc
@@ -2985,9 +3001,11 @@ Theorem~\ref{thm:theta-three-companion-face-obstruction}.
   \(H_\chi^0\), and the moment map \(P_{\Pi}^{\mathrm{an}}\) are
   Theorem~\ref{thm:app-finite-window-bmk-current-transfer}.
 
-  Minimality.  Any other \(\C\)-linear \(\mathfrak h\)-module with a
-  Dolbeault chain homotopy compatible with \(p_N\) and \(i_N\) at
-  every \(N\) must
+  Fixed-projection characterization.  An object in the stated
+  \(\mathsf{Curr}^{BM}\) slice with a \(\C\)-linear
+  \(\mathfrak h\)-module structure and a Dolbeault chain homotopy
+  compatible with \(p_N\) and \(i_N\) at every \(N\) carries the
+  following data:
   \begin{enumerate}[label=(\alph*)]
     \item accept the full Hamiltonian coadjoint action of
       \(\mathfrak h\),
@@ -3002,12 +3020,13 @@ Theorem~\ref{thm:theta-three-companion-face-obstruction}.
   cohomology of the BMK contraction as the moment-restriction kernel,
   fixing the analytic submodule
   \(\mc P_{\mathrm{an}}(B_1)=\tau\bigl(\mathcal O(B_1)^\vee_{\mathrm{red}}\bigr)\)
-  on which the kernel acts; (c) forces the underlying ambient module
-  to contain every \(\rho_{a,b}\) and to project to \(\mc P_{\leq N}\),
-  hence to be \(\widehat{\mc P}_{\Pi}=\varprojlim_N\mc P_{\leq N}\).
-  The pair \((\widehat{\mc P}_{\Pi},\mc P_{\mathrm{an}}(B_1))\) is
-  therefore the unique smallest target.  The downstream theorem surface
-  is the strict all-window factorization-current transfer; it
+  on which the kernel acts; (c) forces the fixed inverse-limit receiver
+  for the finite projections to contain every \(\rho_{a,b}\) and to map
+  to \(\mc P_{\leq N}\), hence to be
+  \(\widehat{\mc P}_{\Pi}=\varprojlim_N\mc P_{\leq N}\) in this slice.
+	  The pair \((\widehat{\mc P}_{\Pi},\mc P_{\mathrm{an}}(B_1))\) is
+	  therefore the target used here with these fixed projections and BMK
+  moment data.  The strict all-window factorization-current transfer
   requires the additional vanishing of
   \(\operatorname{Ob}^{\Pi}_{\mathrm{BM}}\) recorded in
   Theorem~\ref{thm:app-finite-window-bmk-current-transfer}, whose
@@ -3041,13 +3060,14 @@ Theorem~\ref{thm:theta-three-companion-face-obstruction}.
   truncating high transverse modes severs the Hamiltonian return
   channel that would have lifted them to brane momenta, but the
   return channel is already a finite-window operation by
-  \eqref{eq:bmk-bockstein-identity}, so the image remains.  The pro-Matlis retract of
-  Corollary~\ref{cor:promatlis-retract-as-supremum} is the smallest
-  module closed under this leak: the full Taylor tower retains every
+  \eqref{eq:bmk-bockstein-identity}, so the image remains.  The
+  pro-Matlis retract of
+	  Corollary~\ref{cor:promatlis-retract-compatible-replacement} is the
+	  fixed-projection module used here and closed under this leak: the full Taylor tower retains every
   high transverse mode and lets the Hamiltonian flow act
   consistently, while the analytic submodule
-  \(\mc P_{\mathrm{an}}(B_1)\) supplies the moment-restriction kernel
-  required by the BMK contraction.  The arity-two output projection
+  \(\mc P_{\mathrm{an}}(B_1)\) gives the moment-restriction kernel
+  required by the BMK contraction.  The arity-two projection
   \(\ell^{\mathrm{BM},N}_2(x,y)=p_N[ix,iy]\) of
   Theorem~\ref{thm:app-finite-window-bmk-current-transfer} is then a
   finite-window readout of this consistent flow; the finite-rank

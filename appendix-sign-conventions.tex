@@ -35,14 +35,16 @@ another.  Hochschild homology \(HH_\bullet\), cyclic homology, and
 negative-cyclic homology \(HC^-_\bullet\) are distinguished at every
 reference; the cyclic trace symbol \(\operatorname{Tr}\) below is the
 graded cyclic quotient of
-Definition~\ref{def:app-sign-hamiltonian-cyclic}, the Hochschild
-trace is its image under the Connes \(B\)-operator, and the
-negative-cyclic class is the constellation-level Calabi--Yau pairing
-of the compact CY-to-chiral target.  The BCOV holomorphic-anomaly equation enters only as a
+Definition~\ref{def:app-sign-hamiltonian-cyclic}.  Its Hochschild
+shadow is obtained by forgetting the \(S^1\)-equivariance.  Connes'
+\(B\) is the degree-\(+1\) operator in the mixed complex and the
+connecting operator in the SBI sequence.  The negative-cyclic class is
+the constellation-level Calabi--Yau pairing of the compact
+CY-to-chiral target.  The BCOV holomorphic-anomaly equation enters only as a
 target equation on a compact Calabi--Yau threefold, with the
 BCOV-strict sign of \cite{bcov} preserved by the matched-conventions
 divergence row of Theorem~\ref{thm:divergence-bcov}; the local
-Hamiltonian theorem supplies only the formal-stalk input.
+Hamiltonian theorem is the formal-Darboux stalk.
 
 \begin{defn}[Local symplectic and cyclic conventions]
 \label{def:app-sign-hamiltonian-cyclic}
@@ -118,11 +120,16 @@ Hamiltonian theorem supplies only the formal-stalk input.
 \end{lem}
 
 \begin{proof}
-  The CE differential on \(c^K\) is the standard Koszul dual of the
-  bracket, with the sign convention
-  \(d_{\mathrm{CE}}c^K=-\tfrac12 C^K_{IJ}c^Ic^J\) ensuring
-  \(d_{\mathrm{CE}}^2=0\) by the Jacobi identity in
-  \(\mathfrak h\).  The CE differential on \(u_K\) is the dual of the
+  The CE differential on \(c^K\) is fixed by
+  \[
+    (d_{\mathrm{CE}}c^K)(e_I,e_J)
+      =-c^K([e_I,e_J])
+      =-C^K_{IJ},
+  \]
+  equivalently
+  \(d_{\mathrm{CE}}c^K=-\tfrac12 C^K_{IJ}c^Ic^J\); its square vanishes
+  by the Jacobi identity in \(\mathfrak h\).  The CE differential on
+  \(u_K\) is the dual of the
   right-adjoint action \(e_J\cdot u_K=C^L_{KJ}u_L\); applying
   \(d_{\mathrm{CE}}\) once more to \(C^L_{KJ}u_Lc^J\), with the Leibniz
   rule and \(|u_L|=0\), yields
@@ -133,17 +140,36 @@ Hamiltonian theorem supplies only the formal-stalk input.
   which vanishes by the Jacobi identity for the right-adjoint
   representation.
 
-  The polyvector identity \(d_\pi^2=0\) is the master equation
-  \([\pi,\pi]=0\), which in the present notation is the Jacobi identity
-  for \(\mathfrak h\) repackaged as a quadratic relation among the
-  structure constants.  The match of \(d_\pi\) on generators with the
-  CE formulas above is standard
-  (Costello~\cite{costello-renormalization}, Chapter 5):
-  one verifies on a single non-abelian example that
-  \(\pi=\tfrac12 C^K_{IJ}O_K\theta^I\theta^J\) reproduces the
-  right-adjoint CE differential on the cotangent coordinate, and the
-  general case follows by linearity in \(\pi\).  Both \(d_{\mathrm{CE}}\)
-  and \(d_\pi\) are derivations, so the assignment
+  The Schouten bracket is normalized by
+  \[
+    [\pi,O_K]_S=\partial_{\theta^K}\pi,\qquad
+    [\pi,\theta^K]_S=-\partial_{O_K}\pi
+  \]
+  for left odd derivatives in the \(\theta\)-coordinates.  Hence
+  \[
+    d_\pi\theta^K
+      =[\pi,\theta^K]_S
+      =-\partial_{O_K}
+        \left(\tfrac12 C^M_{IJ}O_M\theta^I\theta^J\right)
+      =-\tfrac12 C^K_{IJ}\theta^I\theta^J,
+  \]
+  and
+  \[
+    \begin{aligned}
+    d_\pi O_K
+      &=[\pi,O_K]_S
+        =\partial_{\theta^K}
+          \left(\tfrac12 C^M_{IJ}O_M\theta^I\theta^J\right)  \\
+      &=\tfrac12 C^M_{IJ}O_M
+          \bigl(\delta^I_K\theta^J-\delta^J_K\theta^I\bigr)
+        =C^M_{KJ}O_M\theta^J .
+    \end{aligned}
+  \]
+  The last equality uses \(C^M_{JK}=-C^M_{KJ}\) and the left derivative
+  sign on the odd variables.  The polyvector identity \(d_\pi^2=0\) is
+  the master equation \([\pi,\pi]_S=0\), equivalently the Jacobi identity
+  for \(\mathfrak h\).  Both \(d_{\mathrm{CE}}\) and \(d_\pi\) are
+  derivations, so the assignment
   \(c^I\mapsto\theta^I,\ u_K\mapsto O_K\) extends from generators to a
   chain map on the full Chevalley--Eilenberg and polyvector algebras.
 \end{proof}
@@ -288,10 +314,9 @@ Hamiltonian theorem supplies only the formal-stalk input.
     f*g-g*f=2\sum_{s\geq0}\frac{(\hbar/2)^{2s+1}}{(2s+1)!}P^{2s+1}(f,g).
   \]
   Division by \(\hbar\) gives the displayed series.  The \(s=1\)
-  coefficient is \(1/(2^2\cdot3!)=1/24\); see
-  Theorem~\ref{thm:app-radial-moyal-coefficients} for the all-order
-  identity and \texttt{scripts/check\_moyal\_coefficients.py} for the
-  numerical sweep through order eleven.
+  coefficient is \(1/(2^2\cdot3!)=1/24\); the all-order identity is
+  Theorem~\ref{thm:app-radial-moyal-coefficients}, and exact rational
+  coefficient checks through order eleven give the same sequence.
 \end{proof}
 
 \begin{lem}[Moyal coadjoint signs]
@@ -380,15 +405,14 @@ Hamiltonian theorem supplies only the formal-stalk input.
   raising target index, and sends
   \(z_1\cdot\widetilde\Psi_{a,b}\) to
   \(b(\mu_{a,b-1}/\mu_{a,b})\widetilde\Psi_{a,b-1}\), preserving the
-  lowering target index.  Equality of the two actions would require the
-  same target index for both, contradicting the directions
+  lowering target index.  Equality of the two actions forces the same
+  target index for both, contradicting the directions
   \(b\mapsto b+1\) versus \(b\mapsto b-1\).  Higher Moyal corrections
   \(r\geq3\) shift indices by \(b\mapsto b-q+r\geq b+1\) for
   \((p,q)=(1,0)\) and by \(a\mapsto a-p+r\geq a+1\) for
   \((p,q)=(0,1)\); they raise as well, so the obstruction persists at
-  every order in \(\hbar\).  The compute log
-  \texttt{scripts/check\_one\_psi\_homology.py} records this
-  obstruction explicitly: writing \(\delta_{a,b}\) for the residue
+  every order in \(\hbar\).  The finite-window homology calculation
+  records this obstruction explicitly: writing \(\delta_{a,b}\) for the residue
   functional \(\rho_{a,b}\) under the Matlis identification of
   Lemma~\ref{lem:app-matlis-continuous-dual}, the third-order Moyal
   coadjoint gives
@@ -422,8 +446,8 @@ Hamiltonian theorem supplies only the formal-stalk input.
 \end{lem}
 
 \begin{proof}
-  The de Rham factor supplies the compactly supported density on the
-  brane line; the Hamiltonian current factor supplies \(f\).  Pairing
+  The de Rham factor gives the compactly supported density on the
+  brane line; the Hamiltonian current factor gives \(f\).  Pairing
   this source with the boundary field gives the integral defining
   \(B_f(a)\).  The first bracket is the semidirect-product bracket of
   Definition~\ref{def:app-factorization-current-dual} for

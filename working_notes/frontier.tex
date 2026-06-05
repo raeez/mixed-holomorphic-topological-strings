@@ -1,67 +1,55 @@
-% working_notes/frontier.tex
-%
-% Frontier and future-work notes for the manuscript
-%   "Mixed Holomorphic-Topological Branes: the Formal-Darboux Trace Map"
-%
-% Provenance: extracted from main.tex section "The frontier" (§8).  The
-% local-stalk theorem (Theorem main-local) is the subject of the main
-% paper; this file collects the open frontier programmes that the
-% manuscript explicitly does NOT prove:
-%
-%   - chiral E_d-Deligne conjecture at d >= 2
-%   - W_infinity[lambda] / E_infinity admissible endpoint
-%   - Hall--Drinfeld--Borcherds spectral sequence on compact non-toric CY_3
-%   - operator-level lift of the modular line on K3 x E
-%   - MNOP / framing on S^3 (subsumed by frontier_mnop_framing_volume.tex)
-%   - Hall--Drinfeld realisation on compact CY_3
-%   - gravitational lift of Phi_10
-%
-% Each open problem here is stated at its supremum form -- explicit
-% hypotheses, named obstruction class -- per the CLAUDE.md supremum
-% discipline.  None of these is required for the local theorem of the
-% main paper; the cross-target firewall (tate-P5-cross-volume.tex)
-% asserts that the local theorem implies none of these global
-% statements.
-%
+\section{Compact comparison obstructions}\label{sec:compact-comparison-obstructions-notes}
 
-\section{The frontier}\label{sec:frontier}
-
-Theorem~\ref{thm:main-local} is the formal-Darboux stalk of the
-global Mixed Holomorphic--Topological Deligne identification
-$\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}\simeq
-Z^{\mathrm{der}}_{E_2^{\mathrm{HT}}}\!(\mathcal{C}^{\mathrm{op}}_\partial)$
-of Theorem~\ref{thm:main-global-conditional}, conditional on the
-three-component global obstruction
-$\operatorname{Ob}^{\mathrm{global}}=
-\operatorname{Ob}^{\mathrm{ch}\,E_2}_{\mathrm{Deligne}}\oplus
-\operatorname{Ob}^{\mathrm{desc}}_{\partial}\oplus
-\operatorname{Ob}^{\mathrm{QME}}_{\mathrm{all\mbox{-}loop}}$, with
+Theorem~\ref{thm:main-local} supplies the trace-sector
+formal-Darboux fibre for a global open--closed comparison datum.  Such
+a datum has target
+\[
+  Z^{\mathrm{der}}_{E_2^{\mathrm{HT}}}\!
+  (\mathcal C^{\mathrm{op}}_\partial)
+\]
+and is governed by Theorem~\ref{thm:main-global-deligne-criterion}.
+Its native obstruction contains the five components
+$\operatorname{Ob}^{\mathrm{global},5}=
+\bigl(
+\operatorname{Ob}^{\mathrm{ch}\,E_2}_{\mathrm{Deligne}},
+\operatorname{Ob}^{\mathrm{desc}}_{\partial},
+\operatorname{Ob}^{\mathrm{QME}}_{\mathrm{all\mbox{-}order}},
+\operatorname{Ob}^{\mathrm{anom}},
+\operatorname{Ob}^{\mathrm{loc}}
+\bigr)$, with
 an additional modular-line component $\operatorname{Ob}^V_{\mathrm{mod}}$
-for the operator-level lift on $K3\times E$.  Three open problems
-target these components: the chiral $E_d$ Deligne theorem at $d\geq 2$
-(\S\ref{ssec:open-chiral-Ed-Deligne}), supplying
-$\operatorname{Ob}^{\mathrm{ch}\,E_2}_{\mathrm{Deligne}}$; the
-Hall--Drinfeld--Borcherds comparison spectral sequence on compact
-non-toric CY$_3$ (\S\ref{ssec:open-hall-drinfeld-borcherds}),
-supplying $\operatorname{Ob}^{\mathrm{desc}}_{\partial}\oplus
-\operatorname{Ob}^{\mathrm{QME}}_{\mathrm{all\mbox{-}loop}}$; the
-operator-level lift of the modular line on $K3\times E$
-(\S\ref{ssec:open-modular-lift}), supplying
-$\operatorname{Ob}^V_{\mathrm{mod}}$.  Three frontier inputs anchor them:
-MNOP / framing on $S^3$ (\S\ref{ssec:frontier-mnop-framing}); the
+for the operator-level lift on $K3\times E$.  Four open problems
+record these components: the chiral $E_d$ Deligne theorem at $d\geq 2$
+(\S\ref{ssec:open-chiral-Ed-Deligne}), which contains
+$\operatorname{Ob}^{\mathrm{ch}\,E_2}_{\mathrm{Deligne}}$; the global
+descent and all-order QME problem for the mixed-HT target, whose classes
+are \(\operatorname{Ob}^{\mathrm{desc}}_{\partial}\) and
+\(\operatorname{Ob}^{\mathrm{QME}}_{\mathrm{all\mbox{-}order}}\), together
+with the anomaly and locality classes; the
+Hall--Drinfeld--Borcherds filtered comparison complex on compact
+non-toric CY$_3$ (\S\ref{ssec:open-hall-drinfeld-borcherds}), which
+requires compact comparison data not contained in the local theorem;
+the operator-level lift
+of the modular line on $K3\times E$
+(\S\ref{ssec:open-modular-lift}), which contains
+$\operatorname{Ob}^V_{\mathrm{mod}}$.  Three comparison loci anchor them:
+MNOP / framing on $S^3$ and Abel--Jacobi growth
+(\S\ref{ssec:comparison-mnop-framing}); the
 Hall--Drinfeld realisation on compact CY$_3$
-(\S\ref{ssec:frontier-hall-drinfeld}); the gravitational lift of
-$\Phi_{10}$ (\S\ref{ssec:frontier-phi10-gravitational}).  The
-cross-target firewall acceptance class
-$\operatorname{Ob}_{\mathrm{UKD}}(\mathfrak T)$
-(Theorem~\ref{thm:cross-target-firewall},
+(\S\ref{ssec:comparison-hall-drinfeld}); the operator-level lift of
+$\Phi_{10}$ (\S\ref{ssec:comparison-phi10-operator}).  The
+cross-target obstruction class
+$\operatorname{Ob}_{\mathrm{comparison}}(\mathfrak T)$
+(Theorem~\ref{thm:cross-target-restriction},
 Theorem~\ref{thm:matched-conventions-transfer}) is the obstruction
-each problem encounters in transit to a compact target.  Volume
-\texttt{frontier\_mnop\_framing\_volume.tex} develops the
-compact-CY$_3$ scalar and Fourier--Mukai data (quintic DT/PT
-factorisation, $S^3$ framing, chiral-volume finite evidence,
-$K3\times E$ Fourier--Mukai partner, Gopakumar--Vafa closure) used
-below as comparison anchors.
+each problem encounters in transit to a compact target.  The compact
+Calabi--Yau comparison data used below are the quintic DT/PT
+factorisation of Theorem~\ref{thm:mnop-quintic}, the \(S^3\)-framing
+torsor of Proposition~\ref{prop:s3-framing-quintic}, the Abel--Jacobi
+growth calculation of Proposition~\ref{prop:chiral-volume-quintic}, the
+\(K3\times E\) Fourier--Mukai comparison of
+Theorem~\ref{thm:fm-self-duality-k3e}, and the BCOV non-perturbative
+closure datum of \S\ref{sec:bcov-np-closure}.
 
 \subsection{Open problem: chiral
   \texorpdfstring{$E_d$}{Ed} Deligne conjecture at
@@ -84,7 +72,7 @@ factorization-algebra reformulation is Costello--Gwilliam
 \cite{costello-gwilliam}*{Vol.~I \S 5--6}.  At $d\geq 2$ the
 topological $E_d$-centre is constructed by Lurie
 \cite{lurie-ha}*{\S 5.3} via $E_d$-module categories; the chiral
-upgrade requires three constructions beyond the current
+extension requires three constructions beyond the current
 literature.
 
 \begin{enumerate}
@@ -107,9 +95,9 @@ literature.
     derived chiral $E_d$-centre, compatibly with factorization
     homology.
   \item \emph{Compatibility with factorization homology
-    $\mathrm{Sp}^{\mathrm{ch}}_{\Sigma_{d-1},C}$.}  The two-stage
+    $\mathrm{Sp}^{\mathrm{ch}}_{\Sigma_{d-1},C}$.}  The composite
     functor $\Phi_d=\mathrm{Sp}^{\mathrm{ch}}_{\Sigma_{d-1},C}\circ
-    \Phi^{\mathrm{FA}}_d$ of the master architecture
+    \Phi^{\mathrm{FA}}_d$
     (Lurie--Ayala--Francis factorization homology
     \cite{lurie-ha}*{\S 5.5}) must intertwine the chiral
     $E_d$-centre on its source with the chiral Hochschild centre
@@ -138,40 +126,35 @@ schemes (Hennion's chiral Lie algebroids; Francis' factorisable
 co-operads); the chiral $E_d$-operad on $\C^d$ at $d\geq 2$ in the
 sense of~(1) is open globally.  The formal-Darboux stalk theorem of this
 manuscript (Theorem~\ref{thm:main-local}), together with
-Theorem~\ref{thm:formal-two-dimensional-holomorphic-ope}, supplies the
+Theorem~\ref{thm:formal-two-dimensional-holomorphic-ope}, gives the
 arity-two \(d=2\) formal-coordinate chiral operation
 \[
   H^2_\Delta(\C[[z,w]])\,d\zeta_1d\zeta_2
   \otimes\mathfrak g^{\otimes2}\longrightarrow\mathfrak g,\qquad
   x\otimes y\longmapsto [x,y]_{\mathfrak g}.
 \]
-It is the $d=2$
-formal-Darboux stalk of the Mixed Holomorphic--Topological Deligne
-identification
-$\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}\simeq
-Z^{\mathrm{der}}_{E_2^{\mathrm{HT}}}(\mathcal C^{\mathrm{op}}_\partial)$,
-with $\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}=
-\Omega^{0,\bullet}_c(B)\widehat\otimes\mathfrak g$,
-$\mathfrak g=\mathfrak h\ltimes\mathfrak h^\vee_{\mathrm{cont}}[1]$,
-$\mathfrak h=\C[[z_1,z_2]]/\C$, the holomorphic $E_2$ factorization
-algebra on $\C^2$.  At the formal-Darboux stalk the bulk identifies
-with the brane-side derived $E_1$-centre
-$\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}|_{b_p}\simeq
-Z^{\mathrm{der}}_{E_1}(A^{\mathrm{cl}}_{\partial,N})\simeq
-HH^\bullet(A^{\mathrm{cl}}_{\partial,N},A^{\mathrm{cl}}_{\partial,N})$
-by Costello--Gwilliam bulk--boundary correspondence and Deligne's
-$E_1$-Hochschild theorem (both as $E_2$-algebras), with formal
-coordinate $J(f)=\overline{\operatorname{Tr}\,f(\phi_1,\phi_2)}$.
+At the formal-Darboux stalk the theorem constructs the trace-sector map
+\[
+  \Phi_N:C^\bullet_{\mathrm{CE},\mathrm{cont}}(\mathfrak g)
+  \longrightarrow
+  HH^\bullet(A^{\mathrm{cl}}_{\partial,N},
+             A^{\mathrm{cl}}_{\partial,N}),
+  \qquad c_f\mapsto\theta_f,\quad u_f\mapsto J(f).
+\]
+After stable scalar reduction and admissible completion this is the
+CE/PV coordinate isomorphism on the trace algebra.  The full
+derived-centre equivalence requires centrality homotopies, all-arity
+chiral \(E_2\) data, QME data, and descent.
 The chiral $E_2$-Deligne conjecture
 (Conjecture~\ref{conj:chiral-Ed-deligne} at $d=2$) is the underlying
-purely chiral statement on the bulk side; the local theorem supplies the
+purely chiral statement on the bulk side; the local theorem gives the
 formal-Darboux stalk calculation.
 
 \subsection{\texorpdfstring{Open problem: $W_\infty[\lambda] / E_\infty$ admissible endpoint}{Open problem: W-infinity[lambda] / E-infinity admissible endpoint}}\label{ssec:open-w-infinity-admissible-endpoint}
 
 The Hamiltonian Lie algebra
 \(\mathfrak h=\C[[z_1,z_2]]/\C\cdot 1\) of the closed sector is the
-formal-stalk avatar of the area-preserving Lie algebra of Hamiltonian
+formal-stalk realisation of the area-preserving Lie algebra of Hamiltonian
 vector fields on \(\C^2\), the $E_\infty$ endpoint of the universal
 \(W\)-algebra family \(W_\infty[\lambda]\) of
 \cites{pope-romans-shen}{bakas-w-infinity}.  Under the controlled curve
@@ -179,10 +162,10 @@ reduction of Remark~\ref{rmk:native-bulk-object-c2}, the brane-side
 derived \(E_1\)-Hochschild
 \(HH^\bullet(A^{\mathrm{cl}}_{\partial,N},A^{\mathrm{cl}}_{\partial,N})\)
 restricts to a one-dimensional chiral algebra on the chosen curve
-\(C\hookrightarrow\C^2\) whose conjectural large-\(N\) realisation is
+\(C\hookrightarrow\C^2\) whose large-\(N\) realisation, if it exists, is
 \(W_\infty[\lambda]\) at an admissible boundary parameter.
 
-\begin{conj}[\texorpdfstring{$W_\infty[\lambda]/E_\infty$ admissible endpoint identification}{W-infinity[lambda] / E-infinity admissible endpoint identification}, conditional on four hypotheses]
+\begin{conj}[\texorpdfstring{$W_\infty[\lambda]/E_\infty$ admissible endpoint identification under four hypotheses}{W-infinity[lambda] / E-infinity admissible endpoint identification under four hypotheses}]
 \label{conj:w-infinity-admissible-endpoint}
 Subject to:
 \begin{enumerate}[label=\textup{(H\arabic*)}]
@@ -218,7 +201,7 @@ the Lie algebra of Hamiltonian vector fields on \(\C^2\) as
 The four hypotheses are independent: (H1) and (H4) control truncation
 and weight-window admissibility; (H2) and (H3) extend the finite-spin
 OPE checks to all spins.  This is item~(14) of the seventeen-site
-catalogue; the unconditional version requires constructions beyond
+catalogue; a theorem without these hypotheses requires constructions beyond
 the present literature.  Curve restriction reduces the manuscript's
 native two-complex-dimensional bulk to the one-dimensional curve
 setting in which \(W_\infty[\lambda]\) is defined; the obstruction
@@ -240,13 +223,13 @@ Conjecture~\ref{conj:w-infinity-admissible-endpoint}: Heisenberg lies
 in the Prochazka truncation family \(W_\infty[\lambda]\) at the
 endpoint \(\lambda_*(1)\), with (H2)--(H4) trivially satisfied at rank
 one (no parafermion extension, single-spin window, single admissible
-weight).  The genuine conjectural content begins at \(N\geq 2\),
+weight).  The content beyond the scalar table begins at \(N\geq 2\),
 where the brane sector and the \(W_\infty[\lambda]\) family separate
 through the higher trace generators \(J(z_1^pz_2^q)\) and the matching
 requires (H1)--(H4) in full force.
 \end{rmk}
 
-\subsection{\texorpdfstring{Open problem: Hall--Drinfeld--Borcherds comparison spectral sequence on compact non-toric CY$_3$}{Open problem: Hall-Drinfeld-Borcherds comparison spectral sequence on compact non-toric CY3}}\label{ssec:open-hall-drinfeld-borcherds}
+\subsection{\texorpdfstring{Open problem: Hall--Drinfeld--Borcherds filtered comparison complex on compact non-toric CY$_3$}{Open problem: Hall-Drinfeld-Borcherds filtered comparison complex on compact non-toric CY3}}\label{ssec:open-hall-drinfeld-borcherds}
 
 On $K3\times E$ five comparison anchors carry distinct numerical
 weights:
@@ -256,7 +239,7 @@ weights:
 \]
 \[
   \kappa^{\mathrm{Heis}}_{\mathrm{ch}}=3,\qquad
-  \kappa_{\mathrm{BKM}}(\Phi_{10})=5,\qquad
+  \kappa_{\mathrm{BKM}}(\Delta_5)=5,\qquad
   \mathrm{rk}\,\widetilde H^*(K3,\Z)=24,
 \]
 the categorical Euler invariant
@@ -266,191 +249,187 @@ $\kappa^{\mathrm{Hodge}}_{\mathrm{ch}}=\chi(\Phi^{\mathrm{FA}}_2(\mathcal A_{\ma
 the chiral Heisenberg weight
 $\kappa^{\mathrm{Heis}}_{\mathrm{ch}}$ of the boundary Heisenberg
 factor, the Borcherds--Kac--Moody (BKM) denominator weight
-$\kappa_{\mathrm{BKM}}(\Phi_{10})=5$ recording the lift exponent
-of $\Phi_{10}=\chi_{10}$ in the Gritsenko paramodular row, and the
-extended Mukai-lattice rank of $K3$.  These five numbers occupy five
-distinct construction layers
-(\S\ref{ssec:cross-target-firewall}, the compact CY-to-chiral target
-matched-conventions data;
-\texttt{frontier\_mnop\_framing\_volume.tex}, section
-``Fourier--Mukai partners for \(K3\times E\)'').
+$\kappa_{\mathrm{BKM}}(\Delta_5)=5$ recording the square-root branch
+$\Delta_5=\Phi_{10}^{1/2}$ in the Gritsenko paramodular row; the Igusa
+cusp form $\Phi_{10}=\chi_{10}$ has weight \(10\).  The final entry is
+the extended Mukai-lattice rank of $K3$, while the fibre Euler datum is
+\(\chi(\mathcal O_{K3})=2\).  These numbers occupy distinct comparison
+data: the compact CY-to-chiral target
+matched-conventions data of \S\ref{ssec:cross-target-restriction} and
+the Fourier--Mukai comparison of
+Theorem~\ref{thm:fm-self-duality-k3e}.
 
-\begin{conj}[Hall--Drinfeld--Borcherds comparison spectral
-  sequence on compact non-toric
+\begin{conj}[Hall--Drinfeld--Borcherds filtered comparison complex on compact non-toric
   CY$_3$]\label{conj:hall-drinfeld-borcherds-ss}
   On a compact non-toric Calabi--Yau threefold $X$ with chosen
-  Hall--Drinfeld--Borcherds matched-conventions datum (the compact CY-to-chiral target;
-  convention contract Appendix~\ref{app:convention-contract},
-  Theorem~\ref{thm:matched-conventions-transfer}), the five
-  comparison weights organise into the $E_2$-page of a spectral
-  sequence
+  Hall--Drinfeld--Borcherds datum of compatible conventions
+  (the compact CY-to-chiral target; Appendix~\ref{app:comparison-conventions},
+  Theorem~\ref{thm:matched-conventions-transfer}), one must construct a
+  filtered comparison complex
+  \(K^\bullet_{\mathrm{HDB}}(X)\) whose associated graded contains
+  the comparison summands defined by the chosen compact-target datum.  For
+  \(K3\times E\), or for a target carrying an explicitly specified
+  \(K3\)-Mukai component, these include
   \[
-    E_2^{p,q}(X)
-    \;=\;
     \bigl(\kappa_{\mathrm{cat}},\,\kappa^{\mathrm{Hodge}}_{\mathrm{ch}},\,
     \kappa^{\mathrm{Heis}}_{\mathrm{ch}},\,
-    \kappa_{\mathrm{BKM}},\,\kappa_{\mathrm{fibre}}\bigr)(X)
-    \;\Longrightarrow\;
-    \kappa(X)
+    \kappa_{\mathrm{BKM}},\,\kappa_{\mathrm{Mukai}}\bigr)(X)
   \]
-  whose differentials $d_r\colon E_r^{p,q}\to E_r^{p+r,q-r+1}$ are
-  the Hall--Borcherds comparison residuals tracked by the
-  matched-conventions obstruction
-  $\operatorname{ob}_{\mathrm{Igusa/BKM}}\oplus
-  \operatorname{ob}_{\mathrm{CY\mbox{-}ch}}$ of
-  Theorem~\ref{thm:cross-target-firewall}, and whose abutment
-  $\kappa(X)$ is a single $\kappa$-invariant of $X$.  On
-  $X=K3\times E$ the $E_2$-page reads $(0,0,3,5,24)$, and
-  convergence to $\kappa(K3\times E)$ is the conjectural content.
+  with differentials represented by the images of the ordered
+  matched-conventions obstruction pair
+  \((\operatorname{ob}_{\mathrm{Igusa/BKM}},
+  \operatorname{ob}_{\mathrm{CY\mbox{-}ch}})\) of
+  Theorem~\ref{thm:cross-target-restriction}.  Until this complex, its
+  filtration, bidegrees, and abutment are defined, \((0,0,3,5,24)\)
+  is a comparison table, not an \(E_2\)-page.
 \end{conj}
 
-The construction sketch on $K3\times E$ is the Fourier--Mukai
-partner data of \texttt{frontier\_mnop\_framing\_volume.tex},
-section ``Fourier--Mukai partners for \(K3\times E\)'': under the
-coprimality hypothesis~$(\star)$,
+The construction sketch on \(K3\times E\) is the Fourier--Mukai
+partner datum of Theorem~\ref{thm:fm-self-duality-k3e}: under the
+coprimality hypothesis~\((\star)\),
 the universal sheaf gives a derived equivalence
 $D^b(K3)\simeq D^b(M)$ with $M$ a $K3$ partner; the Mukai-lattice
 side feeds the $\kappa_{\mathrm{cat}}=0$, fibre Euler $=2$, and
-extended-rank $=24$ entries through K\"unneth, and the
-Heisenberg/BKM entries arrive through the chiral specialisation
-$\Phi^{\mathrm{FA}}_2$ along $K3$ paired with the Borcherds product
-realisation of $\Phi_{10}$ on $E$.  Equality among the five
-numbers requires data beyond the Fourier--Mukai theorem alone
-(\texttt{frontier\_mnop\_framing\_volume.tex}, section
-``Fourier--Mukai partners for \(K3\times E\)'',
-distinct $\kappa$ values); the spectral-sequence interpretation
-is the conjectural content; convergence on a generic compact
+extended-rank $=24$ entries through K\"unneth.  The
+Heisenberg/BKM entries require a morphism from the
+chiral specialisation data and the Borcherds product data to the
+defined Hall--Drinfeld--Borcherds comparison complex; no such map is
+constructed here.  Placing the five numbers in one filtered comparison
+object requires data beyond the Fourier--Mukai theorem alone; the
+spectral-sequence interpretation requires an additional filtered complex.
+Convergence on a generic compact
 non-toric CY$_3$ requires the Hall--Drinfeld--Borcherds
-construction of the compact CY-to-chiral target and the matched-conventions firewall of
+construction of the compact CY-to-chiral target and the matched-conventions obstruction of
 Theorem~\ref{thm:matched-conventions-transfer}.
 
 \subsection{Open problem: operator-level lift of the modular line
   on \texorpdfstring{$K3\times E$}{K3 x E}}\label{ssec:open-modular-lift}
 
-The Capelli scalar
-$\hbar N[\bar c]=\Omega_{\mathrm{central}}|_{J(f)}$ of
-\S\ref{subsec:scalar-anomaly} is the local datum: the projective
-curvature of the modular line bundle on the period domain
-$\overline{\mathcal A}_g$, evaluated at the trace generator.  At
-$g=2$ the level-$2$ section of $\Omega_{\mathrm{central}}$ is the
+The Capelli scalar \(\hbar N[\bar c]\) of
+\S\ref{subsec:scalar-anomaly} is the local projective Lie anomaly.
+It becomes the curvature of a modular determinant line on
+$\overline{\mathcal A}_g$ only after the operator-level determinant
+line and its connection have been constructed.  At
+$g=2$ the level-$2$ scalar section in the intended lift is the
 Igusa cusp form $\Phi_{10}=\chi_{10}$, and
 $\Delta_5=\Phi_{10}^{1/2}$ is its square-root branch governing the
-paramodular Borcherds product.  An operator-level lift would have to
-construct an operator on the compact-target bulk theory and identify
+paramodular Borcherds product.  An operator-level lift consists of
+an operator on the compact-target bulk theory together with an identification of
 its protected trace with this modular section.  The formal-Darboux
-stalk supplies only the local fibre of such a construction.
+theorem contributes only the formal trace-sector fibre at \(b\).
 
 \begin{conj}[Operator-level lift of $\Phi_{10}$]\label{conj:operator-modular-lift}
-  Let $b$ be a Dirac brane vacuum on
-  $\partial(K3\times E)$, the Costello--Gwilliam brane-link boundary
-  of a Dirac brane defect in $K3\times E$.  Suppose the compact-target
+  Let \(L\subset K3\times E\) be a Dirac brane defect, let
+  \(\partial_{\mathrm{link}}N_L\) be the boundary of a tubular
+  neighbourhood of \(L\), and let \(b\) be a Dirac brane vacuum on this
+  brane-link boundary.  Choose a two-complex-dimensional formal-normal
+  chart and comparison maps identifying the restriction with the local
+  Hamiltonian stalk.  Suppose the compact-target
   holomorphic-topological bulk theory and its boundary trace have
-  been constructed.  The operator-lift problem is to lift the
+  been constructed.  The operator-level lift is a lift of the
   level-$2$ projective curvature
   $\Omega_{\mathrm{central}}\bigl|_{\overline{\mathcal A}_2}$ to an
   operator-valued cocycle on that bulk theory,
   $\widehat\Omega_{\mathrm{central}}^{\,(2)}$ whose protected
   scalar trace
   $\operatorname{Tr}_{\mathcal C^{\mathrm{op}}_\partial}\bigl(\widehat\Omega_{\mathrm{central}}^{\,(2)}\bigr)$
-  equals $\Phi_{10}=\chi_{10}$ at the specified paramodular points.  The
+  recovers the normalized modular section
+  \(\Phi_{10}=\chi_{10}\in H^0(\overline{\mathcal A}_2,\lambda^{10})\).  The
   Hall--Borcherds comparison residual of
-  Conjecture~\ref{conj:hall-drinfeld-borcherds-ss}, restricted to
-  the $K3\times E$ five-layer page, is the obstruction class to
-  this lift.
+  Conjecture~\ref{conj:hall-drinfeld-borcherds-ss} is an obstruction class
+  only after the operator-valued cocycle complex, filtration, bidegrees,
+  differential, and abutment have been defined.
 \end{conj}
 
-The construction problem is the lift of the projective curvature
+The construction is a lift of the projective curvature
 class $\Omega_{\mathrm{central}}$ from the period domain to an
-operator on the compact-target bulk module: the local datum of
-\S\ref{subsec:scalar-anomaly} supplies only the formal fibre, the modular line
-bundle on $\overline{\mathcal A}_g$ supplies the global structure,
-and the Hall--Borcherds residual identifies the obstruction.  The
+operator on the compact-target bulk module.  The local class of
+\S\ref{subsec:scalar-anomaly} is the formal restriction of this
+problem; the modular line bundle on \(\overline{\mathcal A}_g\) is the
+geometric target; the Hall--Borcherds residual becomes an obstruction
+only after the comparison complex has been constructed.  The
 level-$2$ scalar section in this comparison is \(\Phi_{10}\) by the
-Gritsenko paramodular row and the Borcherds product realisation
-(cross-target reference: the Igusa cusp form volume); the operator
-lift is the construction problem on the bulk side.  The
-cross-target firewall theorem
-(Theorem~\ref{thm:cross-target-firewall}; matched-conventions
+Gritsenko paramodular row and the Borcherds product realisation; the operator
+lift is the remaining bulk-side obstruction.  The
+cross-target obstruction theorem
+(Theorem~\ref{thm:cross-target-restriction}; matched-conventions
 class $\operatorname{ob}_{\mathrm{Igusa/BKM}}$) records the data
-which must be supplied for the lift to descend from the bulk
+needed for the lift to descend from the bulk
 module to a section of the modular line bundle.  $\Delta_5$ is the
 chosen square-root branch on the paramodular cover; the
-operator-level lift is the open construction problem.
+operator-level lift remains the chain-level obstruction.
 
-\subsection{Frontier input: MNOP and framing on
-  \texorpdfstring{$S^3$}{S3}}\label{ssec:frontier-mnop-framing}
+\subsection{MNOP and framing on
+  \texorpdfstring{$S^3$}{S3}}\label{ssec:comparison-mnop-framing}
 
-On a compact Calabi--Yau threefold $X$ the Donaldson--Thomas (DT),
+On a compact Calabi--Yau threefold \(X\), Donaldson--Thomas (DT),
 stable-pair Pandharipande--Thomas (PT), and Gromov--Witten (GW)
-generating series carry a priori distinct chain-level trace data;
-the Maulik--Nekrasov--Okounkov--Pandharipande (MNOP) package
-asserts a single chain-level automorphism
-$\sigma_X\in\operatorname{Aut}_{E_2}(Z_{E_2}(\mathcal F_X))$ of
-the $E_2$-centre of
-$\mathcal F_X=\Phi^{\mathrm{FA}}_3(\operatorname{Perf}(X))$
-implementing the substitution $-q=e^{iu}$ on
-$(\operatorname{Tr}_{\mathrm{DT}},\operatorname{Tr}_{\mathrm{PT}},
-\operatorname{Tr}_{\mathrm{GW}})$.  The proven half on the smooth
-quintic is the DT/PT factorisation by the MacMahon power off the
-degree-zero locus
-(\texttt{frontier\_mnop\_framing\_volume.tex},
-the theorem ``DT/PT factorisation on the quintic'' in that volume;
-Bridgeland's
-Hall-algebra theorem; Behrend--Fantechi).
+theories give scalar virtual-counting series.  The
+Maulik--Nekrasov--Okounkov--Pandharipande correspondence compares these
+series after the reduced DT convention, the variable change
+\(-q=e^{iu}\), and the multiple-cover normalization.  A chain-level
+lift requires compact comparison data
+\[
+  (\mathcal F_X,M_{\DT},M_{\PT},M_{\GW},
+  \operatorname{Tr}_{\DT},\operatorname{Tr}_{\PT},
+  \operatorname{Tr}_{\GW},\sigma_X),
+\]
+and no scalar MNOP statement constructs \(\sigma_X\).  The smooth
+quintic carries the DT/PT factorisation by the MacMahon power off the
+degree-zero locus of Theorem~\ref{thm:mnop-quintic}, by Bridgeland's
+Hall-algebra theorem and the Behrend--Fantechi virtual-cycle formalism.
 
-The formal-Darboux stalk supplies the formal local trace at one Dirac
+The formal-Darboux stalk gives the formal trace coordinate at one Dirac
 brane vacuum: the identification
 $J(f)=\overline{\operatorname{Tr}\,f(\phi_1,\phi_2)}$ of
-Theorem~\ref{thm:main-local} feeds the chain-level trace data on a
-formal neighbourhood of a brane chart on $X$.  The global gluing
+Theorem~\ref{thm:main-local} is the formal restriction of a compact
+comparison trace only after
+\(\operatorname{Ob}_{\mathrm{comparison}}=0\) and matched conventions have
+been fixed on a brane chart of \(X\).  The global gluing
 across $X$ requires a framing datum on the Lagrangian boundary;
 for $L\cong S^3\hookrightarrow X$ the framing torsor is
-$\pi_3(SO(3))=\Z$ (Costello brane-line BV framing;
-\texttt{frontier\_mnop\_framing\_volume.tex},
-the proposition ``\(S^3\)-framing on the quintic'' in that volume).  The
-Calabi--Yau volume form supplies the topological orientation and
-trivialisation; choice of integer framing class
+$\pi_3(SO(3))=\Z$ by Proposition~\ref{prop:s3-framing-quintic}.  The
+K\"ahler form identifies \(N_{L/X}\simeq T^*L\), hence
+\(N_{L/X}\) is topologically trivial.  Its trivialisations form a
+\([S^3,SO(3)]\cong\pi_3(SO(3))=\Z\)-torsor.  The Calabi--Yau volume
+form does not select an integer framing; choice of integer framing class
 $[f]\in\pi_3(SO(3))=\Z$ together with the Costello-compatible
 BV/$A_\infty$ chain homotopy $h_f$ trivialising the framing
 obstruction class $\operatorname{Ob}_{\mathrm{frame}}(L,f)$ is the
-global gluing data.  The construction problem is the
-matched-conventions firewall of
+global gluing data.  The required construction is the
+matched-conventions obstruction of
 Theorem~\ref{thm:matched-conventions-transfer} restricted to the
 GW/DT/PT/MNOP target with $S^3$-framing datum.
 
-\subsection{\texorpdfstring{Frontier input: Hall--Drinfeld realisation on compact CY$_3$}{Frontier input: Hall-Drinfeld realisation on compact CY3}}\label{ssec:frontier-hall-drinfeld}
+\subsection{\texorpdfstring{Hall--Drinfeld realisation on compact CY$_3$}{Hall-Drinfeld realisation on compact CY3}}\label{ssec:comparison-hall-drinfeld}
 
-The chiral specialisation
+The compact CY$_3$ comparison requires the chiral specialisation
 $\Phi_d=\mathrm{Sp}^{\mathrm{ch}}_{\Sigma_{d-1},C}\circ
-\Phi^{\mathrm{FA}}_d$ at $d=3$ realises a CY$_3$ category as a
-chiral algebra on a curve through the two-stage functor of the
-master architecture; the Hall--Drinfeld realisation
+\Phi^{\mathrm{FA}}_d$ at $d=3$ and the completed Hall--Drinfeld
+identification
 $\mathcal G(X)\simeq D(Y^+(X))$ on the spherical Hall double, after
 Hall pairing, completion, integral form, stable-envelope transport,
-and descent, supplies external comparison data for the
+and descent.  These compact comparison data are not consequences of the
 formal-Darboux stalk theorem.  The matched-conventions class
 $\operatorname{ob}_{\mathrm{CY\mbox{-}ch}}$ of
-Theorem~\ref{thm:cross-target-firewall} records the construction
-data a compact CY$_3$ target must supply for transfer; the local
-theorem implies the corresponding compact-CY$_3$ claim only under
-joint vanishing of $\operatorname{Ob}_{\mathrm{UKD}}$.
+Theorem~\ref{thm:cross-target-restriction} records the construction
+data of the compact CY$_3$ comparison; a compact theorem requires its
+own comparison maps and null-homotopies.
 
-\subsection{Frontier input: gravitational lift of
-  \texorpdfstring{$\Phi_{10}$}{Phi10}}\label{ssec:frontier-phi10-gravitational}
+\subsection{Operator-level lift of
+  \texorpdfstring{$\Phi_{10}$}{Phi10}}\label{ssec:comparison-phi10-operator}
 
 The Igusa cusp form $\Phi_{10}=\chi_{10}\in
 S_{10}(\mathrm{Sp}_4(\Z))$ is the level-$2$ section of
 $\Omega_{\mathrm{central}}$ on $\overline{\mathcal A}_2$, realised
 as the Gritsenko paramodular Borcherds product, with square-root
-branch $\Delta_5=\Phi_{10}^{1/2}$.  Its conjectural gravitational
-lift on $K3\times E$ (cross-target reference: the Igusa cusp form
-volume) is the construction of an operator-valued cocycle on the
-compact-target bulk module whose protected scalar trace would recover
-$\Phi_{10}$ at the specified paramodular points
+branch $\Delta_5=\Phi_{10}^{1/2}$.  An operator-level lift on
+\(K3\times E\) is an operator-valued cocycle on the
+compact-target bulk module whose protected scalar trace recovers
+$\Phi_{10}$ as a normalized modular section
 (Conjecture~\ref{conj:operator-modular-lift}).  The cross-target
-firewall of Theorem~\ref{thm:cross-target-firewall} records the
+obstruction of Theorem~\ref{thm:cross-target-restriction} records the
 matched-conventions class
 $\operatorname{ob}_{\mathrm{Igusa/BKM}}$ which must vanish for the
-lift to descend; this is external comparison data for the formal-Darboux
-stalk theorem.
-
+lift to descend; these compact comparison data are independent of the
+formal-Darboux stalk theorem.

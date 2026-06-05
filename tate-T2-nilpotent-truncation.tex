@@ -1,16 +1,15 @@
 \subsection*{Nilpotent truncation of the cotangent module}
 
-The CE/PV Koszul resolution of the brane-side derived
-\(E_1\)-Hochschild
-\(HH^\bullet(A^{\mathrm{cl}}_{\partial,N},A^{\mathrm{cl}}_{\partial,N})\),
-identified with the bulk stalk
-\(\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}|_b\) by
-Theorem~\ref{thm:main-local}, is constructed unconditionally on
-the cubic ideal \(\mathfrak m^3\subset\mathfrak h\); its extension to
-the full reduced Hamiltonian Lie algebra
-\(\mathfrak h=\mathfrak m=(z_1,z_2)\C[[z_1,z_2]]\) is
-Problem~\ref{prob:linear-sector-lift}, an open problem whose obstruction
-to convergence is the explicit triple
+The full CE/PV trace-sector map of Theorem~\ref{thm:main-local} is a
+completed formal-Darboux statement for the reduced Hamiltonian Lie algebra
+\(\mathfrak h=\mathfrak m=(z_1,z_2)\C[[z_1,z_2]]\).  This subsection
+studies a different construction: the lower-central pronilpotent
+finite-window route.  That route starts with the cubic Lie subalgebra
+\(\mathfrak m^3\subset\mathfrak h\).  It does not prove the full
+formal-Darboux CE/PV map, and it does not obstruct that map.  It records
+the obstruction to recovering the full Hamiltonian source from
+nilpotent \(\mathfrak m\)-adic quotients.  The obstruction to this
+nilpotent recovery is the explicit triple
 \(\bigl(\mathfrak o^{\mathrm{lin}}_N,\mathfrak o^{\mathrm{ss}},
 \mathfrak o^{\mathrm{Cas}}_{\leq2}\bigr)\).
 
@@ -37,20 +36,20 @@ $\Phi_{\leq N}\colon
 C^\bullet_{\mathrm{CE},\mathrm{cont}}(\mathfrak g_{\leq N,I})
 \xrightarrow{\sim}
 \mathrm{PV}(\widehat{\mathbf S}(\mathfrak h_{\leq N,I}))$ is the
-Koszul resolution of \(\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}|_b\) on the cubic
-truncation, unconditional in the classical sector
+cubic-truncation trace-sector model for
+\(\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}|_b\), proved in the finite
+classical sector
 (Theorem~\ref{thm:phi-trunc-classical}).
 Theorem~\ref{thm:phi-hbar-trunc} excludes the all-order Moyal lift on
 the same finite truncation;
 Theorem~\ref{thm:colim-obstruction-full-h} shows that the inverse limit
-recovers the proper subalgebra \(\mathfrak m^3\subsetneq\mathfrak h\).
-Problem~\ref{prob:linear-sector-lift} is the open problem of extending
-the Koszul resolution
-$\Phi_{\mathfrak m^3}$ from $\mathfrak m^3$ to $\mathfrak h=\mathfrak m$
-by supplying a coefficient category in which
-$\mathfrak o^{\mathrm{Cas}}_{\leq2}$ converges and a relative or
-reductive replacement for the lower-central Tate-pronilpotent route
-handling the semisimple $H_2\cong\mathfrak{sl}_2$ direction.
+of this nilpotent tower recovers the proper subalgebra
+\(\mathfrak m^3\subsetneq\mathfrak h\).  The full formal-Darboux CE/PV
+map is given elsewhere by the completed coordinate construction.
+Problem~\ref{prob:linear-sector-lift} is the narrower problem of
+replacing the nilpotent finite-window route by a relative or reductive
+route that includes \(H_1\oplus H_2\) without using false
+pronilpotence.
 
 \subsection*{The truncation}
 
@@ -218,9 +217,9 @@ with the explicit generator-level data of
 
 To pass from the stalk identification to the factorization-algebra
 identification on intervals $I\subset\R$, the Hamiltonian-sector
-factorization upgrade of \ref{thm:hamiltonian-current-factorization}
+factorization extension of \ref{thm:hamiltonian-current-factorization}
 applies verbatim with $\mathfrak h$ replaced by
-$\mathfrak h_{\leq N}$: the locality input
+$\mathfrak h_{\leq N}$: the locality bracket
 $\{(\phi_1)^i{}_j(t),(\phi_2)^k{}_l(t')\}=\delta^i_l\delta^k_j\delta(t-t')$
 on two brane-time points is unchanged, the smearing
   $\mathfrak h_{\leq N,I}=\Omega^\bullet_c(I)\,\widehat\otimes\,
@@ -258,7 +257,8 @@ stalkwise limit follow as in
 \begin{thm}[Quantum obstruction for the nilpotent truncation]
 \label{thm:phi-hbar-trunc}
   The classical finite truncation
-  \ref{thm:phi-trunc-classical} is unconditional.  The same finite
+  \ref{thm:phi-trunc-classical} is proved in the finite classical
+  sector.  The same finite
   Lie algebra
   $\mathfrak h_{\leq N}=\mathfrak m^3/\mathfrak m^{N+1}$ has an
   obstruction to an all-order Moyal deformation for $N\geq4$: the
@@ -301,8 +301,8 @@ stalkwise limit follow as in
   source
   $\mathfrak h_{\leq N,\hbar}\ltimes
   \mathfrak h_{\leq N,\hbar}^\vee[1]$ is incompatible with simple
-  restriction of the Moyal bracket.  Any projected bracket would require a new
-  Jacobi proof; the projected-degree warning of
+  restriction of the Moyal bracket.  A projected bracket carries its own
+  Jacobi class; the projected-degree warning of
   \ref{lem:finite-window-hamiltonian-obstruction} shows that this is
   a genuine Jacobi condition.  The all-order theorem
   \ref{thm:phi-hbar-all-order} remains valid on the full
@@ -362,7 +362,7 @@ What remains classically: the third-order and higher canonical
 transformations, which form a nilpotent Lie subalgebra
 $\mathfrak m^3\subset\mathfrak h$, a Lie ideal in $\mathfrak m^2$,
 admitting the classical finite cotangent CE/PV identification
-unconditionally.
+of Theorem~\ref{thm:phi-trunc-classical}.
 The unreduced open BV factorization-centre morphism requires additional
 data beyond this truncation. The all-order Moyal descendant lift is excluded by
 \ref{thm:phi-hbar-trunc} unless extra quantum truncation data are
@@ -425,7 +425,7 @@ Thus projection of CE cochains has a nonzero dg defect.  The correct finite
 functoriality is contravariant pullback along Lie quotients, while a
 completed cochain theorem must be obtained either from a chain-side
 inverse limit followed by exact continuous dualization or from a
-separately supplied topology whose cochain transition maps are dg maps.
+separately given topology whose cochain transition maps are dg maps.
 
 The Lie algebra $\mathfrak m^3$ is lower-central Tate-pronilpotent in the
 $\mathfrak m$-adic Tate filtration: its descending Lie powers satisfy
@@ -528,11 +528,11 @@ than a formal inverse-limit consequence.
   full Casimir family.
 \end{proof}
 
-\begin{thm}[Low-degree obstruction datum for full Hamiltonian recovery]
+\begin{thm}[Low-degree obstruction to nilpotent-window recovery of the full Hamiltonian source]
 \label{thm:colim-obstruction-full-h}
 The coordinate-window family
   $\Phi_{\mathfrak m^3}$ of \ref{prop:colim-recovery} is the
-  classical cotangent lift datum on $\mathfrak m^3$. Extension to all of
+  classical cotangent lift datum on $\mathfrak m^3$. Recovery of all of
 $\mathfrak h=\mathfrak m$ must
 include the low-degree sectors
 $\mathfrak m/\mathfrak m^3=H_1\oplus H_2=\C\cdot z_1\oplus
@@ -568,7 +568,8 @@ $C_{\mathfrak h}$ converges \emph{including} both low-degree
 components, which is exactly the Casimir support obstruction of
 \ref{lem:tate-casimir-obstruction}. The truncation route leaves that
 obstruction intact; it removes the sector supporting the
-obstruction.  A full recovery theorem must therefore supply
+obstruction.  A recovery theorem using this nilpotent-window route must
+therefore give
 both a coefficient category in which \(C_{\mathfrak h}\) converges and a
 relative or reductive model for the \(H_2\)-sector.
 \end{thm}
@@ -603,17 +604,17 @@ relative or reductive model for the \(H_2\)-sector.
   Finally, the full Casimir \(C_{\mathfrak h}\) has nonzero components
   in \(H_1\otimes H_1^\vee\), \(H_2\otimes H_2^\vee\), and in every
   higher \(H_d\otimes H_d^\vee\).  The nilpotent tower sees only the
-  \(d\geq3\) part.  Hence the inverse-limit cotangent lift on
-  \(\mathfrak m^3\) promotes to the full Hamiltonian sector only after
-  an additional coefficient category makes the full Casimir converge.
+	  \(d\geq3\) part.  Hence the inverse-limit cotangent lift on
+	  \(\mathfrak m^3\) reaches the full Hamiltonian sector only after
+	  an additional coefficient category makes the full Casimir converge.
 \end{proof}
 
-\begin{cor}[Full maximal-ideal universal obstruction class]
+\begin{cor}[Full maximal-ideal obstruction class]
 \label{cor:full-maximal-ideal-universal-obstruction-class}
   For the full reduced formal Hamiltonian algebra
   \(\mathfrak h=\mathfrak m=(z_1,z_2)\C[[z_1,z_2]]\), the direct
   formal-local CE/PV recognition theorem remains valid in the
-  finite-coordinate product completion.  The universal filtered-cobar
+  finite-coordinate product completion.  The filtered-cobar
   Koszul recognition criterion of
   Theorem~\ref{thm:universal-filtered-cobar-recognition}, however, has
   a nonzero obstruction class in
@@ -636,7 +637,7 @@ relative or reductive model for the \(H_2\)-sector.
     \qquad
     H_2\subset\bigcap_{r\geq1}\mathfrak h^{(r)} .
   \]
-  Therefore a universal full-\(\mathfrak h\)
+  Therefore a full-\(\mathfrak h\)
   bar-cobar/enveloping theorem requires,
   before any open-side \(A_\infty\) comparison, all of the following:
   a coefficient topology representing \(C_{\mathfrak h}\), continuity of
@@ -648,19 +649,19 @@ relative or reductive model for the \(H_2\)-sector.
 \end{cor}
 
 \begin{proof}
-  The formal-local CE/PV part is
+  The formal-Darboux CE/PV part is
   Theorem~\ref{thm:formal-disk-completed-ce-pv}, equivalently the
-  formal-disk instance of
+  formal-Darboux instance of
   Theorem~\ref{thm:universal-formal-local-ce-pv-recognition}: the
   bracket and coadjoint formulas are continuous for finite coordinate
   projections, so the generator substitution
   \(c\mapsto\theta,\ u\mapsto O\) is a completed dg commutative cochain
   isomorphism.  The \(P_0\)-algebra reading is finite-level or
   bracket-admissible data; an unqualified inverse limit of ambient
-  coordinate products supplies a different object.
+  coordinate products gives a different object.
 
-  The filtered-cobar recognition theorem asks for more.  The linear
-  obstruction is the same computation as in
+  The filtered-cobar recognition theorem has an additional linear
+  obstruction, the same computation as in
   Definition~\ref{defn:nilpotent-low-degree-obstruction-terms}:
   adjoining \(H_1\) to the \(\mathfrak m\)-adic nilpotent windows makes
   the tail non-invariant because
@@ -676,19 +677,20 @@ relative or reductive model for the \(H_2\)-sector.
   finite-window Casimirs have nonzero identity component in every
   \(H_d\otimes H_d^\vee\), while a strict tensor with a direct-sum dual
   has only finitely many dual-degree components.  Finally, even after
-  changing topology and handling \(H_2\) relatively, the universal
-  criterion still demands the cobar cone and the Milnor
+  changing topology and handling \(H_2\) relatively, the
+  filtered-cobar criterion still demands the cobar cone and the Milnor
   \(\varprojlim^1\) terms in
   Definition~\ref{defn:universal-koszul-obstruction-complex} to vanish.
   These are precisely the listed remaining requirements.
 \end{proof}
 
-\begin{prob}[Open problem: extension of the Koszul resolution from
-\(\mathfrak m^3\) to \(\mathfrak h\)]
+\begin{prob}[Relative replacement of the nilpotent
+\(\mathfrak m^3\)-window]
 \label{prob:linear-sector-lift}
-Extend the coordinate-window Koszul-resolution datum
+Replace the coordinate-window Koszul-resolution datum
 $\Phi_{\mathfrak m^3}$ of \ref{prop:colim-recovery} from
-$\mathfrak m^3$ to all of $\mathfrak h=\mathfrak m$ by supplying:
+$\mathfrak m^3$ by a relative construction on all of
+$\mathfrak h=\mathfrak m$ by giving:
 (D1) a Tate or weighted-coefficient extension in which the degree-$1$
 and degree-$2$ Casimir components converge as kernels for the BV
 propagator; (D2) a relative or reductive replacement for the
@@ -703,19 +705,17 @@ terms are the triple
 by \ref{lem:tate-casimir-obstruction} (D1) is the same
 coefficient-category problem as
 \ref{prob:formal-factorization-center}.  The nilpotent-truncation route
-closes the Koszul resolution of
-\(\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}|_b\) on the cubic ideal
-$\mathfrak m^3$; this open problem is the precise obstruction to the
-full \(\mathfrak h\) Koszul resolution, and the residual moves from
-\ref{prob:formal-factorization-center} as stated to its restricted form
-on the low-degree sector $\mathfrak m/\mathfrak m^3=H_1\oplus H_2$
-alone.
+closes the Koszul resolution on the cubic ideal \(\mathfrak m^3\);
+the displayed triple is the precise obstruction to using the same
+pronilpotent route for the full \(\mathfrak h\).  It is not an
+  obstruction to the completed formal-Darboux CE/PV construction of
+Theorem~\ref{thm:main-local}.
 \end{prob}
 
 \begin{thm}[Semisimple obstruction to lower-central Tate-pronilpotence]
 \label{thm:conilpotency-essential}
-A second obstruction to extending $\Phi_{\mathfrak m^3}$ to all of
-$\mathfrak h$ is structural: the inclusion of
+A second obstruction to extending the nilpotent \(\mathfrak m^3\)
+bar-cobar route to all of \(\mathfrak h\) is structural: the inclusion of
 $H_2=\mathfrak{sl}_2$ violates the lower-central Tate-pronilpotence route
 used in Lemma~\ref{lem:continuous-bar-cobar} because
 $[H_2,H_2]=H_2$ is its own descending Lie series. Even if the
@@ -756,7 +756,7 @@ $\mathfrak{gl}(N\mid N)$, with the directed Lie embedding
 $\mathfrak{gl}(N\mid N)\hookrightarrow\mathfrak{gl}(N+k\mid N+k)$
 and the BV-cohomology vanishing
 $H^*_{\mathrm{BV}}\bigl(\mathfrak{gl}(N\mid N)\bigr)=0$
-(supertrace identity $\mathrm{str}(I)=N-N=0$ kills the would-be
+(supertrace identity $\mathrm{str}(I)=N-N=0$ kills the putative
 U(1)-anomaly). The structural analogy with the truncation here:
 \begin{enumerate}
   \item Each window $\mathfrak{gl}(N\mid N)$ is finite-dimensional,
