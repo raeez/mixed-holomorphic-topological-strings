@@ -404,8 +404,8 @@ filtered cobar recognition criterion
 (Theorem~\ref{thm:universal-filtered-cobar-recognition}), and the
 \(E_2\)-Gerstenhaber bracket match of
 \eqref{eq:ce-pv-dictionary-strong}.  Equation
-\eqref{eq:bar-resolution-derived-centre} is the local form of
-the trace-sector Hochschild action
+\eqref{eq:bar-resolution-derived-centre} is the local form of the
+trace-sector generator boundary value in Hochschild cochains
 	\(\operatorname{Obs}^{\mathrm{cl}}_b(\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}})\to
 	C^\bullet_{\mathrm{Hoch},\mathrm{adm}}\!\bigl(A^{\mathrm{cl}}_{\partial,N},
 	A^{\mathrm{cl}}_{\partial,N}\bigr)\) of
@@ -1498,7 +1498,7 @@ The admissibility conditions are structural hypotheses on the
 completion, not consequences of the finite-\(N\) brane algebra.
 
 \begin{lem}[Admissible formal-Darboux data]
-\label{lem:admissibility-automatic}
+\label{lem:admissible-formal-darboux-data}
 In the formal-Darboux setting
 \(X=\R^2_{\mathrm{top}}\times\widehat{\C^2}_{\mathrm{hol}}\), the
 data used in Theorem~\ref{thm:main-local} consist of the following
@@ -1512,8 +1512,10 @@ admissible structures:
         \(H^2_{\mathfrak m}(R)\)
         \cite{hartshorne-local-cohomology}\cite{kunz-residues-duality};
   \item a weighted or pro-Matlis topology in which the diagonal Casimir
-        \(C=\sum_{a+b>0}z_1^az_2^b\otimes\rho_{a,b}\) and the
-        Hamiltonian coadjoint action are continuous;
+        \(C=\sum_{a+b>0}z_1^az_2^b\otimes\rho_{a,b}\) converges and the
+        Hamiltonian coadjoint action satisfies the seminorm estimate
+        \(p^*_n(f\cdot\rho)\leq C_n\,p_{n+r}(f)\,p^*_{n+r}(\rho)\)
+        of Proposition~\ref{prop:completion-promatlis-continuity};
   \item the diagonal local-cohomology kernel
         \(K^{(2)}_\Delta=d\zeta_1d\zeta_2/(\zeta_1\zeta_2)\) is
         bracket- and kernel-admissible by
@@ -1541,7 +1543,7 @@ classes are chosen.
 \begin{cor}[Local trace-sector formal-Darboux fibre]
 \label{cor:local-trace-sector-deligne}
 With the admissible data of
-Lemma~\ref{lem:admissibility-automatic}, the formal-Darboux stalk
+Lemma~\ref{lem:admissible-formal-darboux-data}, the formal-Darboux stalk
 has the trace-sector generator boundary value of
 Theorem~\ref{thm:main-local}.  After stable scalar reduction and
 admissible completion it is the continuous CE/PV isomorphism; a
@@ -1551,7 +1553,7 @@ of Definition~\ref{defn:admissible-hochschild-centre-lift}.
 
 \begin{proof}
 This is Theorem~\ref{thm:main-local} with the admissible data
-spelled out in Lemma~\ref{lem:admissibility-automatic}.
+spelled out in Lemma~\ref{lem:admissible-formal-darboux-data}.
 \end{proof}
 
 \subsubsection{Global criterion under hypotheses on contractible
@@ -1564,7 +1566,7 @@ operation, the QME solution, and the comparison-cone contraction of
 Definition~\ref{defn:oca-comparison-cone} are additional chain-level
 data.
 
-\begin{thm}[Contractible Stein descent criterion for the global
+\begin{thm}[Contractible Stein supplied-data criterion for the global
 Mixed HT Deligne map]
 \label{thm:contractible-stein-descent-criterion-HS}
 On a contractible Stein holomorphic-symplectic surface
@@ -1577,9 +1579,10 @@ comparison
     \longrightarrow
     Z^{\mathrm{der},\mathrm{Mor}}_{E_2^{\mathrm{HT}}}
       (\mathcal C^{\mathrm{op}}_\partial)
-\]
-is a quasi-isomorphism in a strict-filtered model of
-\(\mathcal B^{\mathrm{adm}}\) under the following five hypotheses:
+	\]
+is a supplied morphism in a strict-filtered model of
+\(\mathcal B^{\mathrm{adm}}\).  It is a quasi-isomorphism after the
+following five pieces of chain-level data have been constructed:
 \begin{enumerate}[label=\textup{(\roman*)}]
   \item an all-arity chiral \(E_2\) diagonal-kernel action extending
         \(K^{(2)}_\Delta\);
@@ -1596,7 +1599,7 @@ is a quasi-isomorphism in a strict-filtered model of
         \(\mathcal B^{\mathrm{adm}}\) after the preceding data have
         been installed.
 \end{enumerate}
-Under these hypotheses all components of
+After these data are installed, all components of
 \(\operatorname{Ob}^{\mathrm{global},5}\) are null-homotopic in their
 governing complexes, and the comparison cone is acyclic.  Replacing
 the anomaly null-homotopy in the fourth hypothesis by the Capelli
@@ -1605,18 +1608,19 @@ Theorem~\ref{thm:projective-stein-descent-criterion-HS}.
 \end{thm}
 
 \begin{proof}
-The first three hypotheses give the three source components of
+The first three pieces of data give the three source components of
 Theorem~\ref{thm:main-global-deligne-criterion}.  Contractibility
 removes monodromy for locally constant descent data, and Stein
 vanishing removes coherent sheaf cohomology obstructions once the
 relevant sheaves and counterterm complexes have been constructed.
 The Capelli class is not killed by contractibility; it is a Lie
-central extension.  The fourth hypothesis is therefore the strict
-trivialisation of the anomaly and locality rows.  The fifth
-hypothesis identifies the OCA map as a quasi-isomorphism.
+central extension.  The fourth datum is therefore the strict
+trivialisation of the anomaly and locality rows.  The fifth datum is the
+acyclicity statement for the comparison cone.  Steinness supplies no
+all-arity operation, no counterterm tower, and no cone contraction.
 \end{proof}
 
-\subsubsection{Projective descent criterion on Stein
+\subsubsection{Projective supplied-data criterion on Stein
 holomorphic-symplectic targets}
 \label{sssec:projective-stein-descent-criterion}
 
@@ -1626,7 +1630,7 @@ chiral \(E_2\), descent, QME, and locality complexes have been
 constructed.  The Capelli central extension records the projective
 part of the trace anomaly.
 
-\begin{thm}[Projective Stein descent criterion]
+\begin{thm}[Projective Stein supplied-data criterion]
 \label{thm:projective-stein-descent-criterion-HS}
 On a Stein holomorphic-symplectic surface $Y_{\mathrm{hol}}$
 (not necessarily contractible), let
@@ -1636,7 +1640,7 @@ branes sit along \(L=\R_t\times\{b\}\).  Suppose the all-arity chiral
 solution, the locality homotopy for \(\operatorname{Ob}^{\mathrm{loc}}\),
 and the comparison-cone contraction of
 Definition~\ref{defn:oca-comparison-cone} are fixed.
-Then the OCA map is a quasi-isomorphism in the projective category
+Then the supplied OCA map is a quasi-isomorphism in the projective category
 obtained from \(\mathcal B^{\mathrm{adm}}\) by extension along the
 Capelli central extension
   \(\widehat{\mathfrak g}_{\mathrm{cent}}\).  The projective residual is
@@ -1659,7 +1663,9 @@ renormalised complexes.  The residual scalar anomaly is the Lie
 central class \([\bar c]\) evaluated by the trace character, together
 with any period class of the chosen global Hamiltonian datum.  Passing
 to the projective category records this class as the projective
-curvature of the trace-sector action.
+curvature of the trace-sector action.  The Stein hypothesis contributes
+only the acyclicity row of the sheaf-theoretic descent complex; the
+operadic, QME, locality, and cone data are independent inputs.
 \end{proof}
 
 \subsubsection{Concrete local realizations and global hypotheses}
@@ -1668,11 +1674,10 @@ curvature of the trace-sector action.
 \begin{cor}[Concrete local realizations and global hypotheses]
 \label{cor:concrete-global-realizations}
 The formal-Darboux theorem applies at every smooth point of each
-target listed below.  A global open--closed quasi-isomorphism is the conclusion
-of
+target listed below.  A global open--closed quasi-isomorphism is the conclusion of
 Theorem~\ref{thm:contractible-stein-descent-criterion-HS} or
-Theorem~\ref{thm:projective-stein-descent-criterion-HS} under their
-stated hypotheses.
+Theorem~\ref{thm:projective-stein-descent-criterion-HS} only after the
+data stated in those criteria have been constructed.
 
 The following contractible Stein holomorphic-symplectic surfaces have
 no topological monodromy for the local trace-sector system:
@@ -1738,7 +1743,7 @@ Stein charts; the global statement requires compact descent:
         on each Stein chart of the Hilbert--Chow morphism
         \(\mathrm{Hilb}^N(\C^2)\to S^N(\C^2)\) the local theorem
         gives the trace-sector chart; descent through the
-        exceptional stratum is measured by a central obstruction class
+        exceptional stratum is controlled by a central obstruction class
         in \(\widehat{\mathfrak g}_{\mathrm{cent}}\).  The trace map
         \(J(f)\) descends to the
         \(\mathrm{Hilb}^N(\C^2)\)-coordinate ring through the cyclic
@@ -1779,9 +1784,10 @@ descent groupoid:
 \hline
 \end{tabular}
 \end{center}
-Assume first that the chart-level chiral \(E_2\) operation and QME
-data of Theorem~\ref{thm:projective-stein-descent-criterion-HS}
-have been fixed on the Stein atlas.  The remaining obstruction to
+Assume first that the chart-level supplied data of
+Theorem~\ref{thm:projective-stein-descent-criterion-HS} have been fixed
+on the Stein atlas: the all-arity chiral \(E_2\) operation, QME solution,
+locality homotopy, and cone contraction.  The remaining obstruction to
 the OCA quasi-isomorphism on \(Y\) is the descent class
 \[
   \operatorname{Ob}^{\mathrm{desc}}_{\Gamma_Y}
@@ -1790,10 +1796,10 @@ the OCA quasi-isomorphism on \(Y\) is the descent class
 \]
 and the OCA descends after this class is represented and killed by a
 compatible descent null-homotopy; a nonzero class obstructs descent.
-The local theorem
+The projective supplied-data criterion
 (Theorem~\ref{thm:projective-stein-descent-criterion-HS})
 applies on each Stein chart of the atlas after the stated data are
-        fixed; descent is the problem of gluing the chart-level OCA along the
+        fixed; descent is the problem of gluing the chartwise OCA data along the
         descent groupoid.  After the coefficient groupoid and comparison
   maps are fixed, the representatives are the period class on \(H^1(E)\) for
   \((7')\), the period class on \(H^1(\Sigma_g)\) for \((8')\), the ADE
@@ -1808,20 +1814,21 @@ Theorem~\ref{thm:cross-target-restriction}.
 On each Stein chart \(U\subset\widetilde Y\), the projective descent
 criterion
 (Theorem~\ref{thm:projective-stein-descent-criterion-HS}) gives
-the local OCA quasi-isomorphism once the chiral \(E_2\), descent, and
-QME data are fixed.  The descent groupoid \(\Gamma_Y\) preserves the
-holomorphic-symplectic form on overlaps by construction; the class
+chartwise projective OCA data only after the chiral \(E_2\), descent,
+QME, locality, and cone-contraction data are fixed.  The descent
+groupoid \(\Gamma_Y\) preserves the holomorphic-symplectic form on
+overlaps by construction; the class
 \(\operatorname{Ob}^{\mathrm{desc}}_{\Gamma_Y}\) is the obstruction
-to lifting the chart-level OCA quasi-isomorphisms to a
+to lifting the chartwise projective OCA data to a
 \(\Gamma_Y\)-descent datum, equivalently the class in
 \(\check H^2(\Gamma_Y;\widehat{\mathfrak g}_{\mathrm{cent}})\)
 classifying central extensions of the descent groupoid by the
-Capelli centre.  Standard descent for the chosen Stein atlas gives
-the OCA quasi-isomorphism on \(Y\) after a
-null-homotopy of
+Capelli centre.  The chosen Stein atlas supplies the
+\v{C}ech--Dolbeault acyclicity row; the OCA quasi-isomorphism on \(Y\)
+exists only after a null-homotopy of
 \(\operatorname{Ob}^{\mathrm{desc}}_{\Gamma_Y}\); a nonzero class
-  obstructs equivariant gluing.  The named period classes are proposed
-  cocycle representatives until the coefficient groupoid is fixed.
+obstructs equivariant gluing.  The named period classes are proposed
+cocycle representatives until the coefficient groupoid is fixed.
 \end{proof}
 
 \begin{rmk}[Nakajima quiver-variety reading on
@@ -1880,8 +1887,8 @@ smooth-target hypothesis.
 The listed spaces are Stein or affine on the stated smooth loci under
 the standard hypotheses in their construction.  The local theorem is
 formal and depends only on the completed holomorphic-symplectic
-neighbourhood of the brane point.  A global theorem requires the
-  five hypotheses of Theorem~\ref{thm:contractible-stein-descent-criterion-HS};
+neighbourhood of the brane point.  A global comparison requires the
+five supplied data of Theorem~\ref{thm:contractible-stein-descent-criterion-HS};
 Steinness alone gives no chiral \(E_2\) operad, no all-order QME
 solution, and no comparison-cone contraction
 (Definition~\ref{defn:oca-comparison-cone}).
@@ -1896,13 +1903,14 @@ formal local conclusion unless the global comparison data exist:
         only the local formal trace-sector map;
   \item (17)--(21): the character, Coulomb, Higgs, multiplicative
         quiver, hypertoric, and wild-character targets require their
-        own Stein atlas, OCA comparison, QME solution, and descent
-        null-homotopy.
+        own Stein atlas, OCA comparison, all-arity chiral \(E_2\) datum,
+        QME solution, locality homotopy, descent null-homotopy, and cone
+        contraction.
 \end{itemize}
 In each case the formal-Darboux theorem is the local trace-sector
 closed-to-open map at a smooth brane point.  The full
-derived \(E_2^{\mathrm{HT}}\)-centre identification is the global problem
-under hypotheses.
+derived \(E_2^{\mathrm{HT}}\)-centre identification is the global
+supplied-data criterion above.
 \end{rmk}
 
 \begin{rmk}[Slodowy slices and deformations of Kleinian
@@ -2086,7 +2094,7 @@ twofold:
         bulk--boundary correspondence as the formal-Darboux fibre;
   \item to give the \emph{trace map}
         \(J(f) = \operatorname{Tr}\,f(\phi_1,\phi_2)\) of
-        Theorem~\ref{thm:capelli-equals-modular-curvature} as the
+        Theorem~\ref{thm:capelli-projective-anomaly} as the
         Capelli-projective scalar of the local stalk.
 \end{enumerate}
 The theorem contributes only the formal-Darboux fibre to the following

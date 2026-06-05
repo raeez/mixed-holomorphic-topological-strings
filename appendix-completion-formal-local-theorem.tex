@@ -12,7 +12,7 @@ Chevalley--Eilenberg/polyvector dictionary are continuous objects.
 
 The obstruction classes of the local theorem are then honest
 cohomology classes in filtered \(L_\infty\) deformation complexes.
-They measure separate lifts: radial Weyl compatibility,
+They are the obstruction classes for separate lifts: radial Weyl compatibility,
 Bochner--Martinelli current transfer, Tate bar-cobar admissibility,
 Hochschild equivariance and centre-lift, the scalar-contact chain map, quantum master
 equation counterterms, the brane-defect propagator, and the large-\(N\)
@@ -937,7 +937,7 @@ brane-defect propagator extension
 (\S\ref{ssec:completion-graph-qme}).  Equivariance data
 \(H^{\mathrm{prod}}_{x,a},H^{P_0}_{x,a},H_3,\ldots\in
 CC^\bullet(A_{\mathrm{op}},A_{\mathrm{op}})\) are required to
-satisfy the Hochschild action equations
+satisfy the Hochschild centrality equations
 \[
   [\Phi_N^{\mathrm{gen}}(x),M_a]_G-M_{\rho_x(a)}
     =dH^{\mathrm{prod}}_{x,a},
@@ -1257,7 +1257,7 @@ form a class in
 inverse system of windowwise counterterms
 \(\{C_{n,M}\}\) precisely when this class is zero.  The Milnor
 compatibility class \(\lambda_n\in
-\varprojlim^1 H^0(Q^\bullet_{w,M})\) measures the obstruction to
+\varprojlim^1 H^0(Q^\bullet_{w,M})\) is the obstruction class for
 compatibility of the windowwise counterterms across windows; it
 vanishes when the truncations \(\pi_{M,N}\) are compatible with
 the chosen primitives.  The combined vanishing
@@ -1325,33 +1325,45 @@ of the diagonal by general elliptic-operator theory
 distributional current insertions follows from C4.
 \end{proof}
 
-\begin{thm}[Graph weights and QME after counterterms]
+\begin{thm}[Graph-weight/QME criterion after supplied counterterms]
 \label{thm:completion-graph-qme}
 For the brane-defect interaction
 \(I=I_{\mathrm{Ham}}\) of the local Hamiltonian BF theory and the
 propagator \(P_{\varepsilon,L}\) of
-Definition~\ref{def:completion-brane-defect-propagator}, assume a
-brane-defect Costello locality theorem for this support stratum, a fixed
-chain scalar projection, finite row arrays, graph
-summability/wavefront admissibility, and
-\(\mathfrak D^{\mathrm{ns}}_n=0\) for every order \(n\), with
-compatible primitives.  Then the given
-graph weights \(W_\Gamma(P_{\varepsilon,L},I)\) admit local
-asymptotic expansions as \(\varepsilon\to 0\); divergences are
-removable by local counterterms \(C_{\hbar,w,I}\); the renormalized
-limit \(\lim_{\varepsilon\to 0}\sum_\Gamma\hbar^{b_1(\Gamma)}/
-|\!\Aut\Gamma|W_\Gamma\) exists in the weighted Tate topology of
-\(\mathfrak K_{\mathcal T}\); wavefront sets restrict cleanly by
-Theorem~\ref{thm:completion-wavefront-control}; and the
-	renormalized effective interaction \(I[L]\) satisfies the
-	renormalized quantum master equation
-	\[
-	  Q_HI[L]+\tfrac12\{I[L],I[L]\}_L+\hbar\Delta_LI[L]=0
-	\]
-	in the corrected residual complex.  Before the compatible primitives
-	are inserted, the curvature is the residual non-scalar QME class
-	\(\mathrm{Ob}^{\mathrm{red}}_{w,\partial,\hbar}\) of
-	Definition~\ref{def:completion-residual-nonscalar}.  The bulk-to-defect
+Definition~\ref{def:completion-brane-defect-propagator}, fix the
+following analytic and homological data:
+\begin{enumerate}[label=\textup{(G\arabic*)}]
+\item a brane-defect Costello locality theorem for this support stratum,
+  giving local asymptotic expansions of the graph weights
+  \(W_\Gamma(P_{\varepsilon,L},I)\) as \(\varepsilon\to0\);
+\item clean wavefront restriction for the brane-defect propagator and
+  current insertions, as in
+  Theorem~\ref{thm:completion-wavefront-control};
+\item weighted-Tate summability of the finite-scale graph expansion and
+  of the local counterterm series in the chosen coefficient topology;
+\item a fixed chain scalar projection, finite row arrays, and
+  \(\mathfrak D^{\mathrm{ns}}_n=0\) for every order \(n\), with
+  compatible local primitives \(C_{n,w,I}\).
+\end{enumerate}
+Then the supplied counterterm system
+\(C_{\hbar,w,I}=\sum_{n\ge1}\hbar^nC_{n,w,I}\) removes the local
+divergences and the renormalized finite-scale expression
+\[
+  I[L]=\lim_{\varepsilon\to0}\sum_{\Gamma}
+  \frac{\hbar^{b_1(\Gamma)}}{|\!\Aut\Gamma|}
+  W_\Gamma(P_{\varepsilon,L},I+C_{\hbar,w,I})
+\]
+exists in the stated weighted Tate topology.  In the corrected residual
+complex it satisfies the finite-scale quantum master equation
+\[
+  Q_HI[L]+\tfrac12\{I[L],I[L]\}_L+\hbar\Delta_LI[L]=0 .
+\]
+Before the compatible primitives are inserted, the curvature is the
+residual non-scalar QME class
+\(\mathrm{Ob}^{\mathrm{red}}_{w,\partial,\hbar}\) of
+Definition~\ref{def:completion-residual-nonscalar}.  The theorem does
+not construct \textup{(G1)--(G4)}; it records the exact criterion under
+which they give a QME-compatible brane-defect kernel.  The bulk-to-defect
 kernel
 \(\kappa_{\hbar,w,I}:C^\bullet_{\mathrm{CE,cont}}(\mathfrak g^{\mathrm{cur}}_{w,\hbar,I})
 \to\mathfrak Q^\bullet_{w,\partial,\hbar}(I)\) is defined on
@@ -1366,29 +1378,27 @@ K_{\hbar,w,I}]_\hbar=0\).
 \end{thm}
 
 \begin{proof}
-Local asymptotic expansion as \(\varepsilon\to 0\) is the given
-brane-defect version of Costello's renormalization theorem
-\cite{costello-renormalization}*{Thm.~6.1.1}; the expansion has only
-finitely many non-renormalizable divergences in each loop order,
-removable by local counterterms in
-\(\mathcal O^{\mathrm{bd}}_{\mathrm{loc}}\) by the locality
-hypothesis.  The
-renormalized limit converges in the weighted Tate topology because
-the K\"othe weights \(p_n\) of
-Definition~\ref{def:completion-weighted-kothe} dominate the heat
-kernel decay (Theorem~\ref{thm:wt-canonical-envelope}, applied
-to the brane-defect restriction).  Wavefront control is
-Theorem~\ref{thm:completion-wavefront-control}.  The QME after
-compatible counterterms is the standard Costello effective-action calculus
-\cite{costello-renormalization}*{Ch.~5} applied to the brane-defect
-support stratum, with the residual non-scalar class
-\(\mathrm{Ob}^{\mathrm{red}}_{w,\partial,\hbar}\) measuring
-the curvature before the compatible primitive system is inserted.  The
-kernel construction
-\(K_{\hbar,w,I}=\kappa_{\hbar,w,I}+C_{\hbar,w,I}\) follows from the
-Milnor exact sequence
-(Theorem~\ref{thm:completion-milnor-obstruction-vector}) once the
-windowwise counterterms are compatible.
+Condition \textup{(G1)} supplies the brane-defect version of Costello's
+finite-scale graph expansion
+\cite{costello-renormalization}*{Thm.~6.1.1}; condition \textup{(G2)}
+is the clean-restriction input for the boundary current labels; and
+condition \textup{(G3)} is precisely the convergence statement in the
+weighted coefficient topology.  Thus the renormalized graph expression
+is a well-defined element of the residual local-functional complex.
+Condition \textup{(G4)} is the Milnor counterterm criterion of
+Theorem~\ref{thm:completion-milnor-obstruction-vector}: the windowwise
+non-scalar classes and the \(\varprojlim^1H^0\) primitive-compatibility
+class vanish at every order, so the compatible family
+\(C_{\hbar,w,I}\) exists.  Costello's effective-action identity
+\cite{costello-renormalization}*{Ch.~5}, applied after these analytic
+inputs and counterterms have been fixed, gives the displayed finite-scale
+QME.  Before \textup{(G4)}, the same curvature is represented by
+\(\mathrm{Ob}^{\mathrm{red}}_{w,\partial,\hbar}\).  Adding the
+counterterm to the generator-level kernel gives
+\(K_{\hbar,w,I}=\kappa_{\hbar,w,I}+C_{\hbar,w,I}\), and the QME identity
+is exactly
+\(d_{\mathrm{QME}}K_{\hbar,w,I}
++\tfrac12[K_{\hbar,w,I},K_{\hbar,w,I}]_\hbar=0\).
 \end{proof}
 
 \begin{rmk}[\(\theta_3\) prototype]
@@ -1434,8 +1444,9 @@ Weiss descent is the additional assertion that the homotopy-colimit map
   \xrightarrow{\sim}\mathrm{Obs}^{\mathrm{str}}(O)
 \]
 is an equivalence for every admissible open \(O\subset X\).  After
-quantization this remains governed by the renormalized
-brane-defect propagator and compatible descent homotopies.
+quantization this remains governed by the graph-QME criterion data of
+Theorem~\ref{thm:completion-graph-qme} and compatible descent
+homotopies.
 \end{thm}
 
 \begin{proof}
@@ -1454,12 +1465,12 @@ descent on \(L=\R_t\).  The collision module
 \(X\setminus L\) and restriction to \(L\) via the costalk \(i^!\);
 the stratified factorization product is the bulk-to-brane
 operator-product expansion in the local Hamiltonian BF theory,
-extracted from the Wick contractions of the brane-defect
-propagator (Theorem~\ref{thm:completion-graph-qme}).  These data give
+extracted from Wick contractions only after the graph-QME criterion data
+of Theorem~\ref{thm:completion-graph-qme} have been supplied.  These data give
 the stratified prefactorization maps.  Weiss descent requires the
 homotopy-colimit descent equivalence on each stratum and compatibility
 of the structure maps with the \(j_*\)/\(i^!\)-adjunction; after
-quantization the same statement requires the renormalized propagator
+quantization the same statement requires the graph-QME criterion data
 and descent homotopies.
 \end{proof}
 
@@ -1470,12 +1481,17 @@ The stable primitive trace algebra becomes a physical large-\(N\)
 string state only in the presence of an actual state and connected
 cumulants.
 
-\begin{defn}[Large-\(N\) trace state]
+\begin{defn}[Large-\(N\) trace-state datum]
 \label{def:completion-large-N-state}
-For each \(N\ge 1\), a large-\(N\) trace state is a continuous
-\(\C\)-linear functional
-\(\omega_{N,\Omega}:\mathcal A^q_{\partial,N}(I)\to\C[[\hbar_{\mathrm{QME}},
-\hbar_W,\epsilon]]\) satisfying:
+A large-\(N\) trace-state datum on a fixed factorization window is a
+sequence of continuous \(\C\)-linear functionals
+\[
+  \omega_{N,\Omega}:\mathcal A^q_{\partial,N}(I)\longrightarrow
+  \C[[\hbar_{\mathrm{QME}},\hbar_W,\epsilon]],
+  \qquad N\ge1,
+\]
+together with scaling exponents \(\alpha\) and \(\beta(k)\).  For each
+\(N\), \(\omega_{N,\Omega}\) satisfies:
 \begin{enumerate}
 \item \(\omega_{N,\Omega}((Q+\hbar\Delta+\{I,-\})a)=0\)
   (Ward identity);
@@ -1486,24 +1502,24 @@ For each \(N\ge 1\), a large-\(N\) trace state is a continuous
    =\omega_{N,\Omega}(a_1\cdots a_k)\)
   (factorization compatibility).
 \end{enumerate}
-The connected cumulants are
+The connected cumulants of the sequence are
 \(\kappa^N_k(a_1,\ldots,a_k)=\sum_{\pi\in\mathrm{Part}(k)}
 (-1)^{|\pi|-1}(|\pi|-1)!\prod_{B\in\pi}\omega_{N,\Omega}
-(\prod_{i\in B}a_i)\), and the large-\(N\) limit is
+(\prod_{i\in B}a_i)\).  The datum has a large-\(N\) limit on insertions
+\(f_1,\ldots,f_k\) when
 \(\kappa^\infty_k(f_1,\ldots,f_k)=\lim_{N\to\infty}N^{\beta(k)}
 \kappa^N_k(J_N(f_1),\ldots,J_N(f_k))\) for some scaling exponent
-\(\beta(k)\) and rescaling \(J_N(f)=N^{-\alpha}\Tr f(\phi_1,\phi_2)\).
+\(\beta(k)\) and rescaling \(J_N(f)=N^{-\alpha}\Tr f(\phi_1,\phi_2)\)
+exists.
 \end{defn}
 
-\begin{thm}[Large-\(N\) trace state]
+\begin{thm}[Large-\(N\) trace-state data are additional structure]
 \label{thm:completion-large-N}
 The assembled datum \(\mathfrak U_{\mathcal T}\) does not by itself
-construct a state \(\omega_{N,\Omega}\) or the limits
-\(\kappa^\infty_k\).  A large-\(N\) sector consists of the additional
-state of Definition~\ref{def:completion-large-N-state}, Ward and
-cyclicity identities, a factorization condition, scaling exponents
-\(\alpha,\beta(k)\), and convergence of the rescaled connected
-cumulants.
+construct the trace-state datum of
+Definition~\ref{def:completion-large-N-state} or the limits
+\(\kappa^\infty_k\).  A physical large-\(N\) sector consists of that
+additional datum and convergence of the rescaled connected cumulants.
 \end{thm}
 
 \begin{proof}
@@ -1537,7 +1553,8 @@ where \(\mathsf C\) is the host filtered nuclear Tate dg category
 strong deformation retract
 (Definition~\ref{def:completion-protected-sector-sdr});
 \(\mathcal F^q_{\mathrm{bulk}}\) is the renormalized quantum bulk
-factorization algebra
+factorization datum obtained only after the graph-QME criterion data
+are supplied
 (Theorem~\ref{thm:completion-stratified-factorization} and
 Theorem~\ref{thm:completion-graph-qme});
 \(\mathcal A^q_{\partial,N}\) is the quantum open Dirac brane
@@ -1545,7 +1562,8 @@ factorization algebra
 (Theorem~\ref{thm:completion-tau-op-mc}); \(\Phi^q_N\) is the
 quantum closed-to-open derived-centre morphism
 (\S\ref{ssec:completion-hochschild-centrality}); \(K_{\hbar,w,I}\)
-is the all-order brane-defect QME kernel
+is the candidate brane-defect QME kernel obtained from the supplied
+counterterm tower
 (Theorem~\ref{thm:completion-graph-qme});
 \(\mathcal R_{\mathrm{rad}}\) is the all-bidegree Weyl/radial
 normal-form theorem
@@ -1673,7 +1691,7 @@ cotangent module is Theorem~\ref{thm:completion-native-promatlis};
 the candidate derived-centre lift is defined only after the Hochschild
 equivariance homotopies
 (Theorem~\ref{thm:completion-centrality-homotopies}) are assembled with
-the all-order QME kernel
+the graph-QME criterion data
 (Theorem~\ref{thm:completion-graph-qme}).
 \end{proof}
 
@@ -1842,8 +1860,8 @@ comparison maps.
  & \text{\(L_\infty\)-transferred bracket / counterterm}
  & \text{Thm.~\ref{thm:completion-prot-sector-obstruction}}\\
 \operatorname{Ob}_{N\to\infty}
- & \text{large-\(N\) state \(\omega_{N,\Omega}\) and limits}
- & \text{state extension}
+ & \text{large-\(N\) trace-state datum and limits}
+ & \text{trace-state extension}
  & \text{Thm.~\ref{thm:completion-large-N}}
 \end{array}
 \]
@@ -1854,7 +1872,7 @@ remaining hypotheses are
 the matched-conventions data \(\mathcal C_{\mathcal T}\), the
 protected SDR \((i_{\mathcal T},p_{\mathcal T},h_{\mathcal T})\), the
 all-bidegree radial primitive outside the verified finite windows, the
-all-order QME compatibility, and the large-\(N\) state.
+all-order QME compatibility, and the large-\(N\) trace-state datum.
 \end{thm}
 
 \begin{proof}
@@ -1886,7 +1904,8 @@ finite-window checks give the recorded ranges
 Statement~\ref{stmt:app-radial-parts-hypotheses}(1)--(2)
 homomorphism and injectivity theorems from the cited radial-parts
 literature; (v) the all-order QME compatibility across the inverse
-system; and (vi) the large-\(N\) state and cumulant convergence data.
+system; and (vi) the large-\(N\) trace-state datum and cumulant
+convergence data.
 The remaining clauses are represented by constructed objects or by
 obstruction classes in the assembled datum \(\mathfrak U_{\mathcal T}\).
 \end{rmk}
@@ -1980,15 +1999,15 @@ cohomology class that obstructs its extension.
   \(\theta_3\) row verifies this at \(n=3\).
 
 \item[Theorem~\ref{thm:completion-graph-qme} (Costello brane-defect
-  graph QME).]  Proved by Costello's renormalization theorem
-  adapted to the brane-defect support stratum, plus H\"ormander
-  wavefront control of the heat-kernel propagator restriction.
-  The QME is solved modulo the residual non-scalar class
-  \(\mathrm{Ob}^{\mathrm{red}}_{w,\partial,\hbar}\), which is
-  killed by the Milnor counterterm tower; soundness depends on
-  the explicit Costello finite-scale graph expansion in the
-  weighted Tate topology, which holds for the K\"othe weights of
-  Definition~\ref{def:completion-weighted-kothe}.
+  graph-QME criterion).]  This is a criterion after four supplied
+  inputs: the brane-defect finite-scale graph expansion, clean
+  wavefront restriction, weighted-Tate summability, and vanishing of the
+  Milnor counterterm obstruction tower.  Under those data the
+  counterterm-corrected finite-scale interaction satisfies the QME.  The
+  theorem does not construct the brane-defect renormalization theorem or
+  the weighted convergence estimates; without the compatible Milnor
+  counterterms the curvature is the residual non-scalar class
+  \(\mathrm{Ob}^{\mathrm{red}}_{w,\partial,\hbar}\).
 
 \item[Theorem~\ref{thm:completion-stratified-factorization}
   (stratified factorization on \((X,L)\)).]  Proved at the
@@ -1999,13 +2018,13 @@ cohomology class that obstructs its extension.
   brane-defect term adds the interval support current and defect
   restriction.  Weiss descent follows from descent on each stratum
   and \(j_*\)/\(i^!\)-adjunction.  The post-quantization
-  statement requires the renormalized brane-defect propagator,
-  which is Theorem~\ref{thm:completion-graph-qme}.
+  statement requires the graph-QME criterion data of
+  Theorem~\ref{thm:completion-graph-qme}.
 
-\item[Theorem~\ref{thm:completion-large-N} (large-\(N\) trace
-  state).]  This theorem assumes a state, Ward identity, cyclicity,
-  factorization, scaling exponents, and convergence of connected
-  cumulants.  Köthe continuity and QME counterterms
+\item[Theorem~\ref{thm:completion-large-N} (large-\(N\) trace-state
+  datum).]  This theorem assumes a trace-state sequence, Ward identity,
+  cyclicity, factorization, scaling exponents, and convergence of
+  connected cumulants.  Köthe continuity and QME counterterms
   are necessary algebraic constraints, not an \(N\to\infty\) theorem.
 
 \item[Theorem~\ref{thm:completion-universal-formal-brane} (closed-open
@@ -2014,7 +2033,8 @@ cohomology class that obstructs its extension.
   into the comparison datum \(\mathfrak U_{\mathcal T}\).  The
   remaining hypotheses are the matched-conventions datum, the SDR
   existence, the radial all-bidegree primitive outside verified
-  windows, the all-order QME compatibility, and the large-\(N\) state.
+  windows, the all-order QME compatibility, and the large-\(N\)
+  trace-state datum.
 
 \item[Theorem~\ref{thm:completion-cross-target-slice} (cross-target
   formal-slice principle).]  Proved as the formal restriction of
@@ -2040,5 +2060,5 @@ hypotheses.  A compact target also requires a parent BV theory and
 protected supercharge, the matched-conventions datum, a uniform
 decorated PBW-Stokes contracting homotopy in every bidegree, clauses
 (1)--(2) of Statement~\ref{stmt:app-radial-parts-hypotheses}, all-order
-QME compatibility, and a large-\(N\) trace state.
+QME compatibility, and a large-\(N\) trace-state datum.
 \end{rmk}

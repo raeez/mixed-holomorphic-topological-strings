@@ -82,11 +82,15 @@ Procesi--Razmyslov reduction
 (Proposition~\ref{prop:app-radial-pr-unconditional-window}) closes
 the listed interior bidegrees by finite rational linear algebra; the
 explicit list of bidegrees verified in this mode
-reaches through total degree \(15\) and is given in
-Remark~\ref{rmk:app-radial-finite-verification}.  An unlisted
-	bidegree remains governed by the obstruction class
-\(\Omega^{\mathrm{rad}}_{a,b}\in\operatorname{coker}B_{a,b}\), or else
-it depends on Statement~\ref{stmt:app-radial-parts-hypotheses}.  Reflection
+consists of the non-edge bidegrees of total degree at most \(13\)
+together with the six total-degree-\(14\) bidegrees
+\[
+  (3,11),(11,3),(4,10),(10,4),(5,9),(9,5),
+\]
+and is given in Remark~\ref{rmk:app-radial-finite-verification}.
+An unlisted bidegree remains governed by the obstruction class
+\(\Omega^{\mathrm{rad}}_{a,b}\in\operatorname{coker}B_{a,b}\) unless
+Statement~\ref{stmt:app-radial-parts-hypotheses} is imposed.  Reflection
 symmetry \((a,b)\leftrightarrow(b,a)\) is implemented by the
 symplectic involution \(z_1\leftrightarrow z_2\),
 \(X\leftrightarrow Y\); both sides of the radial bicomplex are
@@ -299,8 +303,8 @@ equivariant under it.
     \mathcal W_N\widehat\mu(\lie{sl}_N).
   \]
   The scalar Hamiltonian line survives this moment ideal; below it is
-  removed by quotienting the empty trace before connected
-  large-\(N\) extraction.
+  removed by quotienting the empty trace before connected stable-trace
+  extraction.
 \end{defn}
 
 \begin{lem}[Capelli--Weyl triangular normalization]
@@ -1995,7 +1999,7 @@ exactly the assertion that the ordinary Weyl trace \(J_N(f)\) equals
   \[
     \overline{J_N(f)}
   \]
-  have a stable connected large-\(N\) limit after removing the empty
+  have a stable connected trace limit after removing the empty
   trace and disconnected products.  This limit is the renormalized
   associated-graded connected transition system associated to the
   finite-rank normal-ordered trace algebras over
@@ -2139,25 +2143,36 @@ exactly the assertion that the ordinary Weyl trace \(J_N(f)\) equals
 \label{rmk:app-radial-finite-verification}
   Exact rational linear algebra over the indexed-diagram basis proves
   \(\Omega^{\mathrm{rad}}_{a,b}=0\) in the following windows:
-  \[
-  \begin{array}{c|l|l}
-  \text{window} & \text{status} & \text{input} \\
+  \begin{center}
+  \begin{tabular}{p{0.38\linewidth}|p{0.16\linewidth}|p{0.36\linewidth}}
+  window & status & input \\
   \hline
-  a=2\ \text{or}\ b=2 & \text{proved} &
-    \text{edge telescoping} \\
-  a,b\ge3,\ a+b\le13 & \text{proved} &
-    \text{exact rational reduction} \\
-  a+b=14,\ \min(a,b)\le6 & \text{proved} &
-    \text{exact rational reduction} \\
-  a+b=15\ \text{listed subwindow} & \text{proved} &
-    \text{exact rational reduction} \\
-  (7,7) & \text{open in the finite computation} &
-    \Omega^{\mathrm{rad}}_{7,7}\in\operatorname{coker}B_{7,7}
-  \end{array}
-  \]
+  \(a=2\) or \(b=2\) & proved &
+    closed-form edge telescoping \\
+  \(a,b\ge3,\ a+b\le13\) & proved &
+    exact rational reduction \\
+  \(a+b=14\), with \((a,b)\) equal to one of
+  \((3,11),(11,3),(4,10)\),
+  \((10,4),(5,9),(9,5)\) &
+    proved & exact rational reduction \\
+  \((6,8),(8,6),(7,7)\) &
+    undecided finite system &
+    classical cyclic boundary equations close; no decorated target
+    solution and no signed obstruction row is certified \\
+  unlisted bidegree &
+    not proved here &
+    governed by
+    \(\Omega^{\mathrm{rad}}_{a,b}\in\operatorname{coker}B_{a,b}\)
+    unless the radial hypotheses or a per-bidegree rational reduction
+    is supplied
+  \end{tabular}
+  \end{center}
   The reduction is the Procesi--Razmyslov kernel-correction route of
   Proposition~\ref{prop:app-radial-pr-unconditional-window}.  The
-  all-bidegree closure is
+  first undecided exact finite systems are
+  \((6,8),(8,6),(7,7)\).  This is not a non-vanishing theorem: no
+  signed row in \(\ker B_{a,b}^*\) is known for these bidegrees.
+  The all-bidegree closure is
   Theorem~\ref{thm:app-radial-bicomplex-acyclic} only under
   Statement~\ref{stmt:app-radial-parts-hypotheses}; without that
   statement, each unlisted bidegree is governed by its exact cokernel
@@ -2402,9 +2417,12 @@ exactly the assertion that the ordinary Weyl trace \(J_N(f)\) equals
   closes \(\Omega^{\mathrm{rad}}_{a,b}=0\) by exact rational
   linear algebra against the moment ideal, independently of the
   statement hypotheses.  The bidegrees enumerated in
-  Remark~\ref{rmk:app-radial-finite-verification} (edges and
-  interior cases through total degree \(15\)) are closed by this
-  exact rational normal-form route.
+  Remark~\ref{rmk:app-radial-finite-verification} (edges, all
+  non-edge bidegrees of total degree at most \(13\), and the six
+  total-degree-\(14\) bidegrees
+  \((3,11),(11,3),(4,10),(10,4),(5,9),(9,5)\)) are closed by this
+  exact rational normal-form route.  The first undecided exact
+  finite systems are \((6,8),(8,6),(7,7)\).
 
   In the bidegrees verified by the exact finite-window route, the
   signed-row obstruction set of

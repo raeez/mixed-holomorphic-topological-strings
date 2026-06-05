@@ -93,9 +93,10 @@ Hamiltonian-equivariant principal-part transfer into a finite Matlis
 target: high transverse holomorphic modes leak back into low brane
 momentum modes under Hamiltonian flow.  The replacement structure used
 below is the one-pair analytic pro-Matlis retract
-(Corollary~\ref{cor:promatlis-retract-compatible-replacement}), with its fixed
-finite-window projections and Bochner--Martinelli moment map
-(Theorem~\ref{thm:promatlis-universal-property}).  The Hadamard / QME
+  (Corollary~\ref{cor:promatlis-retract-compatible-replacement}), with its fixed
+  finite-window projections and Bochner--Martinelli moment map satisfying
+  the fixed-projection receiver criterion of
+  Theorem~\ref{thm:promatlis-universal-property}.  The Hadamard / QME
 residual \(\operatorname{Ob}^{\mathrm{HML}}_{w}\) and the BMK
 finite-window obstruction live in independent sectors of the local
 theorem, with separate formulas.
@@ -2878,9 +2879,11 @@ Theorem~\ref{thm:theta-three-companion-face-obstruction}.
 \end{proof}
 
 \begin{cor}[Pro-Matlis retract as the compatible replacement target]\label{cor:promatlis-retract-compatible-replacement}
-  Theorem~\ref{thm:bmk-finite-window-obstruction} forecloses every choice of
-  finite-Matlis target for a Hamiltonian-equivariant principal-part
-  transfer.  Inside the category \(\mathsf{Curr}^{BM}\) of compatible
+  Theorem~\ref{thm:bmk-finite-window-obstruction} forecloses the fixed
+  finite-Matlis quotient problem for a Hamiltonian-equivariant
+  principal-part transfer retaining \(\mc P_{\le N}\) and killing its
+  tail.  Inside the fixed-projection slice
+  \(\mathsf{Curr}^{BM}_{\mathrm{fix}}\) of compatible
   finite-window principal-part current systems with full
   \(\mathfrak h\)-coadjoint action, BMK homotopy data, and uniform
   \(\mathfrak m\)-adic moment bounds
@@ -2914,12 +2917,13 @@ Theorem~\ref{thm:theta-three-companion-face-obstruction}.
   \]
   This gives the projection-compatible inverse-limit receiver for the
   fixed BMK moment system.  Theorem~\ref{thm:bmk-finite-window-obstruction}
-  establishes the necessity of a pro-Matlis replacement in place of
-  every finite-Matlis target.
+  establishes the necessity of a pro-Matlis replacement for this
+  fixed-projection finite-window transfer problem.
 \end{cor}
 
-\begin{thm}[Pro-Matlis inverse-limit receiver property]\label{thm:promatlis-universal-property}
-  Let \(\mathsf{Curr}^{BM}\) be the category whose objects are
+\begin{thm}[Pro-Matlis fixed-projection receiver criterion]\label{thm:promatlis-universal-property}
+  Let \(\mathsf{Curr}^{BM}_{\mathrm{fix}}\) be the projection slice whose
+  objects are
   \(\C\)-linear pairs
   \((Q,Q^{\mathrm{an}})\) with \(Q^{\mathrm{an}}\subset Q\), equipped
   with:
@@ -2948,21 +2952,45 @@ Theorem~\ref{thm:theta-three-companion-face-obstruction}.
   finite projections \(\pi_N,\pi'_N\) and with the analytic-submodule
   retractions and analytic comparisons.  A morphism is
   \(\mathfrak h\)-equivariant only when the untruncated
-  residue-coadjoint actions commute with it.  Then the pro-Matlis pair
-  \(\bigl(\widehat{\mathcal P}_\Pi,\mathcal P_{\mathrm{an}}(B_1)\bigr)\)
-  with the analytic moment map \(P^{\mathrm{an}}_\Pi\) of
-  Theorem~\ref{thm:app-finite-window-bmk-current-transfer} receives,
-  from every object \((Q,Q^{\mathrm{an}})\), a unique morphism
-  compatible with the fixed finite-window projections and analytic
-  retractions:
+  residue-coadjoint actions commute with it.  For every object
+  \((Q,Q^{\mathrm{an}})\), the finite projections determine a unique
+  \(\C\)-linear map
   \[
-    (Q,Q^{\mathrm{an}})\longrightarrow
-    \bigl(\widehat{\mathcal P}_\Pi,\mathcal P_{\mathrm{an}}(B_1)\bigr).
+    \mu_Q\colon Q\longrightarrow
+    \widehat{\mathcal P}_\Pi=\varprojlim_N\mathcal P_{\le N},
+    \qquad
+    \pi_N\mu_Q=\pi_N .
   \]
-  The assertion is an inverse-limit receiver property for the fixed
-  BMK system; it is not a terminality statement after the category is
-  enlarged by spectator summands or by changing the analytic
-  submodule.
+  Its restriction to \(Q^{\mathrm{an}}\) lands in
+  \(\mathcal P_{\mathrm{an}}(B_1)\) exactly when the analytic
+  compatibility equations
+  \[
+    \iota_{\mathrm{an}}\pi^{\mathrm{an}}=\mu_Q|_{Q^{\mathrm{an}}},
+    \qquad
+    \pi_N\iota_{\mathrm{an}}\pi^{\mathrm{an}}=\pi_N|_{Q^{\mathrm{an}}}
+  \]
+  hold.  It is a morphism in
+  \(\mathsf{Curr}^{BM}_{\mathrm{fix}}\) only after a target analytic
+  retraction
+  \(P^{\mathrm{ret}}_\Pi\colon\widehat{\mathcal P}_\Pi\to
+  \mathcal P_{\mathrm{an}}(B_1)\) with inclusion
+  \(I_\Pi\colon\mathcal P_{\mathrm{an}}(B_1)\hookrightarrow
+  \widehat{\mathcal P}_\Pi\) has been chosen and the retraction and
+  Hamiltonian-action equations
+  \[
+    \mu_QIP=I_\Pi P^{\mathrm{ret}}_\Pi\mu_Q,\qquad
+    \mu_Q(f\cdot\xi)=f\cdot\mu_Q(\xi)
+  \]
+  are satisfied for the chosen analytic retraction and for every
+  \(f\in\mathfrak h\).  Here
+  \(\iota_{\mathrm{an}}\colon\mathcal P_{\mathrm{an}}(B_1)
+  \hookrightarrow\widehat{\mathcal P}_\Pi\) is the inclusion from the
+  definition of \(\mathcal P_{\mathrm{an}}(B_1)\).  The assertion is
+  therefore a fixed-projection
+  receiver criterion for the BMK moment system, not a terminality
+  statement after the category is enlarged by spectator summands, after
+  the analytic submodule is changed, or before the displayed
+  compatibility equations have been checked.
 \end{thm}
 
 \begin{proof}
@@ -2970,23 +2998,24 @@ Theorem~\ref{thm:theta-three-companion-face-obstruction}.
   \(\pi_N\colon Q\to\mathcal P_{\le N}\), defining a unique
   projection-compatible map
   \(Q\to\varprojlim_N\mathcal P_{\le N}=\widehat{\mathcal P}_\Pi\) by
-  the universal property of the inverse limit.  Condition~(d) sends
-  the analytic submodule to
-  \(\mathcal P_{\mathrm{an}}(B_1)=\tau(\mathcal O(B_1)^\vee_{\mathrm{red}})\)
-  compatibly with the finite-window maps, and condition~(e) ensures the
-  lift is convergent in the
+  the universal property of the inverse limit.  Condition~(d), together
+  with the displayed analytic compatibility equations, is exactly the
+  statement that the restriction of this map to \(Q^{\mathrm{an}}\)
+  factors through
+  \(\mathcal P_{\mathrm{an}}(B_1)=
+  \tau(\mathcal O(B_1)^\vee_{\mathrm{red}})\).  Condition~(e) gives the
+  moment bound needed for convergence in the
   \(\mathfrak m\)-adic topology of \(\widehat{\mathcal P}_\Pi\).
   Uniqueness: any two such morphisms agree on every
   \(\mathcal P_{\le N}\)-component by compatibility with \(\pi_N\),
-  hence on \(\varprojlim_N\mathcal P_{\le N}\).  Chain-homotopy
-  compatibility and the moment bounds are preserved by the inverse
-  limit.  Hamiltonian equivariance is a separate condition on the
-  untruncated actions, not a consequence of the finite projections.
-  This proves the
-  projection-compatible receiver property.
-  Theorem~\ref{thm:bmk-finite-window-obstruction} excludes every
-  finite-rank target (those have a strict finite-window restriction of
-  \(\mathfrak h\), violating~(b)), and
+  hence on \(\varprojlim_N\mathcal P_{\le N}\).  The equations
+  \(\mu_QIP=I_\Pi P^{\mathrm{ret}}_\Pi\mu_Q\) and
+  \(\mu_Q(f\cdot\xi)=f\cdot\mu_Q(\xi)\) are additional structure, not
+  consequences of the inverse limit.  Thus the theorem proves the
+  projection-compatible receiver criterion and isolates the remaining
+  homotopy and Hamiltonian-equivariance checks.
+  Theorem~\ref{thm:bmk-finite-window-obstruction} excludes the fixed
+  finite-rank quotient carrying the full Hamiltonian action, and
   Corollary~\ref{cor:promatlis-retract-compatible-replacement} verifies the
   pro-Matlis pair structure, the normalized Dolbeault contraction
   \(H^0_\chi\), and the analytic moment map \(P^{\mathrm{an}}_\Pi\)
@@ -2995,7 +3024,7 @@ Theorem~\ref{thm:theta-three-companion-face-obstruction}.
 
 \begin{proof}[Proof of Corollary~\ref{cor:promatlis-retract-compatible-replacement}]
   The first sentence is Theorem~\ref{thm:bmk-finite-window-obstruction}: the
-  finite-Matlis quotient has the Hamiltonian-action obstruction.  The
+  fixed finite-Matlis quotient has the Hamiltonian-action obstruction.  The
   positive constructions of the pro-Matlis pair \((\widehat{\mc
   P}_{\Pi},\mc P_{\mathrm{an}}(B_1))\), the normalized contraction
   \(H_\chi^0\), and the moment map \(P_{\Pi}^{\mathrm{an}}\) are
@@ -3015,7 +3044,7 @@ Theorem~\ref{thm:theta-three-companion-face-obstruction}.
       arity-two coefficient comparison
       \(\ell^{\mathrm{BM},N}_2(x,y)=p_N[ix,iy]\).
   \end{enumerate}
-  Condition (a) excludes every finite-rank quotient by
+  Condition (a) excludes the fixed finite-rank quotient by
   Theorem~\ref{thm:bmk-finite-window-obstruction}; (b) selects the
   cohomology of the BMK contraction as the moment-restriction kernel,
   fixing the analytic submodule

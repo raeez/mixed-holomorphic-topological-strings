@@ -128,41 +128,80 @@ Costello--Gwilliam as native.
       only when the Mittag--Leffler term
       \(\varprojlim\nolimits^1 H^{*-1}(V_n)\) is zero; otherwise that
       \(\varprojlim^1\)-class is an obstruction datum, not discarded.
-    \item \emph{Scalar reduction.}  A Capelli or empty-trace scalar line
-      \(L\simeq\C\) is a split central subobject.  The scalar-reduction
-      functor is the quotient
+    \item \emph{Scalar reduction.}  Let
+      \(\mathcal B^{\mathrm{adm}}_{\mathrm{sc}}\) be the dg category of
+      pairs \((V,L)\) where \(V\in\mathcal B^{\mathrm{adm}}\) and
+      \(L\simeq\C\) is a declared split central dg subobject.  For an
+      algebra object the source condition is stronger: \(L\) is a
+      central dg ideal for the operation being quotiented.  The
+      scalar-reduction functor is the exact quotient functor
       \[
-        U_{\mathrm{sc}}(V,L)=V/L,
+        U_{\mathrm{sc}}\colon
+        \mathcal B^{\mathrm{adm}}_{\mathrm{sc}}\longrightarrow
+        \mathcal B^{\mathrm{adm}},
+        \qquad
+        (V,L)\longmapsto \operatorname{coker}(L\hookrightarrow V).
       \]
-      while the unit of an algebra object is retained unless the theorem
-      explicitly passes to Hamiltonian primitives.  This is the entire
-      meaning of \(U_{\mathrm{sc}}\): it does not forget pro-Matlis
-      completions, replace Roos limits by strict limits, discard
-      Hochschild centrality homotopies, pass to stable traces, or erase a
-      QME counterterm tower.
-    \item \emph{Stable trace passage.}  For a tower of finite-rank
-      invariant Koszul algebras \(\{\mathcal R_N^{GL_N}\}\), the stable
-      trace functor is degreewise:
+      On a morphism \(f\colon(V,L)\to(W,M)\) satisfying
+      \(f(L)\subset M\), \(U_{\mathrm{sc}}(f)\) is the induced map on
+      cokernels.  The unit of an algebra object is retained unless the
+      theorem explicitly passes to Hamiltonian primitives.  This is the
+      entire meaning of \(U_{\mathrm{sc}}\): it does not forget
+      pro-Matlis completions, replace Roos limits by strict limits,
+      discard Hochschild centrality homotopies, pass to stable traces,
+      or erase a QME counterterm tower.
+    \item \emph{Stable trace passage.}  Fix a word degree \(d\).  Let
+      \(\mathrm{Tow}^{\mathrm{tr}}_d\) be the category whose objects are
+      finite-window rational towers
       \[
-        \operatorname{StTr}_d(\mathcal R_\bullet)
-        =
+        \bigl\{
+        \operatorname{Prim}H^0(\mathcal R_N^{GL_N},Q)_d
+        /\C\cdot\operatorname{Tr}(1)
+        \bigr\}_{N\ge d}
+      \]
+      with transition maps induced by the Procesi--Razmyslov stable
+      trace identifications in degree \(d\); morphisms commute with
+      these transition maps.  The degree-\(d\) stable trace functor is
+      \[
+        \operatorname{StTr}_d\colon
+        \mathrm{Tow}^{\mathrm{tr}}_d\longrightarrow \mathrm{Vect}_\C,
+        \qquad
+        \mathcal R_\bullet\longmapsto
         \varprojlim_{N\geq d}
         \operatorname{Prim}H^0(\mathcal R_N^{GL_N},Q)_d
         \big/\C\cdot\operatorname{Tr}(1).
       \]
-      Physical large-\(N\) states and cumulants are separate data.
-      Here \(H^0(\mathcal R_N^{GL_N},Q)\) means the
+      The completed functor
+      \(\operatorname{StTr}=\widehat{\bigoplus}_{d\ge1}
+      \operatorname{StTr}_d\) lands in the declared Tate completion
+      chosen for the theorem using it.  In the formal-Darboux theorem
+      this output is identified with the reduced Hamiltonian generator
+      space \(\mathfrak h\), and
+      \(A_{\partial,H}^{\mathrm{st}}\) is the completed symmetric
+      algebra on that output.  Physical large-\(N\) trace-state data
+      and cumulants are separate.  Here
+      \(H^0(\mathcal R_N^{GL_N},Q)\) means the
       Chevalley--Eilenberg-length-zero invariant Koszul cohomology of
-      the reduced polynomial brane complex.  Reductive exactness is
-      Lemma~\ref{lem:reductive-invariants-koszul-exactness}; positive
+      the reduced polynomial brane complex.  Reductive exactness is the
+      finite-window rational-module statement of
+      Lemma~\ref{lem:reductive-invariants-koszul-exactness};
+      Roos/strict-limit data control the later inverse system.  Positive
       CE-length stabilizer classes of the quotient stack lie outside
       \(\operatorname{StTr}_d\).
     \item \emph{Operation estimates.}  Every product, bracket,
       coadjoint action, kernel contraction, Hochschild convolution, and
-      Costello counterterm tower used on the object is accompanied by a
-      continuity estimate in the chosen filtration.  A theorem invoking a
-      diagonal Casimir or diagonal local-cohomology kernel must state the
-      topology in which the displayed infinite sum converges.
+      Costello counterterm tower acting on an object of
+      \(\mathcal B^{\mathrm{adm}}\) is accompanied by a continuity
+      estimate in the chosen filtration.  For the Matlis cotangent
+      action this means either the locally finite direct-sum statement of
+      Lemma~\ref{lem:app-matlis-coadjoint-continuity}, where a fixed
+      principal part sees only a finite jet of a formal Hamiltonian, or
+      the pro-Matlis seminorm estimate of
+      Proposition~\ref{prop:completion-promatlis-continuity}.  A finite
+      Matlis cutoff is not a strict \(\mathfrak h\)-submodule unless the
+      window-loss term is recorded.  A theorem invoking a diagonal
+      Casimir or diagonal local-cohomology kernel must state the topology
+      in which the displayed infinite sum converges.
   \end{enumerate}
   Morphisms in \(\mathcal B^{\mathrm{adm}}\) are degree-zero closed
   elements of the dg Hom complex.  Weak equivalences are strict
@@ -191,17 +230,51 @@ action, weighted diagonal Casimir, heat-kernel propagator, fixed-graph
 renormalization-group contribution, and CE/PV map are the operations
 listed in Theorem~\ref{thm:wt-canonical-envelope}.
 
-The strict Tate product/direct-sum pair
-\[
-  \prod_{d\ge1}H_d,\qquad \bigoplus_{d\ge1}H_d^\vee
-\]
-has a continuous evaluation pairing, but it is not an admissible
-coefficient object for the BV propagator used in the theorem: the
-diagonal Casimir has nonzero component in every \(H_d^\vee\) and does
-not lie in the completed tensor product with the direct-sum dual.
-Consequently a theorem using the diagonal kernel in this strict pair
-has no object of \(\mathcal B^{\mathrm{adm}}\) as its source.
+The strict Tate product/direct-sum pair is excluded by
+Proposition~\ref{prop:badm-strict-product-direct-sum-nonobject}: it has
+evaluation but no coevaluation kernel for the BV propagator used in the
+formal-stalk theorem.
 \end{rmk}
+
+\begin{prop}[Strict product/direct-sum non-object]\label{prop:badm-strict-product-direct-sum-nonobject}
+  Let
+  \[
+    H_d=\operatorname{Span}_{\C}\{z_1^az_2^b:a+b=d\},\qquad
+    \mathfrak h_\Pi=\prod_{d\ge1}H_d,\qquad
+    D_\oplus=\bigoplus_{d\ge1}H_d^\vee .
+  \]
+  The pair \((\mathfrak h_\Pi,D_\oplus)\) has a continuous evaluation
+  pairing \(D_\oplus\widehat\otimes\mathfrak h_\Pi\to\C\), but it is
+  not an object of \(\mathcal B^{\mathrm{adm}}\) carrying the BV
+  coevaluation required by the formal-stalk theorem.  The diagonal
+  coevaluation
+  \[
+    C_\Pi=\sum_{d\ge1}\sum_i e_{d,i}\otimes e^i_d
+  \]
+  lies in neither
+  \(\mathfrak h_\Pi\widehat\otimes D_\oplus\) nor
+  \(D_\oplus\widehat\otimes\mathfrak h_\Pi\).
+\end{prop}
+
+\begin{proof}
+  An element of a completed tensor product with the direct-sum factor
+  \(D_\oplus=\bigoplus_{d\ge1}H_d^\vee\) has finite support in the
+  \(D_\oplus\)-degree direction in the strict Tate convention used
+  here.  The displayed diagonal has nonzero \(H_d^\vee\)-component for
+  every \(d\ge1\).  Hence it is not a tensor in
+  \(\mathfrak h_\Pi\widehat\otimes D_\oplus\).  The same support
+  obstruction holds after reversing the tensor factors.
+
+  Definition~\ref{defn:admissible-host-category}(A3) requires a
+  continuous coevaluation \(\C\to V\widehat\otimes D_V\) for every BV
+  pairing used by a theorem.  The strict product/direct-sum pair
+  supplies only evaluation, not the inverse kernel.  Therefore a
+  theorem using the diagonal BV propagator on this pair has no
+  \(\mathcal B^{\mathrm{adm}}\)-object as its coefficient source.  The
+  weighted Tate model of
+  Proposition~\ref{prop:verified-badm-weighted-model} changes the
+  coefficient category precisely to supply this coevaluation.
+\end{proof}
 
 \begin{prop}[Verified admissible finite Hamiltonian model]
 \label{prop:verified-badm-finite-model}
@@ -633,8 +706,11 @@ The local theorem uses the following source and target objects.
   \]
   with the Roos complex used for every non-strict inverse limit.
   Procesi--Razmyslov controls the polynomial trace generators in the
-  range \(N\geq W\), and the \(L+2\) term is the Loday--Quillen--Tsygan
-  finite cochain-window bound.
+  range \(N\geq W\), where \(W\) is total word degree after
+  polarization.  The \(L+2\) term is the sufficient
+  Loday--Quillen--Tsygan finite cochain-window bound used in
+  Theorem~\ref{thm:stable-eulerian-lqt-window}; \(L\) counts
+  Chevalley--Eilenberg length, not polynomial word degree.
 
   For the coordinate polyvector target, the maps \(\Phi_{N,W,L}\) are
   the finite-window restrictions of the CE/PV coordinate isomorphism.
@@ -702,10 +778,13 @@ The local theorem uses the following source and target objects.
   \(C^\bullet_{\mathrm{CE},\mathrm{cont}}(\widehat{\mathfrak g}_{\mathrm{cent}})\)
   before applying \(U_{\mathrm{sc}}\), stable trace passage
   \(\operatorname{StTr}\), and \(\operatorname{TrSec}\).  The whole
-  finite-\(N\) Hochschild centre means
-  \(HH^\bullet(\mathcal R_N,\mathcal R_N)\).  Trace identities,
-  stack-stabilizer cohomology, and unreduced centrality homotopies are
-  outside \(\operatorname{TrSec}^{\mathrm{st}}_{\mathrm{adm}}\).
+  finite-\(N\) Hochschild centre means the derived centre represented by
+  the Hochschild cochain complex
+  \(C^\bullet_{\mathrm{Hoch},\mathrm{adm}}(\mathcal R_N,\mathcal R_N)\);
+  its cohomology is \(HH^\bullet(\mathcal R_N,\mathcal R_N)\).  Trace
+  identities, stack-stabilizer cohomology, and unreduced centrality
+  homotopies are outside
+  \(\operatorname{TrSec}^{\mathrm{st}}_{\mathrm{adm}}\).
 \end{defn}
 
 \begin{defn}[Source complexes for the global mixed-HT Deligne obstruction]\label{defn:global-deligne-source-complexes}
@@ -1222,7 +1301,7 @@ Proposition~\ref{prop:diagonal-cohomology-operad}.
 The quantum brane trace adds
 \(\hbar N\,\omega(f,g)K^{(2)}_\Delta\mathbf1\), with
 \(\omega(f,g)=[\{f,g\}]_0\).  This is the formal-coordinate
-two-complex-dimensional OPE.  A one-variable Laurent expansion is the
+two-complex-dimensional singular product.  A one-variable Laurent expansion is the
 additional curve-restriction datum recorded below.\\
 \hline
 Mixed topological-current enhancement over \(\R^2\) &
@@ -1294,9 +1373,9 @@ with brackets
 This is a support-local real-current \(P_0\) algebra with Matlis
 principal parts in two holomorphic variables.\\
 \hline
-One-dimensional vertex/OPE restriction boundary &
+Curve vertex-algebra restriction boundary &
 A restriction of the \(\C^2\) Hamiltonian holomorphic
-factorization algebra to a one-complex-dimensional vertex/OPE algebra
+factorization algebra to a one-complex-dimensional vertex algebra
 starts from the native diagonal singular product above and requires the extra datum
 \[
   \mathfrak R_L
@@ -1326,7 +1405,7 @@ map.  In the \(\C\times\R\) interface, such a \(V_L\) datum factors through
 \(\mathcal R_{\C\times\R}\) and is identified with
 \(V_{\mathrm{red}}\) in \(\mathfrak I_{\mathrm{ch}}\).\\
 \hline
-OPE data for a restricted curve object &
+Laurent field data for a restricted curve object &
 After such a restriction one must construct
 \[
   V_L=H^\bullet(\mathcal F_{L,\mathcal B_\perp}(\Delta_0)),
@@ -1355,7 +1434,7 @@ holomorphic factorization algebra uses the singular coefficient
 one-variable coefficient module is \(\C((w))/\C[[w]]\,dw\).\\
 \hline
 Compatibility with the Weyl/Moyal brane algebra &
-A one-dimensional vertex/OPE restriction must also specify how the
+A one-dimensional vertex-algebra restriction must also specify how the
 degree-zero brane algebra acts on the restricted object.  Equivalently it
 requires a continuous Zhu/zero-mode map
 \[
@@ -2215,7 +2294,7 @@ Taylor truncation degree when a finite quotient
 \end{tabular}
 \end{center}
 
-\paragraph{\texorpdfstring{Large-\(N\) and quotient conventions.}{Large-N and quotient conventions}}
+\paragraph{\texorpdfstring{Stable trace range and physical large-\(N\) conventions.}{Stable trace range and physical large-N conventions}}
 An algebraic primitive projection is defined inside the stable range;
 a physical cumulant requires a state \(\omega_{N,\Omega}\).
 \begin{center}
@@ -2551,7 +2630,7 @@ Hamiltonian coadjoint action remains the action on the Matlis module.
 \paragraph{Interval-current and boundary labels.}
 Algebraic side: the brane-line objects produced by the support-locality
 differential of Theorem~\ref{thm:dict-kinematic-locality}\,(i).
-Physical side: the smeared brane measurement \(B_f(a)\) and the
+Physical side: the smeared boundary Hamiltonian current \(B_f(a)\) and the
 principal-part current observable \(\Theta_\rho(B)\).  Comparison
 morphism: the de Rham-current contraction
 \(u_{a(t)dt\otimes f}\mapsto B_f(a)\),
@@ -2566,8 +2645,8 @@ a distribution.
 \(\mathfrak h_I\) &
 \(\mathfrak h_I=\Omega^\bullet_c(I)\widehat\otimes\mathfrak h\), the
 compactly supported de Rham Hamiltonian currents on an interval
-\(I\subset\R\). Degree-zero test functions appear only after taking the
-explicit measurement notation.\\
+\(I\subset\R\). Degree-zero test functions appear only after choosing the
+smeared current representative.\\
 \hline
 \(\mathfrak g_I\) &
 \(\mathfrak g_I=\mathfrak h_I\ltimes\mathcal P_I[1]\), the shifted

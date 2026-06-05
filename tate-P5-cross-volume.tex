@@ -59,17 +59,19 @@ $d\geq 2$ the chiral $E_d$-Deligne conjecture
 (Conjecture~\ref{conj:chiral-Ed-deligne}, open).  A matched target
 datum may identify the formal restriction of this global centre at a
 brane stack with the local CE model.  The local theorem computes the
-subsequent trace-sector closed-to-open map
+subsequent finite-\(N\) trace-sector generator boundary value
 \[
-  \Phi_N\colon
-	  C^\bullet_{\mathrm{CE}}\bigl(
-	    \mathfrak h\ltimes\mathfrak h^\vee_{\mathrm{cont}}[1]\bigr)
-	  \dashrightarrow
-	  C^\bullet_{\mathrm{Hoch,tr,adm}}
-	    (A^{\mathrm{cl}}_{\partial,N},A^{\mathrm{cl}}_{\partial,N}),
-	  \qquad
-	  u_f\mapsto J(f)=\overline{\operatorname{Tr}f(\phi_1,\phi_2)}
-	  \quad(f\in\bar A),
+  \Phi_N^{\mathrm{gen}}\colon
+  C^\bullet_{\mathrm{CE}}\bigl(
+    \mathfrak h\ltimes\mathfrak h^\vee_{\mathrm{cont}}[1]\bigr)
+  \dashrightarrow
+  C^\bullet_{\mathrm{Hoch,tr,adm}}
+    (A^{\mathrm{cl}}_{\partial,N},A^{\mathrm{cl}}_{\partial,N}),
+\]
+with generator value
+\[
+  u_f\longmapsto
+  J(f)=\overline{\operatorname{Tr}f(\phi_1,\phi_2)},\qquad f\in\bar A,
 \]
 with formal \(f\) interpreted only in the completed brane algebra.
 After such a target comparison, the formal-stalk curvature has
@@ -83,8 +85,10 @@ coordinates
 \]
 in a common deformation complex, when the comparison maps to
 \(\mathfrak K_{\mathrm{KD}}\) have been constructed.  In that complex,
-agreement means that the formal comparison and \(\Phi_N\) admit a
-compatible null-homotopy; a nonzero coordinate is the named obstruction.
+  agreement at the Hochschild-centre level means that a chosen lift
+  \(\Phi_N^{\mathrm{Hoch}}\) of \(\Phi_N^{\mathrm{gen}}\) and the formal
+  comparison admit a compatible null-homotopy; a nonzero coordinate is
+  the named obstruction.
 
 The derived chiral centre lives before the specialisation functor
 \(\mathrm{Sp}^{\mathrm{ch}}_{\Sigma_{d-1},C}\).  On \(K3\times E\) the
@@ -133,15 +137,15 @@ local theorem contributes the formal trace-sector fibre.
   \(\operatorname{Ob}_{\mathrm{comparison}}(\mathfrak C_{\mathrm{tar}})\)
   and a chosen null-homotopy, the target morphism exists and has the
   displayed formal-Darboux stalk; otherwise the nonzero coordinate is the
-  exact obstruction.  The divergence theorem for each compact object is
-  given respectively by
+  exact obstruction.  The matched-conventions divergence statement for
+  each compact object is given respectively by
   Theorems \ref{thm:divergence-bcov},
   \ref{thm:divergence-volIII},
   \ref{thm:divergence-igusa-bkm},
   \ref{thm:divergence-gwdt},
   \ref{thm:divergence-osv},
   \ref{thm:divergence-mixed-dunn}, and
-  \ref{thm:divergence-global-ham}.  Each theorem names the local
+  \ref{thm:divergence-global-ham}.  Each statement names the local
   conventions, the compact conventions, and the obstruction
   class.  Lemma~\ref{lem:formal-disk-transfer-obstruction} restricts
   the local contribution to the formal-Darboux stalk in every case.
@@ -205,7 +209,7 @@ are included uniformly across all cases.
 \begin{tabular}{@{}p{0.36\textwidth}p{0.16\textwidth}p{0.36\textwidth}@{}}
 \textbf{Compact object}
   & \textbf{Coordinate}
-  & \textbf{Divergence theorem} \\
+  & \textbf{Divergence statement} \\
 \hline
 Compact Calabi--Yau threefold BCOV / Kodaira--Spencer
 \cite{bcov}
@@ -237,14 +241,14 @@ Global Hamiltonian descent on
   & Theorem~\ref{thm:divergence-global-ham} \\
 \end{tabular}
 \end{center}
-Each compact object carries a divergence theorem comparing the local convention
-  with the compact convention and an obstruction class given by the
-  corresponding coordinate.  These coordinates live
+Each compact comparison object carries a divergence statement comparing
+the local convention with the compact convention and an obstruction
+class given by the corresponding coordinate.  These coordinates live
 in syntactically distinct cohomology groups
 (\(H^1(\mc K_{\mathrm{obs}})\), \(H^1(\mathfrak K_{\mathrm{KD}})\),
-  and the appropriate comparison complexes); a strict
-cohomology-level coordinate-independence theorem is an additional
-compact comparison theorem.
+  and the appropriate comparison complexes); strict cohomology-level
+coordinate independence is additional compact comparison data, not part
+of the local theorem.
 
 \begin{defn}[Local Hamiltonian convention base]\label{defn:local-hamiltonian-convention-base}
   The local theorem fixes the convention base
@@ -463,7 +467,7 @@ compact comparison theorem.
   holomorphic Hamiltonian.
 \end{ex}
 
-\begin{thm}[Formal local-to-global Hamiltonian descent theorem data]\label{thm:global-descent-criterion}
+\begin{thm}[Formal local-to-global Hamiltonian descent criterion]\label{thm:global-descent-criterion}
   Let \((X,\omega)\) be a compact connected holomorphic-symplectic
   surface and \(L\subset X\) a brane locus for which the formal local
   Hamiltonian theorem is applied along Darboux charts.  Fix the finite
@@ -652,7 +656,7 @@ compact comparison theorem.
   \(\mathfrak C_{\mathrm{tar}}\), the specialized morphism is
   \(\mathrm{Sp}^{\mathrm{ch}}_{\Sigma_{d-1},C}(\Phi_{\mathfrak C_{\mathrm{tar}}})\).
   If the obstruction class is nonzero, that class is the obstruction to
-  the compact comparison theorem in the global descent problem.
+  the compact comparison datum in the global descent problem.
 \end{thm}
 
 \begin{proof}
@@ -914,8 +918,9 @@ compact comparison theorem.
 \end{proof}
 
 \begin{cor}[Matched-conventions factorization]\label{cor:matched-conventions-factorization}
-  Every compact comparison theorem that uses the local Hamiltonian BF/Moyal
-  theorem through a matched-conventions datum \(\mathfrak C_{\mathrm{tar}}\)
+  Every compact comparison argument that uses the local Hamiltonian BF/Moyal
+  formal-stalk theorem through a matched-conventions datum
+  \(\mathfrak C_{\mathrm{tar}}\)
   with \(\operatorname{Ob}_{\mathrm{comparison}}(\mathfrak C_{\mathrm{tar}})=0\) and
   chosen null-homotopies has, as its formal-stalk component, the transported
   morphism
@@ -936,14 +941,14 @@ compact comparison theorem.
   \(\chi_{\mathrm{cl}}\), \(\chi_{\mathrm{op}}\).  Any subsequent operation
   belongs to the comparison datum: specialization along \((\Sigma_{d-1},C)\),
   compact BV integration, or the Borcherds automorphic construction.  Thus the
-  local theorem enters the compact proof only through the displayed
-  formal-stalk component.
+  local theorem enters a compact comparison argument only through the
+  displayed formal-stalk component.
 \end{proof}
 
 \begin{cor}[Compact matched-conventions criterion]\label{cor:target-obstruction-criterion}
   A compact BCOV, MNOP/Abel--Jacobi, Calabi--Yau-to-chiral,
-  Igusa/Borcherds--Kac--Moody, or related comparison theorem may use the
-  local Hamiltonian BF/Moyal formal stalk only through a global or
+  Igusa/Borcherds--Kac--Moody, or related comparison argument may use
+  the local Hamiltonian BF/Moyal formal stalk only through a global or
   compact descent datum
   \(\mathfrak C_{\mathrm{tar}}\) with
   \[
@@ -958,13 +963,14 @@ compact comparison theorem.
   \]
   the global descent datum, the QME/anomaly null-homotopies, and any
   mixed-Dunn or six-relation factorization null-homotopies asserted by
-  the compact theorem.  The exact residual of an asserted compact
+  the compact comparison datum.  The exact residual of an asserted compact
   structure is the corresponding component of
   \(\operatorname{Ob}_{\mathrm{comparison}}(\mathfrak C_{\mathrm{tar}})\).  A
-  null-homotopy of that class permits the compact theorem to use the
-  formal-stalk component.  The compact Calabi--Yau threefold, global BCOV,
+  null-homotopy of that class permits the compact comparison datum to
+  use the formal-stalk component.  The compact Calabi--Yau threefold,
+  global BCOV,
   MNOP/Abel--Jacobi growth, compact Calabi--Yau-to-chiral, Igusa, and BKM
-  conclusions remain compact theorems with their own data.
+  conclusions remain compact-target statements with their own data.
 \end{cor}
 
 \begin{proof}
@@ -973,10 +979,10 @@ compact comparison theorem.
   matched-conventions obstruction class has been null-homotoped.  The class
   contains the period, descent, anomaly, QME, six-relation, and
   mixed-Dunn components.  Lemma~\ref{lem:formal-disk-transfer-obstruction}
-  identifies these components as compact theorem data attached to
+  identifies these components as compact comparison data attached to
   \(\mathfrak C_{\mathrm{tar}}\).  Therefore a nonzero component is
   the corresponding obstruction class, and a zero component with a
-  null-homotopy is exactly the compact theorem datum.
+  null-homotopy is exactly the compact comparison datum.
 \end{proof}
 
 \begin{defn}[Compact comparison data]\label{defn:compact-comparison-data}
@@ -1056,12 +1062,14 @@ compact comparison theorem.
         \kappa_{\mathrm{BKM}}(\Delta_5)=c_1(0)/2=10/2=5,\qquad
         Z^X_{\mathrm{OP}}=-4096\,\Delta_5^{-2}.
       \]
-      These constants live in the BKM/Borcherds comparison for the
-      \(\Delta_5\) construction; they fix the convention datum at
-      which the matched-conventions theorem must match.  The local
+      These are scalar normalization equations inside the
+      BKM/Borcherds comparison for the \(\Delta_5\) construction.  They
+      fix the convention datum at which the matched-conventions theorem
+      must match; they are not identities derived from the local
       Hamiltonian theorem on
-      \(\R^2_{\mathrm{top}}\times\widehat{\C^2}_{0,\mathrm{hol}}\)
-      contributes the formal-Darboux stalk.  The orientation comparison
+      \(\R^2_{\mathrm{top}}\times\widehat{\C^2}_{0,\mathrm{hol}}\),
+      which contributes only the formal-Darboux stalk.  The
+      orientation comparison
       \(\epsilon_o=\nu_{\Delta_5}\), compact Hall constants, and
       primitive BKM recognition are target obstructions outside the
       local \(d=2\) Hamiltonian theorem.
@@ -1132,11 +1140,11 @@ compact comparison theorem.
   \end{enumerate}
 \end{defn}
 
-\subsection*{Divergence theorems for compact comparisons}
+\subsection*{Divergence statements for compact comparisons}
 
 The seven pieces of matched-conventions data in
 Definition~\ref{defn:compact-comparison-data} carry seven
-divergence theorems.  Each names the convention used in the local
+divergence statements.  Each names the convention used in the local
 theorem, the convention used in the compact comparison, the
 obstruction class to identification, and the matched-conventions
 morphism obtained once that obstruction is killed by a chosen
@@ -1277,11 +1285,12 @@ null-homotopy.
         \kappa_{\mathrm{BKM}}(\Delta_5)=c_1(0)/2=10/2=5,\qquad
         Z^X_{\mathrm{OP}}=-4096\,\Delta_5^{-2},
       \]
-      live in the BKM/Borcherds comparison for the Igusa cusp-form
-      construction; they fix the convention datum at which the
-      admissibility theorem must match.  The local Hamiltonian theorem
-      on \(\R^2_{\mathrm{top}}\times\widehat{\C^2}_{0,\mathrm{hol}}\)
-      contributes the formal-Darboux stalk.
+      are scalar normalization equations in the BKM/Borcherds comparison
+      for the Igusa cusp-form construction.  They fix the convention
+      datum at which the admissibility theorem must match.  They are not
+      consequences of the local Hamiltonian theorem on
+      \(\R^2_{\mathrm{top}}\times\widehat{\C^2}_{0,\mathrm{hol}}\),
+      which contributes only the formal-Darboux stalk.
     \item \emph{Obstruction class.}  The obstruction class is
       the Igusa/BKM Borcherds match class
       \[
@@ -1526,8 +1535,8 @@ matched-conventions class
 \(\operatorname{Ob}_{\mathrm{comparison}}(\mathfrak C_{\mathrm{tar}})\)
 records the compact comparison class for use of that formal local
 model by a compact, modular, automorphic, virtual-cycle, or operadic
-theorem.  After the compact deformation complex and comparison maps are
-constructed, a compact theorem uses the local Hamiltonian formal-stalk
+statement.  After the compact deformation complex and comparison maps are
+constructed, a compact comparison argument uses the local Hamiltonian formal-stalk
 component exactly when three classes vanish in sequence:
 \(\operatorname{Ob}^{\mathrm{HML}}_{w}\) at the analytic regulator,
 \(\operatorname{ob}^{\mathrm{univ}}_{p,X}\) at the ambient-to-formal
