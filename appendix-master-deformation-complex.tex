@@ -1,20 +1,47 @@
-\section{The obstruction calculus: master deformation complex of local-to-global coherence}\label{sec:obstruction-calculus}\label{app:master-deformation-complex}
+\section{The obstruction calculus: native complexes and local-to-global coherence}\label{sec:obstruction-calculus}\label{app:master-deformation-complex}
 
-The four-curvature taxonomy classifies the global obstructions to
-the formal-Darboux stalk identification of
-Theorem~\ref{thm:main-local}: the single curvature
-\(F_{\mathcal T}(\Theta_{\mathrm{loc}})\in
-H^2(\mathfrak K_{\mathcal T},\Theta_{\mathrm{loc}})\) of the master
-deformation complex \(\mathfrak K_{\mathcal T}\) lies on exactly one
-of four cells --- strict, counterterm-coherent, projective, or
-target-replacement --- and the six manuscript obstruction classes
+The formal-Darboux calculation first produces six native obstruction
+classes
 \(\Omega^{\mathrm{rad}}_{a,b}\), \(\hbar N[\bar c]\),
 \([\operatorname{Ob}^{\mathrm{red}}_{w,\partial,\hbar}]\),
 \(\operatorname{Ob}^{\Pi}_{\mathrm{BM}}\),
 \(\operatorname{Ob}_{\mathrm{cent/QME/desc}}\),
-\(\operatorname{per}_X(v)\) are six gauge-slice coordinates of this
-single curvature.  The convention layer of
-\nameref{ssec:binding-convention-layer} fixes the symbols:
+\(\operatorname{per}_X(v)\) in six different complexes.  They become
+the weight-graded projections of one projective curvature only after a
+comparison-unifying datum has been supplied: a Morita centre lift, a
+Costello quantum master-equation complex, Weiss/Ran descent, the
+BMK/pro-Matlis replacement, radial comparison maps, the scalar
+projection, and filtered maps from the six native complexes to one
+complete target.  With such data fixed, the common target is the mixed
+holomorphic--topological Swiss--cheese convolution \(L_\infty\)-algebra
+\[
+  \mathfrak K_{\mathrm{HT}}
+  =\operatorname{Conv}_{\mathrm{SC}}\bigl(
+   \mathcal A^{\mathrm{cl}/\hbar}_{\mathrm{bulk}},\,
+   Z^{\mathrm{der},\mathrm{Mor}}_{E_2^{\mathrm{HT}}}
+     (\mathcal C^{\mathrm{op}}_\partial)\bigr)
+\]
+of the open--closed comparison datum
+\(\mathrm{OCA}_N\).  The assertion that the six native complexes are
+its finite-Matlis window, radial bidegree, \(\hbar\)-order,
+\(P_0\)-cotangent, strict-transfer, and \v Cech--Weiss--Ran projections
+is the projection criterion of
+Proposition~\ref{prop:six-projections}, not a consequence of the
+formal-Darboux stalk alone
+(\S\ref{ssec:common-ht-complex}).  The brane-preserving
+\(\Omega\)-background grades \(\mathfrak K_{\mathrm{HT}}\) by the torus
+\(T_\Omega=\C^*_{\epsilon_s}\times\C^*_{\epsilon_1}\times\C^*_{\epsilon_2}\),
+and equivariant localization onto the brane fixed point contracts the
+nonzero weight part of
+\(H^\bullet(\mathfrak K_{\mathrm{HT}},Q_\Omega)\)
+(Theorem~\ref{thm:omega-localization-collapse}).  Its weight-zero
+scalar projection is the central Capelli class \(\hbar N[\bar c]\);
+the residual non-scalar weight-zero component is the cohomology class
+\(\operatorname{res}^{0}_{\mathrm{nsc}}(\mathfrak o_n)\), which is not
+removed by \(\Omega\)-localization.  Each class is first established in
+its native complex.  The
+conventions of
+\nameref{ssec:local-theorem-conventions} fix the symbols:
 \(d=\dim_\C X\),
 \(\R^2_{\mathrm{top}}\times\widehat{\C^2}_{0,\mathrm{hol}}\) as
 local geometry, \(\mathfrak h=\C[[z_1,z_2]]/\C\cdot 1\) and
@@ -25,38 +52,41 @@ Gerstenhaber sign rules of
 Appendix~\ref{app:sign-conventions}, the explicit Costello
 propagator weight in heat-kernel renormalization, the \(\hbar\)
 versus \(g_s\) discipline, the Hochschild / cyclic /
-negative-cyclic distinction, the Capelli scalar
-\(\hbar N[\bar c]=\Omega_{\mathrm{central}}|_{J(f)}\) of
-Theorem~\ref{thm:capelli-omega-central-identification}, and the
-cross-target firewall acceptance class
-\(\operatorname{Ob}_{\mathrm{UKD}}(\mathfrak C_{\mathrm{tar}})\) of
+negative-cyclic distinction, the Capelli projective Lie class
+\(\hbar N[\bar c]\) of
+Theorem~\ref{thm:capelli-projective-anomaly}, whose
+determinant-line curvature interpretation requires an additional
+determinant line and connection, and the
+matched-conventions obstruction class
+\(\operatorname{Ob}_{\mathrm{comparison}}(\mathfrak C_{\mathrm{tar}})\) of
 Theorem~\ref{thm:matched-conventions-transfer}.  Every class named
-below is a coordinate of the curvature decomposition recorded
-under that convention layer.
+below is first stated in its native complex.
 
 The shifted-cotangent BF Lie algebra of
 \S\ref{ssec:hamiltonian-bf-algebra},
 \(\mathfrak g=\widehat{\mathfrak h}\ltimes\mathfrak h^\vee_{\mathrm{cont}}[1]\),
-is the universal infinitesimal deformation of the closed BV pair on
-\((\widehat{\C^2}_0,dz_1\wedge dz_2)\): every infinitesimal compatible
-local action carrying the Hamiltonian bracket and its coadjoint
-cotangent module is a Maurer--Cartan element of \(\mathfrak g\)
-(Theorem~\ref{thm:bf-action-uniqueness-qme}).  Its filtered
-\(L_\infty\)-deformation complex \((\mathfrak K_{\mathcal T},F^\bullet,
-d,\ell_2,\ldots)\) is the target whose Maurer--Cartan stratum carries
-the trace substitution \(J\) as the local datum
+is the native shifted-cotangent Lie algebra of the local closed fields.
+Deformations of the BV action are controlled by the corresponding
+local-functional deformation complex.  When a target
+\(\mathcal T\) gives a filtered \(L_\infty\)-deformation complex
+\((\mathfrak K_{\mathcal T},F^\bullet,d,\ell_2,\ldots)\), the
+transported trace substitution \(J\) is a local datum
 \(\Theta_{\mathrm{loc}}\).  Image under quantization, globalization,
 factorization-centre lift, modular clutching, and CY-categorical
-specialisation produces the obstruction classes
+specialisation produces the native obstruction classes
 \(\hbar N[\bar c]\), \(\Omega^{\mathrm{rad}}_{a,b}\),
 \([\operatorname{Ob}^{\mathrm{red}}_{w,\partial,\hbar}]\),
 \(\operatorname{Ob}_{\mathrm{cent/QME/desc}}\),
 \(\operatorname{Ob}^{\Pi}_{\mathrm{BM}}\), and
-\(\operatorname{per}_X(v)\) as the components of a single curvature
-decomposition; the four-curvature taxonomy that classifies them is
-proved in \S\ref{ssec:tate-residual-resolution}.
+\(\operatorname{per}_X(v)\).  If the comparison-unifying datum of
+\S\ref{ssec:common-ht-complex} is supplied, the common deformation
+complex \(\mathfrak K_{\mathrm{HT}}\) carries the comparison maps from
+the six native complexes.  Under the \(\Omega\)-background grading the
+nonzero-weight cohomology is contracted, the scalar weight-zero
+projection is the central Capelli line, and any residual non-scalar
+weight-zero component remains an obstruction datum.
 
-\subsection{Filtered \texorpdfstring{$L_\infty$}{Linfty} target deformation complex}\label{ssec:master-deformation-target}
+\subsection{Filtered \texorpdfstring{$L_\infty$}{Linfty} comparison deformation complex}\label{ssec:master-deformation-target}
 
 The data of a target deformation problem are
 \((\mathfrak K_{\mathcal T}^\bullet,F^\bullet,d,\ell_2,\ell_3,\dots)\):
@@ -101,9 +131,9 @@ The formal-stalk-chart hypotheses of
 Theorem~\ref{thm:formal-local-universal-property} -- Chan--Paton
 substitution \(z_i\rightsquigarrow\phi_i\), the Dirac constraint
 \([\phi_1,\phi_2]=0\), and the trace map
-\(J(f)=\overline{\operatorname{Tr}f(\phi_1,\phi_2)}\) -- supply the
-underlying datum; the choice of target supplies its controlling
-deformation algebra.
+\(J(f)=\overline{\operatorname{Tr}f(\phi_1,\phi_2)}\) -- define the
+underlying datum; the chosen comparison object determines its
+controlling deformation algebra.
 
 \paragraph{Global Hamiltonian descent.}  For a holomorphic-symplectic
 ambient \((X,\omega)\) with a brane \(L\) and a Darboux cover
@@ -123,16 +153,21 @@ component.
 
 \paragraph{Costello quantum master equation.}  The Costello
 deformation complex is the filtered local-functional complex
-\(\mathfrak Q^\bullet_{w,\partial,\hbar}(I)\) with differential
-\(d_{\mathrm{QME}}=Q+\{I,-\}+\hbar\Delta\); the transported element is
-the classical interaction \(I_{\mathrm{loc}}\) of the open Hamiltonian
-BF theory, completed in the weighted-Tate envelope of
-Theorem~\ref{thm:wt-canonical-habitat}.  After scalar-symbol
-projection \(\widehat\sigma_{\mathrm{sc}}\), the reduced non-scalar
+\(\mathfrak Q^\bullet_{w,\partial,\hbar}(I)\) with scale-\(L\)
+quantum BV differential
+\[
+  d_{\mathrm{qBV}}^L=Q+\{I[L],-\}_L+\hbar\Delta_L .
+\]
+The transported element is the classical interaction
+\(I_{\mathrm{loc}}\) of the open Hamiltonian BF theory, completed in the
+weighted-Tate envelope of
+Theorem~\ref{thm:wt-canonical-envelope}.  If a filtered chain scalar
+projection \(\widehat\sigma_{\mathrm{sc}}\) exists and its
+scalar-lift obstruction tower vanishes, the reduced non-scalar
 curvature is
 \([F_{\mathrm{QME}}(\Theta_{\mathrm{loc}})]
  =[\operatorname{Ob}^{\mathrm{red}}_{w,\partial,\hbar}]
- \in H^1(\ker\widehat\sigma_{\mathrm{sc}},d_{\mathrm{QME}})\).
+ \in H^1(\ker\widehat\sigma_{\mathrm{sc}},d_{\mathrm{qBV}}^L)\).
 
 \paragraph{\texorpdfstring{Unreduced \(P_0\)-factorization-centre lift.}{Unreduced P-0-factorization-centre lift}}  The
 deformation complex is the mapping complex
@@ -161,14 +196,18 @@ element is the radial comparison vector
 \((\phi,-\lambda)\in\ker B^*_{a,b}\) with
 \(\lambda(E^+_{a,b})-\phi(T_{a,b})\ne0\).
 
-\paragraph{Strict all-window Bochner--Martinelli current transfer.}
-The deformation complex is the tower of finite Matlis windows
+\paragraph{Strict finite-window Bochner--Martinelli current transfer.}
+The transfer problem uses the tower of finite Matlis windows
 \(P_{\le N}=\bigoplus_{a+b\le N}\C\rho_{a,b}\) with action of
-\(\mathfrak h\) by Hamiltonian vector fields; the transported element
+\(\mathfrak h\) by Hamiltonian vector fields.  The compatibility of this
+action with strict native all-window support-local transfer is exactly
+what the BMK leak obstructs; the transported element
 is the brane current pair
 \((P_{\le N},\rho_{0,1})\).  The curvature is the residue-coadjoint
 leak \(z_1^{N+2}\cdot\rho_{N+1,0}=-(N+2)\rho_{0,1}\), encoded as the
-obstruction \(\operatorname{Ob}^{\Pi}_{\mathrm{BM}}\).
+obstruction \(\operatorname{Ob}^{\Pi}_{\mathrm{BM}}\).  The pro-Matlis
+target is the replacement after this obstruction, not a strict native
+all-window transfer.
 
 \paragraph{Modular open-closed clutching.}  Modular coherence on the
 brane-line cyclic factorization dg category \(\mathcal C^{\mathrm{op}}\)
@@ -181,14 +220,14 @@ twist of the projective clutching law
 \(\mathrm{Cl}^*\mathrm{Tr}_{g+1,n-2}
 =\mathrm{contract}_{\mathcal C}(\mathrm{Tr}_{g,n})\otimes e^{\Omega_{\mathrm{node}}}\).
 The data \((b,\mathrm{Tr}_{\mathcal C},\Theta_{\mathcal C}^{oc,\log},
-\Omega_{\mathrm{mod}})\) belong to the companion programme (Vol~II 3d
-HT bulk-boundary; Vol~III CY cyclic trace); cross-target use passes
-through the matched-conventions firewall of
-\S\ref{app:convention-contract}.
+\Omega_{\mathrm{mod}})\) belong to the companion compact comparison
+theorem in Vol~II 3d HT bulk-boundary and Vol~III CY cyclic trace; any
+comparison with the present local theorem factors through
+\S\ref{app:comparison-conventions}.
 
 \subsection{Twists: three mechanisms}\label{ssec:master-deformation-twist}
 
-A nonvanishing curvature class admits three repair mechanisms:
+A nonvanishing curvature class is killed in three ways:
 null-homotopy, central extension, and target replacement.
 
 \begin{description}
@@ -200,49 +239,49 @@ homotopy-centrality witnesses, decorated radial Stokes corrections,
 Weiss/Ran descent homotopies, and many finite-window radial
 adjustments.  The model example is the \(\theta_3\) finite-window
 \(H^1\): bare \(H^1=\C\!\cdot\!E_{\theta_3}\ne0\) under the cleared
-QME differential, but supplied-counterterm \(H^1=0\) under the unique
-local counterterm \(dC=-E\), \(c=1\)
+QME differential, while the counterterm-adjoined row complex has
+\(H^1=0\) after a given scalar-zero local functional satisfying
+\(dC=-E\), \(c=1\)
 (Theorem~\ref{thm:app-theta-three-finite-window-H1}).
 \item[Structural / central twist.]  The class is closed and central:
 \(F_{\mathcal T}(\Theta)=\omega\), \(d\omega=0\), \(\omega\) central.
-The repair is to enlarge \(\mathfrak K_{\mathcal T}\) by a central
+One enlarges \(\mathfrak K_{\mathcal T}\) by a central
 extension carrying \(\omega\) on the trace line.  The corrected
 element satisfies the master equation in the extended target, and
 \(\Theta\) becomes a section of a projective structure.  The scalar anomaly
 \(\hbar N[\bar c]\in H^2_{\mathrm{Lie}}(\bar A,\C)[[\hbar]]\) is the
 prototype: the ordinary
 scalar-reduced Costello obstruction in the \(\mathfrak{gl}_N\)
-branch obstructs internal counterterms, and the admissible repair is the central extension
+branch obstructs internal counterterms, and the admissible object is the central extension
 \(0\to\C\!\cdot\!\mathbf 1\to\mathfrak h_{\hbar,N}\to\bar A\to 0\)
 under which the brane carries a projective Hamiltonian action
 \([\Phi_\hbar(f),\Phi_\hbar(g)]_\star
- =\hbar\Phi_\hbar(\{f,g\})+\hbar N\bar c(f,g)\mathbf 1\).  The same
-mechanism produces the global gerbe-valued descent of Hamiltonian
-sections in the period class \(\operatorname{per}_X(v)\), where the
-gerbe is the central extension of the \v{C}ech--Weiss--Ran complex by
-the descent cocycle.
+ =\hbar\Phi_\hbar(\{f,g\})+\hbar N\bar c(f,g)\mathbf 1\).  A global
+Hamiltonian primitive has instead a descent torsor with Čech
+\(1\)-class \(\operatorname{per}_X(v)\).  It becomes gerbe-valued only
+after a degree-two central extension class has been constructed.
 \item[Target-replacement twist.]  The class is closed, inexact, and
 noncentral: every admissible extension of
 \(\mathfrak K_{\mathcal T}\) for which the corrected curvature is
 zero is obstructed.  Coherence requires a target substitution
 \(\mathcal T\rightsquigarrow\mathcal T'\) along a forced
-embedding.  The strict all-window Bochner--Martinelli current
-transfer is the prototype: in every fixed finite Matlis window
+embedding.  The attempted strict all-window Bochner--Martinelli
+current transfer is the prototype: in every fixed finite Matlis window
 \(\mathcal P_{\le N}\), the residue-coadjoint Jacobiator
 \((N+1)(N+2)\rho_{0,1}\ne 0\) is non-absorptive in the strict
 multiplication structure, so internal counterterm restoration is
 obstructed.  The pro-Matlis tower
 \(\widehat{\mathcal P}_\Pi=\varprojlim_N\mathcal P_{\le N}\)
-(Corollary~\ref{cor:promatlis-retract-as-supremum}) is the supremum
-form selected by the leak: the modified coherence law is
+(Corollary~\ref{cor:promatlis-retract-compatible-replacement}) is the replacement
+target selected by the leak: the modified coherence law is
 \(\pi_N(f\cdot\xi)=\pi_N(f\cdot\pi_{N+r(f)}\xi)\), Hamiltonian action
 is coherent only in the pro-tower, and any fixed finite current
-window is a measurement truncation of the closed dynamical subsystem.
+window is a support-local truncation of the closed dynamical subsystem.
 \end{description}
 
-\subsection{Four-curvature taxonomy and six-coordinate classification}\label{ssec:master-deformation-dichotomy}
+\subsection{Four obstruction mechanisms}\label{ssec:master-deformation-dichotomy}
 
-\begin{thm}[Four-curvature taxonomy of the formal-Darboux stalk identification]\label{thm:four-curvature-taxonomy}\label{thm:obstruction-twist-dichotomy}
+\begin{thm}[Four obstruction mechanisms for the formal-Darboux stalk]\label{thm:four-curvature-taxonomy}\label{thm:obstruction-twist-dichotomy}
 Let \(\mathcal T\) be a target deformation problem with filtered
 \(L_\infty\) algebra
 \((\mathfrak K_{\mathcal T},F^\bullet,d,\ell_k)\), and let
@@ -250,11 +289,12 @@ Let \(\mathcal T\) be a target deformation problem with filtered
 transported local formal-stalk-chart datum.  Call an
 \emph{admissible extension} of \(\mathfrak K_{\mathcal T}\) any
 \(L_\infty\) central extension by a closed degree-\(2\) cocycle.
-Exactly one of the following four cases obtains.
+The following four cases are the possible native mechanisms.  They are
+mutually exclusive only in a single obstruction complex with projection
+maps and vanishing stabilizer cohomology.
 \begin{enumerate}
 \item Strict coherence: \(F_{\mathcal T}(\Theta_{\mathrm{loc}})=0\)
-in \(\mathfrak K_{\mathcal T}^2\), and the
-\(\mathcal T\)-coherence is unique up to gauge.
+in \(\mathfrak K_{\mathcal T}^2\).
 \item Counterterm coherence: the class
 \([F_{\mathcal T}(\Theta_{\mathrm{loc}})]\) is exact in
 \(H^2(\mathfrak K_{\mathcal T},\Theta_{\mathrm{loc}})\), with
@@ -267,14 +307,14 @@ in \(\mathfrak K_{\mathcal T}^2\), and the
 central in \(\mathfrak K_{\mathcal T}\), and the corrected element
 solves the master equation in a central extension by \(\omega\); the
 global structure is projective.
-\item Target replacement: outside cases~(1)--(3),
+\item Target replacement: outside a chosen realization of cases~(1)--(3),
 \([F_{\mathcal T}(\Theta_{\mathrm{loc}})]\) is nonzero in
 \(H^2(\mathfrak K_{\mathcal T},\Theta_{\mathrm{loc}})\), and every
 admissible extension has an obstruction to a central representative; coherence
-exists only after a substitution
-\(\mathcal T\rightsquigarrow\mathcal T'\) supplied as external data.
+requires a replacement target
+\(\mathcal T'\) given as additional mathematical data.
 \end{enumerate}
-The local manuscript theorems decompose as follows.
+The local formal-Darboux theorems decompose as follows.
 \[
   \renewcommand{\arraystretch}{1.25}
   \begin{array}{l|l|l}
@@ -296,15 +336,375 @@ The local manuscript theorems decompose as follows.
       & \text{target replacement, pro-Matlis}\\
     \operatorname{per}_X(v)
       & \text{global Hamiltonian descent}
-      & \text{Hamiltonian gerbe, projective}\\
+      & \text{Hamiltonian descent torsor}\\
   \end{array}
 \]
-The clause assignment follows from the obstruction theorem of
-\S\ref{ssec:tate-residual-resolution} and the appendices.
+The table records the native mechanism in which each class is proved.
 \end{thm}
 
-\begin{thm}[Six coordinates of one curvature]\label{thm:six-coordinates-one-curvature}
-The six manuscript obstruction classes
+\subsection{The common complex and \texorpdfstring{$\Omega$}{Omega}-localization}\label{ssec:common-ht-complex}
+
+The four mechanisms of Theorem~\ref{thm:four-curvature-taxonomy} can be
+placed in a single complex only after the comparison-unifying datum has
+been chosen.  The brane-preserving \(\Omega\)-background then grades
+that complex, and equivariant localization onto the brane fixed point
+contracts its nonzero-weight part.  The scalar projection of the
+weight-zero curvature is the Capelli class; the non-scalar weight-zero
+summand remains the residual obstruction in
+\(H^2(\ker\pi_{\mathrm{sc}},Q)\).
+
+\begin{defn}[The holomorphic--topological comparison complex]\label{defn:common-ht-deformation-complex}
+Assume the following comparison-unifying datum is fixed:
+\begin{enumerate}[label=\textup{(K\arabic*)}]
+\item the mixed-HT Swiss--cheese operad
+  \(\mathrm{SC}^{\mathrm{HT}}_{(1,2)}\) acting in the admissible host
+  category \(\mathcal B^{\mathrm{adm}}\);
+\item the closed bulk factorisation algebra
+  \(\mathcal A^{\mathrm{cl}/\hbar}_{\mathrm{bulk}}\) and a supplied
+  Morita centre target
+  \(Z^{\mathrm{der},\mathrm{Mor}}_{E_2^{\mathrm{HT}}}
+  (\mathcal C^{\mathrm{op}}_\partial)\);
+\item the Costello finite-scale BV operator \(\Delta_L\), the
+  Weiss/Ran descent differential \(\delta_{\check C}\), the
+  BMK/pro-Matlis coefficient receiver, the radial comparison maps, and
+  the scalar projection to \(C^\bullet_{\mathrm{Lie}}(\bar A;\C)\);
+\item filtered comparison maps from the six native complexes of
+  \S\ref{ssec:master-deformation-local-datum} into the target below,
+  compatible with the filtrations and brackets.
+\end{enumerate}
+The \emph{common deformation complex} attached to this datum is the
+mixed holomorphic--topological Swiss--cheese convolution
+\(L_\infty\)-algebra
+\[
+  \mathfrak K_{\mathrm{HT}}
+  =\operatorname{Conv}_{\mathrm{SC}}\bigl(
+   \mathcal A^{\mathrm{cl}/\hbar}_{\mathrm{bulk}},\,
+   Z^{\mathrm{der},\mathrm{Mor}}_{E_2^{\mathrm{HT}}}
+     (\mathcal C^{\mathrm{op}}_\partial)\bigr)
+  =\prod_{p\ge0}\operatorname{Hom}_{\mathcal B^{\mathrm{adm}}}\!\Bigl(
+   \bigl(\mathcal A^{\mathrm{cl}/\hbar}_{\mathrm{bulk}}\bigr)^{\otimes p},\,
+   Z^{\mathrm{der},\mathrm{Mor}}_{E_2^{\mathrm{HT}}}
+     (\mathcal C^{\mathrm{op}}_\partial)\Bigr),
+\]
+the convolution algebra of the mixed-HT Swiss--cheese operad
+\(\mathrm{SC}^{\mathrm{HT}}_{(1,2)}\) acting on the pair
+\((\text{closed bulk},\text{open boundary derived centre})\) in the
+admissible host category \(\mathcal B^{\mathrm{adm}}\) of
+Definition~\ref{defn:admissible-host-category}.  Its differential is
+\(d_{\mathrm{HT}}=d_{\mathrm{bulk}}+d_{\mathrm{cent}}
++\hbar\Delta+\delta_{\check C}\) and its brackets \(\ell_k\) are the
+Swiss--cheese composition products.  The filtration
+\(F^\bullet\mathfrak K_{\mathrm{HT}}\) is the product of arity,
+\(\hbar\)-order, \v Cech degree, and Matlis-window order; it is
+complete and exhaustive, and each \(\ell_k\) raises it by \(k-1\).  The
+transported pre-open--closed datum is the degree-one element
+\(\Theta_{\mathrm{OCA}}\in F^1\mathfrak K^1_{\mathrm{HT}}\) whose
+arity-one component is the supplied pre-comparison
+\(\mathrm{preOCA}_N\),
+\((c_f,u_f)\mapsto(\theta_f,J(f))\), and whose binary component is the
+diagonal kernel \(K^{(2)}_\Delta=d\zeta_1d\zeta_2/\zeta_1\zeta_2\) of
+Proposition~\ref{app:prop:bulk-stalk}.
+\end{defn}
+
+\begin{prop}[Projection criterion for the six native complexes]\label{prop:six-projections}
+Assume the comparison-unifying datum of
+Definition~\ref{defn:common-ht-deformation-complex} is fixed and the
+six filtered comparison maps in \textup{(K4)} are cochain maps
+compatible with the \(L_\infty\)-brackets.  Then
+the radial bicomplex \(\mathfrak K_{\mathrm{rad}}\), the scalar Lie
+complex \(C^\bullet_{\mathrm{Lie}}(\bar A;\C)\), the weighted Costello
+QME complex \(\mathfrak Q_{w,\partial,\hbar}\), the unreduced
+\(P_0\)-factorization-centre complex \(\mathfrak J_{\mathrm{fact}}\),
+the finite-Matlis transfer tower \(\mathfrak K_{\mathrm{BM}}\), and the
+\v Cech--Weiss--Ran global complex \(\mathfrak K_{\mathrm{glob}}\) map to
+the bidegree, weight-zero, \(\hbar\)-order, \(P_0\)-cotangent,
+finite-window, and \v Cech layers of \(\mathfrak K_{\mathrm{HT}}\),
+and these maps carry the native transported elements to the corresponding
+components of \(\Theta_{\mathrm{OCA}}\).  Under these hypotheses the
+six native curvatures
+\(\Omega^{\mathrm{rad}}_{a,b}\), \(\hbar N[\bar c]\),
+\([\operatorname{Ob}^{\mathrm{red}}_{w,\partial,\hbar}]\),
+\(\operatorname{Ob}_{\mathrm{cent/QME/desc}}\),
+\(\operatorname{Ob}^{\Pi}_{\mathrm{BM}}\),
+\(\operatorname{per}_X(v)\) are the components of
+\(F_{\mathrm{HT}}(\Theta_{\mathrm{OCA}})\) in the respective directions.
+Without \textup{(K1)--(K4)} they remain native obstruction classes, not
+coordinates of a single curvature.
+\end{prop}
+
+\begin{proof}
+The filtered maps in \textup{(K4)} identify each native complex with its
+declared layer of \(\mathfrak K_{\mathrm{HT}}\): the radial bicomplex
+maps to the bidegree-\((a,b)\) Hamiltonian part of arity two,
+\(\mathfrak Q_{w,\partial,\hbar}\) maps to the positive-\(\hbar\)-order
+part, \(\mathfrak J_{\mathrm{fact}}\) maps to the \(P_0\)-cotangent
+part, \(\mathfrak K_{\mathrm{BM}}\) maps to the finite-window coefficient
+part, and \(\mathfrak K_{\mathrm{glob}}\) maps to the
+\v Cech--Weiss--Ran part.  Compatibility with the differential and
+\(L_\infty\)-brackets is a hypothesis of \textup{(K4)}, so these maps
+carry native Maurer--Cartan curvature to the corresponding components of
+the curvature series of \(\Theta_{\mathrm{OCA}}\).  The component
+statement is then the decomposition of
+\(F_{\mathrm{HT}}(\Theta_{\mathrm{OCA}})\) along the product filtration.
+\end{proof}
+
+\begin{defn}[\texorpdfstring{$\Omega$}{Omega}-background grading of \texorpdfstring{$\mathfrak K_{\mathrm{HT}}$}{K-HT}]\label{defn:omega-grading}
+The torus
+\(T_\Omega=\C^*_{\epsilon_s}\times\C^*_{\epsilon_1}\times\C^*_{\epsilon_2}\)
+of \nameref{ssec:local-theorem-conventions} acts on
+\(N_LX=\R_s\oplus\C_{z_1}\oplus\C_{z_2}\) with the brane time \(t\)
+fixed, by \(z_i\mapsto\epsilon_i z_i\).  The induced weight assigns
+\(z_1^az_2^b\in\mathfrak h\) the weight
+\(\langle\epsilon,(a,b)\rangle=a\epsilon_1+b\epsilon_2\), the residue
+dual \(\rho_{a,b}=z_1^{-a-1}z_2^{-b-1}dz_1dz_2\in P\) the weight
+\(-\langle\epsilon,(a,b)\rangle\), the Koszul letter \(\psi\) the weight
+\(-(\epsilon_1+\epsilon_2)\) of \(\Omega_{\mathrm{loc}}=dz_1\wedge dz_2\),
+and the quantization parameter \(\hbar\) the weight
+\(\epsilon_1+\epsilon_2\).  The diagonal kernel \(K^{(2)}_\Delta\) and
+the cyclic trace \(\operatorname{Tr}\) are weight zero, and the bracket
+\(\{f,g\}\) has weight
+\(\operatorname{wt}f+\operatorname{wt}g-(\epsilon_1+\epsilon_2)\); the
+projective central term \(\hbar N\bar c(f,g)\mathbf 1\) is weight zero.
+The differential and brackets of \(\mathfrak K_{\mathrm{HT}}\) are
+\(T_\Omega\)-equivariant, the transported datum \(\Theta_{\mathrm{OCA}}\)
+is \(T_\Omega\)-invariant, and the brane-preserving twisted
+differential is \(Q_\Omega=Q+\iota_{V_\Omega}\) with
+\(Q_\Omega^2=L_{V_\Omega}\), where \(V_\Omega\) is the fundamental
+vector field of \((\epsilon_s,\epsilon_1,\epsilon_2)\) and
+\(L_{V_\Omega}=\sum_i\epsilon_i\operatorname{wt}_i\) acts on the
+weight-\(\mathbf w\) space by \(\langle\epsilon,\mathbf w\rangle\).
+\end{defn}
+
+\begin{lem}[Non-scalar weight-zero obstruction criterion]\label{lem:nonscalar-weight-zero-vanishing}
+Let \(\mathfrak o_n\in\mathfrak K_{\mathrm{HT}}^2\) be the
+order-\(n\) Maurer--Cartan obstruction after all lower-order corrections
+have been chosen.  Write
+\(\mathfrak o_n^0\in(\mathfrak K_{\mathrm{HT}}^{T_\Omega})^2\) for its
+weight-zero component, and let
+\[
+  \pi_{\mathrm{sc}}\colon
+  \mathfrak K_{\mathrm{HT}}^{T_\Omega}
+  \longrightarrow C^\bullet_{\mathrm{Lie}}(\bar A;\C)
+\]
+be the scalar trace projection.  After a choice of filtered splitting of
+\(\pi_{\mathrm{sc}}\), the class
+\[
+  \operatorname{res}^{0}_{\mathrm{nsc}}(\mathfrak o_n)
+  :=
+  \bigl[\operatorname{pr}_{\ker\pi_{\mathrm{sc}}}(\mathfrak o_n^0)\bigr]
+  \in H^2(\ker\pi_{\mathrm{sc}},Q)
+\]
+is independent of the splitting up to the natural coboundary
+indeterminacy.  There is a weight-zero non-scalar primitive
+\(\beta_n^0\in(\ker\pi_{\mathrm{sc}})^1\) with
+\[
+  Q\beta_n^0
+  =
+  -\operatorname{pr}_{\ker\pi_{\mathrm{sc}}}(\mathfrak o_n^0)
+\]
+if and only if
+\(\operatorname{res}^{0}_{\mathrm{nsc}}(\mathfrak o_n)=0\).  This
+vanishing is extra centre-lift / quantum master-equation data; it is not
+a consequence of the \(\Omega\)-localization homotopy.
+\end{lem}
+
+\begin{proof}
+The order-\(n\) obstruction is \(Q\)-closed in the deformation complex
+twisted by the lower-order choices, because the filtered
+\(L_\infty\)-Bianchi identity gives
+\(Q\mathfrak o_n=0\) modulo terms already killed in lower filtration.
+The scalar projection is a cochain map on the weight-zero invariant
+subcomplex, so the non-scalar projection is a \(Q\)-cocycle in
+\(\ker\pi_{\mathrm{sc}}\).  Changing the splitting of
+\(\pi_{\mathrm{sc}}\) changes the representative by a \(Q\)-boundary
+coming from the chosen scalar lift, hence only the displayed cohomology
+class is intrinsic.  The equation for \(\beta_n^0\) is exactly the
+cochain-level lifting equation for removing the non-scalar weight-zero
+part of \(\mathfrak o_n\).  It has a solution precisely when the
+corresponding class in \(H^2(\ker\pi_{\mathrm{sc}},Q)\) vanishes.
+\end{proof}
+
+\begin{prop}[Generator trace-sector residual scalarity]\label{prop:residual-vanishes-bf}
+For the formal-Darboux Hamiltonian BF generator datum
+\(\Theta_{\mathrm{gen}}\), the product, action, and \(P_0\) centrality
+defects of
+Definition~\ref{defn:low-degree-hochschild-centrality-defects} have zero
+non-scalar projection on the scalar-reduced trace-sector generators.
+The remaining low-degree weight-zero curvature is the scalar Capelli
+line \(\hbar N[\bar c]\).  This verifies the residual criterion of
+Lemma~\ref{lem:nonscalar-weight-zero-vanishing} only for the displayed
+generator trace-sector rows; it does not construct the all-arity Morita
+centre lift or the all-order Costello QME tower.
+\end{prop}
+
+\begin{proof}
+The open--closed generators map the Hamiltonian Lie algebra into the
+Hochschild cochains by \(c_x\mapsto\theta_x\) and \(u_x\mapsto J(x)\),
+landing \(\theta_x\) in \(HH^1(A^{\mathrm{cl}}_{\partial,N})\) and
+\(J(x)\) in \(HH^0\).  On these generators the non-scalar weight-zero
+defects of
+Definition~\ref{defn:low-degree-hochschild-centrality-defects} are
+strict identities.  The Gerstenhaber bracket of the derivation
+\(\theta_x\) with a multiplication cochain is the multiplication by its
+derivative, \([\theta_x,M_a]_G=M_{\theta_x(a)}\), so with the realized
+action \(\rho_x(a)=\theta_x(a)\)
+\[
+  \delta^{\mathrm{prod}}_{x,a}=[\theta_x,M_a]_G-M_{\theta_x(a)}=0,
+  \qquad
+  \delta^{\mathrm{act}}_{x|y}=[\theta_x,M_{J(y)}]_G-M_{J(\{x,y\})}=0,
+\]
+the latter by the strict identity \(\theta_x(J(y))=J(\{x,y\})\) of
+Lemma~\ref{lem:hamiltonian-vector-field-on-Rep} and
+Proposition~\ref{prop:first-order-bracket}; the \(P_0\)-variant
+\(\delta^{P_0}_{x,a}=0\) by
+Theorem~\ref{thm:reduced-principal-part-boundary-current}.  The Lie
+defect is the strict bracket identity
+\([\theta_x,\theta_y]_G=\theta_{\{x,y\}}\) corrected only by the central
+term, \(\delta^{\mathrm{Lie}}_{x,y}=-\hbar N\omega(x,y)\gamma_{\mathbf1}\),
+a scalar class.  Hence the primitives are
+\(H^{\mathrm{prod}}=H^{P_0}=0\), the secondary defect
+\(\delta^3=\operatorname{Jac}(H^{\mathrm{prod}},H^{P_0})=0\) by
+Proposition~\ref{prop:low-degree-centre-lift-obstruction}.  Thus the
+displayed generator trace-sector rows have no non-scalar weight-zero
+component.  Higher arities, unreduced centrality homotopies, and
+Costello QME counterterms are separate entries of the residual complex.
+\end{proof}
+
+\begin{thm}[\texorpdfstring{$\Omega$}{Omega}-localization of the completed comparison complex]\label{thm:omega-localization-collapse}
+Let \((\epsilon_1,\epsilon_2)\) be nonresonant:
+\(a\epsilon_1+b\epsilon_2=0\) with \((a,b)\in\Z^2\) forces
+\(a=b=0\).  Assume that the completed comparison complex
+\(\mathfrak K_{\mathrm{HT}}\) has the \(T_\Omega\)-weight decomposition
+and continuity properties of Definition~\ref{defn:omega-grading},
+and that the curvature
+\(F_{\mathrm{HT}}(\Theta_{\mathrm{OCA}})\) of the chosen centre-lift
+datum is defined in this filtered complex.  Then the \(\Omega\)-twisted
+comparison complex localizes onto the weight-zero fixed subcomplex,
+\[
+  H^\bullet(\mathfrak K_{\mathrm{HT}},Q_\Omega)
+  \;\cong\;
+  H^\bullet\bigl(\mathfrak K_{\mathrm{HT}}^{T_\Omega},Q\bigr),
+\]
+so all nonzero weight cohomology is killed by the localization homotopy.
+There is a scalar projection
+\[
+  \pi_{\mathrm{sc}}\colon
+  \mathfrak K_{\mathrm{HT}}^{T_\Omega}
+  \longrightarrow C^\bullet_{\mathrm{Lie}}(\bar A;\C)
+\]
+onto the scalar trace cochains.  Its degree-two scalar cohomology is
+spanned by the Capelli cocycle
+\(\bar c(f,g)=[\{f,g\}]_0\) of Lemma~\ref{lem:omega-cocycle}, and the
+scalar projection of the curvature is
+  \[
+    \pi_{\mathrm{sc}}\bigl[F_{\mathrm{HT}}(\Theta_{\mathrm{OCA}})\bigr]
+  =\hbar N[\bar c]\in H^2_{\mathrm{Lie}}(\bar A;\C)[[\hbar]],
+  \]
+the scalar contact obstruction of
+Theorem~\ref{thm:app-scalar-contact-qme-class}.
+The positive-weight part of every order-\(n\) Maurer--Cartan obstruction
+\(\mathfrak o_n\) is \(Q_\Omega\)-exact.  The residual weight-zero
+non-scalar class
+\[
+  \operatorname{res}^{0}_{\mathrm{nsc}}(\mathfrak o_n)
+  \in H^2(\ker\pi_{\mathrm{sc}},Q)
+\]
+is the remaining obstruction.  If these residual classes vanish for all
+\(n\) and compatible primitives \(\beta_n^0\) are chosen, the
+order-by-order projective Maurer--Cartan lift exists, and its curvature
+is
+\[
+  F_{\mathrm{HT}}(\Theta_{\mathrm{OCA}}+\tau)=\hbar N[\bar c]\cdot\mathbf 1 .
+\]
+In that case the positive-weight part of the correction is built from
+\(h_\Omega=\iota_{V_\Omega}L_{V_\Omega}^{-1}\), while the weight-zero
+non-scalar part is the chosen primitive \(\beta_n^0\).  The weight growth
+of the positive-weight summand is absorbed by the weighted-Tate /
+pro-Matlis topology of \(\mathcal B^{\mathrm{adm}}\).
+\end{thm}
+
+\begin{proof}
+Decompose \(\mathfrak K_{\mathrm{HT}}=\bigoplus_{\mathbf w}
+\mathfrak K_{\mathrm{HT}}[\mathbf w]\) into \(T_\Omega\)-weight
+eigenspaces, each of finite total dimension in fixed cohomological
+degree by the admissible nuclearity of \(\mathcal B^{\mathrm{adm}}\).
+On \(\mathfrak K_{\mathrm{HT}}[\mathbf w]\) the operator
+\(L_{V_\Omega}=Q_\Omega^2\) acts by the scalar
+\(\langle\epsilon,\mathbf w\rangle\), nonzero for \(\mathbf w\ne0\) by
+nonresonance.  Hence on the positive-weight part
+\[
+  [Q_\Omega,h_\Omega]
+  =Q_\Omega\iota_{V_\Omega}L_{V_\Omega}^{-1}
+  +\iota_{V_\Omega}L_{V_\Omega}^{-1}Q_\Omega
+  =L_{V_\Omega}L_{V_\Omega}^{-1}=\mathrm{id},
+\]
+using \([Q_\Omega,\iota_{V_\Omega}]=L_{V_\Omega}\) and
+\([L_{V_\Omega},\,\cdot\,]=0\) on weight eigenspaces, so
+\(\mathfrak K_{\mathrm{HT}}[\mathbf w]\) is \(Q_\Omega\)-acyclic for
+\(\mathbf w\ne0\).  The cohomology is carried by the weight-zero
+invariant subcomplex \(\mathfrak K_{\mathrm{HT}}^{T_\Omega}\), on which
+\(\iota_{V_\Omega}\) vanishes and \(Q_\Omega=Q\).  Projecting the
+weight-zero invariant subcomplex to the scalar trace cochains gives
+\(\pi_{\mathrm{sc}}\colon\mathfrak K_{\mathrm{HT}}^{T_\Omega}\to
+C^\bullet_{\mathrm{Lie}}(\bar A;\C)\).  The second cohomology of the
+scalar target is spanned by \([\bar c]\) by Lemma~\ref{lem:omega-cocycle}
+and the uniqueness of the Capelli central extension of
+Theorem~\ref{thm:capelli-projective-anomaly}.  The curvature
+\(F_{\mathrm{HT}}(\Theta_{\mathrm{OCA}})\) is invariant since
+\(\Theta_{\mathrm{OCA}}\) is; its scalar projection is computed by the
+scalar contact bracket
+\(\{I_\partial(a,f),I_\partial(b,g)\}=I_\partial(ab,\{f,g\})
++N\omega(f,g)\int ab\) of
+Theorem~\ref{thm:app-scalar-contact-qme-class}, giving \(\hbar N[\bar
+c]\).  At order \(n\) the obstruction \(\mathfrak o_n\) is the class of
+the order-\(n\) curvature defect.  Its nonzero-weight representative is
+removed by \(\tau_n^{>0}=h_\Omega\mathfrak o_n^{>0}\).  The remaining
+weight-zero component splits into the scalar Capelli line and the
+residual class in \(H^2(\ker\pi_{\mathrm{sc}},Q)\).  By
+Lemma~\ref{lem:nonscalar-weight-zero-vanishing}, a weight-zero
+non-scalar correction \(\beta_n^0\) exists precisely on the vanishing
+locus of that residual class.  When these classes vanish for every
+\(n\) and compatible \(\beta_n^0\)'s have been chosen, summing
+\(\tau_n=\tau_n^{>0}+\beta_n^0\) gives
+\(\Theta_{\mathrm{OCA}}+\tau\), which solves the projective master
+equation with central curvature \(\hbar N[\bar c]\cdot\mathbf 1\).
+Each \(h_\Omega\) carries the factor
+\(L_{V_\Omega}^{-1}=\langle\epsilon,\mathbf w\rangle^{-1}\), so the
+weight-\(\mathbf w\) component of \(\tau\) grows like
+\(\langle\epsilon,\mathbf w\rangle^{-1}\); convergence of the series in
+the weighted-Tate seminorms is the continuity estimate
+\(p^*_n(f\cdot\rho)\le C_np_{n+r}(f)p^*_{n+r}(\rho)\) of
+Proposition~\ref{prop:completion-promatlis-continuity}.
+\end{proof}
+
+\begin{rmk}[Fixed locus and the global hypothesis]\label{rmk:omega-fixed-locus}
+The localization concentrates the cohomology on the \(T_\Omega\)-fixed
+locus.  At the formal-Darboux stalk that locus is the brane point
+\(0\in\widehat{\C^2}_0\), so Theorem~\ref{thm:omega-localization-collapse}
+applies to the completed local comparison complex.  It constructs only
+the contracting homotopy for nonzero weights.  The centre-lift
+Maurer--Cartan element, the projective Costello quantum master equation,
+the locality homotopy, and the cone contraction require the residual
+weight-zero primitives and comparison data stated in
+Theorem~\ref{thm:main-global-deligne-criterion}; the descent datum has
+the weight-zero coordinate \(\operatorname{per}_X(v)\).  A global
+holomorphic-symplectic target \((Y,\omega)\) inherits the same collapse
+once it carries a Hamiltonian \(T_\Omega\)-action whose fixed locus is
+the Dirac brane support, with \(\operatorname{per}_X(v)\) the residual
+weight-zero descent coordinate.  The punctured plane
+\(\C^2\setminus\{0\}\) carries the free residual scaling and no isolated
+brane fixed point, so its global comparison is the genuine descent
+problem of \S\ref{ssec:master-deformation-local-datum}, not a
+consequence of the stalk localization.
+\end{rmk}
+
+\begin{thm}[Projected projective curvature criterion]\label{thm:six-coordinates-one-curvature}
+Assume the comparison-unifying datum of
+Definition~\ref{defn:common-ht-deformation-complex}, the projection
+criterion of Proposition~\ref{prop:six-projections}, and the
+\(\Omega\)-grading hypotheses of
+Theorem~\ref{thm:omega-localization-collapse}.  Then the six native
+obstruction classes
 \[
   \Omega^{\mathrm{rad}}_{a,b},\quad
   \hbar N[\bar c],\quad
@@ -313,40 +713,48 @@ The six manuscript obstruction classes
   \operatorname{Ob}_{\mathrm{cent/QME/desc}},\quad
   \operatorname{per}_X(v)
 \]
-are the six gauge-slice components of the single curvature
-\(F_{\mathcal T}(\Theta_{\mathrm{loc}})\) of
-Theorem~\ref{thm:four-curvature-taxonomy}, evaluated at six
-independent gauge slices of
-\((\mathfrak K_{\mathcal T},\Theta_{\mathrm{loc}})\), with cell
-assignment
-\(\bigl(d_\Theta\tau,\,\Omega_{\mathrm{central}},\,d_\Theta\tau,\,
-\notin\operatorname{im}d_\Theta,\,d_\Theta\tau,\,\Omega_{\mathrm{central}}\bigr)\).
+are the projections of the curvature
+\(F_{\mathrm{HT}}(\Theta_{\mathrm{OCA}})\) of the common complex
+\(\mathfrak K_{\mathrm{HT}}\) under the six comparison maps of
+Proposition~\ref{prop:six-projections}.  The weight-zero projection is
+the central class \(\hbar N[\bar c]\).  The positive-weight coordinates
+are \(Q_\Omega\)-exact and are killed by the localization homotopy
+\(h_\Omega\).  The residual non-scalar weight-zero coordinate is
+\[
+  \operatorname{res}^{0}_{\mathrm{nsc}}(\mathfrak o_n)
+  \in H^2(\ker\pi_{\mathrm{sc}},Q).
+\]
+Hence the projected curvature has scalar component
+\(\hbar N[\bar c]\cdot\mathbf 1\) and no residual non-scalar
+weight-zero component exactly on the vanishing locus of this residual
+class, after compatible weight-zero primitives have been chosen.
 \end{thm}
 
 \begin{proof}
-The slice and cell assignment is established for each coordinate
-through the corresponding section of the manuscript:
-\(\Omega^{\mathrm{rad}}_{a,b}\) in the radial bicomplex
-(Appendix~\ref{sec:app-radial-parts-moyal},
-Theorem~\ref{thm:app-radial-bidegree-rational-reduction}; counterterm
-cell \(d_\Theta\tau\)); \(\hbar N[\bar c]\) in scalar Lie cohomology
+Each class is the corresponding-layer component of
+\(F_{\mathrm{HT}}(\Theta_{\mathrm{OCA}})\) by
+Proposition~\ref{prop:six-projections}:
+\(\Omega^{\mathrm{rad}}_{a,b}\) the bidegree-\((a,b)\) component
+(Theorem~\ref{thm:app-radial-bidegree-rational-reduction}),
+\(\hbar N[\bar c]\) the weight-zero component
 (Lemma~\ref{lem:omega-cocycle},
-Theorem~\ref{thm:capelli-equals-modular-curvature}; projective cell
-\(\Omega_{\mathrm{central}}\));
-\([\operatorname{Ob}^{\mathrm{red}}_{w,\partial,\hbar}]\) in the
-weighted Tate complex
-(Theorem~\ref{thm:app-theta-three-finite-window-H1}; counterterm
-cell); \(\operatorname{Ob}^{\Pi}_{\mathrm{BM}}\) on finite Matlis
-windows (Theorem~\ref{thm:bmk-finite-window-obstruction}; genuine-obstruction
-cell \(\notin\operatorname{im}d_\Theta\));
-\(\operatorname{Ob}_{\mathrm{cent/QME/desc}}\) in the unreduced
-cotangent lift (Theorem~\ref{thm:app-unreduced-cotangent-lift-obstruction};
-counterterm cell); \(\operatorname{per}_X(v)\) as the global period
-class on \(X\)
-(Theorem~\ref{thm:formal-local-universal-property}; projective cell).
-The six slices are independent because their support classes are
-non-overlapping in \(\mathfrak K_{\mathcal T}\); the single curvature
-\(F_{\mathcal T}(\Theta_{\mathrm{loc}})\) projects to each slice via
-the gauge-slice projection induced by the corresponding filtration
-of \(\mathfrak K_{\mathcal T}\).
+Theorem~\ref{thm:capelli-projective-anomaly}),
+\([\operatorname{Ob}^{\mathrm{red}}_{w,\partial,\hbar}]\) the
+positive-\(\hbar\)-order component
+(Theorem~\ref{thm:app-theta-three-finite-window-H1}),
+\(\operatorname{Ob}_{\mathrm{cent/QME/desc}}\) the \(P_0\)-cotangent
+component (Theorem~\ref{thm:app-unreduced-cotangent-lift-obstruction}),
+\(\operatorname{Ob}^{\Pi}_{\mathrm{BM}}\) the finite-window component
+(Theorem~\ref{thm:bmk-finite-window-obstruction}), and
+\(\operatorname{per}_X(v)\) the \v Cech component
+(Theorem~\ref{thm:formal-local-universal-property}).  By
+Theorem~\ref{thm:omega-localization-collapse} the scalar projection of
+the weight-zero curvature is the central Capelli class and its
+positive-weight part is exact.  The positive-weight coordinates are the
+components of the \(Q_\Omega\)-exact remainder \(d_\Theta\tau\), each
+killed in its native complex by the corresponding layer of \(\tau\).
+The non-scalar weight-zero component is the residual class of
+Lemma~\ref{lem:nonscalar-weight-zero-vanishing}.  The weight-zero
+curvature is the scalar Capelli line precisely when that class vanishes
+and the corresponding primitives are chosen.
 \end{proof}

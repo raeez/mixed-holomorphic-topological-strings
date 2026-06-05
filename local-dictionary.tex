@@ -4,14 +4,22 @@
 \section*{Local dictionary}
 \addcontentsline{toc}{section}{Local dictionary}
 
-\paragraph{\texorpdfstring{Linear-algebraic category: Tate $\C$-vector spaces.}{Linear-algebraic category: Tate C-vector spaces.}}
-All linear-algebraic constructions take place in the symmetric monoidal
-category $\mathrm{Tate}_\C$ of Tate $\C$-vector spaces, equivalently linearly
-compact $\C$-modules in the sense of Lefschetz, equivalently the
-ind-pro category of finite-dimensional $\C$-vector spaces.  The
-completed tensor product $\widehat\otimes$ is the topological tensor
-product on $\mathrm{Tate}_\C$; continuous duality is the strict functor
-$V\mapsto V^\vee_{\mathrm{cont}}=\Hom^{\mathrm{cts}}_\C(V,\C)$.  The
+\paragraph{\texorpdfstring{Coefficient category: Tate $\C$-vector spaces.}{Coefficient category: Tate C-vector spaces.}}
+The coefficient-side linear algebra takes place in the symmetric
+monoidal category $\mathrm{Tate}_\C$ of Tate $\C$-vector spaces:
+ind-pro finite-dimensional $\C$-vector spaces equipped with linearly
+compact lattices.  A linearly compact module is a lattice object, not
+the whole Tate object.  The coefficient completed tensor product
+$\widehat\otimes_{\mathrm{Tate}}$ is the topological tensor product on
+$\mathrm{Tate}_\C$; continuous duality is the strict functor
+$V\mapsto V^\vee_{\mathrm{cont}}=\Hom^{\mathrm{cts}}_\C(V,\C)$.  When
+Dolbeault, de Rham, heat-kernel, or local-functional factors are
+present, their analytic tensor product is the nuclear projective tensor
+product \(\widehat\otimes_\pi\); the symbol \(\widehat\otimes\) below
+means the completed product obtained from
+\(\widehat\otimes_\pi\) on analytic factors and
+\(\widehat\otimes_{\mathrm{Tate}}\) on coefficient factors.  No
+bornological tensor product is used unless explicitly named.  The
 $\C$-algebra $A=\C[[z_1,z_2]]$ is a complete linearly topologized
 $\C$-algebra with the $\mathfrak m$-adic filtration
 $\mathfrak m^k=(z_1,z_2)^kA$; $\mathfrak h=A/\C\!\cdot\!1$ is
@@ -41,8 +49,1008 @@ factorisable-$\mathcal D$-module-on-$\mathrm{Ran}(\C^2)$ description ---
 the two-complex-dimensional extension of the
 $\mathcal D$-module-on-Ran presentation of curve chiral algebras
 formalised in \cite{beilinson-drinfeld-chiral}*{\S 3}, equivalent to the analytic
-form via the de Rham complex; the BV / heat-kernel framework selects
+form via the de Rham complex; the BV / heat-kernel formalism selects
 Costello--Gwilliam as native.
+
+\begin{defn}[Admissible host category]\label{defn:admissible-host-category}
+  The category \(\mathcal B^{\mathrm{adm}}\) used in the formal-stalk
+  theorem is the dg category whose objects are tuples
+  \[
+    (V,F^\bullet V,d,\widehat\otimes,V^\vee_{\mathrm{cts}},
+    D_V,\mathrm{ev}_V,\mathrm{coev}_V,
+    \underline{\mathrm{Hom}}^\bullet_{\mathrm{adm}},
+    \operatorname{Roos},\,L_{\mathrm{sc}},\mathcal O_{\mathrm{adm}})
+  \]
+  where \((V,F^\bullet V,d)\) is a complete Hausdorff filtered cochain
+  complex whose coefficient factor lies in \(\mathrm{Tate}_\C\) and
+  whose analytic form or local-functional factors are nuclear
+  locally convex complexes, \(V^\vee_{\mathrm{cts}}\) is the strict
+  continuous dual, \(D_V\) is the declared coefficient dual used by BV
+  pairings and kernels, \(L_{\mathrm{sc}}\) is the declared scalar line
+  when one is present, and \(\mathcal O_{\mathrm{adm}}\) is the
+  list of products, brackets, kernels, convolutions, trace transitions,
+  and counterterm operations that are required to be continuous on
+  \(V\).  Thus an object of
+  \(\mathcal B^{\mathrm{adm}}\) is a complex together with its
+  completed tensor product, internal Hom, strict and declared duality,
+  Roos/strict-limit
+  convention, scalar convention, and operation estimates.  It is not
+  an unspecified background category.  The data satisfy the following
+  conditions.
+  \begin{enumerate}[label=\textup{(A\arabic*)}]
+    \item \emph{Strict topology.}  The filtration is exhaustive and
+      separated; differentials are strict continuous maps; cones and
+      shifts carry the completed induced filtration.
+    \item \emph{Completed tensor product.}  The monoidal product is the
+      completed product \(\widehat\otimes\) obtained by applying the
+      nuclear projective tensor product to analytic factors and the
+      completed Tate tensor product to coefficient factors, then
+      completing the algebraic tensor product for the convolution
+      filtration
+      \[
+        F_n(V\widehat\otimes W)=
+        \widehat{\sum_{i+j\leq n}\operatorname{im}
+        (F_iV\otimes F_jW\to V\otimes W)}
+      \]
+      on the declared objects.  It preserves strict filtered
+      quasi-isomorphisms in each variable.
+    \item \emph{Continuous and declared duality.}  The strict continuous
+      dual is
+      \(V^\vee_{\mathrm{cts}}=\operatorname{Hom}^{\mathrm{cts}}_\C(V,\C)\)
+      with the opposite Tate filtration.  The BV pairing in a theorem is
+      carried by the declared coefficient dual \(D_V\), with continuous
+      maps
+      \[
+        \mathrm{ev}_V\colon D_V\widehat\otimes V\to\C,\qquad
+        \mathrm{coev}_V\colon \C\to V\widehat\otimes D_V .
+      \]
+      If \(D_V\ne V^\vee_{\mathrm{cts}}\), the theorem must state this
+      coefficient enlargement and the topology in which
+      \(\mathrm{coev}_V(1)\) converges.  No statement about \(D_V\) is
+      then a statement about the strict continuous dual.
+    \item \emph{Internal Hom.}  The dg Hom complex is
+      \[
+        \underline{\mathrm{Hom}}^k_{\mathcal B^{\mathrm{adm}}}(V,W)
+        =
+        \{\,f\colon V\to W[k]\mid f
+        \text{ is continuous, filtered, and preserves the declared
+        admissibility data}\,\},
+      \]
+      with differential
+      \(d_{\mathrm{Hom}}f=d_W f-(-1)^k f d_V\).  The internal Hom
+      used in convolution and centrality complexes is the closed
+      subcomplex consisting of maps that preserve scalar lines, pairings,
+      stable transition maps, and all operations listed in
+      \(\mathcal O_{\mathrm{adm}}\).
+    \item \emph{Limits.}  Inverse systems are evaluated by the Roos
+      complex \(\operatorname{Roos}(V_\bullet)\), hence by
+      \(\mathbf R\!\varprojlim V_n\).  A strict inverse limit may be used
+      only when the Mittag--Leffler term
+      \(\varprojlim\nolimits^1 H^{*-1}(V_n)\) is zero; otherwise that
+      \(\varprojlim^1\)-class is an obstruction datum, not discarded.
+    \item \emph{Scalar reduction.}  Let
+      \(\mathcal B^{\mathrm{adm}}_{\mathrm{sc}}\) be the dg category of
+      pairs \((V,L)\) where \(V\in\mathcal B^{\mathrm{adm}}\) and
+      \(L\simeq\C\) is a declared split central dg subobject.  For an
+      algebra object the source condition is stronger: \(L\) is a
+      central dg ideal for the operation being quotiented.  The
+      scalar-reduction functor is the exact quotient functor
+      \[
+        U_{\mathrm{sc}}\colon
+        \mathcal B^{\mathrm{adm}}_{\mathrm{sc}}\longrightarrow
+        \mathcal B^{\mathrm{adm}},
+        \qquad
+        (V,L)\longmapsto \operatorname{coker}(L\hookrightarrow V).
+      \]
+      On a morphism \(f\colon(V,L)\to(W,M)\) satisfying
+      \(f(L)\subset M\), \(U_{\mathrm{sc}}(f)\) is the induced map on
+      cokernels.  The unit of an algebra object is retained unless the
+      theorem explicitly passes to Hamiltonian primitives.  This is the
+      entire meaning of \(U_{\mathrm{sc}}\): it does not forget
+      pro-Matlis completions, replace Roos limits by strict limits,
+      discard Hochschild centrality homotopies, pass to stable traces,
+      or erase a QME counterterm tower.
+    \item \emph{Stable trace passage.}  Fix a word degree \(d\).  Let
+      \(\mathrm{Tow}^{\mathrm{tr}}_d\) be the category whose objects are
+      finite-window rational towers
+      \[
+        \bigl\{
+        \operatorname{Prim}H^0(\mathcal R_N^{GL_N},Q)_d
+        /\C\cdot\operatorname{Tr}(1)
+        \bigr\}_{N\ge d}
+      \]
+      with transition maps induced by the Procesi--Razmyslov stable
+      trace identifications in degree \(d\); morphisms commute with
+      these transition maps.  The degree-\(d\) stable trace functor is
+      \[
+        \operatorname{StTr}_d\colon
+        \mathrm{Tow}^{\mathrm{tr}}_d\longrightarrow \mathrm{Vect}_\C,
+        \qquad
+        \mathcal R_\bullet\longmapsto
+        \varprojlim_{N\geq d}
+        \operatorname{Prim}H^0(\mathcal R_N^{GL_N},Q)_d
+        \big/\C\cdot\operatorname{Tr}(1).
+      \]
+      The completed functor
+      \(\operatorname{StTr}=\widehat{\bigoplus}_{d\ge1}
+      \operatorname{StTr}_d\) lands in the declared Tate completion
+      chosen for the theorem using it.  In the formal-Darboux theorem
+      this output is identified with the reduced Hamiltonian generator
+      space \(\mathfrak h\), and
+      \(A_{\partial,H}^{\mathrm{st}}\) is the completed symmetric
+      algebra on that output.  Physical large-\(N\) trace-state data
+      and cumulants are separate.  Here
+      \(H^0(\mathcal R_N^{GL_N},Q)\) means the
+      Chevalley--Eilenberg-length-zero invariant Koszul cohomology of
+      the reduced polynomial brane complex.  Reductive exactness is the
+      finite-window rational-module statement of
+      Lemma~\ref{lem:reductive-invariants-koszul-exactness};
+      Roos/strict-limit data control the later inverse system.  Positive
+      CE-length stabilizer classes of the quotient stack lie outside
+      \(\operatorname{StTr}_d\).
+    \item \emph{Operation estimates.}  Every product, bracket,
+      coadjoint action, kernel contraction, Hochschild convolution, and
+      Costello counterterm tower acting on an object of
+      \(\mathcal B^{\mathrm{adm}}\) is accompanied by a continuity
+      estimate in the chosen filtration.  For the Matlis cotangent
+      action this means either the locally finite direct-sum statement of
+      Lemma~\ref{lem:app-matlis-coadjoint-continuity}, where a fixed
+      principal part sees only a finite jet of a formal Hamiltonian, or
+      the pro-Matlis seminorm estimate of
+      Proposition~\ref{prop:completion-promatlis-continuity}.  A finite
+      Matlis cutoff is not a strict \(\mathfrak h\)-submodule unless the
+      window-loss term is recorded.  A theorem invoking a diagonal
+      Casimir or diagonal local-cohomology kernel must state the topology
+      in which the displayed infinite sum converges.
+  \end{enumerate}
+  Morphisms in \(\mathcal B^{\mathrm{adm}}\) are degree-zero closed
+  elements of the dg Hom complex.  Weak equivalences are strict
+  filtered quasi-isomorphisms, or filtered quasi-isomorphisms after
+  replacing the inverse system by its Roos complex.
+\end{defn}
+
+\begin{rmk}[Model objects and non-objects in \(\mathcal B^{\mathrm{adm}}\)]
+\label{rmk:badm-models}
+The finite-window object \(B_{\mathrm{fin}}\) is admissible: all sums
+are finite, the tensor product is algebraic before completion, the
+residue pairing is finite-dimensional, and the Schouten bracket,
+Koszul differential, and trace maps are strict continuous maps.
+
+For \(q>1\), let \(w(d)=q^d\).  The weighted Tate envelope
+\(B_w\) of Definition~\ref{defn:wt-Bw-envelope} is admissible by
+Theorem~\ref{thm:wt-canonical-envelope}.  Its declared coefficient
+dual is
+\(\mathfrak h^{\vee,w}_{\mathrm{cont}}\) of
+Definition~\ref{defn:wt-coefficient-pair}; this is the product
+coefficient module that carries the diagonal BV coevaluation.  It is
+not the strict continuous dual of the Tate product
+\(\mathfrak h_w\), whose strict continuous dual is the direct sum.
+The product, Schouten bracket, Schouten differential, coadjoint
+action, weighted diagonal Casimir, heat-kernel propagator, fixed-graph
+renormalization-group contribution, and CE/PV map are the operations
+listed in Theorem~\ref{thm:wt-canonical-envelope}.
+
+The strict Tate product/direct-sum pair is excluded by
+Proposition~\ref{prop:badm-strict-product-direct-sum-nonobject}: it has
+evaluation but no coevaluation kernel for the BV propagator used in the
+formal-stalk theorem.
+\end{rmk}
+
+\begin{prop}[Strict product/direct-sum non-object]\label{prop:badm-strict-product-direct-sum-nonobject}
+  Let
+  \[
+    H_d=\operatorname{Span}_{\C}\{z_1^az_2^b:a+b=d\},\qquad
+    \mathfrak h_\Pi=\prod_{d\ge1}H_d,\qquad
+    D_\oplus=\bigoplus_{d\ge1}H_d^\vee .
+  \]
+  The pair \((\mathfrak h_\Pi,D_\oplus)\) has a continuous evaluation
+  pairing \(D_\oplus\widehat\otimes\mathfrak h_\Pi\to\C\), but it is
+  not an object of \(\mathcal B^{\mathrm{adm}}\) carrying the BV
+  coevaluation required by the formal-stalk theorem.  The diagonal
+  coevaluation
+  \[
+    C_\Pi=\sum_{d\ge1}\sum_i e_{d,i}\otimes e^i_d
+  \]
+  lies in neither
+  \(\mathfrak h_\Pi\widehat\otimes D_\oplus\) nor
+  \(D_\oplus\widehat\otimes\mathfrak h_\Pi\).
+\end{prop}
+
+\begin{proof}
+  An element of a completed tensor product with the direct-sum factor
+  \(D_\oplus=\bigoplus_{d\ge1}H_d^\vee\) has finite support in the
+  \(D_\oplus\)-degree direction in the strict Tate convention used
+  here.  The displayed diagonal has nonzero \(H_d^\vee\)-component for
+  every \(d\ge1\).  Hence it is not a tensor in
+  \(\mathfrak h_\Pi\widehat\otimes D_\oplus\).  The same support
+  obstruction holds after reversing the tensor factors.
+
+  Definition~\ref{defn:admissible-host-category}(A3) requires a
+  continuous coevaluation \(\C\to V\widehat\otimes D_V\) for every BV
+  pairing used by a theorem.  The strict product/direct-sum pair
+  supplies only evaluation, not the inverse kernel.  Therefore a
+  theorem using the diagonal BV propagator on this pair has no
+  \(\mathcal B^{\mathrm{adm}}\)-object as its coefficient source.  The
+  weighted Tate model of
+  Proposition~\ref{prop:verified-badm-weighted-model} changes the
+  coefficient category precisely to supply this coevaluation.
+\end{proof}
+
+\begin{prop}[Verified admissible finite Hamiltonian model]
+\label{prop:verified-badm-finite-model}
+  Let
+  \[
+    H_{\leq 2}
+    =
+    \operatorname{Span}_{\C}\{z_1,z_2,z_1^2,z_1z_2,z_2^2\}
+    \subset \C[z_1,z_2]/\C\cdot1 .
+  \]
+  Since \(\{H_{\leq2},H_{\leq2}\}\subset H_{\leq2}\) modulo constants,
+  \(H_{\leq2}\) is a finite-dimensional Hamiltonian Lie algebra.  Put
+  \(P_{\leq2}=H_{\leq2}^{\vee}\) with the coadjoint action dual to this
+  finite Lie bracket, and
+  \(\mathfrak g_{\leq2}=H_{\leq2}\ltimes P_{\leq2}[1]\).  The completed
+  finite CE/PV object
+  \[
+    B_{\leq2}
+    =
+    \widehat{\mathbf S}(H_{\leq2})
+    \widehat\otimes
+    \Lambda(H_{\leq2}^{\vee})
+  \]
+  with \(I\)-adic filtration \(F^rB_{\leq2}=I^r\), where
+  \(I=(O_f,\theta^\lambda)\), differential
+  \(d_\pi=[\frac12C^K_{IJ}O_K\theta^I\theta^J,-]_S\), ordinary completed
+  tensor product over finite-dimensional coefficient spaces, continuous
+  dual \(B_{\leq2}^{\vee,\mathrm{cont}}\), Roos convention equal to the
+  constant inverse system, no scalar line \(L_{\mathrm{sc}}=0\), and
+  operation list
+  \[
+    \mathcal O_{\leq2}
+    =
+    \{\text{multiplication},\,d_\pi,\,[\, ,\,]_S,\,
+      H_{\leq2}\text{-coadjoint action},\,\text{finite Casimir}\}
+  \]
+  is an object of \(\mathcal B^{\mathrm{adm}}\).
+\end{prop}
+
+\begin{proof}
+  The Poisson bracket of two generators of degree at most two has degree
+  at most two, and the only degree-zero bracket is a constant, killed in
+  \(\C[z_1,z_2]/\C\cdot1\).  Hence \(H_{\leq2}\) is a finite Lie algebra,
+  and \(P_{\leq2}=H_{\leq2}^{\vee}\) is its ordinary finite coadjoint
+  module.
+
+  Conditions (A1)--(A8) of
+  Definition~\ref{defn:admissible-host-category} are then checked inside
+  finite-dimensional linear algebra.  For (A1), the \(I\)-adic completion
+  is
+  \[
+    B_{\leq2}=\varprojlim_r B_{\leq2}/I^r,
+  \]
+  with finite-dimensional quotients; it is complete, Hausdorff, and
+  separated.  Since \(d_\pi(O_K)=C^L_{KJ}O_L\theta^J\) and
+  \(d_\pi(\theta^K)=-\frac12C^K_{IJ}\theta^I\theta^J\),
+  \(d_\pi(I^r)\subset I^{r+1}\), so the differential is strict
+  continuous.  For (A2), the tensor product is the \(I\)-adically
+  completed tensor product of finite-dimensional quotients; over \(\C\)
+  it preserves strict filtered quasi-isomorphisms.  For (A3), the
+  continuous dual is the direct sum of the duals of the homogeneous
+  finite-dimensional quotients, and the pairing with \(B_{\leq2}\) is
+  degreewise perfect.  The finite diagonal
+  \[
+    \Delta_{\leq2}=\sum_i e_i\otimes e^i
+    \in H_{\leq2}\otimes P_{\leq2}
+  \]
+  is an honest tensor, so no convergence hypothesis is hidden.
+
+  For (A4), the internal Hom is the complex of continuous filtered maps
+  preserving \(\mathcal O_{\leq2}\), with differential
+  \(d_{\mathrm{Hom}}f=d f-(-1)^{|f|}f d\); preservation of a finite list
+  of continuous operations cuts out a closed subcomplex.  For (A5), the
+  inverse system is constant, so the Roos complex is the object itself
+  and \(\varprojlim^1=0\).  For (A6), no Capelli or empty-trace scalar
+  line is declared; the scalar-reduction functor is the identity and the
+  unit of \(\widehat{\mathbf S}(H_{\leq2})\) is retained.  For (A7), no
+  stable \(N\)-trace passage is part of \(\mathcal O_{\leq2}\); finite
+  invariant trace towers are therefore not invoked.
+
+  For (A8), all operation estimates are explicit in the \(I\)-adic
+  filtration:
+  \[
+    I^rI^s\subset I^{r+s},\qquad
+    d_\pi(I^r)\subset I^{r+1},\qquad
+    [I^r,I^s]_S\subset I^{r+s-1}.
+  \]
+  The coadjoint action and the finite Casimir use only the finite pair
+  \(H_{\leq2}\otimes P_{\leq2}\).  Thus every operation in
+  \(\mathcal O_{\leq2}\) is continuous in the declared topology, and
+  \(B_{\leq2}\) is a verified object of
+  \(\mathcal B^{\mathrm{adm}}\).
+\end{proof}
+
+\begin{prop}[Verified admissible weighted Hamiltonian model]
+\label{prop:verified-badm-weighted-model}
+  Let \(w(d)=q^d\) with \(q>1\), let
+  \((\mathfrak h_w,\mathfrak h^{\vee,w}_{\mathrm{cont}})\) be the
+  weighted Tate coefficient pair of
+  Definition~\ref{defn:wt-coefficient-pair}, and let \(B_w\) be the
+  weighted Tate envelope of Definition~\ref{defn:wt-Bw-envelope}.  Give
+  \(B_w\) the differential \(d_\pi\), its weighted completed tensor
+  product, strict continuous dual \(B_w^{\vee,\mathrm{cts}}\), declared
+  coefficient dual \(D_{B_w}\) induced from
+  \(\mathfrak h^{\vee,w}_{\mathrm{cont}}\), Roos convention from the
+  finite degree-window tower, scalar line \(L_{\mathrm{sc}}=0\), and
+  operation list
+  \[
+    \mathcal O_w=
+    \{\cdot,\ d_\pi,\ [-,-]_{\mathrm{Sch}},\
+      \text{coadjoint action},\
+      C_{\mathfrak h,w},\
+      P^w_{\epsilon,L},\
+      W_\Gamma(P^w_{\epsilon,L},I),\
+      \Phi^w\}.
+  \]
+  Here \(C_{\mathfrak h,w}\) is the weighted diagonal Casimir,
+  \(P^w_{\epsilon,L}\) is the weighted heat-kernel propagator, \(\Gamma\)
+  ranges over fixed Costello graphs with polynomial-degree-bounded
+  vertices, and \(\Phi^w\) is the weighted CE/PV map.  This tuple is an
+  object of \(\mathcal B^{\mathrm{adm}}\).
+\end{prop}
+
+\begin{proof}
+  Lemma~\ref{lem:wt-weights-exist} verifies the degree-weight
+  conditions for \(w(d)=q^d\).  The tower of finite degree windows is
+  strict Mittag--Leffler by Definition~\ref{defn:wt-degree-weight},
+  hence inverse limits are computed by the Roos complex and have no
+  hidden \(\varprojlim^1\)-term in the coevaluation tower.  The completed
+  tensor product and declared coefficient dual are those of
+  Definition~\ref{defn:wt-coefficient-pair}; the strict continuous dual
+  \(B_w^{\vee,\mathrm{cts}}\) remains separate from \(D_{B_w}\), as
+  required by Definition~\ref{defn:admissible-host-category}.
+
+  Theorem~\ref{thm:wt-canonical-envelope} proves closure of \(B_w\)
+  under multiplication, \(d_\pi\), and the Schouten bracket; convergence
+  of \(C_{\mathfrak h,w}\) in
+  \(B_w\widehat\otimes B_w\); extension of
+  \(P^w_{\epsilon,L}\) as a continuous heat-kernel BV propagator;
+  fixed-graph renormalization-group stability; and continuity of the
+  cochain map \(\Phi^w\).  These are precisely the operation estimates
+  required in (A8).  No scalar quotient or stable trace passage is part
+  of this model, so (A6) and (A7) are identities.  Thus the data satisfy
+  (A1)--(A8) of Definition~\ref{defn:admissible-host-category}.
+\end{proof}
+
+\begin{defn}[Dirac brane stack and boundary types]\label{defn:dirac-brane-stack-boundaries}
+  Fix \(p\in\C^2_{\mathrm{hol}}\) and let
+  \[
+    L=\R_t\times\{0_s\}\times\{p\}\subset
+    X=\R^2_{\mathrm{top}}\times\C^2_{\mathrm{hol}}
+  \]
+  be the worldline defect.  A Dirac brane at \(p\) is the formal
+  skyscraper boundary condition supported on \(L\).  A stack of \(N\)
+  Dirac branes means this boundary condition with Chan--Paton space
+  \(\C^N\).  In a formal Darboux chart
+  \(\widehat{\mathcal O}_{\C^2,p}\cong\C[[z_1,z_2]]\), the transverse
+  coordinates act by
+  \(z_i\mapsto\phi_i\in\mathfrak{gl}_N\), and the classical open
+  observable chart is the quotient-stack Koszul cdga
+  \[
+    A^{\mathrm{cl}}_{\partial,N}
+    =
+    C^\bullet_{\mathrm{CE}}\!\left(\mathfrak{gl}_N,\,
+      \mathrm{Sym}(\mathfrak{gl}_N\oplus\mathfrak{gl}_N
+      \oplus\mathfrak{gl}_N[1])\right),
+    \qquad
+    Q\psi=[\phi_1,\phi_2].
+  \]
+  Equivalently, its transverse derived moduli chart is the derived
+  commuting stack
+  \[
+    [\mu^{-1}_{\mathrm{der}}(0)/\mathrm{GL}_N],
+    \qquad
+    \mu(\phi_1,\phi_2)=[\phi_1,\phi_2].
+  \]
+  This definition is local and formal.  It is not the compact brane
+  moduli problem and not the cyclic framed Hilbert-scheme branch.
+
+  The Costello--Gwilliam brane-link boundary used in the local
+  open--closed comparison is
+  \[
+    \partial_{\mathrm{link}}X
+    =
+    \partial(X\setminus\nu(L)),
+  \]
+  the boundary of an excised tubular neighbourhood of \(L\); in the
+  local model it is the sphere bundle \(L\times S^4_\epsilon\).  The
+  Kato--Nakayama boundary \(\partial X^{\mathrm{KN}}\) is a different
+  global object: it is attached to a chosen log compactification
+  \((\overline X,D)\).  A comparison between
+  \(\partial_{\mathrm{link}}X\) and \(\partial X^{\mathrm{KN}}\) is
+  extra matched-conventions data and is not part of the local
+  formal-Darboux theorem.  In local brane-link constructions below,
+  \(\partial X\) denotes \(\partial_{\mathrm{link}}X\); the
+  Kato--Nakayama boundary is always written as \(\partial
+  X^{\mathrm{KN}}\).
+\end{defn}
+
+\begin{defn}[Formal-Darboux stalk functor]\label{defn:formal-darboux-stalk-functor}
+  For \(X=\R^k_{\mathrm{top}}\times\C^d_{\mathrm{hol}}\) and
+  \(p\in\C^d\), the formal-Darboux stalk functor is the symmetric
+  monoidal restriction functor
+  \[
+    \operatorname{FDSt}_p\colon
+    \mathrm{ChirAlg}^{\mathrm{HT}}_{k,d}(X)
+    \longrightarrow
+    \mathrm{ChirAlg}^{\mathrm{HT}}_{k,d}
+    (\R^k_{\mathrm{top}}\times\widehat{\C^d}_p),
+    \qquad
+    \mathcal F\longmapsto
+    \mathcal F|_{\R^k_{\mathrm{top}}\times\widehat{\C^d}_p}.
+  \]
+  The target uses
+  \(\widehat{\C^d}_p=\operatorname{Spf}\widehat{\mathcal O}_{\C^d,p}\)
+  together with a formal Darboux coordinate system.  A different formal
+  Darboux chart acts through
+  \(\mathrm{Symp}^{\mathrm{form}}(\C^d)\); hence the stalk is canonical
+  as a functor to the quotient by formal symplectomorphisms, and a
+  chosen coordinate chart gives its displayed coordinate algebra.
+
+  For the Hamiltonian BF bulk in this manuscript,
+  \[
+    \operatorname{FDSt}_p(\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}})
+    =
+    C^\bullet_{\mathrm{CE},\mathrm{cont}}\!
+    \left(\mathfrak h\ltimes\mathfrak h^\vee_{\mathrm{cont}}[1]\right),
+    \qquad
+    \mathfrak h=\C[[z_1,z_2]]/\C\cdot1.
+  \]
+  At \(N\) Dirac branes the boundary chart further applies
+  \(z_i\mapsto\phi_i\in\mathfrak{gl}_N\) and the Koszul differential
+  \(Q\psi=[\phi_1,\phi_2]\).  The trace-sector theorem computes the
+  image of this functor after scalar reduction, stable trace passage,
+  and admissible completion.  The full construction and equivariance
+  proof are Definition~\ref{app:defn:Darboux-stalk-functor} and
+  Proposition~\ref{app:prop:Darboux-equivariance}.
+\end{defn}
+
+\begin{defn}[Typed local source and target dictionary]
+\label{defn:typed-local-source-target-dictionary}
+The local theorem uses the following source and target objects.
+\begin{enumerate}[label=\textup{(\roman*)}]
+  \item \(\mathcal C^{\mathrm{op}}_\partial\) is the primitive boundary
+    open factorisation category on the brane-link boundary.  A vacuum
+    \(b\in\mathcal C^{\mathrm{op}}_\partial\) gives the boundary
+    \(E_1\)-algebra
+    \[
+      A_b=\End_{\mathcal C^{\mathrm{op}}_\partial}(b).
+    \]
+    An unadorned \(A_\partial\), when used in a theorem-specific
+    section, denotes such a chosen boundary \(E_1\)-algebra; the local
+    main theorem uses the typed symbols \(A_b\) and
+    \(A^{\mathrm{cl}}_{\partial,N}\).
+  \item The formal coordinate algebra at \(b\) is
+    \[
+      A_b^{\mathrm{coord}}
+      =
+      \widehat{\mathcal O}_{\C^2,b}
+      \cong \C[[z_1,z_2]].
+    \]
+    It contains Hamiltonians on the Darboux normal disk.  It is not the
+    boundary algebra whose Hochschild cochains are computed.
+  \item The Hamiltonian source is
+    \[
+      \mathfrak h=A_b^{\mathrm{coord}}/\C\cdot1,\qquad
+      \bar A=\C[z_1,z_2]/\C\cdot1,\qquad
+      P=\mathfrak h^\vee_{\mathrm{cont}}=\mathcal P,\qquad
+      \mathfrak g=\mathfrak h\ltimes P[1].
+    \]
+    Here \(\bar A\) is the dense polynomial Hamiltonian subalgebra used
+    for finite trace and sign calculations; completed
+    Chevalley--Eilenberg/polyvector calculations use \(\mathfrak h\).
+  \item The \(\mathfrak h\)-action on \(P\) is the residue coadjoint
+    action, not the Matlis \(R\)-module multiplication:
+    \[
+      f\cdot\rho=\pi_{\mathrm{pp}}\{f,\rho\},\qquad
+      z_1^p z_2^q\cdot\rho_{a,b}
+      =-(pb-qa+p-q)\rho_{a-p+1,b-q+1},
+    \]
+    with negative-index targets zero.  This is the action used in the
+    semidirect product \(\mathfrak g=\mathfrak h\ltimes P[1]\).  It
+    extends continuously to
+    \[
+      \mathfrak h_{\mathfrak m\text{-adic}}\times
+      \mathcal P_{\oplus}\longrightarrow\mathcal P_{\oplus},
+    \]
+    where \(\mathcal P_{\oplus}\) has the locally finite direct-sum
+    topology: a fixed principal part sees only a finite jet of a formal
+    Hamiltonian.  In the weighted pro-Matlis model the stronger
+    estimate
+    \[
+      p^*_n(f\cdot\rho)\leq C_n\,p_{n+r}(f)\,p^*_{n+r}(\rho)
+    \]
+    is the continuity datum used by \(\mathcal B^{\mathrm{adm}}\).
+    These statements are
+    Proposition~\ref{prop:app-matlis-coadjoint-action},
+    Lemma~\ref{lem:app-matlis-coadjoint-continuity}, and
+    Proposition~\ref{prop:completion-promatlis-continuity}.
+  \item At a stack of \(N\) Dirac branes, the finite-rank boundary
+    algebra is
+    \[
+      A^{\mathrm{cl}}_{\partial,N}
+      =\mathcal R_N
+      =
+      C^\bullet_{\mathrm{CE}}\!\left(\mathfrak{gl}_N,\,
+        \mathrm{Sym}(\mathfrak{gl}_N\oplus\mathfrak{gl}_N
+        \oplus\mathfrak{gl}_N[1])\right),
+      \qquad Q\psi=[\phi_1,\phi_2].
+    \]
+    This is the quotient-stack Koszul cdga of the derived commuting
+    stack.  Its augmentation ideal is
+    \(\bar A^{\mathrm{cl}}_{\partial,N}\).  Fixed finite \(N\) retains
+    trace relations, stabilizer cohomology, and unreduced centrality
+    data.
+  \item The stable scalar-reduced Hamiltonian trace algebra is
+    \[
+      A_{\partial,H}^{\mathrm{st}}
+      :=
+      \operatorname{TrSec}^{\mathrm{st}}_{\mathrm{adm}}(\mathcal R_\bullet)
+      \cong
+      \widehat{\mathbf S}_{\mathrm{Tate}}(\mathfrak h),
+    \]
+    where the construction first applies the scalar quotient
+    \(U_{\mathrm{sc}}\), then degreewise stable trace passage
+    \(\operatorname{StTr}\), then the Roos/strict-limit convention and
+    the admissible completion of
+    Definition~\ref{defn:admissible-host-category}.  This is a
+    coordinate trace-sector algebra, not the whole fixed-\(N\)
+    Hochschild centre.
+  \item The finite-\(N\) Hochschild target is
+    \[
+      C^\bullet_{\mathrm{Hoch},\mathrm{adm}}
+      (A^{\mathrm{cl}}_{\partial,N},A^{\mathrm{cl}}_{\partial,N}).
+    \]
+    The assignment \(c_f\mapsto\theta_f,\;u_f\mapsto J(f)\) is a
+    generator boundary value into this complex until an admissible
+    Hochschild-centre Maurer--Cartan lift and its centrality primitives
+    have been supplied.
+  \item The stable coordinate Hochschild target is
+    \[
+      HH^\bullet_{\mathrm{adm},\mathrm{HKR}}
+      (A_{\partial,H}^{\mathrm{st}},A_{\partial,H}^{\mathrm{st}}),
+    \]
+    the Hochschild--Kostant--Rosenberg polyvector target of the
+    stable scalar-reduced trace algebra.  It is the target of the
+    formal CE/PV coordinate isomorphism.
+  \item When \(C^\bullet_{\mathrm{ch}}(A_b,A_b)\) appears in a
+    Deligne or chiral-centre statement, \(A_b\) denotes the boundary
+    algebra with its restricted chiral/factorization structure.  The
+    notation does not mean \(A_b^{\mathrm{coord}}\).  A global
+    identification with the chiral derived \(E_2\)-centre requires the
+    all-arity centre lift, descent, quantum master equation, anomaly,
+    locality, and cone-contraction data recorded in
+    Definition~\ref{defn:global-mixed-ht-deligne-obstruction-datum}.
+\end{enumerate}
+\end{defn}
+
+\begin{defn}[Trace-sector reduction]\label{defn:trace-sector-reduction}
+  Let
+  \[
+    \mathcal R_N=
+    C^\bullet_{\mathrm{CE}}\bigl(\mathfrak{gl}_N,\,
+       \mathrm{Sym}(\mathfrak{gl}_N\oplus\mathfrak{gl}_N
+                    \oplus\mathfrak{gl}_N[1])\bigr),
+    \qquad Q\psi=[\phi_1,\phi_2],
+  \]
+  and let \(T_N\) be a target dg algebra or Hochschild cochain complex
+  in \(\mathcal B^{\mathrm{adm}}\).  Fix a polynomial window
+  \(W\), a Chevalley--Eilenberg cochain-length bound \(L\), and
+  \(\mathfrak h_{\leq W}=\mathfrak m/\mathfrak m^{W+1}\).  Put
+  \[
+    S_{W,L}:=
+    C^{\leq L}_{\mathrm{CE}}
+      \bigl(\mathfrak h_{\leq W}\ltimes
+            \mathfrak h_{\leq W}^{\vee}[1]\bigr).
+  \]
+  A finite-window trace-sector datum on \(T_N\) is a continuous
+  cochain map
+  \[
+    \Phi_{N,W,L}\colon
+    S_{W,L}
+    \longrightarrow T_N
+  \]
+  given by
+  \[
+    c_f\longmapsto\theta_f,\qquad
+    u_f\longmapsto J(f),\qquad
+    J(f)=\overline{\operatorname{Tr}f(\phi_1,\phi_2)},
+  \]
+  such that the scalar-reduced image is a strict admissible subcomplex
+  of \(U_{\mathrm{sc}}T_N\).  Equivalently, the induced coimage map
+  \[
+    S_{W,L}/\ker(U_{\mathrm{sc}}\Phi_{N,W,L})
+    \longrightarrow U_{\mathrm{sc}}T_N
+  \]
+  is a monomorphism in the chain category underlying
+  \(\mathcal B^{\mathrm{adm}}\).  If this image is not strict, not
+  closed under the differential, or not an admissible object of
+  \(\mathcal B^{\mathrm{adm}}\), the window contributes an
+  image-admissibility obstruction
+  \(\operatorname{Ob}^{\mathrm{im}}_{N,W,L}\); no trace sector in
+  \(\mathcal B^{\mathrm{adm}}\) is declared for that window.
+
+  When this admissibility condition holds, the finite-window trace
+  sector of \(T_N\) is the image/coimage subcomplex
+  \[
+    \operatorname{TrSec}_{W,L}(T_N)
+    :=
+    \operatorname{im}(U_{\mathrm{sc}}\Phi_{N,W,L})
+    \cong
+    S_{W,L}/\ker(U_{\mathrm{sc}}\Phi_{N,W,L})
+    \subset U_{\mathrm{sc}}T_N .
+  \]
+  It is therefore a defined complex, not a list of trace generators.
+  A bracketed or Hochschild trace sector further requires closure of
+  this subcomplex under the restricted \(P_0\), cup, or Gerstenhaber
+  operations used in the theorem; failure of this closure is recorded
+  by the Hochschild-centrality obstruction complexes below.
+
+  The stable admissible trace sector is
+  \[
+    \operatorname{TrSec}^{\mathrm{st}}_{\mathrm{adm}}(T_\bullet)
+    :=
+    \mathbf R\!\varprojlim_W\,
+    \operatorname*{colim}_L\,
+    \varprojlim_{N\geq \max(W,L+2)}
+    \operatorname{TrSec}_{W,L}(T_N),
+  \]
+  with the Roos complex used for every non-strict inverse limit.
+  Procesi--Razmyslov controls the polynomial trace generators in the
+  range \(N\geq W\), where \(W\) is total word degree after
+  polarization.  The \(L+2\) term is the sufficient
+  Loday--Quillen--Tsygan finite cochain-window bound used in
+  Theorem~\ref{thm:stable-eulerian-lqt-window}; \(L\) counts
+  Chevalley--Eilenberg length, not polynomial word degree.
+
+  For the coordinate polyvector target, the maps \(\Phi_{N,W,L}\) are
+  the finite-window restrictions of the CE/PV coordinate isomorphism.
+  For the Hochschild target
+  \(T_N=C^\bullet_{\mathrm{Hoch},\mathrm{adm}}(\mathcal R_N,\mathcal R_N)\),
+  such maps exist only after an admissible Hochschild-centre
+  Maurer--Cartan lift has been chosen.  Without that lift,
+  \(c_f\mapsto\theta_f,\;u_f\mapsto J(f)\) denotes a generator-level
+  boundary value, not a Hochschild cochain map.
+
+  We use three notations for the three resulting maps.
+  \begin{enumerate}[label=\textup{(\roman*)}]
+    \item \(\Phi_N^{\mathrm{gen}}\) denotes the dashed generator boundary
+      value
+      \[
+        C^\bullet_{\mathrm{CE},\mathrm{cont}}
+          (\widehat{\mathfrak g}_{\mathrm{cent}})
+        \dashrightarrow
+        C^\bullet_{\mathrm{Hoch},\mathrm{adm}}(\mathcal R_N,\mathcal R_N).
+      \]
+    \item \(\Phi_N^{\mathrm{Hoch}}\) denotes the Hochschild cochain map
+      obtained from \(\Phi_N^{\mathrm{gen}}\) after an admissible
+      Hochschild-centre Maurer--Cartan lift has been chosen.
+    \item \(\Phi_{\mathrm{coord}}^{\mathrm{st}}\) denotes the
+      scalar-stable Chevalley--Eilenberg/polyvector coordinate
+      isomorphism
+      \[
+        C^\bullet_{\mathrm{CE},\mathrm{cont}}(\mathfrak g)
+        \xrightarrow{\ \sim\ }
+        \bigl(\mathrm{PV}_{\mathrm{adm}}
+          (A_{\partial,H}^{\mathrm{st}}),d_\pi\bigr).
+      \]
+  \end{enumerate}
+
+  The stable trace-sector construction is functorial on the following
+  subcategory.  A morphism \(a_\bullet\colon T_\bullet\to T'_\bullet\)
+  is allowed only when it is a morphism in \(\mathcal B^{\mathrm{adm}}\),
+  preserves scalar lines, and carries each finite-window image
+  \(\operatorname{im}(\Phi_{N,W,L})\) into
+  \(\operatorname{im}(\Phi'_{N,W,L})\), either strictly or by a specified
+  filtered homotopy compatible with the Roos transition maps.  Such a
+  morphism induces
+  \[
+    \operatorname{TrSec}^{\mathrm{st}}_{\mathrm{adm}}(T_\bullet)
+    \longrightarrow
+    \operatorname{TrSec}^{\mathrm{st}}_{\mathrm{adm}}(T'_\bullet).
+  \]
+
+  The classical trace-coordinate reduction is the partial functor
+  \[
+    \operatorname{Red}_{\mathrm{cl,tr}}(T_\bullet)
+    :=
+    \mathrm{HKR}_{\mathrm{adm}}\!\left(
+      \operatorname{TrSec}^{\mathrm{st}}_{\mathrm{adm}}(T_\bullet)
+    \right)\big|_{\hbar=0},
+  \]
+  defined only on objects for which the Hochschild--Kostant--Rosenberg
+  comparison, the Roos limit, the stable trace transition maps, and the
+  scalar quotient above have been supplied.  If the Roos
+  \(\varprojlim^1\)-class is nonzero, it remains part of
+  \(\operatorname{Red}_{\mathrm{cl,tr}}\) as an obstruction component;
+  it is not replaced by an ordinary inverse limit.
+
+  The whole local bulk means
+  \(C^\bullet_{\mathrm{CE},\mathrm{cont}}(\widehat{\mathfrak g}_{\mathrm{cent}})\)
+  before applying \(U_{\mathrm{sc}}\), stable trace passage
+  \(\operatorname{StTr}\), and \(\operatorname{TrSec}\).  The whole
+  finite-\(N\) Hochschild centre means the derived centre represented by
+  the Hochschild cochain complex
+  \(C^\bullet_{\mathrm{Hoch},\mathrm{adm}}(\mathcal R_N,\mathcal R_N)\);
+  its cohomology is \(HH^\bullet(\mathcal R_N,\mathcal R_N)\).  Trace
+  identities, stack-stabilizer cohomology, and unreduced centrality
+  homotopies are outside
+  \(\operatorname{TrSec}^{\mathrm{st}}_{\mathrm{adm}}\).
+\end{defn}
+
+\begin{defn}[Source complexes for the global mixed-HT Deligne obstruction]\label{defn:global-deligne-source-complexes}
+  Put
+  \[
+    Z_\partial=
+    Z^{\mathrm{der},\mathrm{Mor}}_{E_2^{\mathrm{HT}}}
+    (\mathcal C^{\mathrm{op}}_\partial).
+  \]
+  A pre-open--closed comparison datum \(\mathrm{preOCA}_N\) is a
+  filtered morphism
+  \[
+    \mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}
+    \longrightarrow
+    \underline{\mathrm{End}}_{\mathrm{SC}^{\mathrm{HT}}_{(1,2)}}
+    (\mathcal C^{\mathrm{op}}_\partial)
+  \]
+  in \(\mathcal B^{\mathrm{adm}}\), together with the
+  formal-Darboux trace-sector fibre of Theorem~\ref{thm:main-local}.
+  A centrality morphism to \(Z_\partial\) and the corresponding operadic
+  homotopies promote this datum to \(\mathrm{OCA}_N\).
+
+  The chiral \(E_2\) source complex is the homotopy fibre
+  \[
+    \mathfrak{Def}^{\mathrm{HT}}_{\mathrm{Mor}\mbox{-}E_2}
+    (\mathcal C^{\mathrm{op}}_\partial,b_p)
+    :=
+    \operatorname{fib}\!\left[
+    \mathrm{Conv}\bigl(\mathrm B\mathsf P,
+      \operatorname{End}_{Z_\partial}\bigr)
+    \xrightarrow{\operatorname{res}_{b_p}}
+    \mathrm{Conv}\bigl(\mathrm B\mathsf Q,
+      \operatorname{End}_{\operatorname{ev}_{b_p}(Z_\partial)^{\mathrm{tr}}}
+      \bigr)\right][-1],
+  \]
+  where \(\mathsf P=\mathsf{hE}_2^{\mathrm{ch},\mathrm{HT}}\),
+  \(\mathsf Q\) is its formal Hamiltonian-current restriction at
+  \(b_p\), and \(\mathrm B\mathsf P,\mathrm B\mathsf Q\) are bar
+  cooperads of chosen cofibrant dg-operad models.  The differential is
+  twisted by the Maurer--Cartan element of the formal tree-kernel
+  current action.  The full construction is
+  Definition~\ref{app:defn:morita-chiral-E2-extension-complex}.
+
+  For a collared Weiss cover \(\mathfrak U=\{U_a\}\) of
+  \(\partial X\), write
+  \(\mathcal A=\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}\).  The descent
+  mapping complex is
+  \[
+    \mathcal E^\bullet_{\mathrm{desc}}(U_{a_0\cdots a_p})
+    =
+    \underline{\mathrm{Hom}}_{\mathcal B^{\mathrm{adm}}}^{\bullet}
+    \bigl(
+      \mathcal A|_{U_{a_0\cdots a_p}},
+      Z_\partial|_{U_{a_0\cdots a_p}}\bigr),
+  \]
+  with differential
+  \(d_{\mathcal E}\varphi=d_{Z_\partial}\varphi
+  -(-1)^{|\varphi|}\varphi d_{\mathcal A}\), and
+  \(\check C^\bullet_{\mathrm{Weiss}}(\mathfrak U;
+  \mathcal E^\bullet_{\mathrm{desc}})\) has total differential
+  \(\delta_{\check C}+(-1)^p d_{\mathcal E}\).
+  This is Definition~\ref{app:defn:descent-obstruction-complex}.
+
+  A Costello quantum master-equation source complex consists of a
+  gauge-fixing operator, heat kernel \(K_t\), propagator
+  \(P_{\varepsilon,L}\), scale-\(L\) BV Laplacian \(\Delta_L\), local
+  interaction \(I[L]\), scalar-symbol projection
+  \(\widehat\sigma_{\mathrm{sc},w}\), and admissible local-functional
+  complex \(\mathfrak Q^\bullet_{w,\partial,\hbar}(I)\).  The
+  differential is
+  \[
+    d_{\mathrm{QME}}^L
+    =
+    Q+\{I[L],-\}_{L}+\hbar\Delta_L.
+  \]
+  Put
+  \[
+    \mathrm{CE}_{\bar A}^{\mathbf 1}
+    =
+    C^\bullet_{\mathrm{Lie}}(\bar A;\C\gamma_{\mathbf 1}).
+  \]
+  The residual non-scalar complex is
+  \[
+    \mathcal Q^\bullet_w(I)
+    =
+    \ker\!\left(
+    \widehat\sigma_{\mathrm{sc},w}\colon
+    \mathfrak Q^\bullet_{w,\partial,\hbar}(I)
+    \to \mathrm{CE}_{\bar A}^{\mathbf 1}[1]\right).
+  \]
+  Its inverse-window compatibility is recorded by the Roos
+  \(\varprojlim^1H^0\)-class.
+
+  The operadic anomaly and locality classes live in the
+  \(\mathrm{SC}^{\mathrm{HT}}_{(1,2)}\)-convolution \(L_\infty\)-complex
+  \[
+    \mathrm{Conv}_{\mathrm{SC}}
+    (\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}},Z_\partial),
+  \]
+  the convolution complex for morphisms of
+  \(\mathrm{SC}^{\mathrm{HT}}_{(1,2)}\)-algebras, twisted by the chosen
+  source and target structures.  Its linear term is the Hom differential
+  \(d_{Z_\partial}\varphi-(-1)^{|\varphi|}\varphi d_{\mathcal A}\), and
+  its higher brackets are induced by the cooperadic decomposition.
+\end{defn}
+
+\begin{defn}[Global mixed-HT Deligne obstruction datum]\label{defn:global-mixed-ht-deligne-obstruction-datum}
+  Let \(\mathrm{preOCA}_N\) be a pre-open--closed comparison datum in
+  \(\mathcal B^{\mathrm{adm}}\) on the Costello--Gwilliam brane-link
+  boundary \(\partial X\), with a fixed collared Weiss cover
+  \(\mathfrak U\), source
+  \(\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}\) and target
+  \[
+    Z_\partial=
+    Z^{\mathrm{der},\mathrm{Mor}}_{E_2^{\mathrm{HT}}}
+    (\mathcal C^{\mathrm{op}}_\partial).
+  \]
+  The global mixed-HT Deligne obstruction datum is the pair
+  \[
+    \mathfrak{Ob}_{\mathrm{Del}}^{\mathrm{glob}}
+    =
+    \left(
+      \operatorname{Ob}^{\mathrm{global},5},
+      \operatorname{Cone}(\mathrm{OCA}_N)
+    \right),
+  \]
+  where
+  \[
+    \operatorname{Ob}^{\mathrm{global},5}
+    =
+    \Bigl(
+      \operatorname{Ob}^{\mathrm{ch}\,E_2}_{\mathrm{Deligne}},
+      \operatorname{Ob}^{\mathrm{desc}}_{\partial},
+      \operatorname{Ob}^{\mathrm{QME}}_{\mathrm{all\mbox{-}order}},
+      \operatorname{Ob}^{\mathrm{anom}},
+      \operatorname{Ob}^{\mathrm{loc}}
+    \Bigr).
+  \]
+  These entries are the following native classes:
+  \[
+  \begin{array}{rcl}
+  \operatorname{Ob}^{\mathrm{ch}\,E_2}_{\mathrm{Deligne}}
+  &\in&
+  H^2\!\left(
+  \mathfrak{Def}^{\mathrm{HT}}_{\mathrm{Mor}\mbox{-}E_2}
+  (\mathcal C^{\mathrm{op}}_\partial,b_p)\right),
+  \\[0.35em]
+  \operatorname{Ob}^{\mathrm{desc}}_{\partial}
+  &=&
+  [\delta_{\check C}]\in
+  \check H^2_{\mathrm{Weiss}}\!\left(
+  \mathfrak U;H^{-1}(\mathcal E^\bullet_{\mathrm{desc}})\right),
+  \\[0.35em]
+  \operatorname{Ob}^{\mathrm{QME}}_{\mathrm{all\mbox{-}order}}
+  &\in&
+  \prod_{w,r} H^1\!\left(
+  \ker\widehat\sigma_{\mathrm{sc},w},
+  d_{\mathrm{QME}}^L\right)
+  \times\varprojlim\nolimits^1 H^0,
+  \\[0.35em]
+  \operatorname{Ob}^{\mathrm{anom}}
+  &\in&
+  H^2\!\left(\mathrm{Conv}_{\mathrm{SC}}\!\left(
+  \mathcal A^{\mathrm{cl}}_{\mathrm{bulk}},Z_\partial\right)\right),
+  \\[0.35em]
+  \operatorname{Ob}^{\mathrm{loc}}
+  &\in&
+  H^1\!\left(\partial X,
+  \underline{\mathrm{Hom}}_{\mathcal B^{\mathrm{adm}}}^{0}
+  (\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}},Z_\partial)\right).
+  \end{array}
+  \]
+  Here \(d_{\mathrm{QME}}^L=Q+\{I[L],-\}_{L}+\hbar\Delta_L\), defined
+  only after the gauge fixing, propagator, finite-scale BV Laplacian,
+  local interaction, and admissible counterterm complex have been fixed.
+  Vanishing of \(\mathfrak{Ob}_{\mathrm{Del}}^{\mathrm{glob}}\) means
+  specified primitives
+  \[
+    h_{E_2},\quad h_{\mathrm{desc}},\quad
+    \{C_{w,r}\},\quad h_{\mathrm{anom}},\quad h_{\mathrm{loc}},\quad
+    \kappa_{\operatorname{Cone}}
+  \]
+  satisfying the Maurer--Cartan lifting equation, the
+  \v{C}ech--Weiss descent equation, the scale-\(L\) quantum master
+  equation, the operadic anomaly equation, the factorization-locality
+  equation, and
+  \(d_{\operatorname{Cone}}\kappa_{\operatorname{Cone}}+
+  \kappa_{\operatorname{Cone}}d_{\operatorname{Cone}}=
+  \operatorname{id}_{\operatorname{Cone}}\).  A nonzero component, or a
+  non-contractible comparison cone, obstructs the global mixed-HT
+  Deligne quasi-isomorphism.  The formal-Darboux trace-sector theorem
+  supplies only the restriction of \(\mathrm{preOCA}_N\) to
+  \(\operatorname{TrSec}^{\mathrm{st}}_{\mathrm{adm}}\) and the Capelli
+  projective scalar; it does not construct these primitives.
+\end{defn}
+
+\begin{ex}[Finite-window admissible model]\label{exa:finite-window-admissible-model}
+  Fix \(W<\infty\), and let
+  \(V_N=\mathfrak{gl}_N\phi_1\oplus\mathfrak{gl}_N\phi_2
+  \oplus\mathfrak{gl}_N[1]\psi\).  Let
+  \(I_N\subset\mathrm{Sym}(V_N)\) be the augmentation ideal for the
+  total polynomial degree in \(\phi_1,\phi_2,\psi\).  The finite open
+  Koszul window is
+  \[
+    \mathcal R_{N,\leq W}
+    =
+    C^\bullet_{\mathrm{CE}}\!\left(
+      \mathfrak{gl}_N,\,
+      \mathrm{Sym}(V_N)/I_N^{W+1}\right),
+    \qquad
+    Q\psi=[\phi_1,\phi_2]\bmod I_N^{W+1}.
+  \]
+  The derivation \(Q\) preserves \(I_N^{W+1}\), since it sends the
+  degree-one generator \(\psi\) to the degree-two commutator.  The full
+  subcategory on complexes generated by
+  \[
+    \mathfrak h_{\leq W}=\mathfrak m/\mathfrak m^{W+1},\qquad
+    \mathcal P_{\leq W}=\bigoplus_{1\leq a+b\leq W}\C\,\rho_{a,b},
+    \qquad
+    \mathcal R_{N,\leq W}
+  \]
+  is an objectwise finite-dimensional model of
+  \(\mathcal B^{\mathrm{adm}}\).  Tensor products are algebraic,
+  continuous duality is ordinary linear duality, CE cochain length is
+  bounded by the finite exterior algebra
+  \(\bigwedge^\bullet\mathfrak{gl}_N^\vee\), and the Casimir
+  \[
+    C_{\leq W}=
+    \sum_{1\leq a+b\leq W}z_1^az_2^b\otimes\rho_{a,b}
+  \]
+  is a finite sum.  For \(f\in\mathfrak h_{\leq W}\),
+  \(J(f)=\overline{\operatorname{Tr}f(\phi_1,\phi_2)}\) lies in
+  \(H^0(\mathcal R_{N,\leq W}^{GL_N},Q)\).  The adjacent-transposition
+  homotopy
+  \(Q\operatorname{Tr}(\psi vu)
+    =\operatorname{Tr}([\phi_1,\phi_2]vu)\)
+  remains inside \(\mathcal R_{N,\leq W}\) for words of length
+  \(\leq W\).  Thus the finite-window trace-sector map is an honest
+  finite-dimensional representative of the stable trace construction;
+  its Hochschild version still requires the Hochschild-centre lift of
+  Definition~\ref{defn:admissible-hochschild-centre-lift}.  The
+  Procesi--Razmyslov stable trace identification in this window is used
+  only for \(N\geq W\), or for \(N\geq\max(W,L+2)\) when a
+  Chevalley--Eilenberg length \(L\) LQT projection is present.
+\end{ex}
+
+\begin{ex}[Non-admissible unweighted diagonal]\label{exa:unweighted-diagonal-nonadmissible}
+  The naive infinite pair
+  \[
+    \mathfrak h_{\mathrm{naive}}=\prod_{a+b>0}\C\,z_1^az_2^b,\qquad
+    \mathcal P_{\mathrm{alg}}=\bigoplus_{a+b>0}\C\,\rho_{a,b}
+  \]
+  with the product topology on \(\mathfrak h_{\mathrm{naive}}\) and the
+  algebraic direct-sum topology on \(\mathcal P_{\mathrm{alg}}\) is not
+  an admissible object for the local theorem.  The partial sums
+  \[
+    C_M=\sum_{1\leq a+b\leq M}z_1^az_2^b\otimes\rho_{a,b}
+  \]
+  have no limit in
+  \(\mathfrak h_{\mathrm{naive}}\widehat\otimes\mathcal P_{\mathrm{alg}}\):
+  their \(\mathcal P_{\mathrm{alg}}\)-support escapes every finite
+  direct-sum stage.  Thus the formal diagonal Casimir is not a kernel in
+  this topology.  Any theorem using the Casimir must use a finite window,
+  a Roos/pro-Matlis target, or a weighted Tate completion that supplies
+  the missing convergence.
+\end{ex}
 
 \begingroup
 \small
@@ -194,7 +1202,7 @@ currents \(\Theta_\rho(B)\) satisfy (i) and (ii), and their
 formal-holomorphic content is the residue current
 \(\rho\in\mathcal P\) at the brane point.
 
-The dg Lie input of an acceptable factorization algebra is therefore
+The dg Lie algebra of an acceptable factorization algebra is therefore
 locally constant in \(\R^2_{\mathrm{top}}\) and holomorphic in
 \(B\subset\C^2_{\mathrm{hol}}\),
 \[
@@ -223,11 +1231,11 @@ algebra on a holomorphic curve.
 \begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.25\textwidth}
   >{\raggedright\arraybackslash}p{0.67\textwidth}@{}}
 \hline
-\textbf{Object} & \textbf{Definition and scope}\\
+\textbf{Object} & \textbf{Definition and range}\\
 \hline
 \endfirsthead
 \hline
-\textbf{Object} & \textbf{Definition and scope}\\
+\textbf{Object} & \textbf{Definition and range}\\
 \hline
 \endhead
 Formal Hamiltonian holomorphic factorization algebra on \(\C^2\) &
@@ -235,9 +1243,9 @@ The \(\C^2\) Hamiltonian holomorphic factorization algebra is
 \[
   \mathcal F_{\mathrm{Ham}}^{\mathrm{hol}},
 \]
-the formal-disk Hamiltonian BF object on
+the formal-Darboux Hamiltonian BF object on
 \((\widehat{\C^2}_0,dz_1\wedge dz_2)\).  For a holomorphic polydisk
-\(B\) its dg Lie input is
+\(B\) its dg Lie algebra is
 \[
   \Omega^{0,\bullet}_c(B)\widehat\otimes
   \mathfrak g,\qquad
@@ -293,12 +1301,12 @@ Proposition~\ref{prop:diagonal-cohomology-operad}.
 The quantum brane trace adds
 \(\hbar N\,\omega(f,g)K^{(2)}_\Delta\mathbf1\), with
 \(\omega(f,g)=[\{f,g\}]_0\).  This is the formal-coordinate
-two-complex-dimensional OPE.  A one-variable Laurent expansion is the
+two-complex-dimensional singular product.  A one-variable Laurent expansion is the
 additional curve-restriction datum recorded below.\\
 \hline
 Mixed topological-current enhancement over \(\R^2\) &
 For a topological open \(U\subset\R^2_{\mathrm{top}}\) and holomorphic
-polydisk \(B\subset\C^2_{\mathrm{hol}}\), the mixed current input is
+polydisk \(B\subset\C^2_{\mathrm{hol}}\), the mixed current dg Lie algebra is
 \[
   \mathfrak g^{\mathrm{mix}}_{U,B}
   =
@@ -310,7 +1318,7 @@ Its observables are locally constant in \(U\) and holomorphic in \(B\).
 The brane-line current algebras below are its support-local
 one-real-dimensional restrictions.\\
 \hline
-Weyl/Moyal open-string brane algebra and cyclic avatars &
+Weyl/Moyal open-string brane algebra and cyclic realisations &
 The degree-zero quantum brane target is the Weyl/Moyal deformation of the
 formal symplectic polydisk.  Put
 \[
@@ -325,14 +1333,14 @@ Then
   \end{aligned}
 \]
 with constants quotiented in the Hamiltonian Lie algebra
-\(\bar A_\hbar\).  At finite \(N\) the open avatar is the matrix Weyl
+\(\bar A_\hbar\).  At finite \(N\) the open model is the matrix Weyl
 algebra generated by \((\phi_1)^i{}_j,(\phi_2)^k{}_l\) with
 \[
   [(\phi_1)^i{}_j,(\phi_2)^k{}_l]
   =\hbar\,\delta^i_l\delta^k_j ,
 \]
 followed by the quantum moment-map reduction and the connected trace
-projection.  Cyclic and supercyclic bar-cobar avatars are trace or
+projection.  Cyclic and supercyclic bar-cobar realisations are trace or
 supertrace word complexes for matrix or supermatrix branes.\\
 \hline
 Defect/principal-part current algebra &
@@ -365,9 +1373,9 @@ with brackets
 This is a support-local real-current \(P_0\) algebra with Matlis
 principal parts in two holomorphic variables.\\
 \hline
-One-dimensional vertex/OPE restriction boundary &
+Curve vertex-algebra restriction boundary &
 A restriction of the \(\C^2\) Hamiltonian holomorphic
-factorization algebra to a one-complex-dimensional vertex/OPE algebra
+factorization algebra to a one-complex-dimensional vertex algebra
 starts from the native diagonal singular product above and requires the extra datum
 \[
   \mathfrak R_L
@@ -397,7 +1405,7 @@ map.  In the \(\C\times\R\) interface, such a \(V_L\) datum factors through
 \(\mathcal R_{\C\times\R}\) and is identified with
 \(V_{\mathrm{red}}\) in \(\mathfrak I_{\mathrm{ch}}\).\\
 \hline
-OPE data for a restricted curve object &
+Laurent field data for a restricted curve object &
 After such a restriction one must construct
 \[
   V_L=H^\bullet(\mathcal F_{L,\mathcal B_\perp}(\Delta_0)),
@@ -426,9 +1434,9 @@ holomorphic factorization algebra uses the singular coefficient
 one-variable coefficient module is \(\C((w))/\C[[w]]\,dw\).\\
 \hline
 Compatibility with the Weyl/Moyal brane algebra &
-A one-dimensional vertex/OPE restriction must also specify how the
+A one-dimensional vertex-algebra restriction must also specify how the
 degree-zero brane algebra acts on the restricted object.  Equivalently it
-must supply a continuous Zhu/zero-mode map
+requires a continuous Zhu/zero-mode map
 \[
   \zeta_{L,\hbar}\colon
   (\bar A_\hbar,*)\longrightarrow \operatorname{Zhu}(V_L)
@@ -450,9 +1458,9 @@ current sector
 \]
 together with
 \(\zeta_{L,\hbar}(f*g)=\zeta_{L,\hbar}(f)\zeta_{L,\hbar}(g)\).
-The Weyl/Moyal calculation supplies \(f*g\) and the reduced
+The Weyl/Moyal calculation gives \(f*g\) and the reduced
 interval-current brackets; Theorem~\ref{thm:formal-two-dimensional-holomorphic-ope}
-supplies the native two-dimensional singular expansion.  The data
+gives the native two-dimensional singular expansion.  The data
 \(\zeta_{L,\hbar}\), the fields \(J_f(w)\), the central level, and the
 finite Laurent curve expansion are separate one-dimensional restriction
 constructions.\\
@@ -483,7 +1491,7 @@ principal-part coefficient system
 \(\mathcal F_{\mathrm{red}}\) is the pushed-forward factorization
 algebra on \(\R_t\times\C_{z_1}\).  The interface must prove the
 pushed-forward bracket, BV pairing, brane image, factorization-to-vertex
-package, BRST nilpotence, Zhu/zero-mode map, Capelli normalization,
+comparison, BRST nilpotence, Zhu/zero-mode map, Capelli normalization,
 Moyal multiplicativity, the completed stable Hochschild/HKR/CE-PV
 comparison, and anomaly transport.  The obstruction vector is
 \[
@@ -565,7 +1573,7 @@ The Cartan differential on the local mixed complex is
 \]
 Thus \(Q_\Omega\) is an honest differential on the
 \(T_\Omega\)-invariant subcomplex.  Away from invariants the correct
-object is the \(T_\Omega\)-equivariant curved/Cartan package with
+object is the \(T_\Omega\)-equivariant curved Cartan complex with
 curvature \(L_{V_\Omega}\).\\
 \hline
 Normal-weight localization ring &
@@ -693,15 +1701,18 @@ bracket and the \(d_\pi\)-terms carry the factor \(\hbar_\omega\).  In the
 self-dual convention this factor has weight \(0\) and may be suppressed.\\
 \hline
 Equivariant quantum brane algebra &
-The degree-zero open quantum brane target is the equivariant Hamiltonian
-reduction
+The degree-zero open quantum brane target is the projective
+central-character reduction
 \[
   A^q_{N,\Omega}
   =
-  \operatorname{Weyl}_{\hbar_{\mathrm{W}}}(\operatorname{Mat}_N^2)
-  //_{\hbar_{\mathrm{W}}} GL_N,
+  \left(
+  \operatorname{Weyl}_{\hbar_{\mathrm{W}}}(\operatorname{Mat}_N^2)/
+  \mathcal W_N\widehat\mu_{\chi_N}(\mathfrak{sl}_N)
+  \right)^{SL_N},
   \qquad
-  YX-XY+\hbar_{\mathrm{W}}NI=0,
+  YX-XY+\hbar_{\mathrm{W}}NI\equiv0
+  \pmod{\mathcal W_N\widehat\mu(\mathfrak{sl}_N)},
 \]
 with
 \[
@@ -709,7 +1720,7 @@ with
   w(Y)=\epsilon_2,\qquad
   w(\hbar_{\mathrm{W}})=\epsilon_1+\epsilon_2.
 \]
-The moment-map equation is weight homogeneous.  Its scalar \(U(1)\)
+The central-character relation is weight homogeneous.  Its scalar \(U(1)\)
 contact term is the same Capelli line as in the non-equivariant
 dictionary, now graded by \(\epsilon_1+\epsilon_2\).\\
 \hline
@@ -760,11 +1771,11 @@ on the pair \((X,L)\),
         \mathcal M_{\Omega,L},
         j^*,i^!,\mu_{\mathrm{str}}\bigr),
 \]
-where the open stratum is the \(T_\Omega\)-equivariant mixed bulk
-factorization algebra, the closed stratum is the brane-line current
-object, and \(\mathcal M_{\Omega,L}\) is the defect module.  Protected
-observables become stratified factorization-homology traces after the
-brane-defect QME and the trace-state normalization are supplied.\\
+where the closed bulk stratum is the \(T_\Omega\)-equivariant mixed
+bulk factorization algebra, the open defect stratum is the brane-line
+current object, and \(\mathcal M_{\Omega,L}\) is the defect module.  Protected
+observables become stratified factorization-homology traces in the
+presence of the brane-defect QME and the trace-state normalization.\\
 \hline
 Open obstruction vector &
 The residual obligations are
@@ -787,7 +1798,7 @@ The residual obligations are
 These name, respectively, the mixed Cartan model, the localized normal
 contraction, the equivariant CE/PV bracket comparison, the
 residue-versus-Euler normalization theorem, the stratified factorization
-structure, the Costello brane-defect graph/QME package, and the physical
+structure, the Costello brane-defect graph/QME complex, and the physical
 large-\(N\) trace-state theorem.\\
 \hline
 \end{longtable}
@@ -833,8 +1844,8 @@ The completed \(P_0\) comparison in \(\mathcal B^{\mathrm{adm}}\)
 complete Hausdorff topology, continuous inclusion in the coordinate
 product, continuous multiplication, continuous
 \(d_\pi^{\mathrm{coord}}\), and a continuous closed contraction bracket;
-the operational test is Köthe bracket continuity
-(Remark~\ref{rmk:consistency-probes}, probe~(6)).
+the criterion is Köthe bracket continuity
+(Remark~\ref{rmk:consistency-probes}, check~(6)).
 Boundary Hamiltonians inside this \(P_0\) comparison require the relevant
 \(O_f\) and \(d_\pi^{\mathrm{coord}}O_f\) to lie in \(B\).\\
 \hline
@@ -849,7 +1860,7 @@ converge and the convolution differential and bracket are continuous
 in \(\mathcal K_B\); the kernel-admissibility test is the Maurer--Cartan
 identity \(d\Theta_B+\tfrac12[\Theta_B,\Theta_B]=0\)
 (Theorem~\ref{thm:main-local}, axiom~(v);
-Remark~\ref{rmk:consistency-probes}, probe~(7)).\\
+Remark~\ref{rmk:consistency-probes}, check~(7)).\\
 \hline
 \(\eta^I\) &
 Shifted cotangent generator
@@ -859,9 +1870,8 @@ the CE/PV map.\\
 \hline
 \(\mathfrak U_{\mathfrak h}\) &
 Admissible formal-local interface datum in the category
-\(\mathcal B^{\mathrm{adm}}\) of Theorem~\ref{thm:main-local}
-(seven admissibility axioms~(i)--(vii); host details in
-Appendix~\ref{app:completion-blueprint}~\S1).  The categorical universal
+\(\mathcal B^{\mathrm{adm}}\) of
+Definition~\ref{defn:admissible-host-category}.  The categorical universal
 object is
 \[
   \mathfrak U_{\mathfrak h}
@@ -973,7 +1983,7 @@ Associated-graded scalar-symbol extractor
 It has cochain degree \(0\) as an associated-graded map.  A projection of
 the filtered QME complex is the lifted map
 \(\widehat\sigma_{\mathrm{sc}}\).  On a degree-one scalar contact with two
-Hamiltonian inputs it records the Lie two-cocycle coefficient of
+Hamiltonian arguments it records the Lie two-cocycle coefficient of
 \(\gamma_{\mathbf 1}\).  In the ordinary branch this leading symbol is
 \(\hbar N[\bar c]\).\\
 \hline
@@ -1009,7 +2019,7 @@ Its first nonzero part gives
   \right).
 \]
 In the ordinary scalar-reduced \(\lie{gl}_N\) branch the first
-two-input evaluation is
+two-argument evaluation is
 \(\hbar N\,\omega(f,g)\gamma_{\mathbf 1}\), nonzero on
 \((f,g)=(z_1,z_2)\).\\
 \hline
@@ -1029,7 +2039,7 @@ may replace the Hamiltonian source by the central-character source.\\
 \hline
 \(\kappa_{\hbar,w,I}\) &
 Continuous bulk-to-defect kernel, equivalently a degree-\(0\)
-Maurer--Cartan candidate in the completed convolution Lie algebra,
+Maurer--Cartan element in the completed convolution Lie algebra,
 \[
   \kappa_{\hbar,w,I}\colon
   C^\bullet_{\mathrm{CE},\mathrm{cont}}
@@ -1090,7 +2100,7 @@ Finite-window residual complex
   \right).
 \]
 The bracket, interaction, and differential are the transported
-finite-window structures supplied by the acceptance gate.  The unweighted
+finite-window structures given by the admissibility datum.  The unweighted
 Hamiltonian bracket enters only through that transport.\\
 \hline
 \(C_{n,M}\), \(C_{\Gamma,w}^{w_0}(\epsilon)\) &
@@ -1121,7 +2131,7 @@ order-\(n\) counterterms.\\
 \hline
 \(\mathsf E_{\theta_3,M}\), \(C_{\theta_3,M}\) &
 First proved larger-row non-scalar obstruction and its permitted
-primitive.  In the supplied one-row package,
+primitive.  In the one-row complex,
 \[
   \mathcal Q^0_{\theta_3,M}=0,\qquad
   \mathcal Q^1_{\theta_3,M}=\C\mathsf E_{\theta_3,M},\qquad
@@ -1130,7 +2140,7 @@ primitive.  In the supplied one-row package,
 and the residual is \(\mathfrak o^{\mathrm{ns}}_{\theta_3,M}
 =\mathsf E_{\theta_3,M}\).  The covector
 \(\ell_{\theta_3}(\mathsf E_{\theta_3,M})=1\) proves that this class is
-nonzero in the supplied subcomplex.  A valid \(C_{\theta_3,M}\) is one of
+nonzero in the given subcomplex.  A valid \(C_{\theta_3,M}\) is one of
 three explicit witnesses,
 \[
   K^M_{\Theta_3}(\eta_{\theta_3,M}),\qquad
@@ -1181,7 +2191,7 @@ equivalent to
 for coefficients \(A^j{}_i(a,b,N)\in\mathcal W_N\).  This is a
 degree-zero left-ideal primitive problem in the quantum moment-map ideal.
 The scalar CE primitive \(\eta\), scalar-contact projection, and Costello
-QME counterterms are separate data.\\
+QME counterterms are independent finite-row data.\\
 \hline
 Reduced principal-part brackets &
 Target-side brackets in
@@ -1284,7 +2294,7 @@ Taylor truncation degree when a finite quotient
 \end{tabular}
 \end{center}
 
-\paragraph{\texorpdfstring{Large-\(N\) and quotient conventions.}{Large-N and quotient conventions}}
+\paragraph{\texorpdfstring{Stable trace range and physical large-\(N\) conventions.}{Stable trace range and physical large-N conventions}}
 An algebraic primitive projection is defined inside the stable range;
 a physical cumulant requires a state \(\omega_{N,\Omega}\).
 \begin{center}
@@ -1328,7 +2338,7 @@ action on \(\mathcal P\).  Beyond the Fourier--Rees theorem the spans of
 \(\Psi_{a,b}\) and \(\rho_{a,b}\) carry distinct
 \(\mathfrak h\)-module structures.
 
-\paragraph{Source--target table.}
+\paragraph{Source--comparison table.}
 
 \begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.22\textwidth}
   >{\raggedright\arraybackslash}p{0.22\textwidth}
@@ -1355,7 +2365,7 @@ full unreduced factorization centre requires centrality and descent data\\
 \hline
 bracket-admissible \(B\subset\mathrm{PV}_{\mathrm{coord}}\) &
 \(P_0\) realization \(\Phi^B_{P_0}\) &
-restriction of \(\Phi_{\mathrm{coord}}\) when \(B\) supplies completeness,
+restriction of \(\Phi_{\mathrm{coord}}\) when \(B\) gives completeness,
 \(d_\pi^{\mathrm{coord}}\)-stability, product stability, and a
 continuous contraction bracket &
 bracket-admissible subalgebra inside the chosen completion\\
@@ -1435,9 +2445,9 @@ finite verified relative datum: formal coefficients, Capelli
 normalization, free normal-diagram obstruction
 \(\mathfrak o^{\mathrm{rad}}_{a,b}\), edge PBW strip, and the
 remaining uniform splitting or left-cokernel theorem &
-requires formal Moyal coefficients, radial-parts input, and the
+requires formal Moyal coefficients, the radial-parts hypothesis, and the
 normal-diagram obstruction calculation; Costello analytic graph/QME
-realization is a separate target\\
+realization is a separate construction\\
 \hline
 Costello brane-defect kernel &
 closed-open BV/QME specialization &
@@ -1482,7 +2492,7 @@ symmetrised trace with one \(\psi\), \(a\) copies of \(\phi_1\), and
 \(b\) copies of \(\phi_2\), with \(a+b>0\) after removing the scalar
 descendant line. It lies in the PBW special-fibre open
 shadow and carries the corresponding polynomial action. In the reduced
-comparison it supplies the primitive indecomposable \(P_0\)-shadow
+comparison it gives the primitive indecomposable \(P_0\)-shadow
 label.\\
 \hline
 \(\mathsf F_{\mathrm{Rees}}\) &
@@ -1514,6 +2524,12 @@ observables.  Comparison morphism: \(\Phi_{\mathrm{coord}}\), the
 coordinate dg CE/PV isomorphism on generators
 \(c^I\mapsto\theta^I\), \(u_I\mapsto O_I\); its restriction to a
 bracket-admissible \(B\) is the \(P_0\) realization \(\Phi^B_{P_0}\).
+The parities are
+\[
+  |c^I|=|\theta^I|=1,\qquad |u_I|=|O_I|=0,
+\]
+and the cotangent / Schouten bracket has degree \(-1\), with
+\([\theta^I,O_J]_S=\delta^I_J\).
 \begin{center}
 \begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.25\textwidth}
   >{\raggedright\arraybackslash}p{0.67\textwidth}@{}}
@@ -1614,7 +2630,7 @@ Hamiltonian coadjoint action remains the action on the Matlis module.
 \paragraph{Interval-current and boundary labels.}
 Algebraic side: the brane-line objects produced by the support-locality
 differential of Theorem~\ref{thm:dict-kinematic-locality}\,(i).
-Physical side: the smeared brane measurement \(B_f(a)\) and the
+Physical side: the smeared boundary Hamiltonian current \(B_f(a)\) and the
 principal-part current observable \(\Theta_\rho(B)\).  Comparison
 morphism: the de Rham-current contraction
 \(u_{a(t)dt\otimes f}\mapsto B_f(a)\),
@@ -1629,8 +2645,8 @@ a distribution.
 \(\mathfrak h_I\) &
 \(\mathfrak h_I=\Omega^\bullet_c(I)\widehat\otimes\mathfrak h\), the
 compactly supported de Rham Hamiltonian currents on an interval
-\(I\subset\R\). Degree-zero test functions appear only after taking the
-explicit measurement notation.\\
+\(I\subset\R\). Degree-zero test functions appear only after choosing the
+smeared current representative.\\
 \hline
 \(\mathfrak g_I\) &
 \(\mathfrak g_I=\mathfrak h_I\ltimes\mathcal P_I[1]\), the shifted
@@ -1650,9 +2666,9 @@ Reduced Hamiltonian brane-line \(P_0\) factorization algebra
 Reduced principal-part defect-current model after de Rham-current contraction
 \(\widehat{\mathbf S}(\mathfrak h_I)\widehat\otimes
 \widehat{\mathbf S}(\mathcal P_I[1])\).  An unreduced BV observable
-algebra maps to it only after the centrality homotopies, coefficient
-kernel, brane-defect propagator, descent data, and BV/QME solution are
-supplied.\\
+algebra maps to it in the presence of the centrality homotopies,
+coefficient kernel, brane-defect propagator, descent data, and BV/QME
+solution.\\
 \hline
 \(\Theta_\rho(B)\) &
 Principal-part current observable with

@@ -20,7 +20,7 @@ moment-map equation \([x,y]=0\).  Its universality is independent of any
 choice of Matlis target, PBW model, finite \(N\) trace identity, or quantum
 deformation: after stable trace invariant theory has identified
 primitive traces with graded cyclic words, the answer is the cellular homology
-of a chip-moving state complex.  Every finite-bidegree stable primitive
+of a cyclic-word complex.  Every finite-bidegree stable primitive
 descendant calculation over \(\C\), with \(d\psi=xy-yx\) and graded
 cyclicity as the trace relation, is obtained from this one.  Passage to
 completed coefficient systems requires an exact coefficient functor, or an
@@ -223,9 +223,9 @@ explicit condition excluding new \(\varprojlim^1\) classes.
   \(K^2_{k+1,l+1}\to K^1_{k+1,l+1}\to K^0_{k+1,l+1}\) after putting the
   remaining \(\psi\) at the front of a one-\(\psi\) cyclic word.
   Equivalently, it is the cellular chain complex in dimensions
-  \(2,1,0\) of the state complex constructed below: \(C_0\) records chip
-  configurations, \(C_1\) records one moving chip, and \(C_2\) records two
-  independent moving chips with the orientation fixed by the ordered moving
+  \(2,1,0\) of the state complex constructed below: \(C_0\) records point
+  configurations, \(C_1\) records one edge-interior point, and \(C_2\) records two
+  independent edge-interior points with the orientation fixed by the ordered
   edges.
 \end{constr}
 
@@ -240,23 +240,23 @@ explicit condition excluding new \(\varprojlim^1\) classes.
   \(\partial_1\).
 \end{proof}
 
-\begin{constr}[Labelled chip-moving state complex]
-\label{constr:app-chip-state-complex}
+\begin{constr}[Labelled cyclic-word cell complex]
+\label{constr:app-cyclic-word-cell-complex}
   Assume \(R,S>0\).  Let \(\mathscr C_S\) be the oriented circle subdivided
   into \(S\) labelled oriented edges and \(S\) labelled vertices.  Define
   \(\widetilde Y_{R,S}\) as follows.  A \(p\)-cell is a state with
-  \(R-p\) stationary indistinguishable chips on vertices and \(p\) moving
-  chips in the interiors of \(p\) distinct edges.  Several stationary chips
-  may occupy the same vertex.  Each edge contains at most one moving chip.
+  \(R-p\) stationary indistinguishable points on vertices and \(p\) points
+  in the interiors of \(p\) distinct edges.  Several stationary points
+  may occupy the same vertex.  Each edge contains at most one interior point.
 
   Encode such a state by traversing \(\mathscr C_S\).  At a vertex write one
-  \(x\) for each stationary chip sitting there.  Then write \(y\) if the
+  \(x\) for each stationary point sitting there.  Then write \(y\) if the
   following edge is empty and \(\psi\) if the following edge contains a
-  moving chip.  This gives a word with \(R-p\) letters \(x\), \(S-p\) letters
+  interior point.  This gives a word with \(R-p\) letters \(x\), \(S-p\) letters
   \(y\), and \(p\) letters \(\psi\), with a distinguished starting edge.
 
   The \(p\)-cell is oriented by the increasing order of the labelled edges
-  carrying moving chips.  Its \(j\)-th oriented coordinate has boundary
+  carrying interior points.  Its \(j\)-th oriented coordinate has boundary
   \[
     \text{terminal face }xy-\text{ initial face }yx.
   \]
@@ -308,12 +308,12 @@ explicit condition excluding new \(\varprojlim^1\) classes.
   \(\psi\) is odd.
 
   With this orientation convention, the cellular boundary in
-  Construction~\ref{constr:app-chip-state-complex} is
+  Construction~\ref{constr:app-cyclic-word-cell-complex} is
   \[
     \sum_j(-1)^{j-1}([xy]-[yx])
   \]
   in the \(j\)-th moving edge.  The terminal face is the state in which the
-  chip has crossed the edge and is read as \(xy\); the initial face is read as
+  point has crossed the edge and is read as \(xy\); the initial face is read as
   \(yx\).  This is exactly Lemma~\ref{lem:app-full-p-face-formula}, term by
   term.
 \end{proof}
@@ -337,26 +337,26 @@ explicit condition excluding new \(\varprojlim^1\) classes.
 \begin{proof}
   Work in the universal cover of \(\mathscr C_S\), whose vertices are the integers and
   whose edges are the unit intervals.  A lifted labelled cell is described by
-  the positions of the \(R\) chips: stationary chips have integer positions,
-  and a moving chip on the edge \([m,m+1]\) has coordinate \(m+t\) with
+  the positions of the \(R\) points: stationary points have integer positions,
+  and an interior point on the edge \([m,m+1]\) has coordinate \(m+t\) with
   \(0<t<1\).  The closure of the cell permits \(t=0,1\), which are exactly the
   two vertex states \(yx\) and \(xy\) in the boundary convention of
-  Construction~\ref{constr:app-chip-state-complex}.  Define the Abel map
+  Construction~\ref{constr:app-cyclic-word-cell-complex}.  Define the Abel map
   \[
     A:\widetilde Y_{R,S}\longrightarrow \R/S\Z
   \]
-  by summing the chip positions on the oriented circle, counted with
+  by summing the point positions on the oriented circle, counted with
   multiplicity, and reducing modulo \(S\).  On every cell this map is affine.
 
-  Lift the target to \(\R\) and fix a cyclic order of the \(R\) lifted chips.
+  Lift the target to \(\R\) and fix a cyclic order of the \(R\) lifted points.
   A lifted fibre is described by weakly ordered coordinates
   \[
     t_1\leq t_2\leq\cdots\leq t_R\leq t_1+S
   \]
   with fixed sum.  This is a convex polytope.  Its faces are cut out by the
   equalities \(t_i\in\Z\) and by the choices of those unit intervals which
-  contain a moving chip; these faces are precisely the cells of the
-  chip-moving subdivision meeting the fibre.  Hence every lifted fibre is a
+  contain an interior point; these faces are precisely the cells of the
+  cellular subdivision meeting the fibre.  Hence every lifted fibre is a
   contractible finite polyhedral complex.  The map is a proper PL map of
   finite polyhedra with acyclic fibres.  The Vietoris--Begle theorem, applied
   to this affine cellular map, gives a homology equivalence
@@ -364,7 +364,7 @@ explicit condition excluding new \(\varprojlim^1\) classes.
     H_\bullet(\widetilde Y_{R,S};\C)\cong H_\bullet(S^1;\C).
   \]
 
-  A cyclic relabelling of the \(S\) edges adds a constant to every chip
+  A cyclic relabelling of the \(S\) edges adds a constant to every point
   coordinate, so it rotates the target circle by an orientation-preserving
   rotation.  Therefore \(\Gamma_S\) acts trivially on
   \(H_0(S^1;\C)\) and \(H_1(S^1;\C)\), and hence on the two homology lines of
@@ -383,7 +383,7 @@ explicit condition excluding new \(\varprojlim^1\) classes.
 \begin{proof}
   By Lemma~\ref{lem:app-abel-map-state-homology}, the labelled Abel map
   is a homology equivalence from \(\widetilde Y_{R,S}\) to the circle.  A
-  cyclic relabelling by \(r\in \Gamma_S\) adds \(r\) to each of the \(R\) chip
+  cyclic relabelling by \(r\in \Gamma_S\) adds \(r\) to each of the \(R\) point
   positions, hence translates the Abel coordinate by \(Rr\) in
   \(\R/S\Z\).  The action on the target circle is by
   orientation-preserving rotations, so it is trivial on the two homology
@@ -396,11 +396,11 @@ explicit condition excluding new \(\varprojlim^1\) classes.
 
   Now fix an Abel value and a stabilizer subgroup \(G\subset \Gamma_S\) of that
   value.  In the universal cover, choose the lifted fibre before decomposing
-  it into chip cells.  It is a convex polytope cut out by weak ordering, the
-  fixed-sum equation, and the chip-cell inequalities, and \(G\) acts affinely
+  it into cells.  It is a convex polytope cut out by weak ordering, the
+  fixed-sum equation, and the cellular inequalities, and \(G\) acts affinely
   on it.  Averaging a point over \(G\) gives a \(G\)-fixed point.  Straight-line
   contraction to this fixed point is \(G\)-equivariant and respects the
-  chip-cell subdivision.  Hence the stabilizer quotient of the Abel fibre is
+  cellular subdivision.  Hence the stabilizer quotient of the Abel fibre is
   contractible.
 \end{proof}
 
@@ -412,7 +412,7 @@ explicit condition excluding new \(\varprojlim^1\) classes.
       =
       \sum_{w\in\mathsf W_{R-1,S-1}}[\psi w]_{\mathrm{cyc}}
   \]
-  represents the fundamental \(H_1\)-line of the cyclic chip-moving
+  represents the fundamental \(H_1\)-line of the cyclic-word
   complex.
 \end{lem}
 
@@ -438,7 +438,7 @@ explicit condition excluding new \(\varprojlim^1\) classes.
   \]
   By Lemma~\ref{lem:app-cyclic-abel-stabilizers}, the \(H_1\)-line is
   one-dimensional.  Moreover, every one-cell in the displayed sum is oriented
-  in the positive Abel direction: its terminal face has the moved chip one edge
+  in the positive Abel direction: its terminal face has the moved point one edge
   farther along the oriented circle.  Thus the displayed cycle maps to
   \(\binom{R+S-2}{R-1}\) times the oriented circle class and spans the
   fundamental \(H_1\)-line.
@@ -501,18 +501,17 @@ explicit condition excluding new \(\varprojlim^1\) classes.
   generator as \(\Psi_{R-1,S-1}\).
 \end{proof}
 
-\begin{rmk}[Numerical anchor]
+\begin{rmk}[Finite-window homology check]
 \label{rmk:app-full-psi-numerical-anchor}
-  The script
-  \texttt{scripts/check\_one\_psi\_homology.py} tabulates the same
-  three-term skeleton over \(\Q\), confirms
+  The finite-window calculation tabulates the same three-term skeleton
+  over \(\Q\), confirms
   \(\partial_1\partial_2=0\), checks that \(\Psi_{R-1,S-1}\) is closed
   and independent modulo boundaries, and verifies
   \[
     \dim\,H_1(K_{R,S})=1
   \]
   in each of the \(36\) bidegrees \(0\leq R-1,S-1\leq5\).  The same
-  script verifies the open Hamiltonian descendant action of
+  calculation verifies the open Hamiltonian descendant action of
   Proposition~\ref{prop:open-descendant-action} in \(240\) cases with
   exponents at most \(3\), and the closed coadjoint Taylor-dual / residue
   formula of Proposition~\ref{prop:app-matlis-coadjoint-action} in
@@ -680,7 +679,7 @@ explicit condition excluding new \(\varprojlim^1\) classes.
   Theorem~\ref{thm:app-matlis-polynomial-descendant-obstruction} together
   with the deformation-level
   Corollary~\ref{cor:app-matlis-same-action-interpolation-obstruction}.
-  Theorem~\ref{thm:app-matlis-rees-fourier-bridge} supplies the
+  Theorem~\ref{thm:app-matlis-rees-fourier-bridge} gives the
   positive Fourier--Rees bridge that does identify the two label sets,
   but only after the Fourier twist of the Hamiltonian action.
 \end{proof}
@@ -689,7 +688,7 @@ explicit condition excluding new \(\varprojlim^1\) classes.
 \label{rmk:app-full-instant-computation}
   The polynomial PBW action on the descendant labels and the Moyal
   coadjoint action on the principal parts disagree already at one
-  exponent pair recorded by the verification script.  Take the quartic
+  exponent pair.  Take the quartic
   Hamiltonian \(F_{4,0}=\operatorname{Tr}(\phi_1^4)\) and the
   bidegree-\((1,1)\) descendant target.  On the polynomial PBW side
   Proposition~\ref{prop:open-descendant-action} gives
@@ -710,8 +709,9 @@ explicit condition excluding new \(\varprojlim^1\) classes.
   truncation \((\hbar^0)\) gives
   \(\operatorname{ad}^*_{z_1^4}(\rho_{1,1})=0\) by the principal-part
   formula at this exponent, again disagreeing with the polynomial PBW
-  output \(4\widetilde\Psi_{4,0}\).  The script confirms this fingerprint
-  exactly and embeds it inside a sweep of \(1200\) such mismatches.
+  term \(4\widetilde\Psi_{4,0}\).  Exact finite-window calculation
+  confirms this mismatch and embeds it inside a sweep of \(1200\) such
+  mismatches.
 \end{rmk}
 
 \begin{thm}[Universal primitive descendant calculation]
@@ -750,7 +750,7 @@ explicit condition excluding new \(\varprojlim^1\) classes.
   algebra on \(x,y,\psi\).  Therefore any stable primitive model satisfying
   the stated hypotheses receives a unique chain map from
   \(\mathsf K_{\mathrm{univ}}\) after choosing the images of \(x,y,\psi\).
-  The homology of the source is the two-line module just computed.  Since
+  The homology of the source is the two-line module computed above.  Since
   \(H_p(K_{R,S})=0\) for \(p\ge2\) in every bidegree, every universal
   primitive class in the target comes from the degree-zero polynomial line
   or the degree-one \(\Psi\)-line.  The statement is independent of the
@@ -809,15 +809,15 @@ explicit condition excluding new \(\varprojlim^1\) classes.
 \end{proof}
 
 \begin{cor}[Special-fibre defect polarization]
-\label{cor:app-full-defect-polarization-slogan}
+\label{cor:app-full-defect-polarization-cocycle}
   The polynomial one-\(\psi\) PBW labels \(\Psi_{a,b}\) and the Matlis
   principal parts \(\rho_{a,b}\) are joined by the bidegree-only
   associated-graded morphism
   \(\operatorname{gr}\Phi\) of
   Proposition~\ref{prop:app-full-gr-Phi}: this morphism intertwines the
   two index sets at the special fibre \(\hbar=0\) and only there.  In
-  particular, the full primitive \(\psi\)-homology of this appendix
-  computes the special-fibre shadow of the cotangent module on the open
+  particular, full primitive \(\psi\)-homology computes the
+  special-fibre shadow of the cotangent module on the open
   brane sector, while the Matlis principal-parts module of
   \S~\ref{sec:pro-matlis-target} is the deformation-level
   cotangent module itself.  The formal-stalk chart measures positions

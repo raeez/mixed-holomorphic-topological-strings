@@ -1,4 +1,4 @@
-\section{The pro-Matlis target: Matlis principal parts and the continuous cotangent module}\label{sec:pro-matlis-target}\label{sec:app-matlis-principal-parts}
+\section{The pro-Matlis envelope: Matlis principal parts and the continuous cotangent module}\label{sec:pro-matlis-target}\label{sec:app-matlis-principal-parts}
 
 Configuration observables on the brane are the polynomial trace
 classes \(O_f=\overline{\operatorname{Tr}f(\phi_1,\phi_2)}\): Taylor
@@ -8,7 +8,7 @@ Grothendieck local-cohomology duality, are the residues
 \(\rho_{a,b}=z_1^{-a-1}z_2^{-b-1}\,dz_1dz_2\), top local-cohomology
 generators of \(R=\C[[z_1,z_2]]\) at the maximal ideal \((z_1,z_2)\).
 The brane measures positions polynomially; its cotangent momenta live as
-residues.  The same local-cohomology object also supplies the
+residues.  The same local-cohomology object also gives the
 two-point diagonal coefficients of the native holomorphic singular
 product: after replacing
 the origin support \(\mathfrak m=(z_1,z_2)\) by the diagonal
@@ -30,7 +30,7 @@ descendants \(\widetilde\Psi_{a,b}\) carry the same labels \((a,b)\) and
 a strictly different \(\mathfrak h\)-module structure: linear
 Hamiltonians act locally nilpotently on the polynomial side and never
 locally nilpotently on \(\mc P\), giving the basis-relabeling
-obstruction.  Fourier--Rees conjugation supplies the only universal
+obstruction.  Fourier--Rees conjugation gives the only universal
 label bridge, and only after a polarization change: it sends
 \(\mathcal O_\hbar=\mathcal D_\hbar/(\partial_1,\partial_2)\) to
 \(\Delta^{\mathsf F}_\hbar=\mathcal D_\hbar/(z_1,z_2)\), whose \v{C}ech
@@ -53,11 +53,11 @@ Hamiltonian-dual coordinates \(c^I\), which generate canonical motion,
 and shifted-cotangent coordinates \(u_I\), which carry antifields.  The
 brane line \(L=\R_t\times\{s=z_1=z_2=0\}\) reads only the second
 alphabet, through the trace substitution of
-Lemma~\ref{lem:formal-stalk-trace}: a holomorphic Hamiltonian
-\(f\in\mathfrak h\) becomes a brane configuration observable
-\(O_f=\overline{\operatorname{Tr}f(\phi_1,\phi_2)}\), a \emph{polynomial}
-in the Chan--Paton-valued normal coordinates.  Configuration observables
-are therefore Taylor functions of the Chan--Paton pair.  The cotangent
+Lemma~\ref{lem:formal-stalk-trace}: a polynomial Hamiltonian becomes
+the brane configuration observable
+\(O_f=\overline{\operatorname{Tr}f(\phi_1,\phi_2)}\).  A formal
+Hamiltonian \(f\in\mathfrak h\) gives a completed Taylor function of
+the Chan--Paton pair.  The cotangent
 momentum dual to \(O_f\) is constrained by three properties: it pairs
 with Hamiltonian observables to a scalar; it is continuous for the
 \(\mathfrak m\)-adic topology on \(\mathfrak h\), where
@@ -171,21 +171,21 @@ constraints together select the residue-valued cotangent polarization.
   Theorem~\ref{thm:app-matlis-residue-rigidity}.
 \end{proof}
 
-\begin{rmk}[Computational verification of the polarization]
+\begin{rmk}[Finite-window verification of the polarization]
 \label{rmk:app-defect-polarization-numerics}
-  The coadjoint coefficient \(-(pb-qa+p-q)\) on the residual side is
-  verified by \texttt{scripts/check\_one\_psi\_homology.py}, which
-  computes \(\operatorname{ad}^\vee_{z_1^pz_2^q}(\delta_{a,b})\)
-  symbolically on Taylor-monomial test labels, identifies the
+  The exact rational calculation of
+  \(\operatorname{ad}^\vee_{z_1^pz_2^q}(\delta_{a,b})\)
+  on Taylor-monomial test labels gives the residual-side coefficient
+  \(-(pb-qa+p-q)\), identifies the
   one-functional support, and confirms
   \(-(pb-qa+p-q)\rho_{a-p+1,b-q+1}\) on every quadruple \((p,q,a,b)\)
   with exponents \(\le 5\) and \(p+q,a+b>0\): \(1225\) cases, all match.
-  The same script evaluates the candidate label map
+  The same calculation evaluates the bidegree-only label map
 	  \(\widetilde\Psi_{a,b}\mapsto\rho_{a,b}\) by the exact Moyal coadjoint
 	  action: \(1200\) of \(1225\) cases register a PBW-vs-Moyal mismatch,
 	  and \(958\) cases carry genuine higher Moyal coadjoint terms which the
 	  polynomial one-\(\psi\) action lacks at every order in
-	  \(\hbar\).  The smallest explicit obstruction is the pair
+  \(\hbar\).  The smallest explicit obstruction is the pair
   \[
     \operatorname{ad}^\vee_{z_1^4}(\delta_{1,1})
       =-24\,\hbar^2\,\delta_{0,4},
@@ -194,13 +194,11 @@ constraints together select the residue-valued cotangent polarization.
     \quad\text{(polynomial side)};
   \]
   the two functionals are supported at different bidegrees and at
-  different powers of \(\hbar\).  The companion script
-  \texttt{scripts/check\_moyal\_coefficients.py} verifies the Moyal
-  star-bracket coefficients on monomials up to exponents \(\le 10\) and
-  orders \(\le 11\), with the antisymmetric odd-order tower
+  different powers of \(\hbar\).  The Moyal star-bracket coefficients
+  on monomials up to exponents \(\le 10\) and orders \(\le 11\) have
+  antisymmetric odd-order tower
   \(1,\ \tfrac1{24},\ \tfrac1{1920},\ \tfrac1{322560},\ \dots\) matching
-  the closed-form \(\tfrac{1}{2^{r-1}\,r!}\) for odd \(r\).  Both
-  scripts run from the command line with zero external dependencies.
+  the closed-form \(\tfrac{1}{2^{r-1}\,r!}\) for odd \(r\).
 \end{rmk}
 
 \subsection{Construction of the residual side}
@@ -337,7 +335,7 @@ constraints together select the residue-valued cotangent polarization.
   shows that these coefficient functionals form the whole continuous
   dual.  The exclusion of \(\rho_{0,0}\) is exactly the condition that
   the functional vanish on the scalar line \(\C\cdot1\subset R\); this is
-  the continuous dual of the quotient \(R/\C\cdot1\).  On finite stages
+  the continuous dual of the quotient \(R/\C\cdot1\).  On finite truncations
   the map sends \(\mc P_{\leq N}\) isomorphically to the functionals
   vanishing on \(\mathfrak m^{N+1}\), so both the map and its inverse are
   continuous for the declared locally finite topologies.
@@ -408,9 +406,8 @@ constraints together select the residue-valued cotangent polarization.
   \(a-p+1=b-q+1=0\), then \(a=p-1\) and \(b=q-1\), and the coefficient
   \(pb-qa+p-q=p(q-1)-q(p-1)+p-q\) reduces to zero by direct expansion.
   Thus the action preserves the scalar-annihilator \(\mc P\).  The
-  signed coefficient is verified by direct computation against
-  \texttt{check\_one\_psi\_homology.py} on \(1225\) cases with exponents
-  \(\le 5\).
+  signed coefficient is verified by direct computation on \(1225\)
+  cases with exponents \(\le 5\).
 \end{proof}
 
 \begin{lem}[Continuity of the coadjoint action]
@@ -652,7 +649,7 @@ constraints together select the residue-valued cotangent polarization.
   After inverting \(\hbar\), this gives a filtered Fourier--Rees
   identification of label spaces between nonconstant polynomial labels and
   the reduced principal parts \(\rho_{a,b}\), \(a+b>0\), but only after the
-  Fourier twist of action just stated.  Over the Rees lattice before
+  Fourier twist of action displayed above.  Over the Rees lattice before
   inverting \(\hbar\), the construction records the degree-\(a+b\) shift
   by the explicit factor \(\hbar^{a+b}\).  The special fibre of the
   abstract Rees module keeps the labels

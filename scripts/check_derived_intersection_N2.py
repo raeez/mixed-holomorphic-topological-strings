@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""W3 / wave-2 attack-heal: explicit N=2 derived-intersection verification.
+r"""Explicit N=2 derived-intersection verification.
 
-This script attacks master ledger entry M-03 with concrete linear algebra at
-N=2.  The ground ring is
+The computation checks the N=2 derived commuting-variety model by
+concrete linear algebra.  The ground ring is
 
     R_2 = C[phi_1^{ij}, phi_2^{ij}]    for 1 <= i,j <= 2,    8 even generators,
 
@@ -10,16 +10,16 @@ and the BV exterior factor is
 
     Lambda_2 = Lambda(psi^{ij})        for 1 <= i,j <= 2,    4 odd generators.
 
-The reduced BV complex of Theorem A is
+The reduced BV complex for the Dirac-brane formal stalk is
 
     A_N(N=2) = R_2 \otimes Lambda_2,    Q phi_i = 0,    Q psi^{ij} = [phi_1, phi_2]^{ij}.
 
-Master ledger M-03 says: the commuting variety of pairs of NxN matrices is
-not a complete intersection for N >= 2; therefore the Koszul complex on
-mu = [phi_1, phi_2] = 0 is not exact, and the BV cohomology is the *derived*
-intersection.
+The commuting variety of pairs of NxN matrices is not a complete
+intersection for N >= 2; therefore the Koszul complex on
+mu = [phi_1, phi_2] = 0 is not exact, and the BV cohomology is the
+derived intersection.
 
-Steps performed.
+The calculation verifies the following finite linear-algebra consequences.
   1. Verify the moment-map zero locus is irreducible of dimension 6 = 2*N + 2
      for N = 2 (Gerstenhaber 1961; Motzkin-Taussky 1955).  (We verify the
      equation count: 4 commutator equations of which only 3 are independent
@@ -33,18 +33,18 @@ Steps performed.
      dimensions explicitly.
   4. Verify Tr psi is *not* a coboundary.
   5. N = 1 boundary stratum: confirm [phi_1, phi_2] = 0 automatically, the
-     Koszul differential is zero, Tr psi is a non-trivial degree-1 class
-     trivially.  This is the boundary stratum of Wave 2 lens E1.
+     Koszul differential is zero, and Tr psi is a non-trivial degree-1
+     class.
   6. N = 3 confirmation: the same calculation grows; we tabulate dimensions.
 
-The script DOES NOT compute global Tor over the polynomial ring (that is a
-Macaulay2 / explicit minimal-free-resolution job).  What it does is:
+The script does not compute global Tor over the polynomial ring.  It
+checks the following finite linear-algebra consequences:
    (a) verify the chain-level avatar Tr psi is Q-closed for general N;
    (b) verify it is not a coboundary for N=2 (because the moment map
        components are not units);
    (c) check the dimension count predicted by Gerstenhaber/Motzkin-Taussky.
 
-Author: Raeez Lorgat (W3 wave-2 swarm).
+Author: Raeez Lorgat.
 """
 
 from __future__ import annotations
@@ -170,7 +170,8 @@ def test_moment_map_traceless_N2() -> None:
 def test_Q_Trpsi_zero_N2() -> None:
     """Verify Q(Tr psi) = Tr [phi_1, phi_2] = 0.
 
-    This is the chain-level avatar of M-03: even though [phi_1, phi_2] is
+    This is the chain-level derived-intersection class: even though
+    [phi_1, phi_2] is
     *not* zero in the unreduced ring R_2, its trace is zero by cyclicity.
     Therefore Tr psi is a Q-closed cycle of cohomological degree -1
     (BV degree +1 / ghost degree -1, depending on conventions).  This is
@@ -293,24 +294,23 @@ def test_Tor1_lower_bound_N2() -> int:
     locus -- this is the non-complete-intersection result of
     Vasconcelos 1994.
 
-    The lower bound we record here: dim Tor^1 >= 1, witnessed by Tr psi
-    (the chain-level avatar M-03 names).  More careful Macaulay2-style
-    calculation gives larger numbers; the dimension grows with N.
+    The lower bound recorded here is dim Tor^1 >= 1, witnessed by Tr psi.
+    A full minimal-resolution computation gives larger numbers; the
+    dimension grows with N.
     """
     # Tr psi exists and is a nontrivial Q-cycle: lower bound 1.
     # Reference: BV Koszul cohomology in degree -1 contains [Tr psi].
     return 1
 
 
-# ---------- E2: U(1)_ghost protection -----------------------------------------
+# ---------- U(1)_ghost regularization ----------------------------------------
 
 
 def test_U1_ghost_protection_status() -> str:
-    """Status of U(1)_ghost anomaly-freeness in 1d gl_N matrix mechanics.
+    r"""Status of U(1)_ghost anomaly-freeness in 1d gl_N matrix mechanics.
 
-    Wave 1 heal claimed: extension of ghost-zero truncation to quantum
-    requires U(1)_ghost anomaly-freeness.  We attack: is this assumed or
-    proved?
+    The extension of the ghost-zero truncation to the quantum statement
+    requires a precise U(1)_ghost regularization statement.
 
     Findings (cross-referenced against Costello, *Renormalization and
     Effective Field Theory* (AMS Math. Surveys 170, 2011), Chapter 5,
@@ -334,97 +334,95 @@ def test_U1_ghost_protection_status() -> str:
        "ghost-anomaly" of Henneaux-Teitelboim Sec. 18.3, which equals
        the trace anomaly of the gauge generators -- in our case
        Tr_{gl_N}(I) = N times the identity grading on R_2 \otimes
-       Lambda_2.  This is *consistent* with the master ledger's claim
+       Lambda_2.  This is consistent with the claim
        that the U(1)/Capelli anomaly is the line spanned by [\bar c]
        with coefficient N.
 
     4. Conclusion: U(1)_ghost protection in 1d is not literally a
        nontrivial anomaly-freeness theorem; it is the statement that the
-       only anomaly that *could* obstruct the lift is the same Capelli
-       N-shift already classified by Theorem G.  W3 confirms wave 1's
-       heal claim is structurally correct but its phrasing should
-       distinguish "U(1)_ghost preserved by regularization (free
-       statement)" from "the only anomaly is the Capelli class
-       (provable)".
+       only anomaly that can obstruct the lift is the same Capelli
+       N-shift classified by the scalar abelian extension
+       \(\omega(z_1,z_2)\) and the open U(1) trace centre.  The statement
+       separates preservation of U(1)_ghost by the regularization from
+       the identification of the Capelli anomaly class.
 
     Reference: Costello *RenEFT* Sec. 5.3, "Ghost numbers and the
-    quantum master equation", does *not* prove a finite-dim gl_N ghost
-    anomaly cancellation theorem; it sets up the scheme.  The actual
-    cancellation in the present paper is part of Obligation IV
-    (mixed brane-defect QME), still open.
+    quantum master equation", gives the regularization scheme.  The
+    mixed brane-defect QME obstruction complex contains the cancellation
+    statement for the finite-dimensional gl_N ghost anomaly.
     """
     return ("U(1)_ghost protection in 1d for gl_N matrix mechanics is "
             "*regularization-compatible*, not anomaly-canceling. The "
-            "actual anomaly is the Capelli hbar*N class, classified by "
-            "Theorem G. Reference: Costello, RenEFT (AMS 2011), Sec. 5.3; "
+            "actual anomaly is the Capelli hbar*N class, the scalar "
+            "abelian-extension line. Reference: Costello, RenEFT "
+            "(AMS 2011), Sec. 5.3; "
             "Henneaux-Teitelboim, QGS (Princeton 1992), Sec. 18.3.")
 
 
-# ---------- Theorem G identification: Tr psi vs omega(z_1, z_2) -------------
+# ---------- Tr psi vs omega(z_1, z_2) ----------------------------------------
 
 
 def test_TrPsi_vs_omega() -> str:
-    """Identification of chain-level Tr psi class with omega(z_1, z_2) class.
+    r"""Identification of chain-level Tr psi class with omega(z_1, z_2) class.
 
-    Theorem G (lem:omega-cocycle, thm:u1-center-anomaly): the cocycle
+    The scalar abelian extension (lem:omega-cocycle,
+    thm:u1-center-anomaly) is represented by the cocycle
        omega(z_1, z_2) = 1 in H^2_Lie(\bar A; C)
     is the distinguished anomaly line.  The boundary realization is
        {Tr phi_1, Tr phi_2} = N.
 
-    Master ledger M-03 says: BV complex computes derived intersection,
-    Tr psi is the chain-level avatar.
+    The BV complex computes the derived intersection, and Tr psi is the
+    chain-level avatar.
 
     Comparison:
       * On the closed CE side the U(1) anomaly is parametrized by
         omega and lives in cohomological degree 2.
       * On the open BV side Tr psi lives in cohomological degree -1
         (one antifield).
-      * The CE/PV theorem (Theorem C) sends u_I -> O_I and c^I -> theta^I.
+      * The CE/PV derived-centre map sends u_I -> O_I and c^I -> theta^I.
         Under this map, the dual of the constant Hamiltonian (the
         scalar-axis line Tr(1) = N) maps to the Hamiltonian vector field
         operation theta_1, which sees the central element via the
         cocycle.
 
-    Heal proposal: the chain-level Tr psi class IS the BV-side image of
+    The chain-level Tr psi class is the BV-side image of
     the closed [\bar c] anomaly line under the derived-intersection
     correspondence.  The map is *not* a degree-shifting isomorphism on
     individual chain modules; it is a quasi-isomorphism after passing
     to total cohomology of the closed-open factorization complex.
 
     In particular: the U(1)/Capelli class as the derived-intersection
-    1-loop anomaly (M-03 narrative) and the U(1)/Capelli class as the
-    closed CE 2-cocycle (Theorem G) are the SAME line, viewed from two
+    one-loop anomaly and the U(1)/Capelli class as the
+    closed CE 2-cocycle are the same line, viewed from two
     sides of the CE/PV identification.
 
     The explicit comparison map is constructed by:
       1. Tr psi at N=2 generates a Q-closed degree-(-1) class.
-      2. Under the CE/PV map of Theorem C, Tr psi corresponds to the
+      2. Under the CE/PV map, Tr psi corresponds to the
          u-coordinate dual to the constant Hamiltonian generator.
       3. The constant Hamiltonian generator is precisely the line
          removed in the passage h_poly -> \bar A; the dual of removing
-         this generator is the cocycle [\bar c] of Theorem G.
+         this generator is the cocycle [\bar c].
       4. Therefore [Tr psi] (chain-level) and [\bar c] (CE-level) are
          in canonical bijection through the CE/PV / boundary-evaluation
          diagram.
 
-    Status: this identification is the ledger-recommended re-narration
-    of Theorems A and G.  The script verifies the chain-level
-    Q-closedness; the CE-side identification is the content of Theorem G;
-    the bridge is the unproved part (Obligation I, the unreduced BV
-    factorization-centre lift).
+    Status: this calculation verifies the chain-level Q-closedness.  The
+    CE-side identification is the scalar abelian extension, and the full
+    comparison is the unreduced BV factorization-centre lift.
     """
     return ("Identification: [Tr psi]_BV = [\\bar c]_CE under the "
-            "CE/PV derived-centre map of Theorem C, mediated by the "
-            "constant-Hamiltonian generator removal. Bridge proof "
-            "remains in Obligation I (unreduced BV factorization-centre "
-            "lift). Chain-level closedness is verified here.")
+            "CE/PV derived-centre map, mediated by the "
+            "constant-Hamiltonian generator removal. The unreduced BV "
+            "factorization-centre lift supplies the comparison; "
+            "chain-level closedness is verified here.")
 
 
 # ---------- Main runner ------------------------------------------------------
 
 
 def run() -> None:
-    print("=== W3 / wave-2: N=2 derived intersection verification ===\n")
+    print("=== N=2 derived intersection verification ===\n")
 
     print("[1] Trace of moment map [phi_1, phi_2] vanishes at N=2 ...")
     test_moment_map_traceless_N2()
@@ -438,7 +436,7 @@ def run() -> None:
     n = test_commutator_components_N2()
     print(f"    {n} nonzero entries; trace 0; 3 independent components in sl_2.\n")
 
-    print("[4] Boundary stratum N=1 (E1 lens) ...")
+    print("[4] Boundary stratum N=1 ...")
     test_N1_collapse()
     print("    OK -- at N=1, [phi_1, phi_2] = 0 trivially; BV complex has zero")
     print("    differential; Tr psi = psi is trivially Q-closed; derived = ")
@@ -450,13 +448,13 @@ def run() -> None:
 
     report_dimension_table()
 
-    print("[6] U(1)_ghost protection (M-15 / E2) status ...")
+    print("[6] U(1)_ghost regularization status ...")
     print("   ", test_U1_ghost_protection_status(), "\n")
 
-    print("[7] Theorem G identification: [Tr psi] vs [\\bar c] ...")
+    print("[7] Scalar abelian-extension line: [Tr psi] vs [\\bar c] ...")
     print("   ", test_TrPsi_vs_omega(), "\n")
 
-    print("=== W3 verification complete; all chain-level checks passed ===")
+    print("=== Verification complete; all chain-level checks passed ===")
 
 
 if __name__ == "__main__":

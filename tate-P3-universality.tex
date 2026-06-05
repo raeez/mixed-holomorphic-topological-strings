@@ -1,22 +1,20 @@
-\subsection{Universality of the formal-local Hamiltonian sector}\label{ssec:twistedM-universality}
+\subsection{Formal-Darboux normal form of the local Hamiltonian sector}\label{ssec:twistedM-universality}
 
-The CE/PV Koszul resolution of the brane-side derived
-\(E_1\)-Hochschild
-\(HH^\bullet(A^{\mathrm{cl}}_{\partial,N},A^{\mathrm{cl}}_{\partial,N})\),
-identified with the bulk stalk
-\(\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}|_b\) by
-Theorem~\ref{thm:main-local} of
-\S\ref{ssec:coordinate-free-ce-pv-synthesis}, is the formal-Darboux
-stalk.  Its universal property is a corollary of the
-Koszul-resolution identification.
+The CE/PV Koszul resolution gives the trace summand of the map from
+the bulk stalk \(\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}|_b\) to the
+brane-side derived \(E_1\)-Hochschild complex
+\(HH^\bullet(A^{\mathrm{cl}}_{\partial,N},A^{\mathrm{cl}}_{\partial,N})\)
+in Theorem~\ref{thm:main-local} of
+\S\ref{ssec:coordinate-free-ce-pv-synthesis}.  Its universal property
+is the formal-Darboux normal-form property of the trace sector.
 The local theorem of \S\ref{ssec:local-theorem} lives at one brane
 point of the formal symplectic polydisk \(\widehat{\C^2}_0\).  An
 ambient theory on a connected holomorphic-symplectic surface
-\((X,\omega)\) with brane point \(p\) — Costello's perturbative
-twisted-M-theory \cite{costello-twistedM}, or any source supplying
-its own open fields, closed fields, and bulk-to-boundary evaluation —
-restricts to \(\widehat X_p\) as the same formal Hamiltonian model
-exactly when its protected datum lies in the category
+\((X,\omega)\) with brane point \(p\), including any comparison with
+Costello's perturbative twisted M-theory \cite{costello-twistedM},
+requires its own open fields, closed fields, bulk-to-boundary
+evaluation, and anomaly matching before it restricts to this formal
+Hamiltonian model.  The admissible cases form the category
 \(\mathsf{ProtHam}\) defined below.  The formal Darboux model
 \[
   \mathfrak M^{\mathrm{Ham}}_{\mathrm{loc}}
@@ -31,11 +29,12 @@ exactly when its protected datum lies in the category
   \quad
   \widehat{\mathfrak h}=\C[[z_1,z_2]]/\C\cdot1,
 \]
-is the terminal object of \(\mathsf{ProtHam}\)
-(Theorem~\ref{thm:formal-local-universal-property}); equivalently, it is
-the universal property of the Koszul resolution of
+is the formal-Darboux normal form in \(\mathsf{ProtHam}\)
+(Theorem~\ref{thm:formal-local-universal-property}); equivalently, it gives
+the normal form of the trace-sector Koszul map from
 \(\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}|_b\) at the formal-Darboux stalk.  A
-candidate datum lies in \(\mathsf{ProtHam}\) iff the four-coordinate
+pre-admissible datum is promoted to \(\mathsf{ProtHam}\)
+after the four-coordinate
 class
 \[
   \operatorname{Ob}^{\mathrm{univ}}_{p,X}
@@ -45,27 +44,28 @@ class
         \operatorname{ob}_{\mathrm{scal}},\,
         \operatorname{ob}_{\mathrm{QME}}\bigr)
 \]
-of Definition~\ref{defn:protected-twist-obstruction-datum} vanishes
-with chosen null-homotopies; the four coordinates lie in independent
+of Definition~\ref{defn:protected-twist-obstruction-datum} is
+represented and killed by chosen null-homotopies; the four coordinates lie in independent
 cohomology groups (the de Rham extension on \(X\), the
 closed-comparison cone, \(H^2_{\mathrm{Lie}}(\bar A,\C)\), and the
 weighted protected local-functional complex), and a single nonzero
-coordinate is the exact ambient obstruction.  In Koszul
-language, \(\operatorname{Ob}^{\mathrm{univ}}_{p,X}\) is the obstruction
-to convergence of the Koszul resolution on a non-formal target: each
-coordinate measures a precise obstruction to extending the formal-Darboux
-Koszul resolution along the ambient datum at \((X,\omega,p)\).
+coordinate obstructs the corresponding admissibility clause.  In
+Koszul language, \(\operatorname{Ob}^{\mathrm{univ}}_{p,X}\) is the
+obstruction table for extending the formal-Darboux trace-sector map
+along the ambient datum at \((X,\omega,p)\).
 
-External acceptance of an admissible datum into a compact-CY,
-Maulik--Nekrasov--Okounkov--Pandharipande (MNOP),
-Gopakumar--Vafa (GV), Ooguri--Strominger--Vafa (OSV),
-Donaldson--Thomas (DT), Pandharipande--Thomas (PT), the compact CY-to-chiral target, Igusa,
-or Borcherds--Kac--Moody (BKM) target is a separate
-matched-conventions descent class
-(Corollary~\ref{cor:protected-matched-conventions-interface},
-\S\ref{app:convention-contract}); vanishing of
-\(\operatorname{Ob}^{\mathrm{univ}}_{p,X}\) supplies only the formal-local
-input.
+A compact theorem using this formal restriction contains a second
+geometric or automorphic object: the BCOV/Kodaira--Spencer propagator,
+the Maulik--Nekrasov--Okounkov--Pandharipande virtual trace, a
+Gopakumar--Vafa or Ooguri--Strominger--Vafa scalar, a
+Donaldson--Thomas/Pandharipande--Thomas wall-crossing trace, a
+Calabi--Yau-to-chiral specialization, or an Igusa/Borcherds--Kac--Moody
+normalization.  The comparison with that object is governed by the
+matched-conventions descent class of
+Corollary~\ref{cor:protected-matched-conventions-interface} and
+\S\ref{app:comparison-conventions}.  Vanishing of
+\(\operatorname{Ob}^{\mathrm{univ}}_{p,X}\) proves only the formal
+Hamiltonian restriction at \((X,\omega,p)\).
 
 \begin{defn}[Protected Hamiltonian sector at a brane point]\label{defn:protected-hamiltonian-sector-brane-point}
   Let $(X,\omega)$ be a connected holomorphic-symplectic surface, let
@@ -91,7 +91,7 @@ input.
   at the symplectic polydisk $\widehat X_p$, and the protected
   bulk-to-boundary evaluation on the brane algebra.
 
-  The realization problem is to construct this triple from the ambient
+  The realization datum is the construction of this triple from the ambient
   BV fields and to prove the vanishing of the obstruction datum below.
 \end{defn}
 
@@ -123,8 +123,8 @@ input.
 \end{defn}
 
 \begin{defn}[Protected twist obstruction datum]\label{defn:protected-twist-obstruction-datum}
-  Fix a candidate protected twisted-M background near
-  \(\R\times p\) and a candidate comparison with the Hamiltonian
+  Fix a protected twisted-M background near
+  \(\R\times p\) and a comparison with the Hamiltonian
   formal-disk model.  The comparison carries four obstruction classes.
 
   First, every holomorphic symplectic vector field \(v\) determines the
@@ -205,7 +205,7 @@ input.
   \begin{enumerate}[label=(\arabic*)]
     \item \((X,\omega)=(T^*\Sigma,d\theta_\Sigma)\) for \(\Sigma\) a
       Riemann surface, evaluated at a point of the zero section, with
-      \(\Theta\) supplied by the cotangent BV theory of \(\Sigma\);
+      \(\Theta\) given by the cotangent BV theory of \(\Sigma\);
     \item \((X,\omega)\) any K3 surface at a smooth point, with
       \(\Theta\) the Hochschild restriction of a curved
       \(A_\infty\)-deformation of the structure sheaf;
@@ -226,7 +226,7 @@ input.
   are listed in
   Definition~\ref{defn:admissible-protected-hamiltonian-restriction}
   independent of a coordinate choice.  The functorial datum
-  \(\mathrm{ev}_\Theta\) may be supplied by other evaluations:
+  \(\mathrm{ev}_\Theta\) may be given by other evaluations:
   the cotangent example (1) admits the de Rham residue evaluation as
   \(\mathrm{ev}_\Theta\); the Hochschild example (2) admits the
   Connes--Tsygan evaluation; the symplectic-surface example (3)
@@ -239,7 +239,7 @@ input.
   Theorem~\ref{thm:formal-local-universal-property}.
 \end{proof}
 
-\begin{thm}[Universal property of the formal-local Hamiltonian sector;
+\begin{thm}[Formal-Darboux normal form of the Hamiltonian trace sector;
 corollary of the CE/PV Koszul resolution identification]\label{thm:formal-local-universal-property}
   Let \(\mathsf{ProtHam}\) denote the category whose objects are
   triples \((X,\omega,p)\) with \((X,\omega)\) a connected
@@ -270,18 +270,22 @@ corollary of the CE/PV Koszul resolution identification]\label{thm:formal-local-
   \]
   with bulk-to-boundary evaluation
   \(f\mapsto\overline{\operatorname{Tr}f(\phi_1,\phi_2)}\) on the
-  brane line.  Then \(\mathfrak M^{\mathrm{Ham}}_{\mathrm{loc}}\) is
-  terminal in \(\mathsf{ProtHam}\) up to canonical isomorphism: for
-  every object \((X,\omega,p,\Theta)\) of \(\mathsf{ProtHam}\) there
-  is a morphism
+  brane line.  Let \(\mathcal D_{X,p}\) be the torsor of formal
+  Darboux frames
   \[
-    \mu_{(X,\omega,p,\Theta)}\colon
+    \eta\colon(\widehat X_p,\omega)\xrightarrow{\sim}
+    (\widehat{\C^2}_0,dz_1\wedge dz_2).
+  \]
+  For every object \((X,\omega,p,\Theta)\) of \(\mathsf{ProtHam}\),
+  every \(\eta\in\mathcal D_{X,p}\), and every fixed protected
+  comparison datum entering the definition of \(\mathsf{ProtHam}\),
+  there is a normal-form morphism
+  \[
+    \mu_\eta\colon
     (X,\omega,p,\Theta)\longrightarrow
       \mathfrak M^{\mathrm{Ham}}_{\mathrm{loc}}
   \]
-  in \(\mathsf{ProtHam}\), determined uniquely up to a canonical
-  natural isomorphism.  The map \(\mu_{(X,\omega,p,\Theta)}\) is the
-  canonical formal Darboux reduction
+  in \(\mathsf{ProtHam}\).  Its coordinate part is the formal Darboux reduction
   \[
     \mathfrak h_{X,p}\xrightarrow{\sim}\widehat{\mathfrak h},\qquad
     \Ext^*_X(\mc O_p,\mc O_p)\xrightarrow{\sim}\Lambda^*T_pX,\qquad
@@ -290,63 +294,37 @@ corollary of the CE/PV Koszul resolution identification]\label{thm:formal-local-
   composed with the brane-line factorization restriction
   \(\Phi^{\mathrm{Ham}}_{\mathrm{fact}}\) of
   Theorem~\ref{thm:hamiltonian-current-factorization} and the
-  protected bulk-to-boundary evaluation.
+  protected bulk-to-boundary evaluation.  Darboux frames act on the
+  coordinate part; this statement does not classify the full mapping
+  groupoid of protected open and closed BV comparison data.
 
-  Equivalently, in the natural groupoid enrichment of
-  \(\mathsf{ProtHam}\) by the inner formal Darboux symmetry group
-  \[
-    G_{\mathrm{Darb}}=
-    \operatorname{Symp}_{\mathrm{form}}(\widehat{\C^2}_0)
-  \]
-  acting trivially on isomorphism classes of
-  \(\widehat{\mathfrak h}\ltimes
-  \widehat{\mathfrak h}^\vee_{\mathrm{cont}}[1]\), the contravariant
-  functor
-  \[
-    \mathsf{ProtHam}^{\mathrm{op}}
-    \longrightarrow\mathsf{Grpd},\qquad
-    (X,\omega,p,\Theta)\longmapsto
-    \underline{\mathrm{Hom}}_{\mathsf{ProtHam}}\bigl(
-      (X,\omega,p,\Theta),\mathfrak M^{\mathrm{Ham}}_{\mathrm{loc}}\bigr)
-  \]
-  is naturally isomorphic to the constant functor with value the
-  one-object classifying groupoid \(BG_{\mathrm{Darb}}\); the
-  \(\pi_0\) of this groupoid is the one-point set, so on isomorphism
-  classes of morphisms there is a unique morphism to
-  \(\mathfrak M^{\mathrm{Ham}}_{\mathrm{loc}}\), and inverting the
-  inner Darboux symplectomorphisms in the homotopy category collapses
-  the Hom-groupoid to a one-point set, naturally in isomorphism-class
-  data.
-
-  A candidate ambient datum supplies an object of \(\mathsf{ProtHam}\)
-  iff its protected twist obstruction class
+  A pre-admissible ambient datum equipped with the obstruction class
   \(\operatorname{Ob}^{\mathrm{univ}}_{p,X}\) of
-  Definition~\ref{defn:protected-twist-obstruction-datum} vanishes
-  with chosen null-homotopies; a single nonzero coordinate of
-  \(\operatorname{Ob}^{\mathrm{univ}}_{p,X}\) is the precise
-  obstruction to membership in \(\mathsf{ProtHam}\), hence the
-  precise obstruction to existence of the morphism
-  \(\mu_{(X,\omega,p,\Theta)}\).
+  Definition~\ref{defn:protected-twist-obstruction-datum} is promoted
+  to an object of \(\mathsf{ProtHam}\) after those obstruction
+  coordinates are represented and killed by chosen null-homotopies.
+  A nonzero coordinate obstructs the corresponding admissibility
+  clause, not a universal Hom-set terminality statement.
 \end{thm}
 
 \begin{proof}
-  Terminality of \(\mathfrak M^{\mathrm{Ham}}_{\mathrm{loc}}\) is the
-  universal property of the CE/PV Koszul resolution of
-  \(\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}|_b\) of
+  The normal-form assertion for
+  \(\mathfrak M^{\mathrm{Ham}}_{\mathrm{loc}}\) is the
+  Darboux-frame form of the trace-sector CE/PV Koszul map of
   \S\ref{ssec:coordinate-free-ce-pv-synthesis}: any protected datum on a
   connected holomorphic-symplectic surface restricts to that Koszul
   resolution at the formal-Darboux point \(p\in\partial X\) of the
   brane-link boundary once the four coordinates of
   \(\operatorname{Ob}^{\mathrm{univ}}_{p,X}\) vanish, since the
   Koszul-resolution map is canonical on the formal-Darboux stalk and
-  uniqueness up to inner Darboux symplectomorphism is the
-  Darboux--Weinstein rigidity of the stalk.  The detailed verification
+  frame dependence is the Darboux--Weinstein rigidity of the stalk.
+  The detailed verification
   follows.
 
-  Existence of \(\mu_{(X,\omega,p,\Theta)}\) is read off the three
+  Existence of \(\mu_\eta\) is read off the three
   clauses of
   Definition~\ref{defn:admissible-protected-hamiltonian-restriction}.
-  Formal Darboux Hamiltonian reduction supplies a symplectomorphism
+  Formal Darboux Hamiltonian reduction gives a symplectomorphism
   \(\mathfrak h_{X,p}\xrightarrow{\sim}\widehat{\mathfrak h}\) of
   the completed closed Hamiltonian algebra and an identification
   \(\Ext^*_X(\mc O_p,\mc O_p)\xrightarrow{\sim}\Lambda^*T_pX\) of
@@ -361,100 +339,60 @@ corollary of the CE/PV Koszul resolution identification]\label{thm:formal-local-
   Theorem~\ref{thm:Jf-coordinate-uniqueness}.  Scalar anomaly
   compatibility identifies \([\bar c]_\Theta\) with \([\bar c]\)
   inside \(H^2_{\mathrm{Lie}}(\bar A,\C)\) through
-  \(\chi_{\mathrm{anom}}\).  Their composition is
-  \(\mu_{(X,\omega,p,\Theta)}\).
+  \(\chi_{\mathrm{anom}}\).  Their composition is \(\mu_\eta\).
 
-  Uniqueness up to canonical isomorphism uses the
-  \(G_{\mathrm{Darb}}\)-rigidity of each clause.  Suppose two
-  morphisms
-  \(\mu,\mu'\colon(X,\omega,p,\Theta)\to
-  \mathfrak M^{\mathrm{Ham}}_{\mathrm{loc}}\) exist.  Their
-  closed-side restrictions are two formal Darboux symplectomorphisms
-  \(\mathfrak h_{X,p}\to\widehat{\mathfrak h}\); these differ by an
-  element \(g\in G_{\mathrm{Darb}}\), since the formal Darboux
-  reduction at a point of \((X,\omega)\) is unique up to inner
-  symplectomorphism of \(\widehat{\C^2}_0\) (Darboux--Weinstein for
-  formal symplectic polydisks).  Their open-side restrictions
-  \(\Ext^*_X(\mc O_p,\mc O_p)\to\Lambda^*T_pX\) differ by the same
-  \(g\) acting on \(T_pX\).  Their brane-line factorization maps
-  differ by the action of \(g\) on the boundary algebra
-  \(\overline{\operatorname{Tr}f(\phi_1,\phi_2)}\), which is
-  \(GL_N\)-invariant and preserves the connected-trace projection.  In
-  each Darboux frame the factorization map equals the unique \(J\) of
-  Theorem~\ref{thm:Jf-coordinate-uniqueness}; the only open-side
-  freedom is \(g\).
-  Their scalar anomaly intertwiners are the identity by linearity in
-  \(H^2_{\mathrm{Lie}}(\bar A,\C)\).  Hence
-  \(\mu'=g\cdot\mu\) for the diagonal action of \(g\), and the data
-  \(g\) supplies a canonical natural isomorphism
-  \(\mu\Rightarrow\mu'\) in \(\mathsf{ProtHam}\).  The action of
-  \(G_{\mathrm{Darb}}\) on the isomorphism class of
-  \(\mathfrak M^{\mathrm{Ham}}_{\mathrm{loc}}\) is trivial because
-  inner symplectomorphisms of the formal polydisk preserve the
-  isomorphism class of
-  \(\widehat{\mathfrak h}\ltimes
-  \widehat{\mathfrak h}^\vee_{\mathrm{cont}}[1]\); they act
-  faithfully on the structure but trivially on the isomorphism class.
-  This is the terminality up to canonical isomorphism.
+  Formal Darboux frames form a torsor under
+  \(G_{\mathrm{Darb}}\), and changing the frame changes only the
+  coordinate expression of the displayed normal form.  The open BV
+  theory, closed BV theory, bulk-to-boundary map, scalar anomaly, and
+  chosen null-homotopies are part of the protected comparison datum and
+  are not classified by the Darboux torsor.
 
-  The groupoid reformulation packages this rigidity: the Hom-set
-  \(\underline{\mathrm{Hom}}_{\mathsf{ProtHam}}(
-  (X,\omega,p,\Theta),\mathfrak M^{\mathrm{Ham}}_{\mathrm{loc}})\)
-  is a torsor under the action of \(G_{\mathrm{Darb}}\), since any
-  two morphisms differ by exactly one such \(g\); the action groupoid
-  of a \(G_{\mathrm{Darb}}\)-torsor is the one-object classifying
-  groupoid \(BG_{\mathrm{Darb}}\), whose \(\pi_0\) is the singleton.
-  The functor
-  \((X,\omega,p,\Theta)\mapsto\underline{\mathrm{Hom}}\) is then
-  naturally the constant functor with value \(BG_{\mathrm{Darb}}\),
-  and inverting inner Darboux symplectomorphisms in the homotopy
-  category collapses \(BG_{\mathrm{Darb}}\) to the one-point set: the
-  homotopy-category Hom-set is a singleton.
-
-  The membership iff is
-  Lemma~\ref{lem:protected-primary-obstruction-test} below: an
-  ambient datum supplies an object of \(\mathsf{ProtHam}\) iff each
-  of the four classes
+  Lemma~\ref{lem:protected-primary-obstruction-test} below says that a
+  pre-admissible datum is promoted after each of the four classes
   \(\operatorname{per}(v)\),
   \([\mc C_{\mathrm{cl},p}]\),
   \(\operatorname{ob}_{\mathrm{scal}}\),
   \(\operatorname{ob}_{\mathrm{QME}}\)
-  vanishes with chosen null-homotopies, since these classes
-  precisely measure the obstruction to the four admissibility clauses
+  is represented and killed by chosen null-homotopies.  These classes
+  measure the corresponding admissibility clauses
   (Darboux Hamiltonian reduction, closed-field protected comparison,
   scalar anomaly compatibility, brane-defect QME locality).
 \end{proof}
 
-\begin{cor}[Restriction to the formal-Darboux Koszul resolution]\label{cor:protham-koszul-restriction}
+\begin{cor}[Restriction to the formal-Darboux trace-sector map]\label{cor:protham-koszul-restriction}
   Any protected datum \((X,\omega,p,\Theta)\in\mathsf{ProtHam}\)
   restricts at the formal-Darboux point \(p\in\partial X\) of the
-  Costello--Gwilliam brane-link boundary to the formal-Darboux CE/PV
-  Koszul resolution
+  Costello--Gwilliam brane-link boundary to the trace-sector
+  formal-Darboux CE/PV Koszul map
   \(\Phi_{\mathrm{coord}}\) of
-  \S\ref{ssec:coordinate-free-ce-pv-synthesis} of the chiral Hochschild
-  cohomology \(\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}|_b\), with bulk-to-boundary
+  \S\ref{ssec:coordinate-free-ce-pv-synthesis}, landing in the
+  derived Hochschild complex of the chosen brane algebra, with
+  bulk-to-boundary
   evaluation \(u_f\mapsto J(f)=\overline{\operatorname{Tr}f(\phi_1,\phi_2)}\)
+  for polynomial \(f\), extended to formal \(f\) only after completion,
   and \(c_f\mapsto\theta_f\), uniquely up to inner formal Darboux
   symplectomorphism.  Equivalently,
   \(\operatorname{Ob}^{\mathrm{univ}}_{p,X}\) is the obstruction to
-  convergence of that Koszul resolution along the ambient datum at
+  convergence of that trace-sector map along the ambient datum at
   \((X,\omega,p)\): a single nonzero coordinate is the precise
   obstruction (period, closed-field comparison cone, scalar anomaly,
-  brane-defect QME) to extending the formal-Darboux Koszul resolution
+  brane-defect QME) to extending the formal-Darboux trace-sector map
   along \(\Theta\).
 \end{cor}
 
 \begin{proof}
-  Theorem~\ref{thm:formal-local-universal-property} gives the morphism
-  \(\mu_{(X,\omega,p,\Theta)}\) and its uniqueness up to inner Darboux
-  symplectomorphism; \S\ref{ssec:coordinate-free-ce-pv-synthesis}
+  Theorem~\ref{thm:formal-local-universal-property} gives, for each
+  formal Darboux frame and protected comparison datum, the normal-form
+  morphism \(\mu_\eta\);
+  \S\ref{ssec:coordinate-free-ce-pv-synthesis}
   identifies the formal-Darboux stalk of
-  \(\mathfrak M^{\mathrm{Ham}}_{\mathrm{loc}}\) with the CE/PV Koszul
-  resolution of \(\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}|_b\) under
-  \(c_f\mapsto\theta_f\), \(u_f\mapsto J(f)\).  Composing supplies the
+  \(\mathfrak M^{\mathrm{Ham}}_{\mathrm{loc}}\) with the trace-sector
+  CE/PV Koszul map under
+  \(c_f\mapsto\theta_f\), \(u_f\mapsto J(f)\).  Composing gives the
   corollary; the obstruction reading is
   Lemma~\ref{lem:protected-primary-obstruction-test} restated for the
-  Koszul resolution.
+  trace-sector map.
 \end{proof}
 
 \paragraph*{The QME coordinate of \(\operatorname{Ob}^{\mathrm{univ}}_{p,X}\): Casimir-balance and the queer counterexample.}
@@ -477,7 +415,7 @@ QME obstruction vanishes identically, and exhibits
 exhibits a complementary locus where unsigned parity-equivariance
 breaks down and a nonzero odd scalar class
 \(\hbar N[\bar c]^{\mathrm{otr}}\) survives, showing that the
-algebraic spin-Hecke coefficient input governs the cohomology layer
+algebraic spin-Hecke coefficient datum governs the cohomology class,
 while chain-level QME cancellation requires the additional homotopy data.
 Together these two theorems give the precise dichotomy controlling
 the QME coordinate: scalar QME-vanishing is ruled by a single matrix
@@ -633,7 +571,7 @@ brane stack.
   \(H^1(\mathfrak Q_{\mathfrak s})\) vanishes.
 \end{proof}
 
-\begin{defn}[Spin-Hecke queer coefficient input]\label{defn:spin-hecke-queer-input}
+\begin{defn}[Spin-Hecke queer coefficient datum]\label{defn:spin-hecke-queer-input}
   Let \(N\ge1\) and
   \[
     \mathfrak q(N)=
@@ -655,7 +593,7 @@ brane stack.
       \begin{pmatrix}A&B\\ B&A\end{pmatrix}
       =\operatorname{Tr}(B)\in\Pi\C .
   \]
-  A spin-Hecke input for the queer brane is the Sergeev
+  A spin-Hecke datum for the queer brane is the Sergeev
   Hecke--Clifford action on \(V^{\otimes n}\), \(V=\C^{N|N}\), whose
   central-character comparison identifies
   \[
@@ -666,8 +604,8 @@ brane stack.
   \]
 \end{defn}
 
-\begin{thm}[Queer-centre anomaly from the spin-Hecke input]\label{thm:queer-u1-center-anomaly-spin-hecke}
-  Assume the spin-Hecke input of
+\begin{thm}[Queer-centre anomaly from the spin-Hecke datum]\label{thm:queer-u1-center-anomaly-spin-hecke}
+  Assume the spin-Hecke datum of
   Definition~\ref{defn:spin-hecke-queer-input}.  For the queer-trace
   boundary evaluation
   \(f\mapsto\operatorname{otr}f(\phi_1,\phi_2)\), the odd scalar QME
@@ -696,9 +634,9 @@ brane stack.
   Second, the odd class survives over \(\C[[\hbar]]\) and admits a
   null-homotopy only after either an odd scalar quotient is imposed
   on the target or a target null-homotopy of the odd line
-  \(\Pi\C\cdot[\bar c]^{\mathrm{otr}}\) is supplied; the class itself
-  is the precise residual obstruction.  Third, the spin-Hecke input
-	  fixes the coefficient identity at the cohomology layer; chain-level
+  \(\Pi\C\cdot[\bar c]^{\mathrm{otr}}\) is given; the class itself
+  is the precise residual obstruction.  Third, the spin-Hecke datum
+  fixes the coefficient identity on cohomology; chain-level
 	  QME cancellation has the parity obstruction
   \[
     P^{\mathfrak q}J(P^{\mathfrak q})^{-1}=-J
@@ -710,9 +648,9 @@ brane stack.
   which the QME coordinate
   \(\operatorname{ob}_{\mathrm{QME}}\) of
   \(\operatorname{Ob}^{\mathrm{univ}}_{p,X}\) is nonzero in the
-  cohomology layer; admissibility of the queer datum requires either
+  cohomology; admissibility of the queer datum requires either
   an odd-scalar quotient at the target or a chosen null-homotopy of
-  the odd class, supplied as part of the obstruction-vanishing data
+  the odd class, given as part of the obstruction-vanishing data
   of Definition~\ref{defn:protected-twist-obstruction-datum}.
 \end{thm}
 
@@ -725,7 +663,7 @@ brane stack.
     \operatorname{otr}(J)=
     \operatorname{Tr}(I_N)=N .
   \]
-  The spin-Hecke input asserts that this coefficient is preserved by the
+  The spin-Hecke datum asserts that this coefficient is preserved by the
   Sergeev central-character comparison; the Hamiltonian cocycle on the
   target remains the same \(\omega(f,g)=[\{f,g\}]_0\).  Therefore the
   scalar boundary loop gives exactly the displayed odd representative.
@@ -756,12 +694,12 @@ brane stack.
   \(P^{\mathfrak q}J(P^{\mathfrak q})^{-1}=-J\) is an explicit matrix
   computation.  Thus the queer channel has signed parity; the
   super-balanced cancellation uses the unsigned parity condition.
-  The algebraic spin-Hecke input gives the coefficient class; a
-  null-homotopy of this odd obstruction is separate data.
+  The algebraic spin-Hecke datum gives the coefficient class; a
+  null-homotopy of this odd obstruction is an additional datum.
 \end{proof}
 
 \begin{lem}[Primary obstruction test]\label{lem:protected-primary-obstruction-test}
-  A protected twisted-M background supplies an admissible protected
+  A protected twisted-M background gives an admissible protected
   Hamiltonian restriction in the sense of
   Definition~\ref{defn:admissible-protected-hamiltonian-restriction}
   if and only if the four classes of
@@ -811,7 +749,7 @@ brane stack.
   vanishing of this class with chosen interval-factorization
   null-homotopies is exactly the brane-defect locality clause of
   Definition~\ref{defn:admissible-protected-hamiltonian-restriction}.
-  The four vanishings therefore supply the four admissibility
+  The four vanishings therefore give the four admissibility
   clauses, and conversely each admissibility clause records the
   vanishing of its class.
 \end{proof}
@@ -834,7 +772,7 @@ brane stack.
 \begin{prop}[Admissible protected-sector reduction]\label{prop:admissible-protected-sector-reduction}
   Let $(X,\omega)$ be a connected holomorphic-symplectic surface and
   let $p\in X$.  Suppose that a perturbative twisted-M background with
-  branes on $\R\times p$ supplies an admissible protected Hamiltonian
+  branes on $\R\times p$ gives an admissible protected Hamiltonian
   sector at $\widehat p$.  Then, after the Darboux coordinate and
   scalar-anomaly normalizations included in the admissibility data, that
   restricted sector is identified with the formal local reduced Hamiltonian
@@ -863,7 +801,7 @@ brane stack.
   $$
   Hence the proved Hamiltonian, factorization, and scalar-anomaly
   statements of the local theorem apply to the protected sector.  The
-  all-order one-antifield quantum extension is still conditional on
+  all-order one-antifield quantum extension requires
   vanishing of the mixed brane-defect QME obstruction of
   Problem~\ref{prob:weighted-rg-locality} for that sector.
 \end{prop}
@@ -875,7 +813,7 @@ brane stack.
   coordinates.  The point-brane Ext algebra and its cyclic trace give
   the open coefficient data of the Dirac brane formal-stalk model.
 
-  Brane-defect locality supplies the factorization-algebraic
+  Brane-defect locality gives the factorization-algebraic
   restriction to the brane line and matches it with the local
   factorization map, primitive projection, and weighted Hadamard
   reduction already used in the local theorem.  These
@@ -887,7 +825,7 @@ brane stack.
 
   Scalar anomaly compatibility identifies the brane centre-of-mass
   anomaly with the class $[\bar c]$ appearing in the local anomaly
-  comparison.  The three admissibility inputs therefore supply exactly
+  comparison.  The three admissibility hypotheses therefore give exactly
   the data on which the local theorem acts.  Applying that theorem
   gives the asserted protected-sector reduction.
 \end{proof}
@@ -895,7 +833,7 @@ brane stack.
 \begin{thm}[Protected twist-to-Hamiltonian comparison criterion]\label{thm:protected-twist-hamiltonian-criterion}
   Let \((X,\omega)\) be a connected holomorphic-symplectic surface and
   \(p\in X\).  Suppose a perturbative twisted-M background with branes on
-  \(\R\times p\) supplies a candidate protected sector together with the
+  \(\R\times p\) gives a protected sector together with the
   obstruction datum of
   Definition~\ref{defn:protected-twist-obstruction-datum}.  Assume:
   \begin{enumerate}[label=(\roman*)]
@@ -907,7 +845,7 @@ brane stack.
     \item \(\operatorname{ob}_{\mathrm{QME}}=0\), with a chosen solution
       compatible with compactly supported interval factorization.
   \end{enumerate}
-  Then the candidate protected sector determines an admissible protected
+  Then the protected sector determines an admissible protected
   Hamiltonian restriction.  Consequently the reduced brane-line
   Hamiltonian CE/PV, factorization-current, and scalar-anomaly
   statements of the formal local theorem apply to that protected sector.
@@ -920,32 +858,30 @@ brane stack.
 
 \begin{proof}
   By Lemma~\ref{lem:protected-primary-obstruction-test}, the four
-  hypotheses supply the Darboux Hamiltonian reduction, the field-level
+  hypotheses give the Darboux Hamiltonian reduction, the field-level
   protected comparison, scalar anomaly compatibility, and brane-defect
   QME locality required in
   Definition~\ref{defn:admissible-protected-hamiltonian-restriction}.
   Applying Proposition~\ref{prop:formal-local-global-restriction} at the
   formal polydisk and then the admissible protected-sector reduction gives the
   local Hamiltonian BF model and its bulk-to-boundary evaluation.  The last
-  sentence is exactly the conditional weighted Tate/QME extension isolated in
+  assertion is exactly the weighted Tate/QME extension isolated in
   Problem~\ref{prob:weighted-rg-locality}, transported through the chosen
   protected-sector equivalence.
 \end{proof}
 
-\begin{lem}[Formal-restriction external acceptance criterion]\label{lem:formal-restriction-external-acceptance}
+\begin{lem}[Formal restriction and compact comparison]\label{lem:formal-restriction-compact-comparison}
   An admissible protected Hamiltonian restriction contributes precisely
   the formal Hamiltonian polydisk, the Dirac brane Ext algebra, the brane-line
   factorization restriction, and the scalar anomaly class \( [\bar c] \).
-  For an external compact BCOV, MNOP/chiral-volume, CY-to-chiral, Igusa,
-  Borcherds, or BKM target \(T\), this contribution remains only a
-  conditional quantum input.  The target theorem accepts it as
-  matched-conventions global or cross-target descent data exactly after
-  \(T\) supplies its convention datum
-  \(\mathfrak C_T\), a morphism
+  Let \(T\) be a compact BCOV, MNOP/Abel--Jacobi, Calabi--Yau-to-chiral,
+  Igusa, Borcherds, or Borcherds--Kac--Moody comparison target.  A
+  theorem for \(T\) uses the formal restriction through a convention
+  object \(\mathfrak C_T\), a morphism
   \(\mathfrak C_{\widehat p}^{\mathrm{Ham}}\to \mathfrak C_T\), and
-  null-homotopies for the obstruction vector
+  null-homotopies for the target-specific obstruction classes
   \[
-    \operatorname{Ob}^{\mathrm{ext}}_T
+    \operatorname{Ob}^{\mathrm{cmp}}_T
     =
     \bigl(
       \operatorname{per}_T,
@@ -957,35 +893,37 @@ brane stack.
       \operatorname{ob}^{\mathrm{CY\mbox{-}ch}}_T,
       \operatorname{ob}^{\mathrm{Igusa/BKM}}_T,
       \operatorname{ob}^{6r/\mathrm{MD}}_T
-    \bigr)
-    \in H^1(\mathfrak K_T),
+    \bigr),
   \]
-	  with a component included exactly when \(T\) asserts the
-	  corresponding structure.  A non-zero component is the exact obstruction
-  to the corresponding external theorem.
+  with a component present exactly when the corresponding structure
+  occurs in \(T\).  A single class in \(H^1(\mathfrak K_T)\) exists
+  only after a deformation complex \(\mathfrak K_T\) and comparison maps
+  from the native complexes have been constructed.  A nonzero component
+  is the obstruction to the corresponding compact theorem.
 \end{lem}
 
 \begin{proof}
   The three admissibility clauses record Darboux Hamiltonians at
   \(\widehat X_p\), the point-brane Ext algebra, brane-defect locality on
   \(\R\times p\), and scalar anomaly compatibility.  The global data of
-  any external theorem --- compact Calabi--Yau threefold, negative-cyclic
+  any target theorem --- compact Calabi--Yau threefold, negative-cyclic
   Calabi--Yau class, the compact CY-to-chiral target specialization datum
-  \(\Phi_d=\mathrm{Sp}_{\Sigma_{d-1},C}\circ\Phi^{\mathrm{FA}}_d\),
+  \(\Phi_d=\mathrm{Sp}^{\mathrm{ch}}_{\Sigma_{d-1},C}\circ
+  \Phi^{\mathrm{FA}}_d\),
   compact worldsheet or \(S^3\) framing, BCOV propagator and holomorphic
-  anomaly equation, Borcherds input Jacobi form, Weyl chamber, compact
-  Hall orientation --- enter as independent coordinates of
-  \(\operatorname{Ob}^{\mathrm{ext}}_T\) in the target convention complex
-  \(\mathfrak K_T\).  Two ambient theories with the same admissible
-  formal restriction differ exactly at these coordinates.  Vanishing
-  with specified null-homotopies is the acceptance datum for using the
-  formal restriction in \(T\); a non-zero coordinate is the named target
+  anomaly equation, Borcherds Jacobi form, Weyl chamber, compact
+  Hall orientation --- enter as independent components of
+  \(\operatorname{Ob}^{\mathrm{cmp}}_T\) in their native target
+  complexes.  Two ambient theories with the same admissible
+  formal restriction differ exactly at these components.  Vanishing
+  with specified null-homotopies is the admissibility datum for using the
+  formal restriction in \(T\); a nonzero component is the named target
   obstruction.
 \end{proof}
 
 \begin{defn}[Protected-sector matched-conventions contribution]\label{defn:protected-sector-matched-conventions-contribution}
   The protected-sector reduction contributes the following datum to any
-  external matched-conventions theorem:
+  matched-conventions target theorem:
   \[
   \mathfrak C_{\widehat p}^{\mathrm{Ham}}=
   \bigl(
@@ -1025,46 +963,44 @@ brane stack.
   \(\widehat{\mathfrak h}\ltimes
   \widehat{\mathfrak h}^{\vee}_{\mathrm{cont}}[1]\).  The Ext-algebra
   identification gives the Dirac brane formal-stalk chart, and scalar compatibility
-  fixes the same class \([\bar c]\).  These are exactly the inputs of
+	  fixes the same class \([\bar c]\).  These are exactly the hypotheses of
   Proposition~\ref{prop:formal-local-global-restriction}.
 \end{proof}
 
-\begin{rmk}[Dirac language inside the protected sector]
-  For an admissible protected Hamiltonian sector, the Dirac-thesis
-  language --- the brane as the constrained
-  formal-stalk chart whose stable scalar-reduced measurement is the unique
-  \(GL_N\)-invariant Darboux-natural extension of the moment-map
+\begin{rmk}[Dirac brane formal-stalk chart]
+  In an admissible protected Hamiltonian sector, the brane is the
+  constrained formal-stalk chart whose stable scalar-reduced trace map is
+  the \(GL_N\)-invariant Darboux-natural extension of the moment-map
   action on linear generators
-  (Theorem~\ref{thm:formal-local-universal-property}) --- is a
-  shorthand for the already identified formal local model.  The Dirac
-  brane stack measures the
-  formal symplectic normal polydisk through trace; Dirac reduction gives the open trace
-  algebra; the closed Hamiltonian BF theory is the shifted cotangent
-  theory of canonical transformations of that polydisk; and the closed
-  observables identify with derived Poisson-central operations on the
-  stable open Hamiltonian brane algebra only in the reduced local sense
-  proved by Theorem~\ref{thm:main-local}.  The scalar anomaly is the
-  same class $[\bar c]$ on the closed and open sides.  The corresponding
-  ambient centrality statement is the matched-conventions interface of
+  (Theorem~\ref{thm:formal-local-universal-property}).  The Dirac brane
+  stack reads the formal symplectic normal polydisk through trace.  Dirac
+  reduction gives the open trace algebra, the closed Hamiltonian BF
+  theory is the shifted cotangent theory of canonical transformations of
+  that polydisk, and the closed observables identify with derived
+  Poisson-central operations on the stable open Hamiltonian brane algebra
+  in the reduced local sense proved by Theorem~\ref{thm:main-local}.  The
+  scalar anomaly is the same class \( [\bar c] \) on the closed and open
+  sides.  The corresponding ambient centrality statement is the
+  matched-conventions interface of
   Corollary~\ref{cor:protected-matched-conventions-interface}.
 \end{rmk}
 
-\begin{cor}[Protected-sector matched-conventions acceptance criterion]\label{cor:protected-matched-conventions-interface}
-  A theorem in a compact BCOV, CY-to-chiral, or Igusa/BKM target may use
-  the protected-sector reduction only as a matched-conventions descent
-  input: it must give a morphism
+\begin{cor}[Protected-sector matched-conventions criterion]\label{cor:protected-matched-conventions-interface}
+  A theorem in a compact BCOV, CY-to-chiral, or Igusa/BKM target uses the
+  protected-sector reduction as a matched-conventions descent datum: it
+  defines a morphism
   \(\mathfrak C_{\widehat p}^{\mathrm{Ham}}\to\mathfrak C_T\) and
   null-homotopies for every asserted component of
-  \(\operatorname{Ob}^{\mathrm{ext}}_T\).
+  \(\operatorname{Ob}^{\mathrm{cmp}}_T\).
 \end{cor}
 
 \begin{proof}
-  Lemma~\ref{lem:formal-restriction-external-acceptance} identifies the
-  external acceptance class
-  \(\operatorname{Ob}^{\mathrm{ext}}_T\in H^1(\mathfrak K_T)\).  A
-  morphism of convention data and null-homotopies for this class supply
-  exactly the compact, worldsheet, modular, orientation, and descent
-  coordinates needed by the target theorem.  Corollary~\ref{cor:protected-formal-uniformity}
-  then supplies the \(d=2\) formal-disk normalization functorially in the
-  chosen Darboux chart.
+  Lemma~\ref{lem:formal-restriction-compact-comparison} identifies the
+  target-specific obstruction components
+  \(\operatorname{Ob}^{\mathrm{cmp}}_T\).  A morphism of convention
+  data and null-homotopies for the asserted components give exactly
+  the compact, worldsheet, modular, orientation, and descent data
+  needed by the compact theorem.  Corollary~\ref{cor:protected-formal-uniformity}
+  then gives the \(d=2\) formal-Darboux normalization functorially in the
+  chosen chart.
 \end{proof}
