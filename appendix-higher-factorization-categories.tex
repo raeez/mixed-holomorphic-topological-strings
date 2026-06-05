@@ -9,9 +9,11 @@ brane gives the \(E_1\)-Hochschild complex of
 \(J(f)=\operatorname{Tr}f(\phi_1,\phi_2)\) gives the coordinate
 generator assignment whose centre lift is the closed-to-open morphism
 problem.  The Mixed Holomorphic--Topological Deligne conjecture asserts
-that, before choosing the vacuum, this local Hochschild chart is the
-restriction of the chiral derived centre of the primitive open boundary
-category at \(d=2\).
+the existence of a global Morita chiral \(E_2\)-centre equivalence whose
+formal fibre at a chosen vacuum is this Hochschild chart, after the
+all-arity operations, centre-lift homotopies, descent data, quantum
+master-equation data, anomaly/locality null-homotopies, and
+comparison-cone contraction data have been constructed.
 
 The higher factorization-categorical setting consists of holomorphic
 factorization algebras, mixed holomorphic--topological factorization
@@ -420,16 +422,27 @@ For the bulk closed-string sector
 $\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}\in\mathrm{ChirAlg}^{\mathrm{HT}}_{2,2}(\R^2\times\C^2)$
 of Construction~\ref{app:constr:bulk-fact-Ed} and the boundary open
 category $\mathcal{C}^{\mathrm{op}}_\partial$ of
-Definition~\ref{app:defn:brane-cat}, there is a canonical equivalence
+Definition~\ref{app:defn:brane-cat}, the conjectural datum is an
+open--closed morphism of mixed-HT chiral algebras
   \[
+	  \mathrm{OCA}\colon
 	  \mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}
-	   \;\simeq\;
+	   \longrightarrow
 	   Z^{\mathrm{der},\mathrm{Mor}}_{E_2^{\mathrm{HT}}}
 	   \bigl(\mathcal{C}^{\mathrm{op}}_\partial\bigr)
 	\]
-of mixed-HT chiral algebras at $d=2$, where the right-hand side is the
-Morita mixed-HT chiral derived centre of
-Definition~\ref{app:defn:Z-der-HT}.  After choosing a dualisable
+at $d=2$, where the right-hand side is the Morita mixed-HT chiral
+derived centre of Definition~\ref{app:defn:Z-der-HT}, together with an
+operadic homotopy inverse or, equivalently, a contraction of
+\(\operatorname{Cone}(\mathrm{OCA})\) in the admissible coefficient
+category.  The datum is defined only after the following construction
+packages have been fixed: the all-arity chiral \(E_2\) operations, the
+Morita centre-lift Maurer--Cartan homotopies, the Weiss/Ran descent
+cochains, the Costello quantum master-equation counterterm tower, the
+anomaly and locality null-homotopies, and the comparison-cone
+contraction.  Relative to this datum the morphism is required to be a
+quasi-isomorphism; before these choices are made the conjecture is an
+obstruction problem, not a distinguished map.  After choosing a dualisable
 \(b\in\mathcal C^{\mathrm{op}}_\partial\), the evaluation
 \(\operatorname{ev}_b\) gives the Hochschild chart
 \(C^\bullet_{\mathrm{ch},\mathrm{HT}}(A_b,A_b)\); the chart is not a
@@ -1337,8 +1350,8 @@ where \(\mathrm{Ob}_{F}\) and \(\mathrm{Ob}_{R}\) are the obstructions
 to the formality and Ran-descent hypotheses beyond the formal
 Hamiltonian-current suboperad.  The formal-Darboux stalk theorem and
 Theorem~\ref{app:thm:formal-polydisk-all-arity-current-operad}
-compute the \(d=2\) local Hamiltonian-current operations on which any
-global theorem restricts; vanishing of
+compute the \(d=2\) local Hamiltonian-current operations to which any
+global open--closed comparison must restrict; vanishing of
 \(\mathrm{Ob}_{\mathrm{ch}E_d}\) is the additional global condition.
 \end{rmk}
 
@@ -1683,11 +1696,20 @@ order-\(n\) part of the quantum master equation has the form
    -\Delta_L S^{(n-1)},\qquad
   d_{\mathrm{cl}}^L=Q+\{S^{(0)}[L],-\}_L .
 \]
-The right-hand side is \(d_{\mathrm{cl}}^L\)-closed by the Jacobi identity
-for the BV bracket and by \(\Delta_L^2=0\).  Its cohomology class is the
-Costello obstruction at loop order \(n\).  By hypothesis this class
-vanishes and a compatible primitive is chosen; induction constructs
-\(S^{(n)}\) for every \(n\).
+The right-hand side is \(d_{\mathrm{cl}}^L\)-closed by the order
+\(<n\) quantum master equation and the Costello BV identities
+\[
+  (d_{\mathrm{cl}}^L)^2=0,\qquad
+  [d_{\mathrm{cl}}^L,\Delta_L]=0,\qquad
+  \Delta_L\{a,b\}_L
+   =\{\Delta_La,b\}_L
+    +(-1)^{|a|+1}\{a,\Delta_Lb\}_L .
+\]
+The first identity is the classical master equation for \(S^{(0)}[L]\);
+the other two are part of the supplied scale-\(L\) BV package.  Its
+cohomology class is the Costello obstruction at loop order \(n\).  By
+hypothesis this class vanishes and a compatible primitive is chosen;
+induction constructs \(S^{(n)}\) for every \(n\).
 
 The scalar-contact projection, finite-window residual complexes, curved
 bulk-to-defect kernel, compatible counterterms, and zero Milnor/Roos
