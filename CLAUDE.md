@@ -219,9 +219,12 @@ Lead with content that has compute backing. Flag content with no compute verific
 
 - `main.tex` — root.
 - `abstract.tex`, `preamble.tex`, `authors.tex`, `commands.tex`, `mathmacros.tex`, `notation.tex`, `nomenclature.tex` — bound parts.
-- `appendix-sign-conventions.tex`, `appendix-master-deformation-complex.tex`, `appendix-algorithms.tex`, `appendix-matlis-principal-parts.tex`, `appendix-full-psi-homology.tex`, `appendix-radial-parts-moyal.tex`, `appendix-factorization-current-conventions.tex`, `appendix-unreduced-bv-qme.tex` — appendices.
-- `tate-T2-nilpotent-truncation.tex`, `tate-T4-bv-vanishing.tex`, `tate-T5-chain-level-primitive.tex`, `tate-P3-universality.tex` — theorem files.
-- `frontier_mnop_framing_volume.tex` — frontier volume.
+- `section-obstruction-calculus.tex` — §7 (the obstruction calculus: $\mathfrak{K}_T$, $\Theta_{\mathrm{loc}}$, $F_T$, four-curvature taxonomy, six-coordinates-one-curvature).
+- `section-pro-matlis-envelope.tex` — §8 (the pro-Matlis target: Matlis principal parts, residue pairing, Fourier–Rees bridge).
+- `typed-boundary-open-closed.tex` — §9 (boundary open–closed type theorem; carries `thm:main-global-deligne-criterion`).
+- `appendix-sign-conventions.tex`, `appendix-algorithms.tex`, `appendix-full-psi-homology.tex`, `appendix-radial-parts-moyal.tex`, `appendix-factorization-current-conventions.tex`, `appendix-unreduced-bv-qme.tex`, `appendix-completion-formal-local-theorem.tex`, `appendix-higher-factorization-categories.tex` — appendices.
+- `tate-T1-weighted-completion.tex`, `tate-T2-nilpotent-truncation.tex`, `tate-T3-quillen-equivalence.tex`, `tate-T5-chain-level-primitive.tex`, `tate-P3-universality.tex` — §5 theorem files; `tate-T4-bv-vanishing.tex`, `tate-P1-hadamard-mittag-leffler.tex` — §7 theorem files; `tate-P1b-bmk-promatlis-transfer.tex` — §8 theorem file (BMK transfer / pro-Matlis retract); `tate-P5-cross-volume.tex` — §11 comparison file.
+- `frontier_mnop_framing_volume.tex` — frontier volume (standalone; not input into `main.tex`).
 - `Makefile`, `firstorder.{png,svg}`, `thirdordera.{png,svg}`, `thirdorderb.{png,svg}` — build apparatus and diagrams.
 - `scripts/` — computations.
 

@@ -9285,6 +9285,8 @@ Theorem~\ref{thm:main-global-deligne-criterion}.
 
 \input{tate-T3-quillen-equivalence}
 
+\subsection{Uniqueness and rigidity of the trace coordinate}\label{ssec:trace-coordinate-uniqueness}
+
 \begin{cor}[Moment-map specialisation]\label{cor:moment-map-shadow}
   In the situation of \ref{thm:reduced-ce-pv-central-operation}, the
   degree-zero specialization of \(\Phi_{\mathrm{coord}}\) on the
@@ -10907,7 +10909,7 @@ Hamiltonian bracket deforms the special fibre inside that admissible
 enveloping algebra; on the brane side the matching deformation at order
 one is the Hamiltonian trace bracket proved below.
 
-\subsubsection{First-order Poisson identification}
+\subsection{First-order Poisson identification}
 
 The formal-stalk chart evaluates a closed Hamiltonian on the matrix-valued
 transverse coordinate \((\phi_1,\phi_2)\); Dirac reduction forces
@@ -12107,7 +12109,7 @@ contraction producing the coefficient $(kn-lm)$ in
 Proposition~\ref{prop:first-order-bracket}. An independent
 Feynman-integral proof has Costello graph weights as its input.
 
-\subsubsection{Quantization and the brane trace map}\label{sssec:quantization-trace-map}
+\subsection{Quantization and the brane trace map}\label{sssec:quantization-trace-map}
 
 Three operations are at stake: Moyal star-quantisation of
 Hamiltonians on the formal symplectic polydisk, Weyl quantisation of
@@ -12788,589 +12790,7 @@ Theorem~\ref{thm:bulk-boundary}.
   action requires the principal-part target.
 \end{rmk}
 
-\subsubsection{Graph formalism and specialization datum}
-
-The Moyal coefficients \(\hbar P\), \(\hbar^3 P^3/24\), \(\hbar^5 P^5/1920\),
-\(\hbar^7 P^7/322560\) of the previous subsection form the algebraic
-model.  Costello's heat-kernel BV calculus produces coefficients of
-the same operad-theoretic shape from different data: an elliptic
-parent theory, a propagator, a counterterm scheme, an anomaly class,
-and a trace normalisation.  The question is whether these two
-calculations land on the same coefficients on the brane-defect
-complex.
-
-\begin{stmt}[Costello perturbative BV construction]\label{stmt:costello-bv-construction}
-  For an elliptic BV theory with a gauge fixing, heat kernel $K_t$, propagator
-  $$P_{\epsilon,L}=\int_{\epsilon}^{L}Q^{\mathrm{GF}}K_t\,dt,$$
-  and a renormalization scheme, Costello constructs finite-scale effective
-  interactions by the RG operator
-  $$W(P_{\epsilon,L},I[\epsilon])
-    =\hbar\log\!\left(\exp(\hbar\partial_{P_{\epsilon,L}})
-       \exp(I[\epsilon]/\hbar)\right).$$
-  The renormalized interaction is obtained by adding local counterterms and
-  taking the $\epsilon\to0$ limit. It has the connected-graph expansion
-  $$I[L]=\sum_{\Gamma\ \mathrm{connected}}
-    \frac{\hbar^{b_1(\Gamma)+\sum_v g_v}}{|\operatorname{Aut}\Gamma|}
-    W_\Gamma(P_{\epsilon,L};I_{g_v}[\epsilon]+I^{\mathrm{CT}}_{g_v}(\epsilon)),$$
-  satisfies RG flow and locality, and satisfies the quantum master equation
-  when the obstruction classes vanish \cite{costello-renormalization}. The
-  resulting quantum observables form a factorization algebra
-  \cite{costello-gwilliam}\cite{costello-gwilliam-vol2}.
-\end{stmt}
-
-\begin{stmt}[Costello--Li flat open-closed BCOV theorem]\label{stmt:costello-li-flat-bcov}
-  Costello--Li prove a perturbative quantization of open-closed BCOV
-  theory on flat $\C^d$, for $d$ odd, unique up to the equivalences in their
-  renormalization scheme, with open gauge algebra
-  $\mathfrak{gl}(N\mid N)$ and compatibility under
-  $\mathfrak{gl}(N\mid N)\hookrightarrow\mathfrak{gl}(N+k\mid N+k)$. In that
-  flat open-closed BCOV/HCS theory they compute the anomaly cancellation needed
-  for the graph construction \cite{costello-li-open-closed-bcov}. Ordinary
-  $\mathfrak{gl}_N$ and the mixed $\R^2\times\C^2$ Hamiltonian brane model
-  require an additional reduction or summand argument.
-\end{stmt}
-
-\begin{rmk}
-  Theorem~\ref{thm:main-local} uses the formal Hamiltonian BF
-  calculation.  The brane
-  \(L=\R_{\mathrm{brane}}\times\{0\}\times\{p\}\) is a defect in the
-  mixed space; a spacetime-boundary interpretation requires a chosen
-  half-space model.
-\end{rmk}
-
-\begin{lem}[Finite-window obstruction for the full Hamiltonian sector]\label{lem:finite-window-hamiltonian-obstruction}
-  The polynomial Hamiltonian Lie algebra of the formal symplectic plane has
-  the following finite-window obstructions to a finite-dimensional Lie
-  truncation compatible with the full Hamiltonian sector:
-  \begin{enumerate}
-    \item finite degree windows have a Lie-subalgebra obstruction;
-    \item projected degree-window brackets can violate Jacobi;
-    \item $\mathfrak m$-adic jet quotients have a Lie-quotient obstruction in the
-      presence of linear Hamiltonians;
-    \item directed finite-dimensional Lie-subalgebra exhaustion is obstructed
-      containing the full polynomial Hamiltonian algebra.
-  \end{enumerate}
-\end{lem}
-
-\begin{proof}
-  Let $H_d$ be the span of homogeneous polynomials of degree $d$, and let
-  $\mathfrak m=(z_1,z_2)$. The Poisson bracket satisfies
-  $\{H_p,H_q\}\subset H_{p+q-2}$. Thus
-  $$\{z_1^N,z_2^N\}=N^2z_1^{N-1}z_2^{N-1},$$
-	  which has degree $2N-2>N$ for $N>2$, so degree $\leq N$ windows have
-  a Lie-subalgebra obstruction.
-
-	  Projecting the bracket back to a degree window creates a Jacobi obstruction.
-  For the bracket $\pi_{\leq3}\{-,-\}$, take
-  $$f=z_2,\qquad g=z_2^3,\qquad h=z_1^2z_2.$$
-  A direct calculation gives the projected Jacobiator
-  $$[[f,g]_3,h]_3+[[g,h]_3,f]_3+[[h,f]_3,g]_3=6z_2^3.$$
-
-	  The $\mathfrak m$-adic quotients have a stability obstruction under translations generated
-  by linear Hamiltonians:
-  $$\{z_1^{N+1},z_2\}=(N+1)z_1^N\notin\mathfrak m^{N+1}.$$
-	  Hence $\mathfrak h/\mathfrak m^{N+1}$ has a Lie-quotient obstruction for
-  the full Hamiltonian algebra.
-
-  Any finite-dimensional Lie subalgebra containing
-  $$a=z_1^2z_2^2,\qquad b=z_1^3z_2$$
-  contains all iterated brackets
-  $$(\operatorname{ad}_a)^n(b)=(-4)^n z_1^{n+3}z_2^{n+1},\qquad n\geq0,$$
-  an infinite linearly independent set. Thus directed finite-dimensional
-  Lie-subalgebra exhaustion is obstructed for the full polynomial Hamiltonian
-  algebra.
-\end{proof}
-
-\begin{rmk}[Linear heat operator versus BV kernel]\label{rmk:linear-heat-versus-bv-kernel}
-  On the linear field complex
-  $$\Omega^\bullet(\R^2)\widehat\otimes
-    \Omega^{0,\bullet}(\C^2)\widehat\otimes
-    \bigl(\widehat{\mathfrak h}[1]\oplus
-      \widehat{\mathfrak h}^{\vee}_{\mathrm{cont}}[2]\bigr),$$
-  the flat gauge fixing
-  $$Q^{\mathrm{GF}}=d_{\R^2}^*+\bar\partial_{\C^2}^*,\qquad
-    \Delta=[d_{\R^2}+\bar\partial_{\C^2},Q^{\mathrm{GF}}]$$
-  gives finite-scale heat operators
-  $$K_t=K_t^{\mathrm{base}}\widehat\otimes\mathrm{id},\qquad
-    P_{\epsilon,L}^{\mathrm{op}}
-      =\int_\epsilon^L Q^{\mathrm{GF}}K_t^{\mathrm{base}}\,dt
-        \widehat\otimes\mathrm{id}$$
-  satisfying
-  $$[d_{\R^2}+\bar\partial_{\C^2},P_{\epsilon,L}^{\mathrm{op}}]
-    =K_\epsilon-K_L$$
-  as continuous operators on the completed coefficient spaces. This is an
-  operator-level homotopy. Costello's BV propagator also requires a
-  coefficient coevaluation kernel for the Tate pair
-  $\widehat{\mathfrak h}\oplus\widehat{\mathfrak h}^{\vee}_{\mathrm{cont}}$.
-  In the product/direct-sum topology used here, the formal sum of homogeneous
-  coefficient coevaluations diverges in the completed tensor
-  product. Thus the analytic graph problem requires a genuine Tate or weighted
-  coefficient extension of the heat-kernel calculus, or a declared restriction
-  to a smaller sector.
-\end{rmk}
-
-\begin{lem}[Tate Casimir obstruction for the full Hamiltonian sector]\label{lem:tate-casimir-obstruction}
-  In the product/direct-sum Tate topology
-  $$\mathfrak h=\prod_{d\geq1}H_d,\qquad
-    \mathfrak h^\vee_{\mathrm{cont}}=\bigoplus_{d\geq1}H_d^\vee,$$
-  the coefficient coevaluation
-  $$C_{\mathfrak h}=\sum_{d\geq1}\sum_i e_{d,i}\otimes e^i_{d}$$
-  lies in neither $\mathfrak h\widehat\otimes\mathfrak h^\vee_{\mathrm{cont}}$
-  nor $\mathfrak h^\vee_{\mathrm{cont}}\widehat\otimes\mathfrak h$.
-  Consequently the full Hamiltonian sector lacks a strict BV pairing
-  in this topology; a Costello coefficient kernel here requires a
-  different coefficient category. The
-  operator-level homotopy of
-  Remark~\ref{rmk:linear-heat-versus-bv-kernel} gives a BV propagator,
-  BV Laplacian, and renormalized graph weights only after a coefficient
-  category in which the Casimir converges has been chosen.
-\end{lem}
-
-\begin{proof}
-  For each $d$, choose a basis $\{e_{d,i}\}_i$ of $H_d$ and the dual basis
-  $\{e^i_d\}_i$ of $H_d^\vee$. An element of a completed tensor product with
-  the direct-sum factor $\bigoplus_d H_d^\vee$ has finite support in that
-  direct-sum direction in the Tate convention used here. The displayed formal
-  Casimir has a nonzero component in every $H_d^\vee$. Hence the tensor
-  diverges. The same support obstruction holds with the tensor factors
-  reversed. Costello's heat-kernel BV formalism requires the inverse pairing as
-  a distributional kernel on the field complex; an abstract continuous operator
-  is insufficient. The weighted Tate completion of
-  Corollary~\ref{cor:wt-cotangent-lift} resolves this Casimir obstruction by
-  changing the coefficient category; the unweighted diagnosis here remains
-  the structural reason that change is required.
-\end{proof}
-
-\begin{prob}[Hamiltonian specialization datum for Costello perturbative BV]\label{prob:analytic-graph-realization}
-  \begin{itemize}
-    \item \emph{Theory:} a Costello open--closed BV theory
-      in the heat-kernel BV framework whose restriction is
-      the formal-local Hamiltonian BF
-      sector \(\R^2\times\C^2\) of \S\ref{ssec:local-setup}.
-    \item \emph{Hypotheses:} an elliptic parent or stated
-      dimensional reduction; field topology, BV pairing, gauge
-      fixing, heat-kernel propagator; weighted Tate coefficient
-      kernel
-      (Corollary~\ref{cor:wt-cotangent-lift}); brane-defect condition;
-      ribbon graph data; Capelli/scalar normalisation; bulk-to-defect
-      kernel.
-    \item \emph{Obstruction complex:} the Tate Casimir
-      \(\mathfrak o_{\mathrm{Cas}}\)
-      (Lemma~\ref{lem:tate-casimir-obstruction}); the scalar-symbol
-      class \(\hbar N[\bar c]\)
-      (Theorem~\ref{thm:scalar-qme-alternatives}); the reduced
-      non-scalar QME class
-      \([\operatorname{Ob}^{\mathrm{red}}_{w,\partial,\hbar}]\)
-      (Problem~\ref{prob:quantum-p0-operation-realization}); the
-      \(\theta_3\) finite-window class
-      (Theorem~\ref{thm:app-theta-three-finite-window-H1}).
-    \item \emph{Vanishing criterion:} weighted Tate completion closes
-      \(\mathfrak o_{\mathrm{Cas}}\); a balanced or unreduced source
-      replacement closes \(\hbar N[\bar c]\); the reduced
-      non-scalar class is closed exactly on the locus where the
-      filtered scalar-contact tower of
-      Theorem~\ref{thm:wt-nonscalar-counterterm-criterion} closes.
-    \item \emph{First nonzero example:} the strict full-polydisk
-      product/direct-sum coefficient pair carries a nonzero
-      \(\mathfrak o_{\mathrm{Cas}}\); the ordinary scalar-reduced
-      \(\mathfrak{gl}_N\) branch carries nonzero
-      \(\hbar N[\bar c]\) at order \(\hbar^1\) on the linear pair
-      \((z_1,z_2)\).
-    \item \emph{Physical meaning:} the analytic specialization datum
-      is the elliptic parent and the brane-defect renormalisation
-      under which Costello's heat-kernel BV calculus and the
-      Hamiltonian trace map is simultaneously controllable.
-  \end{itemize}
-
-  \noindent\emph{Statement.}
-  Costello gives the general renormalized BV graph calculus. For
-  the Hamiltonian sector here, the required data begin with an elliptic
-  closed-open parent theory, or a stated dimensional reduction of one,
-  whose restriction is this Hamiltonian BF sector and whose obstruction
-  class vanishes. The required data are:
-  \begin{enumerate}
-    \item choose the mechanism: either prove that the Hamiltonian cotangent BF
-      complex
-      $$\Omega^\bullet(\R^2)\widehat\otimes
-        \Omega^{0,\bullet}(\C^2)\widehat\otimes
-        \bigl(\widehat{\mathfrak h}[1]\oplus
-        \widehat{\mathfrak h}^{\vee}_{\mathrm{cont}}[2]\bigr)$$
-      is literally a closed sector of a Costello open--closed BV theory, or
-      prove that it is obtained by a specified dimensional reduction. The chosen
-      mechanism must determine the field topology, degree $-1$ BV pairing,
-      differential, local interaction, bracket degree, and a homotopy retract
-      closed under the propagator and RG flow. Since
-      $\widehat{\mathfrak h}$ is a completed Tate coefficient system, the proof
-	      goes through a Tate or weighted-coefficient extension; finite-degree
-      and $\mathfrak m$-adic truncations carry the obstruction of
-      Lemma~\ref{lem:finite-window-hamiltonian-obstruction}. It must
-      construct a genuine Tate or weighted-coefficient extension of Costello's
-      heat-kernel calculus \cite{costello-renormalization} compatible with the Poisson bracket
-      and RG flow, or restrict to a smaller Lie sector such as the
-      classical $\mathfrak m^3/\mathfrak m^{N+1}$ truncation and
-      explicitly declare that translations, the conformal
-      $\mathfrak{sl}_2$ sector, and the all-order Moyal closure have
-      been removed. By
-      Lemma~\ref{lem:tate-casimir-obstruction}, a damping factor inside the
-      direct-sum dual fixed above is insufficient; the coefficient category
-      itself must be replaced by one in which the Casimir converges, or the
-      sector must be restricted;
-    \item specify the asymptotic conditions on $\C^2$ and the brane-defect
-      condition on \(L=\R_{\mathrm{brane}}\times\{0\}\times\{p\}\);
-    \item choose the induced finite-scale gauge fixing, heat-kernel propagator,
-      and BV Laplacian in this sector. The infrared limit $L\to\infty$ may be
-      used only after the zero modes and harmonic projection have been fixed;
-	    \item compute the obstruction/anomaly class for this mixed Hamiltonian
-	      sector. Concretely, represent the obstruction as a local
-	      functional class in the chosen bulk-defect local-functional complex. If
-	      the defect cotangent sector is represented by principal-part currents,
-	      the target must either be replaced by a current-compatible complex
-	      \[
-	        \mathcal O_{\mathrm{loc}}^{\mathrm{bd}}\bigl(
-	          \mathcal E_w;\mathfrak J_{\partial}^{\mathrm{pp}}\bigr),
-	      \]
-	      with wavefront and counterterm rules for \(\mathcal D'_c\)-coefficients,
-	      or the theorem must restrict \(B\) to regular compactly supported
-	      densities.  In
-	      the weighted Tate category the obstruction is a class
-	      \[
-	        \operatorname{Ob}_{w,n}\in
-	        H^1_{\mathrm{adm}}\bigl(\mathcal O_{\mathrm{loc}}(\mathcal E_w),
-	          Q+\{I_0^w,-\}\bigr)
-	      \]
-		      coming from the $n$-loop obstruction to the quantum master equation after
-	      counterterms. Costello--Li's flat $\mathfrak{gl}(N\mid N)$ anomaly
-      cancellation gives a source theorem and a model; transfer requires
-      proof. To execute it one must prove that constant-Hamiltonian
-      projection and connected trace extraction kill the ordinary
-      $\mathfrak{gl}_N$ anomaly, or else replace the open sector by the
-      appropriate super or special-linear variant. The
-      first defect-local obstruction is the
-      Capelli contact term
-      $$\omega_{\mathrm{Cap}}(A)=N\,\overline{\mathrm{Tr}(A)},$$
-      represented by
-      $$\mathrm{Tr}(A\,XY)-\mathrm{Tr}(A\,YX)
-        =\hbar N\,\mathrm{Tr}(A)
-        \quad\bmod\ \mathcal W_N\widehat\mu(\lie{sl}_N).$$
-		      It survives the ordinary connected trace projection, since the
-	      right-hand side is a nonempty connected trace when $A$ is nonconstant.
-	      The anomaly datum must therefore be a filtered local class
-	      \(\operatorname{Ob}_{\mathrm{bd}}\) whose scalar-symbol projection is
-	      \[
-	        \sigma_{\mathrm{sc}}(\operatorname{Ob}_{\mathrm{bd}})
-	          =\hbar N[\bar c]\in
-	            H^2_{\mathrm{Lie}}(\bar A;\C)[[\hbar]] .
-	      \]
-		      A closed-exchange cancellation is the datum of
-	      \(W_{\mathrm{closed\,exch}}\) and a counterterm \(C\) with scalar
-	      leading class
-	      \[
-	        [w_{\mathrm{add}}]=-\hbar N[\bar c]
-	        \qquad\text{in }H^2_{\mathrm{Lie}}(\bar A;\C)[[\hbar]]
-	      \]
-	      and with
-	      $$\omega_{\mathrm{Cap}}+W_{\mathrm{closed\,exch}}
-	        +(Q+\{I_0,-\})C=0.$$
-	      The proved local mechanisms here are the specified supertrace and
-	      central-character normalizations; any exhaustive classification is
-	      controlled by the displayed obstruction complex;
-	    \item construct the bulk-to-defect kernel as a curved/cochain-level map
-	      \(\kappa\) to the Poisson central-operation object of the brane
-	      observables. After counterterms it must satisfy
-	      \[
-	        \operatorname{Curv}(\kappa)
-	          =d\kappa+\frac12[\kappa,\kappa]=0.
-	      \]
-	      On degree-zero Hamiltonians it must send \(f(z_1,z_2)\) to the
-	      Weyl-ordered boundary observable
-	      \(\mathrm{Tr}\,\operatorname{Op}_{\mathrm W}(f)(\phi_1,\phi_2)\),
-	      and it must satisfy the Ward identity and the quantum moment-map
-	      constraint. Its cotangent component must either restrict the
-	      principal-part current \(B\) to regular defect densities, or prove
-	      that the chosen Costello bulk-defect observable category admits the
-	      required compactly supported distributions with wavefront,
-	      counterterm, finite-window, and RG compatibility;
-    \item define the relevant boundary ribbon graphs: cyclic order, boundary
-      components, automorphism factors, propagator labels, and the relation
-      between Costello's loop-counting $\hbar$ and the Weyl contraction
-      parameter. Equivalently, one must prove that a single boundary
-      cross-contraction is $P/2$ in the Weyl convention;
-    \item fix the one-propagator boundary graph normalization. For monomials
-      $f=z_1^kz_2^l$ and $g=z_1^mz_2^n$, the raw first boundary commutator must
-      have coefficient
-      $$\hbar(kn-lm)z_1^{k+m-1}z_2^{l+n-1},$$
-      equivalently the normalized commutator must have coefficient
-      $$(kn-lm)z_1^{k+m-1}z_2^{l+n-1};$$
-    \item after the first normalization, compute the three-propagator boundary
-      graph normalization and prove that the connected order-$\hbar^3$
-      commutator contributes exactly
-      $$\frac{\hbar^3}{24}P^3(f,g)$$
-      with $P=\partial_{z_1}\otimes\partial_{z_2}
-      -\partial_{z_2}\otimes\partial_{z_1}$;
-	    \item give the convention for extracting connected single-trace and
-	      multi-trace coefficients as primitive trace classes, and
-	      prove that this extraction cancels, renormalizes, or otherwise accounts
-	      for the normal-ordering shift of
-	      Remark~\ref{rmk:normal-ordering-obstruction};
-	    \item construct the renormalization scheme and counterterm locality
-	      statement in this mixed bulk-defect sector. For every divergent graph
-	      whose \(\epsilon\to0\) limit is subtracted, choose compatible
-	      representatives
-	      \[
-	        C_{\Gamma,w}^{w_0}(\epsilon)\in
-	          \mathcal O_{\mathrm{loc}}(\mathcal E_w^{w_0})
-	      \]
-	      with
-	      \[
-	        \pi_{w_0'w_0}C_{\Gamma,w}^{w_0'}=C_{\Gamma,w}^{w_0},
-	        \qquad
-	        R^{w_0}_{w,w'}C_{\Gamma,w}^{w_0}=C_{\Gamma,w'}^{w_0},
-	      \]
-	      prove support on the relevant bulk diagonal or brane-collision
-	      stratum, and check that RG flow carries these representatives inside
-	      the same local-functional subcomplex;
-	    \item extend the bulk-to-defect kernel to the cotangent boundary-current
-	      target, or record the obstruction. In the reduced setting the
-	      extension must land in the principal-part current object of
-	      Theorem~\ref{thm:reduced-principal-part-boundary-current}; before
-	      contraction it must contain the unreduced data of
-	      Remark~\ref{rmk:unreduced-lift-obstruction}. On the cotangent summand it
-	      must realize the principal-part coadjoint action of
-	      Theorem~\ref{thm:principal-part-coadjoint-uniqueness}, and at the
-	      Moyal level the \(\mathfrak h_\hbar^\vee\)-action induced by the
-	      residue pairing. The allowed substitute for polynomial one-\(\psi\)
-	      representatives is a completed continuous-dual boundary realization.
-	  \end{enumerate}
-\end{prob}
-
-\begin{thm}[Scalar QME obstruction and cancellation branches]
-\label{thm:scalar-qme-alternatives}
-  \begin{itemize}
-    \item \emph{Obstruction:} cancellation of the scalar-symbol
-      QME obstruction in the ordinary scalar-reduced
-      \(\mathfrak{gl}_N\) brane-defect model.
-    \item \emph{Hypotheses:} on the source side, an
-      \(\bar A\)-cochain \(J\) with \(d_{\mathrm{CE}}J=-\hbar N\bar c\),
-      or an alternative source category in which \(\bar c\) is
-      cohomologous to zero; on the Costello side, finite-window
-      complexes \(\mathcal X^\bullet_{\mathrm{sc},w,M}\), cochain
-      maps \(\Xi^{\mathrm{Cost},\mathrm{sc}}_M\), a filtered scalar
-      chain projection \(\widehat\sigma_{\mathrm{sc},M}\), and
-      compatible local counterterms.
-    \item \emph{Obstruction complex:} the Lie cohomology class
-      \(\hbar N[\bar c]\in H^2_{\mathrm{Lie}}(\bar A;\C)[[\hbar]]\),
-      and its filtered Costello image
-      \(\beta_M^{\mathrm{Cost},\mathrm{sc}}=
-      [\hbar N[\bar c_M]]\in
-      \operatorname{coker}H^1(\widehat\sigma_{\mathrm{sc},M}
-      \Xi^{\mathrm{Cost},\mathrm{sc}}_M)\).
-    \item \emph{Vanishing criterion:} either replace the scalar-reduced
-      source by the unreduced source, the central-character source,
-      the opposite central extension, the balanced
-      \(\mathfrak{gl}(N|N)\)-supertrace source, or the algebraic
-      central-contact cone --- each cancellation is a source
-      replacement, made explicit below; alternatively, give a
-      Costello-local closed-exchange triple
-      \((W_M,C_M,\widehat\sigma_{\mathrm{sc},M})\) with
-      \(\beta_M^{\mathrm{Cost},\mathrm{sc}}=0\) and compatible
-      truncation.
-    \item \emph{First nonzero example:} on the linear pair
-      \((z_1,z_2)\), \(\omega(z_1,z_2)=1\) and \(\bar c\ne0\) in
-      \(H^2_{\mathrm{Lie}}(\bar A;\C)\); the projective Moyal
-      commutator gives the Capelli term \(\hbar N\cdot\mathbf 1\)
-      at order \(\hbar^1\).
-    \item \emph{Physical meaning:} the scalar-symbol QME obstruction
-      records the brane center-of-mass anomaly that survives ordinary
-      \(\mathfrak{gl}_N\) Hamiltonian reduction; cancelling it
-      requires changing what one means by ``Hamiltonian'' (source
-      replacement) or giving a closed-exchange counterterm with a
-      matched scalar leading class.
-  \end{itemize}
-
-  \noindent\emph{Statement.}
-  Let \(A=\C[z_1,z_2]\), \(\bar A=A/\C\cdot1\), and
-  \[
-    \omega(f,g)=[\{f,g\}]_0 .
-  \]
-  Write \(\bar c\) for the induced Lie two-cocycle on \(\bar A\).
-  In the ordinary scalar-reduced \(\lie{gl}_N\) brane-defect model, the
-  scalar-symbol part of the mixed QME obstruction is represented by
-  \[
-    \operatorname{Ob}_{\mathrm{sc}}(\gamma_{\mathbf 1};a,f;b,g)
-    =
-    \hbar N\,\omega(f,g)
-    \int_\R a(t)b(t)\gamma_{\mathbf 1}(t)\,dt ,
-  \]
-  and its associated-graded CE class is
-  \[
-    \hbar N[\bar c]\,\gamma_{\mathbf 1}
-    \in H^2_{\mathrm{Lie}}(\bar A;\C\gamma_{\mathbf 1})[1][[\hbar]] .
-  \]
-  Forgetting the central ghost coefficient gives
-  \(\hbar N[\bar c]\in H^2_{\mathrm{Lie}}(\bar A;\C)[[\hbar]]\).
-  For \(N>0\), this class is nonzero in the scalar-reduced source.  Hence the
-  leading scalar symbol obstructs internal scalar-reduced local counterterms.
-
-  The cancellation mechanisms have distinct types.
-  \begin{enumerate}
-    \item On the unreduced source \(A\), the functional
-      \(\eta(f)=-[f]_0\) satisfies \(d_{\mathrm{CE}}\eta=\omega\).  Thus
-      \[
-        \hbar N\omega+d_{\mathrm{CE}}(-\hbar N\eta)=0
-      \]
-      before quotienting constants.
-    \item Equivalently, after replacing the scalar-reduced source by the
-      unreduced source with central character
-      \(\chi_N(f)=N[f]_0\), the scalar term becomes exact before it becomes
-      a reduced obstruction class.
-    \item Equivalently in the scalar-replacement category, define the
-      opposite scalar central extension
-      \[
-        \bar A^{\mathrm{cl}}_{-\hbar N\bar c}
-        =
-        \bar A\oplus\C[[\hbar]]K_{\mathrm{cl}},
-      \]
-      with
-      \[
-        [(f,aK_{\mathrm{cl}}),(g,bK_{\mathrm{cl}})]
-        =
-        \bigl(\{f,g\}_{\bar A},
-        -\hbar N\,\bar c(f,g)K_{\mathrm{cl}}\bigr),
-        \qquad [K_{\mathrm{cl}},-]=0 .
-      \]
-      If \(k^\vee(K_{\mathrm{cl}})=1\) and
-      \(k^\vee(\bar A)=0\), then for
-      \(J_{\mathrm{op}}=-k^\vee\)
-      \[
-        d_{\mathrm{CE}}J_{\mathrm{op}}=-\hbar N\,\bar c,
-        \qquad
-        \operatorname{Ob}_{\mathrm{sc}}+d_{\mathrm{CE}}J_{\mathrm{op}}=0 .
-      \]
-      The cancellation is compatible with scalar finite-window
-      projections retaining \(z_1,z_2\).  It is a source replacement;
-      after forgetting \(K_{\mathrm{cl}}\), the class
-      \(\hbar N[\bar c]\) on \(\bar A\) reappears.
-    \item In the balanced supertrace model \(V=\C^{N|N}\), the scalar
-      coefficient is \(\operatorname{sdim}V=0\); the scalar
-      brane-defect QME representative vanishes in that model.
-    \item The finite-window algebraic central-contact cone is a genuine
-      changed source branch.  After adjoining a defect-supported central
-      closed source line \(\C[[\hbar]]e_M\) with
-      \[
-        \Xi^{\mathrm{alg},\mathrm{sc}}_M(e_M)
-        =
-        -\hbar N\,\bar c_M
-      \]
-      on the scalar-contact line, the choice \(W_M=e_M\) and \(C_M=0\)
-      cancels the finite-window scalar row, and the corresponding
-      \(\beta,\mu,\lambda_C\) classes vanish in that enlarged algebraic
-      cone.
-    \item In the original scalar-reduced ordinary \(\lie{gl}_N\) branch, a
-      same-branch closed-exchange or brane-defect contribution can cancel
-      the scalar symbol only if its leading scalar class obeys
-      \[
-        [w_{\mathrm{add}}]=-\hbar N[\bar c]
-        \qquad\text{in }H^2_{\mathrm{Lie}}(\bar A;\C)[[\hbar]].
-      \]
-      Equivalently, a Costello-local closed-exchange solution must contain
-      finite-window closed-source complexes
-      \(\mathcal X^\bullet_{\mathrm{sc},w,M}(I)\), cochain maps
-      \[
-        \Xi^{\mathrm{Cost},\mathrm{sc}}_M\colon
-        \mathcal X^\bullet_{\mathrm{sc},w,M}(I)\to
-        \mathfrak Q^\bullet_{\mathrm{sc},w,M}(I),
-      \]
-      a filtered scalar chain projection
-      \(\widehat\sigma_{\mathrm{sc},M}\), cocycles \(W_M\), and
-      counterterms \(C_M\) such that
-      \[
-        \operatorname{Ob}_{\mathrm{sc},M}
-        +\Xi^{\mathrm{Cost},\mathrm{sc}}_M(W_M)+d_MC_M=0,
-        \qquad
-        H^1(\widehat\sigma_{\mathrm{sc},M}
-        \Xi^{\mathrm{Cost},\mathrm{sc}}_M)[W_M]
-        =
-        -\hbar N[\bar c_M],
-      \]
-      with compatible truncation and vanishing inverse-limit
-      \(\beta,\mu,\lambda_C\) classes.
-  \end{enumerate}
-  The algebraic cone in (4) becomes a Costello-local closed-exchange
-  theorem only after its formal generator is replaced by a closed source
-  complex, finite-scale propagator, bulk-to-defect graph map, source-face
-  Hom differential, local counterterm support, scalar chain projection,
-  and compatible finite-window representatives.  For current genuine
-  Costello-local towers the ordinary scalar-reduced branch is blocked first
-  by
-  \[
-    o_{\sigma,M}^{(1),\mathrm{sc}}=\hbar N[\bar c_M]\ne0,
-  \]
-  and, after any additional scalar condition, by the image obstruction
-  \[
-    \beta_M^{\mathrm{Cost},\mathrm{sc}}
-    =
-    [\hbar N[\bar c_M]]
-    \in
-    \operatorname{coker}
-    H^1(\widehat\sigma_{\mathrm{sc},M}
-    \Xi^{\mathrm{Cost},\mathrm{sc}}_M).
-  \]
-  A complete classification of scalar QME cancellations is a compact
-  theorem.  Any further mechanism must be an explicitly
-  constructed null-homotopy in
-  the filtered QME obstruction complex whose scalar-symbol class cancels
-  \(\hbar N[\bar c]\).
-\end{thm}
-
-\begin{proof}
-  The representative and its nonzero associated-graded class are exactly
-  Theorem~\ref{thm:app-scalar-contact-qme-class}.  Non-exactness in the
-  reduced source is the last part of that theorem: a primitive on
-  \(\bar A\) would lift to a primitive on \(A\) vanishing on \(1\), but
-  \(\omega(z_1,z_2)=1\) and \(\{z_1,z_2\}=1\).
-
-  The first branch is Lemma~\ref{lem:app-unreduced-scalar-primitive},
-  multiplied by \(\hbar N\).  The central-character branch is
-  Theorem~\ref{thm:app-central-character-qme-cancellation}; it is a
-  source replacement before scalar reduction. A counterterm inside the
-  original reduced obstruction complex is a different datum.  The opposite central-extension
-  branch is the same CE sign calculation written as an honest central
-  extension of \(\bar A\): with
-  \((d_{\mathrm{CE}}\lambda)(x,y)=-\lambda([x,y])\), the central bracket
-  \(-\hbar N\bar c(f,g)K_{\mathrm{cl}}\) gives
-  \(d_{\mathrm{CE}}k^\vee=\hbar N\bar c\), hence
-  \(d_{\mathrm{CE}}(-k^\vee)=-\hbar N\bar c\).  Jacobi is exactly the
-  cocycle identity for \(\bar c\), and finite-window compatibility follows
-  because \(\bar c\) is detected on the retained pair \(z_1,z_2\).  The
-  balanced-supertrace branch is
-  Theorem~\ref{thm:app-balanced-supertrace-qme-cancellation}.  The
-  algebraic central-contact cone is the finite-window source extension
-  recorded in the scalar QME source extension; its differential is zero and
-  its scalar image is declared to be \(-\hbar N\bar c_M\), so the displayed
-  cancellation is immediate in that enlarged source.  The same declaration
-  records the missing Costello-local closed-exchange data.  The
-  necessary condition for any same-branch ordinary cancellation is
-  Theorem~\ref{thm:app-ordinary-glN-scalar-obstruction-criterion}.  The
-  additional Costello-local image and scalar-chain obstructions are the
-  filtered Hom conditions in
-  Problem~\ref{prob:quantum-p0-operation-realization}.
-\end{proof}
-
-\begin{rmk}[Parabolic functoriality of the local model]\label{rmk:parabolic-functoriality}
-  The completion along the brane divisor \(z_1=0\) used here breaks the
-  formal symplectomorphism group \(\mathrm{Symp}_{\mathrm{form}}(\C^2,0)\)
-  to the parabolic stabiliser
-  \[
-    P_{(z_1)}=
-    \{\varphi\in\mathrm{Symp}_{\mathrm{form}}(\C^2,0):
-      \varphi^*(z_1)\in (z_1)\}.
-  \]
-		  Any compact comparison therefore requires a parabolic-equivariant
-	  comparison.  Full \(\mathrm{Symp}_{\mathrm{form}}\)-equivariance is
-	  additional compact comparison data.
-\end{rmk}
-
-\subsubsection{Formal Weyl/Moyal algebra, all orders}
+\subsection{Formal Weyl/Moyal algebra, all orders}
 The order-\(\hbar\) projective coefficient
 \[
   [\Phi_\hbar(z_1),\Phi_\hbar(z_2)]_{\mathrm{proj}}
@@ -13819,575 +13239,6 @@ $$\{f,g\}_\hbar=\hbar^{-1}[f,g]_*
   (Proposition~\ref{prop:app-radial-dual-potential-obstruction}).
 \end{rmk}
 
-\begin{prob}[Non-scalar quantum \(P_0\)-operation obstruction complex]\label{prob:quantum-p0-operation-realization}
-  After the four proved components of
-  Theorem~\ref{thm:componentwise-quantum-coefficient-comparison}, the
-  remaining non-scalar Costello QME comparison is the filtered
-  obstruction triple
-  \((o_{\sigma,w}^{(r)},[\operatorname{Ob}^{\mathrm{red}}_{w,\partial,\hbar}],
-  \lambda)\).  Single-class language applies only after the scalar
-  projection and tower-compatibility data have been fixed.
-  \begin{itemize}
-    \item \emph{Morphism:} a chain-level Costello-local
-      \(P_{0,\hbar}\)-factorisation-centre map
-      \(C^\bullet_{\mathrm{CE},\mathrm{cont}}(\mathfrak h_{w,\hbar}\ltimes\mathfrak h^{\vee,w}_{\hbar,\mathrm{cont}}[1])
-      \to Z^{P_{0,\hbar}}_{\mathrm{fact}}(\mathrm{Obs}^\hbar_{\mathrm{open}})|_{\mathfrak S_{\hbar,w}}\),
-      curved bulk-to-defect kernel \(\kappa_{\hbar,w,I}\) included.
-    \item \emph{Hypotheses:} a complete
-      \(d_{\mathrm{QME}}^{L}\)-stable scalar-contact filtration with
-      vanishing successive scalar-symbol extension classes
-      \(o^{(r)}_{\sigma,w}(I)\); a filtered chain projection
-      \(\widehat\sigma_{\mathrm{sc}}\); a curved bulk-to-defect kernel
-      \(\kappa_{\hbar,w,I}\) on the current source of
-      Definition~\ref{def:app-unreduced-nonscalar-current-lift-datum};
-      compatible local counterterms
-      \(C_{\Gamma,w}^{w_0}(\epsilon)\) with finite-window transport.
-    \item \emph{Obstruction class:} the reduced non-scalar QME
-      cohomology class
-      \([\operatorname{Ob}^{\mathrm{red}}_{w,\partial,\hbar}]
-      \in H^1(\ker\widehat\sigma_{\mathrm{sc}},d_{\mathrm{QME}}^{L})\),
-      together with its finite-window
-      \(\varprojlim^1H^0\)-primitive-compatibility class.
-    \item \emph{Vanishing criterion:} successive vanishing of
-      \(o^{(r)}_{\sigma,w}(I)\) for \(r>0\) builds
-      \(\widehat\sigma_{\mathrm{sc}}\); on a fixed window the row
-      equation \(A^Mc=-r^M\) is solvable iff
-      \([\mathfrak o^{\mathrm{ns}}_{n_0,M}]\) lies in
-      \(-\operatorname{im}H^1(\Xi_M)\); in the inverse-limit tower
-      vanishing of the closed-exchange triple
-      \((\beta^{\mathrm{cl}}_{n_0},\mu^{\mathrm{cl}}_{n_0},\lambda^{\mathrm{cl}}_{n_0})\)
-      is the criterion in that tower.
-    \item \emph{First nonzero example or known obstruction:} the
-      smallest non-scalar window \(\theta_3\) carries the bare
-      \(H^1=\C\!\cdot\!\mathsf E_{\theta_3,M}\ne0\) with covector
-	      \(\ell_{\theta_3}(\mathsf E_{\theta_3,M})=1\); a
-      scalar-zero counterterm \(C_{\theta_3,M}\) with
-      \(d_MC_{\theta_3,M}=-\mathsf E_{\theta_3,M}\) forces \(c=1\)
-      unique and \(H^1=0\)
-      (Theorem~\ref{thm:app-theta-three-finite-window-H1}); the
-      lower source-coordinate Bianchi route of
-      Proposition~\ref{prop:theta-three-finite-window-criterion}
-      exhibits a nontrivial cokernel
-      \(\widetilde\lambda_{02,\mathfrak b}\) surviving the current
-      Bianchi-exposed completion.
-    \item \emph{Physical meaning:} the unreduced
-      Costello-local closed-exchange or local-counterterm cancellation
-      of the non-scalar QME residual is the bulk-to-defect Ward identity
-      compatible with the quantum moment-map constraint.
-  \end{itemize}
-
-  \noindent
-  \emph{Statement.}
-  The non-scalar Costello graph/QME obstruction criterion is the vanishing problem in the
-  filtered local-functional complex
-  \[
-    \mathfrak Q^\bullet_{w,\partial,\hbar}(I)
-      =
-      \left(
-      \mathcal O_{\mathrm{loc}}^{\mathrm{bd}}\bigl(
-        \mathcal E_w|_I;\,A^{\mathrm{pp},w}_{\partial,\hbar}(I)\bigr),
-      d_{\mathrm{QME},w}^{L}=Q+\{I^w[L],-\}_{\hbar,L}
-        +\hbar\Delta_L
-      \right),
-  \]
-  where the local functionals have compact support on the brane line,
-  coefficients in the weighted field complex \(\mathcal E_w\), and
-  target currents in \(A^{\mathrm{pp},w}_{\partial,\hbar}(I)\).  The
-  scalar-symbol projection is only associated-graded data until it is
-  lifted through the scalar-contact filtration.  The first
-  obstruction is the filtered lift of the scalar projection; the reduced
-  non-scalar class is reached after this lift.  Choose a complete
-  \(d_{\mathrm{QME}}^{L}\)-stable scalar-contact filtration
-  \(F^\bullet\mathfrak Q^\bullet_{w,\partial,\hbar}(I)\).  For any
-  filtered linear lift \(s\) of the scalar-symbol map, the successive
-  chain-map defects define classes
-  \[
-    o_{\sigma,w}^{(r)}(I)\in
-    H^1\!\left(
-      \operatorname{Hom}\bigl(
-        \operatorname{gr}_{F}
-        \mathfrak Q^\bullet_{w,\partial,\hbar}(I),
-        C^\bullet_{\mathrm{Lie}}(\bar A;\C\gamma_{\mathbf 1})[1][[\hbar]]
-      \bigr)_{-r}
-    \right),\qquad r>0,
-  \]
-  with the Hom differential of
-  Lemma~\ref{lem:filtered-scalar-projection-obstruction}.  The first
-  condition is the successive vanishing of these
-  \(o_{\sigma,w}^{(r)}(I)\), with compatible choices in the completed
-  finite-window inverse limit.  Only then is there a filtered chain
-  projection
-  \[
-    \widehat\sigma_{\mathrm{sc}}\colon
-    \mathfrak Q^\bullet_{w,\partial,\hbar}(I)
-      \longrightarrow
-    C^\bullet_{\mathrm{Lie}}(\bar A;\C\gamma_{\mathbf 1})[1][[\hbar]]
-  \]
-  whose associated graded is the scalar-symbol projection of
-  Definition~\ref{def:app-scalar-obstruction-complex}.
-
-  The balanced scalar-contact branch has a vanishing subcomplex:
-  on
-  \(\mathfrak H^\bullet_{\mathrm{bal,sc}}(I)\subset
-  \mathfrak Q^\bullet_{w,\partial,\hbar,\operatorname{str}}(I)\),
-  Proposition~\ref{prop:app-balanced-scalar-contact-projection} gives
-  the zero filtered chain projection
-  \(\widehat\sigma_{\mathrm{bal,sc}}=0\) and kills every
-  \(o_{\sigma,w,\mathrm{bal}}^{(r)}(I)\).  Extending this result to the
-  full graph/counterterm completion requires an additional construction:
-  either prove that the relevant scalar-contact symbols still factor
-  through \(\operatorname{sdim}\C^{N|N}\), or compute and kill the
-  extension classes of
-  Remark~\ref{rmk:app-balanced-projection-extension-obstruction}.
-
-  After this lift has been constructed, the balanced supertrace branch
-  requires a continuous bulk-to-defect kernel
-  \[
-    \kappa_{\hbar,w,I}\colon
-    C^\bullet_{\mathrm{CE},\mathrm{cont}}
-    (\mathfrak g^{w,\mathrm{cur}}_{\hbar,I})
-    \longrightarrow
-    \mathfrak Q^\bullet_{w,\partial,\hbar}(I)
-  \]
-  for the current source of
-  Definition~\ref{def:app-unreduced-nonscalar-current-lift-datum}.  Its
-  curvature
-  \[
-    \operatorname{Ob}_{w,\partial,\hbar}
-      =
-      d_{\mathrm{QME}}^{L}\kappa_{\hbar,w,I}
-      +\frac12[\kappa_{\hbar,w,I},\kappa_{\hbar,w,I}]_\hbar
-  \]
-  must be a cocycle satisfying
-  \[
-    \widehat\sigma_{\mathrm{sc}}
-      (\operatorname{Ob}_{w,\partial,\hbar})=0
-  \]
-  and the remaining reduced non-scalar class
-  \[
-    [\operatorname{Ob}^{\mathrm{red}}_{w,\partial,\hbar}]
-      \in
-      H^1\!\left(
-        \ker\widehat\sigma_{\mathrm{sc}},
-        d_{\mathrm{QME}}^{L}
-      \right)
-  \]
-  must vanish.  At finite windows this is the tower
-  \(\mathcal Q^\bullet_{w,M}(I)=\ker\widehat\sigma_{\mathrm{sc},M}\) of
-  Definition~\ref{defn:wt-nonscalar-qme-tower}.  The compatible
-  counterterm recursion is exactly the criterion of
-  Theorem~\ref{thm:wt-nonscalar-counterterm-criterion}: at each
-  \(\hbar\)-order the inverse-limit \(H^1\)-class and the
-  \(\varprojlim^1 H^0\)-primitive-compatibility class must vanish.
-
-  More explicitly, let \(n_0\) be the first order where lower-order
-  choices leave a residual
-  \[
-    \mathfrak o^{\mathrm{ns}}_{n_0,M}
-      \in Z^1(\mathcal Q^\bullet_{w,M}(I)).
-  \]
-  Counterterms alone close this order exactly on the vanishing locus of
-  the obstruction vector
-  \[
-    \mathfrak O^{\mathrm{ns}}_{n_0}
-      =
-      \bigl(([\mathfrak o^{\mathrm{ns}}_{n_0,M}])_M,\lambda_{n_0}\bigr)
-  \]
-  of Theorem~\ref{thm:wt-nonscalar-counterterm-criterion}.  A
-  closed-exchange cancellation is additional cochain data: finite-window
-  complexes \(\mathcal X^\bullet_{w,M}(I)\), compatible cochain maps
-  \[
-    \Xi_M\colon
-    \mathcal X^\bullet_{w,M}(I)\longrightarrow
-    \mathcal Q^\bullet_{w,M}(I),
-  \]
-  and cochains satisfying the branch equation
-  \[
-    \mathfrak o^{\mathrm{ns}}_{n_0,M}
-      +\Xi_M(W_{n_0,M})
-      +d_M C_{n_0,M}=0,
-    \qquad
-    W_{n_0,M}\in Z^1(\mathcal X^\bullet_{w,M}(I)),\quad
-    C_{n_0,M}\in\mathcal Q^0_{w,M}(I).
-  \]
-  For a fixed window this equation is solvable if and only if
-  \[
-    [\mathfrak o^{\mathrm{ns}}_{n_0,M}]
-      \in
-    -\,\operatorname{im}\!\left(
-      H^1(\Xi_M)\colon
-      H^1(\mathcal X^\bullet_{w,M}(I))
-      \to H^1(\mathcal Q^\bullet_{w,M}(I))
-    \right).
-  \]
-  In the inverse-limit tower the exact closed-exchange obstruction is the
-  triple
-  \[
-    \left(
-      \beta^{\mathrm{cl}}_{n_0},\,
-      \mu^{\mathrm{cl}}_{n_0},\,
-      \lambda^{\mathrm{cl}}_{n_0}
-    \right),
-  \]
-  where
-  \[
-    \beta^{\mathrm{cl}}_{n_0}\in
-      \operatorname{coker}\!\left(
-        \varprojlim_M H^1(\mathcal X^\bullet_{w,M}(I))
-        \xrightarrow{\ \varprojlim H^1(\Xi_M)\ }
-        \varprojlim_M H^1(\mathcal Q^\bullet_{w,M}(I))
-      \right),
-  \]
-  \[
-    \mu^{\mathrm{cl}}_{n_0}\in
-      \varprojlim\nolimits^1_M H^0(\mathcal X^\bullet_{w,M}(I)),
-    \qquad
-    \lambda^{\mathrm{cl}}_{n_0}\in
-      \varprojlim\nolimits^1_M H^0(\mathcal Q^\bullet_{w,M}(I)).
-  \]
-	  Vanishing of this triple is the exact typed criterion for a compatible
-	  closed-exchange kernel plus local counterterm to kill the first
-	  non-scalar residual.  Constructing
-	  \(\mathcal X^\bullet\), \(\Xi\), and such a class \([W]\) is the
-	  remaining finite-row obstruction.
-
-  For a fixed binary generator pair \(x,y\), the row form of the
-  centrality obstruction is the same elementary finite-window matrix
-  problem.  Once the finite graph data give a scalar-zero basis
-  \(\rho^M_i\) for the degree \(|x|+|y|\) residual rows and
-  homotopy rows \(\eta^M_j\) of degree \(|x|+|y|-1\), write
-  \[
-    R^{\mathrm{cent}}_{x,y,M}=\sum_i r^M_i\rho^M_i,\qquad
-    d_M\eta^M_j=\sum_i A^M_{ij}\rho^M_i .
-  \]
-  Then \(H^M_{x,y}=\sum_jh^M_j\eta^M_j\) is a binary centrality homotopy
-	  in the chosen finite row span if and only if
-  \[
-    A^Mh^M=-r^M .
-  \]
-  The compatible inverse-limit homotopy additionally requires
-  \[
-    [P^{M,N}h^M-h^N_{\pi x,\pi y}]
-    =
-    0
-    \quad\text{in}\quad
-    H^{|x|+|y|-1}(\mathcal Q^\bullet_{w,N}(I)).
-  \]
-  Thus the coefficient-current zero row gives evidence only for the
-  coefficient-current row; the enlarged Costello row is the displayed
-  matrix obstruction.
-
-  Equivalently, one must construct compatible
-  finite-window local counterterms \(C_{\Gamma,w}^{w_0}(\epsilon)\) and
-  the bulk-to-defect kernel \(\kappa_{\hbar,w,I}\) such that
-  \[
-    \operatorname{Curv}(\kappa_{\hbar,w,I}+C_{\hbar,w})
-      =
-      d_{\mathrm{QME}}^{L}(\kappa_{\hbar,w,I}+C_{\hbar,w})
-      +\frac12[\kappa_{\hbar,w,I}+C_{\hbar,w},
-        \kappa_{\hbar,w,I}+C_{\hbar,w}]_\hbar
-      =0,
-  \]
-  with finite-window compatibility
-  \[
-    \pi_{w_0'w_0}C_{\Gamma,w}^{w_0'}=C_{\Gamma,w}^{w_0},\qquad
-    R^{w_0}_{w,w'}C_{\Gamma,w}^{w_0}=C_{\Gamma,w'}^{w_0}.
-  \]
-  This is the precise obstruction complex for the
-  \[
-    C^\bullet_{\mathrm{CE},\mathrm{cont}}\bigl(
-      \mathfrak h_{w,\hbar}\ltimes
-      \mathfrak h^{\vee,w}_{\hbar,\mathrm{cont}}[1]\bigr)
-    \longrightarrow
-    Z^{P_{0,\hbar}}_{\mathrm{fact}}
-      \bigl(\mathrm{Obs}^\hbar_{\mathrm{open}}\bigr)|_{\mathfrak S_{\hbar,w}}.
-  \]
-\end{prob}
-
-\begin{prop}[Finite-window criterion for the first \(\theta_3\) row]\label{prop:theta-three-finite-window-criterion}
-  In a larger finite-window graph system, let \(\Theta_3\) be a genuine
-  marked source-face row of \(\hbar\)-order \(3\).  The exposed
-  one-row scalar-zero summand is
-  \[
-    \mathcal Q^0_{\theta_3,M}=0,\qquad
-    \mathcal Q^1_{\theta_3,M}=\C\mathsf E_{\theta_3,M},\qquad
-    d_M=0,
-  \]
-  with
-  \[
-    \mathsf E_{\theta_3,M}
-      =
-      -K^M_{\Theta_3}(\zeta_{M,\nu_3}),\qquad
-    \mathfrak o^{\mathrm{ns}}_{\theta_3,M}
-      =
-      \mathsf E_{\theta_3,M},
-    \qquad
-    \widehat\sigma_{\mathrm{sc},M}(\mathsf E_{\theta_3,M})=0 .
-  \]
-	  In this finite subcomplex the class
-  \([\mathsf E_{\theta_3,M}]\) is nonzero.  It is killed in an enlarged
-  finite-window system precisely by one of the following data, together
-  with scalar-zero and finite-window transport compatibility.
-
-  First, a CE-source ancestor
-  \[
-    \eta_{\theta_3,M},\qquad
-    d_{\mathrm{CE}}\eta_{\theta_3,M}=\zeta_{M,\nu_3},
-  \]
-  whose induced degree-zero row
-  \(C^{\mathrm{CE}}_{\theta_3,M}=K^M_{\Theta_3}(\eta_{\theta_3,M})\)
-  satisfies
-  \[
-    d_MC^{\mathrm{CE}}_{\theta_3,M}=-\mathsf E_{\theta_3,M}.
-  \]
-  Second, a Costello local counterterm primitive
-  \(C^{\mathrm{ct}}_{\theta_3,M}\in\mathcal Q^0_{w,M}(I)\) satisfying
-  \[
-    d_MC^{\mathrm{ct}}_{\theta_3,M}=-\mathsf E_{\theta_3,M},\qquad
-    \widehat\sigma_{\mathrm{sc},M}
-      (C^{\mathrm{ct}}_{\theta_3,M})=0.
-  \]
-  Third, a complete companion-face table
-  \(F_{\Theta_3,M}\) with signs
-  \(\epsilon^{\mathrm{CE}}_{\Theta_3,\nu}\) and rows
-  \(E^M_{\Theta_3,\nu}\) such that
-  \[
-    \sum_{\nu\in F_{\Theta_3,M}}
-      \epsilon^{\mathrm{CE}}_{\Theta_3,\nu}E^M_{\Theta_3,\nu}=0,
-    \qquad
-    E^M_{\Theta_3,\nu_3}=\mathsf E_{\theta_3,M}.
-  \]
-  In the first two cases the finite-window tower must also satisfy
-  \[
-    [\pi_{M,N}C_{\theta_3,M}-C_{\theta_3,N}]
-      =
-      0
-      \quad\text{in}\quad
-      H^0(\mathcal Q^\bullet_{w,N}(I)).
-  \]
-  In the companion-face case the source-face transport matrices must
-  satisfy
-  \[
-    \pi_{M,N}E^M_{\Theta_3,\nu}
-      =
-      \sum_{\nu'}
-      v^{M,N}_{\Theta_3,\nu;\Theta_3,\nu'}
-      E^N_{\Theta_3,\nu'},
-    \qquad
-    v^{M,P}=v^{N,P}v^{M,N},
-  \]
-  and must preserve the displayed signed zero sum.  A formal symbol
-	  \(C_{\theta_3}\) given apart from the differential
-  \(d_MC_{\theta_3,M}=-\mathsf E_{\theta_3,M}\), scalar-zero value, and
-  tower compatibility is not a counterterm datum; a counterterm consists of all
-  three data.
-
-  The currently tested finite source routes are obstructed in a sharper
-  sense.  In the ordinary pure two-\(u\) CE source envelope, in every
-  finite Hamiltonian degree, the covector
-  \[
-    q_{2u}
-    =
-    e^*_{((H_{0,1},H_{2,0}),c_{\rho_{2,1}})}
-    -\frac12
-    e^*_{((H_{0,1},H_{0,1}),c_{\rho_{0,2}})}
-  \]
-  satisfies
-  \[
-    q_{2u}d_{\mathrm{CE}}=0,\qquad
-    q_{2u}(\zeta_{M,\nu_3})=1.
-  \]
-  Hence the ordinary pure two-\(u\) degree enlargement has an obstruction to
-  giving a CE ancestor for \(\zeta_{M,\nu_3}\).  This is an exact
-  obstruction theorem for that source envelope; marked-source, Hom-valued
-  companion, and local-functional counterterm completions are separate
-  source categories.  The
-  tested eight-face companion row has coordinates
-  \[
-    (2,-2,3,2,-1,1,-2,-3)
-  \]
-  on
-  \[
-    E_{\nu_{02}},E_{\nu_{20}},E_{\nu_{03}},
-    E_{\nu_{12}^{(1)}},E_{\nu_{12}^{(2)}},
-    E_{\theta_3},E_{\nu_{21}^{(2)}},E_{\nu_{30}},
-  \]
-  and diagonal transport to the \(N=2\) window leaves
-  \(2E^2_{\nu_{02}}-2E^2_{\nu_{20}}\).  The covector
-  \(q_{2u}\) evaluates to zero on this eight-face row, so the row is
-  incompatible with the required marked source column.  The normalized lower-window
-  cokernel functional
-  \(\lambda^{(2)}_{\nu_{02}}=\frac12(E^2_{\nu_{02}})^*\) evaluates to
-  \(1\) on the transported residual.  One must therefore give
-  either a scalar-zero column \(A^M_{\theta_3,C}=-1\), a marked source
-  generator outside the ordinary pure two-\(u\) algebra with
-  \(q_{2u}\)-value \(1\), or a companion relation whose lower-window
-  transport kills this residual by a derived non-diagonal transport,
-  lower primitive, or relation \(E^2_{\nu_{02}}=E^2_{\nu_{20}}\).  The
-  canonical lower source-coordinate column is
-  \[
-    \zeta^0_2=u_{a,H_{1,0}}u_{b,H_{0,1}},
-    \qquad
-    D^2_{02,20}
-    =
-    K^2_{\Theta_3}(\zeta^0_2),
-  \]
-  with source differential
-  \[
-    d_{\mathrm{CE}}\zeta^0_2
-    =
-    2\zeta_{\nu_{02}}-2\zeta_{\nu_{20}}.
-  \]
-  This proves source exactness of the transported lower row.  It proves
-  local-functional exactness only after the Hom-valued Bianchi defect
-  \[
-    \mathfrak b^2_{02,20}
-    =
-    d_{\mathrm{ns},2}K^2_{\Theta_3}(\zeta^0_2)
-    -
-    K^2_{\Theta_3}(d_{\mathrm{CE}}\zeta^0_2)
-  \]
-  is killed:
-  \[
-    d_{\mathrm{ns},2}D^2_{02,20}
-    =
-    -2E^2_{\nu_{02}}+2E^2_{\nu_{20}}
-    +\mathfrak b^2_{02,20}.
-  \]
-  In the Bianchi-exposed lower basis
-  \[
-    (E^2_{\nu_{02}},E^2_{\nu_{20}},\mathfrak b^2_{02,20})
-  \]
-  the column of \(D^2_{02,20}\) and the residual are
-  \[
-    A_D^2=(-2,2,1)^T,\qquad r_2=(2,-2,0)^T .
-  \]
-  The equation \(A_D^2c=-r_2\) is obstructed in this free
-  presentation.  The cokernel
-  \[
-    \widetilde\lambda_{02,\mathfrak b}
-    =
-    \frac12(E^2_{\nu_{02}})^*
-    +(\mathfrak b^2_{02,20})^*
-  \]
-  satisfies
-  \[
-    \widetilde\lambda_{02,\mathfrak b}A_D^2=0,\qquad
-    \widetilde\lambda_{02,\mathfrak b}(r_2)=1.
-  \]
-  Thus the lower source primitive is a genuine local-functional primitive
-  only in the quotient where \(\mathfrak b^2_{02,20}=0\), or after a
-  scalar-zero local counterterm \(B^2_{02,20}\) with
-  \(d_{\mathrm{ns},2}B^2_{02,20}=-\mathfrak b^2_{02,20}\) exists,
-  with locality and transport compatibility.
-
-  In the current Bianchi-exposed finite-row completion the
-  \(B^2_{02,20}\) column is omitted.  The only degree-zero lower column is
-  \(D^2_{02,20}\), so the Bianchi counterterm equation has right-hand side
-  vector
-  \[
-    -\mathfrak b^2_{02,20}=(0,0,-1)^T .
-  \]
-  It lies outside the image of \(A_D^2\), since
-  \[
-    \widetilde\lambda_{02,\mathfrak b}A_D^2=0,\qquad
-    \widetilde\lambda_{02,\mathfrak b}((0,0,-1)^T)=-1 .
-  \]
-  The minimal controlled enlargement must therefore add a genuine
-  scalar-zero local-functional column
-  \[
-    A_B^2=(0,0,-1)^T,\qquad
-    d_{\mathrm{ns},2}B^2_{02,20}
-      =-\mathfrak b^2_{02,20},
-  \]
-  with regular-density or wavefront-admissible locality and compatible
-  finite-window transport.  In a tower this requires
-  \[
-    \Delta^1_{M,N}
-    :=
-    -\pi_{M,N}\mathfrak b^M+\mathfrak b^N
-    =
-    d_{\mathrm{ns},N}(\pi_{M,N}B^M-B^N)
-  \]
-  together with vanishing of the \(H^1\) Bianchi transport class on the
-  right-hand side and then of the resulting secondary
-	  \(\varprojlim^1H^0\)-class after any transport correction.
-\end{prop}
-
-\begin{proof}
-  The one-row complex used here has zero degree-zero term and has
-  one degree-one basis vector.  Hence
-  \(H^1(\mathcal Q^\bullet_{\theta_3,M})\cong
-  \C\mathsf E_{\theta_3,M}\).  The covector
-  \[
-    \ell_{\theta_3}(\mathsf E_{\theta_3,M})=1
-  \]
-  satisfies \(\ell_{\theta_3}d_M=0\) and evaluates nontrivially on the
-  residual, so it is a left-cokernel functional for the nonzero
-  fixed-window \(H^1\)-class.
-
-  After adjoining any finite collection of degree-zero rows,
-  the fixed-window question is the elementary linear system
-  \[
-    A^Mc^M=-r^M,
-  \]
-  where \(A^M\) is the matrix of \(d_M\) from degree-zero rows to residual
-  rows and \(r^M\) is the coordinate vector of
-  \(\mathfrak o^{\mathrm{ns}}_{\theta_3,M}\).  A CE ancestor or local
-  counterterm with differential coefficient \(-1\) is exactly a column
-  of \(A^M\) equal to \(-\mathsf E_{\theta_3,M}\), so \(c^M=1\) solves
-  the equation.  If the column is named while this differential entry is
-  omitted, the old covector \(\ell_{\theta_3}\) still annihilates the
-  image of \(A^M\) and still evaluates to \(1\) on \(r^M\); the
-  obstruction survives.
-
-  The lower source-coordinate column illustrates the distinction
-  between source exactness and local-functional exactness.  The source
-  calculation gives
-  \(d_{\mathrm{CE}}\zeta^0_2=2\zeta_{\nu_{02}}-2\zeta_{\nu_{20}}\), but
-  \(K^2_{\Theta_3}\) becomes a chain map after its Hom-valued Bianchi
-  defect is killed.  In the Bianchi-exposed basis the matrix equation is
-  \(A_D^2c=-r_2\), with \(A_D^2=(-2,2,1)^T\) and \(r_2=(2,-2,0)^T\).
-  The first two coordinates force \(c=1\), while the Bianchi coordinate
-  forces \(c=0\).  Equivalently
-  \(\widetilde\lambda_{02,\mathfrak b}A_D^2=0\) and
-  \(\widetilde\lambda_{02,\mathfrak b}(r_2)=1\).  Hence this computation
-  gives an exact obstruction class. A completed local-functional
-  counterterm requires the additional column displayed below.
-
-  The same cokernel proves absence of the \(B^2_{02,20}\) column in the
-  current completion.  The target vector \((0,0,-1)^T\) forces a
-  scalar \(c\) with \(c(-2,2,1)=(0,0,-1)\); the first two coordinates
-  force \(c=0\), while the third forces \(c=-1\).  Equivalently
-  \(\widetilde\lambda_{02,\mathfrak b}\) annihilates every current
-  boundary column and evaluates to \(-1\) on the target.  A formal new
-  column \(A_B^2=(0,0,-1)^T\) closes this fixed matrix equation.  The
-  corresponding local-functional theorem consists of the local
-  functional, scalar-zero value, locality or wavefront data, and
-  finite-window transport data.
-
-  A companion-face table is a signed source-face relation.  The primitive
-	  is a row datum.  It changes the residual
-  row by replacing the one-face CE source expression with the full
-  signed CE boundary.  It is admissible exactly when the signed sum is zero
-  and the truncation matrices preserve that zero sum in the inverse
-  system.  The displayed Roos condition is precisely the obstruction to
-  choosing the fixed-window primitives compatibly.  These are necessary
-  and sufficient finite-window conditions; the analytic Costello graph
-  construction and all-graph QME solution require additional data.
-\end{proof}
-
-\begin{prob}[Tate-coefficient lift of the descendant cochain isomorphism]\label{prob:tate-coefficient-descendant-lift}
-  In the unweighted Tate pair, the diagnosis of
-  Lemma~\ref{lem:tate-casimir-obstruction} identifies the obstruction as the
-  coefficient-kernel obstruction; the resolution requires a
-  category-level change of coefficient module.  The classical Tate
-  obstruction is closed by the weighted Tate completion of
-  Corollary~\ref{cor:wt-cotangent-lift}(a)--(d); the all-order quantum
-  lift on the descendant sector is the quantum specialization of
-  \ref{prob:formal-factorization-center} under the hypothesis of
-  \ref{prob:weighted-rg-locality}.
-\end{prob}
 
 \begin{prop}[Open-line Weyl boundary product from midpoint kernel]\label{prop:boundary-product-normalization}
   For Weyl-ordered Hamiltonian boundary observables placed on the open line
@@ -14530,7 +13381,7 @@ $$\{f,g\}_\hbar=\hbar^{-1}[f,g]_*
   Hamiltonian reduction.
 \end{rmk}
 
-\subsubsection{Third-order Costello graph class}
+\subsection{Third-order Costello graph class}
 
 The order-\(\hbar^1\) Moyal coefficient \(P\) is fixed by the
 linear-Hamiltonian Heisenberg commutator and gives the target
@@ -15308,11 +14159,1166 @@ Razmyslov--Procesi radical structure of the trace ideal at finite
 \(N\) lies outside the radial reduction: every step is exact
 rational and basis-canonical.
 
-\input{appendix-master-deformation-complex}
+\input{section-obstruction-calculus}
 
 \input{tate-T4-bv-vanishing}
 
 \input{tate-P1-hadamard-mittag-leffler}
+
+\subsection{Graph formalism and specialization datum}
+
+The Moyal coefficients \(\hbar P\), \(\hbar^3 P^3/24\), \(\hbar^5 P^5/1920\),
+\(\hbar^7 P^7/322560\) of the previous subsection form the algebraic
+model.  Costello's heat-kernel BV calculus produces coefficients of
+the same operad-theoretic shape from different data: an elliptic
+parent theory, a propagator, a counterterm scheme, an anomaly class,
+and a trace normalisation.  The question is whether these two
+calculations land on the same coefficients on the brane-defect
+complex.
+
+\begin{stmt}[Costello perturbative BV construction]\label{stmt:costello-bv-construction}
+  For an elliptic BV theory with a gauge fixing, heat kernel $K_t$, propagator
+  $$P_{\epsilon,L}=\int_{\epsilon}^{L}Q^{\mathrm{GF}}K_t\,dt,$$
+  and a renormalization scheme, Costello constructs finite-scale effective
+  interactions by the RG operator
+  $$W(P_{\epsilon,L},I[\epsilon])
+    =\hbar\log\!\left(\exp(\hbar\partial_{P_{\epsilon,L}})
+       \exp(I[\epsilon]/\hbar)\right).$$
+  The renormalized interaction is obtained by adding local counterterms and
+  taking the $\epsilon\to0$ limit. It has the connected-graph expansion
+  $$I[L]=\sum_{\Gamma\ \mathrm{connected}}
+    \frac{\hbar^{b_1(\Gamma)+\sum_v g_v}}{|\operatorname{Aut}\Gamma|}
+    W_\Gamma(P_{\epsilon,L};I_{g_v}[\epsilon]+I^{\mathrm{CT}}_{g_v}(\epsilon)),$$
+  satisfies RG flow and locality, and satisfies the quantum master equation
+  when the obstruction classes vanish \cite{costello-renormalization}. The
+  resulting quantum observables form a factorization algebra
+  \cite{costello-gwilliam}\cite{costello-gwilliam-vol2}.
+\end{stmt}
+
+\begin{stmt}[Costello--Li flat open-closed BCOV theorem]\label{stmt:costello-li-flat-bcov}
+  Costello--Li prove a perturbative quantization of open-closed BCOV
+  theory on flat $\C^d$, for $d$ odd, unique up to the equivalences in their
+  renormalization scheme, with open gauge algebra
+  $\mathfrak{gl}(N\mid N)$ and compatibility under
+  $\mathfrak{gl}(N\mid N)\hookrightarrow\mathfrak{gl}(N+k\mid N+k)$. In that
+  flat open-closed BCOV/HCS theory they compute the anomaly cancellation needed
+  for the graph construction \cite{costello-li-open-closed-bcov}. Ordinary
+  $\mathfrak{gl}_N$ and the mixed $\R^2\times\C^2$ Hamiltonian brane model
+  require an additional reduction or summand argument.
+\end{stmt}
+
+\begin{rmk}
+  Theorem~\ref{thm:main-local} uses the formal Hamiltonian BF
+  calculation.  The brane
+  \(L=\R_{\mathrm{brane}}\times\{0\}\times\{p\}\) is a defect in the
+  mixed space; a spacetime-boundary interpretation requires a chosen
+  half-space model.
+\end{rmk}
+
+\begin{lem}[Finite-window obstruction for the full Hamiltonian sector]\label{lem:finite-window-hamiltonian-obstruction}
+  The polynomial Hamiltonian Lie algebra of the formal symplectic plane has
+  the following finite-window obstructions to a finite-dimensional Lie
+  truncation compatible with the full Hamiltonian sector:
+  \begin{enumerate}
+    \item finite degree windows have a Lie-subalgebra obstruction;
+    \item projected degree-window brackets can violate Jacobi;
+    \item $\mathfrak m$-adic jet quotients have a Lie-quotient obstruction in the
+      presence of linear Hamiltonians;
+    \item directed finite-dimensional Lie-subalgebra exhaustion is obstructed
+      containing the full polynomial Hamiltonian algebra.
+  \end{enumerate}
+\end{lem}
+
+\begin{proof}
+  Let $H_d$ be the span of homogeneous polynomials of degree $d$, and let
+  $\mathfrak m=(z_1,z_2)$. The Poisson bracket satisfies
+  $\{H_p,H_q\}\subset H_{p+q-2}$. Thus
+  $$\{z_1^N,z_2^N\}=N^2z_1^{N-1}z_2^{N-1},$$
+	  which has degree $2N-2>N$ for $N>2$, so degree $\leq N$ windows have
+  a Lie-subalgebra obstruction.
+
+	  Projecting the bracket back to a degree window creates a Jacobi obstruction.
+  For the bracket $\pi_{\leq3}\{-,-\}$, take
+  $$f=z_2,\qquad g=z_2^3,\qquad h=z_1^2z_2.$$
+  A direct calculation gives the projected Jacobiator
+  $$[[f,g]_3,h]_3+[[g,h]_3,f]_3+[[h,f]_3,g]_3=6z_2^3.$$
+
+	  The $\mathfrak m$-adic quotients have a stability obstruction under translations generated
+  by linear Hamiltonians:
+  $$\{z_1^{N+1},z_2\}=(N+1)z_1^N\notin\mathfrak m^{N+1}.$$
+	  Hence $\mathfrak h/\mathfrak m^{N+1}$ has a Lie-quotient obstruction for
+  the full Hamiltonian algebra.
+
+  Any finite-dimensional Lie subalgebra containing
+  $$a=z_1^2z_2^2,\qquad b=z_1^3z_2$$
+  contains all iterated brackets
+  $$(\operatorname{ad}_a)^n(b)=(-4)^n z_1^{n+3}z_2^{n+1},\qquad n\geq0,$$
+  an infinite linearly independent set. Thus directed finite-dimensional
+  Lie-subalgebra exhaustion is obstructed for the full polynomial Hamiltonian
+  algebra.
+\end{proof}
+
+\begin{rmk}[Linear heat operator versus BV kernel]\label{rmk:linear-heat-versus-bv-kernel}
+  On the linear field complex
+  $$\Omega^\bullet(\R^2)\widehat\otimes
+    \Omega^{0,\bullet}(\C^2)\widehat\otimes
+    \bigl(\widehat{\mathfrak h}[1]\oplus
+      \widehat{\mathfrak h}^{\vee}_{\mathrm{cont}}[2]\bigr),$$
+  the flat gauge fixing
+  $$Q^{\mathrm{GF}}=d_{\R^2}^*+\bar\partial_{\C^2}^*,\qquad
+    \Delta=[d_{\R^2}+\bar\partial_{\C^2},Q^{\mathrm{GF}}]$$
+  gives finite-scale heat operators
+  $$K_t=K_t^{\mathrm{base}}\widehat\otimes\mathrm{id},\qquad
+    P_{\epsilon,L}^{\mathrm{op}}
+      =\int_\epsilon^L Q^{\mathrm{GF}}K_t^{\mathrm{base}}\,dt
+        \widehat\otimes\mathrm{id}$$
+  satisfying
+  $$[d_{\R^2}+\bar\partial_{\C^2},P_{\epsilon,L}^{\mathrm{op}}]
+    =K_\epsilon-K_L$$
+  as continuous operators on the completed coefficient spaces. This is an
+  operator-level homotopy. Costello's BV propagator also requires a
+  coefficient coevaluation kernel for the Tate pair
+  $\widehat{\mathfrak h}\oplus\widehat{\mathfrak h}^{\vee}_{\mathrm{cont}}$.
+  In the product/direct-sum topology used here, the formal sum of homogeneous
+  coefficient coevaluations diverges in the completed tensor
+  product. Thus the analytic graph problem requires a genuine Tate or weighted
+  coefficient extension of the heat-kernel calculus, or a declared restriction
+  to a smaller sector.
+\end{rmk}
+
+\begin{lem}[Tate Casimir obstruction for the full Hamiltonian sector]\label{lem:tate-casimir-obstruction}
+  In the product/direct-sum Tate topology
+  $$\mathfrak h=\prod_{d\geq1}H_d,\qquad
+    \mathfrak h^\vee_{\mathrm{cont}}=\bigoplus_{d\geq1}H_d^\vee,$$
+  the coefficient coevaluation
+  $$C_{\mathfrak h}=\sum_{d\geq1}\sum_i e_{d,i}\otimes e^i_{d}$$
+  lies in neither $\mathfrak h\widehat\otimes\mathfrak h^\vee_{\mathrm{cont}}$
+  nor $\mathfrak h^\vee_{\mathrm{cont}}\widehat\otimes\mathfrak h$.
+  Consequently the full Hamiltonian sector lacks a strict BV pairing
+  in this topology; a Costello coefficient kernel here requires a
+  different coefficient category. The
+  operator-level homotopy of
+  Remark~\ref{rmk:linear-heat-versus-bv-kernel} gives a BV propagator,
+  BV Laplacian, and renormalized graph weights only after a coefficient
+  category in which the Casimir converges has been chosen.
+\end{lem}
+
+\begin{proof}
+  For each $d$, choose a basis $\{e_{d,i}\}_i$ of $H_d$ and the dual basis
+  $\{e^i_d\}_i$ of $H_d^\vee$. An element of a completed tensor product with
+  the direct-sum factor $\bigoplus_d H_d^\vee$ has finite support in that
+  direct-sum direction in the Tate convention used here. The displayed formal
+  Casimir has a nonzero component in every $H_d^\vee$. Hence the tensor
+  diverges. The same support obstruction holds with the tensor factors
+  reversed. Costello's heat-kernel BV formalism requires the inverse pairing as
+  a distributional kernel on the field complex; an abstract continuous operator
+  is insufficient. The weighted Tate completion of
+  Corollary~\ref{cor:wt-cotangent-lift} resolves this Casimir obstruction by
+  changing the coefficient category; the unweighted diagnosis here remains
+  the structural reason that change is required.
+\end{proof}
+
+\begin{prob}[Hamiltonian specialization datum for Costello perturbative BV]\label{prob:analytic-graph-realization}
+  \begin{itemize}
+    \item \emph{Theory:} a Costello open--closed BV theory
+      in the heat-kernel BV framework whose restriction is
+      the formal-local Hamiltonian BF
+      sector \(\R^2\times\C^2\) of \S\ref{ssec:local-setup}.
+    \item \emph{Hypotheses:} an elliptic parent or stated
+      dimensional reduction; field topology, BV pairing, gauge
+      fixing, heat-kernel propagator; weighted Tate coefficient
+      kernel
+      (Corollary~\ref{cor:wt-cotangent-lift}); brane-defect condition;
+      ribbon graph data; Capelli/scalar normalisation; bulk-to-defect
+      kernel.
+    \item \emph{Obstruction complex:} the Tate Casimir
+      \(\mathfrak o_{\mathrm{Cas}}\)
+      (Lemma~\ref{lem:tate-casimir-obstruction}); the scalar-symbol
+      class \(\hbar N[\bar c]\)
+      (Theorem~\ref{thm:scalar-qme-alternatives}); the reduced
+      non-scalar QME class
+      \([\operatorname{Ob}^{\mathrm{red}}_{w,\partial,\hbar}]\)
+      (Problem~\ref{prob:quantum-p0-operation-realization}); the
+      \(\theta_3\) finite-window class
+      (Theorem~\ref{thm:app-theta-three-finite-window-H1}).
+    \item \emph{Vanishing criterion:} weighted Tate completion closes
+      \(\mathfrak o_{\mathrm{Cas}}\); a balanced or unreduced source
+      replacement closes \(\hbar N[\bar c]\); the reduced
+      non-scalar class is closed exactly on the locus where the
+      filtered scalar-contact tower of
+      Theorem~\ref{thm:wt-nonscalar-counterterm-criterion} closes.
+    \item \emph{First nonzero example:} the strict full-polydisk
+      product/direct-sum coefficient pair carries a nonzero
+      \(\mathfrak o_{\mathrm{Cas}}\); the ordinary scalar-reduced
+      \(\mathfrak{gl}_N\) branch carries nonzero
+      \(\hbar N[\bar c]\) at order \(\hbar^1\) on the linear pair
+      \((z_1,z_2)\).
+    \item \emph{Physical meaning:} the analytic specialization datum
+      is the elliptic parent and the brane-defect renormalisation
+      under which Costello's heat-kernel BV calculus and the
+      Hamiltonian trace map is simultaneously controllable.
+  \end{itemize}
+
+  \noindent\emph{Statement.}
+  Costello gives the general renormalized BV graph calculus. For
+  the Hamiltonian sector here, the required data begin with an elliptic
+  closed-open parent theory, or a stated dimensional reduction of one,
+  whose restriction is this Hamiltonian BF sector and whose obstruction
+  class vanishes. The required data are:
+  \begin{enumerate}
+    \item choose the mechanism: either prove that the Hamiltonian cotangent BF
+      complex
+      $$\Omega^\bullet(\R^2)\widehat\otimes
+        \Omega^{0,\bullet}(\C^2)\widehat\otimes
+        \bigl(\widehat{\mathfrak h}[1]\oplus
+        \widehat{\mathfrak h}^{\vee}_{\mathrm{cont}}[2]\bigr)$$
+      is literally a closed sector of a Costello open--closed BV theory, or
+      prove that it is obtained by a specified dimensional reduction. The chosen
+      mechanism must determine the field topology, degree $-1$ BV pairing,
+      differential, local interaction, bracket degree, and a homotopy retract
+      closed under the propagator and RG flow. Since
+      $\widehat{\mathfrak h}$ is a completed Tate coefficient system, the proof
+	      goes through a Tate or weighted-coefficient extension; finite-degree
+      and $\mathfrak m$-adic truncations carry the obstruction of
+      Lemma~\ref{lem:finite-window-hamiltonian-obstruction}. It must
+      construct a genuine Tate or weighted-coefficient extension of Costello's
+      heat-kernel calculus \cite{costello-renormalization} compatible with the Poisson bracket
+      and RG flow, or restrict to a smaller Lie sector such as the
+      classical $\mathfrak m^3/\mathfrak m^{N+1}$ truncation and
+      explicitly declare that translations, the conformal
+      $\mathfrak{sl}_2$ sector, and the all-order Moyal closure have
+      been removed. By
+      Lemma~\ref{lem:tate-casimir-obstruction}, a damping factor inside the
+      direct-sum dual fixed above is insufficient; the coefficient category
+      itself must be replaced by one in which the Casimir converges, or the
+      sector must be restricted;
+    \item specify the asymptotic conditions on $\C^2$ and the brane-defect
+      condition on \(L=\R_{\mathrm{brane}}\times\{0\}\times\{p\}\);
+    \item choose the induced finite-scale gauge fixing, heat-kernel propagator,
+      and BV Laplacian in this sector. The infrared limit $L\to\infty$ may be
+      used only after the zero modes and harmonic projection have been fixed;
+	    \item compute the obstruction/anomaly class for this mixed Hamiltonian
+	      sector. Concretely, represent the obstruction as a local
+	      functional class in the chosen bulk-defect local-functional complex. If
+	      the defect cotangent sector is represented by principal-part currents,
+	      the target must either be replaced by a current-compatible complex
+	      \[
+	        \mathcal O_{\mathrm{loc}}^{\mathrm{bd}}\bigl(
+	          \mathcal E_w;\mathfrak J_{\partial}^{\mathrm{pp}}\bigr),
+	      \]
+	      with wavefront and counterterm rules for \(\mathcal D'_c\)-coefficients,
+	      or the theorem must restrict \(B\) to regular compactly supported
+	      densities.  In
+	      the weighted Tate category the obstruction is a class
+	      \[
+	        \operatorname{Ob}_{w,n}\in
+	        H^1_{\mathrm{adm}}\bigl(\mathcal O_{\mathrm{loc}}(\mathcal E_w),
+	          Q+\{I_0^w,-\}\bigr)
+	      \]
+		      coming from the $n$-loop obstruction to the quantum master equation after
+	      counterterms. Costello--Li's flat $\mathfrak{gl}(N\mid N)$ anomaly
+      cancellation gives a source theorem and a model; transfer requires
+      proof. To execute it one must prove that constant-Hamiltonian
+      projection and connected trace extraction kill the ordinary
+      $\mathfrak{gl}_N$ anomaly, or else replace the open sector by the
+      appropriate super or special-linear variant. The
+      first defect-local obstruction is the
+      Capelli contact term
+      $$\omega_{\mathrm{Cap}}(A)=N\,\overline{\mathrm{Tr}(A)},$$
+      represented by
+      $$\mathrm{Tr}(A\,XY)-\mathrm{Tr}(A\,YX)
+        =\hbar N\,\mathrm{Tr}(A)
+        \quad\bmod\ \mathcal W_N\widehat\mu(\lie{sl}_N).$$
+		      It survives the ordinary connected trace projection, since the
+	      right-hand side is a nonempty connected trace when $A$ is nonconstant.
+	      The anomaly datum must therefore be a filtered local class
+	      \(\operatorname{Ob}_{\mathrm{bd}}\) whose scalar-symbol projection is
+	      \[
+	        \sigma_{\mathrm{sc}}(\operatorname{Ob}_{\mathrm{bd}})
+	          =\hbar N[\bar c]\in
+	            H^2_{\mathrm{Lie}}(\bar A;\C)[[\hbar]] .
+	      \]
+		      A closed-exchange cancellation is the datum of
+	      \(W_{\mathrm{closed\,exch}}\) and a counterterm \(C\) with scalar
+	      leading class
+	      \[
+	        [w_{\mathrm{add}}]=-\hbar N[\bar c]
+	        \qquad\text{in }H^2_{\mathrm{Lie}}(\bar A;\C)[[\hbar]]
+	      \]
+	      and with
+	      $$\omega_{\mathrm{Cap}}+W_{\mathrm{closed\,exch}}
+	        +(Q+\{I_0,-\})C=0.$$
+	      The proved local mechanisms here are the specified supertrace and
+	      central-character normalizations; any exhaustive classification is
+	      controlled by the displayed obstruction complex;
+	    \item construct the bulk-to-defect kernel as a curved/cochain-level map
+	      \(\kappa\) to the Poisson central-operation object of the brane
+	      observables. After counterterms it must satisfy
+	      \[
+	        \operatorname{Curv}(\kappa)
+	          =d\kappa+\frac12[\kappa,\kappa]=0.
+	      \]
+	      On degree-zero Hamiltonians it must send \(f(z_1,z_2)\) to the
+	      Weyl-ordered boundary observable
+	      \(\mathrm{Tr}\,\operatorname{Op}_{\mathrm W}(f)(\phi_1,\phi_2)\),
+	      and it must satisfy the Ward identity and the quantum moment-map
+	      constraint. Its cotangent component must either restrict the
+	      principal-part current \(B\) to regular defect densities, or prove
+	      that the chosen Costello bulk-defect observable category admits the
+	      required compactly supported distributions with wavefront,
+	      counterterm, finite-window, and RG compatibility;
+    \item define the relevant boundary ribbon graphs: cyclic order, boundary
+      components, automorphism factors, propagator labels, and the relation
+      between Costello's loop-counting $\hbar$ and the Weyl contraction
+      parameter. Equivalently, one must prove that a single boundary
+      cross-contraction is $P/2$ in the Weyl convention;
+    \item fix the one-propagator boundary graph normalization. For monomials
+      $f=z_1^kz_2^l$ and $g=z_1^mz_2^n$, the raw first boundary commutator must
+      have coefficient
+      $$\hbar(kn-lm)z_1^{k+m-1}z_2^{l+n-1},$$
+      equivalently the normalized commutator must have coefficient
+      $$(kn-lm)z_1^{k+m-1}z_2^{l+n-1};$$
+    \item after the first normalization, compute the three-propagator boundary
+      graph normalization and prove that the connected order-$\hbar^3$
+      commutator contributes exactly
+      $$\frac{\hbar^3}{24}P^3(f,g)$$
+      with $P=\partial_{z_1}\otimes\partial_{z_2}
+      -\partial_{z_2}\otimes\partial_{z_1}$;
+	    \item give the convention for extracting connected single-trace and
+	      multi-trace coefficients as primitive trace classes, and
+	      prove that this extraction cancels, renormalizes, or otherwise accounts
+	      for the normal-ordering shift of
+	      Remark~\ref{rmk:normal-ordering-obstruction};
+	    \item construct the renormalization scheme and counterterm locality
+	      statement in this mixed bulk-defect sector. For every divergent graph
+	      whose \(\epsilon\to0\) limit is subtracted, choose compatible
+	      representatives
+	      \[
+	        C_{\Gamma,w}^{w_0}(\epsilon)\in
+	          \mathcal O_{\mathrm{loc}}(\mathcal E_w^{w_0})
+	      \]
+	      with
+	      \[
+	        \pi_{w_0'w_0}C_{\Gamma,w}^{w_0'}=C_{\Gamma,w}^{w_0},
+	        \qquad
+	        R^{w_0}_{w,w'}C_{\Gamma,w}^{w_0}=C_{\Gamma,w'}^{w_0},
+	      \]
+	      prove support on the relevant bulk diagonal or brane-collision
+	      stratum, and check that RG flow carries these representatives inside
+	      the same local-functional subcomplex;
+	    \item extend the bulk-to-defect kernel to the cotangent boundary-current
+	      target, or record the obstruction. In the reduced setting the
+	      extension must land in the principal-part current object of
+	      Theorem~\ref{thm:reduced-principal-part-boundary-current}; before
+	      contraction it must contain the unreduced data of
+	      Remark~\ref{rmk:unreduced-lift-obstruction}. On the cotangent summand it
+	      must realize the principal-part coadjoint action of
+	      Theorem~\ref{thm:principal-part-coadjoint-uniqueness}, and at the
+	      Moyal level the \(\mathfrak h_\hbar^\vee\)-action induced by the
+	      residue pairing. The allowed substitute for polynomial one-\(\psi\)
+	      representatives is a completed continuous-dual boundary realization.
+	  \end{enumerate}
+\end{prob}
+
+\begin{thm}[Scalar QME obstruction and cancellation branches]
+\label{thm:scalar-qme-alternatives}
+  \begin{itemize}
+    \item \emph{Obstruction:} cancellation of the scalar-symbol
+      QME obstruction in the ordinary scalar-reduced
+      \(\mathfrak{gl}_N\) brane-defect model.
+    \item \emph{Hypotheses:} on the source side, an
+      \(\bar A\)-cochain \(J\) with \(d_{\mathrm{CE}}J=-\hbar N\bar c\),
+      or an alternative source category in which \(\bar c\) is
+      cohomologous to zero; on the Costello side, finite-window
+      complexes \(\mathcal X^\bullet_{\mathrm{sc},w,M}\), cochain
+      maps \(\Xi^{\mathrm{Cost},\mathrm{sc}}_M\), a filtered scalar
+      chain projection \(\widehat\sigma_{\mathrm{sc},M}\), and
+      compatible local counterterms.
+    \item \emph{Obstruction complex:} the Lie cohomology class
+      \(\hbar N[\bar c]\in H^2_{\mathrm{Lie}}(\bar A;\C)[[\hbar]]\),
+      and its filtered Costello image
+      \(\beta_M^{\mathrm{Cost},\mathrm{sc}}=
+      [\hbar N[\bar c_M]]\in
+      \operatorname{coker}H^1(\widehat\sigma_{\mathrm{sc},M}
+      \Xi^{\mathrm{Cost},\mathrm{sc}}_M)\).
+    \item \emph{Vanishing criterion:} either replace the scalar-reduced
+      source by the unreduced source, the central-character source,
+      the opposite central extension, the balanced
+      \(\mathfrak{gl}(N|N)\)-supertrace source, or the algebraic
+      central-contact cone --- each cancellation is a source
+      replacement, made explicit below; alternatively, give a
+      Costello-local closed-exchange triple
+      \((W_M,C_M,\widehat\sigma_{\mathrm{sc},M})\) with
+      \(\beta_M^{\mathrm{Cost},\mathrm{sc}}=0\) and compatible
+      truncation.
+    \item \emph{First nonzero example:} on the linear pair
+      \((z_1,z_2)\), \(\omega(z_1,z_2)=1\) and \(\bar c\ne0\) in
+      \(H^2_{\mathrm{Lie}}(\bar A;\C)\); the projective Moyal
+      commutator gives the Capelli term \(\hbar N\cdot\mathbf 1\)
+      at order \(\hbar^1\).
+    \item \emph{Physical meaning:} the scalar-symbol QME obstruction
+      records the brane center-of-mass anomaly that survives ordinary
+      \(\mathfrak{gl}_N\) Hamiltonian reduction; cancelling it
+      requires changing what one means by ``Hamiltonian'' (source
+      replacement) or giving a closed-exchange counterterm with a
+      matched scalar leading class.
+  \end{itemize}
+
+  \noindent\emph{Statement.}
+  Let \(A=\C[z_1,z_2]\), \(\bar A=A/\C\cdot1\), and
+  \[
+    \omega(f,g)=[\{f,g\}]_0 .
+  \]
+  Write \(\bar c\) for the induced Lie two-cocycle on \(\bar A\).
+  In the ordinary scalar-reduced \(\lie{gl}_N\) brane-defect model, the
+  scalar-symbol part of the mixed QME obstruction is represented by
+  \[
+    \operatorname{Ob}_{\mathrm{sc}}(\gamma_{\mathbf 1};a,f;b,g)
+    =
+    \hbar N\,\omega(f,g)
+    \int_\R a(t)b(t)\gamma_{\mathbf 1}(t)\,dt ,
+  \]
+  and its associated-graded CE class is
+  \[
+    \hbar N[\bar c]\,\gamma_{\mathbf 1}
+    \in H^2_{\mathrm{Lie}}(\bar A;\C\gamma_{\mathbf 1})[1][[\hbar]] .
+  \]
+  Forgetting the central ghost coefficient gives
+  \(\hbar N[\bar c]\in H^2_{\mathrm{Lie}}(\bar A;\C)[[\hbar]]\).
+  For \(N>0\), this class is nonzero in the scalar-reduced source.  Hence the
+  leading scalar symbol obstructs internal scalar-reduced local counterterms.
+
+  The cancellation mechanisms have distinct types.
+  \begin{enumerate}
+    \item On the unreduced source \(A\), the functional
+      \(\eta(f)=-[f]_0\) satisfies \(d_{\mathrm{CE}}\eta=\omega\).  Thus
+      \[
+        \hbar N\omega+d_{\mathrm{CE}}(-\hbar N\eta)=0
+      \]
+      before quotienting constants.
+    \item Equivalently, after replacing the scalar-reduced source by the
+      unreduced source with central character
+      \(\chi_N(f)=N[f]_0\), the scalar term becomes exact before it becomes
+      a reduced obstruction class.
+    \item Equivalently in the scalar-replacement category, define the
+      opposite scalar central extension
+      \[
+        \bar A^{\mathrm{cl}}_{-\hbar N\bar c}
+        =
+        \bar A\oplus\C[[\hbar]]K_{\mathrm{cl}},
+      \]
+      with
+      \[
+        [(f,aK_{\mathrm{cl}}),(g,bK_{\mathrm{cl}})]
+        =
+        \bigl(\{f,g\}_{\bar A},
+        -\hbar N\,\bar c(f,g)K_{\mathrm{cl}}\bigr),
+        \qquad [K_{\mathrm{cl}},-]=0 .
+      \]
+      If \(k^\vee(K_{\mathrm{cl}})=1\) and
+      \(k^\vee(\bar A)=0\), then for
+      \(J_{\mathrm{op}}=-k^\vee\)
+      \[
+        d_{\mathrm{CE}}J_{\mathrm{op}}=-\hbar N\,\bar c,
+        \qquad
+        \operatorname{Ob}_{\mathrm{sc}}+d_{\mathrm{CE}}J_{\mathrm{op}}=0 .
+      \]
+      The cancellation is compatible with scalar finite-window
+      projections retaining \(z_1,z_2\).  It is a source replacement;
+      after forgetting \(K_{\mathrm{cl}}\), the class
+      \(\hbar N[\bar c]\) on \(\bar A\) reappears.
+    \item In the balanced supertrace model \(V=\C^{N|N}\), the scalar
+      coefficient is \(\operatorname{sdim}V=0\); the scalar
+      brane-defect QME representative vanishes in that model.
+    \item The finite-window algebraic central-contact cone is a genuine
+      changed source branch.  After adjoining a defect-supported central
+      closed source line \(\C[[\hbar]]e_M\) with
+      \[
+        \Xi^{\mathrm{alg},\mathrm{sc}}_M(e_M)
+        =
+        -\hbar N\,\bar c_M
+      \]
+      on the scalar-contact line, the choice \(W_M=e_M\) and \(C_M=0\)
+      cancels the finite-window scalar row, and the corresponding
+      \(\beta,\mu,\lambda_C\) classes vanish in that enlarged algebraic
+      cone.
+    \item In the original scalar-reduced ordinary \(\lie{gl}_N\) branch, a
+      same-branch closed-exchange or brane-defect contribution can cancel
+      the scalar symbol only if its leading scalar class obeys
+      \[
+        [w_{\mathrm{add}}]=-\hbar N[\bar c]
+        \qquad\text{in }H^2_{\mathrm{Lie}}(\bar A;\C)[[\hbar]].
+      \]
+      Equivalently, a Costello-local closed-exchange solution must contain
+      finite-window closed-source complexes
+      \(\mathcal X^\bullet_{\mathrm{sc},w,M}(I)\), cochain maps
+      \[
+        \Xi^{\mathrm{Cost},\mathrm{sc}}_M\colon
+        \mathcal X^\bullet_{\mathrm{sc},w,M}(I)\to
+        \mathfrak Q^\bullet_{\mathrm{sc},w,M}(I),
+      \]
+      a filtered scalar chain projection
+      \(\widehat\sigma_{\mathrm{sc},M}\), cocycles \(W_M\), and
+      counterterms \(C_M\) such that
+      \[
+        \operatorname{Ob}_{\mathrm{sc},M}
+        +\Xi^{\mathrm{Cost},\mathrm{sc}}_M(W_M)+d_MC_M=0,
+        \qquad
+        H^1(\widehat\sigma_{\mathrm{sc},M}
+        \Xi^{\mathrm{Cost},\mathrm{sc}}_M)[W_M]
+        =
+        -\hbar N[\bar c_M],
+      \]
+      with compatible truncation and vanishing inverse-limit
+      \(\beta,\mu,\lambda_C\) classes.
+  \end{enumerate}
+  The algebraic cone in (4) becomes a Costello-local closed-exchange
+  theorem only after its formal generator is replaced by a closed source
+  complex, finite-scale propagator, bulk-to-defect graph map, source-face
+  Hom differential, local counterterm support, scalar chain projection,
+  and compatible finite-window representatives.  For current genuine
+  Costello-local towers the ordinary scalar-reduced branch is blocked first
+  by
+  \[
+    o_{\sigma,M}^{(1),\mathrm{sc}}=\hbar N[\bar c_M]\ne0,
+  \]
+  and, after any additional scalar condition, by the image obstruction
+  \[
+    \beta_M^{\mathrm{Cost},\mathrm{sc}}
+    =
+    [\hbar N[\bar c_M]]
+    \in
+    \operatorname{coker}
+    H^1(\widehat\sigma_{\mathrm{sc},M}
+    \Xi^{\mathrm{Cost},\mathrm{sc}}_M).
+  \]
+  A complete classification of scalar QME cancellations is a compact
+  theorem.  Any further mechanism must be an explicitly
+  constructed null-homotopy in
+  the filtered QME obstruction complex whose scalar-symbol class cancels
+  \(\hbar N[\bar c]\).
+\end{thm}
+
+\begin{proof}
+  The representative and its nonzero associated-graded class are exactly
+  Theorem~\ref{thm:app-scalar-contact-qme-class}.  Non-exactness in the
+  reduced source is the last part of that theorem: a primitive on
+  \(\bar A\) would lift to a primitive on \(A\) vanishing on \(1\), but
+  \(\omega(z_1,z_2)=1\) and \(\{z_1,z_2\}=1\).
+
+  The first branch is Lemma~\ref{lem:app-unreduced-scalar-primitive},
+  multiplied by \(\hbar N\).  The central-character branch is
+  Theorem~\ref{thm:app-central-character-qme-cancellation}; it is a
+  source replacement before scalar reduction. A counterterm inside the
+  original reduced obstruction complex is a different datum.  The opposite central-extension
+  branch is the same CE sign calculation written as an honest central
+  extension of \(\bar A\): with
+  \((d_{\mathrm{CE}}\lambda)(x,y)=-\lambda([x,y])\), the central bracket
+  \(-\hbar N\bar c(f,g)K_{\mathrm{cl}}\) gives
+  \(d_{\mathrm{CE}}k^\vee=\hbar N\bar c\), hence
+  \(d_{\mathrm{CE}}(-k^\vee)=-\hbar N\bar c\).  Jacobi is exactly the
+  cocycle identity for \(\bar c\), and finite-window compatibility follows
+  because \(\bar c\) is detected on the retained pair \(z_1,z_2\).  The
+  balanced-supertrace branch is
+  Theorem~\ref{thm:app-balanced-supertrace-qme-cancellation}.  The
+  algebraic central-contact cone is the finite-window source extension
+  recorded in the scalar QME source extension; its differential is zero and
+  its scalar image is declared to be \(-\hbar N\bar c_M\), so the displayed
+  cancellation is immediate in that enlarged source.  The same declaration
+  records the missing Costello-local closed-exchange data.  The
+  necessary condition for any same-branch ordinary cancellation is
+  Theorem~\ref{thm:app-ordinary-glN-scalar-obstruction-criterion}.  The
+  additional Costello-local image and scalar-chain obstructions are the
+  filtered Hom conditions in
+  Problem~\ref{prob:quantum-p0-operation-realization}.
+\end{proof}
+
+\begin{rmk}[Parabolic functoriality of the local model]\label{rmk:parabolic-functoriality}
+  The completion along the brane divisor \(z_1=0\) used here breaks the
+  formal symplectomorphism group \(\mathrm{Symp}_{\mathrm{form}}(\C^2,0)\)
+  to the parabolic stabiliser
+  \[
+    P_{(z_1)}=
+    \{\varphi\in\mathrm{Symp}_{\mathrm{form}}(\C^2,0):
+      \varphi^*(z_1)\in (z_1)\}.
+  \]
+		  Any compact comparison therefore requires a parabolic-equivariant
+	  comparison.  Full \(\mathrm{Symp}_{\mathrm{form}}\)-equivariance is
+	  additional compact comparison data.
+\end{rmk}
+
+
+\subsection{Non-scalar quantum obstruction complexes and the \texorpdfstring{$\theta_3$}{theta3} window}\label{ssec:nonscalar-quantum-obstructions}
+
+\begin{prob}[Non-scalar quantum \(P_0\)-operation obstruction complex]\label{prob:quantum-p0-operation-realization}
+  After the four proved components of
+  Theorem~\ref{thm:componentwise-quantum-coefficient-comparison}, the
+  remaining non-scalar Costello QME comparison is the filtered
+  obstruction triple
+  \((o_{\sigma,w}^{(r)},[\operatorname{Ob}^{\mathrm{red}}_{w,\partial,\hbar}],
+  \lambda)\).  Single-class language applies only after the scalar
+  projection and tower-compatibility data have been fixed.
+  \begin{itemize}
+    \item \emph{Morphism:} a chain-level Costello-local
+      \(P_{0,\hbar}\)-factorisation-centre map
+      \(C^\bullet_{\mathrm{CE},\mathrm{cont}}(\mathfrak h_{w,\hbar}\ltimes\mathfrak h^{\vee,w}_{\hbar,\mathrm{cont}}[1])
+      \to Z^{P_{0,\hbar}}_{\mathrm{fact}}(\mathrm{Obs}^\hbar_{\mathrm{open}})|_{\mathfrak S_{\hbar,w}}\),
+      curved bulk-to-defect kernel \(\kappa_{\hbar,w,I}\) included.
+    \item \emph{Hypotheses:} a complete
+      \(d_{\mathrm{QME}}^{L}\)-stable scalar-contact filtration with
+      vanishing successive scalar-symbol extension classes
+      \(o^{(r)}_{\sigma,w}(I)\); a filtered chain projection
+      \(\widehat\sigma_{\mathrm{sc}}\); a curved bulk-to-defect kernel
+      \(\kappa_{\hbar,w,I}\) on the current source of
+      Definition~\ref{def:app-unreduced-nonscalar-current-lift-datum};
+      compatible local counterterms
+      \(C_{\Gamma,w}^{w_0}(\epsilon)\) with finite-window transport.
+    \item \emph{Obstruction class:} the reduced non-scalar QME
+      cohomology class
+      \([\operatorname{Ob}^{\mathrm{red}}_{w,\partial,\hbar}]
+      \in H^1(\ker\widehat\sigma_{\mathrm{sc}},d_{\mathrm{QME}}^{L})\),
+      together with its finite-window
+      \(\varprojlim^1H^0\)-primitive-compatibility class.
+    \item \emph{Vanishing criterion:} successive vanishing of
+      \(o^{(r)}_{\sigma,w}(I)\) for \(r>0\) builds
+      \(\widehat\sigma_{\mathrm{sc}}\); on a fixed window the row
+      equation \(A^Mc=-r^M\) is solvable iff
+      \([\mathfrak o^{\mathrm{ns}}_{n_0,M}]\) lies in
+      \(-\operatorname{im}H^1(\Xi_M)\); in the inverse-limit tower
+      vanishing of the closed-exchange triple
+      \((\beta^{\mathrm{cl}}_{n_0},\mu^{\mathrm{cl}}_{n_0},\lambda^{\mathrm{cl}}_{n_0})\)
+      is the criterion in that tower.
+    \item \emph{First nonzero example or known obstruction:} the
+      smallest non-scalar window \(\theta_3\) carries the bare
+      \(H^1=\C\!\cdot\!\mathsf E_{\theta_3,M}\ne0\) with covector
+	      \(\ell_{\theta_3}(\mathsf E_{\theta_3,M})=1\); a
+      scalar-zero counterterm \(C_{\theta_3,M}\) with
+      \(d_MC_{\theta_3,M}=-\mathsf E_{\theta_3,M}\) forces \(c=1\)
+      unique and \(H^1=0\)
+      (Theorem~\ref{thm:app-theta-three-finite-window-H1}); the
+      lower source-coordinate Bianchi route of
+      Proposition~\ref{prop:theta-three-finite-window-criterion}
+      exhibits a nontrivial cokernel
+      \(\widetilde\lambda_{02,\mathfrak b}\) surviving the current
+      Bianchi-exposed completion.
+    \item \emph{Physical meaning:} the unreduced
+      Costello-local closed-exchange or local-counterterm cancellation
+      of the non-scalar QME residual is the bulk-to-defect Ward identity
+      compatible with the quantum moment-map constraint.
+  \end{itemize}
+
+  \noindent
+  \emph{Statement.}
+  The non-scalar Costello graph/QME obstruction criterion is the vanishing problem in the
+  filtered local-functional complex
+  \[
+    \mathfrak Q^\bullet_{w,\partial,\hbar}(I)
+      =
+      \left(
+      \mathcal O_{\mathrm{loc}}^{\mathrm{bd}}\bigl(
+        \mathcal E_w|_I;\,A^{\mathrm{pp},w}_{\partial,\hbar}(I)\bigr),
+      d_{\mathrm{QME},w}^{L}=Q+\{I^w[L],-\}_{\hbar,L}
+        +\hbar\Delta_L
+      \right),
+  \]
+  where the local functionals have compact support on the brane line,
+  coefficients in the weighted field complex \(\mathcal E_w\), and
+  target currents in \(A^{\mathrm{pp},w}_{\partial,\hbar}(I)\).  The
+  scalar-symbol projection is only associated-graded data until it is
+  lifted through the scalar-contact filtration.  The first
+  obstruction is the filtered lift of the scalar projection; the reduced
+  non-scalar class is reached after this lift.  Choose a complete
+  \(d_{\mathrm{QME}}^{L}\)-stable scalar-contact filtration
+  \(F^\bullet\mathfrak Q^\bullet_{w,\partial,\hbar}(I)\).  For any
+  filtered linear lift \(s\) of the scalar-symbol map, the successive
+  chain-map defects define classes
+  \[
+    o_{\sigma,w}^{(r)}(I)\in
+    H^1\!\left(
+      \operatorname{Hom}\bigl(
+        \operatorname{gr}_{F}
+        \mathfrak Q^\bullet_{w,\partial,\hbar}(I),
+        C^\bullet_{\mathrm{Lie}}(\bar A;\C\gamma_{\mathbf 1})[1][[\hbar]]
+      \bigr)_{-r}
+    \right),\qquad r>0,
+  \]
+  with the Hom differential of
+  Lemma~\ref{lem:filtered-scalar-projection-obstruction}.  The first
+  condition is the successive vanishing of these
+  \(o_{\sigma,w}^{(r)}(I)\), with compatible choices in the completed
+  finite-window inverse limit.  Only then is there a filtered chain
+  projection
+  \[
+    \widehat\sigma_{\mathrm{sc}}\colon
+    \mathfrak Q^\bullet_{w,\partial,\hbar}(I)
+      \longrightarrow
+    C^\bullet_{\mathrm{Lie}}(\bar A;\C\gamma_{\mathbf 1})[1][[\hbar]]
+  \]
+  whose associated graded is the scalar-symbol projection of
+  Definition~\ref{def:app-scalar-obstruction-complex}.
+
+  The balanced scalar-contact branch has a vanishing subcomplex:
+  on
+  \(\mathfrak H^\bullet_{\mathrm{bal,sc}}(I)\subset
+  \mathfrak Q^\bullet_{w,\partial,\hbar,\operatorname{str}}(I)\),
+  Proposition~\ref{prop:app-balanced-scalar-contact-projection} gives
+  the zero filtered chain projection
+  \(\widehat\sigma_{\mathrm{bal,sc}}=0\) and kills every
+  \(o_{\sigma,w,\mathrm{bal}}^{(r)}(I)\).  Extending this result to the
+  full graph/counterterm completion requires an additional construction:
+  either prove that the relevant scalar-contact symbols still factor
+  through \(\operatorname{sdim}\C^{N|N}\), or compute and kill the
+  extension classes of
+  Remark~\ref{rmk:app-balanced-projection-extension-obstruction}.
+
+  After this lift has been constructed, the balanced supertrace branch
+  requires a continuous bulk-to-defect kernel
+  \[
+    \kappa_{\hbar,w,I}\colon
+    C^\bullet_{\mathrm{CE},\mathrm{cont}}
+    (\mathfrak g^{w,\mathrm{cur}}_{\hbar,I})
+    \longrightarrow
+    \mathfrak Q^\bullet_{w,\partial,\hbar}(I)
+  \]
+  for the current source of
+  Definition~\ref{def:app-unreduced-nonscalar-current-lift-datum}.  Its
+  curvature
+  \[
+    \operatorname{Ob}_{w,\partial,\hbar}
+      =
+      d_{\mathrm{QME}}^{L}\kappa_{\hbar,w,I}
+      +\frac12[\kappa_{\hbar,w,I},\kappa_{\hbar,w,I}]_\hbar
+  \]
+  must be a cocycle satisfying
+  \[
+    \widehat\sigma_{\mathrm{sc}}
+      (\operatorname{Ob}_{w,\partial,\hbar})=0
+  \]
+  and the remaining reduced non-scalar class
+  \[
+    [\operatorname{Ob}^{\mathrm{red}}_{w,\partial,\hbar}]
+      \in
+      H^1\!\left(
+        \ker\widehat\sigma_{\mathrm{sc}},
+        d_{\mathrm{QME}}^{L}
+      \right)
+  \]
+  must vanish.  At finite windows this is the tower
+  \(\mathcal Q^\bullet_{w,M}(I)=\ker\widehat\sigma_{\mathrm{sc},M}\) of
+  Definition~\ref{defn:wt-nonscalar-qme-tower}.  The compatible
+  counterterm recursion is exactly the criterion of
+  Theorem~\ref{thm:wt-nonscalar-counterterm-criterion}: at each
+  \(\hbar\)-order the inverse-limit \(H^1\)-class and the
+  \(\varprojlim^1 H^0\)-primitive-compatibility class must vanish.
+
+  More explicitly, let \(n_0\) be the first order where lower-order
+  choices leave a residual
+  \[
+    \mathfrak o^{\mathrm{ns}}_{n_0,M}
+      \in Z^1(\mathcal Q^\bullet_{w,M}(I)).
+  \]
+  Counterterms alone close this order exactly on the vanishing locus of
+  the obstruction vector
+  \[
+    \mathfrak O^{\mathrm{ns}}_{n_0}
+      =
+      \bigl(([\mathfrak o^{\mathrm{ns}}_{n_0,M}])_M,\lambda_{n_0}\bigr)
+  \]
+  of Theorem~\ref{thm:wt-nonscalar-counterterm-criterion}.  A
+  closed-exchange cancellation is additional cochain data: finite-window
+  complexes \(\mathcal X^\bullet_{w,M}(I)\), compatible cochain maps
+  \[
+    \Xi_M\colon
+    \mathcal X^\bullet_{w,M}(I)\longrightarrow
+    \mathcal Q^\bullet_{w,M}(I),
+  \]
+  and cochains satisfying the branch equation
+  \[
+    \mathfrak o^{\mathrm{ns}}_{n_0,M}
+      +\Xi_M(W_{n_0,M})
+      +d_M C_{n_0,M}=0,
+    \qquad
+    W_{n_0,M}\in Z^1(\mathcal X^\bullet_{w,M}(I)),\quad
+    C_{n_0,M}\in\mathcal Q^0_{w,M}(I).
+  \]
+  For a fixed window this equation is solvable if and only if
+  \[
+    [\mathfrak o^{\mathrm{ns}}_{n_0,M}]
+      \in
+    -\,\operatorname{im}\!\left(
+      H^1(\Xi_M)\colon
+      H^1(\mathcal X^\bullet_{w,M}(I))
+      \to H^1(\mathcal Q^\bullet_{w,M}(I))
+    \right).
+  \]
+  In the inverse-limit tower the exact closed-exchange obstruction is the
+  triple
+  \[
+    \left(
+      \beta^{\mathrm{cl}}_{n_0},\,
+      \mu^{\mathrm{cl}}_{n_0},\,
+      \lambda^{\mathrm{cl}}_{n_0}
+    \right),
+  \]
+  where
+  \[
+    \beta^{\mathrm{cl}}_{n_0}\in
+      \operatorname{coker}\!\left(
+        \varprojlim_M H^1(\mathcal X^\bullet_{w,M}(I))
+        \xrightarrow{\ \varprojlim H^1(\Xi_M)\ }
+        \varprojlim_M H^1(\mathcal Q^\bullet_{w,M}(I))
+      \right),
+  \]
+  \[
+    \mu^{\mathrm{cl}}_{n_0}\in
+      \varprojlim\nolimits^1_M H^0(\mathcal X^\bullet_{w,M}(I)),
+    \qquad
+    \lambda^{\mathrm{cl}}_{n_0}\in
+      \varprojlim\nolimits^1_M H^0(\mathcal Q^\bullet_{w,M}(I)).
+  \]
+	  Vanishing of this triple is the exact typed criterion for a compatible
+	  closed-exchange kernel plus local counterterm to kill the first
+	  non-scalar residual.  Constructing
+	  \(\mathcal X^\bullet\), \(\Xi\), and such a class \([W]\) is the
+	  remaining finite-row obstruction.
+
+  For a fixed binary generator pair \(x,y\), the row form of the
+  centrality obstruction is the same elementary finite-window matrix
+  problem.  Once the finite graph data give a scalar-zero basis
+  \(\rho^M_i\) for the degree \(|x|+|y|\) residual rows and
+  homotopy rows \(\eta^M_j\) of degree \(|x|+|y|-1\), write
+  \[
+    R^{\mathrm{cent}}_{x,y,M}=\sum_i r^M_i\rho^M_i,\qquad
+    d_M\eta^M_j=\sum_i A^M_{ij}\rho^M_i .
+  \]
+  Then \(H^M_{x,y}=\sum_jh^M_j\eta^M_j\) is a binary centrality homotopy
+	  in the chosen finite row span if and only if
+  \[
+    A^Mh^M=-r^M .
+  \]
+  The compatible inverse-limit homotopy additionally requires
+  \[
+    [P^{M,N}h^M-h^N_{\pi x,\pi y}]
+    =
+    0
+    \quad\text{in}\quad
+    H^{|x|+|y|-1}(\mathcal Q^\bullet_{w,N}(I)).
+  \]
+  Thus the coefficient-current zero row gives evidence only for the
+  coefficient-current row; the enlarged Costello row is the displayed
+  matrix obstruction.
+
+  Equivalently, one must construct compatible
+  finite-window local counterterms \(C_{\Gamma,w}^{w_0}(\epsilon)\) and
+  the bulk-to-defect kernel \(\kappa_{\hbar,w,I}\) such that
+  \[
+    \operatorname{Curv}(\kappa_{\hbar,w,I}+C_{\hbar,w})
+      =
+      d_{\mathrm{QME}}^{L}(\kappa_{\hbar,w,I}+C_{\hbar,w})
+      +\frac12[\kappa_{\hbar,w,I}+C_{\hbar,w},
+        \kappa_{\hbar,w,I}+C_{\hbar,w}]_\hbar
+      =0,
+  \]
+  with finite-window compatibility
+  \[
+    \pi_{w_0'w_0}C_{\Gamma,w}^{w_0'}=C_{\Gamma,w}^{w_0},\qquad
+    R^{w_0}_{w,w'}C_{\Gamma,w}^{w_0}=C_{\Gamma,w'}^{w_0}.
+  \]
+  This is the precise obstruction complex for the
+  \[
+    C^\bullet_{\mathrm{CE},\mathrm{cont}}\bigl(
+      \mathfrak h_{w,\hbar}\ltimes
+      \mathfrak h^{\vee,w}_{\hbar,\mathrm{cont}}[1]\bigr)
+    \longrightarrow
+    Z^{P_{0,\hbar}}_{\mathrm{fact}}
+      \bigl(\mathrm{Obs}^\hbar_{\mathrm{open}}\bigr)|_{\mathfrak S_{\hbar,w}}.
+  \]
+\end{prob}
+
+\begin{prop}[Finite-window criterion for the first \(\theta_3\) row]\label{prop:theta-three-finite-window-criterion}
+  In a larger finite-window graph system, let \(\Theta_3\) be a genuine
+  marked source-face row of \(\hbar\)-order \(3\).  The exposed
+  one-row scalar-zero summand is
+  \[
+    \mathcal Q^0_{\theta_3,M}=0,\qquad
+    \mathcal Q^1_{\theta_3,M}=\C\mathsf E_{\theta_3,M},\qquad
+    d_M=0,
+  \]
+  with
+  \[
+    \mathsf E_{\theta_3,M}
+      =
+      -K^M_{\Theta_3}(\zeta_{M,\nu_3}),\qquad
+    \mathfrak o^{\mathrm{ns}}_{\theta_3,M}
+      =
+      \mathsf E_{\theta_3,M},
+    \qquad
+    \widehat\sigma_{\mathrm{sc},M}(\mathsf E_{\theta_3,M})=0 .
+  \]
+	  In this finite subcomplex the class
+  \([\mathsf E_{\theta_3,M}]\) is nonzero.  It is killed in an enlarged
+  finite-window system precisely by one of the following data, together
+  with scalar-zero and finite-window transport compatibility.
+
+  First, a CE-source ancestor
+  \[
+    \eta_{\theta_3,M},\qquad
+    d_{\mathrm{CE}}\eta_{\theta_3,M}=\zeta_{M,\nu_3},
+  \]
+  whose induced degree-zero row
+  \(C^{\mathrm{CE}}_{\theta_3,M}=K^M_{\Theta_3}(\eta_{\theta_3,M})\)
+  satisfies
+  \[
+    d_MC^{\mathrm{CE}}_{\theta_3,M}=-\mathsf E_{\theta_3,M}.
+  \]
+  Second, a Costello local counterterm primitive
+  \(C^{\mathrm{ct}}_{\theta_3,M}\in\mathcal Q^0_{w,M}(I)\) satisfying
+  \[
+    d_MC^{\mathrm{ct}}_{\theta_3,M}=-\mathsf E_{\theta_3,M},\qquad
+    \widehat\sigma_{\mathrm{sc},M}
+      (C^{\mathrm{ct}}_{\theta_3,M})=0.
+  \]
+  Third, a complete companion-face table
+  \(F_{\Theta_3,M}\) with signs
+  \(\epsilon^{\mathrm{CE}}_{\Theta_3,\nu}\) and rows
+  \(E^M_{\Theta_3,\nu}\) such that
+  \[
+    \sum_{\nu\in F_{\Theta_3,M}}
+      \epsilon^{\mathrm{CE}}_{\Theta_3,\nu}E^M_{\Theta_3,\nu}=0,
+    \qquad
+    E^M_{\Theta_3,\nu_3}=\mathsf E_{\theta_3,M}.
+  \]
+  In the first two cases the finite-window tower must also satisfy
+  \[
+    [\pi_{M,N}C_{\theta_3,M}-C_{\theta_3,N}]
+      =
+      0
+      \quad\text{in}\quad
+      H^0(\mathcal Q^\bullet_{w,N}(I)).
+  \]
+  In the companion-face case the source-face transport matrices must
+  satisfy
+  \[
+    \pi_{M,N}E^M_{\Theta_3,\nu}
+      =
+      \sum_{\nu'}
+      v^{M,N}_{\Theta_3,\nu;\Theta_3,\nu'}
+      E^N_{\Theta_3,\nu'},
+    \qquad
+    v^{M,P}=v^{N,P}v^{M,N},
+  \]
+  and must preserve the displayed signed zero sum.  A formal symbol
+	  \(C_{\theta_3}\) given apart from the differential
+  \(d_MC_{\theta_3,M}=-\mathsf E_{\theta_3,M}\), scalar-zero value, and
+  tower compatibility is not a counterterm datum; a counterterm consists of all
+  three data.
+
+  The currently tested finite source routes are obstructed in a sharper
+  sense.  In the ordinary pure two-\(u\) CE source envelope, in every
+  finite Hamiltonian degree, the covector
+  \[
+    q_{2u}
+    =
+    e^*_{((H_{0,1},H_{2,0}),c_{\rho_{2,1}})}
+    -\frac12
+    e^*_{((H_{0,1},H_{0,1}),c_{\rho_{0,2}})}
+  \]
+  satisfies
+  \[
+    q_{2u}d_{\mathrm{CE}}=0,\qquad
+    q_{2u}(\zeta_{M,\nu_3})=1.
+  \]
+  Hence the ordinary pure two-\(u\) degree enlargement has an obstruction to
+  giving a CE ancestor for \(\zeta_{M,\nu_3}\).  This is an exact
+  obstruction theorem for that source envelope; marked-source, Hom-valued
+  companion, and local-functional counterterm completions are separate
+  source categories.  The
+  tested eight-face companion row has coordinates
+  \[
+    (2,-2,3,2,-1,1,-2,-3)
+  \]
+  on
+  \[
+    E_{\nu_{02}},E_{\nu_{20}},E_{\nu_{03}},
+    E_{\nu_{12}^{(1)}},E_{\nu_{12}^{(2)}},
+    E_{\theta_3},E_{\nu_{21}^{(2)}},E_{\nu_{30}},
+  \]
+  and diagonal transport to the \(N=2\) window leaves
+  \(2E^2_{\nu_{02}}-2E^2_{\nu_{20}}\).  The covector
+  \(q_{2u}\) evaluates to zero on this eight-face row, so the row is
+  incompatible with the required marked source column.  The normalized lower-window
+  cokernel functional
+  \(\lambda^{(2)}_{\nu_{02}}=\frac12(E^2_{\nu_{02}})^*\) evaluates to
+  \(1\) on the transported residual.  One must therefore give
+  either a scalar-zero column \(A^M_{\theta_3,C}=-1\), a marked source
+  generator outside the ordinary pure two-\(u\) algebra with
+  \(q_{2u}\)-value \(1\), or a companion relation whose lower-window
+  transport kills this residual by a derived non-diagonal transport,
+  lower primitive, or relation \(E^2_{\nu_{02}}=E^2_{\nu_{20}}\).  The
+  canonical lower source-coordinate column is
+  \[
+    \zeta^0_2=u_{a,H_{1,0}}u_{b,H_{0,1}},
+    \qquad
+    D^2_{02,20}
+    =
+    K^2_{\Theta_3}(\zeta^0_2),
+  \]
+  with source differential
+  \[
+    d_{\mathrm{CE}}\zeta^0_2
+    =
+    2\zeta_{\nu_{02}}-2\zeta_{\nu_{20}}.
+  \]
+  This proves source exactness of the transported lower row.  It proves
+  local-functional exactness only after the Hom-valued Bianchi defect
+  \[
+    \mathfrak b^2_{02,20}
+    =
+    d_{\mathrm{ns},2}K^2_{\Theta_3}(\zeta^0_2)
+    -
+    K^2_{\Theta_3}(d_{\mathrm{CE}}\zeta^0_2)
+  \]
+  is killed:
+  \[
+    d_{\mathrm{ns},2}D^2_{02,20}
+    =
+    -2E^2_{\nu_{02}}+2E^2_{\nu_{20}}
+    +\mathfrak b^2_{02,20}.
+  \]
+  In the Bianchi-exposed lower basis
+  \[
+    (E^2_{\nu_{02}},E^2_{\nu_{20}},\mathfrak b^2_{02,20})
+  \]
+  the column of \(D^2_{02,20}\) and the residual are
+  \[
+    A_D^2=(-2,2,1)^T,\qquad r_2=(2,-2,0)^T .
+  \]
+  The equation \(A_D^2c=-r_2\) is obstructed in this free
+  presentation.  The cokernel
+  \[
+    \widetilde\lambda_{02,\mathfrak b}
+    =
+    \frac12(E^2_{\nu_{02}})^*
+    +(\mathfrak b^2_{02,20})^*
+  \]
+  satisfies
+  \[
+    \widetilde\lambda_{02,\mathfrak b}A_D^2=0,\qquad
+    \widetilde\lambda_{02,\mathfrak b}(r_2)=1.
+  \]
+  Thus the lower source primitive is a genuine local-functional primitive
+  only in the quotient where \(\mathfrak b^2_{02,20}=0\), or after a
+  scalar-zero local counterterm \(B^2_{02,20}\) with
+  \(d_{\mathrm{ns},2}B^2_{02,20}=-\mathfrak b^2_{02,20}\) exists,
+  with locality and transport compatibility.
+
+  In the current Bianchi-exposed finite-row completion the
+  \(B^2_{02,20}\) column is omitted.  The only degree-zero lower column is
+  \(D^2_{02,20}\), so the Bianchi counterterm equation has right-hand side
+  vector
+  \[
+    -\mathfrak b^2_{02,20}=(0,0,-1)^T .
+  \]
+  It lies outside the image of \(A_D^2\), since
+  \[
+    \widetilde\lambda_{02,\mathfrak b}A_D^2=0,\qquad
+    \widetilde\lambda_{02,\mathfrak b}((0,0,-1)^T)=-1 .
+  \]
+  The minimal controlled enlargement must therefore add a genuine
+  scalar-zero local-functional column
+  \[
+    A_B^2=(0,0,-1)^T,\qquad
+    d_{\mathrm{ns},2}B^2_{02,20}
+      =-\mathfrak b^2_{02,20},
+  \]
+  with regular-density or wavefront-admissible locality and compatible
+  finite-window transport.  In a tower this requires
+  \[
+    \Delta^1_{M,N}
+    :=
+    -\pi_{M,N}\mathfrak b^M+\mathfrak b^N
+    =
+    d_{\mathrm{ns},N}(\pi_{M,N}B^M-B^N)
+  \]
+  together with vanishing of the \(H^1\) Bianchi transport class on the
+  right-hand side and then of the resulting secondary
+	  \(\varprojlim^1H^0\)-class after any transport correction.
+\end{prop}
+
+\begin{proof}
+  The one-row complex used here has zero degree-zero term and has
+  one degree-one basis vector.  Hence
+  \(H^1(\mathcal Q^\bullet_{\theta_3,M})\cong
+  \C\mathsf E_{\theta_3,M}\).  The covector
+  \[
+    \ell_{\theta_3}(\mathsf E_{\theta_3,M})=1
+  \]
+  satisfies \(\ell_{\theta_3}d_M=0\) and evaluates nontrivially on the
+  residual, so it is a left-cokernel functional for the nonzero
+  fixed-window \(H^1\)-class.
+
+  After adjoining any finite collection of degree-zero rows,
+  the fixed-window question is the elementary linear system
+  \[
+    A^Mc^M=-r^M,
+  \]
+  where \(A^M\) is the matrix of \(d_M\) from degree-zero rows to residual
+  rows and \(r^M\) is the coordinate vector of
+  \(\mathfrak o^{\mathrm{ns}}_{\theta_3,M}\).  A CE ancestor or local
+  counterterm with differential coefficient \(-1\) is exactly a column
+  of \(A^M\) equal to \(-\mathsf E_{\theta_3,M}\), so \(c^M=1\) solves
+  the equation.  If the column is named while this differential entry is
+  omitted, the old covector \(\ell_{\theta_3}\) still annihilates the
+  image of \(A^M\) and still evaluates to \(1\) on \(r^M\); the
+  obstruction survives.
+
+  The lower source-coordinate column illustrates the distinction
+  between source exactness and local-functional exactness.  The source
+  calculation gives
+  \(d_{\mathrm{CE}}\zeta^0_2=2\zeta_{\nu_{02}}-2\zeta_{\nu_{20}}\), but
+  \(K^2_{\Theta_3}\) becomes a chain map after its Hom-valued Bianchi
+  defect is killed.  In the Bianchi-exposed basis the matrix equation is
+  \(A_D^2c=-r_2\), with \(A_D^2=(-2,2,1)^T\) and \(r_2=(2,-2,0)^T\).
+  The first two coordinates force \(c=1\), while the Bianchi coordinate
+  forces \(c=0\).  Equivalently
+  \(\widetilde\lambda_{02,\mathfrak b}A_D^2=0\) and
+  \(\widetilde\lambda_{02,\mathfrak b}(r_2)=1\).  Hence this computation
+  gives an exact obstruction class. A completed local-functional
+  counterterm requires the additional column displayed below.
+
+  The same cokernel proves absence of the \(B^2_{02,20}\) column in the
+  current completion.  The target vector \((0,0,-1)^T\) forces a
+  scalar \(c\) with \(c(-2,2,1)=(0,0,-1)\); the first two coordinates
+  force \(c=0\), while the third forces \(c=-1\).  Equivalently
+  \(\widetilde\lambda_{02,\mathfrak b}\) annihilates every current
+  boundary column and evaluates to \(-1\) on the target.  A formal new
+  column \(A_B^2=(0,0,-1)^T\) closes this fixed matrix equation.  The
+  corresponding local-functional theorem consists of the local
+  functional, scalar-zero value, locality or wavefront data, and
+  finite-window transport data.
+
+  A companion-face table is a signed source-face relation.  The primitive
+	  is a row datum.  It changes the residual
+  row by replacing the one-face CE source expression with the full
+  signed CE boundary.  It is admissible exactly when the signed sum is zero
+  and the truncation matrices preserve that zero sum in the inverse
+  system.  The displayed Roos condition is precisely the obstruction to
+  choosing the fixed-window primitives compatibly.  These are necessary
+  and sufficient finite-window conditions; the analytic Costello graph
+  construction and all-graph QME solution require additional data.
+\end{proof}
+
+\begin{prob}[Tate-coefficient lift of the descendant cochain isomorphism]\label{prob:tate-coefficient-descendant-lift}
+  In the unweighted Tate pair, the diagnosis of
+  Lemma~\ref{lem:tate-casimir-obstruction} identifies the obstruction as the
+  coefficient-kernel obstruction; the resolution requires a
+  category-level change of coefficient module.  The classical Tate
+  obstruction is closed by the weighted Tate completion of
+  Corollary~\ref{cor:wt-cotangent-lift}(a)--(d); the all-order quantum
+  lift on the descendant sector is the quantum specialization of
+  \ref{prob:formal-factorization-center} under the hypothesis of
+  \ref{prob:weighted-rg-locality}.
+\end{prob}
 
 \subsection{Tate-coefficient cotangent lift: native obstruction classes}\label{ssec:tate-residual-resolution}
 
@@ -15526,7 +15532,7 @@ each finite window selects the pro-Matlis replacement target for the
 coefficient side of the bulk-boundary comparison, constructed in the
 section below.
 
-\input{appendix-matlis-principal-parts}
+\input{section-pro-matlis-envelope}
 
 \input{tate-P1b-bmk-promatlis-transfer}
 
@@ -15728,7 +15734,7 @@ realisations (Heisenberg, \(\widehat{\mathfrak g}_k\), \(\beta\gamma\),
 restriction with pushed-forward bracket, BV pairing, brane image, and
 anomaly matching.
 
-\subsubsection{The single brane: \texorpdfstring{$N=1$}{N=1}}\label{sssec:ex-heisenberg}
+\subsection{The single brane: \texorpdfstring{$N=1$}{N=1}}\label{sssec:ex-heisenberg}
 
 At $N=1$ the matrices commute.  The underived formal-Darboux chart is
 \(A_b^{\mathrm{coord}}=\widehat{\mc O}_{\C^2,p}\cong\C[[z_1,z_2]]\) with
@@ -15748,7 +15754,7 @@ $\hbar N[\bar c]\big|_{N=1}=\hbar[\bar c]$ is retained by the
 projective central extension; the ordinary scalar commutator is lost
 only in the unprojectivized scalar-reduced shadow.
 
-\subsubsection{Rank two: the first finite trace relation}\label{sssec:ex-N2-finite-window}
+\subsection{Rank two: the first finite trace relation}\label{sssec:ex-N2-finite-window}
 
 Let \(N=2\), and write \(X=\phi_1\), \(Y=\phi_2\).  The brane
 coordinate cdga is
@@ -15835,7 +15841,7 @@ the \(N=2\) instance of the Capelli class
 generator, not a determinant-line curvature until the determinant-line
 datum of Theorem~\ref{thm:capelli-projective-anomaly} is supplied.
 
-\subsubsection{The brane stack: \texorpdfstring{$N\ge 2$}{N >= 2}}\label{sssec:ex-N-brane}
+\subsection{The brane stack: \texorpdfstring{$N\ge 2$}{N >= 2}}\label{sssec:ex-N-brane}
 
 At a stack of $N\ge 2$ Dirac branes the trace reads
 \[
@@ -15860,6 +15866,16 @@ and the Capelli scalar
 $\hbar N[\bar c]\in H^2_{\mathrm{Lie}}(\bar A,\C)[[\hbar]]$
 (Theorem~\ref{thm:capelli-projective-anomaly}) is the projective
 Lie anomaly at the trace generator.
+
+% STRUCTURAL-STUB: platonic chapter 10 — the W_infinity[lambda]/E_infinity
+% admissible endpoint. A conditional theorem under four named hypotheses
+% (Prochazka triangular truncation; Creutzig–Kanade–Linshaw parafermion
+% compatibility; Pope–Romans–Shen/Bakas; Yamada weight-window), per the
+% seventeen-site catalogue, site 14. A previous unconditional draft was
+% deleted (commit 3ed5e29) as comparison-problem disclaimers in disguise;
+% the chapter enters only as genuine conditional mathematics sourced from
+% the four primary references. Until then the endpoint identification is
+% named in the frontier (sec:compact-comparison-obstructions).
 
 \section{Compact comparison obstructions}\label{sec:compact-comparison-obstructions}
 
@@ -15926,7 +15942,7 @@ all-arity extension is the content of Conjecture~\ref{conj:chiral-Ed-deligne}.
   compact non-toric CY$_3$]\label{conj:hall-drinfeld-borcherds-ss}
   On a compact non-toric Calabi--Yau threefold \(X\) with chosen
   Hall--Drinfeld--Borcherds datum of compatible conventions
-  (Appendix~\ref{app:comparison-conventions},
+  (\S\ref{app:comparison-conventions},
   Theorem~\ref{thm:matched-conventions-transfer}), construct a filtered
   complex
   \[
@@ -16038,11 +16054,12 @@ arity-two local singular product is
   K^{(2)}_\Delta(z,w)\mathsf{J}_{[x,y]_{\mathfrak g}}(w),
 \]
 generalising the curve-level chiral operation only after controlled
-restriction.  The global mixed-HT comparison at \(d=2\) is controlled by
-\(\mathfrak{Ob}_{\mathrm{Del}}^{\mathrm{glob}}\).  The operator-level
-lift of the modular line on \(K3\times E\) and the chiral \(E_d\)
-Deligne theorem at \(d\geq2\) are separate comparison and operadic
-problems.
+restriction.  The global mixed-HT identification at \(d=2\),
+controlled by \(\mathfrak{Ob}_{\mathrm{Del}}^{\mathrm{glob}}\), the
+operator-level lift of the modular line on \(K3\times E\)
+(\S\ref{ssec:open-modular-lift}), and the chiral \(E_d\) Deligne
+theorem at \(d\geq2\) (\S\ref{ssec:open-chiral-Ed-Deligne}) are the
+open problems the formal-Darboux stalk has made well-posed.
 
 \section*{Acknowledgements}
 This work belongs to the lineage of Bershadsky--Cecotti--Ooguri--Vafa

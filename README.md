@@ -43,7 +43,7 @@ TeX integrity check; it is not a mathematical certification.
 - `abstract.tex` — abstract.
 - `authors.tex` — author block.
 - `mathmacros.tex` — mathematical macro layer.
-- `appendix-matlis-principal-parts.tex`,
+- `section-pro-matlis-envelope.tex`,
   `appendix-factorization-current-conventions.tex`,
   `appendix-sign-conventions.tex`,
   `appendix-full-psi-homology.tex`,
