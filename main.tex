@@ -1210,8 +1210,9 @@ differentials]\label{def:local-th-string}
   \]
   The first undecided total-degree-\(14\) systems in the exact
   kernel-correction window are \((6,8),(8,6),(7,7)\).  Their
-  classical cyclic boundary equations close; no decorated target
-  solution and no signed obstruction row is certified.
+  classical cyclic boundary equations close; the exact computation on
+  these windows produces neither a decorated target solution nor a
+  signed obstruction row.
   Proposition~\ref{prop:app-edge-pbw-telescoping} closes the
   one-moving-letter edge strips
   \(\mathfrak o_{2,b}=\mathfrak o_{a,2}=0\).  The all-interior
@@ -1262,7 +1263,7 @@ The local geometric datum is
 completed at \(L\) and replaced by its formal Darboux normal polydisk
 \((\widehat{\C^2}_0,\omega)\).  Each factor is required.
 
-\paragraph{The RG-stable completion.}
+\paragraph{The factors of the local geometry.}
 \(\R_t\) is the brane worldline: the cyclic open BV theory and its
 trace observables \(J(f)(t)\) live as currents on it.  \(\R_s\) is the
 topological normal/propagator direction along which BV ghosts move
@@ -1987,8 +1988,8 @@ on the moment-map equation.
   Since the escape-return image spans the retained finite Matlis window,
   the unary-boundary closure of these returns coincides with the
   full collapse of \(\mathcal P_{\le N}\) onto the trivial module;
-  every nontrivial finite Matlis window therefore retains the
-  Bochner--Martinelli leak.  A one-pair derived analytic quotient
+  every nontrivial finite Matlis window therefore carries the nonzero
+  Bochner--Martinelli class \(\operatorname{ob}_{\mathfrak h,N}\).  A one-pair derived analytic quotient
   does give a
   differential identity, after the full analytic BMK contraction and
   diagonal orientation are fixed: quotient the relative current complex
@@ -2600,7 +2601,8 @@ Definition~\ref{defn:formal-disk-ce-pv-completion}
 \(P_0\)-bracket enhancement on a chosen bracket-admissible target
 \(B\subset\mathrm{PV}_{\mathrm{coord}}(A_{\partial,\mathrm{coord}})\)
 (Definition~\ref{defn:bracket-kernel-admissible}); the strict ambient
-product is foreclosed by Lemma~\ref{lem:tate-casimir-obstruction}.
+product carries the Casimir obstruction of
+Lemma~\ref{lem:tate-casimir-obstruction}.
 (4) Maurer--Cartan diagonal kernel: the formal Casimir
 \(C_{\mathfrak h}=\sum_{d\ge1}\sum_i e_{d,i}\otimes e^i_d\) converges
 in the chosen completion --- realised by the weighted Tate envelope of
@@ -2746,6 +2748,12 @@ records which level is reached and which obstruction blocks the next.
 
 
 \subsection{The local stalk theorem: introductory form}\label{ssec:intro-main-theorem-statement}
+
+The chart of \S\ref{ssec:formal-darboux-stalk-one-calculation}, the
+locality structure of Proposition~\ref{prop:three-localities}, and the
+closed--open factorization triple assemble into one statement: the
+trace-sector boundary value of the closed Hamiltonian BF observables
+at \(N\) Dirac branes, in the formal Darboux coordinates of the chart.
 
   \begin{thm}[Main theorem, introductory form]\label{thm:intro-main-formal-darboux}
     Let
@@ -3488,6 +3496,10 @@ is the derived commuting variety
 section below.
 
 \subsection{Operators in the closed Hamiltonian sector}\label{sec:grav-ops}
+
+The Hamiltonian BF action determines the classical local operators at
+a formal insertion point: the continuous Chevalley--Eilenberg cochains
+of \(\mathfrak g\).
 
 Let $\mathfrak h=\widehat{\mathfrak h}=\C[[z_1,z_2]]/\C\cdot1$ with the
 projected Poisson bracket, and let $\mathfrak h^\vee$ be its continuous Taylor
@@ -7943,7 +7955,7 @@ rank-\(N\) quantum scalar is
   [\Phi_\hbar(z_1),\Phi_\hbar(z_2)]_{\mathrm{proj}}
   =\hbar N\mathbf 1,
 \]
-the Capelli projective anomaly, not a finite-rank moment-map equation.
+the Capelli projective anomaly.
 
 \section{CE/PV dictionary as Koszul resolution}\label{sec:ce-pv-koszul}
 
@@ -13720,7 +13732,7 @@ the trace representation, realised by the Capelli central extension
 $0\to\C\cdot K\to\widehat{\mathfrak g}_{\mathrm{cent}}\to\mathfrak g\to0$
 of \eqref{eq:cent-extension}; the defining bracket value is
 $\{\operatorname{Tr}\phi_1,\operatorname{Tr}\phi_2\}=N$
-(Remark~\ref{rmk:consistency-probes}, check~(2)).  A determinant-line
+(Remark~\ref{rmk:consistency-probes}(2)).  A determinant-line
 curvature interpretation is a further theorem after the determinant
 line and its connection are constructed.
 
@@ -13736,23 +13748,24 @@ Poisson partner of the symplectic potential is
   \{\operatorname{Tr}\phi_1,\operatorname{Tr}\phi_2\}
     =\operatorname{Tr}(I\cdot I)=N,
 \]
-the brane centre-of-mass charge.  Closed-side: invisible.
-Open-side: visible, equal to \(N\).  The asymmetry is a single Lie
+the brane centre-of-mass charge.  The closed side quotients the
+constant line; the open side retains it with value \(N\).  The
+asymmetry is a single Lie
 cohomology class \([\bar c]\in H^2_{\mathrm{Lie}}(\bar A,\C)\),
 realised both as an abelian-extension obstruction on \(\bar A\)
 and as the U(1) trace centre of \(\mathfrak{gl}_N\), and it
 survives Moyal quantisation as the order-\(\hbar\) Capelli shift.
-The cocycle has three concrete faces --- Lie 2-cocycle on
-\(\bar A\), Poisson bracket of trace coordinates, and projective
+The cocycle has three realisations: the Lie 2-cocycle on
+\(\bar A\), the Poisson bracket of trace coordinates, and the projective
 Moyal--Weyl commutator
 \[
   [\Phi_\hbar(z_1),\Phi_\hbar(z_2)]_{\mathrm{proj}}
-    =\hbar N\cdot\mathbf 1
+    =\hbar N\cdot\mathbf 1 ;
 \]
---- packaging the four equivalent representatives of
-Theorem~\ref{thm:app-scalar-anomaly-transgression} (the abstract
+Theorem~\ref{thm:app-scalar-anomaly-transgression} identifies the four
+equivalent representatives (the abstract
 central extension and the explicit Lie central extension reduce
-to one face on \(\bar A\)).
+to one realisation on \(\bar A\)).
 
 \paragraph{The closed--open mismatch cocycle.}
 Write \(\mathfrak h_{\mathrm{poly}}=\C[z_1,z_2]\) for the unreduced
@@ -13861,7 +13874,8 @@ the closed and open sides disagree.
   Theorem~\ref{thm:u1-center-anomaly-open} multiplies by
   $\operatorname{Tr}I=N$ to give
   $\{\operatorname{Tr}\phi_1,\operatorname{Tr}\phi_2\}
-  =\operatorname{Tr}(I\cdot I)=N$.  Same axis, two faces.
+  =\operatorname{Tr}(I\cdot I)=N$: the closed cocycle and the open
+  trace bracket represent the same class.
 \end{proof}
 
 The class \([\bar c]\) is Chevalley--Eilenberg cohomology on the
@@ -14023,9 +14037,9 @@ only the order-\(\hbar\) correction.
   same datum, read at $\hbar=0$ and at first order in $\hbar$.
 \end{proof}
 
-\begin{rmk}[Three faces, one class]\label{rmk:three-faces-one-class}
+\begin{rmk}[One class, three realisations]\label{rmk:three-faces-one-class}
   The mismatch class $[\bar c]\in H^2_{\mathrm{Lie}}(\bar A,\C)$ has
-  three named faces:
+  three realisations:
   \begin{itemize}
     \item closed side, abelian-extension obstruction
       (Theorem~\ref{thm:u1-center-anomaly});
@@ -14168,7 +14182,8 @@ rational and basis-canonical.
 \subsection{Graph formalism and specialization datum}
 
 The Moyal coefficients \(\hbar P\), \(\hbar^3 P^3/24\), \(\hbar^5 P^5/1920\),
-\(\hbar^7 P^7/322560\) of the previous subsection form the algebraic
+\(\hbar^7 P^7/322560\) of the all-order Weyl/Moyal expansion
+(Theorem~\ref{thm:phi-hbar-all-order}) form the algebraic
 model.  Costello's heat-kernel BV calculus produces coefficients of
 the same operad-theoretic shape from different data: an elliptic
 parent theory, a propagator, a counterterm scheme, an anomaly class,
@@ -15335,10 +15350,9 @@ the coordinate window, Hamiltonian-dual CE coordinates \(c^I\) map
 to Schouten polyvector coordinates \(\theta^I\) on
 \(\widehat{\mathbf S}(\bar A)\), and shifted-cotangent-dual CE
 coordinates \(u_I\) map to boundary Hamiltonian observables \(O_I\)
-on the Chan--Paton pair.  The assignment \(c_f\mapsto O_f\) is a type
-error
-(Theorem~\ref{thm:reduced-ce-pv-central-operation}).  The full
-stratified comparison is \S\ref{ssec:stratified-koszul} below.
+on the Chan--Paton pair; Theorem~\ref{thm:reduced-ce-pv-central-operation}
+separates the two columns.  The full
+stratified comparison is \S\ref{ssec:stratified-koszul}.
 
 \begin{rmk}[Strict-product $P_0$ comparison block]\label{rmk:strict-product-p0-obstruction}
   The cochain-level CE/PV identity of
@@ -15439,8 +15453,8 @@ pair \((\mathfrak h_\Pi,D_\oplus)\) has an obstruction to a coefficient kernel
 projecting to every finite Casimir
 \(C^M_{\mathfrak h}=\sum_{d\le M}\sum_i e_{d,i}\otimes e^i_d\)
 (Lemma~\ref{lem:tate-casimir-obstruction},
-Theorem~\ref{thm:strict-unweighted-obstruction}), so the strict-unweighted
-endpoint is foreclosed.  Theorem~\ref{thm:bmk-finite-window-obstruction}
+Theorem~\ref{thm:strict-unweighted-obstruction}); the strict-unweighted
+endpoint carries this obstruction.  Theorem~\ref{thm:bmk-finite-window-obstruction}
 records the finite-window Bochner--Martinelli obstruction; strict
 all-window support-local transfer is the separate BMK ladder problem
 with obstruction vector
@@ -15486,7 +15500,7 @@ vector]\label{defn:tate-cotangent-lift-obstruction-vector}
   matched-conventions class \(\mathfrak o_{\mathrm{cv}}\).  The
   Costello--Li 2012 BCOV/HCS theorem belongs to a different hypothesis
   class from the present brane-defect geometry; the hypothesis-separation lemma
-  below forces the eight components.
+  forces the eight components.
 \end{defn}
 
 \paragraph{\texorpdfstring{Weighted Casimir kernel \(\mathfrak o_{\mathrm{Cas}}\).}{Weighted Casimir kernel o-Cas.}}
@@ -15591,8 +15605,9 @@ of \(M^\vee\) (Matlis~\cite{matlis-injective};
 Definition~\ref{def:app-matlis-principal-parts},
 Lemma~\ref{lem:app-matlis-coadjoint-continuity}).
 
-Leakage out of the finite Matlis window \(\mathcal P_{\le N}\) for a
-class is the finite-rank Matlis duality obstruction on the
+The Hamiltonian coadjoint action moves classes out of the finite
+Matlis window \(\mathcal P_{\le N}\); this is the finite-rank Matlis
+duality obstruction on the
 corresponding window; the obstruction theorem at level \(N\) is
 Theorem~\ref{thm:bmk-finite-window-obstruction}, the Tate-cohomology
 identity
@@ -15688,7 +15703,7 @@ windowwise primitives.
 The Casimir extension of \S\ref{subsec:scalar-anomaly} and its Capelli
 scalar \(\hbar N[\bar c]\) sit at the trace
 generator inside the same pro-Matlis envelope; the construction
-problem each component inscribes is the choice of pro-Matlis-coherent
+problem recorded by each component is the choice of pro-Matlis-coherent
 counterterm tower that null-homotopes the corresponding class.
 
 
