@@ -5,30 +5,36 @@ formal-Darboux fibre of a higher open--closed problem.  At the chosen
 Dirac brane vacuum \(b_p\in\mathcal{C}^{\mathrm{op}}_\partial\), the
 Hamiltonian BF bulk gives Chevalley--Eilenberg cochains, the boundary
 brane gives the \(E_1\)-Hochschild complex of
-\(A^{\mathrm{cl}}_{\partial,N}\), and the trace map
-\(J(f)=\operatorname{Tr}f(\phi_1,\phi_2)\) gives the coordinate
+\(A^{\mathrm{cl}}_{\partial,N}\), and the finite-window trace maps
+\(J_{\leq W}\), followed by stable scalar-reduced completion, give the coordinate
 generator assignment whose centre lift is the closed-to-open morphism
-problem.  The Mixed Holomorphic--Topological Deligne conjecture asserts
-the existence of a global Morita chiral \(E_2\)-centre equivalence whose
-formal fibre at a chosen vacuum is this Hochschild chart, after the
-all-arity operations, centre-lift homotopies, descent data, quantum
-master-equation data, anomaly/locality null-homotopies, and
-comparison-cone contraction data have been constructed.
+problem.  The global mixed holomorphic--topological Deligne problem is
+the typed open--closed obstruction problem whose solution is a
+Morita mixed-HT \(E_2^{\mathrm{HT}}\)-centre quasi-isomorphism.  Its
+evaluation at a chosen vacuum contains this Hochschild chart as its
+formal fibre only after the typed rows of
+\eqref{eq:typed-total-obstruction-ledger} have been supplied: the
+Swiss-cheese action tower, Morita centre lift, Hochschild-centre chart
+lift, flat Darboux-torsor transport, unreduced cotangent-current
+realization, Weiss/Ran descent, quantum master-equation data,
+anomaly/locality null-homotopies, primitive-coherence data, and
+comparison-cone contraction.
 
 The higher factorization-categorical setting consists of holomorphic
 factorization algebras, mixed holomorphic--topological factorization
 algebras, chiral derived centre objects for \(d\geq2\), and the
 formal-Darboux restriction functor.  At \(d=1\) this language reduces
 to Beilinson--Drinfeld chiral algebras on curves
-\cite{beilinson-drinfeld-chiral}.  At \(d=2\), the formal-Darboux
+\cite{beilinson-drinfeld-chiral}*{\S 3}.  At \(d=2\), the formal-Darboux
 trace theorem gives the trace-sector stalk; the formal polydisk also
 carries the all-arity tree-kernel current operad constructed in
 Theorem~\ref{app:thm:formal-polydisk-all-arity-current-operad}, whose
 binary generator is the diagonal local-cohomology singular product of
-Theorem~\ref{thm:formal-two-dimensional-holomorphic-ope}.  The global
-chiral \(E_2\)-Deligne problem is the promotion of this formal current
-operad to a Morita chiral \(E_2\)-centre Maurer--Cartan lift with
-Ran/Weiss descent and QME compatibility.
+Theorem~\ref{thm:formal-two-dimensional-holomorphic-singular-product}.
+The global mixed-HT \(E_2^{\mathrm{HT}}\)-Deligne problem is the
+promotion of this formal current operad to a Morita mixed-HT
+\(E_2^{\mathrm{HT}}\)-centre Maurer--Cartan lift with Ran/Weiss descent
+and QME compatibility.
 
 \subsection{\texorpdfstring{Factorization $E_d$-algebras on smooth complex $d$-folds}{Factorization Ed-algebras on smooth complex d-folds}}\label{app:hfc:fact-Ed}
 
@@ -51,7 +57,7 @@ assigns a cochain complex \(U\mapsto\mathcal F(U)\) to each open
 \]
 for pairwise disjoint opens \(U_i\subset V\), and extension maps for
 inclusions, satisfying the factorization axioms of Costello--Gwilliam
-\cite{costello-gwilliam}*{Vol.~I, Defn.~3.1.4}.  The holomorphic
+\cite{costello-gwilliam}*{Vol.~I Secs.~6.1, 6.5, 7.2}.  The holomorphic
 condition means that the local cochain models are Dolbeault
 resolutions and the structure maps commute with the holomorphic
 differential.  An \(E_d\)-algebra object in the category of such
@@ -61,7 +67,7 @@ factorization algebras is extra structure.
 \begin{rmk}[Comparison presentations]
 A holomorphic factorization algebra on $X$ has three comparison
 languages
-\cite{beilinson-drinfeld-chiral}\cite{francis-thesis}\cite{lurie-ha}*{\S 5.5}:
+\cite{beilinson-drinfeld-chiral}*{\S 3}\cite{francis-thesis}\cite{lurie-ha}*{\S 5.5}:
 \begin{enumerate}
   \item \emph{Costello--Gwilliam.}  A factorization algebra in the sense
     of \cite{costello-gwilliam}*{Vol.~I, \S 3}, with the holomorphic
@@ -81,7 +87,7 @@ At $d=1$ these presentations reduce to chiral algebras on curves in the
 algebro-geometric sense of \cite{beilinson-drinfeld-chiral}*{\S 3}.
 For $d\geq 2$ the Costello--Gwilliam holomorphic
 factorization-algebra presentation is the definition of
-the closed-string sector classical observables.  The Ran
+the closed field-theory sector classical observables.  The Ran
 \(\mathcal D\)-module comparison and the Lurie--Ayala--Francis
 comparison are hypotheses in the global chiral \(E_d\)-Deligne
 problem isolated in
@@ -154,7 +160,7 @@ cochain complex
 \]
 in the chiral monoidal structure of
 \cite{beilinson-drinfeld-chiral}*{\S 3.4}.  It carries a natural
-$E_2$-algebra structure (chiral Deligne theorem at \(d=1\);
+\(E_2^{\mathrm{top}}\)-algebra structure (chiral Deligne theorem at \(d=1\);
 \cite{beilinson-drinfeld-chiral}*{\S 4}, Lurie HA
 \cite{lurie-ha}*{Thm.~5.3.1.14}, Costello--Gwilliam
 \cite{costello-gwilliam}*{Vol.~I, \S 6}).  This is the proved $d=1$
@@ -183,10 +189,13 @@ $Z^{\mathrm{der}}_{E_d^{\mathrm{ch}}}(\mathcal A)$ extending the
 $E_2$-structure of the $d=1$ case is precisely the datum asserted by
 the chiral $E_d$-Deligne conjecture
 (\S\ref{ssec:open-chiral-Ed-Deligne}; Lurie
-\cite{lurie-ha}*{\S 5.3.1}); partial constructions are due to
-Hennion (chiral Lie algebroids on smooth schemes) and Francis
-(factorisable co-operads).  The Mixed Holomorphic--Topological Deligne
-conjecture at $d=2$ is the corresponding statement for
+\cite{lurie-ha}*{\S 5.3.1}).  Adjacent constructions are supplied by
+Faonte--Hennion--Kapranov higher Kac--Moody/factorization geometry
+\cite{faonte-hennion-kapranov-higher-km} and by Francis's
+factorization-algebra framework \cite{francis-thesis}; neither is used
+as the mixed-HT \(E_{d+1}^{\mathrm{ch}}\)-action.  The Mixed
+Holomorphic--Topological Deligne conjecture at $d=2$ is the
+corresponding statement for
 $\mathrm{ChirAlg}^{\mathrm{HT}}_{2,2}(\R^2\times\C^2)$.
 \end{defn}
 
@@ -216,77 +225,116 @@ category of \(\widehat{\mathcal C}_{\mathrm{adm}}\).  The
       (\mathcal C,\mathcal C)}
   (\Delta_{\mathcal C},\Delta_{\mathcal C}).
 \]
-When no ambiguity is possible, the manuscript writes this Morita object
+When no ambiguity is possible, the manuscript writes this Morita centre
 as \(Z^{\mathrm{der}}_{E_d^{\mathrm{HT}}}(\mathcal C)\).
-The notation records the centre object.  For \(d\geq2\), a mixed-HT
-chiral \(E_{d+1}\)-algebra structure on this object is an additional
+The notation records the centre.  For \(d\geq2\), a mixed-HT
+chiral \(E_{d+1}\)-algebra structure on it is an additional
 chiral \(E_d\)-Deligne datum.
 
 If \(b\in\mathcal C\) is a dualisable boundary object and
 \(A_b=\operatorname{End}_{\mathcal C}(b)\), restriction of bimodules to
-the full subcategory generated by \(b\) gives the Hochschild chart
+the full idempotent-complete, colimit-closed mixed-HT factorization
+module subcategory generated by \(b\) gives the Hochschild chart
 \[
   \operatorname{ev}_b\colon
   Z^{\mathrm{der},\mathrm{Mor}}_{E_d^{\mathrm{HT}}}(\mathcal C)
   \longrightarrow
   C^\bullet_{\mathrm{ch},\mathrm{HT}}(A_b,A_b).
 \]
-This chart is an equivalence only under a separate Morita-density
-hypothesis on \(b\).  At the \(N\)-Dirac-brane formal-Darboux vacuum
-\(b_p\), the theorem computes the trace-sector image of
-\(\operatorname{ev}_{b_p}\), not the whole category-level centre.
+The Morita-density hypothesis means that this generated subcategory is
+all of \(\widehat{\mathcal C}_{\mathrm{adm}}\), equivalently that
+restriction of complete factorisation bimodules to \(b\) is fully
+faithful and essentially surjective after idempotent completion and
+admissible colimits.  Only under this hypothesis is
+\(\operatorname{ev}_b\) an equivalence.  The obstruction to density is
+the Verdier quotient
+\[
+  \mathcal Q_b^{\mathrm{Mor}}
+  =
+  \widehat{\mathcal C}_{\mathrm{adm}}
+  /\langle b\rangle_{\mathrm{adm}},
+\]
+where \(\langle b\rangle_{\mathrm{adm}}\) is the full
+idempotent-complete admissible-colimit subcategory generated by \(b\).
+The obstruction to the chart being an equivalence is
+\(\operatorname{Cone}(\operatorname{ev}_b)\) in the admissible target.
+At the \(N\)-Dirac-brane formal-Darboux vacuum \(b_p\), the theorem
+computes the trace-sector image of \(\operatorname{ev}_{b_p}\), not the
+full category-level centre.
 \end{defn}
 
 \subsection{The formal-Darboux stalk functor}\label{app:hfc:darboux-stalk-functor}
 
-For $X=\R^k_{\mathrm{top}}\times\C^d_{\mathrm{hol}}$ and a closed point
-$p\in\C^d$, the formal-Darboux stalk operation is restriction to the
-formal completion at $p$.
+For \(X=\R^k_{\mathrm{top}}\times Y_{\mathrm{hol}}\) and a closed point
+\(p\in Y\), restriction to the formal completion
+\(\widehat Y_p=\operatorname{Spf}\widehat{\mathcal O}_{Y,p}\) is a
+formal-completion stalk.  It becomes a formal-Darboux stalk only after
+\(Y\) is holomorphic symplectic of even complex dimension \(2m\) and a
+formal Darboux chart at \(p\) has been chosen.
 
 \begin{defn}[Formal-Darboux stalk functor]\label{app:defn:Darboux-stalk-functor}
-The \emph{formal-Darboux stalk functor} at $p$ is the symmetric monoidal
-$\infty$-functor
+Let \((Y,\omega_Y)\) be holomorphic symplectic of complex dimension
+\(2m\), and let \(p\in Y\).  The underlying restriction is the symmetric
+monoidal \(\infty\)-functor
 \[
   (-)|_{p}\colon
-  \mathrm{ChirAlg}^{\mathrm{HT}}_{k,d}(\R^k\times\C^d)
+  \mathrm{ChirAlg}^{\mathrm{HT}}_{k,2m}(\R^k\times Y)
    \longrightarrow
-  \mathrm{ChirAlg}^{\mathrm{HT}}_{k,d}(\R^k\times\widehat{\C^d}_p),
+  \mathrm{ChirAlg}^{\mathrm{HT}}_{k,2m}(\R^k\times\widehat Y_p),
 \]
-sending $\mathcal F\mapsto\mathcal F|_{\R^k\times\widehat{\C^d}_p}$, the
-restriction of the factorisable structure to the formal neighbourhood
-$\widehat{\C^d}_p=\operatorname{Spf}\widehat{\mathcal O}_{\C^d,p}$.  The
-holomorphic Darboux theorem trivialises the germ of $\C^d$ at $p$ to
-the formal symplectic polydisk in coordinates $(z_1,\ldots,z_d)$, so
-the value at $p$ depends on $p$ only through its formal isomorphism
-class --- equivalently, only through the formal Darboux coordinates.
+sending \(\mathcal F\mapsto
+\mathcal F|_{\R^k\times\widehat Y_p}\).  A coordinate expression of this
+stalk is additional data: a formal Darboux chart
+\[
+  \chi\colon
+  \bigl(\widehat{\mathbb A}^{2m}_0,\omega_0\bigr)
+  \xrightarrow{\;\sim\;}
+  \bigl(\widehat Y_p,\omega_Y|_{\widehat Y_p}\bigr),
+  \qquad
+  \omega_0=\sum_{i=1}^m dq_i\wedge dp_i .
+\]
+The set \(\mathscr D_p(Y,\omega_Y)\) of such charts is a torsor for
+\(\mathrm{Symp}^{\mathrm{form}}(\widehat{\mathbb A}^{2m}_0,\omega_0)\)
+by precomposition.  Thus the quotient of the family
+\(\{\chi^*((-)|_p)\}_{\chi\in\mathscr D_p(Y,\omega_Y)}\) by this torsor
+is intrinsic; a single displayed coordinate algebra is a representative,
+not a canonical object.
 \end{defn}
 
-\begin{prop}[Equivariance under formal symplectomorphism]\label{app:prop:Darboux-equivariance}
-The formal-Darboux stalk functor of
-Definition~\ref{app:defn:Darboux-stalk-functor} is equivariant under the
-formal symplectomorphism group $\mathrm{Symp}^{\mathrm{form}}(\C^d)$
-acting on the source category by formal coordinate change at $p$ and
-on the target by the same change of formal Darboux coordinates.  At
-$d=2$ on the holomorphic-symplectic factor, the stalk is canonical up
-to formal Darboux change.
+\begin{prop}[Darboux-chart torsor equivariance]\label{app:prop:Darboux-equivariance}
+Let \(g\in
+\mathrm{Symp}^{\mathrm{form}}(\widehat{\mathbb A}^{2m}_0,\omega_0)\) and
+\(\chi'\!=\chi\circ g\).  The two coordinate representatives of the
+formal-Darboux stalk satisfy a symmetric monoidal natural identification
+\[
+  (\chi')^*((-)|_p)\cong g^*\chi^*((-)|_p).
+\]
+Consequently the formal-Darboux stalk is invariant only as the quotient
+by the Darboux-chart torsor; for the local theorem
+\((Y,\omega_Y)=(\C^2,dz_1\wedge dz_2)\), the coordinates
+\((z_1,z_2)\) are a chosen representative of this quotient.
 \end{prop}
 
 \begin{proof}
-The Darboux theorem in formal coordinates trivialises any holomorphic
-symplectic form to $\omega_p=\sum_i dz_{2i-1}\wedge dz_{2i}$, with the
-trivialisation defined uniquely up to the formal symplectomorphism
-group.  The factorisation structure pulls back along this
-trivialisation by symmetric monoidal naturality.
+The formal holomorphic Darboux theorem gives at least one chart
+\(\chi\).  If \(\chi'\) is another chart, then
+\(\chi^{-1}\circ\chi'\) is an automorphism of
+\((\widehat{\mathbb A}^{2m}_0,\omega_0)\), hence an element of
+\(\mathrm{Symp}^{\mathrm{form}}(\widehat{\mathbb A}^{2m}_0,\omega_0)\).
+Conversely \(\chi\circ g\) is a Darboux chart for every such \(g\).  The
+displayed natural identification is the contravariant functoriality of
+factorisation algebras under formal coordinate change.  No coordinate
+representative is selected by the restriction functor itself.
 \end{proof}
 
-\subsection{The bulk closed-string sector as an
+\subsection{The bulk closed field-theory sector as an
 \texorpdfstring{$E_2^{\mathrm{HT}}$-factorization}{E2-HT-factorization}
 algebra}\label{app:hfc:bulk-as-fact-cat}
 
 \begin{constr}[Bulk classical observables on $\R^2\times\C^2$]\label{app:constr:bulk-fact-Ed}
 Let $X=\R^2_{\mathrm{top}}\times\C^2_{\mathrm{hol}}$ and
 $\mathfrak g=\mathfrak h\ltimes\mathfrak h^\vee_{\mathrm{cont}}[1]$ as
-in \S\ref{ssec:hamiltonian-bf-algebra}.  The closed-string sector
+in \S\ref{ssec:hamiltonian-bf-algebra}.  The closed-sector
 classical observables factorization algebra
 $\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}\in
 \mathrm{ChirAlg}^{\mathrm{HT}}_{2,2}(X)$ is the assignment
@@ -296,10 +344,11 @@ $\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}\in
      \Omega^\bullet_c(U)\widehat\otimes
      \Omega^{0,\bullet}_c(B)\widehat\otimes\mathfrak g\bigr),
 \]
-for $U\subset\R^2$ and $B\subset\C^2$ open, with $E_2$-algebra structure
-from the symmetric algebra structure of the continuous CE cochains and
-factorisation isomorphisms inherited from extension-by-zero on
-disjoint opens.  The three locality differentials of
+for $U\subset\R^2$ and $B\subset\C^2$ open, with a commutative
+dg-algebra structure from the symmetric algebra structure of the
+continuous CE cochains and an \(E_2^{\mathrm{top}}\)-factorization
+structure inherited from extension-by-zero on disjoint opens.  The three
+locality differentials of
 Definition~\ref{app:defn:mixed-HT-fact} are the de Rham differential
 on $U$, the Dolbeault differential $\bar\partial$ on $B$, and the
 internal CE differential dual to the $\mathfrak g$-bracket.
@@ -348,7 +397,7 @@ resolution of the diagonal leaves the local-cohomology quotient
   H^2_\Delta(\C[[z_1,z_2,w_1,w_2]])\,d\zeta_1d\zeta_2,
 \]
 and the CE bracket of $\mathfrak g$ gives exactly the singular product
-of Theorem~\ref{thm:formal-two-dimensional-holomorphic-ope}.  Thus the
+of Theorem~\ref{thm:formal-two-dimensional-holomorphic-singular-product}.  Thus the
 formal completion retains the diagonal collision operation even though
 its disjoint-open product is the extension-by-zero product.
 \end{proof}
@@ -399,14 +448,17 @@ algebras such as affine Kac--Moody, \(\beta\gamma\), Virasoro, and
 matching before comparison with this formal disk.
 \end{constr}
 
-\begin{prop}[Brane $E_1$-Hochschild as $E_2$-algebra]\label{app:prop:brane-HH-E2}
+\begin{prop}[Brane $E_1$-Hochschild as \(E_2^{\mathrm{top}}\)-algebra]\label{app:prop:brane-HH-E2}
 The derived $E_1$-centre
 $Z^{\mathrm{der}}_{E_1}(A^{\mathrm{cl}}_{\partial,N})$ is naturally an
-$E_2$-algebra, equivalent to the Hochschild cochain complex
+\(E_2^{\mathrm{top}}\)-algebra, equivalent to the Hochschild cochain complex
 $C^\bullet_{\mathrm{Hoch}}(A^{\mathrm{cl}}_{\partial,N},A^{\mathrm{cl}}_{\partial,N})$;
 its cohomology is
 $HH^\bullet(A^{\mathrm{cl}}_{\partial,N},A^{\mathrm{cl}}_{\partial,N})$
-with Gerstenhaber bracket and cup product.  This is Deligne's
+with cup product and the unshifted Gerstenhaber bracket of degree
+\(-1\), equivalently a degree-zero Lie bracket on
+$HH^\bullet(A^{\mathrm{cl}}_{\partial,N},A^{\mathrm{cl}}_{\partial,N})[1]$.
+This is Deligne's
 $E_1$-Hochschild theorem
 (Tamarkin~\cite{tamarkin-deligne},
 McClure--Smith~\cite{mcclure-smith},
@@ -418,7 +470,7 @@ Lurie~\cite{lurie-ha}*{Thm.~5.3.1.14}).
 functorial statement}\label{app:hfc:mixed-HT-Deligne}
 
 \begin{conj}[Mixed Holomorphic--Topological Deligne, functorial form]\label{app:conj:mixed-HT-Deligne}
-For the bulk closed-string sector
+For the bulk closed sector
 $\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}\in\mathrm{ChirAlg}^{\mathrm{HT}}_{2,2}(\R^2\times\C^2)$
 of Construction~\ref{app:constr:bulk-fact-Ed} and the boundary open
 category $\mathcal{C}^{\mathrm{op}}_\partial$ of
@@ -436,49 +488,71 @@ derived centre of Definition~\ref{app:defn:Z-der-HT}, together with an
 operadic homotopy inverse or, equivalently, a contraction of
 \(\operatorname{Cone}(\mathrm{OCA})\) in the admissible coefficient
 category.  The datum is defined only after the following construction
-packages have been fixed: the all-arity chiral \(E_2\) operations, the
-Morita centre-lift Maurer--Cartan homotopies, the Weiss/Ran descent
-cochains, the Costello quantum master-equation counterterm tower, the
-anomaly and locality null-homotopies, and the comparison-cone
-contraction.  Relative to this datum the morphism is required to be a
-quasi-isomorphism; before these choices are made the conjecture is an
-obstruction problem, not a distinguished map.  After choosing a dualisable
+packages have been fixed: the mixed-HT Swiss-cheese action
+Maurer--Cartan lift, the all-arity mixed-HT \(E_2^{\mathrm{HT}}\)
+Morita-centre operations, the admissible Hochschild-centre chart lift,
+flat transport over the formal Darboux coordinate torsor, the unreduced
+cotangent-current realization,
+the Weiss/Ran descent cochains, the Costello quantum master-equation
+counterterm tower, the anomaly and locality null-homotopies, and the
+comparison-cone contraction.  These are the typed rows of
+\eqref{eq:typed-total-obstruction-ledger}.  Relative to this datum the
+morphism is required to be a quasi-isomorphism; before these choices are
+made the conjecture is an obstruction problem, not a distinguished map.
+After choosing a dualisable
 \(b\in\mathcal C^{\mathrm{op}}_\partial\), the evaluation
 \(\operatorname{ev}_b\) gives the Hochschild chart
 \(C^\bullet_{\mathrm{ch},\mathrm{HT}}(A_b,A_b)\); the chart is not a
-definition of the category-level centre.
+definition of the category-level centre and is an equivalence only under
+the Morita-density condition of Definition~\ref{app:defn:Z-der-HT}.
 
 \emph{Known cases.}
 \begin{itemize}
   \item At $d=1$ (replacing $\C^2$ by a smooth curve $C$): proved
     (chiral Deligne theorem at \(d=1\),
-    Vol I~\cite{lorgat-vol1}; \cite{beilinson-drinfeld-chiral}).
-  \item At $d\geq 2$ the datum is the chiral $E_d$-Deligne conjecture in
-    the sense of Lurie~\cite{lurie-ha}*{\S 5.3.1}.  Its mixed-HT form is
-    the holomorphic-topological enhancement.  Partial constructions are
-    recorded in Hennion's chiral Lie algebroids on smooth schemes and
-    Francis's factorisable co-operads.
-	  \item \emph{Formal-Darboux stalk:} the trace-sector
-	    map
-	    \[
-	      \Phi_N^{\mathrm{gen}}\colon
-	      C^\bullet_{\mathrm{CE},\mathrm{cont}}(\mathfrak g)
-	      \dashrightarrow
-	      C^\bullet_{\mathrm{Hoch}}\!
-      (A^{\mathrm{cl}}_{\partial,N},A^{\mathrm{cl}}_{\partial,N}),
-      \qquad
-      c_f\mapsto\theta_f,\quad u_f\mapsto J(f),
-	    \]
-	    at \(N\) Dirac branes over the formal-Darboux vacuum \(b_p\).
-	    On the stable scalar-reduced trace algebra its coordinate shadow
-	    \(\Phi_{\mathrm{coord}}^{\mathrm{st}}\) is the
-	    Chevalley--Eilenberg/polyvector coordinate isomorphism after the
-	    admissible Tate/pro-Matlis completion.  The whole finite-\(N\)
-    derived-centre equivalence is governed by Hochschild centrality
-    homotopies, finite-trace relations, and descent/QME hypotheses
-    recorded below.  The
+    Vol I~\cite{lorgat-vol1};
+    Beilinson--Drinfeld~\cite{beilinson-drinfeld-chiral}*{\S 4};
+    Frenkel--Ben-Zvi~\cite{frenkel-ben-zvi}).
+  \item At $d\geq 2$ Lurie's theorem
+    \cite{lurie-ha}*{\S 5.3.1} supplies the topological
+    \(E_d\)-Hochschild action after forgetting holomorphic,
+    boundary-defect, and mixed-HT analytic structure.  The chiral
+    mixed-HT lift is the additional obstruction problem recorded in
+    \eqref{eq:typed-total-obstruction-ledger}.  Partial adjacent
+    structures are recorded by Faonte--Hennion--Kapranov
+    \cite{faonte-hennion-kapranov-higher-km} and by Francis's
+    factorization-algebra framework \cite{francis-thesis}; they are not
+    the mixed-HT \(E_2^{\mathrm{HT}}\)-Deligne datum.
+  \item \emph{Formal-Darboux stalk:} the trace-sector generator boundary
+    value
+    \[
+      \begin{gathered}
+        G_{\mathrm{CE}}=
+        \operatorname{Gen}_{\mathrm{CE}}
+        \bigl(C^\bullet_{\mathrm{CE},\mathrm{cont}}(\mathfrak g)\bigr),
+        \qquad
+        H_N^{\mathrm{Hoch}}=
+        C^\bullet_{\mathrm{Hoch}}\!
+	      (A^{\mathrm{cl}}_{\partial,N},A^{\mathrm{cl}}_{\partial,N}),
+        \\
+        \Phi_N^{\mathrm{gen}}\in
+        \operatorname{Hom}^{\mathrm{gr}}_\C
+        \bigl(G_{\mathrm{CE}},H_N^{\mathrm{Hoch}}\bigr),
+        \qquad
+        \Phi_N^{\mathrm{gen}}(c_f)=\theta_f,\quad
+        \Phi_N^{\mathrm{gen}}(u_f)=J(f).
+      \end{gathered}
+    \]
+    at \(N\) Dirac branes over the formal-Darboux vacuum \(b_p\).
+    On the stable scalar-reduced trace algebra its coordinate projection
+    \(\Phi_{\mathrm{coord}}^{\mathrm{st}}\) is the
+    Chevalley--Eilenberg/polyvector coordinate isomorphism after the
+    admissible Tate/pro-Matlis completion.  The full finite-\(N\)
+    derived-centre comparison is governed by the typed Hochschild-centre,
+    finite-trace, Darboux-torsor, cotangent-current, descent,
+    QME-counterterm, anomaly/locality, and cone rows recorded below.  The
     formal-coordinate arity-two singular product is computed by
-    Theorem~\ref{thm:formal-two-dimensional-holomorphic-ope}.
+    Theorem~\ref{thm:formal-two-dimensional-holomorphic-singular-product}.
 \end{itemize}
 \end{conj}
 
@@ -486,34 +560,46 @@ definition of the category-level centre.
 At $N$ Dirac branes over the formal-Darboux vacuum
 $b_p\in\mathcal{C}^{\mathrm{op}}_\partial$, the formal-Darboux stalk
 of Conjecture~\ref{app:conj:mixed-HT-Deligne} contains the
-trace-sector morphism
+trace-sector generator boundary value
 \[
-  \mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}|_p
+  G_{\mathrm{CE},p}=
+  \operatorname{Gen}_{\mathrm{CE}}\!
+  \bigl(\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}|_p\bigr)
    \simeq
-	   C^\bullet_{\mathrm{CE},\mathrm{cont}}(\mathfrak g)
-	   \dashrightarrow_{\Phi_N^{\mathrm{gen}}}
-		   C^\bullet_{\mathrm{Hoch}}\bigl(A^{\mathrm{cl}}_{\partial,N},A^{\mathrm{cl}}_{\partial,N}\bigr)
+	   \operatorname{Gen}_{\mathrm{CE}}\!
+	   \bigl(C^\bullet_{\mathrm{CE},\mathrm{cont}}(\mathfrak g)\bigr),
+  \qquad
+  \Phi_N^{\mathrm{gen}}\in
+  \operatorname{Hom}^{\mathrm{gr}}_\C\!\left(
+    G_{\mathrm{CE},p},
+    C^\bullet_{\mathrm{Hoch}}\bigl(A^{\mathrm{cl}}_{\partial,N},
+    A^{\mathrm{cl}}_{\partial,N}\bigr)
+  \right)
 \]
 with formal Darboux coordinate expression
 \(J(f)=\overline{\operatorname{Tr}\,f(\phi_1,\phi_2)}\) on polynomials,
 extended to
 \(\mathfrak h=\widehat{\mathcal O}_{\C^2,p}/\C\cdot 1\) only after
 formal completion, and reduced closed-to-open dictionary
-\(c_f\mapsto\theta_f\in C^1\), \(u_f\mapsto J(f)\cdot(-)\in C^0\) on
+\(\Phi_N^{\mathrm{gen}}(c_f)=\theta_f\in C^1\),
+\(\Phi_N^{\mathrm{gen}}(u_f)=J(f)\cdot(-)\in C^0\) on
 Chevalley--Eilenberg generators of
 $\mathfrak g=\mathfrak h\ltimes\mathfrak h^\vee_{\mathrm{cont}}[1]$.
-After scalar reduction and passage to the stable trace algebra the
-coordinate shadow \(\Phi_{\mathrm{coord}}^{\mathrm{st}}\) is the
-admissible CE/PV coordinate isomorphism.  For fixed
-finite \(N\) it is not an equivalence onto the whole Hochschild
-complex.
+This generator boundary value is not a cochain-algebra map from the
+full bulk CE complex.  After scalar reduction and passage to the
+stable trace algebra the coordinate projection
+\(\Phi_{\mathrm{coord}}^{\mathrm{st}}\) is the admissible CE/PV
+coordinate isomorphism.  For fixed finite \(N\) it is not an equivalence
+onto the full Hochschild complex.
 The arity-two formal diagonal operation at the stalk is the singular
 product of
-Theorem~\ref{thm:formal-two-dimensional-holomorphic-ope}.
+Theorem~\ref{thm:formal-two-dimensional-holomorphic-singular-product}.
 The chain-level lift \(\Phi_N^{\mathrm{Hoch}}\) to a strict
-\(P_0\)-factorization-centre
-morphism exists under compatible null-homotopies of
-$\operatorname{Ob}_{\mathrm{cent}/\mathrm{QME}/\mathrm{desc}}$
+\(P_0\)-factorization-centre morphism is the supplied-data object in the
+Hochschild-centre row of the typed ledger: it consists of compatible
+primitives for the four-component centre/QME/descent lift criterion
+\(\operatorname{Ob}_{\mathrm{cent/QME/desc}}\), together with the
+cotangent-current row of \eqref{eq:typed-total-obstruction-ledger}
 (Theorem~\ref{thm:app-unreduced-cotangent-lift-obstruction}).
 \end{thm}
 
@@ -528,7 +614,7 @@ Theorem~\ref{thm:formal-local-universal-property} (Procesi--Razmyslov +
 Loday--Quillen--Tsygan); the dictionary is
 Theorem~\ref{thm:reduced-ce-pv-central-operation}; the arity-two
 diagonal operation is
-Theorem~\ref{thm:formal-two-dimensional-holomorphic-ope}; the
+Theorem~\ref{thm:formal-two-dimensional-holomorphic-singular-product}; the
 chain-level lift with the stated cotangent hypotheses is
 Theorem~\ref{thm:app-unreduced-cotangent-lift-obstruction}.
 \end{proof}
@@ -545,16 +631,16 @@ Conjecture~\ref{app:conj:mixed-HT-Deligne}.  The \(d=2\)
 chiral \(E_d\)-Deligne obstruction is
 \(\operatorname{Ob}^{\mathrm{ch}\,E_2}_{\mathrm{Deligne}}\)
 (\S\ref{ssec:open-chiral-Ed-Deligne}).  Identification
-with any curve chiral algebra requires a curve-restriction theorem and
-matched-conventions transfer
+with any curve chiral algebra is governed by a curve-restriction theorem
+and matched-conventions transfer
 (Theorem~\ref{thm:matched-conventions-transfer}).
 \end{rmk}
 
 \subsection{The chiral \texorpdfstring{$E_d$}{Ed}-operad: holomorphic little disks with principal-parts data}\label{app:hfc:chiral-Ed-operad}
 
 The functorial Mixed-HT Deligne conjecture
-(Conjecture~\ref{app:conj:mixed-HT-Deligne}) requires an operadic
-action: the chiral derived centre
+(Conjecture~\ref{app:conj:mixed-HT-Deligne}) is the assertion of an
+operadic action: the chiral derived centre
 $Z^{\mathrm{der}}_{E_d^{\mathrm{ch}}}(\mathcal A)$ is the endomorphism
 object in a chiral $E_d$-module category.  At $d=1$ the chiral operad
 on curves gives this structure
@@ -626,7 +712,7 @@ The generator \(\rho^\Delta_{0,0}=K^{(2)}_\Delta\) is the
 two-dimensional Cauchy kernel.  For the Hamiltonian BF algebra, the
 associated binary operation sends \(x\otimes y\) to
 \([x,y]_{\mathfrak g}\), giving the formal singular product of
-Theorem~\ref{thm:formal-two-dimensional-holomorphic-ope}.
+Theorem~\ref{thm:formal-two-dimensional-holomorphic-singular-product}.
 \end{rmk}
 
 \begin{defn}[Tree principal-part kernels on the formal surface]
@@ -669,7 +755,8 @@ binary \(I\)-trees \(T\), modulo:
 \begin{enumerate}[label=\textup{(\roman*)}]
   \item antisymmetry under interchange of the two incoming branches at
         a binary vertex;
-  \item the Arnold--Jacobi relation on every three-leaf subtree,
+  \item the scalar Arnold--Jacobi coefficient identity on every
+        three-leaf subtree,
         \[
           \eta_{12}\wedge\eta_{23}
           +\eta_{23}\wedge\eta_{31}
@@ -746,10 +833,166 @@ the empty collision kernel in arity one.
   products \(\eta_{ij}\wedge\eta_{jk}\) are the three Cech
   representatives for the codimension-four collision obtained from the
   three cyclic two-step collisions.  Their signed sum is zero in the
-  local-cohomology quotient by the Arnold relation of
+  local-cohomology quotient by the scalar Arnold coefficient identity of
   Definition~\ref{app:defn:tree-kernel-current-operad}.  The remaining
   coefficient is the signed Jacobiator of a degree-zero graded Lie
   bracket.  Therefore the arity-three relation is killed by the action.
+\end{proof}
+
+\begin{lem}[Arity-four residue pentagon]
+\label{app:lem:arity-four-residue-pentagon}
+  Let \(z^{(1)},z^{(2)},z^{(3)},z^{(4)}\) be four formal points of
+  \(\widehat{\C^2}_0\).  The full diagonal
+  \(\Delta_{\{1,2,3,4\}}\) has codimension six.  Let \(P\) run over
+  the five parenthesizations
+  \[
+    (((12)3)4),\quad ((1(23))4),\quad
+    (1((23)4)),\quad (1(2(34))),\quad ((12)(34)),
+  \]
+  and let \(T_P\) be the corresponding rooted binary tree.  For every
+  \(P\), the edge-normal coordinates
+  \(\{\zeta^P_{e,1},\zeta^P_{e,2}\}_{e\in E_{\mathrm{int}}(T_P)}\)
+  form a regular system of parameters for the normal formal scheme of
+  \(\Delta_{\{1,2,3,4\}}\).  Hence, for every formal Laurent principal
+  part \(F\),
+  \[
+    \operatorname{Res}_{T_P}
+    \left(
+      F\,
+      \bigwedge_{e\in E_{\mathrm{int}}(T_P)}
+      \frac{d\zeta^P_{e,1}\,d\zeta^P_{e,2}}
+           {\zeta^P_{e,1}\zeta^P_{e,2}}
+    \right)
+    =
+    \operatorname{Res}_{\Delta_{\{1,2,3,4\}}}(F),
+  \]
+  so the residue functional is independent of the four-leaf
+  parenthesization.  The image of the oriented arity-four Stasheff
+  pentagon under the tree-current operation is zero in
+  \(\mathsf{PP}^{(2)}_{\mathrm{tree}}\): each pentagon edge is the
+  outside one-edge kernel tensored with the arity-three
+  Arnold--Jacobi class of
+  Lemma~\ref{app:lem:arity-three-residue-jacobi}.  Thus the
+  arity-four tree-current pentagon contributes no curvature.
+\end{lem}
+
+\begin{proof}
+  Put
+  \[
+    a=z^{(1)}-z^{(2)},\qquad
+    b=z^{(2)}-z^{(3)},\qquad
+    c=z^{(3)}-z^{(4)}.
+  \]
+  The completed local ring at the full diagonal is
+  \[
+    \C[[a_1,a_2,b_1,b_2,c_1,c_2,z^{(4)}_1,z^{(4)}_2]].
+  \]
+  The six functions \(a_1,a_2,b_1,b_2,c_1,c_2\) cut out the full
+  collision.  The edge-normal coordinates attached to any one of the
+  five four-leaf rooted trees are obtained from these six coordinates
+  by an invertible formal change of parameters: each internal edge
+  records the relative position of two child clusters, and the three
+  internal edge differences recover \(a,b,c\) by a nonsingular
+  \(\C\)-linear transformation after the root-cluster coordinate is
+  fixed.  The logarithmic Grothendieck residue is invariant under such
+  a change of regular parameters.  Equivalently, each displayed
+  iterated residue extracts the same coefficient functional on the
+  local cohomology module
+  \(H^6_{\Delta_{\{1,2,3,4\}}}((\widehat{\C^2}_0)^4,
+  \omega_{(\C^2)^4/\C^2})\).  This proves parenthesization
+  independence of the residue.
+
+  It remains to identify the four-leaf relation in the coefficient
+  algebra.  The five edges of the associahedral pentagon are elementary
+  rotations on three adjacent inputs or clusters:
+  \[
+    (((12)3)4)\leftrightarrow ((1(23))4),\quad
+    ((1(23))4)\leftrightarrow (1((23)4)),
+  \]
+  \[
+    (1((23)4))\leftrightarrow (1(2(34))),\quad
+    (1(2(34)))\leftrightarrow ((12)(34)),\quad
+    ((12)(34))\leftrightarrow (((12)3)4).
+  \]
+  On each edge, the common outside collision contributes one logarithmic
+  two-form, and the changing three-leaf subtree contributes exactly the
+  scalar Arnold--Jacobi kernel relation together with the signed graded
+  Jacobi identity in \(\mathfrak g\).  This is
+  Lemma~\ref{app:lem:arity-three-residue-jacobi} tensored with the
+  outside edge and outside iterated bracket.  Therefore every oriented
+  edge defect vanishes in the quotient defining
+  \(\mathsf{PP}^{(2)}_{\mathrm{tree}}\), and the pentagon boundary
+  has zero image under the tree-current action.
+\end{proof}
+
+\begin{lem}[Tree-kernel composition and rotation coherence]
+\label{app:lem:tree-kernel-rotation-coherence}
+Let \(I=\bigsqcup_{a\in A}I_a\).  Let \(T_A\) be a rooted binary tree
+with leaves \(A\), and let \(T_a\) be rooted binary trees with leaves
+\(I_a\).  In local cohomology along the iterated diagonal,
+\[
+  \gamma(K_{T_A};\{K_{T_a}\}_{a\in A})
+  =
+  K_{T_A\circ\{T_a\}_{a\in A}},
+\]
+where \(\gamma\) is pullback to the iterated collision stratum followed
+by wedge product of the relative principal-part forms.  Equivalently,
+for every formal Laurent principal part \(F\),
+\[
+  \operatorname{Res}_{T_A}
+  \operatorname{Res}_{\{T_a\}}
+  \left(F\,K_{T_A}\wedge\bigwedge_{a\in A}K_{T_a}\right)
+  =
+  \operatorname{Res}_{T_A\circ\{T_a\}}
+  \left(F\,K_{T_A\circ\{T_a\}}\right).
+\]
+If two rooted binary \(I\)-trees differ by a rotation on a three-leaf
+subtree, then the signed rotation defect of the corresponding operation
+is the product of the outside tree kernel with the arity-three
+Arnold--Jacobi relation of
+Lemma~\ref{app:lem:arity-three-residue-jacobi}.  Hence the assignment
+\[
+  K_T\otimes(x_i)_{i\in I}
+  \longmapsto
+  K_T\,\mathsf J_{[-,\ldots,-]_T(x_i)}
+\]
+descends from the free antisymmetric tree operad to
+\(\mathsf{PP}^{(2)}_{\mathrm{tree}}\), and its partial compositions are
+associative in local cohomology.
+\end{lem}
+
+\begin{proof}
+Choose cluster coordinates for \(T_A\) and for every \(T_a\).  The
+cluster coordinates for the grafted tree
+\(T_A\circ\{T_a\}_{a\in A}\) are their concatenation.  The completed
+local ring at the full collision diagonal is therefore a formal power
+series ring in the normal coordinates attached to the internal edges of
+all the trees, together with the root-cluster coordinates.  Each
+Grothendieck residue is coefficient extraction in the two normal
+coordinates of one internal edge.  Coefficient extractions in disjoint
+or nested edge-coordinate blocks commute.  This proves the displayed
+residue identity and the compatibility of grafting with wedge product.
+
+A rotation is local on a three-leaf subtree.  After the common outside
+kernel and the common outside iterated bracket are factored out, its
+kernel component is the scalar Arnold local-cohomology relation
+\[
+  \eta_{ij}\wedge\eta_{jk}
+  +\eta_{jk}\wedge\eta_{ki}
+  +\eta_{ki}\wedge\eta_{ij}=0,
+\]
+and its coefficient component is the signed graded Jacobi identity in
+\(\mathfrak g\).  This is
+Lemma~\ref{app:lem:arity-three-residue-jacobi} inside the selected
+subtree.  The graph of rooted binary trees with fixed leaf set is
+generated by such rotations; its elementary two-cells are pentagons for
+nested rotations and squares for disjoint rotations.  The pentagon
+reduces to two applications of the same three-leaf Arnold--Jacobi
+relation in adjacent subtrees.  The square reduces to commutation of
+the corresponding residue coefficient extractions.  Thus the rotation
+relations are killed in the quotient by antisymmetry, Arnold--Jacobi,
+and Cech coboundaries, and the operation is independent of the chosen
+binary parenthesization.
 \end{proof}
 
 \begin{thm}[Formal-polydisk all-arity Hamiltonian current operad]
@@ -778,7 +1021,7 @@ rooted tree \(T\).  In arity two this is the diagonal singular product
   \frac{d\zeta_1\,d\zeta_2}{\zeta_1\zeta_2}
   \mathsf{J}_{[x,y]_{\mathfrak g}}(w)
 \]
-of Theorem~\ref{thm:formal-two-dimensional-holomorphic-ope}.  The
+of Theorem~\ref{thm:formal-two-dimensional-holomorphic-singular-product}.  The
 partial compositions are associative on cohomology, and the action is
 compatible with the Chevalley--Eilenberg differential.
 \end{thm}
@@ -790,11 +1033,18 @@ successive Grothendieck residues along the normal coordinates
 is the first nontrivial case: residue Fubini identifies the two nested
 orders on the small diagonal, and the three-leaf Jacobi generator is
 killed by the Arnold local-cohomology relation together with the graded
-Jacobi identity in \(\mathfrak g\).  For a larger tree, every
-associativity comparison is a sequence of such three-leaf rotations
-and independent residue interchanges.  Antisymmetry of the kernel and
-antisymmetry of the
-Lie bracket agree at each binary vertex.  The Chevalley--Eilenberg
+Jacobi identity in \(\mathfrak g\).
+Lemma~\ref{app:lem:arity-four-residue-pentagon} is the four-leaf
+Stasheff check: the five four-leaf residues are the same
+full-diagonal Grothendieck residue, and the pentagon boundary is the
+sum of five arity-three Arnold--Jacobi faces.  For a larger tree, every
+associativity comparison is governed by
+Lemma~\ref{app:lem:tree-kernel-rotation-coherence}: grafting of trees
+is the same operation as iterated residue along the grafted collision
+diagonal, and the signed rotation defects are exactly the
+Arnold--Jacobi relations tensored with the graded Jacobi identity.
+Antisymmetry of the kernel and antisymmetry of the Lie bracket agree at
+each binary vertex.  The Chevalley--Eilenberg
 differential is the derivation dual to the same bracket and is
 continuous in the Tate topology; hence it commutes with the operation
 maps.  The arity-two formula is the definition of the generator
@@ -802,14 +1052,14 @@ maps.  The arity-two formula is the definition of the generator
 composition.
 \end{proof}
 
-\begin{rmk}[What this theorem does not supply]
+\begin{rmk}[Remaining obstruction rows]
 \label{app:rmk:tree-kernel-not-global-deligne}
 Theorem~\ref{app:thm:formal-polydisk-all-arity-current-operad}
-constructs the all-arity formal current-kernel layer.  It does not by
-itself construct the Morita chiral derived centre of the open boundary
-category, a Ran \(\mathcal D\)-module presentation,
-Costello--Gwilliam descent on the brane-link boundary, or a Costello
-QME solution.  Those are the remaining components of
+constructs the all-arity formal current-kernel layer.  The Morita
+mixed-HT derived centre of the open boundary category, a Ran
+\(\mathcal D\)-module presentation, Costello--Gwilliam descent on the
+brane-link boundary, and the Costello QME counterterm tower are the
+separate components of
 \(\operatorname{Ob}^{\mathrm{ch}\,E_2}_{\mathrm{Deligne}}\),
 \(\operatorname{Ob}^{\mathrm{desc}}_{\partial}\), and
 \(\operatorname{Ob}^{\mathrm{QME}}_{\mathrm{all\mbox{-}order}}\).
@@ -840,13 +1090,19 @@ Theorem~\ref{app:thm:formal-polydisk-all-arity-current-operad}.
 The Costello--Gwilliam and Lurie--Ayala--Francis factorization
 formalisms give the symmetric monoidal factorization category and its
 factorization-homology presentation.  The chiral \(E_d\)-Deligne
-equivalence at \(d\geq2\) is the theorem that these operation maps lift
-to the Morita chiral centre through the relative Maurer--Cartan complex
-and descent.  Construction~\ref{app:prop:hEd-algebras}
-is the global model; the proved formal-current part at \(d=2\) is
-Theorem~\ref{app:thm:formal-polydisk-all-arity-current-operad}, and the
-relative lift is controlled by
-Definition~\ref{app:defn:morita-chiral-E2-extension-complex}.
+equivalence at \(d\geq2\) is the separate operation-map theorem: the
+operation maps must lift through the relative
+Maurer--Cartan fibre
+\[
+  \mathfrak{Def}^{\mathrm{HT}}_{\mathrm{Mor}\mbox{-}E_2}
+    (\mathcal C^{\mathrm{op}}_\partial,b_p)
+\]
+and satisfy Ran/Weiss descent.  Construction~\ref{app:prop:hEd-algebras}
+is the operadic source model.  The proved \(d=2\) formal-current input is
+Theorem~\ref{app:thm:formal-polydisk-all-arity-current-operad}; the
+missing lift is exactly the vanishing of the obstruction class in
+Definition~\ref{app:defn:morita-chiral-E2-extension-complex}, together
+with chosen Maurer--Cartan primitives and descent homotopies.
 \end{rmk}
 
 \begin{constr}[Mixed-HT enhancement under the operadic action
@@ -868,7 +1124,7 @@ action of this system on a mixed-HT factorization algebra is an
 all-arity operadic structure.
 \end{constr}
 
-\begin{defn}[Morita chiral \(E_2\)-extension complex]
+\begin{defn}[Morita mixed-HT \(E_2^{\mathrm{HT}}\)-extension complex]
 \label{app:defn:morita-chiral-E2-extension-complex}
 Let
 \[
@@ -899,7 +1155,7 @@ complete filtered convolution dg Lie algebras
       \operatorname{End}_{\operatorname{ev}_{b_p}(Z_\partial)^{\mathrm{tr}}}
       \bigr).
 \]
-The \emph{Morita chiral \(E_2\)-extension complex} is the shifted
+The \emph{Morita mixed-HT \(E_2^{\mathrm{HT}}\)-extension complex} is the shifted
 homotopy fibre
 \[
   \mathfrak{Def}^{\mathrm{HT}}_{\mathrm{Mor}\mbox{-}E_2}
@@ -920,7 +1176,7 @@ The class
   \right)
 \]
 is the first obstruction to lifting the formal current-kernel
-\(\mathsf Q\)-action to a Morita mixed-HT chiral \(E_2\)-centre action on
+\(\mathsf Q\)-action to a Morita mixed-HT \(E_2^{\mathrm{HT}}\)-centre action on
 \(Z_\partial\).
 \end{defn}
 
@@ -929,7 +1185,7 @@ is the first obstruction to lifting the formal current-kernel
 Assume the filtration on
 \(\mathfrak{Def}^{\mathrm{HT}}_{\mathrm{Mor}\mbox{-}E_2}
 (\mathcal C^{\mathrm{op}}_\partial,b_p)\) is complete and pronilpotent.
-A Morita mixed-HT chiral \(E_2\)-centre action on
+A Morita mixed-HT \(E_2^{\mathrm{HT}}\)-centre action on
 \(Z_\partial\) extending the formal tree-kernel current action is
 equivalent to a Maurer--Cartan lift along
 \(\operatorname{res}_{b_p}\).  If such a lift is constructed modulo
@@ -952,16 +1208,45 @@ a Maurer--Cartan element of
 \(\mathrm{Conv}(\mathrm B\mathsf R,\operatorname{End}_V)\).  Restriction
 from \(\mathsf P\) to the formal tree-kernel sector \(\mathsf Q\), and
 then to the \(b_p\)-Hochschild chart, is the morphism
-\(\operatorname{res}_{b_p}\).  Therefore the extension problem is the
-standard lifting problem for Maurer--Cartan elements in the homotopy
-fibre of this morphism.  Completeness and pronilpotence give the usual
-filtration-by-filtration obstruction theory: the quadratic term of the
-Maurer--Cartan equation at order \(r+1\) is closed in the associated
-graded complex, changing the partial lift changes it by a coboundary,
-and a degree-one primitive is precisely the next correction term.
+\(\operatorname{res}_{b_p}\).  Put
+\[
+  \mathfrak D=
+  \mathfrak{Def}^{\mathrm{HT}}_{\mathrm{Mor}\mbox{-}E_2}
+    (\mathcal C^{\mathrm{op}}_\partial,b_p)
+\]
+with its twisted differential \(d_\Theta\).  A lift modulo \(F^{r+1}\)
+is a degree-one element
+\(\alpha_{\le r}\in(\mathfrak D/F^{r+1}\mathfrak D)^1\) satisfying
+\[
+  d_\Theta\alpha_{\le r}
+  +\frac12[\alpha_{\le r},\alpha_{\le r}]
+  \equiv 0 \pmod {F^{r+1}} .
+\]
+Choose any degree-one representative in
+\(\mathfrak D/F^{r+2}\mathfrak D\).  Its curvature component
+\[
+  \omega_{r+1}:=
+  \operatorname{gr}^{r+1}\!\left(
+    d_\Theta\alpha_{\le r}
+    +\frac12[\alpha_{\le r},\alpha_{\le r}]
+  \right)
+  \in
+  \bigl(\operatorname{gr}^{r+1}\mathfrak D\bigr)^2
+\]
+is \(d_\Theta\)-closed by the Bianchi identity
+\(d_\Theta\Omega+[\alpha_{\le r},\Omega]=0\) and the fact that
+\(\Omega\in F^{r+1}\).  Replacing the representative by
+\(\alpha_{\le r}+\gamma_{r+1}\), with
+\(\gamma_{r+1}\in(\operatorname{gr}^{r+1}\mathfrak D)^1\), changes
+\(\omega_{r+1}\) by \(d_\Theta\gamma_{r+1}\).  Hence
+\([\omega_{r+1}]\in H^2(\operatorname{gr}^{r+1}\mathfrak D)\) is the
+obstruction class, and a choice of \(\gamma_{r+1}\) with
+\(d_\Theta\gamma_{r+1}=-\omega_{r+1}\) is exactly the next correction.
+Completeness identifies a compatible sequence of such corrections with
+a Maurer--Cartan lift in the inverse limit.
 \end{proof}
 
-\subsection{Three hypotheses for chiral
+\subsection{Three supplied data for chiral
 \texorpdfstring{$E_d$}{Ed} Deligne at \texorpdfstring{$d\geq 2$}{d>=2}}\label{app:hfc:three-hypotheses}
 
 The chiral \(E_d\) Deligne problem at \(d\geq2\) decomposes here into
@@ -973,35 +1258,53 @@ suboperad is constructed.  The remaining classes are the promotion to
 the full chiral coefficient system, the Morita centre
 Maurer--Cartan lift, and Ran descent.
 
-\begin{defn}[Hypothesis F: formality of $\mathsf{hE}_d^{\mathrm{ch}}$]\label{app:hyp:formality}
+\begin{defn}[Formality datum for $\mathsf{hE}_d^{\mathrm{ch}}$]\label{app:hyp:formality}
 The system \(\mathsf{hE}_d^{\mathrm{ch}}\), beyond the formal
 tree-kernel suboperad of
 Theorem~\ref{app:thm:formal-polydisk-all-arity-current-operad}, is
-promoted to an all-arity \(\infty\)-operad, and that operad is formal:
-there is
-a quasi-isomorphism
+equipped with an all-arity \(\infty\)-operad model and a formality
+quasi-isomorphism as part of the supplied datum:
 \[
   \mathsf{hE}_d^{\mathrm{ch}}\;\simeq\;H_*(\mathsf{hE}_d^{\mathrm{ch}})
 \]
 to its homology operad in chain complexes of
-$\mathcal D_{\mathrm{Ran}(\C^d)}$-modules.  At $d=1$ this is
-Tamarkin's formality theorem
-\cite{tamarkin-deligne}\cite{kontsevich-soibelman-deformation}; at
-$d\geq 2$ the obstruction is the deformation class
-\(\mathrm{Ob}_F=[\mathfrak m_d]\).
+\(\mathcal D_{\mathrm{Ran}(\C^d)}\)-modules.  The obstruction to
+supplying this datum is the deformation class
+\(\mathrm{Ob}_F=[\mathfrak m_d]\) in the deformation complex of the
+chosen operad model; equivalently, one needs \(\mathrm{Ob}_F=0\) with a
+chosen degree-one primitive.  At \(d=1\) the topological input is the
+ordinary Deligne--Tamarkin Hochschild formality theorem
+\cite{tamarkin-deligne}\cite{kontsevich-soibelman-deformation};
+the curve chiral passage uses Beilinson--Drinfeld
+\cite{beilinson-drinfeld-chiral}*{\S 4}.  For \(d\geq2\) no such
+chiral formality theorem is used here without the specified vanishing
+and primitive.
 \end{defn}
 
-\begin{defn}[Hypothesis C: chiral centrality]\label{app:hyp:centrality}
-For $\mathcal A\in\mathrm{HolFA}_d(\C^d)$, there is a chiral bimodule
-\(\infty\)-category
+\begin{defn}[Chiral centrality datum]\label{app:hyp:centrality}
+For \(\mathcal A\in\mathrm{HolFA}_d(\C^d)\), a chiral centrality datum
+consists of a chiral bimodule \(\infty\)-category
 \(\mathcal A\otimes\mathcal A^{\mathrm{op}}\text{-Mod}^{\mathrm{ch}}\)
 and an endomorphism object
 \[
   Z^{\mathrm{der}}_{\mathsf{hE}_d^{\mathrm{ch}}}(\mathcal A)
    =\RHom_{\mathcal A\otimes\mathcal A^{\mathrm{op}}}(\mathcal A,\mathcal A).
 \]
-This object acts on \(\mathcal A\) by homotopy-central chiral
-operations compatible with factorization products.
+It includes a homotopy-central chiral action of this object on
+\(\mathcal A\), compatible with factorization products.  Let
+\(\mathfrak{Def}^{\mathrm{ch}}_{\mathrm{cent}}(\mathcal A)\) be the
+homotopy fibre of the restriction map from the convolution dg Lie
+algebra controlling chiral actions on the pair
+\((Z^{\mathrm{der}}_{\mathsf{hE}_d^{\mathrm{ch}}}(\mathcal A),
+\mathcal A)\) to the convolution dg Lie algebra controlling the
+underlying action before the homotopy-centrality equations are imposed.
+The obstruction to supplying the centrality datum is
+\[
+  \mathrm{Ob}_{C}\in
+  H^2\!\left(\mathfrak{Def}^{\mathrm{ch}}_{\mathrm{cent}}(\mathcal A)\right),
+\]
+and the datum used below is \(\mathrm{Ob}_{C}=0\) together with a
+chosen degree-one primitive at each filtration step.
 At \(d=1\) this is the chiral-centre construction for chiral algebras
 on curves.
 For \(d\geq2\) its topological analogue is Lurie's
@@ -1010,36 +1313,54 @@ holomorphic chiral enhancement is governed by the corresponding
 operadic obstruction problem.
 \end{defn}
 
-\begin{defn}[Hypothesis R: Ran \( ! \)-descent]\label{app:hyp:ran-descent}
-There is a chosen Ran \(\mathcal D\)-module presentation
+\begin{defn}[Ran \( ! \)-descent datum]\label{app:hyp:ran-descent}
+A Ran \( ! \)-descent datum consists of a chosen Ran
+\(\mathcal D\)-module presentation
 \(\mathcal A_{\mathrm{Ran}}\) of the Costello--Gwilliam
 factorization algebra \(\mathcal A\), and \(\mathcal A_{\mathrm{Ran}}\)
-satisfies \( ! \)-descent on the Ran site.  Equivalently, the
-comparison from the Costello--Gwilliam Weiss descent model to the Ran
-\( ! \)-descent model is a quasi-isomorphism in the selected
-coefficient category.  At \(d=1\) this is the Beilinson--Drinfeld
-factorization theorem for chiral algebras on curves
-\cite{beilinson-drinfeld-chiral}*{\S 3}.  At \(d\geq2\) it is a
-hypothesis of the global chiral \(E_d\)-Deligne theorem.
+satisfying \( ! \)-descent on the Ran site.  Equivalently, if
+\[
+  \chi_{\mathrm{Ran}}\colon
+  \mathcal A_{\mathrm{CG}}\longrightarrow
+  \mathcal A_{\mathrm{Ran}}^{!}
+\]
+is the comparison from the Costello--Gwilliam Weiss descent model to the
+Ran \( ! \)-descent model in the selected coefficient category, then the
+datum is a contracting homotopy of
+\(\operatorname{Cone}(\chi_{\mathrm{Ran}})\).  The obstruction is the
+cohomology object
+\[
+  \mathrm{Ob}_{R}:=
+  H^\bullet\!\left(\operatorname{Cone}(\chi_{\mathrm{Ran}})\right).
+\]
+At \(d=1\) this is the Beilinson--Drinfeld factorization theorem for
+chiral algebras on curves \cite{beilinson-drinfeld-chiral}*{\S 3}.  At
+\(d\geq2\) the present datum is only the displayed Ran comparison, or
+equivalently the vanishing of \(\mathrm{Ob}_{R}\) with a chosen
+contraction.
 \end{defn}
 
-\begin{thm}[Chiral $E_d$ Deligne under formality and Ran descent]\label{app:thm:relative-Ed-deligne}
-Under Hypotheses~\ref{app:hyp:formality}, \ref{app:hyp:centrality},
-\ref{app:hyp:ran-descent}, the chiral derived centre satisfies
+\begin{thm}[Chiral \(E_d\) Deligne supplied-data criterion]\label{app:thm:relative-Ed-deligne}
+Let \(\mathcal A\in\mathrm{HolFA}_d(\C^d)\).  Suppose the formality
+datum of Definition~\ref{app:hyp:formality}, the chiral centrality datum
+of Definition~\ref{app:hyp:centrality}, and the Ran \( ! \)-descent
+datum of Definition~\ref{app:hyp:ran-descent} are supplied.  Equivalently,
+\(\mathrm{Ob}_{F}=0\), \(\mathrm{Ob}_{C}=0\), and
+\(\mathrm{Ob}_{R}=0\), with the primitives and the Ran comparison-cone
+contraction specified.  Then the chiral derived centre satisfies
 \[
   Z^{\mathrm{der}}_{\mathsf{hE}_d^{\mathrm{ch}}}(\mathcal A)
    \;\simeq\;
    C^\bullet_{\mathrm{ch}}(\mathcal A,\mathcal A)
 \]
-as $E_{d+1}^{\mathrm{ch}}$-algebras.  Hypotheses~\ref{app:hyp:centrality}
-and~\ref{app:hyp:ran-descent} are the chiral enhancements of known
-topological and curve-level theorems; at \(d\geq2\) they remain
-hypotheses of the chiral \(E_d\)-Deligne statement together with
-Hypothesis~\ref{app:hyp:formality}.
+as \(E_{d+1}^{\mathrm{ch}}\)-algebras.  A nonzero
+\(\mathrm{Ob}_{F}\), \(\mathrm{Ob}_{C}\), or \(\mathrm{Ob}_{R}\), or a
+missing primitive or comparison-cone contraction, is the exact
+obstruction to this criterion in the selected coefficient category.
 \end{thm}
 
 \begin{proof}
-By Hypothesis~\ref{app:hyp:centrality} the chiral bimodule
+By Definition~\ref{app:hyp:centrality} the chiral bimodule
 \(\infty\)-category
 \(\mathcal A\otimes\mathcal A^{\mathrm{op}}\text{-Mod}^{\mathrm{ch}}\)
 exists and the derived centre is the endomorphism object of the
@@ -1076,9 +1397,12 @@ bimodule on \(\mathcal A^{\otimes^! n}\).  Hence
 \]
 the chiral Hochschild cochain complex with the differential dual to
 \(b\); at \(d=1\) this is the Beilinson--Drinfeld chiral Hochschild
-complex \cite{beilinson-drinfeld-chiral}*{\S3}.
+complex \cite{beilinson-drinfeld-chiral}*{\S 3.4}.
+This is the two-sided bar resolution in the chiral bimodule category.  It
+is not the twisting bar coalgebra \(\mathrm{Bar}(A)\) that appears in a
+bar--cobar comparison.
 
-\emph{Model independence.}  By Hypothesis~\ref{app:hyp:ran-descent} the
+\emph{Model independence.}  By Definition~\ref{app:hyp:ran-descent} the
 Ran \(\mathcal D\)-module presentation satisfies \(!\)-descent and its
 comparison to the Costello--Gwilliam Weiss model is a
 quasi-isomorphism, so \(\mathrm{Bar}_\bullet(\mathcal A)\) and the
@@ -1086,12 +1410,12 @@ resulting \(C^\bullet_{\mathrm{ch}}(\mathcal A,\mathcal A)\) are the same
 object of \(\mathcal B^{\mathrm{adm}}\) in either model.
 
 \emph{The \(E_{d+1}^{\mathrm{ch}}\)-structure.}  The Hochschild complex
-carries the chiral brace operations: a tuple of cochains is composed by
-inserting outputs into inputs along the chiral product, the chiral
-analogue of the McClure--Smith brace action of the little-\(d\)-cubes
-chains, assembling \(C^\bullet_{\mathrm{ch}}\) into an
+carries the supplied chiral brace operations: a tuple of cochains is
+composed by inserting outputs into inputs along the chiral product.
+These operations assemble
+\(C^\bullet_{\mathrm{ch}}\) into an
 \(\mathsf{hE}_d^{\mathrm{ch}}\)-algebra.  By
-Hypothesis~\ref{app:hyp:formality} the operad quasi-isomorphism
+Definition~\ref{app:hyp:formality} the operad quasi-isomorphism
 \(\mathsf{hE}_d^{\mathrm{ch}}\simeq
 H_*(\mathsf{hE}_d^{\mathrm{ch}})=\mathsf P_{d+1}^{\mathrm{ch}}\) to the
 chiral Poisson operad transfers the brace action to a
@@ -1108,24 +1432,29 @@ C^\bullet_{\mathrm{ch}}(\mathcal A,\mathcal A)\) as
 \end{proof}
 
 For the formal-Darboux Hamiltonian BF model the residue-kernel operad
-gives the formal current-kernel input.  It is not, by itself, a proof of
-formality for the full chiral \(\mathsf hE_2^{\mathrm{ch}}\)-operad, a
-Ran descent theorem, or a Morita centre lift.  The next theorem records
-the exact criterion that promotes this formal current layer to the
-stalkwise chiral \(E_2\)-Deligne statement.
+gives the formal current-kernel input.  A proof of formality for the
+full chiral \(\mathsf hE_2^{\mathrm{ch,hol}}\)-operad, a Ran descent
+theorem, and a Morita centre lift require the additional data recorded
+in the next theorem.  The criterion identifies the exact obstruction
+datum whose vanishing and chosen primitives promote this formal current
+layer to the stalkwise mixed-HT \(E_2^{\mathrm{HT}}\)-Deligne statement.
 
 \begin{thm}[Formal current-kernel \(E_2\) criterion at the Hamiltonian BF stalk]\label{app:thm:FCR-at-stalk}
 Let \(\mathcal A=\mathcal A^{\mathrm{cl}/\hbar}_{\mathrm{bulk}}\) be the
 formal-Darboux Hamiltonian BF factorization algebra of
 \(\mathfrak g=\mathfrak h\ltimes\mathfrak h^\vee_{\mathrm{cont}}[1]\) at
-a Dirac brane stack, with the brane-preserving \(\Omega\)-background
+a Dirac brane stack.  The tag \(\mathrm{cl}/\hbar\) means either the
+classical current factorization algebra or that algebra equipped with
+the supplied Costello QME branch; it does not identify the QME, Weyl,
+equivariant, or Fourier--Rees parameters.  Equip this source with the
+brane-preserving \(\Omega\)-background
 grading of Definition~\ref{defn:omega-grading} and nonresonant
 \((\epsilon_1,\epsilon_2)\).  The tree-kernel operad
 \(\mathsf{PP}^{(2)}_{\mathrm{tree}}\) acts on the formal Hamiltonian
 current sector by Theorem~\ref{app:thm:formal-polydisk-all-arity-current-operad}.
-The assertion that this action extends to a stalkwise chiral
-\(E_2\)-Deligne equivalence is equivalent to the following additional
-data:
+The assertion that this action extends to a stalkwise mixed-HT
+\(E_2^{\mathrm{HT}}\)-Deligne quasi-isomorphism is equivalent to the
+following additional data:
 \[
   \mathrm{Ob}^{\mathrm{stalk}}_{\mathrm{ch}E_2}
   =
@@ -1154,12 +1483,13 @@ Lemma~\ref{lem:nonscalar-weight-zero-vanishing}.  On this vanishing
 locus, with the displayed primitives chosen,
 Theorem~\ref{app:thm:relative-Ed-deligne} gives
 \[
-  Z^{\mathrm{der}}_{\mathsf{hE}_2^{\mathrm{ch}}}(\mathcal A)
+  Z^{\mathrm{der}}_{\mathsf{hE}_2^{\mathrm{ch},\mathrm{HT}}}(\mathcal A)
    \;\simeq\;
    C^\bullet_{\mathrm{ch}}(\mathcal A,\mathcal A)
 \]
-as \(E_3^{\mathrm{ch}}\)-algebras, projectively with scalar Capelli
-curvature \(\hbar N[\bar c]\).
+as algebras over the induced \(E_3^{\mathrm{ch}}\)-structure of this
+mixed-HT model, projectively with central scalar Capelli anomaly
+\(\hbar_{\mathrm{W}} N[\bar c]\).
 \end{thm}
 
 \begin{proof}
@@ -1171,7 +1501,7 @@ strictly associatively by Grothendieck residue Fubini
 (Lemma~\ref{app:lem:arity-three-residue-jacobi}) and are \(Q\)-closed by
 the Chevalley--Eilenberg identity.  Every higher singular product is an
 iterated binary residue collision
-(Corollary~\ref{cor:binary-generation-higher-two-dimensional-ope}), so
+(Corollary~\ref{cor:binary-generation-higher-two-dimensional-singular-product}), so
 the formal Hamiltonian-current suboperad is strict.
 
 \emph{Promotion data.}  A lift from the formal tree-kernel suboperad to
@@ -1188,15 +1518,18 @@ Ran/Weiss comparison is the class
 computes the scalar weight-zero projection as the Capelli class; the
 non-scalar weight-zero part is removable exactly when the residual
 classes of Lemma~\ref{lem:nonscalar-weight-zero-vanishing} vanish and
-compatible primitives are chosen.
+the residual primitives commute with the finite-window restriction and
+weight-projection maps up to the specified chain homotopies.
 
-If the four displayed obstruction components vanish, Hypotheses
-\ref{app:hyp:formality}, \ref{app:hyp:centrality}, and
-\ref{app:hyp:ran-descent} hold for this stalk with specified data.
-Theorem~\ref{app:thm:relative-Ed-deligne} then gives the
-\(E_3^{\mathrm{ch}}\)-equivalence, and its scalar weight-zero curvature
-is the Capelli class by Theorem~\ref{thm:omega-localization-collapse}.
-Conversely, such an \(E_3^{\mathrm{ch}}\)-equivalence restricts to the
+If the four displayed obstruction components vanish, the data of
+Definitions~\ref{app:hyp:formality}, \ref{app:hyp:centrality}, and
+\ref{app:hyp:ran-descent} hold for this stalk with specified primitives
+and comparison-cone contraction.
+Theorem~\ref{app:thm:relative-Ed-deligne} then gives the induced
+\(E_3^{\mathrm{ch}}\)-equivalence of the mixed-HT model, and its scalar
+weight-zero curvature is the Capelli class by
+Theorem~\ref{thm:omega-localization-collapse}.
+Conversely, such an induced \(E_3^{\mathrm{ch}}\)-equivalence restricts to the
 formal current action, supplies the Maurer--Cartan lift, identifies the
 Ran/Weiss model, and gives the residual centrality primitives; hence all
 four obstruction components vanish.
@@ -1204,11 +1537,11 @@ The general \(d\ge2\) statement for an arbitrary holomorphic
 factorization algebra remains Conjecture~\ref{conj:chiral-Ed-deligne}.
 \end{proof}
 
-The formal-Darboux stalk does not globalise by itself.  A Stein target
-removes only the sheaf-cohomological part of a specified
-\v Cech--Weiss descent problem; it does not construct the Morita centre
-lift, the quantum master equation counterterms, the anomaly and locality
-null-homotopies, or the comparison-cone contraction.
+A Stein target removes the sheaf-cohomological part of the specified
+\v Cech--Weiss descent problem.  Globalisation is governed by the
+mixed-HT Swiss-cheese action, the Morita centre lift, the quantum master
+equation counterterms, the anomaly and locality null-homotopies, and the
+comparison-cone contraction.
 
 \begin{thm}[Stein descent criterion for a projective mixed-HT open--closed comparison]\label{app:thm:stein-global-deligne}
 Let \(Y\) be a Stein holomorphic-symplectic surface,
@@ -1217,10 +1550,29 @@ defect.  Choose a collared formal-Darboux Weiss cover
 \(\mathfrak U=\{U_a\}_{a\in A}\) of the brane-link boundary.  Suppose the
 following data are fixed.
 \begin{enumerate}[label=\textup{(S\arabic*)}]
+\item On every \(U_a\) and every finite intersection
+  \(U_{a_0\cdots a_p}\), a mixed-HT Swiss-cheese action
+  Maurer--Cartan lift is supplied in
+  \[
+    \mathfrak{Def}^{\mathrm{HT}}_{\mathrm{SC}}\!
+    \left(
+	    \mathcal A^{\mathrm{cl}/\hbar}_{\mathrm{bulk}}|_{U_{a_0\cdots a_p}},
+	    \mathcal C^{\mathrm{op}}_\partial|_{U_{a_0\cdots a_p}}
+	    \right),
+	  \]
+	  with curvature representatives
+	  \(\mathcal R^{\mathrm{SC}}_{n+1}\), classes
+	  \(\mathfrak o^{\mathrm{SC}}_{n+1}
+	  =[\mathcal R^{\mathrm{SC}}_{n+1}]\), and primitives
+	  \(H^{\mathrm{SC}}_{n+1}\) satisfying
+	  \(d_{\Theta_{\le n}}H^{\mathrm{SC}}_{n+1}
+	  =-\mathcal R^{\mathrm{SC}}_{n+1}\) for all \(n\ge2\), compatible
+	  with restriction to smaller intersections.
 \item On every \(U_a\), the formal current-kernel criterion of
   Theorem~\ref{app:thm:FCR-at-stalk} holds: the formality,
   Morita-centre, Ran/Weiss, and residual weight-zero obstruction classes
-  vanish and compatible primitives are chosen.
+  vanish, with residual primitives compatible under finite-window
+  restriction and weight projection.
 \item The local boundary categories form a Weiss cosheaf, and the local
   mapping complexes
   \[
@@ -1243,13 +1595,14 @@ following data are fixed.
   \]
   and of its higher obstruction tower
   (Definition~\ref{app:defn:descent-obstruction-complex}).
-\item The all-scale quantum master equation datum, anomaly and locality
-  null-homotopies, and comparison-cone contraction of
+\item The all-scale quantum master equation counterterm datum, anomaly
+  and locality null-homotopies, and comparison-cone contraction of
   Definition~\ref{defn:oca-comparison-cone} are supplied.
 \end{enumerate}
-Then the supplied local maps, descent primitives, QME counterterms,
-anomaly/locality null-homotopies, and cone contraction assemble to a
-projective open--closed quasi-isomorphism
+Then the supplied Swiss-cheese action data, local centre-lifted maps,
+descent primitives, QME counterterms, anomaly/locality null-homotopies,
+and cone contraction assemble to a projective open--closed
+quasi-isomorphism
 \[
   \mathrm{OCA}_N\colon
   \mathcal A^{\mathrm{cl}/\hbar}_{\mathrm{bulk}}
@@ -1258,42 +1611,49 @@ projective open--closed quasi-isomorphism
     (\mathcal C^{\mathrm{op}}_\partial)
 \]
 in the projective category for the Capelli central extension.  Its
-trace-sector scalar curvature is the projective Lie anomaly
-\(\hbar N[\bar c]\).  The Stein hypotheses verify only the
+trace-sector scalar anomaly is the projective Lie anomaly
+\(\hbar_{\mathrm{W}} N[\bar c]\).  The Stein hypotheses verify only the
 Cartan--H\"ormander acyclicity row for \(\C^2\), for the
 analytifications of smooth affine holomorphic-symplectic surfaces, and
 for cotangent bundles \(T^*\Sigma\) of affine curves; the
-quasi-isomorphism conclusion still requires \textup{(S1)--(S4)}.  The
+quasi-isomorphism conclusion is the datum \textup{(S1)--(S5)}.  The
 punctured plane
 \(\C^2\setminus\{0\}\) is not covered by the Stein conclusion.
 \end{thm}
 
 \begin{proof}
-\emph{Local data.}  Condition \textup{(S1)} is exactly the obstruction
-criterion of Theorem~\ref{app:thm:FCR-at-stalk}.  On each member of the
-Weiss cover it gives a projective local morphism \(F_a\) with scalar
-curvature \(\hbar N[\bar c]\); it also records the chosen primitives
-needed for the Morita centre lift and residual weight-zero terms.  This
-is local formal-Darboux data, not a global morphism.
+\emph{Local data.}  Condition \textup{(S1)} supplies the source and
+target \(\mathrm{SC}^{\mathrm{HT}}_{(1,2)}\)-algebra structures on the
+Weiss cover and on all finite intersections.  Condition \textup{(S2)}
+is the obstruction criterion of Theorem~\ref{app:thm:FCR-at-stalk}.
+On each member of the Weiss cover it gives a projective local
+pre-comparison datum \(F_a\) whose central scalar anomaly is
+\(\hbar_{\mathrm{W}} N[\bar c]\);
+it also records the chosen primitives needed for the Morita centre lift
+and residual weight-zero terms.  This is local formal-Darboux data, not
+a global morphism.
 
-\emph{\v Cech--Weiss descent.}  Conditions \textup{(S2)} and
-\textup{(S3)} place the local \(F_a\)'s in the total complex
+\emph{\v Cech--Weiss descent.}  Conditions \textup{(S3)} and
+\textup{(S4)} place the local \(F_a\)'s in the total complex
 \(\operatorname{Tot}\check C^\bullet_{\mathrm{Weiss}}
 (\mathfrak U;\mathcal E^\bullet_{\mathrm{desc}})\) of
 Definition~\ref{app:defn:descent-obstruction-complex}.  Cartan--H\"ormander
 acyclicity on Stein finite intersections kills only the ambient positive
 \v Cech cohomology of the specified Dolbeault mapping complexes.  The
 actual descent obstruction is the class of \(\delta_{\check C}H\) and
-its higher coherences; by \textup{(S3)} those classes have specified
-null-homotopies.  Therefore the \(F_a\)'s assemble to a global
-homotopy-coherent open--closed morphism.
+its higher coherences; by \textup{(S4)} those classes have specified
+null-homotopies.  Therefore the \(F_a\)'s assemble to a descended
+pre-comparison datum.  The Morita centre, QME-counterterm, anomaly, and locality
+rows are not consequences of Stein acyclicity.
 
-\emph{Quantum and cone data.}  Condition \textup{(S4)} supplies the QME
+\emph{Quantum and cone data.}  Condition \textup{(S5)} supplies the QME
 counterterms, the anomaly/locality null-homotopies, and the contraction
-of the global comparison cone.  Hence the assembled morphism is a
-quasi-isomorphism in the projective category.  The scalar part of its
-curvature is unchanged by the descent homotopies, because on every
-chart it is the central Capelli class \(\hbar N[\bar c]\) of
+of the global comparison cone.  Together with the local Morita
+centre-lift data of \textup{(S2)}, this lifts the descended
+pre-comparison datum to an open--closed morphism and supplies the
+projective quasi-isomorphism datum.  The scalar projective anomaly is
+unchanged by the descent homotopies, because on every chart it is the
+central Capelli class \(\hbar_{\mathrm{W}} N[\bar c]\) of
 Theorem~\ref{thm:capelli-projective-anomaly}.
 \end{proof}
 
@@ -1302,22 +1662,24 @@ On a compact holomorphic-symplectic surface the Darboux cover is no
 longer Leray for \(\C_X\), and the Hamiltonian period
 \(\operatorname{per}_X(v)=[h_i-h_j]\in H^1(X,\C_X)\) of
 \S\ref{ssec:master-deformation-local-datum} becomes an additional
-descent obstruction.  If \(\operatorname{per}_X(v)=0\), the analogue of
-Theorem~\ref{app:thm:stein-global-deligne} still requires the same
-local centre-lift, QME, anomaly/locality, and comparison-cone data.  A
+descent obstruction.  If \(\operatorname{per}_X(v)=0\), the compact
+variant of Theorem~\ref{app:thm:stein-global-deligne} is governed by the
+same mixed-HT Swiss-cheese action, local centre-lift, QME,
+anomaly/locality, and comparison-cone data.  A
 nonzero period twists \(\mathrm{OCA}_N\) by the corresponding
 \(\C^*\)-gerbe, and the remaining content is the chiral
 \(E_2\)-Deligne comparison of Conjecture~\ref{conj:chiral-Ed-deligne}.
 \end{rmk}
 
-\begin{rmk}[Obstruction class for Hypothesis~\ref{app:hyp:formality}]\label{app:rmk:formality-obstruction}
-Hypothesis~\ref{app:hyp:formality} is the assertion that the
+\begin{rmk}[Obstruction class for Definition~\ref{app:hyp:formality}]\label{app:rmk:formality-obstruction}
+Definition~\ref{app:hyp:formality} supplies the assertion that the
 Maurer--Cartan element
 $\mathfrak m_d\in\mathrm{Def}\bigl(\mathsf{hE}_d^{\mathrm{ch}}\to
 H_*(\mathsf{hE}_d^{\mathrm{ch}})\bigr)$ classifying the chiral
 \(E_d\)-operad relative to its homology operad is gauge-equivalent to
-zero.  At \(d=1\) Tamarkin~\cite{tamarkin-deligne} proves the
-corresponding formality statement by associator methods.  At \(d\geq2\)
+zero.  At \(d=1\) the ordinary \(E_1\)-Hochschild formality theorem of
+Tamarkin~\cite{tamarkin-deligne} gives the corresponding topological
+input by associator methods.  At \(d\geq2\)
 the corresponding chiral formality theorem is an independent datum.  The class
 \[
   \mathrm{Ob}_F=[\mathfrak m_d]
@@ -1327,29 +1689,31 @@ is the formality obstruction at $d\geq 2$.
 \end{rmk}
 
 \begin{rmk}[Chiral \(E_d\) obstruction]\label{app:rmk:chiral-Ed-obstruction}
-The global chiral \(E_d\)-Deligne hypothesis at \(d\geq2\) consists of the
+The global chiral \(E_d\)-Deligne datum at \(d\geq2\) consists of the
 operadic action of Definition~\ref{app:defn:chiral-Ed-operad} together
-with Hypotheses~\ref{app:hyp:formality}, \ref{app:hyp:centrality}, and
+with Definitions~\ref{app:hyp:formality}, \ref{app:hyp:centrality}, and
 \ref{app:hyp:ran-descent}.  At the \(d=2\) Dirac-brane
 formal-Darboux vacuum the Morita centre-action component is represented
 by the extension complex
 \(\mathfrak{Def}^{\mathrm{HT}}_{\mathrm{Mor}\mbox{-}E_2}
 (\mathcal C^{\mathrm{op}}_\partial,b_p)\) of
-Definition~\ref{app:defn:morita-chiral-E2-extension-complex}.  The full
-obstruction is the class
+Definition~\ref{app:defn:morita-chiral-E2-extension-complex}; in this
+stalk \(\mathrm{Ob}_C\) is represented by
+\(\operatorname{Ob}^{\mathrm{ch}\,E_2}_{\mathrm{Deligne}}\).  The full
+generic obstruction is the class
 \[
   \mathrm{Ob}_{\mathrm{ch}E_d}
    =
-   \bigl(
-   \operatorname{Ob}^{\mathrm{ch}\,E_2}_{\mathrm{Deligne}},
-   \mathrm{Ob}_{F},
-   \mathrm{Ob}_{R}
-   \bigr),
+	   \bigl(
+	   \mathrm{Ob}_{F},
+	   \mathrm{Ob}_{C},
+	   \mathrm{Ob}_{R}
+	   \bigr),
 \]
-where \(\mathrm{Ob}_{F}\) and \(\mathrm{Ob}_{R}\) are the obstructions
-to the formality and Ran-descent hypotheses beyond the formal
-Hamiltonian-current suboperad.  The formal-Darboux stalk theorem and
-Theorem~\ref{app:thm:formal-polydisk-all-arity-current-operad}
+where \(\mathrm{Ob}_{F}\), \(\mathrm{Ob}_{C}\), and \(\mathrm{Ob}_{R}\)
+are the formality, chiral centrality, and Ran-descent obstructions
+beyond the formal Hamiltonian-current suboperad.  The formal-Darboux
+stalk theorem and Theorem~\ref{app:thm:formal-polydisk-all-arity-current-operad}
 compute the \(d=2\) local Hamiltonian-current operations to which any
 global open--closed comparison must restrict; vanishing of
 \(\mathrm{Ob}_{\mathrm{ch}E_d}\) is the additional global condition.
@@ -1358,11 +1722,12 @@ global open--closed comparison must restrict; vanishing of
 \subsection{Descent over the Costello--Gwilliam brane-link boundary}\label{app:hfc:CG-descent}
 
 The boundary open category $\mathcal{C}^{\mathrm{op}}_\partial$
-(Definition~\ref{app:defn:brane-cat}) is defined globally on the
-Costello--Gwilliam brane-link boundary $\partial X$.  This subsection
-records the Weiss descent datum for local boundary categories.  A
-global mixed-HT Deligne equivalence requires this descent datum
-together with the chiral \(E_d\), quantum master equation, and
+(Definition~\ref{app:defn:brane-cat}) is supplied as global data on the
+Costello--Gwilliam brane-link boundary $\partial X$ only with a Weiss
+descent datum for local boundary categories.  The datum is the
+brane-link descent object below.  A
+global mixed-HT Deligne quasi-isomorphism requires this descent datum
+together with the chiral \(E_d\), quantum-master-equation counterterm, and
 comparison-cone data of Definition~\ref{defn:oca-comparison-cone}.
 
 \begin{defn}[Costello--Gwilliam brane-link bundle]\label{app:defn:brane-link}
@@ -1370,7 +1735,8 @@ For $X=\R^2_{\mathrm{top}}\times Y_{\mathrm{hol}}$ a mixed-HT
 spacetime and $L\subset X$ a Dirac brane defect, the
 \emph{Costello--Gwilliam brane-link boundary} $\partial X$ is the
 boundary of the excised tubular neighbourhood $\nu(L)$ of $L$ in $X$
-\cite{costello-gwilliam}*{Vol.~II},
+written in the factorization vocabulary of
+\cite{costello-gwilliam}*{Vol.~I Secs.~6.1, 7.2},
 \[
   \partial X
    \;=\;\partial(X\setminus\nu(L))
@@ -1415,9 +1781,15 @@ $U\subset\partial X$ open,
 the category of boundary conditions supported on \(U\), together with
 the restricted bulk--boundary action.  A module-category model over
 \(\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}|_U\) is an additional
-presentation.  At a closed point $p\in\partial X$ the formal fibre is
+presentation.  At a closed point \(p\in\partial X\) the formal fibre is
+first the formal-completion fibre of this boundary diagram.  In a
+collared formal-Darboux Weiss chart whose holomorphic normal factor is
+\((\C^2,dz_1\wedge dz_2)\), that holomorphic factor is identified with
 the formal-Darboux stalk of
-Definition~\ref{app:defn:Darboux-stalk-functor}.
+Definition~\ref{app:defn:Darboux-stalk-functor} only after choosing a
+point of the Darboux-chart torsor; transition maps transport the
+coordinate representative by formal symplectomorphisms in the
+\((z_1,z_2)\)-directions.
 \end{defn}
 
 \begin{thm}[Weiss descent criterion for the boundary open
@@ -1484,7 +1856,8 @@ The Čech--Weiss descent complex is the total complex
 
 Let \(F_a\in\mathcal E^0_{\mathrm{desc}}(U_a)\) be the local
 formal-Darboux closed-to-open maps obtained from the trace-sector stalk
-and the local Morita \(E_2\)-centre lift.  A first overlap gluing datum
+and the local Morita \(E_2\)-centre lift, relative to the supplied
+local mixed-HT Swiss-cheese action data.  A first overlap gluing datum
 is a Čech \(1\)-cochain
 \[
   H_{ab}\in \mathcal E^{-1}_{\mathrm{desc}}(U_{ab}),
@@ -1515,20 +1888,30 @@ If the class \(\operatorname{Ob}_{\mathrm{desc}}\) of
 Definition~\ref{app:defn:descent-obstruction-complex} and all higher
 classes in
 \(\operatorname{Tot}\check C^\bullet_{\mathrm{Weiss}}
-(\mathfrak U;\mathcal E^\bullet_{\mathrm{desc}})\) are represented and
-killed by compatible cochains, then the local trace-sector
-formal-Darboux maps glue to a global morphism
+(\mathfrak U;\mathcal E^\bullet_{\mathrm{desc}})\) have representatives
+\(\mathcal R^{\mathrm{desc}}_j\) and compatible cochains \(h_j\)
+satisfying \(d_{\mathrm{desc}}h_j=-\mathcal R^{\mathrm{desc}}_j\), then
+the local trace-sector
+formal-Darboux maps glue to a descended pre-open--closed comparison
+datum
 \[
-  \mathrm{OCA}_N\colon
+  \mathrm{preOCA}_N\colon
    \mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}
    \longrightarrow
-   Z^{\mathrm{der},\mathrm{Mor}}_{E_2^{\mathrm{HT}}}
+   \underline{\mathrm{End}}_{\mathrm{SC}^{\mathrm{HT}}_{(1,2)}}\!
    \bigl(\mathcal{C}^{\mathrm{op}}_\partial\bigr)
 \]
-on the Costello--Gwilliam brane-link boundary.  It is a global
-open--closed quasi-isomorphism only after the remaining chiral \(E_d\),
-quantum master equation, and comparison-cone obstruction of
-Definition~\ref{defn:oca-comparison-cone} vanish.
+on the Costello--Gwilliam brane-link boundary, relative to the supplied
+mixed-HT Swiss-cheese action datum.  It lifts to a global
+open--closed morphism into
+\(Z^{\mathrm{der},\mathrm{Mor}}_{E_2^{\mathrm{HT}}}
+(\mathcal C^{\mathrm{op}}_\partial)\) only after the Morita mixed-HT
+\(E_2^{\mathrm{HT}}\)-centre lift, the quantum master equation counterterm tower, and
+the anomaly and locality rows of
+Definition~\ref{defn:global-mixed-ht-deligne-obstruction-datum} have
+been killed.  It is a global open--closed quasi-isomorphism only after
+the comparison-cone obstruction of
+Definition~\ref{defn:oca-comparison-cone} vanishes.
 \end{thm}
 
 \begin{proof}
@@ -1542,9 +1925,10 @@ of changing \(H\) by a Čech coboundary or by a
 chooses the next coherent gluing cochain; the same argument in the
 total Čech--Weiss complex gives the higher obstruction tower.  Vanishing
 of the tower is precisely the homotopy-coherent descent datum for the
-local maps \(F_a\), hence produces the global morphism.  Its being a
-quasi-isomorphism is the separate comparison-cone condition of
-Definition~\ref{defn:oca-comparison-cone}.
+local maps \(F_a\), hence produces the descended pre-comparison datum.
+The Morita centre lift, QME-counterterm, anomaly, locality, and cone equations are
+independent rows of
+Definition~\ref{defn:global-mixed-ht-deligne-obstruction-datum}.
 \end{proof}
 
 \subsection{All-order QME obstruction criterion for finite-jet PVA}\label{app:hfc:all-order-qme}
@@ -1552,64 +1936,77 @@ Definition~\ref{defn:oca-comparison-cone}.
 The classical PVA Jacobi identity holds at the formal-Darboux stalk
 (Theorem~\ref{thm:reduced-ce-pv-central-operation}) and is the Jacobi
 identity for the native two-dimensional singular product of
-Theorem~\ref{thm:formal-two-dimensional-holomorphic-ope}.  Its quantum
+Theorem~\ref{thm:formal-two-dimensional-holomorphic-singular-product}.  Its quantum
 lift is a recursive quantum master equation in the Costello
-local-functional complex.  At order \(\hbar^n\) the obstruction lies in
+local-functional complex.  At order \(\hbar_{\mathrm{QME}}^n\) the obstruction lies in
 the cohomology of the quantum BV differential with scalar-contact
 projection, curved bulk-to-defect kernel, and compatible counterterms;
-it is not killed by the classical Jacobi identity.  The hypotheses below
-name the exact additional data needed to transport this recursion to the
-trace-sector centre.
+it is not killed by the classical Jacobi identity.  The data below name
+the exact additional structures and obstruction classes needed to
+transport this recursion to the trace-sector centre.
 
 \paragraph{Convention.}
 Under the binding convention of
 \nameref{ssec:local-theorem-conventions}, the symbol
 $C^\bullet_{\mathrm{ch}}(A_b,A_b)$ in this subsection denotes the
-brane-side Hochschild target receiving the trace-sector map
-\(\Phi_N^{\mathrm{gen}}\) of Theorem~\ref{thm:main-local}.  A full identification
-with the bulk stalk is the admissible centre-lift problem.
+brane-side Hochschild target containing the trace-sector generator
+action \(\Phi_N^{\mathrm{gen}}\) of Theorem~\ref{thm:main-local}.  A
+full identification with the bulk stalk is the admissible centre-lift
+problem.
 \(Q_{\mathrm{ch}}\) is the Hochschild differential on this target.  It
 is transported to the trace summand only after the admissible
 Hochschild-centre lift, comparison-cone contraction, and required
-homotopy-inverse data have been supplied.  The hypotheses below are
-formulated on that target.
+homotopy-inverse data have been supplied.  The data below are formulated
+on that target.
 
-\begin{defn}[Hypothesis K: filtered formal SDR]\label{app:hyp:KZ-SDR}
-There is a pronilpotent filtered strong deformation retract
+\begin{defn}[Filtered formal SDR datum]\label{app:hyp:KZ-SDR}
+A filtered formal strong-deformation-retract datum is a pronilpotent
+filtered strong deformation retract
 \[
   \bigl(C^\bullet_{\mathrm{CE},\mathrm{cont}}(\mathfrak g),Q_{\mathrm{tot}}\bigr)
    \xrightarrow[\text{retract}]{\text{deform}}
    \bigl(C^\bullet_{\mathrm{ch}}(A_b,A_b),Q_{\mathrm{ch}}\bigr)
 \]
-over \(\C[[\hbar]]\), compatible with the scalar-contact filtration,
+over \(\C[[\hbar_{\mathrm{QME}}]]\), compatible with the scalar-contact filtration,
 finite PVA weight windows, and the admissible Hochschild centrality
 homotopies.  This is additional homological datum, not a consequence of
-the formal-Darboux stalk theorem.
+the formal-Darboux stalk theorem.  Its obstruction is the class
+\[
+  [\mathfrak{ob}_K]\in
+  H^\bullet(\mathfrak{Def}_{\mathrm{SDR}})
+\]
+of the deformation complex whose Maurer--Cartan elements are triples
+\((i,p,h)\) satisfying \(pi=\operatorname{id}\) and
+\(ip-\operatorname{id}=Qh+hQ\) with the stated filtrations and
+centrality compatibilities.
 \end{defn}
 
 \begin{rmk}[Formal and analytic transfer]\label{app:rmk:why-analytic}
-The classical PVA Jacobi holds in the $\hbar$-adic topology of the
+The classical PVA Jacobi holds in the $\hbar_{\mathrm{QME}}$-adic topology of the
 formal disk.  Costello's renormalization theorem gives, after a
 renormalization scheme has been fixed, a finite-order obstruction
 calculus.  A formal SDR transfers the obstruction classes.  It does not
 prove analytic convergence.  Sectorial analytic convergence is the extra
-content of Hypothesis~\ref{app:hyp:stokes} together with explicit graph
+content of Definition~\ref{app:hyp:stokes} together with explicit graph
 estimates.
 \end{rmk}
 
-\begin{defn}[Hypothesis S: sectorial Stokes regularity]\label{app:hyp:stokes}
-If an analytic refinement is sought, the renormalized graph sums and the
+\begin{defn}[Sectorial Stokes datum]\label{app:hyp:stokes}
+If an analytic refinement is sought, a sectorial Stokes datum is the
+assertion that the renormalized graph sums and the
 transferred homological perturbation data form a sheaf over sectors
-\(0<|\hbar|<r\).  On the sectors meeting the real-positive
-\(\hbar\)-axis the Stokes automorphisms act trivially on the chosen
+\(0<|\hbar_{\mathrm{QME}}|<r\).  On the sectors meeting the real-positive
+\(\hbar_{\mathrm{QME}}\)-axis the Stokes automorphisms act trivially on the chosen
 trace-sector image, and the sectorial lifts have the same asymptotic
-\(\hbar\)-adic series.  No KZ connection is assumed unless it is
-constructed as part of this analytic sheaf.
+\(\hbar_{\mathrm{QME}}\)-adic series.  Its obstruction class
+\([\mathfrak{ob}_S]\) is the Stokes mismatch of this sheaf on overlaps
+of sectors.  No KZ connection is assumed unless it is constructed as
+part of this analytic sheaf.
 \end{defn}
 
-\begin{defn}[Hypothesis W: finite-window weight symmetry]\label{app:hyp:reflected-weights}
-Under crossing $z\leftrightarrow w$ on the formal \(E_2\) singular product of
-Theorem~\ref{thm:formal-two-dimensional-holomorphic-ope}, the PVA
+\begin{defn}[Finite-window weight-symmetry datum]\label{app:hyp:reflected-weights}
+Under crossing \(z\leftrightarrow w\) on the formal \(E_2\) singular product of
+Theorem~\ref{thm:formal-two-dimensional-holomorphic-singular-product}, the PVA
 weight grading on $C^\bullet_{\mathrm{ch}}(A_b,A_b)$ reflects: the
 operator
 \[
@@ -1617,12 +2014,14 @@ operator
    \longrightarrow\mathrm{wt}_w\otimes\mathrm{wt}_z
 \]
 intertwines the arity-two singular product with itself in each finite
-weight window.  This is \(S_2\)-equivariance of the binary kernel; it is
-not reflection positivity and it does not construct the all-arity
-chiral \(E_2\) action.
+weight window.  The obstruction \([\mathfrak{ob}_W]\) is the cohomology
+class of the commutator between \(R\) and the binary kernel in the
+finite-window endomorphism complex.  This is \(S_2\)-equivariance of the
+binary kernel.  Reflection positivity and the all-arity mixed-HT
+\(E_2^{\mathrm{HT}}\)-centre action are separate structures.
 \end{defn}
 
-\begin{defn}[Hypothesis G: \texorpdfstring{$T=[Q_{\mathrm{tot}},G]$}{T = [Q,G]}]\label{app:hyp:T-Q-G}
+\begin{defn}[Stress-tensor primitive datum]\label{app:hyp:T-Q-G}
 In the Costello local-functional complex the holomorphic stress tensor is
 quantum-BV exact modulo contact terms:
 \[
@@ -1630,44 +2029,172 @@ quantum-BV exact modulo contact terms:
 \]
 The primitive \(G\) is a degree-\((-1)\) local functional compatible with
 the same filtration and scalar-contact projection used in the QME
-complex.  Transport to Hochschild cochains is allowed only after the
-admissible quantum closed-to-open map has been constructed.
+complex.  The obstruction \([\mathfrak{ob}_G]\) is the cohomology class
+of \(T\) in the scalar-contact quotient of the scale-\(L\)
+local-functional complex.  Transport to Hochschild cochains is allowed
+only after the admissible quantum closed-to-open map has been
+constructed.
+\end{defn}
+
+\begin{defn}[Finite-scale brane-defect QME datum]
+\label{app:defn:finite-scale-brane-defect-qme-datum}
+Fix a brane interval \(I\subset \R_{\mathrm{brane}}\), an admissible
+Hamiltonian weight \(w\), and a scale \(0<\epsilon<L<\infty\).  A
+finite-scale brane-defect quantum master-equation datum consists of the
+following objects.
+\begin{enumerate}
+  \item A filtered Costello local-functional complex
+  \[
+    \mathfrak Q^\bullet_{w,\partial,\hbar_{\mathrm{QME}}}(I)
+	      =
+	      \mathcal O_{\mathrm{loc}}^{\mathrm{bd}}
+	      \bigl(\mathcal E_w|_I;\,
+	      A_{\partial,\hbar_{\mathrm{W}}}^{\mathrm{pp},w}(I)
+	      [[\hbar_{\mathrm{QME}}]]\bigr)
+	  \]
+  with finite Hamiltonian windows
+  \(\mathfrak Q^\bullet_{w,M,\partial,\hbar_{\mathrm{QME}}}(I)\),
+  transition maps, and the scalar-contact filtration.
+  \item An elliptic gauge fixing \(Q^{\mathrm{GF}}\), heat kernel
+  \(K_t^w\), and finite-scale propagator
+  \[
+    P_{\epsilon,L}^w
+      =
+      \int_\epsilon^L Q^{\mathrm{GF}}K_t^w\,dt
+  \]
+  satisfying \([Q,P_{\epsilon,L}^w]=K_\epsilon^w-K_L^w\) in the
+  weighted coefficient category.  The coefficient coevaluation is the
+  weighted BV receiver of Definition~\ref{defn:wt-coefficient-pair};
+  in particular this datum includes the convergence of the Casimir
+  kernel required by Theorem~\ref{thm:hadamard-mittag-leffler}.
+  \item Finite-scale BV operations
+  \[
+    \{-,-\}_L,\qquad \Delta_L
+  \]
+  on the same local-functional complex, compatible with finite-window
+  transition maps and satisfying the Costello BV identities used in
+  \eqref{app:eq:qme-order-recursion} below.
+  \item Effective interactions \(I^w[L]\) obtained from a bare
+  interaction and graphwise local counterterms by the Costello RG
+  operator
+  \[
+    I^w[L]
+      =
+      \lim_{\epsilon\to0}
+      W\bigl(P_{\epsilon,L}^w,\,
+      I^w[\epsilon]+I^{\mathrm{CT}}_w(\epsilon)\bigr),
+  \]
+  with local counterterms
+  \(C_{\Gamma,w}^{M}(\epsilon)\in
+  \mathcal O_{\mathrm{loc}}(\mathcal E_w^M)\) supported on the relevant
+  bulk diagonals or brane-collision strata.  These counterterms are
+  compatible with Hamiltonian-window restriction, admissible weight
+  transport, interval extension by zero, and the RG composition law
+  \(I^w[L_2]=W(P^w_{L_1,L_2},I^w[L_1])\).
+  \item The scale-\(L\) linearized BV differential
+  \[
+    d_{\mathrm{cl},w}^{L}
+      =
+      Q+\{S^{(0)}[L],-\}_L
+  \]
+  on the obstruction complex, and the completed quantum BV differential
+  after a solution has been constructed,
+  \[
+    d_{\mathrm{QME},w}^{L}
+      =
+      Q+\{I^w[L],-\}_L+\hbar_{\mathrm{QME}}\Delta_L
+  \]
+  together with a scalar-contact projection stable under
+  \(d_{\mathrm{cl},w}^{L}\) and under the finite-stage quantum
+  differentials produced by the recursion,
+  \[
+    \widehat\sigma_{\mathrm{sc}}\colon
+    \mathfrak Q^\bullet_{w,\partial,\hbar_{\mathrm{QME}}}(I)
+      \to
+    C^\bullet_{\mathrm{Lie}}(\bar A;\C\gamma_{\mathbf 1})[1]
+      [[\hbar_{\mathrm{QME}}]] .
+  \]
+  \item A curved bulk-to-defect kernel for the source current complex of
+  Definition~\ref{def:app-unreduced-nonscalar-current-lift-datum},
+  \[
+    \kappa_{\hbar_{\mathrm{QME}},w,I}\colon
+    C^\bullet_{\mathrm{CE},\mathrm{cont}}
+    (\mathfrak g^{w,\mathrm{cur}}_{\hbar_{\mathrm{QME}},I})
+      \longrightarrow
+    \mathfrak Q^\bullet_{w,\partial,\hbar_{\mathrm{QME}}}(I),
+  \]
+  with finite-window residual complexes
+  \[
+    \mathcal Q^\bullet_{w,M}(I)
+      =
+      \ker\widehat\sigma_{\mathrm{sc},M},
+  \]
+  and Roos-compatible transition maps.
+\end{enumerate}
+For such a datum, the order-\(n\) residual of an action
+\(S^{(0)}+\cdots+\hbar_{\mathrm{QME}}^{n-1}S^{(n-1)}\) is
+\begin{equation}
+\label{app:eq:qme-order-recursion}
+  \mathcal R_{n,L}
+    =
+    -\frac12
+    \sum_{\substack{i+j=n\\ i,j<n}}
+      \{S^{(i)},S^{(j)}\}_L
+    -\Delta_L S^{(n-1)} .
+\end{equation}
+  Its image in each finite window defines
+  \[
+  [\mathcal R_{n,M,L}]
+    \in H^1(\mathcal Q^\bullet_{w,M}(I),d_{\mathrm{cl},w}^{L}).
+  \]
+The all-order brane-defect QME tower is solved precisely when these
+classes admit primitives \(S^{(n)}_{M,L}\) compatible with scale
+transition, finite-window restriction, admissible weight transport, and
+the Roos \(\varprojlim^1H^0\) primitive-compatibility condition.
 \end{defn}
 
 \begin{thm}[All-order QME obstruction criterion for the trace-sector assignment]\label{app:thm:relative-qme}
-Assume Hypotheses~\ref{app:hyp:KZ-SDR},
-\ref{app:hyp:reflected-weights}, and \ref{app:hyp:T-Q-G}.  Assume also
-the brane-defect Costello local-functional complex with
-\(d_{\mathrm{QME}}^{L}\)-stable scalar-contact projection, finite-window
-residual complexes, curved bulk-to-defect kernel, compatible local
-counterterms, zero Milnor/Roos obstruction, and quantum centrality
-homotopies for the centre lift.  If the Costello obstruction classes vanish in every loop
-order with compatible primitives, the
-formal-Darboux stalk of Theorem~\ref{app:thm:stalk-of-conj} admits a
-formal \(\hbar\)-adic local quantization: there exists a quantum BV
-master action
-$S^{\mathrm{quant}}=S^{\mathrm{cl}}+\sum_{n\geq 1}\hbar^n S^{(n)}$
+Assume the filtered formal SDR datum of
+Definition~\ref{app:hyp:KZ-SDR}, the finite-window weight-symmetry datum
+of Definition~\ref{app:hyp:reflected-weights}, and the stress-tensor
+primitive datum of Definition~\ref{app:hyp:T-Q-G}.  Assume also the
+finite-scale brane-defect QME datum of
+Definition~\ref{app:defn:finite-scale-brane-defect-qme-datum} and the
+quantum centrality homotopies for the centre lift.  For every
+\(n,M,L\), let
+\([\mathcal R_{n,M,L}]\) be the residual class of
+\eqref{app:eq:qme-order-recursion}.  If all classes
+\([\mathcal R_{n,M,L}]\) vanish and the chosen primitives are compatible
+under finite-window restriction, scale transition, admissible weight
+transport, and the Roos \(\varprojlim^1H^0\) condition, then the
+formal-Darboux stalk of Theorem~\ref{app:thm:stalk-of-conj} admits,
+inside that finite-scale datum, a formal \(\hbar_{\mathrm{QME}}\)-adic
+local quantization: there exists a quantum BV master action
+$S^{\mathrm{quant}}=S^{\mathrm{cl}}+\sum_{n\geq 1}\hbar_{\mathrm{QME}}^n S^{(n)}$
 satisfying
 \[
   QS^{\mathrm{quant}}
   +
   \frac12\{S^{\mathrm{quant}},S^{\mathrm{quant}}\}_L
-  +\hbar\Delta_L S^{\mathrm{quant}}=0
+  +\hbar_{\mathrm{QME}}\Delta_L S^{\mathrm{quant}}=0
 \]
-to all orders as a formal power series in \(\hbar\), and a quantum
-trace-sector closed-to-open factorization-centre assignment
-			\[
-			  \Phi_N^\hbar\colon
-			  \mathcal A^{\mathrm{q,tr}}_{\mathrm{bulk}}|_p
-			   \longrightarrow
-			   Z^{P_{0,\hbar}}_{\mathrm{fact}}
-			   (\mathrm{Obs}^\hbar_{\mathrm{open}})|_b
-				\]
-					whose classical limit is the chosen lift
-					\(\Phi_N^{\mathrm{Hoch}}\).  No analytic convergence in
-\(\hbar\), global descent, or whole finite-\(N\) Hochschild-centre
-equivalence is asserted by this criterion.  After a
-	quantum boundary \(A_\infty\)-algebra
+to all orders as a formal power series in \(\hbar_{\mathrm{QME}}\), and a
+quantum trace-sector closed-to-open factorization-centre assignment
+\[
+  \Phi_N^{\hbar_{\mathrm{QME}}}\colon
+  \mathcal A^{\mathrm{q,tr}}_{\mathrm{bulk}}|_p
+  \longrightarrow
+  Z^{P_{0,\hbar_{\mathrm{QME}}}}_{\mathrm{fact}}
+  (\mathrm{Obs}^\hbar_{\mathrm{open}})|_b
+\]
+whose classical limit is the chosen lift \(\Phi_N^{\mathrm{Hoch}}\).
+Conversely, within the same finite-scale datum, a nonzero
+\([\mathcal R_{n,M,L}]\) or a nonzero Roos primitive-compatibility class
+at any order blocks the order-\(n\) extension of the brane-defect QME
+tower.
+No analytic convergence in \(\hbar_{\mathrm{QME}}\), global descent, or
+full finite-\(N\) Hochschild-centre equivalence is asserted by this
+criterion.  After a quantum boundary \(A_\infty\)-algebra
 \(A^\hbar_{\partial,N}\) has been chosen, this target may be modelled by
 \[
   C^\bullet_{\mathrm{Hoch},\mathrm{adm}}
@@ -1676,15 +2203,16 @@ equivalence is asserted by this criterion.  After a
 The trace
 map \(J(f)=\overline{\operatorname{Tr}\,f(\phi_1,\phi_2)}\) is defined
 on polynomials and extended to formal \(f\) after completion; its
-		quantum correction has the form
-		\(J^{\mathrm{quant}}(f)=J(f)+\sum_n\hbar^n J^{(n)}(f)\).
-			The assignment is a morphism of Hochschild complexes only in the
-chosen Hochschild model and precisely after the quantum
-equivariance homotopies are chosen.  Descent to Hochschild cohomology and an
-all-order derived-centre equivalence require the
-			additional Hochschild equivariance, centre-lift, and descent data of
-			Definition~\ref{defn:admissible-hochschild-centre-lift}.
-			\end{thm}
+quantum correction has the form
+\(J^{\mathrm{quant}}(f)=J(f)+\sum_n\hbar_{\mathrm{QME}}^nJ^{(n)}(f)\).
+The assignment is a morphism of Hochschild complexes only in the chosen
+Hochschild model, with the quantum equivariance homotopies included as
+part of the datum.  Descent to Hochschild cohomology and an all-order
+derived-centre quasi-isomorphism require the Hochschild equivariance,
+centre-lift, cotangent-current, descent, anomaly/locality, and cone rows
+of \eqref{eq:typed-total-obstruction-ledger}, together with the data of
+Definition~\ref{defn:admissible-hochschild-centre-lift}.
+\end{thm}
 
 \begin{proof}
 Set \(S^{(0)}=S^{\mathrm{cl}}\).  At order \(n\), after
@@ -1708,17 +2236,23 @@ The right-hand side is \(d_{\mathrm{cl}}^L\)-closed by the order
 The first identity is the classical master equation for \(S^{(0)}[L]\);
 the other two are part of the supplied scale-\(L\) BV package.  Its
 cohomology class is the Costello obstruction at loop order \(n\).  By
-hypothesis this class vanishes and a compatible primitive is chosen;
-induction constructs \(S^{(n)}\) for every \(n\).
+the supplied datum this class vanishes and a compatible primitive is
+chosen; induction constructs \(S^{(n)}\) for every \(n\).
+If \([\mathcal R_{n,M,L}]\neq0\) in any finite window, no
+\(S^{(n)}_{M,L}\) solves the displayed equation in that window.  If the
+finite-window classes vanish but the Roos \(\varprojlim^1H^0\) primitive
+class is nonzero, the primitives do not assemble to a compatible
+completed tower.  These are exactly the two obstruction alternatives in
+the theorem.
 
 The scalar-contact projection, finite-window residual complexes, curved
-bulk-to-defect kernel, compatible counterterms, and zero Milnor/Roos
-class supply the primitives in the brane-defect tower.
-Hypothesis~\ref{app:hyp:KZ-SDR} transfers the formal tower to the
-trace-sector centre.  Hypothesis~\ref{app:hyp:reflected-weights} is the
+bulk-to-defect kernel, compatible counterterms, and Roos-compatible
+primitive data supply the brane-defect tower.
+Definition~\ref{app:hyp:KZ-SDR} transfers the formal tower to the
+trace-sector centre.  Definition~\ref{app:hyp:reflected-weights} is the
 finite-window \(S_2\)-compatibility of the binary kernel.
-Hypothesis~\ref{app:hyp:T-Q-G} supplies the local-functional homotopy for
-the stress tensor.  Hypothesis~\ref{app:hyp:stokes}, when imposed, gives
+Definition~\ref{app:hyp:T-Q-G} supplies the local-functional homotopy for
+the stress tensor.  Definition~\ref{app:hyp:stokes}, when imposed, gives
 sectorial analytic compatibility; it is not used to create a formal
 primitive.
 \end{proof}
@@ -1729,38 +2263,50 @@ QME obstruction classes form the tuple
 \[
   \mathrm{Ob}_{\mathrm{QME}}
    =
-   \bigl([\mathfrak{ob}_K],[\mathfrak{ob}_S],
+   \bigl(
+   ([\mathcal R_{n,M,L}])_{n,M,L},
+   [\mathfrak{ob}_K],[\mathfrak{ob}_S],
    [\mathfrak{ob}_W],[\mathfrak{ob}_G]\bigr),
 \]
-with entries the formal-SDR obstruction \( [\mathfrak{ob}_K]\), the
-sectorial Stokes class \( [\mathfrak{ob}_S]\), the binary
-weight-symmetry class \( [\mathfrak{ob}_W]\), and the
-stress-tensor-exactness class \( [\mathfrak{ob}_G]\).  It becomes a
-single class in \(H^*(\mathrm{Loc}_{\R^2\times\C^2})\) only after these
-entries have been represented in the same Costello local-functional
-deformation complex.  At fixed loop order, only the algebraic finite-window
-entries are checked in finite PVA weight windows.  Analytic convergence
-requires the sectorial estimates of Hypothesis~\ref{app:hyp:stokes}.
+with entries the finite-scale Costello residual classes of
+Definition~\ref{app:defn:finite-scale-brane-defect-qme-datum}, the
+formal-SDR obstruction \( [\mathfrak{ob}_K]\), the sectorial Stokes class
+\( [\mathfrak{ob}_S]\), the binary weight-symmetry class
+\( [\mathfrak{ob}_W]\), and the stress-tensor-exactness class
+\( [\mathfrak{ob}_G]\).  It becomes a single class in
+\(H^*(\mathrm{Loc}_{\R^2\times\C^2})\) only after these entries have been
+represented in the same Costello local-functional deformation complex.
+At fixed loop order, only the finite-window entries explicitly computed
+in \(\mathcal Q^\bullet_{w,M}(I)\) are checked.  Analytic convergence
+requires the sectorial estimates of Definition~\ref{app:hyp:stokes}.
 \end{rmk}
 
 \subsection{Operator-level lift of the Igusa section and its square-root branch}\label{app:hfc:operator-lift-modular}
 
-The Igusa cusp form $\Phi_{10}$ is the level-2 section of the modular
-line $\Omega_{\mathrm{central}}$ on the Siegel period domain
-$\mathfrak H_2$
+In the compact \(K3\times E\) comparison, choose a modular line
+\(\Omega_{\mathrm{central}}\)
+(Remark~\ref{rmk:omega-central-definition}) on the Siegel period
+domain \(\mathfrak H_2\)
+and a matched-conventions map from the local Capelli scalar class to it.
+The Igusa cusp form \(\Phi_{10}\) is then the degree-\(2\) scalar section
+of that chosen modular line
 \cite{igusa-cusp-form}\cite{gritsenko-nikulin-paramodular}.  The square
-root $\Delta_5=\Phi_{10}^{1/2}$ is a scalar modular form in the
-compact \(K3\times E\) comparison
-(\S\ref{ssec:open-modular-lift}).  The formal-Darboux theorem
-constructs the local Capelli scalar.  An operator-level lift is
-an operator-valued cocycle whose protected trace is \(\Phi_{10}\) on
-the Siegel period domain, or \(\Delta_5\) after the square-root cover
-has been chosen, in the compact-target theory.
+root \(\Delta_5=\Phi_{10}^{1/2}\) is defined only after a square-root
+cover or branch datum has been fixed.  The formal-Darboux theorem
+constructs the local Capelli scalar.  The modular curvature
+\(\Omega_{\mathrm{central}}\) is part of the compact matched-conventions
+datum.  An operator-level lift is an
+operator-valued cocycle whose protected trace is \(\Phi_{10}\), or
+\(\Delta_5\) after the square-root datum has been chosen, in the
+compact-target theory.
 
-\begin{conj}[Operator lift of the Igusa modular section]\label{app:conj:operator-lift-Delta5}
-There exists a graded vertex-algebraic or factorization-algebraic
-object \(V\), an involution or real form \(\sigma\), and a protected
-trace such that
+\begin{conj}[Operator lift of the chosen Igusa modular section]\label{app:conj:operator-lift-Delta5}
+After the compact comparison has supplied
+\(\Omega_{\mathrm{central}}\) and, for \(\Delta_5\), a square-root
+branch, there exists a graded state space \(V\), an involution or
+real form \(\sigma\), and a protected trace, with \(V\) obtained either
+from a specified curve-restricted vertex algebra or from a
+higher-dimensional factorization algebra, such that
 \[
   \mathrm{Tr}_V\bigl(\sigma\,q^{L_0-c/24}\,
    \prod_{i=1}^{2}z_i^{H_i}\bigr)
@@ -1768,14 +2314,16 @@ trace such that
    \qquad
    S\in\{\Phi_{10},\,\Delta_5=\Phi_{10}^{1/2}\}
 \]
-with \(S=\Delta_5\) only on the square-root cover of the Siegel period domain
-$(\tau,\rho,\nu)\in\mathfrak H_2$, with the trace compatible with
-the modular line \(\Omega_{\mathrm{central}}\).  The required object is
-the operator-valued cocycle lifting this scalar modular section.
+with \(S=\Delta_5\) only on the chosen square-root cover of the Siegel
+period domain \((\tau,\rho,\nu)\in\mathfrak H_2\), with the trace
+compatible with the chosen modular line \(\Omega_{\mathrm{central}}\).
+The required datum is the operator-valued cocycle lifting this scalar
+modular section.
 \end{conj}
 
 Scalar automorphy does not determine an operator-valued cocycle.  The
-missing datum is a vertex algebra or a factorization algebra with a
+missing datum is a curve vertex algebra obtained from a specified curve
+restriction, or a higher-dimensional factorization algebra, with a
 protected trace.
 
 \begin{constr}[Borcherds--Kac--Moody lift obstruction]\label{app:constr:BKM-obstruction}
@@ -1784,7 +2332,8 @@ products, including the fake-Monster denominator and the
 Gritsenko--Nikulin products
 \cite{borcherds-fake}\cite{gritsenko-nikulin-paramodular}.  These are
 scalar identities.  Passing from a scalar denominator formula to a
-vertex-algebraic object whose graded trace is \(\Delta_5\) requires an
+curve-restricted vertex algebra, or to a higher-dimensional
+factorization algebra, whose graded trace is \(\Delta_5\) requires an
 additional construction.
 
 \emph{Obstruction.}
@@ -1806,7 +2355,7 @@ factorization algebra on \(K3\times E\) whose protected trace is
 \emph{Obstruction.}
 \(\mathrm{Ob}_{K3E}\) is the obstruction to constructing the compact
 target factorization object, its protected trace, and the descent of
-that trace to the level-\(2\) modular line.
+that trace to the degree-\(2\) modular line.
 \end{constr}
 
 \begin{constr}[Dabholkar--Murthy--Zagier lift obstruction]\label{app:constr:DMZ-obstruction}
@@ -1839,65 +2388,160 @@ Mixed Holomorphic--Topological Deligne criterion.  The criterion is a
 vanishing theorem for obstruction data; it is not a consequence of the
 formal-Darboux trace-sector computation alone.
 
-\begin{thm}[Global Mixed-HT Deligne criterion]\label{app:thm:global-deligne-criterion}
+\begin{thm}[Global Mixed-HT Deligne supplied-data criterion]\label{app:thm:global-deligne-criterion}
 Let \(\mathrm{preOCA}_N\) be a pre-open--closed comparison datum whose
-formal-Darboux fibre is the trace-sector morphism of
-Theorem~\ref{app:thm:stalk-of-conj}.  Under the joint vanishing
+formal-Darboux fibre contains the trace-sector generator boundary value of
+Theorem~\ref{app:thm:stalk-of-conj}.  Assume the non-optional typed
+obstruction ledger of Theorem~\ref{thm:typed-global-mixed-ht-deligne}
+has representatives and primitives:
 \[
-	  \mathrm{Ob}_{\mathrm{global}}
-	   :=
-	   \bigl(
-	     \operatorname{Ob}^{\mathrm{ch}\,E_2}_{\mathrm{Deligne}},
-	     \mathrm{Ob}_{\mathrm{desc}},
-	     \mathrm{Ob}_{\mathrm{QME}}
-	   \bigr)
-   =0,
+  \operatorname{Ob}^{\mathrm{typed}}_{\mathrm{nt}}
+  :=
+  \left(
+    \{\mathfrak o^{\mathrm{SC}}_{n+1}\}_{n\ge2},
+    \operatorname{Ob}^{\mathrm{cent}}_{\mathrm{Hoch}},
+    \operatorname{Ob}^{\mathrm{global},5},
+    \operatorname{Ob}^{\mathrm{Darb}},
+    \operatorname{Ob}^{\mathrm{cot}}_\partial,
+    \operatorname{Ob}^{\mathrm{unif}}_{\mathrm{HT}},
+    \operatorname{Ob}^{\mathrm{prim}}_{\mathrm{glob}},
+    H^\bullet\!\left(\operatorname{Cone}(\mathrm{OCA}_N)\right)
+  \right)
 \]
-with the three summands as in
-Definition~\ref{app:defn:morita-chiral-E2-extension-complex},
-Theorem~\ref{app:thm:global-stalk-from-collapse},
-and Remark~\ref{app:rmk:qme-obstruction}, and after the anomaly,
-locality, and comparison-cone data of
-Definition~\ref{defn:global-mixed-ht-deligne-obstruction-datum} are
-killed by compatible null-homotopies, \(\mathrm{preOCA}_N\) is promoted
-to a global open--closed quasi-isomorphism.  On this vanishing locus,
-with the displayed primitives chosen, this is the \(d=2\) realization of the
-Mixed-HT Deligne conjecture~\ref{app:conj:mixed-HT-Deligne} on
-$\R^2_{\mathrm{top}}\times\C^2_{\mathrm{hol}}$ at $d=2$, $N$ Dirac
-branes, with every construction hypothesis named in those theorems.
-The operator-level lift of \(\Phi_{10}\) or
-\(\Phi_{10}^{1/2}\) belongs to the \(K3\times E\) comparison problem.
+obtained from \eqref{eq:typed-total-obstruction-ledger} by omitting only
+the optional topologisation row.  The five-component vector
+\(\operatorname{Ob}^{\mathrm{global},5}\) is the morphism-stage subtuple
+\eqref{eq:obs-five-component}; it does not contain the
+Hochschild-centre, Darboux-transport, cotangent-current,
+common-deformation-complex, primitive-coherence, or cone rows.
+
+Concretely, choose curvature representatives
+\(\mathcal R^{\mathrm{SC}}_{n+1}(\Theta_{\le n})\) and
+\(\mathcal R^{\mathrm{global},5}\) as in
+\eqref{eq:global-five-representatives}; choose a Hochschild-centre
+Maurer--Cartan lift
+\(\mathcal C_{\Phi_N^{\mathrm{Hoch}}}\) killing
+\(\operatorname{Ob}^{\mathrm{cent}}_{\mathrm{Hoch}}\); choose
+Darboux-transport primitives and cotangent-current primitives
+\[
+  h_{\nabla},\quad h_{\nabla,\Theta},\quad h_{\mathrm{cot},I}
+\]
+for every brane interval \(I\); choose the comparison-unifying datum
+\((\mathfrak K_{\mathrm{HT}},\chi_{\mathrm{nat}})\) of
+Definition~\ref{defn:common-ht-deformation-complex} and row
+\textup{(D9)} of
+Definition~\ref{defn:typed-mixed-ht-deligne-equivalence-datum}, with
+\(\operatorname{Ob}^{\mathrm{unif}}_{\mathrm{HT}}=0\).  This transports
+the six native curvature representatives to the single curvature
+\(F_{\mathrm{HT}}(\Theta_{\mathrm{OCA}})\) of
+Proposition~\ref{prop:six-projections}.  Choose also the primitive
+compatibility datum \(\mathfrak C_{\mathrm{prim}}\) of
+\eqref{eq:global-primitive-compatibility-datum} and
+\eqref{eq:global-tertiary-primitive-compatibility-datum}, extended to
+the all-simplex coherence datum
+\eqref{eq:global-all-simplex-primitive-compatibility-datum}.
+Applying \(d_{\Theta_{\le n}}\) to \(H^{\mathrm{SC}}_{n+1}\) gives
+\(-\mathcal R^{\mathrm{SC}}_{n+1}(\Theta_{\le n})\).  The Hochschild-centre
+lift has zero curvature.  Applying \(d_{\mathrm{Darb}}\) to \(h_{\nabla}\) and
+\(h_{\nabla,\Theta}\) gives \(-\Omega_{\nabla}\) and
+\(-\mathcal R_{\nabla,\Theta}\).  Applying \(d_{\mathrm{cot}}\) to
+\(h_{\mathrm{cot},I}\) gives \(-\mathcal R^{\mathrm{cot}}_{\partial,I}\).
+The Morita, descent, quantum-master-equation, anomaly, and locality primitives
+are sent respectively, using \(d^{L}_{\mathrm{QME},n,M}\) for the
+order-\(n\) finite-window QME coefficient differential of
+Definition~\ref{defn:typed-brane-defect-qme-tower}, to
+	\(-\mathcal R^{\mathrm{ch}\,E_2}_{\mathrm{Deligne}}\),
+	\(-\mathcal R^{\mathrm{desc}}_{\partial}\),
+	\(-\mathcal R^{\mathrm{QME}}_{n,w,r,M,L}\),
+	\(-(\mathcal R^{\mathrm{anom}})_{\mathrm{red}}\), and
+	\(-\mathcal R^{\mathrm{loc}}\).  This includes Roos primitives
+	\(K^{\mathrm{RG}}_{n,w,r,M;L_1,L_2}\) and
+	\(K^{\mathrm{win}}_{n,w,r;M,M',L}\).  Applying
+	\(d^{L_2}_{\mathrm{QME},n,M}\)
+	to the first primitive gives the sum of
+	\(-W(P_{L_1,L_2},C_{n,w,r,M,L_1})\) and \(C_{n,w,r,M,L_2}\).  Applying
+	\(d^{L}_{\mathrm{QME},n,M}\) to the second primitive gives the sum of
+	\(-\pi_{M,M'}C_{n,w,r,M,L}\) and
+	\(C_{n,w,r,M',L}\pi^{\mathrm{CE}}_{M,M'}\), together with the analogous
+admissible-weight transport primitive.  Then
+		\(\mathrm{preOCA}_N\) lifts to the morphism-stage global
+open--closed map.
+If, in addition,
+\(C_{\mathrm{OCA}}=\operatorname{Cone}(\mathrm{OCA}_N)\) is equipped with
+a contraction \(\kappa_C\), with \(d_C=d_{\operatorname{Cone}}\), satisfying
+\(d_C\kappa_C+\kappa_Cd_C=\operatorname{id}_{C_{\mathrm{OCA}}}\)
+in the sense of Definition~\ref{defn:oca-comparison-cone}, or with the
+filtered cone datum
+\((F^\bullet C_{\mathrm{OCA}},\kappa_0,\widetilde\kappa_0,E)\) of
+Theorem~\ref{thm:filtered-oca-cone-criterion}, with \(E\) raising
+filtration and \(\sum_{n\ge0}E^n\) convergent, then \(\mathrm{OCA}_N\)
+is a global open--closed quasi-isomorphism.  Under the non-optional
+typed rows assumed above, this is the \(d=2\) target statement of the
+Mixed-HT Deligne criterion on
+	\(\R^2_{\mathrm{top}}\times\C^2_{\mathrm{hol}}\) at \(N\) Dirac branes.
+	If a topologised target is part of the comparison datum, the optional
+	topologisation row \(\operatorname{Ob}^{\mathrm{top}}_\rho\) must also
+	vanish.
+	The datum consists of the mixed-HT Swiss-cheese action,
+	Hochschild-centre lift, all-arity chiral \(E_2\) Morita-centre lift,
+	Darboux-torsor transport, unreduced cotangent-current realization,
+	brane-link descent, quantum master-equation counterterm tower,
+	anomaly/locality primitives, and cone data named above.  A nonzero
+	component, a missing primitive, a missing null-homotopy, or a
+	non-acyclic comparison cone is the corresponding obstruction.
+	The operator-level lift of \(\Phi_{10}\) or
+	\(\Phi_{10}^{1/2}\) belongs to the \(K3\times E\) comparison problem.
 \end{thm}
 
 \begin{proof}
-Compose Proposition~\ref{app:prop:morita-centre-lift-MC-control}
-(Morita chiral \(E_2\)-centre lift via the relative Maurer--Cartan
-complex),
-Theorem~\ref{app:thm:relative-Ed-deligne} (chiral $E_d$
-Deligne via the operadic action and
-Hypotheses~\ref{app:hyp:formality}--\ref{app:hyp:ran-descent}),
-Theorem~\ref{app:thm:global-stalk-from-collapse}
-(Costello--Gwilliam brane-link descent via
-Definition~\ref{app:defn:descent-obstruction-complex}),
-Theorem~\ref{app:thm:relative-qme} (all-order QME obstruction criterion via
+Theorem~\ref{thm:sc-ht-deligne-swiss-cheese} supplies the
+\(\mathrm{SC}^{\mathrm{HT}}_{(1,2)}\)-algebra structures from the
+mixed-HT Swiss-cheese Maurer--Cartan lift.  The Hochschild-centre
+Maurer--Cartan equation is precisely the centrality condition of
+Definition~\ref{defn:typed-hochschild-centre-lift-datum}.  The
+Darboux-transport and cotangent-current equations kill the obstruction
+classes of Definitions~\ref{defn:hol-bd-datum-HT} and
+\ref{defn:typed-cotangent-current-lift-datum}.
+
+Proposition~\ref{app:prop:morita-centre-lift-MC-control} identifies the
+Morita mixed-HT \(E_2^{\mathrm{HT}}\)-centre lift with a relative Maurer--Cartan
+obstruction.  Theorem~\ref{app:thm:relative-Ed-deligne} gives the
+chiral \(E_d\) Deligne operation from the operadic action together with
+the supplied data of
+Definitions~\ref{app:hyp:formality}--\ref{app:hyp:ran-descent}.
+Theorem~\ref{app:thm:global-stalk-from-collapse} gives
+Costello--Gwilliam brane-link descent from
+Definition~\ref{app:defn:descent-obstruction-complex}.
+Theorem~\ref{app:thm:relative-qme} gives the all-order quantum
+master-equation obstruction criterion from
 Hypotheses~\ref{app:hyp:KZ-SDR}, \ref{app:hyp:reflected-weights}, and
 \ref{app:hyp:T-Q-G}, with Hypothesis~\ref{app:hyp:stokes} only for
-analytic refinement).  The three obstructions are independent cohomology
-classes living in distinct cohomology groups; their tuple becomes a
-single curvature class only after a common deformation complex and
-comparison maps have been constructed.
+analytic refinement.  The anomaly and locality equations are the two
+remaining rows of Definition~\ref{defn:typed-anomaly-locality-datum}.
+
+The displayed primitives and the comparison-unifying datum install every
+non-optional row of \(\operatorname{Ob}^{\mathrm{typed}}\) except the cone
+cohomology row, so the pre-comparison datum becomes a global open--closed
+morphism.  The displayed contraction, or the filtered criterion, is
+precisely the acyclicity condition for the comparison cone, hence the
+quasi-isomorphism condition.  No cited criterion constructs the other
+criteria's primitives from the formal-Darboux fibre.  The native tuple
+becomes a single curvature class precisely through
+\((\mathfrak K_{\mathrm{HT}},\chi_{\mathrm{nat}})\); without that row it
+remains a tuple of native cohomology classes.
 \end{proof}
 
 \begin{rmk}[Reduction to obstruction classes]\label{app:rmk:reduction-status}
 The obstruction $\mathrm{Ob}_{\mathrm{QME}}$ is the all-order quantum
 master-equation obstruction for lifting the finite-jet PVA across all
-$\hbar$-orders.  The Morita \(E_2\)-Deligne obstruction
+$\hbar_{\mathrm{QME}}$-orders.  The Morita \(E_2\)-Deligne obstruction
 \(\operatorname{Ob}^{\mathrm{ch}\,E_2}_{\mathrm{Deligne}}\) is the class
 of Definition~\ref{app:defn:morita-chiral-E2-extension-complex}; at
 \(d\geq2\) it is the Dirac-brane formal-Darboux instance of the
 obstruction class of Conjecture~\ref{conj:chiral-Ed-deligne};
-  partial results (chiral Lie algebroids on smooth schemes via Hennion,
-  factorisable co-operads via Francis) give adjacent structures; the
+  Faonte--Hennion--Kapranov
+  \cite{faonte-hennion-kapranov-higher-km} and Francis
+  \cite{francis-thesis} give adjacent factorization structures; the
   global assertion is the obstruction criterion of
   Theorem~\ref{app:thm:global-deligne-criterion}, and the
   underlying equivalence remains
@@ -1908,7 +2552,7 @@ obstruction class of Conjecture~\ref{conj:chiral-Ed-deligne};
 	The formal-Darboux trace theorem
 	(Theorem~\ref{thm:main-local}) is the formal-Darboux stalk
 that anchors the local side of these obstructions, and
-Theorem~\ref{thm:formal-two-dimensional-holomorphic-ope} gives its
+Theorem~\ref{thm:formal-two-dimensional-holomorphic-singular-product} gives its
 arity-two formal diagonal operation.  Each relative theorem has the
 stalk theorem, including this diagonal singular product, as its base case.
 \end{rmk}
@@ -1924,7 +2568,7 @@ cohomology classes in distinct source complexes:
   \item
     \(\operatorname{Ob}^{\mathrm{ch}\,E_2}_{\mathrm{Deligne}}\):
     Maurer--Cartan lift from the formal tree-kernel current operad to
-    the Morita mixed-HT chiral \(E_2\)-centre action
+    the Morita mixed-HT \(E_2^{\mathrm{HT}}\)-centre action
     (Definition~\ref{app:defn:morita-chiral-E2-extension-complex}); the
     higher \(d\geq2\) formality summand is the associator-type operadic
     homotopy class on \(\mathrm{Conf}_I(\C^d)\), \(|I|\geq2\).

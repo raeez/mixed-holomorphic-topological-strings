@@ -1,0 +1,466 @@
+% =====================================================================
+%  THE COMPANION TO MIXED HOLOMORPHIC-TOPOLOGICAL STRINGS
+%  Distilled from ~/mixed-holomorphic-topological-strings.
+%  Standalone document. Author: Raeez Lorgat.
+% =====================================================================
+\documentclass[11pt]{article}
+\usepackage[localtheorems]{raeez-math-template}
+
+\providecommand{\cA}{\mathcal{A}}
+\providecommand{\cB}{\mathcal{B}}
+\providecommand{\cC}{\mathcal{C}}
+\providecommand{\cE}{\mathcal{E}}
+\providecommand{\cH}{\mathcal{H}}
+\providecommand{\cK}{\mathcal{K}}
+\providecommand{\cL}{\mathcal{L}}
+\providecommand{\cM}{\mathcal{M}}
+\providecommand{\cO}{\mathcal{O}}
+\providecommand{\cP}{\mathcal{P}}
+\providecommand{\cR}{\mathcal{R}}
+\providecommand{\cW}{\mathcal{W}}
+\providecommand{\cZ}{\mathcal{Z}}
+\providecommand{\bC}{\mathbb{C}}
+\providecommand{\bR}{\mathbb{R}}
+\providecommand{\bQ}{\mathbb{Q}}
+\providecommand{\bZ}{\mathbb{Z}}
+\providecommand{\fg}{\mathfrak{g}}
+\providecommand{\fh}{\mathfrak{h}}
+\providecommand{\fgl}{\mathfrak{gl}}
+\providecommand{\fsl}{\mathfrak{sl}}
+\providecommand{\fm}{\mathfrak{m}}
+\providecommand{\fD}{\mathfrak{D}}
+\providecommand{\barB}{\overline{B}}
+\providecommand{\MC}{\mathrm{MC}}
+\providecommand{\Ran}{\operatorname{Ran}}
+\providecommand{\Mbar}{\overline{\mathcal{M}}}
+\providecommand{\FM}{\overline{\mathrm{FM}}}
+\providecommand{\Vir}{\mathrm{Vir}}
+\providecommand{\Zder}{Z^{\mathrm{der}}_{\mathrm{ch}}}
+\providecommand{\kch}{\kappa_{\mathrm{ch}}}
+\providecommand{\kBKM}{\kappa_{\mathrm{BKM}}}
+\providecommand{\kcat}{\kappa_{\mathrm{cat}}}
+\providecommand{\kfib}{\kappa_{\mathrm{fiber}}}
+\providecommand{\SCchtop}{\mathsf{SC}^{\mathrm{ch,top}}}
+\providecommand{\PhiFA}{\Phi^{\mathrm{FA}}}
+\providecommand{\SpCh}{\mathrm{Sp}^{\mathrm{ch}}}
+\providecommand{\CoHA}{\mathrm{CoHA}}
+\providecommand{\Dfive}{\Delta_5}
+\providecommand{\Phiten}{\Phi_{10}}
+\providecommand{\Tr}{\operatorname{Tr}}
+\providecommand{\Rez}{\operatorname{Res}}
+\providecommand{\Conf}{\operatorname{Conf}}
+\providecommand{\HH}{\operatorname{HH}}
+\providecommand{\CE}{\mathrm{CE}}
+\providecommand{\PV}{\mathrm{PV}}
+\providecommand{\hbW}{\hbar_{\mathrm{W}}}
+\providecommand{\hbQME}{\hbar_{\mathrm{QME}}}
+\providecommand{\Ob}{\operatorname{Ob}}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem*{principle}{Principle}
+
+\title{\bfseries Mixed Holomorphic--Topological Strings\\[0.4em]
+\Large The Companion}
+\author{Raeez Lorgat}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\noindent\itshape
+The local Bershadsky--Cecotti--Ooguri--Vafa field theory on
+$\bR^2_{\mathrm{top}}\times\bC^2_{\mathrm{hol}}$, truncated to its
+Hamiltonian BF sector, poses at each brane point a mixed
+holomorphic--topological Deligne problem: compare the bulk
+factorization algebra with the Morita $E_2$-centre of the boundary
+category. This volume proves exactly one formal-local stalk of that
+problem, and maps with type-theoretic precision everything that
+separates the stalk from the global theory. The proved stalk: at $N$
+Dirac branes the closed local algebra is the continuous
+Chevalley--Eilenberg algebra of
+$\fg=\fh\ltimes\fh^\vee_{\mathrm{cont}}[1]$,
+$\fh=\bC[[z_1,z_2]]/\bC$, the boundary chart is the Koszul algebra of
+the derived commuting variety, and the dictionary
+$c_f\mapsto\theta_f$, $u_f\mapsto J(f)=\Tr f(\phi_1,\phi_2)$ is the
+unique formal-Darboux coordinate of the scalar-reduced stable trace
+sector. The removed scalar line returns as the Capelli anomaly
+$\hbW N[\bar c]$. This companion states the stalk theorem, the
+uniqueness axioms, the completion analysis with its proved
+obstructions, the typed ledger, and the three conjectures that point
+at the compact world --- ending with the operator lift of the Igusa
+form.
+\end{abstract}
+
+\section{The seed}\label{sec:seed}
+
+A holomorphic--topological theory in complex dimension two is the
+simplest habitat where the chiral world of the curve volumes meets the
+Calabi--Yau world of the threefold volumes: two real topological
+directions, two holomorphic ones, and at a worldline defect the
+question every holography asks --- do the bulk observables equal the
+centre of the boundary? The volume's discipline is to refuse the
+question in the large and answer it exactly in the small. In the
+small: at a formal holomorphic-symplectic brane point of
+$X=\bR^2_{\mathrm{top}}\times\bC^2_{\mathrm{hol}}$ with symplectic
+form $dz_1\wedge dz_2$, the Hamiltonian vector fields form
+$\fh=\bC[[z_1,z_2]]/\bC\cdot1$ with bracket
+$\{f,g\}=\partial_{z_1}f\,\partial_{z_2}g
+-\partial_{z_2}f\,\partial_{z_1}g$; the shifted-cotangent BF theory
+has fields valued in $\fg=\fh\ltimes\fh^\vee_{\mathrm{cont}}[1]$; and
+$N$ Chan--Paton branes present the boundary as the derived commuting
+variety $[\mu^{-1}_{\mathrm{der}}(0)/GL_N]$, $Q\psi=[\phi_1,\phi_2]$.
+The trace map
+\[
+J(f)\;=\;\overline{\Tr\,f(\phi_1,\phi_2)}
+\]
+is the whole local dictionary: it is the formal-Darboux coordinate of
+the scalar-reduced stable trace sector, it satisfies
+$\{J(f),J(g)\}=J(\{f,g\})+N[\{f,g\}]_0$, and the scalar defect
+$[\{f,g\}]_0$ --- the constant the quotient by $\bC\cdot1$ discarded
+--- returns as a projective anomaly, the Capelli scalar
+$\hbW N[\bar c]$: on linear generators,
+$\{\Tr\phi_1,\Tr\phi_2\}=N$. Nothing else about the global theory is
+claimed. The volume's real product is the honest map: a typed ledger
+of the obstructions --- descent, quantum master equation, anomaly,
+locality, centre lift --- that separate this stalk from a compact
+target, so that every global statement in the constellation must
+either supply the named data or remain a criterion.
+
+\section{The objects}\label{sec:objects}
+
+\begin{definition}[The local pair]
+Closed: the continuous Chevalley--Eilenberg algebra
+$C^\bullet_{\CE,\mathrm{cont}}(\fg)$, with
+$\fh^\vee_{\mathrm{cont}}$ the Grothendieck--Matlis residue dual
+spanned by $\rho_{a,b}=z_1^{-a-1}z_2^{-b-1}dz_1dz_2$ with
+$\langle\rho_{a,b},z_1^mz_2^n\rangle=\delta_{am}\delta_{bn}$. Open:
+$A^{\mathrm{cl}}_{\partial,N}
+=C^\bullet_{\CE}(\fgl_N,\mathrm{Sym}(\fgl_N\oplus\fgl_N
+\oplus\fgl_N[1]))$ with Koszul differential $Q\psi=[\phi_1,\phi_2]$;
+the moment map is traceless, so the effective presentation replaces
+$\fgl_N[1]$ by $\fsl_N[1]$. Stable: the trace algebra
+$A^{\mathrm{st}}_{\partial,H}\cong
+\widehat{\mathbf S}_{\mathrm{Tate}}(\fh)$, reached by scalar
+reduction, degreewise stable Procesi--Razmyslov trace passage, and the
+Roos limit convention.
+\end{definition}
+
+\begin{definition}[The admissible habitat]
+All completions live in the admissible host category: filtered
+nuclear-Tate complexes with a \emph{declared} BV coefficient dual
+\textup{(distinct from the strict dual)}, declared operation and
+kernel lists, and every inverse limit taken as a Roos complex with
+$\varprojlim^1$ tracked as obstruction data. The verified carrier is
+the weighted Tate envelope $B_w$, $w(d)=q^d$, $q>1$, the minimal
+complete filtered subspace closing both Costello's heat-kernel BV
+calculus and the Schouten bracket; its Casimir
+$C_{\fh,w}=\sum_d\sum_i(w(d)e_{d,i})\otimes(w(d)^{-1}e^i_d)$
+converges, while the strict product--sum pair is a proved
+\emph{non-object}: the diagonal coevaluation diverges.
+\end{definition}
+
+Three operads are kept distinct --- topological little disks
+$E_2^{\mathrm{top}}$, the holomorphic factorization operad
+$E_2^{\mathrm{ch,hol}}$ in complex dimension two, and the mixed
+Morita-centre structure $E_2^{\mathrm{HT}}$ --- with no identification
+asserted without a topologisation or restriction datum. Four
+deformation parameters are kept distinct: $\hbQME$ \textup{(Costello
+loops)}, $\hbW$ \textup{(Moyal--Weyl--Capelli)}, $\hbar_\omega$
+\textup{(equivariant)}, $\hbar_{\mathrm{Rees}}$. Four map symbols
+are kept distinct: the generator boundary value, the
+Hochschild-centre lift \textup{(a Maurer--Cartan datum, not a
+construction)}, the proved coordinate isomorphism, and the quantum
+map \textup{(never asserted)}. The native singular kernel is
+two-dimensional: $K^{(2)}_\Delta=d\zeta_1\,d\zeta_2/(\zeta_1\zeta_2)$;
+a curve vertex algebra exists only after a restriction datum with a
+transverse boundary condition --- without the restriction functor, no
+vertex algebra is constructed.
+
+\section{The theorems}\label{sec:theorems}
+
+\begin{theorem}[The formal-Darboux trace-sector stalk; proved]
+\label{thm:stalk}
+Under the coordinate tier \textup{(exact continuous duality, perfect
+residue pairing, continuity of bracket and coadjoint action)}, the
+continuous local-observable algebra of the formal current stalk is
+$C^\bullet_{\CE,\mathrm{cont}}(\fg)$; the closed-to-open boundary
+value at finite $N$ is
+$c_f\mapsto\theta_f$, $u_f\mapsto J(f)\cdot(-)$ with
+$\theta_f(\phi_1)=-\partial_{z_2}f$,
+$\theta_f(\phi_2)=\partial_{z_1}f$; and after scalar reduction,
+stable trace passage and the Roos convention this assignment is a
+dg-commutative isomorphism
+\[
+C^\bullet_{\CE,\mathrm{cont}}(\fg)
+\;\xrightarrow{\ \sim\ }\;
+\bigl(\PV_{\mathrm{adm}}(A^{\mathrm{st}}_{\partial,H}),d_\pi\bigr)
+\;\xrightarrow{\ \mathrm{HKR}^{\mathrm{cont}}_{\mathrm{adm}}\ }\;
+\HH^\bullet_{\mathrm{adm,HKR}}
+(A^{\mathrm{st}}_{\partial,H},A^{\mathrm{st}}_{\partial,H}).
+\]
+Under the kernel tier \textup{(the weighted Casimir and K\"othe
+seminorm estimates)} the arity-two singular product holds:
+$\mathsf J_f(z)\,\mathsf J_g(w)\sim
+K^{(2)}_\Delta(z,w)\,\bigl(\mathsf J_{\{f,g\}}(w)
++\hbW N[\{f,g\}]_0\,\mathbf 1\bigr)$. The centre tier and the quantum
+tier are extra data, not consequences. The target is the admissible
+stable-trace Hochschild model --- explicitly \emph{not} identified
+with the chiral Hochschild complex of the curve volumes.
+\end{theorem}
+
+\begin{theorem}[Uniqueness and rigidity of the trace coordinate;
+proved]\label{thm:unique}
+The category of continuous maps $\widetilde J\colon\fh\to A_\partial$
+satisfying stable $GL_N$-invariance in matched windows, the Dirac
+constraint \textup{(descent modulo $[\phi_1,\phi_2]$ through the
+explicit homotopy)}, scalar reduction, Darboux naturality under formal
+symplectomorphisms, linear normalisation
+$\widetilde J(z_i)=\overline{\Tr\phi_i}$, and primitive block-sum
+additivity, has exactly one object:
+$J(f)=\varprojlim_W J_{\le W}(f\bmod\fm^{W+1})$. Dropping any
+hypothesis admits counterexamples. The stable window contract is
+quantitative: the trace identification is valid exactly for
+$N\ge W$ \textup{(word degree)}, and with a length-$L$
+Loday--Quillen--Tsygan primitive projection for
+$N\ge\max(W,L+2)$; the first finite-$N$ residue appears at
+$N=2$, degree $3$, by Cayley--Hamilton.
+\end{theorem}
+
+\begin{theorem}[The brane algebra and the one-$\psi$ homology; proved]
+\label{thm:brane}
+The stable brane operator algebra is
+$\mathbf S(\bar A\oplus\bar A_{\mathrm{desc}}[1])$ ---
+Berest--Khachatryan--Ramadoss with
+$\overline{HC}_0(\bC[x,y])=\bar A$,
+$\overline{HC}_1\cong\bar A_{\mathrm{desc}}$, higher cyclic homology
+vanishing. The new proof computes the one-$\psi$ Koszul homology
+directly: $H_1$ is one-dimensional on the cyclic word class
+$\Psi_{k,l}=\sum_{w}\Tr(\psi w)$, established by a cyclic-word cell
+complex and an equivariant Abel map to the circle with
+convex-polytope fibres; the higher-$\psi$ homology vanishes in
+degrees $\ge2$.
+\end{theorem}
+
+\begin{theorem}[The Capelli quartet; proved]\label{thm:capelli}
+The scalar class has four proved faces. Closed: $[\bar c]$ is the
+extension class of $0\to\bC\cdot1\to R\to\fh\to0$. Open:
+$\{\Tr\phi_1,\Tr\phi_2\}=N$, the $U(1)$ centre with charge $N$.
+Moyal: the star-commutator on trace generators truncates,
+$[X,Y]_\star=-\hbW N$ modulo the moment ideal --- the projective
+identity, not the impossible matrix equation $[\phi_1,\phi_2]=\hbar I$.
+Anomaly: $\kappa_{\mathrm{Cap}}(J)=\hbW N[\bar c]$ in continuous Lie
+cohomology, with four representative constructions proved to agree.
+The interpretation of this class as determinant-line or modular-line
+curvature requires a line, a connection, and an Atiyah-class
+comparison that are not constructed; the Quillen curvature of the
+determinant line on the trace chart is a named open problem. The
+$\fgl(N|N)$ supertrace kills the class --- the Costello--Li
+cancellation, re-proved locally.
+\end{theorem}
+
+\begin{theorem}[The obstruction calculus; proved case division]
+\label{thm:obstruction}
+For a transported local datum in a filtered $L_\infty$ target there
+are four mechanisms --- strict coherence, counterterm coherence,
+projective coherence \textup{(central inexact class, solved in a
+central extension: the Capelli case)}, and target replacement --- a
+case division, promoted to a partition only after the
+comparison-unifying datum is supplied. Six native obstruction classes
+are typed, two of them proved nonzero: the Capelli class, and the
+pro-Matlis window leak $z_1^{N+2}\cdot\rho_{N+1,0}=-(N+2)\rho_{0,1}$,
+which survives every finite Matlis cutoff and forces the pro-object
+replacement tower. A third structural obstruction: $\fh$ contains
+$\fsl_2$ with $[\fsl_2,\fsl_2]=\fsl_2$, so lower-central pronilpotence
+fails on all of $\fh$ --- the bar--cobar route requires the cubic
+nilpotent truncation or a relative model.
+\end{theorem}
+
+\begin{theorem}[The Tate tower; proved on its stated windows]
+\label{thm:tate}
+The weighted envelope $B_w$ is the minimal admissible completion
+closing the BV calculus \textup{(with heat-kernel propagator
+$P^w_{\epsilon,L}$ and $[Q,P^w_{\epsilon,L}]=K^w_\epsilon-K^w_L$)};
+the cubic-ideal nilpotent truncation is honestly Tate-pronilpotent and
+carries the truncated Chevalley--Eilenberg--polyvector isomorphism;
+the bar--cobar adjunction between conilpotent Tate coalgebras and
+augmented Tate algebras is Quillen, a derived equivalence on the
+admissible subcategory; Costello's Hadamard parametrix extends
+graph-by-graph to the Mittag--Leffler limit with uniform wave-front
+bounds \textup{(summability over graph topologies excluded, a separate
+obstruction)}; and every object of the protected-Hamiltonian moduli
+admits a formal-Darboux normal form, unique up to the Darboux torsor.
+A Costello--Li-type BV-vanishing theorem for this endpoint requires
+five named data, of which the brane-defect scalar contact term is
+decided by one of four cancellations, including the $\bC^{N|N}$
+supertrace.
+\end{theorem}
+
+\begin{theorem}[The global criterion; near-definitional, stated as
+such]\label{thm:global}
+The open--closed comparison $\mathrm{OCA}_N$ exists at morphism stage
+if and only if the ten-row typed equivalence datum exists ---
+Swiss-cheese Maurer--Cartan lift, Morita centre lift, admissible
+Hochschild-centre lift, flat Darboux transport, cotangent-current
+realisation, Weiss--Ran descent, the order-indexed quantum
+master-equation tower, anomaly and locality null-homotopies, secondary
+primitives, and a contracting homotopy of the comparison cone. The
+trace-sector stalk theorem contributes exactly one row. The value of
+the criterion is its organisation --- the proof-order directed graph
+and the separation of morphism stage from cone stage --- not an
+existence claim.
+\end{theorem}
+
+\begin{conjecture}[The three compact conjectures]\label{conj:three}
+\textup{(i)} The chiral $E_d$ Deligne conjecture at $d\ge2$: the
+derived chiral $E_d$-centre carries a chiral $E_{d+1}$-structure ---
+the single bottleneck through which every global statement funnels;
+$d=1$ is the Beilinson--Drinfeld case, proved in Volume I.
+\textup{(ii)} The Hall--Drinfeld--Borcherds spectral sequence on
+compact Calabi--Yau threefolds, whose graded at $K3\times E$ contains
+the five-tuple $(0,0,3,5,24)$. \textup{(iii)} The operator modular
+lift: an operator-valued cocycle on $K3\times E$ whose protected trace
+is $\Phiten$, the genus-two weight-ten section of the Hodge
+determinant line $\Omega_{\mathrm{central}}
+=\det\pi_*\Omega^1$ on $\overline{\mathcal A}_2$, with
+$Z^{K3\times E}_{\mathrm{BPS}}=\Phiten^{-1}$ and
+$\Dfive=\Phiten^{1/2}$ on the paramodular branch.
+\end{conjecture}
+
+The frontier volume attached to the manuscript keeps the enumerative
+world at arm's length and correctly attributed: the quintic
+Donaldson--Thomas/stable-pairs factorisation
+$Z_{\mathrm{DT}}=M(-q)^{\chi}Z_{\mathrm{PT}}$ with
+$\chi(Q)=-200$ and $M$ the MacMahon function is an external theorem;
+the Gopakumar--Vafa expansion with integral $n^g_\beta$ is a
+constraint; and the volume's own proposal is structural: the
+Maulik--Nekrasov--Okounkov--Pandharipande correspondence as a
+centre-lift automorphism problem --- a point of the homotopy fibre of
+$\operatorname{Aut}_{E_2}(Z_{E_2}(\cA_Q))$ over the automorphisms of
+the three trace normalisations, at $-q=e^{iu}$.
+
+\section{The dictionary}\label{sec:dictionary}
+
+The local dictionary in one table:
+
+\begin{center}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{ll}
+\textbf{Bulk (closed)} & \textbf{Brane (open)}\\
+\hline
+Hamiltonian $f\in\fh$ & gauge parameter; $\theta_f$ Hamiltonian
+vector field\\
+ghost $c_f$ \textup{(degree 1)} & $\theta_f$ \textup{(degree 1)}\\
+current $u_f$ \textup{(degree 0)} & trace $J(f)=\Tr f(\phi_1,\phi_2)$\\
+cotangent tower $\rho_{a,b}$ & principal parts at the brane\\
+bracket $\{f,g\}$ & $\{J(f),J(g)\}=J(\{f,g\})+N[\{f,g\}]_0$\\
+removed scalar line & Capelli anomaly $\hbW N[\bar c]$\\
+singular kernel $K^{(2)}_\Delta$ & arity-two operator product\\
+\end{tabular}
+\end{center}
+
+The load-bearing formulas. The arithmetic kernel on monomials,
+$\{O_{k,l},O_{m,n}\}=(kn-lm)\,O_{k+m-1,l+n-1}$ --- the
+$w_\infty$-shadow of the trace sector, the same wedge algebra whose
+celestial avatar appears in Volume II. The Moyal expansion on the
+brane truncates to odd orders with coefficients
+$\hbW^{2s+1}/(2^{2s}(2s+1)!)$. The augmentation of the one-$\psi$
+class is $\binom{k+l}{k}$. The window contract $N\ge\max(W,L+2)$. The
+Matlis leak $-(N+2)\rho_{0,1}$. And the terminal conjecture's
+normalisations, matched to the Igusa companion:
+$\Phiten^{\mathrm{un}}=\Dfive^2$,
+$Z_{\mathrm{OP}}=-4096\,\Dfive^{-2}$,
+$\kBKM(\Dfive)=c_1(0)/2=5$.
+
+\section{The garden}\label{sec:garden}
+
+One logarithmic $1$-form generates the programme. On a smooth complex
+curve $X$, the form $\eta=d\log(z_1-z_2)$ is the unique
+coordinate-free $1$-form with a residue along the diagonal of
+$\Conf_2(X)$; the Arnold relation generates all relations among its
+higher companions. From $\eta$ one builds, for an augmented chiral
+algebra $\cA$ on $X$, the ordered bar complex
+$\barB^{\mathrm{ord}}_X(\cA)=T^c(s^{-1}\bar\cA)\otimes
+\Omega^\bullet_{\log}(\FM_\bullet(X))$; its differential squares to
+zero exactly when $\cA$ satisfies the Borcherds identity. Assembled
+over $\Mbar_{g,n}$, the total differential is a Maurer--Cartan element
+$\Theta_\cA=D_\cA-d_0$; genus~$\ge1$ flatness fails by the curvature
+$d^2_{\mathrm{fib}}=\kappa(\cA)\,\omega_g$, with
+$\kappa(\Vir_c)=c/2$, $\kappa(V_k(\fg))=\dim\fg\,(k+h^\vee)/2h^\vee$
+the central charge read as modular curvature; the Verdier--Koszul dual
+obeys the conductor laws $c(\cA)+c(\cA^!)=K$ with $K(\Vir)=26$,
+$K(\cW_N)=4N^3-2N-2$, $K(V_k(\fg))=2\dim\fg$.
+
+Every object sits on one chain: primitive factorization category
+$\to$ chart algebra $\to$ bar shadow $\to$ derived chiral centre
+\textup{(the bulk)} $\to$ acting line operators $\to$ scalar modular
+shadow. Identifying stages without the licensing datum --- shadow $=$
+object --- is the master error; this volume is the chain's local
+microscope, and its seventeen-site catalogue of exactly such
+collapses, each with its corrected form, is the sharpest statement of
+the discipline anywhere in the programme.
+
+The five gardens are five readings of the chain. \emph{Volume I}
+(\texttt{chiral-bar-cobar}) builds the engine on algebraic curves ---
+in particular the $d=1$ chiral Deligne input that this volume's
+central conjecture generalises. \emph{Volume II}
+(\texttt{chiral-bar-cobar-vol2}) reads the bar complex as BV/BRST
+physics on $\bC\times\bR$: its curve--line theorems apply here only
+after the named restriction datum, since the native geometry is
+$\bR^2\times\bC^2$. \emph{Volume III}
+(\texttt{calabi-yau-quantum-groups}) is the compact target world ---
+its two-stage functor and Hall doubles are exactly what the typed
+firewalls of this volume keep at criterion distance until the compact
+data exist. \emph{This volume} computes the local germ: the trace
+coordinate at $N$ Dirac branes, its uniqueness, its anomaly, and the
+exact list of data separating germ from globe --- including the
+holomorphic de Rham obstruction $H^1(K3\times E,\cO)\neq0$ that
+blocks the naive local-to-global route. \emph{The Igusa cusp form}
+(\texttt{igusa-cusp-form}) is the terminal scalar this volume's third
+conjecture points at: $\Dfive$ as the genus-two section of the
+modular line whose operator lift is the shared frontier.
+
+The single question underneath: characterise the modular convolution
+algebra $\fg^{\mathrm{mod}}_\cA$ as a geometric object. The proposed
+answer --- endomorphisms of a Lagrangian in a $(-2)$-shifted
+symplectic stack of vacua --- has Volume I computing its Taylor jets,
+Volume II its local composition law, Volume III its geometric source,
+and this volume its formal-local microscope: the one stalk where
+every structure is computed to the end, so that the global
+obstructions can be named rather than guessed.
+
+\section{The frontier}\label{sec:frontier}
+
+In order of depth:
+
+\begin{enumerate}
+\item The chiral $E_d$ Deligne conjecture at $d\ge2$ --- the single
+bottleneck; all ten rows of the global datum presuppose it.
+\item The all-order quantum master-equation tower for the
+brane-defect coupling, with the anomaly and locality null-homotopies
+--- the quantum tier the stalk theorem deliberately excludes.
+\item The determinant-line problem: construct the line, connection
+and Atiyah comparison that read the Capelli class $\hbW N[\bar c]$ as
+curvature; then the Quillen curvature of the trace chart.
+\item The operator lift of $\Phiten$ --- shared with the Igusa volume
+and Volume II's gravity-line construction problem; the modular line
+$\Omega_{\mathrm{central}}$ is defined, its operator-valued cocycle is
+not.
+\item The Maulik--Nekrasov--Okounkov--Pandharipande centre-lift: the
+correspondence as a canonical $E_2$-centre automorphism, with
+cohomological-Hall orientation data as prerequisite.
+\end{enumerate}
+
+What stands unconditionally: the stalk isomorphism with its
+uniqueness axioms; the brane algebra and one-$\psi$ homology; the
+Capelli quartet with its four faces and its supertrace cancellation;
+the weighted-Tate completion theory with its proved non-objects and
+window leaks; and the typed ledger itself --- the volume's real
+invention, which converts ``local implies global'' from a slogan into
+a finite list of named data.
+
+\end{document}

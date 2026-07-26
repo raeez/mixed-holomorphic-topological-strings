@@ -15,6 +15,12 @@ morphism
 \(\operatorname{gr}\Phi:\bar A_{\mathrm{desc}}[1]\to\mc P\) is the
 bidegree-only special-fibre relabelling.
 
+Two formal deformation variables occur below.  The PBW and
+Fourier--Rees lattices use the Rees variable \(\hbar_{\mathrm{Rees}}\).
+The Moyal coadjoint coefficient checks use the Weyl/Moyal variable
+\(\hbar_{\mathrm{W}}\).  No Costello quantum master-equation parameter
+is used in this primitive Koszul homology appendix.
+
 The universal primitive single-trace Koszul complex is attached to the
 moment-map equation \([x,y]=0\).  Its universality is independent of any
 choice of Matlis target, PBW model, finite \(N\) trace identity, or quantum
@@ -86,12 +92,15 @@ explicit condition excluding new \(\varprojlim^1\) classes.
 \begin{proof}
   First replace the odd letter \(\psi\) by \(p\) distinct even marked
   matrices \(\eta_1,\ldots,\eta_p\), and take the summand multilinear in the
-  \(\eta_i\)'s and homogeneous of the prescribed \(x,y\)-degree.  The
-  Procesi--Razmyslov stable invariant theorem
-  \cite{procesi}\cite{razmyslov} identifies the primitive single-trace invariants
-  of total word length \(d\), for \(N\geq d\), with ordinary cyclic words in
-  the letters \(x,y,\eta_1,\ldots,\eta_p\), modulo only cyclicity of the
-  trace.
+  \(\eta_i\)'s and homogeneous of the prescribed \(x,y\)-degree.
+  Procesi's first fundamental theorem \cite{procesi}*{Thm.~1.3},
+  with finite-\(N\) trace identities controlled by Procesi
+  \cite{procesi}*{Thm.~4.6} and Razmyslov \cite{razmyslov}*{Thm.~2},
+  identifies the primitive single-trace invariants of total word length
+  \(d\), for \(N\geq d\), with ordinary cyclic words in the letters
+  \(x,y,\eta_1,\ldots,\eta_p\), modulo only cyclicity of the trace.  The
+  replacement of the odd letter by marked even matrices and the subsequent
+  sign-isotypic projection are the internal super-cyclic adaptation.
 
   The symmetric group \(\mathbb S_p\) permutes the marked letters.  Passing
   from \(p\) even marked letters to one odd letter is the sign-isotypic
@@ -518,9 +527,9 @@ explicit condition excluding new \(\varprojlim^1\) classes.
   \(1225\) cases with exponents at most \(5\).  The
   PBW-versus-Moyal sweep records \(1200\) explicit mismatches and
   \(958\) cases where the coadjoint Moyal action carries genuine
-  \(\hbar^{\geq2}\) higher-order terms; the \(70\) linear-generator
+  \(\hbar_{\mathrm{W}}^{\geq2}\) higher-order terms; the \(70\) linear-generator
   leading-order tests with labels at most \(5\) identify the exact obstruction
-  to any \(\hbar\)-adic deformation of the classical
+  to any \(\hbar_{\mathrm{W}}\)-adic deformation of the classical
   \(\Psi\to\rho\) projection.  The displayed homology lines and the
   separation in
   Theorem~\ref{thm:pbw-vs-deformation} are therefore proved at the
@@ -545,15 +554,15 @@ explicit condition excluding new \(\varprojlim^1\) classes.
   be the semidirect Hamiltonian shifted-cotangent Lie algebra of
   Proposition~\ref{prop:hamiltonian-polyvector-reduction}, and let
   \[
-    U_\hbar(\mathfrak g)
+    U_{\hbar_{\mathrm{Rees}}}(\mathfrak g)
       \supset
-    \mathbf S_\hbar(\mathfrak h\oplus\mathfrak h^\vee[1])
+    \mathbf S_{\hbar_{\mathrm{Rees}}}(\mathfrak h\oplus\mathfrak h^\vee[1])
   \]
-  denote its Rees PBW lattice over \(\C[[\hbar]]\), namely the Rees
+  denote its Rees PBW lattice over \(\C[[\hbar_{\mathrm{Rees}}]]\), namely the Rees
   algebra of the canonical PBW filtration.  The special fibre is
   \[
-    \mathbf S_\hbar(\mathfrak h\oplus\mathfrak h^\vee[1])
-      \big|_{\hbar=0}
+    \mathbf S_{\hbar_{\mathrm{Rees}}}(\mathfrak h\oplus\mathfrak h^\vee[1])
+      \big|_{\hbar_{\mathrm{Rees}}=0}
       \cong
     \mathbf S(\mathfrak h\oplus\mathfrak h^\vee[1]),
   \]
@@ -568,7 +577,7 @@ explicit condition excluding new \(\varprojlim^1\) classes.
     \qquad
     e^{\mathrm{PBW}}_{a,b}\,[1]\in
     \mathbf S^1(\mathfrak h^\vee[1])\otimes
-    \mathbf S(\mathfrak h)\big|_{\hbar=0} .
+    \mathbf S(\mathfrak h)\big|_{\hbar_{\mathrm{Rees}}=0} .
   \]
   The boundary pairing of
   Corollary~\ref{cor:cotangent-boundary-pairing} identifies this label
@@ -637,7 +646,7 @@ explicit condition excluding new \(\varprojlim^1\) classes.
   particular the polynomial PBW action is locally nilpotent on every
   \(\widetilde\Psi_{a,b}\), whereas every nonzero \(\rho_{a,b}\) has an
   infinite principal-part coadjoint orbit.  The
-  obstruction to an \(\hbar\)-adic same-action lift of
+  obstruction to an \(\hbar_{\mathrm{Rees}}\)-adic same-action lift of
   \(\operatorname{gr}\Phi\) is the local-nilpotence dichotomy of
   Theorem~\ref{thm:app-matlis-polynomial-descendant-obstruction} and
   Corollary~\ref{cor:app-matlis-same-action-interpolation-obstruction}.
@@ -674,7 +683,7 @@ explicit condition excluding new \(\varprojlim^1\) classes.
   module-isomorphism obstruction.
 
   The obstruction to extending \(\operatorname{gr}\Phi\) to an
-  \(\hbar\)-adic same-action map is exactly this local-nilpotence
+  \(\hbar_{\mathrm{Rees}}\)-adic same-action map is exactly this local-nilpotence
   dichotomy, and is recorded as
   Theorem~\ref{thm:app-matlis-polynomial-descendant-obstruction} together
   with the deformation-level
@@ -700,13 +709,13 @@ explicit condition excluding new \(\varprojlim^1\) classes.
   Direct calculation in the Moyal coadjoint module gives
   \[
     \operatorname{ad}^*_{z_1^4}(\delta_{1,1})
-      =-24\,\hbar^2\,\delta_{0,4},
+      =-24\,\hbar_{\mathrm{W}}^2\,\delta_{0,4},
   \]
   the only nonzero term of order \(\leq3\) in the formal Moyal expansion.
   Fourier-untwisted relabelling has the bidegree obstruction
   \((1,1)\to(0,4)\) versus \((1,1)\to(4,0)\), so the polynomial PBW action
   and the Moyal coadjoint action remain distinct.  Replacing the Moyal coadjoint by its classical
-  truncation \((\hbar^0)\) gives
+  truncation \((\hbar_{\mathrm{W}}^0)\) gives
   \(\operatorname{ad}^*_{z_1^4}(\rho_{1,1})=0\) by the principal-part
   formula at this exponent, again disagreeing with the polynomial PBW
   term \(4\widetilde\Psi_{4,0}\).  Exact finite-window calculation
@@ -774,12 +783,12 @@ explicit condition excluding new \(\varprojlim^1\) classes.
   \]
   The Hamiltonian comparison uses only
   \(\bar A\oplus\bar A_{\mathrm{desc}}[1]\), and recognises this latter
-  pair as the special-fibre, \(\hbar=0\), shadow of the Rees PBW lattice
+  pair as the special-fibre, \(\hbar_{\mathrm{Rees}}=0\), associated graded of the Rees PBW lattice
   of Construction~\ref{constr:app-full-pbw-special-fibre-basis}: the
   closed Hamiltonian summand is the polynomial part
-  \(\mathbf S(\mathfrak h)|_{\hbar=0}\), and the descendant copy is the
+  \(\mathbf S(\mathfrak h)|_{\hbar_{\mathrm{Rees}}=0}\), and the descendant copy is the
   primitive one-\(\psi\) PBW label sector
-  \(\mathbf S^1(\mathfrak h^\vee[1])\otimes\mathbf S(\mathfrak h)|_{\hbar=0}\).
+  \(\mathbf S^1(\mathfrak h^\vee[1])\otimes\mathbf S(\mathfrak h)|_{\hbar_{\mathrm{Rees}}=0}\).
   The complementary sectors are exactly the scalar unit \([1]\), the
   scalar odd primitive
   \(\Psi_{0,0}\), and the vanishing higher-\(\psi\) primitive groups
@@ -815,9 +824,9 @@ explicit condition excluding new \(\varprojlim^1\) classes.
   associated-graded morphism
   \(\operatorname{gr}\Phi\) of
   Proposition~\ref{prop:app-full-gr-Phi}: this morphism intertwines the
-  two index sets at the special fibre \(\hbar=0\) and only there.  In
+  two index sets at the special fibre \(\hbar_{\mathrm{Rees}}=0\) and only there.  In
   particular, full primitive \(\psi\)-homology computes the
-  special-fibre shadow of the cotangent module on the open
+  special-fibre associated graded of the cotangent module on the open
   brane sector, while the Matlis principal-parts module of
   \S~\ref{sec:pro-matlis-target} is the deformation-level
   cotangent module itself.  The formal-stalk chart measures positions
@@ -828,8 +837,8 @@ explicit condition excluding new \(\varprojlim^1\) classes.
 
 \begin{proof}
   Construction~\ref{constr:app-full-pbw-special-fibre-basis} identifies
-  \(\widetilde\Psi_{a,b}\) with the unit-normalised \(\hbar=0\) class in
-  \(\mathbf S^1(\mathfrak h^\vee[1])\otimes\mathbf S(\mathfrak h)|_{\hbar=0}\)
+  \(\widetilde\Psi_{a,b}\) with the unit-normalised \(\hbar_{\mathrm{Rees}}=0\) class in
+  \(\mathbf S^1(\mathfrak h^\vee[1])\otimes\mathbf S(\mathfrak h)|_{\hbar_{\mathrm{Rees}}=0}\)
   in bidegree \((a,b)\).  The bidegree-only relabelling
   \(\operatorname{gr}\Phi\) of
   Proposition~\ref{prop:app-full-gr-Phi} is an isomorphism of bigraded
@@ -838,7 +847,7 @@ explicit condition excluding new \(\varprojlim^1\) classes.
   The Matlis side is the continuous coadjoint module
   identified by Theorem~\ref{thm:app-matlis-residue-rigidity} as the
   unique perfect continuous coadjoint pairing.  Therefore
-  \(\bar A_{\mathrm{desc}}[1]\) is the special-fibre shadow and
+  \(\bar A_{\mathrm{desc}}[1]\) is the special-fibre associated graded and
   \(\mc P\) is the deformation-level cotangent module, with the shared
   index set carrying associated-graded label data only.  This is the
   separation displayed by Theorem~\ref{thm:pbw-vs-deformation}.

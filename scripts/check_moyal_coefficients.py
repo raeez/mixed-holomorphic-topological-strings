@@ -237,10 +237,10 @@ def capelli_round_trip(max_exp: int) -> int:
 #     Tr^{ren}(z1^a z2^b) := J_N(z1^a z2^b) - hbar N * delta_shift,
 # where delta_shift collects the lower triangular pieces of degree (a-1, b-1)
 # and below, weighted by the Capelli triangular coefficients.  This is the
-# "stable connected" generator: in the large-N limit, the leading hbar N
-# linear shift in T_{a-1, b-1} is the unique Capelli subtraction that lands
-# in the connected sector, and the higher-r terms are the iterated
-# Capelli corrections.
+# degreewise stable-rank connected generator: after passage to the
+# primitive connected trace sector, the leading hbar*N linear shift in
+# T_{a-1, b-1} is the unique Capelli subtraction that lands in that
+# sector, and the higher-r terms are the iterated Capelli corrections.
 #
 # Equivalently, Tr^{ren}(f) = J_N(f) is itself the Capelli-renormalized
 # generator of Remark `rmk:capelli-renormalized-traces`.  The "subtraction"

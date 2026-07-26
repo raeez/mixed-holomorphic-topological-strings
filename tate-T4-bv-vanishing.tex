@@ -8,7 +8,7 @@ brane \(L=\R_{\mathrm{brane}}\times\{0\}\times\{p\}\) and ordinary
 \(\lie{gl}_N\) gauge data.  An endpoint-admissible coefficient module
 for Problem~\ref{prob:formal-factorization-center} extends the already
 computed native holomorphic singular product of
-Theorem~\ref{thm:formal-two-dimensional-holomorphic-ope} to the
+Theorem~\ref{thm:formal-two-dimensional-holomorphic-singular-product} to the
 unreduced Costello/QME endpoint; it requires the four-component class
 \[
   \mathfrak o_{\mathrm{BV,end}}
@@ -37,8 +37,9 @@ The BV grading is the cotangent-coordinate grading of
 reduced boundary \(P_0\)-bracket has degree \(0\), the Schouten
 bracket has degree \(-1\).
 
-The closed BCOV vanishing of \cite{costello-li-quantum-bcov} and the
-open-closed extension of \cite{costello-li-open-closed-bcov} differ
+The closed BCOV complex of \cite{costello-li-quantum-bcov}*{\S3} and the
+open-closed extension of
+\cite{costello-li-open-closed-bcov}*{Thm.~A, Thm.~B, Prop.~4.4.4} differ
 from the present geometry along five independent axes: compact Hodge
 geometry against the formal jet \(\widehat{\C^2}_0\); pure
 holomorphic-volume kinematics \(\bar\partial+t\,\partial_\Omega\)
@@ -46,7 +47,7 @@ against mixed \(D=d_{\R^2}+\bar\partial_{\C^2}\); empty bulk against
 the transverse line defect \(L\); the
 \(\lie{gl}(N\mid N)\) supertrace cancellation
 \(\mathrm{str}(I)=N-N=0\) against the ordinary
-\(\lie{gl}_N\) scalar contact \(\hbar N[\bar c]\) of
+\(\lie{gl}_N\) scalar contact \(\hbar_{\mathrm{QME}} N[\bar c]\) of
 \ref{thm:app-scalar-contact-qme-class}; the worldsheet \(t\)-Tate
 direction against the coefficient-system Tate direction
 \(\widehat{\mathfrak h}\widehat\otimes
@@ -55,9 +56,9 @@ direction against the coefficient-system Tate direction
 component of \(\mathfrak o_{\mathrm{BV,end}}\) under the cited
 hypotheses (Theorem~\ref{thm:costello-li-coefficient-endpoint-obstruction}); the
 data needed to close them is enumerated in
-Theorem~\ref{thm:t4-four-missing}.  The chain-level primitive shadow
-\ref{thm:chain-level-primitive-projection} closes the classical
-indecomposable shadow by an algebraic argument inside the admissible
+Theorem~\ref{thm:t4-four-missing}.  The chain-level primitive projection
+\ref{thm:chain-level-primitive-projection} supplies the classical
+indecomposable quotient by an algebraic argument inside the admissible
 Tate envelope of \ref{thm:tate-bar-cobar-quillen}.
 
 \subsection*{BV degree convention and Costello renormalization datum}
@@ -87,30 +88,33 @@ Tate envelope of \ref{thm:tate-bar-cobar-quillen}.
   \ref{def:app-sign-hamiltonian-cyclic}.
 \end{rmk}
 
-\begin{rmk}[Costello (2011) heat-kernel renormalization datum invoked]
+\begin{rmk}[Costello heat-kernel data for the endpoint obstruction]
 \label{rmk:t4-costello-renorm-datum}
-  The final obstruction comparison invokes the renormalization formalism of
-  \cite{costello-renormalization}*{Ch.~2 \S2, Ch.~2 \S6, Ch.~5 \S6}: a
-  parametrix
+  The final obstruction comparison uses the following Costello
+  heat-kernel data as part of the endpoint datum, in the sense of
+  \cite{costello-renormalization}*{Ch.~2 \S2, Ch.~2 \S6, Ch.~5
+  \S6}: a parametrix
   \(P_{\epsilon,L}=\int_\epsilon^Lds\,K_s\) for a generalized
   Laplacian, the homotopy RG flow
   \[
     W(P_{\epsilon,L},I)
-      =\hbar\log\!\left(
-        \exp(\hbar\partial_{P_{\epsilon,L}})\exp(I/\hbar)
+      =\hbar_{\mathrm{QME}}\log\!\left(
+        \exp(\hbar_{\mathrm{QME}}\partial_{P_{\epsilon,L}})\exp(I/\hbar_{\mathrm{QME}})
       \right)
       \;=\;
       \sum_{\Gamma\text{ connected}}
-        \frac{\hbar^{\mathrm{loops}(\Gamma)}}
+        \frac{\hbar_{\mathrm{QME}}^{\mathrm{loops}(\Gamma)}}
              {\lvert\mathrm{Aut}(\Gamma)\rvert}
         W_\Gamma(P_{\epsilon,L},I),
   \]
   the scale-zero limit
-  \(\lim_{\epsilon\to0}W(P_{\epsilon,L},I)\) constructed by counterterm
-  subtraction, and the QME
-  \(QI+\hbar\Delta_LI+\tfrac12\{I,I\}_L=0\) at scale \(L\).  In the
-  present brane-defect geometry the propagator factorizes (when it
-  exists) as
+  \(\lim_{\epsilon\to0}W(P_{\epsilon,L},I)\) after a specified local
+  counterterm subtraction, and the scale-\(L\) QME equation
+  \(QI+\hbar_{\mathrm{QME}}\Delta_LI+\tfrac12\{I,I\}_L=0\).  In this manuscript these
+  are not consequences of the formal-Darboux trace-sector theorem.
+  They are hypotheses or obstruction targets for the unreduced
+  brane-defect endpoint.  In the present brane-defect geometry the
+  propagator factorizes, when the factorization datum exists, as
   \(P^w_{\epsilon,L}=P^{\mathrm{base}}_{\epsilon,L}
   \widehat\otimes C_{\mathfrak h\oplus\mathfrak h^\vee[1],w}\)
   (\ref{thm:hadamard-mittag-leffler}); the bulk Hadamard parametrix is
@@ -120,7 +124,12 @@ Tate envelope of \ref{thm:tate-bar-cobar-quillen}.
   \(\mathfrak o_{\mathrm{def}}\) and \(\mathfrak o_{\mathrm{RG}}\) of
   \(\mathfrak o_{\mathrm{BV,end}}\) measure the brane-line extension class
   of \(P^{\mathrm{base}}_{\epsilon,L}\) and the strict-window preservation
-  class of \(W(P_{\epsilon,L},-)\) inside this convention.
+  class of \(W(P_{\epsilon,L},-)\) inside this convention.  A
+  renormalized brane-defect QME counterterm tower is asserted only after the
+  four endpoint components
+  \((\mathfrak o_{\mathrm{Cas}},\mathfrak o_{\mathrm{def}},
+  \mathfrak o_{\mathrm{RG}},\mathfrak o_{\mathrm{QME}})\) vanish and
+  compatible primitives have been chosen.
 \end{rmk}
 
 \subsection*{Costello--Li 2012 hypotheses, restated}
@@ -128,7 +137,7 @@ Tate envelope of \ref{thm:tate-bar-cobar-quillen}.
 \begin{stmt}[Costello--Li 2012 BCOV construction,
    restated]\label{stmt:costello-li-2012-restated}
   Let \(X\) satisfy the compact Calabi--Yau holomorphic-volume
-  hypotheses of \cite{costello-li-quantum-bcov}, with volume form
+  hypotheses of \cite{costello-li-quantum-bcov}*{\S3}, with volume form
   \(\Omega\), \(\dim_{\C}X=d\).  Let
   \(\mathrm{PV}(X)[[t]]=\bigoplus_{i,j}\mathrm{PV}^{i,j}(X)[[t]]\) be
   the polyvector-field complex with the Tate parameter \(t\) for the
@@ -146,10 +155,11 @@ Tate envelope of \ref{thm:tate-bar-cobar-quillen}.
   The classical BCOV interaction \(I_{\mathrm{BCOV}}\) is the cubic
   vertex of \cite{costello-li-quantum-bcov}*{\S3}.  The cited
   construction gives the generalized classical BCOV complex, its
-  local-functional obstruction complex, and the renormalization
-  formalism of \cite{costello-renormalization} adapted to compact
-  Calabi--Yau \(X\).  The 2015 open-closed sequel
-  \cite{costello-li-open-closed-bcov} extends the construction to flat
+  local-functional obstruction complex, and Costello heat-kernel
+  renormalization data under the compact Calabi--Yau hypotheses on
+  \(X\).  The 2015 open-closed sequel
+  \cite{costello-li-open-closed-bcov}*{Thm.~A, Thm.~B, Prop.~4.4.4}
+  extends the construction to flat
   \(\C^d\) (\(d\) odd) coupled to open gauge data
   \(\lie{gl}(N\mid N)\), with the U(1)-anomaly cancellation
   \(\mathrm{str}(I)=N-N=0\).  Each is used here only under its stated
@@ -206,8 +216,9 @@ Tate envelope of \ref{thm:tate-bar-cobar-quillen}.
       \(\C^2\).  The two complexes have distinct generators and
       differentials, so transfer of a Costello--Li class on
       \((\mathrm{PV}(X)[[t]],Q_{\mathrm{BCOV}})\) to a cocycle of
-      \(\Delta\) on the mixed complex requires a kinematic
-      comparison map.  The protected sector of twisted
+      a mixed-complex BV Laplacian \(\Delta_{\mathrm{mix}}\) requires
+      both the supplied mixed BV operator and a kinematic comparison
+      map.  The protected sector of twisted
       M-theory \cite{costello-twistedM} carries this mixed kinematic
       shape as physical motivation.
     \item[(S3)] \emph{Brane and topological line defect.}  The 2012
@@ -225,13 +236,13 @@ Tate envelope of \ref{thm:tate-bar-cobar-quillen}.
       \ref{defn:bv-endpoint-obstruction-tuple}.
     \item[(S4)] \emph{Supertrace cancellation vs.\ ordinary
       \(\lie{gl}_N\) scalar contact.}  On \(\lie{gl}(N\mid N)\) the
-      \cite{costello-li-open-closed-bcov} cancellation
+      \cite{costello-li-open-closed-bcov}*{Thm.~B, Prop.~4.4.4} cancellation
       \(\mathrm{str}(I)=N-N=0\) kills the putative U(1)-anomaly at
       every loop order.  On ordinary \(\lie{gl}_N\) the same closed
       exchange gives the scalar contact term
-      \(\hbar N\omega(f,g)\gamma_{\mathbf 1}\) of
+      \(\hbar_{\mathrm{QME}} N\omega(f,g)\gamma_{\mathbf 1}\) of
       \ref{thm:app-scalar-contact-qme-class}, with cohomology class
-      \(\hbar N[\bar c]\in H^2_{\mathrm{Lie}}(\bar A,\C)\).  If a
+      \(\hbar_{\mathrm{QME}} N[\bar c]\in H^2_{\mathrm{Lie}}(\bar A,\C)\).  If a
       determinant line with connection exists and its Atiyah
       class pulls back to \([\bar c]\), its curvature restricts to
       this class at the trace generator \(J(f)\)
@@ -241,7 +252,7 @@ Tate envelope of \ref{thm:tate-bar-cobar-quillen}.
       graph-level comparison with the Costello--Li cancellation is
       additional data.  Hence
       \(\mathfrak o_{\mathrm{QME}}\) carries the residual
-      \(\hbar N[\bar c]\) summand for ordinary \(\lie{gl}_N\) at the
+      \(\hbar_{\mathrm{QME}} N[\bar c]\) summand for ordinary \(\lie{gl}_N\) at the
       U(1) centre-of-mass slice, and that summand is a separate endpoint
       cocycle in the stated Costello--Li BV complex.
     \item[(S5)] \emph{Worldsheet \(t\)-Tate vs.\ coefficient-system
@@ -273,7 +284,7 @@ Tate envelope of \ref{thm:tate-bar-cobar-quillen}.
   \(\mathfrak o_{\mathrm{BV,end}}\): (S1)+(S2) give the kinematic
   comparison problem for \(\mathfrak o_{\mathrm{QME}}\); (S3) gives
   \(\mathfrak o_{\mathrm{def}}\);
-  (S4) names the residual \(\hbar N[\bar c]\) summand of
+  (S4) names the residual \(\hbar_{\mathrm{QME}} N[\bar c]\) summand of
   \(\mathfrak o_{\mathrm{QME}}\); (S5) names the cokernel class of
   \(\mathfrak o_{\mathrm{Cas}}\).  The remaining component
   \(\mathfrak o_{\mathrm{RG}}\) is the strict finite-window
@@ -292,7 +303,7 @@ Tate envelope of \ref{thm:tate-bar-cobar-quillen}.
   \ref{thm:app-scalar-contact-qme-class}, and the strict-window category
   \ref{defn:strict-ml-tate-category}.
 
-  \emph{(S1).}  Compactness enters \cite{costello-li-quantum-bcov}
+  \emph{(S1).}  Compactness enters \cite{costello-li-quantum-bcov}*{\S3}
   through the Hodge-theoretic harmonic projection used to construct
   the BV propagator and to verify the QME at the parametrix limit
   \(\epsilon\to0\), \(L\to\infty\).  On the formal jet
@@ -310,7 +321,9 @@ Tate envelope of \ref{thm:tate-bar-cobar-quillen}.
 
   \emph{(S3).}  The brane \(L\) is transverse to the topological
   factor and point-supported in the holomorphic factor; the open
-  boundary in \cite{costello-li-open-closed-bcov} is a worldsheet
+  boundary in
+  \cite{costello-li-open-closed-bcov}*{Thm.~A, Thm.~B, Prop.~4.4.4}
+  is a worldsheet
   boundary on flat \(\C^d\).  The present endpoint requires the Wilson
   line on a transverse topological direction.  The bulk Hadamard parametrix
   \(P^{\mathrm{base}}_{\epsilon,L}\) of
@@ -322,7 +335,7 @@ Tate envelope of \ref{thm:tate-bar-cobar-quillen}.
   exchange between two Hamiltonian sources
   \(B_f,B_g\) on the brane line produces the universal scalar contact
   density
-  \(\hbar N\,\omega(f,g)\,\gamma_{\mathbf 1}(t)\,a(t)b(t)\).  Its
+  \(\hbar_{\mathrm{QME}} N\,\omega(f,g)\,\gamma_{\mathbf 1}(t)\,a(t)b(t)\).  Its
   associated-graded scalar symbol is the Lie 2-cocycle
   \(\omega(f,g)\,\gamma_{\mathbf 1}\) on \(\bar A\), with
   \(\omega(z_1,z_2)=1\) by
@@ -331,7 +344,7 @@ Tate envelope of \ref{thm:tate-bar-cobar-quillen}.
   \(H^2_{\mathrm{Lie}}(\bar A,\C)\) by \ref{thm:main-local}~part~(f).
   On \(\lie{gl}(N\mid N)\) the same scalar is multiplied by
   \(\mathrm{sdim}(\C^{N|N})=N-N=0\), killing the representative.  On
-  ordinary \(\lie{gl}_N\) it is \(\hbar N\), and absorption of this term
+  ordinary \(\lie{gl}_N\) it is \(\hbar_{\mathrm{QME}} N\), and absorption of this term
   requires an endpoint counterterm.
 
   \emph{(S5).}  The compatible Casimir family
@@ -348,7 +361,7 @@ Tate envelope of \ref{thm:tate-bar-cobar-quillen}.
   \]
   Equivalently the cocycle representative of
   \(\mathfrak o_{\mathrm{Cas}}\) is nonzero, and the worldsheet
-  \(t\)-Tate completion of \cite{costello-li-quantum-bcov} commutes
+  \(t\)-Tate completion of \cite{costello-li-quantum-bcov}*{\S3} commutes
   with this coefficient direction trivially.
 
   Finally, \(\mathfrak o_{\mathrm{RG}}\) is the assertion that
@@ -365,14 +378,14 @@ Tate envelope of \ref{thm:tate-bar-cobar-quillen}.
   The Costello--Li 2012 BCOV construction gives a pure closed BCOV
   field theory; the 2015 sequel gives the open-closed extension on flat
   \(\C^d\) with \(\lie{gl}(N\mid N)\) gauge data.  The present
-  \(\R^2_{\mathrm{top}}\times\widehat{\C^2}_{0,\mathrm{hol}}\)
-  brane-defect endpoint is governed by the four cocycle classes in
-  \(\mathfrak o_{\mathrm{BV,end}}\).  The unreduced Tate-coefficient cotangent
-  lift therefore additionally requires the endpoint coefficient data
-  of
+	  \(\R^2_{\mathrm{top}}\times\widehat{\C^2}_{0,\mathrm{hol}}\)
+	  brane-defect endpoint is governed by the four cocycle classes in
+	  \(\mathfrak o_{\mathrm{BV,end}}\).  The unreduced Tate-coefficient cotangent
+	  lift is governed by the endpoint coefficient data
+	  of
   Definition~\ref{defn:endpoint-admissible-coefficient-module}.  The
-  classical primitive indecomposable shadow on the open observables is
-  closed by the algebraic argument of
+  classical primitive indecomposable projection on the open observables is
+  supplied by the algebraic argument of
   \ref{thm:chain-level-primitive-projection}; the admissible Tate
   envelope on which the obstruction tuple is computed is provided by
   the model-categorical envelope of \ref{stmt:tate-model-envelope}.
@@ -402,8 +415,9 @@ Tate envelope of \ref{thm:tate-bar-cobar-quillen}.
 \begin{thm}[Costello--Li endpoint coefficient criterion]
 \label{thm:costello-li-coefficient-endpoint-obstruction}
   The Costello--Li 2012 BCOV construction
-  \cite{costello-li-quantum-bcov} and its 2015 open-closed extension
-  \cite{costello-li-open-closed-bcov}, in the forms restated in
+  \cite{costello-li-quantum-bcov}*{\S3} and its 2015 open-closed extension
+  \cite{costello-li-open-closed-bcov}*{Thm.~A, Thm.~B, Prop.~4.4.4},
+  in the forms restated in
   \ref{stmt:costello-li-2012-restated}, give an endpoint-admissible
   coefficient module of
   Definition~\ref{defn:endpoint-admissible-coefficient-module} for the
@@ -413,10 +427,10 @@ Tate envelope of \ref{thm:tate-bar-cobar-quillen}.
     \text{(E2) coefficient Casimir kernel},\quad
     \text{(E3) mixed brane-defect transport},\quad
     \text{(E5) endpoint RG preservation},
-  \]
-  with (E1) and (E4) the inherited finite-window and Mittag-Leffler
-  envelope conditions.  A quantum endpoint additionally requires
-  vanishing of the QME component
+	  \]
+	  with (E1) and (E4) the inherited finite-window and Mittag-Leffler
+	  envelope conditions.  A quantum endpoint is the vanishing locus of the
+	  QME component
   \(\mathfrak o_{\mathrm{QME}}\) of
   Definition~\ref{defn:bv-endpoint-obstruction-tuple}.  Equivalently:
   the four cocycle representatives in
@@ -466,15 +480,17 @@ Tate envelope of \ref{thm:tate-bar-cobar-quillen}.
       \(\mathrm{coker}\bigl(\mathfrak h_\Pi\widehat\otimes D_\oplus
       \to\varprojlim_M(\mathfrak h\otimes\mathfrak h^\vee)_{\le M}\bigr)\),
       degree \(0\); cocycle representative the compatible family
-      \[
-        \mathfrak o_{\mathrm{Cas}}=
-        \bigl[(C^M_{\mathfrak h})_{M\ge1}\bigr],
-        \qquad
-        C^M_{\mathfrak h}=\sum_{d\le M}\sum_ie_{d,i}\otimes e^i_d,
-      \]
-      with transition maps the standard truncations
-      \(C^{M+1}_{\mathfrak h}\mapsto C^M_{\mathfrak h}\); nonzero in
-      the strict pair by \ref{lem:tate-casimir-obstruction}.
+	      \[
+	        \mathfrak o_{\mathrm{Cas}}=
+	        \bigl[(C^M_{\mathfrak h})_{M\ge1}\bigr],
+	        \qquad
+	        C^M_{\mathfrak h}=\sum_{d\le M}\sum_ie_{d,i}\otimes e^i_d,
+	      \]
+	      with transition map \(\pi_{M+1,M}\) deleting the homogeneous
+	      \(d=M+1\) summand, so
+	      \(\pi_{M+1,M}(C^{M+1}_{\mathfrak h})=C^M_{\mathfrak h}\);
+	      nonzero in
+	      the strict pair by \ref{lem:tate-casimir-obstruction}.
     \item \emph{Brane-defect transport class
       \(\mathfrak o_{\mathrm{def}}\)} --- in
       \(H^0\!\bigl(\mathrm{Hom}^\bullet_{\mathrm{loc}}
@@ -519,12 +535,12 @@ Tate envelope of \ref{thm:tate-bar-cobar-quillen}.
         H^1\!\bigl(\mathcal O_{\mathrm{loc}}(\mathcal E_w),\,
           d_{\mathrm{qBV}}\bigr),
         \qquad
-        d_{\mathrm{qBV}}=Q+\{I_0,-\}+\hbar\Delta_L,\ \ |d_{\mathrm{qBV}}|=+1,
+        d_{\mathrm{qBV}}=Q+\{I_0,-\}+\hbar_{\mathrm{QME}}\Delta_L,\ \ |d_{\mathrm{qBV}}|=+1,
       \]
       degree \(+1\); cocycle representative the local functional
       \[
         \mathfrak o_{\mathrm{QME}}
-          =\bigl[QI_0+\hbar\Delta_LI_0
+          =\bigl[QI_0+\hbar_{\mathrm{QME}}\Delta_LI_0
                  +\tfrac12\{I_0,I_0\}_L\bigr]
       \]
       produced by the quantum master equation of
@@ -533,10 +549,10 @@ Tate envelope of \ref{thm:tate-bar-cobar-quillen}.
       Problem~\ref{prob:weighted-rg-locality}.  In the ordinary
       \(\lie{gl}_N\) branch this class carries the residual scalar
       contact summand
-      \(\hbar N\,\omega(f,g)\,\gamma_{\mathbf 1}\) of
+      \(\hbar_{\mathrm{QME}} N\,\omega(f,g)\,\gamma_{\mathbf 1}\) of
       \ref{thm:app-scalar-contact-qme-class}, whose scalar projection
       at the U(1) centre-of-mass slice is the Capelli class
-      \(\hbar N[\bar c]\) of Chapter~6
+      \(\hbar_{\mathrm{QME}} N[\bar c]\) of Chapter~6
       (Theorem~\ref{thm:capelli-projective-anomaly}); in the
       balanced \(\C^{N|N}\) branch the same summand vanishes by
       \ref{thm:app-balanced-supertrace-qme-cancellation}.  The scalar
@@ -595,7 +611,7 @@ Tate envelope of \ref{thm:tate-bar-cobar-quillen}.
   \(\mathfrak o_{\mathrm{QME}}\) in
   \(H^1\bigl(\mathcal O_{\mathrm{loc}}(\mathcal E_w),
   d_{\mathrm{qBV}}\bigr)\), where
-  \(d_{\mathrm{qBV}}=Q+\{I_0,-\}+\hbar\Delta_L\).  The operator
+  \(d_{\mathrm{qBV}}=Q+\{I_0,-\}+\hbar_{\mathrm{QME}}\Delta_L\).  The operator
   \(\Delta_L\) enters as the second-order summand of the quantum BV
   differential; it is not the differential whose cohomology carries the
   anomaly class.
@@ -653,10 +669,11 @@ Tate envelope of \ref{thm:tate-bar-cobar-quillen}.
       The vanishing must allow the transverse one-real-dimensional
       defect \(L\) carrying open gauge \(\lie{gl}_N\), with comparison to
       the flat-\(\C^d\) \(\lie{gl}(N\mid N)\) setup of
-      \cite{costello-li-open-closed-bcov}, and must decide the scalar
+      \cite{costello-li-open-closed-bcov}*{Thm.~A, Thm.~B, Prop.~4.4.4},
+      and must decide the scalar
       contact class
       \[
-        \hbar N\,\omega(f,g)\,\gamma_{\mathbf 1}\in
+        \hbar_{\mathrm{QME}} N\,\omega(f,g)\,\gamma_{\mathbf 1}\in
         H^2_{\mathrm{Lie}}(\bar A,\C),
         \qquad\omega(z_1,z_2)=1,
       \]
@@ -680,11 +697,11 @@ Tate envelope of \ref{thm:tate-bar-cobar-quillen}.
       as a convergent represented kernel; by
       \ref{lem:tate-casimir-obstruction} this requires a coefficient
       category change, given for example by the weighted Tate pair
-      \((\mathfrak h_w,\mathfrak h^{\vee,w}_{\mathrm{cont}})\) of T1.
+      \((\mathfrak h_w,D^{\mathrm{BV}}_w)\) of T1.
     \item[\emph{(I5)}] \emph{Quantum endpoint vanishing}.  A primitive
       for the degree-\(+1\) cocycle
       \(\mathfrak o_{\mathrm{QME}}=
-        \bigl[QI_0+\hbar\Delta_LI_0+\tfrac12\{I_0,I_0\}_L\bigr]\)
+        \bigl[QI_0+\hbar_{\mathrm{QME}}\Delta_LI_0+\tfrac12\{I_0,I_0\}_L\bigr]\)
       in \(H^1\!\bigl(\mathcal O_{\mathrm{loc}}(\mathcal E_w),
         d_{\mathrm{qBV}}\bigr)\), with the Costello-2011 counterterm subtraction
       of \ref{rmk:t4-costello-renorm-datum} compatible with the
@@ -702,8 +719,8 @@ Tate envelope of \ref{thm:tate-bar-cobar-quillen}.
   \end{enumerate}
   Equivalently, (I1)--(I5) are exactly the data of
   Problem~\ref{prob:formal-factorization-center} for the present
-  brane-defect endpoint, after the arity-two formal OPE of
-  Theorem~\ref{thm:formal-two-dimensional-holomorphic-ope} has been
+  brane-defect endpoint, after the arity-two formal singular product of
+  Theorem~\ref{thm:formal-two-dimensional-holomorphic-singular-product} has been
   fixed.
 \end{thm}
 
@@ -713,11 +730,11 @@ Tate envelope of \ref{thm:tate-bar-cobar-quillen}.
   \(\mathfrak o_{\mathrm{BV,end}}\): (S1)+(S2) give the kinematic side of
   \(\mathfrak o_{\mathrm{QME}}\), (S3) for
   \(\mathfrak o_{\mathrm{def}}\), (S4) for the residual
-  \(\hbar N[\bar c]\) summand of \(\mathfrak o_{\mathrm{QME}}\), and
+  \(\hbar_{\mathrm{QME}} N[\bar c]\) summand of \(\mathfrak o_{\mathrm{QME}}\), and
   (S5) for \(\mathfrak o_{\mathrm{Cas}}\); the
   algebraic-coefficient direction governs
   \(\mathfrak o_{\mathrm{RG}}\).  Components (I1)--(I4) give
-  primitives, in turn, for the cocycle representatives forced by
+  primitives, in turn, for the cocycle representatives specified by
   (S1)+(S2), (S3)+(S4)\(_{\mathrm{transport}}\), the strict-window
   Mittag-Leffler preservation of \(W(P_{\epsilon,L},-)\), and the
   Casimir convergence; (I5) gives the quantum primitive.  By
@@ -735,8 +752,8 @@ Tate envelope of \ref{thm:tate-bar-cobar-quillen}.
   \(\mathfrak o_{\mathrm{Cas}}\) as a nonzero cokernel class by
   \ref{lem:tate-casimir-obstruction}; dropping (I5) retains the
   degree-\(+1\) anomaly primitive as endpoint data.  The chain-level
-  primitive shadow of \ref{thm:chain-level-primitive-projection}
-  closes the classical indecomposable shadow by an algebraic argument;
+  primitive projection of \ref{thm:chain-level-primitive-projection}
+  supplies the classical indecomposable quotient by an algebraic argument;
   (I3) and (I5) give the brane-defect scalar and quantum endpoint
 	  data.  The Quillen envelope of
 	  \ref{thm:tate-bar-cobar-quillen} embeds the strict category of

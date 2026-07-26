@@ -7,21 +7,22 @@ special-fibre alphabet.  Their conjugate cotangent momenta, by
 Grothendieck local-cohomology duality, are the residues
 \(\rho_{a,b}=z_1^{-a-1}z_2^{-b-1}\,dz_1dz_2\), top local-cohomology
 generators of \(R=\C[[z_1,z_2]]\) at the maximal ideal \((z_1,z_2)\).
-The brane measures positions polynomially; its cotangent momenta live as
+The brane reads positions polynomially; its cotangent momenta live as
 residues.  The same local-cohomology object also gives the
 two-point diagonal coefficients of the native holomorphic singular
 product: after replacing
 the origin support \(\mathfrak m=(z_1,z_2)\) by the diagonal
 \(\Delta\subset\C^2_z\times\C^2_w\), the basis becomes
 \(\rho^\Delta_{a,b}=(z_1-w_1)^{-a-1}(z_2-w_2)^{-b-1}d\zeta_1d\zeta_2\),
-and Theorem~\ref{thm:formal-two-dimensional-holomorphic-ope} uses
-\(\rho^\Delta_{0,0}\) as the Cauchy kernel.
+and Theorem~\ref{thm:formal-two-dimensional-holomorphic-singular-product} uses
+\(\rho^\Delta_{0,0}\) as the two-dimensional Cauchy kernel.
 
 The \(\mathfrak m\)-adic continuous dual of the reduced Hamiltonian Lie
 algebra \(\mathfrak h=R/\C\cdot1\) sits inside
 \(H^2_{\mathfrak m}(R)\,dz_1dz_2\) as the scalar annihilator of the
-constant line; the residue pairing identifies it canonically with the
-direct sum \(\mc P=\bigoplus_{a+b>0}\C\,\rho_{a,b}\).  The Hamiltonian
+constant line; after the chosen residue normalization, the residue
+pairing identifies it with the direct sum
+\(\mc P=\bigoplus_{a+b>0}\C\,\rho_{a,b}\).  The Hamiltonian
 coadjoint action, transported through this residue identification, is
 the principal-part residue formula
 \(z_1^p z_2^q\cdot\rho_{a,b}=-(pb-qa+p-q)\,\rho_{a-p+1,b-q+1}\), with
@@ -30,19 +31,35 @@ descendants \(\widetilde\Psi_{a,b}\) carry the same labels \((a,b)\) and
 a strictly different \(\mathfrak h\)-module structure: linear
 Hamiltonians act locally nilpotently on the polynomial side and never
 locally nilpotently on \(\mc P\), giving the basis-relabeling
-obstruction.  Fourier--Rees conjugation gives the only universal
+obstruction.
+
+In this appendix the compact subscript \(\hbar\) in
+\(\mathcal D_\hbar\), \(\mathcal O_\hbar\),
+\(\Delta^{\mathsf F}_\hbar\), and the associated \(\hbar\)-adic lattice
+phrases denotes the algebraic Fourier--Rees/PBW variable
+\(\hbar_{\mathrm{Rees}}\).  Its comparison with the formal Weyl/Moyal
+coefficient formulas is the specialization
+\(\hbar_{\mathrm{Rees}}\mapsto\hbar_{\mathrm{W}}\).  It is not the
+Costello quantum master-equation parameter \(\hbar_{\mathrm{QME}}\) and
+not the equivariant line parameter \(\hbar_\omega\).
+
+Fourier--Rees conjugation gives the only universal
 label bridge, and only after a polarization change: it sends
 \(\mathcal O_\hbar=\mathcal D_\hbar/(\partial_1,\partial_2)\) to
 \(\Delta^{\mathsf F}_\hbar=\mathcal D_\hbar/(z_1,z_2)\), whose \v{C}ech
-realization sits inside the standard local-cohomology lattice as
+realization sits inside the \v{C}ech local-cohomology lattice
+\(H^2_{\mathfrak m}(\C[[z_1,z_2]])\,dz_1dz_2[[\hbar]]\) as
 \(\bigoplus\hbar^{a+b}\C[[\hbar]]\rho_{a,b}\); the full lattice
 \(\bigoplus\C[[\hbar]]\rho_{a,b}\) is recovered only after \(\hbar\) is
 inverted.
 
 Source conventions: Matlis duality \cite{matlis-injective},
 Grothendieck--Hartshorne local cohomology
-\cite{hartshorne-local-cohomology}, and the power-series residue model
-of Kunz--Cox--Dickenstein, Chapter~5 \cite{kunz-residues-duality}.
+\cite{hartshorne-local-cohomology}*{Ch.~III, \S2}, and the
+power-series residue model of Kunz--Cox--Dickenstein
+\cite{kunz-residues-duality}*{Ch.~5}.  The exact cotangent statement used
+below is the manuscript's finite-window principal-part realization and
+coadjoint-continuity theorem, not an unqualified appeal to local duality.
 
 \subsection{The defect polarization}
 \label{ssec:app-defect-polarization}
@@ -72,18 +89,20 @@ constraints together select the residue-valued cotangent polarization.
   canonical polarization with the following two sides.
   \begin{enumerate}
     \item \emph{Configuration side: polynomial / Taylor.}  Hamiltonian
-      configuration observables on the brane are the polynomial trace
+      configuration observables on the brane are first the polynomial trace
       family
       \[
         O_f=\overline{\operatorname{Tr}f(\phi_1,\phi_2)},\qquad
-        f\in\mathfrak h=\C[[z_1,z_2]]/\C\cdot1 .
+        f\in\bar A=\C[z_1,z_2]/\C\cdot1 .
       \]
+      Formal \(f\in\mathfrak h=\C[[z_1,z_2]]/\C\cdot1\) are read by
+      Taylor windows and stable completion.
       The Lie algebra acting through these observables is the reduced
       polynomial Hamiltonian sub-Lie algebra
       \(\bar A=\C[z_1,z_2]/\C\cdot1\subset\mathfrak h\), each generator
       represented by a constant Hamiltonian vector field on the
       polynomial PBW special-fibre alphabet.  These observables form the
-      PBW one-\(\psi\) shadow span:
+      PBW one-\(\psi\) label span:
       \(\widetilde\Psi_{a,b}\in\bar A_{\mathrm{desc}}\), bidegree
       \((a,b)\), with linear Hamiltonians acting locally nilpotently.
     \item \emph{Cotangent side: distributional / residual.}  Cotangent
@@ -118,7 +137,7 @@ constraints together select the residue-valued cotangent polarization.
   non-locally-nilpotent action
   (Theorem~\ref{thm:app-matlis-polynomial-descendant-obstruction}).  The
   Moyal coadjoint deformation acts on the residual side; the polynomial
-  one-\(\psi\) shadow has the same obstruction after inverting
+  one-\(\psi\) label module has the same obstruction after inverting
   \(\hbar\), and the Fourier--Rees label bridge of
   Theorem~\ref{thm:app-matlis-rees-fourier-bridge} is the unique
   universal interpolation, available only after a Fourier polarization
@@ -231,6 +250,21 @@ constraints together select the residue-valued cotangent polarization.
   for this topology: if \(f\in\mathfrak m\), then
   \(\{f,\mathfrak m^{N+1}\}\subset \mathfrak m^N\).  The quotient
   \(\mathfrak h\) removes the constant class, which acts by zero.
+  The finite Taylor window of total degree at most \(N\) is
+  \[
+    \mathfrak h^{\mathrm{Taylor}}_{\leq N}
+      =\mathfrak h/F^{N+1}\mathfrak h
+      \cong
+      \bigoplus_{\substack{a,b\geq0\\0<a+b\leq N}}
+        \C z_1^az_2^b ,
+  \]
+  and for \(M\geq N\) the transition
+  \(r^{\mathrm{Taylor}}_{M,N}\colon
+  \mathfrak h^{\mathrm{Taylor}}_{\leq M}\to
+  \mathfrak h^{\mathrm{Taylor}}_{\leq N}\) is
+  truncation of Taylor monomials of total degree \(>N\).  Thus
+  \(\mathfrak h=\varprojlim_N\mathfrak h^{\mathrm{Taylor}}_{\leq N}\) in the
+  \(\mathfrak m\)-adic topology.
 \end{defn}
 
 \begin{lem}[Continuous dual]
@@ -238,7 +272,8 @@ constraints together select the residue-valued cotangent polarization.
   The continuous dual of \(\mathfrak h\), with \(\C\) discrete, is
   \[
     \mathfrak h^\vee_{\mathrm{cont}}
-      =\bigcup_{N\geq1}\bigl(\mathfrak h/F^N\mathfrak h\bigr)^\vee
+      =\varinjlim_{N\geq1}
+        \bigl(\mathfrak h^{\mathrm{Taylor}}_{\leq N}\bigr)^\vee
       =\bigoplus_{\substack{a,b\geq0\\a+b>0}}\C\,\delta_{a,b},
   \]
   where
@@ -252,10 +287,10 @@ constraints together select the residue-valued cotangent polarization.
   \(\mathfrak h\simeq\mathfrak m\) is continuous exactly when its
   kernel contains \(F^N\mathfrak h=\mathfrak m^N\) for some \(N\).
   Such a functional factors through the finite-dimensional quotient
-  \(\mathfrak m/\mathfrak m^N\), hence is a finite linear combination
+  \(\mathfrak h^{\mathrm{Taylor}}_{\leq N-1}\), hence is a finite linear combination
   of Taylor coefficient functionals.  Conversely every finite linear
-  combination of the displayed \(\delta_{a,b}\) kills all sufficiently
-  high powers of \(\mathfrak m\), hence is continuous.
+  combination of the displayed \(\delta_{a,b}\) kills \(F^{K+1}\mathfrak h\)
+  for all sufficiently large cutoffs \(K\), hence is continuous.
 \end{proof}
 
 \begin{defn}[Reduced Matlis principal parts]
@@ -272,7 +307,8 @@ constraints together select the residue-valued cotangent polarization.
     R[z_1^{-1},z_2^{-1}]/(R[z_1^{-1}]+R[z_2^{-1}])
   \]
   after multiplication by \(dz_1dz_2\); the displayed direct sum is
-  the standard representative basis in which both exponents are
+  the representative basis determined by the \v{C}ech quotient, in
+  which both exponents are
   strictly negative.
   The basis vector \(\rho_{0,0}=z_1^{-1}z_2^{-1}dz_1dz_2\) is the nonzero
   functional in \(H^2_{\mathfrak m}(R)\,dz_1dz_2\) which evaluates
@@ -291,10 +327,11 @@ constraints together select the residue-valued cotangent polarization.
       =\bigoplus_{\substack{a,b\geq0\\0<a+b\leq N}}\C\,\rho_{a,b},
   \]
   and give \(\mathfrak h^\vee_{\mathrm{cont}}\) the corresponding
-  inductive-limit topology through the basis \(\delta_{a,b}\). Thus the
+  inductive-limit topology through the basis \(\delta_{a,b}\).  Thus the
   residue identification below is a continuous map of the declared
-  locally finite topological vector spaces.  The space \(\mc P\) is a Hamiltonian-coadjoint module;
-  the \(R\)-submodule structure of \(H^2_{\mathfrak m}(R)\,dz_1dz_2\) is
+  locally finite topological vector spaces.  The space \(\mc P\) is a
+  Hamiltonian-coadjoint module; the \(R\)-submodule structure of
+  \(H^2_{\mathfrak m}(R)\,dz_1dz_2\) is
   obstructed on \(\mc P\), since
   multiplication by \(z_i\) can hit the excluded scalar-residue line.
   The residue pairing is
@@ -305,6 +342,61 @@ constraints together select the residue-valued cotangent polarization.
       =\delta_{a,m}\delta_{b,n}.
   \]
 \end{defn}
+
+\begin{lem}[Finite Matlis windows and completions]
+\label{lem:app-matlis-finite-windows}
+  For each \(N\geq1\) the residue pairing restricts to a perfect finite
+  pairing
+  \[
+    \langle-,-\rangle_N\colon
+    \mc P_{\leq N}\otimes
+    \mathfrak h^{\mathrm{Taylor}}_{\leq N}\longrightarrow\C,
+    \qquad
+    \langle\rho_{a,b},z_1^mz_2^n\rangle_N
+      =\delta_{a,m}\delta_{b,n}.
+  \]
+  For \(M\geq N\), the dual of the Taylor truncation
+  \(r^{\mathrm{Taylor}}_{M,N}\colon
+  \mathfrak h^{\mathrm{Taylor}}_{\leq M}\to
+  \mathfrak h^{\mathrm{Taylor}}_{\leq N}\) is the
+  inclusion
+  \[
+    (r^{\mathrm{Taylor}}_{M,N})^{\vee}\colon
+    \mc P_{\leq N}\hookrightarrow \mc P_{\leq M}.
+  \]
+  Hence the strict continuous dual is the direct limit
+  \[
+    \mathfrak h^\vee_{\mathrm{cont}}
+      \cong \varinjlim_N \mc P_{\leq N}=\mc P .
+  \]
+  The product completion
+  \[
+    \mc P_{\Pi}
+      =
+    \prod_{\substack{a,b\geq0\\a+b>0}}\C\,\rho_{a,b}
+      \cong
+    \varprojlim_N\mc P_{\leq N},
+  \]
+  uses the projections
+  \(p_{M,N}\colon\mc P_{\leq M}\to\mc P_{\leq N}\) which discard basis
+  vectors of total degree \(>N\).  This product pro-Matlis completion is
+  a larger kernel completion; it is not the ordinary continuous dual of
+  \(\mathfrak h\).
+\end{lem}
+
+\begin{proof}
+  The displayed monomial bases of \(\mathfrak h^{\mathrm{Taylor}}_{\leq N}\) and
+  \(\mc P_{\leq N}\) have the same finite index set, and the residue
+  matrix is the identity matrix in those bases.  Truncating a Taylor
+  polynomial from degree \(\leq M\) to degree \(\leq N\) has transpose
+  inclusion of the coefficient functionals with degree \(\leq N\).  The
+  direct-limit assertion is therefore Lemma~\ref{lem:app-matlis-continuous-dual}
+  transported through the residue basis.  The inverse-limit assertion
+  follows from the compatible finite projections \(p_{M,N}\): a point of
+  \(\varprojlim_N\mc P_{\leq N}\) is exactly a choice of one coefficient
+  for every basis vector \(\rho_{a,b}\), with no finite-support
+  condition.
+\end{proof}
 
 \begin{prop}[Matlis realization of the continuous dual]
 \label{prop:app-matlis-realization}
@@ -363,7 +455,7 @@ constraints together select the residue-valued cotangent polarization.
   and the action preserves the scalar-annihilator subspace.  The
   coefficient \(-(pb-qa+p-q)\) is the residue side of the defect
   polarization (Theorem~\ref{thm:app-defect-polarization}); on the
-  polynomial PBW one-\(\psi\) shadow the analogous coefficient is the
+  polynomial PBW one-\(\psi\) label module the analogous coefficient is the
   symmetric \(pb-qa\), and the two formulas differ already at the linear
   Hamiltonians.
 \end{prop}
@@ -423,18 +515,39 @@ constraints together select the residue-valued cotangent polarization.
 \end{lem}
 
 \begin{proof}
-  Fix \(\rho_{a,b}\).  In the monomial formula a term
-  \(z_1^p z_2^q\cdot\rho_{a,b}\) can be nonzero only if
-  \(p\leq a+1\) and \(q\leq b+1\).  Thus an arbitrary formal Hamiltonian
-  acts on \(\rho_{a,b}\) through a finite jet, so the action is
-  well-defined and continuous in the Hamiltonian variable.  Conversely,
-  if \(a+b\leq N\), every nonzero target has total index
+  Fix the finite principal-part window \(\mc P_{\leq N}\).  If
+  \(a+b\leq N\), a monomial term
+  \(z_1^p z_2^q\cdot\rho_{a,b}\) can be nonzero only when
+  \(p\leq a+1\) and \(q\leq b+1\), hence \(p+q\leq N+2\).  Therefore the
+  restriction
+  \[
+    \mathfrak h\times\mc P_{\leq N}\longrightarrow \mc P
+  \]
+  factors through the finite-dimensional quotient
+  \[
+    \mathfrak h^{\mathrm{Taylor}}_{\leq N+2}\times \mc P_{\leq N}.
+  \]
+  Equivalently, \(F^{N+3}\mathfrak h\) acts trivially on
+  \(\mc P_{\leq N}\).  This proves well-definedness for formal
+  Hamiltonians and continuity in the \(\mathfrak h\)-variable on each
+  finite principal-part window.
+
+  The target is also finite-window controlled.  If \(a+b\leq N\), every
+  nonzero target has total index
   \[
     (a-p+1)+(b-q+1)=a+b-(p+q)+2\leq N+1
   \]
   because \(p+q>0\) for a reduced Hamiltonian.  Hence each fixed
-  Hamiltonian sends \(\mc P_{\leq N}\) into \(\mc P_{\leq N+1}\).  This is
-  exactly continuity for the locally finite direct limit.
+  Hamiltonian sends \(\mc P_{\leq N}\) into \(\mc P_{\leq N+1}\), and the
+  bilinear map on the finite stage factors as
+  \[
+    \mathfrak h^{\mathrm{Taylor}}_{\leq N+2}\times\mc P_{\leq N}
+      \longrightarrow \mc P_{\leq N+1}.
+  \]
+  The locally finite topology on \(\mc P=\varinjlim_N\mc P_{\leq N}\) is
+  the final topology for these finite-dimensional inclusions, so these
+  finite-stage factorizations prove continuity of the bilinear coadjoint
+  action.
 \end{proof}
 
 \begin{lem}[Coadjoint centralizer]
@@ -559,7 +672,7 @@ constraints together select the residue-valued cotangent polarization.
   For the primitive PBW labels \(\widetilde\Psi_{a,b}\) the obstruction
   is already visible at the boundary of the index quadrant.  After the
   scalar descendant is removed, the special-fibre action of the linear
-  Hamiltonians on the polynomial one-\(\psi\) shadow is
+  Hamiltonians on the polynomial one-\(\psi\) label module is
   \[
     z_1\cdot\widetilde\Psi_{a,b}=b\,\widetilde\Psi_{a,b-1},
     \qquad
@@ -610,8 +723,9 @@ constraints together select the residue-valued cotangent polarization.
     \Delta^{\mathrm{std}}_\hbar=
     H^2_{\mathfrak m}(\C[[z_1,z_2]])\,dz_1dz_2[[\hbar]]
   \]
-  carries the standard action in which \(z_i\) multiplies and
-  \(\partial_i=\hbar\partial_{z_i}\).  Sending
+  carries the \(\mathcal D_\hbar\)-action
+  \(z_i\cdot\eta=z_i\eta\) and
+  \(\partial_i\cdot\eta=\hbar\partial_{z_i}\eta\).  Sending
   \(e_0\mapsto\rho_{0,0}=z_1^{-1}z_2^{-1}dz_1dz_2\) realizes
   \(\Delta^{\mathsf F}_\hbar\) as the Rees sublattice
   \[
@@ -710,7 +824,7 @@ constraints together select the residue-valued cotangent polarization.
   In the \v{C}ech model, \(z_i\rho_{0,0}=0\), and applying
   \(\partial_i=\hbar\partial_{z_i}\) to \(\rho_{0,0}\) generates the
   Rees lattice displayed in the theorem.  It generates the full
-  standard local-cohomology lattice only after \(\hbar\) is inverted.
+  \v{C}ech local-cohomology lattice only after \(\hbar\) is inverted.
   Therefore
   \(\mathsf F(\mathcal O_\hbar)\cong\Delta^{\mathsf F}_\hbar\), with the
   \v{C}ech realization \(\iota_{\mathsf F}\).

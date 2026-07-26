@@ -13,19 +13,19 @@
 
 ## What this manuscript proves
 
-The **formal-Darboux stalk theorem of the Mixed Holomorphic-Topological Deligne conjecture** at $N$ Dirac branes:
+The **formal-Darboux trace-sector stalk theorem for the Mixed Holomorphic-Topological Deligne problem** at $N$ Dirac branes:
 \[
 A^{\mathrm{cl}}_{\partial, N} = C^\bullet_{\mathrm{CE}}\bigl(\mathfrak{gl}_N,\; \mathrm{Kosz}([\phi_1, \phi_2])\bigr),\qquad
 J(f) = \mathrm{Tr}\,f(\phi_1, \phi_2),\qquad
 c_f \mapsto \theta_f,\quad u_f \mapsto J(f).
 \]
-The trace map $J$ is the formal Darboux coordinate expression of the chiral Hochschild cohomology $C^\bullet_{\mathrm{ch}}(A_b, A_b)$, the derived chiral centre at the brane vacuum. The Capelli scalar $\hbar N[\bar c]$ is the projective curvature $\Omega_{\mathrm{central}}$ at the trace generator. The four-curvature taxonomy classifies global obstructions.
+The trace map $J$ is the formal Darboux coordinate on the scalar-reduced stable trace sector of the admissible HKR model for the chiral Hochschild cohomology $C^\bullet_{\mathrm{ch}}(A_b, A_b)$. The finite-$N$ Capelli scalar $\hbar N[\bar c]$ is the projective Lie anomaly of the trace representation; it is determinant-line or modular-line curvature only after the corresponding line, connection, and Atiyah-class pullback have been supplied. The obstruction-curvature taxonomy classifies the global comparison problem.
 
-The constellation-level master theorem, of which this manuscript proves the formal-Darboux stalk:
+The constellation-level master theorem, of which this manuscript proves the scalar-reduced stable trace-sector formal-Darboux stalk:
 
-> Closed sector $= Z^{\mathrm{der}}_{E_d^{\mathrm{ch}}}(\mathcal{C}^{\mathrm{op}}_\partial)$. Modular structure $=$ trace plus clutching. Quantum and global obstructions $=$ curvature in $\mathfrak{K}_T$. Scalar invariants $=$ sections of the modular line bundle on the period domain.
+> Closed sector $= Z^{\mathrm{der}}_{E_d^{\mathrm{ch}}}(\mathcal{C}^{\mathrm{op}}_\partial)$. Modular structure $=$ trace plus clutching. Quantum and global obstructions $=$ curvature in the supplied comparison complex. Scalar invariants $=$ sections of the modular line bundle on the period domain after the line datum is constructed.
 
-The Deligne conjecture in its mixed holomorphic-topological chiral $E_d$ realization.
+This manuscript supplies the local trace-sector input to the mixed holomorphic-topological chiral $E_d$ Deligne problem.
 
 ---
 
@@ -156,7 +156,7 @@ CY_d-Cat ─Φ^FA→│ E_d-HolFA(X) │─∫_Σ───→│ ChirAlg(C)     
                        on K3 × E)
 ```
 
-Every constellation volume populates one node. **This manuscript proves the formal-Darboux stalk of $C^\bullet_{\mathrm{ch}}(A_b, A_b)$ at the Dirac brane node.**
+Every constellation volume populates one node. **This manuscript proves the scalar-reduced stable trace-sector formal-Darboux stalk of the admissible HKR model for $C^\bullet_{\mathrm{ch}}(A_b, A_b)$ at the Dirac brane node.**
 
 When generating any synthesis, replacement abstract, or master sentence: anchor in this diagram. The diagram is the structural ground; do not claim a position outside it.
 
@@ -170,9 +170,9 @@ Eleven chapters; each forced by the previous.
 2. **The shifted-cotangent BF Lie algebra.** $\mathfrak{h} = \mathbb{C}[[z_1, z_2]] / \mathbb{C}$, $\mathfrak{g} = \mathfrak{h} \ltimes \mathfrak{h}^\vee_{\mathrm{cont}}[1]$; Hamiltonian BF action.
 3. **The derived commuting variety stack at $N$ Dirac branes.** $[\mu^{-1}_{\mathrm{der}}(0) / \mathrm{GL}_N]$, $Q\psi = [\phi_1, \phi_2]$.
 4. **Boundary algebra and trace map.** $A^{\mathrm{cl}}_{\partial, N}$, $J(f) = \mathrm{Tr}\,f(\phi_1, \phi_2)$.
-5. **CE/PV dictionary as Koszul resolution.** $c_f \mapsto \theta_f$, $u_f \mapsto J(f)$; identification with the formal coordinate of $C^\bullet_{\mathrm{ch}}(A_b, A_b)$.
-6. **The Capelli scalar.** $\hbar N[\bar c] = \Omega_{\mathrm{central}}|_{J(f)}$, projective curvature, determinant line.
-7. **The obstruction calculus.** $\mathfrak{K}_T$, $\Theta_T$, $F_T$, four-curvature taxonomy. Six named obstructions as coordinates of one curvature.
+5. **CE/PV dictionary as Koszul coordinate model.** $c_f \mapsto \theta_f$, $u_f \mapsto J(f)$; identification with the scalar-reduced stable trace-sector coordinate in the admissible HKR model for $C^\bullet_{\mathrm{ch}}(A_b, A_b)$.
+6. **The Capelli scalar.** $\hbar N[\bar c]$ as projective Lie anomaly of the trace representation; determinant-line or modular-line curvature only after the line, connection, and Atiyah-class pullback are supplied.
+7. **The obstruction calculus.** $\mathfrak{K}_{\mathrm{HT}}$, $\Theta_{\mathrm{OCA}}$, \(F_{\mathrm{HT}}\), and the four obstruction-curvature rows. Six native obstructions become projections of one curvature only after the comparison-unifying datum is supplied.
 8. **The pro-Matlis target.** $N$-tower categorical home; Matlis duality at finite presentation.
 9. **Examples.** Heisenberg, $\hat{\mathfrak{g}}_k$, $\beta\gamma$, $\mathrm{Vir}_c$ (algebraic HT holographic reading; identification, not construction), $W_N$, $\mathbb{C}^3$, $K3$, $K3 \times E$, generic compact CY3.
 10. **The $W_\infty[\lambda] / E_\infty$ admissible endpoint.** Conditional theorem.
@@ -201,9 +201,9 @@ Curve vertex algebra / Zhu algebra / Vol II $\mathbb{C} \times \mathbb{R}$ chira
 - $\mathcal{C}^{\mathrm{op}}_\partial = \Phi^{\mathrm{FA}}_d(\mathcal{A})\big|_{\partial X^{\mathrm{KN}}}$ on the Kato–Nakayama log boundary.
 - $\mathrm{Sp}^{\mathrm{ch}}_{\Sigma_{d-1}, C}(\mathcal{F}) = \int_{\Sigma_{d-1}} \mathcal{F}\big|_C$ — Lurie–Ayala–Francis factorization homology.
 - "Dirac brane stack" $= [\mu^{-1}_{\mathrm{der}}(0) / \mathrm{GL}_N]$, the derived commuting variety.
-- Capelli scalar $\hbar N[\bar c] = \Omega_{\mathrm{central}}|_{J(f)}$.
+- Capelli scalar $\hbar N[\bar c]$ is the projective Lie anomaly of the trace representation; determinant-line or modular-line curvature requires the corresponding line, connection, and Atiyah-class pullback.
 - Modular line bundle on $\overline{\mathcal{A}}_g = \Omega_{\mathrm{central}}$ at level $g$. Igusa $\Phi_{10}$ is its level-2 section; $\Delta_5 = \Phi_{10}^{1/2}$.
-- CE/PV dictionary $c_f \mapsto \theta_f$, $u_f \mapsto J(f)$ is the Koszul resolution of $C^\bullet_{\mathrm{ch}}(A_b, A_b)$.
+- CE/PV dictionary $c_f \mapsto \theta_f$, $u_f \mapsto J(f)$ is the Koszul coordinate model for the scalar-reduced stable trace sector of the admissible HKR model for $C^\bullet_{\mathrm{ch}}(A_b, A_b)$.
 
 ## Theorem-control predicates (binding)
 

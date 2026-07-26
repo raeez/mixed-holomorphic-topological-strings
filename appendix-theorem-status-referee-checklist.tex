@@ -1,0 +1,353 @@
+\section{Theorem Status and Referee Checklist}
+\label{app:final-theorem-status}
+
+This appendix records the proof strength of the theorem surface.  A
+statement not listed as proved below is used only with its stated
+hypotheses, as a supplied-data criterion, or as a conjectural compact
+comparison target.
+
+\subsection{Proved Statements}
+
+\begin{center}
+\footnotesize
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.27\textwidth}
+  >{\raggedright\arraybackslash}p{0.16\textwidth}
+  >{\raggedright\arraybackslash}p{0.49\textwidth}@{}}
+\textbf{Statement} & \textbf{Status} & \textbf{Anchor} \\
+Formal-Darboux trace-sector coordinate at \(N\) Dirac branes &
+proved &
+Theorem~\ref{thm:main-local}; the ambient chart is
+Definition~\ref{def:formal-darboux-stalk-chart}. \\
+Trace map \(J(f)=\varprojlim_WJ_{\leq W}(f\bmod\mathfrak m^{W+1})\) &
+proved in the stable scalar-reduced trace sector &
+Theorem~\ref{thm:brane-trace-map-principle} and
+Theorem~\ref{thm:Jf-coordinate-uniqueness}. \\
+Reductive invariant exactness for the Koszul trace sector &
+proved finite-window exactness statement &
+\(H^\bullet((\mathcal R_N)^{GL_N},Q)
+\cong H^\bullet(\mathcal R_N,Q)^{GL_N}\) for rational finite windows;
+positive Chevalley--Eilenberg stabilizer cohomology is separate;
+see Lemma~\ref{lem:reductive-invariants-koszul-exactness}. \\
+Signed adjacent-transposition homotopy &
+proved finite-window Koszul identity &
+\(Q\operatorname{Tr}(\psi vu)=
+\operatorname{Tr}(u\phi_1\phi_2v)-
+\operatorname{Tr}(u\phi_2\phi_1v)\) for ordinary even words \(u,v\);
+see Lemma~\ref{lem:koszul-adjacent-transpositions} and
+\eqref{eq:koszul-adjacent-transposition-homotopy}. \\
+Stable trace rank contract &
+proved finite-window bound &
+Procesi--Razmyslov length-zero traces use \(N\ge W\);
+finite-window Loday--Quillen--Tsygan projection uses
+\(N\ge\max(W,L+2)\);
+see Proposition~\ref{prop:stable-trace-sector-type},
+Theorem~\ref{thm:stable-eulerian-lqt-window}, and
+Lemma~\ref{lem:stable-window-contract}. \\
+\(N=2\) derived commuting-pair sanity check &
+proved finite-rank calculation &
+\S\ref{sssec:ex-N2-finite-window}; the script
+\texttt{scripts/check\_derived\_intersection\_N2.py} reproduces the
+displayed identities and is not used as a proof. \\
+Finite-rank primitive trace-residue at \(N=2,d=3\) &
+proved finite-window calculation &
+Proposition~\ref{prop:finite-N-leftover-residue} and
+\S\ref{sssec:ex-N2-finite-window}; the script
+\texttt{scripts/check\_derived\_intersection\_N2.py} reproduces the
+displayed Cayley--Hamilton identities and is not used as a proof. \\
+CE/PV generator dictionary \(c_f\mapsto\theta_f\),
+\(u_f\mapsto J(f)\) &
+proved after the stated completion and scalar reduction &
+Theorem~\ref{thm:reduced-ce-pv-central-operation},
+Theorem~\ref{thm:formal-disk-completed-ce-pv}, and
+Corollary~\ref{cor:ce-pv-formal-disk}. \\
+Finite and weighted admissible Casimir models &
+proved coefficient-completion calculation &
+\S\ref{sssec:ex-completion-casimir},
+Example~\ref{ex:completion-toy-casimir}, and
+Proposition~\ref{prop:verified-badm-weighted-model}. \\
+Strict product/direct-sum Casimir failure &
+proved non-admissibility statement &
+Proposition~\ref{prop:badm-strict-product-direct-sum-nonobject} and
+Lemma~\ref{lem:tate-casimir-obstruction}. \\
+Capelli scalar and projective anomaly &
+proved as the order-\(\hbar_{\mathrm{W}}\) finite-\(N\) shift &
+Theorem~\ref{thm:quantum-classical-anomaly} and
+Theorem~\ref{thm:capelli-projective-anomaly}. \\
+Four-mechanism obstruction taxonomy &
+proved case division; a partition only after the comparison-unifying
+datum &
+Theorem~\ref{thm:four-curvature-taxonomy}; the six-projection
+statement is listed separately below as a supplied-data criterion. \\
+\end{tabular}
+\end{center}
+
+\subsection{Supplied-Data and Conditional Statements}
+
+\begin{center}
+\footnotesize
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.27\textwidth}
+  >{\raggedright\arraybackslash}p{0.16\textwidth}
+  >{\raggedright\arraybackslash}p{0.49\textwidth}@{}}
+\textbf{Statement} & \textbf{Status} & \textbf{Anchor} \\
+Six-coordinate obstruction projection onto one curvature &
+supplied-data criterion &
+Theorem~\ref{thm:six-coordinates-one-curvature}; requires the
+comparison-unifying datum of
+Definition~\ref{defn:common-ht-deformation-complex}, the projection
+criterion of Proposition~\ref{prop:six-projections}, and the
+\(\Omega\)-grading hypotheses of
+Theorem~\ref{thm:omega-localization-collapse}; the six native classes
+and their in-repo proofs are the ledger of
+Theorem~\ref{thm:four-curvature-taxonomy}. \\
+Mixed-HT chiral Deligne action at \(d\geq2\) &
+supplied-data criterion &
+Theorem~\ref{thm:sc-ht-deligne-swiss-cheese} and
+Appendix Theorem~\ref{app:thm:relative-Ed-deligne}. \\
+Typed global mixed-HT Deligne comparison &
+supplied-data criterion &
+Theorem~\ref{thm:typed-global-mixed-ht-deligne},
+Theorem~\ref{thm:main-global-deligne-criterion}, and
+Appendix Theorem~\ref{app:thm:global-deligne-criterion}; the proof datum is
+the ten-row equivalence datum
+\(\mathfrak D^{\mathrm{HT}}_N\) of
+Definition~\ref{defn:typed-mixed-ht-deligne-equivalence-datum}, whose
+secondary primitive compatibility row includes
+\eqref{eq:global-primitive-compatibility-datum}. \\
+Contractible Stein and projective Stein descent &
+criterion under the stated brane-link and descent data &
+Theorem~\ref{thm:contractible-stein-descent-criterion-HS} and
+Theorem~\ref{thm:projective-stein-descent-criterion-HS}. \\
+Quantum master equation and locality extension &
+criterion under the stated filtered SDR, propagator, and anomaly data &
+Statement~\ref{stmt:costello-bv-construction},
+Theorem~\ref{app:thm:relative-qme}, and
+Theorem~\ref{app:thm:global-stalk-from-collapse}. \\
+All-bidegree radial Moyal comparison &
+conditional outside the proved edge strips and finite windows &
+Theorem~\ref{thm:finite-n-reduced-moyal},
+Theorem~\ref{thm:phi-hbar-all-order}, and
+Proposition~\ref{prop:app-radial-pr-unconditional-window}. \\
+Whole fixed-\(N\) Hochschild-centre complex &
+non-claim; obstruction boundary recorded &
+\hyperref[ssec:finite-N-leftovers]{finite-\(N\) leftovers subsection}:
+fixed rank retains
+\(I^{\mathrm{tr}}_{N,d}\), positive Chevalley--Eilenberg stabilizer
+cohomology, and completed centrality curvature
+\(\delta^{\mathrm{Lie}},\delta^{\mathrm{prod}},\delta^{P_0}\);
+the theorem uses only the stable scalar-reduced trace sector. \\
+\end{tabular}
+\end{center}
+
+\subsection{Conjectural and External Comparison Statements}
+
+\begin{center}
+\footnotesize
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.27\textwidth}
+  >{\raggedright\arraybackslash}p{0.16\textwidth}
+  >{\raggedright\arraybackslash}p{0.49\textwidth}@{}}
+\textbf{Statement} & \textbf{Status} & \textbf{Anchor} \\
+Chiral \(E_d\) Deligne theorem without supplied operadic data &
+conjectural for \(d\geq2\) &
+Conjecture~\ref{conj:chiral-Ed-deligne}. \\
+Hall--Drinfeld--Borcherds spectral sequence on compact non-toric
+Calabi--Yau threefolds &
+conjectural comparison problem &
+Conjecture~\ref{conj:hall-drinfeld-borcherds-ss}. \\
+Operator-level lift of the modular line on \(K3\times E\) &
+open construction problem &
+Conjecture~\ref{conj:operator-modular-lift}. \\
+Compact BPS operator package whose protected trace gives a modular
+section &
+open construction problem &
+The compact-target restriction is Theorem~\ref{thm:cross-target-restriction};
+the operator-level lift is the additional compact-target datum of
+Conjecture~\ref{conj:operator-modular-lift}. \\
+\end{tabular}
+\end{center}
+
+\subsection{Reference Dependency Ledger}
+
+The following table records how external results enter the proof.  A
+reference listed here is not a substitute for one of the construction
+rows in Theorem~\ref{thm:main-local} or in the typed global datum
+\(\mathfrak D^{\mathrm{HT}}_N\) of
+Definition~\ref{defn:typed-mixed-ht-deligne-equivalence-datum}.
+
+\begin{center}
+\footnotesize
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.24\textwidth}
+  >{\raggedright\arraybackslash}p{0.34\textwidth}
+  >{\raggedright\arraybackslash}p{0.34\textwidth}@{}}
+\textbf{External input} & \textbf{Use in the manuscript} &
+\textbf{Not used to prove} \\
+BCOV/Kodaira--Spencer field data \cite{bcov} &
+Dolbeault/BV source structures for the retained Hamiltonian BF sector. &
+No compact BCOV theorem, holomorphic anomaly solution, or genus
+expansion follows from the local theorem. \\
+Procesi--Razmyslov invariant theory
+\cite{procesi}*{Thm.~1.3, Thm.~4.6} and \cite{razmyslov}*{Thm.~2} &
+Trace generators for simultaneous conjugation and the fixed-rank
+trace-identity ideal; the stable scalar-reduced window \(N\ge d\) is the
+manuscript's finite-window specialization before Koszul and primitive
+projection. &
+No whole fixed-\(N\) Hochschild centre, no quotient-stack stabilizer
+cohomology, and no Loday--Quillen--Tsygan primitive projection is
+identified by these invariant-theory inputs. \\
+Loday--Quillen--Tsygan stable matrix Lie homology
+\cite{loday-quillen}*{Thm.~6.2} and \cite{tsygan}*{Thm.~1} &
+The primitive stable comparison
+\(\operatorname{Prim}H_n(\mathfrak{gl}_\infty(A))\cong HC_{n-1}(A)\);
+the symmetric-algebra form is only the characteristic-zero
+Hopf-algebra consequence. &
+No finite-window map for \(A_\psi=T(x,y,\psi)\), no scalar quotient, and
+no separated-block finite-rank bridge follows from the external theorem;
+these are supplied by Theorem~\ref{thm:stable-eulerian-lqt-window}. \\
+Costello finite-scale BV theory
+\cite{costello-renormalization}*{Thms.~A--C, Lem.~10.2.2,
+Defn.~10.3.1, Lem.~13.1.2} and Costello--Gwilliam factorization theory
+\cite{costello-gwilliam}*{Vol.~I Secs.~6.1, 6.4--6.5, 7.2}
+\cite{costello-gwilliam-vol2}*{Vol.~II Secs.~8.5--8.6, Thm.~1.5.1} &
+Factorization-algebra, locally constant/cosheaf/basis-extension, and
+quantum-observable vocabulary, together with the general finite-scale
+BV/RG/QME obstruction calculus. &
+No brane-defect current target, wave-front theorem, bulk-to-defect
+kernel, or QME counterterm tower follows from these sources; those are
+the supplied Hamiltonian brane-defect data and obstruction-vanishing
+conditions of the manuscript. \\
+Kontsevich deformation quantization \cite{kontsevich-dq} &
+Formal constant-Poisson Moyal target and the Weyl/Moyal Rees
+parameter \(\hbar_{\mathrm{W}}\). &
+No Costello graph realization follows without the specialization datum. \\
+Capelli and Howe--Capelli sources \cite{capelli}\cite{howe-capelli} &
+Finite-\(N\) projective scalar \(\hbar_{\mathrm{W}}N[\bar c]\). &
+No strict scalar trivialization or determinant-line curvature is claimed
+without the corresponding line, connection, comparison map, and
+\(\operatorname{Ob}^{\det}_J\)-killing lift. \\
+Local cohomology and residues
+\cite{hartshorne-local-cohomology}*{Ch.~III, \S2}
+\cite{kunz-residues-duality}*{Ch.~5} &
+Matlis principal parts and the residue dual
+\(\mathfrak h^\vee_{\mathrm{cont}}\). &
+No PBW polynomial descendant is identified with the residue module
+without the stated bridge. \\
+Beilinson--Drinfeld curve chiral formalism, Lurie, and Ayala--Francis
+\cite{beilinson-drinfeld-chiral}*{Secs.~3, 3.4, 4}
+\cite{lurie-ha}*{\S 5.5.4}\cite{ayala-francis} &
+Curve chiral, chiral monoidal, derived-centre, and
+factorization-homology comparison language. &
+No \(d\geq2\) holomorphic factorization theorem and no curve vertex
+algebra is constructed before the restriction datum \(\mathfrak R_L\)
+and functor \(\mathsf R_{L,\mathcal B_\perp}\) are supplied. \\
+Borcherds/Igusa and compact comparison references &
+Matched-conventions targets in
+\S\ref{ssec:cross-target-restriction}. &
+No compact BPS operator package, Hall--Borcherds theorem, or
+\(K3\times E\) partition-function identity is a consequence of
+Theorem~\ref{thm:main-local}. \\
+\end{tabular}
+\end{center}
+
+\subsection{Obstruction-Class Glossary}
+
+\begin{center}
+\footnotesize
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.24\textwidth}
+  >{\raggedright\arraybackslash}p{0.34\textwidth}
+  >{\raggedright\arraybackslash}p{0.34\textwidth}@{}}
+\textbf{Class} & \textbf{Native complex} & \textbf{Status} \\
+\(\hbar_{\mathrm{W}}N[\bar c]\) &
+Lie cohomology \(H^2_{\mathrm{Lie}}(\bar A,\C)\). &
+Proved projective Capelli scalar; determinant-line curvature is the
+separate lift datum killing
+\(\operatorname{Ob}^{\det}_J\in\operatorname{coker}(\operatorname{At}_J)\). \\
+\(\mathfrak o_{\mathrm{Cas}}\) &
+Strict product/direct-sum Tate kernel comparison. &
+Obstructs the strict diagonal Casimir; killed only after the stated
+weighted or nilpotent replacement. \\
+\(\Omega^{\mathrm{rad}}_{a,b}\) &
+\(\operatorname{coker}B_{a,b}\) in the decorated PBW--Stokes radial
+bicomplex. &
+Vanishing proved on the listed finite range; all-bidegree vanishing is
+conditional on the radial-parts hypotheses. \\
+\(\operatorname{Ob}^{\mathrm{cent}}_{\mathrm{Hoch}}\) &
+Completed Hochschild-centrality convolution algebra
+\(\mathcal K^{\mathrm{cent}}_{\partial,N}\). &
+Blocks promotion of the generator assignment to a Hochschild-centre
+cochain map. \\
+\(\operatorname{Ob}^{\mathrm{cot}}_\partial(I)\) &
+Homotopy fibre from unreduced \(P_0\)-centrality to the
+principal-part current bracket complex. &
+Blocks the unreduced cotangent-current realization. \\
+\(\operatorname{Ob}^{\mathrm{typed}}\) &
+Typed obstruction ledger for
+\(\mathfrak D^{\mathrm{HT}}_N\): Swiss-cheese, Morita centre,
+Hochschild-centre lift, Darboux transport, cotangent-current lift,
+descent, order-indexed QME, anomaly/locality, secondary compatibility,
+and cone rows. &
+Vanishing means that the supplied ten-row equivalence datum exists; it is
+not a consequence of the trace-sector coordinate theorem. \\
+\(\operatorname{Ob}^{\mathrm{prim}}_{\mathrm{glob}}\) &
+All-simplex primitive-coherence complex
+\(\mathcal C^\bullet_{\mathrm{prim,glob}}\) over the transition
+category \(\mathsf I_{\mathrm{glob}}\). &
+Blocks simultaneous compatibility of the Swiss-cheese, descent,
+locality, RG/window/weight, Darboux, and cotangent primitives under
+arity truncations, cover refinements, coordinate overlaps, intervals,
+and finite-window transitions. \\
+\(\operatorname{Ob}^{\mathrm{global},5}\) &
+Five morphism-stage global entries:
+chiral \(E_2\), descent, QME, anomaly, locality. &
+This is only the morphism-stage subvector of
+\(\operatorname{Ob}^{\mathrm{typed}}\); its vanishing is not the full
+mixed-HT Deligne proof datum and is not proved by the formal-Darboux
+trace-sector theorem. \\
+\(\operatorname{Ob}_{\operatorname{Cone}}\) &
+\(\operatorname{Cone}(\mathrm{OCA}_N)\). &
+Blocks quasi-isomorphism of the supplied open--closed map until a
+contracting homotopy is supplied. \\
+\(\operatorname{Ob}_{\mathrm{comparison}}(\mathfrak C_{\mathrm{tar}})\) &
+Matched-conventions compact or automorphic comparison complex. &
+Separates curve, compact Calabi--Yau, Igusa/Borcherds, Hall, and
+operator-lift data from the local theorem. \\
+\end{tabular}
+\end{center}
+
+\subsection{Referee Checklist}
+
+\begin{enumerate}
+\item The native algebraic structure is the holomorphic \(E_2\) factorization algebra on
+  \(\C^2\), not a curve vertex algebra; see
+  Definition~\ref{def:closed-mixed-HT-factorization} and
+  Theorem~\ref{thm:mixed-HT-factorization-theorem}.
+\item The Dirac brane stack is the derived commuting stack with the
+  \(GL_N\)-quotient built into the Chevalley--Eilenberg cochains; see
+  Proposition~\ref{prop:open-zero-fibre-traces}.
+\item The trace-sector passage removes the empty trace and records
+  connected primitive classes before stable reduction; see
+  Definition~\ref{def:stable-trace-sector-passage} and
+  Proposition~\ref{prop:stable-trace-sector-type}.
+\item The CE/PV dictionary is a Koszul-resolution statement in the
+  completed scalar-reduced sector, with signs fixed by
+  Appendix~\ref{app:sign-conventions}.
+\item The bar construction is not identified with the bulk centre; the
+  acting bulk is the derived chiral centre or Hochschild cochain object,
+  as in Appendix Theorem~\ref{app:thm:stalk-of-conj}.
+\item Hochschild cohomology, Hochschild homology, cyclic homology, and
+  negative-cyclic trace data are not interchanged.
+\item The Capelli scalar is a finite-\(N\) projective anomaly; a
+  determinant-line curvature statement is the supplied lift datum on
+  the vanishing locus \(\operatorname{Ob}^{\det}_J=0\), not a compact
+  \(K3\times E\) theorem.
+\item The global mixed-HT Deligne statement is the ten-row typed
+  equivalence datum \(\mathfrak D^{\mathrm{HT}}_N\); the local
+  formal-Darboux theorem supplies only the trace-sector fibre.
+\item Compact Calabi--Yau, Igusa/Borcherds, MNOP, and BPS claims enter
+  only through matched-conventions comparison maps.
+\item Equation labels in the theorem surface are attached to formulas
+  cited later; unreferenced displayed formulas are kept unnumbered.
+\end{enumerate}

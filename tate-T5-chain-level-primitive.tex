@@ -1,17 +1,23 @@
-\subsection{\texorpdfstring{Primitive indecomposable \(P_0\)-shadow: the Koszul resolution at \(F_1/F_0\)}{Primitive indecomposable P0-shadow: the Koszul resolution at F1/F0}}
+\subsection{\texorpdfstring{Primitive \(P_0\) associated-graded projection: the Koszul resolution at \(F_1/F_0\)}{Primitive P0 associated-graded projection: the Koszul resolution at F1/F0}}
 \label{ssec:chain-level-primitive}
 
-The chain-level primitive \(P_0\)-shadow is the cocycle representing
-the trace summand of the map from the bulk stalk
-\(\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}|_b\) to the brane-side
-derived \(E_1\)-Hochschild complex
-\(HH^\bullet(A^{\mathrm{cl}}_{\partial,N},A^{\mathrm{cl}}_{\partial,N})\)
-in Theorem~\ref{thm:main-local}, at the graded piece \(F_1/F_0\) of the
-trace-count filtration on the open observables.  The two-dimensional
-holomorphic singular product on this stalk is the diagonal OPE of
-Theorem~\ref{thm:formal-two-dimensional-holomorphic-ope}; this file
-constructs the primitive open-side shadow of the same stalk as a
-chain-level representative in the primitive trace filtration.
+The chain-level map \(\pi_{\mathrm{prim}}\) constructed here is the
+associated-graded primitive projection in the trace-count filtration.
+It records the cocycle representing the trace summand of the generator
+boundary value from the bulk stalk
+\(\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}|_b\) to brane-side
+Hochschild cochains in Theorem~\ref{thm:main-local}, on the graded
+piece \(F_1/F_0\) of the open observables.  This associated-graded
+projection is not the brane-side centre; its image in the full
+brane-side derived \(E_1\)-Hochschild object requires the admissible
+centre-lift datum.
+The two-dimensional
+holomorphic singular product on this stalk is the diagonal
+local-cohomology singular product of
+Theorem~\ref{thm:formal-two-dimensional-holomorphic-singular-product}; this file
+constructs an associated-graded primitive trace representative of the
+same stalk as a chain-level representative in the primitive trace
+filtration.
 
 Item~(3) of
 Problem~\ref{prob:formal-factorization-center} is the chain-level
@@ -27,7 +33,8 @@ projection
 that exists strictly at the algebraic chain level and realizes the
 Koszul-resolution cocycle representing
 \(\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}|_b\) at \(F_1/F_0\).  Its
-binary operation is read through the \(K^{(2)}_\Delta\)-OPE before the
+binary operation is read through the \(K^{(2)}_\Delta\) singular
+product before the
 brane-line contraction to interval currents.
 
 The chain-level primitive component
@@ -35,11 +42,11 @@ The chain-level primitive component
 obstruction vector
 \(\operatorname{Ob}_T\) of
 Definition~\ref{defn:tate-cotangent-lift-obstruction-vector} is the
-class of the residual cotangent label shadow as a centrality-homotopy
+class of the residual cotangent label projection as a centrality-homotopy
 obstruction in the cotangent target
 \(\widehat{\mathbf S}(\mc M^{\mathrm{pp,unred}}_\partial(I))\),
 together with a one-antifield boundary realization datum.  The
-construction below kills the indecomposable-shadow part of
+construction below kills the indecomposable associated-graded part of
 \(\mathfrak o_{\mathrm{prim}}\) on the graded piece \(F_1/F_0\); the residue is
 the secondary Koszul obstruction, the pair
 \((\operatorname{ob}_{\mathrm{cent}}^{\mathrm{prod}},
@@ -137,11 +144,11 @@ component of \(\mathfrak o_{\mathrm{BV,end}}\) gives
 \(\delta_{\check C/R}^{\mathrm{Weiss}}\) is the local stratification
 of the descent component of \(\mathfrak o_{\mathrm{cv}}\) of
 Remark~\ref{rmk:weiss-ran-descent-obstruction}, whose local form is
-forced by the Weiss-cosheaf condition on the unreduced factorization
+imposed by the Weiss-cosheaf condition on the unreduced factorization
 centre even when the cross-target part of \(\mathfrak o_{\mathrm{cv}}\)
 vanishes.
 
-In this filtration the chain-level primitive shadow is the
+In this filtration the chain-level primitive projection is the
 \emph{associated graded} of the unreduced lift problem on its
 zero-\(\psi\) Hamiltonian and one-\(\psi\) descendant generator
 subspaces.  Strict \(Q\)-, factorization-, and \(P_0\)-bracket
@@ -149,16 +156,21 @@ compatibilities are separate lift obstructions until a filtered
 obstruction complex and its spectral sequence are constructed.
 
 Theorem~\ref{thm:chain-level-primitive-projection} extracts the
-algebraic primitive/indecomposable projection on the free symmetric
+algebraic primitive/indecomposable projection on the symmetric Hopf
 algebra
 \(\mathbf S(\mathrm{Cyc}(F)_{\mathrm{nonempty}})\), with
 \(F=\C\langle x_1,x_2\rangle\) the free associative algebra on the two
 Chan--Paton matrix generators and
 \(\mathrm{Cyc}(F)_{\mathrm{nonempty}}=F/[F,F]\setminus\C\cdot 1\) its
-space of nontrivial cyclic-word generators, composed with the
+space of nontrivial cyclic-word generators.  The coproduct is induced by
+block diagonal sum, equivalently
+\(\Delta_\oplus(v)=v\otimes 1+1\otimes v\) on each cyclic-word
+generator \(v\); the primitive subspace is the linear cyclic-word
+summand and the indecomposable quotient is the augmentation quotient by
+products.  Composition of this projection with the
 zero-\(\psi\) Hamiltonian abelianization
-\(\mathrm{Cyc}(F)_{\mathrm{nonempty}}\twoheadrightarrow\bar A\); the
-result is a strict \(Q\)-chain map, factorization-compatible after
+\(\mathrm{Cyc}(F)_{\mathrm{nonempty}}\twoheadrightarrow\bar A\) gives the
+resulting strict \(Q\)-chain map, factorization-compatible after
 unit retention, and \(P_0\)-bracket-compatible with explicit zero
 homotopy.
 
@@ -171,7 +183,7 @@ theory \(\mc R_\infty^{GL_\infty,\mathrm{st}}\cong
 (Proposition~\ref{prop:stable-trace-invariants}). Analytic propagators
 and Tate-completion convergence enter the remaining obstruction groups.
 
-Beyond the indecomposable shadow, the quantum descendant label
+Beyond the indecomposable quotient, the quantum descendant label
 obstruction Proposition~\ref{prop:quantum-descendant-label-obstruction}
 shows the Moyal coadjoint obstruction to intertwining the classical
 primitive map with the principal-part target.  The exact same-action
@@ -184,33 +196,35 @@ changing polarization with the module action fixed.
 
 \begin{constr}[Trace-count filtration on the open observables]\label{constr:trace-count-filtration}
   Let $\mc R_N$ be as in Construction~\ref{constr:reduced-bv-algebra}.
-  In the stable connected limit $N\to\infty$,
+  After the degreewise stable-rank trace passage,
   Proposition~\ref{prop:stable-trace-invariants} identifies
   $$\mc R_\infty^{GL_\infty,\mathrm{st}}
     \cong\mathbf S\bigl(\mathrm{Cyc}(F)_{\mathrm{nonempty}}\bigr)$$
-  with $F=\C\langle x_1,x_2\rangle$ and the cyclic words being primitive
-  generators (Lemma~\ref{lem:stable-marked-traces} extends this to the
+  with $F=\C\langle x_1,x_2\rangle$ and the cyclic words being the
+  block-sum Hopf-primitive single-trace generators
+  (Lemma~\ref{lem:stable-marked-traces} extends this to the
   super-cyclic case with one displayed odd $\psi$).  The
   \emph{trace-count filtration} on
   $\mathrm{Obs}^{\mathrm{cl}}_{\mathrm{open},N}(I)
    =\Omega^\bullet_c(I)\widehat\otimes\mc R_N^{GL_N}$
   is the symmetric-algebra filtration
-  $F_kObs$ generated by products of at most $k$ primitive trace classes
-  (cyclic words):
+  $F_kObs$ generated by products of at most $k$ block-sum primitive
+  single-trace generators (cyclic words):
   $$F_0\subset F_1\subset F_2\subset\cdots
     \subset\mathrm{Obs}^{\mathrm{cl}}_{\mathrm{open},N}(I).$$
   $F_0$ is the algebra of compactly supported de Rham forms on $I$ with
   scalar coefficients (the empty-trace stratum);
-  $F_1\!\big/F_0$ is the \emph{primitive} or \emph{single-trace}
-  component, isomorphic as a graded vector space to
+  $F_1\!\big/F_0$ is the Hopf-primitive single-trace, equivalently
+  indecomposable, component, isomorphic as a graded vector space to
   $\Omega^\bullet_c(I)\widehat\otimes\mathrm{Cyc}(F)_{\mathrm{nonempty}}$
-  in the stable limit.
+  in the algebraic stable-rank trace sector.
 \end{constr}
 
 \begin{lem}[Trace-count filtration is preserved by $Q$ and by the open
 $P_0$ bracket]\label{lem:filtration-preservation}
-  In the stable connected limit, the BV differential $Q$ and the open
-  $P_0$ bracket $\{-,-\}_{\mathrm{open}}$ both preserve the
+  In the algebraic stable-rank connected trace sector, the BV
+  differential $Q$ and the open $P_0$ bracket
+  $\{-,-\}_{\mathrm{open}}$ both preserve the
   trace-count filtration of
   Construction~\ref{constr:trace-count-filtration}.
 \end{lem}
@@ -234,18 +248,24 @@ $P_0$ bracket]\label{lem:filtration-preservation}
   $F_{k_1+k_2-1}\subset F_{k_1+k_2}$.
 \end{proof}
 
-\begin{constr}[Primitive indecomposable \(P_0\)-shadow]\label{constr:chain-level-primitive-projection}
-  In the stable connected limit, the symmetric-algebra structure
+\begin{constr}[Primitive indecomposable \(P_0\)-projection]\label{constr:chain-level-primitive-projection}
+  In the algebraic stable-rank connected trace sector, the
+  symmetric-algebra structure
   $\mc R_\infty^{GL_\infty,\mathrm{st}}\cong
-  \mathbf S(\mathrm{Cyc}(F)_{\mathrm{nonempty}})$ has the natural
-  projection onto the linear span of generators (the Hopf-algebraic
-  primitive/indecomposable part). Tensored with the identity on
+  \mathbf S(\mathrm{Cyc}(F)_{\mathrm{nonempty}})$ has the symmetric
+  Hopf coproduct
+  \(\Delta_\oplus(v)=v\otimes1+1\otimes v\) on each cyclic-word
+  generator \(v\), induced by block diagonal sum of matrices.  The
+  natural projection onto the linear span of generators is equivalently
+  projection to the Hopf-primitive subspace and to the indecomposable
+  quotient \(I/I^2\) of the augmentation ideal \(I\).  Tensored with the
+  identity on
   $\Omega^\bullet_c(I)$, this gives
   $$\pi_{\mathrm{prim}}:
     \Omega^\bullet_c(I)\widehat\otimes\mathbf S(\mathrm{Cyc}(F)_{\mathrm{nonempty}})
     \twoheadrightarrow
     \Omega^\bullet_c(I)\widehat\otimes\mathrm{Cyc}(F)_{\mathrm{nonempty}}.$$
-  Composing this shadow map with the identification
+  Composing this projection with the identification
   $\mathrm{Cyc}(F)_{\mathrm{nonempty}}\twoheadrightarrow\bar A$ on the
   Hamiltonian-trace subspace
   (the abelianization of cyclic words: the trace of a cyclic word in
@@ -258,13 +278,13 @@ $P_0$ bracket]\label{lem:filtration-preservation}
     \mathrm{Obs}^{\mathrm{cl}}_{\mathrm{open},N}(I)
     \twoheadrightarrow
     \Omega^\bullet_c(I)\widehat\otimes\bar A.$$
-  $\pi_{\mathrm{prim}}$ is the zero-\(\psi\) Hamiltonian shadow:
-  primitive traces containing at least one displayed $\psi$ are killed
-  here and are treated separately by the one-\(\psi\) label shadow of
-  Construction~\ref{constr:chain-level-primitive-cotangent}.
+  $\pi_{\mathrm{prim}}$ is the zero-\(\psi\) Hamiltonian projection:
+  primitive single-trace generators containing at least one displayed
+  $\psi$ are killed here and are treated separately by the one-\(\psi\)
+  label projection of Construction~\ref{constr:chain-level-primitive-cotangent}.
 
   For factorization products one must retain the empty-trace stratum until
-  the final linear projection.  Define the unit-retaining shadow
+  the final linear projection.  Define the unit-retaining projection
   $$\pi_{\leq1}^{\mathrm{Ham}}:
     \mathrm{Obs}^{\mathrm{cl}}_{\mathrm{open},N}(I)
     \longrightarrow
@@ -279,22 +299,23 @@ $P_0$ bracket]\label{lem:filtration-preservation}
   word-degree $d$ and $N\geq d$,
   Proposition~\ref{prop:stable-trace-invariants} identifies the
   degree-$d$ trace invariants with the stable cyclic-word span, and
-  the above shadow map is applied on that stable range.  Outside the
+  the above projection is applied on that stable range.  Outside the
   stable range the finite-$N$ trace identities remain part of the
   finite-\(N\) algebra; the statement is made after passing to the
-  stable connected limit.
+  algebraic stable-rank connected trace sector.
 \end{constr}
 
-\begin{lem}[Kernel of the Hamiltonian primitive shadow]\label{lem:primitive-shadow-kernel}
+\begin{lem}[Kernel of the Hamiltonian primitive projection]\label{lem:primitive-shadow-kernel}
   On the zero-\(\psi\) Hamiltonian subalgebra the kernel of
   $\pi_{\mathrm{prim}}$ is the closed ideal $F_{\geq 2}$ generated by
-  products of at least two primitive trace classes, together with the
+  products of at least two block-sum primitive single-trace generators,
+  together with the
   empty-trace stratum \(F_0\), and the primitive abelianization kernel
   \[
     \ker\!\left(\mathrm{Cyc}(F)_{\mathrm{nonempty}}\to\bar A\right)
     \subset F_1/F_0 .
   \]
-  On the full reduced BV algebra before the cotangent label shadow is
+  On the full reduced BV algebra before the cotangent label projection is
   added, the kernel also contains the positive \(\psi\)-primitive
   summands.  Equivalently, the unit-retaining map
   \(\pi_{\leq1}^{\mathrm{Ham}}\) has kernel \(F_{\ge2}\), the primitive
@@ -303,11 +324,17 @@ $P_0$ bracket]\label{lem:filtration-preservation}
 \end{lem}
 
 \begin{proof}
-  By construction $\pi_{\mathrm{prim}}$ is the projection onto
-  zero-\(\psi\) Hamiltonian generators of the symmetric algebra, which is
-  the standard projection to primitive indecomposable generators followed
-  by the abelianization
-  \(\mathrm{Cyc}(F)_{\mathrm{nonempty}}\to\bar A\).  The primitive
+	  By construction $\pi_{\mathrm{prim}}$ is the projection onto
+	  zero-\(\psi\) Hamiltonian generators of the symmetric algebra, which is
+	  the quotient
+	  \[
+	    \mathbf S^{\ge1}
+	    \twoheadrightarrow
+	    \mathbf S^{\ge1}/\mathbf S^{\ge2}
+	    \cong \mathrm{Cyc}(F)_{\mathrm{nonempty}}
+	  \]
+	  followed by the abelianization
+	  \(\mathrm{Cyc}(F)_{\mathrm{nonempty}}\to\bar A\).  The primitive
   projection kills the augmentation ideal squared
   \((\mathbf S^{\geq1})^2=\mathbf S^{\geq2}\).  The abelianization then
   kills primitive reordering differences, for instance the class of
@@ -321,7 +348,7 @@ $P_0$ bracket]\label{lem:filtration-preservation}
   cyclic-word generators.
 \end{proof}
 
-\begin{thm}[Primitive indecomposable \(P_0\)-shadow is a Q-chain map]\label{thm:chain-level-primitive-projection-Q}
+\begin{thm}[Primitive indecomposable \(P_0\)-projection is a Q-chain map]\label{thm:chain-level-primitive-projection-Q}
   With total differential
   \(Q_{\mathrm{tot}}=d_{\mathrm{dR}}+Q_{\mathrm{BV}}\) on the source and
   the de Rham differential on
@@ -361,8 +388,9 @@ $P_0$ bracket]\label{lem:filtration-preservation}
   \emph{indecomposable} or \emph{linear primitive} part of the brane
   $P_0$ factorization algebra
   $A_\partial^{\mathrm{Ham}}(I)=\widehat{\mathbf S}(\mathfrak h_I)$
-  of Construction~\ref{constr:interval-fact-algebras}: it is the
-  generating Lie subspace
+  of Construction~\ref{constr:interval-fact-algebras}, for the
+  symmetric Hopf coproduct induced by block diagonal sum: it is
+  the generating Lie subspace
   $\mathfrak h_I=\Omega^\bullet_c(I)\widehat\otimes\bar A$.  Equivalently,
   it is the quotient
   $\widehat{\mathbf S}(\mathfrak h_I)/\widehat{\mathbf S}^{\geq 2}(\mathfrak h_I)
@@ -374,7 +402,7 @@ $P_0$ bracket]\label{lem:filtration-preservation}
   the zero space at the indecomposable level.
 \end{rmk}
 
-\begin{thm}[Linearized factorization compatibility of the indecomposable shadow]\label{thm:chain-level-primitive-projection-factorization}
+\begin{thm}[Linearized factorization compatibility of the indecomposable projection]\label{thm:chain-level-primitive-projection-factorization}
   For disjoint intervals \(I_1\sqcup I_2\subset V\) in \(\R\), let
   \[
     \lambda_{V;I_1,I_2}:
@@ -395,7 +423,7 @@ $P_0$ bracket]\label{lem:filtration-preservation}
       \bigl(\pi_{\leq1}^{\mathrm{Ham}}\otimes
             \pi_{\leq1}^{\mathrm{Ham}}\bigr).
   \]
-  Thus the indecomposable shadow is compatible with the factorization
+  Thus the indecomposable projection is compatible with the factorization
   product through the unit-retaining linear projection; it is a
   linearized factorization map to \(\bar A\).
 \end{thm}
@@ -416,13 +444,13 @@ $P_0$ bracket]\label{lem:filtration-preservation}
   first applying \(\pi_{\leq1}^{\mathrm{Ham}}\) on both factors and then
   applying \(\lambda_{V;I_1,I_2}\).  Positive-\(\psi\) primitive factors
   are killed on both sides of this zero-\(\psi\) Hamiltonian statement;
-  their separate label shadow is treated below.  Hence the displayed
+  their separate label projection is treated below.  Hence the displayed
   identity holds strictly.
 \end{proof}
 
 \begin{thm}[\(P_0\) bracket compatibility, with explicit homotopy]\label{thm:chain-level-primitive-projection-P0}
-  For $F,G\in\mathrm{Obs}^{\mathrm{cl}}_{\mathrm{open},N}(I)$ in the
-  stable connected limit,
+  For $F,G\in\mathrm{Obs}^{\mathrm{cl}}_{\mathrm{open},N}(I)$ after
+  algebraic stable-rank trace passage,
   $$\pi_{\mathrm{prim}}\bigl(\{F,G\}_{\mathrm{open}}\bigr)
     -\bigl\{\pi_{\mathrm{prim}}F,\pi_{\mathrm{prim}}G\bigr\}_{\bar A}
     =(Q\circ h_{P_0}+h_{P_0}\circ Q)(F\otimes G),$$
@@ -878,7 +906,7 @@ $P_0$ bracket]\label{lem:filtration-preservation}
     \langle\rho_{a,b},z_1^m z_2^n\rangle
       =\delta_{a,m}\delta_{b,n},
   \]
-  the only flat \(D_\hbar\)-bridge constructed from the polynomial
+  the only flat \(D_{\hbar_{\mathrm{Rees}}}\)-bridge constructed from the polynomial
   descendant labels is the Fourier-twisted Rees bridge of
   Theorem~\ref{thm:T5-fourier-rees-positive-construction}.  If the original
   Hamiltonian action of \(z_1,z_2\) is required to be preserved, the exact
@@ -899,18 +927,19 @@ $P_0$ bracket]\label{lem:filtration-preservation}
   The Matlis pairing fixes the dual coefficient normalization up to the
   single scalar allowed by residue-pairing rigidity; the displayed formula
   chooses that scalar.  With this normalization, the positive flat Rees
-  construction is exactly the Fourier-twisted cyclic \(D_\hbar\)-module
-  \(\mathcal D_\hbar/(z_1,z_2)\) embedded into the principal-part \v{C}ech
+  construction is exactly the Fourier-twisted cyclic
+  \(D_{\hbar_{\mathrm{Rees}}}\)-module
+  \(\mathcal D_{\hbar_{\mathrm{Rees}}}/(z_1,z_2)\) embedded into the principal-part \v{C}ech
   lattice with the explicit factor
-  \((-1)^{a+b}\hbar^{a+b}a!b!\).  If one removes the Fourier twist and asks
+  \((-1)^{a+b}\hbar_{\mathrm{Rees}}^{a+b}a!b!\).  If one removes the Fourier twist and asks
   for the same Hamiltonian action, local nilpotence of the linear
   Hamiltonians is preserved by flat generic-fibre isomorphism but differs
   on the two sides.  This is precisely the obstruction theorem cited in
   the statement.
 \end{proof}
 
-\begin{constr}[Primitive one-\(\psi\) label shadow]\label{constr:chain-level-primitive-cotangent}
-  Extend $\pi_{\mathrm{prim}}$ to the one-$\psi$ primitive shadow by
+\begin{constr}[Primitive one-\(\psi\) label projection]\label{constr:chain-level-primitive-cotangent}
+  Extend $\pi_{\mathrm{prim}}$ to the one-$\psi$ primitive label projection by
   recording the labels of the symmetrised traces $\Psi_{a,b}$ of
   Construction~\ref{constr:boundary-evaluation}, with target the
   reduced principal-part label space \(\mc P\), the
@@ -919,7 +948,7 @@ $P_0$ bracket]\label{lem:filtration-preservation}
   Matlis dual of \(\bar A\) at the origin
   (Theorem~\ref{thm:principal-part-coadjoint-uniqueness}), shifted by
   \([1]\) for the odd \(\psi\)-degree.  The domain here is the
-  enlarged principal-part shadow object
+  enlarged principal-part target
   \(\widetilde{\mathrm{Obs}}^{\mathrm{cl,pp}}_{\partial,N}(I)\): the
   Hamiltonian primitive sector is smeared by \(\Omega^\bullet_c(I)\), and
   the principal-part label sector is smeared by
@@ -965,25 +994,25 @@ $P_0$ bracket]\label{lem:filtration-preservation}
       $\pi_{\mathrm{prim}}^{\mathrm{cot}}\equiv 0$ (projection away from
       the multi-trace stratum).
   \end{itemize}
-	  This is a shadow map to the reduced principal-part label target. The
+	  This is a label map to the reduced principal-part target. The
 	  polynomial-realization obstruction theorem
 	  \ref{thm:polynomial-realization-categorical-obstruction}
 	  says precisely that the open polynomial one-$\psi$ descendants and
 	  the principal-part currents carry distinct
 	  $\mathfrak h$-module structures. The map above is therefore an
-	  indecomposable shadow map after imposing the reduced current target
+	  indecomposable label projection after imposing the reduced current target
 	  $\mc P[1]$; the unreduced boundary-observable realization of
 	  $\mc P$ inside the polynomial BV/Koszul algebra is governed by an
 	  unreduced target.
 \end{constr}
 
-\begin{thm}[Primitive indecomposable \(P_0\)-shadow and one-\(\psi\) label shadow]\label{thm:chain-level-primitive-projection}
-  On every interval \(I\), in the stable connected limit, the
-  Hamiltonian zero-\(\psi\) primitive
-  indecomposable \(P_0\)-shadow
+\begin{thm}[Primitive indecomposable \(P_0\)-projection and one-\(\psi\) label projection]\label{thm:chain-level-primitive-projection}
+  On every interval \(I\), in the algebraic stable-rank connected trace
+  sector, the Hamiltonian zero-\(\psi\) primitive
+  indecomposable \(P_0\)-projection
   $\pi_{\mathrm{prim}}$ of
   Construction~\ref{constr:chain-level-primitive-projection} and the
-  one-$\psi$ shadow $\pi_{\mathrm{prim}}^{\mathrm{cot}}$ of
+  one-$\psi$ label projection $\pi_{\mathrm{prim}}^{\mathrm{cot}}$ of
   Construction~\ref{constr:chain-level-primitive-cotangent} give a
   surjection to the generator space, equivalently the indecomposable
   quotient, of the boundary factorization algebra
@@ -1005,7 +1034,7 @@ $P_0$ bracket]\label{lem:filtration-preservation}
       The zero-\(\psi\) Hamiltonian-current compatibility is
       the unit-retaining linearized statement of
       Theorem~\ref{thm:chain-level-primitive-projection-factorization}.
-      The one-\(\psi\) label shadow satisfies the analogous
+      The one-\(\psi\) label projection satisfies the analogous
       unit-retaining linearized statement: scalar--one-\(\psi\) and
       one-\(\psi\)--scalar products extend the one-\(\psi\) label by zero
       to the larger interval, while products with two positive primitive
@@ -1014,7 +1043,7 @@ $P_0$ bracket]\label{lem:filtration-preservation}
 		      square commutes strictly modulo a zero homotopy on the
 		      Hamiltonian zero-$\psi$ indecomposable quotient
 		      (Theorem~\ref{thm:chain-level-primitive-projection-P0}). On the
-			      one-$\psi$ shadow the map records labels only; the
+			      one-$\psi$ label summand the map records labels only; the
 		      intertwining of the open polynomial descendant PBW action
 		      with the principal-part coadjoint action has the obstruction
 		      of Proposition~\ref{prop:quantum-descendant-label-obstruction}. The reduced
@@ -1028,14 +1057,14 @@ $P_0$ bracket]\label{lem:filtration-preservation}
 	      principal-part cotangent summand it is extension by zero in
 	      \(\mathcal D'_c\).
   \end{enumerate}
-	  The target is the nonunital indecomposable quotient: multiplication
-	  of two positive primitive generators is zero after projection,
+		  The target is the nonunital indecomposable quotient: multiplication
+		  of two positive indecomposable generators is zero after projection,
 	  while the Lie/$P_0$ bracket remains the Hamiltonian bracket.  Thus
 	  the statement is a chain map to the nonunital indecomposable
 	  \(P_0\)-quotient of $\bar A$.
 
 	  Equivalently, $\pi_{\mathrm{prim}}^{\mathrm{cot}}$ is the chain-level
-	  realization of the unreduced-to-reduced primitive shadow required by
+	  realization of the unreduced-to-reduced primitive associated-graded projection required by
 	  Problem~\ref{prob:formal-factorization-center}, item~(3). The
 	  unreduced cotangent factorization-center lift remains the higher
 	  problem.
@@ -1047,7 +1076,7 @@ $P_0$ bracket]\label{lem:filtration-preservation}
   \ref{thm:chain-level-primitive-projection-factorization},
   \ref{thm:chain-level-primitive-projection-P0} above.
 
-  One-$\psi$ shadow.  The functional on one-\(\psi\) words used in
+  One-$\psi$ label projection.  The functional on one-\(\psi\) words used in
   Construction~\ref{constr:chain-level-primitive-cotangent} sends every
   word of bidegree \((a,b)\) to the same scalar
   \(\binom{a+b}{a}^{-1}\rho_{a,b}\).  It kills the two-\(\psi\) boundary
@@ -1077,7 +1106,7 @@ $P_0$ bracket]\label{lem:filtration-preservation}
   killed in the indecomposable quotient.  Thus the unit-retaining
   exactly-one-positive projection agrees on the two routes.  The
 		  $P_0$-bracket compatibility asserted here is the zero-$\psi$
-		  Hamiltonian statement already proved above. The one-$\psi$ shadow
+		  Hamiltonian statement already proved above. The one-$\psi$ label projection
 		  records labels; compatibility between the open descendant PBW
 		  action and the principal-part coadjoint action has difference
 		  Corollary~\ref{cor:descendant-coadjoint-difference}. The
@@ -1099,19 +1128,19 @@ $P_0$ bracket]\label{lem:filtration-preservation}
 
 \begin{prop}[Quantum obstruction to the primitive one-\(\psi\) label map]
   \label{prop:quantum-descendant-label-obstruction}
-  Let \(\mathfrak h_\hbar=\bar A_\hbar\) carry the Weyl/Moyal bracket
+  Let \(\mathfrak h_{\hbar_{\mathrm{W}}}=\bar A_{\hbar_{\mathrm{W}}}\) carry the Weyl/Moyal bracket
   \[
-    \{f,g\}_\hbar
+    \{f,g\}_{\hbar_{\mathrm{W}}}
     =
     \sum_{j\geq0}
-    \frac{\hbar^{2j}}{(2j+1)!\,2^{2j}}P^{2j+1}(f,g),
+    \frac{\hbar_{\mathrm{W}}^{2j}}{(2j+1)!\,2^{2j}}P^{2j+1}(f,g),
     \qquad
     P=\partial_{z_1}\otimes\partial_{z_2}
       -\partial_{z_2}\otimes\partial_{z_1}.
   \]
 	  The chain-level one-\(\psi\) primitive label map
 	  \(\Psi_{a,b}\mapsto\rho_{a,b}\) has a nonzero compatibility
-	  obstruction for the \(\mathfrak h_\hbar\)-coadjoint action.  The
+	  obstruction for the \(\mathfrak h_{\hbar_{\mathrm{W}}}\)-coadjoint action.  The
 	  obstruction already occurs in the indecomposable target and survives
 	  projection away from decomposable multi-trace terms.
 \end{prop}
@@ -1122,8 +1151,8 @@ $P_0$ bracket]\label{lem:filtration-preservation}
   replacement \(\widetilde\Psi_{a,b}\mapsto\rho_{a,b}\), with
   the Moyal coadjoint action
   \[
-    (\operatorname{ad}^{\vee}_{f,\hbar}\delta)(g)
-    =-\delta(\{f,g\}_\hbar).
+    (\operatorname{ad}^{\vee}_{f,\hbar_{\mathrm{W}}}\delta)(g)
+    =-\delta(\{f,g\}_{\hbar_{\mathrm{W}}}).
   \]
   At the single Hamiltonian \(f=z_1^4\) and the single descendant label
   \((a,b)=(1,1)\) the two routes diverge.
@@ -1142,13 +1171,13 @@ $P_0$ bracket]\label{lem:filtration-preservation}
   \]
   Hence
   \[
-    \operatorname{ad}^{\vee}_{z_1^4,\hbar}\delta_{1,1}
-    =-24\,\hbar^2\delta_{0,4}+\cdots,
+    \operatorname{ad}^{\vee}_{z_1^4,\hbar_{\mathrm{W}}}\delta_{1,1}
+    =-24\,\hbar_{\mathrm{W}}^2\delta_{0,4}+\cdots,
   \]
   equivalently
-  \(z_1^4\cdot_\hbar\rho_{1,1}=-24\,\hbar^2\rho_{0,4}+\cdots\) in the
+  \(z_1^4\cdot_{\hbar_{\mathrm{W}}}\rho_{1,1}=-24\,\hbar_{\mathrm{W}}^2\rho_{0,4}+\cdots\) in the
   principal-part realization.  The two answers have different
-  \(\hbar\)-order and different primitive label.  Since both sides have
+  \(\hbar_{\mathrm{W}}\)-order and different primitive label.  Since both sides have
   already been projected to the linear indecomposable summand, adding
   decomposable multi-trace terms have zero image under
   \(\pi_{\mathrm{prim}}^{\mathrm{cot}}\) and leave this square unchanged.
@@ -1159,9 +1188,9 @@ $P_0$ bracket]\label{lem:filtration-preservation}
   map, and \(958\) cases have genuine higher Moyal coadjoint terms.  The
   same finite computation also checks the corrected principal-part target below in
   \(3375\) finite representation identities with exponents \(\leq3\),
-  Moyal order \(\leq5\), and \(\hbar\)-power \(\leq4\), and checks the
-	  linear-generator leading-term obstruction to every \(\hbar\)-adic
-	  deformation of the classical label shadow in \(70\) tests with
+  Moyal order \(\leq5\), and \(\hbar_{\mathrm{W}}\)-power \(\leq4\), and checks the
+	  linear-generator leading-term obstruction to every \(\hbar_{\mathrm{W}}\)-adic
+	  deformation of the classical label projection in \(70\) tests with
   labels \(\leq5\).
 \end{proof}
 
@@ -1171,31 +1200,31 @@ $P_0$ bracket]\label{lem:filtration-preservation}
   target, with the polynomial one-\(\psi\) representatives fixed.
   For an interval \(I\subset\R\) put
   \[
-    \mathfrak h_{\hbar,I}
-      =\Omega^\bullet_c(I)\widehat\otimes\bar A_\hbar,\qquad
-    \mathcal P_{\hbar,I}
-      =\mathcal D'_c(I)\widehat\otimes\mc P[[\hbar]].
+    \mathfrak h_{\hbar_{\mathrm{W}},I}
+      =\Omega^\bullet_c(I)\widehat\otimes\bar A_{\hbar_{\mathrm{W}}},\qquad
+    \mathcal P_{\hbar_{\mathrm{W}},I}
+      =\mathcal D'_c(I)\widehat\otimes\mc P[[\hbar_{\mathrm{W}}]].
   \]
   Define the reduced quantum principal-part descendant complex
   \[
-    A^{\mathrm{pp}}_{\partial,\hbar}(I)
+    A^{\mathrm{pp}}_{\partial,\hbar_{\mathrm{W}}}(I)
     =
-    \widehat{\mathbf S}_{\C[[\hbar]]}(\mathfrak h_{\hbar,I})
+    \widehat{\mathbf S}_{\C[[\hbar_{\mathrm{W}}]]}(\mathfrak h_{\hbar_{\mathrm{W}},I})
     \widehat\otimes
-    \widehat{\mathbf S}_{\C[[\hbar]]}(\mathcal P_{\hbar,I}[1]).
+    \widehat{\mathbf S}_{\C[[\hbar_{\mathrm{W}}]]}(\mathcal P_{\hbar_{\mathrm{W}},I}[1]).
   \]
   The differential is the de Rham/current differential on the interval
-  factors and zero on the coefficient modules \(\bar A_\hbar\) and
-  \(\mc P[[\hbar]]\).  The bracket is the Moyal semidirect bracket
+  factors and zero on the coefficient modules \(\bar A_{\hbar_{\mathrm{W}}}\) and
+  \(\mc P[[\hbar_{\mathrm{W}}]]\).  The bracket is the Moyal semidirect bracket
   \[
-    \{B_f(a),B_g(b)\}_\hbar
-      =B_{\{f,g\}_\hbar}(ab),\qquad
-    \{B_f(a),\Theta_\rho(B)\}_\hbar
-      =\Theta_{\operatorname{ad}^{\vee}_{f,\hbar}\rho}(aB),
+    \{B_f(a),B_g(b)\}_{\hbar_{\mathrm{W}}}
+      =B_{\{f,g\}_{\hbar_{\mathrm{W}}}}(ab),\qquad
+    \{B_f(a),\Theta_\rho(B)\}_{\hbar_{\mathrm{W}}}
+      =\Theta_{\operatorname{ad}^{\vee}_{f,\hbar_{\mathrm{W}}}\rho}(aB),
   \]
   with
   \[
-    \{\Theta_\rho(B),\Theta_\sigma(C)\}_\hbar=0.
+    \{\Theta_\rho(B),\Theta_\sigma(C)\}_{\hbar_{\mathrm{W}}}=0.
   \]
   Here \(a,b\in\Omega^0_c(I)\), \(B,C\in\mathcal D'_c(I)\), and
   \(aB\) denotes multiplication of a compactly supported distribution by
@@ -1209,10 +1238,10 @@ $P_0$ bracket]\label{lem:filtration-preservation}
   \]
   Then
   \[
-    z_1^pz_2^q\cdot_\hbar\rho_{a,b}
+    z_1^pz_2^q\cdot_{\hbar_{\mathrm{W}}}\rho_{a,b}
     =
     -\sum_{\substack{r\geq1\\ r\ \mathrm{odd}}}
-      \frac{\hbar^{r-1}}{2^{r-1}r!}\,
+      \frac{\hbar_{\mathrm{W}}^{r-1}}{2^{r-1}r!}\,
       C_r(p,q;a-p+r,b-q+r)\,
       \rho_{a-p+r,b-q+r},
   \]
@@ -1228,45 +1257,45 @@ $P_0$ bracket]\label{lem:filtration-preservation}
 	  \(\Psi_{a,b}\) remain on the source side.
 \end{constr}
 
-\begin{thm}[\(\hbar\)-adic obstruction for the one-\(\psi\) label shadow]
+\begin{thm}[\(\hbar_{\mathrm{W}}\)-adic obstruction for the one-\(\psi\) label projection]
   \label{thm:one-psi-label-hbar-obstruction}
-  Let \(M_{\Psi,\hbar}\) be a \(\C[[\hbar]]\)-flat complex generated
-  over \(\C[[\hbar]]\) by lifts of the primitive polynomial
+  Let \(M_{\Psi,\hbar_{\mathrm{W}}}\) be a \(\C[[\hbar_{\mathrm{W}}]]\)-flat complex generated
+  over \(\C[[\hbar_{\mathrm{W}}]]\) by lifts of the primitive polynomial
   one-\(\psi\) classes \(\widetilde\Psi_{a,b}\), \(a+b>0\).  Assume:
   \begin{enumerate}
     \item the source action of the linear Hamiltonians reduces modulo
-      \(\hbar\) to the PBW descendant action
+	      \(\hbar_{\mathrm{W}}\) to the PBW descendant action
       \[
         z_1\cdot_0\widetilde\Psi_{a,b}
           =b\,\widetilde\Psi_{a,b-1},\qquad
         z_2\cdot_0\widetilde\Psi_{a,b}
           =-a\,\widetilde\Psi_{a-1,b};
       \]
-    \item the target coefficient module is \(\mc P[[\hbar]][1]\),
+    \item the target coefficient module is \(\mc P[[\hbar_{\mathrm{W}}]][1]\),
       equivalently any fixed interval-current summand of
-      \(\mathcal P_{\hbar,I}[1]\) from
+	      \(\mathcal P_{\hbar_{\mathrm{W}},I}[1]\) from
       Construction~\ref{constr:quantum-principal-part-descendant-target},
       with the full Moyal coadjoint action;
     \item a comparison map
-	      \(T_\hbar:M_{\Psi,\hbar}\to\mc P[[\hbar]][1]\) has the
-	      classical one-\(\psi\) label shadow as leading term:
+		      \(T_{\hbar_{\mathrm{W}}}:M_{\Psi,\hbar_{\mathrm{W}}}\to\mc P[[\hbar_{\mathrm{W}}]][1]\) has the
+	      classical one-\(\psi\) label projection as leading term:
       \[
-        T_\hbar(\widetilde\Psi_{a,b})
-          =\rho_{a,b}[1]+O(\hbar).
+	        T_{\hbar_{\mathrm{W}}}(\widetilde\Psi_{a,b})
+	          =\rho_{a,b}[1]+O(\hbar_{\mathrm{W}}).
       \]
   \end{enumerate}
-  Then the intertwining equation for \(T_\hbar\) has a nonzero
-  obstruction for the \(\mathfrak h_\hbar\)-action.  The obstruction
-  already appears after reduction modulo \(\hbar\) and for the linear
+	  Then the intertwining equation for \(T_{\hbar_{\mathrm{W}}}\) has a nonzero
+	  obstruction for the \(\mathfrak h_{\hbar_{\mathrm{W}}}\)-action.  The obstruction
+	  already appears after reduction modulo \(\hbar_{\mathrm{W}}\) and for the linear
   Hamiltonian \(z_1\).  Consequently the strict quantum descendant lift
-  of the classical primitive label shadow is obstructed under these
+  of the classical primitive label projection is obstructed under these
   assumptions.  The surviving quantum target in this statement is the
   reduced principal-part complex itself, with the polynomial
   one-\(\psi\) classes remaining on the source side.
 \end{thm}
 
 \begin{proof}
-  Reduction modulo \(\hbar\) of a hypothetical intertwiner gives, for
+	  Reduction modulo \(\hbar_{\mathrm{W}}\) of a hypothetical intertwiner gives, for
   the class \(\widetilde\Psi_{1,0}\) and PBW source action,
   \[
     z_1\cdot_0\widetilde\Psi_{1,0}=0,
@@ -1284,7 +1313,7 @@ $P_0$ bracket]\label{lem:filtration-preservation}
   \]
   The principal-part basis vector \(\rho_{1,1}\) is nonzero in
   \(\mc P\).  This contradiction is independent of all higher
-  \(\hbar\)-corrections to \(T_\hbar\), because those corrections vanish
+	  \(\hbar_{\mathrm{W}}\)-corrections to \(T_{\hbar_{\mathrm{W}}}\), because those corrections vanish
   after taking the leading term.  It is also independent of the higher
 	  Moyal terms: the linear Hamiltonian has only the \(r=1\) Moyal
 	  term.
@@ -1293,7 +1322,7 @@ $P_0$ bracket]\label{lem:filtration-preservation}
   \(z_2\cdot_0\widetilde\Psi_{0,1}=0\) on the PBW side but
   \(z_2\cdot\rho_{0,1}=\rho_{1,1}\) on the principal-part side.  Thus
 	  the same mismatch occurs for both coordinates.
-	  Since the coefficient differential on \(\mc P[[\hbar]]\) is zero,
+	  Since the coefficient differential on \(\mc P[[\hbar_{\mathrm{W}}]]\) is zero,
 	  this leading coefficient represents a nonzero homology class in the
 	  reduced target.
   A higher homotopy can remove it only after changing the target
@@ -1301,53 +1330,56 @@ $P_0$ bracket]\label{lem:filtration-preservation}
   assumptions.
 \end{proof}
 
-\begin{thm}[Universal Fourier-twisted Rees D-hbar construction]
+\begin{thm}[Universal Fourier-twisted Rees \(D_{\hbar_{\mathrm{Rees}}}\)-construction]
   \label{thm:T5-fourier-rees-positive-construction}
   Let
   \[
-    D_\hbar=
-    \C[[\hbar]]\langle z_1,z_2,\partial_1,\partial_2\rangle/
-    ([\partial_i,z_j]=\hbar\delta_{ij},\ [z_i,z_j]=[\partial_i,\partial_j]=0)
+    D_{\hbar_{\mathrm{Rees}}}=
+    \C[[\hbar_{\mathrm{Rees}}]]\langle z_1,z_2,\partial_1,\partial_2\rangle/
+    ([\partial_i,z_j]=\hbar_{\mathrm{Rees}}\delta_{ij},\ [z_i,z_j]=[\partial_i,\partial_j]=0)
   \]
   be the Rees Weyl algebra.  Let
   \[
-    \mathcal O_\hbar=D_\hbar/(\partial_1,\partial_2),\qquad
-    \Delta^{\mathsf F}_\hbar=D_\hbar/(z_1,z_2),
+    \mathcal O_{\hbar_{\mathrm{Rees}}}
+      =D_{\hbar_{\mathrm{Rees}}}/(\partial_1,\partial_2),\qquad
+    \Delta^{\mathsf F}_{\hbar_{\mathrm{Rees}}}
+      =D_{\hbar_{\mathrm{Rees}}}/(z_1,z_2),
   \]
   and let \(e_0\) be the image of \(1\) in
-  \(\Delta^{\mathsf F}_\hbar\).  The quotients are left cyclic
-  \(D_\hbar\)-modules, with left ideals generated by
+  \(\Delta^{\mathsf F}_{\hbar_{\mathrm{Rees}}}\).  The quotients are left cyclic
+  \(D_{\hbar_{\mathrm{Rees}}}\)-modules, with left ideals generated by
   \(\partial_1,\partial_2\) and by \(z_1,z_2\). PBW normal form gives
-  \(\mathcal O_\hbar\) the free \(\C[[\hbar]]\)-basis \(z_1^az_2^b\)
-  and gives \(\Delta^{\mathsf F}_\hbar\) the free basis
+  \(\mathcal O_{\hbar_{\mathrm{Rees}}}\) the free
+  \(\C[[\hbar_{\mathrm{Rees}}]]\)-basis \(z_1^az_2^b\)
+  and gives \(\Delta^{\mathsf F}_{\hbar_{\mathrm{Rees}}}\) the free basis
   \(\partial_1^a\partial_2^b e_0\), so both modules are
-  \(\C[[\hbar]]\)-flat.  The Fourier automorphism
+  \(\C[[\hbar_{\mathrm{Rees}}]]\)-flat.  The Fourier automorphism
   \[
     \mathsf F(z_i)=\partial_i,\qquad
     \mathsf F(\partial_i)=-z_i
   \]
-  identifies the Fourier twist of \(\mathcal O_\hbar\) with
-  \(\Delta^{\mathsf F}_\hbar\).  In the \v{C}ech local-cohomology lattice
+  identifies the Fourier twist of \(\mathcal O_{\hbar_{\mathrm{Rees}}}\) with
+  \(\Delta^{\mathsf F}_{\hbar_{\mathrm{Rees}}}\).  In the \v{C}ech local-cohomology lattice
   generated by
   \(\rho_{a,b}=z_1^{-a-1}z_2^{-b-1}dz_1dz_2\), the map
   \(e_0\mapsto\rho_{0,0}\) sends
   \[
     \partial_1^a\partial_2^b e_0
       \longmapsto
-      (-1)^{a+b}\hbar^{a+b}a!b!\,\rho_{a,b}.
+      (-1)^{a+b}\hbar_{\mathrm{Rees}}^{a+b}a!b!\,\rho_{a,b}.
   \]
-  This is a flat \(D_\hbar\)-module bridge in the Fourier-conjugated
-  sense: \(P\in D_\hbar\) acts on the polynomial source as \(P\), and on
+  This is a flat \(D_{\hbar_{\mathrm{Rees}}}\)-module bridge in the Fourier-conjugated
+  sense: \(P\in D_{\hbar_{\mathrm{Rees}}}\) acts on the polynomial source as \(P\), and on
   the delta target as \(\mathsf F(P)\).  After tensoring with
-	  \(\C((\hbar))\), it gives a filtered Fourier--Rees label bijection after
+	  \(\C((\hbar_{\mathrm{Rees}}))\), it gives a filtered Fourier--Rees label bijection after
 	  this polarization change between the nonconstant polynomial label span and
-	  \(\mc P((\hbar))\).  For the original Hamiltonian action it is a
-	  Fourier-conjugated \(D_\hbar\)-module bridge.  Before \(\hbar\) is inverted,
+	  \(\mc P((\hbar_{\mathrm{Rees}}))\).  For the original Hamiltonian action it is a
+	  Fourier-conjugated \(D_{\hbar_{\mathrm{Rees}}}\)-module bridge.  Before \(\hbar_{\mathrm{Rees}}\) is inverted,
   the image is
   the explicit Rees sublattice
   \[
     \bigoplus_{a,b\ge0}
-      \C[[\hbar]]\,(-1)^{a+b}\hbar^{a+b}a!b!\,\rho_{a,b}.
+      \C[[\hbar_{\mathrm{Rees}}]]\,(-1)^{a+b}\hbar_{\mathrm{Rees}}^{a+b}a!b!\,\rho_{a,b}.
   \]
 \end{thm}
 
@@ -1355,34 +1387,34 @@ $P_0$ bracket]\label{lem:filtration-preservation}
   The formulas for \(\mathsf F\) preserve the Rees Weyl relation:
   \[
     [\mathsf F(\partial_i),\mathsf F(z_j)]
-      =[-z_i,\partial_j]=\hbar\delta_{ij}.
+      =[-z_i,\partial_j]=\hbar_{\mathrm{Rees}}\delta_{ij}.
   \]
-  The polynomial module \(\mathcal O_\hbar\) is generated by \(1\)
+  The polynomial module \(\mathcal O_{\hbar_{\mathrm{Rees}}}\) is generated by \(1\)
   killed by \(\partial_1,\partial_2\).  After applying \(\mathsf F\), the
   cyclic generator is killed by \(z_1,z_2\), which is exactly the
-  defining cyclic vector of \(\Delta^{\mathsf F}_\hbar\).
+  defining cyclic vector of \(\Delta^{\mathsf F}_{\hbar_{\mathrm{Rees}}}\).
 
   In the \v{C}ech model \(\partial_i\) acts as
-  \(\hbar\partial_{z_i}\).  Hence
+  \(\hbar_{\mathrm{Rees}}\partial_{z_i}\).  Hence
   \[
   \begin{aligned}
     \partial_1^a\partial_2^b\rho_{0,0}
       &=
-      \hbar^{a+b}
+      \hbar_{\mathrm{Rees}}^{a+b}
       \partial_{z_1}^a\partial_{z_2}^b
       (z_1^{-1}z_2^{-1}dz_1dz_2)  \\
-      &=(-1)^{a+b}\hbar^{a+b}a!b!\rho_{a,b}.
+      &=(-1)^{a+b}\hbar_{\mathrm{Rees}}^{a+b}a!b!\rho_{a,b}.
   \end{aligned}
   \]
   The factorials and signs are units over \(\C\); the nontrivial Rees
-  datum is the power \(\hbar^{a+b}\).  Inverting \(\hbar\) turns this
+  datum is the power \(\hbar_{\mathrm{Rees}}^{a+b}\).  Inverting \(\hbar_{\mathrm{Rees}}\) turns this
   sublattice into the whole principal-part label span.
 \end{proof}
 
 \begin{thm}[Exact same-action Rees obstruction]
   \label{thm:same-action-rees-fourier-descendants-obstruction}
-  The following three requirements on a \(\C[[\hbar]]\)-flat Rees module
-  \(M_\hbar\) have a nonzero local-nilpotence obstruction:
+  The following three requirements on a \(\C[[\hbar_{\mathrm{Rees}}]]\)-flat Rees module
+  \(M_{\hbar_{\mathrm{Rees}}}\) have a nonzero local-nilpotence obstruction:
   \begin{enumerate}
     \item its special fibre is the polynomial primitive descendant module
       generated by the \(\widetilde\Psi_{a,b}\), \(a+b>0\), with linear
@@ -1392,12 +1424,12 @@ $P_0$ bracket]\label{lem:filtration-preservation}
         \qquad
         z_2\cdot\widetilde\Psi_{a,b}=-a\,\widetilde\Psi_{a-1,b};
       \]
-    \item on the generic fibre \(M_\hbar((\hbar))\), the same linear
+    \item on the generic fibre \(M_{\hbar_{\mathrm{Rees}}}((\hbar_{\mathrm{Rees}}))\), the same linear
       Hamiltonians \(z_1,z_2\) act locally nilpotently, as they do in the
       polynomial Rees Weyl module;
     \item the generic fibre is isomorphic, as a module for the same
       Hamiltonian Lie algebra, to
-      \(\mc P((\hbar))\) with the Matlis coadjoint action
+      \(\mc P((\hbar_{\mathrm{Rees}}))\) with the Matlis coadjoint action
       \[
         z_1\cdot\rho_{a,b}=-(b+1)\rho_{a,b+1},\qquad
         z_2\cdot\rho_{a,b}=(a+1)\rho_{a+1,b}.
@@ -1415,15 +1447,15 @@ $P_0$ bracket]\label{lem:filtration-preservation}
 
 \begin{proof}
   Local nilpotence of a fixed operator is invariant under module
-  isomorphism over \(\C((\hbar))\).  On the polynomial descendant side,
+  isomorphism over \(\C((\hbar_{\mathrm{Rees}}))\).  On the polynomial descendant side,
   the displayed formulas lower the \(b\)-index for \(z_1\) and the
   \(a\)-index for \(z_2\); hence every finite vector is killed by a high
   enough power of each linear Hamiltonian.  The same is true for the
-	  polynomial Rees Weyl module after inverting \(\hbar\), because
-	  multiplying the operators by the invertible scalar \(\hbar\) preserves
+	  polynomial Rees Weyl module after inverting \(\hbar_{\mathrm{Rees}}\), because
+	  multiplying the operators by the invertible scalar \(\hbar_{\mathrm{Rees}}\) preserves
 	  local nilpotence.
 
-	  On \(\mc P((\hbar))\), every nonzero finite Laurent vector has an
+	  On \(\mc P((\hbar_{\mathrm{Rees}}))\), every nonzero finite Laurent vector has an
 	  infinite orbit under the linear Hamiltonians.  For
   \(v=\sum c_{a,b}\rho_{a,b}\neq0\),
   \[
@@ -1433,15 +1465,15 @@ $P_0$ bracket]\label{lem:filtration-preservation}
   \]
   The basis vectors \(\rho_{a,b+N}\) remain distinct for distinct
   \((a,b)\), and every rising factorial displayed above is a nonzero
-  element of \(\C((\hbar))\).  Thus \(z_1^Nv\neq0\) for all \(N\).  The
+  element of \(\C((\hbar_{\mathrm{Rees}}))\).  Thus \(z_1^Nv\neq0\) for all \(N\).  The
   same argument using \(z_2\) shifts \(a\) upward and proves
   non-local-nilpotence for \(z_2\).  Hence
-  \(M_\hbar((\hbar))\) is incompatible with
-  \(\mc P((\hbar))\) under the same Hamiltonian action.
+  \(M_{\hbar_{\mathrm{Rees}}}((\hbar_{\mathrm{Rees}}))\) is incompatible with
+  \(\mc P((\hbar_{\mathrm{Rees}}))\) under the same Hamiltonian action.
 \end{proof}
 
 \begin{rmk}\label{rmk:chain-level-primitive-algebraic-input}
-  The chain-level primitive shadow uses the symmetric-algebra splitting
+  The chain-level primitive projection uses the symmetric-algebra splitting
   in place of a heat-kernel propagator on $\R^2\times\C^2$: the
   Costello--Gwilliam role of
   $G_L=\int_0^L K_t\,dt$ is played by the symmetric-algebra splitting,
@@ -1453,7 +1485,7 @@ $P_0$ bracket]\label{lem:filtration-preservation}
   Problem~\ref{prob:formal-factorization-center}, items~(1)--(2).
 \end{rmk}
 
-\begin{cor}[Primitive indecomposable shadow of the reduced cotangent comparison]
+\begin{cor}[Primitive indecomposable projection of the reduced cotangent comparison]
   \label{cor:unreduced-d-closed}
   Combining
   Theorem~\ref{thm:chain-level-primitive-projection} with the
@@ -1461,14 +1493,14 @@ $P_0$ bracket]\label{lem:filtration-preservation}
   (Theorem~\ref{thm:reduced-ce-pv-central-operation}) and the Hamiltonian
   factorization-algebra equivalence
   (Theorem~\ref{thm:hamiltonian-current-factorization}), one
-	  obtains a chain-level primitive indecomposable shadow of the reduced cotangent
+	  obtains a chain-level primitive indecomposable projection of the reduced cotangent
   comparison:
   \begin{align*}
     \mathrm{Obs}^{\mathrm{cl}}_{\mathrm{closed},H}\big|_{L}
     &\xrightarrow{\;\Phi_{\mathrm{cl}}\;}
     \mathrm Z^{P_0}_{\mathrm{red,Ham}}\bigl(A_\partial^{\mathrm{pp}}\bigr) \\
     &\xrightarrow{\;\pi_{\mathrm{prim}}^{\mathrm{cot}*}\;}
-    \text{primitive indecomposable shadow of the open boundary sector}.
+    \text{primitive indecomposable quotient of the open boundary sector}.
   \end{align*}
   The unreduced cotangent factorization-center morphism lifts the
   composite once the missing data of
@@ -1486,11 +1518,12 @@ $P_0$ bracket]\label{lem:filtration-preservation}
 	  extends this to a $P_0$ factorization algebra equivalence
   in the Hamiltonian sector.
 	  Theorem~\ref{thm:chain-level-primitive-projection} gives the
-	  primitive indecomposable \(P_0\)-shadow and one-$\psi$ label shadow. The
-  composition therefore exists only at the indecomposable-shadow level.
+	  primitive indecomposable \(P_0\)-projection and one-$\psi$ label projection. The
+  composition therefore exists only at the associated-graded
+  indecomposable quotient level.
   Since the one-$\psi$ projection carries the descendant PBW /
   principal-part coadjoint obstruction, the asserted result is exactly
-  the shadow statement.
+  the associated-graded projection statement.
 \end{proof}
 
 \begin{rmk}\label{rmk:T5-primitive-shadow-scope}
@@ -1522,6 +1555,6 @@ $P_0$ bracket]\label{lem:filtration-preservation}
   \(H^\bullet(\Omega^\bullet_c(I))=H^\bullet_c(I;\C)\) is one-dimensional
   in degree \(1\) for an open interval \(I\), represented by
 	  \(\lambda_I(t)\,dt\) with integral \(1\); the degree-zero notation in
-	  the primitive shadow is the shifted BV/cotangent coordinate paired
+	  the primitive projection is the shifted BV/cotangent coordinate paired
 	  against this density in place of point-evaluation in \(H_c^0(I)\).
 \end{rmk}

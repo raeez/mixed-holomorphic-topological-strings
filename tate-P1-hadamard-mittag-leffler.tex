@@ -20,10 +20,18 @@ propagator on the bulk diagonal.  The weighted Tate field complex
 carries an infinite tower of coefficient bundles indexed by Hamiltonian
 degree, so the coefficient direction has infinite rank.  The question
 is whether that finite-rank machinery commutes, graphwise and at every
-order in \(\hbar\), with the strict Mittag-Leffler inverse limit in the
-coefficient direction; equivalently, whether universal summation of the
-windowwise counterterms survives passage to the inverse-limit weighted
-Tate envelope, and what class measures the obstruction.
+order in \(\hbar_{\mathrm{QME}}\), with the strict Mittag-Leffler
+inverse limit in the coefficient direction; equivalently, whether
+universal summation of the windowwise counterterms survives passage to
+the inverse-limit weighted Tate envelope, and what class measures the
+obstruction.
+
+Throughout this subsection the bare graph-order symbol \(\hbar\), in
+expressions such as \([\hbar^n]\), \(|\Gamma|_\hbar\), and
+\(\{ -,-\}_{\hbar,M}\), denotes the Costello quantum master-equation
+parameter \(\hbar_{\mathrm{QME}}\).  It is not the Weyl/Moyal parameter
+\(\hbar_{\mathrm{W}}\) and not the equivariant line parameter
+\(\hbar_\omega\).
 
 The Hadamard/Mittag-Leffler (H/ML) commutation residual measuring this
 obstruction is a pair of independent cohomology classes: a primary
@@ -374,21 +382,21 @@ theorem, with separate formulas.
   Theorem~\ref{thm:hadamard-mittag-leffler},
   Proposition~\ref{prop:wt-qme-lift-obstruction-vanishing} is equivalent to the
   vanishing of the mixed brane-defect QME obstruction class.  The
-  all-order quantum source-to-boundary CE/PV comparison
+  all-order QME-counterterm source-to-boundary CE/PV comparison
   \[
   \begin{aligned}
-    \Phi_\hbar^{w}\colon
+    \Phi_{\hbar_{\mathrm{QME}}}^{w}\colon
     &C^\bullet_{\mathrm{CE},\mathrm{cont}}\bigl(
-      \mathfrak h_{w,\hbar}\ltimes
-      \mathfrak h^{\vee,w}_{\hbar,\mathrm{cont}}[1]\bigr)[[\hbar]]\\
+      \mathfrak h_{w,\hbar_{\mathrm{QME}}}\ltimes
+      D^{\mathrm{BV}}_{w,\hbar_{\mathrm{QME}}}[1]\bigr)[[\hbar_{\mathrm{QME}}]]\\
     &\longrightarrow
-      Z^{P_{0,\hbar}}_{\mathrm{fact}}\bigl(
-      \mathrm{Obs}^\hbar_{\mathrm{open}}\bigr)\big|_{\mathfrak g_w}
+      Z^{P_{0,\hbar_{\mathrm{QME}}}}_{\mathrm{fact}}\bigl(
+      \mathrm{Obs}^{\hbar_{\mathrm{QME}}}_{\mathrm{open}}\bigr)\big|_{\mathfrak g_w}
   \end{aligned}
   \]
-  extends to the weighted cotangent direction at all orders in $\hbar$
-  as a continuous $\C[[\hbar]]$-linear cochain map precisely when the
-  obstruction class in
+  extends to the weighted cotangent direction, with compatible
+  \(\hbar_{\mathrm{QME}}\)-adic counterterms, as a continuous
+  \(\C[[\hbar_{\mathrm{QME}}]]\)-linear cochain map precisely when the obstruction class in
   \(H^1(\mathcal O_{\mathrm{loc}}(\mathcal E_w),Q+\{I_0,-\})\)
   vanishes.  Equivalently, this vanishing statement is the datum required
   by Corollary~\ref{cor:wt-descendant-qme-vanishing}.
@@ -521,7 +529,7 @@ order-\(n\) residual written as a finite cochain.
     \]
     generated, and then completed in the \(\hbar\)-adic and scalar-contact
     filtrations, by the displayed renormalized graph weights, their local
-    counterterms, and the \(d_M\)-boundaries and BV brackets forced by the
+    counterterms, and the \(d_M\)-boundaries and BV brackets appearing in the
     finite graph differential on \(\mathcal G_M\).  This is a subcomplex
     only after those boundary and bracket terms have been included.
 
@@ -530,7 +538,7 @@ order-\(n\) residual written as a finite cochain.
       \widehat\sigma_{\mathrm{sc},M}\colon
       \mathfrak Q^\bullet_{\mathcal G,M}(I)
       \longrightarrow
-      C^\bullet_{\mathrm{Lie}}(\bar A;\C\gamma_{\mathbf 1})[1][[\hbar]],
+      C^\bullet_{\mathrm{Lie}}(\bar A;\C\gamma_{\mathbf 1})[1][[\hbar_{\mathrm{QME}}]],
     \]
     whose associated graded is the scalar-symbol projection.  Equivalently,
     either the graph data lie in the balanced graph/counterterm
@@ -568,7 +576,7 @@ order-\(n\) residual written as a finite cochain.
   sense of Definition~\ref{defn:finite-window-graph-qme-system}.  Put
   \[
     S^\bullet=
-    C^\bullet_{\mathrm{Lie}}(\bar A;\C\gamma_{\mathbf 1})[1][[\hbar]],
+    C^\bullet_{\mathrm{Lie}}(\bar A;\C\gamma_{\mathbf 1})[1][[\hbar_{\mathrm{QME}}]],
     \qquad
     \mathcal Q^\bullet_{\mathcal G,M}(I)
       =
@@ -660,7 +668,8 @@ order-\(n\) residual written as a finite cochain.
   essential: outside
   \(\mathcal D'_{c,\mathrm{WF}}(I;\Gamma,M)\), the product of the graph
   Hadamard coefficient with the pushed-forward current label requires the
-  wavefront-admissible product condition to define a canonical distribution.
+  wavefront-admissible product condition to define a uniquely determined
+  distribution.
 
   The scalar statement is formal.  A filtered chain projection
   \(\widehat\sigma_{\mathrm{sc},M}\) is part of the system.  If the
@@ -759,21 +768,63 @@ order-\(n\) residual written as a finite cochain.
 \begin{proof}
   Windowwise, Theorem~\ref{thm:finite-window-graph-qme-assembly} says that
   the only non-scalar obstruction is the class of
-  \(\mathfrak o^{\mathrm{fw}}_{n,M}\) in \(H^1\).  Necessity of the two
-  displayed inverse-limit conditions is immediate from any compatible
-  primitive \(C_{n,M}\).  Conversely, vanishing of the compatible
-  \(H^1\)-class gives primitives \(c_{n,M}\) window by window.  The
-  differences \(\pi_{M,N}c_{n,M}-c_{n,N}\) are closed degree-zero
-  elements, and their cohomology classes are the standard Roos
-  \(1\)-cocycle computing
-  \(\varprojlim\nolimits^1_M
-  H^0(\mathcal Q^\bullet_{\mathcal G,M}(I))\).  The
-  vanishing of \(\lambda^{\mathrm{fw}}_n\) is exactly the statement that
-  the \(c_{n,M}\)'s can be adjusted by closed degree-zero terms and
-  boundaries to become compatible under all truncation maps.  The
-  Mittag--Leffler sufficient condition is the standard vanishing of
-  \(\varprojlim^1\) for a Mittag--Leffler tower.  The weight-transport
-  compatibility follows from the same diagonal transport squares used in
+  \(\mathfrak o^{\mathrm{fw}}_{n,M}\) in \(H^1\).  If compatible
+  primitives \(C_{n,M}\) exist, then
+  \(d_MC_{n,M}=-\mathfrak o^{\mathrm{fw}}_{n,M}\) kills every fixed-window
+  \(H^1\)-class, and
+  \(\pi_{M,N}C_{n,M}-C_{n,N}=0\) kills every primitive-difference class in
+  the Roos cokernel.  Thus both components of
+  \(\mathfrak O^{\mathrm{fw}}_n\) vanish.
+
+  Conversely, assume the two components vanish.  The vanishing of the
+  compatible \(H^1\)-class gives primitives \(c_{n,M}\) window by window.
+  Since the residuals commute with truncation,
+  \[
+    d_N(\pi_{M,N}c_{n,M}-c_{n,N})
+      =
+    -\pi_{M,N}\mathfrak o^{\mathrm{fw}}_{n,M}
+      +\mathfrak o^{\mathrm{fw}}_{n,N}
+      =0 .
+  \]
+  Passing to a cofinal successor tower, put
+  \(A_M=H^0(\mathcal Q^\bullet_{\mathcal G,M}(I))\) and
+  \[
+    \Delta_{\mathcal G}\colon\prod_M A_M\longrightarrow\prod_M A_M,
+    \qquad
+    \Delta_{\mathcal G}((a_M)_M)
+      =\bigl(a_M-\pi_{M+1,M}a_{M+1}\bigr)_M .
+  \]
+  The closed degree-zero differences
+  \[
+    \delta_M
+      =
+    [\pi_{M+1,M}c_{n,M+1}-c_{n,M}]\in A_M
+  \]
+  form the Roos \(1\)-cocycle whose cokernel class is
+  \(\lambda^{\mathrm{fw}}_n\).  If
+  \(\lambda^{\mathrm{fw}}_n=0\), choose closed degree-zero representatives
+  \(a_M\) with
+  \[
+    \delta_M=[a_M-\pi_{M+1,M}a_{M+1}].
+  \]
+  Replacing \(c_{n,M}\) by \(c_{n,M}+a_M\) changes the successor
+  primitive defect to a degree-zero boundary.  The finite-window
+  truncation maps are coefficient projections; on the boundary part of the
+  tower the same successor recursion solves the remaining boundary
+  defect.  After this boundary adjustment one obtains primitives
+  \(C_{n,M}\) with
+  \(\pi_{M+1,M}C_{n,M+1}=C_{n,M}\), hence with
+  \(\pi_{M,N}C_{n,M}=C_{n,N}\) for all \(M\geq N\).
+
+  For the Mittag--Leffler assertion, replace \(A_M\) by the stable image
+  of \(A_{M'}\to A_M\) for \(M'\gg M\).  The resulting cofinal successor
+  system has surjective transition maps.  Given
+  \(b=(b_M)_M\in\prod_M A_M\), choose \(a_1\) and lift
+  \(a_M-b_M\) to \(a_{M+1}\) under \(A_{M+1}\to A_M\).  Then
+  \(\Delta_{\mathcal G}(a)=b\), so
+  \(\operatorname{coker}\Delta_{\mathcal G}
+    =\varprojlim^1_MA_M=0\).  The weight-transport compatibility follows
+  from the same diagonal transport squares used in
   Theorem~\ref{thm:wt-regulator-independence-admissible}.
 \end{proof}
 
@@ -927,7 +978,7 @@ every contribution in normal form.
       \quad\text{provided}\quad
       \sum_{\alpha\in\mathsf A^{\mathrm{fw}}_{n,M}}S_{\alpha,M}=0.
     \]
-    An entrywise non-scalar summand requires an additional chain
+    An entrywise non-scalar summand is governed by a chain
     splitting of \(\widehat\sigma_{\mathrm{sc},M}\); the displayed
     scalar-zero sum is the canonical datum in the present array.
 
@@ -1333,7 +1384,7 @@ every contribution in normal form.
   The scalar-condition assertion follows from
   Theorem~\ref{thm:app-full-equivariant-marked-shadow-vanishing}: on the
   full-equivariant marked complex the filtered scalar projection is the
-  zero chain map.  Since this projection only kills the scalar shadow, it
+  zero chain map.  Since this projection only kills the scalar component, it
   gives a scalar-condition theorem for the non-scalar local functional
   \(K^M_\Gamma\).
 
@@ -1359,7 +1410,7 @@ every contribution in normal form.
   CE-source-face set, and the order-\(2\) graph-counterterm-face set are
   empty.  Use \(C_{1,M}=0\).
 
-  Then the only order-\(2\) boundary data forced by codimension-two closure
+  Then the only order-\(2\) boundary data required by codimension-two closure
   are the two ordered composites of two first scalar-contact boundary
   operations.  For
   \(o=\beta_1\wedge\beta_2\) they have incidence signs
@@ -1887,7 +1938,7 @@ every contribution in normal form.
   raw bracket is already one basis row after division by its incidence
   coefficient.
 
-  The cocycle identities are forced by
+  The cocycle identities follow from
   \(\pi_{N,P}\pi_{M,N}=\pi_{M,P}\).  Expanding first directly from \(M\) to
   \(P\), and then through \(N\), gives two coordinate expansions of the same
   projected row in the same lower-window coordinates.  Equality of
@@ -2331,8 +2382,8 @@ Theorem~\ref{thm:theta-three-companion-face-obstruction}.
 \begin{thm}[\(\theta_3\) companion-face construction obstruction]\label{thm:theta-three-companion-face-obstruction}
   Work in the order-three full-equivariant marked branch of
   Proposition~\ref{prop:concrete-order-three-enlarged-system-row}, and put
-  \(H_{p,q}=z_1^pz_2^q\).  On the standard symplectic
-  \(\C^2\) with \(\omega=dz_1\wedge dz_2\) the Hamiltonian Poisson rule
+  \(H_{p,q}=z_1^pz_2^q\).  On
+  \((\C^2,\omega=dz_1\wedge dz_2)\) the Hamiltonian Poisson rule
   is
   \(\{H_{a,b},H_{r,s}\}=(as-br)H_{a+r-1,b+s-1}\); in particular
   \(\{H_{1,0},H_{2,1}\}=H_{2,0}\).  Consider the source-algebra ancestor
@@ -2642,11 +2693,20 @@ Theorem~\ref{thm:theta-three-companion-face-obstruction}.
   counterterm changes \(R_{n,M}\) by a \(d_M\)-boundary, so the
   fixed-window solvability criterion is precisely the vanishing of its
   \(H^1\)-class.  If primitives are chosen window by window, their
-  truncation differences are closed degree-zero cochains; their classes
-  form the standard Roos cocycle computing
-  \(\varprojlim^1_M H^0(\mathcal Q^\bullet_{\mathcal G,M}(I))\).  Vanishing
-  of this class is exactly the condition that the primitives can be
-  adjusted to a compatible family.
+  truncation differences are closed degree-zero cochains.  On the
+  successor tower \(A_M=H^0(\mathcal Q^\bullet_{\mathcal G,M}(I))\), the
+  map
+  \[
+    \Delta_{\mathcal G}((a_M)_M)
+      =
+    (a_M-\pi_{M+1,M}a_{M+1})_M
+  \]
+  has cokernel \(\varprojlim^1_MA_M\), and the classes
+  \([\pi_{M+1,M}c_{n,M+1}-c_{n,M}]\) define the corresponding Roos
+  \(1\)-cocycle.  Vanishing of this cokernel class is exactly the
+  condition that the primitives can be adjusted, first by closed
+  degree-zero representatives and then by boundary corrections, to a
+  compatible family.
 
   The final assertion is a dependency statement.  The formulas require a
   finite graph list with order assignment, CE cycle, signs, coproduct
@@ -2813,7 +2873,7 @@ Theorem~\ref{thm:theta-three-companion-face-obstruction}.
   Hamiltonian action would satisfy
   \(q_N(\mathfrak h\cdot\xi)=\mathfrak h\cdot q_N(\xi)\) for every
   \(\xi\in\mc P\); applied to \(\xi=\rho_{N+1,0}\), with
-  \(q_N(\rho_{N+1,0})=0\) by the killing hypothesis, this would force
+  \(q_N(\rho_{N+1,0})=0\) by the killing hypothesis, this would imply
   \[
     0=\mathfrak h\cdot q_N(\rho_{N+1,0})
       =q_N(\mathfrak h\cdot\rho_{N+1,0})
@@ -3049,15 +3109,15 @@ Theorem~\ref{thm:theta-three-companion-face-obstruction}.
   cohomology of the BMK contraction as the moment-restriction kernel,
   fixing the analytic submodule
   \(\mc P_{\mathrm{an}}(B_1)=\tau\bigl(\mathcal O(B_1)^\vee_{\mathrm{red}}\bigr)\)
-  on which the kernel acts; (c) forces the fixed inverse-limit receiver
+  on which the kernel acts; (c) identifies the fixed inverse-limit receiver
   for the finite projections to contain every \(\rho_{a,b}\) and to map
   to \(\mc P_{\leq N}\), hence to be
   \(\widehat{\mc P}_{\Pi}=\varprojlim_N\mc P_{\leq N}\) in this slice.
 	  The pair \((\widehat{\mc P}_{\Pi},\mc P_{\mathrm{an}}(B_1))\) is
 	  therefore the target used here with these fixed projections and BMK
-  moment data.  The strict all-window factorization-current transfer
-  requires the additional vanishing of
-  \(\operatorname{Ob}^{\Pi}_{\mathrm{BM}}\) recorded in
+	  moment data.  The strict all-window factorization-current transfer
+	  is the vanishing locus of
+	  \(\operatorname{Ob}^{\Pi}_{\mathrm{BM}}\) recorded in
   Theorem~\ref{thm:app-finite-window-bmk-current-transfer}, whose
   first three nonzero entries (direct-sum moment cokernel, missing
   compact-current section of the pro-product tower, divergent formal

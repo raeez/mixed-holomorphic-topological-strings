@@ -5,36 +5,54 @@ Fix the formal-local mixed geometry
 \(\R^2_{\mathrm{top}}\times\widehat{\C^2}_0\) with
 \(\Omega_{\mathrm{loc}}=dz_1\wedge dz_2\).  On a brane interval
 \(I\subset L\) the open BV theory contributes scalar contact
-counterterms each order in \(\hbar\); the residual non-scalar Costello
+counterterms each order in \(\hbar_{\mathrm{QME}}\); the residual non-scalar Costello
 quantum master equation lives in their orthogonal complement.  The
-complex \(\mathfrak Q^\bullet_{w,\partial,\hbar}(I)\) is the
+complex \(\mathfrak Q^\bullet_{w,\partial,\hbar_{\mathrm{QME}}}(I)\) is the
 local-functional cochain complex on \(I\) at weighted-Tate coefficient
 weight \(w\), with the brane-tangential differential
-\(d_\partial\) and the \(\hbar\)-formal grading;
+\(d_\partial\) and the \(\hbar_{\mathrm{QME}}\)-formal grading;
 \(\widehat\sigma_{\mathrm{sc}}\) is the filtered scalar-symbol chain
 projection killing the scalar-contact filtration;
 \(d_{\mathrm{cl}}=Q+\{I_0,-\}\) is the associated-graded classical
 BV differential; and
-\(d_{\mathrm{QME}}^{L}=Q+\{I[L],-\}_{L}+\hbar\Delta_{L}\) is the
+\(d_{\mathrm{QME}}^{L}=Q+\{I[L],-\}_{L}+\hbar_{\mathrm{QME}}\Delta_{L}\) is the
 scale-\(L\) quantum master differential of Costello's renormalization.
 When a fixed Costello scale is understood, \(d_{\mathrm{QME}}\) denotes
 this quantum differential \(d_{\mathrm{QME}}^{L}\).  The
 associated-graded scalar-symbol complexes below use \(d_{\mathrm{cl}}\).
+The separated parameters are
+\(\hbar_{\mathrm{QME}}\), \(\hbar_{\mathrm{W}}\), and \(\hbar_\omega\):
+Costello graph order, boundary Weyl/Moyal deformation, and equivariant
+Hamiltonian scalarization respectively
+(Definition~\ref{def:app-normal-omega-costello-kernel-datum}).  Write
+\[
+  \kappa_{\mathrm{W}}=\hbar_{\mathrm{W}}N[\bar c],
+  \qquad
+  \kappa_{\mathrm{QME}}=\hbar_{\mathrm{QME}}N[\bar c].
+\]
+The first is the boundary Weyl/Capelli projective class of
+Theorem~\ref{thm:capelli-projective-anomaly}; the second is the scalar
+Costello QME obstruction after the brane-defect kernel identifies its
+one-loop boundary contraction with the same Lie cocycle \([\bar c]\).
+No formula below identifies \(\hbar_{\mathrm{QME}}\) with
+\(\hbar_{\mathrm{W}}\) unless that specialization is stated.
 Before passage to the
 residual non-scalar complex, the unreduced curvature
-\(\operatorname{Ob}_{w,\partial,\hbar}\) has scalar-contact symbol
+\(\operatorname{Ob}_{w,\partial,\hbar_{\mathrm{QME}}}\) has scalar-contact symbol
 \[
   \widehat\sigma_{\mathrm{sc}}\bigl(
-    \operatorname{Ob}_{w,\partial,\hbar}\bigr)
-    =\hbar N[\bar c]\,\gamma_{\mathbf 1}
-    \in H^2_{\mathrm{Lie}}(\bar A;\C\gamma_{\mathbf 1})[1][[\hbar]].
+    \operatorname{Ob}_{w,\partial,\hbar_{\mathrm{QME}}}\bigr)
+    =\kappa_{\mathrm{QME}}\,\gamma_{\mathbf 1}
+    \in H^2_{\mathrm{Lie}}(\bar A;\C\gamma_{\mathbf 1})[1]
+       [[\hbar_{\mathrm{QME}}]].
 \]
 Forgetting the central ghost coefficient gives the scalar class
-\(\hbar N[\bar c]\in H^2_{\mathrm{Lie}}(\bar A;\C)[[\hbar]]\).
+\(\kappa_{\mathrm{QME}}\in
+H^2_{\mathrm{Lie}}(\bar A;\C)[[\hbar_{\mathrm{QME}}]]\).
 After this scalar component is killed, the residual non-scalar QME
 complex contains the cohomology class
 \[
-  [\operatorname{Ob}^{\mathrm{red}}_{w,\partial,\hbar}]
+  [\operatorname{Ob}^{\mathrm{red}}_{w,\partial,\hbar_{\mathrm{QME}}}]
   \in
   H^1\!\bigl(\ker\widehat\sigma_{\mathrm{sc}},
     d_{\mathrm{QME}}^{L}\bigr),
@@ -44,31 +62,38 @@ together with its finite-window
 (the secondary Roos cohomology obstruction tracking compatibility of
 window-by-window primitives across the truncation tower).  The
 Capelli class of Chapter~6
-(Theorem~\ref{thm:capelli-projective-anomaly}) is the scalar
-projection of the unreduced obstruction before reduction to
-\(\ker\widehat\sigma_{\mathrm{sc}}\), with sign
-and convention fixed by
-Appendix~\ref{sec:app-factorization-current-conventions} and the
-canonical scheme
+(Theorem~\ref{thm:capelli-projective-anomaly}) is the boundary Weyl
+class \(\kappa_{\mathrm{W}}\), with sign and convention fixed by
+Appendix~\ref{sec:app-factorization-current-conventions} and the canonical scheme
 \(z_1z_2\mapsto\tfrac12(\phi_1\phi_2+\phi_2\phi_1)\) of the Moyal
 star product.  Exact rational expansion gives the Moyal coefficient
-\(\hbar N\).
+\(\hbar_{\mathrm{W}}N\).  A Costello QME computation lands on the same
+underlying cocycle \([\bar c]\) with coefficient \(\hbar_{\mathrm{QME}}N\)
+only after the brane-defect kernel supplies the one-loop boundary
+contraction.
 
 The scalar anomaly is one cohomology class realized in four
 cohomologies.  The algebraic central extension of
 \(\bar A=\C[z_1,z_2]/\C\cdot1\), the Lie central extension
 \(\widehat{\mathfrak h}_{\mathrm{cent}}\), the trace-algebraic
 boundary central extension, and the quantum Weyl commutator
-\([\Phi_\hbar(z_1),\Phi_\hbar(z_2)]_\star=\hbar N\) carry the same
-class in \(H^2(\bar A;\C)[[\hbar]]\) under the canonical scalar
-projection; the cocycle \(\omega(f,g)=[\{f,g\}]_0\) is the same in each
+\([\Phi_{\hbar_{\mathrm{W}}}(z_1),
+  \Phi_{\hbar_{\mathrm{W}}}(z_2)]_\star=\hbar_{\mathrm{W}}N\)
+carry the same source class \([\bar c]\) under the specified scalar
+projection of Proposition~\ref{prop:app-local-geometry-scalar-shadow}.
+The cocycle \(\omega(f,g)=[\{f,g\}]_0\) is the same in
+each; \(\kappa_{\mathrm{W}}\) and \(\kappa_{\mathrm{QME}}\) are its two
+parameterized scalarizations
 (Theorem~\ref{thm:app-scalar-anomaly-transgression}).  Hamiltonian
 vector fields annihilate the constant line, while the open trace pairs
 that line with \(\operatorname{Tr}(\mathbf 1)=N\) and produces the
-class \(\hbar N[\bar c]\).  Each cancellation branch acts on this
-single class --- ordinary \(\lie{gl}_N\) is obstructed by
-\(\hbar N[\bar c]\), the unreduced central character contributes the
-CE coboundary \(d_{\mathrm{CE}}(\hbar\chi_N)=-\hbar N\omega\), the
+\(\kappa_{\mathrm{W}}\) class.  Each cancellation branch acts on the
+same underlying class \([\bar c]\): ordinary \(\lie{gl}_N\) is obstructed by
+\(\kappa_{\mathrm{QME}}\) in the Costello scalar-contact complex, the
+unreduced central character contributes the
+CE coboundary
+\(d_{\mathrm{CE}}(\hbar_{\mathrm{QME}}\chi_N)
+  =-\hbar_{\mathrm{QME}}N\omega\), the
 balanced \(\C^{N|N}\) supertrace rescales the open trace by
 \(\operatorname{sdim}\C^{N|N}=0\), and full-equivariant marker
 tensors satisfy
@@ -177,7 +202,7 @@ included in the datum
   \]
 \end{defn}
 
-\begin{prop}[Local geometry of scalar shadows]
+\begin{prop}[Local geometry of scalar projections]
 \label{prop:app-local-geometry-scalar-shadow}
   All scalar-contact, finite-window, marked-graph, and supertrace
   calculations below use only the formal-local mixed
@@ -205,7 +230,7 @@ included in the datum
     \qquad
     \operatorname{div}_{\Omega_{\mathrm{loc}}}X_f=0 .
   \]
-  Thus the scalar shadow has zero divergence and zero volume-form anomaly.
+  Thus the scalar projection has zero divergence and zero volume-form anomaly.
   The Hamiltonian scalar cocycle entering every calculation
   below is
   \[
@@ -218,11 +243,11 @@ included in the datum
   The open index contraction then multiplies this local Hamiltonian scalar
   by the Chan--Paton trace coefficient:
   \[
-    \hbar N\,\omega(f,g)\gamma_{\mathbf 1}
+    \hbar_{\mathrm{QME}}N\,\omega(f,g)\gamma_{\mathbf 1}
     \quad\text{in the ordinary }\lie{gl}_N\text{ branch},
   \]
   \[
-    \hbar\,\operatorname{sdim}(\C^{N|N})\,
+    \hbar_{\mathrm{QME}}\,\operatorname{sdim}(\C^{N|N})\,
     \omega(f,g)\gamma_{\mathbf 1}=0
     \quad\text{in the balanced supertrace branch},
   \]
@@ -365,28 +390,30 @@ included in the datum
 \begin{prop}[First scalar-lift obstruction in the ordinary branch]\label{prop:app-first-scalar-lift-obstruction}
   Work in the ordinary scalar-reduced \(\lie{gl}_N\) weighted
   brane-defect local-functional complex
-  \(\mathfrak Q^\bullet_{w,\partial,\hbar}(I)\), with \(N>0\).  Let
+  \(\mathfrak Q^\bullet_{w,\partial,\hbar_{\mathrm{QME}}}(I)\), with \(N>0\).  Let
   \(J_{\mathrm{sc}}\) be the closed ideal of functionals whose
   associated-graded scalar-contact symbol vanishes, and put
-  \(F^r=J_{\mathrm{sc}}^r\), completed \(\hbar\)-adically and in the
-  finite-window inverse limit.  For any filtered linear lift \(s\) of the
+  \(F^r=J_{\mathrm{sc}}^r\), completed
+  \(\hbar_{\mathrm{QME}}\)-adically and in the finite-window inverse
+  limit.  For any filtered linear lift \(s\) of the
   scalar-symbol projection, the first chain-defect class has Hamiltonian
   two-argument evaluation
   \[
     \operatorname{ev}_{f,g}\bigl(o_{\sigma,w}^{(1)}\bigr)
       =
-    \hbar N\,\omega(f,g)\gamma_{\mathbf 1}
-      \in H^2_{\mathrm{Lie}}(\bar A;\C\gamma_{\mathbf 1})[[\hbar]] .
+    \hbar_{\mathrm{QME}}N\,\omega(f,g)\gamma_{\mathbf 1}
+      \in H^2_{\mathrm{Lie}}(\bar A;\C\gamma_{\mathbf 1})
+        [[\hbar_{\mathrm{QME}}]] .
   \]
   In particular
   \[
     \operatorname{ev}_{z_1,z_2}\bigl(o_{\sigma,w}^{(1)}\bigr)
-      =\hbar N\,\gamma_{\mathbf 1}\neq0 .
+      =\hbar_{\mathrm{QME}}N\,\gamma_{\mathbf 1}\neq0 .
   \]
   Hence a filtered chain lift of the scalar-symbol projection in the
-  ordinary scalar-reduced branch requires additional data whose leading
-  scalar class is \(-\hbar N[\bar c]\), or a replacement of the source or
-  open trace model before scalar reduction.
+  ordinary scalar-reduced branch is governed by a primitive whose leading
+  scalar class is \(-\kappa_{\mathrm{QME}}\), or by a replacement of the source
+  or open trace model before scalar reduction.
 \end{prop}
 
 \begin{proof}
@@ -400,7 +427,7 @@ included in the datum
       -
     I_\partial(ab,\{f,g\}_{\bar A})
       =
-    \hbar N\,\omega(f,g)\int_Ia(t)b(t)\,dt
+    \hbar_{\mathrm{QME}}N\,\omega(f,g)\int_Ia(t)b(t)\,dt
   \]
   after insertion of \(\gamma_{\mathbf 1}\).  Applying the scalar-symbol
   lift gives the displayed representative of
@@ -410,8 +437,9 @@ included in the datum
   If this first defect were a Hom coboundary, evaluation on the
   Hamiltonian two-argument subcomplex would give a linear primitive
   \(\bar\eta:\bar A\to\C\gamma_{\mathbf 1}\) with
-  \(d_{\mathrm{CE}}\bar\eta=\hbar N\,\omega\gamma_{\mathbf 1}\).  Pulling
-  \(\bar\eta\) back to \(A=\C[z_1,z_2]\) and forcing it to vanish on the
+  \(d_{\mathrm{CE}}\bar\eta
+    =\hbar_{\mathrm{QME}}N\,\omega\gamma_{\mathbf 1}\).  Pulling
+  \(\bar\eta\) back to \(A=\C[z_1,z_2]\) and requiring it to vanish on the
   constant line contradicts
   Lemma~\ref{lem:app-unreduced-scalar-primitive}, equivalently
   \(\omega(z_1,z_2)=1\) while \(\{z_1,z_2\}=1\) is zero in \(\bar A\).
@@ -457,7 +485,7 @@ included in the datum
 
 \begin{proof}
   The linear Hamiltonians act on polynomial open observables by the
-  canonical scalar-translation derivations
+  scalar-translation derivations
   \[
     O_{1,0}\mapsto \partial_{\phi_2},\qquad
     O_{0,1}\mapsto -\partial_{\phi_1}.
@@ -514,8 +542,15 @@ included in the datum
 
 \begin{proof}
   Multiplication of a compactly supported distribution by a smooth
-  function is the standard operation \(B\mapsto aB\) defined by
-  precomposition with multiplication by \(a\).  If
+  function is the map
+  \[
+    (aB)(\varphi):=B(a\varphi),
+    \qquad
+    \varphi\in C^\infty_c(\R).
+  \]
+  This is continuous because multiplication by \(a\) is a continuous
+  endomorphism of \(C^\infty_c(\R)\) and
+  \(a\varphi\) has compact support.  If
   \(\varphi\) is supported away from
   \(\operatorname{supp}(a)\cap\operatorname{supp}(B)\), then
   \(a\varphi\) is supported away from \(\operatorname{supp}(B)\), hence
@@ -619,7 +654,7 @@ included in the datum
   \(P_0\) current presentation as far as the distributional algebraic
   current model permits.  A morphism into
   \(Z^{P_0}_{\mathrm{fact}}(\mathrm{Obs}_{\mathrm{open}})\) for the
-  genuine unreduced open BV factorization algebra requires the additional
+  genuine unreduced open BV factorization algebra is governed by the
   unreduced graph/QME data.  This is compatible with the polynomial obstruction
   theorem: the image of \(\Theta_\rho(B)\) lives in the added
   principal-part current sector.
@@ -704,7 +739,8 @@ included in the datum
 \end{lem}
 
 \begin{proof}
-  The identity is immediate:
+  Applying the Chevalley--Eilenberg differential to the displayed
+  linear functional gives
   \[
     (d_{\mathrm{CE}}\eta)(f,g)
       =-\eta(\{f,g\}_{\Omega_{\mathrm{loc}}})
@@ -745,13 +781,13 @@ included in the datum
   \[
     \operatorname{Tr}(A\,XY)-\operatorname{Tr}(A\,YX)
       =
-      \hbar N\,\operatorname{Tr}(A)
+      \hbar_{\mathrm{W}}N\,\operatorname{Tr}(A)
       \quad\bmod\ \mathcal W_N\widehat\mu(\lie{sl}_N).
   \]
   Equivalently,
   \[
     \operatorname{Tr}(A[X,Y])
-      =\hbar N\,\operatorname{Tr}(A)
+      =\hbar_{\mathrm{W}}N\,\operatorname{Tr}(A)
       \quad\bmod\ \mathcal W_N\widehat\mu(\lie{sl}_N),
   \]
   for the matrix Weyl commutator \([X,Y]=XY-YX\).
@@ -761,21 +797,23 @@ included in the datum
   \[
     \operatorname{Ob}_{\mathrm{sc}}(\gamma_{\mathbf 1};a,f;b,g)
     =
-    \hbar N\,\omega(f,g)
+    \hbar_{\mathrm{QME}}N\,\omega(f,g)
     \int_\R a(t)b(t)\gamma_{\mathbf 1}(t)\,dt .
   \]
   Its associated graded CE class is
   \[
-    \hbar N[\bar c]\,\gamma_{\mathbf 1}
-    \in H^2_{\mathrm{Lie}}(\bar A;\C\gamma_{\mathbf 1})[1][[\hbar]].
+    \kappa_{\mathrm{QME}}\,\gamma_{\mathbf 1}
+    \in H^2_{\mathrm{Lie}}(\bar A;\C\gamma_{\mathbf 1})[1]
+      [[\hbar_{\mathrm{QME}}]].
   \]
   Under the coefficient-forgetting map it becomes the formal scalar
   multiple
-  \(\hbar N[\bar c]\in H^2_{\mathrm{Lie}}(\bar A;\C)[[\hbar]]\).  This
+  \(\kappa_{\mathrm{QME}}\in
+  H^2_{\mathrm{Lie}}(\bar A;\C)[[\hbar_{\mathrm{QME}}]]\).  This
   class is a nonzero scalar-reduced Hamiltonian cohomology class.  Hence an
   internal scalar counterterm in the ordinary scalar-reduced
   \(\lie{gl}_N\) brane-defect model has leading-symbol obstruction
-  \(\hbar N[\bar c]\).
+  \(\kappa_{\mathrm{QME}}\).
 \end{thm}
 
 \begin{proof}
@@ -787,24 +825,33 @@ included in the datum
   and then keeping only the constant Taylor coefficient.
   The first displayed formula is
   Corollary~\ref{cor:local-bulk-boundary-coupling}. The second is the
-  quantum version of the same central term: the Weyl convention gives
-  \([X^i{}_j,Y^k{}_l]=\hbar\delta^i_l\delta^k_j\), and the normal
+  quantum version of the same central term in the boundary Weyl algebra:
+  the Weyl convention gives
+  \([X^i{}_j,Y^k{}_l]=\hbar_{\mathrm{W}}\delta^i_l\delta^k_j\), and the normal
   ordered moment relation is
-  \(Y_\hbar X_\hbar-X_\hbar Y_\hbar+\hbar N I\equiv0\). Hence
-  \(XY-YX=\hbar N I\) in the quantum Hamiltonian reduction, and tracing
+  \(Y_{\hbar_{\mathrm{W}}}X_{\hbar_{\mathrm{W}}}
+    -X_{\hbar_{\mathrm{W}}}Y_{\hbar_{\mathrm{W}}}
+    +\hbar_{\mathrm{W}}N I\equiv0\). Hence
+  \(XY-YX=\hbar_{\mathrm{W}}N I\) in the quantum Hamiltonian reduction, and tracing
   against \(A\) gives the stated sign.  The matrix-commutator form is
   the same identity written as
   \(\operatorname{Tr}(A(XY-YX))\).
+  The scalar QME representative uses the same cocycle \(\omega\), but
+  its coefficient is the Costello graph-order parameter
+  \(\hbar_{\mathrm{QME}}\), supplied by the one-loop brane-defect
+  contraction.
 
   The scalar contact itself has degree \(0\). Multiplication by the
   central ghost \(\gamma_{\mathbf 1}\) makes the QME obstruction
   representative degree \(1\), the degree of the obstruction complex.
   The CE associated graded of this representative is the scalar
-  extension cocycle \(\hbar N\omega\,\gamma_{\mathbf 1}\), hence the
+  extension cocycle
+  \(\hbar_{\mathrm{QME}}N\omega\,\gamma_{\mathbf 1}\), hence the
   class
   \[
-    \hbar N[\bar c]\,\gamma_{\mathbf 1}
-    \in H^2_{\mathrm{Lie}}(\bar A;\C\gamma_{\mathbf 1})[1][[\hbar]].
+    \kappa_{\mathrm{QME}}\,\gamma_{\mathbf 1}
+    \in H^2_{\mathrm{Lie}}(\bar A;\C\gamma_{\mathbf 1})[1]
+      [[\hbar_{\mathrm{QME}}]].
   \]
 
   If its coefficient-forgetting image were exact in the scalar-reduced
@@ -834,10 +881,15 @@ included in the datum
     \omega(f,g)=[\{f,g\}_{\Omega_{\mathrm{loc}}}]_0,
     \qquad \omega(z_1,z_2)=1,
   \]
-  is detected in four equivalent forms.  All four witness one and the
-  same nonzero class in \(H^2(\bar A;\C)[[\hbar]]\).  Up to the
-  quantum scalar \(\hbar N\) given by the open Chan--Paton index
-  loop, the cocycle is the same in each.
+  is detected in four equivalent forms.  All four witness the same
+  nonzero source class \([\bar c]\in H^2(\bar A;\C)\).  The boundary
+  Weyl/Capelli scalarization gives
+  \(\kappa_{\mathrm{W}}=\hbar_{\mathrm{W}}N[\bar c]\), while the scalar
+  Costello QME row gives
+  \(\kappa_{\mathrm{QME}}=\hbar_{\mathrm{QME}}N[\bar c]\).  These are
+  two scalar multiples of the same Lie cocycle; they are not identified
+  unless a specialization \(\hbar_{\mathrm{W}}=\hbar_{\mathrm{QME}}\) is
+  imposed.
 
   \begin{enumerate}[label=\textnormal{(\roman*)}]
     \item \emph{Algebraic central extension of the Hamiltonian
@@ -876,62 +928,76 @@ included in the datum
         \longrightarrow A_{\partial,\mathrm{red}}
         \longrightarrow 0
       \]
-      of trace-reduced boundary algebras, whose Lie cocycle is
-      \(\hbar N\omega\) and whose class in
-      \(H^2(A_{\partial,\mathrm{red}};\C)[[\hbar]]\) is
-      \(\hbar N[\bar c]\).
+      of trace-reduced boundary algebras.  After insertion in the
+      scalar Costello QME row, its Lie cocycle is
+      \(\hbar_{\mathrm{QME}}N\omega\) and its class in
+      \(H^2(A_{\partial,\mathrm{red}};\C)[[\hbar_{\mathrm{QME}}]]\) is
+      \(\kappa_{\mathrm{QME}}\).
     \item \emph{Quantum Weyl commutator.}  In the Weyl quantization,
       \[
-        [\Phi_\hbar(z_1),\Phi_\hbar(z_2)]_{\star}=\hbar N
+        [\Phi_{\hbar_{\mathrm{W}}}(z_1),
+          \Phi_{\hbar_{\mathrm{W}}}(z_2)]_{\star}
+          =\hbar_{\mathrm{W}}N
         \mod \mathcal W_N\widehat\mu(\lie{sl}_N),
         \qquad
-        W_1^{\mathrm{sc,ord}}=\hbar N[\bar c]
-        \quad\text{in cohomology},
+        W_1^{\mathrm{sc,ord}}=\kappa_{\mathrm{QME}}
+        \quad\text{after Costello one-loop normalization},
       \]
       i.e.\ the Capelli shift makes the scalar commutator equal
-      \(\hbar N\) times the identity, modulo the Hamiltonian moment-map
-      ideal of \(\lie{sl}_N\).  The associated CE class is again
-      \(\hbar N[\bar c]\).
+      \(\hbar_{\mathrm{W}}N\) times the identity, modulo the Hamiltonian
+      moment-map ideal of \(\lie{sl}_N\).  The associated Weyl CE class
+      is \(\kappa_{\mathrm{W}}\); the scalar QME row records the same
+      underlying cocycle as \(\kappa_{\mathrm{QME}}\).
   \end{enumerate}
 
-  These four are equivalent in the strong sense that the same class
-  \([\bar c]\in H^2(\bar A;\C)\) is the image, under the canonical
+  These four are equivalent in the strong sense that the same source class
+  \([\bar c]\in H^2(\bar A;\C)\) is the image, under the specified
   scalar projections, of all four cocycles:
   \[
-  \begin{array}{ccccc}
+  \begin{array}{ccccccc}
     [\omega]_{(\mathrm{i})}
     & = &
     [\omega]_{(\mathrm{ii})}
-    & \in &
-    H^2(\bar A;\C),
-    \\[1ex]
-    \big\downarrow\,\hbar N\cdot
-    &  &
-    \big\downarrow\,\hbar N\cdot
-    &  &
-    \\[1ex]
-    [\hbar N\omega]_{(\mathrm{iii})}
     & = &
-    [\hbar N\omega]_{(\mathrm{iv})}
-    & \in &
-    H^2(\bar A;\C)[[\hbar]],
+    [\omega]_{(\mathrm{iii})}^{\mathrm{src}}
+    & = &
+    [\omega]_{(\mathrm{iv})}^{\mathrm{src}}
+    \\[0.5ex]
+    & & & & & &
+    \in H^2(\bar A;\C).
   \end{array}
   \]
-  with horizontal equalities of cocycles given by the Lie/algebraic
-  identification of (i) with (ii) and the trace/Weyl identification of
-  (iii) with (iv), and vertical multiplications by \(\hbar N\) given
-  by the open Chan--Paton trace pairing.
+  The two scalarized classes are the images
+  \[
+  \begin{array}{ccccc}
+    [\omega]
+    &\longmapsto&
+    \hbar_{\mathrm{QME}}N[\omega]=\kappa_{\mathrm{QME}}
+    & \in &
+    H^2(\bar A;\C)[[\hbar_{\mathrm{QME}}]],
+    \\[1ex]
+    [\omega]
+    &\longmapsto&
+    \hbar_{\mathrm{W}}N[\omega]=\kappa_{\mathrm{W}}
+    & \in &
+    H^2(\bar A;\C)[[\hbar_{\mathrm{W}}]].
+  \end{array}
+  \]
+  The first scalarization is the Costello graph-order class in the QME
+  obstruction complex.  The second is the boundary Weyl/Capelli class.
 
   The radial Poisson field
   \(X_f\) annihilates the constant line in \(A\) (Proposition~\ref
   {prop:app-local-geometry-scalar-shadow}), but the open trace pairs
   the same constant line against \(\operatorname{Tr}(\mathbf 1)=N\) and
-  produces the Capelli shift \(\hbar N[\bar c]\).  Equivalently, the
-  same class is the Lie cohomology class \(\hbar N[\bar c]\).  If a
+  produces the Capelli shift \(\kappa_{\mathrm{W}}\).  Equivalently, the
+  same Weyl scalarization is the Lie cohomology class
+  \(\hbar_{\mathrm{W}}N[\bar c]\).  If a
   determinant line with connection exists and its Atiyah class
   pulls back to \([\bar c]\), its curvature restricts to
-  \(\hbar N[\bar c]\) at the trace generator
-  \(J(f)=\operatorname{Tr}f(\phi_1,\phi_2)\) by
+  \(\kappa_{\mathrm{W}}\) at the polynomial trace generator
+  \(J(f)=\operatorname{Tr}f(\phi_1,\phi_2)\), \(f\in\bar A\), with
+  Taylor-window completion for \(f\in\mathfrak h\), by
   Theorem~\ref{thm:capelli-projective-anomaly}: the four
   representatives are the four forms in which the local-stalk Lie
   cohomology class enters the formal-Darboux computation, with the determinant-line
@@ -947,57 +1013,66 @@ included in the datum
   nonzero on \(\bar A\); the central extension presented in (i) is
   this nontrivial class.
 
-  Representative (ii) is the standard correspondence between Lie central
-  extensions of \(\bar A\) by \(\C\) and elements of
-  \(H^2(\bar A;\C)\).  Setting
+  Representative (ii) is obtained by the Chevalley--Eilenberg
+  construction of a central extension from a \(2\)-cocycle.  Setting
   \([\![\bar f,\bar g]\!]_{\mathrm{cent}}=\overline{\{f,g\}}+\omega(f,g)\bar c\)
   defines a Lie bracket because \(\omega\) is a \(2\)-cocycle, and the
-  associated extension class is \([\omega]=[\bar c]\) by construction.
-  This is the same class as (i) up to canonical identification.
+  associated extension class is \([\omega]=[\bar c]\): if the extension
+  split as Lie algebras, a linear splitting would give a \(1\)-cochain
+  \(\lambda\) with \(d_{\mathrm{CE}}\lambda=\omega\), while the preceding
+  paragraph proves that no such cochain descends to the reduced algebra
+  \(\bar A\).  Under the map which sends a central-extension bracket
+  cocycle to its Chevalley--Eilenberg cohomology class, this is the
+  class of representative (i).
 
   Representative (iii) is the trace-algebraic content of
   Theorem~\ref{thm:app-scalar-contact-qme-class}: the open Chan--Paton
   ordinary trace pairs \(I_\partial(a,f)I_\partial(b,g)\) and produces
-  the residual \(\hbar N\,\omega(f,g)\int_\R a(t)b(t)\,dt\), which is
-  the trace-algebraic cocycle.  The boundary
+  the residual \(N\,\omega(f,g)\int_\R a(t)b(t)\,dt\).  After insertion
+  as a one-loop Costello scalar symbol, this becomes
+  \(\hbar_{\mathrm{QME}}N\,\omega(f,g)\int_\R a(t)b(t)\,dt\), which is
+  the trace-algebraic QME cocycle.  The boundary
   source map \(A_{\partial,\mathrm{red}}\to\bar A\) (induced by
   \(I_\partial(a,f)\mapsto\bar f\) on the Hamiltonian factor and by
   evaluation against the test function) factors the trace cocycle as
-  \(\hbar N\) times the canonical \(\bar A\)-cocycle \(\omega\).
+  \(\hbar_{\mathrm{QME}}N\) times the source \(\bar A\)-cocycle \(\omega\).
   Hence the class in
-  \(H^2(A_{\partial,\mathrm{red}};\C)[[\hbar]]\) is \(\hbar N\) times
-  the same scalar \([\bar c]\) under this canonical pullback: the
-  trace coefficient is the only scalar dependence beyond the source
-  cocycle.
+  \(H^2(A_{\partial,\mathrm{red}};\C)[[\hbar_{\mathrm{QME}}]]\) is
+  \(\kappa_{\mathrm{QME}}\) under this pullback: the trace
+  coefficient and the Costello graph-order parameter are the only
+  scalar dependences beyond the source cocycle.
 
   Representative (iv) is the quantum Weyl reformulation in the same theorem:
-  the matrix Weyl commutator \([X,Y]=\hbar N I\) modulo
+  the matrix Weyl commutator \([X,Y]=\hbar_{\mathrm{W}}N I\) modulo
   \(\mathcal W_N\widehat\mu(\lie{sl}_N)\) is the Capelli normal-ordered
   scalar shift.  Tracing against \(A\) and applying the
   associated-graded scalar-symbol projection produces the same scalar
-  CE class \(\hbar N[\bar c]\).
+  Weyl CE class \(\kappa_{\mathrm{W}}\).  The Costello scalar QME row
+  uses the same source cocycle with coefficient
+  \(\hbar_{\mathrm{QME}}N\), hence \(\kappa_{\mathrm{QME}}\).
 
-  The three vertical/horizontal equalities of the diagram are induced
-  by the canonical scalar-symbol projection
-  (Proposition~\ref{prop:app-local-geometry-scalar-shadow}) and the
-  open Chan--Paton trace.  The algebraic content: \(X_f(1)=0\) for
+  The source equalities are induced by the scalar-symbol projection
+  of Proposition~\ref{prop:app-local-geometry-scalar-shadow}
+  and the open Chan--Paton trace.  The algebraic content:
+  \(X_f(1)=0\) for
   every \(f\) (the constant line is annihilated by every Hamiltonian
   vector field), while the trace pairing
   \(\operatorname{Tr}(\mathbf 1)=N\) records the constant line as the
-  open index loop charge \(\hbar N\).  The four representatives are the
-  four forms of the same class \([\bar c]\) after pairing
-  with the open trace, the source CE differential, the Lie bracket,
-  or the boundary Weyl commutator.
+  open index-loop charge.  The formal parameter is supplied later by
+  the construction: \(\hbar_{\mathrm{QME}}\) for Costello graph order,
+  \(\hbar_{\mathrm{W}}\) for the boundary Weyl algebra.
 \end{proof}
 
 \begin{rmk}[Action of the four cancellation branches on the scalar
   anomaly class]
 \label{rmk:app-scalar-anomaly-transgression-branches}
   Each branch acts on the class
-  \(\hbar N[\bar c]\in H^2(\bar A;\C)[[\hbar]]\) of
+  \(\kappa_{\mathrm{QME}}\in
+  H^2(\bar A;\C)[[\hbar_{\mathrm{QME}}]]\) of
   Theorem~\ref{thm:app-scalar-anomaly-transgression}.  The unreduced
   central character produces the CE coboundary
-  \(d_{\mathrm{CE}}(\hbar N\eta)=\hbar N\omega\) on the unreduced
+  \(d_{\mathrm{CE}}(\hbar_{\mathrm{QME}}N\eta)
+    =\hbar_{\mathrm{QME}}N\omega\) on the unreduced
   source, with \(\eta(f)=-[f]_0\) of
   Lemma~\ref{lem:app-unreduced-scalar-primitive} admitted as a
   degree-zero element
@@ -1017,7 +1092,7 @@ included in the datum
   By Theorem~\ref{thm:app-ordinary-glN-scalar-obstruction-criterion},
   any internal local counterterm in the ordinary scalar-reduced
   \(\lie{gl}_N\) branch must contribute leading scalar class
-  \(-\hbar N[\bar c]\).  The class \([\bar c]\neq0\), so the four branch
+  \(-\kappa_{\mathrm{QME}}\).  The class \([\bar c]\neq0\), so the four branch
   replacements above are exactly the scalar cancellations available here.
 \end{rmk}
 
@@ -1049,7 +1124,7 @@ included in the datum
     J^\chi_N(1)=N,\qquad
     \operatorname{Tr}(A[X,Y])
       =J^\chi_N([z_1,z_2]_{*})\,\operatorname{Tr}(A)
-      =\hbar J^\chi_N(1)\operatorname{Tr}(A).
+      =\hbar_{\mathrm{W}} J^\chi_N(1)\operatorname{Tr}(A).
   \]
   Thus the local scalar QME symbol becomes exact after replacing the
   scalar-reduced source by the unreduced source with central character
@@ -1063,7 +1138,8 @@ included in the datum
   so
   \[
     d_{\mathrm{CE}}\chi_N=-N\omega,\qquad
-    \hbar N\omega+d_{\mathrm{CE}}(\hbar\chi_N)=0
+    \hbar_{\mathrm{QME}}N\omega
+      +d_{\mathrm{CE}}(\hbar_{\mathrm{QME}}\chi_N)=0
   \]
   in the unreduced source.
 \end{thm}
@@ -1090,20 +1166,24 @@ included in the datum
     I^\chi_\partial(ab,\{f,g\}).
   \]
   The quantum formula is the same computation in the Weyl algebra:
-  \([z_1,z_2]_{*}=\hbar\), \(J^\chi_N(1)=N\), and the matrix moment
+  \([z_1,z_2]_{*}=\hbar_{\mathrm{W}}\), \(J^\chi_N(1)=N\), and the matrix moment
   relation gives
-  \(\operatorname{Tr}(A[X,Y])=\hbar N\operatorname{Tr}(A)\).  Hence the
+  \(\operatorname{Tr}(A[X,Y])
+    =\hbar_{\mathrm{W}}N\operatorname{Tr}(A)\).  Hence the
   scalar Weyl commutator is the image of the unreduced Moyal scalar
   instead of an obstruction class.
 
   This is the normal-ordering mechanism.  The relation
-  \(YX-XY+\hbar N I\equiv0\) says that an \(XY\)-to-\(YX\) interchange
-  contributes the scalar \(\hbar N I\).  In the scalar-reduced source
+  \(YX-XY+\hbar_{\mathrm{W}}N I\equiv0\) says that an \(XY\)-to-\(YX\) interchange
+  contributes the scalar \(\hbar_{\mathrm{W}}N I\).  In the scalar-reduced source
   this scalar is invisible and therefore appears as
   \(\operatorname{Ob}_{\mathrm{sc}}\).  In the unreduced source with
   \(J_N^\chi(1)=N\), the same scalar is
-  \(J_N^\chi([z_1,z_2]_*)=\hbar N\), so it is exact before forming
-  the QME obstruction class.
+  \(J_N^\chi([z_1,z_2]_*)=\hbar_{\mathrm{W}}N\), so it is exact before
+  forming the boundary Weyl class.  The corresponding scalar QME class
+  is exact by
+  \(d_{\mathrm{CE}}(\hbar_{\mathrm{QME}}\chi_N)
+    =-\hbar_{\mathrm{QME}}N\omega\).
 \end{proof}
 
 \begin{thm}[Local \(\mathfrak{gl}(N|N)\) supertrace scalar QME cancellation]
@@ -1175,7 +1255,7 @@ included in the datum
   \[
     \mathfrak H^\bullet_{\mathrm{bal,sc}}(I)
       \subset
-    \mathfrak Q^\bullet_{w,\partial,\hbar,\operatorname{str}}(I)
+    \mathfrak Q^\bullet_{w,\partial,\hbar_{\mathrm{QME}},\operatorname{str}}(I)
   \]
   of the local supertrace brane-defect local-functional complex, with
   differential \(d_{\mathrm{QME}}\), satisfying the following conditions.
@@ -1254,10 +1334,10 @@ included in the datum
   Evaluating on two Hamiltonian boundary insertions gives the same local
   contraction as Theorem~\ref{thm:app-balanced-supertrace-qme-cancellation}:
   the ordinary coefficient \(N\) in
-  \(\hbar N\,\omega(f,g)\gamma_{\mathbf 1}\) is replaced by
+  \(\hbar_{\mathrm{QME}}N\,\omega(f,g)\gamma_{\mathbf 1}\) is replaced by
   \(\operatorname{sdim}(V)\).  Thus
   \[
-    \hbar\,\operatorname{sdim}(V)\,
+    \hbar_{\mathrm{QME}}\,\operatorname{sdim}(V)\,
     \omega(f,g)\gamma_{\mathbf 1}=0,
   \]
   including the test \((f,g)=(z_1,z_2)\).
@@ -1300,7 +1380,7 @@ included in the datum
       \subset
     \mathfrak G^\bullet_{\mathrm{bal,Cost}}(I)
       \subset
-    \mathfrak Q^\bullet_{w,\partial,\hbar,\operatorname{str}}(I)
+    \mathfrak Q^\bullet_{w,\partial,\hbar_{\mathrm{QME}},\operatorname{str}}(I)
   \]
   is a balanced graph subcomplex if it is a complete
   \(d_{\mathrm{QME}}\)-stable filtered subcomplex generated, over
@@ -1380,7 +1460,7 @@ included in the datum
       \subset
     \mathfrak G^\bullet_{\mathrm{Cost}}(I)
       \subset
-    \mathfrak Q^\bullet_{w,\partial,\hbar,\operatorname{str}}(I)
+    \mathfrak Q^\bullet_{w,\partial,\hbar_{\mathrm{QME}},\operatorname{str}}(I)
   \]
   be any complete \(d_{\mathrm{QME}}\)-stable filtered
   Costello graph/counterterm enlargement.  Put
@@ -1439,8 +1519,19 @@ included in the datum
       \bigr)
     \right).
   \]
-  These classes are independent of the chosen lift up to the usual Hom
-  coboundary.  A filtered chain projection extending the balanced
+  If \(s'\) is another filtered lift with
+  \(s'-s=h\) in filtration degree \(-r\), then the degree-\((-r)\)
+  component of the chain-map defect changes by
+  \[
+    \delta_{s'}^{(-r)}-\delta_s^{(-r)}
+    =
+    d_{\mathrm{CE}}h-h\,d_{\operatorname{gr}},
+  \]
+  the differential in
+  \(\operatorname{Hom}_{-r}(
+  \operatorname{gr}_{F}\overline{\mathfrak G}^\bullet_{\mathrm{Cost}}(I),
+  S^\bullet)\).  Hence the displayed cohomology class is independent
+  of the lift.  A filtered chain projection extending the balanced
   projection exists exactly when
   \[
     \delta^{(0)}_{\mathrm{Cost},\sigma}(I)=0,\qquad
@@ -1745,7 +1836,7 @@ included in the datum
       [\bar c]\,\gamma_{\mathbf 1}.
   \]
   Thus a non-supertraceless boundary word is the exact obstruction to
-  \(d_{\mathrm{QME}}\)-preservation, and its scalar shadow is precisely
+  \(d_{\mathrm{QME}}\)-preservation, and its scalar projection is precisely
   the marked-loop class computed in
   Proposition~\ref{prop:app-first-nonidentity-loop-scalar-symbol}.
 
@@ -1761,7 +1852,7 @@ included in the datum
   \(d_{\mathrm{cl}}=Q+\{I_0,-\}\) to this displayed Hamiltonian
   generator set preserves supertraceless monodromy.  Preservation by the
   full scale-\(L\) differential \(d_{\mathrm{QME}}^{L}\) further requires
-  that \(\hbar\Delta_L\) and \(I[L]-I_0\) create only empty
+  that \(\hbar_{\mathrm{QME}}\Delta_L\) and \(I[L]-I_0\) create only empty
   identity-loop scalar contacts with zero supertrace; equivalently, the
   Costello specialization has \(\mathcal B_{\operatorname{st}=0}=0\).
   A larger specialization with marked idempotents, holonomies, or
@@ -1870,7 +1961,7 @@ included in the datum
       X_{\Gamma'^{\,\mathfrak m_{\Gamma,\Gamma',\lambda}},M}
     \right]_{\operatorname{st}\neq0,\;F^{p-r}/F^{p-r+1}},
   \]
-  and its two-Hamiltonian-argument scalar shadow is
+  and its two-Hamiltonian-argument scalar projection is
   \[
     \hbar
     \sum_{\Gamma',\lambda}
@@ -1906,7 +1997,7 @@ included in the datum
 
   In particular, a single fixed marker \(T\in\operatorname{End}(V){}_{\bar0}\)
   can occur in a full \(\lie{gl}(V)\)-equivariant marked differential only
-  when \(T=\lambda\operatorname{id}_V\).  Its scalar shadow is then
+  when \(T=\lambda\operatorname{id}_V\).  Its scalar projection is then
   \[
     \hbar\,\lambda\,\operatorname{Str}(\operatorname{id}_V)\,
     \omega(f,g)\gamma_{\mathbf 1}=0 .
@@ -1919,7 +2010,7 @@ included in the datum
   single-marker term is a scalar multiple of the identity.  If one imposes
   only the even block-diagonal group, or gives external marker
   tensors, the admissible datum is the invariant tensor family above, and
-  the first nonzero scalar shadow is detected exactly by the displayed
+  the first nonzero scalar projection is detected exactly by the displayed
   cyclic-supertrace coefficient.
 \end{prop}
 
@@ -1928,7 +2019,7 @@ included in the datum
   \(\mathcal B^{(r)}_{\operatorname{st}=0}\) is
   Definition~\ref{def:app-supertraceless-monodromy-precomplex} applied to
   the marked boundary expansion
-  equation~\eqref{eq:app-marked-differential-datum}.  The scalar-shadow
+  equation~\eqref{eq:app-marked-differential-datum}.  The scalar-projection
   formula is the linear extension of
   Proposition~\ref{prop:app-first-nonidentity-loop-scalar-symbol}: a
   decomposable marker word contributes the cyclic supertrace of the
@@ -1940,14 +2031,14 @@ included in the datum
   The equivariance constraint is the following.  A marked local
   functional with one fixed marker \(T\) transforms under \(g\in GL(V)\)
   by replacing the marker with \(gTg^{-1}\).  Equivariance of the
-  differential therefore forces \(gTg^{-1}=T\), or infinitesimally
+  differential therefore gives \(gTg^{-1}=T\), or infinitesimally
   \([A,T]=0\) for every \(A\in\lie{gl}(V)\).  Since \(T\) is even, write it
   in the parity decomposition as
   \(T=T_{\bar0}\oplus T_{\bar1}\).  Commutation with
   \(\lie{gl}(N)\oplus\lie{gl}(N)\) gives
   \(T_{\bar0}=\lambda_0\operatorname{id}\) and
   \(T_{\bar1}=\lambda_1\operatorname{id}\).  Commutation with the odd
-  elementary endomorphisms forces \(\lambda_0=\lambda_1\).  Hence
+  elementary endomorphisms gives \(\lambda_0=\lambda_1\).  Hence
   \(T=\lambda\operatorname{id}_V\).  The cyclic supertrace is then
   \(\lambda\operatorname{sdim}(V)=0\) for \(V=\C^{N|N}\).
 
@@ -2084,8 +2175,9 @@ included in the datum
 
   The list is \emph{codimension-two closed} if, for every
   \(\beta_i\neq\beta_j\), the two composites are again entries of the
-  finite list and, after the canonical identification of resulting orientation
-  lines,
+  finite list and, after the orientation-line isomorphism induced by the
+  two ordered boundary bases
+  \((\beta_i,\beta_{j|i})\) and \((\beta_j,\beta_{i|j})\),
   \[
     \partial_{\beta_j|\beta_i}\partial_{\beta_i}\Gamma
       =
@@ -2337,7 +2429,7 @@ included in the datum
   \(\operatorname{Str}(\operatorname{id}_V)=0\).
 \end{proof}
 
-\begin{thm}[Full-equivariant marked scalar shadow vanishing]
+\begin{thm}[Full-equivariant marked scalar projection vanishing]
 \label{thm:app-full-equivariant-marked-shadow-vanishing}
   Let \(V=\C^{N|N}\).  Let
   \(\mathfrak G^\bullet_{\mathrm{mk,full}}(I)\) be a complete
@@ -2351,14 +2443,14 @@ included in the datum
   Proposition~\ref{prop:app-finite-window-marked-subcomplex-compatibility}.
   This is a finite-list statement in every window.  Then the marked
   preservation obstruction has zero
-  cyclic-supertrace shadow:
+  cyclic-supertrace projection:
   \[
     \operatorname{Str}_{\mathrm{cyc}}
       \bigl(\mu_{\beta_i}(\mathfrak m)\bigr)=0
     \qquad\text{for every elementary boundary term } \beta_i.
   \]
   Consequently, for every homogeneous
-  \(X_{\Gamma,o,\mathfrak m,M}\in F^p\), the first scalar CE shadow is
+  \(X_{\Gamma,o,\mathfrak m,M}\in F^p\), the first scalar CE projection is
   \[
     \hbar
     \sum_{i:\,r(\beta_i)=r}
@@ -2587,8 +2679,9 @@ included in the datum
 \label{thm:app-constructive-nonscalar-costello-qme-realization}
   Work in a finite-window realization complex of
   Definition~\ref{def:app-native-finite-window-realization-complex}.
-  Suppose that the QME has been solved through order \(\hbar^{n-1}\) by
-  counterterms \(C_{<n,M}\).  The order-\(n\) realization is decided by
+  Suppose that the finite-window QME residual has been killed through
+  order \(\hbar^{n-1}\) by chosen counterterms \(C_{<n,M}\).  The
+  order-\(n\) realization is decided by
   the following finite row construction.
 
   For every valid row array
@@ -2938,8 +3031,8 @@ included in the datum
     H^0(\mathcal K^\bullet_{\mathrm{ns},N}(I))
   \]
   must vanish next.  These two conditions promote the lower \(\theta_3\)
-  Bianchi primitive from a fixed-window matrix target to a solved
-  Costello/QME counterterm tower.
+  Bianchi primitive from a fixed-window matrix target to a compatible
+  finite-window Costello/QME tower datum.
 \end{prop}
 
 \begin{proof}
@@ -2954,8 +3047,8 @@ included in the datum
   \]
   which is the column \(A_D^2=(-2,2,1)^T\) in the displayed basis.  The
   residual transported from the lower two-face row is \(r_2=(2,-2,0)^T\).
-  If \(A_D^2c=-r_2=(-2,2,0)^T\), the first two coordinates force
-  \(c=1\), while the Bianchi coordinate forces \(c=0\).  Thus the equation
+  If \(A_D^2c=-r_2=(-2,2,0)^T\), the first two coordinates give
+  \(c=1\), while the Bianchi coordinate gives \(c=0\).  Thus the equation
   is inconsistent.  The same conclusion is the cokernel calculation:
   \(\widetilde\lambda_{02,\mathfrak b}\) annihilates \(A_D^2\) and pairs
   nontrivially with \(r_2\).
@@ -2975,9 +3068,19 @@ included in the datum
   Bianchi boundary and the \(N\)-window Bianchi boundary, namely
   \(-\pi_{M,N}\mathfrak b^M+\mathfrak b^N\).  Therefore the transported
   family exists after this degree-one class vanishes in
-  \(H^1(\mathcal K^\bullet_{\mathrm{ns},N}(I))\); after choosing
-  primitives, their compatibility is measured by the usual Roos
-  \(\varprojlim^1H^0\) obstruction.
+  \(H^1(\mathcal K^\bullet_{\mathrm{ns},N}(I))\).  After choosing
+  primitives \(B^N\), set
+  \(A_N=H^0(\mathcal K^\bullet_{\mathrm{ns},N}(I))\) and use the
+  successor Roos map
+  \[
+    \Delta((a_N)_N)
+      =
+      \bigl(a_N-\pi_{N+1,N}a_{N+1}\bigr)_N
+      \colon \prod_N A_N\longrightarrow\prod_N A_N .
+  \]
+  The primitive-difference classes
+  \([\pi_{N+1,N}B^{N+1}-B^N]\in A_N\) define the compatibility class in
+  \(\operatorname{coker}\Delta=\varprojlim\nolimits^1_NA_N\).
 \end{proof}
 
 \begin{thm}[First non-scalar finite-window \(H^1\) at the
@@ -3006,12 +3109,13 @@ included in the datum
       \]
       and the obstruction class is the basis vector itself,
       \[
-        [\operatorname{Ob}^{\mathrm{red}}_{w,\partial,\hbar}]
+        [\operatorname{Ob}^{\mathrm{red}}_{w,\partial,\hbar_{\mathrm{QME}}}]
           \big|_{\theta_3,M}
           =[\mathsf E_{\theta_3,M}]\neq0,
       \]
-      detected by the unique covector
-      \(\ell_{\theta_3}(\mathsf E_{\theta_3,M})=1\) on the row basis.
+      detected, after fixing the row basis
+      \(\mathsf E_{\theta_3,M}\), by the dual covector
+      \(\ell_{\theta_3}(\mathsf E_{\theta_3,M})=1\).
       The given finite complex has zero degree-zero row space; the linear system
       \(A^M c=-r^M\) of
       Theorem~\ref{thm:app-constructive-nonscalar-costello-qme-realization}
@@ -3033,11 +3137,11 @@ included in the datum
       \[
         H^1(\widetilde{\mathcal K}^\bullet_{\theta_3,M},\widetilde d)
           =0,\qquad
-        [\operatorname{Ob}^{\mathrm{red}}_{w,\partial,\hbar}]
+        [\operatorname{Ob}^{\mathrm{red}}_{w,\partial,\hbar_{\mathrm{QME}}}]
           \big|_{\theta_3,M}=0,
       \]
-      and the unique counterterm \(c=1\) (i.e.\ adopting
-      \(C_{\theta_3,M}\) with coefficient one in the QME expansion)
+      and, after fixing \(C_{\theta_3,M}\) as the basis of the added
+      degree-zero row, the coefficient \(c=1\)
       solves the row equation \(\widetilde A^M c=-r^M=
       -\mathsf E_{\theta_3,M}\).  Tower compatibility holds with the
       identity primitive transport
@@ -3062,7 +3166,7 @@ included in the datum
   Proposition~\ref{prop:app-closed-rows-and-theta-three-source-face},
   so the row lives in the kernel complex.  Since
   \(d_{\theta_3,M}=0\) on the one-element basis, the row is closed.
-  Its cohomology class equals the basis vector itself, and the unique
+  Its cohomology class equals the basis vector itself, and the dual
   covector \(\ell_{\theta_3}(\mathsf E_{\theta_3,M})=1\) annihilates
   the (empty) image of \(d_{\theta_3,M}\) but is nonzero on
   \(\mathsf E_{\theta_3,M}\).  This is the cokernel separation of
@@ -3493,9 +3597,9 @@ included in the datum
   associated-graded defect is the obstruction to even starting a filtered
   lift.  After it vanishes, the first filtration-lowering chain defect is
   closed for \(D_\Omega\); changing the lift by a filtration-lowering
-  cochain changes it by a Hom coboundary.  Completeness gives the
-  successive criterion and the compatibility condition in the inverse
-  finite-window tower.
+  cochain \(h\) changes the defect by
+  \(D_\Omega(h)\).  Completeness gives the successive criterion and the
+  compatibility condition in the inverse finite-window tower.
 
   With a chain scalar projection fixed, its kernel is preserved by
   \(d_{M,\Omega}\).  The displayed residual is the order-\(n\) term of the
@@ -3507,9 +3611,18 @@ included in the datum
   \(d_{\mathrm{ns},\Omega,M}\)-cocycle.  Adding an order-\(n\) local
   counterterm changes this cocycle by a
   \(d_{\mathrm{ns},\Omega,M}\)-boundary, so the fixed-window obstruction
-  is its \(H^1\)-class.  Compatibility of primitives across the
-  finite-window inverse system is exactly the usual
-  \(\varprojlim^1H^0\) obstruction of
+  is its \(H^1\)-class.  For compatible primitives set
+  \(A_M=H^0(\mathcal Q^\bullet_{w,\Omega,M}(I))\) and
+  \[
+    \Delta_\Omega((a_M)_M)
+      =
+      \bigl(a_M-\pi_{M+1,M}a_{M+1}\bigr)_M .
+  \]
+  The successor differences of any chosen primitive family represent a
+  class in
+  \(\operatorname{coker}\Delta_\Omega
+  =\varprojlim\nolimits^1_M A_M\), and its vanishing is the
+  compatibility condition of
   Theorem~\ref{thm:wt-nonscalar-counterterm-criterion}.  The final
   sentence follows because the normal contraction datum appears only in
   the construction of the equivariant propagator and localized coefficient
@@ -3735,7 +3848,7 @@ included in the datum
   \(\alpha_{\mathrm{sc}}\).  The first explicit such row is harmless:
   it is zero before cohomology.  If the row convention retains only
   nonzero summands, then \(\alpha_{11}\) is omitted, and a nonzero
-  order-one class still requires an additional given row
+  order-one class is encoded by the specified row
   \(R^{\mathrm{row}}_{\alpha,M}\) of the form stated in
   Proposition~\ref{prop:app-first-missing-nonscalar-row}.
 \end{prop}
@@ -3796,7 +3909,7 @@ included in the datum
   conditions, and truncation coefficients are fixed.
 \end{rmk}
 
-\begin{thm}[Minimal full-equivariant all-order vanishing]\label{thm:app-minimal-full-equivariant-all-order-vanishing}
+\begin{thm}[Minimal full-equivariant finite-list vanishing criterion]\label{thm:app-minimal-full-equivariant-all-order-vanishing}
   Work in the local
   \(\R^2_{\mathrm{top}}\times\widehat{\C^2}_{0,\mathrm{hol}}\)
   full-equivariant marked branch with \(V=\C^{N|N}\).  Let
@@ -3808,7 +3921,7 @@ included in the datum
   the finite-window system adds zero further positive-order seed graphs,
   CE-source faces, graph counterterm faces, or nonzero scalar-zero rows.
 
-  Then for every \(n\geq1\)
+  Then, inside this minimal finite marked list, for every \(n\geq1\)
   \[
     R^{\mathrm{ns}}_{n,M}=0,\qquad
     \mathfrak o^{\mathrm{ns}}_{n,M}=0,\qquad
@@ -4024,7 +4137,7 @@ included in the datum
   and these rows satisfy the truncation and weight identities of
   Theorem~\ref{thm:app-curved-kernel-centrality-homotopy-criterion}.  The
   centrality-homotopy row and its compatibility identities are additional
-  data beyond scalar-shadow vanishing.
+  data beyond scalar-projection vanishing.
 
   In the minimal full-equivariant branch of
   Theorem~\ref{thm:app-minimal-full-equivariant-all-order-vanishing},
@@ -4192,7 +4305,7 @@ included in the datum
   The displayed equation is precisely the centrality homotopy equation in
   the invariant \(Q_\Omega\)-complex.  Since \(Q_\Omega^2=L_{V_\Omega}\),
   \(T_\Omega\)-invariance of the primitive is an independent condition
-  beyond scalar-shadow vanishing.  The inverse-limit
+  beyond scalar-projection vanishing.  The inverse-limit
   assertion is the same primitive-compatibility argument as in
   Theorem~\ref{thm:app-curved-kernel-centrality-homotopy-criterion}.  If
   a primitive is chosen outside the basic subcomplex, applying
@@ -4215,20 +4328,20 @@ included in the datum
     T=\lambda_0P_{\bar0}+\lambda_1P_{\bar1},
   \]
   where \(P_{\bar0}\) and \(P_{\bar1}\) are the parity block
-  projections.  Its scalar shadow is
+  projections.  Its scalar projection is
   \[
     \operatorname{Str}(T)=N(\lambda_0-\lambda_1).
   \]
   For a two-Hamiltonian scalar contact the obstruction class is
   \[
-    \hbar N(\lambda_0-\lambda_1)\,
+    \hbar_{\mathrm{QME}}N(\lambda_0-\lambda_1)\,
     \omega(f,g)\gamma_{\mathbf 1},
     \qquad
-    \hbar N(\lambda_0-\lambda_1)[\bar c]\,\gamma_{\mathbf 1}
+    \hbar_{\mathrm{QME}}N(\lambda_0-\lambda_1)[\bar c]\,\gamma_{\mathbf 1}
     \text{ in cohomology}.
   \]
   Since \([\bar c]\neq0\) in the scalar-reduced source, this smaller
-  subalgebra has zero \([\bar c]\)-shadow for single markers if and only if
+  subalgebra has zero \([\bar c]\)-projection for single markers if and only if
   \(\lambda_0=\lambda_1\), i.e. the marker is scalar and the subalgebra
   has collapsed back to the full-equivariant single-marker case.  For
   higher marker tensors the strongest true positive statement is exactly
@@ -4280,13 +4393,14 @@ included in the datum
   \]
   with \(C\in\mathcal O_{\mathrm{loc}}^{\mathrm{bd}}\) can hold only if
   \[
-    [w_{\mathrm{add}}]=-\hbar N[\bar c]
-      \qquad\text{in }H^2_{\mathrm{Lie}}(\bar A;\C)[[\hbar]].
+    [w_{\mathrm{add}}]=-\kappa_{\mathrm{QME}}
+      \qquad\text{in }
+      H^2_{\mathrm{Lie}}(\bar A;\C)[[\hbar_{\mathrm{QME}}]].
   \]
   In particular, with \(W_{\mathrm{add}}=0\), or with
   \(w_{\mathrm{add}}\) exact, the ordinary scalar-reduced
   \(\lie{gl}_N\) brane-defect model carries the scalar QME obstruction
-  \(\hbar N[\bar c]\).
+  \(\kappa_{\mathrm{QME}}\).
 \end{thm}
 
 \begin{proof}
@@ -4298,15 +4412,16 @@ included in the datum
   \]
   to
   \[
-    \hbar N\omega+w_{\mathrm{add}}+\delta\bar\eta=0
+    \hbar_{\mathrm{QME}}N\omega+w_{\mathrm{add}}+\delta\bar\eta=0
       \qquad\text{in }C^2_{\mathrm{Lie}}(\bar A;\C),
   \]
   where \(\bar\eta\) is the linear functional represented by the
   leading scalar part of \(C\).  Passing to cohomology gives the stated
   necessary condition.  If \(W_{\mathrm{add}}=0\), or if
-  \(w_{\mathrm{add}}\) is exact, this condition forces
-  \(\hbar N[\bar c]=0\) in \(H^2_{\mathrm{Lie}}(\bar A;\C)[[\hbar]]\).
-  For \(N>0\) and formal \(\hbar\),
+  \(w_{\mathrm{add}}\) is exact, this condition implies
+  \(\kappa_{\mathrm{QME}}=0\) in
+  \(H^2_{\mathrm{Lie}}(\bar A;\C)[[\hbar_{\mathrm{QME}}]]\).
+  For \(N>0\) and formal \(\hbar_{\mathrm{QME}}\),
   Theorem~\ref{thm:app-scalar-contact-qme-class} identifies
   \([\bar c]\neq0\) on \(\bar A\).  Thus the ordinary scalar-reduced
   obstruction survives every internal local counterterm.
@@ -4424,17 +4539,17 @@ included in the datum
       \text{ with these choices.}\;}
   \]
   At the associated-graded level, the primitive
-  indecomposable \(P_0\)-shadow of
+  indecomposable \(P_0\)-projection of
   Theorem~\ref{thm:chain-level-primitive-projection}
   is the first associated-graded target for the centrality filtration.
   A spectral sequence converging to
   \(\operatorname{ob}^{P_0}_{\mathrm{cent}}\) is obtained only after the
   filtration is complete, exhaustive, and compatible with the
   Hom-valued companion differential.  In that case its first
-  differential is the primitive Hamiltonian shadow
+  differential is the primitive Hamiltonian projection
   acting on the source one-\(\psi\) label, and its first nonzero
   piece is the obstruction class to the strict centrality of the
-  primitive-shadow lift.
+  primitive-projection lift.
 
   The four components are independent in the following sense.
   Vanishing of (i) is a graded commutativity test on the unreduced
@@ -4458,10 +4573,15 @@ included in the datum
   Necessity in each component.
 
   Component (i).  Any factorization-center morphism into
-  \(Z^{P_0}_{\mathrm{fact}}(\mathrm{Obs}_{\mathrm{open}})\) sends
-  every source generator to a graded center element by definition,
-  hence the product centrality defect is a \(d_M\)-boundary on every
-  generator pair.  The cohomology class
+  \(Z^{P_0}_{\mathrm{fact}}(\mathrm{Obs}_{\mathrm{open}})\) lands in
+  the equalizer of the two left/right factorization products.  Thus, for
+  a source generator \(x\) and an open observable \(y\), the centrality
+  cochain
+  \[
+    \mu(F(x),y)-(-1)^{|x||y|}\mu(y,F(x))
+  \]
+  is zero in the strict center and is a \(d_M\)-boundary for a lifted
+  homotopy-center representative.  The cohomology class
   \(\operatorname{ob}^{\mathrm{prod}}_{\mathrm{cent}}\) of such a
   lift is the obstruction to this strict graded centrality; its
   vanishing is necessary.  In the algebraic current model with
@@ -4523,7 +4643,7 @@ included in the datum
       \(d_{\mathrm{ns},M}C_{n,M}=-R^{\mathrm{ns}}_{n,M}\)
       (Theorem~\ref{thm:app-constructive-nonscalar-costello-qme-realization});
       together with the \(\varprojlim^1H^0\)-primitive-compatibility
-      class, this assembles a compatible counterterm tower;
+      class, this assembles a compatible finite-window counterterm tower;
     \item vanishing of (ii) gives a centrality homotopy
       \(H^M_{x,y}\) with
       \(R^{\mathrm{cent}}_{x,y,M}+d_M H^M_{x,y}=0\) for every source
@@ -4545,15 +4665,15 @@ included in the datum
   \(Z^{P_0}_{\mathrm{fact}}\)-lift only with the stated companion and
   descent data.
 
-  The associated-graded statement.  Take the primitive shadow
+  The associated-graded statement.  Take the primitive projection
   filtration of Theorem~\ref{thm:chain-level-primitive-projection}.
   At the associated-graded level, the source differential is the
   CE differential and the target differential is the
-  Hamiltonian/Schouten bracket on primitive trace classes.  The
-  If the primitive filtration is complete, exhaustive, and compatible
+	  Hamiltonian/Schouten bracket on block-sum primitive single-trace
+	  classes.  If the primitive filtration is complete, exhaustive, and compatible
   with the Hom-valued companion differential, the \(E_1\) page is this
-  primitive-shadow target and its first differential is the
-  Hamiltonian shadow on one-\(\psi\) primitive trace classes, as
+  primitive associated-graded target and its first differential is the
+	  Hamiltonian projection on one-\(\psi\) primitive single-trace classes, as
   computed in Theorem~\ref{thm:chain-level-primitive-projection-P0}.
   Without these filtration hypotheses the statement is only the
   associated-graded primitive obstruction.

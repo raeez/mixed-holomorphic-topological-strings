@@ -35,25 +35,36 @@ zero fibre is
   R_{N,W}
     =H^0\bigl(\mathcal O(\mu^{-1}_{\mathrm{der}}(0))_{\leq W}^{GL_N},Q\bigr).
 \]
-The stable trace ring is the degreewise stable limit after the
-Procesi--Razmyslov range.
-\item Reduce stable invariants to commutative monomial traces by
-the Koszul \(Q\)-exactness of adjacent transpositions on the
-moment-map zero-fibre, obtaining
-the basis \(\{\operatorname{Tr}(\phi_1^a\phi_2^b)\}_{a,b\ge 0}\).
+The scalar-reduced stable trace sector is the primitive degreewise
+stable limit after the Procesi--Razmyslov range.
+\item Reduce stable invariants to commutative monomial traces by the
+signed Koszul adjacent-transposition homotopy
+\[
+  Q\operatorname{Tr}(\psi vu)=
+  \operatorname{Tr}(u\phi_1\phi_2v)-
+  \operatorname{Tr}(u\phi_2\phi_1v)
+\]
+of Lemma~\ref{lem:koszul-adjacent-transpositions}, obtaining the basis
+\(\{\operatorname{Tr}(\phi_1^a\phi_2^b)\}_{a,b\ge 0}\).
 \item Define the trace map on monomials:
 \(J(z_1^az_2^b)=\overline{\operatorname{Tr}(\phi_1^a\phi_2^b)}\),
 where the bar denotes scalar reduction.
 \item Extend by linearity to polynomial Hamiltonians.  Extend further
 by \(\mathfrak m\)-adic continuity only after completing the brane
 trace algebra at the formal Darboux point:
-\(J(f)=\sum f_{a,b}\overline{\operatorname{Tr}(\phi_1^a\phi_2^b)}\).
+\[
+  J(f)=\varprojlim_W
+  \sum_{a+b\leq W}f_{a,b}
+  \overline{\operatorname{Tr}(\phi_1^a\phi_2^b)} .
+\]
 \end{enumerate}
 \item[Result.]  The trace substitution on polynomials, and its
 completed formal extension
-\(J\colon\mathfrak h\to\widehat{\mathbf S}(\bar A)\),
-\(f\mapsto\overline{\operatorname{Tr}f(\phi_1,\phi_2)}\), with
-\(\mathfrak h=\C[[z_1,z_2]]/\C\cdot 1\).
+\[
+  J\colon\mathfrak h\to\widehat{\mathbf S}(\bar A),\qquad
+  J(f)=\varprojlim_WJ_{\leq W}(f\bmod\mathfrak m^{W+1}),
+\]
+with \(\mathfrak h=\C[[z_1,z_2]]/\C\cdot 1\).
 \end{description}
 
 \subsection*{Construction 2 (The closed Hamiltonian BF theory)}\label{algo:closed-BV}
@@ -74,9 +85,25 @@ pairing \(\langle\rho_{a,b},z_1^cz_2^d\rangle=\delta_{a,c}\delta_{b,d}\)
 \(\mathfrak g=\mathfrak h\ltimes\mathfrak h^\vee_{\mathrm{cont}}[1]\)
 with bracket
 \([(f,\eta),(g,\xi)]
-=(\{f,g\},\,\mathrm{ad}^\vee_f\xi-(-1)^{|\eta||g|}\mathrm{ad}^\vee_g\eta)\)
+=(\overline{\{f,g\}},\,\mathrm{ad}^\vee_f\xi
+-(-1)^{|\eta||g|}\mathrm{ad}^\vee_g\eta)\)
 and \(\mathrm{ad}^\vee_f\) the Hamiltonian coadjoint action computed
 by Construction~4.
+\item Form the canonical constant-Hamiltonian central extension
+\[
+  0\longrightarrow\C K\longrightarrow
+  \widehat{\mathfrak g}_{\mathrm{cent}}
+  \longrightarrow\mathfrak g\longrightarrow0,
+  \qquad
+  [(f,\eta,aK),(g,\xi,bK)]_{\mathrm{cent}}
+  =\bigl(\overline{\{f,g\}},
+  \mathrm{ad}^\vee_f\xi-\mathrm{ad}^\vee_g\eta,
+  \omega(f,g)K\bigr),
+\]
+where \(\omega(f,g)=[\{f,g\}]_0\) on zero-constant
+representatives.  This source extension is unscaled.  The rank-
+\(N\) trace character is \(\chi_N(K)=N\), while the raw Rees/Weyl
+commutator supplies the separate factor \(\hbar_{\mathrm W}\).
 \item On a product open
 \(U\times B\subset\R^2_{\mathrm{top}}\times\C^2_{\mathrm{hol}}\)
 define the closed BV fields
@@ -113,26 +140,80 @@ of Construction~2; an admissibility class (Tate / nilpotent / weighted /
 relative) for the higher levels of the comparison.
 \item[Construction.]
 \begin{enumerate}
-\item Choose ordered bases \(\{e_i\}\) of \(\mathfrak h\) (e.g.\
-\(e_{a,b}=z_1^az_2^b\)) and dual residues
-\(\{e^i\}\subset\mathfrak h^\vee_{\mathrm{cont}}\) (e.g.\
-\(e^{a,b}=\rho_{a,b}\)).
-\item Introduce CE generators \(c^I\) (degree-1 duals to \(e_I\)) and
-\(u_I\) (degree-1 duals to \(e^I\)) for the cochain complex
-\(C^\bullet_{\mathrm{CE,coord}}(\mathfrak g)\).
-\item Introduce PV generators \(\theta^I\) (Schouten polyvectors on
-\(\mathbf S(\bar A)\)) and \(O_I\) (boundary observables on the trace
-ring) for the polyvector complex
-\(\mathrm{PV}_{\mathrm{coord}}(A_{\partial,\mathrm{coord}})\).
-\item Define the cochain comparison map on generators:
-\(c^I\mapsto\theta^I\), \(u_I\mapsto O_I\).
-\item Verify the differential intertwiners: under CE differential
-\(d_{\mathrm{CE}}\) and Schouten differential
-\(d_{\pi}^{\mathrm{coord}}\),
-\(d_{\mathrm{CE}}c^I\leftrightarrow[\theta^I,\theta^I]\),
-\(d_{\mathrm{CE}}u_I\leftrightarrow\theta^I(O_I)\), with the second
-identity yielding the decisive computation
-\(\theta_f(O_g)=O_{\{f,g\}}\).
+\item Choose an ordered basis \(\{H_I\}\) of \(\mathfrak h\), with
+continuous residue-dual basis \(\{\rho^I\}\subset
+P=\mathfrak h^\vee_{\mathrm{cont}}\), and write
+\([H_I,H_J]=C^K_{IJ}H_K\).
+\item Introduce the standard Chevalley--Eilenberg coordinates
+\[
+  c^I=c^{\rho^I},\qquad u_I=u_{H_I},
+  \qquad
+  |c^I|_{\mathrm{CE}}=1,\qquad |u_I|_{\mathrm{CE}}=2.
+\]
+Give \(u_I\) cotangent weight one and \(c^I\) cotangent weight zero.
+The coordinate regrading
+\[
+  |a|_{\mathrm{coord}}
+  =|a|_{\mathrm{CE}}-2\operatorname{wt}_u(a)
+\]
+places \(u_I\) in coordinate degree zero without changing its standard
+CE degree.
+\item Introduce the constant Schouten fields
+\(\partial^I=\partial_{\rho^I}\) of degree one and the trace functions
+\(O_I=O_{H_I}=J(H_I)\) of degree zero.  Their Hamiltonian fields are
+\(X_I=d_{\pi}^{\mathrm{coord}}O_I\) of degree one.  The standard
+Schouten bracket has degree \(-1\) and
+\([\partial^I,O_J]_S=\delta^I_J\).
+\item Define the regraded CE/PV coordinate map
+\[
+  c^\rho\longmapsto\partial_\rho,\qquad
+  u_f\longmapsto O_f=J(f),\qquad
+  d_{\mathrm{CE}}u_f\longmapsto
+  X_f=d_{\pi}^{\mathrm{coord}}O_f.
+\]
+Thus the standard degrees of \((c^\rho,u_f,d_{\mathrm{CE}}u_f)\) are
+\((1,2,3)\), while their coordinate degrees and the degrees of
+\((\partial_\rho,O_f,X_f)\) are \((1,0,1)\).
+\item Verify the differential intertwiners:
+\[
+  d_{\mathrm{CE}}c^K=-\frac12 C^K_{IJ}c^Ic^J
+  \longleftrightarrow
+  d_{\pi}^{\mathrm{coord}}\partial^K
+  =-\frac12 C^K_{IJ}\partial^I\partial^J,
+\]
+\[
+  d_{\mathrm{CE}}u_K=C^L_{KJ}u_Lc^J
+  \longleftrightarrow
+  d_{\pi}^{\mathrm{coord}}O_K=C^L_{KJ}O_L\partial^J=X_K.
+\]
+The Hamiltonian action is
+\(X_f(O_g)=O_{\{f,g\}_{\mathfrak h}}\); it is the image of
+\(d_{\mathrm{CE}}u_f\), not the image of \(c^\rho\).
+\item Keep the Hochschild realization separate.  Ordinary
+Hochschild--Kostant--Rosenberg theory supplies only the zero-Poisson
+special fibre
+\[
+  \bigl(\mathrm{PV}_{\mathrm{adm}}(A),0\bigr)
+  \xrightarrow{\ \operatorname{HKR}_{\mathrm{adm},0}\ }
+  C^\bullet_{\mathrm{Hoch},\mathrm{adm}}(A,A).
+\]
+The nonzero linear-Poisson differential
+\(d_\pi=[\pi_{\mathrm{lin}},-]_S\) reaches the Hochschild complex of a
+deformation quantization only after an admissible twisted-formality and
+Poincar\'e--Birkhoff--Witt datum has been supplied.  A finite-rank
+Hochschild-centre action is then encoded by a continuous twisting
+cochain
+\[
+  \tau_N\colon
+  \overline C^{\mathrm{CE},\mathrm{cont}}_\bullet(\mathfrak g)
+  \longrightarrow
+  C^\bullet_{\mathrm{Hoch},\mathrm{adm}}(A,A)[1],
+  \qquad
+  \tau_{N,1}\colon\mathfrak g\longrightarrow
+  C^\bullet_{\mathrm{Hoch},\mathrm{adm}}(A,A)[1].
+\]
+The displayed \(c^\rho,u_f\) formulas are obtained only afterward as
+the coordinate-dual expression of \(\tau_{N,1}\).
 \item Complete in the chosen coordinate window or weighted-Tate
 topology.  The cochain identity (level~1) uses no extra datum; the
 \(P_0\)-bracket clause (level~2) holds on a bracket-admissible
@@ -146,11 +227,13 @@ admissibility datum with conilpotent endpoint and
 remainder is the obstruction vector
 \(\operatorname{Ob}_T\) of \S\ref{ssec:tate-residual-resolution}.
 \end{enumerate}
-\item[Result.]  The cochain CE/PV map
+\item[Result.]  The regraded cochain CE/PV map
 \(\Phi_{\mathrm{coord}}\colon
-C^\bullet_{\mathrm{CE,coord}}(\mathfrak g)\to
+\operatorname{Regr}_u C^\bullet_{\mathrm{CE,coord}}(\mathfrak g)\to
 \mathrm{PV}_{\mathrm{coord}}(A_{\partial,\mathrm{coord}})\), together
-with its admissible extensions and obstruction classes.
+with its admissible extensions and obstruction classes.  A Hochschild
+target additionally requires the stated twisting cochain and the
+zero-Poisson HKR or conditional twisted-formality datum.
 \end{description}
 
 \subsection*{Construction 4 (The Matlis coadjoint action)}\label{algo:matlis}
@@ -192,8 +275,9 @@ Bochner--Martinelli finite-window leak
 \subsection*{Construction 5 (Quantization at bidegree \((a,b)\))}\label{algo:quantization}
 
 \begin{description}
-\item[Data.]  A bidegree \((a,b)\); the formal Moyal star product on
-the symplectic disk to the order required by \((a,b)\).
+\item[Data.]  A bidegree \((a,b)\); the formal Moyal star product with
+Weyl parameter \(\hbar_{\mathrm{W}}\) on the symplectic disk to the
+order required by \((a,b)\).
 \item[Construction.]
 \begin{enumerate}
 \item Generate the radial PBW basis of \(C^0_{a,b}\) (normal monomials
@@ -202,7 +286,19 @@ on \(a\) letters \(X\) and \(b\) letters \(Y\)).
 by Moyal-symmetrizing each PBW monomial.
 \item Compute the Moyal terms of \(z_1^a\star z_2^b\) up to the order
 required by \((a,b)\) using
-\(f\star g=fg+\tfrac\hbar2P(f,g)+\tfrac{\hbar^2}{8}P^2(f,g)+\cdots\).
+\(f\star g=fg+\tfrac{\hbar_{\mathrm{W}}}{2}P(f,g)
++\tfrac{\hbar_{\mathrm{W}}^2}{8}P^2(f,g)+\cdots\).
+Define the normalized Moyal bracket by
+\[
+  \{f,g\}_{\hbar_{\mathrm W}}
+  =\hbar_{\mathrm W}^{-1}(f\star g-g\star f).
+\]
+For the canonical constant-Hamiltonian extension, the normalized
+central trace class is \(\chi_N(K)[\bar c]=N[\bar c]\); the raw
+star commutator carries the class
+\(\hbar_{\mathrm W}\chi_N(K)[\bar c]
+=\hbar_{\mathrm W}N[\bar c]\).  No factor of \(N\) or
+\(\hbar_{\mathrm W}\) is inserted in the source extension.
 \item Construct the matrix \(B_{a,b}\colon C^1_{a,b}\to C^0_{a,b}\)
 of adjacent-transposition relations and the radial comparison vector
 \(v_{a,b}=(T_{a,b},E^+_{a,b})\) (Weyl-normal lift minus Moyal-normal
@@ -210,7 +306,7 @@ lift).
 \item Compute \(v_{a,b}\) over \(\Q\) by exact rational arithmetic.
 \item Decide whether \(v_{a,b}\in\operatorname{im}B_{a,b}\) by
 Bareiss row reduction.
-\item Obtain either the unique correction \(C^+_{a,b}\) with
+\item Obtain either a rational correction \(C^+_{a,b}\) with
 \(B_{a,b}C^+_{a,b}=v_{a,b}\), or a covector
 \((\phi,-\lambda)\in\ker B_{a,b}^*\) with
 \(\lambda(E^+_{a,b})-\phi(T_{a,b})\ne 0\) representing
@@ -271,8 +367,8 @@ exact curvature with chosen homotopy \(\Rightarrow\) clause~(2),
 counterterm coherence;
 central but inexact curvature \(\Rightarrow\) clause~(3), pass to
 gerbe-valued/projective deformation functor;
-non-absorptive curvature \(\Rightarrow\) clause~(4), force functor
-replacement and record the matched-conventions data.
+non-absorptive curvature \(\Rightarrow\) clause~(4), replace the functor
+and record the matched-conventions data.
 \end{enumerate}
 \item[Result.]  Either a strict or twisted global \(\mathcal T\)-coherence
 together with its given null-homotopy data, or an obstruction theorem

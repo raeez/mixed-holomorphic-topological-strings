@@ -24,7 +24,13 @@ factors the propagator as
   P_{\epsilon,L}=P_{\epsilon,L}^{\mathrm{base}}\widehat\otimes
   C_{\mathfrak h\oplus\mathfrak h^\vee[1]},
 \]
-the bulk piece being the standard heat-kernel inverse and the
+where \(P_{\epsilon,L}^{\mathrm{base}}\) is the kernel of
+\[
+  \int_\epsilon^L Q^{\mathrm{GF}}e^{-tD}\,dt
+\]
+on
+\(\Omega^\bullet(\R^2)\widehat\otimes
+\Omega^{0,\bullet}(\C^2)\), and the
 coefficient piece $C_{\mathfrak h}$ extended to the cotangent direction;
 the propagator exists in $\mathcal E\widehat\otimes\mathcal E$ exactly
 when $C_{\mathfrak h}$ exists as a coefficient kernel.  In the strict
@@ -88,9 +94,12 @@ Theorem~\ref{thm:wt-canonical-envelope}.
   \end{equation}
   The spacetime piece $P_{\epsilon,L}^{\mathrm{base}}$ on
   $\Omega^\bullet(\R^2)\widehat\otimes\Omega^{0,\bullet}(\C^2)$ is the
-  standard bulk BV inverse, continuous as an operator by
-  Remark~\ref{rmk:linear-heat-versus-bv-kernel}. The coefficient piece is
-  the BV inverse pairing on
+  kernel of the operator
+  \[
+    \int_\epsilon^L Q^{\mathrm{GF}}e^{-tD}\,dt,
+  \]
+  continuous by Remark~\ref{rmk:linear-heat-versus-bv-kernel}. The
+  coefficient piece is the BV inverse pairing on
   $\mathfrak h\oplus\mathfrak h^\vee_{\mathrm{cont}}[1]$,
   i.e.\ the Casimir $C_{\mathfrak h}$ together with its dual
   coevaluation. The full kernel therefore exists in
@@ -105,12 +114,14 @@ Theorem~\ref{thm:wt-canonical-envelope}.
       $C_{\mathfrak h}\in\mathfrak h\widehat\otimes
       \mathfrak h^\vee_{\mathrm{cont}}$ realizing the bilinear form
       with kernel zero in the cohomology of the heat operator;
-    \item\label{costello:CC2} regularity in the cutoff parameters
-      $\epsilon$ and $L$, in the sense that the heat-kernel
+    \item\label{costello:CC2} finite-scale regularity in the cutoff
+      parameters $\epsilon$ and $L$, in the sense that the heat-kernel
       propagator $P_{\epsilon,L}$ is a continuous family in the
-      coefficient topology and converges as
-      $L\to\infty$, $\epsilon\to0^+$ to a distributional kernel after
-      counterterm subtraction;
+      coefficient topology for \(0<\epsilon\leq L<\infty\); if the
+      endpoint \(L\to\infty,\epsilon\to0^+\) or counterterm subtraction
+      is invoked, the renormalized endpoint and the counterterm tower
+      are additional Costello data, not consequences of coefficient
+      admissibility;
     \item\label{costello:CC3} compatibility with the Costello RG flow
       $W(P_{\epsilon,L},I)$: the weight or topology defining the
       coefficient module is preserved by the renormalization flow on
@@ -124,7 +135,7 @@ Theorem~\ref{thm:wt-canonical-envelope}.
   Problem~\ref{prob:weighted-rg-locality}.
 \end{rmk}
 
-\subsection*{Degree weights and the canonical completion \(B_w\)}
+\subsection*{Degree weights and the fixed-weight completion \(B_w\)}
 
 A degree weight on $\mathfrak h$ selects a coefficient category closed
 under the Schouten differential $d_\pi$, the Schouten bracket
@@ -205,29 +216,30 @@ Mittag--Leffler-coevaluating for the heat-kernel propagator.
       \prod_{d=1}^{w_0}H_d^{(w)}
   \end{equation}
   with the Tate filtration $F^{w_0}\mathfrak h_w=\ker(\mathfrak h_w\to
-  \prod_{d\leq w_0}H_d^{(w)})$, and define the \emph{weighted
-  coefficient dual}
+  \prod_{d\leq w_0}H_d^{(w)})$, and define the \emph{weighted BV
+  coefficient partner}
   \begin{equation}\label{eq:wt-hvee-defn}
-    \mathfrak h^{\vee,w}_{\mathrm{cont}}=
+    D^{\mathrm{BV}}_w=
       \varprojlim_{w_0\in\Z_{\geq1}}\,
       \prod_{d=1}^{w_0}(H_d^\vee)^{(w^{-1})}.
   \end{equation}
   The pairing is fixed degreewise by
   $\langle w(d)^{-1}e^i_d,w(d)e_{d,j}\rangle=\delta^i_j$.
   The weighted Tate coefficient pair is
-  $(\mathfrak h_w,\mathfrak h^{\vee,w}_{\mathrm{cont}})$.  The second
-  factor is a product coefficient module replacing the strict continuous
-  dual of the first product Tate space.
+  $(\mathfrak h_w,D^{\mathrm{BV}}_w)$.  The second factor is the
+  product coefficient module used as the BV receiver; it replaces the
+  strict continuous dual only for the coevaluation kernel in this
+  declared coefficient category.
 \end{defn}
 
 \begin{rmk}[Topological content]\label{rmk:wt-topology-content}
-  Both $\mathfrak h_w$ and $\mathfrak h^{\vee,w}_{\mathrm{cont}}$ are
+  Both $\mathfrak h_w$ and \(D^{\mathrm{BV}}_w\) are
   Mittag-Leffler inverse limits of finite-dimensional Tate windows,
   and both are products in the degree direction. The construction
-  replaces the direct-sum dual by a symmetric Mittag-Leffler product
-  coefficient module.  This is an additional coefficient category for
-  the BV kernel; the ordinary continuous dual of $\mathfrak h_w$ remains
-  the strict Tate dual.
+  replaces the direct-sum strict dual in the coevaluation slot by a
+  symmetric Mittag-Leffler product coefficient module.  This is an
+  additional coefficient category for the BV kernel; the ordinary
+  continuous dual of $\mathfrak h_w$ remains the strict Tate dual.
 \end{rmk}
 
 \begin{defn}[The weighted-Tate envelope \(B_w\)]\label{defn:wt-Bw-envelope}
@@ -241,7 +253,7 @@ Mittag--Leffler-coevaluating for the heat-kernel propagator.
           \{O_f,\theta_f\}_{f\in\bar A}
         \bigr\rangle}_{d_\pi,\,[-,-]_{\mathrm{Sch}},\,\cdot}
       ^{\,\mathfrak h_w\widehat\otimes
-        \mathfrak h^{\vee,w}_{\mathrm{cont}}},
+        D^{\mathrm{BV}}_w},
   \]
   the smallest complete filtered subspace of
   $\mathrm{PV}_{\mathrm{coord}}(A_{\partial,\mathrm{coord}})$ containing
@@ -249,12 +261,12 @@ Mittag--Leffler-coevaluating for the heat-kernel propagator.
   $\{O_f,\theta_f\}_{f\in\bar A}$, closed under the Schouten
   differential $d_\pi$, the Schouten bracket $[-,-]_{\mathrm{Sch}}$, and
   the pointwise product, and complete in the weighted Tate topology of
-  $\mathfrak h_w\widehat\otimes\mathfrak h^{\vee,w}_{\mathrm{cont}}$.
+  $\mathfrak h_w\widehat\otimes D^{\mathrm{BV}}_w$.
   The polyvector grading on $B_w$ is the Schouten degree; the
   coefficient grading is the polynomial degree carried by the weight $w$.
 \end{defn}
 
-\begin{thm}[Canonical weighted-Tate envelope]\label{thm:wt-canonical-envelope}
+\begin{thm}[Initial weighted-Tate envelope for a fixed weight]\label{thm:wt-canonical-envelope}
   Let $w$ be a degree weight as in
   Definition~\ref{defn:wt-degree-weight} and let $B_w$ be the envelope
   of Definition~\ref{defn:wt-Bw-envelope}.  Then $B_w$ is the minimal
@@ -281,15 +293,20 @@ Mittag--Leffler-coevaluating for the heat-kernel propagator.
       \]
       converges in the weighted continuous tensor product
       $\mathfrak h_w\widehat\otimes
-      \mathfrak h^{\vee,w}_{\mathrm{cont}}$. Under the
+      D^{\mathrm{BV}}_w$. Under the
       $P_0$-algebra map $e_{d,i}\mapsto O_{e_{d,i}}$,
       $e^i_d\mapsto\theta^{e^i_d}$ of
-      Theorem~\ref{thm:reduced-ce-pv-central-operation}, the kernel lies
-      in $B_w\widehat\otimes B_w$ and realizes Costello
-      requirement~\ref{costello:CC1} as the BV inverse pairing on the
-      cotangent extension.
+      Theorem~\ref{thm:reduced-ce-pv-central-operation}, the first
+      factor lies in \(B_w\) and the second factor is read in the
+      declared BV receiver \(D_{B_w}=D^{\mathrm{BV}}_w\).  Thus the
+      kernel lies in
+      \(B_w\widehat\otimes D_{B_w}\), not in
+      \(B_w\widehat\otimes B_w\) as a strict continuous tensor unless
+      an additional identification of \(D_{B_w}\) with \(B_w\) has been
+      supplied.  It realizes Costello requirement~\ref{costello:CC1} as
+      the BV inverse pairing on the cotangent extension.
     \item\label{wt:canon:propagator}
-      \emph{Heat-kernel propagator extension.} The Costello heat-kernel
+      \emph{Finite-scale heat-kernel propagator extension.} The Costello heat-kernel
       propagator
       \[
         P^w_{\epsilon,L}
@@ -299,13 +316,13 @@ Mittag--Leffler-coevaluating for the heat-kernel propagator.
       extends from the strict Tate field complex to the weighted complex
       $\mathcal E_w$ as a continuous family for $0<\epsilon\leq L<\infty$,
       satisfying the BV identity
-      $[Q,P^w_{\epsilon,L}]=K^w_\epsilon-K^w_L$ and Costello
-      regularity~\ref{costello:CC2}: continuity in $(\epsilon,L)$ in the
-      weighted Tate topology, and existence of the
-      $L\to\infty,\epsilon\to0^+$ limit as a distributional kernel after
-      the standard bulk counterterm subtraction. The coefficient piece
+      $[Q,P^w_{\epsilon,L}]=K^w_\epsilon-K^w_L$ and finite-scale
+      Costello regularity~\ref{costello:CC2}.  The coefficient piece
       $C_{\mathfrak h,w}$ is counterterm-free; it is the fixed
-      Mittag-Leffler kernel of \ref{wt:canon:casimir}.
+      Mittag-Leffler kernel of \ref{wt:canon:casimir}.  The
+      renormalized endpoint and the mixed brane-defect QME counterterm
+      tower are the separate data of
+      Problem~\ref{prob:weighted-rg-locality}.
     \item\label{wt:canon:rg}
       \emph{Graphwise RG stability.} For every fixed Costello graph
       $\Gamma$ and every $0<\epsilon\leq L<\infty$, the contribution
@@ -320,7 +337,7 @@ Mittag--Leffler-coevaluating for the heat-kernel propagator.
       cochain $\Phi$ of
       Theorem~\ref{thm:reduced-ce-pv-central-operation} extends to the
       weighted cotangent extension
-      $\mathfrak g_w=\mathfrak h_w\ltimes\mathfrak h^{\vee,w}_{\mathrm{cont}}[1]$
+      $\mathfrak g_w=\mathfrak h_w\ltimes D^{\mathrm{BV}}_w[1]$
       as a continuous cochain map landing in $B_w$:
       \[
         \Phi^w\colon
@@ -333,10 +350,12 @@ Mittag--Leffler-coevaluating for the heat-kernel propagator.
 
   Conversely, any complete filtered subspace
   $B'\subset\mathrm{PV}_{\mathrm{coord}}(A_{\partial,\mathrm{coord}})$
+  equipped with the fixed declared receiver
+  \(D_{B'}=D^{\mathrm{BV}}_w\),
   satisfying \ref{wt:canon:closure}, containing
   $\{O_f,\theta_f\}_{f\in\bar A}$, and containing
-  $C_{\mathfrak h,w}\in B'\widehat\otimes B'$ as a continuous element of
-  the weighted Tate topology, contains $B_w$.
+  \(C_{\mathfrak h,w}\in B'\widehat\otimes D_{B'}\) as a continuous
+  element of the weighted Tate topology, contains \(B_w\).
 \end{thm}
 
 \begin{proof}
@@ -353,11 +372,18 @@ Mittag--Leffler-coevaluating for the heat-kernel propagator.
   window, the polynomial-degree shift produced by a single $d_\pi$ or a
   single Schouten bracket by a finite constant; the windowwise
   coadjoint-continuity \ref{w:W2} bounds the cotangent-leg shift.
-  Multiplication is closed by definition of the envelope. The closure
-  $\overline{(\cdot)}$ in Definition~\ref{defn:wt-Bw-envelope} adjoins
-  all $d_\pi$-, $[-,-]_{\mathrm{Sch}}$-, and product-completions, and
-  that closure is itself stable under the same operations because each
-  is continuous in the weighted Tate topology by \ref{w:W1}--\ref{w:W2}.
+  The initial generating set is
+  \(S=\{O_f,\theta_f:f\in\bar A\}\).  Definition~\ref{defn:wt-Bw-envelope}
+  takes the smallest weighted-closed subspace containing \(S\) and
+  closed under the three operations \(d_\pi\), the Schouten bracket, and
+  pointwise product.  Hence, if \(x,y\in B_w\) are limits of finite
+  expressions \(x_n,y_n\) in those operations, continuity gives
+  \(x_ny_n\to xy\), \(d_\pi x_n\to d_\pi x\), and
+  \([x_n,y_n]_{\mathrm{Sch}}\to[x,y]_{\mathrm{Sch}}\); the limits again
+  lie in the same weighted closure.  The estimates
+  \ref{w:W1}--\ref{w:W2} are precisely the continuity input for
+  \(d_\pi\) and the bracket, while multiplication is continuous in the
+  completed symmetric topology used in the envelope.
 
   \ref{wt:canon:casimir}: this is
   Proposition~\ref{prop:wt-casimir-convergence} below.
@@ -381,16 +407,20 @@ Mittag--Leffler-coevaluating for the heat-kernel propagator.
   Minimality: any $B'$ satisfying \ref{wt:canon:closure} and containing
   $\{O_f,\theta_f\}$ contains all $d_\pi$-, bracket-, and
   product-iterates of those generators, hence the algebraic envelope.
-  Containing $C_{\mathfrak h,w}\in B'\widehat\otimes B'$ as a continuous
-  element forces $B'$ to be complete in the weighted Tate topology,
-  hence to contain the closure $B_w$.
+  Containing
+  \(C_{\mathfrak h,w}\in B'\widehat\otimes D_{B'}\) as a continuous
+  element in the fixed declared kernel pair requires \(B'\) to be
+  complete in the weighted Tate topology, hence to contain the closure
+  \(B_w\).
 \end{proof}
 
 \begin{defn}[Category of admissible weighted-Tate completions]\label{defn:wt-Adm-category}
   Fix a degree weight $w$ as in Definition~\ref{defn:wt-degree-weight}.
-  The category $\mathsf{Adm}_w$ has objects: complete filtered subspaces
-  $B'\subset\mathrm{PV}_{\mathrm{coord}}(A_{\partial,\mathrm{coord}})$
-  satisfying
+  The category $\mathsf{Adm}_w$ has objects: pairs
+  \((B',D_{B'})\), where
+  \(D_{B'}=D^{\mathrm{BV}}_w\) is the fixed declared BV receiver and
+  \(B'\subset\mathrm{PV}_{\mathrm{coord}}(A_{\partial,\mathrm{coord}})\)
+  is a complete filtered subspace satisfying
   \begin{enumerate}[label=(A\arabic*)]
     \item\label{adm:gen} \emph{(generation)} $B'$ contains the
       brane-side generators $\{O_f,\theta_f\}_{f\in\bar A}$;
@@ -400,7 +430,7 @@ Mittag--Leffler-coevaluating for the heat-kernel propagator.
     \item\label{adm:casimir} \emph{(Casimir convergence)} the weighted
       Casimir $C_{\mathfrak h,w}$ of
       \eqref{eq:wt-casimir-weighted} converges in
-      $B'\widehat\otimes B'$ in the weighted Tate topology;
+      \(B'\widehat\otimes D_{B'}\) in the weighted Tate topology;
     \item\label{adm:propagator} \emph{(heat-kernel propagator
       extension)} the Costello heat-kernel propagator
       $P^w_{\epsilon,L}=P^{\mathrm{base}}_{\epsilon,L}\widehat\otimes
@@ -416,8 +446,8 @@ Mittag--Leffler-coevaluating for the heat-kernel propagator.
   \end{enumerate}
   Morphisms $B'\hookrightarrow B''$ are continuous filtered inclusions
   containing the generators on the nose and intertwining $d_\pi$,
-  $[-,-]_{\mathrm{Sch}}$, the pointwise product, the weighted Casimir,
-  and the heat-kernel propagator.
+  $[-,-]_{\mathrm{Sch}}$, the pointwise product, the weighted Casimir in
+  the declared kernel pair, and the heat-kernel propagator.
 \end{defn}
 
 \begin{cor}[$B_w$ is initial in $\mathsf{Adm}_w$]\label{cor:wt-Bw-initial}
@@ -437,13 +467,13 @@ Mittag--Leffler-coevaluating for the heat-kernel propagator.
 
 \begin{rmk}\label{rmk:wt-canonical-as-initiality}
   $\mathsf{Adm}_w$ depends on $w$; its admissibility conditions are
-  intrinsic to $(\mathfrak h_w,\mathfrak h^{\vee,w}_{\mathrm{cont}},
+  intrinsic to $(\mathfrak h_w,D^{\mathrm{BV}}_w,
   P^w_{\epsilon,L})$.
 \end{rmk}
 
 \begin{prop}[Casimir convergence]\label{prop:wt-casimir-convergence}
   In the weighted Tate coefficient pair
-  $(\mathfrak h_w,\mathfrak h^{\vee,w}_{\mathrm{cont}})$ of
+  $(\mathfrak h_w,D^{\mathrm{BV}}_w)$ of
   Definition~\ref{defn:wt-coefficient-pair}, the formal Casimir
   \begin{equation}\label{eq:wt-casimir-weighted}
     C_{\mathfrak h,w}=\sum_{d\geq1}\sum_i\,
@@ -452,11 +482,31 @@ Mittag--Leffler-coevaluating for the heat-kernel propagator.
   \end{equation}
   converges as an element of
   $\mathfrak h_w\widehat\otimes
-  \mathfrak h^{\vee,w}_{\mathrm{cont}}$. The pairing of
+  D^{\mathrm{BV}}_w$. The pairing of
   $C_{\mathfrak h,w}$ with any test functional in the dual is the
   identity on the corresponding finite-dimensional Tate window, so
   $C_{\mathfrak h,w}$ is the BV coefficient inverse pairing in the
-  weighted category.
+  weighted category.  More explicitly, let
+  \(C_{\mathfrak h,w}^{\leq M}\) be the truncation of
+  \eqref{eq:wt-casimir-weighted} to \(d\leq M\), and let \(p_M\) be the
+  \(M\)-th finite-window projection of the completed tensor product.
+  Then, for \(M'\geq M\),
+  \[
+    p_M(C_{\mathfrak h,w}^{\leq M'}-C_{\mathfrak h,w}^{\leq M})=0.
+  \]
+  If the finite window is given the projective tensor norm induced by
+  the \(\ell^1\)-norms in the weighted bases
+  \(\{w(d)e_{d,i}\}_{d\leq M}\) and
+  \(\{w(d)^{-1}e^i_d\}_{d\leq M}\), then
+  \[
+    \bigl\|p_M(C_{\mathfrak h,w})\bigr\|_{\pi,M}
+      \leq
+    \sum_{d=1}^{M}\dim H_d
+      =
+    \frac{M(M+3)}{2}.
+  \]
+  These two finite-window estimates are the asserted convergence
+  statement; no summability in the strict direct-sum dual is claimed.
 \end{prop}
 
 \begin{proof}
@@ -467,14 +517,42 @@ Mittag--Leffler-coevaluating for the heat-kernel propagator.
   w(d)^{-1}H_d^\vee$. This is a tensor in a finite-dimensional vector
   space because each window is finite-dimensional. The tower of
   finite-window Casimirs is compatible: enlarging $w_0$ extends the
-  sum by the terms in degrees $w_0+1,\ldots,w_0'$. The inverse limit
-  in $\mathbf{TateVec}$ exists by Definition~\ref{defn:wt-coefficient-pair}
-  and \ref{w:W3} of Definition~\ref{defn:wt-degree-weight}.
+  sum by the terms in degrees $w_0+1,\ldots,w_0'$, and the projection
+  back to the \(w_0\)-window removes precisely those added terms.  Thus
+  for the partial sums \(C_{\mathfrak h,w}^{\leq M}\) one has
+  \(p_M(C_{\mathfrak h,w}^{\leq M'}-C_{\mathfrak h,w}^{\leq M})=0\) for
+  every \(M'\geq M\).  This is the Cauchy criterion in the strict
+  Mittag--Leffler topology of
+  \(\mathfrak h_w\widehat\otimes
+  D^{\mathrm{BV}}_w\), so the inverse limit exists
+  by Definition~\ref{defn:wt-coefficient-pair} and
+  \ref{w:W3} of Definition~\ref{defn:wt-degree-weight}.
+
+  The stated norm estimate is finite-window bookkeeping.  In degree
+  \(d\), the homogeneous polynomials in two variables have
+  \(\dim H_d=d+1\).  In the weighted \(\ell^1\)-basis, each simple tensor
+  \((w(d)e_{d,i})\otimes(w(d)^{-1}e^i_d)\) has projective norm \(1\);
+  the weights cancel between the two factors.  Hence
+  \[
+    \bigl\|p_M(C_{\mathfrak h,w})\bigr\|_{\pi,M}
+      \leq
+    \sum_{d=1}^{M}(d+1)
+      =
+    \frac{M(M+3)}{2}.
+  \]
 
   Pairing the Casimir with a test functional $\phi\in
-  \mathfrak h^{\vee,w}_{\mathrm{cont}}$, supported in finitely many
-  Tate windows, gives a finite sum of identity pairings, so the
-  result is the canonical evaluation. Hence $C_{\mathfrak h,w}$
+  D^{\mathrm{BV}}_w$, supported in finitely many
+  Tate windows, gives
+  \[
+    (\phi\otimes 1)(C_{\mathfrak h,w})
+      =
+      \sum_{d\in \operatorname{supp}\phi}\sum_i
+      \phi\!\bigl(w(d)e_{d,i}\bigr)\,w(d)^{-1}e^i_d,
+  \]
+  a finite sum which is the element of
+  \(D^{\mathrm{BV}}_w\) corresponding to evaluation
+  against \(\phi\). Hence $C_{\mathfrak h,w}$
   realizes the inverse pairing on the weighted Tate pair, satisfying
   Costello requirement \ref{costello:CC1}.
 \end{proof}
@@ -493,7 +571,7 @@ Mittag--Leffler-coevaluating for the heat-kernel propagator.
 
 \subsection*{Heat-kernel propagator on the weighted pair}
 
-\begin{prop}[Heat-kernel propagator extension to the weighted pair]\label{prop:wt-propagator-extends}
+\begin{prop}[Finite-scale heat-kernel propagator extension to the weighted pair]\label{prop:wt-propagator-extends}
   Let $w$ be a degree weight as in
   Definition~\ref{defn:wt-degree-weight}. The Costello heat-kernel
   propagator $P_{\epsilon,L}^{\mathrm{op}}$ of
@@ -503,7 +581,7 @@ Mittag--Leffler-coevaluating for the heat-kernel propagator.
     \mathcal E_w=\Omega^\bullet(\R^2)\widehat\otimes
       \Omega^{0,\bullet}(\C^2)\widehat\otimes
       \bigl(\mathfrak h_w[1]\oplus
-      \mathfrak h^{\vee,w}_{\mathrm{cont}}[2]\bigr),
+      D^{\mathrm{BV}}_w[2]\bigr),
   \end{equation}
   to give a continuous family of BV propagators
   $P_{\epsilon,L}^{w}\in\mathcal E_w\widehat\otimes\mathcal E_w$ for
@@ -513,16 +591,15 @@ Mittag--Leffler-coevaluating for the heat-kernel propagator.
       $[Q,P_{\epsilon,L}^{w}]=K_\epsilon^{w}-K_L^{w}$, where
       $K_t^{w}=K_t^{\mathrm{base}}\widehat\otimes C_{\mathfrak h,w}$
       is the weighted heat kernel of the BV inverse pairing;
-    \item Costello regularity \ref{costello:CC2}: the family is
+    \item finite-scale Costello regularity \ref{costello:CC2}: the family is
       continuous in $(\epsilon,L)$ in the weighted Tate topology;
-    \item the limit $L\to\infty$, $\epsilon\to0^+$ exists as a
-	      distributional kernel after the standard spacetime counterterm
-	      subtraction in Costello's heat-kernel renormalization-group construction
-	      \cite{costello-renormalization}*{Chs.~5--7}; the coefficient
-	      direction leaves the spacetime singular support unchanged.
-      Locality and QME counterterm compatibility for the mixed
-      brane-defect theory remain the content of
-      Problem~\ref{prob:weighted-rg-locality}.
+    \item the coefficient direction introduces no new spacetime singular
+      support: every finite-scale wavefront and support statement for
+      \(P_{\epsilon,L}^{\mathrm{base}}\) is tensored with the fixed
+      Mittag--Leffler coefficient kernel \(C_{\mathfrak h,w}\).  The
+      endpoint \(L\to\infty,\epsilon\to0^+\), locality, and QME
+      counterterm compatibility for the mixed brane-defect theory remain
+      the content of Problem~\ref{prob:weighted-rg-locality}.
   \end{enumerate}
 \end{prop}
 
@@ -536,8 +613,8 @@ Mittag--Leffler-coevaluating for the heat-kernel propagator.
   weight on the coefficient direction; it is the Costello heat-kernel
   inverse on the bulk free elliptic complex
   $\Omega^\bullet(\R^2)\widehat\otimes\Omega^{0,\bullet}(\C^2)$,
-  constructed in \cite{costello-renormalization}*{Ch.~5}. The BV
-  identity for $P_{\epsilon,L}^{\mathrm{base}}$ is standard: with
+  constructed in \cite{costello-renormalization}*{Ch.~5}. The finite-scale
+  BV homotopy identity is the following commutator calculation.  With
   $Q^{\mathrm{base}}=d_{\R^2}+\bar\partial_{\C^2}$, gauge-fixing
   $Q^{\mathrm{GF}}=d_{\R^2}^*+\bar\partial_{\C^2}^*$, and the
   associated Laplacian $\Delta=[Q^{\mathrm{base}},Q^{\mathrm{GF}}]$,
@@ -550,17 +627,20 @@ Mittag--Leffler-coevaluating for the heat-kernel propagator.
   The coefficient piece is the Casimir of
   Proposition~\ref{prop:wt-casimir-convergence}, which is annihilated
   by the trivial differential on
-  $\mathfrak h_w[1]\oplus\mathfrak h^{\vee,w}_{\mathrm{cont}}[2]$.
+  $\mathfrak h_w[1]\oplus D^{\mathrm{BV}}_w[2]$.
   Therefore
   $[Q,P_{\epsilon,L}^{w}]=K_\epsilon^{w}-K_L^{w}$, and the family is
   continuous in $(\epsilon,L)$ because $C_{\mathfrak h,w}$ is a fixed
   element of the weighted pair and the bulk family is continuous.
-  Item~(3), at the level asserted here, is the Costello bulk
-  regularity results \cite{costello-renormalization}*{Chs.~5--7}
-  tensored with a fixed coefficient kernel. This proves finite-scale
-  kernel regularity and absence of new coefficient wave-front
-  directions. The brane-defect QME obstruction classes are separate
-  local-functional classes.
+  Item~(3) is a tensor-product support statement.  The coefficient
+  kernel \(C_{\mathfrak h,w}\) is independent of the base variables and
+  belongs to the fixed weighted coefficient tensor product.  Tensoring
+  the base finite-scale kernel with it cannot create a new base
+  wavefront direction or a new collision stratum.  This proves
+  finite-scale kernel regularity and absence of new coefficient
+  wavefront directions.  The endpoint distribution, brane-defect
+  locality, and QME counterterm obstruction classes are separate
+  local-functional data.
 \end{proof}
 
 \begin{rmk}[Brane defect]\label{rmk:wt-brane-defect}
@@ -570,7 +650,7 @@ Mittag--Leffler-coevaluating for the heat-kernel propagator.
   weighted field complex $\mathcal E_w$ to its restriction along the
   defect:
   $$\mathcal E_w^{\partial}=\Omega^\bullet(\R)\widehat\otimes\bigl(
-    \mathfrak h_w[1]\oplus\mathfrak h^{\vee,w}_{\mathrm{cont}}[2]\bigr).$$
+    \mathfrak h_w[1]\oplus D^{\mathrm{BV}}_w[2]\bigr).$$
   The boundary propagator
   $P_{\epsilon,L}^{w,\partial}\in\mathcal E_w^\partial\widehat\otimes
   \mathcal E_w^\partial$ is the bulk-to-boundary restriction of
@@ -810,8 +890,8 @@ contraction.
   \]
   are the non-scalar cohomology and primitive-compatibility obstructions.
   The equivariant weighted kernel data determine a Costello
-  brane-defect QME solution exactly on the common zero locus of this
-  vector, and only there.
+  brane-defect QME counterterm tower exactly on the common zero locus of
+  this vector, and only there.
 \end{cor}
 
 \begin{proof}
@@ -829,7 +909,7 @@ contraction.
   versions.  Resonant normal modes and normalization mismatch occur before
   this cohomology class is even formed.  Hence the displayed vector is
   necessary and sufficient for the equivariant weighted-kernel construction
-  to become a QME solution.
+  to carry a QME counterterm tower.
 \end{proof}
 
 \subsection*{Renormalization-flow compatibility}
@@ -866,7 +946,7 @@ category.
   factor and a matching length in the target. By the bracket-tame
   estimate \ref{w:W1}, each internal edge contraction
   $C_{\mathfrak h,w}\colon
-  \mathfrak h_w\widehat\otimes\mathfrak h^{\vee,w}_{\mathrm{cont}}\to\C$
+  \mathfrak h_w\widehat\otimes D^{\mathrm{BV}}_w\to\C$
   changes the total weight by at most the finite constant attached to
   the degrees present in that graph.  Coadjoint legs are controlled
   windowwise by \ref{w:W2}.  Hence the graph contribution is a
@@ -894,7 +974,7 @@ category.
   finite coefficient-degree bound is
   $D_0V(\Gamma)-2E(\Gamma)$, and continuity in $(\epsilon,L)$ follows
   from Proposition~\ref{prop:wt-propagator-extends}~(2).  Passing from
-  graphwise well-definedness to a renormalized QME solution is
+  graphwise well-definedness to a renormalized QME counterterm tower is
   precisely the residual analytic problem.
 \end{proof}
 
@@ -905,7 +985,7 @@ category.
   Remark~\ref{rmk:wt-canonical-weight}.  Then
   \begin{enumerate}[label=(\alph*)]
     \item the Casimir $C_{\mathfrak h,w}$ converges in
-      $\mathfrak h_w\widehat\otimes\mathfrak h^{\vee,w}_{\mathrm{cont}}$;
+      $\mathfrak h_w\widehat\otimes D^{\mathrm{BV}}_w$;
     \item the Costello heat-kernel propagator $P^w_{\epsilon,L}$ extends
       to the weighted field complex $\mathcal E_w$ as a continuous BV
       family;
@@ -914,7 +994,7 @@ category.
     \item the central-operation cochain $\Phi$ of
       Theorem~\ref{thm:reduced-ce-pv-central-operation} extends to the
       weighted cotangent extension
-      $\mathfrak g_w=\mathfrak h_w\ltimes\mathfrak h^{\vee,w}_{\mathrm{cont}}[1]$
+      $\mathfrak g_w=\mathfrak h_w\ltimes D^{\mathrm{BV}}_w[1]$
       as a continuous cochain map
       $$\Phi^w\colon C^\bullet_{\mathrm{CE},\mathrm{cont}}(\mathfrak g_w)
         \longrightarrow B_w\subset
@@ -922,7 +1002,7 @@ category.
         (\mathfrak h_w)\bigr).$$
   \end{enumerate}
   Relative to Problem~\ref{prob:weighted-rg-locality}, the all-order
-  lift $\Phi_{\hbar,\mathrm{loc}}^w$ is
+  lift $\Phi_{\hbar_{\mathrm{QME}},\mathrm{loc}}^w$ is
   Proposition~\ref{prop:wt-qme-lift-obstruction-vanishing}.
 \end{cor}
 
@@ -945,15 +1025,15 @@ category.
   counterterm system for the mixed brane-defect interaction has
   vanishing obstruction class and is compatible with the weighted
   coefficient category.  Under this assumption, the formal quantum
-  CE/PV central-operation map $\Phi_\hbar^{(0)}$ governed by
+  CE/PV central-operation map $\Phi_{\hbar_{\mathrm{QME}}}^{(0)}$ governed by
   Theorem~\ref{thm:phi-hbar-all-order} has a weighted-continuous
   cotangent extension
-  $$\Phi_{\hbar,\mathrm{loc}}^{w}\colon
+  $$\Phi_{\hbar_{\mathrm{QME}},\mathrm{loc}}^{w}\colon
     C^\bullet_{\mathrm{CE},\mathrm{cont}}\bigl(
-    \mathfrak h_{w,\hbar}\ltimes
-    \mathfrak h^{\vee,w}_{\hbar,\mathrm{cont}}[1]\bigr)[[\hbar]]
+    \mathfrak h_{w,\hbar_{\mathrm{QME}}}\ltimes
+    D^{\mathrm{BV}}_{w,\hbar_{\mathrm{QME}}}[1]\bigr)[[\hbar_{\mathrm{QME}}]]
     \xrightarrow[\mathrm{QME\ obstruction}=0]{\sim}
-    Z^{P_{0,\hbar}}_{\mathrm{fact}}\bigl(
+    Z^{P_{0,\hbar_{\mathrm{QME}}}}_{\mathrm{fact}}\bigl(
     \mathrm{Obs}^\hbar_{\mathrm{open}}\bigr)|_{\mathfrak g_w}.$$
   The displayed isomorphism is a theorem in the weighted-continuous
   sector with vanishing QME obstruction.  The original unweighted Tate
@@ -971,8 +1051,8 @@ category.
   between Costello-locality counterterms and the bulk-boundary kernel
   at the brane defect.  The proposition assumes exactly that weighted
   QME compatibility and the vanishing of the obstruction class named in
-  Problem~\ref{prob:weighted-rg-locality}.  With that assumption in
-  force, the formal $\hbar$-adic construction of
+  Problem~\ref{prob:weighted-rg-locality}.  With that assumption
+  imposed, the formal $\hbar_{\mathrm{QME}}$-adic construction of
   Theorem~\ref{thm:phi-hbar-all-order} applies in the weighted
   coefficient envelope.  The graphwise finite-scale assertions of
   Theorem~\ref{thm:wt-rg-compatibility} are anterior to this obstruction
@@ -989,11 +1069,11 @@ category.
   complex $\mathcal E_w$ such that:
   \begin{enumerate}[label=(L\arabic*)]
     \item each $C_{n,M}$ is a local functional in
-      $\mathcal O_{\mathrm{loc}}^{\hbar^n}(\mathcal E_w^{\leq M})$ of
+      $\mathcal O_{\mathrm{loc}}^{\hbar_{\mathrm{QME}}^n}(\mathcal E_w^{\leq M})$ of
       bounded vertex polynomial degree;
     \item the truncations are compatible:
       $\pi_{M,N}C_{n,M}=C_{n,N}$ for $M\geq N$;
-    \item the recursion solves the QME order by order.
+    \item the recursion cancels the QME curvature order by order.
   \end{enumerate}
   \emph{Named obstruction class.}  The class
   \[
@@ -1023,12 +1103,12 @@ category.
   Tate-coefficient lift of the descendant cochain comparison of
   Problem~\ref{prob:tate-coefficient-descendant-lift} exists in the
   weighted Tate completion only under this hypothesis: the deformation
-  $$\Phi_{\hbar,\mathrm{loc}}^{(0,1)}\colon
+  $$\Phi_{\hbar_{\mathrm{QME}},\mathrm{loc}}^{(0,1)}\colon
     C^\bullet_{\mathrm{CE},\mathrm{cont}}\bigl(
-    \mathfrak h_{w,\hbar}\ltimes\mathfrak h^{\vee,w}_{\hbar,\mathrm{cont}}[1]
-    \bigr)^{(0)+(1)}[[\hbar]]
+    \mathfrak h_{w,\hbar_{\mathrm{QME}}}\ltimes D^{\mathrm{BV}}_{w,\hbar_{\mathrm{QME}}}[1]
+    \bigr)^{(0)+(1)}[[\hbar_{\mathrm{QME}}]]
     \xrightarrow[\mathrm{QME\ obstruction}=0]{\sim}
-    Z^{P_{0,\hbar}}_{\mathrm{fact}}\bigl(\mathrm{Obs}^\hbar_{\mathrm{open}}
+    Z^{P_{0,\hbar_{\mathrm{QME}}}}_{\mathrm{fact}}\bigl(\mathrm{Obs}^\hbar_{\mathrm{open}}
     \bigr)^{(0)+(1)}|_{\mathfrak g_w}$$
   is an isomorphism on the degree-zero plus one-antifield sector in the
   weighted theory with vanishing QME obstruction.
@@ -1036,11 +1116,11 @@ category.
 
 \begin{rmk}[Sector restriction]\label{rmk:wt-sector-restriction}
   The weighted mechanism restricts the cotangent direction from the
-  ambient polynomial Hamiltonian dual to the weighted dual
-  $\mathfrak h^{\vee,w}_{\mathrm{cont}}=\prod_d w(d)^{-1}H_d^\vee$.
+  ambient polynomial Hamiltonian dual to the weighted BV coefficient partner
+  $D^{\mathrm{BV}}_w=\prod_d w(d)^{-1}H_d^\vee$.
   The strict polynomial Hamiltonian dual
   $\mathfrak h^\vee_{\mathrm{cont}}=\bigoplus_d H_d^\vee$ is a
-  \emph{dense subspace} of $\mathfrak h^{\vee,w}_{\mathrm{cont}}$
+  \emph{dense subspace} of $D^{\mathrm{BV}}_w$
   for every $w$ with $w(d)\to\infty$, since the strict direct sum
   is finite-degree truncations and the weighted product is the
   weighted Mittag-Leffler inverse-limit completion. Hence the
@@ -1068,7 +1148,7 @@ category.
       induced restriction obtained by setting higher-degree coefficient
       fields to zero.  They are degreewise surjective maps of
       complexes.
-    \item At each fixed \(\hbar\)-order and for each fixed Costello
+    \item At each fixed \(\hbar_{\mathrm{QME}}\)-order and for each fixed Costello
       graph, the coefficient expression uses only vertexwise
       polynomial-degree-bounded Hamiltonian and cotangent legs.
     \item If \(w,w'\) are two degree weights satisfying
@@ -1127,7 +1207,7 @@ category.
   \]
   The finite-window unweighted endpoint is the finite-dimensional pair
   \[
-    (\mathfrak h_{\leq M},D_{\leq M})
+    (\mathfrak h^0_{\leq M},D^0_{\leq M})
       =\Bigl(\prod_{d\leq M}H_d,\prod_{d\leq M}H_d^\vee\Bigr).
   \]
   Its transition map for \(M\geq N\) is denoted
@@ -1185,7 +1265,7 @@ category.
     \item Its coefficient and local-functional restrictions to
       \(d\leq w_0\) form strict Mittag-Leffler towers with degreewise
       surjective transition maps.
-    \item At every fixed \(\hbar\)-order and for every fixed Costello
+    \item At every fixed \(\hbar_{\mathrm{QME}}\)-order and for every fixed Costello
       graph, the coefficient expression is vertexwise bounded in
       polynomial Hamiltonian and cotangent degree.
     \item For any admissible degree weights \(w,w'\), the diagonal
@@ -1249,12 +1329,12 @@ category.
   fixed graph contraction.
 \end{proof}
 
-\begin{thm}[Canonical equivalence of finite-degree local observables]
+\begin{thm}[Diagonal transport of finite-degree local observables]
 \label{thm:wt-finite-degree-observables}
   Let \(w(d)=q^d\) and \(w'(d)=(q')^d\), with \(q,q'>1\).  Let
   \(\mathcal O^w\) be a regulator-admissible local observable, graph
   coefficient, or obstruction cocycle represented on a finite window
-  \(d\leq M\).  Then \(R^M_{q,q'}\) is the canonical identification of
+  \(d\leq M\).  Then \(R^M_{q,q'}\) is the diagonal transport between
   the \(q\)-weighted and \(q'\)-weighted representatives on that
   finite window:
   \[
@@ -1387,14 +1467,14 @@ category.
   and define the truncated principal-part target
   \[
   \begin{aligned}
-    A_{\partial,\hbar}^{\mathrm{pp},w,M}(I)
+    A_{\partial,\hbar_{\mathrm{QME}}}^{\mathrm{pp},w,M}(I)
       =
-      \widehat{\mathbf S}_{\C[[\hbar]]}
-      \bigl(\Omega^\bullet_c(I)\otimes\prod_{d\leq M}w(d)H_d[[\hbar]]\bigr)
+      \widehat{\mathbf S}_{\C[[\hbar_{\mathrm{QME}}]]}
+      \bigl(\Omega^\bullet_c(I)\otimes\prod_{d\leq M}w(d)H_d[[\hbar_{\mathrm{QME}}]]\bigr)
       \widehat\otimes
-      \widehat{\mathbf S}_{\C[[\hbar]]}
+      \widehat{\mathbf S}_{\C[[\hbar_{\mathrm{QME}}]]}
       \bigl((\mathcal D'_c(I)\widehat\otimes
-        D_{w,\leq M}[[\hbar]])[1]\bigr).
+        D_{w,\leq M}[[\hbar_{\mathrm{QME}}]])[1]\bigr).
   \end{aligned}
   \]
   Assume that the scalar-contact projection of
@@ -1409,18 +1489,18 @@ category.
       \left(
         \mathcal O_{\mathrm{loc}}^{\mathrm{bd}}\bigl(
           \mathcal E_w^M|_I;
-          A_{\partial,\hbar}^{\mathrm{pp},w,M}(I)\bigr),
+          A_{\partial,\hbar_{\mathrm{QME}}}^{\mathrm{pp},w,M}(I)\bigr),
         d_M
       \right),
   \]
   where
-  \(d_M=Q+\{I^w_{0,M},-\}_{\hbar,M}\).  The bracket, interaction, and
+  \(d_M=Q+\{I^w_{0,M},-\}_{\hbar_{\mathrm{QME}},M}\).  The bracket, interaction, and
   differential are the transported finite-window structures given by
 	  the weighted RG criterion; plain projected Hamiltonian brackets are
   replaced by this transported structure.
   The inverse system
   \(\{\mathcal Q^\bullet_{w,M}(I)\}_{M\geq1}\) uses degree truncation
-  \(\pi_{M,N}\) for \(M\geq N\), together with the \(\hbar\)-adic
+  \(\pi_{M,N}\) for \(M\geq N\), together with the \(\hbar_{\mathrm{QME}}\)-adic
   filtration, the scalar-contact filtration, and the finite-window
   coefficient filtration.
 \end{defn}
@@ -1429,7 +1509,7 @@ category.
 \label{thm:wt-nonscalar-counterterm-criterion}
   Work in the tower of
   Definition~\ref{defn:wt-nonscalar-qme-tower}.  Suppose that a
-  counterterm system has been chosen through order \(\hbar^{n-1}\), and
+  counterterm system has been chosen through order \(\hbar_{\mathrm{QME}}^{n-1}\), and
   let
   \[
     \mathfrak o^{\mathrm{ns}}_{n,M}
@@ -1440,10 +1520,10 @@ category.
   \[
     \mathfrak o^{\mathrm{ns}}_{n,M}
       =
-      [\hbar^n]\left(
-        \operatorname{Ob}^{\mathrm{red}}_{w,\partial,\hbar,M}
+      [\hbar_{\mathrm{QME}}^n]\left(
+        \operatorname{Ob}^{\mathrm{red}}_{w,\partial,\hbar_{\mathrm{QME}},M}
         +d_MC_{<n,M}
-        +\frac12\{C_{<n,M},C_{<n,M}\}_{\hbar,M}
+        +\frac12\{C_{<n,M},C_{<n,M}\}_{\hbar_{\mathrm{QME}},M}
       \right),
   \]
   with the quadratic term omitted for the linearized equation
@@ -1479,8 +1559,8 @@ category.
   \(H^1\)-classes is sufficient.
 
   Iterating this criterion for all \(n\geq1\) constructs an
-  \(\hbar\)-adic compatible counterterm
-  \(C_{\hbar,w}=\sum_{n\geq1}\hbar^n C_{n,w}\) in the admissible
+  \(\hbar_{\mathrm{QME}}\)-adic compatible counterterm
+  \(C_{\hbar_{\mathrm{QME}},w}=\sum_{n\geq1}\hbar_{\mathrm{QME}}^n C_{n,w}\) in the admissible
   finite-window inverse limit.  The transport maps \(R^M_{w,w'}\)
   identify the obstruction pair
   \[
@@ -1495,7 +1575,7 @@ category.
 \end{thm}
 
 \begin{proof}
-  The lower-order counterterms solve the QME modulo \(\hbar^n\).  Applying
+  The lower-order counterterms solve the QME modulo \(\hbar_{\mathrm{QME}}^n\).  Applying
   \(d_M\) to the displayed order-\(n\) residual and using
   \(d_M^2=0\), the graded Jacobi identity, and the lower-order equations
   gives \(d_M\mathfrak o^{\mathrm{ns}}_{n,M}=0\).  The scalar-contact
@@ -1504,29 +1584,48 @@ category.
   branch has zero scalar symbol, so the residual lies in
   \(\mathcal Q^\bullet_{w,M}(I)\).
 
-  Necessity is immediate.  A compatible counterterm \(C_{n,M}\) is a
-  primitive of \(-\mathfrak o^{\mathrm{ns}}_{n,M}\), hence each
-  \(H^1\)-class vanishes.  Its truncation identities make
-  \(\pi_{M,N}C_{n,M}-C_{n,N}=0\), so the associated Milnor
-  \(\varprojlim^1 H^0\)-class is also zero.
+  Suppose compatible counterterms \(C_{n,M}\) exist.  The equation
+  \(d_MC_{n,M}=-\mathfrak o^{\mathrm{ns}}_{n,M}\) makes
+  \([\mathfrak o^{\mathrm{ns}}_{n,M}]=0\) in every
+  \(H^1(\mathcal Q^\bullet_{w,M}(I))\).  The compatibility equations
+  \(\pi_{M,N}C_{n,M}=C_{n,N}\) make every primitive-difference class
+  \([\pi_{M,N}C_{n,M}-C_{n,N}]\) equal to zero.  Hence the class in the
+  Roos cokernel computing
+  \(\varprojlim^1_MH^0(\mathcal Q^\bullet_{w,M}(I))\) is zero.
 
   Conversely, assume the two displayed obstructions vanish.  The first
   condition gives primitives \(c_{n,M}\) window by window.  For
   \(M\geq N\), the difference
   \(\pi_{M,N}c_{n,M}-c_{n,N}\) is \(d_N\)-closed because the residuals
-  commute with truncation.  The cohomology classes of these closed
-  degree-zero differences form the standard Roos \(1\)-cocycle computing
-  \(\varprojlim^1_MH^0(\mathcal Q^\bullet_{w,M}(I))\).  Vanishing of
-  \(\lambda_n\), together with the degreewise Mittag--Leffler property of
-  the finite-window truncation tower, means that the primitives can be
-  adjusted by degree-zero cocycles and degree-zero boundaries so that the
-  adjusted primitives commute with every truncation map.  Those adjusted
-  primitives are \(C_{n,M}\).  Passing to the inverse limit
-  gives \(C_{n,w}\).
+  commute with truncation.  On the cofinal successor tower set
+  \(A_M=H^0(\mathcal Q^\bullet_{w,M}(I))\) and
+  \[
+    \Delta_Q\colon\prod_M A_M\longrightarrow\prod_M A_M,\qquad
+    \Delta_Q((a_M)_M)
+      =\bigl(a_M-\pi_{M+1,M}a_{M+1}\bigr)_M .
+  \]
+  The classes
+  \(\delta_M=[\pi_{M+1,M}c_{n,M+1}-c_{n,M}]\) form the Roos
+  \(1\)-cocycle \((\delta_M)_M\), and its cokernel class is
+  \(\lambda_n\).  If \(\lambda_n=0\), choose degree-zero cocycles
+  \(a_M\) and representatives of degree-zero boundaries so that
+  \(\delta_M=a_M-\pi_{M+1,M}a_{M+1}\) in \(A_M\).  Replacing
+  \(c_{n,M}\) by \(c_{n,M}+a_M\), and then by boundary representatives
+  in \(\mathcal Q^0_{w,M}(I)\), gives primitives \(C_{n,M}\) satisfying
+  \(\pi_{M+1,M}C_{n,M+1}=C_{n,M}\).  Compatibility for arbitrary
+  \(M\geq N\) follows by iteration, and the inverse-limit element is
+  \(C_{n,w}\).
 
   The assertion about the \(H^0\)-Mittag--Leffler hypothesis is the
-  standard vanishing of \(\varprojlim^1\) for a Mittag--Leffler inverse
-  system.  Weight invariance follows from
+  following calculation.  For a Mittag--Leffler inverse system
+  \((A_M,\pi_{M+1,M})\) of vector spaces, replace each \(A_M\) by the
+  stable image of \(A_{M'}\to A_M\) for \(M'\gg M\); the resulting
+  cofinal subsystem has surjective transition maps.  Given
+  \(b=(b_M)_M\in\prod_M A_M\), choose \(a_1\) arbitrarily and then lift
+  \(a_M-b_M\) to \(a_{M+1}\) under the surjective map
+  \(A_{M+1}\to A_M\).  Then \(\Delta_Q(a)=b\), so
+  \(\operatorname{coker}\Delta_Q=\varprojlim^1 A_M=0\).
+  Weight invariance follows from
   Theorem~\ref{thm:wt-regulator-independence-admissible}: the maps
   \(R^M_{w,w'}\) are cochain isomorphisms, commute with truncation, and
   carry residuals, primitives, and their difference cocycles to the
@@ -1553,7 +1652,7 @@ category.
   are renormalized brane-defect local functionals compatible with
   interval extension, degree truncation, and admissible weight transport.
   Let \(\mathcal G^{\bullet,\mathrm{reg}}_{w,M}(I)\) be the complete
-  filtered \(\C[[\hbar]]\)-span, inside
+  filtered \(\C[[\hbar_{\mathrm{QME}}]]\)-span, inside
   \(\mathcal Q^\bullet_{w,M}(I)\), of the scalar-zero members among these
   graph weights and their regular-density local counterterms.  The
   zero-internal-edge generators are the coefficient-current terms
@@ -1665,40 +1764,40 @@ category.
 \begin{prop}[Raw kernel obstruction to a stronger cochain map]
 \label{prop:wt-raw-kappa-cochain-obstruction}
   Let
-  \(\kappa^{\mathrm{graph,reg},M}_{\hbar,w,I}\) be the finite-window
+  \(\kappa^{\mathrm{graph,reg},M}_{\hbar_{\mathrm{QME}},w,I}\) be the finite-window
   regular-density graph kernel of
   Proposition~\ref{prop:app-regular-density-costello-graph-kernel},
   viewed as a degree-zero element of the convolution Hom from the
   regular-density CE source to the target
-  \(\mathfrak Q^\bullet_{w,\partial,\hbar}(I)\).  If one tries to take the
+  \(\mathfrak Q^\bullet_{w,\partial,\hbar_{\mathrm{QME}}}(I)\).  If one tries to take the
   regular-density CE source itself as the closed-exchange complex and
-  \(\Xi_M=\kappa^{\mathrm{graph,reg},M}_{\hbar,w,I}\), then the exact
+  \(\Xi_M=\kappa^{\mathrm{graph,reg},M}_{\hbar_{\mathrm{QME}},w,I}\), then the exact
   obstruction to an ordinary cochain map into
   \(\mathcal Q^\bullet_{w,M}(I)\) is the pair
   \[
     \widehat\sigma_{\mathrm{sc},M}
-      \kappa^{\mathrm{graph,reg},M}_{\hbar,w,I},
+      \kappa^{\mathrm{graph,reg},M}_{\hbar_{\mathrm{QME}},w,I},
     \qquad
-    d_{\mathbf K}\kappa^{\mathrm{graph,reg},M}_{\hbar,w,I}
+    d_{\mathbf K}\kappa^{\mathrm{graph,reg},M}_{\hbar_{\mathrm{QME}},w,I}
       =
-      d_M\kappa^{\mathrm{graph,reg},M}_{\hbar,w,I}
+      d_M\kappa^{\mathrm{graph,reg},M}_{\hbar_{\mathrm{QME}},w,I}
       -
-      \kappa^{\mathrm{graph,reg},M}_{\hbar,w,I}d_{\mathrm{CE}}
+      \kappa^{\mathrm{graph,reg},M}_{\hbar_{\mathrm{QME}},w,I}d_{\mathrm{CE}}
   \]
   The first term is the obstruction to landing in
   \(\ker\widehat\sigma_{\mathrm{sc},M}\); the second is the obstruction
   to commuting with differentials.  If the closed-exchange datum
-  is required to be a \(P_{0,\hbar}\)-central-operation kernel, the
+  is required to be a \(P_{0,\hbar_{\mathrm{QME}}}\)-central-operation kernel, the
   ordinary cochain obstruction is strengthened to the Maurer--Cartan
   curvature
   \[
     \operatorname{Curv}_{\mathbf K}
-      (\kappa^{\mathrm{graph,reg},M}_{\hbar,w,I})
+      (\kappa^{\mathrm{graph,reg},M}_{\hbar_{\mathrm{QME}},w,I})
       =
-      d_{\mathbf K}\kappa^{\mathrm{graph,reg},M}_{\hbar,w,I}
+      d_{\mathbf K}\kappa^{\mathrm{graph,reg},M}_{\hbar_{\mathrm{QME}},w,I}
       +\frac12[
-        \kappa^{\mathrm{graph,reg},M}_{\hbar,w,I},
-        \kappa^{\mathrm{graph,reg},M}_{\hbar,w,I}
+        \kappa^{\mathrm{graph,reg},M}_{\hbar_{\mathrm{QME}},w,I},
+        \kappa^{\mathrm{graph,reg},M}_{\hbar_{\mathrm{QME}},w,I}
       ]_{\mathbf K}.
   \]
   Thus the regular-density graph complex gives a proved
@@ -1712,7 +1811,7 @@ category.
 \begin{proof}
   The convolution differential is
   \(d_{\mathbf K}T=d_MT-(-1)^{|T|}Td_{\mathrm{CE}}\).  Since
-  \(\kappa^{\mathrm{graph,reg},M}_{\hbar,w,I}\) has degree zero, the
+  \(\kappa^{\mathrm{graph,reg},M}_{\hbar_{\mathrm{QME}},w,I}\) has degree zero, the
   displayed formula is exactly the commutator of the proposed map with the
   two differentials.  Hence it vanishes if and only if the raw kernel is a
   cochain map into the ambient target.  It lands in the non-scalar complex
@@ -1720,7 +1819,7 @@ category.
 
   The bracket term is the completed convolution bracket of
   Definition~\ref{def:app-bulk-defect-convolution-complex}.  A
-  \(P_{0,\hbar}\)-central-operation kernel is a Maurer--Cartan element in
+  \(P_{0,\hbar_{\mathrm{QME}}}\)-central-operation kernel is a Maurer--Cartan element in
   that convolution dg Lie algebra, so its exact obstruction is
   \(d_{\mathbf K}\kappa+\frac12[\kappa,\kappa]_{\mathbf K}\).  The
   generator-level form of this statement is the obstruction list in
@@ -1831,7 +1930,7 @@ category.
   \[
     \Delta_X((a_M)_M)
       =
-      \bigl(\rho^X_{M+1,M}a_{M+1}-a_M\bigr)_M,
+      \bigl(a_M-\rho^X_{M+1,M}a_{M+1}\bigr)_M,
   \]
   the class of \(( [u_M] )_M\) in
   \(\operatorname{coker}\Delta_X
@@ -1910,8 +2009,9 @@ category.
   \(\rho^X_{M+1,M}w_{M+1}-w_M\) are closed degree-one elements with zero
   cohomology class, hence have the form \(d^X_M u_M\).  Changing the
   representatives \(w_M\) by degree-zero coboundaries changes
-  \(([u_M])_M\) by the Roos coboundary \(\Delta_X\).  Thus the displayed
-  class \(\mu^{\mathrm{cl}}_n(\alpha)\) is independent of the choices.  In
+  \(([u_M])_M\) by the negative of the Roos coboundary \(\Delta_X\).  Thus
+  the displayed class \(\mu^{\mathrm{cl}}_n(\alpha)\) is independent of the
+  choices.  In
   the two-term Roos complex computing the first derived inverse limit of
   the tower \(H^0(\mathcal X^\bullet_{w,M}(I))\), its vanishing is exactly
   the equation making these differences exact after changing
@@ -1924,17 +2024,23 @@ category.
   primitives \(c_M\).  Since \(\pi_{M+1,M}r_{M+1}=r_M\), the differences
   \(\pi_{M+1,M}c_{M+1}-c_M\) are \(d_M\)-closed of degree zero.  Changing
   the primitives by closed degree-zero cochains, and by boundaries, changes
-  their cohomology classes by the Roos coboundary \(\Delta_Q\).  Hence the
+  their cohomology classes by the negative of the Roos coboundary
+  \(\Delta_Q\).  Hence the
   displayed \(\lambda^{\mathrm{cl}}_n(W)\) is independent of primitive
   choices and vanishes exactly when the primitives can be adjusted to a
   compatible system \(C_{n,M}\).  This system is precisely the required
   compatible local counterterm family.
 
-  The last paragraph is the standard vanishing of
-  \(\varprojlim^1\) for Mittag--Leffler inverse systems of vector spaces.
-  Therefore an \(H^0\)-Mittag--Leffler hypothesis on the closed-exchange
-  tower kills the representative obstruction \(\mu^{\mathrm{cl}}_n\), and
-  the corresponding hypothesis on the non-scalar counterterm tower kills
+  For either \(H^0\)-tower, write the Roos differential as
+  \(\Delta((a_M)_M)=(a_M-\rho_{M+1,M}a_{M+1})_M\).  The
+  Mittag--Leffler condition lets one replace the tower by the cofinal
+  tower of stable images, whose transition maps are surjective.  The
+  recursive lifting of \(a_M-b_M\) to \(a_{M+1}\) solves
+  \(\Delta(a)=b\) for every \(b\in\prod_MH^0_M\).  Hence
+  \(\operatorname{coker}\Delta=\varprojlim^1H^0_M=0\).  Therefore an
+  \(H^0\)-Mittag--Leffler hypothesis on the closed-exchange tower kills
+  the representative obstruction \(\mu^{\mathrm{cl}}_n\), and the
+  corresponding hypothesis on the non-scalar counterterm tower kills
   \(\lambda^{\mathrm{cl}}_n\).  If both hold, only the cokernel
   \(H^1\)-class remains.  If the closed-exchange tower is zero, the
   cokernel condition reduces to vanishing of
@@ -1952,7 +2058,7 @@ category.
   Work in the regular-density tower of
   Definition~\ref{defn:wt-regular-density-closed-exchange-complex} and
   Proposition~\ref{prop:wt-regular-density-X-Xi-construction}.  Let
-  \(n_0\) be the first \(\hbar\)-order at which the lower-order choices
+  \(n_0\) be the first \(\hbar_{\mathrm{QME}}\)-order at which the lower-order choices
   leave a compatible non-scalar residual
   \[
     \mathfrak o^{\mathrm{ns}}_{n_0,M}
@@ -2011,7 +2117,7 @@ category.
     \varprojlim_M
     H^1\bigl(\mathcal C^{\bullet,\mathrm{reg}}_{w,M}(I)\bigr)
   \]
-  are the quotient shadow of the closed-exchange obstruction
+  are the quotient image of the closed-exchange obstruction
   \[
     \beta^{\mathrm{cl},\mathrm{reg}}_{n_0}
       \in
@@ -2083,7 +2189,7 @@ category.
   \[
     \beta^{\mathrm{cl},\mathrm{reg}}_{n_0}=0.
   \]
-  The canonical compatible choice
+  The compatible choice
   \(W_{n_0,M}=-\mathfrak o^{\mathrm{ns}}_{n_0,M}\) and \(C_{n_0,M}=0\)
   has
   \[
@@ -2140,7 +2246,7 @@ category.
   \(\varprojlim_MH^1(\mathcal C^{\bullet,\mathrm{reg}}_{w,M}(I))\), and
   the image of \(\beta^{\mathrm{cl},\mathrm{reg}}_{n_0}\) is precisely
   \(\eta^{\mathrm{reg}}_{n_0}\).  Thus nonvanishing of
-  \(\eta^{\mathrm{reg}}_{n_0}\) forces nonvanishing of
+  \(\eta^{\mathrm{reg}}_{n_0}\) implies nonvanishing of
   \(\beta^{\mathrm{cl},\mathrm{reg}}_{n_0}\).
 
   Assume now \(\eta^{\mathrm{reg}}_{n_0}=0\).  Windowwise exactness gives
@@ -2186,10 +2292,10 @@ category.
   \[
     \mathfrak o^{\mathrm{ns}}_{n_0,M}
       =
-      [\hbar^{n_0}]\left(
-        \operatorname{Ob}^{\mathrm{red}}_{w,\partial,\hbar,M}
+      [\hbar_{\mathrm{QME}}^{n_0}]\left(
+        \operatorname{Ob}^{\mathrm{red}}_{w,\partial,\hbar_{\mathrm{QME}},M}
         +d_MC_{<n_0,M}
-        +\frac12\{C_{<n_0,M},C_{<n_0,M}\}_{\hbar,M}
+        +\frac12\{C_{<n_0,M},C_{<n_0,M}\}_{\hbar_{\mathrm{QME}},M}
       \right)
       \in Z^1\bigl(\mathcal Q^\bullet_{w,M}(I)\bigr),
   \]
@@ -2231,7 +2337,7 @@ category.
       local-functional complex
       \(\mathcal O_{\mathrm{loc}}^{\mathrm{bd}}
       (\mathcal E_w^M|_I;
-      A_{\partial,\hbar}^{\mathrm{pp},w,M}(I))\) before cohomology and
+      A_{\partial,\hbar_{\mathrm{QME}}}^{\mathrm{pp},w,M}(I))\) before cohomology and
       before scalar reduction.
     \item The representatives commute with finite-window truncation and
       admissible weight transport:
@@ -2276,10 +2382,10 @@ category.
     \eta^{\mathrm{reg}}_{n_0,M}
       &=
     \left[
-      q_M[\hbar^{n_0}]\left(
-        \operatorname{Ob}^{\mathrm{red}}_{w,\partial,\hbar,M}
+      q_M[\hbar_{\mathrm{QME}}^{n_0}]\left(
+        \operatorname{Ob}^{\mathrm{red}}_{w,\partial,\hbar_{\mathrm{QME}},M}
         +d_MC_{<n_0,M}
-        +\frac12\{C_{<n_0,M},C_{<n_0,M}\}_{\hbar,M}
+        +\frac12\{C_{<n_0,M},C_{<n_0,M}\}_{\hbar_{\mathrm{QME}},M}
       \right)
     \right]
       \in
@@ -2287,7 +2393,7 @@ category.
   \end{aligned}
   \]
   Computing this class requires the finite-window coefficient array of
-  \(\operatorname{Ob}^{\mathrm{red}}_{w,\partial,\hbar,M}\), the lower-order
+  \(\operatorname{Ob}^{\mathrm{red}}_{w,\partial,\hbar_{\mathrm{QME}},M}\), the lower-order
   counterterms \(C_{<n_0,M}\), the scalar-contact chain projection
   \(\widehat\sigma_{\mathrm{sc},M}\), and the reduction of the displayed
   degree-one cochain modulo the regular-density graph/counterterm
@@ -2390,11 +2496,11 @@ category.
   the system, and the scalar-contact projection is zero on the chosen
   subcomplex.  Let
   \[
-    \operatorname{Ob}^{\mathrm{red,reg}}_{w,\partial,\hbar,M}
+    \operatorname{Ob}^{\mathrm{red,reg}}_{w,\partial,\hbar_{\mathrm{QME}},M}
       =
     \operatorname{ev}_{\mathcal G_M}
       \operatorname{Curv}_{\mathbf K}
-      \bigl(\kappa^{\mathrm{graph,reg},M}_{\hbar,w,I}\bigr)
+      \bigl(\kappa^{\mathrm{graph,reg},M}_{\hbar_{\mathrm{QME}},w,I}\bigr)
       \in
     \mathcal Q^1_{w,M}(I)
   \]
@@ -2415,12 +2521,12 @@ category.
   \[
     \mathfrak o^{\mathrm{ns,reg}}_{n_0,M}
       =
-      [\hbar^{n_0}]\left(
-        \operatorname{Ob}^{\mathrm{red,reg}}_{w,\partial,\hbar,M}
+      [\hbar_{\mathrm{QME}}^{n_0}]\left(
+        \operatorname{Ob}^{\mathrm{red,reg}}_{w,\partial,\hbar_{\mathrm{QME}},M}
         +d_MC^{\mathrm{reg}}_{<n_0,M}
         +\frac12
           \{C^{\mathrm{reg}}_{<n_0,M},
-            C^{\mathrm{reg}}_{<n_0,M}\}_{\hbar,M}
+            C^{\mathrm{reg}}_{<n_0,M}\}_{\hbar_{\mathrm{QME}},M}
       \right).
   \]
   Then
@@ -2434,7 +2540,7 @@ category.
   compatibly with finite-window truncation and admissible weight transport.
 
   More explicitly, after expanding the finite graph system at the
-  coefficient of \(\hbar^{n_0}\), there is a finite indexing set
+  coefficient of \(\hbar_{\mathrm{QME}}^{n_0}\), there is a finite indexing set
   \(\mathcal A^{\mathrm{reg}}_{n_0,M}\) and coefficients
   \(\varepsilon_{\alpha,M}\in\C\) such that
   \[
@@ -2442,10 +2548,10 @@ category.
       =
     \sum_{\alpha\in\mathcal A^{\mathrm{reg}}_{n_0,M}}
       \varepsilon_{\alpha,M}\,G^M_{\alpha,w}
-      +[\hbar^{n_0}]d_MC^{\mathrm{reg}}_{<n_0,M}
-      +\frac12[\hbar^{n_0}]
+      +[\hbar_{\mathrm{QME}}^{n_0}]d_MC^{\mathrm{reg}}_{<n_0,M}
+      +\frac12[\hbar_{\mathrm{QME}}^{n_0}]
         \{C^{\mathrm{reg}}_{<n_0,M},
-          C^{\mathrm{reg}}_{<n_0,M}\}_{\hbar,M},
+          C^{\mathrm{reg}}_{<n_0,M}\}_{\hbar_{\mathrm{QME}},M},
   \]
   where each graph generator is of the form
   \[
@@ -2494,11 +2600,11 @@ category.
   linear splitting modulo
   \(\mathcal Q^{\bullet,\mathrm{rd}}_{w,M}(I)\) and write
   \[
-    \operatorname{Ob}^{\mathrm{red}}_{w,\partial,\hbar,M}
+    \operatorname{Ob}^{\mathrm{red}}_{w,\partial,\hbar_{\mathrm{QME}},M}
       =
-    \operatorname{Ob}^{\mathrm{red,reg}}_{w,\partial,\hbar,M}
+    \operatorname{Ob}^{\mathrm{red,reg}}_{w,\partial,\hbar_{\mathrm{QME}},M}
       +
-    \operatorname{Ob}^{\mathrm{red},\neg\mathrm{rd}}_{w,\partial,\hbar,M},
+    \operatorname{Ob}^{\mathrm{red},\neg\mathrm{rd}}_{w,\partial,\hbar_{\mathrm{QME}},M},
     \qquad
     C_{<n_0,M}
       =
@@ -2521,14 +2627,14 @@ category.
     \eta^{\mathrm{reg}}_{n_0,M}
       =
       \Bigl[
-      q_M[\hbar^{n_0}]\Bigl(
-        &\operatorname{Ob}^{\mathrm{red},\neg\mathrm{rd}}_{w,\partial,\hbar,M}
+      q_M[\hbar_{\mathrm{QME}}^{n_0}]\Bigl(
+        &\operatorname{Ob}^{\mathrm{red},\neg\mathrm{rd}}_{w,\partial,\hbar_{\mathrm{QME}},M}
         +d_MC^{\neg\mathrm{rd}}_{<n_0,M} \\
         &+\{C^{\mathrm{reg}}_{<n_0,M},
-             C^{\neg\mathrm{rd}}_{<n_0,M}\}_{\hbar,M}
+             C^{\neg\mathrm{rd}}_{<n_0,M}\}_{\hbar_{\mathrm{QME}},M}
         +\frac12
           \{C^{\neg\mathrm{rd}}_{<n_0,M},
-             C^{\neg\mathrm{rd}}_{<n_0,M}\}_{\hbar,M}
+             C^{\neg\mathrm{rd}}_{<n_0,M}\}_{\hbar_{\mathrm{QME}},M}
       \Bigr)\Bigr]
   \end{aligned}
   \]
@@ -2540,7 +2646,7 @@ category.
     \bigr).
   \]
   Thus a single wavefront-admissible but non-smooth cotangent label, or a
-  distributional current counterterm forced by such a label, is the exact
+  distributional current counterterm required by such a label, is the exact
   datum that leaves \(Q^{\mathrm{rd}}=X^{\mathrm{reg}}\).
 \end{prop}
 
@@ -2554,10 +2660,10 @@ category.
   counterterms in
   \(\mathcal X^{\bullet,\mathrm{reg}}_{w,M}(I)\), and closes this space
   under \(d_M\).  The finite-window graph/QME system includes the
-  BV-bracket terms forced by the finite graph differential, so the
+  BV-bracket terms appearing in the finite graph differential, so the
   quadratic counterterm term remains in the same complete regular-density
   graph/counterterm complex.  Hence every summand in the displayed
-  \(\hbar^{n_0}\)-coefficient lies in
+  \(\hbar_{\mathrm{QME}}^{n_0}\)-coefficient lies in
   \(\mathcal X^{\bullet,\mathrm{reg}}_{w,M}(I)\).
 
   The Bianchi identity in the convolution dg Lie algebra gives closedness
@@ -2614,7 +2720,7 @@ category.
   \]
   A non-smooth label \(B\in\mathcal D'_c(I)\) with
   non-empty wavefront has nonzero class in \(\mathcal S_c(I)\).  This
-  quotient class obstructs a canonical regular-density representative of
+  quotient class obstructs a choice-free regular-density representative of
   \(B\) modulo \(\mathcal D^{\mathrm{reg}}_c(I)\): if
   \(B-B^{\mathrm{sm}}\in\mathcal D^{\mathrm{reg}}_c(I)\) for some
   \(B^{\mathrm{sm}}\in\mathcal D^{\mathrm{reg}}_c(I)\), then \(B\) was
@@ -2624,12 +2730,12 @@ category.
   \[
     \mathfrak o^{\mathrm{ns,WF}}_{n_0,M}
       =
-      [\hbar^{n_0}]\left(
-        \operatorname{Ob}^{\mathrm{red,WF}}_{w,\partial,\hbar,M}
+      [\hbar_{\mathrm{QME}}^{n_0}]\left(
+        \operatorname{Ob}^{\mathrm{red,WF}}_{w,\partial,\hbar_{\mathrm{QME}},M}
         +d_MC^{\mathrm{WF}}_{<n_0,M}
         +\frac12
           \{C^{\mathrm{WF}}_{<n_0,M},
-            C^{\mathrm{WF}}_{<n_0,M}\}_{\hbar,M}
+            C^{\mathrm{WF}}_{<n_0,M}\}_{\hbar_{\mathrm{QME}},M}
       \right)
       \in Z^1\bigl(\mathcal Q^\bullet_{w,M}(I)\bigr),
   \]
@@ -2641,14 +2747,14 @@ category.
   \begin{aligned}
     \mathfrak s^{\mathrm{WF}}_{n_0,M}
       =
-      q_M[\hbar^{n_0}]\Bigl(
-        &\operatorname{Ob}^{\mathrm{red},\neg\mathrm{rd}}_{w,\partial,\hbar,M}
+      q_M[\hbar_{\mathrm{QME}}^{n_0}]\Bigl(
+        &\operatorname{Ob}^{\mathrm{red},\neg\mathrm{rd}}_{w,\partial,\hbar_{\mathrm{QME}},M}
         +d_MC^{\neg\mathrm{rd}}_{<n_0,M} \\
         &+\{C^{\mathrm{reg}}_{<n_0,M},
-             C^{\neg\mathrm{rd}}_{<n_0,M}\}_{\hbar,M}
+             C^{\neg\mathrm{rd}}_{<n_0,M}\}_{\hbar_{\mathrm{QME}},M}
         +\frac12
           \{C^{\neg\mathrm{rd}}_{<n_0,M},
-             C^{\neg\mathrm{rd}}_{<n_0,M}\}_{\hbar,M}
+             C^{\neg\mathrm{rd}}_{<n_0,M}\}_{\hbar_{\mathrm{QME}},M}
       \Bigr)
       \in
       \mathcal C^{1,\mathrm{reg}}_{w,M}(I),
@@ -2819,12 +2925,12 @@ category.
       =
     \mathcal Q^\bullet_{w,M}(I)
       \widehat{\oplus}
-    \C[[\hbar]]\cdot p^{\mathrm{WF}}_{n_0,M},
+    \C[[\hbar_{\mathrm{QME}}]]\cdot p^{\mathrm{WF}}_{n_0,M},
     \qquad |p^{\mathrm{WF}}_{n_0,M}|=0,
   \]
-  completed in the same \(\hbar\)-adic, scalar-contact, and
+  completed in the same \(\hbar_{\mathrm{QME}}\)-adic, scalar-contact, and
   finite-window filtrations as \(\mathcal Q^\bullet_{w,M}(I)\).  The new
-  generator is placed in \(\hbar\)-order \(n_0\), in the scalar-contact
+  generator is placed in \(\hbar_{\mathrm{QME}}\)-order \(n_0\), in the scalar-contact
   filtration of \(\widehat{\mathfrak s}^{\mathrm{WF}}_{n_0,M}\), and with
   local support and wavefront label equal to the support and wavefront
   cone displayed in
@@ -2898,7 +3004,7 @@ category.
   \]
   and \(\widetilde d_M^2=0\) on the old summand because \(d_M^2=0\).
   The image of the new generator has the same local support,
-  wavefront cone, \(\hbar\)-order, scalar-contact order, and finite
+  wavefront cone, \(\hbar_{\mathrm{QME}}\)-order, scalar-contact order, and finite
   coefficient window assigned to the generator.  Therefore the
   differential is continuous for the completed filtration topology.
 
@@ -2996,7 +3102,7 @@ category.
   Lemma~\ref{lem:continuous-bar-cobar} item~(1): every element of a
   completed tensor product with \(D_{\oplus}\) has support in only
   finitely many \(H_d^\vee\)-degrees.  Projection of \(K\) to
-  \(C^{w_0}_{\mathfrak h}\) for all \(w_0\) forces a nonzero
+  \(C^{w_0}_{\mathfrak h}\) for all \(w_0\) gives a nonzero
   \(H_d^\vee\)-component of \(K\) in every degree \(d\).  This is
   infinite support in the direct-sum direction, a contradiction.  The
   same argument applies after reversing the tensor factors.
@@ -3008,12 +3114,13 @@ category.
   homotopy while the coefficient distributional inverse pairing and
   graphwise regulator endpoint are obstructed.
 
-  Suppose a \(q\to1^+\) endpoint existed in the strict pair.  Its
-  finite-window projection is forced to be the limit of the weighted
-  finite-window kernels.  After the weighted bases are identified with
-  the unweighted basis, every such finite-window kernel is exactly
-  \(C^{w_0}_{\mathfrak h}\), independent of \(q\).  Such an endpoint
-  therefore gives a tensor \(K\) with the obstructed projections above.
+  Suppose a \(q\to1^+\) endpoint existed in the strict pair.  Compatibility
+  with finite-window restriction identifies its finite-window projection
+  with the limit of the weighted finite-window kernels.  After the
+  weighted bases are identified with the unweighted basis, every such
+  finite-window kernel is exactly \(C^{w_0}_{\mathfrak h}\), independent
+  of \(q\).  Such an endpoint therefore gives a tensor \(K\) with the
+  obstructed projections above.
   This proves the endpoint assertion.
 
   Finally, with zero differential,
@@ -3127,7 +3234,7 @@ category.
   \]
   be the finite-window restriction of the weighted CE/PV generator map.
   Let \(\Phi^{0,M}\) be the finite-dimensional unweighted CE/PV map on
-  \((\mathfrak h_{\leq M},D_{\leq M})\).  Then
+  \((\mathfrak h^0_{\leq M},D^0_{\leq M})\).  Then
   \[
     U^M_q\,\Phi^q_M=\Phi^{0,M}\,U^M_q
   \]

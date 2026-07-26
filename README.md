@@ -37,6 +37,21 @@ make help        # list all targets
 The compiled PDF is written to `out/main.pdf`.  Build success is a
 TeX integrity check; it is not a mathematical certification.
 
+For a reproducible verification build, run the strict build and scans
+from the repository root:
+
+```bash
+latexmk -pdf -outdir=out -interaction=nonstopmode -halt-on-error main.tex
+perl -pi -e 's/[ \t]+$//' out/main.log
+rg -n '(^!|LaTeX Error|Fatal error|Emergency stop|Undefined control sequence|Citation .* undefined|Reference .* undefined|There were undefined references|Label\(s\) may have changed|multiply-defined|destination with the same identifier)' out/main.log
+rg -n 'Package hyperref Warning|pdfTeX warning|Token not allowed|Suppressing empty link|destination with the same identifier' out/main.log
+git diff --check
+git diff --cached --check
+```
+
+The two `rg` scans should return no matches.  When run alone, `rg`
+exits with status `1` in that clean case.
+
 ## Compiled source layout
 
 - `main.tex` — root file.

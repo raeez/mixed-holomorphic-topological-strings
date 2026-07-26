@@ -1,12 +1,32 @@
 \subsection{Formal-Darboux normal form of the local Hamiltonian sector}\label{ssec:twistedM-universality}
 
-The CE/PV Koszul resolution gives the trace summand of the map from
-the bulk stalk \(\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}|_b\) to the
-brane-side derived \(E_1\)-Hochschild complex
-\(HH^\bullet(A^{\mathrm{cl}}_{\partial,N},A^{\mathrm{cl}}_{\partial,N})\)
-in Theorem~\ref{thm:main-local} of
-\S\ref{ssec:coordinate-free-ce-pv-synthesis}.  Its universal property
-is the formal-Darboux normal-form property of the trace sector.
+The coordinate CE/PV Koszul resolution gives the stable
+scalar-reduced trace-sector model of the bulk stalk
+\(\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}|_b\) in
+Theorem~\ref{thm:main-local} of
+\S\ref{ssec:coordinate-free-ce-pv-synthesis}:
+\[
+  \operatorname{Regr}_u
+  C^\bullet_{\mathrm{CE},\mathrm{coord}}(\mathfrak g)
+  \xrightarrow{\sim}
+  \bigl(\mathrm{PV}_{\mathrm{coord}}
+    (A_{\partial,H}^{\mathrm{st}}),d_\pi\bigr),
+  \qquad
+  c^\rho\mapsto\partial_\rho,
+  \quad u_f\mapsto O_f=J(f),
+  \quad d_{\mathrm{CE}}u_f\mapsto X_f=d_\pi O_f.
+\]
+The standard Chevalley--Eilenberg degree is
+\(|u_f|_{\mathrm{CE}}=2\); the coordinate regrading has
+\(|u_f|_{\mathrm{coord}}=0\).  In the smooth commutative setting,
+ordinary Hochschild--Kostant--Rosenberg comparison identifies the
+zero-differential polyvector complex with ordinary Hochschild cochains;
+its continuous completed form is additional admissible data.  It does not
+intertwine the nonzero Lichnerowicz differential \(d_\pi\).  Passage from
+the displayed coordinate model to brane-side Hochschild cochains
+therefore requires the supplied continuous filtered twisted-formality,
+PBW/Roos, and Hochschild-centre lift data.  The universal property below
+is the formal-Darboux normal-form property of this trace sector.
 The local theorem of \S\ref{ssec:local-theorem} lives at one brane
 point of the formal symplectic polydisk \(\widehat{\C^2}_0\).  An
 ambient theory on a connected holomorphic-symplectic surface
@@ -51,8 +71,9 @@ closed-comparison cone, \(H^2_{\mathrm{Lie}}(\bar A,\C)\), and the
 weighted protected local-functional complex), and a single nonzero
 coordinate obstructs the corresponding admissibility clause.  In
 Koszul language, \(\operatorname{Ob}^{\mathrm{univ}}_{p,X}\) is the
-obstruction table for extending the formal-Darboux trace-sector map
-along the ambient datum at \((X,\omega,p)\).
+obstruction table for extending the formal-Darboux generator boundary
+value and its stable CE/PV trace-sector projection along the ambient datum
+at \((X,\omega,p)\).
 
 A compact theorem using this formal restriction contains a second
 geometric or automorphic object: the BCOV/Kodaira--Spencer propagator,
@@ -60,7 +81,7 @@ the Maulik--Nekrasov--Okounkov--Pandharipande virtual trace, a
 Gopakumar--Vafa or Ooguri--Strominger--Vafa scalar, a
 Donaldson--Thomas/Pandharipande--Thomas wall-crossing trace, a
 Calabi--Yau-to-chiral specialization, or an Igusa/Borcherds--Kac--Moody
-normalization.  The comparison with that object is governed by the
+normalization.  The comparison with the chosen target datum is governed by the
 matched-conventions descent class of
 Corollary~\ref{cor:protected-matched-conventions-interface} and
 \S\ref{app:comparison-conventions}.  Vanishing of
@@ -177,7 +198,7 @@ Hamiltonian restriction at \((X,\omega,p)\).
   \left[
     QI_{\mathrm{prot}}
     +\frac12\{I_{\mathrm{prot}},I_{\mathrm{prot}}\}
-    +\hbar\Delta I_{\mathrm{prot}}
+    +\hbar_{\mathrm{QME}}\Delta I_{\mathrm{prot}}
   \right]
   \in
   H^1\!\left(
@@ -186,7 +207,7 @@ Hamiltonian restriction at \((X,\omega,p)\).
   \right).
   \]
   Its vanishing is the precise statement that the protected brane-defect
-  interaction satisfies the QME in the same normalization as
+  QME curvature vanishes in the same normalization as
   Problem~\ref{prob:weighted-rg-locality}.
 \end{defn}
 
@@ -270,7 +291,9 @@ corollary of the CE/PV Koszul resolution identification]\label{thm:formal-local-
   \]
   with bulk-to-boundary evaluation
   \(f\mapsto\overline{\operatorname{Tr}f(\phi_1,\phi_2)}\) on the
-  brane line.  Let \(\mathcal D_{X,p}\) be the torsor of formal
+  polynomial Hamiltonian subalgebra and
+  \(f\mapsto\varprojlim_WJ_{\leq W}(f\bmod\mathfrak m^{W+1})\) on
+  \(\widehat{\mathfrak h}\).  Let \(\mathcal D_{X,p}\) be the torsor of formal
   Darboux frames
   \[
     \eta\colon(\widehat X_p,\omega)\xrightarrow{\sim}
@@ -315,10 +338,13 @@ corollary of the CE/PV Koszul resolution identification]\label{thm:formal-local-
   connected holomorphic-symplectic surface restricts to that Koszul
   resolution at the formal-Darboux point \(p\in\partial X\) of the
   brane-link boundary once the four coordinates of
-  \(\operatorname{Ob}^{\mathrm{univ}}_{p,X}\) vanish, since the
-  Koszul-resolution map is canonical on the formal-Darboux stalk and
-  frame dependence is the Darboux--Weinstein rigidity of the stalk.
-  The detailed verification
+  \(\operatorname{Ob}^{\mathrm{univ}}_{p,X}\) vanish.  For a chosen
+  Darboux frame \(\eta\), the Koszul-resolution map is the coordinate
+  CE/PV map in that frame.  If \(\eta'\) differs from \(\eta\) by an
+  element of the formal Darboux-frame torsor, the two coordinate maps
+  differ by the induced formal symplectomorphism action on Hamiltonians,
+  polyvector generators, and trace generators.  Thus only the quotient
+  by the Darboux-frame torsor is intrinsic.  The detailed verification
   follows.
 
   Existence of \(\mu_\eta\) is read off the three
@@ -335,11 +361,16 @@ corollary of the CE/PV Koszul resolution identification]\label{thm:formal-local-
   weighted Tate field complex and the brane-line factorization map
   \(\Phi^{\mathrm{Ham}}_{\mathrm{fact}}\) of
   Theorem~\ref{thm:hamiltonian-current-factorization}, with target
-  \(f\mapsto\overline{\operatorname{Tr}f(\phi_1,\phi_2)}\) by
+  \(f\mapsto\overline{\operatorname{Tr}f(\phi_1,\phi_2)}\) on
+  \(\bar A\) and its compatible Taylor-coefficient extension on
+  \(\widehat{\mathfrak h}\), by
   Theorem~\ref{thm:Jf-coordinate-uniqueness}.  Scalar anomaly
   compatibility identifies \([\bar c]_\Theta\) with \([\bar c]\)
   inside \(H^2_{\mathrm{Lie}}(\bar A,\C)\) through
   \(\chi_{\mathrm{anom}}\).  Their composition is \(\mu_\eta\).
+  The spaces \(\mathfrak m/\mathfrak m^{W+1}\) used here label trace
+  coefficients only; they are not Hamiltonian Lie quotients because
+  \(\{z_1,z_2^{W+1}\}=(W+1)z_2^W\).
 
   Formal Darboux frames form a torsor under
   \(G_{\mathrm{Darb}}\), and changing the frame changes only the
@@ -360,24 +391,37 @@ corollary of the CE/PV Koszul resolution identification]\label{thm:formal-local-
   scalar anomaly compatibility, brane-defect QME locality).
 \end{proof}
 
-\begin{cor}[Restriction to the formal-Darboux trace-sector map]\label{cor:protham-koszul-restriction}
+\begin{cor}[Restriction to the formal-Darboux trace-sector boundary value]\label{cor:protham-koszul-restriction}
   Any protected datum \((X,\omega,p,\Theta)\in\mathsf{ProtHam}\)
   restricts at the formal-Darboux point \(p\in\partial X\) of the
   Costello--Gwilliam brane-link boundary to the trace-sector
-  formal-Darboux CE/PV Koszul map
+  formal-Darboux generator boundary value and its stable CE/PV Koszul
+  coordinate projection
   \(\Phi_{\mathrm{coord}}\) of
   \S\ref{ssec:coordinate-free-ce-pv-synthesis}, landing in the
-  derived Hochschild complex of the chosen brane algebra, with
-  bulk-to-boundary
-  evaluation \(u_f\mapsto J(f)=\overline{\operatorname{Tr}f(\phi_1,\phi_2)}\)
-  for polynomial \(f\), extended to formal \(f\) only after completion,
-  and \(c_f\mapsto\theta_f\), uniquely up to inner formal Darboux
-  symplectomorphism.  Equivalently,
+  admissible Lichnerowicz polyvector trace-sector model of the chosen
+  brane algebra.  Its typed coordinate values are
+  \[
+    c^\rho\longmapsto\partial_\rho,
+    \qquad
+    u_f\longmapsto O_f=J(f)
+      =\overline{\operatorname{Tr}f(\phi_1,\phi_2)},
+    \qquad
+    d_{\mathrm{CE}}u_f\longmapsto X_f=d_\pi O_f,
+  \]
+  for polynomial \(f\), extended to formal \(f\) only after completion.
+  Formal symplectomorphisms transport
+  \((u_f,O_f,X_f)\) covariantly and
+  \((c^\rho,\partial_\rho)\) contragrediently.  An ordinary Hochschild
+  target is obtained only after the supplied continuous filtered
+  twisted-formality, PBW/Roos, and Hochschild-centre lift data; ordinary
+  Hochschild--Kostant--Rosenberg comparison alone does not carry
+  \(d_\pi\).  Equivalently,
   \(\operatorname{Ob}^{\mathrm{univ}}_{p,X}\) is the obstruction to
-  convergence of that trace-sector map along the ambient datum at
-  \((X,\omega,p)\): a single nonzero coordinate is the precise
+  extending that generator boundary value and stable coordinate projection
+  along the ambient datum at \((X,\omega,p)\): a single nonzero coordinate is the precise
   obstruction (period, closed-field comparison cone, scalar anomaly,
-  brane-defect QME) to extending the formal-Darboux trace-sector map
+  brane-defect QME) to extending the formal-Darboux trace-sector datum
   along \(\Theta\).
 \end{cor}
 
@@ -388,8 +432,10 @@ corollary of the CE/PV Koszul resolution identification]\label{thm:formal-local-
   \S\ref{ssec:coordinate-free-ce-pv-synthesis}
   identifies the formal-Darboux stalk of
   \(\mathfrak M^{\mathrm{Ham}}_{\mathrm{loc}}\) with the trace-sector
-  CE/PV Koszul map under
-  \(c_f\mapsto\theta_f\), \(u_f\mapsto J(f)\).  Composing gives the
+  coordinate CE/PV Koszul map under
+  \(c^\rho\mapsto\partial_\rho\),
+  \(u_f\mapsto O_f=J(f)\), and
+  \(d_{\mathrm{CE}}u_f\mapsto X_f=d_\pi O_f\).  Composing gives the
   corollary; the obstruction reading is
   Lemma~\ref{lem:protected-primary-obstruction-test} restated for the
   trace-sector map.
@@ -414,9 +460,9 @@ QME obstruction vanishes identically, and exhibits
 (Theorem~\ref{thm:queer-u1-center-anomaly-spin-hecke} below)
 exhibits a complementary locus where unsigned parity-equivariance
 breaks down and a nonzero odd scalar class
-\(\hbar N[\bar c]^{\mathrm{otr}}\) survives, showing that the
+\(\hbar_{\mathrm{QME}} N[\bar c]^{\mathrm{otr}}\) survives, showing that the
 algebraic spin-Hecke coefficient datum governs the cohomology class,
-while chain-level QME cancellation requires the additional homotopy data.
+while chain-level QME cancellation is the homotopy datum.
 Together these two theorems give the precise dichotomy controlling
 the QME coordinate: scalar QME-vanishing is ruled by a single matrix
 coefficient \(\kappa_{\mathfrak s}\), and a target null-homotopy of
@@ -490,7 +536,7 @@ brane stack.
     \operatorname{Ob}^{\mathfrak s}_{\mathrm{sc}}
     (\gamma_{\mathbf 1};a,f;b,g)
     =
-    \hbar\,\kappa_{\mathfrak s}\,
+    \hbar_{\mathrm{QME}}\,\kappa_{\mathfrak s}\,
     \omega(f,g)
     \int_{\R}a(t)b(t)\gamma_{\mathbf 1}(t)\,dt
     \in\mathfrak Q_{\mathfrak s},
@@ -499,7 +545,7 @@ brane stack.
   \[
     [\operatorname{Ob}^{\mathfrak s}_{\mathrm{sc}}]
     =
-    \hbar\,\kappa_{\mathfrak s}\,
+    \hbar_{\mathrm{QME}}\,\kappa_{\mathfrak s}\,
     [\bar c]
     \in
     H^2_{\mathrm{Lie}}(\bar A,\C\gamma_{\mathbf 1}).
@@ -507,11 +553,11 @@ brane stack.
   Two consequences follow.  First, the scalar QME obstruction
   vanishes identically, \(P_{(z_1)}\)-equivariantly, on the
   Casimir-balanced locus \(\kappa_{\mathfrak s}=0\); for the
-  standard \(\mathfrak{gl}(N|N)\) supertrace pairing
-  \(K_{\mathfrak s}=\operatorname{sdim}(V)I=0\), so
+  supertrace form \(\langle X,Y\rangle=\operatorname{str}(XY)\) on
+  \(\mathfrak{gl}(N|N)\), \(K_{\mathfrak s}=\operatorname{sdim}(V)I=0\), so
   \(\kappa_{\mathfrak s}=0\) and Casimir-balance holds.  Second, off
   the Casimir-balanced locus the scalar channel carries the precise
-  nonzero class \(\hbar\,\kappa_{\mathfrak s}[\bar c]\), which is the
+  nonzero class \(\hbar_{\mathrm{QME}}\,\kappa_{\mathfrak s}[\bar c]\), which is the
   exact obstruction to scalar QME-flatness of the brane-defect
   interaction.
 
@@ -614,24 +660,24 @@ brane stack.
     \operatorname{Ob}^{\mathrm{otr}}_{\mathrm{sc}}
     (\gamma_{\mathbf 1};a,f;b,g)
     =
-    \hbar N\,\omega(f,g)
+    \hbar_{\mathrm{QME}} N\,\omega(f,g)
     \int_\R a(t)b(t)\gamma_{\mathbf 1}(t)\,dt
     \in
     \mathcal O_{\mathrm{loc}}(\mc E^{\mathfrak q}_{\mathrm{bd},w})_{\bar1},
   \]
   with associated graded CE class
   \[
-    \hbar N[\bar c]^{\mathrm{otr}}
+    \hbar_{\mathrm{QME}} N[\bar c]^{\mathrm{otr}}
     \in H^2_{\mathrm{Lie}}(\bar A,\Pi\C)_{\bar1}.
   \]
   Three statements follow.  First, the odd class
-  \(\hbar N[\bar c]^{\mathrm{otr}}\) is nonzero for every
+  \(\hbar_{\mathrm{QME}} N[\bar c]^{\mathrm{otr}}\) is nonzero for every
   \(N\ge1\) and is independent of the even class
-  \(\hbar N[\bar c]\in H^2_{\mathrm{Lie}}(\bar A,\C)_{\bar0}\),
+  \(\hbar_{\mathrm{QME}} N[\bar c]\in H^2_{\mathrm{Lie}}(\bar A,\C)_{\bar0}\),
   because they sit in the two direct summands
   \(H^2_{\mathrm{Lie}}(\bar A,\C)\oplus
   H^2_{\mathrm{Lie}}(\bar A,\Pi\C)\) of the even-odd decomposition.
-  Second, the odd class survives over \(\C[[\hbar]]\) and admits a
+  Second, the odd class survives over \(\C[[\hbar_{\mathrm{QME}}]]\) and admits a
   null-homotopy only after either an odd scalar quotient is imposed
   on the target or a target null-homotopy of the odd line
   \(\Pi\C\cdot[\bar c]^{\mathrm{otr}}\) is given; the class itself
@@ -670,7 +716,7 @@ brane stack.
 
   Passing to associated graded removes the brane-line smearing and keeps
   the Lie two-cocycle \(\Pi\omega\), hence the class
-  \(\hbar N[\bar c]^{\mathrm{otr}}\).  Nontriviality is the same
+  \(\hbar_{\mathrm{QME}} N[\bar c]^{\mathrm{otr}}\).  Nontriviality is the same
   calculation as Lemma~\ref{lem:omega-cocycle}: a primitive
   \(\bar\eta:\bar A\to\Pi\C\) would lift with
   \(\tilde\eta(1)=0\), but then
@@ -684,9 +730,9 @@ brane stack.
   direct summands
   \(H^2_{\mathrm{Lie}}(\bar A,\C)\oplus
   H^2_{\mathrm{Lie}}(\bar A,\Pi\C)\).
-	  Since \(N\ge1\) in the datum and \(\hbar\) is formal, the displayed
+	  Since \(N\ge1\) in the datum and \(\hbar_{\mathrm{QME}}\) is formal, the displayed
 	  odd class survives inside
-	  \(H^2_{\mathrm{Lie}}(\bar A,\Pi\C)[[\hbar]]\).  Killing it requires an
+	  \(H^2_{\mathrm{Lie}}(\bar A,\Pi\C)[[\hbar_{\mathrm{QME}}]]\).  Killing it requires an
 	  additional target quotient or null-homotopy beyond the spin-Hecke
 	  coefficient comparison.
 
@@ -743,11 +789,17 @@ brane stack.
   \(\operatorname{ob}_{\mathrm{scal}}=
   \chi_{\mathrm{anom}}([\operatorname{anom}_{\mathrm{prot}}])-[\bar c]=0\).
 
-  Finally, the displayed QME expression is the standard degree-one
-  obstruction class for deforming a classical BV interaction to a
-  quantum BV interaction in the fixed weighted coefficient category;
-  vanishing of this class with chosen interval-factorization
-  null-homotopies is exactly the brane-defect locality clause of
+  Finally, the displayed QME expression is the degree-one curvature
+  representative
+  \[
+    QI_{\mathrm{prot}}
+    +\frac12\{I_{\mathrm{prot}},I_{\mathrm{prot}}\}
+    +\hbar_{\mathrm{QME}}\Delta I_{\mathrm{prot}}
+  \]
+  in the local-functional complex of
+  Definition~\ref{defn:protected-twist-obstruction-datum}.  Vanishing of
+  its class, together with chosen interval-factorization
+  null-homotopies, is exactly the brane-defect locality clause of
   Definition~\ref{defn:admissible-protected-hamiltonian-restriction}.
   The four vanishings therefore give the four admissibility
   clauses, and conversely each admissibility clause records the
@@ -849,8 +901,8 @@ brane stack.
   Hamiltonian restriction.  Consequently the reduced brane-line
   Hamiltonian CE/PV, factorization-current, and scalar-anomaly
   statements of the formal local theorem apply to that protected sector.
-  If, in addition, the QME solution
-  includes the one-antifield weighted Tate lift of
+  If, in addition, the QME counterterm datum includes the one-antifield
+  weighted Tate lift of
   Problem~\ref{prob:weighted-rg-locality}, then the corresponding
   one-antifield quantum Hamiltonian comparison is valid for that
   protected sector and for that sector only.

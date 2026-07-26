@@ -1,10 +1,25 @@
 \subsection*{Nilpotent truncation of the cotangent module}
 
+Notation in this file is local to the nilpotent truncation lane.  Taylor
+windows in the main formal-Darboux theorem are
+\(\mathfrak h^{\mathrm{Taylor}}_{\leq W}=\mathfrak m/\mathfrak m^{W+1}\).
+They are finite coefficient projections, not Hamiltonian Lie quotients:
+\(\{z_1,z_2^{W+1}\}=(W+1)z_2^W\) shows that
+\(\mathfrak m^{W+1}\) is not a Poisson ideal of \(\mathfrak m\).
+The cubic nilpotent truncation is
+\[
+  \mathfrak h^{\mathrm{nilp}}_{[3,N]}
+  :=\mathfrak m^3/\mathfrak m^{N+1}.
+\]
+The Taylor-window symbol is reserved for coefficient projections of the
+full \(\mathfrak m\)-adic Hamiltonian source in the formal-Darboux theorem
+and its Matlis/Tate completion appendices.
+
 The full CE/PV trace-sector map of Theorem~\ref{thm:main-local} is a
 completed formal-Darboux statement for the reduced Hamiltonian Lie algebra
-\(\mathfrak h=\mathfrak m=(z_1,z_2)\C[[z_1,z_2]]\).  This subsection
-studies a different construction: the lower-central pronilpotent
-finite-window route.  That route starts with the cubic Lie subalgebra
+\(\mathfrak h=\mathfrak m=(z_1,z_2)\C[[z_1,z_2]]\).  The lower-central
+pronilpotent route is a separate finite nilpotent-window route.  It
+starts with the cubic Lie subalgebra
 \(\mathfrak m^3\subset\mathfrak h\).  It does not prove the full
 formal-Darboux CE/PV map, and it does not obstruct that map.  It records
 the obstruction to recovering the full Hamiltonian source from
@@ -30,17 +45,21 @@ e_1^i+\sum_ie_{2,i}\otimes e_2^i$, these form the obstruction triple
 of Definition~\ref{defn:nilpotent-low-degree-obstruction-terms}.
 
 On the cubic ideal
-$\mathfrak h_{\leq N}=\mathfrak m^3/\mathfrak m^{N+1}$, where the
+$\mathfrak h^{\mathrm{nilp}}_{[3,N]}=\mathfrak m^3/\mathfrak m^{N+1}$, where the
 obstruction triple is silent, the finite cotangent CE/PV identity
 $\Phi_{\leq N}\colon
-C^\bullet_{\mathrm{CE},\mathrm{cont}}(\mathfrak g_{\leq N,I})
+\operatorname{Regr}_u
+C^\bullet_{\mathrm{CE},\mathrm{cont}}(\mathfrak g^{\mathrm{nilp}}_{[3,N],I})
 \xrightarrow{\sim}
-\mathrm{PV}(\widehat{\mathbf S}(\mathfrak h_{\leq N,I}))$ is the
+\bigl(\mathrm{PV}(\widehat{\mathbf S}(\mathfrak h^{\mathrm{nilp}}_{[3,N],I})),
+d_{\pi_N}\bigr)$ is the
 cubic-truncation trace-sector model for
 \(\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}|_b\), proved in the finite
 classical sector
 (Theorem~\ref{thm:phi-trunc-classical}).
-Theorem~\ref{thm:phi-hbar-trunc} excludes the all-order Moyal lift on
+Here \(\pi_N\) is the linear Kirillov Poisson bivector determined by
+the finite Lie bracket on \(\mathfrak h^{\mathrm{nilp}}_{[3,N]}\).
+Theorem~\ref{thm:phi-hbar-trunc} excludes the formal Moyal lift on
 the same finite truncation;
 Theorem~\ref{thm:colim-obstruction-full-h} shows that the inverse limit
 of this nilpotent tower recovers the proper subalgebra
@@ -60,13 +79,13 @@ bracket $\{f,g\}=\partial_{z_1}f\,\partial_{z_2}g-
 $\mathfrak m^k=(z_1,z_2)^k\C[[z_1,z_2]]$ for $k\geq 1$ be the
 $k$-th power of the maximal ideal. Fix integers $N\geq k\geq 3$ and
 define the \emph{nilpotent truncation}
-$$\mathfrak h_{\leq N}^{(k)}:=\mathfrak m^k/\mathfrak m^{N+1},$$
+$$\mathfrak h^{\mathrm{nilp}}_{[k,N]}:=\mathfrak m^k/\mathfrak m^{N+1},$$
 with $\mathfrak m$-adic Poisson bracket inherited from the
-ambient $\mathfrak h_{\mathrm{poly}}$. The standard choice is
+ambient $\mathfrak h_{\mathrm{poly}}$. The truncation used below is
 $k=3$:
-$$\mathfrak h_{\leq N}:=\mathfrak h_{\leq N}^{(3)}=
+$$\mathfrak h^{\mathrm{nilp}}_{[3,N]}=
   \mathfrak m^3/\mathfrak m^{N+1}.$$
-Concretely, $\mathfrak h_{\leq N}$ is the finite-dimensional vector
+Concretely, $\mathfrak h^{\mathrm{nilp}}_{[3,N]}$ is the finite-dimensional vector
 space spanned by monomials $z_1^az_2^b$ with $3\leq a+b\leq N$.
 
 The cutoff lies at $k=3$.  At $k=2$, the degree-$2$ piece
@@ -84,24 +103,24 @@ $k=3$ the bracket raises $\mathfrak m$-adic degree strictly.
 \label{lem:trunc-is-nilpotent-lie}
 For every $N\geq 3$:
 \begin{enumerate}
-  \item $\mathfrak h_{\leq N}=\mathfrak m^3/\mathfrak m^{N+1}$ is a
+  \item $\mathfrak h^{\mathrm{nilp}}_{[3,N]}=\mathfrak m^3/\mathfrak m^{N+1}$ is a
     finite-dimensional Lie algebra of dimension
     $\binom{N+2}{2}-6$ (the number of
     monomials of degree between $3$ and $N$ inclusive).
-  \item $\mathfrak h_{\leq N}$ is nilpotent of class at most
+  \item $\mathfrak h^{\mathrm{nilp}}_{[3,N]}$ is nilpotent of class at most
     $N-2$ in the lower central series.
-  \item $\mathfrak h_{\leq N}^\vee$ is finite-dimensional, hence the
+  \item $(\mathfrak h^{\mathrm{nilp}}_{[3,N]})^\vee$ is finite-dimensional, hence the
     formal Casimir
-    $C_{\mathfrak h_{\leq N}}=\sum_{3\leq d\leq N}\sum_i
+    $C_{\mathfrak h^{\mathrm{nilp}}_{[3,N]}}=\sum_{3\leq d\leq N}\sum_i
      e_{d,i}\otimes e_d^i$
     is a convergent element of
-    $\mathfrak h_{\leq N}\otimes\mathfrak h_{\leq N}^\vee$ as a finite
+    $\mathfrak h^{\mathrm{nilp}}_{[3,N]}\otimes(\mathfrak h^{\mathrm{nilp}}_{[3,N]})^\vee$ as a finite
     sum in the ordinary tensor product.
   \item The linear Hamiltonians $z_1,z_2\in\mathfrak m\setminus
     \mathfrak m^3$, the conformal-symplectic generators
     $H_2=\mathrm{span}\{z_1^2,z_1z_2,z_2^2\}\cong\mathfrak{sl}_2$,
     and the constant Hamiltonian $1\notin\mathfrak m$ are omitted
-    from $\mathfrak h_{\leq N}$ by construction.
+    from $\mathfrak h^{\mathrm{nilp}}_{[3,N]}$ by construction.
 \end{enumerate}
 \end{lem}
 
@@ -119,7 +138,7 @@ $\mathfrak m^3$ a Lie subalgebra; for $p\geq 3$ and $q\geq N+1$
 the bracket lands in $\mathfrak m^{p+q-2}\subset\mathfrak m^{N+2}
 \subset\mathfrak m^{N+1}$, making $\mathfrak m^{N+1}$ a Lie ideal of
 $\mathfrak m^3$. The quotient
-$\mathfrak h_{\leq N}=\mathfrak m^3/\mathfrak m^{N+1}$ inherits a
+$\mathfrak h^{\mathrm{nilp}}_{[3,N]}=\mathfrak m^3/\mathfrak m^{N+1}$ inherits a
 well-defined Lie bracket. Dimension count: monomials $z_1^az_2^b$
 with $3\leq a+b\leq N$ number $\binom{N+2}{2}-6$ (the total number
 with $0\leq a+b\leq N$ minus the six of degrees $0,1,2$).
@@ -129,11 +148,11 @@ $\mathfrak m^3$ raises $\mathfrak m$-adic degree by at least $1$:
 $\{H_p,H_q\}\subset H_{p+q-2}\subset\mathfrak m^{p+q-2}$, and for
 $p,q\geq 3$, $p+q-2\geq 4>p$ (since $q\geq 3$). Thus the descending
 Lie series
-$$\mathfrak h_{\leq N}^{(\geq m)}:=
-  \underbrace{[\mathfrak h_{\leq N},[\mathfrak h_{\leq N},\ldots]]}_{m\text{ brackets}}
+$$\bigl(\mathfrak h^{\mathrm{nilp}}_{[3,N]}\bigr)^{(\geq m)}:=
+  \underbrace{[\mathfrak h^{\mathrm{nilp}}_{[3,N]},[\mathfrak h^{\mathrm{nilp}}_{[3,N]},\ldots]]}_{m\text{ brackets}}
   \subset\bigl(\mathfrak m^{m+3}/\mathfrak m^{N+1}\bigr)$$
-satisfies $\mathfrak h_{\leq N}^{(\geq m)}=0$ for
-$m+3\geq N+1$, i.e.\ for $m\geq N-2$. Hence $\mathfrak h_{\leq N}$
+satisfies $\bigl(\mathfrak h^{\mathrm{nilp}}_{[3,N]}\bigr)^{(\geq m)}=0$ for
+$m+3\geq N+1$, i.e.\ for $m\geq N-2$. Hence $\mathfrak h^{\mathrm{nilp}}_{[3,N]}$
 is nilpotent of class at most $N-2$.
 
 \emph{(iii)} Immediate from finite-dimensionality.
@@ -147,8 +166,8 @@ the obstruction
 $\{z_1,z_2^{N+1}\}=(N+1)z_2^N\notin\mathfrak m^{N+1}$ of
 \ref{lem:finite-window-hamiltonian-obstruction} requires $z_1\in H_1$,
 which the cubic cutoff omits.  The Casimir is the finite sum
-$C_{\mathfrak h_{\leq N}}=\sum_{d=3}^N\sum_i e_{d,i}\otimes e_d^i\in
-\mathfrak h_{\leq N}\otimes\mathfrak h_{\leq N}^\vee$; the
+$C_{\mathfrak h^{\mathrm{nilp}}_{[3,N]}}=\sum_{d=3}^N\sum_i e_{d,i}\otimes e_d^i\in
+\mathfrak h^{\mathrm{nilp}}_{[3,N]}\otimes(\mathfrak h^{\mathrm{nilp}}_{[3,N]})^\vee$; the
 product/direct-sum support obstruction of
 \ref{lem:tate-casimir-obstruction}, which depends on infinite degree
 expansion, vanishes.
@@ -157,21 +176,33 @@ expansion, vanishes.
 
 \begin{thm}[Classical truncated CE/PV identification: Koszul resolution on the cubic ideal]\label{thm:phi-trunc-classical}
 Set
-$\mathfrak g_{\leq N}=\mathfrak h_{\leq N}\ltimes
-\mathfrak h_{\leq N}^\vee[1]$. For every interval $I\subset\R$ let
-$\mathfrak g_{\leq N,I}=
-\Omega^\bullet_c(I)\,\widehat\otimes\,\mathfrak h_{\leq N}\,\ltimes\,
-\mathcal D'_c(I)\,\widehat\otimes\,\mathfrak h_{\leq N}^\vee[1]$.
+$\mathfrak g^{\mathrm{nilp}}_{[3,N]}=\mathfrak h^{\mathrm{nilp}}_{[3,N]}\ltimes
+(\mathfrak h^{\mathrm{nilp}}_{[3,N]})^\vee[1]$. For every interval $I\subset\R$ let
+$\mathfrak g^{\mathrm{nilp}}_{[3,N],I}=
+\Omega^\bullet_c(I)\,\widehat\otimes\,\mathfrak h^{\mathrm{nilp}}_{[3,N]}\,\ltimes\,
+\mathcal D'_c(I)\,\widehat\otimes\,(\mathfrak h^{\mathrm{nilp}}_{[3,N]})^\vee[1]$.
 Then, after the Poisson, residue, and interval-smearing conventions fixed
-above, the dictionary $c^I\mapsto\theta^I$, $u_I\mapsto O_I$ is the
-Koszul resolution of the chiral Hochschild cohomology
-\(\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}|_b\) on the cubic truncation: a
-filtered cochain isomorphism of completed dg graded-commutative
-$P_0$-algebras
+above, the coordinate dictionary is
+\[
+  c^\rho\longmapsto\partial_\rho,
+  \qquad
+  u_f\longmapsto O_f,
+  \qquad
+  d_{\mathrm{CE}}u_f\longmapsto X_f=d_{\pi_N}O_f.
+\]
+Here the standard Chevalley--Eilenberg degree of \(u_f\) is \(2\),
+whereas its coordinate degree after \(\operatorname{Regr}_u\) is \(0\);
+\(|c^\rho|=|\partial_\rho|=1\).  This is the coordinate Koszul model of
+\(\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}|_b\) on the cubic
+truncation: a filtered cochain isomorphism of completed dg
+graded-commutative \(P_0\)-algebras
 $$\Phi_{\leq N}:
-  C^\bullet_{\mathrm{CE},\mathrm{cont}}(\mathfrak g_{\leq N,I})
+  \operatorname{Regr}_u
+  C^\bullet_{\mathrm{CE},\mathrm{cont}}(\mathfrak g^{\mathrm{nilp}}_{[3,N],I})
   \xrightarrow{\ \sim\ }
-  \mathrm{PV}\bigl(\widehat{\mathbf S}(\mathfrak h_{\leq N,I})\bigr)$$
+  \bigl(
+  \mathrm{PV}\bigl(\widehat{\mathbf S}(\mathfrak h^{\mathrm{nilp}}_{[3,N],I})\bigr),
+  d_{\pi_N}\bigr)$$
 on every interval \(I\subset\R\), with the same Schouten/Lichnerowicz
 convention as in \ref{thm:reduced-ce-pv-central-operation}. It is
 compatible with extension by zero and with disjoint-interval products in
@@ -179,39 +210,47 @@ this reduced finite model, and on the Hamiltonian generators it recovers
 the stalkwise operation \(f\mapsto L_{B_f}\). The cotangent generators
 are finite principal-part labels; their unreduced boundary centrality
 homotopies remain part of
-Problem~\ref{prob:formal-factorization-center}.
+Problem~\ref{prob:formal-factorization-center}.  An identification with
+ordinary or chiral Hochschild cochains is not part of this finite
+CE/PV identity: ordinary Hochschild--Kostant--Rosenberg comparison has
+zero polyvector differential, while the displayed target has
+\(d_{\pi_N}\).  A Hochschild target therefore requires the supplied
+filtered twisted-formality and Hochschild-centre lift data.
 \end{thm}
 
 \begin{proof}
-The Lie algebra $\mathfrak g_{\leq N}$ is finite-dimensional
-($\dim\mathfrak g_{\leq N}=2\dim\mathfrak h_{\leq N}=
+The Lie algebra $\mathfrak g^{\mathrm{nilp}}_{[3,N]}$ is finite-dimensional
+($\dim\mathfrak g^{\mathrm{nilp}}_{[3,N]}=2\dim\mathfrak h^{\mathrm{nilp}}_{[3,N]}=
 2\binom{N+2}{2}-12$), hence pro-finite-dimensional in the trivial
 constant filtration. It is lower-central Tate-pronilpotent in the sense of
 \ref{lem:continuous-bar-cobar}: by
 \ref{lem:trunc-is-nilpotent-lie}(ii) the descending Lie powers of
-$\mathfrak h_{\leq N}$ vanish after at most $N-2$ brackets.  The
+$\mathfrak h^{\mathrm{nilp}}_{[3,N]}$ vanish after at most $N-2$ brackets.  The
 cotangent summand is abelian, and nilpotence of the semidirect product
 uses the degree-lowering
 coadjoint action: since \([H_p,H_q]\subset H_{p+q-2}\), an element
 \(f\in H_p\), \(p\geq3\), sends \(H_d^\vee\) to
 \(H_{d-p+2}^\vee\), hence lowers dual degree by at least one.  Repeated
 action therefore kills every finite quotient
-\(\mathfrak h_{\leq N}^\vee\).  Together with nilpotence of
-\(\mathfrak h_{\leq N}\), the descending Lie powers of
-\(\mathfrak g_{\leq N}=\mathfrak h_{\leq N}\ltimes
-\mathfrak h_{\leq N}^\vee[1]\) also terminate. Hence
-$\bigcap_m\mathfrak g_{\leq N}^{(\geq m)}=0$ in any Tate
+\((\mathfrak h^{\mathrm{nilp}}_{[3,N]})^\vee\).  Together with nilpotence of
+\(\mathfrak h^{\mathrm{nilp}}_{[3,N]}\), the descending Lie powers of
+\(\mathfrak g^{\mathrm{nilp}}_{[3,N]}=\mathfrak h^{\mathrm{nilp}}_{[3,N]}\ltimes
+(\mathfrak h^{\mathrm{nilp}}_{[3,N]})^\vee[1]\) also terminate. Hence
+$\bigcap_m\bigl(\mathfrak g^{\mathrm{nilp}}_{[3,N]}\bigr)^{(\geq m)}=0$ in any Tate
 filtration, and the lower-central Tate-pronilpotence hypothesis of
 \ref{lem:continuous-bar-cobar} is satisfied trivially.
 
 Apply \ref{thm:reduced-ce-pv-central-operation} (the cochain-level reduced
-Hamiltonian CE/PV central-operation theorem) to $\mathfrak h_{\leq N}$.
-The conclusion is a canonical isomorphism of completed dg
-graded-commutative $P_0$-algebras
+Hamiltonian CE/PV central-operation theorem) to $\mathfrak h^{\mathrm{nilp}}_{[3,N]}$.
+The conclusion is the completed dg graded-commutative \(P_0\)-algebra
+isomorphism specified by that theorem,
 $$\Phi_{\leq N}^{\mathrm{stalk}}:
-  C^\bullet_{\mathrm{CE},\mathrm{cont}}(\mathfrak g_{\leq N})
+  \operatorname{Regr}_u
+  C^\bullet_{\mathrm{CE},\mathrm{cont}}(\mathfrak g^{\mathrm{nilp}}_{[3,N]})
   \xrightarrow{\ \sim\ }
-  \mathrm{PV}\bigl(\widehat{\mathbf S}(\mathfrak h_{\leq N})\bigr),$$
+  \bigl(
+  \mathrm{PV}\bigl(\widehat{\mathbf S}(\mathfrak h^{\mathrm{nilp}}_{[3,N]})\bigr),
+  d_{\pi_N}\bigr),$$
 with the explicit generator-level data of
 \ref{thm:reduced-ce-pv-central-operation}.
 
@@ -219,12 +258,12 @@ To pass from the stalk identification to the factorization-algebra
 identification on intervals $I\subset\R$, the Hamiltonian-sector
 factorization extension of \ref{thm:hamiltonian-current-factorization}
 applies verbatim with $\mathfrak h$ replaced by
-$\mathfrak h_{\leq N}$: the locality bracket
+$\mathfrak h^{\mathrm{nilp}}_{[3,N]}$: the locality bracket
 $\{(\phi_1)^i{}_j(t),(\phi_2)^k{}_l(t')\}=\delta^i_l\delta^k_j\delta(t-t')$
 on two brane-time points is unchanged, the smearing
-  $\mathfrak h_{\leq N,I}=\Omega^\bullet_c(I)\,\widehat\otimes\,
-  \mathfrak h_{\leq N}$ is canonical because $\mathfrak h_{\leq N}$
-is finite-dimensional in the ordinary tensor category, and the strict $P_0$
+  $\mathfrak h^{\mathrm{nilp}}_{[3,N],I}=\Omega^\bullet_c(I)\,\widehat\otimes\,
+  \mathfrak h^{\mathrm{nilp}}_{[3,N]}$ uses the ordinary tensor product because
+\(\mathfrak h^{\mathrm{nilp}}_{[3,N]}\) is finite-dimensional, and the strict \(P_0\)
 bracket follows from the delta-function locality.
 
 In this finite truncated classical sector, the cotangent factor has a finite
@@ -232,12 +271,12 @@ Tate-Casimir kernel. The principal-part sub-factorization algebra
 $$\widetilde{\mathrm{Obs}}^{\mathrm{cl,pp}}_{\partial,\leq N}(I)
   =\mathrm{Obs}^{\mathrm{cl}}_{\mathrm{open},\leq N}(I)
    \,\widehat\otimes\,
-   \widehat{\mathbf S}\bigl(\mathfrak h_{\leq N,I}^\vee[1]\bigr)$$
+   \widehat{\mathbf S}\bigl((\mathfrak h^{\mathrm{nilp}}_{[3,N],I})^\vee[1]\bigr)$$
     admits a chain-level primitive projection
     $\pi_{\mathrm{prim}}^{\leq N}$ because the Tate Casimir
-    $C_{\mathfrak h_{\leq N}}=\sum_{d=3}^N\sum_i e_{d,i}\otimes e_d^i$
+    $C_{\mathfrak h^{\mathrm{nilp}}_{[3,N]}}=\sum_{d=3}^N\sum_i e_{d,i}\otimes e_d^i$
 is a finite sum, hence a literal element of the (uncompleted) tensor
-product $\mathfrak h_{\leq N}\otimes\mathfrak h_{\leq N}^\vee$. The
+product $\mathfrak h^{\mathrm{nilp}}_{[3,N]}\otimes(\mathfrak h^{\mathrm{nilp}}_{[3,N]})^\vee$. The
 $Q$-compatibility, factorization compatibility, and $P_0$-bracket
 homotopies are then formal, since every step uses finite-support tensors
 in the direct-sum dual.
@@ -246,7 +285,7 @@ The bracket compatibility and graded Leibniz extension to the completed
 finite CE/PV algebra is the same argument as in
 \ref{thm:reduced-ce-pv-central-operation}, with the additional
 simplification that all completions are trivial because
-$\mathfrak h_{\leq N}$ is finite-dimensional. Compatibility with
+$\mathfrak h^{\mathrm{nilp}}_{[3,N]}$ is finite-dimensional. Compatibility with
 extension by zero, disjoint-interval factorization, and the
 stalkwise limit follow as in
 \ref{thm:hamiltonian-current-factorization}.
@@ -254,69 +293,149 @@ stalkwise limit follow as in
 
 \subsection*{Quantum obstruction for the finite truncation}
 
+\begin{defn}[Moyal-flat nilpotent replacement datum]
+\label{defn:nilpotent-moyal-flat-datum}
+Let \(N\geq4\) and put
+\[
+  V_N=\mathfrak h^{\mathrm{nilp}}_{[3,N]}
+  =\mathfrak m^3/\mathfrak m^{N+1},\qquad
+  Q_{<3}=\mathfrak m/\mathfrak m^3 .
+\]
+Let \(\pi_{[3,N]}\) denote projection to monomials of total degree
+between \(3\) and \(N\), and let \(\pi_{<3}\) denote projection to
+\(Q_{<3}\).  For \(f,g\in V_N\), choose representatives
+\(\tilde f,\tilde g\in\mathfrak m^3\).  The Moyal closure cochain is
+\[
+  \operatorname{cl}_{N,\hbar}(f,g)
+  =
+  \pi_{<3}\bigl(\{\tilde f,\tilde g\}_{\hbar_{\mathrm{W}}}\bigr)
+  \in Q_{<3}[[\hbar_{\mathrm{W}}]],
+\]
+an element of
+\(\operatorname{Hom}^2(\Lambda^2V_N,Q_{<3})[[\hbar_{\mathrm{W}}]]\).
+The projected Moyal bracket on \(V_N[[\hbar_{\mathrm{W}}]]\) is
+\[
+  [f,g]^{\operatorname{proj}}_{N,\hbar}
+  =
+  \pi_{[3,N]}\bigl(\{\tilde f,\tilde g\}_{\hbar_{\mathrm{W}}}\bigr),
+\]
+and its Jacobi obstruction is
+\[
+  \operatorname{Jac}_{N,\hbar}(f,g,k)
+  =
+  [f,[g,k]^{\operatorname{proj}}_{N,\hbar}]^{\operatorname{proj}}_{N,\hbar}
+  +\textup{cyclic}
+  \in V_N[[\hbar_{\mathrm{W}}]] .
+\]
+The cochain-compatibility obstruction
+\(\operatorname{CE}_{N,\hbar}\) is the degree-two endomorphism
+\[
+  (d^{\operatorname{proj}}_{\mathrm{CE},N,\hbar})^2
+  \in
+  \operatorname{End}^2
+  C^\bullet_{\mathrm{CE}}\bigl(
+    V_N[[\hbar_{\mathrm{W}}]]
+    \ltimes V_N^\vee[[\hbar_{\mathrm{W}}]][1]\bigr),
+\]
+where \(d^{\operatorname{proj}}_{\mathrm{CE},N,\hbar}\) is built from
+the projected bracket and the induced coadjoint action.
+
+A Moyal-flat nilpotent replacement consists of a
+\(\C[[\hbar_{\mathrm{W}}]]\)-module \(V^{\flat}_{N,\hbar}\), maps
+\[
+  V_N[[\hbar_{\mathrm{W}}]]
+  \xrightarrow{\ i_N\ }
+  V^{\flat}_{N,\hbar}
+  \xrightarrow{\ q_N\ }
+  V_N[[\hbar_{\mathrm{W}}]],
+  \qquad q_Ni_N=\operatorname{id},
+\]
+and a Lie bracket on \(V^{\flat}_{N,\hbar}\) whose projection to
+\(V_N\) has vanishing
+\(\operatorname{cl}_{N,\hbar}\), \(\operatorname{Jac}_{N,\hbar}\), and
+\(\operatorname{CE}_{N,\hbar}\).  Equivalently, a strict projected
+finite quantum source on \(V_N\) is allowed only after these three
+obstructions vanish for the projected bracket and its coadjoint action.
+\end{defn}
+
 \begin{thm}[Quantum obstruction for the nilpotent truncation]
 \label{thm:phi-hbar-trunc}
   The classical finite truncation
   \ref{thm:phi-trunc-classical} is proved in the finite classical
   sector.  The same finite
   Lie algebra
-  $\mathfrak h_{\leq N}=\mathfrak m^3/\mathfrak m^{N+1}$ has an
-  obstruction to an all-order Moyal deformation for $N\geq4$: the
-  reduced Moyal bracket has a closure obstruction. Consequently an all-order quantum
-  descendant theorem on the strict finite truncation requires an additional
-  Moyal-flat replacement or a projected bracket with Jacobi and cochain
-  compatibility.
+  $\mathfrak h^{\mathrm{nilp}}_{[3,N]}=\mathfrak m^3/\mathfrak m^{N+1}$ has an
+  obstruction to a formal Moyal deformation for $N\geq4$: the
+  Moyal closure cochain of
+  Definition~\ref{defn:nilpotent-moyal-flat-datum} is nonzero.
+  Consequently a formal quantum descendant theorem on the strict finite
+  truncation requires the Moyal-flat nilpotent replacement datum of
+  Definition~\ref{defn:nilpotent-moyal-flat-datum}, or a projected
+  bracket for which
+  \(\operatorname{Jac}_{N,\hbar}=0\) and
+  \(\operatorname{CE}_{N,\hbar}=0\).
 
   What remains true at quantum level is the restriction of the
-  full-sector degree-zero map
+  full-sector degree-zero formal Moyal map
   \ref{thm:phi-hbar-all-order} to the finite set of generators of
-  $\mathfrak h_{\leq N}$, viewed inside the full
-  $\mathfrak h_\hbar$.  This is a restriction of a proved map on the
+  $\mathfrak h^{\mathrm{nilp}}_{[3,N]}$, viewed inside the full
+  $\mathfrak h_{\hbar_{\mathrm{W}}}$.  This is a restriction of a proved map on the
   full Hamiltonian source. A closed CE theorem for a finite quantum Lie
-  subalgebra requires the additional data above.
+  subalgebra is equivalent to the vanishing of the closure, Jacobi, and
+  CE-square obstructions in
+  Definition~\ref{defn:nilpotent-moyal-flat-datum}.
 \end{thm}
 
 \begin{proof}
   The Moyal bracket is
-  $$\{f,g\}_\hbar=\sum_{j\geq 0}
-    \frac{\hbar^{2j}}{(2j+1)!\,2^{2j}}P^{2j+1}(f,g),\qquad
+  $$\{f,g\}_{\hbar_{\mathrm{W}}}=\sum_{j\geq 0}
+    \frac{\hbar_{\mathrm{W}}^{2j}}{(2j+1)!\,2^{2j}}P^{2j+1}(f,g),\qquad
     P=\partial_{z_1}\otimes\partial_{z_2}
       -\partial_{z_2}\otimes\partial_{z_1}.$$
   If $f\in\mathfrak m^p$ and $g\in\mathfrak m^q$, the
-  order-$\hbar^{2j}$ summand lies in
+  order-\(\hbar_{\mathrm{W}}^{2j}\) summand lies in
   $\mathfrak m^{p+q-2(2j+1)}$ when nonzero.  The Poisson term
   $j=0$ preserves $\mathfrak m^3$ as a Lie subalgebra, but the
   higher Moyal terms can leave the ideal.  For $N\geq4$,
   $$P^3(z_1^4,z_2^4)=24z_1\cdot24z_2=576z_1z_2,$$
   so
-  $$\{z_1^4,z_2^4\}_\hbar
-    =16z_1^3z_2^3+24\hbar^2 z_1z_2+\cdots.$$
-  The term $24\hbar^2z_1z_2$ has $\mathfrak m$-adic degree $2$.
+  $$\{z_1^4,z_2^4\}_{\hbar_{\mathrm{W}}}
+    =16z_1^3z_2^3+24\hbar_{\mathrm{W}}^2 z_1z_2+\cdots.$$
+  The term \(24\hbar_{\mathrm{W}}^2z_1z_2\) has \(\mathfrak m\)-adic degree \(2\).
   It has degree \(2\) and lies outside both the cubic ideal
   \(\mathfrak m^3\) and the constants killed by the reduction modulo
-  \(\C\cdot1\).  Thus \(\mathfrak m^3/\mathfrak m^{N+1}\) has a
-  Moyal-closure obstruction for \(N\geq4\).
+  \(\C\cdot1\).  Therefore
+  \[
+    \operatorname{cl}_{N,\hbar}(z_1^4,z_2^4)
+    =
+    24\hbar_{\mathrm{W}}^2z_1z_2
+    \neq0
+    \quad\text{in }Q_{<3}[[\hbar_{\mathrm{W}}]],
+  \]
+  and \(\mathfrak m^3/\mathfrak m^{N+1}\) has a Moyal-closure
+  obstruction for \(N\geq4\).
 
   Therefore the CE differential for a hypothetical finite quantum
   source
-  $\mathfrak h_{\leq N,\hbar}\ltimes
-  \mathfrak h_{\leq N,\hbar}^\vee[1]$ is incompatible with simple
-  restriction of the Moyal bracket.  A projected bracket carries its own
-  Jacobi class; the projected-degree warning of
+  $\mathfrak h^{\mathrm{nilp}}_{[3,N],\hbar_{\mathrm{W}}}\ltimes
+  (\mathfrak h^{\mathrm{nilp}}_{[3,N],\hbar_{\mathrm{W}}})^\vee[1]$ is incompatible with simple
+  restriction of the Moyal bracket.  A projected bracket carries the
+  Jacobi class \(\operatorname{Jac}_{N,\hbar}\) and the CE-square class
+  \(\operatorname{CE}_{N,\hbar}\); the projected-degree warning of
   \ref{lem:finite-window-hamiltonian-obstruction} shows that this is
-  a genuine Jacobi condition.  The all-order theorem
+  a genuine Jacobi condition.  The formal Moyal theorem
   \ref{thm:phi-hbar-all-order} remains valid on the full
-  Hamiltonian algebra $\mathfrak h_\hbar$, and its map can be
+  Hamiltonian algebra $\mathfrak h_{\hbar_{\mathrm{W}}}$, and its map can be
   evaluated on generators of degrees $3,\ldots,N$.  That operation yields
-  restricted values; a finite quantum CE source requires the additional
-  Moyal-flat structure above.  The descendant
-  cotangent sector at $\hbar=0$ is exactly
-  \ref{thm:phi-trunc-classical}; at $\hbar\neq0$ it is the named
+  restricted values; a finite quantum CE source requires the vanishing
+  data of Definition~\ref{defn:nilpotent-moyal-flat-datum}.  The descendant
+  cotangent sector at \(\hbar_{\mathrm{W}}=0\) is exactly
+  \ref{thm:phi-trunc-classical}; at \(\hbar_{\mathrm{W}}\neq0\) it is the named
   Moyal-flat truncation problem.
 \end{proof}
 
 \begin{prop}[Sectors removed by truncation]\label{prop:trunc-lost-sectors}
-The truncation $\mathfrak h\rightsquigarrow\mathfrak h_{\leq N}=
+The truncation $\mathfrak h\rightsquigarrow\mathfrak h^{\mathrm{nilp}}_{[3,N]}=
 \mathfrak m^3/\mathfrak m^{N+1}$ removes the following five
 data from the local theorem \ref{thm:main-local}:
 \begin{enumerate}
@@ -332,10 +451,10 @@ data from the local theorem \ref{thm:main-local}:
     from being nilpotent.
   \item\label{lost:constants}
     The constant Hamiltonian $1\notin\mathfrak m$, on which the
-    $\hbar$-normalization of the Moyal product depends. The
+    \(\hbar_{\mathrm{W}}\)-normalization of the Moyal product depends. The
     central element $\C\cdot 1\subset\mathfrak h_{\mathrm{poly}}$
     is omitted from $\mathfrak m^3$ a fortiori, so the
-    $\hbar$-normalization in the truncated theorem is conventional.
+    \(\hbar_{\mathrm{W}}\)-normalization in the truncated theorem is conventional.
   \item\label{lost:u1-anomaly}
     The U(1) center anomaly cohomology class
     $[\bar c]\in H^2_{\mathrm{Lie}}(\bar A,\C)$ of
@@ -344,18 +463,20 @@ data from the local theorem \ref{thm:main-local}:
        \mathbf 1[(k+m,l+n)=(1,1)]$$
     is concentrated on multidegree $(1,1)$, with both arguments of
     total $\mathfrak m$-adic degree $1$, hence the cocycle pairs
-    only elements outside $\mathfrak h_{\leq N}=\mathfrak m^3/
+    only elements outside $\mathfrak h^{\mathrm{nilp}}_{[3,N]}=\mathfrak m^3/
     \mathfrak m^{N+1}$. The central anomaly has support outside the
     truncation.
   \item\label{lost:colim}
-    The stable connected limit $N\to\infty$ on the full
+    The cutoff inverse limit on the full
     $\mathfrak h$. The inverse system
-    $\{\mathfrak h_{\leq N}\}_{N\geq 3}$ has structure maps the
+    $\{\mathfrak h^{\mathrm{nilp}}_{[3,N]}\}_{N\geq 3}$ has structure maps the
     natural surjections
-    $\mathfrak h_{\leq N+1}\twoheadrightarrow\mathfrak h_{\leq N}$
+    $\mathfrak h^{\mathrm{nilp}}_{[3,N+1]}\twoheadrightarrow\mathfrak h^{\mathrm{nilp}}_{[3,N]}$
     induced by the $\mathfrak m$-adic projection
-    $\mathfrak m^{N+1}\subset\mathfrak m^{N+2}$. The inverse limit
-    is $\varprojlim_N\mathfrak h_{\leq N}=\mathfrak m^3$, the
+    \(\mathfrak m^3/\mathfrak m^{N+2}\to
+    \mathfrak m^3/\mathfrak m^{N+1}\), using
+    \(\mathfrak m^{N+2}\subset\mathfrak m^{N+1}\). The inverse limit
+    is $\varprojlim_N\mathfrak h^{\mathrm{nilp}}_{[3,N]}=\mathfrak m^3$, the
     $\mathfrak m^3$-truncation of the Hamiltonian Lie algebra.
 \end{enumerate}
 What remains classically: the third-order and higher canonical
@@ -363,19 +484,34 @@ transformations, which form a nilpotent Lie subalgebra
 $\mathfrak m^3\subset\mathfrak h$, a Lie ideal in $\mathfrak m^2$,
 admitting the classical finite cotangent CE/PV identification
 of Theorem~\ref{thm:phi-trunc-classical}.
-The unreduced open BV factorization-centre morphism requires additional
-data beyond this truncation. The all-order Moyal descendant lift is excluded by
-\ref{thm:phi-hbar-trunc} unless extra quantum truncation data are
-added.
+The unreduced open BV factorization-centre morphism is governed by
+separate data beyond this truncation: the cotangent centrality and
+factorization-centre primitives in the unreduced open BV complex.  The
+formal Moyal descendant lift is controlled by
+Definition~\ref{defn:nilpotent-moyal-flat-datum}; Theorem~\ref{thm:phi-hbar-trunc}
+excludes it on \(\mathfrak h^{\mathrm{nilp}}_{[3,N]}\) exactly when
+\(\operatorname{cl}_{N,\hbar}\), \(\operatorname{Jac}_{N,\hbar}\), or
+\(\operatorname{CE}_{N,\hbar}\) is nonzero.
 \end{prop}
 
 \begin{proof}
-(i)--(iv) are immediate from the definitions and from the
-$\mathfrak m$-adic concentration of $\omega$. (v) is the explicit
-inverse limit calculation: a compatible family
-$\{f_N\in\mathfrak m^3/\mathfrak m^{N+1}\}_N$ assembles to a unique
-formal series in $\mathfrak m^3\subset\C[[z_1,z_2]]$, and the
-$\mathfrak m$-adic Lie structure is preserved at every level.
+The quotient defining \(\mathfrak h^{\mathrm{nilp}}_{[3,N]}\) is
+\(\mathfrak m^3/\mathfrak m^{N+1}\).  Therefore every monomial of total
+\(\mathfrak m\)-adic degree \(1\) or \(2\), and the constant monomial,
+has zero image in the quotient; this proves (i)--(iii).  The cocycle
+\(\omega\) is supported on pairs of total degree \(1\), because
+\(\omega(z_1^kz_2^l,z_1^mz_2^n)\) is nonzero only when
+\((k+m,l+n)=(1,1)\).  Hence both inputs lie outside
+\(\mathfrak m^3\), proving (iv).  For (v), a compatible family
+\(\{f_N\in\mathfrak m^3/\mathfrak m^{N+1}\}_N\) gives, for each
+homogeneous degree \(d\geq3\), a coefficient independent of every
+window \(N\geq d\); these coefficients assemble to a unique formal
+series in \(\mathfrak m^3\subset\C[[z_1,z_2]]\).  Conversely, every
+element of \(\mathfrak m^3\) determines such a compatible family by
+projection.  The Poisson bracket preserves the inverse-limit Lie
+structure because
+\(\{\mathfrak m^a,\mathfrak m^b\}\subset\mathfrak m^{a+b-2}\), so the
+bracket of two compatible families is compatible in every quotient.
 \end{proof}
 
 \subsection*{Cubic inverse-limit survivor}
@@ -384,32 +520,38 @@ $\mathfrak m$-adic Lie structure is preserved at every level.
 \label{prop:colim-recovery}
 The finite Lie quotients
 \[
-  \mathfrak h_{\leq N}=\mathfrak m^3/\mathfrak m^{N+1}
+  \mathfrak h^{\mathrm{nilp}}_{[3,N]}=\mathfrak m^3/\mathfrak m^{N+1}
 \]
 recover the complete cubic Lie algebra
-\(\varprojlim_N\mathfrak h_{\leq N}=\mathfrak m^3\).  The finite
+\(\varprojlim_N\mathfrak h^{\mathrm{nilp}}_{[3,N]}=\mathfrak m^3\).  The finite
 cotangent maps \(\Phi_{\leq N}\) of
 \ref{thm:phi-trunc-classical} form a compatible family of coordinate
 tests.  Their functoriality is contravariant: it is pullback along Lie
 quotients, with additional data required for an inverse system of dg CE
 cochain projections.  A Lie quotient
-\(\mathfrak h_{\leq M}\twoheadrightarrow\mathfrak h_{\leq N}\) induces CE
+\(\mathfrak h^{\mathrm{nilp}}_{[3,M]}\twoheadrightarrow\mathfrak h^{\mathrm{nilp}}_{[3,N]}\) induces CE
 cochain maps by pullback in the opposite direction.  Consequently
 \(\Phi_{\mathfrak m^3}\) denotes the coordinate-window family
 \(\{\Phi_{\leq N}\}_N\) together with the chain-side inverse limit and an
 exact continuous-dualization datum; the expression
-\(\varprojlim_N\Phi_{\leq N}\) on CE cochains requires those additional data.
+\(\varprojlim_N\Phi_{\leq N}\) on CE cochains denotes that datum.
 
 This is the maximal survivor of the nilpotent tower only in that precise
 sense: the Lie-side tower recovers \(\mathfrak m^3\), while a completed
-cochain \(P_0\)-statement requires the additional variance and
+cochain \(P_0\)-statement is governed by the variance and
 bracket-admissibility data named above.
 \end{prop}
 
 \begin{proof}
-The Lie-side inverse limit is the usual \(\mathfrak m\)-adic completion
-of \(\mathfrak m^3\).  The variance obstruction appears already at
-\(M=4\), \(N=3\).  In \(\mathfrak h_{\leq4}\),
+The Lie-side inverse limit is
+\[
+  \varprojlim_N\mathfrak m^3/\mathfrak m^{N+1}=\mathfrak m^3
+\]
+with its \(\mathfrak m\)-adic topology: the coefficient of each
+monomial of total degree \(d\ge3\) stabilizes in every quotient with
+\(N\ge d\), and these stabilized coefficients are exactly a formal
+series with no terms of degree \(<3\).  The variance obstruction appears already at
+\(M=4\), \(N=3\).  In \(\mathfrak h^{\mathrm{nilp}}_{[3,4]}\),
 \[
   \{z_1^3,z_2^3\}=9z_1^2z_2^2,
   \qquad
@@ -453,7 +595,7 @@ than a formal inverse-limit consequence.
   For \(N\geq3\) let
   \[
     \pi_N\colon\mathfrak m^3\twoheadrightarrow
-    \mathfrak h_{\leq N}=\mathfrak m^3/\mathfrak m^{N+1}
+    \mathfrak h^{\mathrm{nilp}}_{[3,N]}=\mathfrak m^3/\mathfrak m^{N+1}
   \]
   be the nilpotent window projection.  The two obstruction terms for
   adjoining the removed low-degree sector are:
@@ -491,7 +633,7 @@ than a formal inverse-limit consequence.
 \begin{lem}[Obstruction-datum criterion for enlarging the tower]
 \label{lem:nilpotent-obstructions-exact}
   A finite \(\mathfrak m\)-adic tower extending
-  \(\{\mathfrak h_{\leq N}\}_{N\geq3}\) to a Lie tower containing
+  \(\{\mathfrak h^{\mathrm{nilp}}_{[3,N]}\}_{N\geq3}\) to a Lie tower containing
   \(H_1\oplus H_2\) and using the same quotient maps exists only if
   \(\mathfrak o^{\mathrm{lin}}_N=0\) for all \(N\) and
   \(\mathfrak o^{\mathrm{ss}}\) is nilpotent in the lower-central
@@ -520,7 +662,7 @@ than a formal inverse-limit consequence.
   obstruction to nilpotence and to the conilpotent bar-cobar hypothesis.
 
   The finite cotangent windows for
-  \(\mathfrak h_{\leq N}\) use the finite Casimir
+  \(\mathfrak h^{\mathrm{nilp}}_{[3,N]}\) use the finite Casimir
   \(\sum_{3\leq d\leq N}\sum_i e_{d,i}\otimes e_d^i\).  Extending to
   \(\mathfrak h\) adds the missing \(d=1,2\) components and then the
   whole compatible family over all \(d\geq1\).  Thus the full
@@ -576,10 +718,13 @@ relative or reductive model for the \(H_2\)-sector.
 
 \begin{proof}
   The tower used in \ref{prop:colim-recovery} is
-  \(\mathfrak h_{\leq N}=\mathfrak m^3/\mathfrak m^{N+1}\).
-  Since the transition maps are the usual quotient maps,
+  \(\mathfrak h^{\mathrm{nilp}}_{[3,N]}=\mathfrak m^3/\mathfrak m^{N+1}\).
+  The transition map
+  \(\pi_{N+1,N}\colon\mathfrak m^3/\mathfrak m^{N+2}\to
+  \mathfrak m^3/\mathfrak m^{N+1}\) is induced by the inclusion
+  \(\mathfrak m^{N+2}\subset\mathfrak m^{N+1}\).  Therefore
   \[
-    \varprojlim_N \mathfrak h_{\leq N}
+    \varprojlim_N \mathfrak h^{\mathrm{nilp}}_{[3,N]}
       =\varprojlim_N \mathfrak m^3/\mathfrak m^{N+1}
       =\mathfrak m^3
   \]
@@ -655,8 +800,13 @@ relative or reductive model for the \(H_2\)-sector.
   Theorem~\ref{thm:universal-formal-local-ce-pv-recognition}: the
   bracket and coadjoint formulas are continuous for finite coordinate
   projections, so the generator substitution
-  \(c\mapsto\theta,\ u\mapsto O\) is a completed dg commutative cochain
-  isomorphism.  The \(P_0\)-algebra reading is finite-level or
+  \(c^\rho\mapsto\partial_\rho\), \(u_f\mapsto O_f\), and
+  \(d_{\mathrm{CE}}u_f\mapsto X_f=d_\pi O_f\) is a completed dg
+  commutative cochain isomorphism after the \(u\)-regrading.  The
+  standard Chevalley--Eilenberg complex retains \(|u_f|_{\mathrm{CE}}=2\);
+  the coordinate complex
+  \(\operatorname{Regr}_uC^\bullet_{\mathrm{CE},\mathrm{coord}}\)
+  has \(|u_f|_{\mathrm{coord}}=0\).  The \(P_0\)-algebra reading is finite-level or
   bracket-admissible data; an unqualified inverse limit of ambient
   coordinate products gives a different object.
 
@@ -749,9 +899,11 @@ semisimple subalgebras separately.
 
 \begin{rmk}[Costello--Li balanced matrix truncation as structural
 model]\label{rmk:costello-li-precedent}
-Costello and Li \cite{costello-li-quantum-bcov} prove the
-quantum perturbative BCOV theorem on flat holomorphic-volume space by an
-$N\to\infty$ stable connected limit through the open gauge algebra
+The Costello--Li BCOV construction
+\cite{costello-li-quantum-bcov}*{\S3} supplies the
+holomorphic-volume precedent for a
+superrank-stable connected trace construction through the open gauge
+algebra
 $\mathfrak{gl}(N\mid N)$, with the directed Lie embedding
 $\mathfrak{gl}(N\mid N)\hookrightarrow\mathfrak{gl}(N+k\mid N+k)$
 and the BV-cohomology vanishing
@@ -766,7 +918,7 @@ U(1)-anomaly). The structural analogy with the truncation here:
   \item The inverse / direct system is the Lie embedding
     $\mathfrak{gl}(N\mid N)\hookrightarrow\mathfrak{gl}(N+1\mid N+1)$
     on the Costello--Li side, the Lie surjection
-    $\mathfrak h_{\leq N+1}\twoheadrightarrow\mathfrak h_{\leq N}$
+    $\mathfrak h^{\mathrm{nilp}}_{[3,N+1]}\twoheadrightarrow\mathfrak h^{\mathrm{nilp}}_{[3,N]}$
     here.
   \item The U(1)-anomaly is killed by the structure of each window
     on the Costello--Li side (supertrace), and is removed by the
@@ -774,9 +926,9 @@ U(1)-anomaly). The structural analogy with the truncation here:
     pairs only multidegree-$(1,0)$ with multidegree-$(0,1)$, both
     in $H_1\subset\mathfrak m\setminus\mathfrak m^2$, hence outside
     $\mathfrak m^3$).
-  \item The colimit $N\to\infty$ converges on the Costello--Li side
+  \item The superrank colimit converges on the Costello--Li side
     to the full $\mathfrak{gl}(\infty\mid\infty)$, providing the
-    stable connected single-trace algebra. Here the inverse limit
+    superrank-stable connected single-trace algebra. Here the inverse limit
     converges to the proper subalgebra
     $\mathfrak m^3\subsetneq\mathfrak h$ by
     Theorem~\ref{thm:colim-obstruction-full-h}.

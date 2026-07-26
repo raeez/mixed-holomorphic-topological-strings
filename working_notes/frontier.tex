@@ -22,7 +22,8 @@ for the operator-level lift on $K3\times E$.  Four open problems
 record these components: the chiral $E_d$ Deligne theorem at $d\geq 2$
 (\S\ref{ssec:open-chiral-Ed-Deligne}), which contains
 $\operatorname{Ob}^{\mathrm{ch}\,E_2}_{\mathrm{Deligne}}$; the global
-descent and all-order QME problem for the mixed-HT target, whose classes
+descent and all-order QME counterterm problem for the mixed-HT target,
+whose classes
 are \(\operatorname{Ob}^{\mathrm{desc}}_{\partial}\) and
 \(\operatorname{Ob}^{\mathrm{QME}}_{\mathrm{all\mbox{-}order}}\), together
 with the anomaly and locality classes; the
@@ -62,9 +63,12 @@ The Deligne conjecture in its $E_d$-form asserts an equivalence
     C^\bullet_{E_d}(A,A)
 \]
 between the derived $E_d$-centre of an $E_d$-algebra $A$ and the
-$E_d$-Hochschild cochain complex.  At $d=1$ the topological form
-is Lurie \cite{lurie-ha}*{Thm.~5.3.1.14} (after Tamarkin); for a
-chiral algebra on a curve \(C\), the \(d=1\) chiral form is proved in
+$E_d$-Hochschild cochain complex.  At $d=1$ this is the ordinary
+Hochschild Deligne theorem of Tamarkin
+\cite{tamarkin-deligne} and McClure--Smith
+\cite{mcclure-smith}, in Lurie's higher-algebraic form
+\cite{lurie-ha}*{Thm.~5.3.1.14}; for a chiral algebra on a curve \(C\),
+the \(d=1\) chiral form is proved in
 \cite{beilinson-drinfeld-chiral}*{\S 4}, with the chiral centre
 $Z^{\mathrm{der}}_{\mathrm{ch}}(A)\simeq C^\bullet_{\mathrm{ch}}(A,A)$
 realised through the chiral envelope and chiral cobar; the
@@ -118,33 +122,46 @@ literature.
 \end{conj}
 
 The $d=1$ case is proved (Beilinson--Drinfeld
-\cite{beilinson-drinfeld-chiral}; Costello--Gwilliam
-\cite{costello-gwilliam}*{Vol.~I}).  At $d\geq 2$ partial results
-exist for the topological $E_d$-centre
-(\cite{lurie-ha}*{\S 5.3.1}) and for chiral algebras on smooth
-schemes (Hennion's chiral Lie algebroids; Francis' factorisable
-co-operads); the chiral $E_d$-operad on $\C^d$ at $d\geq 2$ in the
-sense of~(1) is open globally.  The formal-Darboux stalk theorem of this
+\cite{beilinson-drinfeld-chiral}*{\S 4}; Costello--Gwilliam
+\cite{costello-gwilliam}*{Vol.~I}).  At $d\geq 2$ the topological
+$E_d$-centre is Lurie's construction
+(\cite{lurie-ha}*{\S 5.3.1}); adjacent structures appear in
+Faonte--Hennion--Kapranov higher Kac--Moody/factorization geometry
+\cite{faonte-hennion-kapranov-higher-km} and Francis's
+factorization-algebra framework \cite{francis-thesis}.  The chiral
+$E_d$-operad on $\C^d$ at $d\geq 2$ in the sense of~(1) is open
+globally.  The formal-Darboux stalk theorem of this
 manuscript (Theorem~\ref{thm:main-local}), together with
-Theorem~\ref{thm:formal-two-dimensional-holomorphic-ope}, gives the
-arity-two \(d=2\) formal-coordinate chiral operation
+Theorem~\ref{thm:formal-two-dimensional-holomorphic-singular-product}, gives the
+arity-two \(d=2\) formal-coordinate singular operation
 \[
   H^2_\Delta(\C[[z,w]])\,d\zeta_1d\zeta_2
   \otimes\mathfrak g^{\otimes2}\longrightarrow\mathfrak g,\qquad
   x\otimes y\longmapsto [x,y]_{\mathfrak g}.
 \]
-At the formal-Darboux stalk the theorem constructs the trace-sector map
+At the formal-Darboux stalk the theorem constructs the trace-sector
+generator boundary value
 \[
-  \Phi_N:C^\bullet_{\mathrm{CE},\mathrm{cont}}(\mathfrak g)
-  \longrightarrow
+  \Phi_N^{\mathrm{gen}}\in
+  \operatorname{Hom}^{\mathrm{gr}}_\C\!\left(
+  \operatorname{Gen}_{\mathrm{CE}}
+  \bigl(C^\bullet_{\mathrm{CE},\mathrm{cont}}(\mathfrak g)\bigr),
   HH^\bullet(A^{\mathrm{cl}}_{\partial,N},
-             A^{\mathrm{cl}}_{\partial,N}),
-  \qquad c_f\mapsto\theta_f,\quad u_f\mapsto J(f).
+             A^{\mathrm{cl}}_{\partial,N})
+  \right),
+  \qquad
+  \Phi_N^{\mathrm{gen}}(c_f)=\theta_f,\quad
+  \Phi_N^{\mathrm{gen}}(u_f)=J(f).
 \]
-After stable scalar reduction and admissible completion this is the
-CE/PV coordinate isomorphism on the trace algebra.  The full
-derived-centre equivalence requires centrality homotopies, all-arity
-chiral \(E_2\) data, QME data, and descent.
+After scalar reduction, degreewise stable trace passage, and admissible
+completion this becomes
+\(\Phi_{\mathrm{coord}}^{\mathrm{st}}\), the CE/PV coordinate
+isomorphism on the scalar-stable trace algebra.  The full
+derived-centre quasi-isomorphism is the typed ledger problem:
+Swiss-cheese action tower, Hochschild-centre lift, finite-\(N\)
+trace-relation control, flat Darboux-torsor transport, unreduced
+cotangent-current realization, descent, QME data, anomaly/locality
+primitives, and cone contraction.
 The chiral $E_2$-Deligne conjecture
 (Conjecture~\ref{conj:chiral-Ed-deligne} at $d=2$) is the underlying
 purely chiral statement on the bulk side; the local theorem gives the
@@ -162,8 +179,10 @@ reduction of Remark~\ref{rmk:native-bulk-object-c2}, the brane-side
 derived \(E_1\)-Hochschild
 \(HH^\bullet(A^{\mathrm{cl}}_{\partial,N},A^{\mathrm{cl}}_{\partial,N})\)
 restricts to a one-dimensional chiral algebra on the chosen curve
-\(C\hookrightarrow\C^2\) whose large-\(N\) realisation, if it exists, is
-\(W_\infty[\lambda]\) at an admissible boundary parameter.
+\(C\hookrightarrow\C^2\).  A physical \(N\to\infty\) chiral realisation,
+if it exists, would require state and cumulant data beyond the algebraic
+stable trace passage and would land at \(W_\infty[\lambda]\) with an
+admissible boundary parameter.
 
 \begin{conj}[\texorpdfstring{$W_\infty[\lambda]/E_\infty$ admissible endpoint identification under four hypotheses}{W-infinity[lambda] / E-infinity admissible endpoint identification under four hypotheses}]
 \label{conj:w-infinity-admissible-endpoint}
@@ -182,7 +201,10 @@ Subject to:
         admissible-level reduction.
   \item \emph{Pope--Romans--Shen / Bakas finite-spin window
         \cites{pope-romans-shen}{bakas-w-infinity}.}
-        The finite-spin OPE checks at spins
+        After choosing a curve-restriction datum
+        \(\mathfrak R_L\) with functor
+        \(\mathsf R_{L,\mathcal B_\perp}\), the finite-spin
+        vertex-algebra singular-product checks at spins
         \(s\leq s_{\max}\) extend to all spins inside the prescribed
         weight window.
   \item \emph{Arakawa admissible weight window
@@ -194,19 +216,23 @@ Subject to:
 Under (H1)--(H4) the curve-restricted brane sector realises the chiral
 algebra \(W_\infty[\lambda]\) at an admissible endpoint
 \(\lambda_*(N)\), with the area-preserving \(E_\infty\) limit recovering
-the Lie algebra of Hamiltonian vector fields on \(\C^2\) as
-\(N\to\infty\).
+the Lie algebra of Hamiltonian vector fields on \(\C^2\) in the
+rank-stable \(W_N\)-truncation limit.  This is not a trace-state
+cumulant limit.
 \end{conj}
 
 The four hypotheses are independent: (H1) and (H4) control truncation
 and weight-window admissibility; (H2) and (H3) extend the finite-spin
-OPE checks to all spins.  This is item~(14) of the seventeen-site
-catalogue; a theorem without these hypotheses requires constructions beyond
-the present literature.  Curve restriction reduces the manuscript's
-native two-complex-dimensional bulk to the one-dimensional curve
-setting in which \(W_\infty[\lambda]\) is defined; the obstruction
-class governing the restriction is the OPE-matching residue identified
-in Remark~\ref{rmk:native-bulk-object-c2}.
+singular-product checks of the curve-restricted object
+\(\mathsf R_{L,\mathcal B_\perp}(\mathcal F_{\C^2})\) to all spins.
+This is item~(14) of the
+seventeen-site catalogue; a theorem without these hypotheses requires
+constructions beyond the present literature.  Curve restriction reduces
+the manuscript's native two-complex-dimensional bulk to the
+one-dimensional curve setting in which \(W_\infty[\lambda]\) is defined;
+the obstruction class governing the restriction is the singular-product
+matching residue for the datum \(\mathfrak R_L\), identified in
+Remark~\ref{rmk:native-bulk-object-c2}.
 
 \begin{rmk}[Base-case consistency of
 Conjecture~\ref{conj:w-infinity-admissible-endpoint} at \(N=1\)]
@@ -216,9 +242,11 @@ At \(N=1\) the matrices commute, the trace map degenerates to evaluation
 (Example~\ref{exa:point-evaluation-N1},
 \S\ref{sssec:ex-heisenberg}), and Weyl quantisation gives the rank-one
 Heisenberg relation
-\([\Phi_\hbar(z_1),\Phi_\hbar(z_2)]_\star=\hbar\) in
-\(M_1(\C)=\C\).  The curve-restricted brane sector is therefore the
-rank-one Heisenberg vertex algebra.  This is the predicted base case of
+\([\Phi_{\hbar_{\mathrm{W}}}(z_1),\Phi_{\hbar_{\mathrm{W}}}(z_2)]_\star=\hbar_{\mathrm{W}}\) in
+\(M_1(\C)=\C\).  After a specified one-complex-dimensional curve
+restriction with pushed-forward bracket and anomaly matching, the
+restricted brane sector becomes the rank-one Heisenberg vertex algebra.
+This is the predicted base case of
 Conjecture~\ref{conj:w-infinity-admissible-endpoint}: Heisenberg lies
 in the Prochazka truncation family \(W_\infty[\lambda]\) at the
 endpoint \(\lambda_*(1)\), with (H2)--(H4) trivially satisfied at rank
@@ -226,7 +254,7 @@ one (no parafermion extension, single-spin window, single admissible
 weight).  The content beyond the scalar table begins at \(N\geq 2\),
 where the brane sector and the \(W_\infty[\lambda]\) family separate
 through the higher trace generators \(J(z_1^pz_2^q)\) and the matching
-requires (H1)--(H4) in full force.
+requires all four hypotheses (H1)--(H4).
 \end{rmk}
 
 \subsection{\texorpdfstring{Open problem: Hall--Drinfeld--Borcherds filtered comparison complex on compact non-toric CY$_3$}{Open problem: Hall-Drinfeld-Borcherds filtered comparison complex on compact non-toric CY3}}\label{ssec:open-hall-drinfeld-borcherds}
@@ -305,7 +333,7 @@ Theorem~\ref{thm:matched-conventions-transfer}.
 \subsection{Open problem: operator-level lift of the modular line
   on \texorpdfstring{$K3\times E$}{K3 x E}}\label{ssec:open-modular-lift}
 
-The Capelli scalar \(\hbar N[\bar c]\) of
+The Capelli scalar \(\hbar_{\mathrm{W}}N[\bar c]\) of
 \S\ref{subsec:scalar-anomaly} is the local projective Lie anomaly.
 It becomes the curvature of a modular determinant line on
 $\overline{\mathcal A}_g$ only after the operator-level determinant
@@ -375,9 +403,10 @@ lift requires compact comparison data
   \operatorname{Tr}_{\GW},\sigma_X),
 \]
 and no scalar MNOP statement constructs \(\sigma_X\).  The smooth
-quintic carries the DT/PT factorisation by the MacMahon power off the
-degree-zero locus of Theorem~\ref{thm:mnop-quintic}, by Bridgeland's
-Hall-algebra theorem and the Behrend--Fantechi virtual-cycle formalism.
+quintic carries the external scalar DT/PT factorisation by the MacMahon
+power off the degree-zero locus of Theorem~\ref{thm:mnop-quintic}, by
+Bridgeland's Hall-algebra theorem and the Behrend--Fantechi
+virtual-cycle formalism.
 
 The formal-Darboux stalk gives the formal trace coordinate at one Dirac
 brane vacuum: the identification

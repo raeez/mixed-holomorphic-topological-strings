@@ -4,7 +4,7 @@
 
 The two \(\mathfrak h\)-modules attached to the labels \((a,b)\) go in
 opposite directions.  The polynomial PBW special-fibre descendant
-\(\widetilde\Psi_{a,b}\), symmetrised trace shadow of the open
+\(\widetilde\Psi_{a,b}\), symmetrised trace projection of the open
 Hamiltonian action on the matrix Koszul algebra \(A_\psi\), admits the
 lowering action
 \(z_1\cdot\widetilde\Psi_{a,b}=b\,\widetilde\Psi_{a,b-1}\),
@@ -36,11 +36,14 @@ negative-cyclic homology \(HC^-_\bullet\) are distinguished at every
 reference; the cyclic trace symbol \(\operatorname{Tr}\) below is the
 graded cyclic quotient of
 Definition~\ref{def:app-sign-hamiltonian-cyclic}.  Its Hochschild
-shadow is obtained by forgetting the \(S^1\)-equivariance.  Connes'
+class is obtained by forgetting the \(S^1\)-equivariance.  Connes'
 \(B\) is the degree-\(+1\) operator in the mixed complex and the
-connecting operator in the SBI sequence.  The negative-cyclic class is
-the constellation-level Calabi--Yau pairing of the compact
-CY-to-chiral target.  The BCOV holomorphic-anomaly equation enters only as a
+connecting operator in the SBI sequence.  A negative-cyclic class is
+the constellation-level Calabi--Yau pairing only after a compact
+CY-to-chiral target category and its negative-cyclic trace class have
+been supplied.  The formal Hamiltonian stalk uses the graded cyclic
+trace quotient and its underlying Hochschild class.  The BCOV holomorphic-anomaly
+equation enters only as a
 target equation on a compact Calabi--Yau threefold, with the
 BCOV-strict sign of \cite{bcov} preserved by the matched-conventions
 divergence row of Theorem~\ref{thm:divergence-bcov}; the local
@@ -91,87 +94,75 @@ Hamiltonian theorem is the formal-Darboux stalk.
   same sign.  The only odd letter is \(\psi\).
 \end{defn}
 
-\begin{lem}[CE/PV cochain signs]
+\begin{lem}[Chevalley--Eilenberg and Lichnerowicz--Poisson gradings]
 \label{lem:app-sign-ce-pv}
-  Let \(\mathfrak h\) have basis \(e_I\) and structure constants
-  \([e_I,e_J]=C^K_{IJ}e_K\).  Let \(c^I\) be the CE ghost dual to
-  \(e_I\), and let \(u_K\) be the shifted cotangent coordinate paired
-  with \(e_K\) under the right-adjoint action
-  \(e_J\cdot u_K=[u_K,e_J]=C^L_{KJ}u_L\).  The Chevalley--Eilenberg
-  differential is
+  Let \(\mathfrak l\) be a finite-dimensional Lie algebra with basis
+  \(e_I\), dual basis \(\epsilon^I\), and structure constants
+  \([e_I,e_J]=C^K_{IJ}e_K\).  For
+  \(T^*[1]\mathfrak l=\mathfrak l\ltimes\mathfrak l^\vee[1]\), the
+  standard Chevalley--Eilenberg algebra has generators
+  \[
+    c^I=e_I^\vee[-1],\qquad u_I=(\epsilon^I[1])^\vee[-1],
+    \qquad |c^I|_{\mathrm{CE}}=1,\quad |u_I|_{\mathrm{CE}}=2.
+  \]
+  Give \(c^I\) cotangent weight \(0\) and \(u_I\) cotangent weight \(1\),
+  and define
+  \[
+    \operatorname{Regr}_u C^\bullet_{\mathrm{CE}}(T^*[1]\mathfrak l)
+    \quad\text{by}\quad
+    |a|_{\mathrm{PV}}=|a|_{\mathrm{CE}}-2\operatorname{wt}_u(a).
+  \]
+  The differential preserves cotangent weight and is
   \[
     d_{\mathrm{CE}}c^K=-\tfrac12 C^K_{IJ}c^Ic^J,\qquad
     d_{\mathrm{CE}}u_K=C^L_{KJ}u_Lc^J.
   \]
-  On the polyvector model with even coordinates \(O_K\) and odd
-  coordinates \(\theta^I\), Schouten bracket
-  \([\theta^I,O_J]=\delta^I_J\), and BV interaction
-  \(\pi=\tfrac12 C^K_{IJ}O_K\theta^I\theta^J\), the differential
-  \(d_\pi=[\pi,-]\) acts by
+  Let \(A_{\mathfrak l}=\mathbf S(\mathfrak l)\).  Its
+  Lichnerowicz--Poisson complex has even linear functions \(O_K\), odd
+  constant vector fields \(\partial^I\), Schouten bracket
+  \([\partial^I,O_J]_S=\delta^I_J\), and linear Poisson bivector
   \[
-    d_\pi\theta^K=-\tfrac12 C^K_{IJ}\theta^I\theta^J,\qquad
-    d_\pi O_K=C^L_{KJ}O_L\theta^J.
+    \pi=\tfrac12 C^K_{IJ}O_K\partial^I\partial^J.
   \]
-  Therefore the assignment
+  Then
   \[
-    c^I\longmapsto\theta^I,\qquad u_K\longmapsto O_K
+    d_\pi\partial^K=-\tfrac12 C^K_{IJ}\partial^I\partial^J,
+    \qquad
+    d_\pi O_K=C^L_{KJ}O_L\partial^J,
   \]
-  is a chain map intertwining \(d_{\mathrm{CE}}\) and \(d_\pi\).
+  and the assignment
+  \[
+    c^I\longmapsto\partial^I,\qquad u_K\longmapsto O_K
+  \]
+  is an isomorphism of regraded cochain algebras
+  \[
+    \operatorname{Regr}_u C^\bullet_{\mathrm{CE}}(T^*[1]\mathfrak l)
+      \xrightarrow{\sim}
+    \bigl(\mathrm{PV}(A_{\mathfrak l}),d_\pi\bigr).
+  \]
+  The Hamiltonian vector field of \(O_K\) is
+  \(X_K=d_\pi O_K\); it is a linear combination of the constant fields
+  \(\partial^J\), rather than a generator \(\partial^K\).
 \end{lem}
 
 \begin{proof}
-  The CE differential on \(c^K\) is fixed by
-  \[
-    (d_{\mathrm{CE}}c^K)(e_I,e_J)
-      =-c^K([e_I,e_J])
-      =-C^K_{IJ},
-  \]
-  equivalently
-  \(d_{\mathrm{CE}}c^K=-\tfrac12 C^K_{IJ}c^Ic^J\); its square vanishes
-  by the Jacobi identity in \(\mathfrak h\).  The CE differential on
-  \(u_K\) is the dual of the
-  right-adjoint action \(e_J\cdot u_K=C^L_{KJ}u_L\); applying
-  \(d_{\mathrm{CE}}\) once more to \(C^L_{KJ}u_Lc^J\), with the Leibniz
-  rule and \(|u_L|=0\), yields
-  \[
-    C^L_{KJ}\bigl(C^M_{LA}u_Mc^A\bigr)c^J
-    -\tfrac12 C^L_{KJ}u_L C^J_{AB}c^Ac^B,
-  \]
-  which vanishes by the Jacobi identity for the right-adjoint
-  representation.
+  The shift convention \((V[1])^n=V^{n+1}\) places
+  \(\mathfrak l^\vee[1]\) in degree \(-1\), hence its standard
+  Chevalley--Eilenberg dual coordinate has degree \(2\).  The two
+  differential formulas follow from the Lie bracket and the right
+  coadjoint action.  They preserve cotangent weight, so the regraded
+  differential still has degree \(+1\).
 
-  The Schouten bracket is normalized by
-  \[
-    [\pi,O_K]_S=\partial_{\theta^K}\pi,\qquad
-    [\pi,\theta^K]_S=-\partial_{O_K}\pi
-  \]
-  for left odd derivatives in the \(\theta\)-coordinates.  Hence
-  \[
-    d_\pi\theta^K
-      =[\pi,\theta^K]_S
-      =-\partial_{O_K}
-        \left(\tfrac12 C^M_{IJ}O_M\theta^I\theta^J\right)
-      =-\tfrac12 C^K_{IJ}\theta^I\theta^J,
-  \]
-  and
-  \[
-    \begin{aligned}
-    d_\pi O_K
-      &=[\pi,O_K]_S
-        =\partial_{\theta^K}
-          \left(\tfrac12 C^M_{IJ}O_M\theta^I\theta^J\right)  \\
-      &=\tfrac12 C^M_{IJ}O_M
-          \bigl(\delta^I_K\theta^J-\delta^J_K\theta^I\bigr)
-        =C^M_{KJ}O_M\theta^J .
-    \end{aligned}
-  \]
-  The last equality uses \(C^M_{JK}=-C^M_{KJ}\) and the left derivative
-  sign on the odd variables.  The polyvector identity \(d_\pi^2=0\) is
-  the master equation \([\pi,\pi]_S=0\), equivalently the Jacobi identity
-  for \(\mathfrak h\).  Both \(d_{\mathrm{CE}}\) and \(d_\pi\) are
-  derivations, so the assignment
-  \(c^I\mapsto\theta^I,\ u_K\mapsto O_K\) extends from generators to a
-  chain map on the full Chevalley--Eilenberg and polyvector algebras.
+  The Schouten identities follow from
+  \([\pi,O_K]_S=\partial_{\partial^K}\pi\) and
+  \([\pi,\partial^K]_S=-\partial_{O_K}\pi\).  Thus the displayed
+  substitution intertwines the differentials on generators.  Both
+  differentials are derivations, which proves the cochain-algebra
+  isomorphism.  Finally,
+  \(d_\pi O_K=C^L_{KJ}O_L\partial^J\); for an abelian
+  \(\mathfrak l\), this Hamiltonian field is zero while every
+  \(\partial^K\) remains a nonzero constant vector field.  Hence the two
+  kinds of vector field are intrinsically distinct.
 \end{proof}
 
 \begin{lem}[Primitive one-\(\psi\) chain boundary]
@@ -290,19 +281,19 @@ Hamiltonian theorem is the formal-Darboux stalk.
     P=\partial_{z_1}\otimes\partial_{z_2}
       -\partial_{z_2}\otimes\partial_{z_1},
     \qquad
-    f*g=m\circ\exp\!\left(\frac{\hbar}{2}P\right)(f\otimes g),
+    f*g=m\circ\exp\!\left(\frac{\hbar_{\mathrm{W}}}{2}P\right)(f\otimes g),
   \]
   the normalized Moyal bracket
-  \(\{f,g\}_\hbar=\hbar^{-1}(f*g-g*f)\) expands as
+  \(\{f,g\}_{\hbar_{\mathrm{W}}}=\hbar_{\mathrm{W}}^{-1}(f*g-g*f)\) expands as
   \[
-    \{f,g\}_\hbar
+    \{f,g\}_{\hbar_{\mathrm{W}}}
       =
       \sum_{s\geq0}
-      \frac{\hbar^{2s}}{2^{2s}(2s+1)!}P^{2s+1}(f,g),
+      \frac{\hbar_{\mathrm{W}}^{2s}}{2^{2s}(2s+1)!}P^{2s+1}(f,g),
   \]
-  with first quantum correction \(\hbar^2P^3(f,g)/24\):
+  with first quantum correction \(\hbar_{\mathrm{W}}^2P^3(f,g)/24\):
   \[
-    \{f,g\}_\hbar=\{f,g\}+\frac{\hbar^2}{24}P^3(f,g)+O(\hbar^4).
+    \{f,g\}_{\hbar_{\mathrm{W}}}=\{f,g\}+\frac{\hbar_{\mathrm{W}}^2}{24}P^3(f,g)+O(\hbar_{\mathrm{W}}^4).
   \]
 \end{lem}
 
@@ -311,9 +302,9 @@ Hamiltonian theorem is the formal-Darboux stalk.
   under \(f\leftrightarrow g\); the commutator therefore retains only
   the odd powers and doubles them:
   \[
-    f*g-g*f=2\sum_{s\geq0}\frac{(\hbar/2)^{2s+1}}{(2s+1)!}P^{2s+1}(f,g).
+    f*g-g*f=2\sum_{s\geq0}\frac{(\hbar_{\mathrm{W}}/2)^{2s+1}}{(2s+1)!}P^{2s+1}(f,g).
   \]
-  Division by \(\hbar\) gives the displayed series.  The \(s=1\)
+  Division by \(\hbar_{\mathrm{W}}\) gives the displayed series.  The \(s=1\)
   coefficient is \(1/(2^2\cdot3!)=1/24\); the all-order identity is
   Theorem~\ref{thm:app-radial-moyal-coefficients}, and exact rational
   coefficient checks through order eleven give the same sequence.
@@ -325,10 +316,10 @@ Hamiltonian theorem is the formal-Darboux stalk.
   falling factorial.  For \(f=z_1^pz_2^q\), the normalized Moyal
   coadjoint action on principal parts is
   \[
-    f\cdot_\hbar\rho_{a,b}
+    f\cdot_{\hbar_{\mathrm{W}}}\rho_{a,b}
       =
       -\sum_{\substack{r\geq1\\ r\ \mathrm{odd}}}
-      \frac{\hbar^{r-1}}{2^{r-1}r!}
+      \frac{\hbar_{\mathrm{W}}^{r-1}}{2^{r-1}r!}
       C_r(p,q;a-p+r,b-q+r)\,
       \rho_{a-p+r,b-q+r},
   \]
@@ -356,8 +347,8 @@ Hamiltonian theorem is the formal-Darboux stalk.
   \(P^r(f,g)=C_r(p,q;m,n)\,z_1^{p+m-r}z_2^{q+n-r}\).  By
   Lemma~\ref{lem:app-sign-moyal-coefficients} the normalized Moyal
   bracket keeps only odd \(r\), with coefficient
-  \(\hbar^{r-1}/(2^{r-1}r!)\).  The coadjoint convention
-  \((f\cdot_\hbar\rho)(g)=-\rho(\{f,g\}_\hbar)\) introduces the
+  \(\hbar_{\mathrm{W}}^{r-1}/(2^{r-1}r!)\).  The coadjoint convention
+  \((f\cdot_{\hbar_{\mathrm{W}}}\rho)(g)=-\rho(\{f,g\}_{\hbar_{\mathrm{W}}})\) introduces the
   leading minus sign and determines the target principal part: pairing with
   \(\rho_{a,b}\) selects \((m,n)\) such that \(p+m-r=a\) and
   \(q+n-r=b\), i.e.\ \(m=a-p+r,\ n=b-q+r\).  At \(r=1\) the
@@ -373,7 +364,7 @@ Hamiltonian theorem is the formal-Darboux stalk.
   the coadjoint convention
   \[
     (f\cdot\rho)(g)=-\rho(\{f,g\}),\qquad
-    (f\cdot_\hbar\rho)(g)=-\rho(\{f,g\}_\hbar),
+    (f\cdot_{\hbar_{\mathrm{W}}}\rho)(g)=-\rho(\{f,g\}_{\hbar_{\mathrm{W}}}),
   \]
   the linear Hamiltonians act on \(\mathcal P\) by
   \[
@@ -405,20 +396,20 @@ Hamiltonian theorem is the formal-Darboux stalk.
   raising target index, and sends
   \(z_1\cdot\widetilde\Psi_{a,b}\) to
   \(b(\mu_{a,b-1}/\mu_{a,b})\widetilde\Psi_{a,b-1}\), preserving the
-  lowering target index.  Equality of the two actions forces the same
+  lowering target index.  Equality of the two actions would require the same
   target index for both, contradicting the directions
   \(b\mapsto b+1\) versus \(b\mapsto b-1\).  Higher Moyal corrections
   \(r\geq3\) shift indices by \(b\mapsto b-q+r\geq b+1\) for
   \((p,q)=(1,0)\) and by \(a\mapsto a-p+r\geq a+1\) for
   \((p,q)=(0,1)\); they raise as well, so the obstruction persists at
-  every order in \(\hbar\).  The finite-window homology calculation
+  every order in \(\hbar_{\mathrm{W}}\).  The finite-window homology calculation
   records this obstruction explicitly: writing \(\delta_{a,b}\) for the residue
   functional \(\rho_{a,b}\) under the Matlis identification of
   Lemma~\ref{lem:app-matlis-continuous-dual}, the third-order Moyal
   coadjoint gives
-  \(\operatorname{ad}^*_{z_1^4}(\delta_{1,1})=-24\hbar^2\delta_{0,4}\),
+  \(\operatorname{ad}^*_{z_1^4}(\delta_{1,1})=-24\hbar_{\mathrm{W}}^2\delta_{0,4}\),
   while the polynomial one-\(\psi\) action sends \(\Psi_{1,1}\) to
-  \(4\Psi_{4,0}\); even matched at the Capelli/Weyl shift \(\hbar N\),
+  \(4\Psi_{4,0}\); even matched at the Capelli/Weyl shift \(\hbar_{\mathrm{W}} N\),
   the higher Moyal coadjoint terms have zero PBW descendant counterpart.
 \end{proof}
 
@@ -436,7 +427,7 @@ Hamiltonian theorem is the formal-Darboux stalk.
   The companion ghost coordinate \(c_{a\otimes f}\) maps to the PV
   coordinate \(\theta_{a\otimes f}\).  For
   \(B\in\mathcal D'_c(I)\), the multiplication of the distribution
-  \(B\) by a smooth test function \(a\) is the standard
+  \(B\) by a smooth test function \(a\) is the
   \(C_c^\infty(I)\)-module operation \(aB\), defined by
   \((aB)(\varphi)=B(a\varphi)\).  The interval current brackets are
   \[

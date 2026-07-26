@@ -2,19 +2,19 @@
 
 ## What this manuscript proves
 
-The **formal-Darboux stalk theorem of the Mixed Holomorphic-Topological Deligne conjecture** at $N$ Dirac branes:
+The **formal-Darboux trace-sector stalk theorem for the Mixed Holomorphic-Topological Deligne problem** at $N$ Dirac branes:
 \[
 A^{\mathrm{cl}}_{\partial, N} = C^\bullet_{\mathrm{CE}}\bigl(\mathfrak{gl}_N,\; \mathrm{Kosz}([\phi_1, \phi_2])\bigr),\qquad
 J(f) = \mathrm{Tr}\,f(\phi_1, \phi_2),\qquad
 c_f \mapsto \theta_f,\quad u_f \mapsto J(f).
 \]
-The trace map $J$ is the formal Darboux coordinate expression of the chiral Hochschild cohomology $C^\bullet_{\mathrm{ch}}(A_b, A_b)$, the derived chiral centre at the brane vacuum. The Capelli scalar $\hbar N[\bar c]$ is the projective curvature $\Omega_{\mathrm{central}}$ at the trace generator. The four-curvature taxonomy classifies global obstructions.
+The trace map $J$ is the formal Darboux coordinate on the scalar-reduced stable trace sector of the admissible $E_1$/HKR polyvector model $HH^\bullet_{\mathrm{adm},\mathrm{HKR}}(A^{\mathrm{st}}_{\partial,H}, A^{\mathrm{st}}_{\partial,H})$ — the finite-window HKR system transported through the Roos limit (`prop:continuous-admissible-hkr-trace-target` in `main.tex`). The manuscript does **not** claim this target is the chiral Hochschild cohomology $C^\bullet_{\mathrm{ch}}(A_b, A_b)$: the holomorphic kernel operad is separate supplied data, and the three $E_2$-structures ($E_2^{\mathrm{top}}$, $E_2^{\mathrm{ch,hol}}$, $E_2^{\mathrm{HT}}$) are not identified without a topologisation or restriction datum (`main.tex` $E_2$-notation block). The finite-$N$ Capelli scalar $\hbar N[\bar c]$ is the projective Lie anomaly of the trace representation; it is determinant-line or modular-line curvature only after the corresponding line, connection, and Atiyah-class pullback have been supplied (the constructed-line question is `prob:quillen-curvature-trace-chart`). The obstruction-curvature taxonomy classifies the global comparison problem.
 
-The constellation-level master theorem, of which this manuscript is the formal-Darboux stalk:
+The constellation-level master picture, of which this manuscript proves **only** the scalar-reduced stable trace-sector formal-Darboux stalk — every other clause below is a criterion, a displayed shape, or a deferral, not a theorem of this repo:
 
-> Closed sector $= Z^{\mathrm{der}}_{E_d^{\mathrm{ch}}}(\mathcal{C}^{\mathrm{op}}_\partial)$. Modular structure $=$ trace plus clutching. Quantum and global obstructions $=$ curvature in $\mathfrak{K}_T$. Scalar invariants $=$ sections of the modular line bundle on the period domain.
+> Closed sector $=$ the target $Z^{\mathrm{der},\mathrm{Mor}}_{E_2^{\mathrm{HT}}}(\mathcal{C}^{\mathrm{op}}_\partial)$ of the global comparison; the comparison itself is the ten-row supplied datum $\mathfrak{D}^{\mathrm{HT}}_N$ (criterion). Modular structure: the projective clutching law is displayed as the *shape* of a deformation problem, with its data deferred to the compact comparison (`conj:operator-modular-lift`); no clutching theorem is proved here. Quantum and global obstructions $=$ the typed obstruction ledger. Scalar invariants $=$ sections of the modular line $\Omega_{\mathrm{central}}$ on the period domain only after the line datum is constructed.
 
-This is the Deligne conjecture in its mixed holomorphic-topological chiral $E_d$ realization.
+This manuscript supplies the local trace-sector input to the mixed holomorphic-topological chiral $E_d$ Deligne problem.
 
 ---
 
@@ -33,12 +33,12 @@ A sentence that does not state mathematics or physics is a defect.
 
 | repository | role |
 |---|---|
-| `~/mixed-holomorphic-topological-strings/` | this manuscript — formal-Darboux stalk |
+| `~/mixed-holomorphic-topological-strings/` | this manuscript — trace-sector formal-Darboux stalk |
 | `~/chiral-bar-cobar/` (Vol I) | $d = 1$ chiral Koszul; bar / cobar / centre distinction |
 | `~/chiral-bar-cobar-vol2/` (Vol II) | $d = 1$ algebraic 3d-gravity HT sector at $A = \mathrm{Vir}_c$ |
 | `~/chiral-bar-cobar-vol4/` (Vol IV) | architectural inheritance |
 | `~/calabi-yau-quantum-groups/` (Vol III) | $d \geq 2$; two-stage CY-to-chiral; Hall–Drinfeld |
-| `~/igusa-cusp-form/` | level-2 modular section of $\Omega_{\mathrm{central}}$ on $K3 \times E$ |
+| `~/igusa-cusp-form/` | degree-2 (genus-two) modular section of $\Omega_{\mathrm{central}}$ on $K3 \times E$ |
 | `~/ecosystem/` | discipline layer; `INVARIANTS.md` binds |
 
 Cross-volume firewall: convention divergence is load-bearing — flag, do not silently reconcile. Every shared symbol and every shared concept has the same definition.
@@ -102,11 +102,11 @@ CY_d-Cat ─Φ^FA→│ E_d-HolFA(X) │─∫_Σ───→│ ChirAlg(C)     
                        = Ω_central
                                 │
                                 ▼
-                  Δ_5 (level-2 modular section
+                  Δ_5 (degree-2 modular section
                        on K3 × E)
 ```
 
-Every constellation volume populates one node. **This manuscript proves the formal-Darboux stalk of $C^\bullet_{\mathrm{ch}}(A_b, A_b)$ at the Dirac brane node.**
+Every constellation volume populates one node. **This manuscript proves the scalar-reduced stable trace-sector formal-Darboux stalk of the admissible $E_1$/HKR polyvector model $HH^\bullet_{\mathrm{adm},\mathrm{HKR}}$ at the Dirac brane node** — not of $C^\bullet_{\mathrm{ch}}(A_b, A_b)$; the identification of the three $E_2$-structures is open supplied data.
 
 ---
 
@@ -114,13 +114,13 @@ Every constellation volume populates one node. **This manuscript proves the form
 
 Eleven chapters; each forced by the previous; each section either constructs the local centre, identifies an obstruction, or computes an example.
 
-1. **The setup.** $\mathbb{R}^2_{\mathrm{top}} \times \mathbb{C}^2_{\mathrm{hol}}$ with brane stacks at holomorphic-symplectic points; the Mixed HT Deligne conjecture; the local stalk question.
+1. **The setup.** $\mathbb{R}^2_{\mathrm{top}} \times \mathbb{C}^2_{\mathrm{hol}}$ with brane stacks at holomorphic-symplectic points; the Mixed HT Deligne problem; the trace-sector local stalk question.
 2. **The shifted-cotangent BF Lie algebra.** $\mathfrak{h} = \mathbb{C}[[z_1, z_2]] / \mathbb{C}$, $\mathfrak{g} = \mathfrak{h} \ltimes \mathfrak{h}^\vee_{\mathrm{cont}}[1]$; Hamiltonian BF action.
 3. **The derived commuting variety stack at $N$ Dirac branes.** $[\mu^{-1}_{\mathrm{der}}(0) / \mathrm{GL}_N]$, $Q\psi = [\phi_1, \phi_2]$.
 4. **Boundary algebra and trace map.** $A^{\mathrm{cl}}_{\partial, N}$, $J(f) = \mathrm{Tr}\,f(\phi_1, \phi_2)$.
-5. **CE/PV dictionary as Koszul resolution.** $c_f \mapsto \theta_f$, $u_f \mapsto J(f)$ identifies the formal coordinate of $C^\bullet_{\mathrm{ch}}(A_b, A_b)$.
-6. **The Capelli scalar.** $\hbar N[\bar c] = \Omega_{\mathrm{central}}|_{J(f)}$, projective curvature, determinant line.
-7. **The obstruction calculus.** $\mathfrak{K}_T$, $\Theta_T$, $F_T$, four-curvature taxonomy $\{0,\, d_\Theta\tau,\, \Omega_{\mathrm{central}},\, \notin \mathrm{im}\,d_\Theta\}$. Six named obstructions as coordinates of one curvature.
+5. **CE/PV dictionary as Koszul coordinate model.** $c_f \mapsto \theta_f$, $u_f \mapsto J(f)$ identifies the scalar-reduced stable trace-sector coordinate in the admissible $E_1$/HKR polyvector model $HH^\bullet_{\mathrm{adm},\mathrm{HKR}}$.
+6. **The Capelli scalar.** $\hbar N[\bar c]$ as projective Lie anomaly of the trace representation; determinant-line or modular-line curvature only after the line, connection, and Atiyah-class pullback are supplied.
+7. **The obstruction calculus.** $\mathfrak{K}_{\mathrm{HT}}$, $\Theta_{\mathrm{OCA}}$, \(F_{\mathrm{HT}}\), and the four obstruction-curvature rows. Six native obstructions become projections of one curvature only after the comparison-unifying datum is supplied.
 8. **The pro-Matlis target.** $N$-tower categorical home; Matlis duality at finite presentation.
 9. **Examples.** Heisenberg, $\hat{\mathfrak{g}}_k$, $\beta\gamma$, $\mathrm{Vir}_c$ (algebraic HT holographic reading; identification, not construction), $W_N$, $\mathbb{C}^3$, $K3$, $K3 \times E$, generic compact CY3.
 10. **The $W_\infty[\lambda] / E_\infty$ admissible endpoint.** Conditional theorem; Prochazka triangular truncation, Creutzig–Kanade–Linshaw parafermion compatibility, Pope–Romans–Shen/Bakas, Yamada weight-window.
@@ -128,11 +128,11 @@ Eleven chapters; each forced by the previous; each section either constructs the
 
 The opening sentence (Chapter 1):
 
-> *Mixed holomorphic-topological string theory on $\mathbb{R}^2_{\mathrm{top}} \times \mathbb{C}^2_{\mathrm{hol}}$ has, at each formal holomorphic-symplectic brane point, a closed sector that coincides with the chiral Hochschild cohomology of the boundary algebra; this manuscript computes the formal-Darboux coordinate expression of that coincidence at $N$ Dirac branes.*
+> *Mixed holomorphic-topological string theory on $\mathbb{R}^2_{\mathrm{top}} \times \mathbb{C}^2_{\mathrm{hol}}$ has, at each formal holomorphic-symplectic brane point, a local Deligne problem comparing Hamiltonian BF bulk observables with the Morita chiral \(E_2\)-centre of the boundary category; this manuscript computes the scalar-reduced stable trace-sector formal-Darboux coordinate of that problem at \(N\) Dirac branes.*
 
 The closing sentence (Chapter 11):
 
-> *The trace map $J(f) = \mathrm{Tr}\,f(\phi_1, \phi_2)$ is the formal coordinate of the universal closed–open identification at one Dirac brane vacuum; the global identification, the operator-level lift of the modular line, and the chiral $E_d$ Deligne theorem at $d \geq 2$ are the open problems the formal-Darboux stalk has now made well-posed.*
+> *The trace map $J(f) = \mathrm{Tr}\,f(\phi_1, \phi_2)$ is the scalar-reduced stable trace-sector coordinate at one Dirac brane vacuum; the global identification, the operator-level lift of the modular line, and the chiral $E_d$ Deligne theorem at $d \geq 2$ are the open problems this formal-Darboux stalk makes precise.*
 
 ---
 
@@ -157,9 +157,9 @@ Curve vertex algebra / Zhu algebra / Vol II $\mathbb{C} \times \mathbb{R}$ chira
 - $\mathcal{C}^{\mathrm{op}}_\partial = \Phi^{\mathrm{FA}}_d(\mathcal{A})\big|_{\partial X^{\mathrm{KN}}}$ on the Kato–Nakayama log boundary.
 - $\mathrm{Sp}^{\mathrm{ch}}_{\Sigma_{d-1}, C}(\mathcal{F}) = \int_{\Sigma_{d-1}} \mathcal{F}\big|_C$ — Lurie–Ayala–Francis factorization homology.
 - "Dirac brane stack" $= [\mu^{-1}_{\mathrm{der}}(0) / \mathrm{GL}_N]$ — derived commuting variety stack; the brane reading is the physical realization.
-- Capelli scalar $\hbar N[\bar c] = \Omega_{\mathrm{central}}|_{J(f)}$ — the Capelli identification IS the projective curvature evaluation at the trace generator.
-- Modular line bundle on $\overline{\mathcal{A}}_g = \Omega_{\mathrm{central}}$ at level $g$. Igusa cusp form $\Phi_{10}$ is its level-2 section; $\Delta_5 = \Phi_{10}^{1/2}$.
-- CE/PV dictionary $c_f \mapsto \theta_f$, $u_f \mapsto J(f)$ is the Koszul resolution of $C^\bullet_{\mathrm{ch}}(A_b, A_b)$.
+- Capelli scalar $\hbar N[\bar c]$ — the Capelli identification is the projective Lie anomaly of the trace representation. A determinant-line or modular-line curvature interpretation requires the corresponding line, connection, and Atiyah-class pullback.
+- $\Omega_{\mathrm{central}}$ is **defined in the manuscript**: `main.tex`, Remark `rmk:omega-central-definition` (Compact modular-line addendum) — the Hodge determinant line $\lambda = \det \pi_* \Omega^1$ on $\overline{\mathcal{A}}_g$, whose weight-$k$ degree-$g$ sections are the Siegel modular forms. $\Phi_{10}$ is its degree-2 (genus-two, full-level $\mathrm{Sp}_4(\mathbb{Z})$) weight-10 section; $\Delta_5 = \Phi_{10}^{1/2}$ on the paramodular cover. This file points at that definition; it no longer carries it.
+- CE/PV dictionary $c_f \mapsto \theta_f$, $u_f \mapsto J(f)$ is the Koszul coordinate model for the scalar-reduced stable trace sector of the admissible $E_1$/HKR polyvector model $HH^\bullet_{\mathrm{adm},\mathrm{HKR}}(A^{\mathrm{st}}_{\partial,H}, A^{\mathrm{st}}_{\partial,H})$.
 
 ## Theorem-control predicates (binding)
 
@@ -260,7 +260,7 @@ The canonical writing standards file is the authoritative source.
 | $\mathrm{Bar}(A)$ is the bulk | $\mathrm{Bar}(A)$ classifies twisting; bulk is $Z^{\mathrm{der}}_{\mathrm{ch}}(A) \simeq C^\bullet_{\mathrm{ch}}(A, A)$ |
 | direct $\Phi : \mathrm{CY}_d \to \mathrm{ChirAlg}$ | $\Phi_d = \mathrm{Sp}^{\mathrm{ch}}_{\Sigma_{d-1}, C} \circ \Phi^{\mathrm{FA}}_d$ |
 | $A$ is modular | $\mathcal{C}^{\mathrm{op}}_\partial$ carries cyclic trace $\mathrm{Tr}_\mathcal{C}$ compatible with clutching; closed shadow has modular consequences |
-| $\Delta_5$ = compact BPS Hilbert space | level-2 modular section of $\Omega_{\mathrm{central}}$; operator lift open |
+| $\Delta_5$ = compact BPS Hilbert space | degree-2 modular section of $\Omega_{\mathrm{central}}$; operator lift open |
 | scalar $Z_{\mathrm{BPS}}$ = operator algebra | scalar = protected trace of still-to-be-constructed operator package |
 | $W_\infty[\lambda] \Rightarrow E_\infty$ unconditional | conditional on the four hypotheses |
 | formal Darboux $\Rightarrow$ compact target theorem | formal-Darboux + descent + QME + anomaly + locality $\Rightarrow$ candidate |

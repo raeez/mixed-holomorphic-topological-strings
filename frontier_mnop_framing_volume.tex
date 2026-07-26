@@ -25,8 +25,9 @@
 \renewcommand{\P}{\mathbb{P}}
 \providecommand{\NAJ}{N_{\AJ}}
 
-\title[Compact CY$_3$ comparison]{Compact CY$_3$ comparison: theorems and
-  conjectures over the formal-local mixed HT SFT}
+\title[Compact CY$_3$ comparison ledger]{Compact CY$_3$ comparison ledger:
+  external scalar theorems, supplied compact data, and centre-lift
+  conjectures}
 
 \begin{document}
 \maketitle
@@ -35,7 +36,7 @@ The formal-local mixed holomorphic--topological theory gives the
 Hamiltonian BF bulk on
 \(\R^2_{\mathrm{top}}\times\widehat{\C^2}_{\mathrm{hol}}\), the
 Dirac-brane trace \(J(f)=\operatorname{Tr}f(\phi_1,\phi_2)\), and the
-Capelli projective class \(\hbar N[\bar c]\).  A compact
+Capelli projective class \(\hbar_{\mathrm{W}} N[\bar c]\).  A compact
 Calabi--Yau threefold carries a different but adjacent structure: a
 3-Calabi--Yau category such as \(\Perf(X)\), virtual-cycle traces, the
 BCOV holomorphic anomaly, and Hodge-theoretic periods.  A compact
@@ -44,7 +45,9 @@ whose formal normal restriction may be compared with the displayed
 stalk.  Its remaining coordinates are the compact virtual cycle, the
 Gromov--Witten/Pandharipande--Thomas comparison, the BCOV propagator,
 and a compact-target chain object whose protected trace has the
-automorphic scalar as shadow.
+automorphic scalar as its scalar invariant.  This note is not used in the proof of
+the formal-Darboux trace-sector theorem; it is a compact-target
+comparison ledger.
 
 \section{\texorpdfstring{MNOP factorisation and the $\E_2$-centre obstruction}{MNOP factorisation and the E2-centre obstruction}}\label{sec:mnop}
 
@@ -65,11 +68,12 @@ Gromov--Witten virtual-class series
 Li--Tian 1998).  The Maulik--Nekrasov--Okounkov--Pandharipande correspondence
 compares these series only after the reduced DT convention, the
 variable change \(-q=e^{iu}\), and the multiple-cover normalisation are
-fixed.  The DT/PT factorisation is a theorem in this form.  The GW/PT
-comparison is a separate virtual-class comparison statement with its
-own hypotheses; it is not produced by the formal-local theorem.
+fixed.  The scalar DT/PT factorisation is an external theorem in this
+form.  The GW/PT comparison is a separate virtual-class comparison
+statement with its own hypotheses; neither statement is produced by the
+formal-local theorem.
 
-\begin{thm}[DT/PT factorisation on the quintic]\label{thm:mnop-quintic}
+\begin{thm}[External scalar DT/PT factorisation on the quintic]\label{thm:mnop-quintic}
   Let \(Q\subset\P^4\) be a smooth quintic threefold (Euler
   characteristic \(\chi(Q)=-200\), Calabi--Yau by \(c_1(Q)=0\)).  The
   degree-zero DT generating function factors as the MacMahon power
@@ -97,8 +101,9 @@ own hypotheses; it is not produced by the formal-local theorem.
 The PT/GW leg
 \(Z_{\PT}(Q;\mathfrak q,\mathsf Q)=
 Z_{\GW}(Q;u,\mathsf Q)|_{-\mathfrak q=e^{iu}}\) is not a
-formal consequence of Theorem~\ref{thm:mnop-quintic}.  For the quintic
-it is part of the GW/PT correspondence, constrained by
+consequence of the scalar DT/PT theorem
+Theorem~\ref{thm:mnop-quintic}.  For the quintic it is part of the
+GW/PT correspondence, constrained by
 Gopakumar--Vafa integrality and by the Huang--Klemm--Quackenbush
 bootstrap in the computed range.
 
@@ -142,7 +147,7 @@ classifies the central automorphisms compatible with these traces.
       \Aut(\mathrm{Tr}_{\DT},\mathrm{Tr}_{\PT},\mathrm{Tr}_{\GW})
     \right)_{-q=e^{iu}} .
   \]
-  Thus the chain-level MNOP lift object is defined by
+  Thus the chain-level MNOP lift datum is defined by
   \(C_{\mathrm{tar}}(Q)\), the trace triple, and the displayed
   homotopy fibre.  Non-emptiness requires the obstruction tower in
   \(\mathfrak C^{\mathrm{cent}}_Q\) to vanish.  At a point of this
@@ -154,8 +159,9 @@ The hypothesis decomposes into four mathematical data: a constructed
 factorisation-algebra functor \(\PhiFA_3\) on the 3-Calabi--Yau dg
 category, compatible with Hall and centre constructions; dualisable
 \(\cA_X\)-modules \(M_{\DT},M_{\PT},M_{\GW}\); chain-level trace maps
-whose protected characters are the three scalar partition functions;
-and centrality homotopies
+whose protected characters realise the three scalar partition-function
+normalisation targets only after the corresponding trace complexes have
+been constructed; and centrality homotopies
 \(\sigma_X\colon\mathrm{Tr}_{\DT}\Rightarrow\mathrm{Tr}_{\PT}\) and
 analogously to \(\mathrm{Tr}_{\GW}\) in the \(\E_2\)-centre.  Existence
 is the lifting problem for this homotopy fibre, and rigidity is the
@@ -561,7 +567,7 @@ Costello--Li 2012 (arXiv:1201.4501) construct the classical BCOV field
 theory and the perturbative BV quantisation problem, with
 elliptic-curve uniqueness and Virasoro results within the stated
 range.  Write \(\{F_g^{\mathrm{BCOV}}(X,t)\}_{g\geq 0}\)
-for a solution of the BCOV holomorphic anomaly equation with standard
+for a solution of the BCOV holomorphic anomaly equation with chosen
 large-radius and conifold-gap boundary data; the perturbative
 generating function is
 \[
@@ -585,7 +591,7 @@ description.
   \label{conj:bcov-np-quintic}
   Let $Q \subset \P^4$ be the smooth quintic, $F^{\mathrm{BCOV}}_g(Q,
   t)$ the genus-$g$ solution of the BCOV holomorphic anomaly recursion
-  with the CDGP 1991 large-radius normalization and standard conifold gap boundary
+  with the CDGP 1991 large-radius normalization and conifold-gap boundary
   condition, and $F^{\mathrm{GV}}$ the Gopakumar--Vafa
   resummation~\eqref{eq:gv-expansion} with the locally mirrored
   explicit quintic data of Huang--Klemm--Quackenbush 2009 through
@@ -685,8 +691,8 @@ the quintic moduli space: large complex structure (where
 \eqref{eq:gv-expansion} is the target definition), the conifold (where
 Strominger's hypermultiplet pairs with the vanishing cycle), and
 Landau--Ginzburg / Gepner (where the HKQ bootstrap gives
-finite-genus data).  The required object is a global resurgent
-sheaf \(\mathcal R^{\mathrm{np}}\) on the moduli space together with a
+finite-genus data).  The required datum is a global resurgent sheaf
+\(\mathcal R^{\mathrm{np}}\) on the moduli space together with a
 section \(F^{\mathrm{np}}(\lambda,t)\) whose Stokes jumps match the BCOV
 monodromy representation on \(H^3(\widetilde Q,\Z)\).  Construction of
 \(\mathcal R^{\mathrm{np}}\) is the non-perturbative BCOV obstruction,

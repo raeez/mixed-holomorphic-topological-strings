@@ -12,7 +12,7 @@ in holomorphic dimension \(d=2\), with brane line
 \(\R_{\mathrm{brane}}\times\{0\}\times\{0\}\) as the one-dimensional
 factorization direction.  A compact or arithmetic comparison changes
 the field content, topology, trace, anomaly complex, and period
-normalization.  The compact objects considered below are: the
+normalization.  The compact target data considered below are: the
 BCOV/Kodaira--Spencer theory of a compact Calabi--Yau threefold
 \cite{bcov}; the Calabi--Yau-to-chiral specialization
 \(\Phi_d=\mathrm{Sp}^{\mathrm{ch}}_{\Sigma_{d-1},C}\circ
@@ -54,19 +54,21 @@ In the three-functor chain
 where the chiral derived $E_d$-centre functor on the right of the
 specialisation is the \(d=1\) chiral-algebra theorem
 ($Z^{\mathrm{der}}_{\mathrm{ch}}=C^\bullet_{\mathrm{ch}}$ on chiral
-algebras over curves; \cite{beilinson-drinfeld-chiral}) and at
+algebras over curves; \cite{beilinson-drinfeld-chiral}*{\S 4}) and at
 $d\geq 2$ the chiral $E_d$-Deligne conjecture
 (Conjecture~\ref{conj:chiral-Ed-deligne}, open).  A matched target
 datum may identify the formal restriction of this global centre at a
 brane stack with the local CE model.  The local theorem computes the
-subsequent finite-\(N\) trace-sector generator boundary value
+  subsequent finite-\(N\) trace-sector generator boundary-value assignment
 \[
-  \Phi_N^{\mathrm{gen}}\colon
-  C^\bullet_{\mathrm{CE}}\bigl(
-    \mathfrak h\ltimes\mathfrak h^\vee_{\mathrm{cont}}[1]\bigr)
-  \dashrightarrow
-  C^\bullet_{\mathrm{Hoch,tr,adm}}
-    (A^{\mathrm{cl}}_{\partial,N},A^{\mathrm{cl}}_{\partial,N}),
+  \Phi_N^{\mathrm{gen}}
+  \in
+  \operatorname{Hom}^{\mathrm{gr}}_\C\!\left(
+    \operatorname{Gen}_{\mathrm{CE}}\!\left(
+      C^\bullet_{\mathrm{CE}}\bigl(
+        \mathfrak h\ltimes\mathfrak h^\vee_{\mathrm{cont}}[1]\bigr)\right),
+    C^\bullet_{\mathrm{Hoch},\mathrm{adm}}
+      (A^{\mathrm{cl}}_{\partial,N},A^{\mathrm{cl}}_{\partial,N})\right),
 \]
 with generator value
 \[
@@ -77,8 +79,8 @@ with formal \(f\) interpreted only in the completed brane algebra.
 After such a target comparison, the formal-stalk curvature has
 coordinates
 \[
-  \bigl(\hbar N[\bar c],\,\Omega^{\mathrm{rad}}_{a,b},\,
-   [\operatorname{Ob}^{\mathrm{red}}_{w,\partial,\hbar}],\,
+  \bigl(\hbar_{\mathrm{W}}N[\bar c],\,\Omega^{\mathrm{rad}}_{a,b},\,
+   [\operatorname{Ob}^{\mathrm{red}}_{w,\partial,\hbar_{\mathrm{QME}}}],\,
    \operatorname{Ob}_{\mathrm{cent/QME/desc}},\,
    \operatorname{Ob}^{\Pi}_{\mathrm{BM}},\,
    \operatorname{Ob}_{\Phi_d\text{-descent}}\bigr)
@@ -98,7 +100,7 @@ distinct scalar invariants until an operator-level lift is constructed.
 When that lift and its trace maps are part of
 \(\mathfrak C_{\mathrm{BKM}}\), and
 \(\operatorname{ob}_{\mathrm{Igusa/BKM}}\) has a chosen null-homotopy,
-the chosen traces of the operator object have these scalar values.  The
+the chosen traces of the operator-level lift have these scalar values.  The
 local theorem contributes the formal trace-sector fibre.
 
 \begin{thm}[Formal-Darboux restriction for compact comparisons]\label{thm:cross-target-restriction}
@@ -138,7 +140,7 @@ local theorem contributes the formal trace-sector fibre.
   and a chosen null-homotopy, the target morphism exists and has the
   displayed formal-Darboux stalk; otherwise the nonzero coordinate is the
   exact obstruction.  The matched-conventions divergence statement for
-  each compact object is given respectively by
+  each compact target datum is given respectively by
   Theorems \ref{thm:divergence-bcov},
   \ref{thm:divergence-volIII},
   \ref{thm:divergence-igusa-bkm},
@@ -262,7 +264,7 @@ of the local theorem.
     \widehat{\mathfrak h}^{\vee}_{\mathrm{cont}}[1],\,
     \Ext^*(\mc O_0,\mc O_0),\,
     [\bar c],\,
-    \hbar_{\mathrm{Weyl}},\,
+    \hbar_{\mathrm{W}},\,
     \Phi^{\mathrm{Ham}}_{\mathrm{fact}}
   \bigr).
   \]
@@ -273,7 +275,7 @@ of the local theorem.
   is its continuous cotangent shift, \([\bar c]\in
   H^2_{\mathrm{Lie}}(\bar A,\C)\) is the scalar anomaly class
   carried by the brane line on the reduced Hamiltonian algebra
-  \(\bar A=\C[z_1,z_2]/\C\cdot1\), \(\hbar_{\mathrm{Weyl}}\) is the
+  \(\bar A=\C[z_1,z_2]/\C\cdot1\), \(\hbar_{\mathrm{W}}\) is the
   Weyl/Moyal deformation parameter, and
   \(\Phi^{\mathrm{Ham}}_{\mathrm{fact}}\) is the brane-line interval
   factorization map produced by the local theorem.  The datum records
@@ -503,7 +505,11 @@ of the local theorem.
       \]
       with null-homotopies compatible with disjoint unions, interval
       inclusions, cotangent boundary realization, \(P_0\)-centrality, and
-      the stable connected quotient.
+      the stable connected quotient.  This four-entry compact-target
+      global vector is distinct from the five-entry mixed-HT Deligne
+      vector \(\operatorname{Ob}^{\mathrm{global},5}\) and from the
+      three-coordinate matched-conventions class of
+      Theorem~\ref{thm:matched-conventions-transfer}.
   \end{enumerate}
   The morphism in (i) is the global admissible Koszul-duality map
   \[
@@ -560,9 +566,13 @@ of the local theorem.
   those homotopies coherent on higher overlaps and higher collision
   strata is computed by the associated graded pieces of the same filtered
   total complex, giving the classes
-  \(\operatorname{ob}^{(r)}_{\mathrm{WR}}\).  This is the standard
-  obstruction theory for a Maurer--Cartan element in a filtered dg Lie
-  algebra of descent data.  Scalar compatibility is separate because the
+  \(\operatorname{ob}^{(r)}_{\mathrm{WR}}\).  Equivalently, the descent
+  datum is a Maurer--Cartan element in the filtered dg Lie algebra
+  \(\mathfrak G_{\mathrm{WR}}(L)\): solving the equation modulo
+  \(F^{r+1}\) leaves the displayed class in
+  \(H^{r+1}(\operatorname{gr}^r\mathfrak G_{\mathrm{WR}}(L))\), and a
+  chosen null-homotopy kills that stage.  Scalar compatibility is
+  separate because the
   local theorem has already quotiented by the distinguished scalar line.
   If all classes vanish and null-homotopies have been chosen, the
   Maurer--Cartan element is gauge equivalent to a global descent datum,
@@ -676,11 +686,16 @@ of the local theorem.
   normalization specified by \(\mc O_{\mathrm{tar}}\).  When a mixed
   topological-holomorphic operad is present, the mixed-Dunn criterion gives
   the required equivalence of algebra categories before applying
-  specialization.  The displayed formula is the definition of the glued map
-  on the formal stalk.  The remaining Maurer--Cartan curvature is exactly
+  specialization.  The displayed formula is the formal-stalk component of
+  the descended target comparison datum.  The remaining Maurer--Cartan
+  curvature is exactly
   \(d\Theta_{\mathrm{KD}}+\frac12[\Theta_{\mathrm{KD}},\Theta_{\mathrm{KD}}]\);
-  a chosen null-homotopy makes the transported local datum a global
-  matched-conventions global descent datum.  Descent gives the global morphism.
+  a chosen null-homotopy supplies the matched-conventions descent
+  primitive.  This produces the global morphism belonging to
+  \(\mathfrak C_{\mathrm{tar}}\); it is not a mixed-HT OCA
+  quasi-isomorphism unless the separate Swiss-cheese action, Morita
+  centre, QME, anomaly/locality, and comparison-cone data of
+  Theorem~\ref{thm:typed-global-mixed-ht-deligne} are supplied.
 \end{proof}
 
 \begin{defn}[Functor of points of mixed six-relation factorization]\label{defn:mixed-dunn-fact6r-datum}
@@ -825,8 +840,8 @@ of the local theorem.
   is precisely \(\operatorname{ob}_{6r}\) and is independent of choices.
   If this class vanishes, the remaining choices form the usual
   \(H^1\)-torsor.  This proves the recognition criterion: a global or
-  compact descent factorization object is exactly an \(R\)-point whose
-  square-zero thickenings kill the six-relation obstruction tower.
+  compact descent factorization datum is an \(R\)-point whose square-zero
+  thickenings kill the six-relation obstruction tower.
 \end{proof}
 
 \begin{defn}[Mixed-Dunn obstruction complex]\label{defn:mixed-dunn-obstruction-complex}
@@ -1172,7 +1187,8 @@ null-homotopy.
 	      is a target equation in \(\mathfrak C_{\mathrm{BCOV}}\).  The
 	      BCOV paper gives the physical holomorphic-anomaly equation; a
 	      theorem in the mathematical BV sense requires the chosen compact
-		      BCOV field theory, gauge fixing, boundary data, and QME solution.
+		      BCOV field theory, gauge fixing, boundary data, and QME
+              counterterm tower.
 	      The local Hamiltonian theorem contributes only the formal-stalk
 	      component.
     \item \emph{Obstruction class.}  The obstruction class is

@@ -1,212 +1,304 @@
 \begin{abstract}
 
 \noindent
-The B-model topological string has a mixed
-holomorphic--topological local sector on
-\(\R^2_{\mathrm{top}}\times\C^2_{\mathrm{hol}}\).  At a stack of \(N\)
-Dirac branes supported on
-\(\R_t\times\{0_s\}\times\{p\}\) with Chan--Paton space \(\C^N\), the
-transverse brane chart is the derived commuting stack
+Let
 \[
-  [\mu^{-1}_{\mathrm{der}}(0)/\mathrm{GL}_N],
-  \qquad \mu(\phi_1,\phi_2)=[\phi_1,\phi_2].
-\]
-The finite-rank boundary cdga is
-\[
-  A^{\mathrm{cl}}_{\partial,N}
-  =
-  C^\bullet_{\mathrm{CE}}\bigl(\mathfrak{gl}_N,\,
-       \mathrm{Sym}(\mathfrak{gl}_N\oplus\mathfrak{gl}_N
-                    \oplus\mathfrak{gl}_N[1])\bigr),
-  \qquad Q\psi=[\phi_1,\phi_2].
-\]
-The local theorem is the formal trace-sector statement obtained from
-that open--closed problem in a Darboux chart.  Its source is the
-continuous Chevalley--Eilenberg algebra of the Hamiltonian BF Lie
-algebra
-\[
-  \mathfrak h=\C[[z_1,z_2]]/\C\cdot1,\qquad
-  \mathfrak g=\mathfrak h\ltimes
-    \mathfrak h^\vee_{\mathrm{cont}}[1]
-\]
-on the formal holomorphic-symplectic polydisk.  Its target is the
-stable scalar-reduced trace-sector coordinate algebra
-\[
-  A_{\partial,H}^{\mathrm{st}}
-  =
-  \operatorname{TrSec}^{\mathrm{st}}_{\mathrm{adm}}
-  \bigl((A^{\mathrm{cl}}_{\partial,N})_{N\geq1}\bigr)
-  \cong \widehat{\mathbf S}_{\mathrm{Tate}}(\mathfrak h)
-\]
-after scalar reduction, degreewise stable trace passage, the
-Roos/strict-limit convention, and the admissible Tate/pro-Matlis
-completion \(\mathcal B^{\mathrm{adm}}\).  The proved coordinate map is
-\[
-  C^\bullet_{\mathrm{CE},\mathrm{cont}}(\mathfrak g)
-  \xrightarrow{\ \sim\ }
-  \bigl(\mathrm{PV}_{\mathrm{adm}}
-    (A_{\partial,H}^{\mathrm{st}}),d_\pi\bigr)
-  \xrightarrow{\mathrm{HKR}}
-  HH^\bullet_{\mathrm{adm},\mathrm{HKR}}
-  (A_{\partial,H}^{\mathrm{st}},A_{\partial,H}^{\mathrm{st}}).
-\]
-At fixed finite \(N\), the constructed boundary value is the generator
-assignment
-\[
-  c_f\longmapsto\theta_f,\qquad
-  u_f\longmapsto J(f)\cdot(-),\qquad
-  J(f)=\overline{\operatorname{Tr}\,f(\phi_1,\phi_2)} ,
-\]
-whose extension to a Hochschild cochain map requires a centre-lift
-Maurer--Cartan datum and residual centrality primitives.  Constants are
-quotiented in \(\mathfrak h\); the scalar trace line reappears as the
-Capelli projective anomaly \(\hbar N[\bar c]\) at the trace generator.
-The global mixed holomorphic--topological (mixed-HT) Deligne problem
-asks for an open--closed quasi-isomorphism from
-\(\mathcal A^{\mathrm{cl}/\hbar}_{\mathrm{bulk}}\) to the Morita
-mixed-HT chiral \(E_2\)-centre
-\[
-  Z^{\mathrm{der},\mathrm{Mor}}_{E_2^{\mathrm{HT}}}
-  (\mathcal C^{\mathrm{op}}_\partial)
-\]
-of the boundary open factorisation category.  Its proof requires the
-all-arity centre lift, Weiss/Ran descent, Costello quantum master
-equation counterterms, anomaly and locality homotopies, and a
-comparison-cone contraction.  The local theorem supplies the
-formal-Darboux trace-sector fibre and the Capelli scalar entering that
-obstruction problem.  The Bershadsky--Cecotti--Ooguri--Vafa B-model
-\cite{bcov}, the Costello--Li Batalin--Vilkovisky (BV) framework
-\cite{costello-renormalization}\cite{costello-li-quantum-bcov}\cite{costello-li-open-closed-bcov},
-and Costello's holomorphic--topological sector
-\cite{costello-twistedM} give the ambient physics and factorisation
-language.
-
-\medskip\noindent
-The closed fields are
-\(\mathcal A\in\Omega^\bullet(\R^2)\widehat\otimes
-\Omega^{0,\bullet}(\C^2)\widehat\otimes\mathfrak h\), with
-\[
-  \mathfrak h=\C[[z_1,z_2]]/\C\cdot1,\qquad
-  \{f,g\}=\partial_{z_1}f\,\partial_{z_2}g
-  -\partial_{z_2}f\,\partial_{z_1}g,
-\]
-and antifields \(\mathcal B\) valued in the Grothendieck--Matlis
-residue dual
-\[
-  \mathfrak h^\vee_{\mathrm{cont}}
-   =\operatorname{Ann}_{\Res}(\C\cdot1)
-     \subset H^2_{(z_1,z_2)}(\C[[z_1,z_2]])\,dz_1dz_2 .
-\]
-They form the shifted-cotangent BF Lie algebra
-\(\mathfrak g=\mathfrak h\ltimes
-\mathfrak h^\vee_{\mathrm{cont}}[1]\), with classical action
-\[
-  S=\int_X\bigl\langle\mathcal B,\,
-        (d+\bar\partial)\mathcal A
-        +\tfrac12[\mathcal A,\mathcal A]_{\mathfrak h}\bigr\rangle .
-\]
-The closed local observables at the formal insertion point are
-\(C^\bullet_{\mathrm{CE},\mathrm{cont}}(\mathfrak g)\).
-
-\medskip\noindent
-A stack of \(N\) Dirac branes on the worldline
-\(\R_t\subset\R^2_{\mathrm{top}}\) has transverse Chan--Paton
-coordinates \(\phi_1,\phi_2\in\mathfrak{gl}_N\).  The formal Darboux
-coordinate algebra
-\(A_b^{\mathrm{coord}}=\widehat{\mathcal O}_{\C^2,b}\cong\C[[z_1,z_2]]\)
-acts by the substitution \(z_i\mapsto\phi_i\), and the Koszul field
-\(\psi\in\mathfrak{gl}_N[1]\) imposes \(Q\psi=[\phi_1,\phi_2]\).  Thus
-the classical boundary algebra is
-\[
-  A^{\mathrm{cl}}_{\partial,N}
-   =
-  C^\bullet_{\mathrm{CE}}\bigl(\mathfrak{gl}_N,\,
-       \mathrm{Sym}(\mathfrak{gl}_N\oplus\mathfrak{gl}_N
-                    \oplus\mathfrak{gl}_N[1])\bigr),
-\]
-the Chevalley--Eilenberg/Koszul algebra of the derived commuting stack
-\([\mu^{-1}_{\mathrm{der}}(0)/\mathrm{GL}_N]\).  For
-\(f\in\bar A=\C[z_1,z_2]/\C\cdot1\) the brane evaluation is the trace
-\[
-  J(f)=\overline{\operatorname{Tr}\,f(\phi_1,\phi_2)}
-  \in\mathcal O(\mu^{-1}_{\mathrm{der}}(0))^{GL_N}.
-\]
-Trace cyclicity kills ordinary commutators, and the Koszul
-differential records the derived moment-map relation; adjacent
-orderings of the matrix substitution are therefore cohomologous on the
-derived commuting stack.  For \(f\in\mathfrak h\), the same formula is
-interpreted in the completed formal brane algebra.
-
-\medskip\noindent
-The finite-\(N\) boundary value before the centre lift is the assignment
-\[
-  \Phi_N^{\mathrm{gen}}\colon\quad
-  (c_f,u_f,K)\longmapsto(\theta_f,J(f)\cdot(-),N),
-\]
-where \(\widehat{\mathfrak g}_{\mathrm{cent}}\) is the Capelli
-projective central extension and \(\theta_f\) is the Koszul lift of the
-Hamiltonian Schouten derivation.  A Hochschild cochain map
-\(\Phi_N^{\mathrm{Hoch}}\) exists only after the centre-lift
-Maurer--Cartan element and centrality primitives are supplied.  After
-scalar reduction, degreewise stable trace passage, and the
-Tate/pro-Matlis admissible completion, the coordinate restriction
-\(\Phi_{\mathrm{coord}}^{\mathrm{st}}\) is the
-Chevalley--Eilenberg/polyvector coordinate isomorphism on the trace
-algebra \(\widehat{\mathbf S}_{\mathrm{Tate}}(\mathfrak h)\).  This is
-the formal-Darboux trace-sector stalk of the mixed
-holomorphic--topological \(E_2\)-Deligne problem; Beilinson--Drinfeld
-prove the corresponding chiral centre theorem in complex dimension \(1\)
-\cite{beilinson-drinfeld-chiral}.  The finite-\(N\) trace-relation
-ideal, stack stabilizer classes, and unreduced \(P_0\)-centrality
-homotopies are the kernel and cokernel of the finite-\(N\) restriction.
-
-\medskip\noindent
-The constant Hamiltonian line removed from \(\mathfrak h\) survives on
-the brane as the trace \(U(1)\).  It produces the finite-\(N\) Capelli
-class
-\[
-  \omega(f,g)=[\{f,g\}]_0,\qquad
-  \{\operatorname{Tr}\phi_1,\operatorname{Tr}\phi_2\}=N,\qquad
-  [\Phi_\hbar(z_1),\Phi_\hbar(z_2)]_{\mathrm{proj}}
-   =\hbar N\cdot\mathbf 1 .
-\]
-These formulas represent
-\(\hbar N[\bar c]\in H^2_{\mathrm{Lie}}(\bar A,\C)[[\hbar]]\).  When a
-determinant or modular line with connection exists and its Atiyah
-class pulls back to \([\bar c]\), this class is the projective
-curvature at the trace generator.
-
-\medskip\noindent
-The holomorphic singular product is the two-complex-dimensional
-diagonal local-cohomology kernel
-\[
-  \mathsf J_x(z)\mathsf J_y(w)\sim
-  \frac{d\zeta_1\,d\zeta_2}{\zeta_1\zeta_2}\,
-  \mathsf J_{[x,y]_{\widehat{\mathfrak g}_{\mathrm{cent}}}}(w),
+  X=\R^2_{\mathrm{top}}\times\widehat{\C^2}_{0,\mathrm{hol}},
   \qquad
-  \zeta_i=z_i-w_i .
+  \mathfrak h=\C[[z_1,z_2]]/\C\cdot1,
+  \qquad
+  \{f,g\}
+  =\partial_{z_1}f\,\partial_{z_2}g
+   -\partial_{z_2}f\,\partial_{z_1}g.
 \]
-It is the residue-pairing extension of the Heisenberg curve kernel; a
-vertex algebra appears only after choosing a holomorphic curve
-restriction and matching the pushed-forward bracket, BV pairing, brane
-image, and anomaly.  On the cyclic framed stable branch
-\(\C[\phi_1,\phi_2]\cdot v=\C^N\), the same formal-Darboux chart gives
-the ADHM presentation of \(\mathrm{Hilb}^N(\C^2)\), and its
-Weyl/Moyal deformation is the corresponding noncommutative
-Hilbert-scheme normalization with centre-of-mass charge \(\hbar N\).
+The native closed model is the Hamiltonian BF theory associated to the
+shifted-cotangent Lie algebra
+\[
+  \mathfrak g=\mathfrak h\ltimes P[1],
+  \qquad
+  P=\mathfrak h^\vee_{\mathrm{cont}},
+\]
+where \(P\) is realized by Grothendieck--Matlis principal parts and paired
+with \(\mathfrak h\) by the residue.  Its classical local-observable
+algebra is the standard continuous Chevalley--Eilenberg cochain algebra
+\[
+  \mathcal O^{\mathrm{cl}}_{\mathrm{Ham}}
+  =C^\bullet_{\mathrm{CE},\mathrm{cont}}(\mathfrak g)
+  =\widehat{\mathbf S}
+    \bigl(\mathfrak g^\vee_{\mathrm{cont}}[-1]\bigr).
+\]
+For \(\rho\in P\) and \(f\in\mathfrak h\), denote the corresponding
+linear cochains by \(c^\rho\) and \(u_f\).  With
+\((V[1])^n=V^{n+1}\), their standard cohomological degrees are
+\[
+  |c^\rho|_{\mathrm{CE}}=1,
+  \qquad
+  |u_f|_{\mathrm{CE}}=2.
+\]
 
 \medskip\noindent
-On a holomorphic-symplectic target whose Hamiltonian \(\Omega\)-torus
-action fixes the Dirac support, the global mixed-HT Deligne statement is
-a criterion and obstruction problem.  The residual descent coordinate is
-the weight-zero \v{C}ech period
-\(\operatorname{per}_X(v)\in H^1(X,\C_X)\).  A global proof requires the
-Morita chiral \(E_2\)-centre Maurer--Cartan lift, the
-Costello--Gwilliam descent datum, the all-order projective quantum
-master equation, the anomaly and locality homotopies, and the
-contracting homotopy of the open--closed comparison cone.  Compact
-Calabi--Yau enumerative theory, Hall--Drinfeld--Borcherds comparison,
-and the operator lift of \(\Phi_{10}\) require matched compact-target
-conventions and do not follow from the formal-Darboux stalk.
+A stack of \(N\) Dirac branes has the non-effective boundary chart
+\[
+  A^{\mathrm{cl}}_{\partial,N}
+  =C^\bullet_{\mathrm{CE}}\!\left(
+    \mathfrak{gl}_N,
+    \mathrm{Sym}\bigl(
+      \mathfrak{gl}_N\oplus\mathfrak{gl}_N
+      \oplus\mathfrak{gl}_N[1]\bigr)\right),
+  \qquad
+  Q\psi=[\phi_1,\phi_2].
+\]
+The effective scalar-reduced chart is
+\[
+  A^{\mathrm{cl,red}}_{\partial,N}
+  =C^\bullet_{\mathrm{CE}}\!\left(
+    \mathfrak{pgl}_N,
+    \mathrm{Sym}\bigl(
+      \mathfrak{gl}_N\oplus\mathfrak{gl}_N
+      \oplus\mathfrak{sl}_N[1]\bigr)\right).
+\]
+The non-effective chart retains the
+central Koszul class \(\operatorname{Tr}\psi\), the scalar trace line,
+the quotient-stack stabilizer cohomology, and the finite-rank trace
+relations.  For a polynomial Hamiltonian
+\(f\in\bar A=\C[z_1,z_2]/\C\cdot1\), the Koszul
+adjacent-transposition homotopy defines the trace class
+\[
+  J_N(f)
+  =\bigl[\overline{\operatorname{Tr}\,\widetilde f
+      (\phi_1,\phi_2)}\bigr]
+  \in H^0(A^{\mathrm{cl,red}}_{\partial,N}),
+\]
+independently of the ordinary-word lift \(\widetilde f\).  A chosen
+Koszul lift of the Hamiltonian action gives a derivation \(X_{f,N}\) on
+the derived commuting chart.  On scalar-reduced cohomology,
+\[
+  X_{f,N}\bigl(J_N(g)\bigr)=J_N(\{f,g\}_{\mathfrak h}).
+\]
+These are the fixed-rank trace and Hamiltonian-action data.
+
+\medskip\noindent
+Procesi--Razmyslov stability in total trace degree \(W\) begins in the
+range \(N\geq W\).  Scalar reduction followed by degreewise stable rank
+passage and admissible completion gives the rank-free trace algebra
+\[
+  A^{\mathrm{st}}_{\partial,H}
+  \cong\widehat{\mathbf S}_{\mathrm{Tate}}(\mathfrak h).
+\]
+Its formal spectrum is the completed linear Poisson space \(P\).  Write
+\(O_f\) for the linear function determined by \(f\in\mathfrak h\), and
+\(\partial_\rho\) for the constant vector field determined by
+\(\rho\in P\):
+\[
+  \partial_\rho(O_f)=\langle\rho,f\rangle_{\mathrm{res}}.
+\]
+For a basis \(H_I\) of \(\mathfrak h\), residue-dual basis
+\(\rho^I\), and structure constants
+\([H_I,H_J]=C^K_{IJ}H_K\), the linear Kirillov Poisson bivector is
+\[
+  \pi_{\mathrm{lin}}
+  =\frac12 C^K_{IJ}O_K\,\partial^I\partial^J,
+  \qquad
+  d_{\pi_{\mathrm{lin}}}=[\pi_{\mathrm{lin}},-]_S.
+\]
+
+Give every \(u\)-coordinate cotangent weight one and every
+\(c\)-coordinate cotangent weight zero.  The coordinate grading is the
+explicit regrading
+\[
+  |a|_{\mathrm{coord}}
+  =|a|_{\mathrm{CE}}-2\operatorname{wt}_u(a),
+  \qquad
+  \operatorname{Regr}_u
+  C^\bullet_{\mathrm{CE},\mathrm{std,coord}}(\mathfrak g),
+\]
+where \(C^\bullet_{\mathrm{CE},\mathrm{std,coord}}(\mathfrak g)\)
+is the row-finite coordinate envelope of the standard continuous
+Chevalley--Eilenberg algebra.
+Thus \(|u_f|_{\mathrm{coord}}=0\).  The row-finite monomial structure
+constants define the differential on the full coordinate product; finite
+Taylor windows serve as coefficient projections and trace-evaluation
+windows.  We prove the coordinate Lichnerowicz isomorphism
+\[
+  \Phi^{\mathrm{st}}_{\mathrm{coord}}\colon
+  \operatorname{Regr}_u
+  C^\bullet_{\mathrm{CE},\mathrm{std,coord}}(\mathfrak g)
+  \xrightarrow{\ \sim\ }
+  \bigl(
+    \mathrm{PV}_{\mathrm{coord}}(A^{\mathrm{st}}_{\partial,H}),
+    d_{\pi_{\mathrm{lin}}}\bigr),
+\]
+determined by
+\[
+  c^\rho\longmapsto\partial_\rho,
+  \qquad
+  u_f\longmapsto O_f=J^{\mathrm{st}}(f).
+\]
+The Hamiltonian vector field is
+\[
+  X_f=d_{\pi_{\mathrm{lin}}}O_f
+      =\Phi^{\mathrm{st}}_{\mathrm{coord}}
+        (d_{\mathrm{CE}}u_f),
+  \qquad
+  X_f(O_g)=O_{\{f,g\}}.
+\]
+The constant fields \(\partial_\rho\) and the Hamiltonian fields
+\(X_f\) are thereby distinguished intrinsically.  The canonical
+contraction bracket has degree \(-3\) in the standard physical grading
+and degree \(-1\) after \(\operatorname{Regr}_u\).  A bracket-admissible
+weighted-Tate completion realizes this contraction continuously; a
+declared Batalin--Vilkovisky (BV) receiver supplies the diagonal kernel
+and heat-kernel propagator.
+
+\medskip\noindent
+The ordinary Hochschild--Kostant--Rosenberg (HKR) theorem occupies the
+zero-Poisson special fibre.  On every finite polynomial coordinate
+algebra \(A_V=\mathbf S(V)\),
+\[
+  \operatorname{HKR}_V\colon
+  \bigl(\mathrm{PV}(A_V),0\bigr)
+  \xrightarrow{\ \sim\ }
+  \bigl(C^\bullet_{\mathrm{Hoch}}(A_V,A_V),b\bigr)
+\]
+is a quasi-isomorphism.  A compatible system of transition homotopies
+gives its Roos-completed admissible form at \(\pi_{\mathrm{lin}}=0\).
+For the nonzero linear Poisson tensor, a supplied continuous filtered
+\(L_\infty\) formality quasi-isomorphism
+\[
+  \mathcal U=(\mathcal U_n)_{n\geq1}\colon
+  \bigl(
+    \mathrm{PV}_{\mathrm{adm}}
+      (A^{\mathrm{st}}_{\partial,H})[1],0\bigr)
+  \longrightarrow
+  \bigl(
+    C^\bullet_{\mathrm{Hoch},\mathrm{adm}}
+      (A^{\mathrm{st}}_{\partial,H},
+       A^{\mathrm{st}}_{\partial,H})[1],b\bigr),
+\]
+with
+\(\mathcal U_1=\operatorname{HKR}\), produces the Maurer--Cartan image
+\[
+  \mu_\hbar
+  =\sum_{n\geq1}
+    \frac{\hbar_{\mathrm{Rees}}^n}{n!}
+    \mathcal U_n(\pi_{\mathrm{lin}}^{\otimes n}),
+  \qquad
+  m_\hbar=m+\mu_\hbar,
+  \qquad
+  A_\hbar=
+  \bigl(A^{\mathrm{st}}_{\partial,H}
+    [[\hbar_{\mathrm{Rees}}]],m_\hbar\bigr).
+\]
+Together with a Poincar\'e--Birkhoff--Witt (PBW) equivalence
+\[
+  \beta_{\mathrm{PBW}}\colon
+  (A^{\mathrm{st}}_{\partial,H}[[\hbar_{\mathrm{Rees}}]],m_\hbar)
+  \xrightarrow{\ \sim\ }
+  \widehat U_{\hbar_{\mathrm{Rees}}}(\mathfrak h)
+\]
+and Roos-compatible transition homotopies, the twisted Taylor components
+give
+\[
+  \mathcal U^{\hbar\pi}\colon
+  \bigl(
+    \mathrm{PV}_{\mathrm{adm}}(A^{\mathrm{st}}_{\partial,H})
+      [[\hbar_{\mathrm{Rees}}]],
+    \hbar_{\mathrm{Rees}}d_{\pi_{\mathrm{lin}}}\bigr)
+  \xrightarrow{\ \simeq\ }
+  \bigl(
+    C^\bullet_{\mathrm{Hoch},\mathrm{adm}}(A_\hbar,A_\hbar),
+    b_\hbar=[m_\hbar,-]_G\bigr).
+\]
+Put
+\[
+  \mathfrak t
+  =\mathrm{PV}_{\mathrm{adm}}
+    (A^{\mathrm{st}}_{\partial,H})[1],
+  \qquad
+  \mathfrak d
+  =C^\bullet_{\mathrm{Hoch},\mathrm{adm}}
+    (A^{\mathrm{st}}_{\partial,H},
+     A^{\mathrm{st}}_{\partial,H})[1],
+\]
+and let
+\[
+  \mathcal C^\bullet_{\mathcal U}
+  =\prod_{k\geq1}
+    \underline{\operatorname{Hom}}^\bullet_{\mathrm{filt}}
+    \left(
+      \widehat{\operatorname{Sym}}^k(\mathfrak t[1]),
+      \mathfrak d[1]\right)
+\]
+be the comparison-map deformation complex.  The successive formality
+curvatures define classes
+\[
+  \operatorname{Ob}_{\mathcal U,m+1}
+  \in
+  H^1\!\left(
+    \operatorname{gr}^{m+1}\mathcal C^\bullet_{\mathcal U},
+    D^{(m)}_{\mathcal U}\right),
+\]
+where \(D^{(m)}_{\mathcal U}\) is the linearized formality differential.
+PBW multiplicativity is governed by the deformation complex of
+\(\beta_{\mathrm{PBW}}\).  Their vanishing with compatible primitives is
+the precise nonzero-Poisson Hochschild comparison criterion.  A
+finite-\(N\) Hochschild-centre morphism further consists of a
+Maurer--Cartan solution in the completed Hochschild-centrality
+convolution \(L_\infty\)-algebra.
+
+\medskip\noindent
+The constant Hamiltonian line defines the cocycle
+\[
+  \omega(f,g)=[\{f,g\}]_0,
+  \qquad
+  \bar c=\omega|_{\bar A\wedge\bar A}.
+\]
+Writing \(\Phi_{\hbar_{\mathrm W}}\) for the Weyl-ordered trace
+representation, the rank-\(N\) trace character sends this cocycle to the
+Capelli projective class
+\[
+  [\Phi_{\hbar_{\mathrm W}}(z_1),
+    \Phi_{\hbar_{\mathrm W}}(z_2)]_{\mathrm{proj}}
+  =\hbar_{\mathrm W}N\,\mathbf 1,
+  \qquad
+  \hbar_{\mathrm W}N[\bar c]
+  \in H^2_{\mathrm{Lie}}(\bar A,\C)[[\hbar_{\mathrm W}]].
+\]
+The parameter \(\hbar_{\mathrm{Rees}}\) grades the linear-Poisson/PBW
+deformation, while \(\hbar_{\mathrm W}\) grades the Weyl/Moyal trace
+representation.
+A determinant-line or modular-line realization consists of a line,
+connection, and Atiyah-class pullback representing this cocycle.
+
+\medskip\noindent
+The Hamiltonian BF theory is the native formal-local field theory of the
+theorem.  A realization inside
+Bershadsky--Cecotti--Ooguri--Vafa (BCOV)/Kodaira--Spencer B-model field
+theory is a matched reduction datum: a retained BCOV BV subquotient, a
+quasi-isomorphism to the Hamiltonian BF local Lie algebra, preservation of
+the BV pairing and brackets, identification of the Dirac-brane image, and
+matching of the anomaly classes.  The curvature of this comparison lies
+in the corresponding filtered mapping-cone deformation complex.
+
+Let \(\mathcal A^{\mathrm{cl}/\hbar}_{\mathrm{bulk}}\) be the bulk
+mixed holomorphic--topological (HT) factorization algebra, and let
+\(\mathcal C^{\mathrm{op}}_\partial\) be the primitive boundary open
+factorization category.  The global mixed-HT Deligne problem asks for an
+open--closed morphism
+\[
+  \mathrm{OCA}_N\colon
+  \mathcal A^{\mathrm{cl}/\hbar}_{\mathrm{bulk}}
+  \longrightarrow
+  Z^{\mathrm{der},\mathrm{Mor}}_{E_2^{\mathrm{HT}}}
+  (\mathcal C^{\mathrm{op}}_\partial).
+\]
+Its construction consists of the mixed holomorphic--topological
+Swiss-cheese action, the all-arity Morita centre lift, the admissible
+Hochschild-centre lift, flat formal-Darboux transport, the unreduced
+cotangent-current realization, Weiss/Ran descent, the all-order quantum
+master equation (QME) counterterm tower, anomaly and locality primitives,
+and a contracting homotopy of the comparison cone.  The scalar-reduced
+stable trace coordinate and the Capelli projective class form the
+formal-Darboux row of this obstruction problem.
 
 \end{abstract}

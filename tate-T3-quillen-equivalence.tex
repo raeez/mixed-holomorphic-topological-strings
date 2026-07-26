@@ -5,18 +5,31 @@ Inside an admissible Tate envelope satisfying
 Statement~\ref{stmt:tate-model-envelope}, the bar-cobar adjunction
 \(\Omega\dashv\mathrm{Bar}\) is required to satisfy the admissible
 unit and counit weak-equivalence hypotheses
-(Theorem~\ref{thm:tate-bar-cobar-quillen}).  The CE/PV map
-\(c_f\mapsto\theta_f,\ u_f\mapsto J(f)\) then gives an admissible
-filtered equivalence between the closed CE cochain algebra and the
-Schouten polyvector algebra of the Hamiltonian formal disk.  This is a
+(Theorem~\ref{thm:tate-bar-cobar-quillen}).  Together with the
+finite-window Lie, variance, and exact continuous-dualization hypotheses
+of Lemma~\ref{lem:closed-ce-pv-window-limit}, the CE/PV map
+\[
+  c^\rho\longmapsto\partial_\rho,
+  \qquad
+  u_f\longmapsto O_f=J(f),
+  \qquad
+  d_{\mathrm{CE}}u_f\longmapsto X_f=d_\pi O_f
+\]
+then gives an admissible filtered equivalence between the
+\(u\)-regraded closed coordinate CE algebra and the Lichnerowicz
+polyvector algebra \((\mathrm{PV},d_\pi)\) of the Hamiltonian formal
+disk.  The standard CE grading has \(|u_f|_{\mathrm{CE}}=2\); the
+coordinate source is
+\(\operatorname{Regr}_uC^\bullet_{\mathrm{CE},\mathrm{coord}}\), with
+\(|u_f|_{\mathrm{coord}}=0\).  This is a
 Koszul comparison for the trace sector.  It is not the construction of
 the full Hochschild cochain complex, nor of the derived chiral centre;
 those require the Hochschild-centre lift and its centrality homotopies.
 After restriction to a holomorphic curve, the \(d=1\) matching to the
 bulk side is the chiral-algebra theorem of
-\cite{beilinson-drinfeld-chiral}.  The arity-two holomorphic collision
+\cite{beilinson-drinfeld-chiral}*{\S 4}.  The arity-two holomorphic collision
 is the two-dimensional diagonal singular product of
-Theorem~\ref{thm:formal-two-dimensional-holomorphic-ope}; the Tate
+Theorem~\ref{thm:formal-two-dimensional-holomorphic-singular-product}; the Tate
 bar-cobar comparison controls only the Koszul algebraic coordinate of
 that stalk:
 \(\Omega C_*^{\mathrm{CE}}(\mathfrak g)\xrightarrow{\sim}\widehat
@@ -26,8 +39,11 @@ duality to
   C^\bullet_{\mathrm{CE},\mathrm{cont}}(\mathfrak g)
     \simeq A_{\mathrm{op}}^!,
 \]
-with the linear symbol \(B_f\mapsto O_f,\ \Theta_{\rho_{a,b}}\mapsto
-\theta^{a,b}\) of
+where this last display uses the standard CE grading.  Its coordinate
+PV presentation is obtained only after \(\operatorname{Regr}_u\).  The
+linear symbol is \(B_f\mapsto O_f\),
+\(\Theta_{\rho_{a,b}}\mapsto\partial_{\rho_{a,b}}\), with
+\(d_{\mathrm{CE}}u_f\mapsto X_f=d_\pi O_f\), as in
 Definition~\ref{defn:universal-open-side-twisting-cochain}.
 
 For zero-differential finite-dimensional pieces $\{V_d\}_{d\geq1}$,
@@ -95,8 +111,7 @@ constructed here.
     V=(V_{\leq M},\pi^V_{M,N})_{M\geq N\geq1}
   \]
   of bounded-below finite-dimensional chain complexes over \(\C\), with
-  degreewise surjective transition maps.  The represented complete
-  object is
+  degreewise surjective transition maps.  The represented completion is
   \[
     |V|=\varprojlim_MV_{\leq M},\qquad
     F^M|V|=\ker(|V|\to V_{\leq M-1}).
@@ -162,13 +177,31 @@ constructed here.
   image vanishes in every finite quotient is the zero compatible family.
   Surjectivity of the transition maps gives the Mittag-Leffler condition.
   The Milnor exact sequence then has zero \(\varprojlim^1\)-term, proving
-  exactness and the cohomology formula.  The tensor and dual formulas are
-  definitions inside the strict category and are finite-dimensional on each
-  window.  Finally, a compatible tensor family \((C_M)_M\) is precisely an
-  element of the inverse limit
-  \(\varprojlim_M(H_{\leq M}\otimes D_{\leq M})\), which is the completed
-  tensor product by definition.  The uniqueness is the inverse-limit
-  universal property of Definition~\ref{defn:strict-ml-tate-category}.
+  exactness and the cohomology formula.
+
+  Let \(\lambda\colon |V|\to\C\) be continuous.  The kernels
+  \(F^M|V|\) form a fundamental system of neighbourhoods of \(0\), hence
+  \(\lambda(F^M|V|)=0\) for some \(M\); equivalently \(\lambda\) factors
+  uniquely through \(V_{\leq M-1}\).  Conversely, every functional on a
+  finite quotient is continuous.  Thus the strict continuous dual is the
+  filtered colimit \(\varinjlim_MV_{\leq M}^\vee\).
+
+  For strict towers \(H,D\) the tensor window at level \(M\) is
+  \(T_{\leq M}=H_{\leq M}\otimes D_{\leq M}\), with transition
+  \(\pi^H_{M,N}\otimes\pi^D_{M,N}\).  These maps are surjective because
+  the two factors are surjective over the field \(\C\).  Hence
+  \[
+    |H\widehat\otimes_{\mathrm{ML}}D|
+      =
+    \Bigl\{(t_M)_M:\;
+      t_M\in H_{\leq M}\otimes D_{\leq M},
+      (\pi^H_{M,N}\otimes\pi^D_{M,N})t_M=t_N
+      \Bigr\}.
+  \]
+  A compatible kernel \(C_M\in H_{\leq M}\otimes D_{\leq M}\) is exactly
+  such a family.  The inverse-limit separation above gives uniqueness:
+  two strict ML kernels with the same finite-window projections have zero
+  difference in every quotient, hence coincide.
 \end{proof}
 
 \begin{stmt}[Admissible Tate model envelope]\label{stmt:tate-model-envelope}
@@ -194,8 +227,8 @@ constructed here.
   \(\widehat\otimes\) with the finite-window model structures.  All
   Quillen statements below are relative to such an envelope.  The strict
   Mittag-Leffler category gives exact inverse limits; it does not by
-  itself give local presentability, Hovey recognition, the monoid axiom,
-  or operadic transfer.
+  itself give local presentability, Hovey recognition
+  ~\cite{hovey}, the monoid axiom, or operadic transfer.
 \end{stmt}
 
 \begin{lem}[Mittag-Leffler dictionary for closed Tate windows]
@@ -235,26 +268,48 @@ constructed here.
 \begin{proof}
   Surjectivity of the transition maps gives the Mittag-Leffler
   condition, hence \(\varprojlim^1=0\).  The cohomology assertion is
-  the standard Milnor exact sequence with the \(\varprojlim^1\)-term
-  killed.  Continuous linear functionals on \(V\) factor through a
-  finite quotient \(V_{\leq M}\), giving the displayed direct limit of
-  duals.  The completed tensor product in
-  Definition~\ref{defn:strict-ml-tate-category} is defined by the same
-  finite-window inverse system, so item (iii) is tautological inside the
-  strict category.  Item (iv) is the definition of weak equivalence in
-  Definition~\ref{defn:strict-ml-tate-category} and
+  the Milnor exact sequence
+  \[
+    0\to \varprojlim\nolimits^1_M H^{n-1}(V_{\leq M})
+      \to H^n(\varprojlim_M V_{\leq M})
+      \to \varprojlim_M H^n(V_{\leq M})\to 0
+  \]
+  with the left term killed by the Mittag--Leffler condition.
+  Continuous linear functionals on \(V\) factor through a finite quotient
+  \(V_{\leq M}\) because the kernels of \(V\to V_{\leq M}\) are the
+  neighbourhood basis of \(0\); this gives
+  \(V^\vee_{\mathrm{cont}}=\varinjlim_MV_{\leq M}^\vee\).  For the tensor
+  product, the paired finite-window truncations give the strict tower
+  \[
+    (V\widehat\otimes W)_{\leq M}
+      =V_{\leq M}\otimes W_{\leq M},\qquad
+    \pi^{V\widehat\otimes W}_{M,N}
+      =\pi^V_{M,N}\otimes\pi^W_{M,N}.
+  \]
+  Its represented completion is the inverse limit displayed in
+  item~(iii), and no larger completion or projective tensor norm is being
+  invoked.  The admissible filtered quasi-isomorphisms are exactly the
+  morphisms satisfying the finite-window and associated-graded
+  quasi-isomorphism tests stated in item~(iv); this is the weak-equivalence
+  class fixed in Definition~\ref{defn:strict-ml-tate-category} and
   Statement~\ref{stmt:tate-model-envelope}.
 \end{proof}
 
 \begin{defn}[Closed-window obstruction terms]
 \label{defn:closed-window-obstruction-terms}
-  Let \(\mathfrak h=\varprojlim_M\mathfrak h_{\leq M}\) be a complete
-  filtered Lie algebra with finite-dimensional windows and surjective
-  transition maps \(\pi_{M,N}\).  Write
-  \(D_{\leq M}\) for a finite dual module paired with
-  \(\mathfrak h_{\leq M}\), with surjective transition maps
+  Let \(\mathfrak h=\varprojlim_M\mathfrak h^{\mathrm{win}}_{\leq M}\) be a complete
+  filtered Lie algebra with finite-dimensional Lie windows and surjective
+  linear transition maps \(\pi_{M,N}\).  Each window is required to be
+  an actual Lie algebra; for a quotient presentation, its kernel must be
+  a bracket-stable ideal.  In particular,
+  \(\mathfrak m/\mathfrak m^{M+1}\) for the full Hamiltonian algebra is
+  only a coefficient projection, since
+  \(\{z_1,z_2^{M+1}\}=(M+1)z_2^M\); it is not an object of this
+  definition.  Write
+  \(D^{\mathrm{win}}_{\leq M}\) for a finite dual module paired with
+  \(\mathfrak h^{\mathrm{win}}_{\leq M}\), with surjective transition maps
   \(\pi^\vee_{M,N}\), and put
-  \(D_{\mathrm{cont}}=\varprojlim_MD_{\leq M}\).  For \(M\geq N\)
+  \(D_{\mathrm{cont}}=\varprojlim_MD^{\mathrm{win}}_{\leq M}\).  For \(M\geq N\)
   define:
   \[
     \mathfrak o^{\mathrm{br}}_{M,N}(x,y)
@@ -288,21 +343,31 @@ constructed here.
   CE/PV identity
   \[
     \Phi_M^{\mathrm{CE/PV}}\colon
-    C^\bullet_{\mathrm{CE}}\bigl(\mathfrak h_{\leq M}\ltimes
-      D_{\leq M}[1]\bigr)
+    \operatorname{Regr}_u
+    C^\bullet_{\mathrm{CE}}\bigl(\mathfrak h^{\mathrm{win}}_{\leq M}\ltimes
+      D^{\mathrm{win}}_{\leq M}[1]\bigr)
     \xrightarrow{\sim}
-    \mathrm{PV}\bigl(\mathbf S(\mathfrak h_{\leq M})\bigr).
+    \bigl(
+      \mathrm{PV}\bigl(\mathbf S(\mathfrak h^{\mathrm{win}}_{\leq M})\bigr),
+      d_{\pi_M}\bigr).
   \]
+  Here \(\pi_M\) is the linear Kirillov bivector of the finite Lie
+  window.  The standard CE degree of a shifted-cotangent dual
+  coordinate is \(2\); \(\operatorname{Regr}_u\) places it in coordinate
+  degree \(0\).
   Then the \(\Phi_M^{\mathrm{CE/PV}}\) are compatible as finite coordinate tests under the
   contravariant CE pullbacks and the corresponding PV coordinate maps.
   These maps form compatible finite coordinate tests.  A completed
   admissible filtered quasi-isomorphism
   \[
     \Phi^{\mathrm{CE/PV}}_{\mathrm{cont}}\colon
+    \operatorname{Regr}_u
     C^\bullet_{\mathrm{CE},\mathrm{cont}}
       \bigl(\mathfrak h\ltimes D_{\mathrm{cont}}[1]\bigr)
     \xrightarrow{\sim}
-    \mathrm{PV}\bigl(\widehat{\mathbf S}_{\mathrm{Tate}}(\mathfrak h)\bigr)
+    \bigl(
+      \mathrm{PV}\bigl(\widehat{\mathbf S}_{\mathrm{Tate}}(\mathfrak h)\bigr),
+      d_\pi\bigr)
   \]
   follows only after one gives either a chain-side inverse limit with
   exact continuous dualization or a topology whose cochain transition maps
@@ -313,7 +378,8 @@ constructed here.
 
 \begin{proof}
   The finite coordinate map \(\Phi_M^{\mathrm{CE/PV}}\) is determined on generators by
-  \(c\mapsto\theta\) and \(u\mapsto O\).  Vanishing of
+  \(c^\rho\mapsto\partial_\rho\), \(u_f\mapsto O_f\), and
+  \(d_{\mathrm{CE}}u_f\mapsto X_f=d_{\pi_M}O_f\).  Vanishing of
   \(\mathfrak o^{\mathrm{br}}_{M,N}\) says the CE differential on the
   Hamiltonian ghosts commutes with transition maps.  Vanishing of
   \(\mathfrak o^{\mathrm{coad}}_{M,N}\) says the cotangent-coordinate
@@ -322,10 +388,11 @@ constructed here.
   Therefore the finite squares with
   \(\Phi_M^{\mathrm{CE/PV}}\) and \(\Phi_N^{\mathrm{CE/PV}}\) commute in
   the variance appropriate to cochains.  A quotient
-  \(\mathfrak h_{\leq M}\twoheadrightarrow\mathfrak h_{\leq N}\) induces
+  \(\mathfrak h^{\mathrm{win}}_{\leq M}
+  \twoheadrightarrow\mathfrak h^{\mathrm{win}}_{\leq N}\) induces
   CE cochain maps by pullback along the quotient.
-  Thus inverse-limit language on cochains requires the additional
-  continuous-dualization or topology hypothesis stated above.  Vanishing
+  Thus inverse-limit language on cochains is the continuous-dualization
+  or topology hypothesis stated above.  Vanishing
   of \(\mathfrak o^{\mathrm{Cas}}_{M,N}\) is the separate statement that
   the finite \(P_0\)-brackets and BV coefficient pairings are compatible
   under transition in the chosen kernel-admissible tensor category.
@@ -337,19 +404,32 @@ constructed here.
 \label{defn:universal-open-side-twisting-cochain}
   Fix an admissible filtered-cobar datum
   \[
-    \mathfrak h=\varprojlim_M\mathfrak h_{\leq M},\qquad
-    D=\varinjlim_M\mathfrak h_{\leq M}^{\vee},\qquad
+    \mathfrak h=\varprojlim_M\mathfrak h^{\mathrm{win}}_{\leq M},\qquad
+    D=\varinjlim_M(\mathfrak h^{\mathrm{win}}_{\leq M})^{\vee},\qquad
     \mathfrak g=\mathfrak h\ltimes D[1],
   \]
   a complete augmented filtered open \(A_\infty\)-algebra
   \(A_{\mathrm{op}}\), and the completed CE/PV target
   \[
+    B^{\mathrm{std}}_{\mathrm{cl}}
+      =
+      C^\bullet_{\mathrm{CE},\mathrm{cont}}(\mathfrak g),
+    \qquad
     B_{\mathrm{cl}}
       =
-      C^\bullet_{\mathrm{CE},\mathrm{cont}}(\mathfrak g)
+      \operatorname{Regr}_u B^{\mathrm{std}}_{\mathrm{cl}}
       \cong
-      \mathrm{PV}\bigl(\widehat{\mathbf S}_{\mathrm{coord}}(\mathfrak h)\bigr).
+      \bigl(
+      \mathrm{PV}\bigl(\widehat{\mathbf S}_{\mathrm{coord}}(\mathfrak h)\bigr),
+      d_\pi\bigr).
   \]
+  Thus \(B^{\mathrm{std}}_{\mathrm{cl}}\) is the standard CE object used
+  by bar--cobar duality, while \(B_{\mathrm{cl}}\) is its coordinate
+  \(u\)-regrading.  A twisting cochain with target
+  \(B_{\mathrm{cl}}\) includes a compatible \(u\)-weight regrading of
+  the open bar complex so that the map below still has degree one;
+  without that datum only the standard bar--cobar target
+  \(B^{\mathrm{std}}_{\mathrm{cl}}\) is defined.
   Put \(C_{\mathrm{op}}=\mathrm{Bar}(A_{\mathrm{op}})\), with reduced bar
   differential \(b_{\mathrm{op}}\), coproduct \(\Delta\), and iterated
   reduced coproducts \(\Delta^{(r)}\).  The bar coalgebra is required to
@@ -406,18 +486,24 @@ constructed here.
   In the Hamiltonian trace presentation the required linear symbol is
   \[
     \operatorname{gr}\kappa_\tau(B_f)=O_f,\qquad
-    \operatorname{gr}\kappa_\tau(\Theta_{\rho_{a,b}})=\theta^{a,b},
+    \operatorname{gr}\kappa_\tau(\Theta_{\rho_{a,b}})
+      =\partial_{\rho_{a,b}},
   \]
   after the scalar trace is removed and the cotangent generator is read
-  in the principal-part local-dual basis.
+  in the principal-part local-dual basis.  Differential compatibility
+  additionally sends \(d_{\mathrm{CE}}u_f\) to
+  \(X_f=d_\pi O_f\), distinct from the constant Schouten field
+  \(\partial_\rho\).
 \end{defn}
 
 \begin{defn}[Open-side Koszul obstruction complex]
 \label{defn:universal-koszul-obstruction-complex}
   In the notation of
   Definition~\ref{defn:universal-open-side-twisting-cochain}, put
-  \(D_{\leq M}=\mathfrak h_{\leq M}^\vee\),
-  \(\mathrm{PV}_{\leq M}=\mathrm{PV}(\mathbf S(\mathfrak h_{\leq M}))\),
+  \(D^{\mathrm{win}}_{\leq M}=(\mathfrak h^{\mathrm{win}}_{\leq M})^\vee\),
+  \(\mathrm{PV}_{\leq M}=
+  (\mathrm{PV}(\mathbf S(\mathfrak h^{\mathrm{win}}_{\leq M})),
+  d_{\pi_M})\),
   and \(B_{\mathrm{cl},\leq M}\) for the corresponding finite CE/PV
   window.  The obstruction datum is
   \[
@@ -439,9 +525,11 @@ constructed here.
       =
       \prod_{M\geq N}
       \left(
-        \Hom(\Lambda^2\mathfrak h_{\leq M},\mathfrak h_{\leq N})
+        \Hom(\Lambda^2\mathfrak h^{\mathrm{win}}_{\leq M},
+          \mathfrak h^{\mathrm{win}}_{\leq N})
         \oplus
-        \Hom(\mathfrak h_{\leq M}\otimes D_{\leq M},D_{\leq N})
+        \Hom(\mathfrak h^{\mathrm{win}}_{\leq M}\otimes
+          D^{\mathrm{win}}_{\leq M},D^{\mathrm{win}}_{\leq N})
       \right)
       \oplus
       Q_{\mathrm{Cas}},
@@ -450,7 +538,8 @@ constructed here.
   \[
     Q_{\mathrm{Cas}}
       =
-      \frac{\varprojlim_M(\mathfrak h_{\leq M}\otimes D_{\leq M})}
+      \frac{\varprojlim_M(\mathfrak h^{\mathrm{win}}_{\leq M}\otimes
+        D^{\mathrm{win}}_{\leq M})}
            {\operatorname{im}(\mathfrak h\widehat\otimes D)} .
   \]
   The distinguished window class is
@@ -471,7 +560,9 @@ constructed here.
     \mathcal O_{\mathrm{top}}^n
       =
       \varprojlim\nolimits^1_M
-        H^{n-1}\!\left(C^\bullet_{\mathrm{CE}}(\mathfrak g_{\leq M})\right)
+        H^{n-1}\!\left(
+          \operatorname{Regr}_u
+          C^\bullet_{\mathrm{CE}}(\mathfrak g_{\leq M})\right)
       \oplus
       \varprojlim\nolimits^1_M
         H^{n-1}\!\left(\mathrm{PV}_{\leq M}\right).
@@ -529,7 +620,9 @@ constructed here.
   Then the following conditions are equivalent.
   \begin{enumerate}[label=(A\arabic*)]
     \item The datum is admissible: the generator substitution
-      \(c\mapsto\theta,\ u\mapsto O\) is the completed CE/PV identity,
+      \(c^\rho\mapsto\partial_\rho\), \(u_f\mapsto O_f\), and
+      \(d_{\mathrm{CE}}u_f\mapsto X_f=d_\pi O_f\) is the completed
+      \(u\)-regraded CE/PV identity,
       \(\tau\) is a twisting cochain, and
       \[
         \kappa_\tau\colon
@@ -564,9 +657,14 @@ constructed here.
       \simeq
     A_{\mathrm{op}}^!
   \]
-  precisely when the CE-side cobar map
+  in the standard CE grading, precisely when the CE-side cobar map
   \(\Omega C_*^{\mathrm{CE}}(\mathfrak g)\to A_{\mathrm{op}}\) has the
   same exact associated-graded cone and \(\varprojlim^1\) obstruction.
+  Identifying this standard dual with the coordinate target
+  \(B_{\mathrm{cl}}=\operatorname{Regr}_u
+  C^\bullet_{\mathrm{CE},\mathrm{cont}}(\mathfrak g)\) additionally
+  requires the compatible \(u\)-weight regrading included in the
+  twisting-cochain datum.
 \end{thm}
 
 \begin{proof}
@@ -621,8 +719,10 @@ constructed here.
        \mid n\in\Z_{\geq 0},\ w\in\N\bigr\},\qquad
     J=\bigl\{0\hookrightarrow F^w D^n
        \mid n\in\Z_{\geq 0},\ w\in\N\bigr\},$$
-  where $S^{n-1},D^n$ are the standard sphere and disk chain
-  complexes in $\Cat{Vec}$ and the Tate window $F^w(-)$ takes the
+  where \(S^{n-1}=\C[n-1]\) for \(n>0\), \(S^{-1}=0\), and \(D^n\)
+  is the chain complex with \(\C\) in degrees \(n\) and \(n-1\) and
+  identity differential \(D^n_n\to D^n_{n-1}\) (with \(D^0=\C[0]\)).
+  The Tate window \(F^w(-)\) takes the
   $w$-th piece of the filtration. A morphism $f\colon V\to W$ in
   $\Cat{TateChain}_{\geq 0}^{\mathrm{adm}}$ is:
   \begin{enumerate}
@@ -703,14 +803,31 @@ constructed here.
 
 \subsubsection{Operad-algebra transfer}
 
-Let $\mathrm{Lie}_{\Cat{TateVec}}$ be the Lie operad in
-$\Cat{TateVec}$, regarded as a $\Sigma$-cofibrant $\Sigma$-module
-(by the standard Koszul resolution of the $\Sigma$-cofibrant
-replacement), and similarly $\mathrm{Ass}^+_{\Cat{TateVec}}$ for
-augmented associative. A $\mathrm{Lie}_{\Cat{TateVec}}$-algebra is
-a Tate Lie algebra in $\Cat{TateVec}$; an
-$\mathrm{Ass}^+_{\Cat{TateVec}}$-algebra is a Tate complete
-augmented associative algebra. Write
+Choose operadic cofibrant replacements
+\[
+  \mathrm{Lie}^{\mathrm{cof}}_{\Cat{TateVec}}
+    \xrightarrow{\sim}\mathrm{Lie}_{\Cat{TateVec}},
+  \qquad
+  (\mathrm{Ass}^{+})^{\mathrm{cof}}_{\Cat{TateVec}}
+    \xrightarrow{\sim}\mathrm{Ass}^{+}_{\Cat{TateVec}}
+\]
+inside the admissible symmetric sequence category.  The first may be
+taken to be the cobar construction on the shifted cocommutative
+cooperad; the second may be taken to be the cofibrant associative
+resolution whose arity-\(n\) term is the direct sum, over planar rooted
+trees with \(n\) labelled leaves, of the orientation chain of the
+corresponding associahedral cell; the right \(\Sigma_n\)-action permutes
+leaf labels.  The
+augmentation maps are aritywise admissible filtered weak equivalences,
+and the replacement operads are \(\Sigma\)-cofibrant by construction.
+An algebra over
+\(\mathrm{Lie}^{\mathrm{cof}}_{\Cat{TateVec}}\) is a cofibrant
+Tate \(L_\infty\)-Lie model for a Tate Lie algebra; an algebra over
+\((\mathrm{Ass}^{+})^{\mathrm{cof}}_{\Cat{TateVec}}\) is a cofibrant
+model of a Tate complete augmented associative algebra.  Strict Tate
+Lie or strict augmented associative algebras are recovered by restriction
+along the displayed weak equivalences when the rectification hypotheses
+of Lemma~\ref{lem:transferred-model} are imposed.  Write
 $$\mathrm{TateLie}=\mathrm{Lie}_{\Cat{TateVec}}\text{-alg}_{\geq 0},
   \qquad \mathrm{TateAssocAlg}^+=
   \mathrm{Ass}^+_{\Cat{TateVec}}\text{-alg}_{\geq 0}$$
@@ -726,9 +843,11 @@ in $\Cat{TateChain}_{\geq 0}^{\mathrm{adm}}$.
   these weak equivalences.  Then the free-forget adjunction
   $\mathrm{Free}_{\mathcal P}\dashv\mathrm{Forget}$ for
   \(\mathcal P\) transfers the cofibrantly
-  generated model structure of \ref{thm:tate-model-structure} to
+	  generated model structure of Theorem~\ref{thm:tate-model-structure} to
   $\mathcal P\text{-alg}_{\geq 0}$ in the sense of
-  Hinich~\cite{hinich-htpy-alg}*{\S 2.2}: the weak equivalences and
+	  Hinich~\cite{hinich-htpy-alg}*{\S 2.2} and the operadic-transfer
+		  framework of Berger--Moerdijk
+		  ~\cite{berger-moerdijk-axiomatic}: the weak equivalences and
   fibrations in $\mathcal P\text{-alg}_{\geq 0}$ are the maps
   whose underlying chain map in
   $\Cat{TateChain}_{\geq 0}^{\mathrm{adm}}$ is one,
@@ -850,37 +969,58 @@ through the bar-cobar adjunction itself.
 \end{thm}
 
 \begin{proof}
-  Items~(1) and~(2) are immediate from
-  \ref{lem:tate-conilp-model}: weak equivalences in
-  $\mathrm{TateConilpCoAlg}$ are defined as maps whose $\Omega$
-  is a weak equivalence, and fibrations on the coalgebra side are
-  defined by lifting.
+  Let \(i:C\to C'\) be a cofibration of conilpotent Tate coalgebras.
+  Lemma~\ref{lem:tate-conilp-model} includes the hypothesis that
+  \(\Omega i\) is a cofibration of augmented Tate associative algebras.
+  If \(i\) is also acyclic, then \(\Omega i\) is a weak equivalence by
+  the definition of weak equivalence in
+  \(\mathrm{TateConilpCoAlg}\).  Hence \(\Omega\) preserves
+  cofibrations and acyclic cofibrations.  The right adjoint
+  \(\mathrm{Bar}\) preserves fibrations because a lifting problem against
+  \(\Omega i\) is adjoint to a lifting problem against \(i\); it
+  preserves acyclic fibrations because the same adjunction applies to
+  acyclic cofibrations.  This proves items~(1) and~(2).
 
   For item~(3), the unit $\eta_C$: filter both sides by symmetric
   / tensor length on the underlying $\Cat{TateVec}$ object, plus
   the Tate window filtration $F^w$. The associated graded gives,
-  windowwise, a finite-dimensional dg coalgebra and the standard
-  bar-cobar resolution
-  $C^{\mathrm{gr}}\to\mathrm{Bar}\,\Omega(C^{\mathrm{gr}})$. By
-  Loday-Vallette \cite{loday-vallette}*{\S 2.2.5, \S 11.1.5}, this
-  is a quasi-isomorphism on each window. Conilpotency
-  (\ref{defn:tate-conilp-coalg}) ensures the coaugmentation
-  filtration on $C$ is exhaustive and Hausdorff, so the abutment
-  of the spectral sequence of the filtration computes the global
-  qiso. Mittag-Leffler exactness in the Tate filtration
-  (\alpharef\ item~1) lifts the windowwise qiso to a global
-  filtered qiso.
+  windowwise, a finite-dimensional dg coalgebra \(C^{\mathrm{gr}}\).
+  The associated graded of \(\mathrm{Bar}\,\Omega(C^{\mathrm{gr}})\)
+  is the tensor coalgebra on
+  \(s\,s^{-1}\overline C^{\mathrm{gr}}\), with the internal
+  differential and the length-changing term coming from the
+  coaugmentation.  The summand of length \(0\) is
+  \(C^{\mathrm{gr}}\).  On positive length, the homotopy which deletes
+  the leftmost adjacent pair \(s\,s^{-1}\) satisfies
+  \(dh+hd=\mathrm{id}\), with the sign determined by
+  \(d(sx)=-s(dx)\) and \(d(s^{-1}x)=-s^{-1}(dx)\) when the
+  desuspension crosses the preceding suspended factors.  This is the
+  bar-cobar contraction of
+  Loday--Vallette~\cite{loday-vallette}*{\S 2.2.5, \S 11.1.5} written in
+  the present suspension convention.  Hence the graded unit is a
+  quasi-isomorphism on every finite window.  Conilpotency
+  (\ref{defn:tate-conilp-coalg}) makes the coaugmentation filtration
+  exhaustive and Hausdorff, while the Tate filtration is complete and
+  satisfies the Mittag--Leffler exactness clause of
+  Statement~\ref{stmt:tate-model-envelope}.  The spectral sequence
+  comparison theorem therefore lifts the windowwise quasi-isomorphism to
+  an admissible filtered weak equivalence.
 
   For the counit
   \(\varepsilon_A\colon\Omega\,\mathrm{Bar}(A)\to A\), filter both
   sides by augmentation/tensor length and by the Tate window.  On every
-  finite window and every finite length cap this is the ordinary
-  bar-cobar counit for an augmented dg associative algebra over
-  \(\C\), hence a quasi-isomorphism by the standard normalized bar
-  resolution \cite{loday-vallette}*{\S 2.2.5, \S 11.1.5}.  The
-  filtrations are bounded below, complete, and Hausdorff in the
-  admissible envelope, so the spectral sequence comparison and
-  Mittag-Leffler exactness lift the windowwise quasi-isomorphism to the
+  finite window and every finite length cap the associated graded is the
+  normalized bar resolution
+  \[
+    \cdots\to A\otimes (s\overline A)^{\otimes 2}\otimes A
+      \to A\otimes s\overline A\otimes A\to A\otimes A\to A .
+  \]
+  The degeneracy inserting the augmentation unit gives a homotopy
+  \(h\) with \(dh+hd=\mathrm{id}-\iota\varepsilon_A\) on the positive
+  augmentation-length summands, so the counit is a quasi-isomorphism on
+  each finite window.  The filtrations are bounded below, complete, and
+  Hausdorff in the admissible envelope; spectral sequence comparison and
+  Mittag--Leffler exactness lift the windowwise quasi-isomorphism to the
   completed Tate object.
 
   In the Lie specialization \(A=\widehat U(\mathfrak g)\), the same
@@ -892,11 +1032,15 @@ through the bar-cobar adjunction itself.
   closed-side PBW form used later, but the Quillen counit above is the
   associative bar-cobar counit for general \(A\).
 
-  Item~(4) is formal from~(1)-(3) on the stated admissible
-  cofibrant-fibrant subcategory.  On the whole model categories,
-  Quillen's adjoint-functor criterion is the assertion that the same
-  unit and counit are weak equivalences for every cofibrant and fibrant
-  object.
+  Item~(4) is Quillen's adjoint-functor criterion applied to the full
+  subcategory on which the two displayed maps are weak equivalences:
+  after cofibrant replacement of \(C\) and fibrant replacement of \(A\),
+  a morphism \(\Omega C\to A\) is a weak equivalence precisely when its
+  adjoint \(C\to\mathrm{Bar}(A)\) is one, because the comparison factors
+  through \(\eta_C\) and \(\varepsilon_A\).  On the whole model
+  categories this same sentence is an additional hypothesis, namely
+  that the unit and counit are weak equivalences for every cofibrant and
+  fibrant object.
 \end{proof}
 
 \subsubsection[Promotion to the associated infinity-categories]{Promotion to the associated $\infty$-categories}
@@ -968,7 +1112,7 @@ gives the cochain-level comparison used in the CE/PV theorem.
 
 \begin{lem}[Closed-side Tate formalism]
 \label{lem:closed-tate-koszul-formalism}
-  Let \(\mathfrak h=\varprojlim_M\mathfrak h_{\leq M}\) be a closed
+  Let \(\mathfrak h=\varprojlim_M\mathfrak h^{\mathrm{win}}_{\leq M}\) be a closed
   Hamiltonian Tate Lie algebra whose finite windows are
   cochain-CE/PV-admissible, and kernel-admissible when a \(P_0\) kernel is
   used, in the sense of
@@ -991,9 +1135,12 @@ gives the cochain-level comparison used in the CE/PV theorem.
   \end{enumerate}
   Then the closed-side formalism has two compatible consequences:
   \[
+    \operatorname{Regr}_u
     C^\bullet_{\mathrm{CE},\mathrm{cont}}(\mathfrak g)
       \xrightarrow{\ \Phi\ }
-    \mathrm{PV}\bigl(\widehat{\mathbf S}_{\mathrm{Tate}}(\mathfrak h)\bigr)
+    \bigl(
+      \mathrm{PV}\bigl(\widehat{\mathbf S}_{\mathrm{Tate}}(\mathfrak h)\bigr),
+      d_\pi\bigr)
   \]
   is the admissible completed CE/PV identity obtained from the
   finite-window family of Lemma~\ref{lem:closed-ce-pv-window-limit}
@@ -1008,6 +1155,8 @@ gives the cochain-level comparison used in the CE/PV theorem.
   is the Tate Lie bar-cobar / CE Koszul duality of
   Corollary~\ref{cor:tate-lie-bar-cobar}.  The two constructions are
   compatible with the same finite-window transition maps.
+  The bar--cobar display uses standard CE degrees; the first display
+  uses the coordinate \(u\)-regrading.
 \end{lem}
 
 \begin{proof}
@@ -1048,9 +1197,11 @@ gives the cochain-level comparison used in the CE/PV theorem.
   \ref{thm:tate-bar-cobar-quillen}.  Assume further that:
   \begin{enumerate}[label=(M\arabic*)]
     \item the strict cochain map
-  $$\Phi\colon C^\bullet_{\mathrm{CE},\mathrm{cont}}(\mathfrak g_{\mathrm{adm}})
-    \longrightarrow \mathrm{PV}\bigl(
-    \widehat S_{\mathrm{Tate}}(\mathfrak h_{\mathrm{adm}})\bigr)$$
+  $$\Phi\colon \operatorname{Regr}_u
+    C^\bullet_{\mathrm{CE},\mathrm{cont}}(\mathfrak g_{\mathrm{adm}})
+    \longrightarrow \bigl(\mathrm{PV}\bigl(
+    \widehat S_{\mathrm{Tate}}(\mathfrak h_{\mathrm{adm}})\bigr),
+    d_\pi\bigr)$$
       is the admissible CE/PV quasi-isomorphism obtained from the
       finite-window family of Lemma~\ref{lem:closed-ce-pv-window-limit}
       after the required variance and exact continuous-dualization data
@@ -1068,11 +1219,13 @@ gives the cochain-level comparison used in the CE/PV theorem.
   model envelope, of module $\infty$-categories over the two identified
   completed dg \(P_0\)-algebras
   $$\widetilde\Phi\colon
-    N_\Delta\bigl(C^\bullet_{\mathrm{CE},\mathrm{cont}}(\mathfrak g_{\mathrm{adm}})
+    N_\Delta\bigl(\operatorname{Regr}_u
+      C^\bullet_{\mathrm{CE},\mathrm{cont}}(\mathfrak g_{\mathrm{adm}})
       \text{-mod},W\bigr)
     \xrightarrow{\sim}
-    N_\Delta\bigl(\mathrm{PV}\bigl(\widehat S_{\mathrm{Tate}}(\mathfrak h_{\mathrm{adm}})
-      \bigr)\text{-mod},W\bigr)$$
+    N_\Delta\bigl(\bigl(\mathrm{PV}\bigl(
+      \widehat S_{\mathrm{Tate}}(\mathfrak h_{\mathrm{adm}})\bigr),
+      d_\pi\bigr)\text{-mod},W\bigr)$$
   in the \(\infty\)-categorical setting of Lurie's \emph{Higher Algebra}
   \S 5.5.  The
   hypotheses (M1)--(M3) presuppose an already constructed admissible
@@ -1086,19 +1239,32 @@ gives the cochain-level comparison used in the CE/PV theorem.
 \begin{proof}
   Assumption (M1) gives a strict admissible filtered quasi-isomorphism of
   completed dg \(P_0\)-algebras.  The strictness is the generator-level
-  identity \(c\mapsto\theta,\ u\mapsto O\), together with
+  identity \(c^\rho\mapsto\partial_\rho\), \(u_f\mapsto O_f\), and
+  \(d_{\mathrm{CE}}u_f\mapsto X_f=d_\pi O_f\), together with
   \(d_\pi\Phi=\Phi d_{\mathrm{CE}}\) and bracket compatibility from the
   finite-window CE/PV calculation.
 
   By (M2), this strict weak equivalence is a weak equivalence in the
   transferred \(P_0\)-algebra model structure.  Replace the two
   \(P_0\)-algebras by cofibrant-fibrant representatives if necessary.
-  Extension and restriction of scalars along a weak equivalence of
-  admissible algebra objects give a Quillen equivalence of module model
-  categories; this is the standard Schwede--Shipley/Lurie mechanism
-  for module categories over weakly equivalent algebra objects
-  \cite{schwede-shipley-monoid} and
-  \cite{lurie-ha}*{Th.~7.1.4.6}.  Applying
+  Let \(A\) and \(B\) denote the two cofibrant-fibrant
+  \(P_0\)-algebra representatives and let
+  \(\Phi:A\to B\) be the weak equivalence of (M1).  Restriction of
+  scalars \(\Phi^\ast:B\text{-mod}\to A\text{-mod}\) has left adjoint
+  \(B\otimes_A^{\mathbb L}(-)\), computed by the ordinary tensor
+  product on cofibrant \(A\)-modules.  For a cofibrant \(A\)-module
+  \(M\), the unit
+  \(M\to\Phi^\ast(B\otimes_A M)\) is a weak equivalence because the
+  bar resolution
+  \(B\otimes A^{\otimes \bullet}\otimes M\) is filtered by tensor length
+  and its associated graded has the augmentation-unit contraction.  For
+  a fibrant \(B\)-module \(N\), the counit
+  \(B\otimes_A\Phi^\ast N\to N\) is obtained from \(\Phi\otimes_A N\)
+  and is a weak equivalence by the pushout-product and monoid axioms in
+  (M2).  This is the Schwede--Shipley/Lurie criterion for weakly
+  equivalent algebra objects
+  \cite{schwede-shipley-monoid}\cite{lurie-ha}*{Th.~7.1.4.6}, with the
+  admissible filtration hypotheses made explicit.  Applying
   Dwyer--Kan localization gives the displayed equivalence of module
   \(\infty\)-categories.
 
@@ -1138,13 +1304,17 @@ gives the cochain-level comparison used in the CE/PV theorem.
   \ref{thm:admissible-envelope-module-reconstruction}, when their
   admissible-envelope hypotheses hold, are independent
   of the convergence of the Tate Casimir element. The cochain
-  complexes $C^\bullet_{\mathrm{CE},\mathrm{cont}}(\mathfrak g)$
-  and $\mathrm{PV}\bigl(\widehat S_{\mathrm{Tate}}(\mathfrak h)
-  \bigr)$ are equivalent in the model category of
-  \ref{lem:transferred-model} after imposing the same conilpotent
-  admissibility hypotheses. The required hypothesis here is
-  conilpotence; Casimir convergence belongs to the analytic kernel
-  problem.
+  complexes $\operatorname{Regr}_u
+  C^\bullet_{\mathrm{CE},\mathrm{cont}}(\mathfrak g)$
+  and $\bigl(\mathrm{PV}\bigl(
+  \widehat S_{\mathrm{Tate}}(\mathfrak h)\bigr),d_\pi\bigr)$ are
+  equivalent in the model category of \ref{lem:transferred-model} only
+  after the finite-window Lie, variance, and exact
+  continuous-dualization hypotheses of
+  Lemma~\ref{lem:closed-ce-pv-window-limit} are supplied.  The
+  bar--cobar comparison requires conilpotence.  Neither algebraic
+  conclusion requires a Casimir kernel; Casimir convergence belongs to
+  the analytic kernel problem and to a bracketed kernel realization.
 \end{prop}
 
 \begin{proof}
@@ -1157,12 +1327,15 @@ gives the cochain-level comparison used in the CE/PV theorem.
   it converges in the chosen coefficient category; in the strict
   product/direct-sum Tate endpoint it is precisely the obstruction
   isolated in Lemma~\ref{lem:tate-casimir-obstruction}.  Such a kernel is
-  required for the Costello \cite{costello-renormalization} heat-kernel
-  propagator construction at the analytic factorization-algebra level
+	  required for the Costello heat-kernel/RG package
+	  \cite{costello-renormalization}*{Thms.~A--C, Lem.~10.2.2, Defn.~10.3.1}
+	  propagator construction at the analytic factorization-algebra level
   where the bracket is not strict.  The algebraic
 	  bar-cobar comparison uses only the conilpotent admissibility
-	  hypotheses: the cochain-level $\Phi$ extends, in the admissible model
-	  envelope, to an $\infty$-categorical equivalence.
+  hypotheses.  The coordinate cochain-level $\Phi$ additionally uses
+  the \(u\)-regrading and the finite-window variance and exact-duality
+  hypotheses; under those data it extends in the admissible model
+  envelope to the displayed module $\infty$-categorical equivalence.
 \end{proof}
 
 \begin{prop}[Strict product/direct-sum kernel obstruction]
@@ -1212,11 +1385,11 @@ gives the cochain-level comparison used in the CE/PV theorem.
   categorical comparison.  The Weiss-cosheaf condition for the
   \emph{unreduced} factorization algebra
   $\mathrm{Obs}^{\mathrm{cl}}_{\mathrm{closed},H}$ on $\R^2\times\C^2$
-  requires the additional descent check below.
+	  is the descent check below.
   The Weiss / descent condition for an unreduced factorization
-	  algebra on a higher-dimensional manifold requires checking
-	  \v{C}ech descent for Weiss covers, an independent
-	  cosheaf-theoretic statement.  Costello--Gwilliam Vol.~I
+	  algebra on a higher-dimensional manifold is the \v{C}ech descent
+	  statement for Weiss covers, an independent cosheaf-theoretic
+	  statement.  Costello--Gwilliam Vol.~I
 	  \S\S 6.1, 6.5, 7.2 provide the factorization, cosheaf, and
 	  basis-extension vocabulary; the present argument uses them as
 	  vocabulary and records the unreduced descent obligation as a residual
@@ -1228,16 +1401,23 @@ gives the cochain-level comparison used in the CE/PV theorem.
   obligation requiring the heat-kernel propagator extension of
   Problem~\ref{prob:formal-factorization-center}.  The two-dimensional
   formal singular product calculation is the separate result of
-  Theorem~\ref{thm:formal-two-dimensional-holomorphic-ope}.
+  Theorem~\ref{thm:formal-two-dimensional-holomorphic-singular-product}.
 \end{prop}
 
 \begin{proof}
-  Lurie \cite{lurie-ha}*{\S 5.5.4}, with the same terminology as
-  Costello-Gwilliam \cite{costello-gwilliam}*{Vol.~I \S 6.4}: a locally constant factorization
-  algebra on $\R$ determines an $E_1$-algebra up to the standard
-  contractible choice; the
-  bar-cobar comparison of \ref{thm:tate-bar-cobar-quillen}
-  realizes this on the admissible subcategory.  On a higher-dimensional manifold, the Weiss
+  Choose an oriented interval \(I\subset\R\).  For a locally constant
+  factorization algebra \(\mathcal F_{\mathrm{cl}}\) on \(\R\), the
+  multiplication on \(\mathcal F_{\mathrm{cl}}(I)\) is the structure map
+  for two disjoint subintervals \(I_1<I_2\subset I\).  Refining the
+  intervals changes the multiplication by the homotopy supplied by local
+  constancy; the poset of such interval configurations is contractible.
+  This is the \(E_1\)-algebra associated to a locally constant
+  factorization algebra in
+  Lurie~\cite{lurie-ha}*{\S 5.5.4} and
+  Costello--Gwilliam~\cite{costello-gwilliam}*{Vol.~I \S 6.4}.  The
+  bar-cobar comparison of \ref{thm:tate-bar-cobar-quillen} realizes this
+  \(E_1\)-algebra on the admissible subcategory.  On a
+  higher-dimensional manifold, the Weiss
   cover $\{U_\alpha\}$ has structure-map descent independent of
   the algebraic bar-cobar; in particular the heat-kernel
   propagator on $\R^2\times\C^2$ enters the analytic check.

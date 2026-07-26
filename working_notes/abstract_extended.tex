@@ -10,8 +10,9 @@ the Costello holomorphic--topological sector
 \cite{costello-twistedM} localises the theory on
 \(X=\R^2_{\mathrm{top}}\times\C^2_{\mathrm{hol}}\), topological on
 \(\R^2\) and holomorphic on \(\C^2\).  At a formal
-holomorphic-symplectic Dirac brane vacuum, the closed-string sector is
-the holomorphic-topological Hamiltonian BF theory whose fields are
+holomorphic-symplectic Dirac brane vacuum, the retained closed-string
+sector is the holomorphic-topological Hamiltonian BF truncation whose
+fields are
 $\mathcal A\in\Omega^\bullet(\R^2)\widehat\otimes
 \Omega^{0,\bullet}(\C^2)\widehat\otimes\mathfrak h$ valued in the
 reduced Hamiltonian Lie algebra
@@ -92,72 +93,85 @@ singular coefficient module.  A curve chiral algebra is obtained from
 this surface factorization algebra after choosing a curve
 $C\hookrightarrow\C^2$, a pushed-forward bracket, the induced BV
 pairing, the image of the brane, and the anomaly normalisation; under
-these data the diagonal principal part restricts to the Cauchy kernel
+these data the diagonal principal part restricts to the one-dimensional
+curve Cauchy kernel
 $K^{(1)}_C(z,w)=dz/(z-w)$.
 
 \medskip\noindent
-The Mixed Holomorphic--Topological Deligne conjecture identifies
-\(\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}\) with the mixed-HT chiral
+The Mixed Holomorphic--Topological Deligne conjecture asks for a
+typed open--closed quasi-isomorphism from
+\(\mathcal A^{\mathrm{cl}}_{\mathrm{bulk}}\) to the mixed-HT chiral
 derived \(E_2\)-centre of the primitive boundary open factorisation
 category \(\mathcal C^{\mathrm{op}}_\partial\) on the
 Costello--Gwilliam brane-link boundary \(\partial X\) of the Dirac
 brane defect \(L=\R_t\times\{b\}\subset X\).  This is the
 two-complex-dimensional (\(d=2\)) extension of the \(d=1\) chiral
 Deligne theorem for chiral algebras on curves in the
-Beilinson--Drinfeld formalism \cite{beilinson-drinfeld-chiral}.  At
-\(N\) Dirac branes the formal-Darboux fibre of this conjecture is the
-trace-sector closed-to-open map
+Beilinson--Drinfeld formalism
+\cite{beilinson-drinfeld-chiral}*{\S 4}.  At \(N\) Dirac branes the
+formal-Darboux fibre of this conjecture contains the finite-\(N\)
+trace-sector generator boundary value
 \[
-  \Phi_N\colon
-  C^\bullet_{\mathrm{CE},\mathrm{cont}}(\mathfrak g)
-  \longrightarrow
+  \Phi_N^{\mathrm{gen}}\in
+  \operatorname{Hom}^{\mathrm{gr}}_\C\!\left(
+  \operatorname{Gen}_{\mathrm{CE}}
+  \bigl(C^\bullet_{\mathrm{CE},\mathrm{cont}}(\mathfrak g)\bigr),
   HH^\bullet\!\bigl(A^{\mathrm{cl}}_{\partial,N},
-                 A^{\mathrm{cl}}_{\partial,N}\bigr),
+                 A^{\mathrm{cl}}_{\partial,N}\bigr)
+  \right),
   \qquad
-  c_f\mapsto\theta_f,\quad u_f\mapsto J(f).
+  \Phi_N^{\mathrm{gen}}(c_f)=\theta_f,\quad
+  \Phi_N^{\mathrm{gen}}(u_f)=J(f).
 \]
-After stable scalar reduction and admissible completion this is the
-CE/PV coordinate isomorphism on the trace algebra.  The full
-derived-centre equivalence and the \(E_2\)-algebra identification
-require Hochschild centrality homotopies, trace relations, QME data,
-and descent.  The Capelli class \(\hbar N[\bar c]\) is the projective
+After stable scalar reduction and admissible completion the resulting
+\(\Phi_{\mathrm{coord}}^{\mathrm{st}}\) is the CE/PV coordinate
+isomorphism on the trace algebra.  The full
+derived-centre quasi-isomorphism and the \(E_2\)-algebra identification
+require the typed ledger: Swiss-cheese action tower, Hochschild-centre
+lift, finite-\(N\) trace-relation control, flat Darboux-torsor
+transport, unreduced cotangent-current realization, descent, QME data,
+anomaly/locality primitives, and cone contraction.  The Capelli class
+\(\hbar_{\mathrm{W}}N[\bar c]\) is the projective
 Lie anomaly of the trace-sector action.
 
 \medskip\noindent
 The constant Hamiltonian line $\C\cdot 1\subset\C[z_1,z_2]$ lies
 in the kernel of the closed Hamiltonian Lie algebra reduction but
 acts on the brane as $c\mapsto c\cdot I$, producing the finite-$N$
-central term.  With $\Phi_\hbar\colon\C[z_1,z_2]\to M_N(\C)$ the
+central term.  With $\Phi_{\hbar_{\mathrm{W}}}\colon\C[z_1,z_2]\to M_N(\C)$ the
 Weyl-symmetric quantisation map and $\star$ the Moyal star-product,
 this term has three equivalent expressions:
 \[
   \omega(f,g)=[\{f,g\}]_0,\qquad
   \{\operatorname{Tr}\phi_1,\operatorname{Tr}\phi_2\}=N,\qquad
-  [\Phi_\hbar(z_1),\Phi_\hbar(z_2)]_\star=\hbar N\cdot I,
+  [\Phi_{\hbar_{\mathrm{W}}}(z_1),\Phi_{\hbar_{\mathrm{W}}}(z_2)]_\star
+    =\hbar_{\mathrm{W}}N\cdot I,
 \]
 the Lie 2-cocycle on $\bar A=\C[z_1,z_2]/\C\cdot 1$, the Poisson
 bracket of trace coordinates, and the Moyal commutator in
 $M_N(\C)$.  They realise one class
-$\hbar N[\bar c]\in H^2_{\mathrm{Lie}}(\bar A,\C)[[\hbar]]$, the
+$\hbar_{\mathrm{W}}N[\bar c]\in H^2_{\mathrm{Lie}}(\bar A,\C)[[\hbar_{\mathrm{W}}]]$, the
 Capelli scalar of the trace centre-of-mass.  If a determinant line
 with connection exists and its Atiyah class pulls back to
 $[\bar c]$, its curvature evaluates at the trace generator as
 \[
-  [\Omega_{\mathrm{central}}|_{J(f)}]=\hbar N[\bar c],
+  [\Omega_{\mathrm{central}}|_{J(f)}]=\hbar_{\mathrm{W}}N[\bar c],
 \]
-in the sense of \cite{beilinson-drinfeld-chiral}*{\S2.5}.
+in the sense of \cite{beilinson-drinfeld-chiral}*{\S 2.5}.
 
 \medskip\noindent
-The local model is a two-complex-dimensional residue-pairing analogue
-of the Heisenberg vertex algebra: the Kac--Moody central-pairing
-module $\Omega_K$ of a curve $K$ is replaced by the Matlis
+The local model is two-complex-dimensional and is not itself a vertex
+algebra.  Under a separate curve-restriction datum
+\(\mathfrak R_L\) with functor \(\mathsf R_{L,\mathcal B_\perp}\), it has a
+residue-pairing comparison with the Heisenberg vertex algebra: the
+Kac--Moody central-pairing module $\Omega_K$ of a curve $K$ is replaced by the Matlis
 principal-part module
 $\mathcal P=\mathfrak h^\vee_{\mathrm{cont}}=
 H^2_{(z_1,z_2)}(\C[[z_1,z_2]])\,dz_1dz_2$, regular functions on $K$
 by $\mathfrak h=\C[[z_1,z_2]]/\C\cdot 1$, and the curve residue
 $\Res_p$ by the two-variable Grothendieck residue
 $\langle f,\omega\rangle=\Res_0 f\omega$, with central cocycle the
-Capelli scalar $\hbar N[\bar c]$.  It is a formal local
+Capelli scalar $\hbar_{\mathrm{W}}N[\bar c]$.  It is a formal local
 Hamiltonian-BF sector.  Comparison with Costello's twisted M-theory
 \cite{costello-twistedM} requires an explicit reduction and anomaly
 matching.  On the cyclic framed stable branch
@@ -172,10 +186,12 @@ ADHM stability, and the projective central extension are included.
 \medskip\noindent
 The formal-Darboux stalk theorem supplies the trace-sector fibre for a
 global open--closed comparison datum on the Costello--Gwilliam
-brane-link boundary \(\partial X\).  The global equivalence requires
-all-arity chiral \(E_2\) operations, descent data, QME
-null-homotopies, anomaly and locality null-homotopies, and an acyclic
-comparison cone.  The native obstruction has five displayed components,
+brane-link boundary \(\partial X\).  The global comparison is the typed
+open--closed Deligne problem: Swiss-cheese action tower,
+Hochschild-centre lift, finite-\(N\) trace-relation control, flat
+Darboux-torsor transport, unreduced cotangent-current realization,
+descent, QME data, anomaly/locality primitives, and cone contraction.
+Its global obstruction shadow has five displayed components,
 \[
   \operatorname{Ob}^{\mathrm{global},5}=
   \bigl(
