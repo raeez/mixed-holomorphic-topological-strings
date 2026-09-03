@@ -218,8 +218,9 @@ Holomorphic--Topological Deligne problem}
   sector of \(N\) M2-branes in the \(\Omega\)-background, whose
   quantization is unique up to reparametrization.  The classical layer
   of the trace dictionary --- the bracket, for the zero-constant section
-  \(s\colon\bar A\to\C[z_1,z_2]\) and
-  \(J_N^s(f)=[\operatorname{Tr}s(f)(\phi_1,\phi_2)]\),
+  \(s\colon\bar A\to\C[z_1,z_2]\),
+  \(\widetilde J_N^s(f)=\operatorname{Tr}s(f)(\phi_1,\phi_2)\), and
+  \(J_N^s(f)=[\widetilde J_N^s(f)]\),
   \(\{J_N^s(f),J_N^s(g)\}
     =J_N^s(\overline{\{s(f),s(g)\}})+N\omega(f,g)\mathbf1\)
   (Theorem~\ref{thm:bulk-boundary},
@@ -667,11 +668,20 @@ or marked points; framing on \(S^3\) is stated when invoked, with
 deviation flagged.
 
 \paragraph{Closed--open map notation.}
-Four symbols are reserved.  The finite-\(N\) dashed generator boundary
+For the zero-constant section \(s\), write
+\[
+  \widetilde J_N^s(f)
+    :=\operatorname{Tr}s(f)(\phi_1,\phi_2)
+      \in Z^0(A^{\mathrm{cl}}_{\partial,N}),
+  \qquad
+  J_N^s(f):=[\widetilde J_N^s(f)]
+      \in H^0(A^{\mathrm{cl}}_{\partial,N}).
+\]
+Four map symbols are reserved.  The finite-\(N\) dashed generator boundary
 value is \(\Phi_N^{\mathrm{gen}}\); it denotes the pair consisting of
 the Hamiltonian first Taylor coefficient
 \(f\mapsto X_{f,N}\) and the coordinate-dual trace value
-\(u_f\mapsto M_{J_N^s(f)}\).  The symbol
+\(u_f\mapsto M_{\widetilde J_N^s(f)}\).  The symbol
 \(\Phi_N^{\mathrm{Hoch}}\) denotes an admissible continuous twisting
 cochain satisfying its centrality Maurer--Cartan equation.  The symbol
 \(\Phi_{\mathrm{coord}}^{\mathrm{st}}\) is
@@ -1110,7 +1120,7 @@ boundary pair
   \[
     \Phi_N^{\mathrm{gen}}
     =\bigl(f\mapsto X_{f,N},\;
-      u_f\mapsto M_{J_N^s(f)}\bigr)
+      u_f\mapsto M_{\widetilde J_N^s(f)}\bigr)
   \]
 is Theorem~\ref{thm:main-local}; the Capelli scalar is the projective
 Lie anomaly class \(\hbar_{\mathrm{W}}N[\bar c]\) of
@@ -1255,23 +1265,33 @@ stabilizer classes of
 
 Third, the fixed-rank boundary datum
 \[
-  \tau_{N,1}(f)=X_{f,N},\qquad
-  u_f\longmapsto M_{J_N^s(f)}
+  \tau_{N,1}^{\mathfrak h}(f)=X_{f,N},\qquad
+  u_f\longmapsto M_{\widetilde J_N^s(f)}
 \]
-extends to a Hochschild-centre twisting cochain when the centrality
-defects admit chosen primitives:
+fixes only the Hamiltonian and coordinate-dual trace faces.  Choose a
+full arity-one coefficient
+\(\widetilde\tau_{N,1}\colon\mathfrak g\to
+C^\bullet_{\mathrm{Hoch},\mathrm{adm}}(A,A)[1]\) extending
+\(\tau_{N,1}^{\mathfrak h}\), with its \(P[1]\)-component supplied by
+the cotangent-current datum.  This full coefficient extends through
+centrality filtration \(3\) when the primary defects and their
+Jacobiator admit chosen primitives:
 \[
   d_{\mathrm{cent}}H_{x,y}=-\delta^{\mathrm{Lie}}_{x,y},\qquad
+  d_{\mathrm{cent}}H_{f|g}=-\delta^{\mathrm{act}}_{f|g},\qquad
   d_{\mathrm{cent}}H^{\mathrm{prod}}_{x,a}
     =-\delta^{\mathrm{prod}}_{x,a},\qquad
-  d_{\mathrm{cent}}H^{P_0}_{x,a}=-\delta^{P_0}_{x,a}.
+  d_{\mathrm{cent}}H^{P_0}_{x,a}=-\delta^{P_0}_{x,a},\qquad
+  d_{\mathrm{cent}}H^3=-\delta^3.
 \]
 The obstruction is the Maurer--Cartan curvature in the completed
 Hochschild-centrality convolution complex of
 Definition~\ref{defn:low-degree-hochschild-centrality-defects} and
 Theorem~\ref{thm:completion-centrality-homotopies}.  The boundary pair
-is denoted \(\Phi_N^{\mathrm{gen}}\); the twisting cochain with these
-primitives is \(\Phi_N^{\mathrm{Hoch}}\).
+is denoted \(\Phi_N^{\mathrm{gen}}\).  It determines
+\(\Phi_N^{\mathrm{Hoch}}\) only after all higher Taylor coefficients
+have been supplied compatibly with the finite-window projections,
+Roos transitions, and Darboux/Weiss descent maps.
 
 \begin{prop}[Finite-rank residue of the stable trace projection]
 \label{prop:finite-N-leftover-residue}
@@ -1347,20 +1367,25 @@ primitives is \(\Phi_N^{\mathrm{Hoch}}\).
   \(\mathfrak C^{\mathrm{cent}}_N\) be the completed Hochschild
   centrality convolution complex of
   Definition~\ref{defn:low-degree-hochschild-centrality-defects}.  The
-  generator assignment \(\Phi_N^{\mathrm{gen}}\) determines a curvature
-  class
+  partial assignment \(\Phi_N^{\mathrm{gen}}\) fixes only the
+  Hamiltonian and coordinate-dual trace faces.  A supplied full
+  arity-one extension \(\widetilde\tau_{N,1}\), including its
+  \(P[1]\)-component, determines the curvature class
   \[
-    \kappa_N^{\mathrm{cent}}(\Phi_N^{\mathrm{gen}})
+    \kappa_N^{\mathrm{cent}}(\widetilde\tau_{N,1})
     \in H^2(\mathfrak C^{\mathrm{cent}}_N).
   \]
-  Its three low-degree components are represented by
+  Its five centrality faces through filtration \(3\) are represented by
   \(\delta^{\mathrm{Lie}}_{x,y}\),
+  \(\delta^{\mathrm{act}}_{f|g}\),
   \(\delta^{\mathrm{prod}}_{x,a}\), and
-  \(\delta^{P_0}_{x,a}\).  The low-degree centrality datum consists of
-  primitives \(H_{x,y}\), \(H^{\mathrm{prod}}_{x,a}\), and
-  \(H^{P_0}_{x,a}\) whose centrality differentials kill these
-  representatives, together with the
-  completion compatibility required in
+  \(\delta^{P_0}_{x,a}\), together with the secondary curvature
+  \(\delta^3\).  The corresponding datum consists of
+  \(H^{\mathrm{Lie}},H^{\mathrm{act}},H^{\mathrm{prod}},H^{P_0}\), and
+  \(H^3\), whose centrality differentials kill these representatives.
+  These primitives must be continuous and compatible with the
+  finite-window projections, Roos transitions, and Darboux/Weiss
+  descent maps, in addition to the completion conditions of
   Theorem~\ref{thm:completion-centrality-homotopies}.
 \end{prop}
 
@@ -2648,14 +2673,15 @@ equation.
   \]
   The pair \((\widetilde\theta_f,h_f)\) is determined only up to a
   \(Q\)-closed vertical derivation.  Its action on \(H^0\) trace
-  characters is independent of that choice and is
+  characters is independent of that choice.  For the zero-constant
+  section \(s\colon\mathfrak h\to A\), it is
   \[
-    \theta_f^0\bigl(J_g\bigr)
-     =J_{\{f,g\}_{\bar A}}
+    \theta_f^0\bigl(J_N^s(g)\bigr)
+     =J_N^s\!\left(\overline{\{s(f),s(g)\}}\right)
+       +N\omega(f,g)\mathbf1
     \qquad(f,g\in\mathfrak h),
   \]
-  with $\{-,-\}_{\bar A}$ the Hamiltonian Poisson bracket on
-  $\mathfrak h$.
+  where \(\omega(f,g)=[\{s(f),s(g)\}]_0\).
 \end{lem}
 
 \begin{proof}
@@ -2663,9 +2689,14 @@ equation.
   \(\delta_f(z_1)=-\partial_{z_2}f\),
   \(\delta_f(z_2)=\partial_{z_1}f\) of the commutative algebra \(A\)
   induces \(\theta_f^0\) by functoriality of the representation
-  functor of \(A\).  Since \(\delta_f(g)=\{f,g\}_{\bar A}\), cyclicity
-  of trace gives
-  \(\theta_f^0(J_g)=J_{\{f,g\}_{\bar A}}\).
+  functor of \(A\).  The decomposition
+  \[
+    \{s(f),s(g)\}
+      =s\!\left(\overline{\{s(f),s(g)\}}\right)
+       +\omega(f,g)\mathbf1
+  \]
+  and cyclicity of trace give the displayed action, because
+  \(\operatorname{Tr}(I_N)=N\).
 
   The derived coordinate algebra is the Koszul resolution of the ideal
   generated by \(\mu=[\phi_1,\phi_2]\).  A derivation of the quotient
@@ -2679,19 +2710,109 @@ equation.
   \(H^0\).
 \end{proof}
 
+\begin{lem}[A nonzero Koszul Lie defect for ordered Hamiltonian lifts]
+\label{lem:ordered-hamiltonian-lift-defect}
+  Let
+  \[
+    A_\psi=\C\langle x,y,\psi\rangle,
+    \qquad |x|=|y|=0,\quad |\psi|=-1,
+    \qquad Q\psi=\mu:=xy-yx .
+  \]
+  In the commutative Poisson algebra, take
+  \(f=z_1^2z_2\), \(g=z_1z_2^2\), and
+  \(h=\{f,g\}=3z_1^2z_2^2\).  Their zero-constant ordered evaluations
+  are \(x^2y\), \(xy^2\), and \(3x^2y^2\), respectively.  The following
+  choices extend the ordered
+  Hamiltonian values on \(x,y\) to \(Q\)-commuting derivations of
+  \(A_\psi\):
+  \[
+    \begin{array}{c|ccc}
+      &x&y&\psi\\ \hline
+      X_f&-x^2&2xy&[x,\psi]\\
+      X_g&-2xy&y^2&[y,\psi]\\
+      X_h&-6x^2y&6xy^2&3[xy+yx,\psi].
+    \end{array}
+  \]
+  Their Gerstenhaber commutator has the nonzero defect
+  \[
+    \delta^{\mathrm{Lie}}_{f,g}
+      :=[X_f,X_g]_G-X_h,
+    \qquad
+    \begin{aligned}
+      \delta^{\mathrm{Lie}}_{f,g}(x)&=2x\mu,\\
+      \delta^{\mathrm{Lie}}_{f,g}(y)&=-2\mu y,\\
+      \delta^{\mathrm{Lie}}_{f,g}(\psi)&=2[\psi,yx].
+    \end{aligned}
+  \]
+  It is a Koszul boundary.  The degree-\(-1\) derivation
+  \[
+    K_{f,g}(x)=2x\psi,
+    \qquad K_{f,g}(y)=-2\psi y,
+    \qquad K_{f,g}(\psi)=0
+  \]
+  satisfies
+  \[
+    [Q,K_{f,g}]=QK_{f,g}+K_{f,g}Q
+      =\delta^{\mathrm{Lie}}_{f,g}.
+  \]
+  Hence the convention
+  \(d_{\mathrm{cent}}H^{\mathrm{Lie}}_{f,g}
+    =-\delta^{\mathrm{Lie}}_{f,g}\)
+  is realized in this example by \(H^{\mathrm{Lie}}_{f,g}=-K_{f,g}\).
+  At rank \(2\), the specialization
+  \(x=E_{12}\), \(y=E_{21}\) gives
+  \(\delta^{\mathrm{Lie}}_{f,g}(x)=-2E_{12}\) and
+  \(\delta^{\mathrm{Lie}}_{f,g}(y)=2E_{21}\), so the cochain defect is
+  nonzero after matrix evaluation.
+\end{lem}
+
+\begin{proof}
+  Direct substitution gives \([Q,X_f]=[Q,X_g]=[Q,X_h]=0\).  On the
+  even generators,
+  \[
+    \begin{array}{c|cc}
+      &[X_f,X_g]_G&X_h\\ \hline
+      x&-4x^2y-2xyx&-6x^2y\\
+      y&4xy^2+2yxy&6xy^2,
+    \end{array}
+  \]
+  which gives the first two defect values.  The chosen odd components
+  give
+  \(\delta^{\mathrm{Lie}}_{f,g}(\psi)=2(\psi yx-yx\psi)\).
+  Applying the graded derivation rule to \(K_{f,g}\) gives
+  \[
+    [Q,K_{f,g}](x)=2x\mu,
+    \quad [Q,K_{f,g}](y)=-2\mu y,
+    \quad [Q,K_{f,g}](\psi)=K_{f,g}(\mu)=2[\psi,yx].
+  \]
+  These are equalities in the free dg algebra, hence remain valid after
+  matrix evaluation.  The displayed \(2\times2\) values follow from
+  \(E_{12}E_{21}-E_{21}E_{12}=E_{11}-E_{22}\).  Every displayed
+  derivation is equivariant for simultaneous conjugation.  Extending
+  \(K_{f,g}\) by zero on the Chevalley--Eilenberg ghosts therefore gives
+  \[
+    [d_{\mathrm{CE}}+Q,K_{f,g}]
+      =\delta^{\mathrm{Lie}}_{f,g}
+  \]
+  on the finite-rank boundary complex.
+\end{proof}
+
 \begin{thm}[Trace-sector generator boundary value and CE/PV reduction]\label{thm:trace-sector-generator-boundary-value}
   Let \(s\colon\bar A\to\C[z_1,z_2]\) be the zero-constant section.
   At fixed rank \(N\), the trace-sector boundary datum is
   \[
-    J_N^s(f)=
-      \bigl[\operatorname{Tr}\,s(f)(\phi_1,\phi_2)\bigr],
+    \widetilde J_N^s(f)
+      =\operatorname{Tr}\,s(f)(\phi_1,\phi_2),
+    \qquad
+    J_N^s(f)=\bigl[\widetilde J_N^s(f)\bigr],
     \qquad
     X_{f,N}\in Z^1C^\bullet_{\mathrm{Hoch}}
       (A^{\mathrm{cl}}_{\partial,N},A^{\mathrm{cl}}_{\partial,N}),
   \]
   where \(X_{f,N}\) is a chosen Koszul lift of the Hamiltonian vector
   field.  Denote this pair, together with
-  \(u_f\mapsto M_{J_N^s(f)}\), by \(\Phi_N^{\mathrm{gen}}\).  Its
+  \(u_f\mapsto M_{\widetilde J_N^s(f)}\), by
+  \(\Phi_N^{\mathrm{gen}}\).  Its
   Hamiltonian part is the first Taylor coefficient
   \[
     \tau_{N,1}|_{\mathfrak h}\colon\mathfrak h\longrightarrow
@@ -2699,15 +2820,39 @@ equation.
       (A^{\mathrm{cl}}_{\partial,N},A^{\mathrm{cl}}_{\partial,N})[1],
     \qquad f\longmapsto X_{f,N}.
   \]
-  The fixed-rank identities are
+  The fixed-rank trace identity and Lie-defect equation are
   \[
-    X_{f,N}(J_N^s(g))
-    =J_N^s\!\left(\overline{\{s(f),s(g)\}}\right)
-      +N\omega(f,g)\mathbf1,
+    \begin{aligned}
+      X_{f,N}(J_N^s(g))
+        &=J_N^s\!\left(\overline{\{s(f),s(g)\}}\right)
+          +N\omega(f,g)\mathbf1,\\
+      \delta^{\mathrm{Lie}}_{f,g}
+        &:=[X_{f,N},X_{g,N}]_G
+          -X_{\overline{\{s(f),s(g)\}},N},\\
+      [d_{\mathrm{CE}}+Q,\delta^{\mathrm{Lie}}_{f,g}]&=0.
+    \end{aligned}
+  \]
+  The induced Hamiltonian derivations of the underived commuting
+  quotient are strictly Lie.  The chosen first Taylor coefficient
+  satisfies the arity-two \(L_\infty\)-morphism equation precisely when
+  there is a continuous skew assignment
+  \(H^{\mathrm{Lie}}_{f,g}\) of degree \(-1\) in the shifted target
+  \(C^\bullet_{\mathrm{Hoch}}[1]\), equivalently total Hochschild degree
+  \(0\) before the shift, compatible with the finite-window and
+  admissible filtrations, such that
+  \[
+    d_{\mathrm{cent}}H^{\mathrm{Lie}}_{f,g}
+      =-\delta^{\mathrm{Lie}}_{f,g},
     \qquad
     [X_{f,N},X_{g,N}]_G
-    =X_{\overline{\{s(f),s(g)\}},N}.
+      =X_{\overline{\{s(f),s(g)\}},N}
+       -d_{\mathrm{cent}}H^{\mathrm{Lie}}_{f,g}.
   \]
+  Lemma~\ref{lem:ordered-hamiltonian-lift-defect} shows that the
+  differential term need not vanish.  The equality of Hochschild
+  cohomology classes follows only when this primitive exists; the full
+  centre action additionally requires its \(H^3\) Jacobiator primitive
+  and all higher coherences.
   Deligne's \(E_1\)-Hochschild theorem identifies the target of the
   centre-lift problem as
   \[
@@ -2770,10 +2915,19 @@ equation.
   Lemma~\ref{lem:koszul-adjacent-transpositions} identifies all
   ordinary-word lifts of \(s(f)\) in cohomology and therefore defines
   \(J_N^s(f)\).  Lemma~\ref{lem:hamiltonian-vector-field-on-Rep}
-  supplies the Koszul cocycle \(X_{f,N}\), and the matrix Poisson
-  calculation gives the two fixed-rank identities displayed in the
-  theorem.  These constitute the arity-one Hamiltonian coefficient and
-  the coordinate-dual trace boundary value.
+  supplies the Koszul cocycle \(X_{f,N}\).  The matrix Poisson
+  calculation gives the trace identity in \(H^0\).  Since each chosen
+  lift is equivariant and commutes with \(Q\), the graded Jacobi
+  identity gives
+  \([d_{\mathrm{CE}}+Q,\delta^{\mathrm{Lie}}_{f,g}]=0\).  The preceding
+  lemma proves that
+  this cocycle is not generally zero and exhibits its primitive for a
+  decisive pair of Hamiltonians.  In general the displayed
+  \(H^{\mathrm{Lie}}\)-equation is exactly the arity-two
+  Maurer--Cartan equation for extending the arity-one Hamiltonian
+  coefficient.  The arity-one coefficient and the coordinate-dual trace
+  value therefore define only \(\Phi_N^{\mathrm{gen}}\) until the
+  primitive hierarchy is supplied.
 
   Lemma~\ref{lem:finite-cotangent-ce-pv-calculation} gives, in a finite
   basis,
@@ -3550,7 +3704,10 @@ field \(\partial_\rho\), while
 zero-constant section \(s\colon\bar A\to\C[z_1,z_2]\), the fixed-rank
 and stable trace coordinates are
 \begin{equation}\label{eq:setup-Jf-flagship}
-  J_N^s(f)=\bigl[\operatorname{Tr}\,s(f)(\phi_1,\phi_2)\bigr],
+  \widetilde J_N^s(f)
+    =\operatorname{Tr}\,s(f)(\phi_1,\phi_2),
+  \qquad
+  J_N^s(f)=\bigl[\widetilde J_N^s(f)\bigr],
   \qquad
   J^{\mathrm{st}}(f)=O_f.
 \end{equation}
@@ -7952,8 +8109,10 @@ transpositions makes it well defined on the derived stack
 Let \(s\colon\bar A\to\C[z_1,z_2]\) be the zero-constant section.  At
 fixed rank \(N\), the Dirac brane chart supplies
 \[
-  J_N^s(f)=
-  \bigl[\operatorname{Tr}\,s(f)(\phi_1,\phi_2)\bigr]
+  \widetilde J_N^s(f)
+    =\operatorname{Tr}\,s(f)(\phi_1,\phi_2),
+  \qquad
+  J_N^s(f)=\bigl[\widetilde J_N^s(f)\bigr]
   \qquad(f\in\bar A).
 \]
 The adjacent-transposition Koszul homotopy makes this class independent
@@ -8159,9 +8318,9 @@ observable, and its Chevalley--Eilenberg differential produces the
 Hamiltonian vector field.
 
 \paragraph{Word ordering is BRST-exact, the bracket records the symbol.}
-At finite \(N\) the polynomial trace map
-\(J_N^s(f)=\operatorname{Tr}\,s(f)(\phi_1,\phi_2)\), \(f\in\bar A\),
-requires a word ordering of the noncommuting
+At finite \(N\) the polynomial trace representative
+\(\widetilde J_N^s(f)=\operatorname{Tr}\,s(f)(\phi_1,\phi_2)\),
+\(f\in\bar A\), requires a word ordering of the noncommuting
 matrices in \(f(\phi_1,\phi_2)\).  The choice is irrelevant in
 \(H^0(\mathcal R_N^{GL_N},Q)\): Lemma~\ref{lem:koszul-adjacent-transpositions}
 gives the degree-\(-1\) chain \(H_{u,v}=\operatorname{Tr}(\psi vu)\)
@@ -8172,7 +8331,7 @@ with
   \operatorname{Tr}(u\phi_1\phi_2v)
   -\operatorname{Tr}(u\phi_2\phi_1v),
 \]
-so \(J_N^s(f)\) depends only on the symbol \(f\).
+so \(J_N^s(f)=[\widetilde J_N^s(f)]\) depends only on the symbol \(f\).
 The cohomology target here is the CE-length-zero invariant Koszul
 sector of Lemma~\ref{lem:reductive-invariants-koszul-exactness}.
 The matrix Poisson bracket induced by
@@ -9902,7 +10061,7 @@ effective scalar reduction and stable trace passage, \(O_f\) is
 \(\Phi_{\mathrm{coord}}^{\mathrm{st}}\).  At fixed finite rank the
 boundary pair is
 \(\Phi_N^{\mathrm{gen}}=(f\mapsto X_{f,N},
-u_f\mapsto M_{J_N^s(f)})\); the notation
+u_f\mapsto M_{\widetilde J_N^s(f)})\); the notation
 \(\Phi_N^{\mathrm{Hoch}}\) denotes a supplied Hochschild-centre
 twisting cochain with its centrality primitives.  The chiral Koszul
 comparison is separate from the local scalar-reduced coordinate theorem
@@ -10882,28 +11041,52 @@ extension of Theorem~\ref{thm:wt-canonical-envelope}.
   \(N\), let \(s\colon\bar A\to\C[z_1,z_2]\) be the zero-constant
   section.  The derived commuting chart supplies the trace classes
   \begin{equation}\label{eq:finite-N-generator-assignment}
-    J_N^s(f)=
-    \bigl[\operatorname{Tr}\,s(f)(\phi_1,\phi_2)\bigr]
-    \in H^0(A^{\mathrm{cl}}_{\partial,N}),
+    \widetilde J_N^s(f)
+      =\operatorname{Tr}\,s(f)(\phi_1,\phi_2)
+      \in Z^0(A^{\mathrm{cl}}_{\partial,N}),
+    \qquad
+    J_N^s(f)=\bigl[\widetilde J_N^s(f)\bigr]
+      \in H^0(A^{\mathrm{cl}}_{\partial,N}),
     \qquad f\in\bar A,
   \end{equation}
   and a chosen Koszul homotopy supplies Hamiltonian Hochschild cocycles
-  \(X_{f,N}\in Z^1C^\bullet_{\mathrm{Hoch}}
-  (A^{\mathrm{cl}}_{\partial,N},A^{\mathrm{cl}}_{\partial,N})\) with
+  \[
+    X_{f,N}\in Z^1C^\bullet_{\mathrm{Hoch}}\!\left(
+      A^{\mathrm{cl}}_{\partial,N},
+      A^{\mathrm{cl}}_{\partial,N}\right)
+  \]
+  with
   \begin{equation}\label{eq:schouten-explicit}
     X_{f,N}(\phi_1)=-\partial_{z_2}s(f)(\phi_1,\phi_2),\qquad
     X_{f,N}(\phi_2)=\partial_{z_1}s(f)(\phi_1,\phi_2),
     \qquad [Q,X_{f,N}]=0.
   \end{equation}
-  Their fixed-rank action retains the scalar contact:
+  Their fixed-rank action on trace cohomology retains the scalar contact,
+  while their cochain commutator has a
+  \((d_{\mathrm{CE}}+Q)\)-closed Lie defect:
   \begin{equation}\label{eq:fixed-rank-trace-action}
-    X_{f,N}\bigl(J_N^s(g)\bigr)
-    =J_N^s\!\left(\overline{\{s(f),s(g)\}}\right)
-      +N\omega(f,g)\mathbf1,
+    \begin{gathered}
+      X_{f,N}\bigl(J_N^s(g)\bigr)
+      =J_N^s\!\left(\overline{\{s(f),s(g)\}}\right)
+        +N\omega(f,g)\mathbf1,\\
+      \delta^{\mathrm{Lie}}_{f,g}
+        :=[X_{f,N},X_{g,N}]_G
+          -X_{\overline{\{s(f),s(g)\}},N},
+      \qquad
+      [d_{\mathrm{CE}}+Q,\delta^{\mathrm{Lie}}_{f,g}]=0.
+    \end{gathered}
+  \end{equation}
+  Under tier \(\mathrm{(H)}\), its arity-two component satisfies
+  \begin{equation}\label{eq:fixed-rank-lie-homotopy}
+    d_{\mathrm{cent}}H^{\mathrm{Lie}}_{f,g}
+      =-\delta^{\mathrm{Lie}}_{f,g},
     \qquad
     [X_{f,N},X_{g,N}]_G
-    =X_{\overline{\{s(f),s(g)\}},N}.
+      =X_{\overline{\{s(f),s(g)\}},N}
+       -d_{\mathrm{cent}}H^{\mathrm{Lie}}_{f,g}.
   \end{equation}
+  Without this primitive, only the induced Hamiltonian action on the
+  underived commuting quotient is strictly Lie.
   The Hamiltonian component of a centre-lift twisting cochain has first
   Taylor coefficient
   \[
@@ -10913,7 +11096,8 @@ extension of Theorem~\ref{thm:wt-canonical-envelope}.
     \qquad f\longmapsto X_{f,N},
   \]
   while the coordinate dual of the shifted cotangent summand has the
-  boundary value \(u_f\mapsto M_{J_N^s(f)}\).  The trace-identity ideal,
+  boundary value \(u_f\mapsto M_{\widetilde J_N^s(f)}\).  The
+  trace-identity ideal,
   quotient-stack stabilizer cohomology, and the chosen Koszul homotopies
   are the remaining fixed-rank data.  The projective enhancement uses
   \(K\mapsto N\mathbf1\); its raw Weyl commutator supplies the factor
@@ -11081,7 +11265,9 @@ extension of Theorem~\ref{thm:wt-canonical-envelope}.
   \eqref{eq:schouten-explicit} preserves the moment-map ideal and its
   chosen Koszul homotopy extends the action to \(\psi\) with
   \([Q,X_{f,N}]=0\).  It therefore defines a Hochschild
-  \(1\)-cochain, and multiplication by \(J_N^s(f)\) defines a Hochschild
+  \(1\)-cochain, and
+  \(\widetilde J_N^s(f)\in Z^0(A^{\mathrm{cl}}_{\partial,N})\)
+  defines a Hochschild
   \(0\)-cochain.  The equivariance homotopies named in the theorem are
   part of the admissible Hochschild-centre lift.  The
   \(\Omega\)-localization homotopy of
@@ -11125,7 +11311,7 @@ extension of Theorem~\ref{thm:wt-canonical-envelope}.
   \(A_{\partial,H}^{\mathrm{st}}\cong
   \widehat{\mathbf S}_{\mathrm{Tate}}(\mathfrak h)\).  At finite \(N\)
   the same formula gives only the Hochschild generator values
-  \(X_{f,N}\) and \(M_{J_N^s(f)}\); a Hochschild cochain map is the
+  \(X_{f,N}\) and \(M_{\widetilde J_N^s(f)}\); a Hochschild cochain map is the
   centre-lift Maurer--Cartan datum.  The finite-\(N\) target consists of
   the stable symmetric-coordinate image together with the
   Procesi--Razmyslov relations and the stack BRST classes.
@@ -11137,17 +11323,24 @@ extension of Theorem~\ref{thm:wt-canonical-envelope}.
   tiers \(\mathrm{(C1)}\)--\(\mathrm{(C4)}\); the centre tier
   \(\mathrm{(H)}\) and quantum tier \(\mathrm{(Q)}\) carry their
   respective Maurer--Cartan data.  Under the admissible
-  Hochschild-centre lift, the induced map \(\Phi_N^{\mathrm{Hoch}}\) respects the
-  cup product and the shifted Gerstenhaber bracket of degree \(0\) on
-  \(C^\bullet_{\mathrm{Hoch}}[1]\); in unshifted notation the generator
-  identities are
+  Hochschild-centre lift, the total \(L_\infty\)-map
+  \(\Phi_N^{\mathrm{Hoch}}\) respects the cup product and the shifted
+  Gerstenhaber bracket through its higher Taylor coefficients.  Its
+  arity-two relation in unshifted notation is
   \[
-    [X_{f,N},X_{g,N}]_G=X_{\overline{\{s(f),s(g)\}},N},
+    [X_{f,N},X_{g,N}]_G
+      =X_{\overline{\{s(f),s(g)\}},N}
+       -d_{\mathrm{cent}}H^{\mathrm{Lie}}_{f,g},
     \qquad
     X_{f,N}(J_N^s(g))
       =J_N^s\!\left(\overline{\{s(f),s(g)\}}\right)
        +N\omega(f,g)\mathbf1 .
   \]
+  Thus bracket compatibility belongs to the complete
+  Maurer--Cartan datum; it does not make the first Taylor coefficient a
+  strict Lie morphism.  The next relation is the
+  \(d_{\mathrm{cent}}H^3=-\delta^3\) Jacobiator equation of
+  Definition~\ref{defn:low-degree-hochschild-centrality-defects}.
   For a Weyl realization \(\Phi_{\hbar_{\mathrm W}}\), define the
   projective defect by
   \[
@@ -11284,21 +11477,27 @@ extension of Theorem~\ref{thm:wt-canonical-envelope}.
   operation slots and restricts to the operation list
   \(\mathcal O^{\mathrm{cent}}_{\partial,N}\).
 
-  The finite-rank boundary datum begins with the first Taylor coefficient
+  The finite-rank boundary datum prescribes the Hamiltonian face
   \[
-    \tau_{N,1}\colon\mathfrak g\longrightarrow
+    \tau_{N,1}^{\mathfrak h}\colon\mathfrak h\longrightarrow
     C^\bullet_{\mathrm{Hoch},\mathrm{adm}}
       (A^{\mathrm{cl}}_{\partial,N},A^{\mathrm{cl}}_{\partial,N})[1],
-    \qquad
-    \tau_{N,1}(f)=X_{f,N}\quad(f\in\mathfrak h),
+    \qquad \tau_{N,1}^{\mathfrak h}(f)=X_{f,N},
   \]
   together with the coordinate-dual boundary value
-  \(u_f\mapsto M_{J_N^s(f)}\).  Let \(\tau_N^{\mathrm{gen}}\) denote
-  the resulting arity-one element of the convolution algebra.  An
-  admissible Hochschild-centre lift is a Maurer--Cartan element
+  \(u_f\mapsto M_{\widetilde J_N^s(f)}\).  Denote this partial boundary condition
+  by \(\tau_N^{\mathrm{gen}}\).  A full arity-one coefficient
+  \[
+    \widetilde\tau_{N,1}\colon\mathfrak g\longrightarrow
+    C^\bullet_{\mathrm{Hoch},\mathrm{adm}}
+      (A^{\mathrm{cl}}_{\partial,N},A^{\mathrm{cl}}_{\partial,N})[1]
+  \]
+  extending \(\tau_{N,1}^{\mathfrak h}\) includes a separately supplied
+  cotangent-current component on \(P[1]\).  An admissible
+  Hochschild-centre lift is a Maurer--Cartan element
   \[
     \mathcal C_{\Phi_N^{\mathrm{Hoch}}}
-    =\tau_N^{\mathrm{gen}}
+    =\widetilde\tau_{N,1}
       +H^{\mathrm{Lie}}+H^{\mathrm{act}}+H^{\mathrm{prod}}
       +H^{P_0}+H^3+\cdots
   \]
@@ -11315,21 +11514,22 @@ extension of Theorem~\ref{thm:wt-canonical-envelope}.
   \]
   with \(H^{\mathrm{prod}}\) the product-equivariance homotopy
   \[
-    [\tau_{N,1}(x),M_a]_G-M_{\rho_x(a)}
-      =dH^{\mathrm{prod}}_{x,a},
+    [\widetilde\tau_{N,1}(x),M_a]_G-M_{\rho_x(a)}
+      =-d_{\mathrm{cent}}H^{\mathrm{prod}}_{x,a},
   \]
   where \(\rho_x\) is the closed-on-open Hamiltonian action and
   \(M_a\) denotes multiplication by the open observable \(a\).  The
   \(P_0\) homotopy satisfies
   \[
-    \{\tau_{N,1}(x),M_a\}_{P_0}-M_{\rho_x^{P_0}(a)}
-      =dH^{P_0}_{x,a}.
+    \{\widetilde\tau_{N,1}(x),M_a\}_{P_0}
+      -M_{\rho_x^{P_0}(a)}
+      =-d_{\mathrm{cent}}H^{P_0}_{x,a}.
   \]
   For invariant centre classes, \(\rho_x=\rho_x^{P_0}=0\) and these
-  equations reduce to null-centrality.  The term $H^3$ is the order-three
-  Jacobiator/associator
-  $dH^3_{x,a,b}=\mathrm{Jac}\bigl(H^{\mathrm{prod}},H^{P_0}\bigr)$,
-  and higher $H^n$ the Stasheff coherences.  The Maurer--Cartan
+  equations reduce to null-centrality.  The term \(H^3\) kills the
+  order-three Jacobiator/associator curvature:
+  \(d_{\mathrm{cent}}H^3=-\delta^3\); higher \(H^n\) kill the subsequent
+  Stasheff curvatures.  The Maurer--Cartan
   equation is the homotopy-equivariance condition for extending the
   trace-sector action of closed currents on open observables to a
   derived \(E_1\)-centre morphism.
@@ -11340,18 +11540,28 @@ extension of Theorem~\ref{thm:wt-canonical-envelope}.
   Work in the shifted Hochschild complex \(CC^\bullet(A,A)[1]\), so the
   Gerstenhaber bracket has degree \(0\).  Let
   \(A=A^{\mathrm{cl}}_{\partial,N}\) and let
-  \(\tau_1=\tau_{N,1}\) be the first Taylor coefficient of
+  \(\tau_1=\widetilde\tau_{N,1}\) be the supplied full first Taylor
+  coefficient of
   Definition~\ref{defn:admissible-hochschild-centre-lift}.  For
   homogeneous \(x,y\in\mathfrak g\), \(f,g\in\mathfrak h\), and a
-  homogeneous open observable \(a\), define the four
+  homogeneous open observable \(a\), prescribe the trace-coordinate
+  action independently of \(\tau_1\) by
+  \[
+    \rho_f^{\mathrm{tr}}\!\left(\widetilde J_N^s(g)\right)
+      :=
+      \widetilde J_N^s\!\left(
+        \overline{\{s(f),s(g)\}}\right)
+      +N\omega(f,g)\mathbf1 .
+  \]
+  Define the four
   primary centrality defects
   \[
     \begin{aligned}
       \delta^{\mathrm{Lie}}_{x,y}
         &:=[\tau_1(x),\tau_1(y)]_G-\tau_1([x,y]),\\
       \delta^{\mathrm{act}}_{f|g}
-        &:=[\tau_1(f),M_{J_N^s(g)}]_G
-          -M_{\rho_f(J_N^s(g))},\\
+        &:=[\tau_1(f),M_{\widetilde J_N^s(g)}]_G
+          -M_{\rho_f^{\mathrm{tr}}(\widetilde J_N^s(g))},\\
       \delta^{\mathrm{prod}}_{x,a}
         &:=[\tau_1(x),M_a]_G-M_{\rho_x(a)},\\
       \delta^{P_0}_{x,a}
@@ -11365,14 +11575,42 @@ extension of Theorem~\ref{thm:wt-canonical-envelope}.
   the same complex after adjoining the \(P_0\)-bracket operation.  The
   signed cyclic sum of the brackets of the chosen primitives for these
   four defects is the secondary defect
-  \(\delta^3_{x,y,a}\).  These five rows are the filtration
+  \(\delta^3_{x,y,a}\).  On three degree-zero Hamiltonian inputs, its
+  pure Lie face is
+  \[
+    \delta^{3,\mathrm{Lie}}_{f,g,h}
+      =\underset{f,g,h}{\operatorname{cyc}}
+        \left(
+          [X_{f,N},H^{\mathrm{Lie}}_{g,h}]_G
+          -H^{\mathrm{Lie}}_{\{f,g\},h}
+        \right).
+  \]
+  In the shifted dg Lie target, the carriers are
+  \[
+    H^{\mathrm{Lie}}\in
+      \underline{\operatorname{Hom}}_{\mathrm{cont}}
+      \!\left(\wedge^2\mathfrak h,
+        C^\bullet_{\mathrm{Hoch},\mathrm{adm}}(A,A)[1]\right)^{-1},
+    \qquad
+    H^{3,\mathrm{Lie}}\in
+      \underline{\operatorname{Hom}}_{\mathrm{cont}}
+      \!\left(\wedge^3\mathfrak h,
+        C^\bullet_{\mathrm{Hoch},\mathrm{adm}}(A,A)[1]\right)^{-2}.
+  \]
+  Their unshifted total Hochschild degrees are \(0\) and \(-1\),
+  respectively.  The arity-three equation is
+  \(d_{\mathrm{cent}}H^{3,\mathrm{Lie}}=-\delta^{3,\mathrm{Lie}}\).
+  For homogeneous inputs the cyclic sum carries the Koszul signs of the
+  shifted convolution complex.  The primitives must commute with the
+  finite-window projections, Roos transition maps, and Darboux/Weiss
+  restrictions before they define descent data.  These five rows are the filtration
   \(\leq3\) part of the Maurer--Cartan curvature of
   \(\mathcal C_{\Phi_N^{\mathrm{Hoch}}}\).
 \end{defn}
 
 \begin{prop}[Low-degree centre-lift obstruction]
 \label{prop:low-degree-centre-lift-obstruction}
-  The boundary coefficient \(\tau_{N,1}\) extends to a
+  The supplied arity-one coefficient \(\widetilde\tau_{N,1}\) extends to a
   Hochschild-centre lift through centrality filtration \(\leq3\) if and
   only if there exist continuous cochains
   \[
@@ -11394,7 +11632,7 @@ extension of Theorem~\ref{thm:wt-canonical-envelope}.
   \]
   Equivalently, the obstruction class
   \[
-    \operatorname{ob}^{\leq3}_{\mathrm{cent}}(\tau_{N,1})
+    \operatorname{ob}^{\leq3}_{\mathrm{cent}}(\widetilde\tau_{N,1})
       :=
       \bigl[
         \delta^{\mathrm{Lie}},
@@ -11409,9 +11647,11 @@ extension of Theorem~\ref{thm:wt-canonical-envelope}.
       \right)
   \]
   vanishes.  For invariant centre classes the open actions
-  \(\rho_x,\rho_x^{P_0}\) vanish and the equations specialize to strict
-  centrality; general closed currents satisfy the displayed
-  homotopy-equivariance equations.
+  \(\rho_x,\rho_x^{P_0}\) vanish and the equations specialize to
+  null-homotopy of the centrality defects; strict centrality is the
+  special case in which those defects vanish as cochains.  General
+  closed currents satisfy the displayed homotopy-equivariance
+  equations.
 \end{prop}
 
 \begin{proof}
@@ -11470,10 +11710,13 @@ extension of Theorem~\ref{thm:wt-canonical-envelope}.
       $d\Theta_B+\tfrac12[\Theta_B,\Theta_B]=0$
       (Theorem~\ref{thm:universal-ce-pv-koszul-criterion}).
     \item \emph{Hochschild equivariance.}
-      $[\Phi_N^{\mathrm{gen}}(x),M_a]_G-M_{\rho_x(a)}
-      =dH^{\mathrm{prod}}_{x,a}$ and
-      $\{\Phi_N^{\mathrm{gen}}(x),M_a\}_{P_0}
-      -M_{\rho_x^{P_0}(a)}=dH^{P_0}_{x,a}$
+      Given a supplied full first Taylor coefficient
+      \(\widetilde\tau_{N,1}\) and its centre-lift primitives,
+      $[\widetilde\tau_{N,1}(x),M_a]_G-M_{\rho_x(a)}
+      =-d_{\mathrm{cent}}H^{\mathrm{prod}}_{x,a}$ and
+      $\{\widetilde\tau_{N,1}(x),M_a\}_{P_0}
+      -M_{\rho_x^{P_0}(a)}
+      =-d_{\mathrm{cent}}H^{P_0}_{x,a}$
       for every closed generator $x$ and open observable $a$;
       invariant centre classes are the case \(\rho_x=\rho_x^{P_0}=0\)
       (Definition~\ref{defn:admissible-hochschild-centre-lift}).
@@ -18171,7 +18414,8 @@ The dictionary \(c^\rho\mapsto\partial_\rho\),
 \(d_{\mathrm{CE}}u_f\mapsto X_f\) is the scalar-stable CE/PV coordinate
 map at the formal-Darboux stalk of the Dirac brane vacuum \(b_p\)
 (Theorem~\ref{thm:main-local}).  At fixed finite \(N\), the boundary
-pair is \(f\mapsto X_{f,N}\), \(u_f\mapsto M_{J_N^s(f)}\); its extension
+pair is \(f\mapsto X_{f,N}\),
+\(u_f\mapsto M_{\widetilde J_N^s(f)}\); its extension
 to the derived \(E_1\)-centre is the Hochschild-centrality twisting
 cochain.  The closed constant-Hamiltonian extension and the open
 \(\mathrm{U}(1)\) character are joined by the Lie \(2\)-cocycle
@@ -18742,7 +18986,8 @@ formal-Darboux theorem constructs neither an object of
   \(A^{\mathrm{cl}}_{\partial,N}=
     C^\bullet_{\mathrm{CE}}(\mathfrak{gl}_N,
                             \mathrm{Kosz}_{\mathfrak{gl}_N}([\phi_1,\phi_2]))\)
-  has fixed-rank boundary values \(u_f\mapsto M_{J_N^s(f)}\) and
+  has fixed-rank boundary values
+  \(u_f\mapsto M_{\widetilde J_N^s(f)}\) and
   \(f\mapsto X_{f,N}\).  The scalar-stable CE/PV coordinates are
   \(c^\rho\mapsto\partial_\rho\), \(u_f\mapsto O_f\), and
   \(d_{\mathrm{CE}}u_f\mapsto X_f\) by
@@ -19546,7 +19791,7 @@ fixed-rank boundary pair
 \[
   \Phi_N^{\mathrm{gen}}
   =\bigl(f\mapsto X_{f,N},\;
-    u_f\mapsto M_{J_N^s(f)}\bigr).
+    u_f\mapsto M_{\widetilde J_N^s(f)}\bigr).
 \]
 Effective scalar reduction, degreewise stable trace passage, and
 admissible completion give \(\Phi_{\mathrm{coord}}^{\mathrm{st}}\),
