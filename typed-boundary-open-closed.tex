@@ -300,8 +300,9 @@ coalgebra, followed by desuspension, is the first Taylor coefficient
   \mathfrak g\longrightarrow
   C^\bullet_{\mathrm{Hoch},\mathrm{adm}}(A,A)[1].
 \end{equation}
-The formal-Darboux theorem prescribes the Hamiltonian trace-sector part
-\(\tau_{N,1}^{\mathrm{tr}}\) of this coefficient.  Only after pairing it
+The formal-Darboux theorem prescribes the Hamiltonian trace-sector face
+\(\tau_{N,1}^{\mathrm{tr}}|_{\mathfrak h}\) of this coefficient.  Only
+after pairing it
 with the continuous linear coordinates in
 \(C^\bullet_{\mathrm{CE},\mathrm{cont}}(\mathfrak g)\) does one obtain
 the coordinate-dual shorthand
@@ -311,7 +312,8 @@ the coordinate-dual shorthand
   J(f)=\varprojlim_WJ_{\leq W}(f\bmod\mathfrak m^{W+1}).
 \]
 We denote this coordinate expression by \(\Phi_N^{\mathrm{gen}}\); it
-is the coordinate shadow of \(\tau_{N,1}^{\mathrm{tr}}\), not a map
+is the coordinate shadow of
+\(\tau_{N,1}^{\mathrm{tr}}|_{\mathfrak h}\), not a map
 whose source is the set of generators of a CE cochain algebra.  The
 component of \(\tau_{N,1}\) on the cotangent-current summand \(P[1]\)
 is present only after the datum of
@@ -377,10 +379,22 @@ satisfying
     (\mathcal C_{\Phi_N^{\mathrm{Hoch}}}^{\otimes3})
   +\cdots=0.
 \]
-In unsuspended Hochschild degrees, the primary homotopies have degree
-\(-1\), the next Stasheff primitive \(H^3\) has degree \(-2\), and in
-general \(H^m\) has degree \(1-m\); after operadic suspension they are
-the components of the degree-one Maurer--Cartan element above.
+The formula \(1-m\) for \(H^m\) is a degree in the full shifted
+centrality convolution complex; it includes the source and open-input
+suspensions.  Target Hochschild degrees depend on the operation slot.
+For degree-zero Hamiltonians,
+\(H^{\mathrm{Lie}}_{f,g}\) has degree \(-1\) in
+\(C^\bullet_{\mathrm{Hoch},\mathrm{adm}}(A,A)[1]\), equivalently
+unshifted total Hochschild degree \(0\): its arity-one derivation
+representative has internal degree \(-1\).  The pure Lie
+\(H^{3,\mathrm{Lie}}_{f,g,h}\) has shifted-target degree \(-2\),
+equivalently unshifted total degree \(-1\).  By contrast, if an action
+primitive is represented by \(M_b\) with \(b\in A^{-1}\), then
+\(M_b\in C^0_{\mathrm{Hoch}}(A,A)\) has unshifted total degree \(-1\)
+and shifted-target degree \(-2\); its open-input suspension is part of
+its degree in \(\mathcal K^{\mathrm{cent}}_{\partial,N}\).  Thus the
+uniform primary degree belongs to the full coloured convolution
+grading, not to the Hochschild target alone.
 
 For homogeneous \(x,y\in\mathfrak g_{\mathrm{src}}\) and an open
 observable \(a\),
@@ -402,7 +416,16 @@ put
 Here \(O_y\) is the boundary observable attached to a degree-zero
 closed generator, \(M_a\) is multiplication by \(a\), and
 \(\rho_x,\rho_x^{P_0}\) are the closed-on-open Hochschild and
-\(P_0\)-actions.  A strict centre class is the special case
+\(P_0\)-actions prescribed independently of \(\tau_{N,1}\).  On the
+trace face this prescription is
+\[
+  O_g=\widetilde J_N^s(g),\qquad
+  \rho_f(O_g)
+    =\widetilde J_N^s\!\left(
+       \overline{\{s(f),s(g)\}}\right)
+      +N\omega(f,g)\mathbf1 .
+\]
+A strict centre class is the special case
 \(\rho_x=\rho_x^{P_0}=0\); otherwise the datum is equivariance.
 The primary primitive equations are
 \[
@@ -618,15 +641,19 @@ obstruction is
   H^2(\mathcal E^\bullet_{\mathrm{Darb}})
   \oplus H^2(\mathcal E^\bullet_{\mathrm{Darb}}).
 \]
-The formal-Darboux trace theorem supplies the infinitesimal Hamiltonian
-action on the trace sector; Proposition~\ref{prop:trace-sector-darboux-flat-transport}
-packages this action as a strict flat trace-sector transport datum.  The
-bar-centre family requires the separate primitives
+The scalar-reduced CE/PV theorem supplies a strict infinitesimal
+Hamiltonian action on its abstract trace-coordinate chart;
+Proposition~\ref{prop:trace-sector-darboux-flat-transport} packages this
+coordinate action as a strict flat transport datum.  A realization by
+chosen finite-rank Koszul cocycles instead uses the
+\(H^{\mathrm{Lie}},H^{\mathrm{act}},H^3,\ldots\) components of the
+Hochschild-centre Maurer--Cartan datum.  The bar-centre family requires
+the separate primitives
 \((h_{\nabla},h_{\nabla,\Theta})\) satisfying the two displayed
 \(d_{\mathrm{Darb}}\)-equations.
 \end{defn}
 
-\begin{prop}[Strict Darboux transport on the trace-sector chart]
+\begin{prop}[Strict Darboux transport on the abstract trace-coordinate chart]
 \label{prop:trace-sector-darboux-flat-transport}
 Let \(\mathfrak h=\C[[z_1,z_2]]/\C\cdot1\) act on the completed
 trace-sector source
@@ -641,13 +668,11 @@ by
   \qquad
   L^{\mathrm{src}}_f(u_g)=u_{\{f,g\}},
 \]
-and on the completed trace-sector Hochschild chart
+and on the abstract completed trace-coordinate target
 \[
   H^{\mathrm{tr}}_{N,\mathrm{adm}}
   =
-  \langle \theta_g,M_{J(g)}:g\in\mathfrak h\rangle
-  \subset C^\bullet_{\mathrm{Hoch},\mathrm{adm}}
-  (A^{\mathrm{cl}}_{\partial,N},A^{\mathrm{cl}}_{\partial,N})
+  \langle \theta_g,M_{J(g)}:g\in\mathfrak h\rangle_{\mathrm{coord}},
 \]
 by
 \[
@@ -656,9 +681,9 @@ by
   L^{\mathrm{tar}}_f(M_{J(g)})=M_{J(\{f,g\})}.
 \]
 Both actions extend as continuous derivations for the completed
-product and bracket filtrations.  After continuous dualization of
-\(\tau_{N,1}^{\mathrm{tr}}\), they define a strict flat
-Darboux-transport datum on the coordinate trace-sector chart
+product and bracket filtrations.  They define a strict flat
+Darboux-transport datum on the scalar-reduced coordinate trace-sector
+chart
 \[
   \zeta_{\mathrm{tr}}\colon
   G_{\mathrm{tr}}\longrightarrow H^{\mathrm{tr}}_{N,\mathrm{adm}},
@@ -683,6 +708,26 @@ Definition~\ref{defn:hol-bd-datum-HT} is the extension of this strict
 transport from \(G_{\mathrm{tr}}\to H^{\mathrm{tr}}_{N,\mathrm{adm}}\)
 to the whole bar-centre family
 \(\bar B\to Z^{\mathrm{der}}\).
+
+If the symbols are realized by chosen finite-rank Hochschild cocycles,
+\(\theta_f=X_{f,N}\), their actual adjoint action obeys
+\[
+  \begin{aligned}
+    [X_{f,N},X_{g,N}]_G
+      -X_{\overline{\{s(f),s(g)\}},N}
+      &=-d_{\mathrm{cent}}H^{\mathrm{Lie}}_{f,g},\\
+    [X_{f,N},M_{\widetilde J_N^s(g)}]_G
+      -M_{\widetilde J_N^s(\overline{\{s(f),s(g)\}})}
+      -N\omega(f,g)M_{\mathbf1}
+      &=-d_{\mathrm{cent}}H^{\mathrm{act}}_{f|g}.
+  \end{aligned}
+\]
+It is therefore homotopy-flat only after these primitives, the
+\(d_{\mathrm{cent}}H^3=-\delta^3\) coherence, and all higher
+Maurer--Cartan components have been supplied.  Transport between
+Darboux charts further requires these cochains to form a cocycle in the
+Darboux/Weiss total descent complex.  The strict coordinate calculation
+does not supply that finite-rank or descended action.
 \end{prop}
 
 \begin{proof}
@@ -704,15 +749,8 @@ one of these four generators,
   =
   L_{\{f,g\}}(x_h).
 \]
-The differentials are equivariant because the CE/PV trace-sector
-complex uses the adjoint \(\mathfrak h\)-module structure and the
-Koszul differential \(Q\psi=[\phi_1,\phi_2]\) is preserved by
-Hamiltonian vector fields:
-\[
-  \theta_f([\phi_1,\phi_2])
-  =
-  [\theta_f(\phi_1),\phi_2]+[\phi_1,\theta_f(\phi_2)].
-\]
+The coordinate differentials are equivariant because the CE/PV
+trace-sector complex uses the adjoint \(\mathfrak h\)-module structure.
 Finally
 \[
   L_f^{\mathrm{tar}}\zeta_{\mathrm{tr}}(c_g)
@@ -727,16 +765,37 @@ Finally
   =
   \zeta_{\mathrm{tr}}L_f^{\mathrm{src}}(u_g).
 \]
-Thus the trace-sector preconnection has zero curvature and preserves
-the trace-sector chart strictly.  No statement about the non-trace
-Hochschild summands or the full Morita centre follows from this
-calculation.
+Thus the abstract trace-coordinate preconnection has zero curvature
+and preserves the coordinate chart strictly.  The preceding
+finite-rank equations show why no strict statement about its chosen
+Hochschild representatives, the non-trace Hochschild summands, or the
+full Morita centre follows from this calculation.
 \end{proof}
 
 \begin{defn}[Relative Darboux extension obstruction]
 \label{defn:relative-darboux-extension-obstruction}
-Fix the strict trace-sector transport of
+Fix the strict abstract trace-coordinate transport of
 Proposition~\ref{prop:trace-sector-darboux-flat-transport}.  The
+construction below concerns this strict coordinate chart.  A
+finite-rank Hochschild realization instead requires a full arity-one
+extension \(\widetilde\tau_{N,1}\) of
+\(\tau_{N,1}^{\mathrm{tr}}|_{\mathfrak h}\), including the separately
+supplied \(P[1]\)-component, and the analogous convolution complex
+twisted at the complete Maurer--Cartan base point
+\[
+  \mathcal C_{\mathrm{tr}}
+    =\widetilde\tau_{N,1}
+      +H^{\mathrm{Lie}}+H^{\mathrm{act}}
+      +H^{\mathrm{prod}}+H^{P_0}+H^3+\cdots,
+  \qquad
+  d_{\mathcal C_{\mathrm{tr}}}
+    =d_{\mathrm{cent}}+
+      [\mathcal C_{\mathrm{tr}},-]+\cdots ,
+\]
+together with a proof that the trace receiver is a cochain map for the
+twisted differential.  That homotopy-relative Darboux complex is
+additional data; it is not supplied by the strict coordinate
+calculation.  The
 trace-sector Darboux deformation complex is
 \[
   \mathcal E^\bullet_{\mathrm{tr}}
@@ -753,7 +812,8 @@ trace-sector Darboux deformation complex is
   \right),
 \]
 with differential \(d_{\mathrm{tr}}\) induced by the source differential,
-the Hochschild differential restricted to the strict trace image, and
+the coordinate Chevalley--Eilenberg/polyvector differential on
+\(H^{\mathrm{tr}}_{N,\mathrm{adm}}\), and
 the linearised action on \(\zeta_{\mathrm{tr}}\).
 
 A trace receiver for the full bar-centre Darboux complex is a continuous
@@ -793,7 +853,8 @@ In the model
   =
   \bigl(d_{\mathrm{Darb}}x,\,-d_{\mathrm{tr}}y-r_{\mathrm{tr}}x\bigr),
 \]
-a preconnection \(\nabla_0\) extending the strict trace transport has
+a preconnection \(\nabla_0\) extending the strict abstract coordinate
+transport has
 \[
   r_{\mathrm{tr}}(\Omega_\nabla)=0,\qquad
   r_{\mathrm{tr}}(\mathcal R_{\nabla,\Theta})=0,
@@ -814,7 +875,8 @@ and hence defines the relative obstruction pair
 \begin{prop}[Relative criterion for extending trace-sector transport]
 \label{prop:relative-darboux-extension-criterion}
 Fix a trace receiver \(r_{\mathrm{tr}}\) and a preconnection
-\(\nabla_0\) whose restriction is the strict trace-sector transport of
+\(\nabla_0\) whose restriction is the abstract trace-coordinate
+transport of
 Proposition~\ref{prop:trace-sector-darboux-flat-transport}.  A flat
 Darboux transport on the full bar-centre family extending that trace
 transport up to trace-sector gauge homotopy exists if and only if
@@ -852,8 +914,8 @@ trace-sector primitives precisely when one can choose
 \end{prop}
 
 \begin{proof}
-The trace-sector curvature and trace-sector
-Maurer--Cartan compatibility curvature vanish by
+The abstract trace-coordinate curvature and its Maurer--Cartan
+compatibility curvature vanish by
 Proposition~\ref{prop:trace-sector-darboux-flat-transport}.  Therefore a
 preconnection extending that trace action gives closed degree-two
 elements \((\Omega_\nabla,0)\) and
@@ -867,7 +929,9 @@ applies to \((\mathcal R_{\nabla,\Theta},0)\).  Vanishing of the two
 relative cohomology classes is therefore equivalent to the existence of
 the two displayed primitive equations.  Setting the trace homotopies to
 zero is exactly the condition that the chosen full primitives restrict
-to the zero primitives of the strict trace-sector transport.
+to the zero primitives of the abstract coordinate transport.  A
+finite-rank Hochschild realization requires the separately supplied
+homotopy-relative complex twisted at \(\mathcal C_{\mathrm{tr}}\).
 \end{proof}
 
 \begin{defn}[Decorated brane and boundary-data categories]
@@ -1119,11 +1183,11 @@ where
 	            A^{\mathrm{cl}}_{\partial,N},
 	            A^{\mathrm{cl}}_{\partial,N}\bigr),
           \\
-	          \tau_N^{\mathrm{tr}}\colon
+	          \tau_N^{\mathrm{Hoch}}\colon
 	          \overline C^{\mathrm{CE},\mathrm{cont}}_\bullet(\mathfrak g)
 	          \longrightarrow H_{N,\mathrm{adm}}^{\mathrm{Hoch}}[1],
 	          \qquad
-	          \tau_{N,1}^{\mathrm{tr}}\colon
+	          \widetilde\tau_{N,1}\colon
 	          \mathfrak g\longrightarrow
 	          H_{N,\mathrm{adm}}^{\mathrm{Hoch}}[1],\\
 	          G_{\mathrm{tr}}=
@@ -1133,9 +1197,14 @@ where
 	          \Phi_N^{\mathrm{gen}}(u_f)=M_{J(f)}.
         \end{gathered}
 \end{equation}
-        The last line is obtained from the first Taylor coefficient by
-        continuous coordinate duality; it is not the type of the
-        twisting cochain itself.
+        The first two arrows are the sought full centre lift and its
+        arity-one coefficient.  The formal-Darboux theorem prescribes
+        only
+        \(\widetilde\tau_{N,1}|_{\mathfrak h}
+          =\tau_{N,1}^{\mathrm{tr}}|_{\mathfrak h}\);
+        its \(P[1]\)-component is part of the cotangent-current datum.
+        The last line is the coordinate-dual trace expression, not the
+        type of the twisting cochain itself.
         A full centre identification is the typed datum consisting of
         the admissible centre-lift, equivariance homotopies, mixed-HT
         \(E_2^{\mathrm{HT}}\)-centre operations, and descent data of
@@ -1724,15 +1793,17 @@ quasi-isomorphism.
 This is Theorem~\ref{thm:main-local} viewed as the formal-Darboux
 trace-sector fibre of an open--closed comparison datum.  In
 \(\mathcal B^{\mathrm{adm}}\) its covariant boundary value is the
-continuous first Taylor coefficient
+Hamiltonian face of the first Taylor coefficient
 \[
-  \tau_{N,1}^{\mathrm{tr}}\colon
-  \mathfrak g\longrightarrow
+  \tau_{N,1}^{\mathrm{tr}}\big|_{\mathfrak h}\colon
+  \mathfrak h\longrightarrow
   C^\bullet_{\mathrm{Hoch},\mathrm{adm}}\!
     (A^{\mathrm{cl}}_{\partial,N},A^{\mathrm{cl}}_{\partial,N})[1],
 \]
-the arity-one part of a candidate continuous twisting cochain on
+which is the prescribed restriction of an arity-one coefficient for a
+candidate continuous twisting cochain on
 \(\overline C^{\mathrm{CE},\mathrm{cont}}_\bullet(\mathfrak g)\).
+Its component on \(P[1]\) is a separate cotangent-current datum.
 Continuous coordinate duality then gives
 \[
   c_f\longmapsto\theta_f,\qquad
@@ -1759,7 +1830,8 @@ The pre-open--closed datum of Definition~\ref{defn:oca-comparison}, evaluated
 at the formal-Darboux stalk \(b\), contains the bulk-boundary factorisation
 pairing on the contractible polydisk neighbourhood of \(b\).  On the
 trace sector Theorem~\ref{thm:main-local} computes this pairing by the
-first Taylor coefficient \(\tau_{N,1}^{\mathrm{tr}}\); its
+Hamiltonian face
+\(\tau_{N,1}^{\mathrm{tr}}|_{\mathfrak h}\); its
 coordinate-dual CE/PV expression is
 \(c_f\mapsto\theta_f,\ u_f\mapsto J(f)\).  The binary diagonal kernel,
 the unscaled constant-Hamiltonian cocycle, and its raw Rees/Weyl trace
@@ -2064,10 +2136,12 @@ the closed binary piece is the Hamiltonian BF singular product on closed
 observables; its trace-sector image under the open--closed comparison is
 the same diagonal kernel \(K^{(2)}_\Delta\).  The open binary piece is the
 \(E_1^{\mathrm{top}}\)-product on
-\(A^{\mathrm{cl}}_{\partial,N}\).  The trace-sector mixed binary piece
-is the centrality arrow of the closed colour acting on
-\(A^{\mathrm{cl}}_{\partial,N}\); its first Taylor coefficient is
-\(\tau_{N,1}^{\mathrm{tr}}\).  Under continuous coordinate duality and
+  \(A^{\mathrm{cl}}_{\partial,N}\).  The trace-sector mixed binary piece
+  is the centrality arrow of the closed colour acting on
+  \(A^{\mathrm{cl}}_{\partial,N}\); its first Taylor coefficient is
+  \(\tau_{N,1}^{\mathrm{tr}}|_{\mathfrak h}\) on the Hamiltonian face,
+  while the \(P[1]\)-component is a separate cotangent-current datum.
+  Under continuous coordinate duality and
 \eqref{eq:ce-pv-dictionary-strong} its expression is
 \[
   c_f\mapsto\theta_f,\qquad
@@ -3203,7 +3277,8 @@ Let
 \[
   \Theta^{\mathrm{tr}}_{\leq 2}
   =
-  \bigl(\tau_{N,1}^{\mathrm{tr}},K^{(2)}_\Delta\bigr).
+  \bigl(\tau_{N,1}^{\mathrm{tr}}|_{\mathfrak h},
+        K^{(2)}_\Delta\bigr).
 \]
 The first entry has the coordinate-dual expression
 \[
@@ -3248,7 +3323,7 @@ be the formal Hamiltonian-current projection.  Let
 \(\mathfrak{Def}_{\mathrm{tr},\leq2}\) denote the finite arity
 deformation complex whose degree-one Maurer--Cartan points are the
 closed binary diagonal kernel together with the first Taylor coefficient
-\(\tau_{N,1}^{\mathrm{tr}}\).  Its coordinate-dual values are
+\(\tau_{N,1}^{\mathrm{tr}}|_{\mathfrak h}\).  Its coordinate-dual values are
 \(c_f\mapsto\theta_f\) and \(u_f\mapsto M_{J(f)}\).  Precomposition
 with \(\iota_{\mathsf Q}\), postcomposition with \(\pi_{\mathrm{cur}}\),
 and projection to the trace arity-\(\leq2\) face give restriction
@@ -3607,6 +3682,12 @@ The entries satisfy the following equations.
           -M_{\rho_x^{P_0}(a)} .
       \end{aligned}
     \]
+    Here \(\rho\) and \(\rho^{P_0}\) are prescribed independently of
+    \(\tau_{N,1}\), as in
+    Definition~\ref{defn:typed-hochschild-centre-lift-datum}; on the
+    trace face \(\rho_f(\widetilde J_N^s(g))\) is the ordered
+    representative of the source Poisson action plus
+    \(N\omega(f,g)\mathbf1\).
     The first centrality equations are
     \[
       d_{\mathrm{cent}}H^{\mathrm{Lie}}=-\delta^{\mathrm{Lie}},\quad
@@ -3633,8 +3714,10 @@ The entries satisfy the following equations.
     \(\mathcal C_{\Phi_N^{\mathrm{Hoch}}}\) through arity \(m\).  The
     next primitive must satisfy
     \(d_{\mathrm{cent}}H^{m+1}=-\mathcal R^{\mathrm{cent}}_{m+1}\).
-    Equivalently, after fixing the first Taylor boundary value
-    \(\tau_{N,1}\), the relative class
+    Equivalently, after fixing a full first Taylor coefficient whose
+    Hamiltonian restriction is
+    \(\tau_{N,1}^{\mathrm{tr}}|_{\mathfrak h}\) and whose
+    \(P[1]\)-component is separately supplied, the relative class
     \[
       \operatorname{Ob}^{\mathrm{cent}/\mathrm{gen}}_{m+1}
       \in
@@ -3645,14 +3728,17 @@ The entries satisfy the following equations.
     of Definition~\ref{defn:relative-hochschild-centre-extension-obstruction}
     vanishes.  Thus the Hochschild-centre lift extends the fixed
     trace-sector first Taylor coefficient.
-    In unsuspended Hochschild degrees \(H^m\) has degree \(1-m\).  The
+    In the full shifted centrality convolution grading \(H^m\) has
+    degree \(1-m\).  Its target Hochschild degree also includes the
+    operation-slot and input suspensions and is not uniformly \(2-m\).
+    The
     finite-window, open-input, and Roos transition defects of the
     primitives are part of the secondary compatibility row
     \textup{(D9)}.  Only after this tower is solved does the induced
     twisting cochain receive the name \(\Phi_N^{\mathrm{Hoch}}\).  The
     displayed formula \(c_f\mapsto\theta_f,\ u_f\mapsto M_{J(f)}\) is
     obtained afterward as the coordinate-dual expression
-    \(\Phi_N^{\mathrm{gen}}\) of \(\tau_{N,1}^{\mathrm{tr}}\).
+    \(\Phi_N^{\mathrm{gen}}\) of the Hamiltonian trace face.
 
   \item \emph{Darboux-torsor transport.}
     \(\nabla_{\mathrm{Darb}}\) is the flat transport datum of
@@ -3677,7 +3763,7 @@ The entries satisfy the following equations.
     \]
     This is a datum over the Darboux-chart torsor, not a statement in
     one coordinate system.  When this row is required to extend the
-    strict trace-sector transport of
+    strict abstract trace-coordinate transport of
     Proposition~\ref{prop:trace-sector-darboux-flat-transport}, it also
     includes a trace receiver \(r_{\mathrm{tr}}\) and the vanishing of the
     relative class
@@ -3690,9 +3776,16 @@ The entries satisfy the following equations.
     in the homotopy fibre complex
     \(\mathcal E^\bullet_{\mathrm{Darb}/\mathrm{tr}}\) of
     Definition~\ref{defn:relative-darboux-extension-obstruction}.  The
-    full primitives must restrict to zero trace-sector primitives for a
-    strict extension, or to trace-exact primitives for extension up to
-    trace-sector gauge homotopy.  Let
+    full primitives must restrict to zero coordinate-chart primitives
+    for a strict extension, or to coordinate-exact primitives for
+    extension up to gauge homotopy.  A finite-rank Hochschild
+    realization instead requires a separately supplied relative
+    complex and a cochain map to the endomorphism/Hom deformation
+    complex whose differential is twisted at
+    \(\mathcal C_{\mathrm{tr}}\).  Under this map the full Darboux
+    curvature cocycles must admit compatible finite-rank primitives;
+    the strict coordinate receiver alone supplies neither the map nor
+    those primitives.  Let
     \[
       \mathsf G_{\mathrm{Darb}}
       =
@@ -4548,9 +4641,18 @@ Definition~\ref{defn:typed-hochschild-centre-lift-datum}, and let
   \mathcal K^{\mathrm{gen}}_{\partial,N}
 \]
 be restriction of a twisting cochain to the cogenerators of the
-Chevalley--Eilenberg chain coalgebra, followed by desuspension.  Fix the
-formal-Darboux first Taylor face \(\tau_{N,1}\), whose trace-sector
-coordinate dual is
+Chevalley--Eilenberg chain coalgebra, followed by desuspension.  Fix a
+supplied full first Taylor coefficient
+\[
+  \widetilde\tau_{N,1}\colon
+  \mathfrak g_{\mathrm{src}}\longrightarrow
+  C^\bullet_{\mathrm{Hoch},\mathrm{adm}}(A,A)[1].
+\]
+Its restriction to \(\mathfrak h\) is the formal-Darboux Hamiltonian
+face \(\tau^{\mathrm{tr}}_{N,1}|_{\mathfrak h}\); its restriction to
+the cotangent-current summand \(P[1]\) is a separately supplied
+continuous current cochain.  Only the Hamiltonian trace face has the
+coordinate-dual expression
 \[
   \Phi_N^{\mathrm{gen}}(c_f)=\theta_f,\qquad
   \Phi_N^{\mathrm{gen}}(u_f)=M_{J(f)} .
@@ -4562,18 +4664,20 @@ filtered \(L_\infty\)-algebra
   =
   \operatorname{fib}(r_{\mathrm{gen}})[-1],
 \]
-twisted by the fixed face \(\tau_{N,1}\).  Its elements are centrality
+twisted by the supplied full coefficient \(\widetilde\tau_{N,1}\).
+Its elements are centrality
 corrections whose first Taylor projection is zero.
 
 For an \(m\)-truncated lift
 \[
   \mathcal C_{\le m}
   =
-  \tau_{N,1}
+  \widetilde\tau_{N,1}
   +H^{\mathrm{Lie}}+H^{\mathrm{act}}
   +H^{\mathrm{prod}}+H^{P_0}+H^3+\cdots+H^m
 \]
-with \(r_{\mathrm{gen}}(\mathcal C_{\le m})=\tau_{N,1}\),
+with
+\(r_{\mathrm{gen}}(\mathcal C_{\le m})=\widetilde\tau_{N,1}\),
 the order-\((m+1)\) relative curvature is
 \[
   \mathcal R^{\mathrm{cent}/\mathrm{gen}}_{m+1}
@@ -4610,10 +4714,9 @@ Hochschild-centre obstruction class is
 \]
 The absolute tower
 \(\operatorname{Ob}^{\mathrm{cent}}_{\mathrm{Hoch}}\) is the same
-centrality curvature before imposing the fixed first Taylor face; the
-relative class above is the obstruction to extending the constructed
-first Taylor coefficient to a continuous Hochschild-centre twisting
-cochain.
+centrality curvature before imposing the supplied full first Taylor
+coefficient; the relative class above is the obstruction to extending
+that coefficient to a continuous Hochschild-centre twisting cochain.
 \end{defn}
 
 \begin{prop}[Relative criterion for the Hochschild-centre lift]
@@ -4621,7 +4724,7 @@ cochain.
 Assume the centrality filtration on
 \(\mathfrak D_{\mathrm{Hoch}/\mathrm{gen}}\) is complete and
 pronilpotent.  An \(m\)-truncated Hochschild-centre lift extending
-\(\tau_{N,1}\) extends to order \(m+1\) if and only if
+\(\widetilde\tau_{N,1}\) extends to order \(m+1\) if and only if
 \[
   \operatorname{Ob}^{\mathrm{cent}/\mathrm{gen}}_{m+1}=0 .
 \]
@@ -4642,7 +4745,7 @@ whose order-\((m+1)\) component satisfies
   -\mathcal R^{\mathrm{cent}/\mathrm{gen}}_{m+1}
   (\mathcal C_{\le m}).
 \]
-Strict preservation of the formal-Darboux first Taylor coefficient means
+Strict preservation of the supplied full first Taylor coefficient means
 \[
   r_{\mathrm{gen}}(H^{\mathrm{cent}}_{m+1})=0.
 \]
@@ -4651,12 +4754,12 @@ specified degree-zero primitive in
 \(\mathcal K^{\mathrm{gen}}_{\partial,N}\).  A compatible tower of such
 primitives for all \(m\) is equivalent to a Maurer--Cartan element
 \(\tau_N=\mathcal C_{\Phi_N^{\mathrm{Hoch}}}\) whose projection is
-\(\tau_{N,1}\).
+\(\widetilde\tau_{N,1}\).
 \end{prop}
 
 \begin{proof}
 This is the obstruction theory of the filtered homotopy fibre of
-\(r_{\mathrm{gen}}\), based at \(\tau_{N,1}\).  The
+\(r_{\mathrm{gen}}\), based at \(\widetilde\tau_{N,1}\).  The
 \(L_\infty\) Bianchi identity gives
 \[
   d_{\mathcal C_{\le m}}
@@ -4705,8 +4808,12 @@ cone contraction from a later row as input.
 \end{lem}
 
 \begin{proof}
-The formal-Darboux trace fibre \(T_0\) fixes the first Taylor boundary
-coefficient, its coordinate-dual values, and the binary diagonal kernel.
+The formal-Darboux trace fibre \(T_0\) fixes only the Hamiltonian
+restriction \(\tau^{\mathrm{tr}}_{N,1}|_{\mathfrak h}\), its
+coordinate-dual trace values, and the binary diagonal kernel.  A full
+first Taylor coefficient enters rows \(\mathrm{D3}\) and \(\mathrm{D5}\)
+only after a continuous cotangent-current cochain on \(P[1]\) has been
+supplied.
 Theorem~\ref{app:thm:formal-polydisk-all-arity-current-operad}
 extends the closed Hamiltonian-current part to the
 \(\mathsf Q\)-restricted tree-kernel action
@@ -4745,7 +4852,9 @@ construct a mixed-HT open--closed morphism
   (\mathcal C^{\mathrm{op}}_\partial)
 \]
 whose formal-Darboux fibre has first Taylor coefficient
-\(\tau_{N,1}^{\mathrm{tr}}\).  Its coordinate-dual expression is
+\(\tau_{N,1}^{\mathrm{tr}}|_{\mathfrak h}\) on the Hamiltonian face;
+the full coefficient also contains the separately supplied
+cotangent-current component.  Its coordinate-dual expression is
 \(\Phi_N^{\mathrm{gen}}(c_f)=\theta_f\) and
 \(\Phi_N^{\mathrm{gen}}(u_f)=M_{J(f)}\).  The cone component of the
 datum makes this morphism a quasi-isomorphism in
@@ -4846,12 +4955,15 @@ transport obstruction pair
 \]
 of Definition~\ref{defn:hol-bd-datum-HT} is an additional typed
 boundary datum and must be killed by its own primitives.  If the datum is
-required to extend the constructed trace-sector transport, the sharper
+required to extend the strict abstract trace-coordinate transport, the sharper
 condition is the relative class
 \(\operatorname{Ob}^{\mathrm{Darb}/\mathrm{tr}}\) of
 Definition~\ref{defn:relative-darboux-extension-obstruction}, together
-with primitives whose restrictions are the zero trace-sector primitives
-or trace-exact gauge homotopies.  This full bar-centre extension is not
+with primitives whose restrictions are the zero coordinate-chart
+primitives or coordinate-exact gauge homotopies.  For the finite-rank
+Hochschild realization, a homotopy-relative Darboux complex twisted at
+\(\mathcal C_{\mathrm{tr}}\) and compatible with Darboux/Weiss
+restrictions is additional data.  This full bar-centre extension is not
 constructed by the formal-Darboux trace theorem.  If the target statement
 uses the full shifted-cotangent BF source rather than only the stable
 Hamiltonian trace sector, then the cotangent-current obstruction
@@ -5235,8 +5347,9 @@ criterion\\
 \(H^{\mathrm{Lie}},H^{\mathrm{act}},H^{\mathrm{prod}},H^{P_0}\in
 (\mathcal K^{\mathrm{cent}}_{\partial,N})^{-1}\),
 \(H^3\in(\mathcal K^{\mathrm{cent}}_{\partial,N})^{-2}\), and
-\(H^m\in(\mathcal K^{\mathrm{cent}}_{\partial,N})^{1-m}\) before
-operadic suspension &
+  \(H^m\in(\mathcal K^{\mathrm{cent}}_{\partial,N})^{1-m}\) in the
+  full shifted coloured-convolution grading; target Hochschild degrees
+  are determined separately by the operation and input slots &
 Hochschild centrality filtration, open-input filtration, finite
 Hamiltonian windows, and \(P_0\)-bracket filtration &
 continuous for the completed Hochschild brace operations, window
@@ -5306,8 +5419,9 @@ optional topologisation criterion
 The formal-Darboux trace-sector theorem supplies the arity-\(\le2\)
 boundary value entering \(\mathrm{O0}\), the formal fibre entering
 \(\mathrm{O2}\), and the scalar anomaly value in \(\mathrm{O4}\).  It
-supplies the first Taylor coefficient \(\tau_{N,1}^{\mathrm{tr}}\)
-entering \(\mathrm{O}_{\mathrm{Hoch}}\); the coordinate expression
+supplies the Hamiltonian restriction
+\(\tau_{N,1}^{\mathrm{tr}}|_{\mathfrak h}\) entering
+\(\mathrm{O}_{\mathrm{Hoch}}\); the coordinate expression
 \(\Phi_N^{\mathrm{gen}}\) is obtained by continuous duality.  The
 centrality primitives making \(\Phi_N^{\mathrm{Hoch}}\) a continuous
 Hochschild twisting cochain are separate
@@ -5433,8 +5547,8 @@ formal-Darboux theorem fixes the arity-\(\le2\) boundary condition of
 this lifting problem and no higher arity.
 
 \emph{Hochschild chart before centre morphism.}  The local theorem gives
-the first Taylor coefficient
-\(\tau_{N,1}^{\mathrm{tr}}\colon\mathfrak g\to
+the Hamiltonian face
+\(\tau_{N,1}^{\mathrm{tr}}|_{\mathfrak h}\colon\mathfrak h\to
 C^\bullet_{\mathrm{Hoch},\mathrm{adm}}(A,A)[1]\).  Continuous
 coordinate duality gives \(c_f\mapsto\theta_f\) and
 \(u_f\mapsto M_{J(f)}\) only afterward.  A continuous Hochschild
@@ -5615,7 +5729,7 @@ On the contractible formal-Darboux neighbourhood of a brane vacuum
 ledger are explicit: the all-arity tree-kernel current operad of
 Theorem~\ref{app:thm:formal-polydisk-all-arity-current-operad}, whose
 binary generator is \(K^{(2)}_\Delta\), the first Taylor coefficient
-\(\tau_{N,1}^{\mathrm{tr}}\) with coordinate-dual CE/PV expression
+\(\tau_{N,1}^{\mathrm{tr}}|_{\mathfrak h}\) with coordinate-dual CE/PV expression
 \(c_f\mapsto\theta_f,\ u_f\mapsto J(f)\), the unscaled class
 \([\bar c]\), the rank character \(\chi_N(K)=N\), and the raw Rees/Weyl
 trace class \(\hbar_{\mathrm W}N[\bar c]\).  The tree-kernel operad is the local representative of the

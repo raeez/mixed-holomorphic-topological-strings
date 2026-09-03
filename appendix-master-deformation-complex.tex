@@ -779,23 +779,42 @@ corresponding class in \(H^2(\ker\pi_{\mathrm{sc}},Q)\) vanishes.
 \end{proof}
 
 \begin{prop}[Trace-sector first-Taylor residual scalarity]\label{prop:residual-vanishes-bf}
-For the formal-Darboux Hamiltonian BF first Taylor datum
-\(\tau_{N,1}^{\mathrm{tr}}\), assume the chosen Koszul lifts and, for a
-nonzero linear-Poisson Hochschild realization, the admissible
-twisted-formality and Poincar\'e--Birkhoff--Witt datum.  The product,
-action, and \(P_0\) centrality
-defects of
-Definition~\ref{defn:low-degree-hochschild-centrality-defects} have zero
-non-scalar projection on the scalar-reduced trace-sector first Taylor
-coefficient.  The remaining low-degree weight-zero scalar projection is
-the raw Rees/Weyl Capelli class
+For the formal-Darboux Hamiltonian face
+\(\tau_{N,1}^{\mathrm{tr}}|_{\mathfrak h}\), assume the chosen Koszul
+lifts.  Supply a full arity-one coefficient
+\[
+  \widetilde\tau_{N,1}\colon
+  \mathfrak g\longrightarrow
+  C^\bullet_{\mathrm{Hoch},\mathrm{adm}}(A,A)[1]
+\]
+extending this face, including the cotangent-current component on
+\(P[1]\).  For a nonzero linear-Poisson Hochschild realization, assume
+also the admissible twisted-formality and
+Poincar\'e--Birkhoff--Witt datum.  Assume that the non-scalar
+low-degree centrality classes on the faces with Hamiltonian closed
+inputs and trace-generator open inputs vanish, and choose
+continuous primitives
+\[
+  H^{\mathrm{Lie}},\quad H^{\mathrm{act}},\quad
+  H^{\mathrm{prod}},\quad H^{P_0},\quad H^3
+\]
+satisfying the equations of
+Definition~\ref{defn:low-degree-hochschild-centrality-defects}, with
+their finite-window, Roos, and Darboux/Weiss compatibilities.  Then the
+non-scalar curvature on those faces is exact.  The scalar projection
+of the raw Rees/Weyl Hamiltonian trace-commutator face is the Capelli
+class
 \(\hbar_{\mathrm{W}}\chi_N(K)[\bar c]
-=\hbar_{\mathrm{W}}N[\bar c]\).  This verifies the
-residual criterion of
-Lemma~\ref{lem:nonscalar-weight-zero-vanishing} for the displayed
-generator trace-sector rows.  The all-arity Morita centre lift and the
-all-order Costello QME tower are the separate extension data governed by
-their obstruction complexes.
+=\hbar_{\mathrm{W}}N[\bar c]\).  No scalar component involving the
+supplied \(P[1]\)-current, an arbitrary open input, or a higher-arity
+operation is computed here.  Hence the residual criterion of
+Lemma~\ref{lem:nonscalar-weight-zero-vanishing} is verified only on the
+displayed Hamiltonian trace-generator faces; application to the full
+coefficient additionally requires the complementary scalar projections
+to vanish or to be computed.  The supplied full first Taylor
+coefficient need not be a strict Lie action, and the all-arity Morita
+centre lift and all-order Costello QME tower remain separate extension
+data governed by their obstruction complexes.
 \end{prop}
 
 \begin{proof}
@@ -813,28 +832,51 @@ polyvector degrees are \((1,0,1)\).  The chosen Koszul lift gives closed
 Hochschild representatives for \(X_x\) and \(M_{O_x}\).  Ordinary HKR
 supplies this statement only at the zero-Poisson special fibre; the
 nonzero \(d_\pi\) statement uses the twisted-formality datum in the
-hypothesis.  On these first Taylor components the non-scalar weight-zero
-defects of
-Definition~\ref{defn:low-degree-hochschild-centrality-defects} are
-strict identities.  The unshifted Gerstenhaber bracket of degree
-\(-1\) sends a derivation and a multiplication cochain to multiplication
-by the derivative,
-\([X_x,M_a]_G=M_{X_x(a)}\), so with the realized
-action \(\rho_x(a)=X_x(a)\)
+hypothesis.  On the scalar-reduced stable coordinate algebra, the
+unshifted Gerstenhaber bracket of degree \(-1\) sends a derivation and a
+multiplication cochain to multiplication by the derivative:
+\([X_x,M_a]_G=M_{X_x(a)}\).  The corresponding product, action, and
+\(P_0\) identities are strict in that coordinate model.  Chosen
+finite-rank Koszul representatives need not satisfy these identities
+strictly.  Their Lie defect is
 \[
-  \delta^{\mathrm{prod}}_{x,a}=[X_x,M_a]_G-M_{X_x(a)}=0,
-  \qquad
-  \delta^{\mathrm{act}}_{x|y}
-  =[X_x,M_{O_y}]_G-M_{O_{\{x,y\}_{\mathfrak h}}}=0,
+  \delta^{\mathrm{Lie}}_{x,y}
+    =[X_x,X_y]_G-X_{\{x,y\}_{\mathfrak h}}
+    =-d_{\mathrm{cent}}H^{\mathrm{Lie}}_{x,y},
 \]
-the latter by the strict identity
-\(X_x(O_y)=O_{\{x,y\}_{\mathfrak h}}\) of
-Lemma~\ref{lem:hamiltonian-vector-field-on-Rep} and
-Proposition~\ref{prop:first-order-bracket}; the \(P_0\)-variant
-\(\delta^{P_0}_{x,a}=0\) by
-Theorem~\ref{thm:reduced-principal-part-boundary-current}.  The
-normalized classical Lie identity is
-\([X_x,X_y]_G=X_{\{x,y\}_{\mathfrak h}}\).  In the raw Rees/Weyl
+and the action, product, and \(P_0\) defects are killed by their
+respective displayed primitives.
+
+For \(f=z_1^2z_2\) and \(g=z_1z_2^2\), the ordered representatives
+\(x^2y\) and \(xy^2\) make this distinction explicit.  Writing
+\(\mu=[x,y]=Q\psi\), one has
+\[
+  \delta^{\mathrm{Lie}}_{f,g}(x)=2x\mu,\qquad
+  \delta^{\mathrm{Lie}}_{f,g}(y)=-2\mu y,
+\]
+as in Lemma~\ref{lem:ordered-hamiltonian-lift-defect}.  On the ordered
+trace representative,
+\[
+  X_f\operatorname{Tr}(xy^2)-\operatorname{Tr}(3x^2y^2)
+    =2\operatorname{Tr}(xyxy-x^2y^2)
+    =-2Q\operatorname{Tr}(\psi yx).
+\]
+Thus the trace action is strict in \(H^0\), while the corresponding
+Hochschild cochain equation has
+\[
+  \delta^{\mathrm{act}}_{f|g}
+    =-2d_{\mathrm{cent}}M_{\operatorname{Tr}(\psi yx)},
+  \qquad
+  H^{\mathrm{act}}_{f|g}
+    =2M_{\operatorname{Tr}(\psi yx)}.
+\]
+Here \(\operatorname{Tr}(\psi yx)\) has internal degree \(-1\), so its
+Hochschild zero-cochain has unshifted total Hochschild degree
+\(-1\), hence degree \(-2\) in \(CC^\bullet[1]\).  The suspension of
+the trace/open input is included separately in the full coloured
+centrality-convolution degree of \(H^{\mathrm{act}}\).
+
+In the raw Rees/Weyl
 trace algebra, writing
 \(\{x,y\}_{\hbar_{\mathrm W}}
 =\hbar_{\mathrm W}^{-1}(x\star y-y\star x)\), the projective defect is
@@ -850,13 +892,16 @@ trace algebra, writing
 \]
 Its leading Lie cohomology class is
 \(\hbar_{\mathrm W}\chi_N(K)[\bar c]\); the source extension remains
-\(\bar cK\).  Hence the non-scalar primitives are
-\(H^{\mathrm{prod}}=H^{P_0}=0\), the secondary defect
-\(\delta^3=\operatorname{Jac}(H^{\mathrm{prod}},H^{P_0})=0\) by
-Proposition~\ref{prop:low-degree-centre-lift-obstruction}.  Thus the
-displayed first-Taylor trace-sector rows have no non-scalar weight-zero
-component.  Higher arities, unreduced centrality homotopies, and
-Costello QME counterterms are separate entries of the residual complex.
+\(\bar cK\).  The arity-three non-scalar curvature contains the signed
+Jacobiator of \(H^{\mathrm{Lie}}\), \(H^{\mathrm{act}}\),
+\(H^{\mathrm{prod}}\), and \(H^{P_0}\); it vanishes in cohomology only
+after a compatible \(H^3\) is chosen.  Under the hypotheses of the
+proposition, these primitives remove the non-scalar low-degree
+curvature on the Hamiltonian trace-generator faces, and the raw Weyl
+face has the displayed scalar class.  The scalar projections of the
+cotangent-current and other operation faces, higher arities, unreduced
+centrality homotopies, and Costello QME counterterms are separate
+entries of the residual complex.
 \end{proof}
 
 \begin{thm}[\texorpdfstring{$\Omega$}{Omega}-localization of the completed comparison complex]\label{thm:omega-localization-collapse}

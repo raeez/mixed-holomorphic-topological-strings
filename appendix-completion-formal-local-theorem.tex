@@ -1128,8 +1128,9 @@ the supplied map
 \(\Tr_{\mathrm{open}}:A_{\mathrm{op}}\to\C[-1]\).  Its ghost-zero
 closed-to-open trace observables at fixed rank are
 \[
-  J_N^s(f)=
-  \bigl[\Tr s(f)(\phi_1,\phi_2)\bigr],
+  \widetilde J_N^s(f)=\Tr s(f)(\phi_1,\phi_2),
+  \qquad
+  J_N^s(f)=\bigl[\widetilde J_N^s(f)\bigr],
   \qquad f\in\bar A,
 \]
 with the finite-\(N\) trace relations retained.  Effective scalar
@@ -1359,7 +1360,7 @@ and
 
 At fixed rank, prescribe the boundary cochains
 \[
-  M_{J_N^s(f)}\in
+  M_{\widetilde J_N^s(f)}\in
   CC^0(A_{\mathrm{op}},A_{\mathrm{op}}),
   \qquad
   \Theta^{(1)}_{f,N}\in
@@ -1379,36 +1380,42 @@ Its product, \(P_0\), and Jacobiator homotopies are denoted
 A supplied datum \(\mathcal D_{\mathrm{form}}\) gives the stable
 linear-Poisson Hochschild comparison \(\Psi_\hbar\) of
 Definition~\ref{def:completion-centre-cochains}.  A fixed-rank
-Hochschild-centre lift extending
-\(\Theta^{(1)}_{f,N},M_{J_N^s(f)}\) exists precisely when there is a
-continuous assignment of these Hochschild cochains and homotopies
+first Taylor datum extends through the displayed Lie, trace-action,
+multiplication, and Jacobiator faces of the bracket-admissible
+centrality filtration precisely when there is a continuous assignment
+of the Hochschild cochains
+\(\Theta^{(1)}_{f,N},M_{\widetilde J_N^s(f)}\) and homotopies
 \(H_{f,g},H_{f|g},H^{\mathrm{mult}}_{f,g}\), compatible with the
 weighted K\"othe filtration, satisfying
 \[
   \begin{aligned}
     [\Theta^{(1)}_{f,N},\Theta^{(1)}_{g,N}]_G
-      &=\Theta^{(1)}_{\{f,g\},N}+b_NH_{f,g},\\
-    [\Theta^{(1)}_{f,N},M_{J_N^s(g)}]_G
-      &=M_{J_N^s(\{f,g\})}+b_NH_{f|g},\\
-    [M_{J_N^s(f)},M_{J_N^s(g)}]_G
-      &=b_NH^{\mathrm{mult}}_{f,g},
+      &=\Theta^{(1)}_{\{f,g\},N}-b_NH_{f,g},\\
+    [\Theta^{(1)}_{f,N},M_{\widetilde J_N^s(g)}]_G
+      &=M_{\widetilde J_N^s(\overline{\{s(f),s(g)\}})
+              +N\omega(f,g)\mathbf1}
+        -b_NH_{f|g},\\
+    [M_{\widetilde J_N^s(f)},M_{\widetilde J_N^s(g)}]_G
+      &=-b_NH^{\mathrm{mult}}_{f,g},
   \end{aligned}
 \]
 for all \(f,g\in\mathfrak h_q\), together with the corresponding
 Jacobiator homotopy \(H_3\) and the finite-rank trace relations.
-For such a lift the obstruction component
+For such a partial extension the obstruction component
 \(\mathrm{ob}^{\mathrm{prod}}_{\mathrm{cent}}\in
 H^2(\mathfrak K_{\mathrm{cent}})\) of the four-component
 \(\operatorname{Ob}_{\mathrm{cent/QME/desc}}\) vanishes on the
 bracket-admissible sector.  Conversely, vanishing of this component is
 the obstruction-theoretic statement that such Hochschild homotopies may
 be chosen in the selected Hochschild model.
-The formality extension classes
+This statement does not construct a full Hochschild-centre
+Maurer--Cartan element.  The formality extension classes
 \(\operatorname{Ob}_{\mathcal U,m+1}\), the PBW comparison cone,
 and the Roos transition defects govern the construction of
-\(\mathcal D_{\mathrm{form}}\).  The \(P_0\)-centrality,
-brane-defect quantum master equation, and centre-map Roos descent
-entries govern the subsequent finite-rank lift.
+\(\mathcal D_{\mathrm{form}}\).  The \(P_0\)-centrality, all higher
+centrality components, brane-defect quantum master equation, and
+centre-map Roos descent entries govern the subsequent finite-rank
+lift.
 \end{thm}
 
 \begin{proof}
@@ -2193,8 +2200,9 @@ table:
   \(\tau_{\mathrm{QME}}=C^{\mathrm{red}}_{\hbar_{\mathrm{QME}},w}\) (Milnor
   counterterm, by
   Theorem~\ref{thm:completion-milnor-obstruction-vector}),
-  \(\tau_{\mathrm{cent}}\) (Hochschild equivariance homotopies, by
-  Theorem~\ref{thm:completion-centrality-homotopies}).
+  \(\tau_{\mathrm{cent}}\) (when the Hochschild equivariance
+  primitives of
+  Theorem~\ref{thm:completion-centrality-homotopies} exist).
 \item Projective/descent-torsor realization: the obstruction lands in a
   central summand and the corrected element solves the master
   equation in a central extension; the scalar Capelli anomaly
@@ -2208,7 +2216,8 @@ table:
   Theorem~\ref{thm:completion-native-promatlis}.
 \end{enumerate}
 The fixed-rank trace datum is
-\(J_N^s(f)=\overline{\Tr s(f)(\phi_1,\phi_2)}\) on \(\bar A\),
+\(\widetilde J_N^s(f)=\Tr s(f)(\phi_1,\phi_2)\) and
+\(J_N^s(f)=[\widetilde J_N^s(f)]\) on \(\bar A\),
 with finite-\(N\) trace relations and scalar contact.  Effective
 scalar reduction and degreewise stable passage give
 \[
@@ -2260,8 +2269,9 @@ constructions of \S\S\ref{ssec:completion-decorated-pbw-stokes}--\S\ref{ssec:com
 The stable formal trace map is
 Theorem~\ref{thm:completion-shear-determination}; the pro-Matlis
 cotangent module is Theorem~\ref{thm:completion-native-promatlis};
-the derived-centre lift assembles the supplied formality/PBW/Roos
-datum, the Hochschild equivariance homotopies
+the derived-centre lift requires the supplied formality/PBW/Roos
+datum, all higher centrality components, the displayed
+Hochschild-equivariance primitives
 (Theorem~\ref{thm:completion-centrality-homotopies}), and the
 graph-QME criterion data
 (Theorem~\ref{thm:completion-graph-qme}).
@@ -2298,7 +2308,8 @@ zero-Poisson special fibre
 complex of the PBW deformation.  A chain-level
 comparison with the brane-side derived \(E_1\)-Hochschild object is
 the fixed-rank Maurer--Cartan extension of the cochains
-\(M_{J_N^s(f)}\), \(\Theta^{(1)}_{f,N}\), and \(T_\rho\), governed
+\(M_{\widetilde J_N^s(f)}\), \(\Theta^{(1)}_{f,N}\), and \(T_\rho\),
+governed
 by the Hochschild equivariance, brane-defect quantum master equation,
 and descent data of
 Theorems~\ref{thm:completion-centrality-homotopies},
@@ -2322,7 +2333,8 @@ the chiral algebra
 \(\Phi_d\); the formal-Darboux trace theorem computes the formal Hamiltonian
 normal-slice restriction of that bulk to a finite Chan--Paton
 brane stack via the fixed-rank polynomial trace classes
-\(J_N^s(f)=\overline{\Tr s(f)(\phi_1,\phi_2)}\) and the
+\(J_N^s(f)=[\widetilde J_N^s(f)]\), where
+\(\widetilde J_N^s(f)=\Tr s(f)(\phi_1,\phi_2)\), and the
 degreewise stable trace map \(J^{\mathrm{st}}\).  Taylor windows
 enter as coefficient projections of this completed map.
 On that normal slice the holomorphic collision product is explicit:
@@ -2387,9 +2399,11 @@ linear-Poisson Hochschild realization is
     (A_\hbar,A_\hbar),b_\hbar\bigr).
 \]
 The fixed-rank chart supplies \(J_N^s(f)\) and the chosen Koszul
-Hamiltonian derivations \(X_{f,N}\); their extension to a derived
-centre is the Maurer--Cartan criterion of
-Theorem~\ref{thm:completion-centrality-homotopies}.  Effective scalar
+Hamiltonian derivations \(X_{f,N}\).  Their first Lie, trace-action,
+multiplication, and Jacobiator extension faces obey the criterion of
+Theorem~\ref{thm:completion-centrality-homotopies}; a derived-centre
+map additionally requires the full Maurer--Cartan hierarchy,
+\(P[1]\)-current component, and descent compatibilities.  Effective scalar
 reduction uses the \(\mathfrak{pgl}_N/\mathfrak{sl}_N[1]\) Koszul
 model, removes \(\operatorname{Tr}\psi\) and the empty trace, and
 retains \(\hbar_{\mathrm W}N[\bar c]\) as the projective central
@@ -2633,12 +2647,15 @@ cohomology class that obstructs its extension.
 
 \item[Theorem~\ref{thm:completion-centrality-homotopies} (Hochschild
   equivariance, bracket-admissible sector).]  On the
-	  bracket-admissible sector \(B_q\), the Koszul homotopy for
-	  \([\phi_1,\phi_2]=0\) gives the explicit
-  Hochschild homotopies.  The unrestricted centre lift on
-  arbitrary cotangent currents requires the brane-defect
-  propagator extension (Theorem~\ref{thm:completion-graph-qme}),
-  acknowledged in Remark~\ref{rmk:completion-cotangent-centrality}.
+  bracket-admissible sector \(B_q\), the first Taylor datum extends
+  through the displayed centrality faces exactly when their defects
+  admit continuous compatible primitives.  The ordered pair
+  \(z_1^2z_2,z_1z_2^2\) supplies one explicit
+  \(H^{\mathrm{Lie}}\) and \(H^{\mathrm{act}}\); it does not supply a
+  family for all Hamiltonians.  The unrestricted \(P[1]\)-current and
+  higher faces require the separate data of
+  Remark~\ref{rmk:completion-cotangent-centrality} and the subsequent
+  obstruction rows.
 
 \item[Theorem~\ref{thm:completion-prot-sector-obstruction}
   (protected-sector SDR obstruction).]  Proved as an obstruction
