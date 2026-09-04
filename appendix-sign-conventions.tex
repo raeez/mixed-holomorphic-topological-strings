@@ -91,7 +91,52 @@ Hamiltonian theorem is the formal-Darboux stalk.
     [uv]_{\mathrm{cyc}}=(-1)^{|u||v|}[vu]_{\mathrm{cyc}},
   \]
   and the trace symbol \(\operatorname{Tr}\) is graded cyclic with the
-  same sign.  The only odd letter is \(\psi\).
+  same sign.  The only odd letter is \(\psi\).  For a homogeneous cyclic
+  word \(F=[a_1\cdots a_n]\), the left cyclic derivative is
+  \[
+    \partial_qF
+      =\sum_{a_i=q}
+       (-1)^{|a_1\cdots a_{i-1}|
+                    (|q|+|a_{i+1}\cdots a_n|)}
+       a_{i+1}\cdots a_na_1\cdots a_{i-1}.
+  \]
+
+  More generally, let
+  \[
+    E_{\mathrm{BRST}}
+      =\C x\oplus\C y\oplus\C\gamma\oplus\C\psi,
+    \qquad |x|=|y|=0,\quad |\gamma|=1,\quad |\psi|=-1,
+  \]
+  with even graded-skew symplectic pairing
+  \[
+    \omega(x,y)=1,\quad \omega(y,x)=-1,
+    \qquad \omega(\gamma,\psi)=\omega(\psi,\gamma)=1.
+  \]
+  The cyclic Hamiltonian convention is
+  \[
+    \iota_{X_F}\omega=-dF,
+    \qquad \{F,G\}_{\mathrm{neck}}=[X_F(G)]_{\mathrm{cyc}}.
+  \]
+  Solving the contraction equation gives
+  \[
+    X_F(x)=-\partial_yF,\quad X_F(y)=\partial_xF,
+    \qquad
+    X_F(\gamma)=(-1)^{|F|}\partial_\psi F,\quad
+    X_F(\psi)=(-1)^{|F|}\partial_\gamma F,
+  \]
+  and hence
+  \[
+    \{F,G\}_{\mathrm{neck}}
+      =\bigl[
+        \partial_xF\,\partial_yG-\partial_yF\,\partial_xG
+        +(-1)^{|F|}\bigl(
+          \partial_\gamma F\,\partial_\psi G
+          +\partial_\psi F\,\partial_\gamma G\bigr)
+       \bigr]_{\mathrm{cyc}}.
+  \]
+  In particular,
+  \(\{[x],[y]\}_{\mathrm{neck}}=[1]\) and
+  \(\{[\gamma],[\psi]\}_{\mathrm{neck}}=-[1]\).
 \end{defn}
 
 \begin{lem}[Chevalley--Eilenberg and Lichnerowicz--Poisson gradings]

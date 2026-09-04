@@ -7226,7 +7226,10 @@ on invariant trace functions.
   where cyclic derivatives are taken in the graded cyclic quotient, so
   every sign is the Koszul sign obtained by moving the cut word through
   the remaining letters.  Since \(x,y\) are even, the displayed formula
-  carries sign \(+1\) on ordinary Hamiltonian words.
+  carries sign \(+1\) on ordinary Hamiltonian words.  This is the
+  Hamiltonian convention induced by
+  \(\omega(x,y)=1\), \(\omega(y,x)=-1\), and
+  \(\iota_{X_F}\omega=-dF\); the letter \(\psi\) is unpaired.
 \end{defn}
 
 \begin{thm}[Unital cyclic Koszul \(P_0\) model]
@@ -7264,9 +7267,26 @@ on invariant trace functions.
   For a cyclic word \(F\), let \(X_F\) be the derivation of
   \(T(E_{\mathrm K})\) of degree \(|F|\) defined by
   \[
-    X_F(x)=\partial_yF,\qquad
-    X_F(y)=-\partial_xF,\qquad
+    X_F(x)=-\partial_yF,\qquad
+    X_F(y)=\partial_xF,\qquad
     X_F(\psi)=0 .
+  \]
+  Thus the smallest coordinate calculation already fixes the signs:
+  \[
+    X_{[x]}(y)=[1]=\{[x],[y]\}_{\mathrm{neck}}.
+  \]
+  A noncommutative word calculation retains the ordering information.  For
+  \(F=[x^2y]\) and \(G=[xy^2]\),
+  \[
+    \partial_xF=xy+yx,\quad \partial_yF=x^2,
+    \qquad
+    \partial_xG=y^2,\quad \partial_yG=yx+xy,
+  \]
+  and therefore
+  \[
+    \{F,G\}_{\mathrm{neck}}
+      =[x^2y^2]+2[xyxy]
+      =X_F(G).
   \]
   The definition of the cyclic derivatives gives
   \[
@@ -7294,9 +7314,14 @@ on invariant trace functions.
     [X_F,X_G]_{\mathrm{gr}}(\psi)=0,
   \]
   which follows by differentiating the displayed formula for the bracket
-  and pairing the four possible second-cut positions.  Since graded
-  commutators of derivations satisfy Jacobi, the induced cyclic bracket
-  satisfies Jacobi.  The scalar word must be present:
+  and pairing the four possible second-cut positions.  Jacobi also follows
+  directly from the constant double bracket on \(T(E_{\mathrm K})\) whose
+  only nonzero generator values are
+  \(\{\!\{x,y\}\!\}=1\otimes1\) and
+  \(\{\!\{y,x\}\!\}=-1\otimes1\).  Its double Jacobiator vanishes on
+  generators and hence on the tensor algebra; multiplication followed by
+  the graded cyclic quotient is exactly the displayed necklace bracket.
+  The scalar word must be present:
   \(\{[x],[y]\}_{\mathrm{neck}}=[1]\).
 
   The differential \(Q\) is the degree-one derivation of
@@ -7395,6 +7420,17 @@ on invariant trace functions.
       -\partial_{z_2}N(F)\,\partial_{z_1}N(G)
       =\{N(F),N(G)\}.
   \]
+  The same derivative identities show that commutativizing the Hamiltonian
+  generator values gives
+  \[
+    X_F(x)\longmapsto-\partial_{z_2}N(F),
+    \qquad
+    X_F(y)\longmapsto\partial_{z_1}N(F).
+  \]
+  These are the formal-Darboux and finite-rank Hamiltonian signs fixed by
+  \(\iota_{X_f}(dz_1\wedge dz_2)=-df\).  Thus the normal-ordering map,
+  the matrix trace bracket, and the scalar-contact term all have the same
+  bracket orientation.
   The chain-map property follows generatorwise and then by the derivation
   rule.  If a word contains one \(\psi\), each \(Q\)-summand replaces that
   \(\psi\) by \(xy-yx\), and the two resulting ordinary commutative monomials
@@ -7437,7 +7473,8 @@ on invariant trace functions.
   Enlarge \(E_{\mathrm K}\) to
   \(E_{\mathrm{BV}}=\C x\oplus\C y\oplus\C a\oplus\C\psi\) with
   \(|a|=1\), \(|\psi|=-1\), and add the constant pairing
-  \(\langle a,\psi\rangle=1\) to the necklace bracket.  The map that sends
+  \(\langle a,\psi\rangle=\langle\psi,a\rangle=1\) to the necklace bracket.
+  The map that sends
   an \(x,y\)-word to its commutative monomial and kills every word
   containing \(a\) or \(\psi\) has a nonzero Lie defect.
 \end{lem}
@@ -7445,10 +7482,10 @@ on invariant trace functions.
 \begin{proof}
 	  With left cyclic derivatives and the displayed pairing convention,
 	  \[
-	    \{[a],[\psi x]\}_{\mathrm{neck}}=[x]
+	    \{[a],[\psi x]\}_{\mathrm{neck}}=-[x]
 	  \]
-		  exactly.  The plain
-  projection sends the left-hand bracket to \(z_1\), while it sends both
+	  exactly.  The plain
+	  projection sends the left-hand bracket to \(-z_1\), while it sends both
   \([a]\) and \([\psi x]\) individually to zero, so the bracket of their
 	  projected images is zero.  Thus the full gauge-paired cyclic BV algebra
 	  is controlled by a quotient, homotopy transfer, or explicit
@@ -7476,7 +7513,7 @@ on invariant trace functions.
   \]
   and the corresponding graded necklace bracket.  The cyclic Hamiltonian
   \[
-    S=[\gamma(xy-yx)]+[\psi\gamma\gamma]
+    S=-[\gamma(xy-yx)]-[\psi\gamma\gamma]
   \]
   has degree \(1\) and satisfies \(\{S,S\}_{\mathrm{neck}}=0\).  Hence
   \(Q=\{S,-\}_{\mathrm{neck}}\) makes
@@ -7506,13 +7543,25 @@ on invariant trace functions.
   For a cyclic word \(F\), let \(X_F\) be the Hamiltonian derivation of
   \(T(E_{\mathrm{BRST}})\) determined by the displayed even pairing:
   \[
-    X_F(x)=\partial_yF,\qquad
-    X_F(y)=-\partial_xF,\qquad
-    X_F(\gamma)=\partial_\psi F,\qquad
-    X_F(\psi)=\partial_\gamma F .
+    X_F(x)=-\partial_yF,\qquad
+    X_F(y)=\partial_xF,\qquad
+    X_F(\gamma)=(-1)^{|F|}\partial_\psi F,\qquad
+    X_F(\psi)=(-1)^{|F|}\partial_\gamma F .
   \]
   Cyclic derivatives are taken in the graded cyclic quotient; moving the
-  cut word past the removed letter gives the Koszul sign.  With these
+  cut word past the removed letter gives the Koszul sign.  Equivalently,
+  the inverse pairing gives
+  \[
+    \{F,G\}_{\mathrm{neck}}
+      =\bigl[
+       \partial_xF\,\partial_yG-\partial_yF\,\partial_xG
+       +(-1)^{|F|}\bigl(
+         \partial_\gamma F\,\partial_\psi G
+         +\partial_\psi F\,\partial_\gamma G\bigr)
+      \bigr]_{\mathrm{cyc}},
+  \]
+  so \(\{[x],[y]\}_{\mathrm{neck}}=[1]\) while
+  \(\{[\gamma],[\psi]\}_{\mathrm{neck}}=-[1]\).  With these
   signs, \(X_F(G)=\{F,G\}_{\mathrm{neck}}\).  Reversing a cut pair gives
   the graded antisymmetry
   \[
@@ -7524,17 +7573,20 @@ on invariant trace functions.
   \[
     [X_F,X_G]_{\mathrm{gr}}=X_{\{F,G\}_{\mathrm{neck}}}
   \]
-  on the four generators \(x,y,\gamma,\psi\).  The graded Jacobi identity
-  for commutators of derivations therefore implies Jacobi for the
-  necklace bracket.
+  on the four generators \(x,y,\gamma,\psi\).  The corresponding constant
+  graded double bracket is determined by the displayed even pairing.  Its
+  double Jacobiator vanishes on generators and hence on the tensor algebra;
+  multiplication followed by the graded cyclic quotient gives the displayed
+  necklace bracket.  Thus the necklace bracket satisfies Jacobi.
 
-  For \(S=[\gamma(xy-yx)]+[\psi\gamma\gamma]\), the same
+  Put \(\mu=xy-yx\).  For
+  \(S=-[\gamma\mu]-[\psi\gamma\gamma]\), the same
   cyclic-derivative convention gives
   \[
-    \partial_\psi S=\gamma^2,\qquad
-    \partial_yS=\gamma x-x\gamma,\qquad
-    -\partial_xS=\gamma y-y\gamma,\qquad
-    \partial_\gamma S=xy-yx+\gamma\psi+\psi\gamma .
+    \partial_\psi S=-\gamma^2,\qquad
+    \partial_yS=x\gamma-\gamma x,\qquad
+    \partial_xS=\gamma y-y\gamma,\qquad
+    \partial_\gamma S=-\mu-\gamma\psi-\psi\gamma .
   \]
   Hence \(Q=X_S\) has the four displayed values.  These values square to
   zero on generators.  First
@@ -7546,19 +7598,29 @@ on invariant trace functions.
        -(\gamma x-x\gamma)\gamma-x\gamma^2=0,
   \]
   and the same computation with \(x\) replaced by \(y\) gives
-  \(Q^2y=0\).  For \(\mu=xy-yx\), \(Q\mu=\gamma\mu-\mu\gamma\), whence
+  \(Q^2y=0\).  Moreover \(Q\mu=\gamma\mu-\mu\gamma\), whence
   \[
     Q^2\psi
       =Q\mu+Q(\gamma\psi)+Q(\psi\gamma)
       =(\gamma\mu-\mu\gamma)+(-\gamma\mu-\gamma\psi\gamma)
         +(\mu\gamma+\gamma\psi\gamma)=0 .
   \]
-  Thus \(\{S,S\}_{\mathrm{neck}}\) has zero Hamiltonian derivation on all
-  generators; in the reduced cyclic quotient it is a scalar central word.
-  But \(\{S,S\}_{\mathrm{neck}}\) is homogeneous of cyclic word length
-  \(4\), whereas a scalar central word has length \(0\).  Hence
-  \(\{S,S\}_{\mathrm{neck}}=0\), and \(Q=\{S,-\}\) is a square-zero
-  derivation of the necklace bracket.
+  The master equation can also be read directly in cyclic words:
+  \[
+    \frac12\{S,S\}_{\mathrm{neck}}
+      =\bigl[(\gamma y-y\gamma)(x\gamma-\gamma x)
+       -(\mu+\gamma\psi+\psi\gamma)\gamma^2\bigr]_{\mathrm{cyc}}.
+  \]
+  The first summand is \([\mu\gamma^2]_{\mathrm{cyc}}\), and
+  \[
+    [\,(\gamma\psi+\psi\gamma)\gamma^2\,]_{\mathrm{cyc}}=0,
+    \qquad
+    [\gamma\psi\gamma^2]_{\mathrm{cyc}}
+      =-[\psi\gamma^3]_{\mathrm{cyc}}.
+  \]
+  Hence \(\{S,S\}_{\mathrm{neck}}=0\), and
+  \(Q=\{S,-\}_{\mathrm{neck}}\) is a square-zero derivation of the
+  necklace bracket.
 
   The chain-map statement for \(N_{\mathrm{BRST}}\) follows as in
   Proposition~\ref{prop:normal-ordering-quotient-cyclic-koszul}: ordinary
@@ -7566,7 +7628,7 @@ on invariant trace functions.
   \(xy-yx\), whose two normal orderings agree, while the \(\gamma\psi\) and
   \(\psi\gamma\) terms are killed; every summand containing \(\gamma\) is
   killed.  Its Lie defect is the gauge-paired bracket
-  \(\{[\gamma],[\psi x]\}_{\mathrm{neck}}=[x]\), whose image is \(z_1\),
+  \(\{[\gamma],[\psi x]\}_{\mathrm{neck}}=-[x]\), whose image is \(-z_1\),
   whereas both factors have zero image.  Finally \([\psi]\) is closed:
   \[
     Q[\psi]=[xy-yx]+[\gamma\psi+\psi\gamma]=0,

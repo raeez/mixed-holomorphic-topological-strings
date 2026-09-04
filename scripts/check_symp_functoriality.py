@@ -25,7 +25,7 @@ $\bar A = \C[[z_1, z_2]]/\C \cdot 1$.
 The parabolic subgroup $P_{(z_1)}$ preserves $\mathfrak m = (z_1)$;
 its Lie algebra consists of Hamiltonians $h \in \bar A$ with
 $\partial_{z_2} h \in (z_1)$ (so that the vector field
-$X_h = \partial_{z_2} h \cdot \partial_{z_1} - \partial_{z_1} h
+$X_h = -\partial_{z_2} h \cdot \partial_{z_1} + \partial_{z_1} h
 \cdot \partial_{z_2}$ preserves the ideal $(z_1)$).
 
 Concrete generators of $P_{(z_1)}$ Lie algebra:
