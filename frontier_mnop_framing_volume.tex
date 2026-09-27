@@ -1,0 +1,738 @@
+\documentclass[12pt]{amsart}
+\usepackage[localtheorems]{raeez-math-template}
+\input{mathmacros.tex}
+
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{conj}[thm]{Conjecture}
+\theoremstyle{remark}
+\newtheorem{rmk}[thm]{Remark}
+\renewcommand*{\theHthm}{\thesection.\arabic{thm}}
+\renewcommand*{\theHprop}{\theHthm}
+\renewcommand*{\theHconj}{\theHthm}
+\renewcommand*{\theHrmk}{\theHthm}
+
+\providecommand{\E}{\mathrm{E}}
+\providecommand{\PhiFA}{\Phi^{\mathrm{FA}}}
+\providecommand{\DT}{\mathrm{DT}}
+\providecommand{\PT}{\mathrm{PT}}
+\providecommand{\GW}{\mathrm{GW}}
+\providecommand{\Perf}{\mathrm{Perf}}
+\providecommand{\Aut}{\mathrm{Aut}}
+\providecommand{\End}{\mathrm{End}}
+\providecommand{\cF}{\mathcal{F}}
+\providecommand{\cO}{\mathcal{O}}
+\renewcommand{\P}{\mathbb{P}}
+\providecommand{\NAJ}{N_{\AJ}}
+
+\title[Compact CY$_3$ comparison ledger]{Compact CY$_3$ comparison ledger:
+  external scalar theorems, supplied compact data, and centre-lift
+  conjectures}
+
+\begin{document}
+\maketitle
+
+The formal-local mixed holomorphic--topological theory gives the
+Hamiltonian BF bulk on
+\(\R^2_{\mathrm{top}}\times\widehat{\C^2}_{\mathrm{hol}}\), the
+Dirac-brane trace \(J(f)=\operatorname{Tr}f(\phi_1,\phi_2)\), and the
+Capelli projective class \(\hbar_{\mathrm{W}} N[\bar c]\).  A compact
+Calabi--Yau threefold carries a different but adjacent structure: a
+3-Calabi--Yau category such as \(\Perf(X)\), virtual-cycle traces, the
+BCOV holomorphic anomaly, and Hodge-theoretic periods.  A compact
+enumerative or automorphic comparison is a matched-conventions datum
+whose formal normal restriction may be compared with the displayed
+stalk.  Its remaining coordinates are the compact virtual cycle, the
+Gromov--Witten/Pandharipande--Thomas comparison, the BCOV propagator,
+and a compact-target chain object whose protected trace has the
+automorphic scalar as its scalar invariant.  This note is not used in the proof of
+the formal-Darboux trace-sector theorem; it is a compact-target
+comparison ledger.
+
+\section{\texorpdfstring{MNOP factorisation and the $\E_2$-centre obstruction}{MNOP factorisation and the E2-centre obstruction}}\label{sec:mnop}
+
+On a smooth compact Calabi--Yau threefold \(X\), three enumerative
+theories produce a priori distinct generating series: Donaldson--Thomas
+counts of ideal sheaves
+\(Z_{\DT}(\mathfrak q,\mathsf Q)=
+\sum_{\beta,n}\DT_{\beta,n}(X)\mathfrak q^n\mathsf Q^\beta\)
+(Thomas 2000;
+Behrend--Fantechi 2008), Pandharipande--Thomas stable-pair counts
+\(Z_{\PT}(\mathfrak q,\mathsf Q)=
+\sum_{\beta,n}\PT_{\beta,n}(X)\mathfrak q^n\mathsf Q^\beta\)
+(Pandharipande--Thomas 2009), and
+Gromov--Witten virtual-class series
+\(Z_{\GW}(u,\mathsf Q)=
+\exp\sum_{\beta,g}\GW_{\beta,g}(X)u^{2g-2}\mathsf Q^\beta\)
+(Behrend--Fantechi 1997;
+Li--Tian 1998).  The Maulik--Nekrasov--Okounkov--Pandharipande correspondence
+compares these series only after the reduced DT convention, the
+variable change \(-q=e^{iu}\), and the multiple-cover normalisation are
+fixed.  The scalar DT/PT factorisation is an external theorem in this
+form.  The GW/PT comparison is a separate virtual-class comparison
+statement with its own hypotheses; neither statement is produced by the
+formal-local theorem.
+
+\begin{thm}[External scalar DT/PT factorisation on the quintic]\label{thm:mnop-quintic}
+  Let \(Q\subset\P^4\) be a smooth quintic threefold (Euler
+  characteristic \(\chi(Q)=-200\), Calabi--Yau by \(c_1(Q)=0\)).  The
+  degree-zero DT generating function factors as the MacMahon power
+  \(M(q)=\prod_{n\ge1}(1-q^n)^{-n}\) raised to \(\chi(Q)\).  With
+  \(\mathfrak q\) the Euler-characteristic variable and
+  \(\mathsf Q^\beta\) the Novikov monomial, the reduced DT series equals
+  the PT series:
+  \[
+    Z_{\DT}(Q;\mathfrak q,\mathsf Q)
+    \;=\;
+    M(-\mathfrak q)^{\chi(Q)}\,
+    Z_{\PT}(Q;\mathfrak q,\mathsf Q).
+  \]
+\end{thm}
+
+\begin{proof}
+  The factorisation \(Z_{\DT}=Z_{\DT,0}\cdot Z'_{\DT}\) with
+  \(Z_{\DT,0}=M(-\mathfrak q)^{\chi(Q)}\) is Behrend--Fantechi's Hilbert-scheme
+  formula applied to the degree-zero locus.  The reduced equality
+  \(Z'_{\DT}=Z_{\PT}\) is Bridgeland's Hall-algebra theorem, with
+  Toda's wall-crossing route as auxiliary.  Smoothness of \(Q\) and
+  \(\chi(Q)=-200\) fix the MacMahon exponent.
+\end{proof}
+
+The PT/GW leg
+\(Z_{\PT}(Q;\mathfrak q,\mathsf Q)=
+Z_{\GW}(Q;u,\mathsf Q)|_{-\mathfrak q=e^{iu}}\) is not a
+consequence of the scalar DT/PT theorem
+Theorem~\ref{thm:mnop-quintic}.  For the quintic it is part of the
+GW/PT correspondence, constrained by
+Gopakumar--Vafa integrality and by the Huang--Klemm--Quackenbush
+bootstrap in the computed range.
+
+The substitution \(-q=e^{iu}\) is an analytic continuation datum between
+distinct generating functions.  A chain-level lift must place
+the DT, PT, and GW theories in three dualisable modules over a
+factorisation-algebra image of \(\Perf(Q)\), each carrying its own
+trace; no scalar MNOP statement implies such a lift.  The required
+compact comparison datum is
+\[
+  C_{\mathrm{tar}}(X)=
+  \bigl(\cF_X,\;\mathrm{Sp}^{\mathrm{ch}}_{\Sigma_2,C},\;
+    \cA_X,\; M_{\DT},M_{\PT},M_{\GW},\;
+    \mathrm{Tr}_{\DT},\mathrm{Tr}_{\PT},\mathrm{Tr}_{\GW},\;
+    \mathfrak C^{\mathrm{cent}}_X\bigr),
+\]
+where \(\cF_X=\PhiFA_3(\Perf(X))\) denotes the required image of the
+3-Calabi--Yau dg category of perfect complexes on \(X\) under a
+factorisation-algebra functor of degree~\(3\);
+\(\mathrm{Sp}^{\mathrm{ch}}_{\Sigma_2,C}\) is a chosen curve
+specialisation datum; \(\cA_X\) is the resulting chiral algebra after
+that specialisation; each \(M_\bullet\) is a dualisable
+\(\cA_X\)-module attached to the corresponding theory; each
+\(\mathrm{Tr}_\bullet\) is a chain-level trace map recovering the
+scalar generating function; and \(\mathfrak C^{\mathrm{cent}}_X\) is
+the centre-comparison complex whose degree-zero Maurer--Cartan fibre
+classifies the central automorphisms compatible with these traces.
+
+\begin{conj}[MNOP centre-lift on the quintic]
+  \label{conj:mnop-centre-lift}
+  Suppose \(C_{\mathrm{tar}}(Q)\) and the three chain-level trace maps
+  are constructed in conventions matched to
+  Theorem~\ref{thm:mnop-quintic} and to the chosen GW/PT normalisation.
+  With the curve specialisation and centre-comparison maps fixed, an
+  MNOP lift is a point of the homotopy fibre
+  \[
+    \mathrm{Lift}_{\mathrm{MNOP}}(Q):=
+    \operatorname{hofib}\!\left(
+      \Aut_{\E_2}\bigl(Z_{\E_2}(\cA_Q)\bigr)
+      \longrightarrow
+      \Aut(\mathrm{Tr}_{\DT},\mathrm{Tr}_{\PT},\mathrm{Tr}_{\GW})
+    \right)_{-q=e^{iu}} .
+  \]
+  Thus the chain-level MNOP lift datum is defined by
+  \(C_{\mathrm{tar}}(Q)\), the trace triple, and the displayed
+  homotopy fibre.  Non-emptiness requires the obstruction tower in
+  \(\mathfrak C^{\mathrm{cent}}_Q\) to vanish.  At a point of this
+  fibre, acyclicity of the tangent complex in non-negative degrees gives
+  uniqueness up to contractible choice.
+\end{conj}
+
+The hypothesis decomposes into four mathematical data: a constructed
+factorisation-algebra functor \(\PhiFA_3\) on the 3-Calabi--Yau dg
+category, compatible with Hall and centre constructions; dualisable
+\(\cA_X\)-modules \(M_{\DT},M_{\PT},M_{\GW}\); chain-level trace maps
+whose protected characters realise the three scalar partition-function
+normalisation targets only after the corresponding trace complexes have
+been constructed; and centrality homotopies
+\(\sigma_X\colon\mathrm{Tr}_{\DT}\Rightarrow\mathrm{Tr}_{\PT}\) and
+analogously to \(\mathrm{Tr}_{\GW}\) in the \(\E_2\)-centre.  Existence
+is the lifting problem for this homotopy fibre, and rigidity is the
+acyclicity of its tangent complex.  Orientation and
+cohomological-Hall-algebra (CoHA) prerequisites enter through
+Joyce--Upmeier and Kinjo--Park--Safronov.
+
+\section{\texorpdfstring{$S^3$-framing on the quintic}{S^3-framing on the quintic}}\label{sec:s3-framing}
+
+The open topological theory with a Lagrangian brane \(L\subset X\)
+requires a framing datum on \(L\): a chosen trivialisation of the
+\(SO(\mathrm{rank}\, N_L)\)-torsor of orthonormal frames of the normal
+bundle, compatible with the brane-line BV complex.
+For a Lagrangian \(L\cong S^3\hookrightarrow Q\) in the smooth quintic
+--- for instance the real locus of a real deformation (Sheridan 2016;
+Sheridan--Smith 2021) --- the topological framing obstruction lives in
+\[
+  \pi_0\bigl(\Map(S^3,SO(3))\bigr) \;=\; \pi_3(SO(3)) \;=\; \Z,
+\]
+the Hirzebruch \(\sigma\)-invariant torsor.  Two questions separate:
+	whether the symplectic Lagrangian condition and an orientation of \(L\)
+	trivialise \(N_{L/Q}\) topologically, so that the framing torsor is
+	\(\Z\); and which integer in that torsor, paired with which
+BV/\(A_\infty\) chain homotopy on the brane complex, the open B-model
+requires.
+
+\begin{prop}[Normal-bundle orientation and topological triviality]
+  \label{prop:s3-framing-quintic}
+  Let \(L\cong S^3\subset Q\) be an oriented Lagrangian in the smooth
+  quintic threefold.  Then the oriented rank-three real bundle
+  \(N_{L/Q}\to S^3\) is topologically trivial.  Its trivialisations form
+  a \(\pi_3(SO(3))=\Z\)-torsor; no element of this torsor is determined
+  by the Calabi--Yau volume form alone.
+\end{prop}
+
+\begin{proof}
+  The symplectic form identifies \(N_{L/Q}\) with \(T^*L\).  The chosen
+  orientation of \(L\) orients \(T^*L\).  Since \(S^3\) is
+  parallelisable, \(T^*S^3\) is trivial.  Every oriented rank-three real
+  bundle on \(S^3\) is also trivial by obstruction theory: the
+  classifying map lies in \(BSO(3)\) and
+  \(\pi_3(BSO(3))=\pi_2(SO(3))=0\).
+\end{proof}
+
+The topological construction gives the framing torsor, not a preferred
+framing.  Two further data complete the open brane theory on
+\((Q,L)\): an integer framing class \([f]\in\pi_3(SO(3))=\Z\)
+selecting a point in the trivialisation torsor, and a
+Costello-compatible BV/\(A_\infty\) chain homotopy \(h_f\) trivialising
+the obstruction class
+\[
+  \mathrm{Ob}_{\mathrm{frame}}(L,f)\in
+  H^0\bigl(\Omega^\bullet(L)\otimes\End_{\mathrm{BV}}\bigr)
+\]
+to the equivariant lift of the brane propagator over the chosen
+framing.  Framing on \(S^3\) is a choice: each \([f]\)
+defines a different chain-level brane.
+
+\section{Quintic BPS growth and Abel--Jacobi comparison}\label{sec:chiral-volume}
+
+If the genus-zero BPS counts \(n_N\) of degree-\(N\) rational curves on
+a compact Calabi--Yau threefold grow at the rate predicted by a
+vanishing period, the sequence \(a_N=N^{-1}\log n_N\) has a finite
+limit.  An Abel--Jacobi invariant is attached to a homologically
+trivial one-cycle, not to a curve class alone.  Thus a compact
+CY-to-chiral theorem must choose homologically trivial cycles
+\[
+  \mathcal Z_N=C_{N\ell}-C^0_{N\ell}
+\]
+and a Hodge norm on \(J^2(X)\).  The compact-target asymptotic
+conjecture is the assertion
+\[
+  \lim_{N\to\infty}\frac1N\log\bigl|n_N(X,N\ell)\bigr|
+  =
+  \tfrac1{2\pi}\,
+  \lim_{N\to\infty}\frac1N\|\AJ(\mathcal Z_N)\|_H,
+\]
+where \(n_N(X,N\ell)\) is the degree-\(N\) rational-curve count in
+class \(N\ell\in H_2(X,\Z)\), \(\AJ(\mathcal Z_N)\in J^2(X)\) is
+the Abel--Jacobi period of the chosen homologically trivial difference, and the
+intermediate Jacobian
+\(J^2(X)=H^3(X,\C)/(F^2H^3+H^3(X,\Z))\) carries the Hodge metric.  Take
+\(X=Q\) the smooth quintic, \(\beta=N\ell\) for \(\ell\in H_2(Q,\Z)\)
+the line class, and \(n_N=Z_N(Q,N\ell)\) the genus-zero BPS invariant.  The
+finite data through \(N=10\) (BCOV bootstrap for \(N\le 9\),
+Huang--Klemm--Quackenbush 2009 for \(N=10\)) reads:
+$$\renewcommand{\arraystretch}{1.1}
+\begin{array}{r@{\;=\;}l}
+  n_1 & 2875 \\
+  n_2 & 609\,250 \\
+  n_3 & 317\,206\,375 \\
+  n_4 & 242\,467\,530\,000 \\
+  n_5 & 229\,305\,888\,887\,625 \\
+  n_6 & 248\,249\,742\,118\,022\,000 \\
+  n_7 & 295\,091\,050\,570\,845\,659\,250 \\
+  n_8 & 375\,632\,160\,937\,476\,603\,550\,000 \\
+  n_9 & 503\,840\,510\,416\,985\,243\,645\,106\,250 \\
+  n_{10} & 704\,288\,164\,978\,454\,686\,113\,488\,249\,750.
+\end{array}$$
+The sequence $a_N := N^{-1} \log n_N$ attains its minimum at $N=3$:
+$$
+a_1 \approx 7.964,\;
+a_2 \approx 6.660,\;
+a_3 \approx 6.525,\;
+a_4 \approx 6.554,\;
+a_5 \approx 6.613,
+$$
+$$
+a_6 \approx 6.676,\;
+a_7 \approx 6.733,\;
+a_8 \approx 6.785,\;
+a_9 \approx 6.832,\;
+a_{10} \approx 6.873.
+$$
+The sequence decreases sharply through $N = 3$, then increases
+monotonically: $a_{N+1} - a_N > 0$ for $N \in \{3, \dots, 9\}$, with
+increments
+\[
+\{+0.029,\ +0.060,\ +0.062,\ +0.058,\ +0.052,\ +0.046,\ +0.041\}.
+\]
+
+\begin{prop}[Quintic BPS-growth finite calculation through $N=10$]
+  \label{prop:chiral-volume-quintic}
+  For the displayed genus-zero quintic BPS table through \(N=10\), the
+  sequence \(a_N=N^{-1}\log n_N\) attains its minimum at
+  \(N=3\) and, on the tail \(N\in\{5,\dots,10\}\), satisfies the
+  three-parameter law
+  \[
+    a_N \;=\; L \;+\; \alpha\,\frac{\log N}{N} \;+\; \frac{\beta}{N}
+  \]
+  with residual bounded by \(5\times10^{-6}\) and
+  \[
+    L \;\approx\; 7.5925,\qquad \alpha \;\approx\; -3.3204,
+    \qquad \beta \;\approx\; 0.4477.
+  \]
+  The intercept \(L\) is numerically within three significant figures of the
+  raw mirror-period ratio at the conifold point \(z_c=5^{-5}\) of the
+  Candelas--de la Ossa--Green--Parkes (CDGP) mirror quintic:
+  \[
+    |t(z_c)| \;=\;
+    \biggl|\frac{\omega_1(z_c)}{\omega_0(z_c)}\biggr|
+    \;\approx\; 7.5909,
+  \]
+  where the fundamental period
+  \(\omega_0(z)=\sum_n\binom{5n}{n,n,n,n,n}z^n\) and the logarithmic
+  period
+  \(\omega_1(z)=\omega_0(z)\log z+5\sum_n\binom{5n}{n,n,n,n,n}(H_{5n}-H_n)z^n\)
+  (with \(H_k\) the \(k\)-th harmonic number) solve the quintic
+  Picard--Fuchs operator \(\mathcal L_{\mathrm{PF}}\) of
+  \eqref{eq:picard-fuchs-cdgp} below.
+\end{prop}
+
+\begin{proof}
+  Linear least squares on the six equations
+  \(a_N=L+\alpha(\log N)/N+\beta/N\), \(N\in\{5,\dots,10\}\), gives the
+  stated coefficients with maximum residual
+  \(4.62\times10^{-6}<5\times10^{-6}\).  The fundamental and logarithmic
+  periods solve
+  \begin{equation}\label{eq:picard-fuchs-cdgp}
+    \mathcal L_{\mathrm{PF}}\;=\;\theta^4-5z(5\theta+1)(5\theta+2)(5\theta+3)(5\theta+4),
+    \qquad \theta=z\partial_z,
+  \end{equation}
+  with \(z=5^{-5}\psi^{-5}\) the natural mirror coordinate.  At
+  \(z_c=5^{-5}\) the convergent power-series sum yields
+  \[
+    \omega_0(z_c) \;\approx\; 1.0707258684,\qquad
+    \omega_1(z_c) \;\approx\; -8.1277650532,
+  \]
+  giving \(|t(z_c)|\approx 7.5908925831\).
+\end{proof}
+
+Three numbers are visible in the finite table: the tail-fit intercept
+\(L\approx 7.59\), the raw mirror-period ratio
+\(|t(z_c)|\approx 7.5909\), and the attractor comparison value
+\(5\log 5\approx 8.05\).  They live in different normalisations.  The
+fit shows only that the six displayed tail values are compatible with a
+period scale near \(|t(z_c)|\); it does not identify the Abel--Jacobi
+normal function.
+
+The Abel--Jacobi growth assertion
+\[
+  \lim_N N^{-1}\log n_N
+  =(2\pi)^{-1}\lim_N N^{-1}\|\AJ(C_{N\ell}-C_{N\ell}^0)\|_H
+\]
+is stated against
+the Hodge metric on \(J^2(Q)\).  The raw CDGP mirror ratio
+\(t(z_c)=\omega_1(z_c)/\omega_0(z_c)\) is a period-coordinate ratio:
+\(\omega_0,\omega_1\) sit in a CDGP basis of solutions of
+\eqref{eq:picard-fuchs-cdgp} before Hodge normalization, and
+the \(2\pi i\) monodromy factor is not fixed.  Bridging the two requires
+a normalisation datum
+\[
+  \NAJ\colon\;\bigl(\omega_0,\omega_1,\omega_2,\omega_3\bigr)
+  \;\longmapsto\;\bigl(\varpi_0,\varpi_1,\varpi_2,\varpi_3\bigr)
+\]
+matching the CDGP period basis to the Hodge filtration on \(H^3\) and
+		fixing the \(2\pi i\) monodromy convention.  The finite agreement
+		\(L\approx|t(z_c)|\) is a normalisation check relative to \(\NAJ\).
+
+\section{Serre pairing and the compact Calabi--Yau categorical trace}\label{sec:serre-nccr}
+
+The Serre functor and its pairing are the categorical Calabi--Yau
+datum that any compact CY\(_3\) descent must preserve, before any
+module, tilting, or Hall-algebra structure is built.  Van den Bergh's
+noncommutative crepant resolution (NCCR) is an algebra
+\(\End_R(M)\) for a reflexive maximal Cohen--Macaulay \(R\)-module
+\(M\), required to be homologically homogeneous over the singular
+Gorenstein base.  On the smooth quintic there is no crepant-resolution
+datum; the compact descent begins with the Serre datum.
+
+\begin{prop}[Serre pairing on smooth compact CY$_3$]
+  \label{prop:serre-nccr-substitute}
+  Let \(X\) be a smooth compact Calabi--Yau threefold.  The Serre functor
+  \(S_X\colon D^b(X)\to D^b(X)\) is the shift \(S_X=[3]\), and the
+  Calabi--Yau pairing
+  \[
+    \RHom(F,G)\otimes\RHom(G,F)\;\longrightarrow\;\C[-3]
+  \]
+  is non-degenerate on \(\Perf(X)=D^b(X)\).
+\end{prop}
+
+\begin{proof}
+  Smoothness gives \(\Perf(X)=D^b(X)\).  Serre duality is
+  \(S_X=\otimes K_X[\dim X]\); the Calabi--Yau condition \(K_X=\cO_X\)
+  reduces this to \(S_X=[3]\).  The pairing is the Serre trace of
+  \(\RHom\otimes\RHom\to\RHom(F,F)\) followed by the Serre trace
+  \(\RHom(F,F)\to\C[-3]\).
+\end{proof}
+
+The Serre datum \(S_X=[3]\) is what a compact Calabi--Yau descent must
+preserve.  The remaining global quasi-NCCR obstruction is the
+construction of a Serre-equivariant local algebraic or dg model
+\(\mathcal A_X\to\End_{D^b(X)}(\bigoplus_i F_i)\) generating
+\(D^b(X)\), with finite-dimensionality of \(\mathrm{Ext}^*(F_i,F_j)\)
+and a descent datum identifying the local model with a global
+endomorphism sheaf compatibly with \(S_X\).  Such an object exists in
+the singular Gorenstein cases above; on the smooth quintic its
+existence is the Serre-equivariant compact-trace obstruction.
+
+\section{\texorpdfstring{Fourier--Mukai partners for $K3 \times E$}{Fourier-Mukai partners for K3 x E}}\label{sec:fm-k3e}
+
+Kuznetsov homological projective duality (Kuznetsov 2007) starts from
+a smooth projective variety with a very ample line bundle
+inducing a non-trivial Lefschetz decomposition of \(D^b\); on any
+  Calabi--Yau the Serre functor is a shift, and Bridgeland's
+  indecomposability theorem (Bridgeland 1999) constrains the only
+  semiorthogonal decomposition to the trivial one.  Both \(D^b(K3)\) and \(D^b(E)\) are
+indecomposable, so the Lefschetz datum on \(K3\times E\) is the
+trivial rectangular structure \(\mathcal A_0=D^b(K3\times E)\), and
+Kuznetsov Fano HPD lacks the required non-trivial Lefschetz datum.  The derived-equivalence statement
+on \(K3\times E\) takes a different shape: Fourier--Mukai partner
+construction governed by Mukai-vector divisibility.
+
+\begin{thm}[Fourier--Mukai equivalence in the isotropic \(K3\times E\) case]
+  \label{thm:fm-self-duality-k3e}
+  Let $S$ be a projective $K3$ surface with primitive polarisation
+  $H_S$, and let $E$ be a principally polarised elliptic curve. Fix a
+  Mukai vector $v = (r, \ell, s) \in \widetilde{H}(S, \Z)$ with $\ell
+  \in \mathrm{NS}(S)$, Mukai pairing \(\langle v,v\rangle=0\), and
+  $H_S$ chosen $v$-generic. Assume the fine-moduli condition
+  \begin{equation}\label{eq:coprimality-star}
+    \operatorname{div}(v):=
+    \gcd\{\langle v,w\rangle:\,w\in\widetilde H(S,\Z)\}=1. \tag{$\star$}
+  \end{equation}
+  If \(\mathrm{NS}(S)=\Z H_S\) and \(\ell=mH_S\), this condition is
+  \(\gcd(r,\,mH_S^2,\,s)=1\).
+  Let $M := M_{H_S}(v)$ be the moduli space of $H_S$-stable sheaves
+  with Mukai vector $v$. Then:
+  \begin{enumerate}
+    \item $M$ is a smooth projective $K3$ surface (Mukai 1987;
+      O'Grady 1997);
+    \item there is an equivalence of $\C$-linear triangulated
+      categories
+      $$\Phi_{\mathcal{U}} :\ D^b(S) \xrightarrow{\,\sim\,} D^b(M),$$
+      given by Fourier--Mukai transform along the universal sheaf
+      $\mathcal{U}$ on $S \times M$ (Bridgeland--Maciocia 2001,
+      \emph{Complex surfaces with equivalent derived categories},
+      Thm.\ 1.1);
+    \item combined with the Poincar\'e--Mukai autoequivalence
+      $\mathrm{FM}_{\mathcal{P}} : D^b(E) \xrightarrow{\,\sim\,}
+      D^b(\hat{E}) = D^b(E)$ (Mukai 1981), the product transform
+      $$\Phi_{\mathcal{U}} \boxtimes \mathrm{FM}_{\mathcal{P}} :\
+        D^b(S \times E) \xrightarrow{\,\sim\,}
+        D^b(M \times E)$$
+      is an equivalence of CY$_3$ categories preserving the Serre
+      structure $S_{X} = [3]$.  When \(M\simeq S\) this is an
+      untwisted Fourier--Mukai self-equivalence; in general it is a
+      derived equivalence to the partner \(M\times E\).
+  \end{enumerate}
+\end{thm}
+
+\begin{proof}
+  (1) Under $(\star)$ and $v$-genericity of $H_S$, every
+  $H_S$-semistable sheaf with Mukai vector $v$ is stable
+  (zero strict semistables occur); the moduli $M$ is then a smooth projective
+  holomorphic symplectic variety of dimension
+  \(\langle v,v\rangle+2=2\).  Hence \(M\) is a \(K3\) surface.  For
+	  positive Mukai square the moduli space is higher-dimensional
+	  hyperk\"ahler, and the product with \(E\) is no longer a threefold.
+
+	  (2) The universal sheaf $\mathcal{U}$ exists on $S \times M$ under
+	  $(\star)$: primitive Mukai divisibility kills the Brauer obstruction
+	  to a universal family (C\u{a}ld\u{a}raru 2000,
+  Thm.\ 1.3.2). The Fourier--Mukai kernel
+  $\mathcal{U} \in D^b(S \times M)$ satisfies the
+  Bridgeland--Maciocia orthogonality criterion
+  (Bridgeland--Maciocia 2001, \S 1) and induces an equivalence.
+  Under a nonzero Brauer obstruction to $(\star)$, $\mathcal{U}$ exists as a
+  $p_M^*\alpha$-twisted sheaf for a Brauer class $\alpha \in
+  \mathrm{Br}(M)$, yielding instead $D^b(S) \simeq D^b(M, \alpha)$
+  (Huybrechts--Stellari 2005).
+
+  (3) On $E$ with principal polarisation, $\hat{E} \cong E$
+  canonically; the Poincar\'e bundle $\mathcal{P} \in D^b(E \times E)$
+  is the kernel of $\mathrm{FM}_{\mathcal{P}}$ (Mukai 1981, Thm.\
+  2.2). Tensoring kernels,
+  $\mathcal{K} := \mathcal{U} \boxtimes \mathcal{P} \in D^b((S \times
+  E) \times (M \times E))$ defines a Fourier--Mukai transform whose
+  composition with its adjoint is the identity on each factor; the
+  external-tensor convolution
+  \((\Phi_1\boxtimes\Phi_2)\circ(\Psi_1\boxtimes\Psi_2)
+  = (\Phi_1\circ\Psi_1)\boxtimes(\Phi_2\circ\Psi_2)\)
+  for FM kernels (Huybrechts, \emph{Fourier--Mukai transforms in
+  algebraic geometry}, Prop.\ 5.10) lifts the factor identities to the
+  product.  The Serre functor is preserved by any exact equivalence of
+  triangulated categories (uniqueness of the Serre functor up to natural
+  isomorphism); since both \(\Phi_{\mathcal U}\) and
+  \(\mathrm{FM}_{\mathcal P}\) are equivalences between CY categories
+  of dimensions \(2\) and \(1\) respectively, the product Serre
+  \(S_{S\times E}=S_S\boxtimes S_E=[2]\boxtimes[1]=[3]\) survives.
+\end{proof}
+
+\begin{prop}[Brauer-twisted dichotomy in the isotropic case]
+  \label{prop:coprimality-dichotomy}
+  Keep the isotropic hypothesis \(\langle v,v\rangle=0\) and drop
+  $(\star)$ in Theorem~\ref{thm:fm-self-duality-k3e}. Then there
+  exists a Brauer class $\alpha \in \mathrm{Br}(M)$, whose order
+  divides \(\operatorname{div}(v)\), such that
+  $$D^b(S \times E) \simeq D^b\bigl((M, \alpha) \times E\bigr),$$
+  where the right-hand side denotes the derived category of
+  $p_M^*\alpha$-twisted sheaves. The partner is
+  \((M,\alpha)\times E\) with twisted \(K3\) factor; an untwisted
+	  kernel exists only under the fine-moduli hypothesis.
+\end{prop}
+
+\begin{proof}
+  C\u{a}ld\u{a}raru 2000 Thm.\ 1.3.2 constructs the Brauer obstruction
+  to the universal sheaf from the non-fine Mukai vector; its order is
+  controlled by \(\operatorname{div}(v)\). Huybrechts--Stellari 2005
+  (\emph{Equivalences of twisted
+  K3 surfaces}) then identifies the derived equivalence as a twisted
+  Fourier--Mukai. The elliptic factor contributes an untwisted
+  $\mathrm{FM}_{\mathcal{P}}$.\qed
+\end{proof}
+
+The Kuznetsov--Perry 2019 categorical-join / rectangular-HPD machinery
+requires a non-trivial Lefschetz decomposition; here
+$D^b(K3)$ and $D^b(E)$ are indecomposable, so the Fourier--Mukai
+statement remains the relevant equivalence.
+
+\begin{rmk}[Distinct $\kappa$ values on $K3\times E$ and its anchors]
+  The fine-moduli condition \((\star)\) is the primitive Mukai-vector hypothesis
+  controlling the untwisted Fourier--Mukai kernel.  Four \(\kappa\)
+  values attached to \(K3\times E\) and its comparison anchors are
+  pairwise distinct:
+  \begin{itemize}
+    \item \(\kappa_{\mathrm{cat}}(K3\times E)=\chi(\cO_{K3\times E})=0\),
+      the total-space categorical Euler invariant by K\"unneth.
+    \item \(\kappa_{\mathrm{fibre}}(K3)=\chi(\cO_{K3})=2\), the fibre
+      Euler datum.
+    \item \(\kappa_{\mathrm{Mukai}}(K3)=\mathrm{rk}\,\widetilde H^*(K3)=24\), the rank of the
+      extended Mukai lattice
+      \(\widetilde H^*(K3,\Z)=H^0\oplus H^2\oplus H^4\).
+	    \item \(\kappa_{\mathrm{ch}}^{\mathrm{Heis}}=3\), while the
+	      Borcherds square-root branch \(\Delta_5=\Phi_{10}^{1/2}\) has
+	      weight \(5\) and the Igusa cusp form \(\Phi_{10}\) has weight
+	      \(10\).
+	  \end{itemize}
+	  The Fourier--Mukai equivalence of
+	  Theorem~\ref{thm:fm-self-duality-k3e} preserves the categorical
+	  invariant; it does not identify these four comparison invariants.
+\end{rmk}
+
+\section{Non-perturbative BCOV: Gopakumar--Vafa closure}
+\label{sec:bcov-np-closure}
+
+Physics large-order arguments and one-parameter computations predict
+conifold factorial growth for compact BCOV amplitudes,
+\[
+  F_g\sim (2g-3)!/A^{2g-2},
+\]
+with \(A=\mathcal N_{\mathrm{per}}(Z_{\gamma_c})\) the normalized
+Borel-plane image of the vanishing-cycle central charge
+\(Z_{\gamma_c}=\int_{\gamma_c}\Omega\) at the nearest conifold
+singularity (Shenker; Mari\~no et al.).  A
+theorem requires a chosen BCOV solution, boundary data, Borel plane,
+and Stokes sector.  Non-perturbative BCOV is a compact-target
+resurgent problem with its own Stokes data and compact period
+normalization.  Two structures remain: the Gopakumar--Vafa BPS
+resummation, and a global resurgent Stokes sheaf.
+
+Costello--Li 2012 (arXiv:1201.4501) construct the classical BCOV field
+theory and the perturbative BV quantisation problem, with
+elliptic-curve uniqueness and Virasoro results within the stated
+range.  Write \(\{F_g^{\mathrm{BCOV}}(X,t)\}_{g\geq 0}\)
+for a solution of the BCOV holomorphic anomaly equation with chosen
+large-radius and conifold-gap boundary data; the perturbative
+generating function is
+\[
+  F^{\mathrm{pert}}(\lambda,t) \;=\; \sum_{g\geq 0}\lambda^{2g-2}F_g(X,t),
+  \qquad \lambda=g_s.
+\]
+The Gopakumar--Vafa expansion (Gopakumar--Vafa 1998) proposes the
+non-perturbative form
+\begin{equation}\label{eq:gv-expansion}
+  F^{\mathrm{GV}}(\lambda,t) \;=\; \sum_{\beta>0}\sum_{g\geq 0}n_\beta^g
+    \sum_{m\geq 1}\frac{1}{m}\bigl(2\sin(m\lambda/2)\bigr)^{2g-2}
+    e^{-m\,\beta\cdot t},
+\end{equation}
+where \(n_\beta^g\in\Z\) are integer BPS invariants of the
+class~\(\beta\).  Each fixed-\(\beta\) summand resums infinitely many
+perturbative genera and produces Schwinger poles at \(\lambda=2\pi k/m\)
+whose residues are pair-production amplitudes in the dual gauge
+description.
+
+\begin{conj}[GV non-perturbative closure on the quintic]
+  \label{conj:bcov-np-quintic}
+  Let $Q \subset \P^4$ be the smooth quintic, $F^{\mathrm{BCOV}}_g(Q,
+  t)$ the genus-$g$ solution of the BCOV holomorphic anomaly recursion
+  with the CDGP 1991 large-radius normalization and conifold-gap boundary
+  condition, and $F^{\mathrm{GV}}$ the Gopakumar--Vafa
+  resummation~\eqref{eq:gv-expansion} with the locally mirrored
+  explicit quintic data of Huang--Klemm--Quackenbush 2009 through
+  genus \(20\), together with their boundary-determination assertion
+  through genus \(51\).  In the K\"ahler cone $\Re t > t_c$, where $t_c$ is the image
+  of the conifold locus $\psi = 1$ on the complex-structure moduli
+  space of the mirror quintic $\widetilde Q$:
+  \begin{enumerate}
+    \item[(i)] For every $0 \leq g \leq 20$ after the unstable
+      \(g=0,1\) constant-map conventions are fixed,
+      \[
+        F^{\mathrm{BCOV}}_g(Q, t) \;=\; [\lambda^{2g - 2}]\, F^{\mathrm{GV}}(\lambda, t)
+      \]
+      as formal power series in \(e^{-\beta\cdot t}\) with rational
+      coefficients.  Integrality is the assertion that the inverse
+      multiple-cover transform gives integers \(n_\beta^g(Q)\).
+    \item[(ii)] The analytic convergence obstruction
+      \(\operatorname{ob}_{\mathrm{conv}}\) for the genus-\(0\) BPS series
+      \(\sum_\beta n_\beta^0 e^{-\beta t}\) vanishes in the
+      Hodge-normalised K\"ahler coordinate, giving a nonempty convergence
+      domain and a coefficient-growth limsup bounded by the nearest
+      singularity in that coordinate.
+    \item[(iii)] There is a resurgent comparison whose perturbative
+      sector is \(F^{\mathrm{pert}}\), whose compact scalar target datum,
+      when included, has logarithm \(F^{\mathrm{GV}}\), and whose conifold
+      Stokes wall is compatible with the
+      Candelas--de la Ossa--Green--Parkes 1991 mirror-period monodromy.
+      In that comparison the instanton action
+      is \(A_{\mathrm{BCOV}}=\mathcal N_{\mathrm{per}}(Z_{\gamma_c})\),
+      where \(Z_{\gamma_c}=\int_{\gamma_c}\Omega_{\widetilde Q}\); the
+      convention \(A_{\mathrm{BCOV}}=2\pi i Z_{\gamma_c}\) is one choice
+      of \(\mathcal N_{\mathrm{per}}\).  The Stokes constant \(S_c\) is
+      part of the comparison datum.
+  \end{enumerate}
+\end{conj}
+
+Clause (i) does not follow from Theorem~\ref{thm:mnop-quintic}.  It
+  requires the CDGP prepotential, the HKQ genus-\(20\) explicit data and
+  boundary-determination theorem, the GV
+multiple-cover transform, and the GW/PT comparison as independent
+data.  Clause (ii) is a convergence problem
+for the genus-zero BPS series: Castelnuovo-type genus bounds control
+arithmetic genus, while the rational-curve numbers \(n_\beta^0\) govern
+the GV series.  Finite-genus and finite-degree data alone leave the
+coefficient growth of
+\(\sum_\beta n_\beta^0 e^{-\beta t}\) undetermined; the analytic input
+is a coefficient-growth theorem in the Hodge-normalised K\"ahler
+coordinate.  Clause (iii) is the local
+conifold Stokes match: the leading factorial growth
+\(F_g^{\mathrm{pert}}(Q,t)\sim
+(2g-3)!/\mathcal N_{\mathrm{per}}(Z_{\gamma_c})^{2g-2}\) along
+the Borel direction fixed by the vanishing cycle \(\gamma_c\)
+identifies the B-model Borel singularity with the vanishing-cycle
+hypermultiplet of mass \(|Z_{\gamma_c}|\).  A comparison with the sine poles of
+\eqref{eq:gv-expansion} is an additional resurgent mirror theorem; it
+does not follow from the scalar GV expansion.
+
+\begin{conj}[Conifold comparison on the quintic]
+  \label{conj:conifold-trinity-quintic}
+  On the quintic $Q \subset \P^4$, there exists a resurgent mirror
+  comparison with a chosen Borel coordinate, flat coordinate,
+  holomorphic-volume normalisation, and central-charge convention in which
+  \[
+    A_{k,m}
+    =
+    \mathcal N_{\mathrm{Sch}}(p_{k,m}),\qquad
+    A_c=\mathcal N_{\mathrm{per}}(Z_{\gamma_c}).
+  \]
+  Equality \(A_{k,m}=A_c\) is asserted only for the pole indexed by the
+  vanishing-cycle BPS charge selected by the comparison.  Here
+  \(A_c\) is the Shenker--Mari\~no instanton action
+  of the perturbative BCOV series, read off as
+  \(|F_g|/|F_{g+1}|\sim|A_c|^2/(2g-2)(2g-1)\);
+  \(p_{k,m}=2\pi k/m\) is the raw Gopakumar--Vafa \(\lambda\)-plane pole
+  at multiplicity \(m\);
+  \(Z_{\gamma_c}=\int_{\gamma_c}\Omega_{\widetilde Q}\) is the
+  central charge of the vanishing cycle at the conifold locus
+  \(\psi=1\) on the mirror quintic; and
+  \(\mathcal N_{\mathrm{Sch}},\mathcal N_{\mathrm{per}}\) are the
+  comparison maps to the BCOV Borel plane.  The same comparison must
+  compute the conifold Stokes constant and identify the protected scalar
+  A-model BPS datum, if such a datum exists.
+\end{conj}
+
+The proposed equality is not an equality of raw symbols.  It is the
+large-order conifold statement after the normalisations
+\(\mathcal N_{\mathrm{Sch}}\) and \(\mathcal N_{\mathrm{per}}\) have
+been constructed.  The comparison from GV sine-pole singularities to the
+BCOV Borel plane and the conifold Stokes constant are part of the same
+datum.
+
+Conjecture~\ref{conj:bcov-np-quintic}(iii) specifies the Borel sum
+along the physical ray and the matching problem at the single conifold
+Stokes wall.  Full
+non-perturbative completion requires matching at every Stokes wall of
+the quintic moduli space: large complex structure (where
+\eqref{eq:gv-expansion} is the target definition), the conifold (where
+Strominger's hypermultiplet pairs with the vanishing cycle), and
+Landau--Ginzburg / Gepner (where the HKQ bootstrap gives
+finite-genus data).  The required datum is a global resurgent sheaf
+\(\mathcal R^{\mathrm{np}}\) on the moduli space together with a
+section \(F^{\mathrm{np}}(\lambda,t)\) whose Stokes jumps match the BCOV
+monodromy representation on \(H^3(\widetilde Q,\Z)\).  Construction of
+\(\mathcal R^{\mathrm{np}}\) is the non-perturbative BCOV obstruction,
+both globally on the quintic moduli space and in any compact CY\(_3\)
+generalisation.
+
+\begin{conj}[Mirror-period recovery from non-perturbative BCOV]
+  \label{conj:mirror-period-recovery}
+  Let an integral symplectic period basis, monodromy normalisation, and
+  \(2\pi i\)-convention be fixed.  Let
+  \(\varpi_0(z),\varpi_1(z),\varpi_2(z),\varpi_3(z)\) be the
+  Hodge-normalised CDGP 1991 fundamental periods of the mirror quintic
+  \(\widetilde Q\), solutions of the Picard--Fuchs operator
+  \(\mathcal L_{\mathrm{PF}}\) of \eqref{eq:picard-fuchs-cdgp}, with
+  the mirror coordinate \(z=5^{-5}\psi^{-5}\) and conventions matched
+  to those of Proposition~\ref{prop:chiral-volume-quintic}.  The
+  genus-zero prepotential extracted from
+  \(F^{\mathrm{GV}}(\lambda,t)=\lambda^{-2}\mathcal F_0(t)+O(\lambda^0)\)
+  with mirror map \(t=\varpi_1/\varpi_0\) satisfies
+  \[
+    \mathcal F_0(t) \;=\;
+    \frac{1}{\varpi_0^{\,2}}\bigl(\varpi_0\varpi_3-\varpi_1\varpi_2\bigr)
+    + \text{(classical polynomial)},
+  \]
+  with instanton corrections encoded exactly in
+  \(\{n_\beta^0\}_\beta\).  The first three BPS values
+  \(n_1^0=2875,\;n_2^0=609\,250,\;n_3^0=317\,206\,375\) come from the
+  BCOV table; the CDGP period/prepotential row and the
+  Schubert--Katz--Ellingsrud--Str\o mme historical mirrors enter as
+  numerical data.
+\end{conj}
+
+Under the Hodge-normalisation datum \(\NAJ\), the comparison asks for a
+normal function with chosen cycles \(\mathcal Z_N\), regulator map, Hodge
+metric, and \(2\pi i\)-convention.  The number \(L\) in
+Proposition~\ref{prop:chiral-volume-quintic} is a finite tail-fit
+intercept.  An Abel--Jacobi growth limit requires the normal function and
+Hodge norm; only then can one compare it with
+\(|\varpi_1(z_c)/\varpi_0(z_c)|\).  Finite evidence comes from the HKQ
+genus-\(20\) explicit data; higher-genus extension requires the resurgent
+completion of Conjecture~\ref{conj:bcov-np-quintic}(iii).
+
+\end{document}

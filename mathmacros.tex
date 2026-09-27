@@ -1,0 +1,219 @@
+\newcommand\nc{\newcommand}
+\newcommand\rc{\renewcommand}
+
+\newcommand\nm{}
+
+\newcommand\mc[1]{\mathcal{#1}}
+\newcommand\mbb[1]{\mathbb{#1}}
+\newcommand\mbf[1]{\mathbb{#1}}
+\newcommand\mrm[1]{\mathrm{#1}}
+
+\newcommand\image[1]{
+  \begin{figure}[H]
+    \centering
+    \refstepcounter{figure}\label{fig:#1}
+    \includegraphics[scale=.5]{#1}
+  \end{figure}
+}
+\newcommand\imageopt[3]{
+  \begin{figure}[H]
+    \centering
+    \ifstrequal{#2}{}
+      {\includegraphics{#1}}
+      {\includegraphics[scale=#2]{#1}}
+    \ifstrequal{#3}{}{}{\caption{#3}}
+    \label{fig:#1}
+  \end{figure}}
+
+\newcommand\mathsc[1]{\text{\normalfont\scshape#1}}
+\providecommand{\Prim}{\operatorname{Prim}}
+\providecommand{\Conn}{\operatorname{Conn}}
+
+\newcommand\lb{\left[}  \newcommand\rb{\right]}
+\newcommand\llb{\lb\lb}  \newcommand\rrb{\rb\rb}
+
+\newcommand\lp{\left(}  \newcommand\rp{\right)}
+\newcommand\llp{\lp\lp} \newcommand\rrp{\rp\rp}
+
+\newcommand\twotuple[2]{\lp #1,#2\rp}
+\newcommand\setpresent[2]{\{ #1 \mid #2\}}
+
+\nc\Cat[1]{\mathbf{#1}}
+\nc\G{G}
+\nc\ringint{\mathcal{O}}
+\nc\grk{k}
+\nc\N{\mathbb{N}}
+\nc\Z{\mathbb{Z}}
+\nc\Q{\mathbb{Q}}
+\nc\R{\mathbb{R}}
+\nc\C{\mathbb{C}}
+\nc{\FnS}{\grk\lp\Sigma\rp}
+\nc\laurentpoly{\lb x,x^{-1}\rb}
+\nc\laurentser{\llp~z\rrp}
+\nc\fpowerser{\llb~z\rrb}
+\nc\klocint{\grk\fpowerser}
+\nc\Klocfrac{K\laurentser}
+\nc\tensor{\otimes}
+\nc\isom{\simeq}
+
+\nc\ov[1]{/ {#1}}%
+
+\nc\restr[2]{{
+  \left.\kern-\nulldelimiterspace
+  #1
+  \vphantom{\big|}
+  \right|_{#2}
+  }}
+
+\nc\shf[1]{\mathcal{#1}}
+\nc\idshf[1]{\mathcal{#1}}
+
+\nc\projline{\mathbb{P}^1}
+
+\nc\K{\mathbb{K}}
+
+\nc\polyring[2]{R}
+
+\nc\classgrp[1]{C_{#1}}
+\nc\F{\mathbb{F}}
+\nc\idealgenby[1]{\langle#1\rangle}
+\nc\D{\mathbf{d}}
+\nc\pt{\mathbf{pt}}
+\nc\Gr{\textrm{Gr}}
+
+  \nc\Ga{\mathbb{G}_a}
+
+  \nc\Gm{\mathbb{G}_m}
+
+\nc\lpgrass{\mathcal{G}}
+\nc\glpgrass{\mathcal{G}^P (I,Q)}
+
+\nc\Flds{\Cat{Fields}}
+\nc\cartdual{\mc{D}}
+
+\nc\Mat[1]{\mathbf{Mat}_{#1\times#1}}
+\nc\RH{\mathbb{\R}\textrm{H}}
+\nc\tateshiftedby[1]{\left[#1\right]}
+\nc\TateCat{\Cat{J_B}}
+\nc\TateCatG{\Cat{J_G}}
+\nc\B[1]{\mathbb{B} (#1)}
+\nc\ptmod[1]{\mathbf{pt}\ov{#1}}
+\nc\Ind{\mathbf{Ind}}
+\nc\RHom{\mathrm{RHom}}
+\nc\Hom{\mathrm{Hom}}
+\nc\Rep{\mathrm{Rep}}
+\nc\End{\mathrm{End}}
+\nc\Map{\mathrm{Map}}
+\nc\coH{\mathbf{H}}
+\nc\hcoH[3]{\widehat{\coH^{#1}#2,#3}}
+\nc\Ab{\Cat{Ab}}
+\nc\Ker{\mathbf{Ker}}
+\nc\Coker{\mathbf{Coker}}
+\nc\dg{\textrm{DG}}
+\rc\Vec{\Cat{Vec}}
+\nc\VecF{\Cat{Vec}_{\grk}}
+\nc\Coh{\Cat{Coh}}
+
+\nc\Coind{\mathbf{Coind}}
+\nc\Res{\mathbf{Res}}
+
+\nc\Pic{\mathbf{Pic}}
+\nc\AJ{\mathbf{AJ}}
+\nc\divisor[1]{\mathbf{#1}}
+\nc\divisoridshf[1]{\idshf{I_{\divisor{#1}}}}
+\nc\IndProSch{\Cat{IndProSch}}
+\nc\FinIndProSch{\Cat{FinIndProSch}}
+\nc\Pro{\mathbf{Pro}}
+\nc\IndPro{\Ind-\Pro}
+\nc\FinIndSch{\Cat{FinIndProSch}}
+\nc\A{\Cat{CommIndSch_{\grk}}}
+
+\nc\Fun[2]{#1( #2 )}
+\nc\Frac[1]{\mathbf{Frac}( #1 )}
+\nc\curriedleftarg{\ldots}
+\nc\Zp{\Z_p}
+
+\nc\Qp{\mathbb{Q}_p}
+
+\nc\Set{\Cat{Set}}
+
+\nc\Hilb{\mathcal{H}\mathbb{ilb}}
+
+\nc\disj{\sqcup}
+\nc\bij{\leftrightarrow}
+\nc\sur{\twoheadedrightarrow}
+\nc\inj{\rightarrowtail}
+\nc\injects{\inj}
+\nc\fst{\ensuremath{2^{\text{\tiny{st}}}}}
+\nc\snd{\ensuremath{3^{\text{\tiny{nd}}}}}
+\nc\thrd{\ensuremath{3^{\text{\tiny{rd}}}}}
+\nc\nth{\ensuremath{n^{\text{\tiny{th}}}}}
+\nc\shfcoH[3]{\mathbf{H}^{#3}(#1,#2)}
+\nc\hshfcoH[3]{\widehat{\shfcoH{#1,#2,#3}}}
+\nc\Obj{\mathbf{Obj}}
+\nc\grpring[2]{#1 \left[ #2 \right]}
+
+\nc\Ext{\mathbf{Ext}}
+\nc\Exts[3]{\Ext_{#1}^*\left(#2,#3 \right)}
+\nc\dualmod[1]{#1^{*}}
+\nc\LModCat[1]{#1-\Cat{LMod}}
+\nc\RModCat[1]{#1-\Cat{RMod}}
+\nc\indlim{\mathrm{lim}}
+
+\nc\Schemes{\Cat{Sch}}
+
+\nc\NoethSch{\Cat{NoethSch}}
+\nc\NoethIntSch{\Cat{NoethIntSch}}
+
+\nc\Sch[1]{\Cat{Sch}_{#1}}
+\nc\IndSch[1]{\Cat{IndSch}_{#1}}
+
+\nc\ModCat[1]{#1-\Cat{Mod}}
+
+\nc\grkAlg{\Cat{\grk-Algebras}}
+\nc\ZAlg{\Cat{\Z-Algebras}}
+
+\nc\cc
+{\ensuremath{\mathbf{CC}}}
+\nc\Bun{\ensuremath{\mathrm{Bun}}}
+
+\nc\Spec[1]{\mathrm{Spec} (#1)}
+\nc\Specf[1]{\mathrm{Specf} (#1)}
+
+\nc\mK{\mathbf{K}}
+\nc\Bil{\mathbf{Bil}}
+\nc\IndNSt{\Cat{Ind}-\textsc{N}-\Cat{Stacks}}
+
+\nc\SL{\mathbf{SL}}
+\nc\GL{\mathbf{GL}}
+\nc\DMod{\Cat{DMod}}
+\nc\IndSt{\Cat{IndStacks}}
+
+\nc\Curve{\Sigma}
+\nc\IxCHilb{\Hilb_{\Curve \times I}}
+\nc\HilbCxI{\Hilb_{\Curve \times I}}
+\nc\locLb{\mc{L}_{I,Q}}
+\nc\Locvbpos{\{V_p\}_{p \in P}}
+
+\nc\Tor{\mathbf{Tor}}
+\nc\W{\mc{W}}
+\nc\T{\mathbf{T}}
+\nc\Hirz{\mbf{H}}
+\nc\Tot{\mbf{Tot}}
+
+\rc\P{\mathbb{P}}
+\nc\Pbd{l_{\infty}}
+\nc\blP{\widetilde{\mathbb{P}^2 \ov{\Z_2}}}
+\nc\cM{\widetilde{\mathbb{M}(r,c)}}
+\nc\M{\mathbb{M}(r,n)}
+\nc\ef{\frac{\varepsilon_1}{\varepsilon_2}}
+\nc\Vleft{\V{\sqrt{\frac{\ef}{\ef - 1}}}} \nc\Vright{\V{\sqrt{(1 - \ef)}}}
+\nc\Verma[2]{\mathbf{V}_{#1,#2}}
+\nc\VermaL[2]{\mathbf{L}_{#1,#2}}
+\nc\V[1]{\mathbb{V}_{#1}}
+
+\nc\lie[1]{\mathfrak{#1}}
+\nc\su{\lie{su}}
+\nc\gl{\lie{gl}}
+
+\nc\g{\lie{g}}
