@@ -1,0 +1,1345 @@
+\chapter{Heat tensors and contact terms}
+\label{mht:ch:heat-contacts}
+
+Classical transfer applies a homotopy to smooth fields. Quantum
+contraction instead evaluates two input covectors on a tensor of
+fields, so it requires control of both factors at once. The paired
+modes of Chapter~\ref{mht:ch:angular-cutoffs} provide this control at
+positive heat time. They give a free BV complex and explicit
+contractions of jets at the pole. Their generator also identifies
+the limitation of this construction: it contains an angular
+projection and is therefore nonlocal on the curve.
+
+The tensor contracts all surface modes and evaluates jets at the
+pole. Products of coincident kernels and collisions of poles
+require further choices. A subtraction prescription determines
+finite contacts, and convergence of a polar trace need not
+preserve the boundary product.
+The differential on supported normal jets determines which finite
+contacts survive as classes. At a matrix background, a separate
+Hilbert-scale estimate controls the inverse after the angular cutoff
+is removed.
+
+\section{The paired heat tensor}
+
+Retain $E,d_E,\tau_E,h,V_\pm,\mathcal C,\mathcal R$ and the round
+probability measure $d\mu$ from the preceding chapter. Choose an
+orthonormal spherical basis $e_{\ell m}$ of $V_-$, where
+$\ell\geq1$, $0\leq m\leq\ell$, and $e_{\ell m}$ has rotation
+weight $-m$. Put
+\[
+ \lambda_\ell=\ell(\ell+1),\qquad
+ f_{\ell m}=\mathcal Ce_{\ell m}.
+\]
+The polarization identity gives
+\[
+ \omega(e_{\ell m},f_{\ell'm'})
+   =\kappa\delta_{\ell\ell'}\delta_{mm'},\qquad
+ \omega(e,e')=\omega(f,f')=0.
+\]
+Cyclic self-adjointness therefore requires equal heat weights
+on the two members of each pair.
+
+Define $R_t$ to fix $1,\eta_0$ and to multiply
+$e_{\ell m},f_{\ell m},d_Ee_{\ell m},d_Ef_{\ell m}$ by
+$e^{-t\lambda_\ell}$. If $\Delta_-$ is the round scalar Laplacian
+on $V_-$, its restriction to $V=\ker p_0$ is
+\begin{equation}\label{mht:eq:paired-heat-operator}
+ R_t|_V=e^{-t\Delta_-}\mathcal P_-
+       +\mathcal Ce^{-t\Delta_-}\mathcal R\mathcal P_+.
+\end{equation}
+On functions include the residual term $p_0(f)1$, and on one-forms
+set $R_t\eta=\eta_0p_1(\eta)+d_ER_th\eta$.
+
+The signs of the tensor can be fixed on one pair. Write
+$\langle x,y\rangle=\tau_E(xy)$. For even vectors $a,b$ and odd
+vectors $A=d_Ea,B=d_Eb$, suppose
+$\langle a,B\rangle=\kappa$ and
+$\langle b,A\rangle=-\kappa$. Define
+\begin{align}
+ P^{\mathrm{pair}}&=\kappa^{-1}(a\otimes b-b\otimes a),\notag\\
+ K^{\mathrm{pair}}=d_EP^{\mathrm{pair}}
+   &=\kappa^{-1}(a\otimes B-B\otimes a-b\otimes A+A\otimes b).
+ \label{mht:eq:heat-pair-signs}
+\end{align}
+The differential on a tensor has its Koszul sign.
+
+In the convention
+\[
+ R_Kx=(-1)^{|x|+1}\langle x,K_{(1)}\rangle K_{(2)},
+\]
+$K^{\mathrm{pair}}$ contracts to the identity on these four vectors.
+The residual tensor is
+$K_{\mathrm{res}}=\kappa^{-1}(1\otimes\eta_0-\eta_0\otimes1)$.
+
+For $t>0$ define
+\begin{align}
+ \mathcal P_t&=\frac1\kappa\sum_{\ell\geq1}\sum_{m=0}^{\ell}
+   e^{-t\lambda_\ell}
+   (e_{\ell m}\otimes f_{\ell m}-f_{\ell m}\otimes e_{\ell m}),
+   \notag\\
+ \mathcal K_t&=K_{\mathrm{res}}+d_E\mathcal P_t.
+ \label{mht:eq:paired-heat-tensors}
+\end{align}
+For $0<\epsilon<T$, put
+$P_{\epsilon,T}=\mathcal P_\epsilon-\mathcal P_T$.
+
+\begin{theorem}\label{mht:thm:paired-heat}
+The series in \eqref{mht:eq:paired-heat-tensors} converge with
+all derivatives on the product sphere. Their limits lie in the
+completed projective tensor product of smooth Neumann fields and
+satisfy
+\begin{equation}\label{mht:eq:coefficient-heat-ward}
+ d_EP_{\epsilon,T}=\mathcal K_\epsilon-\mathcal K_T,
+ \qquad P_{\epsilon,T}+P_{T,S}=P_{\epsilon,S}.
+\end{equation}
+Contraction with $\mathcal K_t$ is $R_t$. These operators form a
+chain semigroup, preserve the unit, trace and Neumann condition,
+and satisfy
+\[
+ \langle R_tx,y\rangle=\langle x,R_ty\rangle.
+\]
+They tend to the identity uniformly on bounded subsets of the
+smooth field space.
+
+For total derivative order $r\geq0$ and
+$0<t\leq1$,
+\begin{equation}\label{mht:eq:heat-tensor-bound}
+ \|\mathcal K_t\|_{C^r}\leq C_rt^{-(r+7)/2}.
+\end{equation}
+The part with $\ell>L$ satisfies the same bound times
+$e^{-t(L+1)^2/2}$, with a different constant.
+\end{theorem}
+
+\begin{proof}
+An $L^2$-normalized spherical harmonic has $H^a$ norm bounded by
+$C_a(1+\ell)^a$. Sobolev embedding therefore bounds its $C^r$
+norm by $C_r(1+\ell)^{r+2}$. The estimate for $\mathcal C$ in
+Proposition~\ref{mht:prop:angular-polarization} gives this same
+safe bound for $f_{\ell m}$. One application of $d_E$ costs at
+most one further power.
+
+At total derivative order $r$, a summand of $\mathcal K_t$ is
+bounded by $C_r(1+\ell)^{r+5}e^{-t\lambda_\ell}$. There are
+$\ell+1$ summands at degree $\ell$. A Gaussian integral bounds
+their sum by \eqref{mht:eq:heat-tensor-bound}. Splitting the
+exponential into two equal factors gives the tail estimate.
+The same argument applies to every derivative of $\mathcal P_t$.
+
+Smooth functions and forms on a compact product identify with
+the completed projective tensor products of their smooth spaces.
+The Neumann jet constraints define closed complemented subspaces,
+so they persist in these limits. The four-vector calculation
+\eqref{mht:eq:heat-pair-signs} and the residual tensor now give
+the asserted contraction operator.
+
+All chain identities hold on each pair. Equal weights on paired
+vectors give cyclic self-adjointness. Since $R_t1=1$, that identity
+also gives $\tau_ER_t=\tau_E$. Finally, spectral convergence on
+$V_-$, composed with the continuous maps $\mathcal C,\mathcal R$,
+proves convergence in every smooth seminorm. The spectral tail
+estimates are uniform when the input ranges over a bounded
+smooth set.
+\end{proof}
+
+The tensor is smooth, but its contraction with an input still
+uses $\tau_E$. Relative to an ordinary smooth density, the input
+covectors retain the polar singularity. Already the residual
+tensor distinguishes these two assertions about a kernel.
+
+\section{The generator and curve locality}
+
+Let $\Lambda_E=-\partial_tR_t|_{t=0}$. It acts by
+$\lambda_\ell$ on each acyclic pair and by zero on $1,\eta_0$.
+On scalars, write $r=|z|^2$ and
+\[
+ \Delta=-(1+r)^2\partial_z\partial_{\bar z}.
+\]
+This is the positive round Laplacian in our normalization.
+Formula~\eqref{mht:eq:paired-heat-operator} determines
+$\Lambda_E=\Delta\mathcal P_-+\mathcal C\Delta\mathcal R\mathcal P_+$
+on $V$.
+
+\begin{proposition}\label{mht:prop:heat-generator}
+On the smooth scalar Neumann domain,
+\begin{equation}\label{mht:eq:heat-generator}
+ \Lambda_Ef=\Delta f+
+   \frac{2(1+|z|^2)}{z}\partial_{\bar z}\mathcal P_+f.
+\end{equation}
+The second term extends smoothly across the marked point.
+\end{proposition}
+
+\begin{proof}
+For a positive weight $m$, write $f=z^mF(r)$ and
+$V(r)=-(1+r)^2F'(r)$. Then
+$\mathcal Rf=\bar z^{m-1}\overline{V(r)}$. The equation
+$d_E\mathcal Cv=\eta_0\overline v$ gives
+$\mathcal C\Delta\mathcal Rf=z^mG(r)$, with
+\[
+ G'=rV''+mV',\qquad G=rV'+(m-1)V
+\]
+up to a holomorphic term. Substitution gives
+$z^mG=\Delta(z^mF)+2(1+r)z^mF'$.
+
+For $m=1$, the Neumann condition is $F(0)=0$, and the two
+first-jet contributions in this expression cancel. For $m>1$
+the first jet vanishes by weight. In the chart $w=1/z$, the
+extra differential expression is
+$-2(1+|w|^2)\bar w\partial_{\bar w}$, so it is smooth there.
+The possible holomorphic difference is a global positive-weight
+holomorphic function, and hence zero. Nonpositive weights give
+$\Delta$, and constants give zero. Smooth Fourier convergence
+and the estimates for $\mathcal C,\mathcal R$ extend the identity
+to every smooth Neumann input.
+\end{proof}
+
+The projection $\mathcal P_+$ prevents locality. To see its
+effect between disjoint supports, put $z=\rho e^{i\theta}$.
+Choose an even nonnegative smooth function $b$, supported in a
+small arc about zero, with mean
+$\bar b=(2\pi)^{-1}\int b\,d\theta>0$. Choose an annular
+function $a$ with $a(\rho_0)=0$ and $a'(\rho_0)=1$, and put
+$f(\rho,\theta)=a(\rho)b(\theta)$. This function vanishes near
+the opposite arc and near both poles.
+
+\begin{proposition}\label{mht:prop:heat-nonlocal}
+For this function,
+\begin{equation}\label{mht:eq:heat-disjoint-response}
+ (\Lambda_Ef)(\rho_0,\pi)
+   =-\frac{1+\rho_0^2}{2\rho_0}\bar b,
+ \qquad
+ (R_tf)(\rho_0,\pi)
+   =t\frac{1+\rho_0^2}{2\rho_0}\bar b+O(t^2).
+\end{equation}
+No finite-rank linear correction to $\Lambda_E$ makes it
+support-preserving.
+\end{proposition}
+
+\begin{proof}
+Off the angular diagonal, the kernel of the positive Fourier
+projection is
+\[
+ k_+(\theta-\varphi)=\frac1{2\pi}
+       \frac{e^{i(\theta-\varphi)}}{1-e^{i(\theta-\varphi)}}.
+\]
+Its real part is $-1/(4\pi)$. At $\theta=\pi$ its imaginary
+part is odd in $\varphi$, so
+$(\mathcal P_+b)(\pi)=-\bar b/2$. The local Laplacian vanishes
+on the opposite arc.
+
+The extra term in
+\eqref{mht:eq:heat-generator} is
+\[
+ \frac{1+\rho^2}{\rho}
+   \left(\partial_\rho+\frac{i}{\rho}\partial_\theta\right)
+   \mathcal P_+f.
+\]
+At $\rho_0$, only the radial derivative remains. This proves
+the first formula. On smooth inputs the spectral series is
+twice differentiable at zero, giving the second.
+
+Repeat the construction in arbitrarily many disjoint radial
+annuli. On the opposite arc the resulting outputs are nonzero
+and have disjoint radial supports, so they are linearly
+independent. A correction restoring support preservation would
+have to cancel all of them there. Its rank cannot be finite.
+\end{proof}
+
+A local cyclic operator exists if uniform ellipticity at the
+pole is relinquished. Consider a first-order operator on
+one-forms,
+\[
+ q(\eta\,d\bar z)=A\partial_z\eta+B\eta,
+\]
+with smooth coefficients, and set $q(E^0)=0$. Cyclicity means
+$\tau_E((q\eta)\zeta)+\tau_E(\eta q\zeta)=0$.
+
+\begin{proposition}\label{mht:prop:local-polar-gauge}
+Cyclicity forces
+\begin{equation}\label{mht:eq:local-cyclic-coefficients}
+ 2B=\partial_zA-\frac{2A}{z}.
+\end{equation}
+In particular $A(0)=0$. A real coefficient $A=-a$, with $a>0$
+off the pole, therefore cannot give a uniformly elliptic
+Dolbeault--Laplace principal part there.
+The operator
+\begin{equation}\label{mht:eq:local-polar-gauge}
+ q_{\mathrm{loc}}(\eta\,d\bar z)
+   =-r(1+r)\partial_z\eta+\tfrac12\bar z\eta
+\end{equation}
+is globally smooth, maps $E^1$ to $E^0$, is cyclic, and has
+square zero. Its commutator
+$\Lambda_{\mathrm{loc}}=[d_E,q_{\mathrm{loc}}]$ commutes with $d_E$.
+\end{proposition}
+
+\begin{proof}
+Integration by parts on tests away from the pole gives
+$2z^{-2}B-\partial_z(z^{-2}A)=0$. Thus $A/z$ extends smoothly,
+proving \eqref{mht:eq:local-cyclic-coefficients} and $A(0)=0$.
+The coefficients in \eqref{mht:eq:local-polar-gauge} satisfy this
+identity. Its output and first holomorphic jet vanish at zero.
+
+In the coordinate $w=1/z$, its action on $\eta_wd\bar w$ is
+\[
+ -(1+|w|^2)\partial_w\eta_w-\tfrac12\bar w\eta_w,
+\]
+which proves global smoothness.
+
+Since $r(1+r)/z^2$ is bounded
+near zero, the boundary term in polar integration by parts
+tends to zero with the circle length. This proves cyclicity
+on all smooth inputs. The square vanishes by degree, and the
+commutation assertion follows from $d_E^2=0$.
+\end{proof}
+
+The degeneracy opens an infinite radial end for a natural
+weighted realization. On radial scalars $f=F(r)$, put
+$s=-\log r$ and $g(s)=F(e^{-s})$. Direct differentiation gives
+\begin{equation}\label{mht:eq:local-radial-operator}
+ \Lambda_{\mathrm{loc}}g=-(1+e^{-s})g''-\tfrac12g'.
+\end{equation}
+
+Fix $s_0\geq0$ and set
+$a(s)=1+e^{-s}$, $w(s)=e^{s/2}/\sqrt{1+e^{-s}}$.
+Since $(aw)'=w/2$, the expression is
+$-w^{-1}\partial_s(aw\partial_s)$. Let $L$ be the Friedrichs
+operator on $L^2([s_0,\infty),w\,ds)$ obtained by closing
+$\int aw|g'|^2ds$ on $C_c^\infty((s_0,\infty))$.
+This specifies a Dirichlet condition at $s_0$.
+
+\begin{proposition}\label{mht:prop:local-radial-spectrum}
+For this realization,
+$\sigma_{\mathrm{ess}}(L)=[1/16,\infty)$. Its resolvent is
+not compact, and $e^{-tL}$ is not trace class for any $t>0$.
+\end{proposition}
+
+\begin{proof}
+The unitary substitution $u=w^{1/2}g$ gives
+\[
+ \widehat L=-\partial_s(a\partial_s)+V(s),\qquad
+ V(s)=\frac{1-4e^{-s}-4e^{-2s}}{16(1+e^{-s})}.
+\]
+The coefficients approach those of $-\partial_s^2+1/16$
+exponentially, with all derivatives. For $\xi\in\mathbb R$
+and $\chi\in C_c^\infty(0,1)$ of norm one, the unit vectors
+\[
+ u_R(s)=R^{-1/2}\chi((s-R^2)/R)e^{i\xi s}
+\]
+escape every compact interval and satisfy
+$\|(\widehat L-\xi^2-1/16)u_R\|=O(R^{-1})+O(e^{-R^2})$.
+Weyl's criterion includes $[1/16,\infty)$ in the essential
+spectrum.
+
+For any $\varepsilon>0$, the quadratic form on a sufficiently
+distant tail is bounded below by
+$(1/16-\varepsilon)\|u\|^2$. Dirichlet--Neumann bracketing
+separates that tail from a compact interval, whose resolvent
+is compact. Hence no essential spectrum lies below
+$1/16-\varepsilon$. Letting $\varepsilon$ decrease to zero
+proves equality. This nonempty essential spectrum excludes
+a compact resolvent and a compact, hence trace-class, heat
+operator.
+\end{proof}
+
+After translating the endpoint to zero, the limiting operator
+$-\partial_s^2+1/16$ has Dirichlet heat kernel
+\[
+ \frac{e^{-t/16}}{\sqrt{4\pi t}}
+ \left(e^{-(s-s')^2/(4t)}-e^{-(s+s')^2/(4t)}\right).
+\]
+Odd reflection of the line Gaussian proves this formula.
+It describes the limiting end, while
+\eqref{mht:eq:local-radial-operator} retains variable coefficients.
+The weighted Hilbert domain is additional analytic data. Its
+spectrum makes no assertion about the cohomology of the smooth
+Neumann complex.
+
+\section{All surface modes and the free BV complex}
+
+Return to the paired spectral regulator. Define
+$Q_E^{\mathrm{GF}}=\Lambda_Eh$. The contraction identities give
+\[
+ [d_E,Q_E^{\mathrm{GF}}]=\Lambda_E,
+ \qquad (Q_E^{\mathrm{GF}})^2=0.
+\]
+Both operators are continuous on smooth fields.
+
+Let $U$ be a
+closed compact oriented Riemannian surface and use the full space
+\begin{equation}\label{mht:eq:heat-field-space}
+ \mathcal F=
+  \bigl(\Omega^\bullet(U)\widehat\otimes E
+                   \otimes\mathfrak{gl}_N\bigr)[1].
+\end{equation}
+The tensor product is completed projectively. Surface forms
+precede coefficient forms, and tensor operators use the Koszul
+rule. Integration over $U$, the trace $\tau_E$, and
+$\operatorname{tr}(XY)$ give a pairing of degree $-3$ before
+the shift, and the odd BV pairing after it.
+
+Set
+\[
+ Q=d_U+d_E,
+ \qquad Q^{\mathrm{GF}}=d_U^*+Q_E^{\mathrm{GF}},
+ \qquad [Q,Q^{\mathrm{GF}}]=\Delta_U+\Lambda_E.
+\]
+The cross commutators vanish by the tensor signs.
+
+Let
+$\mathbf K_t$ be the de Rham heat tensor on $U$, tensored
+with $\mathcal K_t$ and the matrix coevaluation, with the
+suspension signs induced by the pairing. Thus every smooth
+surface mode is retained. Put
+\begin{equation}\label{mht:eq:surface-heat-propagator}
+ \mathbf P_{\epsilon,T}
+   =\int_\epsilon^T(Q^{\mathrm{GF}}\otimes1)\mathbf K_t\,dt.
+\end{equation}
+For $0<\epsilon<T$ this is smooth, and
+\begin{equation}\label{mht:eq:surface-heat-ward}
+ Q\mathbf P_{\epsilon,T}=\mathbf K_\epsilon-\mathbf K_T.
+\end{equation}
+Indeed $Q\mathbf K_t=0$, and the commutator in the integral
+acts as $-\partial_t$ on the heat semigroup.
+
+Write $\mathcal O_n(\mathcal F)$ for continuous homogeneous
+polynomials of degree $n$, defined by continuous graded symmetric
+multilinear forms, and set
+$\mathcal O_{\mathrm{poly}}=\bigoplus_{n\geq0}\mathcal O_n$.
+Give $\mathcal O_n$ the strong dual topology of the completed
+projective graded symmetric tensor power
+$\widehat{\operatorname{Sym}}{}^n_\pi\mathcal F$:
+its seminorms are uniform bounds on bounded sets of that space.
+Use the product topology in field degree and formal completion
+in $\hbar$; continuity in $\hbar$ is understood coefficientwise.
+Contraction of two inputs with $\mathbf K_t$ defines an odd
+constant second-order operator $\Delta_t$.
+Contraction with $\mathbf P_{\epsilon,T}$ defines the even
+operator $\partial_{\mathbf P_{\epsilon,T}}$, with convention
+\[
+ [Q,\partial_{\mathbf P_{\epsilon,T}}]
+      =\Delta_\epsilon-\Delta_T.
+\]
+The derived bracket is
+\[
+ \{F,G\}_t=(-1)^{|F|}
+  \bigl(\Delta_t(FG)-(\Delta_tF)G
+                   -(-1)^{|F|}F\Delta_tG\bigr).
+\]
+
+\begin{proposition}\label{mht:prop:free-heat-bv}
+On $\mathcal O_{\mathrm{poly}}(\mathcal F)[[\hbar]]$,
+\begin{equation}\label{mht:eq:free-heat-flow}
+ D_t=Q+\hbar\Delta_t,\qquad D_t^2=0,
+ \qquad
+ D_Te^{\hbar\partial_{\mathbf P_{\epsilon,T}}}
+   =e^{\hbar\partial_{\mathbf P_{\epsilon,T}}}D_\epsilon.
+\end{equation}
+These formulas also define continuous coefficientwise operations
+on $\bigl(\prod_{n\geq0}\mathcal O_n(\mathcal F)\bigr)[[\hbar]]$.
+\end{proposition}
+
+\begin{proof}
+The smooth projective tensor can be evaluated on every
+continuous multilinear coefficient, including marked jets.
+The identity $Q\mathbf K_t=0$ gives $[Q,\Delta_t]=0$.
+An odd constant contraction has square zero, and constant
+contraction operators graded commute. Hence $D_t^2=0$.
+Conjugating $D_T$ by the even exponential adds precisely
+$\hbar(\Delta_\epsilon-\Delta_T)$, proving the intertwiner.
+
+For output degree $n$ and coefficient $\hbar^r$, its
+exponential uses only input degrees $n+2j$ with $0\leq j\leq r$.
+Insertion of a fixed smooth tensor is a continuous linear map
+between the completed symmetric tensor powers and preserves
+bounded sets. Its transpose is therefore continuous for their
+strong dual topologies. Each output coefficient is a finite sum
+of these continuous contractions. This proves the assertion
+about the product completion without summing infinitely many
+contractions at one power of $\hbar$.
+\end{proof}
+
+At positive lower scale every fixed finite graph with continuous
+polar interaction vertices is defined by these tensors. A local
+counterterm theorem at zero scale requires a further argument:
+Proposition~\ref{mht:prop:heat-nonlocal} excludes an appeal to
+curve-local elliptic heat asymptotics for this generator.
+If $U$ has boundary, the surface Stokes term also requires a
+specified compatible BV--BFV domain.
+
+\section{Pole jets and their subtractions}
+
+The positive-scale tensor may be evaluated on the continuous
+functionals
+\[
+ L_m(f)=\frac{\partial_{\bar z}^mf(0)}{m!},\qquad
+ R_{m+1}(f)=\frac{\partial_z^{m+1}f(0)}{(m+1)!},\qquad m\geq1.
+\]
+They act on scalar acyclic fields and avoid the excluded first
+holomorphic jet. Their oriented coefficient contraction is
+$C_m(t)=(L_m\otimes R_{m+1})\mathcal P_t$.
+After choosing a surface Gaussian polarization, the corresponding
+component covariance is $\hbar C_m(t)$.
+
+For an explicit calculation set
+$x=(1-|z|^2)/(1+|z|^2)$ and let $P_\ell$ denote the Legendre
+polynomial normalized by $P_\ell(1)=1$. Put
+\[
+ N_{\ell m}=\sqrt{\frac{(2\ell+1)(\ell-m)!}{(\ell+m)!}},
+ \qquad
+ e_{\ell m}=2^mN_{\ell m}
+   \left(\frac{\bar z}{1+|z|^2}\right)^mP_\ell^{(m)}(x).
+\]
+Here $P_\ell^{(m)}$ means the ordinary $m$th derivative.
+Legendre orthogonality gives norm one for $d\mu$.
+
+The radial Dolbeault equation has solution
+\begin{equation}\label{mht:eq:heat-radial-partner}
+ \mathcal Ce_{\ell m}
+   =\frac{N_{\ell m}z^{m+1}}2
+       \int_{-1}^{x}(1+y)^mP_\ell^{(m)}(y)\,dy.
+\end{equation}
+Differentiating verifies $d_E\mathcal Ce=\eta_0\overline e$.
+The integral vanishes to order at least $m+1$ at $x=-1$,
+which gives smoothness at infinity. For $m=0$, its value at
+$x=1$ is zero when $\ell\geq1$, giving the Neumann first jet.
+
+\begin{lemma}\label{mht:lem:heat-legendre}
+For $\ell,m\geq1$,
+\begin{equation}\label{mht:eq:heat-legendre}
+ \int_{-1}^{1}(1+x)^mP_\ell^{(m)}(x)\,dx
+   =\frac2{(m-1)!}\prod_{j=1}^{m-1}
+             \bigl(\ell(\ell+1)-j(j+1)\bigr).
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Integrate by parts $m$ times. All boundary terms at $-1$
+vanish, and the remaining integral of $P_\ell$ is zero.
+The derivatives at $1$ make the answer a polynomial in
+$\lambda=\ell(\ell+1)$ of degree $m-1$, with leading
+coefficient $2/(m-1)!$. For $\ell=1,\ldots,m-1$ the original
+derivative vanishes. These roots determine the polynomial.
+The empty product gives the case $m=1$.
+\end{proof}
+
+Let $\Theta(t)=\sum_{\ell\geq0}(2\ell+1)e^{-t\ell(\ell+1)}$.
+
+\begin{proposition}\label{mht:prop:pole-heat-contacts}
+For $t>0$ and $m\geq1$,
+\begin{equation}\label{mht:eq:pole-heat-contacts}
+ C_m(t)=\frac1{\kappa m!(m-1)!}
+   \prod_{j=1}^{m-1}(-\partial_t-j(j+1))[\Theta(t)-1].
+\end{equation}
+In particular,
+\begin{align}
+ \kappa C_1(t)&=t^{-1}-\tfrac23+O(t),\notag\\
+ \kappa C_2(t)&=\tfrac1{2t^2}-\tfrac1t+\tfrac{19}{30}+O(t),\notag\\
+ \kappa C_3(t)&=\tfrac1{6t^3}-\tfrac2{3t^2}+\tfrac1t
+                       -\tfrac{586}{945}+O(t).
+ \label{mht:eq:first-pole-contacts}
+\end{align}
+For general $m$, the leading term is $1/(\kappa m!t^m)$.
+\end{proposition}
+
+\begin{proof}
+The leading coefficients of $\bar z^m$ in $e_{\ell m}$ and
+of $z^{m+1}$ in $\mathcal Ce_{\ell m}$ are
+\[
+ a_{\ell m}=N_{\ell m}\frac{(\ell+m)!}{m!(\ell-m)!},
+ \qquad
+ b_{\ell m}=\frac{N_{\ell m}}2
+             \int_{-1}^{1}(1+x)^mP_\ell^{(m)}(x)\,dx.
+\]
+Their product is
+$(2\ell+1)\prod_{j=1}^{m-1}(\lambda_\ell-j(j+1))/(m!(m-1)!)$.
+The second orientation in $\mathcal P_t$ contributes zero by
+weights. Sum the first against $\kappa^{-1}e^{-t\lambda_\ell}$.
+Modes $1\leq\ell<m$ may be added because their coefficients
+vanish, proving \eqref{mht:eq:pole-heat-contacts}.
+
+Euler--Maclaurin summation gives
+\[
+ \Theta(t)\sim t^{-1}+\tfrac13+\tfrac{t}{15}
+                   +\tfrac{4t^2}{315}+\tfrac{t^3}{315}
+                   +\tfrac{4t^4}{3465}+\cdots.
+\]
+The integral of $(2x+1)e^{-tx(x+1)}$ on $[0,\infty)$ is
+$1/t$. The endpoint half-value and the Bernoulli derivative
+terms give the remaining coefficients. Its remainder estimate
+also holds after any fixed number of $t$ derivatives.
+Applying the differential polynomial gives
+\eqref{mht:eq:first-pole-contacts}. Its highest derivative on
+$t^{-1}$ gives the general leading term.
+\end{proof}
+
+For a finite set of pairs choose commuting formal sources
+$J_m,K_m$ in the Gaussian polarization. Rotation weights kill
+the pairings with distinct indices, so their generating series is
+\[
+ Z_t(J,K)=\exp\left(\hbar\sum_{m=1}^M C_m(t)J_mK_m\right).
+\]
+Let $\operatorname{PP}$ and $\operatorname{FP}$ denote the
+negative-power part and constant part of the small-$t$ expansion.
+Then, coefficientwise in sources and $\hbar$,
+\[
+ e^{-\hbar\sum_m\operatorname{PP}C_m(t)J_mK_m}Z_t
+   \longrightarrow
+ e^{\hbar\sum_m\operatorname{FP}C_m(t)J_mK_m}.
+\]
+This defines the Gaussian multipoint coefficients in the selected
+component sector. Gauge invariance and comparison with sourced
+closed observables require their own maps.
+
+\begin{proposition}\label{mht:prop:heat-jet-subtraction}
+On a finite jet system closed under the dual differential,
+the divergent parts of the paired tensors obey
+$\mathrm{CT}_K=d_E\mathrm{CT}_P$. Their subtraction preserves
+the free Ward identity. That identity does not fix the finite
+parts.
+\end{proposition}
+
+\begin{proof}
+Choose $N\geq M+1$, take scalar jets through order $N$ and
+one-form jets through order $N-1$, and impose the Neumann
+relation on scalar jets. The dual of $d_E$ sends a one-form jet to a scalar jet of at
+most order $N$. These tests therefore form a finite differential
+system containing the selected pairs.
+Evaluate $d_E\mathcal P_t=\mathcal K_t-K_{\mathrm{res}}$ on
+it. Each asymptotic coefficient commutes with the finite
+differential, proving the subtraction identity.
+
+Replacing the heat parameter by $t+ct^2$ retains the paired
+identity but changes the first covariance to
+$\kappa^{-1}(t^{-1}-2/3-c+O(t))$. Its finite part varies
+by $-c/\kappa$. This is a reparametrized prescription. It need
+not be a semigroup in the new parameter.
+\end{proof}
+
+\section{Coincident kernels}
+
+Linear approximation on smooth inputs does not by itself
+control products of kernels. Consider the ordinary scalar
+sharp projector on the sphere, independently of the paired
+projection of Chapter~\ref{mht:ch:angular-cutoffs}. At the
+north pole its kernel relative to $d\mu$ is
+\[
+ D_L(x)=\sum_{\ell=0}^L(2\ell+1)P_\ell(x),\qquad x=\cos\theta.
+\]
+
+\begin{proposition}\label{mht:prop:sharp-contact-obstruction}
+No sequence of counterterms supported at the north pole makes
+$D_L^2$ converge as a distribution. If $a$ is a nonzero
+nonnegative smooth radial test supported in a compact annulus
+in $0<\theta<\pi$, then
+\begin{equation}\label{mht:eq:sharp-annular-contact}
+ \lim_{L\to\infty}\frac1L\int a(\theta)D_L(\cos\theta)^2d\mu
+   =\frac1{2\pi}\int\frac{a(\theta)}{\sin^2(\theta/2)}d\theta>0.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Christoffel--Darboux gives
+$(1-x)D_L(x)=(L+1)(P_L(x)-P_{L+1}(x))$.
+Uniformly on a compact interior interval, Darboux's formula is
+\[
+ P_L(\cos\theta)=\sqrt{\frac2{\pi L\sin\theta}}
+   \cos((L+\tfrac12)\theta-\tfrac\pi4)+O(L^{-3/2}).
+\]
+This is the zero-parameter Jacobi case of
+\href{https://dlmf.nist.gov/18.15.E4_5}{DLMF 18.15.4\_5}.
+Consequently the leading term of $D_L$ is
+\[
+ \sqrt{\frac{2L}{\pi\sin\theta}}
+       \frac{\sin((L+1)\theta-\pi/4)}{\sin(\theta/2)}.
+\]
+
+Squaring and integrating against the radial measure
+$\frac12\sin\theta\,d\theta$ gives
+\eqref{mht:eq:sharp-annular-contact}. The oscillatory cosine
+has vanishing integral in the limit. Every pole-supported
+counterterm vanishes on $a$, while this positive integral
+grows linearly.
+\end{proof}
+
+The same kernel has exact moments
+\begin{align*}
+ \tfrac12\int_{-1}^{1}D_L^2dx&=(L+1)^2,\\
+ \tfrac12\int_{-1}^{1}(x-1)D_L^2dx&=-(L+1),\\
+ \tfrac12\int_{-1}^{1}(1-x)^2D_L^2dx
+   &=(L+1)^2\left(\frac1{2L+1}+\frac1{2L+3}\right).
+\end{align*}
+Orthogonality proves the first. The three-term recurrence for
+$xP_\ell$ proves the second, and the squared
+Christoffel--Darboux identity proves the third. These moments belong to the ordinary sharp kernel. A comparison
+with the paired regulator would require its individual components.
+
+There is also a finite comparison between different heat
+prescriptions. In a separate complex normal plane, with real
+coordinates $(x,y)$, put
+\[
+ \Delta_\perp=\partial_x^2+\partial_y^2,
+ \qquad \delta_t(x,y)=\frac1{4\pi t}e^{-(x^2+y^2)/(4t)}.
+\]
+These are scalar coefficient densities after contraction.
+
+\begin{proposition}\label{mht:prop:normal-heat-contact}
+For $n\geq2$, the distributional finite part is
+\begin{equation}\label{mht:eq:normal-heat-contact}
+ \operatorname{FP}_{t=0}\delta_t^n
+   =\frac{\Delta_\perp^{n-1}\delta_0}
+          {(4\pi)^{n-1}n^n(n-1)!}.
+\end{equation}
+The joint cubic prescription minus the prescription which
+first takes the binary finite part and then heat-regularizes
+both remaining factors is
+\begin{equation}\label{mht:eq:normal-triple-difference}
+ \frac{37}{55296\pi^2}\Delta_\perp^2\delta_0.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+The identities
+\[
+ \delta_t^n=\frac{\delta_{t/n}}{n(4\pi t)^{n-1}},
+ \qquad \delta_{t/n}=e^{(t/n)\Delta_\perp}\delta_0
+\]
+give \eqref{mht:eq:normal-heat-contact} by taking the constant
+coefficient.
+The binary and joint cubic finite parts are respectively
+$\Delta_\perp\delta_0/(16\pi)$ and
+$\Delta_\perp^2\delta_0/(864\pi^2)$.
+
+For the successive prescription,
+$\delta_t\Delta_\perp\delta_t=\frac12\partial_t(\delta_t^2)$,
+whose finite part is $\Delta_\perp^2\delta_0/(128\pi)$.
+Multiplication by the preceding binary coefficient $1/(16\pi)$
+gives $\Delta_\perp^2\delta_0/(2048\pi^2)$. Subtracting yields
+\eqref{mht:eq:normal-triple-difference}.
+\end{proof}
+
+The comparison is between two declared prescriptions on scalar
+densities. It supplies a local contact between them. A product
+of arbitrary singular Dolbeault currents, or coherent collision
+operations in all arities, requires additional extension data.
+
+\section{Two poles approaching one}
+
+The spectral coordinate has its own contact, separate from
+the normal plane. Work in a fixed chart and use compactly
+supported smooth coefficients $\eta$ with measure $d^2z=dx\,dy$.
+For $a\ne0$ define the locally integrable distribution
+$K_a(z)=(z^2-a^2)^{-1}$ and functionals
+\[
+ \tau_a(\eta)=-\frac\kappa\pi\langle K_a,\eta\rangle,
+ \qquad
+ \tau_0(\eta)=-\frac\kappa\pi
+       \langle\operatorname{PV}(z^{-2}),\eta\rangle.
+\]
+Here $\operatorname{PV}(z^{-2})=-\partial_z(1/z)$, and the
+orientation fixes $\partial_{\bar z}(1/z)=\pi\delta_0$.
+Thus $\tau_0(\eta)$ is the circular double-pole trace of
+$\eta\,d\bar z$.
+
+\begin{theorem}\label{mht:thm:two-pole-contact}
+There is an exact distributional identity
+\begin{equation}\label{mht:eq:two-pole-contact}
+ K_a=\frac12\int_{-1}^{1}
+       \operatorname{PV}\frac1{(z-ta)^2}\,dt
+       -\frac{\pi\bar a}{2a}\int_{-1}^{1}\delta_{ta}\,dt.
+\end{equation}
+Along $a=\rho e^{i\theta}$ with $\rho\downarrow0$,
+\[
+ \tau_a=\tau_0+\kappa e^{-2i\theta}\operatorname{ev}_0
+         +O(\rho^2).
+\]
+For tests in a fixed compact chart the error is bounded by
+$C|a|^2\|\eta\|_{C^3}$, uniformly in $\theta$.
+The corrected functional
+\begin{equation}\label{mht:eq:segment-corrected-trace}
+ \tau_a^{\mathrm{seg}}(\eta)
+   =\tau_a(\eta)-\frac{\kappa\bar a}{2a}
+                            \int_{-1}^{1}\eta(ta)\,dt
+\end{equation}
+converges to $\tau_0$ with the same bound and satisfies
+\begin{equation}\label{mht:eq:segment-ward}
+ \tau_a^{\mathrm{seg}}(\partial_{\bar z}f)
+   =\frac\kappa2\int_{-1}^{1}\partial_zf(ta)\,dt
+\end{equation}
+for compactly supported smooth $f$.
+\end{theorem}
+
+\begin{proof}
+Differentiate the translated locally integrable distribution:
+\[
+ \frac{d}{dt}\frac1{z-ta}
+   =a\operatorname{PV}\frac1{(z-ta)^2}-\pi\bar a\delta_{ta}.
+\]
+Integration from $-1$ to $1$, followed by division by $2a$,
+gives \eqref{mht:eq:two-pole-contact}. Translation is
+continuous on distributions, so the first average tends to
+$\operatorname{PV}(z^{-2})$ and the second gives the stated
+directional contact.
+
+On a fixed compact neighborhood, $1/z$ is integrable and
+its derivative has order at most one. Symmetric Taylor
+expansion of the translated test cancels the linear term.
+The remainder in $C^1$ is bounded by
+$C|a|^2\|\eta\|_{C^3}$. The symmetric delta average differs
+from evaluation at zero by $C|a|^2\|\eta\|_{C^2}$.
+These two estimates prove both convergence bounds.
+
+The simple-pole distributional identity gives
+$\tau_a(\partial_{\bar z}f)=\kappa(f(a)-f(-a))/(2a)$.
+The chain rule along $ta$ separates this difference into
+holomorphic and antiholomorphic derivatives. Subtracting
+the segment term leaves \eqref{mht:eq:segment-ward}.
+\end{proof}
+
+For $f=\bar z$ near the segment, cut off outside a larger
+disc, the raw expression is $\kappa\bar a/a$, while the
+double-pole expression is zero. The contact is therefore
+detected on smooth tests even though holomorphic residue
+formulas alone do not see it.
+
+A correction to the trace does not automatically specify an
+algebra of boundary functions. Put
+$\ell_a(f)=\frac12\int_{-1}^{1}\partial_zf(ta)dt$.
+With the same cutoff convention,
+\begin{equation}\label{mht:eq:segment-kernel-defect}
+ \ell_a(\bar z)=\ell_a(z^2)=0,
+ \qquad \ell_a(\bar z z^2)=\tfrac23|a|^2.
+\end{equation}
+Hence $\ker\ell_a$ is not a subalgebra when $a\ne0$.
+
+In contrast, the raw condition $f(a)=f(-a)$ is multiplicative.
+Its normalized difference tends, along the ray, to
+$\partial_zf(0)+e^{-2i\theta}\partial_{\bar z}f(0)$.
+This is a point derivation, so its kernel is an algebra, but
+it imposes a directional boundary condition. Comparing it
+with the holomorphic Neumann condition requires a map
+preserving the boundary product as well as the corrected trace.
+
+\section{Relative normal insertions and supported contacts}
+
+The normal contact in \eqref{mht:eq:normal-triple-difference} is a
+nonzero scalar distribution. To decide whether it represents an
+obstruction, one must place it in a complex with its allowed
+primitives. We first normalize its insertion on a disk, retaining the
+outer boundary, and then compute the supported Dolbeault complex.
+
+Write $p=x+iy$ for this normal coordinate, independently of the
+spectral coordinate $z$. Orient $D_R=\{|p|\leq R\}$ by
+$dx\wedge dy$ and its boundary $S_R$ by the induced orientation.
+Normalize the area delta by $\langle\delta_0,\phi\rangle=\phi(0)$.
+Then
+\[
+ \bar\partial(1/p)=\pi\delta_0\,d\bar p,\qquad
+ d(dp/p)=2\pi i\delta_0\,dx\wedge dy.
+\]
+
+Let $\mathcal K^\bullet(D_R)$ be the de Rham currents that are
+smooth on a fixed outer collar. Give them the strong distribution
+topology in the interior and the smooth topology on that collar.
+Restriction $i^*$ to $S_R$ is therefore continuous. The relative
+complex and its charge are
+\begin{align}
+ \mathcal N_R^n
+   &=\mathcal K^n(D_R)\oplus\Omega^{n-1}(S_R),\notag\\
+ d_{\mathrm{rel}}(\omega,\gamma)
+   &=(d\omega,i^*\omega-d\gamma),\notag\\
+ \operatorname{Ch}(\omega,\gamma)
+   &=\frac1{2\pi i}
+       \left(\int_{D_R}\omega-\int_{S_R}\gamma\right)
+       \quad(n=2).
+       \label{mht:eq:relative-normal-charge}
+\end{align}
+The charge is zero in other degrees. Stokes' theorem makes it a
+cochain map to $\mathbb C[-2]$, with its generator in degree two.
+
+For normal heat time $t>0$, independently of the spectral heat time,
+put
+\begin{align*}
+ Q_t&=1-e^{-R^2/(4t)},&
+ \beta_t^H&=(1-e^{-|p|^2/(4t)})\frac{dp}{p},&
+ \widetilde\beta_t^H&=Q_t^{-1}\beta_t^H,\\
+ q_\epsilon&=\frac{R^2}{R^2+\epsilon^2},&
+ \beta_\epsilon^R&=\frac{\bar p\,dp}{|p|^2+\epsilon^2},&
+ \widetilde\beta_\epsilon^R&=q_\epsilon^{-1}\beta_\epsilon^R
+       \quad(\epsilon>0).
+\end{align*}
+The superscripts distinguish heat and rational representatives.
+Define $U_t^H=(d\widetilde\beta_t^H,0)$ and
+$U_\epsilon^R=(d\widetilde\beta_\epsilon^R,0)$ in $\mathcal N_R^2$.
+
+\begin{proposition}\label{mht:prop:relative-normal-insertion}
+Both insertions have charge one and boundary primitive $i\,d\theta$.
+Their difference is the relative boundary
+\begin{equation}\label{mht:eq:normal-regulator-homotopy}
+ U_t^H-U_\epsilon^R
+   =d_{\mathrm{rel}}
+        (\widetilde\beta_t^H-\widetilde\beta_\epsilon^R,0).
+\end{equation}
+Differences of normalized primitives give additive homotopies between
+any two positive scales. Moreover,
+$\widetilde\beta_t^H\to dp/p$ in the declared current and collar
+topologies as $t\downarrow0$.
+\end{proposition}
+
+\begin{proof}
+The function $(1-e^{-r^2/(4t)})/r^2$ is smooth at zero, so
+$\beta_t^H$ is smooth there. Polar differentiation gives
+\[
+ d\beta_t^H=\frac{ir}{2t}e^{-r^2/(4t)}dr\wedge d\theta
+          =2\pi i\delta_t\,dx\wedge dy.
+\]
+Both normalized primitives restrict to $i\,d\theta$ on $S_R$.
+Stokes gives charge one, and equality of the boundary restrictions
+proves \eqref{mht:eq:normal-regulator-homotopy}. Differences telescope,
+which proves additivity.
+
+Away from zero the heat primitive converges in every smooth seminorm.
+Its local $L^1$ difference from $dp/p$ is bounded by a constant times
+$\int_0^R e^{-r^2/(4t)}dr=O(\sqrt t)$.
+This gives convergence uniformly on bounded test sets.
+Since $Q_t\to1$, normalization preserves that convergence and the
+smooth collar limit.
+\end{proof}
+
+This is a comparison of independently specified insertion maps.
+It preserves relative charge and the stated support and boundary
+conditions. It does not define a coincident product of singular currents.
+
+\subsection{The differential on supported jets}
+
+Set $\rho_t=Q_t^{-1}\delta_t$ on $D_R$ and
+\[
+ c_n=\frac1{(4\pi)^{n-1}n^n(n-1)!},\qquad n\geq2.
+\]
+The factor $Q_t^{-n}-1$ is exponentially small with all fixed
+$t$ derivatives. The finite-part calculation of
+Proposition~\ref{mht:prop:normal-heat-contact} therefore gives
+$\operatorname{FP}_{t=0}\rho_t^n=c_n\Delta_\perp^{n-1}\delta_0$.
+Its relative de Rham primitive is supported at the origin:
+\begin{align}
+ V_n&=c_n\bigl(
+     \partial_x\Delta_\perp^{n-2}\delta_0\,dy
+    -\partial_y\Delta_\perp^{n-2}\delta_0\,dx\bigr),\notag\\
+ d_{\mathrm{rel}}(V_n,0)
+   &=(c_n\Delta_\perp^{n-1}\delta_0\,dx\wedge dy,0).
+       \label{mht:eq:real-contact-primitive}
+\end{align}
+Direct differentiation proves the identity, and support makes the
+boundary restriction zero.
+
+The Dolbeault quotient retains more information than this real charge.
+Define the finite supported normal-jet complex by
+\begin{align}
+ \mathcal J_p^0&=\mathbb C[\xi,\eta]\delta_0,&
+ \mathcal J_p^1&=\mathbb C[\xi,\eta]\delta_0\,d\bar p,\notag\\
+ \xi&=\partial_p,&\eta&=\partial_{\bar p},\notag\\
+ \bar\partial(\xi^a\eta^b\delta_0)
+   &=\xi^a\eta^{b+1}\delta_0\,d\bar p.
+       \label{mht:eq:supported-normal-jets}
+\end{align}
+The symbols denote distribution derivatives without factorial
+normalization. Degree is Dolbeault degree. Use the inductive topology
+of finite normal-order spaces, with smooth tangential coefficients at
+fixed compact supports when these are present. Formal completions are
+coefficientwise, with finite normal order at each coefficient.
+
+\begin{theorem}\label{mht:thm:supported-normal-contraction}
+The complex $\mathcal J_p$ contracts onto
+$\mathbb C[\xi]\delta_0\,d\bar p$ in degree one. Let $\pi$ retain
+only degree-one terms with antiholomorphic derivative order zero,
+and let $\iota$ be their inclusion. The homotopy is zero in degree
+zero and is
+\[
+ h_p(\xi^a\eta^b\delta_0\,d\bar p)=
+ \begin{cases}
+  \xi^a\eta^{b-1}\delta_0,&b\geq1,\\
+  0,&b=0.
+ \end{cases}
+\]
+It satisfies
+\[
+ \bar\partial h_p+h_p\bar\partial=1-\iota\pi,
+ \qquad h_p^2=\pi h_p=h_p\iota=0.
+\]
+Thus $H^0(\mathcal J_p)=0$ and
+$H^1(\mathcal J_p)=\mathbb C[\partial_p]\delta_0\,d\bar p$.
+The maps are continuous, commute with holomorphic normal
+differentiation, and extend after tensoring with an independent
+cochain coefficient space in the stated finite-order topology.
+\end{theorem}
+
+\begin{proof}
+On a degree-zero monomial $h_p\bar\partial$ is the identity.
+On a degree-one monomial with $b\geq1$, $\bar\partial h_p$ is the
+identity. On the remaining monomials both sides of $1-\iota\pi$
+vanish. These cases also prove the side conditions.
+
+The homotopy lowers normal order, so it is continuous at every
+finite stage. The graded tensor rule cancels the two terms
+involving an independent coefficient differential. This proves
+the tensor assertion without passing to an unrestricted completion.
+\end{proof}
+
+In particular, $\delta_0\,d\bar p$ has no supported primitive.
+Such a primitive would require negative antiholomorphic derivative
+order. The higher heat contacts behave differently, since
+$\Delta_\perp=4\partial_p\partial_{\bar p}$ gives
+\begin{equation}\label{mht:eq:dolbeault-contact-primitive}
+ \Delta_\perp^{n-1}\delta_0\,d\bar p
+ =\bar\partial\bigl(
+   4^{n-1}\partial_p^{n-1}\partial_{\bar p}^{n-2}\delta_0\bigr).
+\end{equation}
+The cubic difference in \eqref{mht:eq:normal-triple-difference}
+therefore satisfies
+\begin{equation}\label{mht:eq:cubic-contact-primitive}
+ \frac{37}{55296\pi^2}\Delta_\perp^2\delta_0\,d\bar p
+ =\bar\partial\left(
+    \frac{37}{3456\pi^2}\partial_p^2\partial_{\bar p}\delta_0\right).
+\end{equation}
+
+The primitive requires a mixed normal jet in degree zero.
+A pure holomorphic residue module does not contain the heat contact.
+Adjoining the contact while excluding its displayed primitive
+changes the complex and hence the obstruction question.
+
+\subsection{Two normal directions and a surface boundary}
+
+Tensor products below use independent normal variables, at finite
+normal order and fixed compact test support. They do not multiply
+arbitrary distributions in a single variable. Suppose $U_i,U_i'$
+are closed cochains of degree $a_i$, and
+$dH_i=U_i-U_i'$ with $|H_i|=a_i-1$. The two ordered homotopies are
+\begin{align*}
+ H_{12}&=H_1\otimes U_2+(-1)^{a_1}U_1'\otimes H_2,\\
+ H_{21}&=(-1)^{a_1}U_1\otimes H_2+H_1\otimes U_2'.
+\end{align*}
+
+Both differentiate to $U_1\otimes U_2-U_1'\otimes U_2'$.
+Their difference is
+\begin{equation}\label{mht:eq:normal-corner-homotopy}
+ H_{12}-H_{21}=(-1)^{a_1+1}d(H_1\otimes H_2).
+\end{equation}
+Indeed, the first difference expands as
+$H_1\otimes dH_2-(-1)^{a_1}dH_1\otimes H_2$,
+which is the displayed differential. The normal charges have
+$a_i=2$. Adjoining an independent closed odd label to each factor,
+placed last, changes $a_i$ to three and reverses the corner sign.
+
+The tensor contraction for $\mathcal J_u\otimes\mathcal J_v$ is
+\[
+ h_u\otimes1+(\iota_u\pi_u)\otimes h_v.
+\]
+It is interpreted as a graded tensor of maps, so the second term
+has a minus sign after a degree-one residue in the first factor.
+The retained cohomology is
+\[
+ \mathbb C[\partial_u,\partial_v]
+     \delta_u\delta_v\,d\bar u\,d\bar v
+\]
+in degree two. Expanding the tensor differential and using the two
+one-variable contraction identities proves this assertion.
+
+To retain contacts along the union of the two divisors, one must also
+retain its faces. In one normal variable let $\mathcal L$ be the
+Dolbeault coefficient complex localized at the divisor, with finite
+pole order. Its principal-value section uses
+\[
+ E_m(p)=\frac{(-1)^{m-1}}{(m-1)!}
+                \partial_p^{m-1}(1/p).
+\]
+Let $\mathcal E=\sigma(\mathcal L)+\mathcal J$ inside currents,
+where $\sigma$ is this graded section and $\mathcal J$ is the full
+supported jet complex. In the graded splitting,
+\[
+ \mathcal E=\mathcal L\oplus\mathcal J,\qquad
+ d(a,s)=(d_{\mathcal L}a,d_{\mathcal J}s+\mathsf Ra),\qquad
+ \mathsf R=d\sigma-\sigma d_{\mathcal L}.
+\]
+
+The identities $pE_1=1$ and $pE_m=E_{m-1}$ make the section
+well-defined on localized coefficients. Restriction off the divisor
+identifies the quotient with $\mathcal L$.
+The equation $d_{\mathcal J}\mathsf R+\mathsf R d_{\mathcal L}=0$
+follows from $d^2=0$.
+
+For two variables the supported kernel of
+$\mathcal E_u\boxtimes\mathcal E_v\to
+ \mathcal L_u\boxtimes\mathcal L_v$ has graded space
+\begin{equation}\label{mht:eq:normal-face-kernel}
+ \mathcal J_{uv}=
+ (\mathcal J_u\boxtimes\mathcal L_v)
+ \oplus(\mathcal L_u\boxtimes\mathcal J_v)
+ \oplus(\mathcal J_u\boxtimes\mathcal J_v).
+\end{equation}
+Its differential retains both face-to-corner maps. With
+$r_1=\bar\partial(1/p)$, the signs are
+\begin{align*}
+ \bar\partial(E_1(u)E_1(v))
+   &=r_1(u)E_1(v)+E_1(u)r_1(v),\\
+ \bar\partial(r_1(u)E_1(v))&=-r_1(u)r_1(v),\\
+ \bar\partial(E_1(u)r_1(v))&=+r_1(u)r_1(v).
+\end{align*}
+Deleting either face destroys the cancellation in the second
+differential.
+
+Now let $\mathcal B$ be an independently given cochain complex
+with cochain map $\mathsf W:\mathcal B\to\mathcal L$.
+The pullback of the extension is
+\[
+ \mathcal E_{\mathsf W}=\mathcal B\oplus\mathcal J,
+ \qquad d(b,s)=(d_{\mathcal B}b,d_{\mathcal J}s+\mathsf R\mathsf Wb).
+\]
+It maps to $\mathcal E$ by $(b,s)\mapsto(\mathsf Wb,s)$.
+Both the square-zero and chain-map identities follow from
+$d_{\mathcal L}\mathsf W=\mathsf Wd_{\mathcal B}$ and the identity
+for $\mathsf R$. This construction supplies a coefficient extension,
+without a product of meromorphic functions with arbitrary supported
+currents.
+
+\begin{proposition}\label{mht:prop:relative-contact-totalization}
+Suppose these complexes and maps are given on a surface $U$ and its
+boundary $\Gamma$. Let the degree-zero cochain restrictions $\rho$
+commute with $\mathsf W$ and satisfy
+$\rho_{\mathcal J}\mathsf R_U=\mathsf R_\Gamma\rho_{\mathcal L}$.
+The relative complex has differential
+\begin{equation}\label{mht:eq:relative-contact-differential}
+ D(b,s;c,v)=
+ \left(
+ \begin{array}{c}
+ d_{\mathcal B}b,\quad d_{\mathcal J}s+\mathsf R_U\mathsf W_Ub;\\
+ \rho_{\mathcal B}b-d_{\mathcal B}c,\quad
+ \rho_{\mathcal J}s-d_{\mathcal J}v
+                         -\mathsf R_\Gamma\mathsf W_\Gamma c
+ \end{array}\right).
+\end{equation}
+Here $(b,s)$ has degree $n$ over $U$, and $(c,v)$ has degree
+$n-1$ over $\Gamma$. One has $D^2=0$.
+For two normal directions, $\mathcal J$ includes the full kernel
+\eqref{mht:eq:normal-face-kernel}.
+\end{proposition}
+
+\begin{proof}
+The restriction hypotheses make
+$\mathcal E_{\mathsf W,U}\to\mathcal E_{\mathsf W,\Gamma}$ a
+cochain map. For any cochain map $f:A\to B$, applying
+$(a,b)\mapsto(d_Aa,fa-d_Bb)$ twice gives zero, since
+$fd_A=d_Bf$. Substitution of the two extension differentials
+gives \eqref{mht:eq:relative-contact-differential}.
+\end{proof}
+
+Thus a closed degree-one element satisfies all four equations
+\[
+ \begin{aligned}
+ d_{\mathcal B}b&=0,&
+ d_{\mathcal J}s+\mathsf R_U\mathsf W_Ub&=0,\\
+ \rho_{\mathcal B}b-d_{\mathcal B}c&=0,&
+ \rho_{\mathcal J}s-d_{\mathcal J}v
+                        -\mathsf R_\Gamma\mathsf W_\Gamma c&=0.
+ \end{aligned}
+\]
+If a sourced BV--BFV action realizes this diagram
+in its admissible local cyclic counterterm complex, a degree-zero
+counterterm changes its first quantum residual by $DX$.
+For $X=(x,u;y,w)$ the boundary contact component is
+\[
+ \rho_{\mathcal J}u-d_{\mathcal J}w
+                       -\mathsf R_\Gamma\mathsf W_\Gamma y.
+\]
+An admissible regulator transport giving such a boundary preserves
+the residual class.
+
+The primitive \eqref{mht:eq:cubic-contact-primitive}, tensored with
+a closed independent coefficient, kills that supported coefficient
+class. It does not kill additional field or boundary components.
+Constructing the native sourced action, its local cyclic domain,
+compatible restrictions and quantum measure is still required.
+A compact-group disk preparation requires its own real integration
+cycle, measure and sewing comparison. Its state is not determined
+by the charge-one normal insertion.
+
+\section{Uniform inverses at a matrix background}
+
+The finite inverse in \eqref{mht:eq:angular-background-inverse} is
+polynomial in $J$, but its degree grows with the cutoff. To take a
+limit one needs a common bound. The adapted norm
+\eqref{mht:eq:angular-adapted-norm} reveals an infinite square-zero
+block whose removal would destroy the operator-norm approximation.
+
+For $s\geq3$, let $H_s^-$ be the closure of $V_-$ in ordinary
+round $H^s$, and complete $V_-\oplus V_+$ in the adapted norm
+to obtain $\mathfrak V_s$. Its complex linear Hilbert coordinates are
+\[
+ \mathfrak V_s\longrightarrow H_s^-\oplus\overline{H_s^-},
+ \qquad f\longmapsto(f_-,\overline{\mathcal Rf_+}).
+\]
+The second bar denotes the conjugate vector space, compensating for
+the antilinearity of $\mathcal R$. The one-derivative gain of
+$\mathcal C$ embeds $\mathfrak V_s$ continuously in ordinary $H^s$.
+Its vectors satisfy the mean and Neumann constraints, and the
+intersection of the scale is the original smooth space $V$.
+
+Let $\mathcal P_0^{\mathrm{rot}}$ project to rotation weight zero,
+distinct from the scalar residual mean $p_0$. Put
+\[
+ X=h\eta_0,\qquad
+ \mathsf Nf=h(\eta_0\mathcal P_0^{\mathrm{rot}}f_-),\qquad
+ K=X-\mathsf N.
+\]
+
+\begin{proposition}\label{mht:prop:staggered-nonsmoothing-block}
+The operator $\mathsf N$ is bounded on $\mathfrak V_s$ and satisfies
+$\mathsf N^2=0$. The remainder $K$ maps $\mathfrak V_s$ boundedly
+to $\mathfrak V_{s+1}$. The actual staggered projections
+$\widehat\Pi_L$ are orthogonal at every index, converge strongly
+to the identity and commute with $\mathsf N$.
+\end{proposition}
+
+\begin{proof}
+Write $f_-=r+w$, with $r$ of weight zero and $w$ of strictly
+negative weights. Then
+\[
+ \mathsf Nr=\mathcal C\overline r,\qquad
+ \mathcal R\mathsf Nr=\overline r.
+\]
+These bars are pointwise conjugation. Thus $\mathsf N$ sends the
+radial summand isometrically to its positive partner in the adapted
+norm. It kills positive weights, proving boundedness and square zero.
+
+The vector $Xw$ has nonpositive weights and gains one ordinary
+Sobolev derivative. The finite-rank corrections in $h$ obey the
+same bound: $\tau_E(\eta)=\kappa j(G\eta)$, the Green operator gains
+one derivative, and first-jet evaluation is continuous at these
+indices. For $f_+=\mathcal Cv$, one has
+\[
+ d_EXf_+=\eta_0f_+,\qquad
+ \mathcal RXf_+=\overline{f_+},\qquad
+ \|\mathcal RXf_+\|_{H^{s+1}}
+       \leq C_s\|v\|_{H^s}.
+\]
+The first identity uses $p_0(f_+)=0$. These bounds prove the
+one-derivative gain of $K$ on both summands.
+
+In the Hilbert coordinates, $\widehat\Pi_L$ is the ordinary spherical
+spectral projection on each summand, with conjugation on the second.
+It is orthogonal and converges strongly. Radial spherical projection
+commutes with pointwise conjugation, so the formulas for $\mathsf N$
+also give $\mathsf N\widehat\Pi_L=\widehat\Pi_L\mathsf N$.
+\end{proof}
+
+The inclusion $\mathfrak V_{s+1}\hookrightarrow\mathfrak V_s$ is
+compact, as the sum of two ordinary Sobolev inclusions.
+Hence $K$ and $X^2=\mathsf NK+K\mathsf N+K^2$ are compact.
+The operator $X$ is not compact on this scale, because
+$\mathsf N$ is an isometry on an infinite radial summand.
+
+\begin{lemma}\label{mht:lem:staggered-quasinilpotence}
+The spectrum of $X$ on $\mathfrak V_s$ is $\{0\}$.
+\end{lemma}
+
+\begin{proof}
+Rotation pullback $U_\theta$ is unitary. On the positive summand,
+$\mathcal RU_\theta f_+=e^{-i\theta}U_\theta\mathcal Rf_+$,
+whose extra phase preserves the norm. Since $X$ raises weight by one,
+\[
+ U_\theta XU_\theta^{-1}=e^{i\theta}X.
+\]
+
+A nonzero spectral value would bring its entire rotation circle
+into the spectrum. Polynomial spectral mapping would then put a
+nonzero circle in the spectrum of the compact operator $X^2$.
+The nonzero spectrum of a compact operator consists of isolated
+finite-multiplicity eigenvalues, so this is impossible.
+Nonemptiness of the spectrum of a bounded operator gives $\{0\}$.
+\end{proof}
+
+Fix a positive Hilbert norm on $\mathfrak g=\mathfrak{gl}_N(\mathbb C)$
+and retain ordinary matrix trace in the cyclic pairing. Define
+\[
+ M_J=1+X\otimes\operatorname{ad}_J,\qquad
+ B_J=M_J^{-1},\qquad
+ B_{J,L}=(1+X_L\otimes\operatorname{ad}_J)^{-1}.
+\]
+The finite inverse acts on $\widehat V_L\otimes\mathfrak g$.
+The tensor with $\mathfrak g$ is understood in the norms below.
+
+\begin{theorem}\label{mht:thm:uniform-staggered-inverse}
+For $s\geq3$ and every compact matrix set $\mathcal K$,
+\[
+ \sup_{L\geq0,\ J\in\mathcal K}
+       \|B_{J,L}\|_{\mathfrak V_s\otimes\mathfrak g}<\infty.
+\]
+The full inverse $B_J$ is entire in the entries of $J$.
+For every integer $r\geq0$ and finite parameter derivative
+$\partial_J^\alpha$,
+\begin{equation}\label{mht:eq:staggered-inverse-rate}
+ \sup_{J\in\mathcal K}
+ \|\partial_J^\alpha(B_{J,L}\widehat\Pi_L-B_J)f\|_{\mathfrak V_s}
+ \leq C_{s,r,\alpha,\mathcal K}(1+L)^{-r}
+                              \|f\|_{\mathfrak V_{s+r}}.
+\end{equation}
+Thus the inverses and all finite background responses converge
+uniformly on bounded smooth sets, locally uniformly in $J$.
+\end{theorem}
+
+\begin{proof}
+The spectral-radius formula gives
+$\|X^n\|^{1/n}\to0$. Consequently
+\[
+ B_J=\sum_{n\geq0}(-X\otimes\operatorname{ad}_J)^n
+\]
+converges in operator norm uniformly on compact matrix sets and
+defines an entire inverse.
+
+Retain the nonsmoothing block before compressing:
+\[
+ \widehat X_L=\mathsf N+\widehat\Pi_LK\widehat\Pi_L.
+\]
+Compactness of $K$ and strong convergence of the orthogonal
+projections imply $\widehat X_L\to X$ in operator norm.
+Indeed, $(1-\widehat\Pi_L)K$ converges uniformly on the unit ball
+because its image under $K$ is relatively compact. Apply the same
+argument to the adjoint compact operator to control
+$K(1-\widehat\Pi_L)$.
+
+The operator $\widehat X_L$ commutes with $\widehat\Pi_L$.
+On its range it is $X_L$, and on its complement it is $\mathsf N$.
+Uniform boundedness of $B_J$ on $\mathcal K$ and the resolvent
+Neumann series therefore give a uniform inverse bound for
+$1+\widehat X_L\otimes\operatorname{ad}_J$ at large $L$.
+Restriction gives the required bound for $B_{J,L}$.
+The finitely many remaining polynomial inverses are bounded on
+$\mathcal K$, so one constant works for every $L$.
+
+For the rate set $u=B_Jf$ and $u_L=B_{J,L}\widehat\Pi_Lf$.
+Projecting $M_Ju=f$ and subtracting the finite equation gives
+\begin{equation}\label{mht:eq:staggered-Galerkin-error}
+ u_L-u=-(1-\widehat\Pi_L)u
+   +B_{J,L}\widehat\Pi_L(X\otimes\operatorname{ad}_J)
+                            (1-\widehat\Pi_L)u.
+\end{equation}
+The adapted spectral tail obeys
+\[
+ \|(1-\widehat\Pi_L)v\|_{\mathfrak V_s}
+     \leq C_r(1+L)^{-r}\|v\|_{\mathfrak V_{s+r}}.
+\]
+Apply it to $u$, using the finite inverse bound at index $s$ and
+the full inverse bound at index $s+r$. This proves the rate for
+$\alpha=0$.
+
+Enlarge $\mathcal K$ by a fixed small compact complex neighborhood.
+The same rate holds uniformly there. Cauchy estimates in the
+finite-dimensional matrix entries give every fixed parameter
+derivative in \eqref{mht:eq:staggered-inverse-rate}.
+The inverses at different indices agree on smooth vectors, since
+the same norm-convergent Neumann series defines them.
+\end{proof}
+
+These estimates concern the actual linear inverses on the declared
+Hilbert scale. They will control smoothly smeared Gaussian
+contractions and their source derivatives. A local interacting
+quantum comparison still requires its cyclic counterterm domain,
+normal contacts, boundary data and prepared state.

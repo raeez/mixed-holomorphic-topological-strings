@@ -1,0 +1,938 @@
+\chapter{Reduction and boundary fields}
+\label{mht:ch:neumann-bv}
+
+Putting the curve connection in normal form also changes the surface
+connection. Before imposing the field equations, the transformed surface
+field has an error determined by the mixed curvature. On flat fields
+this error vanishes, giving the full formal BF reduction. At a fixed
+residual matrix, the linearized reduction retains its entire adjoint
+complex, including the stabilizer directions that appear when
+eigenvalues coincide.
+
+The action retains two kinds of boundary data. At the pole, its Stokes
+term pairs the value of a function with its first holomorphic jet.
+Along the boundary of the surface, a varying gauge transformation
+contributes a cubic term in its Maurer--Cartan form. We derive both
+terms after computing the exact quadratic action of the eliminated
+surface fields.
+
+\section{Curvature and the surface connection}
+
+Keep the sphere, trace, normalized Green operator, and representative
+$f_0,\eta_0$ of Chapter~\ref{mht:ch:polar-neumann}.
+Write $\mathfrak g=\mathfrak{gl}_N(\mathbb C)$ and let $U$ be an oriented
+smooth surface. Surface forms precede curve forms in the graded tensor
+product. Decompose a physical mixed connection as
+\[
+ \mathsf A=b+a,\qquad
+ b\in\Omega^1(U)\widehat\otimes E^0\otimes\mathfrak g,\qquad
+ a\in C^\infty(U)\widehat\otimes E^1\otimes\mathfrak g.
+\]
+
+Work formally in the field amplitude, or in the small Sobolev
+neighborhood of Proposition~\ref{mht:prop:analytic-frame}, smoothly
+parametrized over $U$. Let $H=H(a)$ and $J=\mathcal J(a)$, so
+$\bar\partial H=-aH$, $H(o)=I_N$, and $j(H)=-J$.
+Put $b_o=b(o)$.
+
+Transformation by $H$ kills the curve connection and leaves the surface
+one-form
+\begin{equation}\label{mht:eq:surface-frame}
+ B=H^{-1}bH+H^{-1}d_UH.
+\end{equation}
+To recover it, define the curvature components and their residual value:
+\begin{align}
+ F_{UU}&=d_Ub+b^2,&
+ F_{UC}&=d_Ua-\bar\partial b+[b,a],\label{mht:eq:mixed-curvature}\\
+ C_a&=H^{-1}F_{UC}H,&
+ r&=d_UJ+[b_o,J].\notag
+\end{align}
+Here $\bar\partial b$ differentiates the curve coefficients. Its minus
+sign is the tensor sign in the total differential.
+
+\begin{proposition}\label{mht:prop:curvature-reconstruction}
+Without imposing flatness,
+\begin{equation}\label{mht:eq:curvature-reconstruction}
+ B=b_o-GC_a,\qquad
+ r=j(GC_a)=\kappa^{-1}\tau_E(C_a),\qquad
+ (H^{-1}F_{UU}H)(o)=d_Ub_o+b_o^2.
+\end{equation}
+All curve operators act coefficientwise on surface forms.
+\end{proposition}
+
+\begin{proof}
+The transformed curve connection is zero, so covariance of mixed
+curvature gives $-\bar\partial B=C_a$. Since $B(o)=b_o$, normalization
+of $G$ gives the first identity. Differentiate
+\eqref{mht:eq:surface-frame} at $o$, using
+$j(H^{-1})=J$, $j(b)=0$, and $j(d_UH)=-d_UJ$.
+The result is $j(B)=-r$, which gives the second identity by polar Stokes.
+Surface curvature transforms by conjugation, and evaluation at $o$
+gives the last identity.
+\end{proof}
+
+The frame $H$ need not be Neumann. The admissible transformation is
+$g=H\exp(f_0J)$ from Theorem~\ref{mht:thm:neumann-normal-form}.
+For $L=\operatorname{ad}_J$, introduce the entire operator
+\begin{equation}\label{mht:eq:entire-adjoint-operator}
+ T_J=f_0\int_0^1e^{-u f_0L}\,du
+       =\sum_{n\geq0}\frac{(-1)^nf_0^{n+1}L^n}{(n+1)!}.
+\end{equation}
+This formula is defined even when $L$ has a kernel.
+
+\begin{corollary}\label{mht:cor:full-normal-error}
+For the convention
+$\mathsf A^g=g^{-1}\mathsf A g+g^{-1}(d_U+\bar\partial)g$,
+\begin{equation}\label{mht:eq:full-normal-error}
+ \mathsf A^g=b_o+\eta_0J+R_a,\qquad
+ R_a=-e^{-f_0L}GC_a+T_Jr.
+\end{equation}
+The surface one-form $R_a$ has value and first holomorphic jet zero at
+$o$.
+\end{corollary}
+
+\begin{proof}
+After transformation by $H$, transform $B$ by $e^{f_0J}$.
+Differentiation of the matrix exponential gives
+\[
+ e^{-f_0J}Be^{f_0J}+e^{-f_0J}d_Ue^{f_0J}-b_o
+   =e^{-f_0L}(B-b_o)+T_J(d_UJ+[b_o,J]).
+\]
+Substitute \eqref{mht:eq:curvature-reconstruction}.
+The curve component becomes $\eta_0J$.
+Both $GC_a$ and $T_J$ vanish at $o$, and their first jets are $r$ and
+the identity operator. Their contributions to $j(R_a)$ cancel.
+\end{proof}
+
+Thus mixed curvature measures exactly the failure of a general field
+to be represented by residual BF fields. On flat fields, $C_a=r=0$,
+and the normal form is $b_o+\eta_0J$.
+
+\section{Formal fields and gauge homotopies}
+
+To retain ghosts and higher gauge homotopies, let $R$ be a local Artin
+commutative differential graded algebra over $\mathbb C$, with nilpotent
+maximal ideal $\mathfrak m$. A formal field is a total-degree-one element
+of
+\[
+ \Omega^\bullet(U)\widehat\otimes E\otimes\mathfrak g
+                                      \otimes\mathfrak m.
+\]
+It is a Maurer--Cartan field if $D\mathsf A+\mathsf A^2=0$, where $D$
+is the total differential. Tensoring additionally with
+$\Omega^\bullet_{\mathrm{poly}}(\Delta^n)$ defines its simplicial space
+of fields. The residual complex replaces $E$ by
+$A_\kappa=\mathbb C\oplus\mathbb C\varepsilon$.
+
+\begin{theorem}\label{mht:thm:formal-bf-reduction}
+The maps
+\[
+ \mathsf A=\mathbf b+a\longmapsto(\mathbf b(o),\mathcal J(a)),
+ \qquad
+ (\mathbf b_o,\mathbf J)\longmapsto\mathbf b_o+\mathbf J\eta_0
+\]
+give mutually inverse equivalences of these formal deformation
+problems, up to a natural based Neumann gauge homotopy.
+The residual equations are
+\begin{equation}\label{mht:eq:residual-mc}
+ d\mathbf b_o+\mathbf b_o^2=0,\qquad
+ d\mathbf J+[\mathbf b_o,\mathbf J]=0.
+\end{equation}
+Here $d$ includes the surface, Artin, and simplex differentials.
+\end{theorem}
+
+\begin{proof}
+The coefficient of a curve one-form has total coefficient degree zero.
+Its normalized frame therefore has degree zero, and the Green series
+and exponential are defined over $R$. Nilpotence makes the series
+finite. The curvature calculation uses only the Leibniz rule and graded
+matrix multiplication, so it applies with the full coefficient
+differential. On a Maurer--Cartan field, both curvature components
+vanish. Equation~\eqref{mht:eq:full-normal-error} then gives the residual
+field and \eqref{mht:eq:residual-mc}.
+
+For a residual field, $H=\exp(-f_0\mathbf J)$, so the residual composite
+is the identity and the correcting gauge is $g=I_N$.
+For a general field, set $g_u=\exp(u\log g)$.
+The connection
+\[
+ \mathsf A^{g_u}+g_u^{-1}\partial_ug_u\,du
+\]
+is Maurer--Cartan on the parameter interval. It joins $\mathsf A$ to
+its residual normal form. Its residual image is constant, since
+$g_u(o)=I_N$, $j(g_u)=0$, and its additional $du$ coefficient vanishes
+at $o$.
+
+For a Neumann gauge $k$, uniqueness of the frame gives
+$H(a^k)=k^{-1}H(a)k(o)$. Hence $\mathcal J$ transforms by conjugation
+with $k(o)$, and $\mathbf b(o)$ transforms as a connection.
+The formulas commute with coefficient morphisms and simplex
+restrictions. They consequently give the stated equivalence with its
+higher gauge homotopies.
+\end{proof}
+
+The strict inclusion preserves the cyclic pairing. On a closed surface,
+or with compact support, substitution in the cyclic action gives
+\begin{align}
+ S_{\mathrm{BF}}
+   &=\kappa\int_U\operatorname{tr}
+             \bigl(\mathbf J(d_U\mathbf b+\mathbf b^2)\bigr),
+       \label{mht:eq:residual-bv-action}\\
+ \omega_{\mathrm{BF}}
+   &=\kappa\int_U\operatorname{tr}
+                      (\delta\mathbf J\,\delta\mathbf b).
+       \label{mht:eq:residual-bv-pairing}
+\end{align}
+The pairing has degree $-1$. In surface degrees $0,1,2$, write
+$\mathbf b=(c,b,J^+)$ and $\mathbf J=(J,b^+,c^+)$.
+Their coordinate ghost numbers are respectively $(1,0,-1)$ and
+$(0,-1,-2)$. These are all components of the residual shifted complex.
+
+The projection removes contractible directions, so it is not a
+symplectomorphism of the full spaces of fields before the equations of
+motion are imposed. The equivalence concerns the trivial curve-bundle
+neighborhood. Its maps preserve restriction and support in $U$, while
+the Green operator still uses the whole curve.
+
+\section{The adjoint complex at a residual matrix}
+
+The residual field $J$ may have repeated eigenvalues or be nonsemisimple.
+The correct linearized complex keeps both copies of $\mathfrak g$:
+\begin{equation}\label{mht:eq:residual-adjoint-complex}
+ K_J=\bigl[\mathfrak g\xrightarrow{\operatorname{ad}_J}
+                                  \mathfrak g\varepsilon\bigr].
+\end{equation}
+They lie in degrees zero and one. On the smooth curve complex, the
+differential is
+\[
+ d_Jf=\bar\partial f+\eta_0[J,f],\qquad d_J(E^1)=0.
+\]
+
+The inclusion $I:K_J\to E\otimes\mathfrak g$ is
+$I_0x=x$, $I_1y=\eta_0y$. Extend the cyclic projections entrywise:
+\[
+ P_0f=\kappa^{-1}\tau_E(f\eta_0),\qquad
+ P_1\eta=\kappa^{-1}\tau_E(\eta).
+\]
+The factor $\varepsilon$ in the target of $P_1$ is understood.
+
+Conjugation by $e^{f_0\operatorname{ad}_J}$ removes the twist from
+$d_J$. It changes the domain condition, so a correction is still
+needed. With $L=\operatorname{ad}_J$ and $T_J$ from
+\eqref{mht:eq:entire-adjoint-operator}, define
+\begin{align}
+ p^{\mathrm{fr}}_{J,0}f&=f(o),&
+ p^{\mathrm{fr}}_{J,1}\eta&=jG(e^{f_0L}\eta),\notag\\
+ h^{\mathrm{fr}}_J\eta
+   &=e^{-f_0L}G(e^{f_0L}\eta)-T_Jp^{\mathrm{fr}}_{J,1}\eta,
+       &h^{\mathrm{fr}}_J(E^0)&=0.
+       \label{mht:eq:background-frame-h}
+\end{align}
+
+\begin{theorem}\label{mht:thm:background-contraction}
+For every finite matrix $J$, the map
+\begin{equation}\label{mht:eq:background-cyclic-h}
+ h_J=(1-I_0P_0)h^{\mathrm{fr}}_J
+\end{equation}
+is a continuous cyclic contraction onto $K_J$:
+\[
+ PI=1,\qquad d_Jh_J+h_Jd_J=1-IP,\qquad
+ h_J^2=h_JI=Ph_J=0.
+\]
+For matrix-valued curve one-forms $\eta,\xi$,
+\begin{equation}\label{mht:eq:background-cyclic-identity}
+ \tau_E\operatorname{tr}((h_J\eta)\xi)
+       +\tau_E\operatorname{tr}(\eta h_J\xi)=0.
+\end{equation}
+The maps depend analytically on $J$, including at nonsemisimple
+matrices, and define coefficientwise maps for formal matrix parameters.
+The cohomology is $\ker\operatorname{ad}_J$ in degree zero and
+$\operatorname{coker}\operatorname{ad}_J$ in degree one.
+\end{theorem}
+
+\begin{proof}
+For $F=e^{f_0L}f$, the Neumann condition $j(f)=0$ becomes
+$j(F)=LF(o)$. Direct differentiation on unconstrained smooth functions
+gives
+\[
+ d_J(T_Jy)=\eta_0y,\qquad T_JL=1-e^{-f_0L}.
+\]
+The two first jets in \eqref{mht:eq:background-frame-h} cancel.
+Thus $h^{\mathrm{fr}}_J$ takes values in $E^0$ and vanishes at $o$.
+The same identities give
+\[
+ d_Jh^{\mathrm{fr}}_J\eta
+       =\eta-\eta_0p^{\mathrm{fr}}_{J,1}\eta,\qquad
+ h^{\mathrm{fr}}_Jd_Jf=f-f(o).
+\]
+For the latter equality use
+$G(e^{f_0L}d_Jf)=e^{f_0L}f-f(o)$.
+
+The normalized primitive of $e^{f_0L}\eta_0y$ is
+$\int_0^{f_0}e^{uL}y\,du$. It proves
+$p^{\mathrm{fr}}_JI=1$ and $h^{\mathrm{fr}}_JI=0$.
+The adjoint projection is a chain map, since
+$P_1d_Jf=[J,P_0f]$. Hence $\Pi=1-IP$ commutes with $d_J$, and
+$h_J=\Pi h^{\mathrm{fr}}_J\Pi$. Therefore
+\[
+ d_Jh_J+h_Jd_J
+   =\Pi(1-Ip^{\mathrm{fr}}_J)\Pi=\Pi.
+\]
+The side conditions follow from $\Pi I=P\Pi=0$,
+$h^{\mathrm{fr}}_JI=0$, and degree.
+
+For cyclicity, put $v=h_J\eta$ and $w=h_J\xi$.
+Both have zero $P_0$. Adjointness of $P$ and $I$, followed by polar
+integration by parts, gives
+\[
+ \tau_E\operatorname{tr}(v\xi)
+ =\tau_E\operatorname{tr}(v\,d_Jw)
+ =-\tau_E\operatorname{tr}((d_Jv)w)
+ =-\tau_E\operatorname{tr}(\eta w).
+\]
+The commutator contribution has zero matrix trace, and the degree-zero
+products remain in the Neumann domain.
+
+Finally, multiplication by the smooth matrix exponentials, $G$, and the
+finite-rank projections is continuous. Parameter derivatives are
+bounded on compact sets of matrices in every smooth seminorm.
+This proves the analytic assertion and the coefficientwise formal
+construction. The contraction identifies cohomology with that of
+\eqref{mht:eq:residual-adjoint-complex}.
+\end{proof}
+
+In particular, put
+\[
+ V=\ker P_0\subset E^0\otimes\mathfrak g,\qquad
+ W=\ker P_1\subset E^1\otimes\mathfrak g.
+\]
+Then $d_J:V\to W$ is an isomorphism with inverse $h_J$.
+Write $h=h_{J=0}$ for the cyclic homotopy of
+Theorem~\ref{mht:thm:cyclic-contraction}.
+As a formal series at $J=0$,
+\[
+ h_J=h(1+\eta_0\operatorname{ad}_Jh)^{-1}.
+\]
+The exact formula \eqref{mht:eq:background-cyclic-h} does not require
+convergence of this particular series.
+
+\subsection{An eigenvalue collision}
+
+The family $J_x=\operatorname{diag}(x,-x)$ shows what would be lost by
+dividing by nonzero eigenvalue differences. Over either
+$R=\mathbb C[x]$ or $R=\mathbb C[[x]]$, its residual complex has
+\begin{equation}\label{mht:eq:collision-torsion}
+ H^0(K_{J_x})=R^2,\qquad
+ H^1(K_{J_x})=R^2\oplus(R/(x))^2.
+\end{equation}
+Indeed, the two diagonal directions have zero differential, and the
+two off-diagonal arrows are multiplication by $2x$ and $-2x$.
+They are injective over $R$ with cokernel $R/(x)$.
+
+At $x=0$, the specialized complex has four-dimensional kernel and
+cokernel. Each two-term free resolution of $R/(x)$ contributes a
+$\operatorname{Tor}_1^R(R/(x),\mathbb C)$ class in degree zero.
+This accounts for the two additional stabilizer directions.
+Theorem~\ref{mht:thm:background-contraction} transports the calculation
+to the native formal family $(E\otimes\mathfrak g)[[x]]$.
+
+The completion in this last assertion is necessary. For
+$f_0=z/(1+z\bar z)$, the differential in the $E_{12}$ direction is
+$D_x=\bar\partial+2x\eta_0$ on $E^0[x]$. The cokernel of the residual
+inclusion on first cohomology is
+\[
+ Q=\frac{E^1[x]}{D_xE^0[x]+\mathbb C[x]\eta_0}.
+\]
+
+\begin{proposition}\label{mht:prop:polynomial-family-failure}
+Inclusion as constant polynomials induces an injective complex linear
+map $E^1/\mathbb C\eta_0\longrightarrow Q$.
+For $v=z\bar z/(1+z\bar z)$, the classes
+$[\bar\partial(v^m)]$, $m\geq1$, are linearly independent in $Q$.
+Thus the residual inclusion over $\mathbb C[x]$ has an
+infinite-dimensional cokernel on first cohomology of
+$(E\otimes\mathfrak{gl}_2)[x]$ with differential $d_{J_x}$.
+\end{proposition}
+
+\begin{proof}
+Suppose that $\eta\in E^1$, viewed as constant in $x$, has zero class in $Q$.
+There are polynomials $c(x)\in\mathbb C[x]$ and $u(x)\in E^0[x]$ with
+\[
+ \eta=c(x)\eta_0+D_xu(x).
+\]
+Multiplication by $\eta_0$ on smooth functions is injective because the
+form is nonzero on a dense open set.
+
+If $u$ has degree $n$, comparison above degree $n+1$ first gives
+$\deg c\leq n+1$. The coefficient of $x^{n+1}$ says that the top
+coefficient of $u$ is a scalar constant. Its Dolbeault derivative
+vanishes. Descending through powers of $x$ then makes every coefficient
+of $u$ constant. The constant term gives $\eta=c(0)\eta_0$,
+which also follows directly when $u=0$. This proves the injection.
+
+A finite relation among the displayed classes would therefore give
+\[
+ \bar\partial\left(\sum_{m=1}^M a_m v^m-cf_0\right)=0.
+\]
+The function in parentheses is smooth on the sphere, so it is
+holomorphic and constant. Its first holomorphic jet at $o$ is $-c$,
+so $c=0$, and its value at $o$ makes the constant zero.
+Since $v$ takes every value in $[0,1)$ on the affine chart,
+the polynomial $\sum_{m=1}^M a_m t^m$ vanishes identically.
+Every coefficient $a_m$ is zero.
+\end{proof}
+
+Thus a formal or analytic parameter family retains the collision through
+the full adjoint complex. The exponential contraction is not a map on
+the uncompleted polynomial family.
+
+\section{The exact action of the eliminated fields}
+
+On the curve slice $a=\eta_0J$, split the surface field by the cyclic
+projection:
+\[
+ b=b_c+u,\qquad b_c=P_0b,\qquad P_0u=0.
+\]
+Here $b_c$ is a surface connection with constant curve coefficients.
+Before imposing flatness, it can differ from $b(o)$.
+
+\begin{proposition}\label{mht:prop:exact-slice-action}
+The physical action is exactly
+\begin{align}
+ S_E(b+\eta_0J)
+  &=\kappa\int_U\operatorname{tr}(JF_{b_c})
+     -\frac12\int_U\tau_E\operatorname{tr}(u\,d_Ju)\notag\\
+  &\hspace{1em}
+     -\frac{\kappa}{2}\int_{\partial U}\operatorname{tr}(b_cJ).
+       \label{mht:eq:exact-slice-action}
+\end{align}
+The boundary term is absent on a closed surface or with compact support
+in its interior. The differential $d_J$ acts on curve coefficients.
+In oriented surface coordinates $(s,t)$, the middle term is
+$-\int_U\tau_E\operatorname{tr}(u_s d_Ju_t)\,ds\,dt$.
+
+The infinitesimal gauge derivative of the condition $ha=0$, on gauge
+parameters $\xi\in V$, is
+\begin{equation}\label{mht:eq:gauge-slice-derivative}
+ M_J=hd_J|_V=1+h\eta_0\operatorname{ad}_J|_V,\qquad
+ M_J^{-1}=h_J\bar\partial|_V.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Expand the kinetic and cubic terms in $b_c+u+\eta_0J$.
+Every term linear in $u$ vanishes because
+$\tau_E(u\eta_0)=\kappa P_0u=0$,
+$\tau_E(\bar\partial u)=0$, and $P_0$ commutes with $d_U$.
+The terms independent of $u$ are the BF density and its boundary
+term from Proposition~\ref{mht:prop:bf-density}.
+
+The remaining cubic coefficient is
+$\tau_E\operatorname{tr}(\eta_0Ju^2)$.
+Cyclicity identifies it with the
+$\eta_0\operatorname{ad}_J$ part of the displayed quadratic form.
+The remaining kinetic coefficient is its $\bar\partial$ part.
+A product of three surface fields has no curve one-form and
+contributes zero. This proves the exact identity for
+surface-dependent $J$ as well.
+
+At the slice, the curve component of a gauge variation is $d_J\xi$.
+Applying $h$ gives $M_J$. Since $d_JV\subset W$ and
+$\bar\partial h=1$ on $W$, one has $\bar\partial M_J=d_J$ on $V$.
+Composition of the two isomorphisms $d_J,\bar\partial:V\to W$ gives
+the inverse in \eqref{mht:eq:gauge-slice-derivative}.
+\end{proof}
+
+The eliminated surface fields therefore have a quadratic action whose
+kernel depends on $J$. A quantum elimination must use this same
+background dependence both for the gauge determinant and for observable
+contractions. The classical splitting alone assigns neither quantity.
+
+\section{The polar first-jet boundary}
+
+The condition $j(f)=0$ makes the polar trace closed. To allow the first
+jet to vary, retain it as a boundary variable. Write
+\[
+ \mathcal A=\Omega^{0,\bullet}(C),\qquad
+ B=\mathbb C[\xi]/(\xi^2),\qquad |\xi|=0,\qquad d_B=0.
+\]
+Here $\xi$ is even, unlike the odd residual class
+$\varepsilon\in A_\kappa$. Define differential graded algebra maps
+\begin{equation}\label{mht:eq:jet-boundary-maps}
+ \begin{split}
+ r:\mathcal A\longrightarrow B,&\qquad
+ r(f)=f(o)+\xi j(f),\quad r(\eta)=0,\quad |\eta|=1,\\
+ \ell:\mathbb C\longrightarrow B,&\qquad \ell(c)=c.
+ \end{split}
+\end{equation}
+
+The product rule for $j$ proves multiplicativity of $r$. The map
+annihilates positive degree, so it commutes with the differentials.
+The Neumann algebra is the strict pullback
+\begin{equation}\label{mht:eq:neumann-pullback}
+ E=\mathcal A\times_B\mathbb C.
+\end{equation}
+Indeed, the equation $r(f)=\ell(c)$ says $j(f)=0$ and $c=f(o)$.
+There is no restriction in degree one.
+
+Let $\tau_{\mathcal A}$ be the polar functional on $\mathcal A^1$,
+extended by zero on $\mathcal A^0$, and define
+\[
+ \tau_B(c_0+\xi c_1)=\kappa c_1.
+\]
+The polar Stokes identity becomes the relative trace identity
+\begin{equation}\label{mht:eq:relative-trace}
+ \tau_{\mathcal A}\bar\partial=\tau_Br,\qquad
+ \tau_B\ell=0.
+\end{equation}
+The two traces have degrees $-1$ and $0$, respectively.
+
+\begin{proposition}\label{mht:prop:jet-boundary-pairing}
+The pairing $(x,y)\mapsto\tau_B(xy)$ on $B$ is nondegenerate, and
+$\ell(\mathbb C)$ is Lagrangian. The same holds after tensoring with
+$\mathfrak{gl}_N$ and the matrix trace: the constant matrices form a
+Lagrangian Lie subalgebra of $\mathfrak{gl}_N(B)$.
+\end{proposition}
+
+\begin{proof}
+In the basis $(1,\xi)$ the pairing has matrix
+\[
+ \kappa\begin{pmatrix}0&1\\1&0\end{pmatrix}.
+\]
+The constant line is isotropic and equals its orthogonal complement.
+For matrices the pairing is
+\[
+ \kappa\operatorname{tr}(X_0Y_1+X_1Y_0).
+\]
+Nondegeneracy of the ordinary matrix trace gives the assertion, and
+cyclicity makes the pairing invariant under the Lie bracket.
+\end{proof}
+
+Thus the Neumann condition selects the constant Lagrangian subalgebra
+of the first-jet boundary. This boundary records the integration term
+at the double pole without choosing a real boundary circle.
+
+\subsection{The boundary action}
+
+For this subsection assume that $U$ is closed and oriented. Tensor the
+relative diagram \eqref{mht:eq:jet-boundary-maps} with
+$\Omega^\bullet(U)\otimes\mathfrak g$, retaining the full graded
+fields. Let $\mathbf A$ be the total-degree-one bulk superfield,
+$D=d_U+\bar\partial$, and $a=r(\mathbf A)$. Put
+\[
+ T_{\mathcal A}=\int_U\tau_{\mathcal A}\operatorname{tr},\qquad
+ T_B=\int_U\tau_B\operatorname{tr},\qquad
+ S_{\mathcal A}(\mathbf A)
+ =T_{\mathcal A}\left(\frac12\mathbf A D\mathbf A
+                                      +\frac13\mathbf A^3\right).
+\]
+
+The traces $T_{\mathcal A}$ and $T_B$ have degrees $-3$ and $-2$.
+After shifting the field complexes by one, their induced pairings have
+degrees $-1$ and $0$. These are the bulk Batalin--Vilkovisky pairing
+and the boundary Batalin--Fradkin--Vilkovisky pairing, respectively.
+
+\begin{proposition}\label{mht:prop:polar-boundary-action}
+In the cyclic suspension convention for the full fields,
+\begin{equation}\label{mht:eq:polar-action-variation}
+ \delta S_{\mathcal A}
+ =T_{\mathcal A}\bigl(\delta\mathbf A
+                     (D\mathbf A+\mathbf A^2)\bigr)
+                         -\frac12T_B(a\,\delta a).
+\end{equation}
+The boundary one-form and Hamiltonian are
+\begin{align}
+ \Theta_B&=\frac12T_B(a\,\delta a),&
+ \omega_B&=\delta\Theta_B,\label{mht:eq:polar-boundary-form}\\
+ S_B(a)&=T_B\left(\frac12a\,d_Ua+\frac13a^3\right).
+       \label{mht:eq:polar-boundary-hamiltonian}
+\end{align}
+Writing $a=a_0+\xi a_1$, one obtains
+\begin{equation}\label{mht:eq:polar-bfv-bf}
+ S_B=\kappa\int_U\operatorname{tr}
+                            \bigl(a_1(d_Ua_0+a_0^2)\bigr).
+\end{equation}
+The boundary condition $a_1=0$ is Lagrangian and preserved by the
+cohomological vector field. Its restriction recovers the Neumann
+action.
+\end{proposition}
+
+\begin{proof}
+The kinetic variation is
+$\tfrac12T_{\mathcal A}(\delta\mathbf A D\mathbf A
+                      +\mathbf A D\delta\mathbf A)$.
+Use the identity
+\[
+ D(\mathbf A\delta\mathbf A)
+       =(D\mathbf A)\delta\mathbf A-\mathbf A D\delta\mathbf A
+\]
+and \eqref{mht:eq:relative-trace}. The resulting endpoint term is
+$-\tfrac12T_B(a\delta a)$, and the interior kinetic terms combine.
+Graded cyclicity makes the cubic variation
+$T_{\mathcal A}(\delta\mathbf A\,\mathbf A^2)$.
+This proves \eqref{mht:eq:polar-action-variation} and gives the relative
+Hamiltonian identity
+$\iota_Q\omega_{\mathcal A}=\delta S_{\mathcal A}+r^*\Theta_B$.
+
+On the boundary, the vector field is $Qa=d_Ua+a^2$.
+Associativity and the derivation identity give $Q^2=0$ in this
+suspension convention. To expand its Hamiltonian, retain the coefficient
+of $\xi$:
+\[
+ \frac{\kappa}{2}\int_U\operatorname{tr}
+           (a_0d_Ua_1+a_1d_Ua_0)
+ +\frac{\kappa}{3}\int_U\operatorname{tr}
+           (a_0^2a_1+a_0a_1a_0+a_1a_0^2).
+\]
+Surface integration by parts identifies the two kinetic terms, and
+graded cyclicity identifies the three cubic terms. This yields
+\eqref{mht:eq:polar-bfv-bf}. Moreover,
+\[
+ Qa_0=d_Ua_0+a_0^2,\qquad
+ Qa_1=d_Ua_1+a_0a_1+a_1a_0.
+\]
+
+Hence $a_1=0$ is invariant. Its Lagrangian property follows from
+Proposition~\ref{mht:prop:jet-boundary-pairing}. Both $S_B$ and the
+boundary one-form restrict to zero there.
+\end{proof}
+
+The degrees in this calculation matter. The variables $a_0$ and $a_1$
+include ghosts and antifields as well as ordinary surface forms.
+Restricting them both to one-forms would erase the boundary Hamiltonian
+by surface degree. If $U$ has a boundary, its Stokes term must also be
+retained. The polar calculation alone does not give the corner data.
+
+\section{A closed path model for the relative trace}
+
+The pullback \eqref{mht:eq:neumann-pullback} fixes the boundary jet to
+be constant. A path from the unrestricted jet to a constant instead
+retains the boundary comparison itself. Let $B[t,dt]$ be the polynomial
+de Rham algebra of the interval, with $|t|=0$, $|dt|=1$ and
+$d_t t=dt$. Define
+\begin{equation}\label{mht:eq:relative-path-algebra}
+ \widetilde E=\bigl\{(a,b,c)\in
+     \mathcal A\oplus B[t,dt]\oplus\mathbb C:
+                  b(0)=r(a),\ b(1)=\ell(c)\bigr\}.
+\end{equation}
+Endpoint evaluation sets $dt=0$. The product is componentwise and the
+differential is $D=(\bar\partial,d_t,0)$.
+
+Write a degree-one element as
+$y=(\eta,dt(\beta_0(t)+\xi\beta_1(t)),0)$, and set
+\begin{equation}\label{mht:eq:relative-path-trace}
+ \widetilde\tau(y)=\tau_{\mathcal A}(\eta)
+                            +\kappa\int_0^1\beta_1(t)\,dt.
+\end{equation}
+Extend this functional by zero in degree zero. It is a graded cyclic
+trace of degree $-1$. For $x=(a,b,c)$ in degree zero,
+\[
+ \widetilde\tau(Dx)
+ =\tau_Br(a)+\tau_B\bigl(b(1)-b(0)\bigr)
+ =\tau_B\ell(c)=0.
+\]
+Thus the path integral cancels the failure of the bulk trace to be
+closed.
+
+\begin{proposition}\label{mht:prop:relative-path-retraction}
+The multiplicative inclusion $\iota:E\to\widetilde E$, given by
+\[
+ \iota(f)=(f,f(o),f(o)),\qquad \iota(\eta)=(\eta,0,0),
+\]
+is a trace-preserving quasi-isomorphism. It has the following cochain
+retraction. For
+$x=(a,b_0(t)+\xi b_1(t),c)$ and $y$ as above, put
+\begin{align}
+ p_0x&=a-f_0j(a),&
+ p_1y&=\eta+\eta_0I_1,&
+ I_i&=\int_0^1\beta_i(t)\,dt.\label{mht:eq:relative-path-projection}
+\end{align}
+Let $K$ vanish in degree zero and define
+\begin{equation}\label{mht:eq:relative-path-homotopy}
+ Ky=\left(-f_0I_1,
+  \int_0^t\beta_0(u)\,du
+    +\xi\left[-I_1+\int_0^t\beta_1(u)\,du\right],I_0\right).
+\end{equation}
+Then
+\[
+ DK+KD=1-\iota p,\qquad p\iota=1,\qquad
+ K^2=K\iota=pK=0,\qquad \widetilde\tau=\tau_Ep.
+\]
+\end{proposition}
+
+\begin{proof}
+The zero endpoint of the middle component of $Ky$ is $-\xi I_1$,
+which is $r(-f_0I_1)$. The endpoint at one is $I_0$. Thus $Ky$ belongs
+to \eqref{mht:eq:relative-path-algebra}.
+
+On degree one, $DKy$ has first component $-\eta_0I_1$ and path
+component $dt(\beta_0+\xi\beta_1)$. These are the components of
+$y-\iota p_1y$. On degree zero, the endpoint conditions give
+\[
+ \int_0^1b'_1(t)\,dt=-j(a),\qquad
+ \int_0^1b'_0(t)\,dt=c-a(o).
+\]
+Substitution in \eqref{mht:eq:relative-path-homotopy} gives
+$KDx=x-\iota p_0x$. The chain-map identity for $p$ also follows
+directly:
+\[
+ p_1Dx=\bar\partial a-\eta_0j(a)=\bar\partial p_0x.
+\]
+
+The identities $p\iota=1$ and $K\iota=0$ follow from the constant
+path in the inclusion. Degree gives $K^2=0$, while
+$p_0(-f_0I_1)=0$ gives $pK=0$.
+Finally, $\tau_E(\eta_0)=\kappa$ proves the trace identity.
+\end{proof}
+
+\begin{example}\label{mht:ex:path-adjoint-defect}
+This retraction does not preserve the cyclic pairings. For
+\[
+ v=\frac{|z|^2}{1+|z|^2}\in E^0,
+ \qquad y=(0,\xi\,dt,0),
+\]
+one has
+\[
+ \widetilde\tau(\iota(v)y)=\kappa v(o)=0,\qquad
+ \tau_E(vp_1y)=\tau_E(v\eta_0)=\frac\kappa2.
+\]
+The last value is the integral
+$\kappa\int_0^\infty r(1+r)^{-3}\,dr$.
+\end{example}
+
+In fact no projection into unchanged smooth $E$ can be the cyclic
+adjoint of $\iota$ on this $y$. Such a projection would give a smooth
+form $\eta$ satisfying $\tau_E(v\eta)=\kappa v(o)$ for every
+$v\in E^0$. Functions supported away from $o$ belong to $E^0$ and
+would force $\eta=0$ away from $o$, hence everywhere by smoothness.
+The test $v=1$ then contradicts the required value $\kappa$.
+
+The closed trace on $\widetilde E$ nevertheless gives a classical
+cyclic action after tensoring with the surface and matrix algebras.
+Its restriction through $\iota$ is the Neumann action. The cochain
+retraction proves equivalence of the complexes, but supplies no smooth
+cyclic inverse pairing or elliptic propagator on the path algebra.
+
+\section{The residual class is global on the curve}
+
+The global normal form depends on solving a problem over the whole
+sphere. A local gauge calculation explains why pole jets alone cannot
+replace that step. In this calculation, $w$ is a formal
+antiholomorphic variable, independent of $z$. Write a matrix connection
+germ as
+\[
+ a=A(z,w)\,dw,\qquad A(z,w)=\sum_{n\geq0}A_n(z)w^n,
+ \qquad A_n(z)\in\operatorname{Mat}_N(\mathbb C[[z]]).
+\]
+
+\begin{proposition}\label{mht:prop:local-curve-frame}
+There is a unique formal frame $g$ with $g(z,0)=I_N$ and
+$\partial_wg=-Ag$. It is an admissible Neumann gauge and sends $a$
+to zero. Consequently, every gauge-invariant formal function of this
+connection germ alone is constant.
+\end{proposition}
+
+\begin{proof}
+For $g=\sum_{n\geq0}g_n(z)w^n$, the equation is equivalent to
+\begin{equation}\label{mht:eq:local-frame-recursion}
+ g_0=I_N,\qquad
+ g_{n+1}=-\frac1{n+1}\sum_{j=0}^n A_jg_{n-j}.
+\end{equation}
+The recursion constructs each coefficient uniquely without commuting
+matrix factors. The constant term makes $g$ invertible, and
+$g(z,0)=I_N$ gives $j(g)=0$. Its gauge action sends $a$ to zero by
+the defining differential equation. An invariant function therefore
+takes on every germ its value at zero.
+\end{proof}
+
+The same distinction appears linearly. The exact sequence of global
+complexes
+\[
+ 0\longrightarrow E\longrightarrow\mathcal A
+          \xrightarrow{j}\mathbb C[0]\longrightarrow0
+\]
+gives $H^1(E)=\mathbb C[\eta_0]$, because a global holomorphic function
+has zero derivative and $H^1(\mathcal A)=0$. On a disk, the holomorphic
+function $z$ has derivative one, so the analogous local first cohomology
+vanishes.
+
+There is an explicit representative invisible to every jet at the
+pole. Choose a smooth cutoff $\chi(r)$, equal to one near $r=0$ and
+zero outside a small coordinate disk, and define
+\begin{equation}\label{mht:eq:annular-residual}
+ f_*=z\chi(|z|^2),\qquad
+ \eta_*=\bar\partial f_*=z^2\chi'(|z|^2)\,d\bar z.
+\end{equation}
+Extend $f_*$ by zero to the sphere. The form $\eta_*$ is supported in
+an annulus, so all of its jets at $o$ vanish. Nevertheless,
+\[
+ \tau_E(\eta_*)=-\kappa\int_0^\infty\chi'(r)\,dr=\kappa.
+\]
+
+For a constant matrix $J$, the connection $a=\eta_*J$ has normalized
+global frame $H=e^{-f_*J}$ and residual matrix $\mathcal J(a)=J$.
+This formula holds formally and, for this family, at every finite $J$.
+Thus even all local jets of $a$ fail to determine the global residual.
+The assertion concerns the curve connection alone. Surface curvature
+and additional fields may carry their own local invariants.
+
+\section{Surface-dependent gauge transformations}
+
+Let $D=d_U+\bar\partial$ and let $g$ be a smooth formal Neumann gauge
+near the identity, defined on $U\times C$. Set
+\[
+ \theta=g^{-1}Dg,\qquad \theta_R=(Dg)g^{-1},\qquad
+ \operatorname{CS}(A)=\operatorname{tr}
+                \left(\frac12 A\,DA+\frac13A^3\right).
+\]
+The one-forms $\theta$ and $\theta_R$ are conjugate, but their placement
+in the finite gauge identity is fixed by the convention
+$A^g=g^{-1}Ag+\theta$.
+
+\begin{lemma}\label{mht:lem:finite-transgression}
+As a cyclic three-form density,
+\begin{equation}\label{mht:eq:finite-transgression}
+ \operatorname{CS}(A^g)-\operatorname{CS}(A)
+   =-\frac12D\operatorname{tr}(\theta_RA)
+                       -\frac16\operatorname{tr}(\theta^3).
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+It is convenient to set $k=g^{-1}$ and
+$\vartheta=k^{-1}Dk=-\theta_R$.
+The transformed connection is $kAk^{-1}-(Dk)k^{-1}$.
+Conjugating it and its derivative by $k^{-1}$ gives
+$A-\vartheta$ and
+$DA+\vartheta A+A\vartheta-\vartheta^2$.
+Here $D\vartheta=-\vartheta^2$.
+
+Substitution in the kinetic and cubic terms, with graded cyclicity,
+reduces their difference to
+\[
+ -\frac12\operatorname{tr}
+       (\vartheta^2A+\vartheta DA)
+       +\frac16\operatorname{tr}(\vartheta^3)
+ =\frac12D\operatorname{tr}(\vartheta A)
+       +\frac16\operatorname{tr}(\vartheta^3).
+\]
+Substitute $\vartheta=-\theta_R$ and use conjugacy of
+$\theta_R$ and $\theta$.
+\end{proof}
+
+Choose a formal Neumann path $g_u$, $0\leq u\leq1$, from $1$ to $g$.
+The parameter $u$ is independent of the surface coordinates.
+Put
+\[
+ v_u=g_u^{-1}\partial_ug_u,\qquad \theta_u=g_u^{-1}Dg_u.
+\]
+Path integrals are interpreted coefficientwise in the formal
+amplitude.
+
+\begin{proposition}\label{mht:prop:surface-boundary-functional}
+For $S_E(A)=\int_U\tau_E\operatorname{CS}(A)$,
+\begin{align}
+ S_E(A^g)-S_E(A)&=\mathcal B(A,g),\label{mht:eq:boundary-difference}\\
+ \mathcal B(A,g)
+ &=-\frac12\int_{\partial U}\tau_E\operatorname{tr}(\theta_RA)
+   -\frac12\int_{\partial U}\int_0^1
+               \tau_E\operatorname{tr}(v_u\theta_u^2)\,du.
+       \label{mht:eq:boundary-functional}
+\end{align}
+This integrated functional is independent of the chosen formal path
+and satisfies
+\begin{equation}\label{mht:eq:boundary-cocycle}
+ \mathcal B(A,gh)=\mathcal B(A,g)+\mathcal B(A^g,h).
+\end{equation}
+These assertions concern small formal gauges defined on $U\times C$.
+\end{proposition}
+
+\begin{proof}
+The Maurer--Cartan identity and its parameter derivative are
+\[
+ D\theta_u=-\theta_u^2,\qquad
+ \partial_u\theta_u=Dv_u+[\theta_u,v_u].
+\]
+Graded cyclicity removes the commutator in the trace, while
+$D(\theta_u^2)=0$. Hence
+\[
+ \partial_u\operatorname{tr}(\theta_u^3)
+             =3D\operatorname{tr}(v_u\theta_u^2).
+\]
+Integrate along the path and substitute in
+\eqref{mht:eq:finite-transgression}.
+
+The surface coefficients of $\theta_u,\theta_R,A$, and the function
+$v_u$, have zero first holomorphic jet. Their degree-zero curve products
+are therefore in $E^0$. Polar Stokes contributes zero.
+Surface Stokes leaves exactly the oriented boundary expression
+\eqref{mht:eq:boundary-functional}.
+
+The action difference depends only on the endpoints, proving
+independence of the integrated functional from the path.
+Finally, $(A^g)^h=A^{gh}$ makes the action differences telescope and
+gives \eqref{mht:eq:boundary-cocycle}.
+\end{proof}
+
+This construction does not assign periods to large gauge
+transformations. On its formal domain, it gives a classical boundary
+compensator:
+\[
+ \widetilde S(A,g)=S_E(A)+\mathcal B(A,g)=S_E(A^g).
+\]
+Under $(A,g)\mapsto(A^k,k^{-1}g)$, the connection $A^g$ stays fixed.
+Thus the group-valued edge field $g$ makes $\widetilde S$ invariant.
+Its identification with a geometric closed-string field would require
+a separate map.
+
+\subsection{A nonzero cubic boundary response}
+
+Take $U=[0,1]^2$ with coordinates $(s,t)$ and orientation $ds\wedge dt$.
+On the sphere set
+\[
+ f=\frac{z^2}{(1+|z|^2)^2},\qquad
+ g_1=\frac{\bar z}{1+|z|^2},\qquad
+ v=\frac{|z|^2}{1+|z|^2}.
+\]
+These are smooth Neumann functions. Let
+$E=E_{12}$, $F=E_{21}$, $Z=[E,F]$, and define
+\[
+ X=sfE+tg_1F+st\,vZ,\qquad g_\lambda=\exp(\lambda X),
+\]
+where $\lambda$ is a formal amplitude. Since $j(X)=0$,
+$g_\lambda$ is an admissible gauge.
+
+Matrix multiplication, with surface forms before $d\bar z$, gives
+\begin{align*}
+ \tau_E\operatorname{tr}((DX)^3)
+ &=6st\,\tau_E\bigl(fg_1\bar\partial v-fv\bar\partial g_1
+                              -g_1v\bar\partial f\bigr)\,ds\,dt\\
+ &=12st\,\tau_E(fg_1\bar\partial v)\,ds\,dt.
+\end{align*}
+The second equality uses polar Stokes for $fg_1v$, whose first jet is
+zero. The remaining integral is explicit:
+\[
+ fg_1\bar\partial v
+      =\frac{z^2|z|^2}{(1+|z|^2)^5}\,d\bar z,\qquad
+ \tau_E(fg_1\bar\partial v)
+      =-\kappa\int_0^\infty\frac{r}{(1+r)^5}\,dr
+      =-\frac{\kappa}{12}.
+\]
+Thus $\tau_E\operatorname{tr}((DX)^3)=-\kappa st\,ds\,dt$, and
+\begin{equation}\label{mht:eq:nonzero-wess-zumino}
+ S_E(0^{g_\lambda})
+   =-\frac{\lambda^3}{6}\int_U\tau_E\operatorname{tr}((DX)^3)
+             +O(\lambda^4)
+   =\frac{\kappa\lambda^3}{24}+O(\lambda^4).
+\end{equation}
+For the path $\exp(u\lambda X)$, the leading boundary primitive is
+$-\lambda^3\tau_E\operatorname{tr}(X(DX)^2)/6$.
+Its derivative is the leading bulk density, so the four oriented
+boundary edges give the same coefficient.
+
+A frame depending only on the curve has $\theta^2=0$ by curve degree.
+Equation~\eqref{mht:eq:nonzero-wess-zumino} shows why that simplification
+fails for a surface-dependent frame. The residual comparison must retain
+the boundary functional and its composition law. A quantum comparison
+must in addition account for the background-dependent quadratic
+complement in \eqref{mht:eq:exact-slice-action}.

@@ -1,0 +1,711 @@
+\chapter{Algebraic examples of ordered reconstruction}
+\label{ch:algebraic-reconstruction-examples}
+
+An augmentation selects a module whose derived endomorphisms can be computed by a bar construction.
+A coproduct instead specifies how an algebra acts on tensor products of modules.
+The examples below construct both kinds of structure and exhibit the relations that make them work.
+
+Free and square-zero algebras give the first bar calculations. The quantum plane supplies a nontrivial Yoneda product.
+Hall flags, rational exchange and reflection equations then provide explicit quantum-group coefficients.
+Their realization by fields requires the field maps and collision compatibilities in addition to these algebraic formulas.
+
+\section{Augmentations and two elementary bars}
+
+Fix a field $k$ of characteristic zero.
+An augmented algebra is a unital associative algebra $A$ with a unital algebra map
+$\varepsilon:A\to k$. Write $I=\ker\varepsilon$.
+For an ordinary algebra concentrated in degree zero, use the homological normalized bar
+\[
+ B_n(A)=I^{\otimes n},\qquad B_0(A)=k,
+ \qquad
+ d[a_1|\cdots|a_n]
+ =\sum_{i=1}^{n-1}(-1)^{i-1}
+ [a_1|\cdots|a_i a_{i+1}|\cdots|a_n].
+\]
+
+Deconcatenation cuts the tensor at every position, including the two empty ends.
+Thus $B(A)$ is a coaugmented conilpotent differential graded coalgebra.
+Conilpotence here means that repeated reduced coproducts kill each element.
+In the cohomological convention of Chapter~\ref{mht:ch:signs-duals}, $B_n$ lies in degree $-n$.
+All tensors and sums in this section are algebraic.
+
+Let $V$ be finite-dimensional, give it internal weight one, and write $sV$ for $V$ in homological degree one.
+The tensor algebra $T(V)=\bigoplus_{m\ge0}V^{\otimes m}$ is augmented by projection to $k$.
+The square-zero algebra $k\oplus V$ has the same augmentation and product $V^2=0$.
+
+\begin{proposition}[Free and square-zero bars]
+\label{prop:alg-free-square-zero}
+There is a quasi-isomorphism of coaugmented differential graded coalgebras
+\[
+ k\oplus sV\longrightarrow B(T(V)),\qquad sv\longmapsto[v],
+\]
+where $sV$ is primitive and its differential is zero.
+For the square-zero algebra,
+\[
+ B(k\oplus V)=\bigoplus_{n\ge0}(sV)^{\otimes n}
+\]
+with zero differential and deconcatenation coproduct.
+Consequently the first augmentation has square-zero positive Yoneda algebra $V^*$ in degree one. The second has tensor Yoneda algebra $T(V^*)$, with $V^*$ in degree one.
+\end{proposition}
+\begin{proof}
+Fix an underlying tensor of $m$ factors of $V$.
+A bar expression with that tensor is specified by a subset $C$ of its $m-1$ internal gaps.
+The differential deletes the $i$th selected gap with sign $(-1)^{i-1}$.
+For $m\ge2$, define $h(C)$ by inserting the first gap if it is absent, and by zero if it is present.
+
+Deleting that newly inserted gap contributes $C$ to $dh(C)$. The other deletions cancel the terms of $hd(C)$.
+If the first gap was already present, its deletion contributes $C$ to $hd(C)$.
+Thus $dh+hd=1$ on every weight $m\ge2$.
+
+Weights zero and one are $k$ and $sV$.
+Their inclusion preserves the coproduct, proving the first assertion.
+
+When $V^2=0$, every merged product in the bar differential vanishes.
+Dualizing deconcatenation gives concatenation of dual tensors.
+Dualizing the primitive coalgebra $k\oplus sV$ gives a square-zero positive ideal.
+These dual models compute derived endomorphisms of the augmentation module and hence the Yoneda products.
+\end{proof}
+
+The grading determines the completion in these formulas.
+The degree-$n$ Yoneda space of $k\oplus V$ is $(V^*)^{\otimes n}$. The ordinary graded algebra is their direct sum.
+Its internal-weight completion is the different algebra
+$\prod_{n\ge0}(V^*)^{\otimes n}$, with multiplication defined by the finite sum over two weights adding to a fixed weight.
+A completion must therefore be specified even in this elementary example.
+
+\section{Paths and the direction of extensions}
+
+For a finite quiver $Q$, put $S=\bigoplus_{i\in Q_0}ke_i$, where the $e_i$ are orthogonal idempotents summing to one.
+An arrow $a:i\to j$ is represented in the $S$-bimodule $M$ by $a=e_j a e_i$.
+The algebra $A=T_S(M)$ consists of finite linear combinations of composable paths, multiplied with the rightmost path traversed first.
+Projection to the paths of length zero is the augmentation $A\to S$.
+The relative bar uses tensors over $S$.
+
+\begin{proposition}[Relative path resolution]
+\label{prop:alg-path-resolution}
+The sequence of left $A$-modules
+\[
+ 0\longrightarrow A\otimes_S M
+ \xrightarrow{\ \mu\ }A\longrightarrow S\longrightarrow0,
+ \qquad \mu(a\otimes m)=am,
+\]
+is a projective resolution.
+The relative bar admits the coalgebra quasi-isomorphism
+$S\oplus sM\to B_S(A)$ given by the paths of length zero and one.
+\end{proposition}
+\begin{proof}
+Every nonempty path has a unique first arrow, which is its rightmost factor in the chosen multiplication convention.
+Removing that factor gives the inverse of $\mu$ onto the augmentation ideal.
+Semisimplicity of $S$ makes $M$ projective over $S$, so $A\otimes_S M$ is projective over $A$.
+The gap contraction in Proposition~\ref{prop:alg-free-square-zero} respects endpoints and tensors over $S$.
+It gives the relative coalgebra comparison.
+\end{proof}
+
+For $1\xrightarrow{a}2$, the projective left module $Ae_1$ has basis $e_1,a$ and radical $ka\cong S_2$.
+The module $Ae_2=S_2$ is simple and projective.
+Thus
+\[
+ 0\longrightarrow Ae_2\xrightarrow{\ e_2\mapsto a\ }Ae_1
+ \longrightarrow S_1\longrightarrow0
+\]
+gives $\Ext^1_A(S_1,S_2)=k$, while all other degree-one extensions between the two simples vanish.
+Higher extensions vanish by the resolution.
+
+There are two bimodule conventions to distinguish.
+The vector-space dual $M^*=\Hom_k(M,k)$ with $(sft)(m)=f(tms)$ reverses endpoints:
+$(e_jMe_i)^*=e_iM^*e_j$.
+By contrast, in the algebra $E=\Ext^*_A(S,S)$ with product $\alpha\beta$ meaning first $\beta$ and then $\alpha$,
+\[
+ e_jE^1e_i=\Ext^1_A(S_i,S_j).
+\]
+The extension above therefore lies in $e_2E^1e_1$.
+An identification with the endpoint-reversing dual must include the corresponding opposite-algebra convention.
+
+\section{The quantum plane and its Yoneda product}
+
+Let $q\in k^\times$ and set $A_q=k\langle x,y\rangle/(yx-qxy)$.
+Assign $x,y$ internal weight one and use the augmentation killing them.
+The rule $yx\mapsto qxy$ decreases the inversion number of a tensor.
+Its leading pair has no overlap with itself, and reductions on disjoint pairs commute.
+It follows that the monomials $x^ay^b$, $a,b\ge0$, form a basis.
+In particular,
+\[
+ (x^ay^b)(x^cy^d)=q^{bc}x^{a+c}y^{b+d}.
+\]
+
+\begin{proposition}[Resolution and product]
+\label{prop:alg-quantum-plane}
+The augmentation has the linear free resolution
+\[
+ 0\longrightarrow A_q e_r
+ \xrightarrow{d_2}A_q e_x\oplus A_q e_y
+ \xrightarrow{d_1}A_q\longrightarrow k\longrightarrow0,
+\]
+where $e_x,e_y$ have internal weight one, $e_r$ has weight two, and
+\[
+ d_1(e_x)=x,\qquad d_1(e_y)=y,\qquad
+ d_2(e_r)=y e_x-qx e_y.
+\]
+With the composition convention above,
+\[
+ \Ext^*_{A_q}(k,k)
+ =k\langle\xi,\eta\rangle/(\xi^2,\eta^2,\xi\eta+q\eta\xi),
+ \qquad |\xi|=|\eta|=1.
+\]
+\end{proposition}
+\begin{proof}
+The relation gives $d_1d_2=0$, and $\operatorname{im}d_1$ is the augmentation ideal.
+Write $u=\sum u_{ab}x^ay^b$ and $v=\sum v_{ab}x^ay^b$.
+The equation $ux+vy=0$ is equivalent to
+\[
+ q^b u_{a-1,b}+v_{a,b-1}=0,
+\]
+with negative-index coefficients zero.
+It gives $u_{a0}=0$ and $v_{ab}=-q^{b+1}u_{a-1,b+1}$.
+For $c=\sum u_{a,b+1}x^ay^b$, these identities say $u=cy$ and $v=-qcx$.
+
+This proves exactness at $A_qe_x\oplus A_qe_y$.
+Right multiplication by $y$ is injective on the displayed basis, so $d_2$ is injective.
+
+Applying $\Hom_{A_q}(-,k)$ kills the differential and gives dimensions $1,2,1$.
+Represent the degree-one classes by maps to $k$ with
+$\xi(e_x)=1$, $\xi(e_y)=0$, $\eta(e_x)=0$, $\eta(e_y)=1$.
+Their degree-minus-one lifts to endomorphisms of the resolution satisfy
+\[
+ \xi(e_r)=-e_y,\qquad \eta(e_r)=q e_x.
+\]
+Indeed $d\xi+\xi d=d\eta+\eta d=0$ on $e_r$.
+If $\theta(e_r)=1$ denotes the degree-two class, composition gives
+\[
+ \xi\eta=q\theta,\qquad \eta\xi=-\theta,
+ \qquad \xi^2=\eta^2=0.
+\]
+These products give precisely the asserted four-dimensional algebra.
+\end{proof}
+
+The resolution is linear in internal weight, which is the Koszul property in this example.
+Its dual relation can also be read directly from
+$k(y\otimes x-q x\otimes y)$: the annihilator is spanned by
+$\xi^2,\eta^2,\xi\eta+q\eta\xi$.
+The explicit lifts fix the convention needed to identify that quadratic dual with the Yoneda algebra.
+
+\section{Weyl and Clifford coefficients}
+
+A scalar deformation of a quadratic relation can destroy the augmentation.
+To see this without a completion ambiguity, first work over $R=k[\hbar]$ and form finite sums of tensor monomials.
+For an even finite-dimensional space $V$ and alternating form $\omega$, define
+\[
+ W_\hbar(V,\omega)=T_R(V\otimes R)\big/
+ (uv-vu-\hbar\omega(u,v)).
+\]
+For a purely odd space and symmetric $\omega$, define the Clifford algebra by
+$uv+vu=\hbar\omega(u,v)$.
+In particular, an odd generator satisfies $u^2=\hbar\omega(u,u)/2$.
+
+\begin{proposition}[Ordered bases and scalar curvature]
+\label{prop:alg-weyl-clifford}
+After choosing an ordered basis of $V$, the Weyl algebra has an $R$-basis of nondecreasing monomials.
+The Clifford algebra has the same basis with each generator occurring at most once.
+For the filtration by the number of generators,
+\[
+ \operatorname{gr}W_\hbar=\operatorname{Sym}_R(V\otimes R),
+ \qquad
+ \operatorname{gr}\operatorname{Cl}_\hbar=\Lambda_R(V\otimes R).
+\]
+The quadratic relation space carries a scalar functional $c$ sending each relation to its prescribed value $\hbar\omega$.
+If $c\ne0$, sending all generators to zero does not define an augmentation to $R$.
+\end{proposition}
+\begin{proof}
+Replace each descending adjacent pair by its ordered pair and its scalar correction.
+In the odd case also replace a repeated pair by its scalar square.
+Order tensors first by length and then lexicographically.
+Every replacement decreases this order.
+
+In a triple of distinct generators, either reduction sequence makes the same three interchanges. Each scalar correction commutes with the remaining generator.
+The resulting ordered terms and scalar terms therefore agree.
+
+For repeated odd generators, the square rule agrees with the diagonal relation because $2u^2=\hbar\omega(u,u)$.
+This resolves the remaining overlaps, proving the bases.
+
+The scalar terms lower the filtration by two, so the associated graded algebras are as stated.
+Applying a proposed augmentation to a relation would give $0=c(r)$, proving the last assertion.
+\end{proof}
+
+In a curved Koszul description, $c$ is the degree-two curvature element in the dual of the quadratic relation space. The presentation here has no linear correction and hence no linear dual differential.
+The functional and its degree belong to this quadratic algebraic construction.
+Identifying it with a geometric anomaly requires a map of the relevant deformation complexes.
+
+One may subsequently complete in $\hbar$.
+In that completion, an element can have unbounded tensor length as its $\hbar$-order increases.
+The finite-length filtration above is not exhaustive on such elements.
+The algebraic PBW basis describes this completion as formal series in $\hbar$.
+Each coefficient is a finite linear combination of the stated monomials.
+
+\section{Enveloping bars and their homology}
+
+Let $\mathfrak g$ be an ordinary Lie algebra over $k$.
+The universal enveloping algebra $U(\mathfrak g)$ has augmentation killing $\mathfrak g$.
+Its normalized bar is generally much larger than its Chevalley chain complex
+$C_n(\mathfrak g)=\Lambda^n\mathfrak g$.
+Set
+\[
+ d(x_1\wedge\cdots\wedge x_n)
+ =\sum_{i<j}(-1)^{i+j+1}[x_i,x_j]\wedge
+ x_1\wedge\cdots\widehat{x_i}\cdots\widehat{x_j}\cdots\wedge x_n.
+\]
+The exterior coalgebra coproduct splits the factors into two ordered sublists with the permutation sign.
+
+\begin{theorem}[Ordinary bar--Chevalley comparison]
+\label{thm:alg-bar-chevalley}
+Antisymmetrization defines a coalgebra quasi-isomorphism
+\[
+ \kappa:C_*(\mathfrak g)\longrightarrow B(U(\mathfrak g)),\qquad
+ \kappa(x_1\wedge\cdots\wedge x_n)
+ =\sum_{\sigma\in\Sigma_n}\operatorname{sgn}(\sigma)
+ [x_{\sigma(1)}|\cdots|x_{\sigma(n)}].
+\]
+If $\mathfrak g$ is positively graded and its bracket adds weights,
+this comparison is a quasi-isomorphism in each weight and on the degreewise product over weights.
+The product completion uses tensors completed by total weight.
+\end{theorem}
+\begin{proof}
+Pair terms whose merged adjacent entries occur in opposite orders.
+Their difference is the Lie bracket, with the sign in the displayed Chevalley differential.
+This proves the chain-map equation.
+Cutting an antisymmetrized tensor is the same signed sum as choosing its left subset and antisymmetrizing both parts.
+Hence $\kappa$ preserves coproducts.
+
+Filter by total PBW degree, putting $\Lambda^n\mathfrak g$ in filtration degree $n$.
+The associated graded comparison is
+$\Lambda(V)\to B(\operatorname{Sym}(V))$, for $V=\mathfrak g$.
+It is the comparison of the Koszul and bar free resolutions of $k$.
+For completeness, on polynomial degree $p$ and exterior degree $q$ with $p+q>0$, the Koszul contraction is
+\[
+ h=\frac1{p+q}\sum_i (x_i\wedge -)\frac{\partial}{\partial x_i},
+ \qquad \delta=\sum_i x_i\iota_i,
+ \qquad \delta h+h\delta=1.
+\]
+Here $\iota_i$ contracts the exterior generator $x_i$. Only finitely many summands act on each element.
+
+The free bar resolution is contracted by its extra degeneracy.
+The augmentation-preserving comparison between the two free resolutions has a homotopy inverse obtained by lifting basis elements degree by degree.
+Tensoring those homotopies with $k$ proves the associated graded assertion.
+Multiplication by $(-1)^n$ in degree $n$ identifies the two overall bar-differential sign conventions.
+
+A cycle in the cone of $\kappa$ has finite PBW degree.
+A primitive for its highest associated graded term lowers that degree.
+Iteration terminates, proving acyclicity of the cone.
+In positive total weight $w$, PBW degree is at most $w$, so the argument also works weight by weight.
+Products of complexes of vector spaces have componentwise kernels and images.
+The comparison consequently extends to the stated product completion, which is conilpotent in each weight.
+\end{proof}
+
+For every augmented algebra, $H_1B(A)=I/I^2$.
+For an enveloping algebra this becomes
+\[
+ H_1B(U(\mathfrak g))=\mathfrak g/[\mathfrak g,\mathfrak g].
+\]
+The inclusion of generators is surjective onto $I/I^2$ and kills brackets.
+Its inverse follows from the augmented algebra map
+$U(\mathfrak g)\to k\oplus\mathfrak g/[\mathfrak g,\mathfrak g]$ with square-zero second summand.
+This degree-one calculation often decides a proposed homology formula before any higher calculation is needed.
+
+For $\mathfrak{sl}_2=\langle e,h,f\rangle$, with
+$[h,e]=2e$, $[h,f]=-2f$ and $[e,f]=h$, the differential
+$\Lambda^2\mathfrak{sl}_2\to\mathfrak{sl}_2$ sends
+\[
+ e\wedge h\mapsto-2e,\qquad e\wedge f\mapsto h,
+ \qquad h\wedge f\mapsto-2f.
+\]
+It is an isomorphism, while
+$d(e\wedge h\wedge f)=-2e\wedge f-2f\wedge e=0$.
+The homology polynomial is therefore $1+t^3$.
+The Chevalley chain dimensions are $1,3,3,1$.
+
+The bar chain space $B_n(U(\mathfrak{sl}_2))$, however, is countably infinite-dimensional for every $n\ge1$.
+Its finite PBW pieces have generating function
+\[
+ \sum_{d\ge0}\dim\operatorname{gr}^{\mathrm{PBW}}_dB_n(U(\mathfrak{sl}_2))z^d
+ =\bigl((1-z)^{-3}-1\bigr)^n.
+\]
+Thus $3^n$ counts only the least PBW degree $d=n$.
+
+Over $\mathbb C$, the cohomology of a finite-dimensional simple Lie algebra of rank $r$ is exterior on generators in degrees $2m_i+1$, where $m_i$ are its exponents.
+This standard Lie-cohomology theorem gives
+\[
+ P_{\mathfrak{sl}_3}(t)=(1+t^3)(1+t^5),\qquad
+ P_{\mathfrak g_2}(t)=(1+t^3)(1+t^{11}).
+\]
+See Etingof's \emph{Lie groups and Lie algebras, I}, \S44.
+The invariant-form comparison, rank-two examples and exponent formula appear in Theorem~44.12, Example~44.16 and Theorem~44.17.
+The equality of homology and cohomology dimensions here uses finite-dimensional Chevalley chain spaces.
+
+For the positive Witt algebra
+\[
+ L_1=\bigoplus_{m\ge1}\mathbb C e_m,\qquad [e_i,e_j]=(j-i)e_{i+j},
+\]
+the abelianization has basis $e_1,e_2$.
+Indeed brackets have weight at least three and
+$e_m=(m-2)^{-1}[e_1,e_{m-1}]$ for $m\ge3$.
+
+The higher calculation is Goncharova's theorem: for every $n\ge1$, the homology of $B(U(L_1))$ has one class in each weight
+\[
+ \frac{3n^2-n}{2},\qquad \frac{3n^2+n}{2},
+\]
+and vanishes in other weights.\footnote{L.~V.~Goncharova, \emph{The cohomologies of Lie algebras of formal vector fields on the line}. Functional Analysis and Its Applications \textbf{7} (1973), 91--97 and 194--203. The weight formula is also stated as Theorem~1.4 of D.~Millionschikov, \emph{Algebra of formal vector fields on the line and Buchstaber's conjecture}, arXiv:0807.0653.}
+
+Weightwise duality and Theorem~\ref{thm:alg-bar-chevalley} transfer the Lie-cohomology formula to this bar.
+Its Euler series is consequently
+\[
+ \prod_{m\ge1}(1-z^m)
+ =1+\sum_{n\ge1}(-1)^n
+ \bigl(z^{(3n^2-n)/2}+z^{(3n^2+n)/2}\bigr).
+\]
+The homology theorem supplies the degree and multiplicity of each class. The Euler series alone does not determine them.
+
+\section{Planar path counts and bar gradings}
+
+A Motzkin path of length $n$ stays at nonnegative height, starts and ends at height zero, and has steps $(1,1),(1,0),(1,-1)$.
+Let $M(n)$ count these paths and $R(n)$ count those with no horizontal step at height zero.
+Both include the empty path.
+Write $M(z)=\sum M(n)z^n$ and $R(z)=\sum R(n)z^n$ in $\mathbb Q[[z]]$.
+
+A first-return decomposition gives
+\[
+ M=1+zM+z^2M^2,\qquad R=1+z^2MR.
+\]
+In the second decomposition, the interior of the first excursion is arbitrary, while the remainder obeys the height-zero restriction.
+The quadratic equation implies
+$(1+zM)(1-z^2M)=1+z$ and therefore
+\[
+ (1+z)R=1+zM,\qquad
+ M(n)=R(n)+R(n+1).
+\]
+
+Solving with constant term one gives
+\[
+ M(z)=\frac{1-z-\sqrt{1-2z-3z^2}}{2z^2},
+ \qquad R(z)=\frac{1+zM(z)}{1+z}.
+\]
+The square root has constant term one, and the apparent pole is removable.
+
+For $n\ge1$, the derived sequences
+\[
+ a_n=M(n+1)-M(n)=1,2,5,12,30,76,\ldots,
+ \qquad b_n=R(n+3)=3,6,15,36,91,\ldots
+\]
+belong to the same quadratic generating-function field.
+They nevertheless disagree already in degree one with the proposed enveloping homologies:
+\[
+ \dim H_1B(U(L_1))=2\ne a_1,
+ \qquad \dim H_1B(U(\mathfrak{sl}_2))=0\ne b_1.
+\]
+They also cannot count the full bar chain spaces, whose positive degrees are countably infinite-dimensional.
+
+For $L_1$, the finite weightwise chain count is instead
+\[
+ \sum_{w\ge0}\dim B_n(U(L_1))_w z^w
+ =\left(\prod_{m\ge1}(1-z^m)^{-1}-1\right)^n.
+\]
+A comparison with a path complex must specify its differential, grading and map to this bar.
+The choice of $U(L_1)$ is itself algebraic data. A Virasoro coefficient or central charge does not determine a transverse multiplication.
+
+\section{Hall multiplication for one arrow}
+
+Let $Q:1\to2$ over $\mathbb F_q$, and choose $v$ with $v^2=q$ in a characteristic-zero coefficient field.
+A representation is a linear map between its two vertex spaces.
+For isomorphism classes $[A],[B]$, define twisted Hall multiplication by
+\[
+ [A]*[B]=v^{\langle\dim A,\dim B\rangle}
+ \sum_{[L]}F^L_{AB}[L],\qquad
+ \langle(a,b),(c,d)\rangle=ac+bd-ad,
+\]
+where $F^L_{AB}$ counts subrepresentations isomorphic to $B$ with quotient isomorphic to $A$.
+Associativity follows by counting the same two-step flags in either order. Bilinearity of the Euler form makes the two total twisting exponents equal.
+
+Write $S_1,S_2$ for the vertex simples, $D=S_1\oplus S_2$, and $M$ for the nonzero map $\mathbb F_q\to\mathbb F_q$.
+The two representations of dimension $(1,1)$ give
+\[
+ E_1E_2=v^{-1}([D]+[M]),\qquad E_2E_1=[D],
+ \qquad E_i=[S_i].
+\]
+In particular $E_1E_2-v^{-1}E_2E_1=v^{-1}[M]$.
+
+\begin{proposition}[The two quantum Serre relations]
+\label{prop:alg-hall-serre}
+The Hall generators satisfy
+\[
+ E_1^2E_2-(v+v^{-1})E_1E_2E_1+E_2E_1^2=0
+\]
+and the relation obtained by exchanging $1$ and $2$.
+\end{proposition}
+\begin{proof}
+A representation of dimension $(2,1)$ is a map $f:\mathbb F_q^2\to\mathbb F_q$, of rank zero or one.
+Read the successive simple quotients of a complete flag from top to bottom.
+The counts are
+\[
+\begin{array}{c|ccc}
+ \operatorname{rank}f&112&121&211\\\hline
+ 0&q+1&q+1&q+1\\
+ 1&q+1&1&0.
+\end{array}
+\]
+In rank zero, each of the $q+1$ lines is allowed.
+In rank one, the middle pattern forces the kernel line, the last pattern would force $f=0$, and the first allows every line.
+
+The Euler exponents of these three patterns are $-1,0,1$.
+The Serre coefficient on the rank-zero representation is
+$(q+1)(v^{-1}-(v+v^{-1})+v)=0$.
+On the rank-one representation it is
+$v^{-1}(q+1)-(v+v^{-1})=0$.
+
+Dualizing representations reverses flags and the arrow. Interchanging the vertices restores $Q$.
+The resulting anti-isomorphism exchanges $E_1,E_2$ and sends this relation to the other one.
+\end{proof}
+
+The relation is an exact count of extensions with its stated normalization.
+Identifying a Hall algebra of a geometric category with these coefficients additionally requires an extension-preserving comparison of categories and of the counting or integration measures.
+
+\section{Exchange in an ordered chamber}
+
+Fix a finite set of pairwise distinct spectral labels and a total order on it.
+Let $K$ be a coefficient field containing their differences, and let each label carry a copy of a finite-dimensional space $V$.
+An exchange rule replaces an inverted adjacent pair by a $K$-linear combination with the two labels in increasing order.
+Write its coefficient as an invertible matrix $R(u-v)$. Tensor positions track the original labeled factors.
+Apply rules only to inversions.
+
+\begin{proposition}[Chamber confluence]
+\label{prop:alg-exchange}
+Suppose no further relations are imposed on the ordered tensor spaces.
+The exchange rules are confluent precisely when, on each triple of distinct labels,
+\[
+ R_{12}(u-v)R_{13}(u-w)R_{23}(v-w)
+ =R_{23}(v-w)R_{13}(u-w)R_{12}(u-v).
+\]
+When this equation holds, the ordered tensors form a basis of the quotient.
+\end{proposition}
+\begin{proof}
+Every exchange decreases the inversion number of the label sequence.
+Disjoint exchanges commute.
+For three descending labels, the two sequences of three exchanges have the displayed coefficients.
+These are all overlapping ambiguities, so equality resolves every reduction by induction on the inversion number.
+Conversely, confluence and independence of the ordered tensor space force equality of the two coefficient operators.
+\end{proof}
+
+The rational permutation matrix supplies the basic example.
+Let $P(v\otimes w)=w\otimes v$ and set
+\[
+ R(u)=1-\frac{\hbar P}{u}.
+\]
+The Yang--Baxter identity follows in the group algebra of $\Sigma_3$.
+The terms of degree zero and one in $\hbar$ agree directly.
+At degree two, the two three-cycles have coefficients equal by
+\[
+ \frac1{u(u+v)}+\frac1{v(u+v)}=\frac1{uv};
+\]
+at degree three the equality is
+$P_{12}P_{13}P_{23}=P_{23}P_{13}P_{12}$.
+This proves the operator identity on $V^{\otimes3}$ in every dimension.
+
+If exchange is also imposed in the reverse direction, its compatibility requires
+$R_{21}(-u)R(u)=1$ on the chosen pair space.
+For the rational matrix,
+\[
+ R_{21}(-u)R(u)=\left(1-\frac{\hbar^2}{u^2}\right)1.
+\]
+Over $k(\hbar,u)$, imposing both relations therefore kills every degree-two product between those distinct labels.
+Even $\dim V=1$ exhibits this failure, although the Yang--Baxter equation is then automatic.
+Over a formal coefficient ring, it instead produces $\hbar^2$-torsion.
+
+The scalar normalization
+\[
+ \widetilde R(u)=f(u)R(u),\qquad
+ f(u)=\left(1-\frac{\hbar^2}{u^2}\right)^{-1/2}
+ \in k(u)[[\hbar]]
+\]
+restores the reverse-crossing identity.
+The series $f$ is even in $u$ and has constant term one. Its scalar nature preserves Yang--Baxter.
+Its formal coefficient ring is part of the normalization.
+
+\section{RTT multiplication, coproduct and PBW}
+
+Work first over $R=k[\hbar]$.
+Define $Y_\hbar(\mathfrak{gl}_N)$ by generators $t_{ij}^{(r)}$, $r\ge1$, and put
+\[
+ T(u)=I+\sum_{r\ge1}T^{(r)}u^{-r},\qquad
+ t_{ij}^{(0)}=\delta_{ij}.
+\]
+The defining RTT relation is
+\[
+ R(u-v)T_1(u)T_2(v)=T_2(v)T_1(u)R(u-v),
+ \qquad R(u)=I-\frac{\hbar P}{u}.
+\]
+It means the coefficient identities after clearing $u-v$:
+\begin{equation}
+\label{eq:alg-rtt-coefficients}
+ [t_{ij}^{(r+1)},t_{kl}^{(s)}]-[t_{ij}^{(r)},t_{kl}^{(s+1)}]
+ =\hbar\bigl(t_{kj}^{(r)}t_{il}^{(s)}-t_{kj}^{(s)}t_{il}^{(r)}\bigr),
+ \qquad r,s\ge0.
+\end{equation}
+Indeed these are the coefficients of $u^{-r}v^{-s}$ in
+$(u-v)[t_{ij}(u),t_{kl}(v)]$ and its numerator.
+Each coefficient is a finite algebraic expression.
+
+\begin{proposition}[Hopf structure and evaluation]
+\label{prop:alg-rtt-hopf}
+There is an algebraic Hopf structure with
+\[
+ \Delta(t_{ij}^{(r)})=
+ \sum_{a=1}^N\sum_{p=0}^r t_{ia}^{(p)}\otimes t_{aj}^{(r-p)},
+ \qquad \varepsilon(T(u))=I,\qquad S(T(u))=T(u)^{-1}.
+\]
+Let $U_\hbar(\mathfrak{gl}_N)$ be generated by $E_{ij}$ with
+$[E_{ij},E_{kl}]=\hbar(\delta_{kj}E_{il}-\delta_{il}E_{kj})$.
+For a central parameter $a$, evaluation is the homomorphism
+\[
+ T(u)\longmapsto I+\frac{E}{u-a},
+ \qquad t_{ij}^{(r)}\longmapsto a^{r-1}E_{ij}.
+\]
+The inclusion $E_{ij}\mapsto t_{ij}^{(1)}$ has evaluation at $a=0$ as a left inverse.
+\end{proposition}
+\begin{proof}
+If matrices $T,U$ satisfy RTT and their coefficient algebras commute, then
+\[
+ R(T_1U_1)(T_2U_2)
+ =RT_1T_2U_1U_2
+ =T_2T_1RU_1U_2
+ =T_2U_2T_1U_1R.
+\]
+Here only factors from distinct coefficient algebras and distinct auxiliary positions have been interchanged.
+Thus their matrix product satisfies RTT.
+This proves the coproduct identity. Associativity of matrix multiplication proves coassociativity.
+The counit follows by substituting $I$.
+
+Since $T(u)=I+O(u^{-1})$, its inverse coefficient of order $r$ is a finite sum of products of coefficients of total order $r$.
+Inverting the RTT identity shows that this inverse satisfies the relations for an antihomomorphism.
+The two matrix inverse identities are the antipode axioms.
+All these formulas lie in the ordinary coefficient algebra and tensor product. Only their generating series use $u^{-1}$-adic notation.
+
+Substituting $I+E/(u-a)$ into RTT reduces it to the displayed commutator of the $E_{ij}$.
+Equation~\eqref{eq:alg-rtt-coefficients} with $r=0,s=1$ gives that commutator for the first modes.
+Evaluation fixes those modes, proving the claimed injection.
+\end{proof}
+
+\begin{theorem}[PBW for the rational RTT algebra]
+\label{thm:alg-rtt-pbw}
+For any total order on the generators, their ordered monomials form an $R$-basis of $Y_\hbar(\mathfrak{gl}_N)$.
+For the filtration $\deg t_{ij}^{(r)}=r-1$,
+\[
+ \operatorname{gr}Y_\hbar(\mathfrak{gl}_N)
+ \cong U_\hbar(\mathfrak{gl}_N[t]).
+\]
+For the different filtration $\deg t_{ij}^{(r)}=r$, the associated graded algebra is the polynomial algebra on the same generators.
+\end{theorem}
+\begin{proof}
+Iterating the coefficient recurrence gives
+\[
+ [t_{ij}^{(r)},t_{kl}^{(s)}]
+ =\hbar\sum_{b=1}^{\min(r,s)}
+ \left(t_{kj}^{(b-1)}t_{il}^{(r+s-b)}
+       -t_{kj}^{(r+s-b)}t_{il}^{(b-1)}\right).
+\]
+In the degree-$r$ filtration, each term on the right has strictly smaller total degree than the commutator on the left.
+Sorting therefore proves spanning by ordered monomials.
+In the degree-$r-1$ filtration, the $b=1$ term is the current Lie bracket and all other terms have lower degree.
+There is consequently a surjection
+$U_\hbar(\mathfrak{gl}_N[t])\to\operatorname{gr}Y_\hbar$.
+
+To prove injectivity, iterate the coproduct and evaluation at independent parameters $a_1,\ldots,a_m$.
+The resulting matrix is
+\[
+ \prod_{j=1}^m\left(I+\frac{E^{[j]}}{u-a_j}\right),
+\]
+with the indicated order and commuting coefficient algebras in distinct factors.
+Give the parameters degree one and all $E^{[j]}$ degree zero.
+The highest parameter-degree part of the image of $t_{ij}^{(r)}$ is
+$\sum_{b=1}^m a_b^{r-1}E_{ij}^{[b]}$. A product using at least two nonidentity matrix factors has degree at most $r-2$.
+Thus the induced map on current enveloping algebras is evaluation at these $m$ independent parameters.
+
+These evaluation maps, as $m$ varies, are jointly injective.
+Indeed, take a nonzero element of highest PBW degree $d$.
+For $m=d$, pass to the PBW associated graded in each tensor factor and take the component of degree one in every factor.
+A symmetric tensor of $d$ currents maps to its polarization, with the power of $a_b$ recording the current exponent in factor $b$.
+Distinct basis tensors have distinct coefficients of these independent parameter monomials.
+
+Polarization is injective in characteristic zero.
+PBW over $R$ applies because the current Lie algebra is free over the $\mathbb Q$-algebra $R$.
+Hence the original element has nonzero image in one of these evaluations.
+
+The current enveloping surjection is injective, proving the first associated graded formula.
+Its PBW basis proves independence of the ordered Yangian monomials and hence also the second formula.
+\end{proof}
+
+For $k=\mathbb C$, the usual complex Yangian is obtained by setting $\hbar=1$.
+In an evaluation into the ordinary $U(\mathfrak{gl}_N)[\hbar]$, the matrix is instead $I+\hbar e/(u-a)$, where $[e_{ij},e_{kl}]=\delta_{kj}e_{il}-\delta_{il}e_{kj}$.
+These conventions keep the deformation parameter in its proper location.
+Molev's \emph{Yangians and their applications}, \S\S2.1--2.5, gives the standard RTT, evaluation, PBW and Hopf formulations.\footnote{A.~I.~Molev, \emph{Yangians and their applications}, Handbook of Algebra \textbf{3} (2003), 907--959. arXiv:math/0211288, Proposition~2.2 and Theorems~2.6, 2.8.}
+
+\section{An explicit reflection algebra}
+
+A reflection equation is a different quadratic relation.
+For a constant invertible $R\in\operatorname{End}(V^{\otimes2})$, put $R_{21}=PRP$ and define its coefficient algebra by
+\[
+ R_{21}K_1R K_2=K_2R_{21}K_1R.
+\]
+
+Even for Yang--Baxter solutions, this equation does not determine a universal ordered-monomial theorem.
+For $R=I$, it says that all entries of $K$ commute.
+For $R=P$, it is the identity $K_2^2=K_2^2$ and imposes no relations at all.
+If $\dim V>1$, the resulting symmetric and free algebras have different Hilbert series.
+A PBW assertion must therefore specify the matrix and the rewriting rules.
+
+Take $V=k^2$, $q\in k^\times$, and use the basis $11,12,21,22$ of $V^{\otimes2}$.
+Set
+\[
+ R=\begin{pmatrix}
+ q&0&0&0\\
+ 0&1&q-q^{-1}&0\\
+ 0&0&1&0\\
+ 0&0&0&q
+ \end{pmatrix},\qquad
+ K=\begin{pmatrix}a&b\\c&d\end{pmatrix},\qquad \gamma=1-q^{-2}.
+\]
+This $R$ is invertible and satisfies the constant Yang--Baxter equation.
+
+\begin{proposition}[Reflection PBW basis]
+\label{prop:alg-reflection-pbw}
+The reflection equation for this matrix is equivalent to
+\begin{align*}
+ ba&=q^2ab,&ca&=q^{-2}ac,&da&=ad,\\
+ cb&=bc+\gamma(a^2-ad),&
+ db&=bd+\gamma ab,&
+ dc&=cd-\gamma q^{-2}ac.
+\end{align*}
+The monomials $a^i b^j c^k d^\ell$ form a basis, for all $q\ne0$.
+\end{proposition}
+\begin{proof}
+Multiplying the four-by-four matrices gives the six displayed relations. Each remaining entry of the reflection equation is a scalar multiple of one of them or reduces by $da=ad$.
+Conversely, the six relations make every matrix entry vanish.
+
+Orient them from left to right with $a<b<c<d$.
+Each rule decreases degree-lexicographic order.
+The only overlapping leading pairs occur in $cba,dba,dca,dcb$.
+Both reduction sequences give, respectively,
+\[
+\begin{array}{c|l}
+ cba&abc+\gamma a^3-\gamma a^2d\\
+ dba&q^2abd+q^2\gamma a^2b\\
+ dca&q^{-2}acd-\gamma q^{-4}a^2c\\
+ dcb&bcd+\gamma a^2d-\gamma ad^2.
+\end{array}
+\]
+
+Disjoint replacements commute.
+Induction on the decreasing order therefore gives a unique normal expression in every degree, proving the basis.
+The constant Yang--Baxter identity for the displayed $R$ is verified by multiplication on $(k^2)^{\otimes3}$. It is independent of this explicit overlap argument.
+\end{proof}
+
+The three constructions now have specified domains.
+Chamber exchange acts on labeled tensor spaces.
+RTT gives an algebra and its tensor-product action through a coproduct.
+Reflection gives the stated boundary coefficient algebra.
+A physical identification must supply representations, supported field operations, boundary conditions and compatible collision maps in addition to these coefficients.

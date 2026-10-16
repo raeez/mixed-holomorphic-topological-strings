@@ -1,0 +1,828 @@
+\chapter{Compact targets and gravitational comparisons}
+\label{mht:ch:compact-gravity}
+
+A formal boundary chart determines local fields and their operations.
+A compact theory must also glue those charts, and a gravitational
+theory must identify their observables with fields defined by its own
+action. The comparison needs a map of field complexes compatible
+with products and collisions. It also needs states on which
+amplitudes can be sewn.
+
+The local trace construction of
+Chapter~\ref{mht:ch:matrix-branes} supplies one component.
+The compact examples below have additional global degrees of freedom.
+Their Hall products and root characters can be constructed on explicit
+coefficient spaces. The gravitational examples likewise admit explicit
+connection fields, representations and prepared states. These
+constructions let us ask which operations a comparison must preserve.
+
+\section{Calabi--Yau traces and compact fields}
+
+Let $\mathcal C$ be a small stable $\mathbb C$-linear category.
+Properness means that each morphism complex is perfect over
+$\mathbb C$. Smoothness means that its diagonal bimodule is perfect.
+Assume $\mathcal C$ is smooth and proper. A $d$-Calabi--Yau trace pairs
+$\operatorname{RHom}(E,F)$ with $\operatorname{RHom}(F,E)$
+nondegenerately in degree $-d$. We require a negative-cyclic lift
+when using this trace in a closed differential form on a moduli space.
+
+At an object $E$, the tangent complex to the derived moduli of objects
+is $\operatorname{RHom}(E,E)[1]$. Composition and trace give the pairing
+\[
+ \operatorname{RHom}(E,E)[1]^{\otimes2}
+ \longrightarrow \operatorname{RHom}(E,E)[2]
+ \longrightarrow \mathbb C[2-d].
+\]
+On a moduli stack to which the shifted symplectic construction applies,
+Calabi--Yau duality makes this pairing nondegenerate, and the cyclic
+lift supplies its closedness. The shift $2-d$ belongs to this moduli
+problem. Hochschild cochains have their own composition operations.
+Identifying them with operations on physical fields requires a map.
+
+A concrete compact field model starts with a K3 surface $S$, an
+elliptic curve $E$, and holomorphic forms $\sigma_S$ and $dz$.
+Then $X=S\times E$ has volume form $\Omega_X=\sigma_S\wedge dz$.
+Let $\mathfrak l$ be a finite-dimensional Lie algebra and let
+$\mathfrak d=\mathfrak l\ltimes\mathfrak l^*$ be its cotangent Lie
+algebra. Its pairing is the symmetric evaluation pairing, and its
+bracket uses the coadjoint action on $\mathfrak l^*$.
+
+The holomorphic cotangent BF fields are
+\[
+ A\in\Omega^{0,*}(X,\mathfrak l)[1],\qquad
+ B\in\Omega^{0,*}(X,\mathfrak l^*)[1],
+\]
+with action
+\begin{equation}\label{mht:eq:compact-bf-action}
+ S(A,B)=\int_X\Omega_X\wedge
+       \left\langle B,\bar\partial A+\tfrac12[A,A]\right\rangle.
+\end{equation}
+The integral pairs complementary Dolbeault degrees. Including the
+field shifts, it is a BV pairing of degree $-1$.
+
+\begin{proposition}\label{mht:prop:compact-bf}
+The action \eqref{mht:eq:compact-bf-action} satisfies the classical
+master equation. Choose a K\"ahler metric on $S$ and a harmonic
+$(0,2)$-form $\eta$ with
+$\int_S\sigma_S\wedge\eta=1$. Put
+$K=\mathbb C[\eta]/(\eta^2)$, with $|\eta|=2$ and zero differential.
+For every open $U\subset E$, inclusion of harmonic representatives gives
+a trace-preserving dg Lie quasi-isomorphism
+\[
+ K\otimes\Omega^{0,*}(U)\otimes\mathfrak d
+ \longrightarrow \Omega^{0,*}(S\times U)\otimes\mathfrak d.
+\]
+The smooth tensor product in the $S$ direction is completed.
+The maps commute with restriction in $U$.
+\end{proposition}
+
+\begin{proof}
+The differential of the cotangent theory is the cotangent lift of
+$\bar\partial A+\tfrac12[A,A]$. Its square vanishes by
+$\bar\partial^2=0$, the derivation rule and Jacobi. Invariance of the
+evaluation pairing identifies this identity with the classical master
+equation.
+
+The map $i:K\to\Omega^{0,*}(S)$ is multiplicative because
+$(0,4)$-forms on $S$ vanish. The Dolbeault cohomology of $S$ is
+one-dimensional in degrees zero and two and vanishes in degree one.
+Hodge projection $p$ and $h=\bar\partial^*G$ therefore satisfy
+\[
+ pi=1,\qquad \bar\partial h+h\bar\partial=1-ip,\qquad hi=0.
+\]
+
+Tensor these continuous operators with the identity on
+$\Omega^{0,*}(U)\otimes\mathfrak d$, with the tensor differential.
+They give the required contraction. Multiplicativity of $i$ proves
+bracket compatibility, and the normalization of $\eta$ proves trace
+compatibility. Restriction acts on the $U$ factor alone.
+\end{proof}
+
+The two K3 modes both survive this comparison. All higher
+transferred products in the K3 factor vanish. The first product of
+harmonic inputs lies in $i(K)$, and the next internal homotopy kills it.
+This proves a classical field comparison. Quantized observables still
+require compatible kernels, local extensions and observable
+completions.
+
+There is a useful finite-dimensional control on loop coefficients.
+Suppose $\mathfrak l$ has a strictly positive grading and is truncated
+above a finite height. Each cubic vertex has one $B$-leg. Since an
+internal edge consumes one such leg, a connected graph has at most one
+loop.
+
+At one loop every $B$-leg is internal. The Lie coefficient is a
+trace of adjoint operators with positive total height, hence is zero.
+The dual trace vanishes for the same reason. This removes those Lie
+coefficients. Analytic extension of the graph kernels and the full
+quantum master equation remain separate requirements.
+
+\section{Extension flags and their coefficient theory}
+
+Let $\mathcal M_\gamma$ be a moduli stack of objects of charge
+$\gamma$. The extension stack $\mathcal E_{\alpha,\beta}$ records
+exact sequences $0\to E_\alpha\to E\to E_\beta\to0$ and has maps
+\[
+ \mathcal M_\alpha\times\mathcal M_\beta
+ \xleftarrow{\ p\ }\mathcal E_{\alpha,\beta}
+ \xrightarrow{\ q\ }\mathcal M_{\alpha+\beta}.
+\]
+Choose a coefficient theory in which $p^!$ and $q_*$ are defined on
+the selected classes. This choice includes support conditions and,
+for critical coefficients, orientation isomorphisms. A Hall product
+then has the form $q_*p^!$, with its declared shifts.
+
+The associativity comparison lives on the stack of two-step flags.
+If base change identifies the two iterated pull--push constructions
+with that same flag correspondence, their products agree. For three
+or more steps these identifications must be compatible under
+forgetting intermediate terms. Thus orientation and base change are
+part of the multiplication, rather than consequences of a numerical
+count of extensions.
+
+An action on a field theory requires one further correspondence map.
+Its target is a state complex defined from the fields, independently
+of the Hall action. For a compact chiral state space, this map must
+retain the normal oscillators at diagonals and commute with joining
+cycles. Local coordinate formulas must also agree through higher
+changes of coordinates. Defining the state space to be the image of
+the Hall map would omit this comparison problem.
+
+\section{An exchange ratio does not determine the integral algebra}
+
+The following polynomial example isolates the coefficient issue.
+Put
+\[
+ \begin{gathered}
+ R=\mathbb Q[h_1,h_2],\qquad h_3=-h_1-h_2,\\
+ a=-(h_1^2+h_1h_2+h_2^2),\qquad b=-h_1h_2(h_1+h_2),\\
+ N(v)=v^3+av+b.
+ \end{gathered}
+\]
+The ring $R$ is a domain and $b\ne0$.
+
+For $j=0,1$, take independent copies of
+$\mathcal A^{(j)}=\bigoplus_{n\geq0}R[x_1,\ldots,x_n]^{S_n}$.
+Charge is $n$. All cohomological degrees are zero and all parities are
+even. The sum has finite charge support. No parameter or root
+difference is inverted.
+
+Define
+\[
+ K_0(v)=N(v)/v,\qquad K_1(v)=vN(v)=v^2K_0(v).
+\]
+and, for inputs of charges $d,e$, set
+\begin{equation}\label{mht:eq:compact-shuffle}
+ (F*_jG)(X)=
+ \sum_{\substack{I\sqcup J=[d+e]\\|I|=d}}
+ F(X_I)G(X_J)\prod_{i\in I,\,k\in J}K_j(x_k-x_i).
+\end{equation}
+There is no factorial divisor. The charge-zero constant is the unit.
+The constant polynomial in charge one is a different element.
+
+\begin{proposition}\label{mht:prop:compact-shuffle-lattices}
+Both products are polynomial, unital and associative. They have the
+same exchange ratio
+\[
+ r(v)=\frac{K_j(-v)}{K_j(v)}
+     =\frac{v^3+av-b}{v^3+av+b},
+\]
+but no charge-preserving $R$-linear algebra isomorphism identifies
+their full polynomial carriers. The conclusion also holds for maps
+semilinear under one automorphism of $R$.
+\end{proposition}
+
+\begin{proof}
+For $K_0$, pair summands across a possible pole $x_k=x_i$ by
+exchanging the two labels. The remaining factors agree on that
+diagonal and the two residues are opposite. All denominators have
+simple root-difference factors, so cancellation proves polynomiality.
+For $K_1$ polynomiality is immediate.
+
+Both bracketings of three inputs
+sum over the same ordered three-block partitions, with one kernel
+factor per cross-block pair. This proves associativity in all charges.
+Empty blocks prove the unit equations. The even factor $v^2$ cancels
+from the exchange ratio.
+
+In charge two write $c=(x+y)/2$, $v=y-x$, $t=v^2$ and $B=R[c,t]$.
+Then $R[x,y]=B\oplus vB$. The linearized multiplication maps obey
+\[
+ \mu_0(A+vC)=2((t+a)A+bC),\qquad
+ \mu_1(A+vC)=2t((t+a)A+bC).
+\]
+Their images are $J=(t+a,b)B$ and $tJ$. Hence
+\[
+ \operatorname{coker}\mu_0\simeq R[c]/(b),\qquad
+ \operatorname{coker}\mu_1=B/tJ.
+\]
+
+The first cokernel has scalar annihilator $(b)$. The second surjects
+onto the faithful $R$-module $R[c]$ by evaluation at $t=0$, so its
+annihilator is zero. An algebra isomorphism preserving charge would
+identify these cokernels. A semilinear isomorphism would take the
+nonzero annihilator $b$ to its nonzero image under the scalar
+automorphism. Both possibilities contradict faithfulness.
+\end{proof}
+
+The obstruction concerns the full polynomial realizations. A positive
+comparison exists on their generated subalgebras. Put
+\[
+ D_n(X)=\prod_{i<k}(x_k-x_i)^2,\qquad D_0=D_1=1.
+\]
+The maps $\Phi_n(F)=D_nF$ are injective and multiplicative because
+\[
+ D_{d+e}(X)=D_d(X_I)D_e(X_J)
+                   \prod_{i\in I,\,k\in J}(x_k-x_i)^2.
+\]
+
+They fix charge one. Their restrictions therefore identify the two
+subalgebras generated by all charge-one polynomials. Inverting $D_n$
+also makes them isomorphisms on the localized full carriers. Neither
+statement gives an invertible map on the original full lattice:
+the constant polynomial in charge $n\geq2$ is not divisible by $D_n$.
+
+\section{Cooperation and the tensor of its target}
+
+The same algebras expose a separate obstruction to an ordinary
+bialgebra. Let $e_m=x^m$ in charge one and let $\varepsilon$ be the
+projection to charge zero. An ordinary coproduct here means an
+$R$-linear, charge-preserving, unital algebra map
+\[
+ \Delta:\mathcal A^{(j)}\longrightarrow
+                \mathcal A^{(j)}\otimes_R\mathcal A^{(j)}
+\]
+with the usual tensor multiplication and both counit equations for
+$\varepsilon$. The same definition can be made on the subalgebra
+generated by the $e_m$.
+
+\begin{proposition}\label{mht:prop:compact-ordinary-cooperation}
+Neither algebra admits this coproduct, even on its current-generated
+subalgebra. Coassociativity is not needed for the obstruction.
+\end{proposition}
+
+\begin{proof}
+The charge-zero counits force every $e_m$ to be primitive. Direct
+substitution in \eqref{mht:eq:compact-shuffle} gives
+\begin{equation}\label{mht:eq:compact-current-relation}
+ [e_0,e_3]-3[e_1,e_2]+a[e_0,e_1]=b(e_0*_je_0).
+\end{equation}
+Indeed, for polynomials $f,g$ the commutator is
+\[
+ 2b\,v^{2j}\frac{f(x)g(y)-g(x)f(y)}{v},\qquad v=y-x.
+\]
+The numerator for the first two terms of
+\eqref{mht:eq:compact-current-relation}, divided by $v$, is $v^2$.
+The remaining term contributes $a$, and
+$e_0*_je_0=2v^{2j}(v^2+a)$.
+
+In an ordinary tensor algebra a commutator of even primitive elements
+is primitive. The charge-$(1,1)$ part of the coproduct of the left
+side is therefore zero. That of the right side is
+$2b\,e_0\otimes e_0$, which is nonzero over $R$.
+This contradicts multiplicativity.
+\end{proof}
+
+This proof uses $b\ne0$. It makes no assertion on the fiber $b=0$.
+The charge-$(1,1)$ module is free, so merely writing a derived tensor
+over $R$ does not remove the displayed defect.
+
+There is again a positive construction after changing the recipient.
+For two disjoint root lists put
+\[
+ Q_j(X,Y)=\prod_{x\in X,\,y\in Y}K_j(y-x),\qquad
+ \Delta_{d,e}^{\mathrm{rat}}F(X,Y)=\frac{F(X,Y)}{Q_j(X,Y)}.
+\]
+Work on the ordered root cover with all pairwise differences and the
+zeros of $N(\pm v)$ inverted, and then take symmetry within each
+list. Let $A$ have bidegree $(d,e)$ and $B$ have bidegree $(f,g)$.
+Define their product by summing
+\begin{equation}\label{mht:eq:compact-rational-tensor}
+ \begin{split}
+ &A(X_1,Y_1)B(X_2,Y_2)
+ Q_j(X_1,X_2)Q_j(Y_1,Y_2)\\
+ &\hspace{15mm}\cdot
+   \prod_{y\in Y_1,\,x\in X_2}r(y-x)
+ \end{split}
+\end{equation}
+over partitions of $X$ into sizes $d,f$ and of $Y$ into sizes $e,g$.
+The last factor changes the interchange of the two middle blocks.
+
+\begin{proposition}\label{mht:prop:compact-rational-cooperation}
+Formula \eqref{mht:eq:compact-rational-tensor} is associative and
+unital. With this target multiplication, the sum of
+$\Delta_{d,e}^{\mathrm{rat}}$ is multiplicative and coassociative,
+with counits given by empty lists.
+\end{proposition}
+
+\begin{proof}
+For three factors, either bracketing uses the same partitions of
+$X$ and $Y$. It contributes one $K_j$ for every ordered pair within
+each list. It also contributes one $r$ whenever a root in an earlier
+$Y$ block crosses a root in a later $X$ block.
+These scalar factors commute, so the
+terms agree.
+
+To compare a split shuffle product with the product of two splits,
+partition each input between $X$ and $Y$. Cross factors with the
+order $X$ before $Y$ cancel against the denominator $Q_j(X,Y)$.
+The opposite order leaves $K_j(x-y)/K_j(y-x)=r(y-x)$, exactly the
+factor in \eqref{mht:eq:compact-rational-tensor}. This proves
+multiplicativity term by term. Three-way splitting divides by
+$Q_j(X,Y)Q_j(X,Z)Q_j(Y,Z)$ in either order. Empty lists give the
+counits.
+\end{proof}
+
+The elementary relation now reads
+\[
+ (1-r(v))v(v^2+a)=b(1+r(v)),
+\]
+so the changed interchange cancels the earlier defect. But the split
+of the charge-two constant is $v/N(v)$ for $j=0$ and $1/(vN(v))$
+for $j=1$. These are not polynomial coefficients. A comparison to
+supported collision operations must restore the information on the
+removed divisors, including any derived excess classes.
+
+\section{Root states and scalar automorphic products}
+
+Let $V=\bigoplus_{\alpha>0}V_\alpha$ be a graded superspace with
+finite-dimensional pieces. Choose a positive height so that every
+height truncation contains finitely many basis vectors. The completed
+Fock space is
+\[
+ \mathcal H_V=\widehat{\operatorname{Sym}}(V_{\bar0})
+                  \widehat\otimes\widehat\Lambda(V_{\bar1}).
+\]
+
+Completion is by height. A root variable $x^\alpha$ records the
+additive degree, and the parity operator defines the supertrace.
+For finitely many roots, or in an absolute-convergence chamber,
+\begin{equation}\label{mht:eq:compact-fock-character}
+ \operatorname{str}_{\mathcal H_V}(x^{\mathrm{degree}})
+       =\prod_{\alpha>0}(1-x^\alpha)^{-\operatorname{sdim}V_\alpha}.
+\end{equation}
+An even oscillator contributes a geometric series, while an odd one
+contributes $1-x^\alpha$. Multiplication proves the formula at each
+finite height. Coefficientwise stabilization, or absolute convergence,
+gives the stated limit.
+
+Applied to specified Borcherds root spaces, this is the Fock product
+associated with the denominator identity. The Weyl monomial, the
+coordinate pullback and any doubling of root multiplicities must
+still be included in comparing automorphic normalizations. In the
+Igusa example, the weight-five square-root branch and the weight-ten
+cusp form are sections of different modular lines. The reciprocal
+partition product is a further scalar convention.
+
+The supertrace loses information even before geometry enters.
+One even and one odd vector of the same degree contribute $1$ to
+\eqref{mht:eq:compact-fock-character}. Their Fock space is nonetheless
+nontrivial. Nor does a graded trace determine a bracket on $V$.
+Consequently a product identity cannot construct the brane objects,
+their extension operations or a map to an independently defined
+compact state space.
+
+\begin{problem}\label{mht:prob:compact-geometric-comparison}
+For a compact Calabi--Yau target, construct reduced critical
+coefficients with their relative unit, cyclic pairing and orientation
+on all extension flags. Construct their action on the independently
+defined chiral state complexes, preserving charge, normal oscillators,
+diagonal joining and higher coordinate gluing. Compare the resulting
+trace line and its normalized section with the specified automorphic
+line. On a formal normal chart, require compatibility with the native
+trace coordinate and supported operations.
+\end{problem}
+
+This problem retains the positive classical compact field reduction,
+the Hall products on their declared carriers and the scalar product
+formula. Its missing maps concern the geometric field and state
+recipients, rather than the existence of those algebraic constructions.
+
+\section{Gravitational fields and the invertible coframe}
+
+The gravitational comparison begins with its own bulk fields.
+Let $M$ be an oriented three-manifold and fix $\ell>0$. Take the
+Lorentz form $\eta_{ab}$ and its oriented volume tensor
+$\epsilon_{ab}{}^c$. The Cartan Lie algebra has generators $J_a,P_a$
+and brackets
+\[
+ [J_a,J_b]=\epsilon_{ab}{}^cJ_c,\qquad
+ [J_a,P_b]=\epsilon_{ab}{}^cP_c,\qquad
+ [P_a,P_b]=\ell^{-2}\epsilon_{ab}{}^cJ_c.
+\]
+The invariant form pairs $J_a$ with $P_b$ by $\eta_{ab}$ and vanishes
+on the two diagonal summands. A connection is
+$\mathcal A=\omega^aJ_a+e^aP_a$.
+
+Write
+\[
+ R^a=d\omega^a+\tfrac12\epsilon^a{}_{bc}\omega^b\wedge\omega^c,
+ \qquad
+ T^a=de^a+\epsilon^a{}_{bc}\omega^b\wedge e^c.
+\]
+Its curvature is
+\begin{equation}\label{mht:eq:cartan-curvature}
+ F_{\mathcal A}
+ =\left(R^a+\frac1{2\ell^2}
+                  \epsilon^a{}_{bc}e^b\wedge e^c\right)J_a+T^aP_a.
+\end{equation}
+
+\begin{proposition}\label{mht:prop:cartan-invertible}
+On the locus where $e$ is an invertible coframe, flatness of
+$\mathcal A$ is equivalent to torsion-free Einstein geometry with
+cosmological constant $\Lambda=-\ell^{-2}$ and metric
+$g_{\mu\nu}=\eta_{ab}e^a_\mu e^b_\nu$.
+\end{proposition}
+
+\begin{proof}
+The $P$ component of \eqref{mht:eq:cartan-curvature} gives $T=0$.
+Invertibility identifies $\omega$ with the metric spin connection.
+The $J$ component then says that the metric has constant sectional
+curvature $-\ell^{-2}$. In three dimensions the Riemann tensor is
+determined by the Ricci tensor, so this is the Einstein equation.
+Conversely a torsion-free Einstein coframe has this curvature, and
+both components of $F_{\mathcal A}$ vanish.
+\end{proof}
+
+Degenerate coframes remain connections but do not give this metric
+interpretation. The same restriction matters in the linear theory:
+at a flat background, a variation $a=\delta\mathcal A$ obeys
+$d_{\mathcal A}a=0$, with gauge variation
+$a\mapsto a+d_{\mathcal A}\epsilon$. Flatness gives
+$d_{\mathcal A}^2=0$. Splitting $a$ into $\delta\omega$ and $\delta e$
+is the linearized Cartan complex. Passing to metric variables uses
+the invertible coframe and quotient by infinitesimal Lorentz rotations.
+Boundary conditions and the induced pairing must be carried through
+this passage before it compares Hilbert spaces.
+
+The usual Chern--Simons normalization sets $k=\ell/(4G)$, and its
+classical Brown--Henneaux relation is $c=6k$. These equations specify
+a classical normalization. A quantum coupling comparison must
+intertwine the renormalized current and ghost operations, including
+their allowed finite counterterms. A chosen scalar reparametrization
+is not that map.
+
+\section{A Weyl representation and its modular transform}
+
+Fix $b>0$. On $L^2(\mathbb R,dP)$, the self-adjoint Weyl pair has
+Schwartz-space formulas
+\[
+ \widehat\ell_A=2\pi bP,\qquad
+ \widehat\ell_B=-\frac{ib}{2}\frac{d}{dP},\qquad
+ [\widehat\ell_A,\widehat\ell_B]=i\pi b^2.
+\]
+Reflection acts by $P\mapsto-P$. The individual length operators
+exchange parity, while their squares preserve the even subspace.
+Identify that subspace with
+$\mathcal H=L^2(\mathbb R_{\geq0},dP)$ by
+$f\mapsto 2^{-1/2}f(|P|)$.
+
+The full-line Fourier transform with kernel
+$\sqrt2\,e^{4\pi iPP'}$ is unitary and squares to reflection.
+Its restriction is therefore the unitary involution
+\begin{equation}\label{mht:eq:gravity-cosine}
+ (\mathcal Ff)(P)=2\sqrt2\int_0^\infty
+                  \cos(4\pi PP')f(P')\,dP'.
+\end{equation}
+For $t>0$ the Gaussian integral gives
+\begin{equation}\label{mht:eq:gravity-gaussian}
+ \mathcal F(e^{-tP^2})
+   =\sqrt{\frac{2\pi}{t}}\,e^{-4\pi^2P^2/t}.
+\end{equation}
+These are representation-theoretic constructions on the specified
+Lebesgue space. A physical zero-mode quantization must identify its
+measure and observables with this representation.
+
+Put $Q=b+b^{-1}$ and $c=1+6Q^2$, so $c\geq25$.
+For $q=e^{2\pi i\tau}$ with $\operatorname{Im}\tau>0$, let
+$\eta(\tau)=q^{1/24}\prod_{n\geq1}(1-q^n)$ be the Dedekind function.
+The Virasoro character functions in this normalization are
+\[
+ \chi_P(\tau)=\frac{q^{P^2}}{\eta(\tau)}.
+\]
+
+The vacuum character is the difference at the two imaginary momenta
+$iQ/2$ and $i(b^{-1}-b)/2$:
+\[
+ \chi_{\mathrm{vac}}(\tau)
+ =q^{-c/24}\prod_{n\geq2}(1-q^n)^{-1}.
+\]
+The difference removes the level-one descendant. Transforming the
+two Gaussians yields
+\[
+ \chi_{\mathrm{vac}}(-1/\tau)
+       =\int_0^\infty\rho(P)\chi_P(\tau)\,dP,
+\]
+where
+\begin{equation}\label{mht:eq:gravity-cap-density}
+ \begin{split}
+ \rho(P)
+ &=2\sqrt2\bigl(\cosh(2\pi QP)
+                  -\cosh(2\pi(b^{-1}-b)P)\bigr)\\
+ &=4\sqrt2\,\sinh(2\pi bP)\sinh(2\pi P/b).
+ \end{split}
+\end{equation}
+
+This density is positive for $P>0$ and vanishes quadratically at zero.
+Its exponential growth prevents it from being a vector of
+$\mathcal H$. It does define a continuous functional on each
+Gaussian-weighted space
+$L^2(\mathbb R_{\geq0},e^{P^2/n}dP)$, by Cauchy--Schwarz.
+Their union, with its final locally convex topology, is a test domain
+for the uncollared linear cap.
+
+\section{Positive collars and finite sewing}
+
+Let $H_0$ be multiplication by $P^2$ on $\mathcal H$, and write
+$C_t=e^{-tH_0}$ for $t\geq0$. This is a bounded strongly continuous
+semigroup. Positive collars give actual vectors
+\[
+ v_{0,t}(P)=e^{-tP^2},\qquad
+ v_{1,t}(P)=\rho(P)e^{-tP^2},\qquad t>0.
+\]
+The Gaussian dominates the exponential growth of $\rho$, so both
+belong to $\mathcal H$. A preparation is the map
+$\mathbb C\to\mathcal H$ taking $1$ to one of these vectors.
+Its reflected cap is the Hilbert adjoint.
+
+Use an inner product linear in its second argument and define
+\[
+ K_{ij}(s,t)=|v_{i,s}\rangle\langle v_{j,t}|,\qquad
+ G_{ij}(u)=\int_0^\infty\rho(P)^{i+j}e^{-uP^2}\,dP,
+ \quad i,j\in\{0,1\}.
+\]
+The first expression is a rank-one operator. The second records the
+overlap at the total collar width.
+
+\begin{proposition}\label{mht:prop:gravity-prepared-sewing}
+For positive widths,
+\[
+ \begin{split}
+ K_{ij}(s,t)K_{k l}(u,v)
+     &=G_{jk}(t+u)K_{i l}(s,v),\\
+ K_{ij}(s,t)^*&=K_{ji}(t,s),\\
+ \operatorname{Tr}K_{ij}(s,t)&=G_{ji}(s+t).
+ \end{split}
+\]
+Every finite product of these kernels is trace class. More generally,
+a bounded operator word with a trace-class factor has a finite cyclic
+trace. For a Hilbert--Schmidt operator $B$,
+$\operatorname{Tr}(B^*B)=\|B\|_{\mathrm{HS}}^2\geq0$.
+\end{proposition}
+
+\begin{proof}
+Composition of rank-one operators contracts the two middle vectors,
+giving the first formula. The adjoint and trace formulas follow from
+the same inner product. The trace norm of $|u\rangle\langle v|$ is
+$\|u\|\|v\|$. Thus sums with
+$\sum_n\|u_n\|\|v_n\|<\infty$ converge in trace norm.
+The rank-one trace identity extends to this completion and gives
+$\operatorname{Tr}(AB)=\operatorname{Tr}(BA)$ for bounded $A$ and
+trace-class $B$. The last assertion is the definition of the
+Hilbert--Schmidt norm.
+\end{proof}
+
+All three overlap functions have closed Gaussian expressions. Put
+$A=2\pi Q$, $B=2\pi(b^{-1}-b)$ and
+$J_u(k)=\sqrt\pi\,e^{k^2/(4u)}/(2\sqrt u)$. Then
+\[
+ \begin{aligned}
+ G_{00}(u)&=J_u(0),\\
+ G_{01}(u)&=2\sqrt2\bigl(J_u(A)-J_u(B)\bigr),\\
+ G_{11}(u)&=4J_u(2A)+4J_u(2B)+8J_u(0)\\
+          &\hspace{8mm}-8J_u(A+B)-8J_u(A-B).
+ \end{aligned}
+\]
+The linear cap uses one factor of $\rho$. Reflected sewing of two
+caps uses $\rho^2$. Replacing $\rho$ by its square root would change
+the character transform \eqref{mht:eq:gravity-cap-density}.
+
+Unitary conjugation and Hilbert tensor products preserve these
+trace-class sewing identities. Remarking the torus conjugates the
+cylinder as well as its states. In particular $\mathcal F$ does not
+commute with $C_t$: applying \eqref{mht:eq:gravity-gaussian} to
+$C_s e^{-tP^2}$ gives a different width from
+$C_s\mathcal F e^{-tP^2}$. Thus unitary transport is not invariance
+of a fixed cylinder operator.
+
+\section{The trace obstruction for the continuous cylinder}
+
+The finite amplitudes above use prepared vectors. Positive time alone
+does not make $C_t$ trace class. On the infinite-dimensional subspace
+$L^2([1,2])$, one has $C_t\geq e^{-4t}$. The sum of its diagonal
+matrix coefficients over any $N$ orthonormal vectors in this subspace
+is at least $Ne^{-4t}$. In particular $C_t$ is not compact.
+
+The obstruction persists for a finite trace with no continuity or
+positivity assumption, provided it is linear and cyclic on a full
+operator ideal.
+
+\begin{theorem}\label{mht:thm:gravity-no-finite-trace}
+Let $t>0$ and let $I\subset B(\mathcal H)$ be a two-sided ideal
+containing $C_t$. No complex-linear map $\tau:I\to\mathbb C$
+satisfies both of the following conditions:
+\[
+ \begin{aligned}
+ \tau(AB)&=\tau(BA)&& (A\in I,\ B\in B(\mathcal H)),\\
+ \tau(p)&=1&& (p\in I\text{ a rank-one projection}).
+ \end{aligned}
+\]
+\end{theorem}
+
+\begin{proof}
+Let $q$ be multiplication by the indicator of $[1,2]$.
+The multiplier $B_t=e^{tP^2}q$ is bounded, so $q=B_tC_t\in I$.
+Choose an orthonormal basis of $q\mathcal H$ and let $V$ be its
+unilateral shift, extended by zero on $(1-q)\mathcal H$.
+Then $V=qVq\in I$, and
+\[
+ V^*V=q,\qquad VV^*=q-p,
+\]
+where $p$ projects to the first basis vector. Thus $p\in I$.
+Cyclicity gives $\tau(q)=\tau(q-p)$, whereas linearity gives
+$\tau(q)-\tau(q-p)=\tau(p)=1$, a contradiction.
+\end{proof}
+
+Linearity is essential: the constant function $A\mapsto1$ is cyclic
+and takes the value one on every rank-one projection, but is not a
+trace. The theorem also does not exclude a weight defined only on a
+smaller commutative algebra of multipliers.
+
+That smaller algebra ceases to suffice when all multipliers and the
+modular transform act together. Let $\mathcal M$ be their generated
+von Neumann algebra. An operator commuting with all multipliers is
+itself a multiplier $M_f$. Commutation with the cosine transform
+implies
+\[
+ (f(P)-f(P'))\cos(4\pi PP')=0
+ \quad\hbox{for almost every }(P,P').
+\]
+
+One obtains this identity by testing the kernels on bounded
+intervals. The zero set of the cosine has measure zero, so $f$ is
+constant. Hence $\mathcal M'= \mathbb C$ and
+$\mathcal M=B(\mathcal H)$.
+
+A faithful normal semifinite trace on this algebra assigns a common
+finite positive value $\kappa$ to rank-one projections. Finiteness
+follows from semifiniteness on a minimal projection, and equality
+from unitary conjugacy. Normality then gives $\tau(q)=\infty$ and
+$\tau(C_t)\geq e^{-4t}\tau(q)=\infty$.
+Thus a finite multiplier weight cannot extend to such a trace while
+retaining the full modular operator algebra.
+
+There is a related tensor obstruction. A vector in
+$\overline{\mathcal H}\otimes\mathcal H$ defines a
+Hilbert--Schmidt operator. Contracting two such vectors gives a
+trace-class operator. It therefore cannot give $C_t$, even for
+$t>0$. A two-boundary Hilbert cup for the bare continuous cylinder
+requires a different distributional or relative recipient.
+The one-boundary preparations of
+Proposition~\ref{mht:prop:gravity-prepared-sewing} remain valid.
+
+\section{A positivity test for the regularized vacuum sum}
+
+A different obstruction concerns a particular scalar modular sum.
+For $c>1$, take the vacuum character
+$q^{-c/24}\prod_{n\geq2}(1-q^n)^{-1}$ and sum its absolute square
+over $\Gamma_\infty\backslash\operatorname{PSL}_2(\mathbb Z)$.
+Fix the \href{https://arxiv.org/abs/0712.0155}{Maloney--Witten
+regularization} by analytic continuation of the
+Poincar\'e exponent to $1/2$.
+
+Its large imaginary-modulus expansion is
+\[
+ Z_c(\tau)=|\chi_{\mathrm{vac}}(\tau)|^2+
+ \frac{-6+c_1y^{-1}+c_2y^{-2}+O(y^{-3})}{|\eta(\tau)|^2},
+ \qquad \tau=x+iy,
+\]
+with fixed $x$, where, on putting $u=(c-13)/12$,
+\[
+ \begin{aligned}
+ c_1&=\frac{(\pi^3-6\pi)(c-13)}{9\zeta(3)},\\
+ c_2&=\frac{8\pi^2((\pi^4-90)u^2+\pi^4+45)}{135\zeta(5)}>0.
+ \end{aligned}
+\]
+
+These coefficients belong to the fixed regularized sum. To see the
+seed signs, write $\kappa_0=(c-1)/12$. Multiplication of the vacuum
+term by $|\eta|^2$ gives
+$e^{2\pi\kappa_0y}(1-q)(1-\bar q)$. The four Poincar\'e seeds are
+therefore $(\kappa_0,0)$, $(\kappa_0-2,0)$ and
+$(\kappa_0-1,\pm1)$, with coefficients $+,+,-,-$.
+
+For a seed $(\kappa,0)$, its continued constant Fourier mode, after
+removing the identity term and dividing by $y^{1/2}$, is
+\[
+ -1+\frac{2\pi^3\kappa}{3\zeta(3)}y^{-1}
+      +\frac{4\pi^6\kappa^2}{135\zeta(5)}y^{-2}+O(y^{-3}).
+\]
+For $(\kappa,\pm1)$ it is
+\[
+ 2+\frac{4\pi\kappa}{\zeta(3)}y^{-1}
+      +\frac{4\pi^2(2\kappa^2-1)}{3\zeta(5)}y^{-2}+O(y^{-3}).
+\]
+These are the constant-mode Fourier expansions of that analytic
+continuation. The other Fourier modes are exponentially small at
+fixed $x$. Substitution gives $-6,c_1,c_2$ above.
+The seed signs and this regularization are part of the question
+about a spectral measure.
+
+On the imaginary axis, put $\beta=2\pi y$ and define $d_N$ by
+\[
+ \prod_{n\geq2}(1-q^n)^{-2}=\sum_{N\geq0}d_Nq^N.
+\]
+Then
+\begin{equation}\label{mht:eq:gravity-vacuum-asymptotic}
+ Z_c(\beta)=e^{\beta c/12}\sum_{N\geq0}d_Ne^{-\beta N}
+              +e^{\beta/12}\bigl(-6+O(\beta^{-1})\bigr).
+\end{equation}
+The first coefficients are $1,0,2,2,5,6,13$.
+
+\begin{proposition}\label{mht:prop:gravity-positive-spectrum}
+Suppose the function in \eqref{mht:eq:gravity-vacuum-asymptotic} is
+the Laplace transform of a positive Borel measure. Assume its energy
+support is bounded below and its exponential weighting is finite.
+Then $c=12N+1$ for an integer $N\geq5$.
+This necessary condition is not a sufficiency statement.
+\end{proposition}
+
+\begin{proof}
+First suppose a positive measure $\mu$ has
+$e^{\beta a}\int e^{-\beta E}\,d\mu(E)\to d<\infty$.
+Any mass below $a$ would make this limit infinite. There is thus no
+such mass. Dominated convergence after one fixed exponential
+weighting shows that the limit is the mass of the atom at $a$.
+
+Apply this observation successively to
+\eqref{mht:eq:gravity-vacuum-asymptotic}. It forces actual atoms of
+masses $d_N$ at $E_N=N-c/12$ for every
+$N<(c-1)/12$. Subtracting these atoms preserves positivity.
+At the threshold $E=-1/12$, the remaining rescaled limit is $-6$
+unless $m=(c-1)/12$ is an integer. A negative limit is impossible.
+
+If $m$ is an integer, the limit is $d_m-6$, so it must be
+nonnegative. The values $d_0,\ldots,d_4$ are all less than six,
+while $d_5=6$. Necessarily $m\geq5$, as claimed.
+\end{proof}
+
+For example, $c=25$ gives a remaining threshold mass $2-6=-4$.
+The cases $c=61$ and $c=73$ give zero and seven, respectively, and
+this argument does not rule them out. The test permits continuous
+positive measures. It assumes neither a discrete spectrum nor a
+previously chosen vacuum subspace. It does not apply unchanged to
+signed measures or to a different finite renormalization of the sum.
+
+\section{State normalization and physical reconstruction}
+
+Even a finite algebra can have several positive sewing theories
+before its cap is chosen. Let
+$A=\mathbb Ce_1\oplus\mathbb Ce_2$, with
+$e_ie_j=\delta_{ij}e_i$ and $e_i^*=e_i$. For $0<w<1$, set
+\[
+ \varepsilon_w(a_1e_1+a_2e_2)=wa_1+(1-w)a_2.
+\]
+
+This is a positive normalized trace. Write $p_1=w$, $p_2=1-w$.
+The Frobenius pairing has inverse
+$\sum_i e_i\otimes e_i/p_i$. Its connected genus-$g$ amplitude is
+\[
+ Z_g=\sum_{i=1}^2p_i^{\,1-g}.
+\]
+
+Indeed, each handle multiplies the $i$th idempotent by $p_i^{-1}$,
+and the final cap contributes $p_i$. Thus the sphere and torus
+amplitudes are always one and two, whereas genus two distinguishes
+$w=1/2$ from $w=1/3$: the values are $4$ and $9/2$.
+This is freedom in choosing a cap, not nonuniqueness after the
+Frobenius structure has been fixed.
+
+For a gravity comparison, the analogous data must come from the
+bulk construction. One needs the gauge quotient with its real
+structure, the physical pairing, the cylinder energy and the
+renormalized insertion maps. A formal vacuum module or an equality
+of oscillator characters does not specify these analytic objects.
+Conversely, the positive prepared amplitudes constructed here do
+not depend on identifying every bulk state with a boundary vector.
+
+\begin{problem}\label{mht:prob:gravity-physical-comparison}
+Construct the comparison from the source-dependent bulk BV/BFV
+complex on the solid torus to the boundary state complex. Preserve
+the moving boundary condition and both corner variations. Define
+the physical gauge quotient and its pairing, and compare its
+Euclidean cut with the Lorentzian state space. On this domain,
+construct the current, ghost and line insertions with their
+renormalized collision products. Determine the coupling and
+cylinder-energy normalization from the same theory. Require the
+comparison to commute with sewing and with the specified real
+structure.
+\end{problem}
+
+An obstruction to this problem must survive the admitted local
+counterterms and changes of regulator on its physical carrier.
+The nonexistence of the ordinary shuffle coproduct and of the finite
+continuous-cylinder trace have narrower, explicit domains.
+They determine which coefficient or state constructions cannot
+serve unchanged in a comparison. The rational Hall tensor and the
+positive prepared sewing amplitudes exhibit alternatives whose
+physical realization remains a separate question.

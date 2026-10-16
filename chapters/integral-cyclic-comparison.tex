@@ -1,0 +1,983 @@
+\chapter{Integral cyclic comparison and Hamiltonian homotopies}
+\label{mht:ch:integral-cyclic}
+
+The coefficient Weyl algebra has cyclic operations that ordinary
+traces do not determine. We construct a comparison from its
+Hochschild chains to differential forms which preserves the circle
+operator. Two independent parameters remain in the comparison.
+Their relation connects the vacuum to the volume form before
+either parameter is inverted.
+
+Hamiltonian equivariance requires two explicit homotopies.
+After passing to continuous duals, the same comparison gives a
+criterion for a current to be strictly cyclic. Point currents
+then give nonzero scalar classes with separate primitives for
+the two parameters.
+
+\section{Two operators on relative chains}
+
+Let $A=\mathbb C[q,p]$ with the direct-limit topology of its
+finite-degree subspaces. The second coefficient domain will be
+$A=\mathbb C[[q,p]]$ with its formal topology. In either case set
+$R_\epsilon=\mathbb C[[\epsilon]]$ and
+\[
+ A_\epsilon=(A[[\epsilon]],\star),\qquad
+ a\star b=m\exp(\epsilon P/2)(a\otimes b),\qquad
+ P=\partial_q\otimes\partial_p-\partial_p\otimes\partial_q.
+\]
+Here $m$ is ordinary multiplication and $|\epsilon|=0$.
+This is a deformation of the coefficient algebra, with
+$q\star p-p\star q=\epsilon$. It is distinct from the matrix-entry
+quantization in Chapter~\ref{mht:ch:matrix-branes}.
+
+Parameter series are completed coefficientwise. For the
+polynomial domain, every parameter coefficient is a polynomial,
+with no uniform degree bound. For the formal domain, tensor
+products are also completed in the separate coordinates of
+all slots.
+
+At each parameter order the Moyal product and the circle comparison
+have finite differential order in their coefficient slots.
+They are continuous on both domains.
+Continuity of the chosen cone contractions, coefficientwise
+antiderivatives and flow operators is justified separately below.
+No finite-differential-order assertion is made for them.
+
+Use normalized Hochschild chains relative to $R_\epsilon$:
+\[
+ C_n=A_\epsilon\widehat\otimes_{R_\epsilon}
+          (A_\epsilon/R_\epsilon1)^{\widehat\otimes n}.
+\]
+The chain $a_0[a_1|\cdots|a_n]$ has cohomological degree $-n$.
+A scalar in a bar slot is zero. The Hochschild boundary is
+\begin{align*}
+ b(a_0[a_1|\cdots|a_n])
+ ={}&(a_0\star a_1)[a_2|\cdots|a_n]\\
+ &+\sum_{i=1}^{n-1}(-1)^i
+       a_0[a_1|\cdots|a_i\star a_{i+1}|\cdots|a_n]\\
+ &+(-1)^n(a_n\star a_0)[a_1|\cdots|a_{n-1}].
+\end{align*}
+It vanishes on $C_0$.
+
+The Connes operator is
+\[
+ B(a_0[a_1|\cdots|a_n])
+ =\sum_{i=0}^n(-1)^{ni}
+      1[a_i|\cdots|a_n|a_0|\cdots|a_{i-1}].
+\]
+Associativity cancels the pairs of terms in $b^2$.
+Cyclic rotation and normalization give $B^2=bB+Bb=0$.
+Thus $|b|=1$ and $|B|=-1$ define a mixed complex.
+Adjoin $u$ of degree two and write
+\[
+ D_C=b+uB
+ \quad\text{on}\quad C_\bullet[[u]].
+\]
+This is the complete negative-cyclic chain complex.
+
+Place a differential $n$-form in degree $-n$. Put
+$\pi=\partial_q\wedge\partial_p$, use
+$\iota_\pi(dq\wedge dp)=1$, and define
+$\delta=\iota_\pi d-d\iota_\pi$. In coordinates,
+\[
+ \delta(a\,dq+b\,dp)=b_q-a_p,\qquad
+ \delta(c\,dq\wedge dp)=-dc,\qquad \delta(f)=0.
+\]
+Direct differentiation gives
+$d^2=\delta^2=d\delta+\delta d=0$. The form complex is
+\[
+ \bigl(\Omega_A^\bullet[[\epsilon,u]],D_\Omega\bigr),
+ \qquad D_\Omega=\epsilon\delta+ud.
+\]
+Write $\Omega=dq\wedge dp$.
+
+The smallest mixed relation already contains both parameters.
+With $\chi=1[q|p]-1[p|q]$, one has
+\begin{equation}\label{mht:eq:cyclic-vacuum-volume}
+ \begin{aligned}
+ D_C(q[p])&=\epsilon1+u\chi,\qquad &b\chi=B\chi&=0,\\
+ D_\Omega(q\,dp)&=\epsilon+u\Omega, &\delta\Omega=d\Omega&=0.
+ \end{aligned}
+\end{equation}
+The Hochschild boundary of $\chi$ is a scalar in a bar slot
+and therefore vanishes. A comparison preserving the actual
+circle operator must carry the first relation to the second.
+
+\section{Integration over a circle}
+
+For $n\geq1$, let
+\[
+ \Delta_n=\{0<t_1<\cdots<t_n<1\},\qquad t_0=0,
+\]
+with orientation $dt_1\wedge\cdots\wedge dt_n$.
+Let $P_{ij}$ apply $P$ to tensor slots $i,j$.
+Its derivatives act on form coefficients and leave their
+exterior factors fixed. Define
+\begin{equation}\label{mht:eq:circle-comparison}
+ \mathcal U_n(a_0[a_1|\cdots|a_n])
+ =m\int_{\Delta_n}
+   \exp\!\left(\epsilon\sum_{i<j}
+                 (\tfrac12+t_i-t_j)P_{ij}\right)
+       a_0\,da_1\cdots da_n\,dt_1\cdots dt_n.
+\end{equation}
+
+In this formula $m$ identifies the coordinate slots and
+multiplies their exterior factors. Set $\mathcal U_0$ equal
+to the identity. Exterior degree makes $\mathcal U_n=0$ for
+$n>2$. A scalar bar input has zero differential, so the formula
+descends to normalized chains.
+
+For polynomial inputs the exponential terminates.
+The required moments are rational:
+\[
+ \int_{\Delta_n}t_1^{a_1}\cdots t_n^{a_n}\,dt
+   =\prod_{j=1}^n(a_1+\cdots+a_j+j)^{-1}.
+\]
+Successive integration proves this formula. In particular,
+\[
+ \mathcal U_n\bmod\epsilon
+     =\frac1{n!}a_0\,da_1\wedge\cdots\wedge da_n.
+\]
+The volume of the simplex supplies the normalized
+Hochschild--Kostant--Rosenberg map.
+
+At one bar slot the operator has a simpler expression:
+\begin{equation}\label{mht:eq:circle-onebar}
+ \mathcal U_1(a_0[a_1])
+ =mS(P)(a_0\,da_1),\qquad
+ S(P)=\frac{2\sinh(\epsilon P/2)}{\epsilon P}
+ =\sum_{j\geq0}\frac{\epsilon^{2j}P^{2j}}
+                         {2^{2j}(2j+1)!}.
+\end{equation}
+The quotient denotes its power series, whose constant
+coefficient is one. For example,
+\[
+ \mathcal U_1(q^3[p^3])
+   =(3q^3p^2+\tfrac32\epsilon^2q)\,dp.
+\]
+Applying $\epsilon\delta$ gives
+$9\epsilon q^2p^2+3\epsilon^3/2$, the Moyal commutator of
+$q^3$ and $p^3$. The classical term alone would miss the
+cubic correction.
+
+The ordered-circle kernel is the one appearing in
+\href{https://arxiv.org/abs/math/0311303v2}
+{Feigin--Felder--Shoikhet, Section~2.3}.
+Its compatibility with $B$ is the identity of
+\href{https://arxiv.org/abs/0804.3887v1}
+{Willwacher, Theorem~3}.
+We prove the flat formulas with the normalization above.
+
+\section{The mixed comparison}
+
+\begin{theorem}\label{mht:thm:integral-cyclic-comparison}
+On both specified coefficient domains,
+\[
+ \mathcal U b=\epsilon\delta\mathcal U,\qquad
+ \mathcal U B=d\mathcal U.
+\]
+Consequently $\mathcal U$ is a quasi-isomorphism
+\[
+ (C_\bullet[[u]],b+uB)
+ \longrightarrow
+ (\Omega_A^\bullet[[\epsilon,u]],\epsilon\delta+ud).
+\]
+It sends $\chi$ to $\Omega$ and preserves
+\eqref{mht:eq:cyclic-vacuum-volume} before either parameter
+is inverted.
+\end{theorem}
+\begin{proof}
+At fixed parameter order all operators have constant
+coefficients and finite differential order. It therefore
+suffices to compare their symbols on
+$a_i=\exp(k_i\cdot(q,p))$.
+The coefficients in the momenta $k_i$ recover the polynomial
+identities and their continuous formal extensions.
+
+Set $K=\sum_i k_i$, $c_{ij}=\pi(k_i,k_j)$,
+$\Lambda_i=k_i\cdot(dq,dp)$, and
+\[
+ S(t)=\sum_{i<j}(\tfrac12+t_i-t_j)c_{ij}.
+\]
+The integrand of \eqref{mht:eq:circle-comparison} is
+$e^{K\cdot(q,p)}e^{\epsilon S(t)}
+\Lambda_1\wedge\cdots\wedge\Lambda_n$.
+The two elementary identities are
+\begin{align*}
+ \partial_{t_i}S&=\pi(k_i,K),\\
+ \delta(e^{K\cdot(q,p)}\Lambda_1\cdots\Lambda_n)
+ &=e^{K\cdot(q,p)}\sum_{i=1}^n(-1)^i\pi(k_i,K)
+         \Lambda_1\cdots\widehat\Lambda_i\cdots\Lambda_n.
+\end{align*}
+Integrating the first identity by parts gives the boundary
+faces of the ordered simplex.
+
+At $t_1=0$, the factor $e^{\epsilon c_{01}/2}$ is the first
+Moyal multiplication. At $t_i=t_{i+1}$, the two omitted-form
+terms combine their differentials to
+$\Lambda_i+\Lambda_{i+1}$. At $t_n=1$, the cyclic
+multiplication has factor $e^{-\epsilon c_{0n}/2}$ and sign
+$(-1)^n$. These are exactly the three types of terms in $b$.
+
+The face sum also proves the equation for $n=3$, where the
+interior three-form vanishes. For larger $n$ both sides vanish
+by form degree. This proves $\mathcal U b=\epsilon\delta\mathcal U$.
+
+For the second identity, move the marked origin around the
+circle. Its possible positions are partitioned by the $n+1$
+intervals between labeled inputs. Taking each interval as
+the first gives the corresponding cyclic rotation in $B$,
+with sign $(-1)^{ni}$ from exterior reordering.
+The marked origin has total interval length one.
+
+The resulting form factor is
+\[
+ (\Lambda_0+\cdots+\Lambda_n)
+       \wedge\Lambda_1\wedge\cdots\wedge\Lambda_n.
+\]
+This is the exterior derivative of the exponential coefficient.
+The jump of $\tfrac12+t_i-t_j$ at the origin is precisely
+the cyclic reordering of the kernel. Thus
+$\mathcal U B=d\mathcal U$, with no additional factorial.
+
+At $\epsilon=0$, the diagonal Koszul resolution on
+$q_L-q_R,p_L-p_R$ computes Hochschild homology as differential
+forms. Its comparison with the normalized bar resolution gives
+the displayed Hochschild--Kostant--Rosenberg projection.
+The completed diagonal resolution gives the same assertion
+for formal functions and completed chains.
+
+Give each coordinate and its differential weight one.
+At fixed weight the normalized undeformed comparison cone is
+a finite-dimensional acyclic complex: a positive bar slot has
+positive weight, which bounds its length. Choose a contraction
+at each weight. Their direct sum preserves polynomial inputs.
+Their product is continuous on formal inputs.
+
+The deformed differential differs by terms in $(\epsilon,u)$.
+Perturbing this contraction gives a convergent geometric series
+in the parameter-adic topology, with continuous coefficients.
+It contracts the completed comparison cone and proves the
+quasi-isomorphism on both stated domains.
+Finally, the two linear bar inputs have no nonzero contraction,
+so direct antisymmetrization gives $\mathcal U\chi=\Omega$.
+\end{proof}
+
+\section{Cohomology before inversion}
+
+The integral cohomology records information hidden by either
+parameter specialization. Write $R=\mathbb C[[\epsilon,u]]$.
+For this calculation group the completed even and odd form
+degrees. The original cohomological grading is retained by
+assigning $|u|=2$ and $|\Omega|=-2$.
+
+\begin{proposition}\label{mht:prop:integral-form-cohomology}
+The form complex has
+\[
+ H^{\mathrm{even}}
+   =\frac{R1\oplus R\Omega}{R(\epsilon1+u\Omega)},
+ \qquad H^{\mathrm{odd}}=dA,
+ \qquad (\epsilon,u)H^{\mathrm{odd}}=0.
+\]
+Both the vacuum and volume classes are nonzero.
+\end{proposition}
+\begin{proof}
+An even element $f+g\Omega$ is closed exactly when
+$d(uf-\epsilon g)=0$.
+Subtract the constant spatial coefficients of $f$ and $g$,
+leaving $f',g'$. Then $uf'=\epsilon g'$.
+Reduction modulo $\epsilon$ shows that $f'$ is divisible by
+$\epsilon$. Since neither parameter is a zero divisor,
+\[
+ f'=\epsilon h,\qquad g'=uh.
+\]
+
+Every coefficient of $h$ is a curl $b_q-a_p$.
+For example, integrate it with respect to $q$ and take $a=0$.
+This integration is continuous on the formal domain.
+Thus $f'+g'\Omega=D_\Omega(a\,dq+b\,dp)$.
+
+The remaining constant pair has the relation
+$\epsilon1+u\Omega$, obtained from $q\,dp$.
+Its quotient embeds in $R$ by
+\[
+ [a+b\Omega]\longmapsto ua-\epsilon b.
+\]
+The kernel before taking the quotient is exactly the submodule
+$R\cdot(\epsilon,u)\subset R^2$, by the same regular-sequence argument.
+The two classes map to $u$ and $-\epsilon$, so neither vanishes.
+
+An odd form $\alpha$ is closed exactly when its curl vanishes.
+Indeed the scalar and volume components of $D_\Omega\alpha$
+are its curl multiplied by $\epsilon$ and $u$.
+Closed one-forms on the polynomial or formal plane are exact.
+The odd boundaries are
+$u\,df-\epsilon\,dg$, precisely
+$(\epsilon,u)dA[[\epsilon,u]]$.
+\end{proof}
+
+Specializing this answer need not compute the cohomology of
+the specialized complex. At $u=0$, the differential is
+$\epsilon\delta$, and its degree-zero cohomology is
+$A[[\epsilon]]/\epsilon A[[\epsilon]]$.
+In particular $q$ survives there. It does not extend to an
+even class with nonzero $u$, because $D_\Omega q=u\,dq$.
+The vacuum--volume relation alone does not account for this
+failure of ordinary base change.
+
+\section{Hamiltonian operations}
+
+Let $\mathfrak h_\epsilon=A[[\epsilon]]/R_\epsilon1$ with
+bracket
+\[
+ \{f,g\}_\epsilon=\epsilon^{-1}(f\star g-g\star f).
+\]
+The numerator is divisible by $\epsilon$, so this bracket
+is integral. Write $\{f,g\}_0=f_qg_p-f_pg_q$ and
+$X_f=\{f,-\}_0$. The quantum derivation
+$\rho_f=\epsilon^{-1}\operatorname{ad}_\star f$ acts in
+every chain slot, giving an operator $L_f^C$.
+
+There is also a degree-minus-one insertion
+\[
+ h_f(a_0[a_1|\cdots|a_n])
+ =-\sum_{i=0}^n(-1)^i
+       a_0[a_1|\cdots|a_i|f|a_{i+1}|\cdots|a_n].
+\]
+On forms put $m_f=-df\wedge(-)$, also of degree minus one.
+Constants vanish in both operations.
+The brackets below are graded commutators of operators.
+
+\begin{lemma}\label{mht:lem:cyclic-cartan}
+The source and target operations satisfy
+\begin{align*}
+ [D_C,h_f]&=\epsilon L_f^C,& [B,h_f]&=0,&
+ [L_f^C,h_g]&=h_{\{f,g\}_\epsilon},\\
+ [D_\Omega,m_f]&=\epsilon L_{X_f},& [d,m_f]&=0,&
+ [L_{X_f},m_g]&=m_{\{f,g\}_0}.
+\end{align*}
+Moreover $[h_f,h_g]=[m_f,m_g]=0$.
+\end{lemma}
+\begin{proof}
+In $bh_f+h_fb$, every merger disjoint from the inserted $f$
+occurs twice with opposite signs. The two neighboring mergers
+leave the commutator with $f$ in each original slot.
+Their sum is $\epsilon L_f^C$.
+In $Bh_f+h_fB$, the inserted slot may occur on either side
+of the cyclic origin. These terms cancel in pairs.
+Inserting $f$ and $g$ in either order gives the same chain
+with opposite signs, proving $[h_f,h_g]=0$.
+
+A derivation applied to the insertion cancels against its
+application to the original slots. The remaining term inserts
+$\rho_f(g)$, giving the third source identity.
+For forms, substitute the coordinate formulas for $\delta$.
+They give $[\delta,-df\wedge]=L_{X_f}$.
+Exterior differentiation and two odd exterior multiplications
+anticommute, while Lie differentiation sends $dg$ to
+$d\{f,g\}_0$. These prove the target identities.
+\end{proof}
+
+The classical vector fields do not represent the quantum
+bracket strictly. Define
+\[
+ R(f,g)=\frac{\{f,g\}_\epsilon-\{f,g\}_0}{\epsilon},
+ \qquad F_1(f)=L_{X_f},\qquad F_2(f,g)=dR(f,g)\wedge(-).
+\]
+The difference of brackets starts at order $\epsilon^2$,
+so $R$ and $F_2$ are integral. Lemma~\ref{mht:lem:cyclic-cartan}
+gives
+\begin{equation}\label{mht:eq:cyclic-action-defect}
+ [D_\Omega,F_2(f,g)]
+   =[F_1(f),F_1(g)]-F_1(\{f,g\}_\epsilon).
+\end{equation}
+
+The ternary expression is the exterior differential of
+\[
+ \sum_{\mathrm{cyc}(f,g,k)}
+       \bigl(\{f,R(g,k)\}_0+R(f,\{g,k\}_\epsilon)\bigr).
+\]
+Multiplying the sum by $\epsilon$ gives the difference of
+the quantum and classical Jacobi identities. It is zero.
+There are no further terms, since the odd wedge operators
+$F_2$ anticommute.
+
+A nonconstant correction makes the binary operation visible.
+For $f=q^3/3$ and $g=p^4/4$,
+\[
+ \{f,g\}_\epsilon=q^2p^3+\tfrac12\epsilon^2p,
+ \qquad F_2(f,g)=\tfrac12\epsilon\,dp\wedge(-).
+\]
+For the two cubics $q^3/3,p^3/3$, the bracket correction is
+constant and $F_2$ vanishes. Their comparison homotopy below
+still has a nonzero secondary value.
+
+\section{Two integral comparison homotopies}
+
+The first comparison homotopy has degree minus one:
+\begin{equation}\label{mht:eq:cyclic-first-homotopy}
+ \mathcal K_f
+       =\epsilon^{-1}(\mathcal U h_f-m_f\mathcal U).
+\end{equation}
+At $\epsilon=0$, insertion under the normalized
+Hochschild--Kostant--Rosenberg map is multiplication by $-df$.
+Indeed its $n+1$ insertion positions cancel the extra factor
+in $(n+1)!$. Hence the numerator is divisible by $\epsilon$.
+The mixed and Cartan identities give
+\[
+ D_\Omega\mathcal K_f+\mathcal K_fD_C
+     =\mathcal U L_f^C-L_{X_f}\mathcal U,
+ \qquad d\mathcal K_f+\mathcal K_fB=0.
+\]
+
+The second comparison homotopy has degree minus two:
+\begin{equation}\label{mht:eq:cyclic-second-homotopy}
+ \mathcal K^{(2)}_{f,g}
+ =\epsilon^{-2}
+       \bigl(m_f\mathcal U h_g-m_g\mathcal U h_f
+               -m_fm_g\mathcal U-\mathcal U h_fh_g\bigr).
+\end{equation}
+Its numerator vanishes on positive-length chains by exterior
+degree. On a zero chain $a$ the numerator is
+\begin{align*}
+ &df\wedge\mathcal U_1(a[g])
+   -dg\wedge\mathcal U_1(a[f])-a\,df\wedge dg\\
+ &\hspace{35mm}-\mathcal U_2(a[f|g]-a[g|f]).
+\end{align*}
+Its constant coefficient is zero.
+
+The one-bar map is even
+in $\epsilon$. The linear coefficient of the two-bar
+integral operator is
+\[
+ (P_{01}-P_{02}+P_{12})/12.
+\]
+Interchanging the last two slots reverses both this operator
+and their exterior product. Antisymmetrization therefore
+kills the linear coefficient. Thus
+$\mathcal K^{(2)}$ is integral as well.
+
+We specify the higher-action signs by the completed
+Chevalley complex. Choose an enumeration $(f_a)$ of the
+nonconstant monomials, viewed in $\mathfrak h_\epsilon$,
+and let $c^a$ be the corresponding odd dual coordinates
+of degree one. Define $f^a_{bc}\in R_\epsilon$ by
+\[
+ \{f_b,f_c\}_\epsilon=\sum_a f^a_{bc}f_a
+ \quad\text{in }\mathfrak h_\epsilon.
+\]
+
+The scalar Chevalley differential is
+\[
+ d_{\mathrm{CE}}c^a=-\frac12\sum_{b,c}f^a_{bc}c^bc^c.
+\]
+An odd operator anticommutes with an odd variable from the
+coefficient factor. The coordinate sums denote continuous
+multilinear maps, coefficientwise in the parameters and in
+fixed finite arity.
+
+No finite basis is assumed. We use
+product completion over arities.
+
+\begin{theorem}\label{mht:thm:cyclic-hamiltonian-comparison}
+The operators $F_1,F_2$ and zero higher components define an
+$L_\infty$ action of $\mathfrak h_\epsilon$ on the mixed
+form complex. In the stated Chevalley convention,
+\[
+ \mathbb D_\Omega
+   =D_\Omega+d_{\mathrm{CE}}
+       +\sum_a c^a F_1(f_a)
+       -\sum_{a<b}c^ac^bF_2(f_a,f_b).
+\]
+The comparison
+\[
+ \mathbb U=\mathcal U-\sum_a c^a\mathcal K_{f_a}
+                    +\sum_{a<b}c^ac^b
+                              \mathcal K^{(2)}_{f_a,f_b}
+\]
+is an integral $L_\infty$ module quasi-isomorphism from the
+chain action. It preserves the circle operators.
+\end{theorem}
+\begin{proof}
+Temporarily invert $\epsilon$ and set
+\[
+ T=\epsilon^{-1}\sum_a c^a h_{f_a},\qquad
+ M=\epsilon^{-1}\sum_a c^a m_{f_a}.
+\]
+These have degree zero and raise Chevalley arity.
+Their exponentials therefore exist in the arity completion.
+The Cartan identities give
+\begin{align*}
+ e^T(D_C+d_{\mathrm{CE}})e^{-T}
+   &=D_C+d_{\mathrm{CE}}+\sum_a c^aL_{f_a}^C,\\
+ e^M(D_\Omega+d_{\mathrm{CE}})e^{-M}
+   &=\mathbb D_\Omega.
+\end{align*}
+
+On chains, the commutator with $d_{\mathrm{CE}}$ cancels
+the quadratic term because the action and insertion use
+the same bracket. On forms their discrepancy is $F_2$,
+with the sign displayed in the theorem.
+Further commutators vanish by anticommutation of the insertions.
+
+Conjugate the mixed comparison:
+\[
+ e^M\mathcal Ue^{-T}=\mathbb U.
+\]
+Expansion through arity two gives exactly
+\eqref{mht:eq:cyclic-first-homotopy} and
+\eqref{mht:eq:cyclic-second-homotopy}, with the tensor signs
+just specified. A term of arity $j$ sends a chain of length
+$n$ to a form of degree $n+j$. Hence every term of arity
+at least three vanishes on a surface.
+
+Conjugation gives $\mathbb D_\Omega^2=0$ and
+$\mathbb D_\Omega\mathbb U=\mathbb U\mathbb D_C$,
+where $\mathbb D_C$ is the first conjugated differential.
+All displayed components are integral, and their coefficient
+modules have no $\epsilon$-torsion. The identities therefore
+hold before localization. Their parts involving $u$ express
+compatibility with the circle differentials.
+
+The arity-zero comparison is a quasi-isomorphism by
+Theorem~\ref{mht:thm:integral-cyclic-comparison}.
+Its continuous cone contraction also contracts each fixed-arity
+space of continuous multilinear maps by postcomposition.
+The remaining differential raises arity. Perturbing in arity
+therefore contracts the full cone in the product completion.
+\end{proof}
+
+The cubic first homotopy on a zero chain is
+\[
+ \mathcal K_{q^3/3}(a)=-\frac{\epsilon}{12}a_{pp}\,dq.
+\]
+The second homotopy has an all-order vacuum formula:
+\begin{equation}\label{mht:eq:cyclic-secondary-vacuum}
+ \mathcal K^{(2)}_{f,g}(1)
+ =-\frac{\{f,g\}_\epsilon-\{f,g\}_0}{\epsilon^2}\Omega.
+\end{equation}
+
+To see this, the unit in the outer slot kills $P_{01}$
+and $P_{02}$. Put $s=t_2-t_1$. The even moments of the
+remaining operator are
+\[
+ 2\int_0^1(1-s)(\tfrac12-s)^{2j}\,ds
+       =\frac1{2^{2j}(2j+1)}.
+\]
+Together with $(2j)!$ and the two exterior derivatives,
+these are the coefficients of the divided Moyal commutator.
+The remaining terms of \eqref{mht:eq:cyclic-second-homotopy}
+subtract its classical coefficient.
+
+In particular,
+\[
+ \mathcal K^{(2)}_{q^3/3,p^3/3}(1)=-\Omega/6,
+ \qquad
+ \mathcal K^{(2)}_{q^3/3,p^3/3}(qp)=-qp\Omega/6.
+\]
+The second identity follows by the same terminating
+simplex integral with outer coefficient $qp$.
+These values persist at $\epsilon=0$ after the integral
+division has been made. A strict classical projection by
+itself does not retain this secondary comparison.
+
+\section{The integrated Hamiltonian kernel}
+
+The differential formulas also apply coefficientwise to smooth
+inputs. On an oriented real plane use the volume $\Omega$.
+For complex coordinates, include a fixed complementary
+antiholomorphic volume form in each integral. Assume compact
+support or periodicity, so integration by parts has no boundary
+term. These are formal identities in $\epsilon$.
+
+For scalar $f$ and matrix-valued inputs $a_0,a_1$, one has
+\begin{equation}\label{mht:eq:integrated-cyclic-kernel}
+ \int df\wedge\operatorname{Tr}\mathcal U_1(a_0[a_1])
+     =\int\Omega\,\operatorname{Tr}(a_0\rho_f(a_1)).
+\end{equation}
+The remaining form factors and orientations agree on the two
+sides.
+
+To prove the identity, give $f,a_0,a_1$ momenta $k,l,m$.
+Integration by parts imposes $k+l+m=0$.
+If $c=\pi(k,m)$, then $\pi(l,m)=-c$, and the left multiplier is
+\[
+ c\frac{2\sinh(-\epsilon c/2)}{-\epsilon c}
+     =\frac{2\sinh(\epsilon c/2)}{\epsilon}.
+\]
+This is the multiplier of $\rho_f$ on the right.
+The Taylor coefficients prove the equality, with matrix
+factors kept in their trace order.
+
+The comparison for matrix algebras first uses the Morita trace
+\[
+ a_0[a_1|\cdots|a_n]\longmapsto
+ \sum_{i_0,\ldots,i_n}
+ (a_0)_{i_0i_1}[(a_1)_{i_1i_2}|\cdots|(a_n)_{i_ni_0}].
+\]
+Each adjacent matrix product sums the same repeated index on
+both sides. Cyclic rotation preserves the closed index cycle.
+The map therefore commutes with $b$ and $B$, and it descends
+to normalized chains. In degree zero it sends $I_N$ to $N$,
+retaining the rank normalization.
+
+The integrated Hamiltonian insertion is a strictly cyclic
+cochain. Put
+\[
+ \tau(a)=\int\Omega\,\operatorname{Tr}a,
+ \qquad \phi_f(a_0,a_1)=\tau(a_0\star\rho_f(a_1)).
+\]
+
+Here the unit is allowed as a multiplier of compactly
+supported inputs. Integration by parts gives
+$\tau(a\star b)=\tau(ab)=\tau(b\star a)$ and
+$\tau\rho_f=0$. Since $\rho_f$ is a derivation,
+\[
+ \phi_f(a_0,a_1)+\phi_f(a_1,a_0)
+     =\tau\rho_f(a_0\star a_1)=0.
+\]
+The same derivation identity cancels its Hochschild boundary.
+The equality $\rho_f(1)=0$ gives normalization.
+
+Equation~\eqref{mht:eq:integrated-cyclic-kernel} expresses
+this cochain as a form pairing. For additional graded
+coefficients, the trace must be closed and $\rho_f$ must
+commute with their differential. The graded identities then
+have the corresponding Koszul signs.
+
+\section{Continuous duals and cyclicity}
+
+A general form current has no automatic cyclicity property.
+We make the dual convention explicit. Let $C^n(A_\epsilon)$
+be the coefficientwise continuous $R_\epsilon$-multilinear
+functionals on $A_\epsilon^{n+1}$ which vanish when a bar
+input is $1$. Define the scalar transposes by
+\[
+ (b\phi)(c)=\phi(bc),\qquad (B\phi)(c)=\phi(Bc).
+\]
+They have degrees $1,-1$ and satisfy the mixed identities.
+
+In particular,
+\begin{align*}
+ (b\phi)(a_0,\ldots,a_{n+1})
+   ={}&\sum_{i=0}^{n}(-1)^i
+       \phi(a_0,\ldots,a_i\star a_{i+1},\ldots,a_{n+1})\\
+    &+(-1)^{n+1}\phi(a_{n+1}\star a_0,a_1,\ldots,a_n).
+\end{align*}
+For $n\geq1$ the other operator is
+\[
+ (B\phi)(a_0,\ldots,a_{n-1})
+   =\sum_{j=0}^{n-1}(-1)^{(n-1)j}
+       \phi(1,a_j,\ldots,a_{n-1},a_0,\ldots,a_{j-1}).
+\]
+Set $B=0$ on $C^0$.
+The completed scalar mixed complex is
+$(C^\bullet(A_\epsilon)[[u]],b+uB)$, with $|u|=2$.
+These transpose conventions fix the signs in its primitives.
+
+A continuous functional $\beta$ on forms gives
+\[
+ \Phi_\beta(a_0,\ldots,a_n)
+   =\langle\beta,\mathcal U_n(a_0[a_1|\cdots|a_n])\rangle.
+\]
+Transpose the two form operators by the same convention.
+The mixed identities for $\mathcal U$ give a map from this
+dual form complex to the scalar cochain complex.
+A closed dual element gives a total mixed cocycle.
+This assertion does not require products of distributions:
+each evaluation has smooth or formal inputs and one
+continuous functional.
+
+A scalar one-cochain is \emph{strictly cyclic} when
+$\Phi(a,b)=-\Phi(b,a)$. At $\epsilon=0$, the point current
+\[
+ \beta(a\,dq+b\,dp)=b(0)
+\]
+gives $\Phi_\beta(1,p)=1$ and $\Phi_\beta(p,1)=0$.
+Thus an arbitrary continuous current fails this condition.
+Smooth inputs equal to $1,p$ near the point give the same
+example with compact support.
+
+\begin{proposition}\label{mht:prop:all-order-current-cyclicity}
+For a coefficientwise continuous functional
+$\beta:\Omega_A^1[[\epsilon]]\to R_\epsilon$, the cochain
+$\Phi_\beta(a,b)=\beta(\mathcal U_1(a[b]))$ is strictly
+cyclic if and only if $\beta d=0$.
+\end{proposition}
+\begin{proof}
+The series $S(P)$ in \eqref{mht:eq:circle-onebar} is even.
+Interchanging the two coefficient slots therefore gives
+\[
+ \mathcal U_1(a[b])+\mathcal U_1(b[a])
+       =d\bigl(mS(P)(a\otimes b)\bigr).
+\]
+Annihilation of exact forms proves sufficiency at every
+parameter order. Conversely,
+$\mathcal U_1(1[b])=db$ and $\mathcal U_1(b[1])=0$.
+Cyclicity on this pair forces $\beta(db)=0$ for every $b$.
+\end{proof}
+
+\section{Point currents and two primitives}
+
+Let $\mathscr J'_0$ be the vector space of finite linear
+combinations of derivatives at $(q,p)=(0,0)$.
+A series in $\mathscr J'_0[[\epsilon]]$ may have unbounded
+derivative order as the parameter order increases.
+For $\gamma$ in this space define
+\[
+ \beta_\gamma=\gamma\delta,\qquad
+ \Phi_\gamma(a,b)=\gamma\delta\mathcal U_1(a[b]).
+\]
+This sends point functionals in degree zero to scalar
+one-cochains in degree one. It specifies no output-valued
+operation or multiplication of currents.
+
+\begin{lemma}\label{mht:lem:point-current-classification}
+Every coefficientwise finite point functional on one-forms
+which annihilates exact forms is uniquely $\beta_\gamma$.
+\end{lemma}
+\begin{proof}
+At one parameter coefficient write
+\[
+ \beta(a\,dq+b\,dp)
+   =A(\partial_q,\partial_p)a(0)
+       +B(\partial_q,\partial_p)b(0)
+\]
+for polynomials $A(X,Y),B(X,Y)$.
+The condition $\beta d=0$ is the polynomial identity
+$XA+YB=0$. Since $X,Y$ are relatively prime, there is a
+unique polynomial $C$ with
+\[
+ A=-YC,\qquad B=XC.
+\]
+
+Take $\gamma(f)=C(\partial_q,\partial_p)f(0)$ and apply
+the argument at every parameter coefficient.
+For smooth complex-coordinate currents, antiholomorphic
+derivative symbols may be included as polynomial coefficients.
+The same regular-sequence argument still applies.
+\end{proof}
+
+The two-bar comparison supplies a second scalar cochain.
+Let $\lambda_\gamma(c\Omega)=\gamma(c)$ and put
+\[
+ \Psi_\gamma(a_0,a_1,a_2)
+      =\lambda_\gamma\mathcal U_2(a_0[a_1|a_2]).
+\]
+It is a normalized cochain of degree two.
+The integral mixed map relates its Connes boundary to
+$\Phi_\gamma$.
+
+\begin{theorem}\label{mht:thm:point-current-two-primitives}
+The point cochains satisfy
+\[
+ b\Phi_\gamma=B\Phi_\gamma=0,\qquad
+ \epsilon\Phi_\gamma=b\gamma,\qquad
+ b\Psi_\gamma=0,\qquad B\Psi_\gamma=\Phi_\gamma.
+\]
+Consequently
+\begin{equation}\label{mht:eq:point-current-primitives}
+ (b+uB)\gamma=\epsilon\Phi_\gamma,
+ \qquad (b+uB)\Psi_\gamma=u\Phi_\gamma.
+\end{equation}
+The class $[\Phi_\gamma]$ is nonzero exactly when the
+constant $\epsilon$ coefficient of $\gamma$ is nonzero.
+The resulting copy of $\mathscr J'_0$ in degree-one mixed
+cohomology is annihilated by both $\epsilon$ and $u$.
+\end{theorem}
+\begin{proof}
+Direct differentiation of the one-bar formula gives
+\[
+ \delta\mathcal U_1(a[b])
+       =mP S(P)(a\otimes b)
+       =\frac{a\star b-b\star a}{\epsilon}.
+\]
+This proves $\epsilon\Phi_\gamma=b\gamma$.
+Associativity gives $b^2\gamma=0$, and the scalar coefficient
+module has no $\epsilon$-torsion. Hence $b\Phi_\gamma=0$.
+Both unit evaluations vanish, so
+$B\Phi_\gamma(a)=\Phi_\gamma(1,a)=0$.
+
+On a chain of length three,
+$\mathcal U_2 b=\epsilon\delta\mathcal U_3=0$.
+Transposing proves $b\Psi_\gamma=0$.
+On a chain $a[b]$, the second mixed identity gives
+\[
+ (B\Psi_\gamma)(a,b)
+   =\lambda_\gamma d\mathcal U_1(a[b])
+   =\gamma\delta\mathcal U_1(a[b])
+   =\Phi_\gamma(a,b).
+\]
+The middle equality uses
+$d(a\,dq+b\,dp)=(b_q-a_p)\Omega$.
+This proves the two independent primitives in
+\eqref{mht:eq:point-current-primitives}.
+
+In total degree one a boundary can only come from a scalar
+zero-cochain, since cochain degrees and powers of $u$ are
+nonnegative. Modulo $\epsilon$, its Hochschild boundary
+vanishes because $A$ is commutative.
+If the constant coefficient $\gamma_0$ is nonzero, choose
+a polynomial $f$ with $\gamma_0(f)\ne0$ and a polynomial
+$g$ with $\partial_pg=f$.
+Then $\Phi_{\gamma_0}(q,g)=\gamma_0(f)\ne0$.
+Thus $\Phi_\gamma$ cannot be a boundary.
+
+Conversely, if $\gamma=\epsilon\gamma_1$, then
+$\Phi_\gamma=b\gamma_1$ is a mixed boundary.
+The assignment of a class therefore depends exactly on
+$\gamma_0$ and embeds $\mathscr J'_0$ as stated.
+The two displayed primitives prove its annihilation by
+each parameter.
+\end{proof}
+
+For $\gamma=\operatorname{ev}_0$, the normalizations are
+\[
+ \Phi_\gamma(q,p)=1,\qquad
+ \Phi_\gamma(q^3,p^3)=\tfrac32\epsilon^2,\qquad
+ \Psi_\gamma(1,q,p)=\tfrac12.
+\]
+The first primitive uses a zero-cochain and multiplication
+by $\epsilon$. The second uses a two-cochain and the actual
+Connes operator. They have different degrees and remain
+distinct constructions. Neither identifies this scalar
+current with a geometric normal residue or a closed field.
+
+\section{Transport by a quantum shear}
+
+A nonlinear coordinate motion tests the comparison homotopy.
+For $f=q^3/3$,
+\[
+ \rho_f=q^2\partial_p+\frac{\epsilon^2}{12}\partial_p^3.
+\]
+Its two terms commute. The corresponding quantum flow is
+\[
+ \Phi_t(a)=e^{t\epsilon^2\partial_p^3/12}a(q,p+tq^2).
+\]
+The exponential terminates on each polynomial input, and
+formal inputs are treated coefficientwise in the specified
+completion. Since $\rho_f$ is a derivation, $\Phi_t$ is a
+Moyal automorphism.
+
+Its value on a cubic is
+\[
+ \Phi_t(p^3)=(p+tq^2)^3+\tfrac12t\epsilon^2.
+\]
+Ordinary pullback alone would omit the last term.
+
+Let $\phi_t^*$ be the classical pullback on forms, and
+let $\Phi_t$ act in each chain slot. Define
+\begin{equation}\label{mht:eq:cyclic-flow-homotopy}
+ \mathcal H_t=\int_0^t\phi_{t-s}^*\mathcal K_f\Phi_s\,ds.
+\end{equation}
+For polynomial inputs, each parameter coefficient of the
+integrand is polynomial in the flow parameter. For formal
+inputs this holds after fixing the coordinate coefficient too.
+Integration of these coefficients and the first homotopy
+identity give
+\[
+ \mathcal U\Phi_t-\phi_t^*\mathcal U
+       =D_\Omega\mathcal H_t+\mathcal H_tD_C.
+\]
+
+Indeed differentiating $\phi_{t-s}^*\mathcal U\Phi_s$
+with respect to $s$ gives
+$\phi_{t-s}^*(\mathcal U L_f^C-L_{X_f}\mathcal U)\Phi_s$.
+The mixed differentials commute with both flows.
+Integration supplies the two endpoints and proves the formula.
+For several Hamiltonian motions the second comparison
+homotopy remains part of their compatibility data.
+
+\section{A logarithmic torus}
+
+The same kernel has a global example without choosing
+logarithms. Let $A=\mathbb C[x^{\pm1},y^{\pm1}]$, and put
+\[
+ D_x=x\partial_x,\qquad D_y=y\partial_y,\qquad
+ \alpha=d\log x,\qquad\beta=d\log y.
+\]
+Define its formal product on Laurent monomials by
+\[
+ x^ay^b\star x^cy^d
+    =e^{\epsilon(ad-bc)/2}x^{a+c}y^{b+d}.
+\]
+Bilinearity of the exponent proves associativity.
+
+The constant Laurent coefficient is a cyclic trace: only
+opposite modes contribute, and their alternating pairing is
+zero. Replace $\partial_q,\partial_p$ by $D_x,D_y$ in
+\eqref{mht:eq:circle-comparison}.
+The commuting derivations give the same mixed identities
+globally, without logarithmic functions in the algebra.
+
+The undeformed diagonal Koszul resolution of this Laurent
+algebra is the localization of the polynomial diagonal
+resolution. It proves the Hochschild comparison, and the
+same completed filtration argument proves the mixed
+quasi-isomorphism. Each parameter coefficient has finite
+Laurent support. The exponential is now a formal parameter
+series, rather than a terminating polynomial expression.
+
+After inverting $\epsilon$ and then completing in $u$,
+consider the Laurent mode $(m,n)\in\mathbb Z^2$.
+The form differential on this mode is
+\[
+ D_{m,n}=\epsilon\iota_{-nD_x+mD_y}
+                    +u(m\alpha+n\beta)\wedge.
+\]
+For a nonzero mode put
+\[
+ H_{m,n}=\frac{-n\alpha+m\beta}{\epsilon(m^2+n^2)}\wedge.
+\]
+
+Contraction with $-nD_x+mD_y$ evaluates the numerator to
+$m^2+n^2$. The two exterior multiplication operators
+anticommute. Therefore
+\[
+ D_{m,n}H_{m,n}+H_{m,n}D_{m,n}=1.
+\]
+The zero mode has zero differential. The mixed cohomology is
+consequently
+\begin{equation}\label{mht:eq:torus-cyclic-cohomology}
+ \mathbb C((\epsilon))[[u]]\otimes\Lambda(\alpha,\beta).
+\end{equation}
+The homotopy preserves Laurent support and lowers the
+$\epsilon$ bound by one, so it is defined on the stated
+coefficientwise completion.
+
+The derivations $D_x,D_y$ are outer on the Laurent algebra.
+An inner derivation preserving the mode of each input could
+only use a zero-mode Hamiltonian. Distinct nonzero Hamiltonian
+modes shift each input to distinct output modes. A zero-mode Hamiltonian is
+constant and has zero commutator. Thus local Hamiltonian
+coordinates do not remove these global vector fields or
+the four zero-mode form classes.
+
+\section{The remaining source comparison}
+
+The circle map and its Hamiltonian homotopies are constructions
+for the associative coefficient algebra. The integrated
+Hamiltonian insertion gives a closed cyclic cochain under its
+trace and support hypotheses. A general distribution supplies
+a dual mixed cochain, with strict cyclicity governed by
+Proposition~\ref{mht:prop:all-order-current-cyclicity}.
+The point-current primitives are scalar operations on this
+specified recipient.
+
+To obtain the mixed field-theory comparison, one must supply
+a map from the geometric closed-source complex. It must
+preserve its differential, interaction, boundary restriction
+and polar collision operations. The scalar parameter
+primitives above neither choose this map nor fix its physical
+normalization. Tensoring with a normal complex preserves the
+mixed identities, but cyclic insertions still require a
+compatible normal pairing and the stated tangential cyclicity.
+
+For a general holomorphic symplectic surface, coordinate
+changes must carry the comparison and its higher homotopies
+through overlaps. A connection, deformation period and trace
+normalization enter this descent. The explicit shear supplies
+one transport homotopy, while the logarithmic torus exhibits
+global classes which a local calculation must retain.
+Neither example constructs the full descent or its supported
+chiral comparison.

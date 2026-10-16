@@ -1,0 +1,1651 @@
+\chapter{Quantum observables under elimination}
+\label{mht:ch:quantum-elimination}
+
+The eliminated curve modes have a quadratic action on the Neumann
+slice. Integrating them therefore determines both a determinant and
+an inverse quadratic form. The determinant can cancel against the
+ghost determinant while the inverse form still contracts observables.
+This is the first quantum information that a classical residual
+projection loses.
+
+We begin with that Gaussian calculation, then retain its contractions
+in the full observable map. Connected insertions give its higher
+components. Background variation gives a connection on them.
+The finite torus model and the first-jet boundary completion provide
+quantum master equations on explicit finite spaces. Their proofs also
+identify which additional constructions the smooth interacting theory
+requires.
+
+We then remove the curve and surface cutoffs on smooth
+Gaussian observables, retaining their source-antifield corrections.
+The continuum determinant uses an ordinary Sobolev space.
+
+\section{The determinant and the covariance}
+
+Use the cyclic Neumann algebra $E$, trace $\tau_E$, and residual
+projections $p_0,p_1$ of Chapter~\ref{mht:ch:polar-neumann}.
+Tensor with $\mathfrak g=\mathfrak{gl}_N(\mathbb C)$ and write
+\[
+ V=\ker p_0,\qquad W=\ker p_1,\qquad
+ d_J=\bar\partial+\eta_0\operatorname{ad}_J.
+\]
+Here $V$ consists of matrix-valued functions and $W$ of matrix-valued
+curve one-forms.
+
+Theorem~\ref{mht:thm:background-contraction} supplies
+the inverse $h_J:W\to V$. Put $h=h_0$ and
+\[
+ K_J(v,w)=\tau_E\operatorname{tr}(v d_Jw),\qquad
+ M_J=h d_J|_V.
+\]
+The forms $K_J$ are skew. On the physical slice
+$a=\eta_0J$, Proposition~\ref{mht:prop:exact-slice-action} identifies
+the eliminated quadratic action with $K_J$ and the gauge derivative
+with $M_J$.
+
+Choose a finite-dimensional subspace $V_K\subset V$ on which $K_0$
+is nondegenerate. Let $\pi_K$ be its $K_0$-orthogonal projection
+and let $K_{J,K}$ be the matrix of $K_J|_{V_K}$ in one fixed basis.
+Initially all expressions are formal in the entries of $J$ at zero.
+The loop parameter $\hbar$ is independent of this completion.
+
+\begin{proposition}\label{mht:prop:matched-gaussian}
+The compressed gauge derivative is
+\begin{equation}\label{mht:eq:matched-gauge-matrix}
+ M_{J,K}=\pi_KM_J|_{V_K}=K_{0,K}^{-1}K_{J,K}.
+\end{equation}
+
+Normalize the bosonic action $y^{\mathsf T}K_{J,K}x$ relative to its
+Gaussian at $J=0$. Normalize the ghost Gaussian with the same
+matrix $M_{J,K}$. With the reference
+orientations fixed, their vacuum factors are
+\[
+ Z_{\mathrm{bos}}=\det(M_{J,K})^{-1},\qquad
+ Z_{\mathrm{gh}}=\det(M_{J,K}),\qquad
+ Z_{\mathrm{bos}}Z_{\mathrm{gh}}=1.
+\]
+In the Wick convention with weight $e^{-y^{\mathsf T}K_{J,K}x/\hbar}$,
+the normalized bosonic expectation satisfies
+\begin{align}
+ \langle x_i y_j\rangle
+   &=\hbar(K_{J,K}^{-1})_{ij},\notag\\
+ \langle x_i y_j x_k y_l\rangle
+       -\langle x_i y_j\rangle\langle x_k y_l\rangle
+   &=\hbar^2(K_{J,K}^{-1})_{il}(K_{J,K}^{-1})_{kj}.
+ \label{mht:eq:matched-covariances}
+\end{align}
+\end{proposition}
+
+\begin{proof}
+Since $\bar\partial M_J=d_J$ on $V$, one has
+$K_0(v,M_Jw)=K_J(v,w)$. Pairing with every $v\in V_K$ and using
+the definition of $\pi_K$ proves
+\eqref{mht:eq:matched-gauge-matrix}. Its constant term is the
+identity. The block Hessian of the bosonic action has determinant
+equal to a fixed sign times $\det(K_{J,K})^2$. The square-root branch
+continued from the reference Gaussian gives the inverse determinant
+ratio. Berezin integration gives the ghost determinant ratio.
+
+For commuting source columns $F,G$, completing the square gives
+\[
+ \left\langle e^{F^{\mathsf T}x+G^{\mathsf T}y}\right\rangle
+       =\exp\bigl(\hbar F^{\mathsf T}K_{J,K}^{-1}G\bigr).
+\]
+Two derivatives give the covariance. Four derivatives give two
+pairings. Subtraction of the product of expectations leaves the
+crossed pairing in \eqref{mht:eq:matched-covariances}.
+\end{proof}
+
+These formulas define a formal complex Gaussian, without a choice of
+positive real contour. Numerical evaluation requires $K_{J,K}$ to
+be invertible. The artificial singularity of
+Example~\ref{mht:ex:compressed-pole} shows why invertibility of the
+full smooth operator does not settle that requirement for an
+arbitrary finite compression.
+
+\begin{example}\label{mht:ex:native-gaussian-pair}
+On the round sphere take
+\[
+ f=\frac{z^2}{(1+|z|^2)^2},\qquad
+ g=\frac{\bar z}{1+|z|^2}.
+\]
+Both have zero $p_0$ projection. With $r=|z|^2$, polar integration
+gives
+\[
+ \tau_E(f\bar\partial g)
+       =-\kappa\int_0^\infty\frac{dr}{(1+r)^4}
+       =-\frac\kappa3.
+\]
+Thus on their span
+\[
+ K_{0,K}=\kappa\begin{pmatrix}0&-1/3\\1/3&0\end{pmatrix},
+ \qquad \langle x_1y_2\rangle=\frac{3\hbar}{\kappa}.
+\]
+The combined vacuum is one and this covariance is nonzero.
+
+For a background-dependent example put
+\[
+ v=\frac r{1+r}-\frac12,\qquad
+ u=\frac{zr}{(1+r)^2}.
+\]
+The two polar matrices on $(v,u)$ are
+\[
+ \kappa^{-1}\bigl(\tau_E(v_i\bar\partial v_j)\bigr)
+    =\begin{pmatrix}0&1/6\\-1/6&0\end{pmatrix},\qquad
+\kappa^{-1}\bigl(\tau_E(\eta_0v_iv_j)\bigr)
+    =\begin{pmatrix}1/12&0\\0&0\end{pmatrix}.
+\]
+
+The nonzero entry of the second matrix is the integral
+$\int_0^\infty(r/(1+r)-1/2)^2(1+r)^{-2}\,dr=1/12$.
+The other entries vanish by angular weight.
+
+Tensor with $\mathfrak{gl}_2$ and take $J=j\operatorname{diag}(1,-1)$.
+In the order $E_{11},E_{12},E_{21},E_{22}$, let $G$ be the trace
+matrix and let $L=\operatorname{ad}_J$. Direct multiplication gives
+\begin{equation}\label{mht:eq:matrix-gaussian-inverse}
+ \begin{gathered}
+ M_{J,K}=\begin{pmatrix}1&0\\L/2&1\end{pmatrix},\qquad
+ K_{0,K}=\kappa\begin{pmatrix}0&G/6\\-G/6&0\end{pmatrix},\\
+ K_{J,K}^{-1}=\kappa^{-1}
+       \begin{pmatrix}0&-6G^{-1}\\6G^{-1}&3LG^{-1}\end{pmatrix}.
+ \end{gathered}
+\end{equation}
+Although $\det M_{J,K}=1$, the last block has entries
+$6j/\kappa$ and $-6j/\kappa$. The covariance remembers the background.
+\end{example}
+
+The inverse quadratic form also has a smooth domain independent of
+finite compression. Let $U\subset\mathbb R^2$ be an oriented surface
+patch with coordinates $(s,t)$ and let $J:U\to\mathfrak g$ be smooth.
+For smooth compactly supported maps $\phi,\gamma:U\to W$, define
+\[
+ F_\phi(x)=\int_U\tau_E\operatorname{tr}(x\phi)\,ds\,dt,
+ \qquad
+ G_\gamma(y)=\int_U\tau_E\operatorname{tr}(y\gamma)\,ds\,dt
+\]
+and
+\[
+ C_J(\phi,\gamma)=\int_U\tau_E\operatorname{tr}
+                   \bigl((h_{J(s,t)}\gamma)\phi\bigr)\,ds\,dt.
+\]
+These covectors are represented by the cyclic pairing.
+
+\begin{proposition}\label{mht:prop:smooth-gaussian-observables}
+The generating rule
+\[
+ \mathcal P_J e^{F_\phi+G_\gamma}
+       =e^{\hbar C_J(\phi,\gamma)}
+\]
+defines a normalized Gaussian functional on polynomials in the
+displayed linear observables. Each Wick coefficient is continuous
+on the smooth test spaces with a common compact surface support.
+\end{proposition}
+
+\begin{proof}
+The equation $d_Jh_J\gamma=\gamma$ identifies $h_J\gamma$ with the
+inverse kinetic form on these covectors. The background Green map
+is continuous, with seminorm bounds uniform on compact matrix sets.
+The image of $J$ on a common compact surface support is such a set.
+Continuity of multiplication and the polar trace therefore proves
+continuity of $C_J$. Every polynomial coefficient is a finite sum
+of products of this bilinear form.
+\end{proof}
+
+The surface delta distribution has been paired with tests before
+evaluation. The curve inverse still uses the global Green map.
+Products of coincident local insertions require a further extension
+of this domain.
+
+\section{Finite BV integration}
+
+Let $\mathcal F=\mathcal F'\oplus\mathcal F''$ be a finite-dimensional
+graded symplectic complex with pairing of degree $-1$, split into
+symplectic subcomplexes. Assume $\mathcal F''$ is acyclic. A cyclic
+strong deformation retract onto $\mathcal F'$ fixes a gauge-fixing
+Lagrangian in $\mathcal F''$ on which the free quadratic action is
+nondegenerate. Fix compatible constant reference semidensities.
+Integration on this Lagrangian, denoted $\mathcal I$, is the
+coefficientwise Gaussian integral, including Berezin integration
+in odd coordinates.
+
+Write $\Delta,\Delta'$ for the degree-one BV Laplacians on the two
+spaces. The odd bracket is normalized by
+\begin{equation}\label{mht:eq:quantum-product-identity}
+ \Delta(fg)=(\Delta f)g+(-1)^{|f|}f\Delta g
+                              +(-1)^{|f|}\{f,g\}.
+\end{equation}
+The constant semidensity identifies functions with semidensities.
+An even \emph{master weight} is an element $U$ of the integration
+domain satisfying $\Delta U=0$. For $U=e^{I/\hbar}$ this is
+\[
+ \frac12\{I,I\}+\hbar\Delta I=0.
+\]
+The weight $e^{-S/\hbar}$ corresponds to $I=-S$ in this convention.
+
+We use polynomial observables completed in $\hbar$ and in a positive
+interaction parameter, with polynomial coefficients at each
+interaction order. Alternatively, interactions of field degree at
+least three use the completed field algebra
+$\widehat{\operatorname{Sym}}(\mathcal F^\vee)[[\hbar]]$.
+In the latter case the connected expansion is finite at each fixed
+field degree and loop order. These are perturbative completions.
+An analytic integration cycle requires its own convergence conditions.
+
+\begin{proposition}\label{mht:prop:normalized-bv-pushforward}
+Finite BV integration satisfies $\Delta'\mathcal I=\mathcal I\Delta$.
+Let $I=I_0+I_{\mathrm{int}}$ be a degree-zero action with free
+quadratic part $I_0$ and no negative powers of $\hbar$.
+Require $I_{\mathrm{int}}$ to have positive interaction order in the
+polynomial completion, or field degree at least three in the field
+completion. For the master weight $U=e^{I/\hbar}$, assume
+$U'=\mathcal I(U)$ has invertible leading coefficient after the
+chosen Gaussian normalization, and put
+\begin{equation}\label{mht:eq:normalized-bv-map}
+ D=\hbar U^{-1}\Delta U,\qquad
+ D'=\hbar(U')^{-1}\Delta'U',\qquad
+ p(f)=(U')^{-1}\mathcal I(Uf).
+\end{equation}
+Then $D^2=(D')^2=0$, $D1=D'1=0$, $p1=1$, and $D'p=pD$.
+Successive normalized integrations compose when each uses the
+effective weight produced by the preceding integration.
+\end{proposition}
+
+\begin{proof}
+The Laplacian splits into retained and eliminated terms. Retained
+derivatives commute with the integral. Each eliminated term is an
+integrated total derivative. It vanishes by Gaussian integration by
+parts in even coordinates and by the Berezin derivative identity in
+odd coordinates.
+
+This proves the Stokes relation and implies $\Delta'U'=0$.
+The exponential weights give
+$D=\{I,-\}+\hbar\Delta$ and
+$D'=\{I',-\}'+\hbar\Delta'$, where $U'=e^{I'/\hbar}$ is
+interpreted in the same perturbative Gaussian domain. These
+operators preserve the stated observable completions. Conjugating
+the square-zero Laplacians proves the differential identities, and
+\[
+ D'p(f)=\hbar(U')^{-1}\Delta'\mathcal I(Uf)
+       =\hbar(U')^{-1}\mathcal I\Delta(Uf)=pD(f).
+\]
+For two integrations put $U_1=\mathcal I_1U$ and
+$U_2=\mathcal I_2U_1$, so the two intermediate factors cancel in
+\[
+ U_2^{-1}\mathcal I_2\bigl(U_1U_1^{-1}\mathcal I_1(Uf)\bigr)
+       =U_2^{-1}\mathcal I_2\mathcal I_1(Uf).
+\]
+All identities are coefficientwise in the declared perturbative
+domain.
+\end{proof}
+
+In \eqref{mht:eq:normalized-bv-map}, $U^{-1}\Delta U$ denotes
+conjugation of operators. It is not multiplication by $U^{-1}\Delta(U)$.
+For this finite symplectic splitting, the perturbative pushforward
+is a quasi-isomorphism. Homological perturbation gives its inverse
+and homotopy.\footnote{Cattaneo--Mnev,
+\emph{BV pushforward as a quasi-isomorphism}, Theorem~5.1 and
+Corollary~5.2, \href{https://arxiv.org/abs/2605.30558v2}{arXiv:2605.30558v2}.}
+The eliminated acyclic complex and the coefficient completion are
+part of this theorem's hypotheses.
+
+For a free propagator $P$, include the factor $1/2$ in the contraction
+operator $\partial_P$. Normalize its sign by the free Stokes identity
+\[
+ (Q'+\hbar\Delta')\,\pi e^{\hbar\partial_P}
+       =\pi e^{\hbar\partial_P}(Q+\hbar\Delta),
+\]
+where $\pi$ restricts to retained fields and $Q,Q'$ are the free
+differentials. It follows by commuting $Q$ through the exponential
+and using the contraction identity.
+
+If an interaction $I$ obeys
+$(Q+\hbar\Delta)e^{I/\hbar}=0$, its effective interaction is
+\begin{equation}\label{mht:eq:finite-effective-interaction}
+ I'=\hbar\log\bigl(\pi e^{\hbar\partial_P}e^{I/\hbar}\bigr).
+\end{equation}
+The same intertwining proves the effective master equation.
+The logarithm selects connected graphs. A graph with $v$ interaction
+vertices and $e$ contractions has power $\hbar^{e-v+1}$, its loop
+number, and coefficient $1/|\operatorname{Aut}\Gamma|$ times its
+contracted vertex tensor. Thus \eqref{mht:eq:finite-effective-interaction}
+constructs interaction vertices as well as the unary differential.
+
+\begin{example}\label{mht:ex:scalar-effective-action}
+Let $a\ne0$ and set
+\[
+ S(x,y)=\frac{a+\lambda y}{2}x^2+gxy^2+\frac b2y^2.
+\]
+Treat $g,\lambda$ formally. Completing the square and dividing the
+$x$ integral by its reference Gaussian gives
+\begin{equation}\label{mht:eq:scalar-effective-action}
+ S_{\mathrm{eff}}(y)=\frac b2y^2
+       -\frac{g^2y^4}{2(a+\lambda y)}
+       +\frac\hbar2\log\frac{a+\lambda y}{a}.
+\end{equation}
+
+The conditional mean and variance are
+\[
+ p_y(x)=-\frac{gy^2}{a+\lambda y},\qquad
+ p_y(x^2)-p_y(x)^2=\frac\hbar{a+\lambda y}.
+\]
+
+The rational correction in \eqref{mht:eq:scalar-effective-action}
+is its tree series. The logarithm is its one-loop series. Evaluation
+at the conditional mean recovers the former and loses the latter
+and the variance.
+\end{example}
+
+\section{Connected insertions and their compositions}
+
+Let $p:A\to B$ be the normalized map of
+Proposition~\ref{mht:prop:normalized-bv-pushforward}. The observable
+algebras $A,B$ are graded commutative and $\hbar$-adically complete.
+Their differentials satisfy
+\begin{equation}\label{mht:eq:observable-product-identity}
+ D(fg)=(Df)g+(-1)^{|f|}fDg+(-1)^{|f|}\hbar\{f,g\},
+\end{equation}
+and the corresponding identity with primes on $B$.
+
+For homogeneous inputs $f_1,\ldots,f_n$, let
+$\operatorname{Part}(n)$ denote the partitions of $\{1,\ldots,n\}$.
+Order each block by its input order and order blocks by their least
+element. The sign $\epsilon(\pi;f)$ is the Koszul sign of this
+reordering. Define the cumulant
+\begin{equation}\label{mht:eq:quantum-cumulants}
+ \kappa_n^p(f_1,\ldots,f_n)
+  =\sum_{\pi\in\operatorname{Part}(n)}
+     (-1)^{|\pi|-1}(|\pi|-1)!\,\epsilon(\pi;f)
+       \prod_{C\in\pi}p\left(\prod_{i\in C}f_i\right).
+\end{equation}
+
+\begin{theorem}\label{mht:thm:quantum-cumulants}
+In the finite perturbative Gaussian domain, with observables having
+no negative powers of $\hbar$, one has
+$\kappa_n^p\in\hbar^{n-1}B$. Hence the maps
+\[
+ \Phi_n^p=\hbar^{1-n}\kappa_n^p
+\]
+are defined over the original quantum power-series ring.
+Their first component is $p$, and every higher component vanishes
+when an input is the unit.
+
+These maps give a coalgebra morphism for the degree-one coderivations
+whose unary parts are $D,D'$ and whose binary parts are
+$b_2(f,g)=(-1)^{|f|}\{f,g\}$. In particular,
+\begin{align}
+ D'\Phi_2^p(f,g)-\Phi_2^p(Df,g)
+       -(-1)^{|f|}\Phi_2^p(f,Dg)
+   =(-1)^{|f|}\bigl(p\{f,g\}-\{pf,pg\}'\bigr).
+ \label{mht:eq:binary-quantum-ward}
+\end{align}
+For successive normalized integrations $p,q$, their full Taylor
+series compose: $\Phi^{qp}=\Phi^q\circ\Phi^p$.
+\end{theorem}
+
+\begin{proof}
+Introduce formal graded parameters $t_i$ with $|t_i|=-|f_i|$, so
+$F=\sum_i t_i f_i$ has degree zero. The partition formula is
+equivalent to
+\begin{equation}\label{mht:eq:connected-observable-generator}
+ \Phi^p(F)=\hbar\log p(e^{F/\hbar})
+       =\sum_{n\ge1}\frac1{n!}\Phi_n^p(F,\ldots,F).
+\end{equation}
+
+The logarithm retains connected components containing all marked
+observables. A connected graph with $n$ marks, $v$ interaction
+vertices and $e$ contractions has $e\ge n+v-1$. Its quantum power
+in the unscaled cumulant is $e-v$, proving divisibility by
+$\hbar^{n-1}$. Normalization removes components containing only
+interaction vertices.
+
+At fixed interaction order the inputs are
+polynomials, so the contributing contractions are finite. The
+field-completed alternative is finite at each specified field degree
+and loop order.
+
+For completeness, let $S^c(A)=\bigoplus_{n\ge1}S^n(A)$ be the
+conilpotent symmetric coalgebra. The coalgebra automorphism $\tau_A$
+whose Taylor coefficients are the products in $A$ sums over
+partitions. Its inverse is finite on each tensor length.
+
+Since $D$ has order at most two, its conjugated coderivation has only
+unary part $D$ and binary part $\hbar b_2$.
+The conjugate of $S^c(p)$ has Taylor coefficients
+\eqref{mht:eq:quantum-cumulants}. The relation $D'p=pD$ gives its
+coalgebra identity. Dividing the arity-$n$ identity by
+$\hbar^{n-1}$ gives the displayed normalized coderivations and
+their morphism. Direct subtraction of
+\eqref{mht:eq:observable-product-identity} before and after $p$
+also proves \eqref{mht:eq:binary-quantum-ward}.
+
+For a scalar mark $t1$, the generating function factors by
+$e^{t/\hbar}$. Its logarithm has no mixed coefficient with this
+mark, proving the unit assertion. Finally
+\[
+ e^{\Phi^p(F)/\hbar}=p(e^{F/\hbar})
+\]
+and substitution into the next logarithm proves composition,
+including every partition coefficient and Koszul sign.
+\end{proof}
+
+The quantum division is performed before specializing to a quotient
+by $\hbar^r$. Knowing an unscaled cumulant only modulo $\hbar^r$
+does not determine its divided component to that same precision.
+
+\begin{example}\label{mht:ex:gaussian-cumulants}
+For one even Gaussian coordinate $x$ with invertible stiffness $A$,
+\[
+ p_A(x^{2m})=(2m-1)!!(\hbar/A)^m,\qquad
+ p_A(x^{2m+1})=0.
+\]
+
+Its BV complex adjoins $\eta$ of degree $-1$, with
+$D(\eta f)=Axf-\hbar f'$ and $D(f)=0$. Gaussian integration by
+parts proves its Stokes identity. The first nonzero connected maps are
+\begin{equation}\label{mht:eq:composite-gaussian-cumulants}
+ \Phi_2(x,x)=A^{-1},\qquad
+ \Phi_3(x^2,x,x)=2A^{-2},\qquad
+ \Phi_n(x^2,\ldots,x^2)=2^{n-1}(n-1)!\hbar A^{-n}.
+\end{equation}
+The second formula is
+$\hbar^{-2}(p_A(x^4)-p_A(x^2)^2)$.
+For the last, expand
+$\log p_A(e^{t x^2})=-\tfrac12\log(1-2\hbar t/A)$.
+Thus the higher comparison remains nontrivial even when $p_A(x)=0$.
+\end{example}
+
+\section{Changing the covariance and lifting sources}
+
+Let $C^{ab}(J)$ be a symmetric matrix of formal functions of even
+parameters $J$. On polynomials in even coordinates $x^a$, define
+\[
+ p_J=\operatorname{ev}_{x=0}
+       \exp\left(\frac\hbar2 C^{ab}(J)\partial_a\partial_b\right).
+\]
+Repeated indices are summed. On each polynomial the exponential
+contains finitely many contractions. Write $d_{\mathrm{par}}$ for
+exterior differentiation in the parameters.
+
+\begin{proposition}\label{mht:prop:covariance-connection}
+The connection
+\begin{equation}\label{mht:eq:covariance-connection}
+ \nabla^{\mathrm W}=d_{\mathrm{par}}+
+       \frac\hbar2(d_{\mathrm{par}}C^{ab})\partial_a\partial_b
+\end{equation}
+is flat and obeys $d_{\mathrm{par}}(p_JF)=p_J\nabla^{\mathrm W}F$.
+Its transport from $J_0$ to $J_1$ is
+\begin{equation}\label{mht:eq:covariance-transport}
+ F_{J_1}=\exp\left[-\frac\hbar2
+          \bigl(C(J_1)-C(J_0)\bigr)^{ab}\partial_a\partial_b\right]
+          F_{J_0},\qquad p_{J_1}F_{J_1}=p_{J_0}F_{J_0}.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+All constant-coefficient contraction operators commute. Differentiate
+their exponential to obtain \eqref{mht:eq:covariance-connection}.
+The exterior derivative of its one-form is zero and its commutator
+square is zero, proving flatness. Multiplication of the two commuting
+exponentials proves \eqref{mht:eq:covariance-transport}.
+\end{proof}
+
+For $C(J)=(1+J)^{-1}$, the quadratic expectation has derivative
+$\partial_Jp_J(x^2)=-\hbar/(1+J)^2$.
+The connection accounts for this term. A varying field frame also
+has the cotangent source shift and the semidensity factor of
+\eqref{mht:eq:moving-antifield-shift} and
+\eqref{mht:eq:moving-density-action}. These data enter the same
+observable comparison, with different roles.
+
+A finite gauge quartet displays the source shift directly.
+Let $J$ be even, with conjugate $J^+$ of degree $-1$. Take even
+coordinates $x,b$ and odd coordinates $c,\bar c$ of degrees $1,-1$.
+For vector-valued coordinates all following expressions sum over
+components. Set
+\[
+ Q_0x=c,\qquad Q_0\bar c=b,\qquad Q_0b=Q_0c=Q_0J=0.
+\]
+
+Adjoin cotangent antifields $q^+$ of degree $-1-|q|$. Fix
+$\{q,q^+\}=1$, use left odd derivatives, and set
+\[
+ \Delta=\sum_q(-1)^{|q|}\partial_q\partial_{q^+},\qquad
+ S_0=\sum_i(x_i^+c_i-\bar c_i^+b_i).
+\]
+This convention gives $\{S_0,q\}=Q_0q$. For an invertible formal
+matrix $M(J)$ with $M(0)=1$, let
+\[
+ \Psi=\bar cM(J)x,\qquad
+ Q_0\Psi=bM(J)x-\bar cM(J)c.
+\]
+
+\begin{proposition}\label{mht:prop:quantum-source-lift}
+The canonical transformation $T=\exp(-\{\Psi,-\})$ has unit
+Berezinian, commutes with $\Delta$, and sends $S_0$ to
+$S_\Psi=S_0+Q_0\Psi$. Both actions satisfy the quantum master
+equation. For $D_\Psi=\{S_\Psi,-\}+\hbar\Delta$, the transformed
+source
+\begin{equation}\label{mht:eq:quantum-source-lift}
+ T(J^+)=J^+-\bar c M'(J)x
+\end{equation}
+is closed. For several parameters the corresponding term is
+$\bar c(\partial_{J_a}M)x$, and $T$ transports every polynomial
+in their conjugates.
+\end{proposition}
+
+\begin{proof}
+The cotangent lift of $Q_0$ squares to zero and has zero divergence,
+so $\{S_0,S_0\}=\Delta S_0=0$. The fermion has no antifields.
+Thus $\Delta\Psi=0$ and its Hamiltonian flow commutes with $\Delta$.
+The flow fixes fields and translates antifields, giving a triangular
+Jacobian with identity diagonal. The transformation of $S_0$
+terminates at its first commutator because $Q_0\Psi$ has no
+antifields. This proves the action and master equations.
+
+The derivative of $Q_0\Psi$ with respect to $J$ is
+$bM'x-\bar cM'c$. It equals $Q_0(\bar cM'x)$, whereas
+$\{S_\Psi,J^+\}=\partial_J(Q_0\Psi)$. Thus the Hamiltonian
+differential kills \eqref{mht:eq:quantum-source-lift}. Its Laplacian
+is zero as well. More generally, $T$ intertwines the two quantum
+differentials and is an algebra map. The original polynomials in
+the $J_a^+$ are closed, proving the last assertion.
+\end{proof}
+
+\section{A homotopy for a changing master weight}
+
+The source correction is a special case of a normalized variation.
+Keep a finite BV integration map $\mathcal I$ and the Laplacians
+fixed. Let $t$ be a parameter and let $R_t$ have degree $-1$.
+Assume a family of master weights satisfies
+\begin{equation}\label{mht:eq:master-weight-family}
+ \partial_tU=\Delta(R_tU),\qquad \Delta U=0.
+\end{equation}
+Use the normalized maps of \eqref{mht:eq:normalized-bv-map} and put
+$r_t=p_t(R_t)$. Stokes gives
+$\partial_tU'=\Delta'(r_tU')$.
+
+For multiplication $m_R$, set $L_R=[\Delta,m_R]$, the graded
+commutator. Define degree-zero operators
+\[
+ v_A=U^{-1}L_RU-m_{U^{-1}\partial_tU},\qquad
+ v_B=(U')^{-1}[\Delta',m_r]U'
+                         -m_{(U')^{-1}\partial_tU'}.
+\]
+An order-two operator commuted with multiplication has order at
+most one. Subtracting its value at $1$ therefore makes each $v$
+a derivation. Moreover
+$\partial_tD=[v_A,D]$ and $\partial_tD'=[v_B,D']$, by
+\eqref{mht:eq:master-weight-family} and $\Delta^2=(\Delta')^2=0$.
+
+\begin{proposition}\label{mht:prop:normalized-gauge-homotopy}
+The degree-minus-one map
+\[
+ h_t(f)=\hbar^{-1}\bigl(p_t(R_tf)-p_t(R_t)p_t(f)\bigr)
+\]
+satisfies
+\begin{equation}\label{mht:eq:normalized-gauge-homotopy}
+ \partial_tp_t+p_tv_A-v_Bp_t=D'h_t+h_tD,\qquad h_t1=0.
+\end{equation}
+If $R_t$ has no negative quantum powers in the perturbative Gaussian
+domain, the division by $\hbar$ is integral.
+\end{proposition}
+
+\begin{proof}
+On unnormalized weights put $K=\mathcal I m_R-m_r\mathcal I$.
+The Stokes relation gives
+\[
+ \mathcal I L_R-L_r\mathcal I=\Delta'K+K\Delta.
+\]
+
+Differentiate $p_t=(U')^{-1}\mathcal I U$. In
+$\partial_tp_t+p_tv_A-v_Bp_t$ the two logarithmic derivatives
+cancel, leaving the conjugate of the left side. The right side
+becomes $D'h_t+h_tD$ because
+$h_t=\hbar^{-1}(U')^{-1}KU$. Normalization gives $K(U)=0$.
+The numerator of $h_t$ is a two-input cumulant, so the integrality
+follows from Theorem~\ref{mht:thm:quantum-cumulants}.
+\end{proof}
+
+The homotopy retains higher insertions as well. Write $F_p$ for the
+undivided cumulant coalgebra map, and $\mathcal Q_A,\mathcal Q_B$
+for the coderivations with unary parts $D,D'$ and binary parts
+$\hbar b_2$.
+
+Let $S^c(p_t;h_t)$ apply $h_t$ to one factor and $p_t$ to every
+other factor, summed with the graded tensor signs. Define
+\[
+ \mathcal H_t=\tau_B^{-1}S^c(p_t;h_t)\tau_A.
+\]
+Derivations commute with the multiplication coalgebra maps.
+Conjugating
+\eqref{mht:eq:normalized-gauge-homotopy} gives
+\[
+ \partial_tF_p+F_p\widetilde v_A-\widetilde v_BF_p
+       =\mathcal Q_B\mathcal H_t+\mathcal H_t\mathcal Q_A,
+\]
+where $\widetilde v$ is the unary coderivation induced by $v$.
+The arity-$n$ coefficient of $\mathcal H_t$ is
+\begin{equation}\label{mht:eq:marked-quantum-homotopy}
+ (\mathcal H_t)_n(f_1,\ldots,f_n)
+        =\hbar^{-1}\kappa_{n+1}^{p_t}(R_t,f_1,\ldots,f_n).
+\end{equation}
+
+Indeed, differentiating a partition term replaces one block
+expectation by its connected expectation with $R_t$. The first
+summands enumerate partitions in which the block of $R_t$ is not
+a singleton. For a partition into $k$ other blocks, the $k$
+subtracted summands contribute $(-1)^k k!$, the coefficient of
+the additional singleton block. This proves the formula, with
+$R_t$ placed first to fix the odd signs.
+
+Connected graphs now have $n+1$ marks, so
+$(\mathcal H_t)_n\in\hbar^{n-1}B$. Its divided coefficients give
+the homotopy of the normalized higher maps. For two successive
+eliminations, the undivided coalgebra formula is
+\[
+ \mathcal H^{qp}=F_q\mathcal H^p+\mathcal H^qF_p,
+\]
+where $F_p,F_q$ are the cumulant coalgebra maps. This follows by
+differentiating $F_{qp}=F_qF_p$, and is associative under three
+eliminations.
+
+A higher parameter simplex requires a total master weight satisfying
+its parameter-dependent master equation. Separate paths alone do not
+provide that datum.
+
+\section{Finite surface actions and the torus}
+
+Let $\ell_n$ be the cyclic $L_\infty$ operations on
+$E_K\otimes\mathfrak{gl}_N$ obtained in
+Theorem~\ref{mht:thm:finite-cyclic-transfer}. Their degrees are $2-n$.
+For an oriented surface $U$, tensor with $\Omega^\bullet(U)$,
+placing surface forms first, and include $d_U$ in the unary
+differential. Write $\langle x,y\rangle=\tau_E\operatorname{tr}(xy)$
+for the internal pairing, extended with the tensor signs.
+
+For a total-degree-one superfield $\mathsf A$, define
+\begin{equation}\label{mht:eq:finite-surface-action}
+ S_{K,U}=\frac12\int_U\langle\mathsf A,(d_U+d_E)\mathsf A\rangle
+     +\sum_{n\ge2}\frac1{(n+1)!}
+          \int_U\langle\mathsf A,\ell_n(\mathsf A^{\otimes n})\rangle.
+\end{equation}
+The series is completed in field amplitude. Its odd symplectic form
+and cohomological vector field are
+\[
+ \omega_{K,U}=\frac12\int_U\langle\delta\mathsf A,\delta\mathsf A\rangle,
+ \qquad
+ Q\mathsf A=(d_U+d_E)\mathsf A
+       +\sum_{n\ge2}\frac1{n!}\ell_n(\mathsf A^{\otimes n}).
+\]
+
+\begin{proposition}\label{mht:prop:finite-surface-boundary}
+For closed $U$, or compact support in its interior,
+\eqref{mht:eq:finite-surface-action} satisfies the classical master
+equation. If $U$ has boundary, its cohomological vector field and
+field-space symplectic form satisfy
+\[
+ \iota_Q\omega_{K,U}=\delta S_{K,U}+\pi^*\alpha_{K,\partial U},
+ \qquad
+ \alpha_{K,\partial U}
+      =\frac12\int_{\partial U}\langle\mathsf A,\delta\mathsf A\rangle,
+\]
+where $\pi$ is boundary restriction. Internal transfer preserves
+surface support and commutes with restriction. The boundary terms
+cancel on an interface with opposite induced orientations.
+\end{proposition}
+
+\begin{proof}
+Cyclicity makes the variation of each $(n+1)$-field term equal to
+its Hamiltonian contraction with $\ell_n/n!$. The transferred
+identities give $Q^2=0$. Integration by parts in $d_U$ leaves the
+displayed boundary primitive. The other operations use only internal
+coefficients and commute with $d_U$ and restriction, with their
+Koszul signs. Stokes' theorem supplies the opposite interface signs.
+\end{proof}
+
+To obtain a finite quantum model, replace the surface complex by
+its specified Frobenius algebra
+\[
+ B=H^*(T^2;\mathbb C)=\Lambda(a,b),\qquad
+ |a|=|b|=1,\qquad \tau_B(ab)=1.
+\]
+Its differential and its other basis traces are zero. The shifted
+field space
+\[
+ \mathcal F_K=(B\otimes E_K\otimes\mathfrak{gl}_N)[1]
+\]
+has dimension $(8+16K)N^2$. The pairing
+$\tau_B\tau_E\operatorname{tr}$ induces an odd symplectic form.
+Fix a constant Darboux semidensity, its Laplacian $\Delta_K$, and
+the action $S_K$ obtained from \eqref{mht:eq:finite-surface-action}
+by replacing integration over $U$ with $\tau_B$.
+
+\begin{theorem}\label{mht:thm:finite-torus-qme}
+The action obeys
+\[
+ \frac12\{S_K,S_K\}+\hbar\Delta_KS_K=0.
+\]
+
+For $K\le L$, normalized finite BV integration of the acyclic
+complement of $\mathcal F_K$ in $\mathcal F_L$ gives $S_K$ with
+no loop correction to its action. These integrations compose.
+\end{theorem}
+
+\begin{proof}
+For a homogeneous Frobenius basis $(e_i)$, use right trace duals
+$\tau_B(e_je^i)=\delta_j^i$. Closing two inputs of a multiplication
+tensor inserts the Euler element
+\[
+ \mathfrak e_B=\sum_i(-1)^{|e_i|}e_ie^i.
+\]
+The basis $(1,a,b,ab)$ has dual $(ab,b,-a,1)$, so
+\begin{equation}\label{mht:eq:torus-euler-element}
+ \mathfrak e_B=ab-ab-ab+ab=0.
+\end{equation}
+
+Each vertex of $S_K$ factors into a multiplication tensor of $B$
+and an internal cyclic tensor. Applying $\Delta_K$ closes two
+inputs and therefore gives zero. The classical master equation
+follows from the transferred identities, proving the quantum one.
+
+The eliminated propagator is the identity on $B$ tensored with
+the internal complement homotopy. In a connected interaction graph,
+contract a spanning tree on the $B$ factors. The Frobenius dual-basis
+identity joins the multiplication tensors into one. Every remaining
+edge inserts $\mathfrak e_B$. Thus every graph with a loop vanishes.
+
+The surviving trees are exactly the nested transfer of
+\eqref{mht:eq:finite-nested-homotopy}. Normalizing the free Gaussian
+to one and using coefficientwise integration proves composition.
+\end{proof}
+
+Open contractions survive, since $\tau_B(ab)=1$. They enter the
+cumulant maps of Theorem~\ref{mht:thm:quantum-cumulants}.
+For a closed genus-$g$ surface, the Euler element of its cohomology
+algebra is $(2-2g)$ times the normalized top class. Thus the loop
+cancellation uses the chosen torus coefficient algebra.
+
+The full surface heat propagator imposes a second restriction.
+On a flat patch, let $L_a,L_b$ denote wedge multiplication by the
+parallel one-forms and let $\iota_a,\iota_b$ be the dual exterior
+contractions. Pure wedge multiplication on $\Lambda(a,b)$ has
+supertrace zero: positive-degree maps are strictly upper triangular,
+and the identity has supertrace $1-2+1=0$.
+
+Exterior contractions change this trace:
+\begin{equation}\label{mht:eq:surface-loop-detector}
+ \operatorname{Str}(L_aL_b\iota_b\iota_a)=1.
+\end{equation}
+Indeed, in the order $1,a,b,ab$ this operator is the projection
+onto $ab$. The adjoint surface differential in the full heat
+propagator contains such exterior contractions. The Euler argument
+therefore does not cancel every coefficient tensor of its loops.
+The spacetime kernels and the full graph sum are still needed to
+compute an anomaly.
+
+\section{The compensating first-jet field}
+
+The first-jet boundary in \eqref{mht:eq:neumann-pullback}
+permits an explicit enlargement of the gauge group. Work in the
+formal normalized-frame neighborhood of the polar connection $a$.
+Its frame $H(a)$ obeys $\bar\partial H=-aH$, $H(o)=I_N$, and its
+residual is $\mathcal J(a)=-j(H(a))$.
+For a formal smooth gauge $k$ whose amplitude-zero coefficient is
+an invertible constant matrix, put
+$k_0=k(o)$ and $k_1=j(k)$, without imposing $k_1=0$.
+Frame uniqueness gives
+$H(a^k)=k^{-1}H(a)k_0$, and hence
+\begin{equation}\label{mht:eq:affine-residual-gauge}
+ \mathcal J(a^k)=k_0^{-1}\mathcal J(a)k_0+k_0^{-1}k_1.
+\end{equation}
+Here the derivative of $k^{-1}$ is
+$-k_0^{-1}k_1k_0^{-1}$, fixing the affine sign.
+
+Introduce a degree-zero edge matrix $\phi$ with the same affine
+law. Then
+\[
+ X=\mathcal J(a)-\phi,\qquad
+ X^k=k_0^{-1}Xk_0,\qquad
+ \mathcal O_r^{\mathrm{rel}}=\frac1r\operatorname{tr}(X^r)
+ \quad(r\ge1).
+\]
+For formal $\phi$ of positive amplitude, the smooth global gauge
+$k=e^{-f_0\phi}$ has $k_0=I_N$, $k_1=-\phi$ and sends $\phi$ to
+zero. The subgroup preserving $\phi=0$ is exactly the Neumann
+group. The edge field compensates the translation part of
+$\operatorname{GL}_N(\mathbb C[\xi]/\xi^2)$. It is different from
+the coefficient $a_1$ of the boundary superconnection in
+\eqref{mht:eq:polar-bfv-bf}.
+
+The finite residual complex has even matrices $J,\phi$ and odd
+ghost matrices $c_0,c_1$, of degrees $1,1$. Its algebra is polynomial
+in even entries and exterior in odd entries. Define the degree-one
+derivation
+\begin{align}
+ QJ&=c_1+[J,c_0],& Q\phi&=c_1+[\phi,c_0],\notag\\
+ Qc_0&=-c_0^2,& Qc_1&=-c_0c_1-c_1c_0.
+ \label{mht:eq:first-jet-brst}
+\end{align}
+Matrix multiplication includes the exterior signs of ghost entries.
+The comparison with smooth fields sets $J=\mathcal J(a)$.
+
+\begin{theorem}\label{mht:thm:edge-brst-contraction}
+The derivation $Q$ squares to zero. In the polynomial coordinates
+\[
+ X=J-\phi,\qquad \gamma=c_1+[\phi,c_0]
+\]
+it is
+\[
+ QX=[X,c_0],\quad Qc_0=-c_0^2,\quad Q\phi=\gamma,\quad Q\gamma=0.
+\]
+
+Let $p$ kill $\phi,\gamma$, let $i$ include the retained
+Chevalley--Eilenberg complex
+\[
+ C_N=\mathbb C[X_{ij}]\otimes\Lambda((c_0)_{ij}),
+\]
+and let $N_{\mathrm{pair}}$ count the added variables. On positive
+pair degree set
+\[
+ h=N_{\mathrm{pair}}^{-1}\sum_{ij}
+                         \phi_{ij}\partial_{\gamma_{ij}},
+\]
+with $h=0$ in degree zero. Then $Qh+hQ=1-ip$.
+\end{theorem}
+
+\begin{proof}
+The graded Leibniz rule verifies $Q^2=0$ on the four matrix
+generators. It gives the displayed equations after the coordinate
+change, whose inverse is $J=X+\phi$,
+$c_1=\gamma-[\phi,c_0]$.
+With left odd derivatives, the anticommutator of
+$\sum\gamma_{ij}\partial_{\phi_{ij}}$ and
+$\sum\phi_{ij}\partial_{\gamma_{ij}}$ is
+$N_{\mathrm{pair}}$. The retained differential involves only
+$X,c_0$ and graded-commutes with the added homotopy. Division on
+each positive eigenspace proves the identity.
+\end{proof}
+
+The retained complex contains its full ghost cohomology. Replacing
+it by invariant functions of $X$ would discard part of this
+retraction. The first invariant has the particularly simple form
+\begin{equation}\label{mht:eq:relative-linear-source}
+ \mathcal O_1^{\mathrm{rel}}
+       =\kappa^{-1}\tau_E(\operatorname{tr}a)-\operatorname{tr}\phi.
+\end{equation}
+To see this, apply polar Stokes to
+$\bar\partial\log\det H=-\operatorname{tr}a$ and use
+$j(\log\det H)=-\operatorname{tr}\mathcal J(a)$.
+Both terms on the right of \eqref{mht:eq:relative-linear-source}
+have variation $\operatorname{tr}c_1$ under the enlarged gauge
+group, so their difference is closed.
+
+\section{The finite edge master equation and local primitives}
+
+Adjoin antifields $q^+$ of degree $-1-|q|$ to every coordinate
+of \eqref{mht:eq:first-jet-brst}. Use the cotangent bracket and
+Laplacian of Proposition~\ref{mht:prop:quantum-source-lift}. The
+cotangent Hamiltonian is
+\[
+ S_Q=\sum_q(-1)^{|q|}q^+Qq,\qquad \{S_Q,q\}=Qq.
+\]
+
+\begin{theorem}\label{mht:thm:finite-edge-qme}
+The coordinate change of Theorem~\ref{mht:thm:edge-brst-contraction}
+and its cotangent lift have Berezinian one. They split $S_Q$ into
+the retained cotangent Hamiltonian and
+\[
+ S_{\mathrm{pair}}=\sum_{ij}\phi_{ij}^+\gamma_{ij}.
+\]
+Both $\{S_Q,S_Q\}$ and $\Delta S_Q$ vanish. For every
+conjugation-invariant polynomial or formal field-only potential
+$V(X)$,
+\begin{equation}\label{mht:eq:finite-edge-qme}
+ \frac12\{S_Q+V,S_Q+V\}+\hbar\Delta(S_Q+V)=0.
+\end{equation}
+Normalized BV integration of the separated added pair leaves
+the retained potential unchanged.
+\end{theorem}
+
+\begin{proof}
+The even change $J=X+\phi$ is a determinant-one shear. The odd
+change $c_1=\gamma-[\phi,c_0]$ is triangular with identity diagonal.
+Their base Berezinian, and hence that of the cotangent lift, is one.
+The split differential determines $S_{\mathrm{pair}}$ and also gives
+$Q\gamma^+=\phi^+$, $Q\phi^+=0$.
+
+The cotangent master bracket is the lift of $2Q^2$, so vanishes.
+For the Laplacian, the adjoint action on $\mathfrak{gl}_N$ has
+trace zero. The first-jet Lie algebra has adjoint matrix
+\[
+ \begin{pmatrix}\operatorname{ad}_x&0\\
+                 \operatorname{ad}_y&\operatorname{ad}_x\end{pmatrix}
+\]
+at $x+\xi y$, and therefore also has trace zero. These identities
+give zero divergence for the even representation and ghost parts
+of \eqref{mht:eq:first-jet-brst}. The affine terms have zero
+divergence. Thus $\Delta S_Q=0$.
+
+The potential has no antifields, so $\Delta V=\{V,V\}=0$.
+Invariance gives $\{S_Q,V\}=0$, completing the master equation.
+
+On the added Lagrangian $\phi=\gamma^+=0$, the remaining
+coordinates $\phi^+,\gamma$ are odd and have the nondegenerate
+quadratic pairing $\phi^+\gamma$. Orient each Berezin integral by
+$\int\phi^+\gamma=1$ and normalize it by $\hbar$. Then
+$\hbar\int e^{\phi^+\gamma/\hbar}=1$.
+The product over entries is one and the retained weight factors out.
+\end{proof}
+
+The contraction also gives supported primitives in a precisely
+defined local algebra. On a surface $U$, take polynomial densities
+in finitely many derivatives of the retained fields, the added
+fields and all their antifields. For a derivative multi-index $I$,
+write $\phi_I,\gamma_I,\phi_I^+,\gamma_I^+$ for the added jets.
+Prolongation of the differential gives
+\[
+ Q\phi_I=\gamma_I,\quad Q\gamma_I=0,\quad
+ Q\gamma_I^+=\phi_I^+,\quad Q\phi_I^+=0.
+\]
+Let $N_{\mathrm{add}}$ count these four sorts of variables, and let
+$p$ kill them. Define
+\[
+ h_0=\sum_{I,i,j}
+   \left(\phi_{I,ij}\partial_{\gamma_{I,ij}}
+          +\gamma_{I,ij}^+\partial_{\phi_{I,ij}^+}\right),\qquad
+ h=N_{\mathrm{add}}^{-1}h_0
+\]
+on positive added degree, and set $h=0$ on degree zero.
+
+\begin{theorem}\label{mht:thm:supported-edge-primitive}
+On these densities and their quotient by total surface derivatives,
+one has $Qh+hQ=1-ip$. The maps preserve surface support and maximal
+derivative order. They act coefficientwise on formal series of
+finite jet order in each coefficient. They also extend to a fixed
+normal-current coefficient complex with defined products and total
+Koszul signs.
+Consequently a defined local residual $\mathcal A$ satisfying
+$Q\mathcal A=0$ and $p\mathcal A=0$ has primitive
+\begin{equation}\label{mht:eq:supported-edge-primitive}
+ \mathcal A=Q(h\mathcal A).
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Each field pair and each antifield pair contributes its Euler
+operator to $Qh_0+h_0Q$. The retained differential uses only retained
+jets, so graded-commutes with $h_0$. Division by the positive count
+proves the identity.
+
+A total derivative shifts each pair to the
+next jet pair and commutes with $h_0$ and the count. The identity
+therefore descends modulo total derivatives. No inverse differential
+operator or new derivative is introduced. Coefficient functions
+remain at the same surface point. This proves the support and
+derivative-order assertions.
+
+Tensoring with the specified coefficient
+complex preserves the identity. Apply it to the closed residual
+with zero retained projection to obtain
+\eqref{mht:eq:supported-edge-primitive}.
+\end{proof}
+
+For a compactly supported smooth density $\rho$,
+\[
+ \int_U\rho\,\operatorname{tr}c_1
+       =Q\left(\int_U\rho\,\operatorname{tr}\phi\right).
+\]
+The same homotopy leaves a retained component $p\mathcal A$
+untouched. Its coefficient and cohomology class must be computed
+in the retained theory.
+
+\section{A retained current anomaly}
+
+The first-jet boundary has an algebraic deformation that makes this
+last restriction concrete. Let
+\[
+ R=\mathbb C[\sigma,\nu],\qquad
+ B_\sigma=R[\zeta]/(\zeta^2-\sigma),\qquad
+ \tau(1)=0,\quad\tau(\zeta)=\kappa\in\mathbb C^\times.
+\]
+Here $\sigma,\nu$ have degree zero and $\zeta$ is a coefficient
+coordinate, distinct from a surface or current coordinate. The
+fiber at $\sigma=0$ is the first-jet Frobenius algebra.
+
+Let
+$\mathfrak g$ be a finite-dimensional complex Lie algebra with
+nondegenerate invariant symmetric form $\kappa_0$, and set
+$\mathfrak d_\sigma=\mathfrak g\otimes B_\sigma$.
+Writing $(x,v)=x+\zeta v$, its bracket and form are
+\begin{align}
+ [(x,v),(y,w)]&=([x,y]+\sigma[v,w],\ [x,w]+[v,y]),\notag\\
+ B_0((x,v),(y,w))&=\kappa\bigl(\kappa_0(x,w)+\kappa_0(v,y)\bigr).
+ \label{mht:eq:collision-current-form}
+\end{align}
+The subalgebra $\mathfrak l=R\otimes_{\mathbb C}\mathfrak g$,
+embedded through the coefficient $1$, is Lagrangian.
+Denote the Killing form by
+$K_{\mathfrak g}(x,y)=\operatorname{Tr}_{\mathfrak g}
+(\operatorname{ad}_x\operatorname{ad}_y)$.
+
+For an invariant level $k$, the affine current algebra has modes
+\[
+ [J_m(X),J_n(Y)]=J_{m+n}([X,Y])
+               +m\delta_{m+n,0}k(X,Y)\mathbf1.
+\]
+
+Induce its vacuum module from the one-dimensional module on which
+all nonnegative modes vanish and the central element acts as one.
+Ordered negative modes give its PBW basis.
+Choose a basis $t_a$ of $\mathfrak l$ with structure constants
+$f_{ab}{}^c$, and odd ghosts $c^a,b_a$ of degrees $1,-1$ with
+$b_a(w)c^b(w')\sim\delta_a^b/(w-w')$.
+The current coordinate is $w$ and the BRST residue is
+\begin{equation}\label{mht:eq:affine-brst-residue}
+ Q_{\mathrm{cur}}=\operatorname{Res}_w
+       \left({:}c^aJ_a{:}
+          -\frac12 f_{ab}{}^c{:}c^ac^bb_c{:}\right).
+\end{equation}
+
+\begin{proposition}\label{mht:prop:collision-current-level}
+The invariant level
+\begin{equation}\label{mht:eq:collision-current-level}
+ k_\sigma=\nu B_0-\frac12K_{\mathfrak d_\sigma}
+    =\begin{pmatrix}-K_{\mathfrak g}&\nu\kappa\kappa_0\\
+                    \nu\kappa\kappa_0&-\sigma K_{\mathfrak g}
+      \end{pmatrix}
+\end{equation}
+defines a universal affine vacuum algebra free over $R$.
+On its tensor product with the ghosts,
+$Q_{\mathrm{cur}}^2=0$ over $R$ and in every fiber.
+After $\sigma=a^2$ and inversion of $a$, the two separated levels are
+\[
+ k_\pm=\pm\frac{\nu\kappa}{2a}\kappa_0
+                         -\frac12K_{\mathfrak g}.
+\]
+\end{proposition}
+
+\begin{proof}
+The adjoint matrix of $(x,v)$ is
+\[
+ \begin{pmatrix}\operatorname{ad}_x&\sigma\operatorname{ad}_v\\
+                 \operatorname{ad}_v&\operatorname{ad}_x\end{pmatrix}.
+\]
+The trace of a product gives
+$K_{\mathfrak d_\sigma}((x,v),(y,w))
+=2K_{\mathfrak g}(x,y)+2\sigma K_{\mathfrak g}(v,w)$.
+This proves \eqref{mht:eq:collision-current-level} and its restriction
+$k_\sigma|_{\mathfrak l}=-K_{\mathfrak g}$. Invariance proves the
+Jacobi identity of the mode algebra. PBW and induction give the
+free vacuum module without inverting either parameter.
+
+Compute the two residues of the product of
+\eqref{mht:eq:affine-brst-residue} with itself. The current double
+pole contributes
+$\tfrac12k|_{\mathfrak l,ab}\operatorname{Res}{:}\partial_wc^ac^b{:}$.
+The terms containing a current and two ghosts cancel against the
+mixed contractions. The remaining single contractions cancel by
+the Lie Jacobi identity.
+
+The two ghost contractions give the
+adjoint trace, with contribution
+$\tfrac12K_{\mathfrak g,ab}\operatorname{Res}{:}\partial_wc^ac^b{:}$.
+Thus, in these conventions,
+\begin{equation}\label{mht:eq:retained-brst-square}
+ Q_{\mathrm{cur}}^2=\frac12
+       (k|_{\mathfrak l}+K_{\mathfrak g})_{ab}
+                     \operatorname{Res}{:}\partial_wc^ac^b{:}.
+\end{equation}
+The chosen level makes this zero.
+Finally the idempotents $(1\pm\zeta/a)/2$ have traces
+$\pm\kappa/(2a)$ and separate the two adjoint representations.
+They give the stated levels on the split fiber.
+\end{proof}
+
+At the bare level $\nu B_0$, the restriction to $\mathfrak l$
+vanishes and leaves the ghost term. For $\mathfrak g=\mathfrak{sl}_2$
+with $[h,e]=2e$, $[h,f]=-2f$, one has $K_{\mathfrak g}(h,h)=8$.
+Set $c^h=\eta_+w+\eta_-w^{-1}$ with independent odd coefficients.
+Then
+\[
+ \operatorname{Res}(\partial_wc^h)c^h=2\eta_+\eta_-,\qquad
+ Q_{\mathrm{cur}}^2=8\eta_+\eta_-\ne0.
+\]
+
+This polynomial in retained ghosts survives the projection that
+kills the added edge pairs. The zero-projection hypothesis of
+Theorem~\ref{mht:thm:supported-edge-primitive} therefore fails.
+The half-Killing level supplies the algebraic correction.
+
+Its polynomial dependence on $\nu$ does not identify $\nu$ with
+an inverse physical coupling at zero coupling. That normalization
+still requires the native field-theory comparison.
+
+\section{Smooth Gaussian Ward identities}
+
+The smooth functional of
+Proposition~\ref{mht:prop:smooth-gaussian-observables} is defined
+without a cutoff. We now obtain it from finite cyclic spaces, with
+control of background derivatives. This comparison concerns the
+quadratic complement in a prescribed smooth residual field.
+
+Use the staggered spaces $\widehat V_L$, projections
+$\widehat\Pi_L$, and operators $X_L$ of
+Chapter~\ref{mht:ch:angular-cutoffs}. Put
+\[
+ M_{J,L}=1+X_L\otimes\operatorname{ad}_J,\qquad
+ h_{J,L}=M_{J,L}^{-1}\widehat\Pi_Lh.
+\]
+The inverse exists for every finite matrix $J$. If
+$a\in\widehat V_L\otimes\mathfrak g$ and
+$\gamma\in W$, then
+\begin{equation}\label{mht:eq:staggered-pairing-inverse}
+ K_{J,L}(a,h_{J,L}\gamma)=\tau_E\operatorname{tr}(a\gamma).
+\end{equation}
+
+Indeed, $K_{J,L}(a,v)=K_0(a,M_Jv)$ and
+$\widehat\Pi_LM_Jh_{J,L}\gamma=\widehat\Pi_Lh\gamma$.
+Adjointness of the projection for $K_0$ proves the identity.
+Thus $h_{J,L}$ inverts the restricted kinetic form on the smooth
+covectors represented by this pairing.
+
+For the compactly supported tests $\phi,\gamma$ used above, define
+\[
+ C_{J,L}(\phi,\gamma)=\int_U\tau_E\operatorname{tr}
+                  \bigl((h_{J(s,t),L}\gamma)\phi\bigr)\,ds\,dt.
+\]
+All tests have common compact surface support. Backgrounds and
+variations range over bounded smooth sets, with the background
+values in a fixed compact subset of $\mathfrak g$.
+
+\begin{theorem}\label{mht:thm:smooth-ward-limit}
+At every fixed polynomial degree, the normalized Wick functionals
+\[
+ \mathcal P_{J,L}e^{F_\phi+G_\gamma}
+       =e^{\hbar C_{J,L}(\phi,\gamma)}
+\]
+converge to $\mathcal P_J$, rapidly in $L$ on the stated bounded
+sets. The convergence holds after every fixed finite number of
+background variations and surface derivatives.
+For fixed smooth matrix variations $A,B$,
+\begin{align}
+ \partial_Ah_J&=-h_J\eta_0\operatorname{ad}_A h_J,\notag\\
+ \partial_B\partial_Ah_J
+   &=h_J\eta_0\operatorname{ad}_B h_J\eta_0\operatorname{ad}_A h_J
+     +h_J\eta_0\operatorname{ad}_A h_J\eta_0\operatorname{ad}_B h_J.
+ \label{mht:eq:ordered-smooth-responses}
+\end{align}
+The same identities hold for $h_{J,L}$ and converge to these
+formulas. The matrices $A,B,J$ need not commute.
+\end{theorem}
+
+\begin{proof}
+Apply Theorem~\ref{mht:thm:uniform-staggered-inverse} to $h\gamma$.
+Its adapted Hilbert norms control ordinary Sobolev norms, and the
+polar pairing is continuous on the smooth core. For $s\geq3$,
+Sobolev multiplication and $\tau_E(\eta)=\kappa j(G\eta)$ give
+\[
+ |\tau_E\operatorname{tr}(v\phi)|
+       \leq C_s\|v\|_{H^s}\|\phi\|_{H^s}.
+\]
+
+Integration over the fixed compact support preserves the estimate.
+Surface derivatives act on the tests and on the finite matrix
+parameters of the inverse. The theorem already controls every
+fixed number of those derivatives. Each Wick coefficient is a
+finite sum of products of covariances, so it has the same rapid
+convergence, with a larger seminorm bound.
+
+Differentiating $M_JM_J^{-1}=1$ gives
+\[
+ \partial_A M_J^{-1}
+       =-M_J^{-1}(X\otimes\operatorname{ad}_A)M_J^{-1}.
+\]
+Use $X=h\eta_0$ and $h_J=M_J^{-1}h$ to obtain the first response.
+A second differentiation gives both ordered terms in
+\eqref{mht:eq:ordered-smooth-responses}. The finite projection is
+independent of $J$, so the same calculation applies at finite $L$.
+The parameter-derivative estimates identify their limits.
+\end{proof}
+
+For a finite list of smooth smearings, write $x_a,y_b$ for the
+resulting even linear observables and $C_{ab}(J)$ for their
+covariance without $\hbar$. On their polynomial algebra,
+\[
+ \mathcal P_J=\operatorname{ev}_0
+       \exp\left(\hbar\sum_{a,b}C_{ab}(J)
+                           \partial_{x_a}\partial_{y_b}\right).
+\]
+The corresponding Ward connection is
+\begin{equation}\label{mht:eq:smooth-ward-connection}
+ \nabla_A^{\mathrm W}=\partial_A+
+       \hbar\sum_{a,b}(\partial_AC_{ab})
+                           \partial_{x_a}\partial_{y_b},
+ \qquad
+ \partial_A(\mathcal P_JF)=\mathcal P_J\nabla_A^{\mathrm W}F.
+\end{equation}
+
+Mixed parameter derivatives and the constant-coefficient
+contraction operators commute. The connection is therefore flat
+for fixed parameter directions, as in
+Proposition~\ref{mht:prop:covariance-connection}. It is compatible
+with changing or enlarging the list of smearings, so defines a
+linear connection on the smooth cylindrical polynomial core.
+Its second-order term retains the contractions in the observable
+map. The connection is not a derivation of the ordinary product.
+
+\subsection{Surface cells and source antifields}
+
+The quadratic complement has no surface derivatives. This permits
+an independent finite surface regulator. Choose a bounded oriented
+coordinate rectangle $R\Subset U$ containing the support of the
+tests, and partition it into cells $Q_\nu$ of diameter at most $a$.
+Write $w_\nu=\int_{Q_\nu}d\sigma>0$ and choose
+$\sigma_\nu\in Q_\nu$.
+
+At each cell take the quartet of
+Proposition~\ref{mht:prop:quantum-source-lift}. Its even fields are
+$x_\nu,b_\nu$, and its odd fields $c_\nu,\bar c_\nu$ have degrees
+$1,-1$. Their components
+lie in the finite curve space and its dual. The reference kinetic
+pairing identifies $b_\nu$ with the second surface component.
+The quadratic action and gauge fermion are
+\begin{align}
+ S_{J,L,a}&=\sum_\nu w_\nu
+       \bigl(b_\nu M_{J(\sigma_\nu),L}x_\nu
+             -\bar c_\nu M_{J(\sigma_\nu),L}c_\nu\bigr),\notag\\
+ \Psi_{J,L,a}&=\sum_\nu w_\nu
+                \bar c_\nu M_{J(\sigma_\nu),L}x_\nu.
+ \label{mht:eq:surface-quartet-regulator}
+\end{align}
+
+Use ordinary Darboux brackets in each cell and the reference
+Berezin orientation for which, with $M=M_{J(\sigma_\nu),L}$,
+\[
+ \mathcal P(x_{\nu,i}b_{\nu,j})
+       =\hbar w_\nu^{-1}(M^{-1})_{ij},\qquad
+ \mathcal P(\bar c_\nu Bc_\nu)
+       =\hbar w_\nu^{-1}\operatorname{tr}(BM^{-1}).
+\]
+Different cells have no contractions. Smooth smearings use the
+weights $w_\nu$, so their covariance is the Riemann sum for
+$C_{J,L}$.
+
+Before evaluating the residual matrices at $J(\sigma_\nu)$,
+give each $J_\nu$ its ordinary cotangent antifield $J_\nu^+$.
+For a prescribed smooth direction $A$, put
+\[
+ J_A^+=\sum_\nu\langle A(\sigma_\nu),J_\nu^+\rangle,
+ \qquad A_{\nu,L}=X_L\otimes\operatorname{ad}_{A(\sigma_\nu)}.
+\]
+The gauge fermion has the closed source lift
+\begin{equation}\label{mht:eq:surface-quartet-source}
+ \mathcal L_{A,L,a}=J_A^+
+       -\sum_\nu w_\nu\bar c_\nu A_{\nu,L}x_\nu.
+\end{equation}
+The same cell weights occur in the action, fermion and source
+correction. Closure follows by the canonical transformation of
+Proposition~\ref{mht:prop:quantum-source-lift} before any limit.
+
+For a fixed finite parameter family $J+\sum_i z_iA_i$, the same
+formula uses the retained antifield $z_i^+$ in place of $J_{A_i}^+$.
+We keep this residual coefficient algebra fixed as the cells are
+refined.
+
+The quartet cylindrical core consists of polynomials in smoothly
+smeared $x,b,c,\bar c$ and unintegrated residual parameters and
+their antifields. Eliminated cotangent antifields and unsmeared
+coincident surface composites are excluded. Let
+$\mathcal P_J^{\mathrm q}$ be the Wick functional on this core
+with continuum covariance $C_J$, the displayed ghost signs, and
+the identity on residual variables. It extends $\mathcal P_J$.
+All formal moments are interpreted coefficientwise in $\hbar$.
+
+\begin{proposition}\label{mht:prop:joint-quartet-limit}
+On every fixed cylindrical polynomial, the finite functionals
+$\mathcal P_{J,L,a}$ converge to $\mathcal P_J^{\mathrm q}$ as
+$L\to\infty$ and $a\to0$. For fixed polynomial degree, every
+integer $r\geq0$ and bounded smooth sets, the error is at most
+\[
+ C_r\bigl((1+L)^{-r}+a\bigr).
+\]
+The estimate holds after any fixed finite number of background
+variations. Moments containing finitely many source primitives
+\eqref{mht:eq:surface-quartet-source} also have limits, with the
+same estimate. The finite Ward insertions define convergent
+operations on this core.
+\end{proposition}
+
+\begin{proof}
+For a smooth function $f$ on $R$, the mean value estimate gives
+\[
+ \left|\sum_\nu w_\nu f(\sigma_\nu)-\int_Rf\,d\sigma\right|
+       \leq a\,\operatorname{Area}(R)\sup_R|\nabla f|.
+\]
+Theorem~\ref{mht:thm:smooth-ward-limit} bounds the required
+derivatives of the finite covariance integrands uniformly in $L$.
+Its rapid curve estimate and this quadrature bound prove the
+claim for covariances. Fixed Wick polynomials have finitely many
+contractions, proving the first assertion and its differentiated
+versions.
+
+Each correction $\bar cA_{\nu,L}x$ has no internal contraction,
+and two such corrections cannot contract with each other.
+In a moment against a fixed cylindrical polynomial, both ends
+must therefore attach to external fields. The resulting open
+chains involve the bounded direction operator
+$\widehat\Pi_L(X\otimes\operatorname{ad}_A)\widehat\Pi_L$
+and the convergent inverse. Each source primitive contributes
+one cell weight. The contractions leave the weights of an
+ordinary Riemann sum. This proves the assertion for their
+products.
+
+For Ward insertions, differentiate the actual finite Gaussian.
+Its normalized determinant is one in every cell. For a test $F$
+independent of $J$, let $W_{A,L,a}=\partial_AS_{J,L,a}$. Then
+\begin{align}
+ \mathcal P_{J,L,a}(W_{A,L,a})&=0,\notag\\
+ \partial_A\mathcal P_{J,L,a}(F)
+       &=-\hbar^{-1}\mathcal P_{J,L,a}(W_{A,L,a}F),\notag\\
+ \partial_B\partial_A\mathcal P_{J,L,a}(F)
+       &=\hbar^{-2}\mathcal P_{J,L,a}(W_{B,L,a}W_{A,L,a}F).
+ \label{mht:eq:regulated-inserted-ward}
+\end{align}
+
+The last identity uses the linear dependence of $M_{J,L}$ on $J$.
+The differentiated left sides converge with the stated estimate,
+so the finite insertions on the right have those limits. This
+constructs the inserted operations without multiplying surface
+delta distributions after the limit.
+\end{proof}
+
+This regulator is local on the surface for the displayed quadratic
+action, and global on the curve. Extending it to nonlinear surface
+vertices requires their differential and local products as further
+data.
+
+\subsection{A source response with unit vacuum}
+
+The first four-mode space gives a nonzero inserted response.
+Use $(u,v,\mathcal Cv,\mathcal Cu)$ from
+\eqref{mht:eq:angular-first-background}, tensor with
+$(E_{11},E_{12},E_{21},E_{22})$, and put
+\[
+ H=\operatorname{diag}(1,-1),\qquad
+ A=X_1\otimes\operatorname{ad}_H,\qquad
+ M=1+\lambda A,\qquad
+ C=M^{-1}=1-\lambda A+\lambda^2A^2-\lambda^3A^3.
+\]
+Here $A^4=0$ and $\lambda$ is an even residual parameter.
+For the quartet action $S=bMx-\bar cMc$, normalize the Wick
+functional $\mathcal P$ with weight $e^{-S/\hbar}$ and the
+Berezin orientation used above. Adjoin cotangent antifields and
+write
+\[
+ S_{\mathrm{cot}}=\sum_i(x_i^+c_i-\bar c_i^+b_i),\qquad
+ D^- =\{S_{\mathrm{cot}}+S,-\}-\hbar\Delta.
+\]
+The source lift is
+$\mathcal L=\lambda^+-\bar cAx$ and satisfies $D^-\mathcal L=0$.
+
+Let $B$ take $v\otimes E_{12}$ to $u\otimes E_{12}$ and vanish
+on the other basis vectors. Set $F=\bar cBc$ and
+$W=bAx-\bar cAc$.
+
+\begin{proposition}\label{mht:prop:inserted-source-detector}
+The normalized moments satisfy
+\begin{equation}\label{mht:eq:inserted-source-detector}
+ \mathcal P(F)=\hbar\lambda,\qquad
+ \mathcal P(W)=0,\qquad
+ \mathcal P(WF)=-\hbar^2,\qquad
+ \partial_\lambda\mathcal P(F)
+       =-\hbar^{-1}\mathcal P(WF)=\hbar.
+\end{equation}
+The bare residual antifield obeys $D^-\lambda^+=W$, detected by
+$\mathcal P((D^-\lambda^+)F)=-\hbar^2$. The corrected lift is
+closed before integration.
+\end{proposition}
+
+\begin{proof}
+The four-mode chain gives
+\[
+ \operatorname{tr}(AC)=0,\qquad
+ \operatorname{tr}(BC)=\lambda,\qquad
+ \operatorname{tr}(ACBC)=-1.
+\]
+Berezin contraction, with the order of odd factors fixed, gives
+\[
+ \mathcal P((\bar cAc)(\bar cBc))
+   =\hbar^2\bigl(\operatorname{tr}(AC)\operatorname{tr}(BC)
+                         -\operatorname{tr}(ACBC)\bigr).
+\]
+The independent bosonic factor gives
+$\mathcal P((bAx)F)=\hbar^2\operatorname{tr}(AC)
+\operatorname{tr}(BC)$. Subtraction proves the moment formulas.
+Finally $D^-\lambda^+=W=D^-(\bar cAx)$ by differentiation of
+the gauge fermion, proving both closure statements.
+\end{proof}
+
+This is a test of the inserted cochain map. The ghosts remain
+contractible. It persists on the smooth cylindrical core for a
+constant background $J=\lambda H$: smear the two ghost factors
+by smooth surface tests whose pairing is one. The weight change
+from $u$ to $v$ permits exactly one $X$ step, with the same
+coefficient in every larger staggered space. Thus the nonzero
+response survives Proposition~\ref{mht:prop:joint-quartet-limit},
+although the vacuum determinant is one.
+
+\section{The regularized continuum determinant}
+
+The adapted Hilbert space controls the actual staggered inverse.
+For a determinant, use instead the ordinary constrained Sobolev
+space
+\[
+ V_s^{\mathrm{ord}}
+   =\{f\in H^{s+1}(C):j(f)=p_0(f)=0\},\qquad s\geq2.
+\]
+The operators agree on their common smooth vectors. On this
+space $X=h\eta_0$ gains one ordinary derivative.
+Fix a positive Hilbert norm on $\mathfrak g$ and put
+$A_J=X\otimes\operatorname{ad}_J$, so $M_J=1+A_J$.
+
+The Schatten ideal $\mathcal S_p$ consists of compact operators
+whose singular values have summable $p$th powers. The ideal
+$\mathcal S_1$ is the trace class. For an integer $p\geq1$ and
+$A\in\mathcal S_p$, the regularized Fredholm determinant is
+\begin{equation}\label{mht:eq:regularized-neumann-determinant}
+ \det\nolimits_p(1+A)
+  =\det\left((1+A)
+       \exp\left(\sum_{r=1}^{p-1}\frac{(-1)^r}{r}A^r\right)\right).
+\end{equation}
+The operator inside the determinant is identity plus trace class.
+The determinant on the right is the ordinary Fredholm determinant.
+
+\begin{theorem}\label{mht:thm:neumann-continuum-determinant}
+On $V_s^{\mathrm{ord}}$, the operator $X$ belongs to
+$\mathcal S_p$ for every real $p>2$. For every integer $n\geq3$,
+$A_J^n$ is trace class and $\operatorname{Tr}(A_J^n)=0$.
+For every integer $p\geq3$ and every finite matrix $J$,
+\[
+ \det\nolimits_p M_J=1.
+\]
+The trace-log series and all its finite matrix-parameter
+derivatives converge locally uniformly in $J$, in trace norm
+before taking the trace.
+\end{theorem}
+
+\begin{proof}
+The spherical Sobolev inclusion $H^{s+2}(C)\hookrightarrow
+H^{s+1}(C)$ has singular values
+$(1+\ell(\ell+1))^{-1/2}$ with multiplicity $2\ell+1$.
+Their $p$th powers are summable for $p>2$, since the tail is
+bounded by a multiple of $\sum_\ell\ell^{1-p}$.
+
+Factor $X$ through this inclusion. The Green operator gains
+one derivative, and its finite-rank corrections obey the same
+bound because first-jet evaluation is continuous at these indices.
+Fixed smooth corrections impose $j=p_0=0$. The ideal property
+therefore gives $X\in\mathcal S_p$ for $p>2$.
+
+The Schatten product inequality makes $X^3$ trace class, and
+bounded composition gives the same for every $X^n$, $n\geq3$.
+\footnote{B.~Simon, \emph{Notes on infinite determinants of Hilbert
+space operators}. Advances in Mathematics \textbf{24} (1977),
+244--273, \href{https://math.caltech.edu/SimonPapers/74.pdf}{\S\S1, 3, 6}.}
+
+Rotation is unitary on the ordinary constrained space and
+$U_\theta XU_\theta^{-1}=e^{i\theta}X$. Trace invariance gives
+\[
+ \operatorname{Tr}(X^n)=e^{in\theta}\operatorname{Tr}(X^n)=0
+ \qquad(n\geq3),
+\]
+where the last equality follows by choosing $e^{in\theta}\ne1$.
+The finite matrix factor can now be traced:
+\[
+ \operatorname{Tr}(A_J^n)=\operatorname{Tr}(X^n)
+                    \operatorname{tr}_{\mathfrak g}
+                         ((\operatorname{ad}_J)^n)=0.
+\]
+
+On this ordinary carrier $X$ is compact. A nonzero spectral
+value would bring an entire nonzero rotation circle into its
+spectrum, contradicting the compact-operator spectrum theorem.
+Thus $\|X^n\|^{1/n}\to0$. For $n\geq p\geq3$,
+\[
+ \|X^n\|_1\leq\|X^p\|_1\|X^{n-p}\|.
+\]
+The root test gives absolute trace-norm convergence, locally
+uniformly in $J$, of
+\begin{equation}\label{mht:eq:neumann-trace-log}
+ \sum_{n\geq p}\frac{(-1)^{n+1}}{n}A_J^n.
+\end{equation}
+
+A fixed number $k$ of matrix derivatives introduces at most
+$n(n-1)\cdots(n-k+1)$ ordered placements of directions. This
+polynomial factor leaves the root test unchanged.
+
+The scalar series defining the operator in
+\eqref{mht:eq:regularized-neumann-determinant} differs from one
+first at order $p$. Factoring out $A^p$ proves its trace-class
+property. Near $J=0$, its logarithmic determinant is the trace
+of \eqref{mht:eq:neumann-trace-log}, and hence zero.
+Analyticity of the regularized Fredholm determinant gives the
+identity for every $J$.
+\end{proof}
+
+For a matrix direction $U$, set $A_U=X\otimes\operatorname{ad}_U$.
+Differentiating the trace-log, using cyclicity only for trace-class
+products, gives
+\begin{equation}\label{mht:eq:neumann-determinant-connection}
+ d\log\det\nolimits_p M_J(U)
+   =(-1)^{p+1}\operatorname{Tr}
+                   (M_J^{-1}A_J^{p-1}A_U)=0.
+\end{equation}
+Indeed, the derivative series is
+$\sum_{n\geq p}(-1)^{n+1}\operatorname{Tr}(A_J^{n-1}A_U)$.
+Summing its geometric factor proves the formula. Each summand
+has positive rotation weight $n$ and zero trace. The same
+trace-norm estimates justify every further finite source
+derivative, retaining all ordered placements of its matrix
+directions.
+
+This determinant is a scalar entire function on the declared
+Hilbert family. It assigns no ordinary trace to $X$ or $X^2$,
+and does not define the full native quantum measure. The
+nonzero response in \eqref{mht:eq:inserted-source-detector}
+remains part of the observable comparison.
+
+\subsection{The two subtracted orders}
+
+A finite rotation-equivariant projector $\Pi$ gives
+$\operatorname{Tr}((\Pi A_J\Pi)^n)=0$ for every $n\geq1$ on
+its finite range. A trace-class regulator $R_\epsilon$ commuting
+with rotations likewise gives
+$\operatorname{Tr}(R_\epsilon A_J^n)=0$ for $n\geq1$ on
+$V_s^{\mathrm{ord}}\otimes\mathfrak g$. These prescriptions assign zero to
+the first two traces. Relaxing that normalization leaves the
+following precise freedom for constant backgrounds.
+
+\begin{proposition}\label{mht:prop:determinant-quadratic-normalization}
+Let $N\geq2$ and let $F(J)$ be a holomorphic germ vanishing at zero.
+Suppose its Taylor coefficients vanish in degrees at least three,
+and it is invariant under conjugation and central translation
+$J\mapsto J+cI_N$. Then, for a unique scalar $\beta$,
+\begin{equation}\label{mht:eq:determinant-quadratic-normalization}
+ F(J)=\beta\operatorname{tr}_{\mathfrak g}
+                         ((\operatorname{ad}_J)^2)
+     =\beta\bigl(2N\operatorname{tr}(J^2)
+                           -2(\operatorname{tr}J)^2\bigr).
+\end{equation}
+If $F(e^{i\theta}J)=F(J)$ also holds, then $\beta=0$.
+For $N=1$, central-translation invariance already gives $F=0$.
+\end{proposition}
+
+\begin{proof}
+The Taylor hypothesis makes $F$ a polynomial of degree at most
+two. On diagonal matrices it is symmetric. Matrices with distinct
+eigenvalues are dense, so conjugation invariance gives
+\[
+ F=a\operatorname{tr}J+b\operatorname{tr}(J^2)
+                               +c(\operatorname{tr}J)^2.
+\]
+
+Central translation forces $a=0$ and $c=-b/N$.
+On $\operatorname{End}(\mathbb C^N)$ one has
+$\operatorname{ad}_J=J\otimes1-1\otimes J^{\mathsf T}$.
+Taking the trace of its square proves the displayed formula,
+with $\beta=b/(2N)$. It is nonzero for some traceless $J$ when
+$N\geq2$, proving uniqueness. Rotation invariance kills this
+homogeneous term of degree two. In rank one every matrix is
+a central translate of zero.
+\end{proof}
+
+The hypotheses compare constant-background logarithms with
+$\log\det_3M_J=0$. They do not classify local cyclic counterterms
+depending on surface derivatives, normal sources or boundary
+fields.
+
+\section{The interacting comparison}
+
+The preceding constructions supply finite master weights, their
+connected observables, supported contractions of an added edge
+sector, and smooth Gaussian source limits. The regularized scalar
+determinant and the inserted Ward responses have separate roles.
+On the smooth theory the next equation involves the actual
+regulated interacting fields. For a positive-scale kernel, an
+effective interaction $I_t=\sum_{g\ge0}\hbar^g I_{g,t}$ must satisfy
+\[
+ QI_t+\frac12\{I_t,I_t\}_t+\hbar\Delta_tI_t=0.
+\]
+
+After lower orders have been solved, the next residual is closed
+for their linearized differential. Its primitive must lie in the
+prescribed local cyclic counterterm complex, with the same normal
+support and boundary data.
+
+\begin{problem}[The native quantum comparison]
+\label{mht:qn:native-quantum-elimination}
+Extend the smooth Gaussian regulator and source-antifield map to
+one regulator for the interacting Neumann theory and its nonminimal
+fields. Require compatibility with cyclic transfer and the polar
+trace, estimates uniform on compact residual-matrix sets, and
+Ward identities on the enlarged observable domain. Construct local
+cyclic extensions at every simultaneous source collision.
+Compute the retained interacting master residual and determine
+whether it has an allowed supported primitive.
+
+Construct the map from independently specified dynamical closed
+fields and descendants to these observables, preserving the normal
+marking, relative boundary operations and connected insertions.
+Compare its determinant, residual measure, boundary polarization,
+disk normalization and heat operator with an independently prepared
+state, including sewing. In the affine collision family, derive the
+level and its parameter normalization from the native regulator.
+\end{problem}
+
+The free kernels of Chapter~\ref{mht:ch:heat-contacts} determine the
+positive-scale contractions. The finite torus theorem determines
+the action after internal elimination on its specified coefficient
+algebra. The remaining state comparison requires a preparation on
+both sides of the elimination map.

@@ -1,0 +1,848 @@
+\chapter{Hamiltonian fields and continuous coefficients}
+\label{mht:ch:hamiltonian-coefficients}
+
+A Hamiltonian function can serve as a field on a symplectic surface
+or as an independent coefficient of another field. These uses have
+different differentials and support conditions. Their formal
+coordinates alone do not identify the resulting theories.
+
+Finite Hamiltonian jets provide explicit coefficient algebras.
+Their duals, quantizations and continuous cochains require separate
+constructions. The first issue is already visible before
+quantization: discarding a Hamiltonian jet reverses direction on its
+dual. For cochains, the output jet and the input jet must be allowed
+to differ.
+
+\section{Pointed Hamiltonians and their finite quotients}
+
+Work over $\mathbb C$ and put $\mathfrak m=(u,v)$ in
+$\mathbb C[[u,v]]$. Give this ring its $\mathfrak m$-adic topology,
+with discrete finite quotients. The Poisson bracket is
+\begin{equation}\label{mht:eq:ham-poisson}
+ \{f,g\}=\partial_uf\,\partial_vg-\partial_vf\,\partial_ug.
+\end{equation}
+The Hamiltonian vector field is $X_f=\{f,-\}$.
+Constants have zero vector field. Thus
+$\mathfrak h_{\mathrm{aff}}=\mathbb C[[u,v]]/\mathbb C$
+contains every formal Hamiltonian vector field on the plane.
+
+The pointed algebra is the Lie subalgebra
+$\mathfrak h=\mathfrak m^2$: its vector fields vanish at the origin.
+The filtration $F^a\mathfrak h=\mathfrak m^{a+2}$, for $a\geq0$,
+satisfies
+\[
+ \{F^a\mathfrak h,F^b\mathfrak h\}\subset F^{a+b}\mathfrak h.
+\]
+For $d\geq2$, write $W_r$ for homogeneous polynomials of degree $r$
+and set
+\[
+ \mathfrak h_d=\mathfrak m^2/\mathfrak m^{d+1}
+              =\bigoplus_{r=2}^dW_r.
+\]
+These coefficient Lie algebras have cohomological degree zero.
+Polynomial degree is a separate grading.
+
+\begin{proposition}\label{mht:prop:pointed-jets}
+The bracket descends to every $\mathfrak h_d$, and the degree
+projections are Lie maps. Moreover,
+\[
+ \mathfrak h=\varprojlim_d\mathfrak h_d,\qquad
+ \dim\mathfrak h_d=\frac{d(d+3)}2-2.
+\]
+Every $\mathfrak h_d$ is unimodular:
+$\operatorname{Tr}_{\mathfrak h_d}(\operatorname{ad}_x)=0$
+for every $x$.
+\end{proposition}
+
+\begin{proof}
+The bracket sends $\mathfrak m^r\times\mathfrak m^s$ into
+$\mathfrak m^{r+s-2}$. Hence $\mathfrak m^{d+1}$ is an ideal
+in $\mathfrak m^2$. Compatible jets determine one formal series,
+and summing $\dim W_r=r+1$ gives the dimension.
+
+Set $E=u^2/2$, $F=-v^2/2$ and $H=-uv$. Direct differentiation gives
+\[
+ \{H,E\}=2E,\qquad \{H,F\}=-2F,\qquad \{E,F\}=H.
+\]
+On $u^{r-j}v^j$, the $H$-weights are $r-2j$.
+They sum to zero. The operators $E,F$ move between distinct weights,
+so their traces vanish.
+
+Higher-degree Hamiltonians strictly raise
+polynomial degree and have triangular adjoint matrices with zero
+diagonal. Linearity proves unimodularity.
+\end{proof}
+
+The quadratic algebra is $\mathfrak{sl}_2$. Its presence means that
+$\mathfrak h$ is not pronilpotent. The ideal
+$\mathfrak m^3=F^1\mathfrak h$ is pronilpotent, since an iterated
+bracket of $r$ of its elements lies in $F^r\mathfrak h$.
+
+The first nonlinear layers exhibit this filtration. Put
+$v_i=u^{3-i}v^i$, for $0\leq i\leq3$, and
+$w_j=u^{4-j}v^j$, for $0\leq j\leq4$. Then
+\begin{align*}
+ \{H,v_i\}&=(3-2i)v_i,&
+ \{E,v_i\}&=iv_{i-1},&
+ \{F,v_i\}&=(3-i)v_{i+1},\\
+ \{v_i,v_j\}&=3(j-i)w_{i+j-1}.
+\end{align*}
+Terms outside the indicated index ranges vanish.
+
+Consequently $\mathfrak h_3=\mathfrak{sl}_2\ltimes W_3$ with
+abelian $W_3$. In $\mathfrak h_4$, the cubic brackets generate
+$W_4$, while $\{W_3,W_4\}=\{W_4,W_4\}=0$.
+For example, $\{u^3,v^3\}=9u^2v^2$ and
+$\{u^2v,uv^2\}=3u^2v^2$.
+
+Translations change the permitted quotients:
+\[
+ \{u,v^{d+1}\}=(d+1)v^d.
+\]
+The right side survives the degree-$d$ projection although
+$v^{d+1}$ does not. The same jet ideal therefore cannot be used
+after adjoining the linear Hamiltonians.
+
+\section{Residue duals and cotangent degrees}
+
+A continuous functional from $\mathfrak h$ to discrete $\mathbb C$
+annihilates some $\mathfrak m^{d+1}$. Its continuous dual is
+\[
+ P=\mathfrak h^\vee_{\mathrm{cont}}
+    =\varinjlim_d\mathfrak h_d^\vee
+    =\bigoplus_{a+b\geq2}\mathbb C\rho_{ab}.
+\]
+Here $\rho_{ab}$ extracts the coefficient of $u^av^b$.
+It can be represented by the principal part
+$u^{-a-1}v^{-b-1}\,du\,dv$, with residue convention
+\[
+ \operatorname{Res}_0(u^iv^j\rho_{ab})=\delta_{ia}\delta_{jb}.
+\]
+The algebraic direct sum has the discrete linear topology.
+The residue pairing with the formal product is continuous.
+
+Use the coadjoint convention
+$\langle\operatorname{ad}_f^*\rho,g\rangle
+=-\langle\rho,\{f,g\}\rangle$. The monomial bracket gives
+\begin{equation}\label{mht:eq:ham-coadjoint}
+ \operatorname{ad}_{u^iv^j}^*\rho_{ab}
+  =\bigl(j(a+1)-i(b+1)\bigr)
+       \rho_{a-i+1,b-j+1}.
+\end{equation}
+The expression is zero when an index is negative or the output
+degree is less than two. Indeed, pairing with $u^kv^\ell$ forces
+$k=a-i+1$ and $\ell=b-j+1$, and negating the bracket coefficient
+gives the displayed factor.
+
+\begin{example}\label{mht:ex:cotangent-jet-projection}
+The simultaneous degree projection
+\[
+ \mathfrak h_4\ltimes\mathfrak h_4^\vee[-1]
+ \longrightarrow
+ \mathfrak h_3\ltimes\mathfrak h_3^\vee[-1]
+\]
+is not a Lie map. Formula \eqref{mht:eq:ham-coadjoint} gives
+$\operatorname{ad}_{u^3}^*\rho_{22}=-9\rho_{03}$.
+The projection kills $\rho_{22}$ while preserving $u^3$ and
+$\rho_{03}$. Thus projecting their bracket differs from bracketing
+their projections.
+\end{example}
+
+The actual dual of $\mathfrak h_4\to\mathfrak h_3$ is the injection
+$\mathfrak h_3^\vee\to\mathfrak h_4^\vee$. One may retain both
+systems, with their opposite directions. They do not form the
+simultaneous inverse system in the example.
+
+This distinction also controls completion. For a countable basis
+$(e_i)$, the vectors $e_i$ tend to zero in the coordinate product.
+A continuous bilinear pairing of two such products cannot satisfy
+$B(e_i,e_j)=\delta_{ij}$, since $B(e_i,e_i)=1$.
+Reciprocal rescaling of two dual bases leaves their contractions
+unchanged. In particular, contracting the first $n$ diagonal
+terms still gives $n$. Weights alone do not define that infinite
+contraction.
+
+For a finite-dimensional Lie algebra $\mathfrak l$, two cotangent
+shifts have different Chevalley degrees. With
+$V[k]^j=V^{j+k}$ and
+$C^\bullet_{\mathrm{CE}}(\mathfrak g)
+=\operatorname{Sym}(\mathfrak g^\vee[-1])$, put
+\[
+ \mathfrak g_-=\mathfrak l\ltimes\mathfrak l^\vee[-1],
+ \qquad
+ \mathfrak g_+=\mathfrak l\ltimes\mathfrak l^\vee[1].
+\]
+The shifted dual is abelian, with its coadjoint action.
+The exterior ghost $c^a$ has degree one in both cases.
+The coordinate dual to the cotangent summand has degree zero for
+$\mathfrak g_-$ and degree two for $\mathfrak g_+$.
+
+For the former there is an isomorphism of commutative complexes
+\[
+ C^\bullet_{\mathrm{CE}}(\mathfrak g_-)
+   =C^\bullet_{\mathrm{CE}}
+      (\mathfrak l,\operatorname{Sym}\mathfrak l).
+\]
+Its differential is the adjoint Chevalley differential.
+
+Subtracting twice the cotangent weight from the degree in
+$C^\bullet_{\mathrm{CE}}(\mathfrak g_+)$ gives the same coordinate
+degrees. This is an explicit regrading. It is not an identification
+of the two original graded field theories.
+
+There is also a finite BV model whose antifields have degree $-2$.
+Choose $[e_a,e_b]=f^c{}_{ab}e_c$, ghosts $c^a$ of degree one and
+antifields $b_a$ of degree $-2$. With left odd derivatives, set
+\[
+ \Delta=\sum_a\partial_{b_a}\partial_{c^a},\qquad
+ S=-\frac12\sum_{a,b,c}b_a f^a{}_{bc}c^bc^c.
+\]
+The BV bracket is fixed by the second-order identity
+\[
+ \Delta(FG)=(\Delta F)G+(-1)^{|F|}F\Delta G
+                         +(-1)^{|F|}\{F,G\}.
+\]
+
+\begin{proposition}\label{mht:prop:finite-hamiltonian-bv}
+If $\mathfrak l$ is unimodular, then
+$\{S,S\}/2+\hbar\Delta S=0$. In particular this holds for every
+$\mathfrak h_d$ with its constant Berezinian.
+\end{proposition}
+
+\begin{proof}
+The Hamiltonian differential sends
+$c^a$ to $-f^a{}_{bc}c^bc^c/2$ and sends the $b$ variables by
+the cotangent lift. Jacobi gives its square zero.
+Equivalently, the coefficients of $\{S,S\}$ are the Jacobi sums,
+so they vanish. Direct contraction gives
+\[
+ \Delta S=\sum_k\operatorname{Tr}(\operatorname{ad}_{e_k})c^k.
+\]
+Unimodularity annihilates this term.
+\end{proof}
+
+The finite odd cotangent model has its declared coordinates,
+measure and differential. Its quantum master equation supplies no
+measure or diagonal contraction on an unrestricted infinite
+coefficient product.
+
+\section{Horizontal physical jets}
+
+Let $z=(z_1,z_2)$ be holomorphic coordinates on a flat chart $U$.
+Introduce independent formal variables $w_1,w_2$ and odd variables
+$\vartheta_1,\vartheta_2$ of degree one. Define
+\[
+ \mathcal J=\mathcal O(U)[[w_1,w_2]]
+               \otimes\Lambda(\vartheta_1,\vartheta_2),\qquad
+ \nabla=\sum_i\vartheta_i(\partial_{z_i}-\partial_{w_i}).
+\]
+The formal coefficients have the product topology, using compact-set
+holomorphic seminorms on each coefficient. Exterior degree is
+auxiliary and adds no dimension to the physical integration measure.
+
+Define $T=\exp(w\cdot\partial_z)$ coefficientwise, and let
+$j(f)=Tf$ be the formal Taylor series of $f(z+w)$.
+Let $p(F)$ evaluate the exterior-degree-zero part at $w=0$.
+Put $\delta=\sum_i\vartheta_i\partial_{w_i}$ and
+$\kappa=\sum_iw_i\iota_{\vartheta_i}$, where $\iota$ is the left
+exterior derivative. On $w$-degree $m$ and exterior degree $r$, set
+\[
+ h_0=-\frac{\kappa}{m+r}\quad(m+r>0),\qquad
+ h_0=0\quad(m+r=0),\qquad h=Th_0T^{-1}.
+\]
+
+\begin{proposition}\label{mht:prop:physical-spencer}
+These continuous maps satisfy
+\[
+ pj=1,\qquad \nabla h+h\nabla=1-jp,\qquad
+ h^2=hj=ph=0.
+\]
+The Taylor inclusion preserves the constant Poisson bracket and
+its formal Moyal product.
+\end{proposition}
+
+\begin{proof}
+The anticommutator $\delta\kappa+\kappa\delta$ is multiplication
+by $m+r$. Thus $h_0$ contracts $-\delta$ onto the constants in
+$w,\vartheta$. Differentiation gives
+$\nabla=T(-\delta)T^{-1}$, and evaluation at $w=0$ commutes with
+$T^{-1}$. Conjugating proves all the contraction identities.
+
+At fixed output $w$-degree, $T$ and $T^{-1}$ use finitely many
+coefficient derivatives. The operator $h_0$ raises that degree by
+one and lowers exterior degree by one. These facts prove continuity.
+Finally $\partial_{w_i}j(f)=j(\partial_{z_i}f)$.
+Applying this equality to each derivative proves the Poisson and
+Moyal assertions coefficientwise.
+\end{proof}
+
+For example,
+$j(z_1^2)=z_1^2+2z_1w_1+w_1^2$.
+Evaluation on arbitrary independent coefficients is not Poisson:
+\[
+ p\{w_1,w_2\}_w=1,\qquad \{p(w_1),p(w_2)\}_z=0.
+\]
+The contraction therefore compares geometric functions with the
+horizontal complex. Imposing that complex changes a theory of
+unconstrained independent coefficient fields. The same formulas
+work for smooth coefficients and the total mixed differential,
+with its tensor signs and coefficientwise support.
+
+\section{The abstract Rees algebra and the Moyal product}
+
+For a finite-dimensional Lie algebra $\mathfrak l$, let
+$R_N=\mathbb C[\hbar]/(\hbar^{N+1})$ and define
+\[
+ U_N(\mathfrak l)=
+ T_{R_N}(R_N\otimes\mathfrak l)/
+       (xy-yx-\hbar[x,y]).
+\]
+Here $N$ is parameter precision, unrelated to matrix rank.
+The Poincar\'e--Birkhoff--Witt map is the module isomorphism
+\[
+ \operatorname{sym}_N:
+ \operatorname{Sym}(\mathfrak l)\otimes R_N
+ \longrightarrow U_N(\mathfrak l),\qquad
+ x_1\cdots x_r\longmapsto
+ \frac1{r!}\sum_{\sigma\in S_r}x_{\sigma(1)}\cdots x_{\sigma(r)}.
+\]
+The source here has its ordinary symmetric product. Symmetrization
+is not generally an algebra map.
+
+For completeness, choose an ordered basis of $\mathfrak l$.
+Interchanging an inverted neighboring pair adds its shorter
+$\hbar$-bracket term. Reduction terminates by word length and then
+lexicographic order at fixed length. The only overlapping
+ambiguity has three factors, and its difference reduces to the
+Jacobi sum. Disjoint interchanges commute.
+Thus ordered monomials form a basis, over $R_N$ as well as over
+$\mathbb C[\hbar]$.
+
+PBW degree differs from powers of the augmentation ideal.
+For example, let $\mathfrak n$ be the Heisenberg Lie algebra
+with basis $x,y,z$, bracket $[x,y]=z$ and central $z$.
+In its ordinary enveloping algebra, the augmentation sends these
+three generators to zero. Its kernel $I$ contains
+$z=xy-yx\in I^2$, although $z$ has PBW degree one.
+The two filtrations therefore define different truncations.
+
+The coefficient limit is
+$U_\hbar(\mathfrak l)=\varprojlim_NU_N(\mathfrak l)$.
+Its PBW module is $(\operatorname{Sym}\mathfrak l)[[\hbar]]$:
+each coefficient is polynomial, but its degree can increase with
+parameter order. For example, $\sum_{n\geq0}\hbar^n x^n$
+belongs to this module and need not belong to
+$\mathbb C[[\hbar]][x]$.
+
+Quantizing functions on the symplectic plane gives a different
+operation. On $\mathbb C[u,v][[\hbar]]$, define
+\begin{equation}\label{mht:eq:ham-moyal}
+ f\star g=
+ \sum_{r\geq0}\frac{\hbar^r}{2^rr!}
+ \sum_{j=0}^r(-1)^j\binom rj
+  (\partial_u^{r-j}\partial_v^jf)
+  (\partial_u^j\partial_v^{r-j}g).
+\end{equation}
+For polynomial inputs the sum terminates. In formal $\hbar$
+series each coefficient still has finitely many contributions.
+The commuting constant bidifferential operators on three factors
+prove associativity by multiplying their exponentials.
+
+\begin{proposition}\label{mht:prop:pointed-moyal-failure}
+Quadratic Hamiltonians have
+$[f,g]_\star=\hbar\{f,g\}$. The full pointed polynomial subspace
+is not closed under $\hbar^{-1}[-,-]_\star$, even modulo constants:
+\begin{align*}
+ [u^3,v^3]_\star&=9\hbar u^2v^2+\frac32\hbar^3,\\
+ [u^3,v^4]_\star&=12\hbar u^2v^3+6\hbar^3v.
+\end{align*}
+\end{proposition}
+
+\begin{proof}
+Reversing the inputs multiplies the derivative-order-$r$ term by
+$(-1)^r$. The commutator retains precisely the odd orders.
+Orders at least three vanish on quadratics. For $u^a,v^b$ the
+surviving coefficient is
+\[
+ 2\frac{\hbar^r}{2^rr!}
+   \frac{a!}{(a-r)!}\frac{b!}{(b-r)!}\,u^{a-r}v^{b-r}.
+\]
+Taking $(a,b)=(3,3)$ and $(3,4)$ gives the formulas.
+The second normalized commutator retains the linear term
+$6\hbar^2v$ modulo constants.
+\end{proof}
+
+The Rees algebra of $\mathfrak h_d$ uses its specified truncated
+classical bracket. It does not make the pointed subspace of
+Moyal functions closed. A quantum Hamiltonian action retaining
+all polynomial functions belongs to the larger affine recipient.
+
+\section{The finite relative cochain comparison}
+
+Put $A=U_N(\mathfrak l)$ and let $M$ be an $A$-bimodule.
+The relative Hochschild cochains are
+\[
+ C^n_{\mathrm{HH}}(A/R_N,M)
+ =\operatorname{Hom}_{R_N}(A^{\otimes_{R_N}n},M).
+\]
+Their differential is
+\begin{align*}
+ (bF)(a_1,\ldots,a_{n+1})
+ ={}&a_1F(a_2,\ldots,a_{n+1})\\
+ &+\sum_{i=1}^n(-1)^i
+ F(a_1,\ldots,a_i a_{i+1},\ldots,a_{n+1})\\
+ &+(-1)^{n+1}F(a_1,\ldots,a_n)a_{n+1}.
+\end{align*}
+The coefficient ring is held fixed in every input.
+
+For $e\geq d$, abbreviate $A_{d,N}=U_N(\mathfrak h_d)$.
+Give $A_{d,N}$ its $A_{e,N}$-bimodule structure through the quotient.
+On
+\[
+ P^n_{e,d,N}=
+ \operatorname{Hom}_{\mathbb C}
+  (\Lambda^n\mathfrak h_e,\operatorname{Sym}\mathfrak h_d)
+       \otimes R_N,
+\]
+the coefficient action factors through $\mathfrak h_d$.
+Define
+\begin{align*}
+ (d_{\mathrm{CE}}\phi)(x_0,\ldots,x_n)
+ ={}&\sum_i(-1)^i x_i\cdot
+       \phi(x_0,\ldots,\widehat x_i,\ldots,x_n)\\
+ &+\sum_{i<j}(-1)^{i+j}
+ \phi(\{x_i,x_j\},x_0,\ldots,\widehat x_i,\ldots,\widehat x_j,
+                                                        \ldots,x_n).
+\end{align*}
+The bracket occupies the first slot in the second sum.
+
+\begin{theorem}\label{mht:thm:rectangular-rees}
+Output PBW symmetrization and input antisymmetrization define a
+quasi-isomorphism of $R_N$-complexes
+\[
+ \operatorname{Alt}_{e,d,N}:
+ C^\bullet_{\mathrm{HH}}(A_{e,N}/R_N,A_{d,N})
+ \longrightarrow (P^\bullet_{e,d,N},\hbar d_{\mathrm{CE}}),
+\]
+where
+\[
+ (\operatorname{Alt}_{e,d,N}F)(x_1,\ldots,x_n)
+ =\operatorname{sym}_N^{-1}
+   \sum_{\sigma\in S_n}\operatorname{sgn}(\sigma)
+       F(x_{\sigma(1)},\ldots,x_{\sigma(n)}).
+\]
+These maps commute with input refinement, output quotient and
+parameter reduction.
+\end{theorem}
+
+\begin{proof}
+Write $U=A_{e,N}$ and
+$\mathfrak l_N=R_N\otimes\mathfrak h_e$ with bracket
+$[x,y]_N=\hbar\{x,y\}$. Consider the bimodule complex
+$K_n=U\otimes_{R_N}\Lambda^n\mathfrak l_N\otimes_{R_N}U$.
+For $X=x_1\wedge\cdots\wedge x_n$, its boundary is
+\begin{align*}
+ \partial(a\otimes X\otimes b)
+ ={}&\sum_i(-1)^{i+1}
+ \bigl(ax_i\otimes X_{\widehat i}\otimes b
+       -a\otimes X_{\widehat i}\otimes x_i b\bigr)\\
+ &+\sum_{i<j}(-1)^{i+j}
+ a\otimes[x_i,x_j]_N\wedge X_{\widehat i\widehat j}\otimes b.
+\end{align*}
+Omitted exterior factors retain their order. The augmentation
+$K_0\to U$ is multiplication.
+
+Antisymmetrizing the middle factors maps $K$ into the relative bar
+resolution. The endpoint bar faces give the first sum.
+Adjacent internal faces cancel in pairs except for their
+commutators, giving the second sum. This proves the chain identity.
+The antisymmetrization is injective because $\mathfrak l_N$ is a
+free PBW summand and factorials are invertible.
+Thus $\partial^2=0$ follows from the bar identity.
+
+Filter $K_n$ by the two outer PBW degrees plus $n$.
+The associated graded is the diagonal Koszul resolution of
+$\operatorname{Sym}_{R_N}\mathfrak l_N$. Its diagonal differences
+are independent polynomial variables after a linear change of
+coordinates. They form a regular sequence even over the ring
+$R_N$ with nilpotents.
+
+A cycle has finite filtration degree.
+Lift a primitive of its leading symbol and subtract its boundary.
+Induction lowers the degree and proves exactness.
+
+Both $K$ and the relative bar are free bimodule resolutions.
+Their comparison lifts the identity and is a chain homotopy
+equivalence, by lifting successively through the surjective maps
+onto cycles. Applying bimodule Hom into $A_{d,N}$ therefore
+preserves that equivalence.
+
+The resulting coefficient action is the commutator with the image
+of $x$. For a symmetric polynomial $f$, PBW gives
+\[
+ [x,\operatorname{sym}_N(f)]
+      =\hbar\operatorname{sym}_N(x\cdot f).
+\]
+The internal bracket term has the same factor $\hbar$.
+Hence the differential is precisely $\hbar d_{\mathrm{CE}}$.
+All formulas use only the quotient Lie maps and the coefficient
+ring, so the three stated naturalities hold.
+\end{proof}
+
+The factor $\hbar$ is necessary. For the quadratic jet,
+$[H,E]=2\hbar E$, whereas $(d_{\mathrm{CE}}E)(H)=2E$.
+The Hochschild differential of $E$ becomes zero on the commutative
+special fiber. An unscaled Chevalley differential would not.
+
+The comparison is relative to $R_N$, and its formal limit is
+relative to $R=\mathbb C[[\hbar]]$. Already for $\mathfrak l=0$,
+the absolute continuous derivation $\partial_\hbar$ on $R$
+has no relative counterpart.
+
+\section{Continuous input and output cutoffs}
+
+Form the complete algebra and its quotient tensor powers
+\[
+ \mathcal A=\varprojlim_{d,N}A_{d,N},\qquad
+ \mathcal A^{\widehat\otimes_R n}
+      =\varprojlim_{d,N}A_{d,N}^{\otimes_{R_N}n}.
+\]
+The quotients are discrete, and no PBW-degree completion is taken
+at a fixed $(d,N)$. For $n=0$ the tensor source is $R$.
+Distinct indices in the tensor factors give the same limit,
+because a common upper bound is cofinal.
+
+\begin{definition}\label{mht:def:uniform-cochains}
+The continuous cochain space is
+\[
+ C^n_{\mathrm{uc}}(\mathcal A/R,\mathcal A)
+ =\varprojlim_{d,N}\varinjlim_{e\geq d}
+  \operatorname{Hom}_{R_N}
+   (A_{e,N}^{\otimes_{R_N}n},A_{d,N}).
+\]
+Input refinement is precomposition with a quotient.
+The inverse maps reduce the output and parameter precision.
+Each direct limit is discrete, and the cochain space has their
+inverse-limit topology.
+\end{definition}
+
+\begin{proposition}\label{mht:prop:continuous-cochain-carrier}
+There is a natural identification
+\[
+ C^n_{\mathrm{uc}}(\mathcal A/R,\mathcal A)
+ =\operatorname{Hom}_{R,\mathrm{cont}}
+    (\mathcal A^{\widehat\otimes_R n},\mathcal A).
+\]
+All quotient projections of the displayed tensor source are onto.
+\end{proposition}
+
+\begin{proof}
+Compatible PBW bases identify the underlying module with
+$(\varprojlim_d\operatorname{Sym}\mathfrak h_d)[[\hbar]]$.
+The tensor powers have the analogous coefficientwise description.
+Lift a finite PBW polynomial by the same monomials at all higher
+cutoffs. This proves surjectivity. Coefficientwise division also
+gives
+$\mathcal A/\hbar^{N+1}\mathcal A=\varprojlim_dA_{d,N}$,
+and the same identity for each completed tensor.
+
+A continuous map to the discrete output $(d,N)$ factors through
+an input quotient $(e,M)$. Enlarge these indices so that
+$e\geq d$ and $M\geq N$. The factored map is $R$-linear by
+surjectivity of the input projection. Its target is annihilated
+by $\hbar^{N+1}$, so the input precision reduces to $N$.
+
+Two factorizations agree after a common refinement.
+This gives the stated inverse and direct limits. Conversely,
+such a family defines a continuous map to every output quotient.
+\end{proof}
+
+The larger input cutoff is essential. Choose a basis Hamiltonian
+$x$ of degree $e>d$. Extract its coefficient as a PBW monomial
+and multiply by the unit of $\mathcal A$. This is a continuous
+linear cochain with scalar output. It detects $x$ and therefore
+cannot factor through $A_{d,N}$.
+
+For an arity-$n$ cochain use reduced degree $n-1$.
+The brace $F\{G_1,\ldots,G_r\}$ sums over ordered, disjoint
+insertions into $F$. If $G_j$ has arity $q_j$ and its block begins
+after $i_j$ input arguments, the sign is
+$(-1)^{\sum_j(q_j-1)i_j}$. The cup product is
+\[
+ (F\smile G)(a_1,\ldots,a_{p+q})
+   =F(a_1,\ldots,a_p)G(a_{p+1},\ldots,a_{p+q}).
+\]
+
+\begin{proposition}\label{mht:prop:continuous-braces}
+The Hochschild differential, cup product and every finite brace
+are defined on $C^\bullet_{\mathrm{uc}}$ and satisfy their
+usual identities.
+\end{proposition}
+
+\begin{proof}
+Fix output $(d,N)$ and an input cutoff $e$ for the outer cochain.
+Each inner cochain is needed only at output $(e,N)$.
+Choose a common input cutoff for this finite family.
+Every insertion then factors through one tensor quotient, and
+further refinement leaves it unchanged.
+
+Multiplication descends at each quotient, so the same argument
+defines the differential and cup product. In each identity choose
+one common quotient for all intermediate outputs.
+The usual insertion bijection and its reduced-degree signs prove
+the identity there. Equality at every output proves it in the
+complete complex.
+\end{proof}
+
+A single space
+$\operatorname{Hom}(A_{e,N}^{\otimes n},A_{d,N})$ with $e\ne d$
+has no self-valued brace composition. The complete family supplies
+the intermediate output required by the proof.
+
+There is a relative derived interpretation with the same topology.
+Use complete separated linearly topologized $R$-modules and their
+quotient-completed tensors. A complete $\mathcal A$-bimodule has
+a continuous action on that tensor. Declare a short exact sequence
+admissible when it has a continuous $R$-linear splitting.
+This splitting need not commute with the bimodule actions.
+
+\begin{proposition}\label{mht:prop:continuous-relative-bar}
+In this exact structure the augmented completed bar is a relative
+projective resolution of $\mathcal A$. Consequently,
+\[
+ \operatorname{RHom}^{\mathrm{rel,cont}}_{\mathcal A^e}
+                (\mathcal A,\mathcal A)
+ \simeq C^\bullet_{\mathrm{uc}}(\mathcal A/R,\mathcal A),
+ \qquad
+ \mathcal A^e=\mathcal A\widehat\otimes_R\mathcal A^{\mathrm{op}}.
+\]
+\end{proposition}
+
+\begin{proof}
+Induction from a complete coefficient module $E$ has the
+adjunction
+\[
+ \operatorname{Hom}_{\mathcal A^e,\mathrm{cont}}
+       (\mathcal A^e\widehat\otimes_RE,M)
+ =\operatorname{Hom}_{R,\mathrm{cont}}(E,M).
+\]
+The extension sends $a\otimes e\otimes b$ to $a f(e)b$.
+Refine first the quotient for the action and then that for $f$.
+This proves continuity. Restriction to $1\otimes E\otimes1$
+is the inverse. Composing with an admissible splitting proves
+relative projectivity of induced modules.
+
+The degree-$n$ bar term is induced from
+$\mathcal A^{\widehat\otimes_Rn}$. Its boundary is the alternating
+sum of adjacent multiplications. Inserting the unit on the left
+gives a continuous $R$-linear contraction of the augmented complex.
+On cycles it splits the preceding boundary map, so exactness is
+admissible. Continuous bimodule Hom into $\mathcal A$ gives the
+cochain spaces and differential above.
+\end{proof}
+
+This relative exact structure is part of the assertion.
+An absolute topological derived category, or a different analytic
+tensor product, requires a separate comparison.
+
+\begin{theorem}\label{mht:thm:continuous-rees}
+The finite antisymmetrizations induce a quasi-isomorphism
+\[
+ C^\bullet_{\mathrm{uc}}(\mathcal A/R,\mathcal A)
+ \longrightarrow
+ \varprojlim_{d,N}\varinjlim_{e\geq d}
+             (P^\bullet_{e,d,N},\hbar d_{\mathrm{CE}}).
+\]
+For both sides the ordinary inverse limit computes the derived
+inverse limit of the indicated direct-limit complexes.
+\end{theorem}
+
+\begin{proof}
+Filtered direct limits of modules are exact, so
+Theorem~\ref{mht:thm:rectangular-rees} gives a quasi-isomorphism
+at each output $(d,N)$. Use a countable cofinal diagonal for
+these two indices.
+
+Each transition is degreewise surjective. Represent a cochain at
+one input cutoff and increase it if necessary. Lift its values
+on the PBW tensor basis to the next output and parameter precision.
+Extend over the new coefficient ring. For the Chevalley side,
+use the exterior basis instead. These are lifts of elements,
+not chain sections or $R_N$-linear splittings of coefficient
+reduction.
+
+For a degreewise surjective tower, the map
+$1-\mathrm{shift}$ on its product is degreewise onto.
+Indeed, solve its equations successively using the surjective
+transition maps. Its kernel is the ordinary inverse limit, so
+the derived-limit fiber complex is quasi-isomorphic to that
+kernel. Derived limits preserve the levelwise quasi-isomorphisms,
+which proves the comparison.
+\end{proof}
+
+At a fixed jet cutoff this reduces to
+\[
+ C^\bullet_{\mathrm{HH,cont}}
+       (U_\hbar(\mathfrak h_d)/R,U_\hbar(\mathfrak h_d))
+ \simeq
+ \bigl(C^\bullet_{\mathrm{CE}}
+   (\mathfrak h_d,\operatorname{Sym}\mathfrak h_d)[[\hbar]],
+                                             \hbar d_{\mathrm{CE}}\bigr).
+\]
+The coefficientwise PBW description is used throughout.
+The inverse limit over jets has the additional input cutoff.
+A diagonal tower of self-valued finite cochains would omit it.
+
+\section{Integral torsion and even traces}
+
+Scaling a differential changes integral cohomology.
+Let $(P^\bullet,d)$ be a complex of complex vector spaces and
+write $Z^n=\ker d$, $B^n=\operatorname{im}d$.
+All formal series below mean coefficientwise products.
+
+\begin{proposition}\label{mht:prop:scaled-ce-torsion}
+There is a natural exact sequence
+\[
+ 0\longrightarrow B^n
+ \longrightarrow H^n(P^\bullet[[\hbar]],\hbar d)
+ \longrightarrow H^n(P^\bullet,d)[[\hbar]]
+ \longrightarrow0.
+\]
+The first term is annihilated by $\hbar$ and is exactly the
+$\hbar$-power torsion. A vector-space complement of $B^n$ in
+$Z^n$ splits the sequence. The first Bockstein of the
+special-fiber complex, whose differential is zero, is $d$.
+\end{proposition}
+
+\begin{proof}
+Multiplication by $\hbar$ is injective on every coefficient
+module. Cycles and boundaries are therefore
+$Z^n[[\hbar]]$ and $\hbar B^n[[\hbar]]$.
+Coefficientwise passage to $Z^n/B^n$ gives the surjection, with
+kernel $B^n[[\hbar]]/\hbar B^n[[\hbar]]=B^n$.
+A complement lifts the coefficients and splits it.
+
+The quotient has no $\hbar$-power torsion, while the kernel is
+killed by $\hbar$. Finally lift $x\in P^n$ by its constant series.
+Its differential is $\hbar dx$. Dividing by $\hbar$ and reducing
+gives the Bockstein $dx$.
+\end{proof}
+
+For example, $R\xrightarrow{\hbar}R$ has free cochain modules and
+first cohomology $R/(\hbar)$. At finite precision its degree-zero
+kernel is $\mathbb C\hbar^N$. The next reduction sends that
+kernel to zero. Those extra cycles disappear in the limit,
+while the degree-one torsion class persists.
+
+Unimodularity controls the first adjoint trace, but the even traces
+have another limit. Fix $m\geq1$. For $x\in\mathfrak h$, let $x_2$ be its
+quadratic part and let $\rho_r$ denote its action on $W_r$.
+Higher Hamiltonians raise degree, so
+\[
+ T_{2m,d}(x)=\operatorname{Tr}_{\mathfrak h_d}
+       (\operatorname{ad}_x^{2m})
+    =\sum_{r=2}^d\operatorname{Tr}_{W_r}(\rho_r(x_2)^{2m}).
+\]
+
+\begin{proposition}\label{mht:prop:hamiltonian-even-traces}
+The expression $T_{2m,d}$ is polynomial in the cutoff $d$.
+Its constant coefficient, denoted $\operatorname{FP}_d$, is
+\[
+ \operatorname{FP}_dT_{2m,d}(x)
+      =-\operatorname{Tr}_{W_1}(\rho_1(x_2)^{2m}).
+\]
+For $H=-uv$,
+\[
+ T_{2,d}(H)=\frac{d(d+1)(d+2)(d+3)}{12}-2.
+\]
+\end{proposition}
+
+\begin{proof}
+For $x_2=aH$ the sum is
+$a^{2m}\sum_{r=2}^d\sum_{j=0}^r(r-2j)^{2m}$.
+Power-sum identities make it polynomial in $d$.
+The sum starting at $r=1$ vanishes at $d=0$. Removing its first
+term subtracts $2a^{2m}$. This proves the constant coefficient
+on the Cartan line. Both sides are invariant polynomials on
+$\mathfrak{sl}_2$, so density of semisimple elements proves
+the identity everywhere.
+
+For $m=1$ the inner sum is $r(r+1)(r+2)/3$.
+Summing from $r=2$ gives the displayed polynomial.
+\end{proof}
+
+This defines a subtraction scheme, not a canonical limit.
+Let $B_{2m}$ be the Bernoulli numbers defined by
+$z/(e^z-1)=\sum_n B_nz^n/n!$. The formal half-determinant
+logarithm has coefficients
+$c_m=B_{2m}/(4m(2m)!)$. Subtracting the nonconstant cutoff
+polynomial from each trace gives
+\[
+ \ell_{\mathrm{ren}}(x)
+ =-\frac12\operatorname{Tr}_{W_1}
+  \log\!\left(
+   \frac{\sinh(\hbar\rho_1(x_2)/2)}{\hbar\rho_1(x_2)/2}
+       \right).
+\]
+The quotient is its power series with constant term one, without
+inverting an eigenvalue. On the Cartan line its exponential is
+$(\hbar a/2)/\sinh(\hbar a/2)$.
+
+Replacing the cutoff by $d+b$ changes the two-wheel finite part
+by $b(b+1)(b+2)(b+3)/12$.
+
+An ordinary even dual has the same even traces and doubles them
+when added to the original representation. A parity-reversed
+dual cancels them in the supertrace. These two coefficient
+choices therefore have different subtraction problems.
+
+\section{Support and the remaining field comparison}
+
+Let $\mathcal L_c(U)$ be compactly supported smooth sections of a
+local differential graded Lie algebra on an open set $U$.
+Assume its differential and bracket are differential operators.
+Extension by zero then gives a covariant Lie map
+$\mathcal L_c(U)\to\mathcal L_c(V)$ for $U\subset V$.
+For disjoint opens, the bracket of their extended sections is zero.
+
+With the algebraic tensor product, the Chevalley chains
+$C^{\mathrm{Lie}}_*(\mathfrak l)=\operatorname{Sym}(\mathfrak l[1])$
+have their internal and bracket differential. They take direct
+sums of Lie algebras to tensor products. Consequently the maps
+\[
+ \bigotimes_i C^{\mathrm{Lie}}_*(\mathcal L_c(U_i))
+ \longrightarrow C^{\mathrm{Lie}}_*(\mathcal L_c(V))
+\]
+define a prefactorization algebra. Weiss descent is an additional
+property.
+
+Extension by zero pulls Chevalley cochains from $V$ to $U$.
+A covariant observable model therefore requires its own coefficient
+duality and support construction.
+
+For the usual smooth topologies,
+$(C^\infty(U))'_b=\mathcal E'(U)$ consists of compactly supported
+distributions. In contrast,
+$(C^\infty_c(U))'_b=\mathcal D'(U)$ allows arbitrary support.
+The first assertion follows because a continuous functional uses
+finitely many seminorms on a common compact set.
+The second follows by compatibility on all compact test supports.
+The subscript indicates the strong dual topology.
+
+The Hochschild side of Theorem~\ref{mht:thm:continuous-rees}
+carries braces and a relative derived-center interpretation.
+An operation-preserving comparison with independently defined
+polyvectors requires further maps.
+
+\begin{problem}\label{mht:qn:continuous-hamiltonian-comparison}
+Construct a coherent refinement of the continuous Rees comparison
+for independently defined polyvector products and brackets.
+Require compatibility with all input and output refinements,
+and specify any even-wheel subtraction used by a multiplicative
+PBW correction.
+
+Construct a map from supported mixed field observables to this
+coefficient complex. Preserve horizontal jets, normal derivatives,
+the vacuum and collision operations. Make the subtraction compatible
+with these operations and nonlinear symplectic coordinate descent.
+\end{problem}

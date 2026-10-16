@@ -1,0 +1,1705 @@
+\chapter{States and sewing}
+\label{mht:ch:states-sewing}
+
+The residual action determines equations of motion and their gauge
+symmetries. To obtain an amplitude, one must also choose a state.
+For a boundary circle this requires a real form, a polarization,
+a measure and a Hamiltonian. These choices determine the disk
+amplitude and the pairing used when two boundaries are sewn.
+
+We first prepare the compact residual gauge theory and compute its
+character amplitudes. Holonomy density and invariant ordering then
+exhibit two quantities that a normalized Gaussian vacuum does not
+determine. Finite Gaussian integration, a free gauge quartet and an
+infinite family of scalar oscillators provide explicit sewing maps.
+A nonnegative interaction preserves scalar sewing at fixed positive
+smoothing. Its divergent coupling series has a Borel reconstruction,
+and a Hermite unitary identifies the interacting Fock Hamiltonian.
+The final comparison asks which of these data the native Neumann
+quantum theory supplies.
+
+\section{The residual boundary and its real quantization}
+
+Write $b\in\Omega^1(U,\mathfrak{gl}_N)$ and
+$J\in\Omega^0(U,\mathfrak{gl}_N)$ for the physical residual fields.
+The action of Proposition~\ref{mht:prop:exact-slice-action} is
+\[
+ S_{\mathrm{res}}=\kappa\int_U\operatorname{tr}(JF_b)
+       -\frac\kappa2\int_{\partial U}\operatorname{tr}(bJ),
+ \qquad F_b=d_Ub+b\wedge b.
+\]
+Its boundary one-form is
+\[
+ \Theta_{\partial U}=\frac\kappa2\int_{\partial U}
+                    \operatorname{tr}(J\delta b-b\delta J).
+\]
+Adding $\kappa\int_{\partial U}\operatorname{tr}(bJ)/2$ changes
+this primitive to $\kappa\int_{\partial U}\operatorname{tr}(J\delta b)$.
+The boundary two-form is unchanged. We use the resulting connection
+polarization, in which $b$ is the boundary configuration variable.
+
+Choose a connected compact Lie group $G$ with Lie algebra
+$\mathfrak g$, a positive invariant inner product
+$\langle-,-\rangle$, and numerical parameters
+$\kappa\in\mathbb R\setminus\{0\}$, $v>0$, $\hbar>0$.
+Let $U$ be an oriented surface with a positive area form.
+We declare the real Euclidean preparation by the first-order action
+\begin{equation}\label{mht:eq:prepared-residual-action}
+ S_E=\int_U\left(i\kappa\langle J,F_b\rangle
+              +\frac v2\langle J,J\rangle\,d\mathrm{vol}\right).
+\end{equation}
+Here $J$ is a real adjoint scalar and $b$ is a $G$-connection.
+The Gaussian measure in $J$ is normalized as part of this preparation.
+Completing its square gives the density
+$\kappa^2|F_b|^2/(2v)$ for the second-order action.
+
+The corresponding canonical momentum is $P=\kappa J$.
+Its kinetic energy per unit spatial length is
+$v\langle P,P\rangle/(2\kappa^2)$.
+Choose the positive Laplace--Beltrami quantization and assign energy
+zero to the trivial representation. For the positive Laplacian
+$\Delta_G$ of the chosen metric, this gives
+\begin{equation}\label{mht:eq:prepared-heat-time}
+ \begin{aligned}
+ \mathsf H=\frac{v\hbar^2}{2\kappa^2}\Delta_G,
+ \qquad &t=\frac{v\hbar}{\kappa^2}\operatorname{Area}(U),\\
+ &e^{-\operatorname{Area}(U)\mathsf H/\hbar}=e^{-t\Delta_G/2}.
+ \end{aligned}
+\end{equation}
+
+An additive energy constant would multiply each amplitude by an
+area factor. The zero-energy convention fixes this freedom.
+We also fix normalized Haar measure and the disk normalization below.
+These are the representation-theoretic choices in two-dimensional
+Yang--Mills theory.\footnote{E.~Witten, \emph{Two Dimensional Gauge
+Theories Revisited}, \S4, including \S\S4.1--4.2,
+\url{https://arxiv.org/abs/hep-th/9204083}. The Haar and vacuum
+normalizations used here are specified explicitly.}
+
+\subsection{The conjugation constraint}
+
+Let $\mathcal R(G)$ be the complex representative functions on $G$.
+Choose a basis of $\mathfrak g$ with structure constants
+$f^a{}_{bc}$. Let $G_a$ denote the infinitesimal conjugation
+operators, with $[G_a,G_b]=f^c{}_{ab}G_c$.
+On the graded algebra
+$\mathcal R(G)\otimes\Lambda(\mathfrak g^*)$, put
+$|c^a|=1$ and use left odd derivatives. Its BRST differential is
+\begin{equation}\label{mht:eq:residual-group-brst}
+ Q=c^aG_a-\frac12f^a{}_{bc}c^bc^c\partial_{c^a}.
+\end{equation}
+
+\begin{proposition}\label{mht:prop:residual-group-brst}
+The differential $Q$ squares to zero and commutes with
+$e^{-t\Delta_G/2}$. Its degree-zero cohomology is
+$\mathcal R(G)^G$. For normalized Haar measure $dg$, the Hilbert
+completion of this cohomology is
+\[
+ \mathcal H_G=L^2(G,dg)^G.
+\]
+The orthogonal projection onto $\mathcal H_G$ is
+$P_{\mathrm{inv}}f(U)=\int_Gf(hUh^{-1})\,dh$.
+\end{proposition}
+
+\begin{proof}
+The coefficient of two ghosts in $Q^2$ is
+$c^ac^b([G_a,G_b]-f^c{}_{ab}G_c)/2$.
+The coefficient of three ghosts is the Jacobi identity.
+Both vanish on the whole exterior algebra.
+The bi-invariant Laplacian commutes with each $G_a$ and acts
+trivially on the ghosts, proving the heat commutation relation.
+
+In degree zero, $Qf=0$ is the system $G_af=0$ for all $a$.
+Connectedness of $G$ identifies its solutions with conjugation
+invariants. There are no boundaries from negative degrees.
+Haar invariance proves that $P_{\mathrm{inv}}$ is idempotent
+and self-adjoint. Jensen's inequality gives its $L^2$ bound.
+Peter--Weyl approximation, followed by this projection, shows
+that invariant representative functions are dense in its range.
+\end{proof}
+
+This identifies ghost degree zero. Higher Lie algebra cohomology
+is retained by the BRST complex and need not vanish.
+
+\subsection{Disk, cylinder and surface amplitudes}
+
+For $\lambda\in\widehat G$, let $d_\lambda$, $\chi_\lambda$
+and $C_2(\lambda)$ denote its dimension, character and positive
+Laplacian eigenvalue. The characters are an orthonormal basis
+of $\mathcal H_G$. Equip this space on its smooth core with
+Haar convolution,
+\[
+ (f*g)(U)=\int_G f(UW^{-1})g(W)\,dW.
+\]
+The preparation uses the complete sum over $\widehat G$.
+It has no additional discrete theta weight or fixed-bundle
+projection. For nonsimply connected $G$, prescribing such a
+sector would change this global choice.
+
+\begin{theorem}\label{mht:thm:residual-character-sewing}
+At positive heat time, the cylinder kernel and disk state are
+\begin{align}
+ K_t(U,V)&=\sum_{\lambda\in\widehat G}
+ e^{-tC_2(\lambda)/2}\chi_\lambda(U)\overline{\chi_\lambda(V)},
+       \label{mht:eq:residual-cylinder}\\
+ D_t(U)&=\sum_{\lambda\in\widehat G}
+ d_\lambda e^{-tC_2(\lambda)/2}\chi_\lambda(U).
+       \label{mht:eq:residual-disk}
+\end{align}
+They are smooth, and for $s,t>0$ satisfy
+\begin{equation}\label{mht:eq:residual-cylinder-sewing}
+ \int_GK_s(U,W)K_t(W,V)\,dW=K_{s+t}(U,V).
+\end{equation}
+The disk tends to the identity point source distributionally
+as $t\downarrow0$. With this normalization, the amplitude
+of a genus-$g$ surface with $b$ outgoing boundaries is
+\begin{equation}\label{mht:eq:residual-surface-amplitude}
+ Z_{g,b}(t;U_1,\ldots,U_b)
+ =\sum_\lambda d_\lambda^{2-2g-b}e^{-tC_2(\lambda)/2}
+                      \prod_{i=1}^b\chi_\lambda(U_i).
+\end{equation}
+An incoming boundary carries the conjugate character.
+These amplitudes satisfy boundary and handle sewing.
+\end{theorem}
+
+\begin{proof}
+The heat operator is diagonal in the character basis, giving
+\eqref{mht:eq:residual-cylinder}. The identity point source has
+Fourier coefficients $\chi_\lambda(1)=d_\lambda$.
+Heat evolution therefore gives \eqref{mht:eq:residual-disk}.
+Character orthogonality proves
+\eqref{mht:eq:residual-cylinder-sewing} for finite sums.
+
+Highest weights have lattice growth. Representation dimensions
+and the coefficients of differentiated matrix elements grow
+polynomially in the weight. The Casimir grows quadratically
+for a positive invariant metric. Consequently the sums and
+all their derivatives converge locally uniformly for $t>0$.
+These bounds justify Haar integration and prove smoothness.
+On a smooth test function the Fourier coefficients also give
+the asserted distributional limit of the disk.
+
+Schur orthogonality gives
+\[
+ \chi_\lambda*\chi_\mu
+       =\delta_{\lambda\mu}\frac{\chi_\lambda}{d_\lambda}.
+\]
+Thus a three-holed sphere contributes $d_\lambda^{-1}$.
+Its product with the disk coefficient $d_\lambda$ is the
+unit cylinder coefficient. Decomposition into these pieces
+gives \eqref{mht:eq:residual-surface-amplitude}.
+
+Sewing opposed boundary characters identifies their labels.
+For two surfaces, their dimension exponents add to the Euler
+characteristic of the glued surface. Gluing two boundaries of
+one surface leaves that exponent unchanged: $g$ increases by
+one and $b$ decreases by two. These observations prove both
+sewing laws. The positive-time bounds justify each passage
+from finite sums to the displayed amplitudes.
+\end{proof}
+
+In particular, the sphere and torus amplitudes are
+\begin{equation}\label{mht:eq:residual-closed-amplitudes}
+ Z_{0,0}(t)=\sum_\lambda d_\lambda^2e^{-tC_2(\lambda)/2},
+ \qquad
+ Z_{1,0}(t)=\operatorname{Tr}_{\mathcal H_G}e^{-t\Delta_G/2}
+           =\sum_\lambda e^{-tC_2(\lambda)/2}.
+\end{equation}
+For a nontrivial connected compact group, the torus trace is
+strictly greater than one. If $\dim G>0$, the zero-area disk
+is not an $L^2$ state. Indeed, invariant smooth functions equal
+to one at the identity can have arbitrarily small $L^2$ norm,
+by shrinking an invariant bump function to the identity.
+Point evaluation is therefore unbounded on the invariant core.
+For the trivial group the point source is the normalized constant.
+
+On a closed surface the positive summands define a probability
+distribution after division by $Z_{g,0}(t)$. Differentiation gives
+\begin{equation}\label{mht:eq:residual-thermal-response}
+ -2\partial_t\log Z_{g,0}=\langle C_2\rangle,
+ \qquad
+ 4\partial_t^2\log Z_{g,0}
+       =\langle C_2^2\rangle-\langle C_2\rangle^2.
+\end{equation}
+The same positive-time majorants justify both derivatives.
+These are moments of the chosen quadratic quantum operator.
+Higher invariant operators require an ordering convention.
+
+\subsection{A normalization and tail bound for \texorpdfstring{$SU(2)$}{SU(2)}}
+
+Give $SU(2)$ its round-$S^3$ metric. Its irreducibles have labels
+$n\geq0$ and data
+\[
+ d_n=n+1,\qquad C_2(n)=n(n+2),\qquad
+ \chi_n(\theta)=\frac{\sin((n+1)\theta)}{\sin\theta}.
+\]
+The endpoint values of the quotient are its continuous limits.
+On class functions, normalized Haar measure is
+$(2/\pi)\sin^2\theta\,d\theta$ for $0\leq\theta\leq\pi$.
+The character inner product is therefore the elementary sine
+inner product.
+
+At $t=1$, the convergent sums give
+\[
+ Z_{1,0}(1)\simeq1.24200505276743,
+ \qquad Z_{0,0}(1)\simeq2.06636525163437.
+\]
+The corresponding torus mean and variance of $C_2$ are
+approximately $0.66373337$ and $2.22320420$.
+
+To control truncation, set $\alpha=t/2$ and retain $n\leq K$,
+where $K\geq0$ is integral. Write $\operatorname{erfc}$ for the
+complementary error function. Since $n(n+2)\geq n^2$,
+\begin{equation}\label{mht:eq:residual-torus-tail}
+ 0\leq\sum_{n>K}e^{-tn(n+2)/2}
+ \leq\int_K^\infty e^{-\alpha x^2}\,dx
+ =\frac{\sqrt\pi}{2\sqrt\alpha}
+                         \operatorname{erfc}(\sqrt\alpha K).
+\end{equation}
+
+For $K+1\geq\alpha^{-1/2}$, the function
+$x^2e^{-\alpha x^2}$ decreases on $[K+1,\infty)$.
+Putting $m=n+1$ and integrating gives
+\begin{align}
+ \sum_{n>K}(n+1)^2e^{-tn(n+2)/2}
+ &\leq e^\alpha\int_{K+1}^\infty x^2e^{-\alpha x^2}\,dx
+       \notag\\
+ &=e^\alpha\left[
+ \frac{(K+1)e^{-\alpha(K+1)^2}}{2\alpha}
+ +\frac{\sqrt\pi\operatorname{erfc}(\sqrt\alpha(K+1))}
+                                     {4\alpha^{3/2}}\right].
+       \label{mht:eq:residual-sphere-tail}
+\end{align}
+Because $|\chi_n|\leq n+1$, the same bound controls the
+absolute disk-character tail. Both estimates require $t>0$.
+
+\section{Holonomy density and invariant ordering}
+
+The heat state uses a group holonomy and a quantum Hamiltonian.
+Exponential coordinates contribute a Jacobian, while ordering
+changes products of invariant insertions. We compute both with
+their normalizations before asking for a map from the polar fields.
+
+\subsection{The exponential half-density}
+
+Let $\mathfrak g$ now be a finite-dimensional unimodular complex
+Lie algebra. For a dimensionless exponential coordinate $X$ near
+zero, write $L=\operatorname{ad}_X$. Left trivialization gives
+\[
+ \operatorname{dexp}_X=\int_0^1e^{-tL}\,dt
+          =e^{-L/2}\frac{\sinh(L/2)}{L/2}.
+\]
+The quotient denotes its entire power series. Normalize the
+tangent and invariant volume forms to agree at the identity.
+Choose every square-root branch to have value one there.
+
+\begin{proposition}\label{mht:prop:holonomy-half-density}
+The exponential Jacobian and its half-density are
+\begin{equation}\label{mht:eq:holonomy-half-density}
+ j(X)=\det_{\mathfrak g}\frac{\sinh(L/2)}{L/2},\qquad
+ \mathfrak j(X)=\exp\!\left(
+ \frac12\operatorname{Tr}_{\mathfrak g}
+                         \log\frac{\sinh(L/2)}{L/2}\right).
+\end{equation}
+On a sufficiently small neighborhood of zero,
+\begin{equation}\label{mht:eq:holonomy-mode-product}
+ \mathfrak j(X)=\lim_{K\to\infty}
+ \prod_{n=1}^K\det_{\mathfrak g}
+       \left(1+\frac{L^2}{4\pi^2n^2}\right)^{1/2}
+\end{equation}
+locally uniformly. Let $\mathfrak j_K$ denote this product through $n=K$.
+If $L$ is real diagonalizable with real
+eigenvalues, then, for $K\geq1$,
+\begin{equation}\label{mht:eq:holonomy-mode-tail}
+ 0\leq\log\mathfrak j-\log\mathfrak j_K
+       \leq\frac{\operatorname{Tr}_{\mathfrak g}L^2}{8\pi^2K}.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Unimodularity gives $\operatorname{Tr}L=0$, so
+$\det(e^{-L/2})=1$. This proves the Jacobian formula.
+The scalar product for $\sinh(z/2)/(z/2)$ gives
+\eqref{mht:eq:holonomy-mode-product} on eigenvalues, including
+their algebraic multiplicities. Each logarithmic factor is
+locally bounded by a constant times $n^{-2}$. Hence the
+product converges locally uniformly on its normalized branch.
+
+For real eigenvalues $\lambda_a$, apply
+$0\leq\log(1+u)\leq u$ to
+$u=\lambda_a^2/(4\pi^2n^2)$. The logarithmic tail is bounded by
+$\sum_a\lambda_a^2\sum_{n>K}n^{-2}/(8\pi^2)$.
+The estimate $\sum_{n>K}n^{-2}\leq K^{-1}$ proves the result.
+\end{proof}
+
+On a compact real form, the eigenvalues of $L$ are imaginary
+and the factors become sine factors. The branch is local,
+before their first zeros. For a quadratic Lie algebra, the
+same half-determinant occurs in the effective action of
+one-dimensional Chern--Simons theory.\footnote{A.~Alekseev
+and P.~Mnev, \emph{One-dimensional Chern--Simons theory},
+Proposition~1, \url{https://arxiv.org/abs/1005.2111}.}
+That formula concerns the circle field complex. A comparison
+with the Neumann sphere must identify the corresponding fields.
+
+Expansion at $X=0$ gives
+\begin{equation}\label{mht:eq:holonomy-density-expansion}
+ \log\mathfrak j(X)=\frac1{48}\operatorname{Tr}L^2
+       -\frac1{5760}\operatorname{Tr}L^4
+       +\frac1{362880}\operatorname{Tr}L^6+O(X^8).
+\end{equation}
+For $\mathfrak g=\mathfrak{gl}_N$, put
+$p_r=\operatorname{tr}(X^r)$, with $p_0=N$.
+
+\begin{proposition}\label{mht:prop:holonomy-block-defect}
+For every integer $m\geq0$,
+\begin{equation}\label{mht:eq:adjoint-trace-polynomial}
+ \operatorname{Tr}_{\mathfrak{gl}_N}(\operatorname{ad}_X)^m
+       =\sum_{r=0}^m(-1)^r\binom mr p_{m-r}p_r.
+\end{equation}
+In particular, $\operatorname{Tr}L^2=2Np_2-2p_1^2$ and
+$\operatorname{Tr}L^4=2Np_4-8p_1p_3+6p_2^2$.
+For matrices $X,Y$ of sizes $N,M$, the quadratic part of
+$\log\mathfrak j(X\oplus Y)-\log\mathfrak j(X)
+-\log\mathfrak j(Y)$ is
+\begin{equation}\label{mht:eq:holonomy-block-defect}
+ \frac1{24}\left(M\operatorname{tr}X^2
+        +N\operatorname{tr}Y^2
+        -2\operatorname{tr}X\operatorname{tr}Y\right).
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Left and right multiplication on $\operatorname{End}(\mathbb C^N)$
+commute. Their difference is $\operatorname{ad}_X$, and
+$\operatorname{Tr}(L_X^aR_X^b)
+=\operatorname{tr}(X^a)\operatorname{tr}(X^b)$.
+The binomial theorem proves \eqref{mht:eq:adjoint-trace-polynomial}
+without diagonalizing $X$.
+Substituting $m=2,4$ gives the displayed traces.
+The quadratic half-density logarithm is $(Np_2-p_1^2)/24$.
+Its block-sum difference is \eqref{mht:eq:holonomy-block-defect}.
+\end{proof}
+
+The two off-diagonal Hom spaces between the blocks contribute
+to this difference. Thus this quantum density is not an additive
+family of classical invariant polynomials. Its holonomy coordinate
+$X$ has not been identified with the residual matrix $J$.
+
+\subsection{The universal quadratic and quartic contacts}
+
+Use Hermitian generators in the complex Rees enveloping algebra,
+completed in $\hbar$, with relations
+\[
+ [\widehat J_i,\widehat J_j]
+       =i\hbar\epsilon_{ijk}\widehat J_k.
+\]
+Put $p=x_1^2+x_2^2+x_3^2$, $C=\sum_i\widehat J_i^2$, and
+$\Delta=\sum_i\partial_{x_i}^2$.
+PBW symmetrization $\operatorname{sym}$ averages all orderings
+of a commutative monomial in the generators $\widehat J_i$.
+
+In this convention define
+\begin{equation}\label{mht:eq:su2-duflo-factor}
+ \operatorname{Duf}_\hbar
+ =\operatorname{sym}\circ
+ \left(1+\frac{\hbar^2}{24}\Delta
+          +\frac{\hbar^4}{1920}\Delta^2+\cdots\right).
+\end{equation}
+The series in parentheses is
+$\sinh(\hbar\sqrt\Delta/2)/(\hbar\sqrt\Delta/2)$,
+interpreted as a power series in $\Delta$.
+The adjoint eigenvalues in the unscaled Hermitian basis are
+$0,\sqrt p,-\sqrt p$, so this is the half-Jacobian factor.
+The Duflo theorem identifies its invariant restriction as an
+algebra isomorphism.\footnote{A.~Alekseev and E.~Meinrenken,
+\emph{The non-commutative Weil algebra}, \S6.1,
+\url{https://arxiv.org/abs/math/9903052}.}
+
+\begin{proposition}\label{mht:prop:su2-ordering-contact}
+The universal Rees algebra satisfies
+\begin{align}
+ \operatorname{Duf}_\hbar(p)&=C+\hbar^2/4,
+       \label{mht:eq:su2-quadratic-ordering}\\
+ \operatorname{sym}(p^2)&=C^2-\hbar^2C/3,
+       \label{mht:eq:su2-quartic-contact}\\
+ \operatorname{Duf}_\hbar(p^2)&=(C+\hbar^2/4)^2.
+       \label{mht:eq:su2-duflo-product}
+\end{align}
+For the multiplicative ordering $p\mapsto C$, the collapsed
+double-insertion contact relative to raw PBW symmetrization
+is $\hbar^2C/3$.
+\end{proposition}
+
+\begin{proof}
+The relations make $C$ central and give
+\[
+ \sum_j[\widehat J_j,[\widehat J_j,\widehat J_i]]
+       =2\hbar^2\widehat J_i,
+ \qquad
+ \sum_j\widehat J_j\widehat J_i\widehat J_j
+       =(C-\hbar^2)\widehat J_i.
+\]
+Grouping the six orders of two repeated indices yields
+\[
+ \operatorname{sym}(p^2)=\frac13\sum_{i,j}
+ \left(\widehat J_i^2\widehat J_j^2
+       +\widehat J_i\widehat J_j\widehat J_i\widehat J_j
+       +\widehat J_i\widehat J_j^2\widehat J_i\right).
+\]
+The three sums equal $C^2$, $C^2-\hbar^2C$ and $C^2$.
+This proves \eqref{mht:eq:su2-quartic-contact} before any
+representation is chosen. Finally,
+$\Delta p=6$, $\Delta p^2=20p$, and $\Delta^2p^2=120$.
+Substitution into \eqref{mht:eq:su2-duflo-factor} gives
+the other two identities.
+\end{proof}
+
+The invariant ordering with zero vacuum energy is
+\[
+ \mathcal Q(F(p))=\operatorname{Duf}_\hbar(F(p-\hbar^2/4)),
+ \qquad \mathcal Q(p)=C.
+\]
+Translation in $p$ and the Duflo theorem prove multiplicativity.
+In spin $j$, the quadratic eigenvalues before and after the
+Duflo shift are $\hbar^2j(j+1)$ and $\hbar^2(j+1/2)^2$.
+At numerical $\hbar=1$, the two half-Casimir evolutions differ
+by $e^{-t/8}$. This scalar factor respects addition of $t$,
+so sewing does not select between the two vacuum energies.
+The round-$S^3$ Casimir above is four times this spin Casimir.
+
+\section{Gaussian states with their normalization lines}
+
+The distinction between a state and its normalized correlations
+already occurs in one variable. Gaussian integration gives a
+nonzero quadratic moment, while its value on the unit carries
+a square root of a determinant. Under elimination, the moment
+and determinant compose by different parts of the same block
+matrix identity.
+
+\subsection{The polynomial Gaussian complex}
+
+Let $R=\mathbb C[\hbar]$ and let $Q$ be an invertible symmetric
+complex $n\times n$ matrix. Set
+\[
+ B_Q=R[x_1,\ldots,x_n]\otimes\Lambda(\xi_1,\ldots,\xi_n),
+ \qquad |x_i|=0,\quad |\xi_i|=-1.
+\]
+Using left odd derivatives, define
+\begin{equation}\label{mht:eq:gaussian-state-differential}
+ D_Q=\sum_i\bigl(\hbar\partial_{x_i}-(Qx)_i\bigr)
+                                                   \partial_{\xi_i}.
+\end{equation}
+
+The even factors commute because $Q$ is symmetric, whereas
+the odd derivatives anticommute. Thus $D_Q^2=0$.
+These formulas define $B_Q,D_Q$ for every symmetric matrix.
+Invertibility is required for the integration map below.
+
+Over the space of nondegenerate symmetric matrices, let
+$\mathscr G_Q$ be the degree-zero Gaussian square-root line.
+Its local sections $\gamma_Q=(\det Q)^{-1/2}$ have the sign
+transitions of the square root. On real positive matrices use
+the positive section, corresponding to the density
+$dx/(2\pi\hbar)^{n/2}$ for numerical $\hbar>0$.
+Continuation retains this line and its chosen branch.
+
+\begin{proposition}\label{mht:prop:sourced-gaussian-state}
+The $R$-linear map
+\begin{equation}\label{mht:eq:sourced-gaussian-state}
+ \Pi_Q(F)=\gamma_Q\left.
+ \exp\!\left(\frac\hbar2
+       \sum_{i,j}(Q^{-1})_{ij}\partial_{x_i}\partial_{x_j}\right)
+                       F(x,0)\right|_{x=0}
+\end{equation}
+is a cochain map from $(B_Q,D_Q)$ to $\mathscr G_Q\otimes R$
+with zero differential. For commuting formal sources $t_i$,
+\begin{equation}\label{mht:eq:gaussian-state-ward}
+ Z_Q(t)=\gamma_Qe^{\hbar t^{\mathsf T}Q^{-1}t/2},
+ \qquad
+ \sum_jQ_{ij}\partial_{t_j}Z_Q=\hbar t_iZ_Q.
+\end{equation}
+These identities hold coefficientwise in
+$\mathscr G_Q\otimes R[[t_1,\ldots,t_n]]$.
+\end{proposition}
+
+\begin{proof}
+Write $\mathbb E_Q=\gamma_Q^{-1}\Pi_Q$ in a local branch.
+The exponential terminates on each polynomial.
+Commuting multiplication by $x_j$ through it gives
+\[
+ \mathbb E_Q(x_jf)=\hbar\sum_l(Q^{-1})_{jl}
+                                      \mathbb E_Q(\partial_{x_l}f).
+\]
+
+Consequently $\Pi_QD_Q(\xi_i f)=0$.
+An input with at least two odd factors retains an odd factor
+after $D_Q$ and maps to zero. An input with no odd factors
+has zero differential. This proves the cochain assertion.
+
+Applying the heat exponential to the formal source gives
+the first identity in \eqref{mht:eq:gaussian-state-ward}.
+Differentiation proves the second.
+\end{proof}
+
+The Ward equations allow every nonzero source-independent
+multiple of $Z_Q$. Integration data fix $Z_Q(0)=\gamma_Q$.
+Even after normalization, evaluation at zero is insufficient:
+for $Q=1$ in one variable,
+\[
+ D_Q(x\xi)=\hbar-x^2,
+ \qquad \mathbb E_Q(x^2)=\hbar.
+\]
+
+For a real symmetric invertible Hessian $H$, use the damped
+matrix $Q_\epsilon=\epsilon I-iH$, $\epsilon>0$.
+Continuation through $\operatorname{Re}Q_\epsilon>0$ gives
+\begin{equation}\label{mht:eq:gaussian-state-fresnel}
+ \gamma_{-iH}=|\det H|^{-1/2}
+                       e^{i\pi\operatorname{sign}(H)/4},
+ \qquad \mathbb E_{-iH}(x_ix_j)=i\hbar(H^{-1})_{ij}.
+\end{equation}
+Here $\operatorname{sign}(H)$ is the number of positive
+eigenvalues minus the number of negative eigenvalues.
+Diagonalization reduces both formulas to the one-dimensional
+Gaussian. No infinite determinant occurs in these identities.
+
+\subsection{The full residual complex under elimination}
+
+Split the even coordinates into $(x,y)$ and their odd partners
+into $(\xi,\eta)$. For a symmetric matrix write
+\[
+ \mathsf Q=\begin{pmatrix}A&B\\B^{\mathsf T}&C\end{pmatrix},
+ \qquad C_{\mathrm{eff}}=C-B^{\mathsf T}A^{-1}B,
+\]
+assuming that $A$ is invertible. The even shear and its
+cotangent lift are
+\begin{equation}\label{mht:eq:gaussian-state-shear}
+ x'=x+A^{-1}By,\quad y'=y,\quad
+ \xi'=\xi,\quad \eta'=\eta-B^{\mathsf T}A^{-1}\xi.
+\end{equation}
+They preserve the quantum contraction
+$\sum_i\partial_{x_i}\partial_{\xi_i}
++\sum_j\partial_{y_j}\partial_{\eta_j}$ and have Berezinian one.
+The quadratic form becomes
+$x'^{\mathsf T}Ax'+y^{\mathsf T}C_{\mathrm{eff}}y$.
+
+\begin{proposition}\label{mht:prop:gaussian-state-sewing}
+Apply $\Pi_A$ in the primed eliminated variables and retain
+the full $(y,\eta')$ complex. The result is a cochain map
+\[
+ (B_{\mathsf Q},D_{\mathsf Q})\longrightarrow
+ \mathscr G_A\otimes(B_{C_{\mathrm{eff}}},D_{C_{\mathrm{eff}}}).
+\]
+Here the polynomial differential defines the residual complex
+even if $C_{\mathrm{eff}}$ is degenerate. On formal sources,
+the map is
+\begin{equation}\label{mht:eq:partial-gaussian-state-source}
+ e^{t_x^{\mathsf T}x+t_y^{\mathsf T}y}\longmapsto
+ \gamma_Ae^{\hbar t_x^{\mathsf T}A^{-1}t_x/2}
+             e^{(t_y-B^{\mathsf T}A^{-1}t_x)^{\mathsf T}y}.
+\end{equation}
+When $C_{\mathrm{eff}}$ is invertible, successive integration
+agrees with $\Pi_{\mathsf Q}$ under the branch identification
+\[
+ \mathscr G_{\mathsf Q}\simeq
+                  \mathscr G_A\otimes\mathscr G_{C_{\mathrm{eff}}}.
+\]
+Iterated integration is associative on that branch.
+\end{proposition}
+
+\begin{proof}
+The inverse-transpose transformation of the odd variables
+splits $D_{\mathsf Q}$ into the $A$ and $C_{\mathrm{eff}}$
+differentials. Proposition~\ref{mht:prop:sourced-gaussian-state}
+therefore proves the cochain assertion with all residual odd
+variables retained. Substituting $x=x'-A^{-1}By$ proves
+\eqref{mht:eq:partial-gaussian-state-source}.
+
+The block inverse formula identifies the source exponent
+after the second integration. The identity
+$\det\mathsf Q=\det A\det C_{\mathrm{eff}}$ identifies the
+normalization lines. Fubini on the positive real domain fixes
+their common branch and proves associativity.
+Analytic continuation preserves these identities.
+For real oscillatory Hessians, the same congruence adds
+signatures, so the Fresnel phases compose as well.
+\end{proof}
+
+For $\mathsf Q=\left(\begin{smallmatrix}2&1\\1&3\end{smallmatrix}\right)$,
+one has $C_{\mathrm{eff}}=5/2$ and
+\[
+ \frac\hbar{10}(3t_x^2-2t_xt_y+2t_y^2)
+       =\frac\hbar4t_x^2+\frac\hbar5(t_y-t_x/2)^2.
+\]
+The vacuum factor is $5^{-1/2}=2^{-1/2}(5/2)^{-1/2}$.
+A kernel of $C_{\mathrm{eff}}$ instead remains in the residual
+complex. The partial integration never inverts that kernel.
+
+\subsection{Continuous Wick preparation on regular kernels}
+
+For infinitely many fields, specify a test space before applying
+the same contraction. Let $(W,d)$ be a nuclear graded test
+complex with a continuous graded-symmetric pairing $b$ of
+degree one. Assume
+\[
+ b(du,v)+(-1)^{|u|}b(u,dv)=0.
+\]
+Let $(H,d_H)$ be finite-dimensional. Choose continuous maps
+$i,p,h$ of degrees $0,0,-1$, with $i,p$ cochain maps, such that
+\[
+ pi=1,\qquad dh+hd=1-ip,\qquad h^2=hi=ph=0.
+\]
+Assume $P=ip$ is self-adjoint for $b$ and
+$C(u,v)=-b(hu,v)$ is graded symmetric of degree zero.
+
+Use the completed nuclear tensor spaces of the tests.
+For a smooth test complex these are smooth compact kernels,
+and covariance distributions act continuously on them.
+Let $\operatorname{Sym}_{\mathrm{reg}}^nW$ be the symmetric
+part of the chosen $n$-fold tensor space. Denote unordered
+pair contraction with $C$ by $\partial_C$, and pair contraction
+with $b$ by $\Delta_b$. Put $b_H(a,a')=b(ia,ia')$.
+
+\begin{proposition}\label{mht:prop:continuous-wick-state}
+The normalized Wick map
+\[
+ \Gamma_h=\operatorname{Sym}(p)e^{\hbar\partial_C}
+\]
+is a continuous cochain map
+\[
+ \left(\bigoplus_{n\geq0}\operatorname{Sym}_{\mathrm{reg}}^nW[\hbar],
+                                      d+\hbar\Delta_b\right)
+ \longrightarrow
+ \left(\operatorname{Sym}H[\hbar],d_H+\hbar\Delta_{b_H}\right).
+\]
+It sends $1$ to $1$ and extends to coefficientwise
+$\hbar$-series in these spaces.
+\end{proposition}
+
+\begin{proof}
+On homogeneous generators,
+\begin{align*}
+ [d,\partial_C](uv)
+   &=-C(du,v)-(-1)^{|u|}C(u,dv)\\
+   &=b((dh+hd)u,v)=b(u,v)-b(Pu,Pv).
+\end{align*}
+The last equality uses self-adjointness and $P^2=P$.
+Summing over pairs gives
+$[d,\partial_C]=\Delta_b-\Delta_{b(P-,P-)}$.
+Constant contractions supercommute, and $\partial_C$ is even.
+Thus
+\[
+ e^{\hbar\partial_C}(d+\hbar\Delta_b)e^{-\hbar\partial_C}
+          =d+\hbar\Delta_{b(P-,P-)}.
+\]
+Applying $\operatorname{Sym}(p)$ proves the cochain equation.
+
+Each term contracts disjoint pairs of variables in one smooth
+compact kernel. Partial distributional evaluation leaves a
+smooth kernel with support in the projected compact set.
+The nuclear tensor topology makes these operations continuous.
+There is no multiplication of singular distributions on a
+common diagonal. At fixed field number the exponential
+terminates. At fixed $\hbar$ order only finitely many input
+coefficients contribute, proving the formal extension.
+\end{proof}
+
+Strong convergence of the covariance distributions on each
+fixed compact test space gives coefficientwise convergence
+of these maps. Their value on the unit remains one.
+An unnormalized state still needs its determinant section
+and a boundary-compatible family of contractions.
+
+\section{A free gauge state with nonzero contractions}
+
+The preceding Gaussian cochain map is compatible with a quantum
+second-order differential. A free BRST differential instead
+acts as a derivation. A quartet gives an explicit preparation
+for this case and separates cancellation of the graded trace
+from the values of its observables.
+
+Over $\mathbb C[[\hbar]]$, set
+\[
+ A=\mathbb C[x,b]\otimes\Lambda(\bar c,c)[[\hbar]],
+ \qquad |x|=|b|=0,\quad |\bar c|=-1,\quad |c|=1.
+\]
+Each coefficient of $\hbar$ is polynomial in the displayed
+variables. Use the odd order $\bar c,c$ and left derivatives.
+Define
+\[
+ Q=c\partial_x+b\partial_{\bar c},\qquad
+ s=x\partial_c+\bar c\partial_b.
+\]
+
+Let $N$ count total polynomial and exterior degree.
+The identities $Q^2=s^2=0$ and $Qs+sQ=N$ hold on generators,
+and hence on the algebra by the derivation rule.
+Put $h_0=s/N$ on positive degree and zero on constants.
+If $i$ includes constants, then
+$Qh_0+h_0Q=1-i\operatorname{ev}_0$.
+
+Introduce the even contraction
+\begin{equation}\label{mht:eq:quartet-wick}
+ C=\partial_x\partial_b+\partial_c\partial_{\bar c},
+ \qquad W=e^{\hbar C},\qquad P_G=\operatorname{ev}_0W.
+\end{equation}
+The exponential terminates on each polynomial and is a
+continuous linear automorphism of the underlying formal module.
+
+\begin{theorem}\label{mht:thm:quartet-preparation}
+The functional $P_G$ is $Q$-closed and has moments
+\begin{align}
+ P_G(x^mb^n)&=\delta_{mn}m!\hbar^m,\notag\\
+ P_G(\bar c c\,x^mb^n)&=\hbar\delta_{mn}m!\hbar^m.
+       \label{mht:eq:quartet-moments}
+\end{align}
+Terms with exactly one ghost have zero expectation.
+For $H_G=W^{-1}h_0W$,
+\begin{equation}\label{mht:eq:quartet-contraction}
+ QH_G+H_GQ=1-iP_G,
+ \qquad H_G^2=H_Gi=P_GH_G=0.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The commutators of $Q$ with the two terms of $C$ are
+$-\partial_x\partial_{\bar c}$ and
+$\partial_x\partial_{\bar c}$. Hence $[Q,C]=0$.
+Evaluation at zero kills $Q$, so $P_GQ=0$.
+
+The bosonic contraction survives evaluation only when it
+differentiates $x^mb^n$ equally often in both variables.
+For $m=n$ its coefficient is $(m!)^2\hbar^m/m!$.
+Also $\partial_c\partial_{\bar c}(\bar c c)=1$.
+These commuting contractions prove the moment formulas.
+Conjugation of the $h_0$ identities by $W$ gives
+\eqref{mht:eq:quartet-contraction}, since $Wi=i$.
+\end{proof}
+
+For example,
+\[
+ Q(\bar c x)=bx-\bar c c,\qquad
+ P_G(bx)=P_G(\bar c c)=\hbar.
+\]
+The Ward identity equates two nonzero contractions.
+The preparation is a graded algebraic functional, with no
+claim of a positive measure on odd variables.
+
+\subsection{Transfer and its Hilbert completion}
+
+For $0<r<1$, define $T_r=W^{-1}r^NW$ on polynomials.
+Because $[Q,N]=[Q,W]=0$,
+\begin{equation}\label{mht:eq:quartet-transfer}
+ [Q,T_r]=0,\qquad T_{r_1}T_{r_2}=T_{r_1r_2},
+ \qquad P_GT_r=P_G,\qquad T_r1=1.
+\end{equation}
+
+For an analytic trace, fix a numerical value of $\hbar$.
+Declare the vectors
+\[
+ W^{-1}(x^ab^d\bar c^{\nu_1}c^{\nu_2}),
+ \qquad a,d\geq0,\quad \nu_1,\nu_2\in\{0,1\},
+\]
+orthonormal, with parity $\nu_1+\nu_2$.
+This defines the Hilbert completion. The operator $T_r$ is
+diagonal there, with eigenvalue $r^{a+d+\nu_1+\nu_2}$, so
+\begin{equation}\label{mht:eq:quartet-supertrace}
+ \operatorname{Tr}|T_r|=\frac{(1+r)^2}{(1-r)^2},
+ \qquad \operatorname{Str}T_r=1.
+\end{equation}
+The differential and homotopy identities hold on the invariant
+polynomial core. No boundedness of $W$ on a different Hilbert
+space is assumed.
+
+This free differential also has a finite BFV charge.
+Give the cotangent momenta of $(x,b,\bar c,c)$ complementary
+degrees so that the canonical Poisson bracket has degree zero.
+Let $\Theta$ be the degree-one fiber-linear Hamiltonian of $Q$.
+The correspondence from vector fields to these Hamiltonians
+preserves brackets, so $\{\Theta,\Theta\}=0$.
+Coordinate quantization gives the square-zero operator $\hbar Q$.
+
+\subsection{Nonzero Fourier modes and the residual sector}
+
+Take a flat product
+\[
+ Y=S^1_s\times(\mathbb C/\Lambda)^2\cong\mathbb T^5,
+ \qquad D=d_s+\bar\partial.
+\]
+For a real dual-lattice vector
+$k=(k_s,k_{x_1},k_{y_1},k_{x_2},k_{y_2})$, the mode complex is
+$\Lambda^\bullet\mathbb C^3$ with differential
+$D_k=\eta(k)\wedge$, where
+\[
+ \eta(k)=ik_s\,ds
+       +\frac{ik_{x_1}-k_{y_1}}2\,d\bar z_1
+       +\frac{ik_{x_2}-k_{y_2}}2\,d\bar z_2.
+\]
+
+For $k\ne0$, this covector is nonzero. The Hermitian dual
+vector $\eta(k)^\sharp$ satisfies
+$\eta(k)(\eta(k)^\sharp)=\|\eta(k)\|^2$, and
+\begin{equation}\label{mht:eq:mixed-fourier-contraction}
+ h_k=\frac{\iota_{\eta(k)^\sharp}}{\|\eta(k)\|^2},
+ \qquad D_kh_k+h_kD_k=1.
+\end{equation}
+To see the exact pairs, choose
+$u_1=\eta(k)/\|\eta(k)\|$ and an orthonormal complement
+$u_2,u_3$. For each $I\subset\{2,3\}$,
+\[
+ D_ku_I=\|\eta(k)\|u_1\wedge u_I,
+ \qquad D_k(u_1\wedge u_I)=0.
+\]
+There are four pairs.
+
+Choose grading shifts and cotangent partners that turn each
+pair into the quartet just constructed. This specifies the
+free paired sector. Give its quartets positive frequencies
+$\omega_k$ with $c|k|\leq\omega_k\leq C|k|$ outside a finite
+set, and define, for $\ell>0$,
+\[
+ W_k=\exp\!\left(\frac{\hbar C_k}{2\omega_k}\right),
+ \qquad r_k=e^{-\ell\omega_k}.
+\]
+
+Here $C_k$ is the quartet contraction of
+\eqref{mht:eq:quartet-wick}. The paired covariance is
+$\hbar/(2\omega_k)$ and commutes with the mode differential.
+Tensor products define preparation and transfer on polynomials
+in finitely many modes. Smoothly smeared contractions converge
+by rapid decay of their Fourier coefficients.
+
+Complete the occupation basis with the vacuum as reference
+vector. The logarithm of the absolute transfer trace is a
+fixed finite multiple of
+\[
+ \sum_{k\ne0}2\log\frac{1+r_k}{1-r_k}<\infty.
+\]
+Indeed, $\sum_{k\ne0}e^{-\ell\omega_k}<\infty$ by lattice
+shell counting. Absolute convergence permits the graded
+product. Each quartet contributes one, so the nonzero-mode
+supertrace is one.
+
+At $k=0$ the differential vanishes. Before field shifts and
+cotangent partners, the residual complex is
+\[
+ \Lambda^\bullet\langle ds,d\bar z_1,d\bar z_2\rangle,
+\]
+with eight components per coefficient copy. Its polarization
+and state remain separate data. This free mixed Fourier
+preparation has not identified those data with the compact
+residual state of \eqref{mht:eq:residual-cylinder}.
+
+\section{A scalar collar with infinitely many modes}
+
+We next construct a positive scalar preparation on the compact
+five-dimensional space. Its reference measure and vacuum energy
+are fixed before the mode cutoff is removed. This makes it
+possible to prove sewing and then add a nonnegative interaction.
+The scalar sector is independently defined from the gauge
+quartets and their residual cohomology.
+
+Let $\mathbb T^5=(\mathbb R/2\pi\mathbb Z)^5$ with its flat
+volume measure. Fix $m>0$ and numerical $\hbar>0$. Put
+\[
+ \Omega_0=\sqrt{-\Delta_{\mathbb T^5}+m^2},
+ \qquad \Omega_0e_j=\omega_je_j,
+\]
+where $e_j$ is a real orthonormal Fourier basis.
+Write $k_j$ for a frequency of $e_j$.
+The eigenvalue multiset is
+$\omega_k=\sqrt{|k|^2+m^2}$, $k\in\mathbb Z^5$.
+The sine and cosine multiplicities give this same count.
+
+Take independent centered Gaussian coordinates $x_j$ with
+variances $c_j=\hbar/(2\omega_j)$.
+
+For $s>2$, the random series $\phi=\sum_jx_je_j$ defines
+a Gaussian probability measure $\mu$ on $H^{-s}(\mathbb T^5)$.
+Indeed,
+\begin{equation}\label{mht:eq:scalar-gaussian-domain}
+ \mathbb E\|\phi\|_{H^{-s}}^2
+   =\frac\hbar2\sum_{k\in\mathbb Z^5}
+       \frac{(1+|k|^2)^{-s}}{\sqrt{|k|^2+m^2}}<\infty.
+\end{equation}
+Shell counting gives summands of order $n^{3-2s}$ after
+grouping lattice points of radius $n$. The finite sums converge
+in mean square in this Hilbert space. For real smooth $f$,
+\begin{equation}\label{mht:eq:scalar-characteristic-functional}
+ \int e^{i\langle\phi,f\rangle}\,d\mu(\phi)
+ =\exp\!\left(-\frac\hbar4
+                       \langle f,\Omega_0^{-1}f\rangle\right).
+\end{equation}
+
+\begin{proposition}[The exact Sobolev threshold]
+\label{mht:prop:scalar-sobolev-threshold}
+The measure $\mu$ is concentrated on $H^{-s}(\mathbb T^5)$
+if and only if $s>2$.
+\end{proposition}
+
+\begin{proof}
+The finite expectation in
+\eqref{mht:eq:scalar-gaussian-domain} proves sufficiency.
+For necessity put $a_j=(1+|k_j|^2)^{-s}c_j$ and
+$\xi_j=x_j/\sqrt{c_j}$. Independence gives
+\[
+ \mathbb E\exp\!\left(-\sum_{j\leq K}a_j\xi_j^2\right)
+       =\prod_{j\leq K}(1+2a_j)^{-1/2}.
+\]
+
+For $s\leq2$, shell counting gives $\sum_ja_j=\infty$.
+Hence $\sum_j\log(1+2a_j)=\infty$. Indeed, either infinitely
+many $a_j$ are bounded below, or the logarithms are comparable
+to $a_j$ on the tail. The product tends to zero.
+
+Bounded convergence shows that the exponential of the negative
+full square sum is zero almost surely. Thus that square sum
+is infinite almost surely, proving necessity.
+\end{proof}
+
+\subsection{The measure in the Mehler kernel}
+
+For a collar of length $\ell>0$, let $r_j=e^{-\ell\omega_j}$.
+Relative to the fixed measure $\mu$, the first $K$ modes have
+kernel
+\begin{equation}\label{mht:eq:scalar-finite-collar}
+ p_\ell^{(K)}(x,y)=\prod_{j=1}^K(1-r_j^2)^{-1/2}
+ \exp\!\left[-\sum_{j=1}^K
+  \frac{r_j^2(x_j^2+y_j^2)-2r_jx_jy_j}
+                              {2c_j(1-r_j^2)}\right].
+\end{equation}
+Unused modes have kernel one on the full probability space.
+In one coordinate, $p_\ell(x,y)d\mu(y)$ is the Gaussian law
+with mean $rx$ and variance $c(1-r^2)$.
+
+The ordinary oscillator amplitude relative to Lebesgue measure is
+\begin{equation}\label{mht:eq:scalar-oscillator-amplitude}
+ Z_\ell(a,b)=
+ \left(\frac{\omega}{2\pi\hbar\sinh(\omega\ell)}\right)^{1/2}
+ \exp\!\left[-\frac{\omega((a^2+b^2)\cosh(\omega\ell)-2ab)}
+                                  {2\hbar\sinh(\omega\ell)}\right].
+\end{equation}
+If $\psi_0^2$ is the Gaussian density of variance
+$\hbar/(2\omega)$, direct substitution gives
+\begin{equation}\label{mht:eq:scalar-ground-transform}
+ p_\ell(a,b)=e^{\ell\omega/2}
+                  \frac{Z_\ell(a,b)}{\psi_0(a)\psi_0(b)}.
+\end{equation}
+Thus \eqref{mht:eq:scalar-finite-collar} includes a change of
+reference measure and a ground-energy subtraction.
+
+\begin{theorem}\label{mht:thm:scalar-infinite-sewing}
+The kernels $p_\ell^{(K)}$ converge in $L^2(\mu\otimes\mu)$
+to a kernel $p_\ell$ that is positive almost everywhere.
+For each pair of positive lengths, almost everywhere,
+\begin{align}
+ \int p_\ell(x,y)\,d\mu(y)&=1,\notag\\
+ \int p_{\ell_1}(x,z)p_{\ell_2}(z,y)\,d\mu(z)
+                         &=p_{\ell_1+\ell_2}(x,y).
+       \label{mht:eq:scalar-infinite-sewing}
+\end{align}
+The associated operators $P_\ell$ form a strongly continuous,
+self-adjoint Markov semigroup on $L^2(\mu)$.
+At every positive length they are trace class, with
+\begin{align}
+ \operatorname{Tr}P_\ell
+       &=\det(1-e^{-\ell\Omega_0})^{-1},\notag\\
+ \|p_\ell\|_{L^2(\mu\otimes\mu)}^2
+       &=\det(1-e^{-2\ell\Omega_0})^{-1}.
+       \label{mht:eq:scalar-fredholm-determinants}
+\end{align}
+These Fredholm determinants converge on the one-particle
+space $L^2(\mathbb T^5)$.
+\end{theorem}
+
+\begin{proof}
+Composition of one-mode transitions gives mean $r_1r_2x$
+and variance $c(1-r_1^2r_2^2)$. This proves finite-mode
+sewing with its normalization. Direct Gaussian integration gives
+\[
+ \int p_r(x,y)^2\,d\mu(x)d\mu(y)=(1-r^2)^{-1}.
+\]
+Each independent coordinate factor has expectation one.
+Consequently $p_\ell^{(K)}$ is a nonnegative martingale in
+the first $K$ pairs of coordinates, with squared norm
+$\prod_{j\leq K}(1-r_j^2)^{-1}$.
+
+For every $a>0$, shell counting gives
+$\sum_je^{-a\omega_j}<\infty$. Also $r_j\leq e^{-\ell m}<1$.
+The squared norms are bounded, so the martingale converges
+in $L^2$ to a nonnegative kernel.
+
+To prove positivity, take the logarithm of the product.
+The diagonal quadratic terms have summable absolute expectations.
+The independent centered cross terms have summable variances,
+and the constant logarithmic terms converge.
+The logarithm is therefore finite almost everywhere.
+
+Integration in one variable is an $L^2$ contraction, so
+normalization passes to the limit. Kernel convergence gives
+Hilbert--Schmidt convergence of the operators.
+The finite operators are contractions. Their composition
+identity therefore passes to the limit, proving
+\eqref{mht:eq:scalar-infinite-sewing}.
+Symmetry follows from the kernel formula.
+
+Normalized Hermite polynomials in one coordinate have eigenvalues
+$r^n$, as follows from their generating function.
+Finite products give an orthonormal basis of $L^2(\mu)$:
+conditional expectations onto finitely many coordinates
+converge in $L^2$, and the finite-dimensional Hermite bases
+are complete. The eigenvalues are
+$\prod_jr_j^{n_j}$ for finite-support occupation sequences.
+They tend to one as $\ell\downarrow0$ on each basis vector.
+Density and contraction prove strong continuity.
+
+Monotone summation of these positive eigenvalues gives
+\[
+ \operatorname{Tr}P_\ell
+       =\prod_j\sum_{n\geq0}r_j^n
+       =\prod_j(1-r_j)^{-1}<\infty.
+\]
+The one-particle operator $e^{-\ell\Omega_0}$ is trace class,
+so this is its stated Fredholm determinant.
+The identity $P_{2\ell}=P_\ell^*P_\ell$ gives the second one.
+\end{proof}
+
+For a Fourier cutoff $\|k\|_\infty\leq K$, let
+$Z_\ell^{(K)}$ be the truncated trace and
+$Z_\ell=\operatorname{Tr}P_\ell$. The shell cardinality is
+\[
+ (2n+1)^5-(2n-1)^5=160n^4+80n^2+2.
+\]
+Since $\omega_k\geq\|k\|_\infty$ and
+$-\log(1-x)\leq x/(1-x)$,
+\begin{equation}\label{mht:eq:scalar-fredholm-tail}
+ 0\leq\log Z_\ell-\log Z_\ell^{(K)}
+ \leq\frac{\sum_{n>K}(160n^4+80n^2+2)e^{-\ell n}}
+                                  {1-e^{-\ell(K+1)}}.
+\end{equation}
+The massive zero mode is included. At $m=0$, its variance
+and trace factor are undefined in this construction.
+It must then be prepared as a residual variable.
+
+\section{An interaction at fixed positive smoothing}
+
+Fix $\sigma>0$. Define a smoothing operator and potential by
+\begin{equation}\label{mht:eq:scalar-smoothed-potential}
+ R_\sigma=e^{-\sigma\Omega_0},\qquad
+ V_\sigma(\phi)=\frac1{24}\int_{\mathbb T^5}
+                                      (R_\sigma\phi)(z)^4\,dz.
+\end{equation}
+The map $R_\sigma$ sends $H^{-s}$ continuously into every
+fixed smooth Sobolev space. Thus $V_\sigma$ is continuous,
+finite and nonnegative on $H^{-s}$. Smoothing bounds it by
+a constant times $\|\phi\|_{H^{-s}}^4$.
+All its Gaussian moments are finite.
+
+For paths fix $s>2$. Let $\Phi_t$ be the stationary
+Ornstein--Uhlenbeck process with coordinate covariance
+\[
+ \mathbb E(\Phi_j(t)\Phi_j(t'))
+                  =c_je^{-\omega_j|t-t'|}.
+\]
+
+\begin{proposition}\label{mht:prop:scalar-time-regularity}
+The process has a continuous $H^{-s}(\mathbb T^5)$ modification,
+locally H\"older of every order $\alpha<\min\{1/2,s-2\}$.
+For $0<h\leq1/2$ its increment variance satisfies
+\begin{equation}\label{mht:eq:scalar-time-increments}
+ \mathbb E\|\Phi_{t+h}-\Phi_t\|_{H^{-s}}^2\leq C_s
+ \begin{cases}
+ h^{2s-4},&2<s<5/2,\\
+ h\log(e/h),&s=5/2,\\
+ h,&s>5/2.
+ \end{cases}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+The increment variance is
+\[
+ 2\sum_j(1+|k_j|^2)^{-s}c_j(1-e^{-\omega_jh}).
+\]
+The bound $1-e^{-x}\leq\min\{1,x\}$ and shell counting reduce it
+to a constant times $\sum_{n\geq1}n^{3-2s}\min\{1,nh\}$,
+plus a bounded multiple of $h$ from the massive zero mode.
+Splitting this sum at $n=h^{-1}$ gives
+\eqref{mht:eq:scalar-time-increments}.
+For $s>5/2$, the simpler bound
+$\hbar h\sum_j(1+|k_j|^2)^{-s}$ also converges.
+
+For a centered Hilbert-valued Gaussian $G$, diagonalize its
+covariance and apply the $L^q$ triangle inequality to its squared
+norm. This gives
+$\mathbb E\|G\|^{2q}\leq C_q(\mathbb E\|G\|^2)^q$.
+Apply this to the increments and use the moment continuity
+criterion with arbitrarily large integers $q$.
+At $s=5/2$, the logarithm is bounded by every negative power
+of $h$, giving each strict exponent $\alpha<1/2$.
+\end{proof}
+
+The transition kernel of this continuous modification is $p_t$.
+
+The continuous path space is separable, so regular conditional
+Gaussian bridge laws exist given $\Phi_0=x$, $\Phi_\ell=y$.
+Their endpoint law is $p_\ell(x,y)d\mu(x)d\mu(y)$.
+Positivity of $p_\ell$ makes this measure equivalent to
+$\mu\otimes\mu$. For $g\geq0$ define
+\begin{equation}\label{mht:eq:scalar-interacting-kernel}
+ p_\ell^{g,\sigma}(x,y)=p_\ell(x,y)
+  \mathbb E_{x,y}^{\mathrm{bridge}}
+       \exp\!\left(-g\int_0^\ell V_\sigma(\Phi_t)\,dt\right).
+\end{equation}
+Here $g$ is the coefficient in the Euclidean weight.
+An action coupling $g_{\mathrm{phys}}$ corresponds to
+$g=g_{\mathrm{phys}}/\hbar$.
+
+\begin{theorem}\label{mht:thm:scalar-interacting-sewing}
+For $g\geq0$ and $\sigma>0$, the kernel
+\eqref{mht:eq:scalar-interacting-kernel} is symmetric, belongs
+to $L^2(\mu\otimes\mu)$, and satisfies
+$0\leq p_\ell^{g,\sigma}\leq p_\ell$.
+For each pair of positive lengths, almost everywhere,
+\begin{equation}\label{mht:eq:scalar-interacting-sewing}
+ \int p_{\ell_1}^{g,\sigma}(x,z)
+       p_{\ell_2}^{g,\sigma}(z,y)\,d\mu(z)
+                         =p_{\ell_1+\ell_2}^{g,\sigma}(x,y).
+\end{equation}
+The operators form a strongly continuous, self-adjoint,
+positivity-preserving contraction semigroup.
+At positive length they are trace class and satisfy
+\begin{equation}\label{mht:eq:scalar-interacting-trace}
+ \operatorname{Tr}P_\ell^{g,\sigma}
+   =\|P_{\ell/2}^{g,\sigma}\|_{\mathrm{HS}}^2
+   \leq\det(1-e^{-\ell\Omega_0})^{-1}.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+First use a bounded nonnegative potential. Its path weight
+lies between zero and one. Conditioning at an intermediate
+time and using the Markov property gives the sewing law.
+Reversal of the stationary path gives symmetry.
+
+Apply this construction to $V_\sigma\wedge M$ and let
+$M\to\infty$. On every continuous path, the potential
+integral is finite by continuity and compactness of the time
+interval. The weights decrease to the weight in
+\eqref{mht:eq:scalar-interacting-kernel}.
+Domination by $p_\ell$ gives convergence in $L^2$.
+In the sewing integral the product is dominated by the free
+product, whose integral is $p_{\ell_1+\ell_2}$.
+Dominated convergence proves the claimed sewing law.
+
+The same kernel is obtained by spatial mode cutoffs.
+Fourier projections converge uniformly on the compact image
+of a continuous $H^{-s}$ path. After smoothing, the potentials
+and their integrated weights therefore converge.
+The finite-coordinate marginal of the full bridge is precisely
+the corresponding finite-mode bridge. Its conditional weights
+converge almost everywhere and are bounded by one.
+Together with $p_\ell^{(K)}\to p_\ell$ in $L^2$, this proves
+the cutoff assertion.
+
+Kernel domination gives the Hilbert--Schmidt bound.
+Symmetry and sewing imply
+\[
+ P_\ell^{g,\sigma}
+       =(P_{\ell/2}^{g,\sigma})^*P_{\ell/2}^{g,\sigma}.
+\]
+This proves trace class, operator positivity and
+\eqref{mht:eq:scalar-interacting-trace}.
+The inequality $P_\ell^{g,\sigma}1\leq1$ and symmetry give
+contraction on $L^2(\mu)$.
+On bounded continuous cylinder functions, path continuity
+and bounded convergence prove strong continuity at zero.
+Density and contraction extend it to all of $L^2(\mu)$.
+\end{proof}
+
+\begin{corollary}\label{mht:cor:scalar-trace-convergence}
+At fixed $g\geq0$, $\sigma>0$ and $\ell>0$, the interacting
+mode-cutoff operators converge to $P_\ell^{g,\sigma}$ in trace norm.
+The finite kernels are extended by the constant kernel one in
+the unused modes.
+\end{corollary}
+
+\begin{proof}
+The proof of Theorem~\ref{mht:thm:scalar-interacting-sewing}
+gives Hilbert--Schmidt convergence at length $\ell/2$.
+Write $A_K$ and $A$ for the half-length operators.
+The finite sewing identity includes the Gaussian
+conditional-expectation projection on unused modes.
+Consequently its length-$\ell$ operator is $A_K^2$,
+and the limiting sewing identity gives $A^2$.
+
+Decompose the difference as
+$(A_K-A)A_K+A(A_K-A)$.
+The trace-ideal product estimate gives
+\[
+ \|A_K^2-A^2\|_1
+ \leq\|A_K-A\|_2(\|A_K\|_2+\|A\|_2),
+\]
+which tends to zero.
+\end{proof}
+
+At positive coupling these operators are generally sub-Markov:
+their mass can be less than one. Dividing each interval kernel
+by its own mass would generally change the sewing law.
+The path weights in \eqref{mht:eq:scalar-interacting-kernel}
+remain part of the amplitude.
+
+\subsection{The first insertion and the ordering of composites}
+
+Conditioning the stationary covariance on both endpoints gives
+\begin{align}
+ m_j(t)&=\frac{\sinh(\omega_j(\ell-t))}{\sinh(\omega_j\ell)}x_j
+           +\frac{\sinh(\omega_jt)}{\sinh(\omega_j\ell)}y_j,
+       \label{mht:eq:scalar-bridge-mean}\\
+ v_j(t)&=\frac{\hbar\sinh(\omega_jt)
+                            \sinh(\omega_j(\ell-t))}
+                            {\omega_j\sinh(\omega_j\ell)}.
+       \label{mht:eq:scalar-bridge-variance}
+\end{align}
+For a direct derivation, put $r=e^{-\omega_jt}$ and
+$s=e^{-\omega_j(\ell-t)}$. The endpoint covariance is
+$c_j\left(\begin{smallmatrix}1&rs\\rs&1\end{smallmatrix}\right)$
+and the cross covariance is $c_j(r,s)$.
+Multiplying by the inverse endpoint matrix gives the mean.
+The Schur complement is
+$c_j(1-r^2)(1-s^2)/(1-r^2s^2)$, giving the variance.
+
+Define the smoothed mean and pointwise variance by
+\[
+ m_\sigma(t,z)=\sum_je^{-\sigma\omega_j}m_j(t)e_j(z),
+ \qquad
+ v_\sigma(t,z)=\sum_je^{-2\sigma\omega_j}v_j(t)e_j(z)^2.
+\]
+These series converge with every fixed spatial derivative.
+The conditional variance is bounded by $c_j$, and the
+smoothed mean is bounded by the endpoint $H^{-s}$ norms.
+Consequently all moments of the integrated potential are
+finite for almost every endpoint pair.
+
+\begin{proposition}\label{mht:prop:scalar-first-insertion}
+The first right response at zero coupling is
+\begin{align}
+ -\left.\partial_g\log
+       \frac{p_\ell^{g,\sigma}(x,y)}{p_\ell(x,y)}\right|_{g=0+}
+  =\frac1{24}\int_0^\ell dt\int_{\mathbb T^5}dz\,
+       \bigl(m_\sigma^4+6m_\sigma^2v_\sigma+3v_\sigma^2\bigr).
+       \label{mht:eq:scalar-first-insertion}
+\end{align}
+All higher right derivatives at zero exist as finite bridge
+moments and cumulants.
+\end{proposition}
+
+\begin{proof}
+Put $\mathcal V=\int_0^\ell V_\sigma(\Phi_t)dt$.
+The quotient $(1-e^{-g\mathcal V})/g$ is bounded by
+$\mathcal V$ and tends to it as $g\downarrow0$.
+Dominated convergence gives the derivative of its conditional
+expectation. At zero coupling that expectation is one, so
+the negative logarithmic derivative is
+$\mathbb E_{x,y}^{\mathrm{bridge}}\mathcal V$.
+
+For a Gaussian of mean $m$ and variance $v$,
+$\mathbb E X^4=m^4+6m^2v+3v^2$.
+Integrating this identity proves the formula.
+Higher finite moments justify repeated right differentiation.
+Differentiating the logarithm gives their cumulants.
+\end{proof}
+
+The last two terms retain fluctuations about the conditional
+mean. A change of covariance has its own polynomial ordering
+rule. For a scalar variance $C$, define
+$:F:_C=e^{-C\partial_x^2/2}F$. Then
+\begin{equation}\label{mht:eq:scalar-wick-ordering}
+ :F:_{C_2}=e^{-(C_2-C_1)\partial_x^2/2}:F:_{C_1},
+ \qquad :x^4:_C=x^4-6Cx^2+3C^2.
+\end{equation}
+The exponentials terminate on polynomials.
+
+On smeared kernels the same identity uses the corresponding
+covariance contraction. It does not define unsmoothed
+coincident products.
+
+\section{Divergence and Borel reconstruction}
+
+The finite bridge moments determine an asymptotic expansion at
+zero coupling. Their factorial growth also determines a Borel
+reconstruction of the positive-coupling kernel. Write
+$X=\mathbb T^5$, $\mathcal V=\int_0^\ell V_\sigma(\Phi_t)\,dt$ and
+$F_{\ell,x,y}(g)=\mathbb E_{x,y}^{\mathrm{bridge}}e^{-g\mathcal V}$.
+This expectation is defined for $\operatorname{Re}g\geq0$.
+Let $J_0(z)=\sum_{n\geq0}(-1)^n(z^2/4)^n/(n!)^2$ be the
+Bessel function of order zero.
+
+\begin{lemma}\label{mht:lem:scalar-bessel-reconstruction}
+Let $\mathcal V\geq0$ be a random variable with
+$\mathbb E e^{\varepsilon\sqrt{\mathcal V}}<\infty$ for some $\varepsilon>0$.
+Put $M_n=\mathbb E \mathcal V^n$ and
+$F(g)=\mathbb E e^{-g\mathcal V}$ for $g\geq0$.
+The Borel germ of its formal expansion is
+\[
+ \widehat F(\zeta)=\sum_{n\geq0}
+             \frac{(-1)^nM_n}{(n!)^2}\zeta^n.
+\]
+It continues along the nonnegative ray by
+\begin{equation}\label{mht:eq:scalar-bessel-transform}
+ \widehat F(\zeta)=\mathbb E J_0(2\sqrt{\zeta \mathcal V}),\qquad
+ |\widehat F(\zeta)|\leq1\quad(\zeta\geq0),
+\end{equation}
+and for every $g>0$,
+\begin{equation}\label{mht:eq:scalar-borel-laplace}
+ F(g)=\int_0^\infty e^{-t}\widehat F(gt)dt.
+\end{equation}
+The continuation is analytic wherever
+$2|\operatorname{Im}\sqrt\zeta|<\varepsilon$, together with its
+germ at zero.
+\end{lemma}
+\begin{proof}
+The function $J_0(2\sqrt{\zeta \mathcal V})$ is entire in $\zeta$, by its
+power series. The integral representation
+\[
+ J_0(z)=\frac1{2\pi}\int_0^{2\pi}e^{iz\cos\theta}\,d\theta
+\]
+gives $|J_0(z)|\leq e^{|\operatorname{Im}z|}$.
+For small $|\zeta|$, absolute summation is dominated by
+$e^{2\sqrt{|\zeta|}\sqrt{\mathcal V}}$. This proves the germ identity.
+The same bound on compact subsets proves the stated analytic
+continuation, while for nonnegative $\zeta$ the bound is one.
+
+For fixed $w\geq0$, termwise integration is justified by the
+convergent sum $\sum_n(gw)^n/n!=e^{gw}$ and gives
+\[
+ \int_0^\infty e^{-t}J_0(2\sqrt{gtw})dt=e^{-gw}.
+\]
+To average this identity, use $|J_0(2\sqrt{gt\mathcal V})|\leq1$.
+Fubini now requires only the integrable bound $e^{-t}$ and proves
+\eqref{mht:eq:scalar-borel-laplace}.
+No exponential moment $\mathbb E e^{g\mathcal V}$ is required.
+\end{proof}
+
+\begin{theorem}\label{mht:thm:scalar-quartic-borel}
+Fix $m,\hbar,\ell,\sigma>0$ and $s>2$ in
+\eqref{mht:eq:scalar-interacting-kernel}. For almost every endpoint pair $(x,y)$ there
+are constants $0<c_-\leq c_+<\infty$ such that, for $n\geq1$,
+\begin{equation}\label{mht:eq:scalar-gevrey}
+ c_-^n(n!)^2\leq\mathbb E_{x,y}^{\mathrm{bridge}}\mathcal V^n\leq c_+^n(n!)^2.
+\end{equation}
+The coupling series of $F_{\ell,x,y}$ has radius zero and exact
+Gevrey order one. Its coefficients are bounded by an exponential
+times $n!$. No exponential multiple of $(n!)^a$, with $a<1$,
+bounds them. It is an asymptotic expansion on $\operatorname{Re}g\geq0$,
+with a remainder bounded by $c_+^N N!|g|^N$ after $N$ terms.
+
+Its endpointwise Borel continuation and Laplace integral are given by
+Lemma~\ref{mht:lem:scalar-bessel-reconstruction}. Multiplication by $p_\ell$ gives
+$L^2(\mu\otimes\mu)$ kernels along the positive Borel ray, whose
+Bochner Laplace integral is exactly $p_\ell^{g,\sigma}$.
+Thus this reconstruction preserves the sewing of
+Theorem~\ref{mht:thm:scalar-interacting-sewing}.
+\end{theorem}
+\begin{proof}
+Write $D=\ell\operatorname{vol}(X)$ and
+$u(t,z)=(R_\sigma\Phi_t)(z)$. Its conditional mean has a finite
+uniform bound $M$, and its conditional pointwise variance has a
+finite uniform bound $v_*$, because $\sigma>0$ and $x,y\in H^{-s}$.
+For a standard real Gaussian $Z$, let $b_n=\mathbb E Z^{4n}=(4n-1)!!$.
+The exact ratio
+\[
+ \frac{b_{n+1}}{b_n}=(4n+1)(4n+3)
+\]
+lies between $3(n+1)^2$ and $16(n+1)^2$. Hence
+$3^n(n!)^2\leq b_n\leq16^n(n!)^2$.
+Using $|a+b|^{4n}\leq2^{4n-1}(|a|^{4n}+|b|^{4n})$ and Jensen's
+inequality on the finite measure space $[0,\ell]\times X$ yields
+\[
+ \mathbb E \mathcal V^n\leq
+ \left[\frac{D}{24}\,16(M^4+16v_*^2)\right]^n(n!)^2.
+\]
+
+For a lower bound use the space-time average
+$Y=D^{-1}\int_0^\ell\int_Xu(t,z)dzdt$.
+H\"older's inequality gives $\mathcal V\geq(D/24)Y^4$.
+The constant spatial mode is $e_0=\operatorname{vol}(X)^{-1/2}$, so
+\[
+ Y=\frac{e^{-\sigma m}}{\ell\sqrt{\operatorname{vol}(X)}}
+                        \int_0^\ell\Phi_0(t)dt.
+\]
+Its conditional variance is
+\begin{equation}\label{mht:eq:scalar-average-variance}
+ v_Y=\frac{\hbar e^{-2\sigma m}}{\ell^2\operatorname{vol}(X)m^2}
+       \left(\ell-\frac2m\tanh\frac{m\ell}{2}\right)>0.
+\end{equation}
+
+To obtain this formula, the covariance of the pinned constant mode
+is $\hbar$ times the Dirichlet Green kernel of
+$-\partial_t^2+m^2$. Its integral solves
+$(-\partial_t^2+m^2)f=1$, $f(0)=f(\ell)=0$, and is
+\[
+ f(t)=\frac1{m^2}
+       \left(1-\frac{\cosh(m(t-\ell/2))}{\cosh(m\ell/2)}\right).
+\]
+Integrating $f$ proves \eqref{mht:eq:scalar-average-variance}.
+Positivity follows from $\tanh a<a$ for $a>0$.
+
+All terms in the even Gaussian moment expansion are nonnegative,
+so $\mathbb E Y^{4n}\geq v_Y^{2n}b_n$.
+This proves the lower bound with $c_-=3Dv_Y^2/24$.
+
+Dividing \eqref{mht:eq:scalar-gevrey} by $n!$ proves the radius and exact
+factorial order. The integral Taylor remainder for $e^{-g\mathcal V}$ has
+absolute value at most $|g\mathcal V|^N/N!$ on the closed right half-plane,
+which proves the asymptotic estimate.
+
+The upper moment bound also implies exponential square-root
+integrability: use
+\[
+ e^{a\sqrt{\mathcal V}}\leq2\cosh(a\sqrt{\mathcal V}),\qquad
+ \mathbb E\cosh(a\sqrt{\mathcal V})
+ =\sum_{n\geq0}\frac{a^{2n}\mathbb E \mathcal V^n}{(2n)!}<\infty
+\]
+for $a^2c_+<1$, since $(2n)!\geq(n!)^2$.
+Lemma~\ref{mht:lem:scalar-bessel-reconstruction} applies.
+
+Along the positive ray the reconstructed kernel is bounded in
+absolute value by $p_\ell$. Dominated convergence makes it continuous
+in $L^2$. Its Bochner integral therefore exists
+in $L^2$, and the endpointwise identity identifies it with
+\eqref{mht:eq:scalar-interacting-kernel}. The resulting equality of kernels transfers
+their actual convolution law.
+\end{proof}
+
+The analytic germ in this theorem is endpointwise. Its radius may
+depend on the endpoints. The positive-ray Bochner integral uses the
+uniform domination by $p_\ell$. No endpoint-independent analytic
+radius in $L^2$ is needed for that assertion.
+
+The second connected response has an explicit form as well.
+Let $X_1,X_2$ be smoothed field values with means $a,b$,
+variances $v,w$ and covariance $C$. Gaussian expansion gives
+\begin{equation}\label{mht:eq:scalar-quartic-covariance}
+ \begin{split}
+ \operatorname{Cov}(X_1^4,X_2^4)={}&
+ 16ab(a^2+3v)(b^2+3w)C
+ +72(a^2+v)(b^2+w)C^2\\
+ &+96abC^3+24C^4.
+ \end{split}
+\end{equation}
+
+For a proof, expand $X_1^4$ in the Wick polynomials of its centered
+Gaussian part. The coefficients of Wick degrees $1,2,3,4$ are
+$4a(a^2+3v)$, $6(a^2+v)$, $4a$, $1$. Cross expectation of equal
+Wick degrees $r$ is $r!C^r$, while unequal degrees have zero cross
+expectation. This proves \eqref{mht:eq:scalar-quartic-covariance}.
+Its double integral divided by $24^2$ is
+$\partial_g^2\log F_{\ell,x,y}(0+)=\operatorname{Var}(\mathcal V)$.
+
+\section{A unitary comparison of the scalar states}
+
+The scalar kernel has a Hilbert Fock realization with the same
+interaction and vacuum normalization. Construct its Hamiltonian
+on the symmetric Hilbert Fock space
+\[
+ \mathcal F_{\Omega_0}
+   =\widehat{\bigoplus}_{n\geq0}\operatorname{Sym}^n\ell^2(\{j\}),
+\]
+where the summands are symmetric Hilbert tensor powers.
+Its orthonormal occupation basis $|\mathbf n\rangle$ is indexed by
+finitely supported sequences of nonnegative integers.
+The creation and annihilation operators $b_j^\dagger,b_j$ obey
+$[b_i,b_j^\dagger]=\delta_{ij}$, with all other commutators zero.
+The energy $d\Gamma(\Omega_0)$ has eigenvalue $\sum_j\omega_jn_j$.
+
+For $\sigma>0$ define the selfadjoint Segal field
+\[
+ Q_\sigma(z)=\sum_j e^{-\sigma\omega_j}e_j(z)
+                           \sqrt{c_j}(b_j+b_j^\dagger).
+\]
+The real coefficient sequence is square-summable uniformly in $z$.
+On $\mathcal F_{\Omega_0}$ define the maximal operator
+\[
+ \mathsf T_\sigma:\mathcal F_{\Omega_0}\longrightarrow L^2(X;\mathcal F_{\Omega_0}),
+ \qquad (\mathsf T_\sigma\psi)(z)=Q_\sigma(z)^2\psi,
+\]
+whose domain consists of vectors for which the displayed expression
+is defined almost everywhere and is square-integrable.
+This operator is closed. A convergent graph sequence has a
+subsequence converging pointwise almost everywhere in the target.
+Closedness of each $Q_\sigma(z)^2$ identifies the limit.
+
+On particle sectors of number at most $K$, the creation and
+annihilation bounds give
+$\|Q_\sigma(z)^2\psi\|\leq C_\sigma(K+2)\|\psi\|$ uniformly in $z$.
+Thus finite occupation vectors lie in its domain.
+
+For $g>0$ define the quadratic form
+\begin{equation}\label{mht:eq:scalar-fock-form}
+ \begin{aligned}
+ q_{g,\sigma}(\psi)
+   &=\|(d\Gamma(\Omega_0))^{1/2}\psi\|^2
+       +\frac g{24}\|\mathsf T_\sigma\psi\|^2,\\
+ D(q_{g,\sigma})
+   &=D((d\Gamma(\Omega_0))^{1/2})\cap D(\mathsf T_\sigma).
+ \end{aligned}
+\end{equation}
+It is nonnegative and closed: its form norm is the joint graph
+norm of two closed operators. Its domain contains the algebraic
+span of the occupation basis and is therefore dense.
+
+Let $K_{g,\sigma}$ be its
+associated nonnegative selfadjoint operator. For $g=0$ set
+$K_{0,\sigma}=d\Gamma(\Omega_0)$ on $D(d\Gamma(\Omega_0))$.
+The form representation and increasing-form convergence apply
+to these densely defined nonnegative forms.\footnote{See
+\href{https://webhomes.maths.ed.ac.uk/~v1ranick/papers/kato1.pdf}
+{T.~Kato, \emph{Perturbation Theory for Linear Operators}}, second
+edition, corrected printing. The results are VI.2.1, VI.2.6,
+VI.2.23 and VIII.3.13a.}
+
+Let $\mathrm{He}_n$ be the probabilists' Hermite polynomial, defined by
+$e^{ty-t^2/2}=\sum_n\mathrm{He}_n(y)t^n/n!$. For a finitely supported
+occupation sequence set
+\[
+ h_{\mathbf n}(x)=\prod_j
+       \frac{\mathrm{He}_{n_j}(x_j/\sqrt{c_j})}{\sqrt{n_j!}}.
+\]
+
+\begin{proposition}\label{mht:prop:scalar-fock-unitary}
+The map
+\[
+ \mathcal U:L^2(\mu)\longrightarrow\mathcal F_{\Omega_0},
+ \qquad \mathcal U h_{\mathbf n}=|\mathbf n\rangle
+\]
+extends to a unitary isomorphism. On polynomial cylinder vectors it
+preserves the following operators and their common commutation relations:
+\begin{align*}
+ \mathcal U1&=|0\rangle,\\
+ \mathcal U\,x_j\,\mathcal U^{-1}
+       &=\sqrt{c_j}(b_j+b_j^\dagger),\\
+ \mathcal U\,\sqrt{c_j}\partial_{x_j}\,\mathcal U^{-1}&=b_j,\\
+ \mathcal UP_\ell\mathcal U^{-1}&=e^{-\ell d\Gamma(\Omega_0)}.
+\end{align*}
+At fixed smoothing, the multiplication form of $V_\sigma$ is carried to
+$\|\mathsf T_\sigma\psi\|^2/24$, with equality of the full form
+domains. For $g\geq0$ one has
+\begin{equation}\label{mht:eq:scalar-interacting-unitary}
+ \mathcal U P_\ell^{g,\sigma}\mathcal U^{-1}
+                       =e^{-\ell K_{g,\sigma}}.
+\end{equation}
+This comparison preserves operator composition, adjoints, traces
+and normalized positive states.
+\end{proposition}
+\begin{proof}
+The generating function and Gaussian integration give
+$\mathbb E\mathrm{He}_n(Z)\mathrm{He}_r(Z)=n!\delta_{nr}$.
+Finite products form an orthonormal basis because conditional
+expectations onto finitely many coordinates converge in $L^2$ and
+finite-dimensional Hermite polynomials are complete. Thus $\mathcal U$
+is unitary. The recurrence
+$y\mathrm{He}_n=\mathrm{He}_{n+1}+n\mathrm{He}_{n-1}$ and
+$\mathrm{He}'_n=n\mathrm{He}_{n-1}$ prove the field and derivative
+identities. In particular, the Gaussian adjoint of
+$\sqrt{c_j}\partial_{x_j}$ is
+$x_j/\sqrt{c_j}-\sqrt{c_j}\partial_{x_j}$, matching $b_j^\dagger$.
+The free heat identity follows on the same basis and hence on the
+Hilbert completion.
+
+Exponential smoothing makes the coefficient sequence of
+$Q_\sigma(z)$ square-summable, with all fixed spatial derivatives.
+The multiplication operator $R_\sigma\phi(z)$ is its unitary image
+under the preceding identities, first on cylinders and then by closure.
+
+Finite occupation vectors are analytic for every real Segal field,
+by the creation and annihilation bounds. Their Gaussian polynomials
+are analytic for the corresponding real linear multiplication
+operator, so equality on this core identifies the selfadjoint closures.
+
+The spectral theorem identifies the full domain of $Q_\sigma(z)^2$
+with multiplication by $(R_\sigma\phi(z))^2$. Tonelli's theorem then
+identifies the domain of $\mathsf T_\sigma$ with $D(V_\sigma^{1/2})$.
+
+Let $H_{\mathrm{OU}}$ be the nonnegative generator of $P_\ell$.
+Together with the free heat identity, this identifies the full
+closed form \eqref{mht:eq:scalar-fock-form} with the Gaussian form
+\[
+ \|H_{\mathrm{OU}}^{1/2}f\|^2
+                       +g\|V_\sigma^{1/2}f\|^2.
+\]
+
+For each bounded potential $\min(V_\sigma,M)$, expansion in its
+bounded multiplication operator and the Markov law give the
+Feynman--Kac semigroup. The forms increase to the displayed closed
+form as $M\to\infty$. Their associated resolvents and semigroups
+converge strongly, while their kernels converge by bounded
+convergence of the path weights. This is precisely the preparation
+in Theorem~\ref{mht:thm:scalar-interacting-sewing}, proving
+\eqref{mht:eq:scalar-interacting-unitary}.
+
+Trace-class positivity and unitary
+invariance of the trace then give, for every bounded $A$,
+\[
+ \frac{\operatorname{Tr}(P_\ell^{g,\sigma}A)}{\operatorname{Tr} P_\ell^{g,\sigma}}
+ =\frac{\operatorname{Tr}\bigl(e^{-\ell K_{g,\sigma}}
+                   (\mathcal UA\mathcal U^{-1})\bigr)}
+        {\operatorname{Tr} e^{-\ell K_{g,\sigma}}}.
+\]
+This is an equality of prepared states under the specified unitary,
+with the same reference vacuum and coupling.
+\end{proof}
+
+\section{The comparison with native quantum fields}
+
+The compact residual state, determinant-line Gaussian,
+BRST quartet and positive scalar collar each have a specified
+domain and sewing law. Their constructions supply concrete
+targets for the native comparison of
+Problem~\ref{mht:qn:native-quantum-elimination}.
+That comparison must preserve more than the vacuum amplitude.
+
+The invariant functions $\mathcal O_r$ of
+Chapter~\ref{mht:ch:nonlinear-neumann} already lift classical
+matrix invariants to smooth Neumann fields.
+When the chosen real quadratic form is
+$\langle J,J\rangle=c_G\operatorname{tr}(J^2)$, its potential
+is $vc_G\mathcal O_2$. Its quantum image must specify the
+ordering, including the lower-Casimir corrections.
+The half-density computation also requires a map between
+the holonomy coordinate $X$ and the residual field $J$.
+
+\begin{problem}\label{mht:qn:native-prepared-state}
+Construct a renormalized observable complex for the native
+Neumann fields and a boundary state map from its action.
+Specify a common regulator, the determinant or Pfaffian line,
+the residual measure and the boundary BRST polarization.
+Compare the resulting invariant degree-zero states with
+$L^2(G,dg)^G$ and the heat operator
+\eqref{mht:eq:prepared-heat-time}.
+
+For a cut surface $U=U_1\cup_\Sigma U_2$, let $F_i$ be
+regular observables supported inside $U_i$.
+Construct source-dependent sewing of the form
+\[
+ \Pi_U(F_1F_2)=\operatorname{BV}_{\mathrm{res}}
+       \bigl\langle\Pi_{U_1}(F_1),\Pi_{U_2}(F_2)\bigr\rangle_\Sigma,
+\]
+where the pairing includes line transport and the residual
+BV integral satisfies Stokes. Require adjoint boundary
+differentials and compatibility with the supported insertion
+operations. Determine the disk normalization, vacuum energy,
+holonomy density and ordering of the lifted $\mathcal O_r$.
+If the prepared states differ, compute their first invariant
+defect modulo the allowed local cyclic counterterms.
+\end{problem}
+
+The scalar interaction poses a separate analytic limit:
+construct local counterterms and a state for which its sewing
+maps converge as $\sigma\downarrow0$.
+At fixed positive smoothing, the divergent coupling series has
+a Borel reconstruction and the scalar Fock comparison is unitary.
+The local limit and the comparison with the physical BRST fields,
+their residual sector and their boundary pairing remain to be
+constructed.

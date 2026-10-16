@@ -1,0 +1,659 @@
+\chapter{Signs, duals and coefficient completions}
+\label{mht:ch:signs-duals}
+
+A coefficient calculation enters a field theory through a map of
+complexes. Its grading determines the signs of that map, and its
+topology determines which inputs the map accepts. We give the
+conventions needed for the Hamiltonian and boundary constructions.
+The examples distinguish a coordinate change from a change of
+representation or completion.
+
+\section{Degrees and deformation parameters}
+
+For a cochain complex, use
+\[
+ (V[r])^j=V^{j+r},\qquad
+ d_{V[r]}=(-1)^r d_V.
+\]
+Thus an element of degree zero in $V$ has degree $-1$ in $V[1]$.
+The tensor differential and interchange law are
+\[
+ d(v\otimes w)=dv\otimes w+(-1)^{|v|}v\otimes dw,
+ \qquad
+ v\otimes w\longmapsto(-1)^{|v||w|}w\otimes v.
+\]
+Parity is cohomological degree modulo two. When a complex is written
+homologically, its differential lowers degree. We state this change
+before introducing its generators.
+
+The matrix relation variable $\Psi$ has cohomological degree $-1$,
+and the gauge ghost $c$ has degree $1$. Both are odd. Form degree
+on $\mathbb R^2\times\mathbb C^2$ is an additional grading before
+the field complex is totalized. In a tensor product of form and
+coefficient complexes, moving a coefficient past a form contributes
+the sign from their declared degrees.
+
+Several parameters occur in the comparison. Write $t$ for the Rees
+parameter of a filtered operator algebra and $h$ for the coefficient
+in a Weyl relation. The loop parameter in the quantum master
+equation is $\hbar_Q$.
+
+An equivariant parameter is specified by its
+cohomological degree and vector field. The polar constant $\kappa$
+is the value of a chosen residue normalization. These parameters
+can be related by a stated scalar map. The grading convention
+does not identify them.
+
+\section{Cyclic derivatives and the relation differential}
+
+Let $F=\mathbb C\langle x,y,c,\psi\rangle$, with degrees
+$0,0,1,-1$, respectively. Its graded cyclic quotient is the vector
+space
+\[
+ F_{\mathrm{cyc}}=F/[F,F]_{\mathrm{gr}},\qquad
+ [uv]=(-1)^{|u||v|}[vu].
+\]
+The denominator is the linear span of graded commutators. It is not
+the ideal imposing graded commutativity on the free algebra.
+
+For a word $a_1\cdots a_n$, define its left cyclic derivative by
+\[
+ \partial_q[a_1\cdots a_n]
+ =\sum_{a_i=q}
+ (-1)^{|a_1\cdots a_{i-1}|(|q|+|a_{i+1}\cdots a_n|)}
+ a_{i+1}\cdots a_na_1\cdots a_{i-1}.
+\]
+This sign moves the preceding block past the selected factor and
+the following block. Fix the even graded-skew pairing
+\[
+ \omega(x,y)=1,\quad\omega(y,x)=-1,
+ \qquad \omega(c,\psi)=\omega(\psi,c)=1.
+\]
+With $\iota_{X_G}\omega=-dG$, the induced necklace bracket is
+\[
+ \begin{split}
+ \{G,H\}_{\mathrm{neck}}=
+ \bigl[&\partial_xG\,\partial_yH-\partial_yG\,\partial_xH\\
+ &+(-1)^{|G|}(\partial_cG\,\partial_\psi H
+                         +\partial_\psi G\,\partial_cH)\bigr].
+ \end{split}
+\]
+In particular $\{[x],[y]\}=[1]$ and
+$\{[c],[\psi]\}=-[1]$. The symmetry of the pairing on the two
+odd factors is required by graded skew symmetry.
+
+The full matrix BRST differential of
+\eqref{mht:eq:matrix-classical-brst} uses graded matrix products:
+\[
+ QX=[X,c],\qquad QY=[Y,c],\qquad Qc=-c^2,
+ \qquad Q\Psi=[X,Y]-[c,\Psi].
+\]
+The relation term is equivariant for conjugation. For example,
+putting $M=[X,Y]$ gives $QM=[M,c]$, and
+\[
+ Q[c,\Psi]=[Qc,\Psi]-[c,Q\Psi].
+\]
+Since $[c,[c,\Psi]]=[c^2,\Psi]$, substitution gives $Q^2\Psi=0$.
+The same computation for $X,Y$, and $Q(c^2)=(Qc)c-c(Qc)$,
+gives $Q^2=0$ on all generators. The odd Leibniz rule extends this
+identity to the polynomial algebra.
+
+Without ghosts, set $dx=dy=0$ and $d\psi=xy-yx$. For even words
+$u,v$,
+\begin{equation}\label{mht:eq:sign-two-psi}
+ d[\psi u\psi v]
+   =[\psi vxyu]-[\psi vyxu]-[\psi uxyv]+[\psi uyxv].
+\end{equation}
+The second replacement crosses one odd factor and has a minus
+sign. The first replacement can be rotated past the remaining
+$\psi$ without a further sign because the moved block is even.
+Thus interchanging $u,v$ negates the result, as required by graded
+cyclicity.
+
+\section{Suspension and the ordered bar}
+
+Let $A$ be an augmented differential graded algebra in cohomological
+degrees, and let $\bar A$ be its augmentation ideal. Write
+$sa\in\bar A[1]$, so $|sa|=|a|-1$. The tensor coalgebra
+\[
+ BA=\bigoplus_{n\geq0}(\bar A[1])^{\otimes n}
+\]
+has deconcatenation coproduct, including the empty word. Its
+differential is the coderivation determined by
+\[
+ b_1(sa)=-s(da),\qquad
+ b_2(sa\otimes sb)=(-1)^{|a|}s(ab).
+\]
+Inserting a degree-one map after $sa_1,\ldots,sa_{i-1}$ contributes
+$(-1)^{\sum_{j<i}(|a_j|-1)}$.
+
+\begin{proposition}\label{mht:prop:suspended-bar-signs}
+These formulas give $b^2=0$. For degree-zero closed elements,
+\[
+ b[a|b|c]=[ab|c]-[a|bc].
+\]
+Consequently its second boundary is $[(ab)c-a(bc)]=0$.
+\end{proposition}
+
+\begin{proof}
+On one input the assertion is $d^2=0$. On two inputs the terms
+containing $d(ab)$ cancel the two terms containing $da$ and $db$,
+using $d(ab)=(da)b+(-1)^{|a|}a\,db$.
+On three inputs the two multiplication terms have opposite signs
+and cancel by associativity. On disjoint input blocks the two
+degree-one insertions anticommute. These cases exhaust the square
+of the coderivation at every word length.
+\end{proof}
+
+The empty word is the coalgebra coaugmentation. An algebra
+augmentation is a separate map $A\to\mathbb C$ used to define
+$\bar A$. A local vacuum or a prepared state in a field theory
+requires its own map. Neither is selected by the empty bar word.
+
+\section{Chevalley coordinates and cotangent shifts}
+
+Let $\mathfrak l$ be a finite-dimensional Lie algebra with
+$[e_I,e_J]=C^K_{IJ}e_K$. In
+$\mathfrak l\ltimes\mathfrak l^\vee[1]$, the dual summand has
+degree $-1$ and is abelian. Its Chevalley algebra has coordinates
+\[
+ |c^I|=1,\qquad |u_I|=2,
+\]
+and differential
+\[
+ dc^K=-\tfrac12 C^K_{IJ}c^Ic^J,
+ \qquad du_K=C^L_{JK}u_Lc^J.
+\]
+Give $u_I$ weight one and $c^I$ weight zero. Subtracting twice this
+weight from cohomological degree makes the $u_I$ even coordinates
+of degree zero, without changing the degree of the differential.
+
+For the alternative shift
+$\mathfrak l\ltimes\mathfrak l^\vee[-1]$, these degree-zero
+coordinates occur without regrading. The two original graded Lie
+algebras have different cotangent degrees. Their coordinate
+comparison is the stated regrading, not a comparison of their
+graded field pairings.
+
+Write $O_I$ for linear functions on $\mathfrak l^\vee$ and
+$\partial^I$ for constant vector fields, with
+$[\partial^I,O_J]_S=\delta^I_J$. The linear Poisson tensor is
+\[
+ \pi=\tfrac12 C^K_{IJ}O_K\partial^I\partial^J.
+\]
+Its differential $d_\pi=[\pi,-]_S$ satisfies
+\[
+ d_\pi\partial^K=-\tfrac12C^K_{IJ}\partial^I\partial^J,
+ \qquad d_\pi O_K=C^L_{JK}O_L\partial^J.
+\]
+Thus $c^I\mapsto\partial^I$, $u_I\mapsto O_I$ intertwines the
+two differentials on generators and hence on their symmetric
+algebras. The vector field $d_\pi O_I$ is generally not
+$\partial^I$.
+
+For $[e_1,e_2]=e_2$, the equations become
+\[
+ dc^1=0,\quad dc^2=-c^1c^2,
+ \qquad du_1=-u_2c^2,\quad du_2=u_2c^1.
+\]
+Then $d^2u_1=-u_2c^1c^2+u_2c^1c^2=0$.
+This two-dimensional example detects a reversal of the coadjoint
+sign. For an abelian Lie algebra every $d_\pi O_I$ vanishes, while
+the constant fields remain nonzero.
+
+\section{All antifield degrees in the cyclic-word complex}
+
+Use homological degrees in this section. Let
+$R=\mathbb C\langle x,y,\psi\rangle$, with $|\psi|=1$ and
+$d\psi=xy-yx$. Give the factors weights $(1,0),(0,1),(1,1)$.
+In bidegree $(r,s)$, a degree-$p$ cyclic word has $p$ occurrences
+of $\psi$, $r-p$ of $x$, and $s-p$ of $y$. Denote this finite
+complex by $K_{r,s}$.
+
+There is an elementary model for all of its degrees. For $s>0$,
+put
+\[
+ B_s=\mathbb C[v_0,\ldots,v_{s-1}]
+       \otimes\Lambda(e_0,\ldots,e_{s-1}),
+ \qquad de_i=v_i-v_{i+1},\quad dv_i=0,
+\]
+with indices modulo $s$. Give each generator weight one, each
+$v_i$ homological degree zero and each $e_i$ degree one. A
+monomial of weight $r$ records a labeled cyclic word. The factor
+$v_i^{a_i}$ records $a_i$ copies of $x$ immediately before the
+$i$th marker. This marker is $\psi$ when $e_i$ occurs and $y$ otherwise.
+
+Replacing the marker $\psi$ by $xy-yx$ increases the multiplicity
+at vertex $i$ or vertex $i+1$, with opposite signs. Ordering the
+occupied markers gives exactly the exterior signs of $B_s$.
+Rotation of the $s$ labels gives the graded cyclic relation,
+because interchanging blocks with $a,b$ occupied markers changes
+orientation by $(-1)^{ab}$. Hence
+\[
+ K_{r,s}\cong (B_s^{\mathrm{wt}=r})_{\mathbb Z/s\mathbb Z}.
+\]
+
+\begin{proposition}\label{mht:prop:cyclic-koszul-circle}
+For $r,s>0$, the homology of $K_{r,s}$ is one-dimensional in
+degrees zero and one, and zero in every higher degree. A
+degree-one generator is
+\[
+ \Psi_{r-1,s-1}
+   =\sum_{w\in\mathsf W_{r-1,s-1}}[\psi w],
+\]
+where $\mathsf W_{a,b}$ consists of the words with $a$ factors
+$x$ and $b$ factors $y$.
+\end{proposition}
+
+\begin{proof}
+Set $z=v_0$, $a_i=v_i-v_{i+1}$ for $0\leq i<s-1$, and
+$\eta=\sum_i e_i$. These are invertible linear changes of
+the even and odd variables. They give
+\[
+ B_s\cong\mathbb C[z]\otimes\Lambda(\eta)\otimes
+ \bigotimes_{i=0}^{s-2}
+       (\mathbb C[a_i]\otimes\Lambda(e_i),\ de_i=a_i).
+\]
+The last factors are one-variable Koszul resolutions. Their
+positive-weight parts contract by polynomial division by $a_i$.
+Thus $H_*(B_s)=\mathbb C[z]\otimes\Lambda(\eta)$.
+
+At weight $r>0$ the surviving classes are $z^r$ and
+$z^{r-1}\eta$. Rotation fixes $\eta$ and sends every $v_i$ to
+a representative of $[z]$, so it acts trivially on homology.
+Coinvariants for the finite cyclic group are exact over
+$\mathbb C$, proving the dimension assertion.
+
+Every necklace has equally many $xy$ and $yx$ transitions, so
+$d\Psi_{a,b}=0$. The functional taking $[\psi w]$ to $1$
+kills every two-antifield boundary by
+\eqref{mht:eq:sign-two-psi}. Its value on $\Psi_{a,b}$ is
+$\binom{a+b}{a}$, which is nonzero. This identifies the generator.
+\end{proof}
+
+If $r=0$ or $s=0$, only the unique degree-zero necklace remains.
+Summing all weights gives
+\[
+ H_*(R/[R,R]_{\mathrm{gr}})
+   \cong\mathbb C[x,y]\oplus\mathbb C[x,y]\theta,
+ \qquad |\theta|=1,\quad\mathrm{wt}(\theta)=(1,1).
+\]
+This is an identification of graded vector spaces. A multiplication
+on the polynomial label space is additional structure on those
+labels. The cyclic quotient itself is not an associative quotient
+algebra.
+
+The classes $[1]$ and $[\psi]$ occur in different bidegrees.
+Removing the scalar augmentation removes $[1]$ and retains
+$[\psi]$. Removing the latter requires another quotient. Nor is
+the one-dimensional label in each bidegree the whole symmetric
+algebra on the Hamiltonian Lie algebra: products of Hamiltonian
+generators create additional summands. An identification with a
+PBW component must specify that component and its map.
+
+\section{Trace normalization and the central rank}
+
+For an ungraded associative algebra $A$, use $N\times N$ matrices.
+Write $E_{ij}a$ for the matrix with entry $a$ in position $(i,j)$. In ordinary homological CE
+chains set
+\[
+ \Theta_1(a)=\sum_iE_{ii}a,
+ \qquad \Theta_2(a,b)=\sum_{i,j}E_{ij}a\wedge E_{ji}b.
+\]
+The boundary is the matrix commutator, so
+\[
+ d\Theta_2(a,b)=N\Theta_1(ab-ba).
+\]
+Both products sum over a free matrix index. Thus the raw reverse
+trace formula has a rank factor even in length two.
+
+The primitive cyclic comparison in
+Theorem~\ref{mht:thm:stable-cyclic-primitives} instead uses stable
+scalar-matrix coinvariants and single cycles with distinct indices.
+
+The empty cyclic word $\nu$ is central for the necklace bracket,
+with $[x,y]=\nu$. It is a primitive generator before rank is fixed.
+Matrix evaluation sends it to $N1$. Consequently, for
+$X=\operatorname{Tr}x$ and $Y=\operatorname{Tr}y$,
+\[
+ \{X^2,Y\}=2NX.
+\]
+
+Projection that kills multitraces and scalar values kills $X^2$
+but retains this bracket. The Lie projection in a symmetric
+algebra on a zero-central-character Lie algebra must therefore be
+taken before the fixed-rank specialization. These are different
+reductions of the scalar direction.
+
+\section{The residue dual of formal Hamiltonians}
+
+Put $\mathcal O=\mathbb C[[u,v]]$ and
+$\mathfrak m=(u,v)$. The formal Hamiltonian Lie algebra is
+$\mathfrak h=\mathcal O/\mathbb C$, with Poisson bracket
+\[
+ \{f,g\}=f_u g_v-f_v g_u.
+\]
+Give it the quotient of the $\mathfrak m$-adic linear topology,
+with discrete scalar field. The pointed subalgebra
+$\mathfrak h_0=\mathfrak m^2$ has finite Lie quotients
+$\mathfrak m^2/\mathfrak m^{d+1}$ for $d\geq2$.
+The full algebra has finite Taylor vector-space quotients, but
+these are not Lie quotients: $\{v,u^{d+1}\}=-(d+1)u^d$.
+
+A continuous linear functional on $\mathfrak h$ kills some
+$\mathfrak m^{d+1}$. Therefore
+\[
+ P=\mathfrak h^\vee_{\mathrm{cont}}
+    =\bigoplus_{a+b>0}\mathbb C\rho_{ab},\qquad
+ \rho_{ab}=u^{-a-1}v^{-b-1}\,du\,dv,
+\]
+with $\langle\rho_{ab},u^iv^j\rangle=\delta_{ai}\delta_{bj}$.
+The full principal-part module is the local-cohomology quotient
+\[
+ P^{\mathrm{full}}=
+ \frac{\mathcal O[u^{-1},v^{-1}]}
+      {\mathcal O[u^{-1}]+\mathcal O[v^{-1}]}\,du\,dv.
+\]
+
+Its representatives have finite support in the displayed negative
+monomials. The module $P^{\mathrm{full}}$ also contains
+$\rho_{00}$. The subspace $P$ is the annihilator of constants
+under the residue pairing. It is a coadjoint submodule, not a module over
+$\mathcal O$, since $u\rho_{10}=\rho_{00}$.
+
+The transpose of a Taylor truncation is an inclusion of finite
+dual spaces. Its direct limit is $P$. In contrast,
+$\prod_{a+b>0}\mathbb C\rho_{ab}$ is a larger vector space,
+formed using projections in the opposite direction. It is not
+the continuous dual just defined.
+
+Fix the coadjoint convention
+$\langle f\cdot\rho,g\rangle=-\langle\rho,\{f,g\}\rangle$.
+Pairing against a monomial gives
+\begin{equation}\label{mht:eq:full-residue-action}
+ u^pv^q\cdot\rho_{ab}
+   =\bigl(q(a+1)-p(b+1)\bigr)
+                    \rho_{a-p+1,b-q+1}.
+\end{equation}
+Negative target indices give zero. The coefficient of a scalar
+target also vanishes.
+
+For $a+b\leq n$, only Hamiltonian terms of
+degree at most $n+2$ can contribute, and the output degree is at
+most $n+1$. This proves that a formal Hamiltonian acts on each
+finite principal part through a finite Taylor window. With the
+discrete linear topology on $P$, it also proves continuity of
+the bilinear action.
+
+\section{Polynomial and residual representations}
+
+Let $\mathfrak h_{\mathrm{pol}}=\mathbb C[u,v]/\mathbb C$.
+It acts on $M=\mathbb C[u,v]/\mathbb C$ by the adjoint action.
+For polynomial monomial labels,
+\[
+ u^pv^q\cdot u^av^b=(pb-qa)u^{a+p-1}v^{b+q-1}
+                         \pmod{\mathbb C}.
+\]
+In particular $u$ and $v$ act locally nilpotently on $M$.
+This polynomial space is not preserved by every formal
+Hamiltonian. For example, $f=\sum_{n\geq2}u^n$ has
+$\{f,v\}=\sum_{n\geq2}n u^{n-1}$, which is not a polynomial.
+
+\begin{theorem}\label{mht:thm:residue-simple}
+The $\mathfrak h_{\mathrm{pol}}$-module $P$ is simple. If $N$ is
+any module on which $u$ acts locally nilpotently, then
+\[
+ \operatorname{Hom}_{\mathfrak h_{\mathrm{pol}}}(P,N)=0,
+ \qquad
+ \operatorname{Hom}_{\mathfrak h_{\mathrm{pol}}}(N,P)=0.
+\]
+\end{theorem}
+
+\begin{proof}
+Take a nonzero vector in a submodule of $P$, and let $n$ be the
+largest total degree of its nonzero coefficients. Choose a top
+coefficient $c_{ab}\ne0$, with $a+b=n$. Acting by
+$u^av^{b+1}$ kills every lower-degree term. Its output has degree
+one, and its coefficient at $\rho_{10}$ is $(b+1)c_{ab}\ne0$.
+
+The quadratic Hamiltonians act irreducibly on
+$\mathbb C\rho_{10}\oplus\mathbb C\rho_{01}$: $uv$ has
+eigenvalues $1,-1$, while $u^2\rho_{10}=-2\rho_{01}$ and
+$v^2\rho_{01}=2\rho_{10}$. Thus the submodule contains both
+degree-one vectors. Repeated action by $u$ and $v$ reaches
+every $\rho_{ab}$ with $a+b>0$, with nonzero factorial
+coefficients. The submodule is all of $P$.
+
+The action of $u$ on $P$ is injective:
+$u\rho_{ab}=-(b+1)\rho_{a,b+1}$. A nonzero map $P\to N$
+would be injective by simplicity, contradicting local nilpotence
+on its image. A map $N\to P$ sends each vector killed by a power
+of $u$ to a vector killed by that power in $P$, hence to zero.
+\end{proof}
+
+Simplicity is essential for the first direction of the proof.
+An injective operator on a source can acquire nilpotent action
+on a quotient. Non-nilpotence alone does not rule out maps to
+locally nilpotent modules.
+
+Diagonal rescaling cannot remove the opposite index directions.
+If $\rho'_{ab}=\lambda_{ab}\rho_{ab}$ with $\lambda_{ab}\ne0$, then
+\[
+ u\rho'_{ab}=-(b+1)\frac{\lambda_{ab}}{\lambda_{a,b+1}}
+                       \rho'_{a,b+1}.
+\]
+Polynomial labels instead move from $b$ to $b-1$. The
+distinction concerns the representation, before any choice of
+factorials or deformation coefficient.
+
+\section{Moyal coefficients and residue transposition}
+
+Define
+\[
+ \mathcal P=\partial_u\otimes\partial_v
+                   -\partial_v\otimes\partial_u,
+ \qquad f*_h g=m\exp(\tfrac h2\mathcal P)(f\otimes g).
+\]
+For polynomial inputs the series is finite. Interchanging inputs
+negates $\mathcal P$, so the normalized commutator is
+\[
+ \{f,g\}_h=
+ \sum_{\substack{r\geq1\\r\ \mathrm{odd}}}
+       \frac{h^{r-1}}{2^{r-1}r!}\mathcal P^r(f,g).
+\]
+The coefficients begin $1,1/24,1/1920,1/322560$.
+
+For $f=u^pv^q$ and $g=u^mv^n$, write
+\[
+ C_r(p,q;m,n)=\sum_{j=0}^r(-1)^j\binom rj
+                  (p)_{r-j}(q)_j(m)_j(n)_{r-j},
+\]
+where $(a)_j=a(a-1)\cdots(a-j+1)$ and $(a)_0=1$.
+Then $\mathcal P^r(f,g)=C_r u^{p+m-r}v^{q+n-r}$.
+
+Residue transposition gives
+\[
+ f\cdot_h\rho_{ab}=
+ -\sum_{\substack{r\geq1\\r\ \mathrm{odd}}}
+ \frac{h^{r-1}}{2^{r-1}r!}
+ C_r(p,q;a-p+r,b-q+r)\rho_{a-p+r,b-q+r}.
+\]
+Terms with negative target indices vanish. The scalar target
+vanishes because every bracket with the constant test function
+is zero.
+
+For linear $f$, all terms with $r\geq3$ vanish, so
+the opposite translation actions above persist without quantum
+correction. For $f=u^4$ and $\rho_{11}$, the only nonzero term is
+\[
+ u^4\cdot_h\rho_{11}=-24h^2\rho_{04}.
+\]
+The polynomial adjoint action on the label $uv$ instead gives
+$4u^4$. These are statements about two specified modules.
+
+\section{The algebraic Fourier lattice and its completion}
+
+Let $R_t=\mathbb C[[t]]$, and define the algebraic Rees Weyl
+algebra
+\[
+ D_t=R_t\langle z_1,z_2,\partial_1,\partial_2\rangle/
+ ([\partial_i,z_j]=t\delta_{ij},\ [z_i,z_j]=[\partial_i,\partial_j]=0).
+\]
+Algebraic here means a finite sum of Weyl monomials with
+coefficients in $R_t$. Its polynomial and delta modules are
+\[
+ O_t=R_t[z_1,z_2]=D_t/(D_t\partial_1+D_t\partial_2),
+ \qquad
+ \Delta_t=D_t/(D_tz_1+D_tz_2).
+\]
+Write $e$ for the cyclic vector of $\Delta_t$. The basis of
+$\Delta_t$ is $\partial_1^a\partial_2^be$, with finite support
+in $(a,b)$.
+
+The automorphism
+$\mathsf F(z_i)=\partial_i$, $\mathsf F(\partial_i)=-z_i$
+preserves the Weyl relations. The map
+\[
+ T:O_t\longrightarrow\Delta_t,
+ \qquad z_1^az_2^b\longmapsto\partial_1^a\partial_2^be
+\]
+satisfies $T(Pf)=\mathsf F(P)T(f)$. This specifies the
+direction of the Fourier twist.
+
+Let $L_t=\bigoplus_{a,b\geq0}R_t\rho_{ab}$, with the usual
+principal-part multiplication by $z_i$ and
+$\partial_i=t\partial_{z_i}$. There is an injective $D_t$-map
+\begin{equation}\label{mht:eq:fourier-lattice-map}
+ \iota:\Delta_t\longrightarrow L_t,
+ \qquad \partial_1^a\partial_2^be\longmapsto
+       (-1)^{a+b}t^{a+b}a!b!\rho_{ab}.
+\end{equation}
+It follows by differentiating $\rho_{00}$. The map becomes
+an isomorphism after inverting $t$, because each vector has
+only finitely many principal-part labels. Neither the scalar
+line nor its complementary label span is a $D_t$-submodule:
+$\partial_i e$ leaves the line, and
+$z_i\partial_i e=-te$ leaves the complementary span.
+
+Parameter completion changes the assertion. Put
+\[
+ \widehat\Delta_t=\varprojlim_r\Delta_t/t^r\Delta_t,
+ \qquad \widehat L_t=\varprojlim_r L_t/t^rL_t
+                         =P^{\mathrm{full}}[[t]].
+\]
+A vector in either completion has coefficients $b_{ab}(t)$
+such that for each $r$ only finitely many labels have
+$b_{ab}\notin t^rR_t$. This is the condition that each
+coefficient of $t$ have finite label support. Likewise
+\[
+ \widehat O_t=\mathbb C[z_1,z_2][[t]]
+\]
+is larger than $R_t[z_1,z_2]$.
+
+\begin{proposition}\label{mht:prop:completed-fourier-image}
+The completed map $\widehat\iota$ is injective. Image membership
+for a family $\sum c_{ab}(t)\rho_{ab}$ is equivalent to two
+conditions. Each $c_{ab}$ is divisible by $t^{a+b}$. The coefficients
+\[
+ \frac{(-1)^{a+b}c_{ab}(t)}{t^{a+b}a!b!}
+\]
+tend to zero $t$-adically over the label set. Inverting $t$
+after completion does not make this map surjective.
+\end{proposition}
+
+\begin{proof}
+Formula~\eqref{mht:eq:fourier-lattice-map} acts separately
+on each coefficient. Multiplication by a nonzero power of $t$
+is injective in $R_t$. The stated divisibility and decay
+conditions are exactly those for its coefficientwise inverse
+to define a vector in $\widehat\Delta_t$.
+
+The vector
+\[
+ \sigma=\sum_{n\geq0}t^n\rho_{2n,0}
+\]
+belongs to $\widehat L_t$. A preimage after localization would
+have coefficient $t^{-n}/(2n)!$ at $\partial_1^{2n}e$.
+There is no common lower bound on these powers of $t$.
+Every element of $\widehat\Delta_t[t^{-1}]$ has such a lower
+bound, so no preimage exists.
+\end{proof}
+
+The decay condition is independent of divisibility. The vector
+$\sum_{n\geq0}n!t^n\rho_{n,0}$ satisfies divisibility, but its
+formal inverse has coefficients $(-1)^n$, which do not tend
+to zero. Thus even a coefficientwise inverse with no negative
+powers need not belong to the completed source.
+
+The Fourier isomorphism holds on the algebraic modules,
+and $T$ extends to their parameter completions. Its completed
+principal-part image is the one in the proposition. A change
+of action, a localization and a completion are three separate
+operations in this comparison.
+
+\section{Support, pairing and compatible limits}
+
+For an open interval $I$, the continuous dual of
+$C_c^\infty(I)$ is the distribution space $\mathcal D'(I)$.
+The continuous dual of $C^\infty(I)$ is the compactly
+supported distribution space $\mathcal E'(I)$. A smooth
+function acts on either by
+\[
+ (aT)(\varphi)=T(a\varphi),\qquad
+ (\partial_tT)(\varphi)=-T(\partial_t\varphi).
+\]
+These formulas define multiplication by a smooth test and
+transposition of differentiation. They do not define the
+product of two arbitrary distributions.
+
+Extension by zero carries compact tests from $U$ to $V$ when
+$U\subset V$. Dualizing reverses this arrow. The same variance
+distinction occurs between covariant Chevalley chains and
+contravariant Chevalley cochains. To identify a dual cochain
+object with physical observables one must construct the
+required support maps, rather than infer their direction
+from the coefficient formula.
+
+A continuous Kronecker pairing cannot pair two unrestricted
+coordinate products. If $e_n$ is the $n$th coordinate vector,
+then $e_n\to0$ in the product topology, whereas the requested
+pairing would have $B(e_n,e_n)=1$. Reciprocal changes of dual
+bases also leave the contraction of the first $n$ diagonal
+terms equal to $n$. A weighted Hilbert or nuclear pairing
+must therefore specify its spaces and prove its convergence.
+
+For countable surjective inverse systems $V_d,W_d$ of discrete
+vector spaces, put $V=\varprojlim_dV_d$ and
+$W=\varprojlim_dW_d$. A continuous map $V\to W_d$ factors
+through some input quotient $V_e$. The input cutoff can depend
+on the output cutoff. When the relevant quotient projections
+are onto, this gives the familiar form
+\[
+ \operatorname{Hom}_{\mathrm{cont}}(V,W)
+   =\varprojlim_d\varinjlim_e\operatorname{Hom}(V_e,W_d).
+\]
+
+This formula records continuity, not locality in a physical
+coordinate. For complexes, derived inverse limits also retain
+their degree-minus-one compatibility information. The strict
+cycle criterion and the derived Roos complex are distinguished
+in Section~\ref{mht:sec:descent-towers}.
+
+Finally, the polar trace of Chapter~\ref{mht:ch:neumann-bv}
+is a relative trace. With its boundary maps $r,\ell$, it obeys
+$\tau_{\mathcal A}d=\tau_Br$ and $\tau_B\ell=0$.
+On the path model with $b(0)=r(a)$ and $b(1)=\ell(c)$,
+the corrected trace includes $\int_0^1\tau_B(b_{dt})$.
+Indeed its value on a differential is
+\[
+ \tau_Br(a)+\tau_B(b(1)-b(0))=0.
+\]
+The endpoint term supplies closedness. A residue value alone
+does not supply that term or the physical measure used in
+quantum sewing.
+
+The coefficient constructions above fix the signs and domains
+of their maps. A native comparison must additionally preserve
+the full field differential, support, pairing, boundary
+conditions and operations. Those requirements remain at the
+points where the physical maps are constructed.

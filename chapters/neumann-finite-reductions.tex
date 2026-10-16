@@ -1,0 +1,673 @@
+\chapter{Finite cyclic reductions}
+\label{mht:ch:finite-reductions}
+
+A finite collection of curve modes can retain the kinetic pairing
+without retaining the product. The projected product then has an
+associator, and the eliminated modes determine the higher operations
+that cancel it. We construct this cancellation on the smooth Neumann
+complex. A six-dimensional example already has nonzero ternary and
+quartic operations. We then vary the residual matrix and transport the
+finite subspace so that its pairing stays nondegenerate through every
+eigenvalue collision.
+
+\section{Finite subspaces and the polar trace}
+
+Retain $E$, $d_E$, $\tau_E$, $p_0$, $p_1$, and $h$ from
+Chapter~\ref{mht:ch:polar-neumann}. Throughout this chapter choose
+\[
+ f_0=\frac{z}{1+|z|^2},\qquad \eta_0=d_Ef_0,
+\]
+and keep the circular prescription for the double-pole trace.
+There are two elementary restrictions on a finite approximation.
+
+\begin{proposition}\label{mht:prop:finite-restrictions}
+On a connected smooth manifold, every finite-dimensional unital
+subalgebra of complex-valued smooth functions consists of constants.
+On $C=\mathbb P^1$, no operator
+$R:\Omega^{0,1}(C)\to\Omega^{0,1}(C)$ with a globally smooth
+Schwartz kernel preserves $\tau_E$.
+\end{proposition}
+
+\begin{proof}
+The powers of a function in a finite-dimensional algebra satisfy a
+nonzero polynomial relation. The function therefore takes values in
+a finite set. Connectedness makes it constant.
+
+The polar trace is a distribution of finite order. Applying it in
+the output variable of a smooth kernel gives a smooth covector in
+the input variable. If $\tau_ER=\tau_E$, that covector would equal
+$\kappa z^{-2}dz/(2\pi i)$ away from $o$. This coefficient has no
+smooth extension across $o$.
+\end{proof}
+
+Thus a finite space containing a nonconstant scalar mode cannot
+retain the pointwise product by restriction. A projection preserving
+the trace must also retain its distributional input covector. Neither
+restriction prevents a cyclic contraction.
+
+The acyclic part of the complex is
+\[
+ V=\ker p_0\subset E^0,\qquad W=\ker p_1\subset E^1,
+ \qquad d_E:V\xrightarrow{\sim}W,
+\]
+with inverse $h|_W$. On $V$ define
+\begin{equation}\label{mht:eq:acyclic-symplectic-form}
+ \omega_0(v,w)=\tau_E(vd_Ew).
+\end{equation}
+
+\begin{lemma}\label{mht:lem:finite-symplectic}
+The form $\omega_0$ is continuous, skew and weakly nondegenerate.
+Let $\mathcal R$ be the restrictions to the round sphere of complex
+polynomials in its three Cartesian coordinates. Then
+\[
+ E_{\mathrm{alg}}^0=\mathcal R\cap\ker j,
+ \qquad E_{\mathrm{alg}}^1=d_E\mathcal R
+\]
+form a dense subalgebra and subcomplex of $E$, preserved by $h$ and
+the residual projections. The restriction of $\omega_0$ to
+$V_{\mathrm{alg}}=V\cap\mathcal R$ is nondegenerate.
+\end{lemma}
+
+\begin{proof}
+For $v,w\in E^0$, polar Stokes applied to $vw$ gives
+$\tau_E(vd_Ew)=-\tau_E((d_Ev)w)$. If $v\in V$ annihilates
+$V$ under this form, it pairs to zero with $W=d_EV$. The equality
+$p_0(v)=0$ also gives $\tau_E(v\eta_0)=0$. Hence
+$\tau_E(v\eta)=0$ for every smooth one-form $\eta$. Tests supported
+away from $o$ imply $v=0$ there, and smoothness gives $v=0$ on $C$.
+
+The space $\mathcal R$ consists of finite sums of spherical
+harmonics. Smooth functions and forms have convergent expansions in
+rotation types in every smooth seminorm. The Dolbeault differential
+and the round Dolbeault Laplacian preserve these types. Since
+$H^{0,1}(C)=0$, the Dolbeault inverse sends a finite sum of form
+types to a finite sum of function types. Subtracting its value at
+$o$ gives $G$ and preserves this property.
+
+Products of finite sums
+of types are again finite sums, also for a function times a form.
+This proves closure under products and $G$, hence under $h$ and $p$.
+
+For a sequence $f_n\in\mathcal R$ converging to a Neumann function,
+replace $f_n$ by $f_n-j(f_n)f_0$. Subtracting its $p_0$ projection
+also imposes the condition defining $V$. These continuous corrections
+prove the required density. A vector of $V_{\mathrm{alg}}$ that
+annihilates $V_{\mathrm{alg}}$ annihilates its closure $V$, so the
+first paragraph proves nondegeneracy on $V_{\mathrm{alg}}$.
+\end{proof}
+
+Choose a basis of the countable-dimensional space $V_{\mathrm{alg}}$.
+Starting with a finite nondegenerate subspace, take the first basis
+vector outside it and subtract its symplectic projection. The nonzero
+remainder has a partner by Lemma~\ref{mht:lem:finite-symplectic}.
+Subtract the partner's projection as well and adjoin the resulting
+two-dimensional symplectic space. Iteration gives
+\[
+ V_1\subset V_2\subset\cdots,
+ \qquad \dim V_K=2K,
+ \qquad \bigcup_KV_K=V_{\mathrm{alg}}.
+\]
+
+For a basis $(v_a)_{a=1}^{2K}$ of $V_K$, its symplectic projection is
+\begin{equation}\label{mht:eq:finite-symplectic-projection}
+ \Omega_{ab}=\omega_0(v_a,v_b),\qquad
+ \Pi_Kv=\sum_{a,b}v_a(\Omega^{-1})_{ab}\omega_0(v_b,v).
+\end{equation}
+Only a finite matrix is inverted.
+
+\begin{definition}\label{mht:def:finite-neumann-complex}
+The finite Neumann complex and its projection are
+\begin{align}
+ E_K^0&=\mathbb C1\oplus V_K,&
+ E_K^1&=\mathbb C\eta_0\oplus d_EV_K,\notag\\
+ \mathsf p_K^0f&=p_0(f)1+\Pi_K(f-p_0(f)1),&
+ \mathsf p_K^1\eta&=p_1(\eta)\eta_0+d_E\Pi_Kh\eta.
+ \label{mht:eq:finite-neumann-projection}
+\end{align}
+Write $i_K:E_K\hookrightarrow E$ for inclusion and set
+\[
+ H_K\eta=(1-\Pi_K)h\eta,\qquad H_K(E^0)=0.
+\]
+\end{definition}
+
+\begin{theorem}\label{mht:thm:finite-cyclic-contraction}
+The pairing $\tau_E(xy)$ is nondegenerate on $E_K$. The maps above
+give a continuous cyclic strong deformation retract:
+\[
+ \mathsf p_Ki_K=1,\qquad d_EH_K+H_Kd_E=1-i_K\mathsf p_K,
+ \qquad H_K^2=H_Ki_K=\mathsf p_KH_K=0.
+\]
+Projection is adjoint to inclusion, and both preserve the unit and
+trace. For $K\leq L$, the induced contraction from $E_L$ to $E_K$
+has homotopy
+\begin{equation}\label{mht:eq:finite-nested-homotopy}
+ H_{LK}=(\Pi_L-\Pi_K)h|_{E_L},\qquad
+ H_K=H_L+i_LH_{LK}\mathsf p_L.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The decomposition
+\[
+ E=(\mathbb C1\oplus\mathbb C\eta_0)
+      \oplus(V\xrightarrow{d_E}W)
+\]
+is orthogonal for the cyclic pairing. The first summand has
+$\langle1,\eta_0\rangle=\kappa$. Identifying $W$ with $V$ by $h$
+identifies the pairing between $V_K$ and $d_EV_K$ with $\Omega$.
+This proves nondegeneracy on $E_K$.
+
+The symplectic projection $\Pi_K$ is self-adjoint for $\omega_0$.
+Its transport to $W$ is $d_E\Pi_Kh$, and the inverse differential
+on the orthogonal complement is $(1-\Pi_K)h$. This proves the
+homotopy identity and its side conditions. The same orthogonality
+and polar Stokes prove cyclicity of $H_K$. The unit and its dual
+$\eta_0$ are retained, giving preservation of the trace. All the
+coefficient functionals in the projection are continuous.
+
+Nested symplectic projections satisfy
+$\Pi_K\Pi_L=\Pi_L\Pi_K=\Pi_K$. Decompose the acyclic summand
+into $V_K$, its complement in $V_L$, and the complement of $V_L$.
+The inverse differential on these summands gives
+\eqref{mht:eq:finite-nested-homotopy}.
+\end{proof}
+
+\section{A six-dimensional example}
+
+The first finite complex can be made explicit. Put $r=|z|^2$ and
+\begin{equation}\label{mht:eq:finite-two-modes}
+ v=\frac r{1+r}-\frac12,
+ \qquad w=\frac{zr}{(1+r)^2}+\frac{\bar z}{1+r},
+ \qquad V_1=\operatorname{span}\{v,w\}.
+\end{equation}
+
+Both functions are smooth in the two sphere charts, satisfy $j=0$,
+and have zero $p_0$ projection. Their pairings are
+\begin{equation}\label{mht:eq:finite-two-pairings}
+ \Omega=\kappa\begin{pmatrix}0&1/6\\-1/6&0\end{pmatrix},
+ \qquad
+ S=\bigl(\tau_E(\eta_0v_av_b)\bigr)
+       =\kappa\begin{pmatrix}1/12&0\\0&1/6\end{pmatrix}.
+\end{equation}
+These values follow from one radial integral. For integers
+$0\leq a\leq k$ and $0\leq b\leq k-2$, the indicated form is smooth
+at infinity, and angular integration gives
+\begin{equation}\label{mht:eq:finite-radial-moment}
+ \kappa^{-1}\tau_E\left(
+      \frac{z^a\bar z^b}{(1+|z|^2)^k}d\bar z\right)
+ =\begin{cases}
+ -\dfrac{b!(k-b-2)!}{(k-1)!},&a-b=2,\\
+ 0,&a-b\ne2.
+ \end{cases}
+\end{equation}
+In the nonzero case the remaining integral is
+$-\int_0^\infty r^b(1+r)^{-k}\,dr$.
+
+Write $\pi_1$ for the projection to the complex $E_1$ in both
+degrees, and put $m_2(x,y)=\pi_1(xy)$. Substituting
+\eqref{mht:eq:finite-two-pairings} into
+\eqref{mht:eq:finite-neumann-projection} gives
+\begin{equation}\label{mht:eq:finite-product-table}
+ m_2(v,v)=\frac1{12},\qquad
+ m_2(w,w)=\frac16,\qquad m_2(v,w)=0.
+\end{equation}
+Consequently
+\begin{equation}\label{mht:eq:finite-associator}
+ m_2(m_2(v,v),w)-m_2(v,m_2(v,w))=\frac w{12}.
+\end{equation}
+For the projected matrix commutator, the cyclic Jacobi sum
+$[[x,y],z]+[[y,z],x]+[[z,x],y]$ on
+$x=vE_{12}$, $y=vE_{21}$, $z=wE_{12}$ is $wE_{12}/6$.
+Thus keeping the projected binary operation alone loses the gauge
+identity already on these smooth modes.
+
+\section{Higher operations from the eliminated modes}
+
+Let $\sigma:E\to E[1]$ have degree $-1$. On the shifted complex use
+\[
+ b_1=-\sigma d_E\sigma^{-1},\qquad
+ b_2(\sigma x,\sigma y)=(-1)^{|x|}\sigma(xy),\qquad
+ \mathbf H_K=-\sigma H_K\sigma^{-1}.
+\]
+
+Shift $i_K$ and $\mathsf p_K$ as well. Define maps on shifted tensor powers
+by the recursion
+\begin{align}
+ I_1&=i_K,&\beta_1&=b_1|_{E_K[1]},\notag\\
+ \lambda_n&=\sum_{r=1}^{n-1}b_2(I_r\otimes I_{n-r}),&
+ I_n&=-\mathbf H_K\lambda_n,&
+ \beta_n&=\mathsf p_K\lambda_n\quad(n\geq2).
+ \label{mht:eq:finite-tree-recursion}
+\end{align}
+Tensor products of maps have their Koszul signs. Each $I_n$ has
+degree zero on the shifted spaces, and each $\beta_n$ has degree
+one. At a fixed arity the recursion is a finite sum over planar
+binary trees.
+
+\begin{theorem}\label{mht:thm:finite-cyclic-transfer}
+The maps $\beta_n$ extend to a square-zero coderivation on the
+conilpotent tensor coalgebra $T^c(E_K[1])$. They define a strictly
+unital cyclic $A_\infty$ algebra, and the maps $I_n$ give an
+$A_\infty$ quasi-isomorphism to $E$. Tensoring with matrices and
+antisymmetrizing gives cyclic $L_\infty$ operations with the full
+matrix trace.
+
+For the nested contractions of
+\eqref{mht:eq:finite-nested-homotopy}, successive transfer through
+$E_L$ gives the same operations on $E_K$ as direct transfer.
+The tree comparisons are compatible with every further nested
+elimination.
+\end{theorem}
+
+\begin{proof}
+The differential, Leibniz rule and associativity are the coderivation
+identities
+\[
+ b_1^2=0,\qquad b_1b_2+b_2b_1=0,\qquad b_2^2=0.
+\]
+The shifted homotopy satisfies
+$b_1\mathbf H_K+\mathbf H_Kb_1=1-i_K\mathsf p_K$.
+
+Move $b_1$ through a tree in
+\eqref{mht:eq:finite-tree-recursion}. Its terms at vertices cancel
+by the Leibniz rule. At an internal edge, replace the commutator
+with $\mathbf H_K$ by $1-i_K\mathsf p_K$. The identity contracts the edge.
+The two resolutions of the resulting ternary vertex cancel by
+associativity. The $i_K\mathsf p_K$ term cuts the tree into two transferred
+trees.
+
+Summing all cuts gives $\beta^2=0$ at the root and
+$(b_1+b_2)I=I\beta$ at the inclusion. The linear component is a
+quasi-isomorphism by Theorem~\ref{mht:thm:finite-cyclic-contraction}.
+
+Pair the root with one additional input. Adjointness of $\mathsf p_K$ and
+cyclicity of $H_K$ allow the root to move across every edge, with
+the graded sign of the pairing. The resulting unrooted tensor is
+cyclic.
+
+This is the cyclic tree transfer associated with an abstract
+Hodge decomposition.\footnote{J.~Chuang and A.~Lazarev,
+\emph{Abstract Hodge decomposition and minimal models for cyclic
+algebras}, \href{https://arxiv.org/abs/0810.2393}{arXiv:0810.2393}.
+See Definition~2.1 and Theorem~4.2.
+Here the retained differential need not vanish.}
+
+Suppose a unit enters a tree of arity at least three. Its neighboring
+vertex sends either a retained input into $H_Ki_K=0$ or a homotopy
+output into $H_K^2=0$. If that vertex is the root, the
+same term vanishes by $\mathsf p_KH_K=0$. The binary operation preserves
+the unit. Antisymmetrization of the associative identities gives
+the Lie identities and preserves the cyclic tensor.
+
+For successive transfer, expand each internal homotopy using
+\eqref{mht:eq:finite-nested-homotopy}. Mark the edge by its chosen
+summand. The maximal subtrees whose edges use $H_L$ are exactly
+the transferred vertices on $E_L$. The remaining edges use $H_{LK}$.
+This is a bijection of signed planar trees with those of successive
+transfer. With three or more cutoffs, grouping the connected subtrees
+in either order gives the same marked tree.
+\end{proof}
+
+The missing operations in the six-dimensional example can now be
+calculated. In the next formulas, $\beta_n(x_1,\ldots,x_n)$ denotes
+$\sigma^{-1}\beta_n(\sigma x_1,\ldots,\sigma x_n)$, with this
+convention fixed rather than an additional desuspension sign.
+
+For inputs of degrees $a,b,c$, the cubic recursion reads
+\[
+ \beta_3(x,y,z)=(-1)^{a+b}\pi_1\bigl(xH_1(yz)\bigr)
+                      -(-1)^b\pi_1\bigl(H_1(xy)z\bigr).
+\]
+It gives
+\begin{align}
+ \beta_3(v,v,d_Ev)&=v/30,&
+ \beta_3(v,v,d_Ew)&=w/30,\notag\\
+ \beta_3(d_Ev,v,w)&=w/60,&
+ \beta_3(v,d_Ev,w)&=-w/30.
+ \label{mht:eq:finite-cubic-products}
+\end{align}
+For example, direct Green integration and
+\eqref{mht:eq:finite-radial-moment} give
+\[
+ H_1(vd_Ev)=\frac{r^2-4r+1}{12(1+r)^2},\qquad
+ \pi_1\bigl(vH_1(vd_Ev)\bigr)=v/30.
+\]
+On $(v,v,w)$ the complete cubic identity reduces to
+\[
+ \frac1{12}-\frac1{60}-\frac1{30}-\frac1{30}=0.
+\]
+The unary differential is essential here: $v$ and $w$ are not
+closed cohomology classes.
+
+The fourth operation also survives:
+\begin{equation}\label{mht:eq:finite-quartic-products}
+ \begin{aligned}
+ \beta_4(d_Ev,v,w,d_Ew)&=\frac1{720}-\frac v{280},\\
+ \beta_4(v,d_Ev,w,d_Ew)&=\frac1{720}+\frac{11v}{630}.
+ \end{aligned}
+\end{equation}
+There are five planar binary trees. Grouping them by the three
+root splittings, their projected contributions for the first input
+are $0$, $1/720-v/280$, $0$. For the second input they are
+$1/360+v/72$, $-1/720+v/280$, $0$.
+Each is evaluated by the same radial moment, and their sums give
+\eqref{mht:eq:finite-quartic-products}.
+
+\section{Algebraic recovery and analytic convergence}
+
+The choice of symplectic exhaustion gives exact recovery on finite
+algebraic expressions. It need not control the norms of its projections.
+
+\begin{proposition}\label{mht:prop:finite-recovery}
+Fix finitely many inputs in $E_{\mathrm{alg}}$ and finitely many
+expressions formed from their products and $h$. Their projections
+to $E_K$ equal the original expressions for every sufficiently
+large $K$.
+
+For fixed $K$ and integer $s\geq2$, give functions the $H^{s+1}$
+norm and one-forms the $H^s$ norm. The tree series in
+\eqref{mht:eq:finite-tree-recursion} converges on a sufficiently
+small field in this graded Sobolev space. Its radius can depend on $K$.
+\end{proposition}
+
+\begin{proof}
+Lemma~\ref{mht:lem:finite-symplectic} keeps every intermediate
+coefficient in $E_{\mathrm{alg}}$. A sufficiently large $V_K$
+contains the acyclic components of this finite collection. Projection
+fixes them, and the complementary homotopy vanishes on them. This
+proves eventual recovery, including vanishing of higher corrections
+on the fixed collection when every required intermediate coefficient
+has entered the finite complex.
+
+The Green operator gains one derivative. The identity
+$\tau_E(\eta)=\kappa j(G\eta)$ makes the trace continuous in these
+norms, since first-jet evaluation is continuous on $H^{s+1}$ for
+$s>1$ in real dimension two. Multiplication is continuous, and the
+finite-rank projections and $H_K$ are bounded.
+
+Let $C$ bound
+multiplication and let $C_{n-1}$ be the number of planar binary
+trees with $n$ inputs. Then
+\[
+ \|I_n\|\leq C_{n-1}C^{n-1}\|H_K\|^{n-1}\|i_K\|^n,
+ \qquad C_{n-1}\leq4^{n-1}.
+\]
+For $\beta_n$, replace the last homotopy by $\mathsf p_K$. Both sums are
+bounded by a geometric series for a sufficiently small input.
+\end{proof}
+
+No bound uniform in $K$ has been used. The proposition therefore
+separates eventual algebraic recovery from analytic removal of the
+cutoff. A family with quantitative projection estimates is needed
+for the latter.
+
+\section{Backgrounds and artificial singularities}
+
+Tensor $V$ and $W$ with $\mathfrak g=\mathfrak{gl}_N(\mathbb C)$.
+Extend $p_0,p_1,h$ entrywise, writing $P_0,P_1$ for the matrix
+projections. For a residual matrix $J$, set
+\[
+ d_J=d_E+\eta_0\operatorname{ad}_J,
+ \qquad M_J=hd_J|_V=1+h\eta_0\operatorname{ad}_J|_V.
+\]
+The full contraction of
+Theorem~\ref{mht:thm:background-contraction} gives
+$M_J^{-1}=h_Jd_E|_V$ at every finite $J$. A fixed compression of
+this operator need not be invertible.
+
+\begin{example}\label{mht:ex:compressed-pole}
+In a root direction with $\operatorname{ad}_J=\lambda$, compression
+to the modes \eqref{mht:eq:finite-two-modes} gives
+\begin{equation}\label{mht:eq:compressed-pole}
+ M_{J,1}=1+\lambda\Omega^{-1}S
+       =\begin{pmatrix}1&-\lambda\\\lambda/2&1\end{pmatrix},
+ \qquad \det M_{J,1}=1+\lambda^2/2.
+\end{equation}
+The compression is singular at $\lambda=i\sqrt2$. For
+$J=j\operatorname{diag}(1,-1)$, the two opposite root spaces
+give determinant $(1+2j^2)^2$, and the two Cartan directions
+contribute determinant one. The matrix trace pairs opposite roots.
+One scalar root block is not itself a skew kinetic form.
+\end{example}
+
+The mode $w$ in this example mixes rotation weights $1$ and $-1$.
+The singularity depends on the chosen subspace. To avoid it for an
+arbitrary finite subspace, first change the full kinetic form to a
+constant one and then transport that subspace.
+
+\section{An entire family of cyclic frames}
+
+Fix an integer $s\geq2$ and a smooth metric on $C$. On the scalar
+Sobolev space
+\[
+ V_s=\{f\in H^{s+1}(C):j(f)=0,\ p_0(f)=0\}
+\]
+define $Xf=h(\eta_0f)$.
+
+\begin{lemma}\label{mht:lem:quasinilpotent-green}
+The operator $X:V_s\to V_s$ is compact and has spectrum $\{0\}$.
+For every finite matrix $J$ and
+$\alpha\in\{-1,-\tfrac12,\tfrac12\}$, the series
+\begin{equation}\label{mht:eq:entire-binomial-frame}
+ (1+X\otimes\operatorname{ad}_J)^\alpha
+   =\sum_{n\geq0}\binom\alpha n X^n\otimes(\operatorname{ad}_J)^n
+\end{equation}
+converges in operator norm, locally uniformly in the entries of $J$.
+It is an entire operator-valued function of those entries.
+\end{lemma}
+
+\begin{proof}
+Multiplication by $\eta_0$ is smooth and $h$ gains one derivative.
+Its finite-rank corrections obey the trace estimate in
+Proposition~\ref{mht:prop:finite-recovery}. Hence $X$ maps $V_s$
+continuously into $H^{s+2}$, and Rellich compactness proves that
+it is compact on $V_s$.
+
+Suppose $Xv=\mu v$ with $\mu\ne0$. The gain of regularity in this
+equation makes $v$ smooth. Put $\lambda=-\mu^{-1}$. Since
+$hd_Ev=v$, one has $h(d_E+\lambda\eta_0)v=0$. Moreover
+\[
+ p_1((d_E+\lambda\eta_0)v)=\lambda p_0(v)=0.
+\]
+
+The form lies in $W$, where $h$ is injective, so
+$(d_E+\lambda\eta_0)v=0$. Multiplication by $e^{\lambda f_0}$
+gives a holomorphic function on $\mathbb P^1$, hence
+$v=ce^{-\lambda f_0}$. The first jet is $j(v)=-\lambda c$.
+The Neumann condition forces $c=0$, excluding every nonzero
+eigenvalue. Compactness and infinite dimension imply
+$\operatorname{spec}(X)=\{0\}$.
+
+The spectral-radius formula gives
+$\lim_n\|X^n\|^{1/n}=0$. On each compact set of matrices,
+$\|\operatorname{ad}_J\|$ is bounded. The binomial coefficients
+have at most polynomial growth, so the root test gives normal
+convergence of \eqref{mht:eq:entire-binomial-frame}. Each summand
+is polynomial in $J$, proving the entire dependence.
+\end{proof}
+
+On the matrix-valued acyclic space put
+\[
+ \omega_J(v,w)=\tau_E\operatorname{tr}(v d_Jw),\qquad
+ \omega_0(v,w)=\tau_E\operatorname{tr}(v d_Ew).
+\]
+Both forms are skew by cyclicity, and
+\begin{equation}\label{mht:eq:kinetic-self-adjoint}
+ \omega_J(v,w)=\omega_0(v,M_Jw),\qquad
+ \omega_0(M_Jv,w)=\omega_0(v,M_Jw).
+\end{equation}
+Define the full frame
+\begin{equation}\label{mht:eq:full-cyclic-frame}
+ \mathcal T_J=M_J^{-1/2}
+ =1-\frac12A_J+\frac38A_J^2-\frac5{16}A_J^3+\cdots,
+ \qquad A_J=X\otimes\operatorname{ad}_J.
+\end{equation}
+The scalar projection $\Pi_K$ is now tensored with the identity on
+$\mathfrak g$. Set
+\begin{align}
+ V_K(J)&=\mathcal T_J(V_K\otimes\mathfrak g),&
+ \Pi_K^J&=\mathcal T_J\Pi_K\mathcal T_J^{-1},\notag\\
+ E_K^0(J)&=\mathfrak g\oplus V_K(J),&
+ E_K^1(J)&=\eta_0\mathfrak g\oplus d_JV_K(J).
+ \label{mht:eq:moving-finite-complex}
+\end{align}
+The residual summand is the full complex
+$[\mathfrak g\xrightarrow{\operatorname{ad}_J}\mathfrak g\eta_0]$.
+
+\begin{theorem}\label{mht:thm:moving-finite-contraction}
+For every finite $J$,
+\begin{equation}\label{mht:eq:moving-darboux}
+ \omega_J(\mathcal T_Jv,\mathcal T_Jw)=\omega_0(v,w).
+\end{equation}
+The complex \eqref{mht:eq:moving-finite-complex} has a nondegenerate
+cyclic pairing and the cyclic strong contraction
+\begin{align}
+ \mathsf p_{K,J}^0f&=P_0f+\Pi_K^J(f-P_0f),\notag\\
+ \mathsf p_{K,J}^1\eta&=\eta_0P_1\eta+d_J\Pi_K^Jh_J\eta,&
+ H_{K,J}\eta&=(1-\Pi_K^J)h_J\eta.
+ \label{mht:eq:moving-finite-contraction}
+\end{align}
+The homotopy is zero on degree zero. These maps depend analytically
+on all entries of $J$ and preserve smooth vectors. Their formal
+coefficients involve finitely many Green operations and commutators,
+with no inverse eigenvalue difference.
+\end{theorem}
+
+\begin{proof}
+The binomial series and \eqref{mht:eq:kinetic-self-adjoint} give
+$\mathcal T_J^\dagger M_J\mathcal T_J=1$, first near zero by
+series multiplication and then everywhere by analyticity.
+Here $\dagger$ is the adjoint for $\omega_0$. This proves
+\eqref{mht:eq:moving-darboux}. Thus $\Pi_K^J$ is the
+$\omega_J$-orthogonal projection onto $V_K(J)$.
+
+The residual summand remains orthogonal to the acyclic summand.
+On $W$, conjugate the degree-zero projection by the isomorphism
+$d_J:V\to W$, whose inverse is $h_J$. This gives the degree-one
+projection in \eqref{mht:eq:moving-finite-contraction}. The inverse
+differential on the remaining orthogonal summand is $H_{K,J}$.
+The decomposition proves the contraction identity, adjointness,
+cyclicity and all side conditions. The residual differential is
+retained because $P_1d_Jf=[J,P_0f]$.
+
+The series converge in every $V_s$, and their limits agree under
+Sobolev inclusion. Hence they preserve smooth vectors. Near zero,
+$h_J=M_J^{-1}h$, so every formal coefficient uses only finitely
+many copies of $h\eta_0\operatorname{ad}_J$. This also describes
+the coefficients of the transported projection and homotopy.
+\end{proof}
+
+Taking a square root of the compressed matrix
+\eqref{mht:eq:compressed-pole} would retain its singularities.
+The full frame supplies a nondegenerate moving subspace at every
+finite background, including nonsemisimple matrices.
+
+\section{The parameter connection and its curvature}
+
+Let $d_{\mathrm{par}}$ differentiate the entries of $J$, and put
+$\mathcal R_J=\mathcal T_J^{-1}=M_J^{1/2}$. The frame connection is
+\begin{equation}\label{mht:eq:frame-parameter-connection}
+ \nabla=d_{\mathrm{par}}+\mathcal A,
+ \qquad \mathcal A=\mathcal R_J^{-1}d_{\mathrm{par}}\mathcal R_J.
+\end{equation}
+This differential acts on parameters, separately from $d_J$ on
+curve coefficients.
+
+\begin{proposition}\label{mht:prop:frame-connection}
+The connection \eqref{mht:eq:frame-parameter-connection} is flat
+and compatible with the varying form:
+\[
+ d_{\mathrm{par}}\mathcal A+\mathcal A\wedge\mathcal A=0,
+ \qquad d_{\mathrm{par}}\omega_J
+       =\mathcal A^{\mathsf T}\omega_J+\omega_J\mathcal A.
+\]
+In contrast, for $\theta=M_J^{-1}d_{\mathrm{par}}M_J$,
+\begin{equation}\label{mht:eq:half-connection-curvature}
+ F_{\theta/2}=-\frac14\theta\wedge\theta,
+ \qquad
+ \mathcal A=\frac12\theta+
+       \frac18[A_J,d_{\mathrm{par}}A_J]
+       +O(A_J^2d_{\mathrm{par}}A_J).
+\end{equation}
+The last remainder has at least two undifferentiated factors $A_J$.
+\end{proposition}
+
+\begin{proof}
+The Maurer--Cartan identity for $\mathcal R_J^{-1}d_{\mathrm{par}}\mathcal R_J$
+gives flatness. Differentiating
+$\omega_J=\mathcal R_J^{\mathsf T}\omega_0\mathcal R_J$ proves
+compatibility. The same identity for $\theta$ gives the curvature
+of $\theta/2$. Expanding $\mathcal R_J=1+A_J/2-A_J^2/8+\cdots$
+and its inverse gives, through the displayed order,
+\[
+ \mathcal A=\frac12d_{\mathrm{par}}A_J
+       -\frac38A_Jd_{\mathrm{par}}A_J
+       -\frac18(d_{\mathrm{par}}A_J)A_J+\cdots.
+\]
+Subtract $\theta/2=(d_{\mathrm{par}}A_J-A_Jd_{\mathrm{par}}A_J)/2+\cdots$
+to obtain the commutator term.
+\end{proof}
+
+The curvature is nonzero for the curve operator itself. On the
+mode $v$ of \eqref{mht:eq:finite-two-modes}, Green integration gives
+\begin{equation}\label{mht:eq:native-frame-curvature}
+ X^2v=\frac{z^2(1+3z\bar z)}{12(1+z\bar z)^3},\qquad
+ F_{\theta/2}|_{J=0}(U,V)
+       =-\frac14X^2\otimes\operatorname{ad}_{[U,V]}.
+\end{equation}
+For $U=E_{12}$ and $V=E_{21}$, the commutator is
+$\operatorname{diag}(1,-1)$ and its adjoint action is nonzero.
+Thus the half-logarithmic formula already fails to give a flat
+connection in the native matrix family.
+
+\section{Source antifields and change of density}
+
+A parameter-dependent change of finite field coordinates also
+changes the antifields of those parameters. Let $q$ be graded
+coordinates, let $J^i$ be even parameters, and give their odd
+cotangent coordinates the degrees
+$|q^+|=-1-|q|$ and $|J_i^+|=-1$.
+
+Let $T(J)$ be an invertible degree-preserving formal matrix,
+with $T(0)=1$, and set $q=T(J)Q$. Its cotangent lift is determined
+by the one-form identity
+\begin{equation}\label{mht:eq:moving-source-cotangent}
+ q^+\delta q+J_i^+\delta J^i
+       =Q^+\delta Q+\widetilde J_i^+\delta J^i.
+\end{equation}
+Dual coordinates are placed on the left. Expanding the left side gives
+\begin{equation}\label{mht:eq:moving-antifield-shift}
+ Q^+=q^+T,\qquad
+ \widetilde J_i^+=J_i^++q^+(\partial_iT)Q.
+\end{equation}
+For the moving cutoff, $T$ is a finite coordinate comparison between
+chosen transported bases. No infinite-dimensional determinant of
+$\mathcal T_J$ is required.
+
+\begin{proposition}\label{mht:prop:moving-semidensity}
+Write $b=\operatorname{Ber}T$, with formal branch $b(0)=1$.
+The odd cotangent lift has Berezinian $b^2$ and sends a coordinate
+semidensity to $b$ times that semidensity. If a master weight is
+$e^{I/\hbar}$ times the old coordinate semidensity, its new action is
+\begin{equation}\label{mht:eq:moving-density-action}
+ I'=I\circ F+\hbar\log\operatorname{Ber}T,
+\end{equation}
+where $F$ is the full coordinate change including
+\eqref{mht:eq:moving-antifield-shift}.
+\end{proposition}
+
+\begin{proof}
+The base Jacobian in $(Q,J)$ is triangular and has Berezinian $b$.
+The inverse transpose on the dual variables would have reciprocal
+Berezinian, but parity reversal for the odd cotangent space inverts
+it again. The full Berezinian is therefore $b^2$. Its normalized
+square root is $b$, and absorbing that factor into the exponential
+gives \eqref{mht:eq:moving-density-action}.
+\end{proof}
+
+For one even coordinate, $q=e^JQ$ gives $q^+=e^{-J}Q^+$ and
+$\widetilde J^+=J^++Q^+Q$. The coordinate Berezinian is $e^{2J}$,
+and the action acquires $\hbar J$. If equal even and odd copies
+carry the same matrix $T$, their base Berezinians cancel. Their
+source-antifield shifts still remain. A varying cutoff therefore
+requires its cotangent lift even when its density contribution is one.

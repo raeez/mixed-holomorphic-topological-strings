@@ -1,0 +1,445 @@
+\chapter{Fields, boundaries and comparison}
+\label{mht:ch:fields-boundaries}
+
+A bulk field can act on a brane without being determined by that
+action. Recovering the field theory requires enough boundary
+observables to detect its differential, products and higher operations.
+Traces of matrices give concrete tests of such an action. Boundary
+conditions and quantum contractions determine what those tests retain.
+The open--closed problem is to construct the action and determine the
+information it recovers.
+
+The polar model imposes a first-jet boundary condition. On a marked
+sphere, a function is required to have zero first holomorphic
+derivative. The resulting Dolbeault complex has an extra cohomology
+class, detected by a meromorphic one-form with a double pole.
+
+The physical matrix fields reduce classically to a surface connection
+and an adjoint scalar. The map extracting that scalar is nonlinear. At the
+quantum level, eliminating the other fields also contracts observables
+with one another.
+
+Hamiltonian fields on a holomorphic symplectic surface provide a second
+model. Their matrix probes retain commutator equations, relations among
+those equations and central rank. Comparing the two models, or comparing
+either with a closed string field theory, requires a map between their
+specified fields and operations.
+
+\section{Mixed differential forms and local observables}
+
+Let $U$ be an oriented real surface and $Z$ a complex manifold. Mixed
+forms on $U\times Z$ are sections of
+\[
+ \mathcal A_{U,Z}
+   =\Omega^\bullet(U)\widehat\otimes\Omega^{0,\bullet}(Z).
+\]
+The tensor product is the completed projective tensor product of the
+usual complex Fréchet spaces of smooth forms. On product opens it gives
+smooth forms in both sets of variables. Compactly supported smooth
+spaces carry their usual inductive-limit topologies.
+
+On a noncompact space, integrals below use compact support.
+For homogeneous forms $\xi,\xi'$ on $U$ and $\eta,\eta'$ on $Z$,
+the total differential and multiplication have the tensor signs
+\begin{align}
+ D(\xi\otimes\eta)
+   &=d_U\xi\otimes\eta+(-1)^{|\xi|}\xi\otimes\bar\partial\eta,
+       \label{mht:eq:mixed-differential}\\
+ (\xi\otimes\eta)(\xi'\otimes\eta')
+   &=(-1)^{|\eta||\xi'|}(\xi\wedge\xi')\otimes(\eta\wedge\eta').
+       \label{mht:eq:mixed-product}
+\end{align}
+Degrees are cohomological, and $V[k]^j=V^{j+k}$. Thus the shift
+$[1]$ lowers the degree of a field vector by one. Coordinates on a
+graded field space have the opposite degrees.
+
+The adjective \emph{mixed} refers to these two differentials. For a
+real vector field $v$ on $U$, contraction gives
+$[d_U,\iota_v]=\mathcal L_v$. Antiholomorphic contraction gives the
+corresponding identity for $\bar\partial$ on a complex coordinate
+chart. Extending these identities to an interacting theory requires
+compatibility with its interaction and boundary conditions. At the
+quantum level it also requires compatibility with renormalization.
+
+A classical Batalin--Vilkovisky (BV) model specifies a complex of fields,
+a symplectic pairing of degree $-1$, and an action whose Hamiltonian differential
+squares to zero. An infinite-dimensional pairing has a domain: a
+continuous functional need not have a smooth Hamiltonian vector field.
+The admissible observables and their coefficient topology are therefore
+part of the model.
+
+Write $Q$ for the free differential and $\{-,-\}$ for the degree-one
+BV bracket. Let $\hbar$ be a formal parameter of degree zero.
+When a regulated BV Laplacian $\Delta$ is defined, the quantum master
+equation for an interaction $I$ takes the form
+\[
+ QI+\frac12\{I,I\}+\hbar\Delta I=0.
+\]
+The equation is asserted only on a domain where its three terms
+are defined.
+
+Local observables on an open set $V$ form a cochain complex
+$\operatorname{Obs}(V)$. A unital prefactorization structure supplies chain
+maps
+\[
+ \operatorname{Obs}(V_1)\otimes\cdots\otimes
+ \operatorname{Obs}(V_r)\longrightarrow\operatorname{Obs}(V)
+\]
+for pairwise disjoint $V_i\subset V$, compatible with nested insertions
+and with permutations carrying the Koszul signs. Empty insertion gives
+the unit. Factorization also requires descent for Weiss covers:
+every finite subset of the open lies in some member of the cover.
+
+Local constancy in the real directions means that the maps
+associated to inclusions of sufficiently small real disks are
+quasi-isomorphisms, with the holomorphic open fixed. It is a property
+of these observable maps. A formula for the differential on fields
+alone does not establish it.
+
+Support fixes the variance of the maps. A smooth field on $V$ restricts
+to a smaller open. A compactly supported distributional coefficient of
+an observable extends by zero to a larger open. These maps have
+opposite directions.
+
+The continuous dual of all smooth test functions consists of compactly
+supported distributions. The dual of compactly supported smooth tests
+contains distributions of arbitrary support. Each current construction specifies which
+test space it uses.
+
+\section{The polar field theory}
+
+Take $C=\mathbb P^1$, with marked point $o=0$ in the coordinate $z$,
+and fix $\kappa\in\mathbb C^\times$. For $f\in C^\infty(C)$, put
+\[
+ \alpha=\kappa z^{-2}dz,\qquad j(f)=\partial_zf(o),
+ \qquad
+ E^0=\ker j,\quad E^1=\Omega^{0,1}(C),\quad d_E=\bar\partial.
+\]
+All functions and forms here are globally smooth, and $E^k=0$ outside
+degrees zero and one. The condition $j=0$
+is imposed on degree-zero elements. It is preserved by multiplication,
+so $E$ is a commutative differential graded algebra.
+
+Its degree-minus-one
+trace is the circular principal value
+\[
+ \tau_E(\eta)=\frac1{2\pi i}
+       \lim_{r\downarrow0}\int_{C\setminus\{|z|<r\}}\alpha\wedge\eta,
+ \qquad \tau_E(E^0)=0.
+\]
+The marked coordinate and the shrinking circles are part of the
+prescription. For every smooth function $f$, polar Stokes gives
+\begin{equation}\label{mht:eq:entrance-polar-stokes}
+ \tau_E(\bar\partial f)=\kappa j(f).
+\end{equation}
+The trace is therefore closed on $E$. Chapter~\ref{mht:ch:polar-neumann}
+proves its continuity and computes the resulting cohomology.
+
+For a positive integer $N$, matrix multiplication and the ordinary
+trace give the classical field space
+\begin{equation}\label{mht:eq:entrance-polar-fields}
+ \mathcal F_E
+   =\bigl(\Omega^\bullet(U)\widehat\otimes E
+                         \otimes\operatorname{Mat}_N(\mathbb C)\bigr)[1].
+\end{equation}
+Integration over $U$, followed by $\tau_E\operatorname{tr}$, has degree
+$-3$ before the shift. The induced BV pairing has degree $-1$.
+
+Let $\mathsf A$ denote the full graded field, including its ghost and
+antifield components. For a closed surface, or compact support in its
+interior, the cyclic action is
+\begin{equation}\label{mht:eq:entrance-polar-action}
+ S_E(\mathsf A)=\int_U\tau_E\operatorname{tr}
+       \left(\frac12\mathsf A D\mathsf A+\frac13\mathsf A^3\right),
+ \qquad D=d_U+d_E.
+\end{equation}
+The differential graded algebra identities give its classical gauge
+complex. This is the partial-connection form of four-dimensional
+Chern--Simons theory, with the polar trace and boundary domain just
+specified.\footnote{K.~Costello, E.~Witten and M.~Yamazaki,
+\emph{Gauge Theory and Integrability, I},
+\href{https://arxiv.org/abs/1709.09993}{arXiv:1709.09993},
+Section~3.1, especially equations~(3.1)--(3.4). The action here uses
+the normalization $\frac12\mathsf A D\mathsf A+\frac13\mathsf A^3$
+and the displayed principal-value trace.}
+
+A physical field is $\mathsf A=b+a$, where $b$ is a surface one-form
+with coefficients in $E^0$ and $a$ is a curve $(0,1)$-form. Gauge
+transformations take values in invertible matrices over $E^0$ and act by
+\[
+ \mathsf A^g=g^{-1}\mathsf Ag+g^{-1}Dg.
+\]
+Unless stated otherwise, gauges and fields are considered formally
+near the zero field and the trivial curve bundle. The analytic
+normal form is asserted on its separately specified small Sobolev
+neighborhood.
+
+The residual curve algebra is
+\[
+ A_\kappa=\mathbb C\oplus\mathbb C\varepsilon,
+ \qquad |\varepsilon|=1,\quad\varepsilon^2=0,\quad
+ d_A=0,\quad \tau_A(1)=0,\quad \tau_A(\varepsilon)=\kappa.
+\]
+It is represented in $E$ by
+\[
+ f_0=\frac{z}{1+|z|^2},\qquad
+ \eta_0=\bar\partial f_0,
+ \qquad 1\longmapsto1,\quad\varepsilon\longmapsto\eta_0.
+\]
+Although $\eta_0$ is exact among unrestricted smooth forms,
+\eqref{mht:eq:entrance-polar-stokes} excludes a Neumann primitive.
+The inclusion is a trace-preserving quasi-isomorphism.
+
+The residual matrix of a curve connection is extracted from its
+normalized frame:
+\[
+ \bar\partial H=-aH,\qquad H(o)=I_N,\qquad
+ \mathcal J(a)=-j(H).
+\]
+Let $G$ be the right inverse of $\bar\partial$ normalized by
+$(G\eta)(o)=0$. Formally,
+\begin{equation}\label{mht:eq:entrance-nonlinear-residual}
+ H=I_N-Ga+G(aGa)-\cdots,\qquad
+\mathcal J(a)=j(Ga)-jG(aGa)+\cdots.
+\end{equation}
+
+The order of the matrix factors is retained. The first term is the
+linear cohomology projection. The other terms record how the
+connection changes that projection. Chapter~\ref{mht:ch:nonlinear-neumann}
+constructs the frame, its equivariance and explicit nonzero nonlinear
+trace invariants.
+
+For a surface connection $b\in\Omega^1(U,\mathfrak{gl}_N)$ and
+$J\in C^\infty(U,\mathfrak{gl}_N)$, the residual field is
+$b+\eta_0J$. The same physical density on a surface with boundary gives
+\begin{equation}\label{mht:eq:entrance-bf-action}
+ S_E(b+\eta_0J)
+   =\kappa\int_U\operatorname{tr}(JF_b)
+        -\frac\kappa2\int_{\partial U}\operatorname{tr}(bJ),
+ \qquad F_b=d_Ub+b\wedge b.
+\end{equation}
+The boundary term contributes to the variational problem. A boundary
+polarization must also be chosen.
+
+The full
+shifted residual complex also contains ghosts and antifields. At a
+constant matrix $J$, its curve differential is the two-term adjoint
+complex $[\mathfrak{gl}_N\xrightarrow{\operatorname{ad}_J}
+\mathfrak{gl}_N\varepsilon]$. Retaining this complex preserves the
+stabilizers when eigenvalues coincide. Chapter~\ref{mht:ch:neumann-bv}
+proves the full reduction and the two boundary transgressions, at the
+pole and at the boundary of $U$.
+
+The coefficient ring matters in this reduction. Formal deformation
+parameters admit recursive inversion, and sufficiently small analytic
+parameters admit the corresponding convergent inverse. A polynomial
+parameter does not permit either step. The same chapter exhibits an
+infinite-dimensional cokernel for the polynomial family while retaining
+the formal and analytic equivalences. Thus the residual model comes
+with its parameter domain.
+
+\section{Hamiltonian fields and matrix probes}
+
+The symplectic model has a different holomorphic factor. Let $W$ be a
+complex surface with holomorphic symplectic form. On a Darboux chart
+write this form as $dq\wedge dp$ and use
+\[
+ \{f,g\}=f_qg_p-f_pg_q,\qquad X_f=\{f,-\}.
+\]
+The spacetime $U\times W$ has real dimension six, whereas $U\times C$
+in \eqref{mht:eq:entrance-polar-fields} has real dimension four.
+A passage between them requires a reduction with its fields,
+integration domain and boundary conditions.
+
+At a fixed point of $W$, put $\mathfrak m=(q,p)$ in
+$\mathbb C[[q,p]]$. Formal Hamiltonian vector fields are represented
+by $\mathbb C[[q,p]]/\mathbb C1$. Those fixing the point are represented
+by $\mathfrak m^2$. The latter have finite Lie quotients
+\[
+ \mathfrak h_d=\mathfrak m^2/\mathfrak m^{d+1},\qquad d\geq2,
+\]
+because the Poisson bracket lowers polynomial degree by two.
+Translations do not preserve these quotients:
+$\{q,p^{d+1}\}=(d+1)p^d$. The pointed and moving-point problems
+therefore require different coefficient data.
+
+An internal formal Hamiltonian is also distinct from a function of
+the physical holomorphic coordinates. If $z=(z_1,z_2)$ are physical
+coordinates on a chart $V$ and $w=(w_1,w_2)$ independent formal variables,
+use the complex
+\[
+ \mathcal O(V)[[w_1,w_2]]\otimes\Lambda(\vartheta_1,\vartheta_2),
+ \qquad |\vartheta_i|=1.
+\]
+Its horizontal jet differential is
+\[
+ \nabla=\sum_{i=1}^2\vartheta_i
+              (\partial_{z_i}-\partial_{w_i}).
+\]
+Its horizontal inclusion sends $f(z)$ to the formal Taylor series
+$f(z+w)$. Evaluation at $w=0$ on arbitrary coefficients is not a
+Poisson map: it sends $\{w_1,w_2\}_w$ to $1$ and sends both inputs
+to zero. The horizontal complex supplies the additional constraint
+needed for the geometric Hamiltonian comparison.
+
+The matrix probe of a commutative plane is the differential graded
+algebra
+\begin{equation}\label{mht:eq:entrance-matrix-probe}
+ R_N=\mathbb C[X_{ij},Y_{ij}]\otimes\Lambda(\Psi_{ij}),\qquad
+ |\Psi_{ij}|=-1,\quad Q\Psi=[X,Y],\quad QX=QY=0.
+\end{equation}
+The Chevalley--Eilenberg cochains for simultaneous conjugation additionally
+record infinitesimal gauge symmetry and stabilizers.
+Even before that step, the derived relation matters:
+$\operatorname{Tr}\Psi$ is a closed class that is not exact. Evaluation
+at $X=Y=0$ sends it to a nonzero element of the exterior algebra
+with zero differential, proving the assertion. A reduction that
+removes this class changes the probe.
+
+Central constants are detected independently. With
+$\{X_{ij},Y_{kl}\}=\delta_{il}\delta_{jk}$, direct summation gives
+\begin{equation}\label{mht:eq:entrance-rank-bracket}
+ \{\operatorname{Tr}X,\operatorname{Tr}Y\}=N.
+\end{equation}
+The classes of $q,p$ commute in the Lie algebra of Hamiltonians modulo
+constants. Their unreduced matrix traces have the nonzero bracket
+\eqref{mht:eq:entrance-rank-bracket}. A Hamiltonian-function comparison
+must retain this central datum or construct its reduction. The
+induced derivations, which annihilate constants, ask a different
+question.
+
+Framed probes impose a moment equation with an additional scalar
+parameter. At rank two, a cyclic matrix basis gives regular coordinates
+even when eigenvalues collide. Chapter~\ref{mht:ch:matrix-branes}
+constructs an integral quantum reduction on this chart and a regular
+Lie map from polynomial Hamiltonians.
+
+Two different global obstructions remain. One fixes four low charges. The other allows
+every formal correction but prescribes the full trace map at zero
+framing. A comparison at an isolated nonzero framing level can
+lie outside both classes. Its nonlinear moments and its transitions
+between cyclic charts must still be constructed.
+
+\section{The bulk action and the boundary center}
+
+A boundary theory includes objects describing boundary conditions and
+cochain complexes of operators changing one condition into another.
+Their compositions are part of the data. For an associative
+differential graded algebra $B$, the corresponding algebraic center is
+the Hochschild cochain complex
+\[
+ C^\bullet(B,B)=\operatorname{RHom}_{B\otimes B^{\mathrm{op}}}(B,B).
+\]
+
+It records coherent operations on $B$ and its modules. A geometric
+boundary theory requires the analogous operations to respect the
+positions and support of insertions. Choosing its category of
+factorization bimodules and its diagonal precedes taking derived
+endomorphisms. That choice is not determined by the trace of a single
+matrix probe.
+
+Even the polynomial coordinate comparison has two stages. Regrading
+the Chevalley--Eilenberg coordinates of a shifted cotangent Lie algebra
+gives polyvectors with their linear Poisson differential. Ordinary
+Hochschild--Kostant--Rosenberg antisymmetrization has zero differential
+on its polyvector source. It therefore supplies the Hochschild
+comparison only at zero Poisson structure. A nonzero Poisson tensor
+requires a supplied formality map, twisted by that tensor, and the
+corresponding deformed associative product.
+Chapter~\ref{mht:ch:centres-actions} proves the coordinate identity
+and gives the explicit failure of the untwisted comparison.
+
+The bulk is specified independently by its fields, pairing, action
+and boundary domain. Its action on a boundary is a family of maps
+from bulk observables in a collar to coherent boundary operations.
+The maps must commute with the differential and preserve disjoint
+products. Moving and colliding insertions impose further homotopies.
+
+For example, let $\mathfrak l$ be a Lie algebra in degree zero and
+$(\mathfrak a,d)$ a differential graded Lie algebra.
+Let $F_1:\mathfrak l\to\mathfrak a^0$ take values in closed elements.
+A binary correction is a map
+$F_2:\Lambda^2\mathfrak l\to\mathfrak a^{-1}$ required to solve
+\[
+ dF_2(f,g)=F_1([f,g])-[F_1(f),F_1(g)].
+\]
+The next equation tests the compatibility of these binary corrections.
+An action on cohomology alone leaves these equations undecided.
+
+A dynamical coupling must also determine the source in the bulk
+equations. If $i:Y\hookrightarrow M$ is a defect inclusion, the
+transpose of restriction sends a defect density $\mu$ to a current
+supported on $Y$. For a real normal coordinate $r$, oriented before
+the coordinates of $Y$, this pushforward has the form
+$i_*\mu=\delta(r)\,dr\,\mu$. Coupling a Hamiltonian bulk field to a
+cyclic action on defect fields produces both their gauge action and
+this transposed source. A product of singular currents at several
+insertions requires its own extension across their collisions.
+
+The geometric Hamiltonian model uses a six-dimensional bulk and a
+five-dimensional defect of this kind. Its cotangent field admits
+normal distributions, while the field multiplying it is smooth.
+This domain permits the classical action without multiplying two
+normal distributions. A closed theory of polyvector fields, such as
+Bershadsky--Cecotti--Ooguri--Vafa (BCOV) theory, starts with a different
+complex and its own divergence, descendants and background.
+Identifying its sourced observables with Hamiltonian or polar boundary
+operations requires a map of those complexes, preserving the source
+terms and the cyclic operations. The general comparison remains open.
+
+\section{Quantum reduction and prepared states}
+
+Classical reduction supplies a residual field and the homotopies of
+its gauge complex. Quantum elimination additionally supplies
+contractions. For a normalized Gaussian functional on one variable $x$,
+with mean $m$ and covariance $\hbar C$,
+\[
+ \langle x^2\rangle=m^2+\hbar C.
+\]
+Substitution of $m$ alone misses the second term. For several
+observables the corresponding corrections are their connected
+cumulants. The normalized BV pushforward and its composition law in
+Chapter~\ref{mht:ch:quantum-elimination} retain these terms.
+
+Infinite-dimensional elimination requires more than the finite
+identity. The paired native heat tensors give continuous contractions
+at positive scale, including pole jets. Their generator is nonlocal
+on the curve. Extending coincident products to zero scale therefore
+requires estimates and counterterms on the stated support domain.
+The free identities of Chapter~\ref{mht:ch:heat-contacts} do not supply
+the interacting quantum master equation.
+
+That chapter also computes the full supported normal-jet complex.
+Antiholomorphic derivative jets have explicit Dolbeault primitives.
+Holomorphic residue jets survive in cohomology. Boundary faces and
+their intersections require the relative differential. Admissibility
+of these primitives for the native cyclic field theory is a further
+condition.
+
+For the Gaussian sector, the staggered inverse converges uniformly on
+compact sets of matrix backgrounds. Its finite background derivatives
+converge on bounded smooth tests. Chapter~\ref{mht:ch:quantum-elimination}
+uses these estimates to obtain smooth Ward identities and the
+regularized determinant. An inserted source detector remains nonzero
+even when the uninserted regularized determinant equals one.
+
+A state is further data: a functional on observables compatible with
+their differential and the chosen boundary preparation.
+The unnormalized functional evaluated on the unit gives the partition
+function. Normalizing that value leaves the other observable values
+to be determined.
+
+Chapter~\ref{mht:ch:states-sewing} constructs compact
+gauge and Gaussian preparations, keeps their normalization lines,
+and proves their sewing formulas. Its interacting scalar preparation
+has a fixed positive smoothing parameter. A Hermite unitary identifies
+it with an independently defined scalar Fock interaction, including
+the full form domains, semigroups, traces and normalized positive
+states. The finite cutoff semigroups converge in trace norm.
+
+The remaining physical comparison must identify the state produced by
+the native field theory with an independently prepared residual state
+on common observables. It must also intertwine cutting and sewing.
+This requirement connects the boundary algebra to the quantum field
+theory: the algebra specifies which operations can be composed, and
+the preparation specifies their amplitudes.

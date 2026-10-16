@@ -1,0 +1,328 @@
+\chapter{The polar Neumann complex}
+\label{mht:ch:polar-neumann}
+
+A boundary condition can leave a state even when the unconstrained
+Dolbeault complex has no first cohomology. On the sphere, every smooth
+$(0,1)$-form has a primitive. If the primitive must have zero first
+holomorphic derivative at a marked point, one scalar obstruction remains.
+The meromorphic form with a double pole at that point measures precisely
+this obstruction. We compute the resulting algebra and retain the trace
+needed for its classical action.
+
+\section{A first jet and its boundary integral}
+
+Let $C=\mathbb P^1$ have its complex orientation, and let $o=0$ in the
+affine coordinate $z$. Fix $\kappa\in\mathbb C^\times$ and put
+\[
+ \alpha=\kappa z^{-2}dz,\qquad j(f)=\partial_z f(o)
+ \quad\text{for }f\in C^\infty(C).
+\]
+The form $\alpha$ extends across infinity and has a single double pole,
+with zero residue. All smooth function and form spaces below carry their
+usual Fr\'echet topologies.
+
+\begin{definition}\label{mht:def:neumann-algebra}
+The Neumann Dolbeault algebra is the cohomologically graded algebra
+\[
+ E^0=\ker j,\qquad E^1=\Omega^{0,1}(C),\qquad
+ E^k=0\ (k\ne0,1),\qquad d_E=\bar\partial,
+\]
+with pointwise multiplication and wedge product.
+\end{definition}
+
+The condition is imposed on functions. It is preserved by multiplication,
+since $j(fg)=f(o)j(g)+j(f)g(o)$. A product of two degree-one elements
+vanishes. Thus $E$ is a unital commutative differential graded algebra.
+Its holomorphic germs at $o$ form
+$\mathbb C\oplus z^2\mathbb C\{z\}$, whose completion is
+$\mathbb C\oplus z^2\mathbb C[[z]]$.
+
+The polar form defines a trace by deleting round disks in the fixed
+coordinate:
+\begin{equation}\label{mht:eq:polar-trace}
+ \tau_E(\eta)=\frac1{2\pi i}
+   \lim_{r\downarrow0}\int_{C\setminus\{|z|<r\}}\alpha\wedge\eta
+ \quad(\eta\in E^1),\qquad \tau_E(E^0)=0.
+\end{equation}
+The coordinate and the circular prescription are part of this definition.
+
+\begin{lemma}[Polar Stokes identity]\label{mht:lem:polar-stokes}
+The limit in \eqref{mht:eq:polar-trace} exists and defines a continuous
+functional of degree $-1$. For every $f\in C^\infty(C)$,
+\begin{equation}\label{mht:eq:polar-stokes}
+ \tau_E(\bar\partial f)=\kappa j(f).
+\end{equation}
+In particular, $\tau_Ed_E=0$ on $E$, and
+$\tau_E(xy)=(-1)^{|x||y|}\tau_E(yx)$ for homogeneous $x,y\in E$.
+\end{lemma}
+
+\begin{proof}
+The vanishing of $H^{0,1}(\mathbb P^1)$ gives a continuous solution
+operator
+\begin{equation}\label{mht:eq:normalized-green}
+ G:\Omega^{0,1}(C)\longrightarrow C^\infty(C),\qquad
+ \bar\partial G\eta=\eta,\qquad (G\eta)(o)=0.
+\end{equation}
+One obtains it from a Dolbeault Green operator by subtracting the value
+at $o$. The normalization makes it unique, because the global
+holomorphic functions on $C$ are constant.
+
+Away from $o$, one has $d(\alpha f)=-\alpha\wedge\bar\partial f$.
+The inner boundary of the deleted disk is oriented clockwise, so
+Stokes' theorem gives
+\[
+ \frac1{2\pi i}\int_{C\setminus\{|z|<r\}}\alpha\wedge\bar\partial f
+ =\frac1{2\pi i}\oint_{|z|=r}^{\mathrm{counterclockwise}}
+        \kappa z^{-2}f\,dz.
+\]
+In the expansion
+$f=f(o)+zj(f)+\bar z\,\partial_{\bar z}f(o)+O(|z|^2)$,
+only the holomorphic linear term contributes in the limit.
+This proves \eqref{mht:eq:polar-stokes}.
+
+Every $\eta$ is $\bar\partial G\eta$, so the same identity proves
+existence and continuity of the
+trace on all of $E^1$. It vanishes on $d_EE^0$ by the defining condition
+$j=0$. Graded commutativity gives cyclicity.
+\end{proof}
+
+The trace is therefore the obstruction to finding a Neumann primitive.
+To exhibit its class, choose a smooth function $f_0$ with
+$f_0(o)=0$ and $j(f_0)=1$, and set $\eta_0=\bar\partial f_0$.
+A useful choice, used in the explicit calculations below, is
+\begin{equation}\label{mht:eq:sphere-representative}
+ f_0=\frac{z}{1+z\bar z},\qquad
+ \eta_0=-\frac{z^2}{(1+z\bar z)^2}\,d\bar z.
+\end{equation}
+In the coordinate $w=1/z$, the function is
+$\bar w/(1+w\bar w)$, so it is smooth at infinity.
+Although $\eta_0$ is exact in the unconstrained Dolbeault complex,
+it is not exact in $E$, since $\tau_E(\eta_0)=\kappa$.
+
+\section{The two-dimensional state algebra}
+
+Let
+\begin{equation}\label{mht:eq:residual-algebra}
+ A_\kappa=\mathbb C\oplus\mathbb C\varepsilon,\qquad
+ |\varepsilon|=1,\quad \varepsilon^2=0,\quad d_A=0,\qquad
+ \tau_A(1)=0,\quad\tau_A(\varepsilon)=\kappa.
+\end{equation}
+Its inclusion into the smooth complex sends the odd generator to the
+class just constructed:
+\[
+ i:A_\kappa\longrightarrow E,\qquad i(1)=1,\quad i(\varepsilon)=\eta_0.
+\]
+
+\begin{proposition}\label{mht:prop:polar-model}
+The map $i$ is a continuous unital differential graded algebra
+quasi-isomorphism, and $\tau_Ei=\tau_A$.
+\end{proposition}
+
+\begin{proof}
+It preserves the differential and product because $\eta_0$ is closed
+and $\eta_0^2=0$. Define
+\[
+ q(f)=f(o),\qquad q(\eta)=j(G\eta)\varepsilon,\qquad
+ h_0(\eta)=G\eta-j(G\eta)f_0,\qquad h_0(E^0)=0.
+\]
+The first jet of $h_0\eta$ is zero.
+
+For $f\in E^0$, the normalization
+of $G$ gives $Gd_Ef=f-f(o)$, hence
+$h_0d_Ef=f-iq(f)$ and $qd_Ef=0$. On degree one,
+$d_Eh_0\eta=\eta-iq(\eta)$. Also $G\eta_0=f_0$, so
+$qi=1$, $h_0i=qh_0=h_0^2=0$. These formulas give a continuous
+contraction of complexes and prove the quasi-isomorphism.
+The polar Stokes identity gives $\tau_Ei=\tau_A$.
+\end{proof}
+
+Point evaluation gives the simplest contraction, but an action also
+uses the bilinear pairing $\langle x,y\rangle_E=\tau_E(xy)$.
+For transfer of that pairing, the projection must be adjoint to $i$.
+This requirement changes its degree-zero component.
+
+\begin{theorem}[Cyclic contraction]\label{mht:thm:cyclic-contraction}
+Define $p(f)=p_0(f)1$ and $p(\eta)=p_1(\eta)\varepsilon$ by
+\begin{equation}\label{mht:eq:adjoint-projection}
+ p_0(f)=\kappa^{-1}\tau_E(f\eta_0),\qquad
+ p_1(\eta)=\kappa^{-1}\tau_E(\eta),
+\end{equation}
+and define a degree-$-1$ map by
+\begin{equation}\label{mht:eq:cyclic-homotopy}
+ h\eta=G\eta-p_1(\eta)f_0+\kappa^{-1}\tau_E(f_0\eta)1,
+ \qquad h(E^0)=0.
+\end{equation}
+These continuous maps satisfy
+\begin{equation}\label{mht:eq:contraction-identities}
+ pi=1,\qquad d_Eh+hd_E=1-ip,\qquad h^2=hi=ph=0.
+\end{equation}
+The maps $p$ and $i$ are adjoint for $\tau_E(xy)$ and $\tau_A(xy)$.
+The homotopy satisfies
+\begin{equation}\label{mht:eq:cyclicity}
+ \tau_E((h\eta)\xi)+\tau_E(\eta h\xi)=0
+ \qquad(\eta,\xi\in E^1).
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+By \eqref{mht:eq:polar-stokes}, $j(G\eta)=p_1(\eta)$, so $h\eta\in E^0$.
+For $f\in E^0$, the same identity applied to $ff_0$ yields
+\[
+ \tau_E(f\eta_0)+\tau_E(f_0d_Ef)=\kappa f(o).
+\]
+Together with $Gd_Ef=f-f(o)$, this proves $hd_Ef=f-p_0(f)$.
+Differentiating \eqref{mht:eq:cyclic-homotopy} gives
+$d_Eh\eta=\eta-p_1(\eta)\eta_0$.
+
+One has $p_0(1)=p_1(\eta_0)=1$ and
+$\tau_E(f_0\eta_0)=\frac12\tau_Ed_E(f_0^2)=0$.
+Consequently $pi=1$ and $hi=0$. Applying the polar Stokes identity to
+$(G\eta)f_0$, whose value and first derivative at $o$ vanish, gives
+\[
+ \tau_E((G\eta)\eta_0)=-\tau_E(f_0\eta).
+\]
+This proves $ph=0$. Degree considerations give $h^2=0$.
+The two formulas in \eqref{mht:eq:adjoint-projection} are exactly the
+adjointness identities.
+
+For cyclicity, set $F=G\eta$, $K=G\xi$,
+$r=p_1(\eta)$, $s=p_1(\xi)$,
+$u=\kappa^{-1}\tau_E(f_0\eta)$ and
+$v=\kappa^{-1}\tau_E(f_0\xi)$. The left side of
+\eqref{mht:eq:cyclicity} becomes
+\[
+ \tau_E(F\xi+\eta K)-\kappa rv-\kappa su+\kappa us+\kappa vr.
+\]
+The last four terms cancel. The first is
+$\tau_Ed_E(FK)=\kappa j(FK)=0$, since $F(o)=K(o)=0$.
+Continuity follows from that of $G$, $\tau_E$, and multiplication by
+the fixed smooth function $f_0$.
+\end{proof}
+
+\begin{example}\label{mht:ex:projection-not-evaluation}
+For the choice \eqref{mht:eq:sphere-representative}, put
+$v=z\bar z/(1+z\bar z)$. Then $v\in E^0$ and $v(o)=0$, whereas
+\[
+ G(v\eta_0)=\frac{z}{1+z\bar z}
+                -\frac{z}{2(1+z\bar z)^2},\qquad
+ p_0(v)=\frac12.
+\]
+The displayed primitive is smooth in both charts, vanishes at $o$,
+and differentiates to $v\eta_0$. Its first jet computes $p_0(v)$.
+Thus point evaluation and the cyclic projection impose different
+normalizations on the eliminated functions.
+\end{example}
+
+The contraction has a particularly simple effect on the internal
+algebra. In the binary-tree formulas for transfer, leaves are labeled
+by $i$, vertices by multiplication, internal edges by $h$, and the root
+by $p$. Every tree with at least three leaves has a non-root vertex
+joining two leaves. Their product lies in $i(A_\kappa)$ and is killed by
+the following $h$. Hence all transferred products of arity at least
+three vanish. The binary product is the one in
+\eqref{mht:eq:residual-algebra}.
+
+This statement concerns the internal coefficient algebra. It supplies
+neither an inverse pairing on arbitrary distributional covectors nor
+operations at coincident field insertions.
+
+\section{Choice of representative and surface fields}
+
+Changing $f_0$ changes the representative of the odd state, but leaves
+its trace fixed. The comparison can be made over parameter simplices,
+so the choices admit compatible homotopies.
+
+\begin{proposition}\label{mht:prop:representative-homotopies}
+An affine family $f$ of smooth functions satisfying $f(o)=0$ and
+$j(f)=1$, parametrized by a simplex $P$, defines a trace-preserving
+unital differential graded algebra map
+\[
+ A_\kappa\longrightarrow\Omega^\bullet_{\mathrm{poly}}(P)\otimes E,
+ \qquad \varepsilon\longmapsto(d_P+\bar\partial)f.
+\]
+The maps commute with face and degeneracy restrictions.
+\end{proposition}
+
+\begin{proof}
+Use the indicated tensor order and its Koszul signs. The coefficients
+of $d_Pf$ have zero first jet, so they lie in $E^0$. The image of
+$\varepsilon$ is closed and odd, so its square is zero.
+The trace annihilates its $E^0$ component and sends
+$\bar\partial f$ to $\kappa$. Restriction of the affine family commutes
+with the formula.
+
+On an interval, writing $u=f_1-f_0$, the image is
+$\eta_0+t\bar\partial u+dt\,u$. The two differential terms
+$dt\,\bar\partial u$ cancel.
+\end{proof}
+
+Let $U$ be an oriented smooth surface and $N\geq1$ an integer.
+Tensor the comparison with $\Omega^\bullet(U)$ and
+$\operatorname{Mat}_N(\mathbb C)$, using the completed projective tensor
+product of the smooth spaces and the graded tensor product of algebras.
+The homotopy on a simple tensor is
+\[
+ h_U(\omega\otimes\eta)=(-1)^{|\omega|}\omega\otimes h\eta.
+\]
+The identities \eqref{mht:eq:contraction-identities} then hold for the
+total differential. These maps commute with restriction in $U$ and
+preserve support there.
+
+For compact support, take the inductive limit
+over fixed compact subsets of $U$. The Green operator acts on the whole
+compact curve, so it is not local in the curve variable.
+
+The trace also determines the classical action. Let
+\[
+ L_U=\Omega^\bullet(U)\widehat\otimes E
+                         \otimes\operatorname{Mat}_N(\mathbb C)
+\]
+with total form degree and the graded commutator bracket.
+
+A physical connection is an element $\mathcal A\in L_U^1$.
+Its surface component has Neumann function coefficients, while its
+curve component is an arbitrary smooth $(0,1)$-form. Define
+\begin{equation}\label{mht:eq:open-action}
+ S_E(\mathcal A)=\int_U\tau_E\operatorname{tr}
+ \left(\frac12\mathcal A(d_U+d_E)\mathcal A+\frac13\mathcal A^3\right).
+\end{equation}
+Only surface degree two and internal degree one contribute. On a
+noncompact surface take compactly supported fields.
+
+For the residual fields, write
+$a\in\Omega^1(U)\otimes\operatorname{Mat}_N(\mathbb C)$ and
+$J\in C^\infty(U)\otimes\operatorname{Mat}_N(\mathbb C)$.
+Their image is $\mathcal A=a+J\eta_0$.
+
+\begin{proposition}\label{mht:prop:bf-density}
+With $F_a=d_Ua+a\wedge a$, the density of
+\eqref{mht:eq:open-action} is
+\[
+ \kappa\operatorname{tr}(JF_a)
+       -\frac{\kappa}{2}d_U\operatorname{tr}(aJ).
+\]
+On a closed surface this is the BF action
+$\kappa\int_U\operatorname{tr}(JF_a)$. If $U$ has boundary, the
+additional term is
+$-\frac{\kappa}{2}\int_{\partial U}\operatorname{tr}(aJ)$.
+\end{proposition}
+
+\begin{proof}
+The kinetic term has trace
+\[
+ \frac{\kappa}{2}\operatorname{tr}(a\wedge d_UJ+Jd_Ua)
+ =\kappa\operatorname{tr}(Jd_Ua)
+       -\frac{\kappa}{2}d_U\operatorname{tr}(aJ).
+\]
+The three terms of $\mathcal A^3$ containing one internal form are
+$a^2J\eta_0$, $-aJa\eta_0$, and $Ja^2\eta_0$. Graded cyclicity makes
+their traces equal, so the cubic term contributes
+$\kappa\operatorname{tr}(Ja^2)$. All other terms vanish by degree.
+Stokes' theorem gives the boundary integral.
+\end{proof}
+
+The inclusion now identifies states, products, trace, and the action on
+the chosen residual fields. To evaluate an invariant on an arbitrary
+smooth connection, we still need its residual matrix. The linear
+projection need not compute it: the gauge transformation that eliminates
+the other modes is nonlinear.

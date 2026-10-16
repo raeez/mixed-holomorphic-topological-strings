@@ -1,0 +1,474 @@
+\chapter{Nonlinear residual observables}
+\label{mht:ch:nonlinear-neumann}
+
+The residual algebra has no higher products, but recovering a residual
+field is a different operation. A matrix-valued connection must first be
+put into Neumann gauge. Its normalized frame solves a linear equation
+whose coefficient is the connection. The solution depends nonlinearly
+on that coefficient. The first jet of this frame gives the residual
+matrix and all its invariant polynomials. An explicit sphere family
+will have zero linear projection and a nonzero quadratic invariant.
+
+\section{The normalized frame}
+
+Retain $C,o,j,E,G,f_0,\eta_0$ and $\kappa$ from
+Chapter~\ref{mht:ch:polar-neumann}. Fix $N\geq1$ and let $t$ be a formal
+parameter of degree zero. A formal curve connection is
+\[
+ a\in t\bigl(E^1\otimes\operatorname{Mat}_N(\mathbb C)\bigr)[[t]].
+\]
+All series in this section are $t$-adically complete. The operator $G$
+acts entrywise on matrix-valued one-forms.
+
+\begin{definition}\label{mht:def:normalized-frame}
+Let $L_a(F)=aF$. The normalized frame and the residual matrix of $a$ are
+\begin{align}
+ H(a)&=(1+GL_a)^{-1}I_N
+       =I_N-Ga+G(aGa)-G(aG(aGa))+\cdots,\label{mht:eq:frame}\\
+ \mathcal J(a)&=-jH(a).\label{mht:eq:nonlinear-residual}
+\end{align}
+\end{definition}
+
+Each coefficient uses finitely many applications of $G$ and
+multiplications of a one-form by a function. The recursion and the
+normalization of $G$ show that $H(a)$ is the unique formal solution of
+\begin{equation}\label{mht:eq:frame-equation}
+ \bar\partial H=-aH,\qquad H(o)=I_N.
+\end{equation}
+Its constant term is $I_N$, so it is formally invertible.
+On a complex curve there is no further $(0,2)$ integrability equation.
+
+A formal Neumann gauge is a matrix
+$k\in\operatorname{GL}_N(C^\infty(C)[[t]])$ whose reduction modulo $t$
+is a constant invertible matrix and whose first jet satisfies $j(k)=0$.
+It acts by
+\[
+ a^k=k^{-1}ak+k^{-1}\bar\partial k.
+\]
+The gauge is based if $k(o)=I_N$. The condition on its constant term
+ensures that $a^k$ again vanishes modulo $t$.
+
+\begin{theorem}\label{mht:thm:neumann-normal-form}
+For every formal curve connection, the matrix
+\begin{equation}\label{mht:eq:normal-gauge}
+ g(a)=H(a)\exp(f_0\mathcal J(a))
+\end{equation}
+is a based Neumann gauge and satisfies
+$a^{g(a)}=\eta_0\mathcal J(a)$. Under a Neumann gauge,
+\begin{equation}\label{mht:eq:frame-equivariance}
+ H(a^k)=k^{-1}H(a)k(o),\qquad
+ \mathcal J(a^k)=k(o)^{-1}\mathcal J(a)k(o).
+\end{equation}
+More precisely, gauges with $a^k=b$ correspond bijectively to
+$K\in\operatorname{GL}_N(\mathbb C[[t]])$ satisfying
+$\mathcal J(a)K=K\mathcal J(b)$, by
+\begin{equation}\label{mht:eq:gauge-morphisms}
+ k=H(a)KH(b)^{-1},\qquad K=k(o).
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The frame equation gives $a^{H(a)}=0$, and
+$0^{\exp(f_0\mathcal J)}=\eta_0\mathcal J$.
+The factors in \eqref{mht:eq:normal-gauge} have value $I_N$ at $o$ and
+first jets $-\mathcal J$ and $\mathcal J$. Thus their product is a based
+Neumann gauge.
+
+The matrix $k^{-1}H(a)k(o)$ solves the normalized frame equation for
+$a^k$. Uniqueness gives the first identity in
+\eqref{mht:eq:frame-equivariance}. Taking its first jet, using
+$j(k^{-1})=0$, gives the second.
+
+If $a^k=b$, both $kH(b)$ and $H(a)$ are frames for $a$. Their ratio is
+a global holomorphic matrix and hence is constant. This yields
+\eqref{mht:eq:gauge-morphisms}. Conversely, that formula satisfies
+$\bar\partial k=-ak+kb$, and
+\[
+ j(k)=-\mathcal J(a)K+K\mathcal J(b).
+\]
+It is Neumann precisely when the indicated intertwining relation holds.
+\end{proof}
+
+Every $J\in t\operatorname{Mat}_N(\mathbb C)[[t]]$ occurs, since
+$H(\eta_0J)=\exp(-f_0J)$ and $\mathcal J(\eta_0J)=J$.
+Thus the quotient by based gauges is exactly this formal matrix space.
+Constant gauges then act by conjugation. The construction of $H$ and
+$\mathcal J$ does not use $f_0$. That choice enters only the representative
+$\eta_0\mathcal J$.
+
+The theorem describes a neighborhood of the trivial holomorphic bundle.
+It does not assert that every holomorphic bundle on the sphere is
+trivial. In a small Sobolev neighborhood, the same construction is
+convergent.
+
+\begin{proposition}\label{mht:prop:analytic-frame}
+Fix an integer $s\geq3$ and smooth metrics for the Sobolev norms on $C$.
+For $a$ in a sufficiently small neighborhood of zero in
+$H^s(\Omega_C^{0,1}\otimes\operatorname{Mat}_N(\mathbb C))$, the series
+\eqref{mht:eq:frame} converges in $H^{s+1}$ to an invertible frame.
+The maps $a\mapsto H(a)$ and $a\mapsto\mathcal J(a)$ are analytic.
+Smooth inputs give smooth frames, also for smooth families parametrized
+by compact subsets of a surface.
+\end{proposition}
+
+\begin{proof}
+The Dolbeault solution operator gains one derivative. Subtracting its
+value at $o$ preserves this bound, since evaluation is continuous on
+$H^{s+1}$. Sobolev multiplication on the compact real surface gives
+\[
+ \|G(aF)\|_{H^{s+1}}
+       \leq C_s\|a\|_{H^s}\|F\|_{H^{s+1}}.
+\]
+The Neumann series converges when $C_s\|a\|_{H^s}<1$.
+
+After shrinking the neighborhood, Sobolev embedding makes $H-I_N$
+uniformly small, so $H$ is invertible. First-jet evaluation is continuous
+on $H^{s+1}$, proving analyticity of $\mathcal J$. The frame equation
+bootstraps smooth inputs to smooth solutions. Differentiation of the
+inverse operator with respect to surface parameters gives the same
+estimates on each compact parameter set.
+\end{proof}
+
+Gauge equivariance continues to hold whenever both $a$ and $a^k$ belong
+to this neighborhood. No smallness assumption on an unrelated gauge
+orbit is implicit.
+
+\section{The linear trace and the cyclic representative}
+
+The first term of \eqref{mht:eq:nonlinear-residual} is
+$p_1a=\kappa^{-1}\tau_E(a)$. The trace removes all its higher corrections,
+although the matrix itself usually retains them.
+
+\begin{proposition}\label{mht:prop:linear-first-trace}
+Formally, and in the analytic neighborhood above,
+\[
+ \operatorname{tr}\mathcal J(a)=\kappa^{-1}\tau_E(\operatorname{tr}a).
+\]
+If the coefficient matrices of $a$ lie in one commutative subalgebra of
+$\operatorname{Mat}_N(\mathbb C)$, then
+$\mathcal J(a)=\kappa^{-1}\tau_E(a)$.
+\end{proposition}
+
+\begin{proof}
+The formal or near-identity logarithm satisfies
+\[
+ \bar\partial\log\det H
+ =\operatorname{tr}(H^{-1}\bar\partial H)=-\operatorname{tr}a.
+\]
+Its first jet is $-\operatorname{tr}\mathcal J(a)$.
+The polar Stokes identity proves the first assertion.
+In a commutative coefficient algebra, $\exp(-Ga)$ solves the normalized
+frame equation. Taking its first jet proves the second.
+\end{proof}
+
+The cyclic homotopy of Theorem~\ref{mht:thm:cyclic-contraction} gives a
+different gauge normalization. Seek $\xi\in t(E^0\otimes
+\operatorname{Mat}_N(\mathbb C))[[t]]$ with $p_0(\xi)=0$, and expand
+\[
+ a^{e^\xi}=e^{-\operatorname{ad}\xi}a+
+     \sum_{k\geq0}\frac{(-1)^k}{(k+1)!}
+                   (\operatorname{ad}\xi)^k d_E\xi,
+ \qquad \operatorname{ad}\xi(x)=[\xi,x].
+\]
+At order $n$, let $R_n$ denote the coefficient with the unknown
+$\xi_n$ omitted. Set
+\begin{equation}\label{mht:eq:cyclic-slice-recursion}
+ \xi_n=-hR_n,\qquad J_n^{\mathrm{cyc}}=p_1R_n.
+\end{equation}
+The contraction identities give
+$R_n+d_E\xi_n=\eta_0p_1R_n$ and $p_0(\xi_n)=0$, so this recursion
+puts the connection in the form $\eta_0J^{\mathrm{cyc}}$.
+It is unique: a first difference $\zeta$ of two normalized choices
+satisfies $p_0\zeta=0$ and $hd_E\zeta=0$, hence $\zeta=0$.
+
+For an input of field degree one, the first two homogeneous terms are
+\begin{equation}\label{mht:eq:cyclic-first-terms}
+ J_1^{\mathrm{cyc}}=p_1a,\qquad
+ J_2^{\mathrm{cyc}}=-\frac12p_1[a,ha].
+\end{equation}
+Indeed, substituting $\xi_1=-ha$ in the quadratic coefficient leaves
+$-\frac12[a,ha]-\frac12[\eta_0p_1a,ha]$ before projection.
+The projection of the second commutator is zero, since
+$p_1(\eta_0h\eta)=p_0(h\eta)=0$ entrywise.
+Theorem~\ref{mht:thm:neumann-normal-form} makes
+$J^{\mathrm{cyc}}$ conjugate to $\mathcal J(a)$.
+Their invariant polynomials therefore agree.
+
+\section{An exact noncommuting sphere family}
+
+Take $N=2$, write $s_0=z\bar z$, and put
+\[
+ f=\frac{z^2}{(1+s_0)^2},\qquad
+ g=\frac{\bar z}{1+s_0},\qquad
+ A=E_{12},\quad B=E_{21},\quad
+ M_0=[A,B]=\operatorname{diag}(1,-1).
+\]
+Here $E_{ij}$ are the elementary matrices. Both functions are globally
+smooth: in the coordinate $w=1/z$ they become
+$\bar w^2/(1+w\bar w)^2$ and $w/(1+w\bar w)$.
+Their values and first holomorphic jets at $o$ vanish. Consequently
+\[
+ a=t(A\bar\partial f+B\bar\partial g)
+\]
+is exact in the linear Neumann complex, and $p_1a=0$.
+
+\begin{theorem}\label{mht:thm:exact-sphere-residual}
+For this family, as a formal identity and for sufficiently small
+complex $t$,
+\begin{equation}\label{mht:eq:exact-sphere-residual}
+ \mathcal J(a)=-\frac{t^2}{3}M_0-\frac{13t^5}{315}B.
+\end{equation}
+It satisfies $\mathcal J(a)^2=(t^4/9)I_2$. For every $m\geq1$,
+\begin{equation}\label{mht:eq:exact-sphere-invariants}
+ \operatorname{tr}\mathcal J(a)^{2m+1}=0,\qquad
+ \frac1{2m}\operatorname{tr}\mathcal J(a)^{2m}
+       =\frac{t^{4m}}{m\,3^{2m}}.
+\end{equation}
+The constant Neumann gauge $K=I_2+(13/210)t^3B$ obeys
+$K^{-1}\mathcal J(a)K=-(t^2/3)M_0$.
+\end{theorem}
+
+\begin{proof}
+The normalized primitive
+\[
+ G(f\bar\partial g)=-\frac{z}{3(1+s_0)^3},
+ \qquad f\bar\partial g=\frac{z^2}{(1+s_0)^4}\,d\bar z
+\]
+has first jet $-1/3$. These identities follow by differentiation,
+smoothness in both charts, and the zero value at $o$.
+The polar Stokes identity applied to $fg$ gives
+$\tau_E(g\bar\partial f)=-\tau_E(f\bar\partial g)$.
+The quadratic term
+$-\kappa^{-1}\tau_E(aGa)$ of $\mathcal J(a)$ is therefore
+$-t^2M_0/3$.
+
+Write $H=\sum_{n\geq0}t^nH_n$, with $H_0=I_2$. The recursion
+$\bar\partial H_n=-(a/t)H_{n-1}$ gives
+\begin{align*}
+ (H_2)_{11}&=\frac{z(3s_0+1)}{3(1+s_0)^3},\\
+ (H_3)_{21}&=-\frac{s_0^4+4s_0^3+6s_0^2+2s_0}{6(1+s_0)^4},\\
+ (H_4)_{11}&=\frac{z^2(15s_0^4+60s_0^3+90s_0^2+48s_0+8)}
+                         {90(1+s_0)^6},\\
+ (H_5)_{21}&=\frac{z(35s_0^4+140s_0^3+210s_0^2+126s_0+26)}
+                         {630(1+s_0)^7}.
+\end{align*}
+Each right side is smooth in both charts and vanishes at $o$.
+Differentiating, with
+$\bar\partial f=-2z^3(1+s_0)^{-3}d\bar z$ and
+$\bar\partial g=(1+s_0)^{-2}d\bar z$, verifies the recursion
+and fixes each primitive uniquely. The last first jet is $13/315$.
+
+To exclude all other orders, use rotations $z\mapsto e^{i\theta}z$.
+The normalized solution operator commutes with their pullback, and
+$f,g$ have weights $2,-1$. Since $A^2=B^2=0$, only alternating matrix
+words occur. A word of length $2k$ has weight $k$, while words of length
+$2k+1$ beginning with $A$ and $B$ have weights $k+2$ and $k-1$.
+
+A smooth function can have nonzero first holomorphic jet at $o$ only
+in weight one. The only surviving orders are therefore $n=2$ and the
+$B$ word at $n=5$. This proves \eqref{mht:eq:exact-sphere-residual}
+in every formal order.
+
+Proposition~\ref{mht:prop:analytic-frame}
+gives the analytic identity.
+
+Now $M_0^2=I_2$, $M_0B+BM_0=0$, and $B^2=0$ give the square and all
+trace identities. Finally $K^{-1}=I_2-(13/210)t^3B$ and
+$[M_0,B]=-2B$ give the asserted conjugation.
+\end{proof}
+
+The first nonzero quadratic measurement is thus
+$\frac12\operatorname{tr}\mathcal J(a)^2=t^4/9$.
+The linear exactness of $a$ does not contradict this invariant:
+a straight line of infinitesimal gauge variations need not be a finite
+gauge orbit. A pure-gauge path has higher terms that enforce zero
+residual.
+
+The kinetic differential matters even for this small matrix example.
+For comparison, take the Laurent complex
+\[
+ E_{\mathrm L}^0=\mathbb C[z,z^{-1}],\quad
+ E_{\mathrm L}^1=E_{\mathrm L}^0\eta,\quad
+ d_{\mathrm L}u=(z\partial_zu)\eta,\quad
+ \tau_{\mathrm L}(u\eta)=[z^0]u.
+\]
+Here $\eta$ has degree one and square zero, and $[z^0]$ extracts the
+constant coefficient. Its contraction projects to constant modes and
+divides a nonzero mode by its integer exponent.
+
+Set
+\[
+ a_{\mathrm L}=t\begin{pmatrix}0&z\\z^{-1}&0\end{pmatrix}\eta,\quad
+ b(t)=\frac{\sqrt{1+4t^2}-1}{2},\quad r(t)=b(t)/t,\quad
+ G_0=\begin{pmatrix}1&-rz\\rz^{-1}&1\end{pmatrix},
+\]
+using the formal square root with constant term one. Since
+$b^2+b=t^2$,
+\[
+ z\partial_zG_0+(a_{\mathrm L}/\eta)G_0
+       =G_0\operatorname{diag}(b,-b).
+\]
+
+Multiplying $G_0$ by $(1+r^2)^{-1/2}$ leaves the transformed connection
+unchanged. Its logarithm is
+$\arctan(r)\left(\begin{smallmatrix}0&-z\\z^{-1}&0\end{smallmatrix}\right)$,
+which has zero constant Laurent coefficient. The resulting quadratic
+invariant is
+\[
+ b(t)^2=t^4-2t^6+5t^8-14t^{10}+O(t^{12}).
+\]
+It belongs to this Laurent complex. The sphere invariant is
+\eqref{mht:eq:exact-sphere-invariants}.
+
+\section{Invariant functions and their smooth derivatives}
+
+For each integer $r\geq1$, define
+\begin{equation}\label{mht:eq:invariant-insertion}
+ \mathcal O_r(a)=\frac1r\operatorname{tr}\mathcal J(a)^r.
+\end{equation}
+These functions are gauge invariant and satisfy
+$\mathcal O_r(\eta_0J)=\operatorname{tr}(J^r)/r$.
+Their Taylor coefficients are iterated Green expressions. For example,
+superscripts denoting homogeneous field degree,
+\begin{align*}
+ \mathcal O_2^{[2]}&=\frac1{2\kappa^2}\operatorname{tr}\tau_E(a)^2,\\
+ \mathcal O_2^{[3]}&=-\frac1{\kappa^2}
+              \operatorname{tr}\bigl(\tau_E(a)\tau_E(aGa)\bigr),\\
+ \mathcal O_2^{[4]}&=\frac1{\kappa^2}
+              \operatorname{tr}\bigl(\tau_E(a)\tau_E(aG(aGa))\bigr)
+              +\frac1{2\kappa^2}\operatorname{tr}\tau_E(aGa)^2.
+\end{align*}
+The polar trace acts entrywise. The final trace is a matrix trace.
+
+\begin{proposition}\label{mht:prop:smooth-invariant-gradient}
+The variation of $\mathcal O_r$ is represented by the smooth matrix
+function
+\begin{equation}\label{mht:eq:smooth-invariant-gradient}
+ X_r(a)=\kappa^{-1}H(a)\mathcal J(a)^{r-1}H(a)^{-1},\qquad
+ \delta\mathcal O_r=\tau_E\operatorname{tr}(X_r\,\delta a).
+\end{equation}
+It lies in $E^0\otimes\operatorname{Mat}_N(\mathbb C)$ and obeys
+$\bar\partial X_r+[a,X_r]=0$.
+\end{proposition}
+
+\begin{proof}
+Write $\delta H=HY$. Variation of the frame equation gives
+\[
+ \bar\partial Y=-H^{-1}\delta aH,\qquad Y(o)=0,\qquad
+ Y=-G(H^{-1}\delta aH).
+\]
+Taking the first jet, using $H(o)=I_N$, yields
+$\delta\mathcal J=\kappa^{-1}\tau_E(H^{-1}\delta aH)$.
+Differentiate the invariant polynomial and use cyclicity of matrix
+trace to obtain \eqref{mht:eq:smooth-invariant-gradient}.
+The first jet of $X_r$ is
+$\kappa^{-1}[-\mathcal J,\mathcal J^{r-1}]=0$.
+Differentiating $H\mathcal J^{r-1}H^{-1}$ by $\bar\partial$ proves
+covariant closedness.
+\end{proof}
+
+Let $U$ be a closed oriented surface with a smooth two-form $\rho$.
+Let $a_C$ be a smoothly $U$-dependent curve connection in the formal or
+analytic domain above. The functionals
+\[
+ I_r=\int_U\rho\,\mathcal O_r(a_C)
+\]
+have smooth representatives $\rho X_r$ in the conjugate antifield
+component. They are local in $U$ and generally nonlocal in $C$.
+The same construction applies with compact support on an open surface,
+or with boundary conditions that annihilate the boundary variations.
+
+For the Batalin--Vilkovisky (BV) extension, use the shifted space $L_U[1]$.
+Its components of total form degrees $0,1,2,3$ are respectively the
+ghost $c$, physical connection $\mathcal A$, connection antifield, and
+ghost antifield. Their coordinate ghost numbers are $1,0,-1,-2$.
+The pairing $\int_U\tau_E\operatorname{tr}$ pairs complementary total
+degrees summing to three. After the shift, it has degree $-1$.
+We use its degree-one antibracket on functionals whose differentials
+admit smooth Hamiltonian representatives.
+
+\begin{proposition}\label{mht:prop:classical-source-deformation}
+Let $S_{\mathrm{BV}}$ be the minimal classical BV extension of
+\eqref{mht:eq:open-action}, with field--antifield pairing induced by
+$\int_U\tau_E\operatorname{tr}$.
+Assume a boundary condition for which its classical master equation
+holds. Then
+\[
+ \{S_{\mathrm{BV}},I_r\}=0,\qquad \{I_r,I_s\}=0.
+\]
+For any fixed finite set of degree-zero parameters $\sigma_r$, the action
+$S_{\mathrm{BV}}+\sum_r\sigma_rI_r$ satisfies the classical master
+equation. This remains true after completion in the ideal generated by
+these sources.
+\end{proposition}
+
+\begin{proof}
+On the physical curve connection, the minimal BV differential is its
+infinitesimal gauge transformation with the ghost as parameter.
+Gauge invariance of $\mathcal O_r$ gives the first identity, and
+Proposition~\ref{mht:prop:smooth-invariant-gradient} supplies its
+admissible smooth Hamiltonian representative. The $I_r$ depend only
+on fields, so their mutual field--antifield contractions vanish.
+Expansion of the master equation gives the assertion.
+\end{proof}
+
+One may also adjoin source antifields $\sigma_r^+$ of degree $-1$.
+With antibracket convention $\{\sigma_r,\sigma_r^+\}=1$ and
+$Q=\{S_{\mathrm{BV}}+\sum_r\sigma_rI_r,-\}$, the extended differential satisfies
+$Q\sigma_r=0$ and $Q\sigma_r^+=I_r$.
+This is a classical source deformation. It specifies no quantum
+measure or coincident-point contraction.
+
+\section{Direct sums and the closed-field comparison}
+
+The frame equation respects block sums. Consequently the same
+normalization of \eqref{mht:eq:invariant-insertion} at every rank gives
+\[
+ \mathcal O_r(a\oplus b)=\mathcal O_r(a)+\mathcal O_r(b).
+\]
+This property distinguishes single traces among homogeneous polynomial
+families.
+
+\begin{proposition}\label{mht:prop:additive-trace-family}
+Let $F_N$ be a conjugation-invariant polynomial on
+$\operatorname{Mat}_N(\mathbb C)$ for every $N\geq1$, homogeneous of one
+fixed degree $d>0$. If
+\[
+ F_{N+M}(X\oplus Y)=F_N(X)+F_M(Y),
+\]
+then $F_N(X)=c_d\operatorname{tr}(X^d)$ with a scalar $c_d$ independent
+of $N$. In degree zero, the additive constant families are $F_N=c_0N$.
+\end{proposition}
+
+\begin{proof}
+Repeated direct-sum additivity gives
+$F_N(\operatorname{diag}(x_1,\ldots,x_N))=\sum_iF_1(x_i)$.
+Homogeneity gives $F_1(x)=c_dx^d$. Conjugation invariance then determines
+$F_N$ on matrices with distinct eigenvalues, a Zariski dense set.
+Equality holds as polynomials. In degree zero, additivity determines
+the constant at rank $N$ as $N$ times the constant at rank one.
+\end{proof}
+
+For example, the direct-sum defect of
+$u\operatorname{tr}(J^2)+v(\operatorname{tr}J)^2$ is
+$2v\operatorname{tr}X\operatorname{tr}Y$.
+Additivity forces $v=0$, while leaving $u$ undetermined.
+It tests block-diagonal inputs and removes no off-diagonal fields at
+the larger rank.
+
+The invariant functions and their classical Hamiltonians are now
+constructed. Identifying them as the image of geometric closed fields
+requires another map, whose normalization and locality are independent
+conditions.
+
+\begin{problem}\label{mht:prob:closed-neumann-map}
+Construct an action-derived map from an independently specified
+geometric closed-field complex to the smooth Neumann insertions.
+Determine its scalar normalization and whether its disk operation is
+additive under block sums at fixed sources. Compare its full nonlinear
+image with \eqref{mht:eq:invariant-insertion}, including the family of
+Theorem~\ref{mht:thm:exact-sphere-residual}. The comparison must preserve
+the chosen normal marking, boundary terms, two-source collisions, and
+sewing. If it is required to be local in the curve variable, construct
+that local comparison before using the global operator $G$.
+\end{problem}

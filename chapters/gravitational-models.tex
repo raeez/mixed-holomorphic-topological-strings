@@ -1,0 +1,1049 @@
+\chapter{Cartan fields, boundary currents and gravitational states}
+\label{mht:ch:gravitational-models}
+
+A boundary stress tensor supplies a transformation law and a central
+charge. A gravitational comparison must also supply bulk fields,
+their gauge symmetry, an action and a state pairing. In three
+dimensions the classical field comparison is unusually explicit:
+an invertible coframe converts a flat Cartan connection into an
+Einstein metric. This conversion determines neither a quantum
+integration cycle nor a boundary state.
+
+We begin with the action and its infinitesimal complexes. The
+boundary matrix calculation then fixes the classical central term.
+Finite Gaussian integrals, Virasoro states and marked parallel
+transport give further comparisons with specified domains. Together
+they identify the data needed to extend the classical correspondence
+to the quantum comparisons of Chapter~\ref{mht:ch:compact-gravity}.
+
+\section{The coframe and the action}
+
+Let $M$ be an oriented three-manifold, and let $V\to M$ be an
+oriented rank-three bundle with metric $\eta$ of signature $(-,+,+)$.
+A coframe is a bundle isomorphism $e:TM\to V$.
+It defines $g=e^*\eta$.
+Choose $\ell>0$ and set $\Lambda=-\ell^{-2}$.
+Let $G>0$ denote Newton's constant.
+
+In an orthonormal frame, put $\epsilon_{012}=1$ and raise indices
+with $\eta$. The Lorentz algebra has generators $J_a$ satisfying
+$[J_a,J_b]=\epsilon_{ab}{}^cJ_c$.
+
+Write the spin connection as $\omega=\omega^aJ_a$ and its curvature as
+\[
+ F_\omega=d\omega+\tfrac12[\omega,\omega]=R^aJ_a.
+\]
+Brackets of Lie-valued forms include their exterior product.
+The invariant bilinear form used in each chiral sector is
+\[
+ B(J_a,J_b)=\tfrac12\eta_{ab}.
+\]
+It is the fundamental matrix trace in the usual real
+$\mathfrak{sl}_2$ realization. On a chosen trivialization define
+\[
+ \operatorname{CS}_B(A)
+ =B(A\wedge dA)+\tfrac13B(A\wedge[A,A]),
+ \qquad A^\pm=\omega\pm\ell^{-1}e.
+\]
+Here $e$ is identified with a Lorentz-algebra-valued one-form by
+the oriented metric on $V$.
+
+\begin{proposition}\label{mht:prop:gravity-action-normalization}
+The two Chern--Simons forms satisfy
+\begin{equation}\label{mht:eq:gravity-cs-difference}
+ \begin{split}
+ \operatorname{CS}_B(A^+)-\operatorname{CS}_B(A^-)
+ ={}&\frac4\ell B(e\wedge F_\omega)
+       +\frac{2}{3\ell^3}B(e\wedge[e,e])\\
+    &-\frac2\ell dB(\omega\wedge e).
+ \end{split}
+\end{equation}
+Consequently, for $k=\ell/(4G)$, the bulk part of
+$\frac{k}{4\pi}\int_M(\operatorname{CS}_B(A^+)-
+\operatorname{CS}_B(A^-))$ is
+\begin{equation}\label{mht:eq:gravity-palatini}
+ \frac1{8\pi G}\int_M e_a\wedge R^a
+ +\frac1{48\pi G\ell^2}\int_M
+       \epsilon_{abc}e^a\wedge e^b\wedge e^c.
+\end{equation}
+Its displayed boundary term is
+$-\frac{k}{4\pi\ell}\int_{\partial M}\eta_{ab}\omega^a\wedge e^b$.
+\end{proposition}
+
+\begin{proof}
+Set $a=e/\ell$ and expand in $a$.
+The quadratic terms contribute
+$2B(\omega\wedge da)+2B(a\wedge d\omega)$.
+Since
+$dB(\omega\wedge a)=B(d\omega\wedge a)-B(\omega\wedge da)$,
+their sum is $4B(a\wedge d\omega)-2dB(\omega\wedge a)$.
+
+Invariance of $B$ makes the three terms containing one $a$ in
+the cubic expression equal. Their sum is
+$2B(a\wedge[\omega,\omega])$.
+The remaining odd term is $\frac23B(a\wedge[a,a])$.
+These terms give \eqref{mht:eq:gravity-cs-difference}.
+
+The identities
+$B(e\wedge F_\omega)=\frac12e_a\wedge R^a$ and
+$B(e\wedge[e,e])=\frac12\epsilon_{abc}e^a\wedge e^b\wedge e^c$
+give \eqref{mht:eq:gravity-palatini} after substituting $k$.
+\end{proof}
+
+With $R^a=\frac12\epsilon^a{}_{bc}R^{bc}$, the first term
+in \eqref{mht:eq:gravity-palatini} is
+$\frac1{16\pi G}\int\epsilon_{abc}e^a\wedge R^{bc}$.
+This is the first-order Einstein--Hilbert normalization.
+The trace convention and the relation $k=\ell/(4G)$ are the
+ones used in the Chern--Simons description of three-dimensional
+gravity.\footnote{See Campoleoni, Fredenhagen, Pfenninger and Theisen,
+\emph{Asymptotic symmetries of three-dimensional gravity coupled to
+higher-spin fields}, Section~2.2, equations~(2.22)--(2.25),
+\url{https://arxiv.org/abs/1008.4744}.}
+A boundary variational problem must further specify its fixed
+fields and any additional boundary action.
+
+The Cartan algebra $\mathfrak g_\Lambda$ has generators $J_a,P_a$ with
+\[
+ [J_a,P_b]=\epsilon_{ab}{}^cP_c,
+ \qquad [P_a,P_b]=\ell^{-2}\epsilon_{ab}{}^cJ_c,
+ \qquad \mathcal A=\omega^aJ_a+e^aP_a.
+\]
+For the off-diagonal pairing $b(J_a,P_b)=\eta_{ab}$, put
+$J_a^\pm=(J_a\pm\ell P_a)/2$.
+Then $b(J_a^\pm,J_b^\pm)=\pm\ell B(J_a,J_b)$ and
+$b(J_a^+,J_b^-)=0$.
+Thus the Cartan action is
+$\frac{k}{4\pi\ell}\int_M\operatorname{CS}_b(\mathcal A)$.
+Its level is $k/\ell=1/(4G)$ when the two sector levels
+are $k$ and $-k$.
+
+\begin{proposition}\label{mht:prop:gravity-flat-coframe}
+On the invertible-coframe locus, $F_{\mathcal A}=0$ is equivalent
+to the torsion-free Einstein equation with cosmological constant
+$\Lambda=-\ell^{-2}$.
+We use $G_{\mu\nu}=\operatorname{Ric}_{\mu\nu}
+-\frac12Rg_{\mu\nu}$ for the Einstein tensor.
+\end{proposition}
+
+\begin{proof}
+The translation component of the curvature is
+$T^a=d e^a+\epsilon^a{}_{bc}\omega^b\wedge e^c$.
+Its vanishing determines the metric-compatible torsion-free
+connection because $e$ is invertible.
+The rotation component is
+$R^a+(2\ell^2)^{-1}\epsilon^a{}_{bc}e^b\wedge e^c$.
+Its vanishing says that the metric has constant curvature
+$-\ell^{-2}$.
+In dimension three the Riemann tensor is determined by its Ricci
+contraction, so this is equivalent to
+$G_{\mu\nu}+\Lambda g_{\mu\nu}=0$.
+The same identities prove the converse.
+\end{proof}
+
+Invertibility is essential: $e=0$ and a flat $\omega$ solve the
+Cartan equations but give a degenerate metric.
+The classical comparison therefore applies to an open field domain.
+It does not identify a path integral over all connections with one
+over nondegenerate metrics.\footnote{Witten,
+\emph{$2+1$ dimensional gravity as an exactly soluble system},
+Section~2, explicitly separates the invertible-coframe argument from
+the larger gauge-field domain. See
+\url{https://doi.org/10.1016/0550-3213(88)90143-5}.}
+
+\section{Eliminating the algebraic pairs}
+
+Fix a flat background $\mathcal A$ with invertible coframe.
+Its unshifted deformation complex has degrees zero through three:
+\begin{equation}\label{mht:eq:gravity-flat-complex}
+ \Omega^0(M,\mathfrak g_\Lambda)
+ \xrightarrow{d_{\mathcal A}}
+ \Omega^1(M,\mathfrak g_\Lambda)
+ \xrightarrow{d_{\mathcal A}}
+ \Omega^2(M,\mathfrak g_\Lambda)
+ \xrightarrow{d_{\mathcal A}}
+ \Omega^3(M,\mathfrak g_\Lambda).
+\end{equation}
+Flatness gives $d_{\mathcal A}^2=[F_{\mathcal A},-]=0$.
+
+Write a parameter as $(\xi,\lambda)$, a fluctuation as
+$(u,v)=(\delta e,\delta\omega)$, and a curvature variation as
+$(t,r)$ in the translation and rotation summands.
+Put $D_\omega=d+[\omega,-]$.
+The differentials are
+\begin{align}
+ (\xi,\lambda)&\longmapsto
+ (D_\omega\xi+[e,\lambda],
+  D_\omega\lambda+\ell^{-2}[e,\xi]),\label{mht:eq:gravity-gauge}\\
+ (u,v)&\longmapsto
+ (D_\omega u+[e,v],
+  D_\omega v+\ell^{-2}[e,u]),\label{mht:eq:gravity-curvature}\\
+ (t,r)&\longmapsto
+ (D_\omega t+[e,r],
+  D_\omega r+\ell^{-2}[e,t]).\label{mht:eq:gravity-bianchi}
+\end{align}
+They are the components of the same flat differential.
+
+We shall remove three pairs connected by invertible algebraic
+operators. The relevant cancellation also specifies the comparison
+maps.
+
+\begin{lemma}\label{mht:lem:gravity-cancellation}
+Suppose a differential between two consecutive terms of a complex
+has block form
+$\left(\begin{smallmatrix}a&b\\c&d\end{smallmatrix}\right)$
+on $U\oplus A\to V\oplus B$, with $a:U\to V$ invertible.
+The pair $U\to V$ contracts, leaving differential
+$d-ca^{-1}b:A\to B$.
+The lift of $x\in A$ in that degree is $(-a^{-1}bx,x)$,
+and projection in the next degree sends $(v,y)$ to $y-ca^{-1}v$.
+\end{lemma}
+
+\begin{proof}
+Multiply the differential on the right and left by
+\[
+ \begin{pmatrix}1&-a^{-1}b\\0&1\end{pmatrix},
+ \qquad
+ \begin{pmatrix}1&0\\-ca^{-1}&1\end{pmatrix},
+\]
+respectively. It becomes $a\oplus(d-ca^{-1}b)$.
+The square-zero identity forces the adjacent differentials to have
+zero components into and out of this isolated invertible block.
+Its inverse is a contracting homotopy.
+Undoing the two basis changes gives the stated lift and projection.
+\end{proof}
+
+Use $e$ to regard $u$ as an endomorphism of $TM$.
+Its symmetric part is the metric variation
+\[
+ h_{\mu\nu}=\eta_{ab}
+       (e^a_\mu u^b_\nu+e^a_\nu u^b_\mu).
+\]
+The Lorentz parameter maps isomorphically to the skew part of $u$.
+Cancelling this degree-zero/degree-one pair removes the frame
+rotation and retains $h$.
+
+Next consider the torsion map on a connection variation,
+$L_e(v)=v^a{}_b\wedge e^b$.
+In an orthonormal coframe, write
+$v_{ab}=v_{abc}e^c$, where $v_{abc}=-v_{bac}$, and
+$L_e(v)^a=\frac12t^a{}_{bc}e^b\wedge e^c$.
+Then
+\begin{equation}\label{mht:eq:gravity-torsion-inverse}
+ t_{abc}=v_{acb}-v_{abc},
+ \qquad
+ v_{abc}=\tfrac12(t_{cab}-t_{abc}-t_{bca}).
+\end{equation}
+This is an isomorphism between two rank-nine bundles.
+It cancels $v$ against the torsion component in the next degree.
+The lift of $u$ is the unique $v$ satisfying
+$L_e(v)=-D_\omega u$.
+
+After this cancellation, the translation Bianchi equation is
+$[e,r]=0$.
+Dualizing the form indices identifies $r$ with an endomorphism
+of $V$. The map $r\mapsto[e,r]$ identifies its skew part with
+a rank-three Bianchi component.
+Cancelling this final pair leaves a symmetric curvature tensor
+and the divergence identity.
+
+\begin{theorem}\label{mht:thm:gravity-metric-complex}
+The three cancellations give a homotopy equivalence, by local
+differential operators, from \eqref{mht:eq:gravity-flat-complex} to
+\begin{equation}\label{mht:eq:gravity-metric-complex}
+ \Gamma(TM)\xrightarrow{K}\Gamma(S^2T^*M)
+ \xrightarrow{E_\Lambda}\Gamma(S^2T^*M)
+ \xrightarrow{\operatorname{div}}\Gamma(T^*M).
+\end{equation}
+Here $K\zeta=\mathcal L_\zeta g$, $E_\Lambda$ is the variation
+of $G+\Lambda g$, and the final map is covariant divergence.
+On a sufficiently small geodesically convex open set, this complex
+resolves the sheaf of Killing fields.
+\end{theorem}
+
+\begin{proof}
+Each cancellation above has a pointwise inverse, so
+Lemma~\ref{mht:lem:gravity-cancellation} supplies chain maps and
+homotopies. The remaining parameter is the vector field
+$\zeta=e^{-1}\xi$.
+Cartan's identity
+$\mathcal L_\zeta\mathcal A=d_{\mathcal A}(\iota_\zeta\mathcal A)$
+on a flat background shows that its metric variation is $K\zeta$.
+A compensating Lorentz rotation gives the symmetric-frame lift
+selected by the first cancellation.
+
+Solving the torsion equation gives the variation of the
+Levi--Civita connection. The rotation curvature equation therefore
+becomes the variation of $G+\Lambda g$.
+Its remaining Bianchi component is covariant divergence.
+The explicit formulas below identify these two operators.
+Thus the cancelled complex is \eqref{mht:eq:gravity-metric-complex}.
+
+A flat connection has a local parallel trivialization.
+The ordinary Poincar\'e homotopy then contracts its positive-degree
+de Rham complex on a small convex open set.
+The degree-zero kernel transfers to $K\zeta=0$ under the chain
+equivalence. This gives the asserted local resolution.
+\end{proof}
+
+The operator $E_\Lambda$ can be written without commuting covariant
+derivatives. Put $h=g^{\mu\nu}h_{\mu\nu}$ and define
+\begin{align}
+ C^\rho{}_{\mu\nu}
+ &=\tfrac12g^{\rho\sigma}
+   (\nabla_\mu h_{\nu\sigma}+\nabla_\nu h_{\mu\sigma}
+     -\nabla_\sigma h_{\mu\nu}),\label{mht:eq:gravity-christoffel-variation}\\
+ r_{\mu\nu}
+ &=\nabla_\rho C^\rho{}_{\mu\nu}
+       -\nabla_\nu C^\rho{}_{\mu\rho},\qquad
+ r=g^{\mu\nu}r_{\mu\nu}-2\Lambda h.
+\end{align}
+Since $\operatorname{Ric}=2\Lambda g$ and $R=6\Lambda$,
+\begin{equation}\label{mht:eq:gravity-einstein-variation}
+ (E_\Lambda h)_{\mu\nu}
+   =r_{\mu\nu}-\tfrac12g_{\mu\nu}r-2\Lambda h_{\mu\nu}.
+\end{equation}
+Diffeomorphism covariance gives $E_\Lambda K=0$.
+Varying the contracted Bianchi identity at the background solution
+gives $\nabla^\mu(E_\Lambda h)_{\mu\nu}=0$.
+
+A constant rescaling checks the curvature terms:
+for $h_{\mu\nu}=g_{\mu\nu}$, one has $C=0$, $r=-6\Lambda$
+and $E_\Lambda h=\Lambda g$.
+Equivalently, $G((1+t)g)=G(g)$ as a covariant tensor, while
+the cosmological term varies by $t\Lambda g$.
+The kernel of $(u,v)\mapsto h$ consists of Lorentz variations
+only after imposing the linearized torsion equation.
+Without that condition, $(0,v)$ is in the kernel for every $v$.
+
+For the Calabi presentation, use the curvature defect
+\[
+ \mathcal R_\Lambda(g)_{\rho\mu\sigma\nu}
+ =R_{\rho\mu\sigma\nu}
+  -\Lambda(g_{\rho\sigma}g_{\mu\nu}
+             -g_{\rho\nu}g_{\mu\sigma}).
+\]
+It vanishes at the background, so its variation kills $K\zeta$.
+
+In dimension three, Ricci contraction followed by subtraction of
+half the scalar trace is an isomorphism from algebraic curvature
+tensors to symmetric two-tensors.
+Applied to $\mathcal R_\Lambda(g)$, it gives $G+\Lambda g$.
+Its linearization therefore identifies the corrected Calabi
+curvature operator with \eqref{mht:eq:gravity-einstein-variation}.
+This comparison concerns differential complexes on open sets.
+Boundary conditions and Gaussian measures require additional maps.
+
+\section{The projective boundary calculation}
+
+Consider the matrix connection $\partial_z+a$ on a coordinate
+interval or formal disc, where
+\[
+ a=\begin{pmatrix}0&q\\1&0\end{pmatrix}.
+\]
+An infinitesimal gauge parameter $\lambda$ acts by
+$\delta a=\partial_z\lambda+[a,\lambda]$.
+Preserving the lower-left entry and the zero diagonal leaves one
+function $\varepsilon$:
+\begin{equation}\label{mht:eq:gravity-ds-parameter}
+ \lambda_\varepsilon=
+ \begin{pmatrix}
+  -\varepsilon'/2&q\varepsilon-\varepsilon''/2\\
+  \varepsilon&\varepsilon'/2
+ \end{pmatrix},
+ \qquad
+ \delta_\varepsilon q
+ =\varepsilon q'+2\varepsilon'q-\tfrac12\varepsilon'''.
+\end{equation}
+Primes denote $z$-derivatives.
+Indeed the lower-left equation gives the diagonal entries, and
+the diagonal equation determines the upper-right entry.
+Substitution gives the displayed variation of $q$.
+
+Choose the chiral orientation for which the charge variation is
+\[
+ \delta Q_\varepsilon
+   =-\frac{k}{2\pi}\int\operatorname{tr}
+                       (\lambda_\varepsilon\delta a)\,dz.
+\]
+Since the trace is $\varepsilon\delta q$, the stress density
+in the convention $Q_\varepsilon=(2\pi)^{-1}\int\varepsilon T\,dz$
+is $T=-kq$. Consequently
+\begin{equation}\label{mht:eq:gravity-classical-stress}
+ \delta_\varepsilon T
+ =\varepsilon T'+2\varepsilon'T+\frac{k}{2}\varepsilon'''.
+\end{equation}
+The Virasoro central term $c\varepsilon'''/12$ therefore has
+$c=6k=3\ell/(2G)$.
+This is the classical Brown--Henneaux normalization for the
+specified boundary reduction.\footnote{The boundary constraints,
+charges and central term are derived in Campoleoni et al.,
+Section~4.2, equations~(4.13)--(4.26),
+\url{https://arxiv.org/abs/1008.4744}.}
+
+The same law follows from the scalar equation $\psi''=q\psi$.
+For $z=f(w)$ and a local square root of $f'$, set
+$\widetilde\psi(w)=(f'(w))^{-1/2}\psi(f(w))$.
+Two differentiations give
+\begin{equation}\label{mht:eq:gravity-projective-change}
+ \widetilde q(w)=(f')^2q(f(w))-\tfrac12\{f,w\},
+ \qquad
+ \{f,w\}=\frac{f'''}{f'}-\frac32\left(\frac{f''}{f'}\right)^2.
+\end{equation}
+
+The Schwarzian chain rule makes this a coordinate-gluing law.
+It defines a projective connection, whose differences are
+quadratic differentials.
+Taking $f(w)=w+t\varepsilon(w)$ recovers
+\eqref{mht:eq:gravity-ds-parameter}.
+The solution half-density uses a chosen square root locally.
+The projective coefficient itself is independent of its sign.
+
+For a holomorphic projective background, the infinitesimal action
+gives the two-term Dolbeault complex
+\[
+ \Omega^{0,\bullet}(X,T_X)
+ \xrightarrow{\ \varepsilon\mapsto
+       \varepsilon T'+2\varepsilon'T+(c/12)\varepsilon'''\ }
+ \Omega^{0,\bullet}(X,K_X^2).
+\]
+A family of mixed boundary operations over these backgrounds also
+needs coordinate-equivariance for every operation and coherence map.
+Choose a differential graded Lie model of this action and a
+compatible action on the relative deformation algebra.
+Their semidirect product describes the coupled deformation problem.
+A conformal vector specifies the stress action on its vertex algebra.
+Compatibility with additional mixed operations is further data.
+
+\subsection{The quantum affine parameter}
+
+Let $\kappa\in\mathbb C\setminus\{-2\}$ be the level of the ordinary affine
+$\mathfrak{sl}_2$ vertex algebra with trace pairing $B$.
+Its Sugawara central charge is $3\kappa/(\kappa+2)$.
+Principal quantum Drinfeld--Sokolov reduction adds the derivative
+of the Cartan current to the stress tensor.
+It also adds one fermionic ghost pair of weights zero and one.
+
+The Cartan current has double-pole coefficient $\kappa/2$.
+Its derivative changes the central charge by $-6\kappa$, and
+the ghost pair contributes $-2$.
+Thus the algebraic reduced central charge is
+\begin{equation}\label{mht:eq:gravity-quantum-ds}
+ c_{\mathrm{DS}}(\kappa)
+ =\frac{3\kappa}{\kappa+2}-6\kappa-2
+ =1-\frac{6(\kappa+1)^2}{\kappa+2}.
+\end{equation}
+
+The free-field formula makes the normalization explicit.
+For $b(z)b(w)\sim(z-w)^{-2}$ put
+\[
+ T_\nu=\tfrac12:b^2:+\nu\partial b,
+ \qquad \nu=\frac{\kappa+1}{\sqrt{2(\kappa+2)}}.
+\]
+Choose either square root in this expression.
+Wick contraction gives the identity coefficient
+$\frac12-6\nu^2$ in the fourth-order pole of $T_\nu(z)T_\nu(w)$.
+The other contractions give $2T_\nu$ and $\partial T_\nu$ in
+the second- and first-order poles.
+Hence its central charge is $1-12\nu^2$, equal to
+\eqref{mht:eq:gravity-quantum-ds}.
+
+This is the standard free-field realization of the reduced
+$\mathfrak{sl}_2$ stress tensor.\footnote{Arakawa,
+\emph{Introduction to $W$-algebras and their representation theory},
+Section~5.4 and Example~5.22,
+\url{https://arxiv.org/abs/1605.00138}.}
+
+The affine parameter $\kappa$ and the gravitational coefficient
+$k$ have distinct definitions. Their quantum relation must be
+derived from the physical current and ghost insertion, its finite
+terms and its integration convention.
+Equation~\eqref{mht:eq:gravity-classical-stress} fixes a classical
+charge normalization. Equation~\eqref{mht:eq:gravity-quantum-ds}
+is an identity in the specified algebraic reduction.
+
+\section{Principal embeddings and holonomy}
+
+Let $V_{N-1}=\operatorname{Sym}^{N-1}\mathbb C^2$ and let
+$\mathfrak{sl}_2$ act on $\operatorname{End}(V_{N-1})$ by
+commutators. The defining action gives the principal embedding
+in $\mathfrak{sl}_N$.
+If $E,F,H$ are its standard generators, $E^j$ is a highest-weight
+vector of weight $2j$ for $0\le j\le N-1$.
+Its iterated commutators with $F$ span a module of dimension $2j+1$.
+The raising and lowering relation is
+\[
+ (\operatorname{ad}E)(\operatorname{ad}F)^rE^j
+ =r(2j-r+1)(\operatorname{ad}F)^{r-1}E^j.
+\]
+The finite-dimensional highest-weight relations give $V_{2j}$.
+
+These modules have distinct highest weights, and their dimensions
+sum to $N^2$.
+Removing the scalar module gives
+\begin{equation}\label{mht:eq:gravity-principal-decomposition}
+ \mathfrak{sl}_N=\bigoplus_{j=1}^{N-1}V_{2j},
+ \qquad \sum_{j=1}^{N-1}(2j+1)=N^2-1.
+\end{equation}
+
+In a supplied $\mathfrak{sl}_N\oplus\mathfrak{sl}_N$
+Chern--Simons theory, each summand gives one pair of one-form
+fields in the Lorentz representation $V_{2j}$.
+These are the frame variables of spin $s=j+1$.
+Their linearized torsion and curvature equations on an AdS background
+are the spin-$s$ versions of \eqref{mht:eq:gravity-curvature}.
+Eliminating the spin connection and the Lorentz-type gauge component
+gives the corresponding Fronsdal field with its trace constraints.
+This field interpretation uses the invertible background coframe
+and the supplied action.\footnote{The torsion solution, metric
+field and gauge transformation are given explicitly in
+Campoleoni et al., Section~2.2, equations~(2.28)--(2.37),
+\url{https://arxiv.org/abs/1008.4744}.}
+
+Principal Drinfeld--Sokolov boundary reduction has currents of
+weights $2,\ldots,N$, forming the classical $W_N$ algebra.
+The representation match identifies the possible spin labels.
+Realizing a specified pair of $W_N$ boundary theories still requires
+their boundary action, real form, states and map from these bulk
+fields.
+
+The distinction between a connection and its exponentiated holonomy
+is already visible for constant matrices.
+For example, the companion connection
+\[
+ a=\begin{pmatrix}0&0&w_3\\1&0&w_2\\0&1&0\end{pmatrix}
+\]
+has characteristic polynomial $\lambda^3-w_2\lambda-w_3$ and
+\[
+ \operatorname{tr}(a^2)=2w_2,
+ \qquad \operatorname{tr}(a^3)=3w_3.
+\]
+These are polynomial coordinates on the constant companion slice.
+
+Parallel transport for $\partial+a$ around a circle of length $L$
+is $\exp(-La)$.
+For $a=\operatorname{diag}(x,-x)$, replacing $x$ by
+$x+2\pi i n/L$ leaves this holonomy unchanged and generally
+changes $\operatorname{tr}(a^2)$.
+Thus recovery of the constant charges from holonomy needs a
+logarithm branch and the relevant gauge identifications.
+For nonconstant connections it also needs the ordered transport.
+
+A smooth flat connection on a contractible disk has identity
+holonomy around its boundary in its actual gauge group.
+A central element is indistinguishable from the identity only
+after passage to a group quotient that kills it.
+Thermal regularity, the choice of quotient and the specified
+state sector therefore enter a higher-spin filling problem.
+
+\section{Stress tensors from an action}
+
+A stress tensor is obtained by varying a supplied matter action.
+Let $S_{\mathrm m}(g,\varphi)$ be invariant under compactly supported
+diffeomorphisms in the interior of $M$.
+Define $T^{\mu\nu}$ and the matter Euler--Lagrange expression
+$\mathcal E_\varphi$ by
+\[
+ \delta S_{\mathrm m}
+ =\int_M\mathrm{vol}_g
+   \left(\tfrac12T^{\mu\nu}\delta g_{\mu\nu}
+                  +\mathcal E_\varphi\delta\varphi\right).
+\]
+This equation fixes the sign convention for $T$.
+
+For a scalar field, diffeomorphism invariance implies
+\begin{equation}\label{mht:eq:gravity-noether-stress}
+ \nabla_\mu T^{\mu\nu}=\mathcal E_\varphi\nabla^\nu\varphi.
+\end{equation}
+Indeed, substitute
+$\delta g_{\mu\nu}=\nabla_\mu\zeta_\nu+\nabla_\nu\zeta_\mu$
+and $\delta\varphi=\zeta^\mu\partial_\mu\varphi$, then integrate
+the metric term by parts. Since $\zeta$ is arbitrary,
+\eqref{mht:eq:gravity-noether-stress} follows.
+Stress conservation holds on the matter equations of motion.
+With a boundary, the same variation also determines a boundary flux.
+
+The full metric dependence matters for a coupled action.
+For the Euclidean scalar kinetic density, a symmetric variation $h$ of the
+identity metric gives
+\begin{equation}\label{mht:eq:gravity-quadratic-density}
+ \begin{split}
+ \sqrt{\det(I+th)}(I+th)^{-1}
+ ={}&I+t\left(\tfrac12\operatorname{tr}(h)I-h\right)\\
+ &+t^2\left[
+ \left(\frac{\operatorname{tr}(h)^2}{8}
+        -\frac{\operatorname{tr}(h^2)}4\right)I
+ -\frac{\operatorname{tr}(h)}2h+h^2\right]+O(t^3).
+ \end{split}
+\end{equation}
+This follows by multiplying the determinant and inverse-matrix
+series. For $h=I$ in dimension three, the result is
+$(1+t)^{1/2}I$, with nonzero quadratic coefficient $-I/8$.
+The linear stress coupling is therefore only the first variation
+of this action.
+
+There is a precise finite Hamiltonian statement behind the
+equivariance condition. Let $(P,\{-,-\})$ be a symplectic manifold.
+Let $\mathfrak h$ be a finite-dimensional Lie algebra with basis
+$(t_a)$ and bracket $[t_a,t_b]=f_{ab}{}^ct_c$.
+Choose functions $\mu_a$ on $P$.
+
+Adjoin odd ghosts $c^a$ of degree one and odd conjugates $b_a$
+of degree minus one, with even Poisson bracket
+$\{b_a,c^b\}=\delta_a^b$.
+The functions on $P$ Poisson-commute with these new coordinates.
+Define the degree-one charge
+\[
+ \Omega=c^a\mu_a-\tfrac12f_{ab}{}^c c^ac^bb_c.
+\]
+
+\begin{proposition}\label{mht:prop:gravity-hamiltonian-charge}
+The charge satisfies $\{\Omega,\Omega\}=0$ precisely when the moment functions
+are equivariant:
+\[
+ \tfrac12\{\Omega,\Omega\}
+ =\tfrac12c^ac^b
+       \bigl(\{\mu_a,\mu_b\}-f_{ab}{}^c\mu_c\bigr).
+\]
+\end{proposition}
+
+\begin{proof}
+The bracket of the two terms linear in $c$ gives
+$c^ac^b\{\mu_a,\mu_b\}$.
+The two cross terms give $-f_{ab}{}^c c^ac^b\mu_c$.
+The term with three ghosts and one conjugate is the Jacobi
+expression $f_{[ab}{}^d f_{c]d}{}^e$, which vanishes.
+The independent exterior monomials $c^ac^b$ give the equivalence.
+\end{proof}
+
+For example, on $\mathbb R^2$ with $\{q,p\}=1$, the functions
+$\mu_E=q^2/2$, $\mu_F=-p^2/2$ and $\mu_H=-qp$
+satisfy the $\mathfrak{sl}_2$ relations.
+They give a concrete square-zero charge.
+The construction starts with a symplectic structure and moment
+functions. Coordinate covariance by itself supplies neither.
+
+A supplied complete $L_\infty$ action similarly defines a
+semidirect deformation algebra. If its local realization and
+dual pairing are given, its shifted cotangent action has the
+form $S(\alpha,\beta)=\langle\beta,Q(\alpha)\rangle$.
+The identity $Q^2=0$ implies the classical master equation
+for this cotangent action.
+Its independent dual fields are part of its definition.
+Comparison with gravitational BV fields must preserve the action,
+the BV pairing and the boundary terms on the stated coframe domain.
+
+\section{Gaussian determinants and their measures}
+
+The preceding chain equivalence preserves deformation cohomology.
+A Gaussian integral additionally uses a quadratic form and a
+measure. We first compute it in finite dimensions, where these
+data can all be fixed.
+
+Let
+$0\to C^0\xrightarrow{d_0}C^1\xrightarrow{d_1}C^2
+\xrightarrow{d_2}C^3\to0$
+be an acyclic finite-dimensional real Hilbert complex.
+Set
+\[
+ \Delta_j=d_{j-1}d_{j-1}^*+d_j^*d_j,
+ \qquad
+ \tau(C)=\prod_{j=0}^3(\det\Delta_j)^{(-1)^{j+1}j/2}.
+\]
+Absent differentials are zero.
+Suppose Hodge duality identifies the spectra of $\Delta_3$
+with $\Delta_0$ and of $\Delta_2$ with $\Delta_1$.
+On $H=(\operatorname{im}d_0)^\perp\subset C^1$, suppose the
+quadratic operator $D$ is invertible and self-adjoint, with
+$D^2=\Delta_1|_H$.
+These are the finite data corresponding to a gauge-fixed
+three-dimensional Chern--Simons quadratic form.
+
+Use the Euclidean measures of the given inner products for
+fields and gauge parameters. Their quotient contributes
+the orbit Jacobian $(\det\Delta_0)^{1/2}$.
+For $k\in\mathbb R^\times$, define the oscillatory integral by a small positive
+Gaussian damping, with bosonic measure $(2\pi)^{-\dim H/2}dx$.
+
+\begin{proposition}\label{mht:prop:gravity-finite-torsion}
+With $r=\dim H$, this normalized quotient integral is
+\begin{equation}\label{mht:eq:gravity-finite-gaussian}
+ Z_k(C,D)=|k|^{-r/2}\tau(C)^{1/2}
+       \exp\left(\frac{\pi i}{4}\operatorname{sign}(kD)\right).
+\end{equation}
+Here $\operatorname{sign}(kD)$ is the number of positive
+eigenvalues minus the number of negative eigenvalues.
+\end{proposition}
+
+\begin{proof}
+Orthogonal decomposition separates the gauge orbit
+$\operatorname{im}d_0$ from $H$.
+The linear map from gauge parameters to the orbit has Jacobian
+$(\det d_0^*d_0)^{1/2}=(\det\Delta_0)^{1/2}$.
+Diagonalizing $D$ reduces the remaining integral to the
+one-dimensional damped Fresnel formula.
+It gives
+\[
+ |k|^{-r/2}(\det\Delta_0)^{1/2}
+        (\det\Delta_1|_H)^{-1/4}
+ \exp\left(\frac{\pi i}{4}\operatorname{sign}(kD)\right).
+\]
+
+The exact part of $C^1$ has the nonzero spectrum of $\Delta_0$,
+so $\det\Delta_1=(\det\Delta_0)(\det\Delta_1|_H)$.
+Hodge duality in the definition of $\tau$ gives
+$\tau=(\det\Delta_0)^{3/2}(\det\Delta_1)^{-1/2}$.
+These identities give \eqref{mht:eq:gravity-finite-gaussian}.
+\end{proof}
+
+Even acyclic complexes can have different torsions.
+For $a,b>0$, take dimensions $(1,2,2,1)$ and differentials
+\[
+ d_0=\begin{pmatrix}a\\0\end{pmatrix},\qquad
+ d_1=\begin{pmatrix}0&0\\0&b\end{pmatrix},\qquad
+ d_2=\begin{pmatrix}a&0\end{pmatrix}.
+\]
+With the standard inner products, $\tau=a^2/b$.
+Changing $a$ changes the Gaussian magnitude, although every
+complex remains acyclic and the determinant-line orientations
+can be kept fixed.
+An abstract quasi-isomorphism therefore does not determine the
+metric torsion or the Gaussian normalization.
+
+For a closed Riemannian three-manifold and an acyclic unitary flat
+bundle, the analytic counterpart uses zeta determinants of the
+elliptic de Rham Laplacians.
+The modulus of the gauge-fixed one-loop expression has the same
+determinant exponents. Its phase uses an eta invariant and a
+chosen framing correction.\footnote{Witten,
+\emph{Quantum field theory and the Jones polynomial},
+Section~2, pages~356--359, derives the gauge-fixed determinants
+and their phase. The formula here fixes the torsion convention
+explicitly in \eqref{mht:eq:gravity-finite-gaussian}.}
+
+These analytic hypotheses differ from those of a noncompact
+gravitational real form on a solid torus with boundary.
+That problem also requires closed operator domains, a specified
+integration cycle, residual-mode measures and normalized cut states.
+
+The chain maps in Theorem~\ref{mht:thm:gravity-metric-complex}
+must transport these Gaussian data.
+The Jacobians of their cancelled pairs also enter the determinant
+comparison.
+The source-dependent finite terms and the determinant-line
+connection must then agree under the permitted local corrections.
+Equality of the local deformation complexes is the classical
+part of this comparison.
+
+Algebraic cancellation of curvature has its own precise meaning.
+Let $(\mathfrak g,d,[-,-],\kappa)$ be a curved differential graded
+Lie algebra with central closed curvature $\kappa$ of degree two.
+Adjoin a central generator $u$ of degree one with $du=\kappa$.
+The extended differential squares to zero, and
+\[
+ \kappa+d(-u)+\tfrac12[-u,-u]=0.
+\]
+Twisting by $-u$ therefore gives zero curvature.
+This algebraic construction does not supply an invertible field theory.
+
+Geometrically, opposite line curvatures make the tensor connection
+flat. Trivializing it also requires its holonomy and sewing data.
+For example, the connection $d+ia\,d\theta$ on the trivial line
+over a circle has zero curvature and holonomy $e^{-2\pi ia}$.
+At $a=1/2$ its holonomy is $-1$.
+Cancellation by an invertible theory thus requires the complete
+inverse theory and its compatible boundary maps.
+
+\section{Virasoro states and analytic continuation}
+
+State comparisons can be tested before a full Fock construction.
+Let $c\in\mathbb R$ and let the Virasoro generators satisfy
+\[
+ [L_m,L_n]=(m-n)L_{m+n}
+       +\frac{c}{12}(m^3-m)\delta_{m+n,0},
+\]
+and normalize a vacuum $v$ by
+$L_nv=0$ for $n\ge-1$ and $\langle v,v\rangle=1$.
+The contravariant Hermitian form obeys $L_n^*=L_{-n}$.
+No positivity at all weights is assumed.
+
+\begin{proposition}\label{mht:prop:gravity-vacuum-gram}
+The forms at weights two and three are $(c/2)$ and $(2c)$.
+At weight four, in the basis $L_{-4}v,L_{-2}^2v$, the form is
+\begin{equation}\label{mht:eq:gravity-gram-four}
+ G_4=\begin{pmatrix}5c&3c\\3c&c^2/2+4c\end{pmatrix},
+ \qquad \det G_4=\frac{c^2(5c+22)}2.
+\end{equation}
+For $c>0$, these displayed forms are positive.
+\end{proposition}
+
+\begin{proof}
+The first two norms are the vacuum values of
+$[L_2,L_{-2}]$ and $[L_3,L_{-3}]$.
+At weight four,
+\[
+ L_4L_{-2}^2v=3cv,
+ \qquad L_2L_{-2}^2v=(8+c)L_{-2}v,
+ \qquad \|L_{-4}v\|^2=5c.
+\]
+Taking their vacuum pairings gives the matrix.
+Its leading principal minors are positive when $c>0$.
+\end{proof}
+
+Assume $c>0$, and let $X_2,X_4$ be independent centered circular complex Gaussian
+variables with variances $c/2$ and $5c$.
+In their holomorphic polynomial space, the basis $X_4,X_2^2$
+has Gram matrix $\operatorname{diag}(5c,c^2/2)$.
+The finite-degree isometry fixing the first vector is
+\begin{equation}\label{mht:eq:gravity-gram-isometry}
+ L_{-4}v\longmapsto X_4,
+ \qquad
+ L_{-2}^2v\longmapsto
+     \frac35X_4+\sqrt{1+\frac{22}{5c}}\,X_2^2.
+\end{equation}
+
+The coefficient $3/5$ gives the required cross term $3c$.
+The remaining squared norm is
+$c^2/2+4c-9c/5=(c^2/2)(1+22/(5c))$.
+The assignment sending each Virasoro monomial directly to the
+corresponding Gaussian monomial misses this cross term.
+Both displayed forms are positive, and
+\eqref{mht:eq:gravity-gram-isometry} corrects that finite assignment.
+It does not yet intertwine the full Virasoro actions.
+
+A physical unitary preserving the vacuum and conjugation must
+preserve the Gram forms of its marked stress descendants.
+Such a comparison uses the actual gauge quotient and real
+structure of each state space. A holomorphic bilinear covariance
+alone does not specify its Hermitian norm.
+
+Direct Wick rotation also has a domain.
+For instance,
+\[
+ u(t,\theta)=\sum_{n\ge1}e^{-\sqrt n}e^{-int+in\theta}
+\]
+is smooth for real $t,\theta$, since every polynomially weighted
+coefficient sequence is summable.
+At $t=i\tau$ with $\tau>0$, its Fourier coefficients become
+$e^{n\tau-\sqrt n}$.
+They exceed every polynomial bound, so they are not the
+coefficients of a distribution on the circle.
+For the opposite sign of imaginary time, the opposite frequency
+sector gives the same obstruction.
+Thus direct evaluation cannot rotate arbitrary smooth solutions.
+
+By contrast, coefficients bounded by $Ce^{-\sigma n}$ give a
+holomorphic continuation for $|\operatorname{Im}t|<\sigma$.
+Finite Fourier sums are included in this analytic domain.
+A comparison outside it requires another construction, such as
+a boundary Green operator with specified closed domains.
+The domain obstruction above does not decide whether such a
+physical comparison exists.
+
+\section{The Cardy expression and the BTZ area}
+
+Suppose an independently defined boundary theory has the Cardy
+asymptotic on a specified high-energy domain.
+Write its cylinder energies as
+$H_L=L_0-c_L/24$ and $H_R=\bar L_0-c_R/24$.
+The leading entropy expression is
+\[
+ S_C=2\pi\sqrt{c_LH_L/6}+2\pi\sqrt{c_RH_R/6}.
+\]
+In a modular derivation, vacuum dominance after the modular
+transformation and control of the inverse Laplace asymptotic
+are part of this assumption.
+
+For a nonextremal BTZ geometry, choose $G,\ell>0$ and
+$r_+>|r_-|$. In the gravitational normalization, let
+\begin{equation}\label{mht:eq:gravity-btz-charges}
+ \begin{gathered}
+ c_L=c_R=c=\frac{3\ell}{2G},\qquad
+ M=\frac{r_+^2+r_-^2}{8G\ell^2},\qquad
+ J=\frac{r_+r_-}{4G\ell},\\
+ H_L=\frac{\ell M+J}{2}
+     =\frac{(r_++r_-)^2}{16G\ell},\qquad
+ H_R=\frac{\ell M-J}{2}
+     =\frac{(r_+-r_-)^2}{16G\ell}.
+ \end{gathered}
+\end{equation}
+These are cylinder charges. The vacuum shift must be retained
+when comparing them with plane conformal weights.
+
+\begin{proposition}\label{mht:prop:gravity-cardy-area}
+Substitution of \eqref{mht:eq:gravity-btz-charges} into $S_C$ gives
+\[
+ S_C=\frac{2\pi r_+}{4G}.
+\]
+\end{proposition}
+
+\begin{proof}
+The two terms are
+$\pi(r_++r_-)/(4G)$ and $\pi(r_+-r_-)/(4G)$.
+Their sum gives the formula. The inequalities on the radii fix
+the signs of the square roots.
+\end{proof}
+
+The right-hand side is the horizon circumference divided by $4G$.
+The equality identifies the leading Cardy expression with the
+area term wherever the assumed asymptotic applies.
+It does not determine the finite-energy degeneracies or establish
+the existence of the boundary theory.\footnote{Strominger,
+\emph{Black hole entropy from near-horizon microstates},
+Sections~3 and~5, keeps the cylinder shift and states the
+high-energy regime and the existence assumption,
+\url{https://arxiv.org/abs/hep-th/9712251}.}
+
+\section{Marked classical lines}
+
+The projective matrix connection also gives an explicit classical
+spin-one-half line. Let $q$ be smooth on a compact interval, set
+$a(t)=\left(\begin{smallmatrix}0&q(t)\\1&0\end{smallmatrix}\right)$,
+and let $U(y,x)$ solve
+\begin{equation}\label{mht:eq:gravity-marked-transport}
+ \partial_yU(y,x)=-a(y)U(y,x),\qquad U(x,x)=I.
+\end{equation}
+For a column solution, its second component satisfies
+$\psi_2''=q\psi_2$.
+The endpoint bases are retained, so $U$ is a matrix rather than
+its trace.
+
+\begin{proposition}\label{mht:prop:gravity-marked-lines}
+The transport has determinant one and satisfies
+\begin{equation}\label{mht:eq:gravity-line-sewing}
+ U(z,x)=U(z,y)U(y,x).
+\end{equation}
+For an arbitrary coefficient variation,
+\begin{equation}\label{mht:eq:gravity-line-variation}
+ \delta U(y,x)
+ =-\int_x^yU(y,t)\,\delta a(t)\,U(t,x)\,dt.
+\end{equation}
+For $\delta a=\lambda'+[a,\lambda]$, this becomes
+\begin{equation}\label{mht:eq:gravity-line-endpoints}
+ \delta U(y,x)=-\lambda(y)U(y,x)+U(y,x)\lambda(x).
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Iterating the integral equation for
+\eqref{mht:eq:gravity-marked-transport} gives the ordered series
+\[
+ I+\sum_{n\ge1}(-1)^n
+ \int_{x<t_1<\cdots<t_n<y}
+       a(t_n)\cdots a(t_1)\,dt_1\cdots dt_n.
+\]
+Its $n$th norm is at most
+$(|y-x|\sup\|a\|)^n/n!$, so it converges uniformly.
+Uniqueness of the initial-value problem gives
+\eqref{mht:eq:gravity-line-sewing}.
+Jacobi's determinant identity gives
+$\partial_y\det U=-\operatorname{tr}(a)\det U=0$.
+
+Differentiate the integral equation with respect to the
+coefficient variation to obtain \eqref{mht:eq:gravity-line-variation}.
+For a gauge variation the integrand is
+\[
+ \partial_t\bigl(U(y,t)\lambda(t)U(t,x)\bigr).
+\]
+Its integral gives \eqref{mht:eq:gravity-line-endpoints}.
+\end{proof}
+
+The same identities give a classical ghost differential.
+For an odd matrix ghost $c$, set
+\[
+ Qa=c'+[a,c],\qquad Qc=-c^2,
+ \qquad QU(y,x)=-c(y)U(y,x)+U(y,x)c(x).
+\]
+The graded Jacobi identity gives $Q^2a=Q^2c=0$.
+Using the Leibniz sign for $Q(cU)$ gives $Q^2U=0$.
+
+Applying $Q$ to \eqref{mht:eq:gravity-line-sewing} cancels the
+two ghost actions at the common endpoint.
+Thus marked parallel transport is compatible with the
+classical gauge complex and ordered sewing.
+The identity matrix is its interval-composition unit.
+Comparison with a local quantum boundary vacuum requires the
+corresponding unit action map.
+
+\section{The physical comparison maps}
+
+The classical constructions above leave distinct quantum questions.
+Their source and target complexes must be defined with their
+own actions, support conditions, completions and states.
+The following problem specifies the maps needed to join them.
+
+\begin{problem}\label{mht:prob:gravity-native-maps}
+Construct the following comparisons on matched physical domains.
+\begin{enumerate}
+\item For the sourced solid-torus Gaussian, construct its
+renormalized determinant or Pfaffian line, connection and phase.
+Compare them with an independently normalized boundary preparation,
+preserving source derivatives, disk-cut Green data and cap sewing.
+The permitted finite bulk, boundary and corner corrections must
+preserve the declared source identity.
+
+\item Construct an insertion from the affine-current and ghost
+complex into the constrained native observable complex.
+Require the chain identity
+$Q_{\mathrm{phys}}\mathcal I=\mathcal I Q_{\mathrm{DS}}$,
+including composite current products, their simultaneous
+cutoff/collision limits, translation and the vacuum action.
+Derive the relation between the affine level and gravitational
+coupling from this map and the physical normalization.
+
+\item Construct the physical Euclidean cut-state quotient,
+its Lorentzian comparison and its conjugation.
+On this quotient, construct both Virasoro actions and the
+marked stress descendants with their Hermitian forms.
+Compare the normalized cylinders and the sewing pairing.
+
+\item Construct the coincident-junction products of physical
+cycle operators on a common nonzero state domain.
+Retain their determinant-derived framing, monodromy and local
+vacuum action, and determine the unreduced Weyl parameter there.
+Formal power-series constructions and fixed numerical levels
+require their own comparison of domains.
+
+\item Define independently an effective spin-one-half bulk-line
+complex $\mathscr L(y,x)$ and a marked boundary-operation complex
+$\operatorname{Op}^{\mathrm{marked}}_\partial(y,x)$.
+Construct a degree-zero comparison
+\[
+ \beta_{y,x}:\mathscr L(y,x)\longrightarrow
+ \operatorname{Op}^{\mathrm{marked}}_\partial(y,x),
+\]
+satisfying the chain identity and both endpoint identities:
+\[
+ \begin{aligned}
+ Q_\partial\beta&=\beta Q_{\mathrm{eff}},\\
+ \beta(a_{\mathrm{out}}u)
+       &=\rho_{\mathrm{out}}(a_{\mathrm{out}})\beta(u),\\
+ \beta(u a_{\mathrm{in}})
+       &=\beta(u)\rho_{\mathrm{in}}(a_{\mathrm{in}}).
+ \end{aligned}
+\]
+Here $\rho_{\mathrm{out}},\rho_{\mathrm{in}}$ are the independently
+specified endpoint actions.
+Require these identities and ordered sewing at every formal order.
+The selected renormalized staple $\mathcal W_t^{\mathrm{ren}}$
+must be a cocycle at every
+positive depth, with its independently normalized quantum Hill
+field as boundary image.
+Construct a degree-minus-one depth homotopy $\mathcal H_t$ with
+$\partial_t\mathcal W_t^{\mathrm{ren}}
+=-Q_{\mathrm{eff}}\mathcal H_t$ and a compatible marked image.
+
+The construction must retain normal heat profiles, ghosts,
+antifields and common subgraph restrictions.
+In particular, construct the quadratic coupling coefficient
+with both endpoint actions and sewing.
+\end{enumerate}
+\end{problem}
+
+An obstruction to one of these maps must survive the complete
+admissible counterterm complex on its specified carrier.
+The matrix, Gaussian and finite-state examples distinguish
+particular constructions and their domains.
+They supply exact conditions that a physical comparison must
+preserve, while its existence remains a separate mathematical
+question.

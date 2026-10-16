@@ -1,0 +1,1076 @@
+\chapter{Formal geometry and cyclic descent}
+\label{mht:ch:cyclic-descent}
+
+A local formula for an observable must transform when the Darboux
+chart changes. A local comparison must transform with it. The two
+transformations can agree up to homotopy on each overlap and still
+require another homotopy on triple overlaps. Quantization adds the
+period of the algebra and the normalization of its trace to these
+gluing data.
+
+The circle comparison of Chapter~\ref{mht:ch:integral-cyclic}
+provides a local map and two Hamiltonian homotopies. Its logarithmic
+torus example also gives a global comparison on a specified algebra.
+A general surface requires coordinate changes and allowed overlap
+corrections. Their successive choices need a topology of convergence. The first obstruction
+already appears for two one-dimensional complexes.
+
+\section{Coordinates that preserve the formal point}
+
+Put $R=\mathbb C[[q,p]]$, with maximal ideal $\mathfrak m=(q,p)$
+and its $\mathfrak m$-adic topology. A pointed formal coordinate
+change is a continuous $\mathbb C$-algebra automorphism of $R$.
+It preserves $\mathfrak m$. It is symplectic when its pullback
+preserves $\omega=dq\wedge dp$.
+For maps $\phi$ followed by $\psi$, pullbacks satisfy
+\[
+ (\psi\circ\phi)^*=\phi^*\psi^*.
+\]
+Thus the order of pullback operators is fixed by their action on
+functions, independently of the notation for a transition matrix.
+
+The Hamiltonian convention remains
+$X_f=\{f,-\}$, with $\{q,p\}=1$. It gives
+\[
+ X_f=f_q\partial_p-f_p\partial_q,
+ \qquad -\iota_{X_f}\omega=df.
+\]
+A symplectic formal vector field $v$ therefore determines a closed
+formal one-form $-\iota_v\omega$.
+
+\begin{proposition}\label{mht:prop:formal-coordinate-hamiltonians}
+Every symplectic formal vector field is Hamiltonian, uniquely modulo
+constants. It vanishes at the formal point exactly when its
+Hamiltonian has no linear term. A Hamiltonian in $\mathfrak m^3$
+has a convergent formal exponential $e^{X_f}$ acting on $R$.
+A nonzero constant translation is not a pointed formal
+automorphism.
+\end{proposition}
+
+\begin{proof}
+Let $E=q\partial_q+p\partial_p$. Decompose a closed formal one-form
+as $\alpha=\sum_{r\geq1}\alpha_r$, where pullback by scalar dilation
+multiplies $\alpha_r$ by its $r$th power. Cartan's identity gives
+\[
+ d(\iota_E\alpha_r)=r\alpha_r.
+\]
+Hence $f=\sum_{r\geq1}r^{-1}\iota_E\alpha_r$ satisfies $df=\alpha$.
+The sum converges in the formal topology.
+
+A function with zero
+differential is constant.
+The constant coefficients of $v$ are
+exactly the coefficients of the linear part of $f$.
+
+For $f\in\mathfrak m^3$, the derivation $X_f$ sends
+$\mathfrak m^s$ into $\mathfrak m^{s+1}$. Each finite jet of
+$e^{X_f}a$ therefore uses finitely many terms. The derivation rule
+makes this exponential multiplicative, and $e^{-X_f}$ is its
+inverse. It preserves the Poisson bracket. In contrast,
+$p\mapsto p+c$ with $c\ne0$ does not preserve the maximal ideal,
+so it cannot define a pointed formal automorphism.
+\end{proof}
+
+Translations do act after adjoining a formal motion parameter.
+For example $e^{t\partial_p}$ acts continuously on
+$\mathbb C[[q,p,t]]$ with its $(q,p,t)$-adic topology.
+Evaluating $t$ at a nonzero complex number is an additional
+operation, unavailable on an arbitrary formal series. Quadratic
+Hamiltonians instead generate the linear symplectic group. Their
+exponentiation is distinct from the pronilpotent exponential of
+$\mathfrak m^3$.
+
+Now let $(X,\omega)$ be a holomorphic symplectic surface and let $v$
+be a global holomorphic symplectic vector field. Define
+$\alpha_v=-\iota_v\omega$. On sufficiently small coordinate balls
+choose holomorphic functions $h_i$ satisfying $dh_i=\alpha_v$.
+On each connected component of an overlap, $h_j-h_i$ is constant.
+These differences define
+\begin{equation}\label{mht:eq:hamiltonian-period}
+ \operatorname{per}_X(v)=[h_j-h_i]\in H^1(X,\mathbb C_X).
+\end{equation}
+
+Equivalently this is the connecting class for the exact sequence
+of sheaves
+\[
+ 0\longrightarrow\mathbb C_X\longrightarrow\mathcal O_X
+ \xrightarrow{d}\Omega^1_{X,\mathrm{cl}}\longrightarrow0.
+\]
+Here $\Omega^1_{X,\mathrm{cl}}$ is the sheaf of closed holomorphic
+one-forms. Local exactness follows from the holomorphic Poincar\'e
+lemma on a ball. An arbitrary Stein open need not have this global
+exactness.
+
+\begin{proposition}\label{mht:prop:global-hamiltonian-period}
+The field $v$ has a global holomorphic Hamiltonian if and only if
+$\operatorname{per}_X(v)=0$. If $X$ is compact and connected, this
+holds if and only if $v=0$.
+\end{proposition}
+
+\begin{proof}
+Vanishing of the connecting class means that constants can be
+added to the $h_i$ so that they agree. The resulting global function
+is a Hamiltonian for $v$. A global Hamiltonian conversely supplies
+such a choice. On a compact connected complex manifold every
+holomorphic function is constant, so its Hamiltonian vector field
+is zero. Nondegeneracy of $\omega$ proves the remaining implication.
+\end{proof}
+
+For the logarithmic torus, $\omega=d\log x\wedge d\log y$ and
+$v=x\partial_x$ give $\alpha_v=-d\log y$. Its integral around the
+second circle is $-2\pi i$, so no single-valued Hamiltonian exists.
+The vector field and the global cyclic comparison nevertheless
+exist. The period obstructs a Hamiltonian function with the stated
+coefficients. Global algebras and non-Hamiltonian vector fields can
+still exist on the surface.
+
+\section{An obstruction relative to fixed local maps}
+
+Take the complex $\mathbb C$ in degree zero on two charts and their
+overlap, with identity restrictions. Prescribe comparison maps
+given by multiplication by $1$ and by $2$. They are separately
+isomorphisms. Their overlap discrepancy is the element $1$ of
+\[
+ T^0=\mathbb C^2,\qquad T^1=\mathbb C,
+ \qquad D(a,b)=b-a.
+\]
+
+It is a boundary in $T$. Removing it while keeping both prescribed
+chart maps requires a correction with zero chart components, and
+there is no such degree-zero correction. The coefficient space of
+allowed corrections is therefore part of the obstruction problem.
+
+Let $\pi:(T,D)\to(Q,d_Q)$ be a degreewise split surjection of
+cochain complexes over a commutative ring. The quotient $Q$ records
+the local data that must be preserved. Put $K=\ker\pi$, and choose
+a graded section $s:Q\to T$. For topological complexes all these
+maps, including the section, are required to be continuous.
+
+Define the degree-one map
+\[
+ b=D s-s d_Q:Q\longrightarrow K[1].
+\]
+The notation indicates its degree. As operators,
+$D b+b d_Q=0$. For a prescribed cycle $\theta\in Q^0$, the defect
+of its chosen lift is
+\[
+ \Omega=D(s\theta)=b\theta\in K^1.
+\]
+
+\begin{proposition}\label{mht:prop:relative-descent}
+The class $[\Omega]\in H^1(K)$ is independent of the section.
+There is a closed lift of $\theta$ to $T^0$ exactly when this class
+vanishes. If lifts exist, their classes modulo homotopies in
+$K^{-1}$ form a torsor for $H^0(K)$.
+\end{proposition}
+
+\begin{proof}
+The identity $D^2=0$ makes $\Omega$ closed. A second section changes
+$s\theta$ by an element of $K^0$, so it changes $\Omega$ by a
+boundary in $K$. Every lift is $s\theta+h$, with $h\in K^0$.
+It is closed precisely when $Dh=-\Omega$.
+
+The difference of two closed lifts is a degree-zero cycle in $K$.
+Two such differences represent the same relative homotopy class
+precisely when they differ by $D(K^{-1})$. This gives the free
+transitive action of $H^0(K)$.
+\end{proof}
+
+In the two-chart example, $Q=\mathbb C^2$ lies in degree zero,
+$K^0=0$, and $K^1=\mathbb C$. Thus $[\Omega]=[1]$ is nonzero in
+$H^1(K)$ although $H^1(T)=0$. The absolute complex loses the
+requirement that the two local maps remain fixed.
+Existence need not make the choices contractible. For
+$K=\mathbb C$ in degree zero, distinct elements give distinct
+homotopy classes of lifts.
+
+Sometimes local changes are permitted. Specify them by a complex
+$L$ and a chain map $j:L\to Q$. An allowed change replaces
+$\theta$ by $\theta+jw$, with $w\in Z^0(L)$.
+
+Put
+\begin{equation}\label{mht:eq:allowed-change-complex}
+ E^n=K^n\oplus L^n,
+ \qquad d_E(k,w)=(Dk+bjw,d_Lw).
+\end{equation}
+The relation $Db+bd_Q=0$ makes $d_E^2=0$.
+The class $[(\Omega,0)]\in H^1(E)$ vanishes exactly when
+\[
+ d_Lw=0,\qquad Dh+bjw=-\Omega
+\]
+has a solution. These equations say that $s(\theta+jw)+h$ is a
+closed lift.
+On the two charts, diagonal changes $(w,w)$ leave the
+discrepancy unchanged, whereas allowing arbitrary changes in
+$\mathbb C^2$ removes it. The two choices define different
+comparison problems.
+
+\section{Overlap equations and their higher terms}
+
+For cochain complexes $P,G$, the differential on a homogeneous map
+$f:P\to G$ of degree $r$ is
+\[
+ d_{\mathrm{Hom}}f=d_Gf-(-1)^r f d_P.
+\]
+Suppose first that $P,G$ are complexes of sheaves on an ordered
+cover $\{U_i\}$. Their continuous Hom sheaf $\mathcal H$ has the
+product \v Cech total complex
+\begin{equation}\label{mht:eq:cech-totalization}
+ T^n=\prod_{p\geq0}\check C^p(\mathfrak U,\mathcal H^{n-p}),
+ \qquad D=\check\delta+(-1)^p d_{\mathrm{Hom}}.
+\end{equation}
+Projection to \v Cech degree zero is a chain map onto the complex
+of chart data. Its kernel is the relative complex of
+Proposition~\ref{mht:prop:relative-descent}.
+
+A closed element of total degree zero has components $\Phi_p$ of
+internal degree $-p$. Its equations begin
+\[
+ d\Phi_0=0,\qquad d\Phi_1=\check\delta\Phi_0,
+ \qquad d\Phi_2=-\check\delta\Phi_1.
+\]
+Each equation is a primitive problem in its actual Hom complex.
+To identify this totalization with derived global sections requires
+an acyclic resolution or the corresponding hypotheses on the cover
+and totalization. The displayed algebraic equations hold without
+that further identification.
+
+Object transitions may themselves be coherent only up to homotopy.
+Write $u_{ij}:P_i\to P_j$ and $v_{ij}:G_i\to G_j$ for chain maps
+on overlaps. All compositions below are restricted to the full
+intersection. Choose degree-minus-one object homotopies satisfying
+\[
+ dt^P_{ijk}=u_{jk}u_{ij}-u_{ik},\qquad
+ dt^G_{ijk}=v_{jk}v_{ij}-v_{ik}.
+\]
+
+For local comparison maps $\Theta_i:P_i\to G_i$, a pair homotopy
+$h_{ij}:P_i\to G_j$ must satisfy
+\begin{equation}\label{mht:eq:descent-pair}
+ dh_{ij}=\Theta_j u_{ij}-v_{ij}\Theta_i.
+\end{equation}
+The right side is closed. Its exactness is an additional condition.
+
+\begin{lemma}\label{mht:lem:descent-triple}
+If the pair equations hold, then
+\begin{equation}\label{mht:eq:descent-triple}
+ c_{ijk}=v_{jk}h_{ij}+h_{jk}u_{ij}-h_{ik}
+              +t^G_{ijk}\Theta_i-\Theta_k t^P_{ijk}
+\end{equation}
+is a degree-minus-one cycle. The next comparison homotopy has degree
+$-2$ and obeys $dh_{ijk}=-c_{ijk}$ in the totalization convention
+\eqref{mht:eq:cech-totalization}.
+\end{lemma}
+
+\begin{proof}
+Applying $d_{\mathrm{Hom}}$ to the first three terms and using
+\eqref{mht:eq:descent-pair} gives
+\[
+ \Theta_k(u_{jk}u_{ij}-u_{ik})
+       -(v_{jk}v_{ij}-v_{ik})\Theta_i.
+\]
+The differential of the last two terms is its negative. The sign
+of the next primitive is the positive internal differential in
+\v Cech degree two.
+\end{proof}
+
+The object data require their own next equation. For instance
+\[
+ u_{kl}t^P_{ijk}+t^P_{ikl}-t^P_{jkl}u_{ij}-t^P_{ijl}
+\]
+is closed: substitution of the four equations for $dt^P$ cancels
+each composite. A degree-minus-two object homotopy must kill this
+cycle before the next comparison equation is formulated.
+
+For strict sheaves, a total comparison $\Phi$ acts on total
+\v Cech cochains by
+\[
+ (\Phi x)_{i_0\ldots i_n}
+ =\sum_{p=0}^n(-1)^{p(n-p)}
+   \Phi_{i_0\ldots i_p}(x_{i_p\ldots i_n}).
+\]
+The sign moves internal degree $-p$ past \v Cech degree $n-p$.
+The cup-product Leibniz identity then gives $D\Phi=\Phi D$.
+Each output component uses a finite sum, so this formula is
+continuous in the product topology when its component maps are.
+
+An algebra comparison also has multiplication inputs. Its
+multiplicativity equation is a map on $P\widehat\otimes P$,
+not on $P$ alone. Supported collision operations, normal
+derivatives and both vacuum insertions likewise contribute their
+own inputs and relations.
+
+A deformation complex for all these
+operations requires a resolution of the entire operation diagram.
+At a linear extension stage, restriction to fixed local operations
+must supply the map $T\to Q$. Its kernel specifies the allowed
+corrections. The unary Hom calculation does not construct this
+larger complex or its supported maps.
+
+\section{Nonlinear corrections and complete filtrations}
+
+A differential graded Lie algebra $\mathfrak g$ has a degree-one
+differential $d$ and a degree-zero graded Lie bracket. For
+$a\in\mathfrak g^1$, define
+\[
+ F(a)=da+\tfrac12[a,a],\qquad d_a=d+[a,-].
+\]
+The Jacobi and derivation identities give
+\begin{equation}\label{mht:eq:curvature-bianchi}
+ d_a^2x=[F(a),x],\qquad d_aF(a)=0.
+\end{equation}
+Thus $d_a$ is a differential at a Maurer--Cartan element, meaning
+an element with $F(a)=0$. For a general candidate $a$, a correction
+$b\in\mathfrak g^1$ must solve
+\begin{equation}\label{mht:eq:full-curvature-correction}
+ F(a+b)=F(a)+d_ab+\tfrac12[b,b]=0.
+\end{equation}
+
+The quadratic term can be decisive. Take degree-one elements $a,b$,
+central degree-two elements $c,z$, and set
+\[
+ da=c,\qquad db=-c,\qquad [b,b]=2z,
+\]
+with all other differentials and brackets zero. These formulas
+define a dg Lie algebra. Then
+\[
+ F(a)+d_ab=0,\qquad F(a+b)=z\ne0.
+\]
+A primitive of the linear defect has solved only its linear
+equation.
+
+For higher operations use the cohomological $L_\infty$ convention
+$|\ell_n|=2-n$. The curvature and its unary Taylor operator are
+\[
+ F(a)=\sum_{n\geq1}\frac1{n!}\ell_n(a^{\otimes n}),\qquad
+ d_a x=\sum_{n\geq0}\frac1{n!}\ell_{n+1}(a^{\otimes n},x).
+\]
+These series are finite in a nilpotent algebra, or converge in the
+complete filtrations used below.
+
+\begin{proposition}\label{mht:prop:square-zero-descent}
+Let $\widetilde{\mathfrak g}\to\mathfrak g$ be a surjective strict
+morphism of nilpotent $L_\infty$ algebras over a field of
+characteristic zero. Let its kernel be $I$, and assume that every
+bracket containing two entries from $I$ vanishes. For a
+Maurer--Cartan element $a$ of $\mathfrak g$, choose a graded lift
+$\widetilde a$. Then $(I,d_a)$ is a complex and
+$F(\widetilde a)\in I^2$ is a closed element. Its class in
+$H^2(I,d_a)$ is independent of the lift and vanishes exactly when
+a Maurer--Cartan lift exists. Relative gauge classes of such lifts,
+when nonempty, form a torsor for $H^1(I,d_a)$.
+\end{proposition}
+
+\begin{proof}
+The curvature lies in $I$ because its image is $F(a)=0$.
+The $L_\infty$ identities give its Bianchi identity. The same
+identities express $d_a^2x$ as a sum with both a curvature input
+and the input $x\in I$. Every such term vanishes.
+
+Replacing
+$\widetilde a$ by $\widetilde a+b$, with $b\in I^1$, leaves $d_a$
+unchanged on $I$ and changes the curvature by $d_ab$.
+This proves
+the obstruction criterion. Differences of lifts are cycles in
+$I^1$. Relative degree-zero gauge changes are the boundaries
+$d_a(I^0)$. Higher terms in the gauge action contain two kernel
+inputs and vanish.
+\end{proof}
+
+The obstruction degree is two for these objects and one for the
+linear comparison maps of Proposition~\ref{mht:prop:relative-descent}.
+A shift changes the degrees of both the elements and the brackets.
+
+Let $\mathfrak g=F^1\mathfrak g$ be complete and separated for a
+decreasing filtration. Assume that $d$ preserves it and that
+\[
+ \ell_k(F^{r_1},\ldots,F^{r_k})
+       \subseteq F^{r_1+\cdots+r_k}.
+\]
+Completeness means $\mathfrak g\simeq\varprojlim_r\mathfrak g/F^r$.
+Separatedness means $\bigcap_rF^r=0$.
+
+\begin{theorem}\label{mht:thm:filtered-descent-corrections}
+Suppose $a\in F^1\mathfrak g^1$ satisfies $F(a)\in F^r$, with
+$r\geq1$. Its leading curvature $o_r$ is a closed degree-two
+element of $(\operatorname{gr}^r_F\mathfrak g,d)$.
+A correction $b_r\in F^r\mathfrak g^1$ makes the curvature lie in
+$F^{r+1}$ exactly when $[o_r]=0$. Successive compatible corrections
+at every order converge to a Maurer--Cartan element.
+\end{theorem}
+
+\begin{proof}
+Each term in the Bianchi identity involving $a$ raises the
+filtration, so its leading part is $do_r=0$. The leading correction
+equation is
+\[
+ o_r+d\bar b_r=0.
+\]
+Every term with two corrections lies in $F^{2r}\subseteq F^{r+1}$,
+and every additional background input also raises the filtration.
+This proves the equivalence.
+
+The successive corrections form a
+Cauchy sequence. Continuity of each bracket identifies its limit
+curvature modulo every $F^r$ with zero. Separatedness then makes
+the full curvature zero.
+\end{proof}
+
+The later classes depend on the earlier choices. Finding unrelated
+solutions at every quotient is weaker than constructing this
+compatible sequence. Prescribed local operations are retained by
+performing the correction in their relative kernel.
+
+For a comparison of coalgebra models with square-zero coderivations
+$Q_P,Q_G$, the defect of a degree-zero map $\mathcal X$ is
+\[
+ \mathcal R=Q_G\mathcal X-\mathcal XQ_P,
+ \qquad Q_G\mathcal R+\mathcal RQ_P=0.
+\]
+At a filtration stage where the new Taylor coefficients enter
+linearly, this is a degree-one cycle in the comparison complex.
+Changing those coefficients by $h$ changes the defect by $D h$.
+The obstruction is its relative $H^1$ class. Nullary terms, unit
+conditions and the continuity of every Taylor component remain
+part of the chosen model.
+
+\section{Compatible primitives in an inverse system}
+\label{mht:sec:descent-towers}
+
+Let $(C_n,d_n)$ be a countable inverse system of cochain complexes
+of vector spaces, with chain maps $r_n:C_{n+1}\to C_n$. Products
+in this section are algebraic products. A topological application
+requires an exact structure with exact products and a Roos
+resolution computing its derived inverse limit. All indicated maps
+and lifts must belong to its continuous coefficient class.
+
+Write
+\[
+ Z^q_n=\ker(d_n:C_n^q\to C_n^{q+1}),\qquad
+ B^q_n=d_n(C_n^{q-1}),\qquad H^q_n=Z^q_n/B^q_n.
+\]
+For any tower $A_n$, its Roos operator is
+\[
+ \Delta_A:\prod_n A_n\longrightarrow\prod_n A_n,
+ \qquad \Delta_A(a)_n=a_n-r_na_{n+1}.
+\]
+Its kernel is $\varprojlim A_n$ and its cokernel is the first
+derived inverse limit $\varprojlim^1 A_n$ for this countable
+system.
+
+Suppose $o_n\in Z^1_n$ is compatible: $r_no_{n+1}=o_n$.
+A strictly compatible primitive is a family $c_n\in C_n^0$ with
+\begin{equation}\label{mht:eq:strict-primitive-equations}
+ d_nc_n=-o_n,\qquad \Delta_C(c)=0.
+\end{equation}
+The first equation alone is a separate problem at each level.
+
+\begin{theorem}\label{mht:thm:strict-primitive-tower}
+Assume $[o_n]=0$ for every $n$, and choose primitives $c_n$.
+Their discrepancies $\delta_n=c_n-r_nc_{n+1}$ lie in $Z^0_n$.
+The class
+\begin{equation}\label{mht:eq:strict-primitive-class}
+ \lambda_Z(o)=[(\delta_n)_n]\in\varprojlim{}^1 Z^0_n
+\end{equation}
+is independent of the chosen primitives. A strict primitive family
+exists if and only if $\lambda_Z(o)=0$.
+Its image $\lambda_H(o)$ in $\varprojlim^1 H^0_n$ is sufficient
+when $\varprojlim^1 B^0_n=0$.
+\end{theorem}
+
+\begin{proof}
+Compatibility of $o$ gives $d_n\delta_n=0$.
+Changing $c_n$ by a cycle $a_n$ changes $\delta$ by
+$\Delta_Z(a)$. This proves independence. If
+$\delta=\Delta_Z(a)$, then $c-a$ satisfies both equations
+\eqref{mht:eq:strict-primitive-equations}. The converse follows
+by comparing any initial primitives with a strict family.
+
+Apply the kernel--cokernel exact sequence to the two product rows
+of $0\to B^0_n\to Z^0_n\to H^0_n\to0$ and their Roos operators.
+It contains
+\[
+ \varprojlim{}^1 B^0_n\longrightarrow
+ \varprojlim{}^1 Z^0_n\longrightarrow
+ \varprojlim{}^1 H^0_n\longrightarrow0.
+\]
+The first vanishing hypothesis therefore makes the last map an
+isomorphism, proving the final assertion.
+\end{proof}
+
+Thus a cohomology-level discrepancy must not be substituted for a
+cycle-level discrepancy without a condition allowing its boundary
+remainders to be removed. This distinction disappears for complexes
+concentrated in nonnegative degrees, since then $B^0_n=0$.
+
+A tower is Mittag--Leffler if, for each fixed $n$, the images of
+$A_m\to A_n$ stabilize as $m$ increases. A countable
+Mittag--Leffler tower has surjective Roos operator.
+
+To see this, take its stable-image tower. Its transition maps are
+surjective, so $a_n-r_na_{n+1}=b_n$ can be solved recursively.
+The quotient tower has eventually zero maps to each fixed level.
+There the solution is the finite sum
+\[
+ a_n=b_n+r_nb_{n+1}+r_nr_{n+1}b_{n+2}+\cdots.
+\]
+Lifting the quotient solution and correcting its discrepancy in
+the stable-image tower solves the original equation.
+
+Finite-dimensional towers are Mittag--Leffler. A finite cutoff on
+field labels does not by itself make a completed functional space
+finite-dimensional.
+
+\subsection*{The derived inverse limit}
+
+The two-column Roos complex of the tower $C_n$ has terms and
+differential
+\begin{equation}\label{mht:eq:derived-roos-complex}
+ \begin{split}
+ \mathcal R(C)^k&=\prod_n C_n^k\oplus\prod_n C_n^{k-1},\\
+ d_{\mathcal R}(x,y)&=(dx,\Delta_Cx-dy).
+ \end{split}
+\end{equation}
+The chain-map identity $d\Delta_C=\Delta_Cd$ proves
+$d_{\mathcal R}^2=0$. It is the shifted cone of the Roos operator.
+Its long exact cohomology sequence gives
+\begin{equation}\label{mht:eq:milnor-roos-sequence}
+ 0\longrightarrow\varprojlim{}^1 H^{k-1}_n
+ \longrightarrow H^k(\mathcal R(C))
+ \longrightarrow\varprojlim H^k_n\longrightarrow0.
+\end{equation}
+Products of vector spaces are exact, so cohomology commutes with
+the products used in this derivation. No splitting of this exact
+sequence is specified.
+
+The compatible residual gives the closed element $(o,0)$ in degree
+one. A primitive in $\mathcal R(C)$ consists of $c_n\in C_n^0$
+and $h_n\in C_n^{-1}$ satisfying
+\[
+ dc=-o,\qquad \Delta_Cc=dh.
+\]
+These are homotopy-compatible primitives. After solving the first equation, alter $c$ by cycles.
+The second equation is then solvable exactly when its discrepancy
+vanishes in $H^0$, which is the condition $\lambda_H(o)=0$.
+
+The class in the left term of
+\eqref{mht:eq:milnor-roos-sequence} is therefore secondary to the
+vanishing of the image in its right term. The exact sequence does
+not define a canonical pair of obstruction coordinates beforehand.
+
+If each degreewise Roos operator $\Delta_{C^k}$ is surjective,
+the inclusion $\varprojlim C_n\to\mathcal R(C)$ is a
+quasi-isomorphism. Indeed the short exact sequence of complexes
+\[
+ 0\longrightarrow\varprojlim C_n\longrightarrow
+ \prod_n C_n\xrightarrow{\Delta_C}\prod_n C_n\longrightarrow0
+\]
+identifies its kernel with the homotopy fiber.
+This supplies another sufficient condition for replacing a
+homotopy-compatible primitive by a strict one.
+
+\begin{example}\label{mht:ex:strict-versus-derived-primitives}
+For $n\geq1$, consider the acyclic complex
+\[
+ C_n^{-1}=x^n\mathbb C[x]\ \lhook\joinrel\longrightarrow\
+ C_n^0=\mathbb C[x]\ \longrightarrow\
+ C_n^1=\mathbb C[x]/(x^n),
+\]
+with inclusion and quotient as differentials. Transitions are
+inclusion in degree $-1$, identity in degree zero, and quotient in
+degree one. The compatible residual
+\[
+ o_n=1+x+\cdots+x^{n-1}\pmod{x^n}
+\]
+has primitives $c_n=-(1+x+\cdots+x^{n-1})$. Their discrepancies are
+$c_n-c_{n+1}=x^n\in Z^0_n=x^n\mathbb C[x]$.
+
+A strict primitive would be one polynomial with every Taylor
+coefficient equal to $-1$. It would satisfy $(1-x)c=-1$.
+Evaluation at $x=1$ proves that no such polynomial exists.
+
+Nevertheless $H^0_n=0$ at every level, and
+$h_n=x^n\in C_n^{-1}$ satisfies $dh_n=x^n$.
+Thus $(c,h)$ is a primitive in the Roos complex.
+Replacing the degree-zero polynomial ring by $\mathbb C[[x]]$
+admits $c=-(1-x)^{-1}$ and changes the strict problem.
+The example distinguishes both kinds of compatibility and the
+coefficient completion that relates them.
+\end{example}
+
+\subsection*{Compatible representatives and closed exchange}
+
+Suppose a compatible cohomology class
+$\alpha\in\varprojlim H^1(X_n)$ has representatives
+$w_n\in Z^1(X_n)$. Their discrepancies
+\[
+ w_n-r_nw_{n+1}\in B^1(X_n)
+\]
+define a class
+\begin{equation}\label{mht:eq:strict-representative-class}
+ \mu_B(\alpha)\in\varprojlim{}^1 B^1(X_n).
+\end{equation}
+Changing a representative adds a boundary, and hence changes its
+discrepancy by a Roos coboundary in the boundary tower. It follows
+that $\mu_B$ is well-defined and vanishes precisely when
+$\alpha$ has strict compatible cycle representatives.
+
+Writing $w_n-r_nw_{n+1}=du_n$ does not put $u_n$ in $Z^0(X_n)$.
+In $\mathbb C\xrightarrow{1}\mathbb C$, placed in degrees zero
+and one, the degree-one cycles $1$ and $0$ differ by $d(1)$.
+Their degree-zero primitive is not closed.
+There is no class $[u_n]\in H^0(X_n)$ to use in a Roos cokernel.
+
+This gives an explicit strict criterion for a closed-field
+contribution together with a counterterm. Let
+$\Xi_n:X_n\to Q_n$ be compatible chain maps and let
+$o_n\in Z^1(Q_n)$ be compatible. The equations are
+\begin{equation}\label{mht:eq:closed-exchange-tower}
+ o_n+\Xi_n W_n+dC_n=0,\qquad dW_n=0,
+\end{equation}
+with $W_n$ and $C_n$ both strictly compatible.
+Define the cone
+\[
+ E_n^k=Q_n^k\oplus X_n^{k+1},\qquad
+ d_E(q,x)=(d_Qq+\Xi_nx,-d_Xx).
+\]
+Then \eqref{mht:eq:closed-exchange-tower} asks for a strict
+primitive of $(o_n,0)$ in $E_n$. Theorem
+\ref{mht:thm:strict-primitive-tower} applies directly.
+
+The same criterion can be resolved into successive choices.
+First choose
+\[
+ \alpha\in\varprojlim H^1(X_n),\qquad
+ H^1(\Xi_n)(\alpha_n)=-[o_n].
+\]
+Next require $\mu_B(\alpha)=0$ and choose compatible representatives
+$W_n$. Finally require
+$\lambda_Z(o+\Xi W)=0$ in $\varprojlim^1 Z^0(Q_n)$.
+
+These conditions are necessary and sufficient by their definitions
+and the two primitive criteria. The last condition can depend on
+the preceding choice of $W$. If the towers $B^1(X_n)$ and
+$Z^0(Q_n)$ are Mittag--Leffler, only the first choice remains.
+Neither of these cycle conditions is an automatic consequence of
+Mittag--Leffler cohomology groups.
+
+\section{Linear transport at an interacting background}
+
+Renormalization acts on interactions nonlinearly. To transport an
+obstruction complex one needs its derivative at the chosen
+interaction. The distinction is already visible in a finite
+Gaussian model.
+
+Let $P$ be a constant symmetric covariance on a finite-dimensional
+even field space and put
+$\partial_P=\frac12P^{ij}\partial_i\partial_j$.
+Use polynomial interactions with a positive formal coupling, so
+that all expressions are interpreted coefficientwise. Define
+\[
+ Z_P(I)=e^{\hbar\partial_P}e^{I/\hbar},\qquad
+ W_P(I)=\hbar\log Z_P(I).
+\]
+
+The exponential and logarithm here specify the connected formal
+graph expansion. At a fixed coupling order there are finitely many
+vertices. Polynomial valences make each graph sum finite. In the
+connected expansion every power of $\hbar$ is a loop number and
+is nonnegative.
+
+\begin{proposition}\label{mht:prop:rg-tangent-transport}
+The derivative of $W_P$ at $I$ is the linear operator
+\begin{equation}\label{mht:eq:rg-tangent}
+ T_{P,I}(F)=Z_P(I)^{-1}e^{\hbar\partial_P}
+                           (F e^{I/\hbar}).
+\end{equation}
+For another covariance $Q$,
+\[
+ T_{P+Q,I}=T_{Q,W_P(I)}\,T_{P,I}.
+\]
+If the Gaussian transport intertwines the master-equation vector
+fields and $I$ solves that equation, $T_{P,I}$ is a chain map
+between their tangent complexes.
+\end{proposition}
+
+\begin{proof}
+Differentiate $\hbar\log Z_P(I+sF)$ at $s=0$ to obtain
+\eqref{mht:eq:rg-tangent}. Constant contraction operators commute,
+so
+$Z_Q(W_P(I))=e^{\hbar\partial_Q}Z_P(I)=Z_{P+Q}(I)$.
+Differentiating this identity proves the composition formula.
+For the last assertion, differentiate the stated intertwining
+identity at a zero of the master-equation vector field. Its
+derivatives there are the tangent differentials, so the resulting
+identity is precisely the chain-map equation.
+\end{proof}
+
+For one coordinate, covariance $P$, and $I=gx^2/2$, the formal
+Gaussian identity gives
+\[
+ W_P(gx^2/2)
+ =\frac{gx^2}{2(1-Pg)}-\frac{\hbar}{2}\log(1-Pg).
+\]
+It follows either by completing the square formally or by solving
+the heat equation with the given initial exponential.
+The term $Pg^2x^2/2$ shows that $W_P$ is not linear in $I$.
+Consequently $W_P(C)$ is not the transition map on a linear
+counterterm complex.
+
+\begin{example}[RG can produce nonlocal terms]
+\label{mht:ex:rg-nonlocal}
+Consider two sites, with fields $x,y$ and local functionals
+$\C[x]+\C[y]\subset\C[x,y]$. Choose
+$\partial_P=\partial_x\partial_y$ and the local interaction
+$I=g(x^3+y^3)/6$. Direct expansion gives
+\[
+ W_P(I)=\frac g6(x^3+y^3)
+   +g^2\left(\frac{x^2y^2}{4}
+             +\frac{\hbar xy}{2}+\frac{\hbar^2}{6}\right)
+   \pmod{g^3}.
+\]
+
+Indeed, the mixed part of the coefficient of $g^2$ in
+$e^{I/\hbar}$ is $x^3y^3/(36\hbar^2)$. Its successive cross
+derivatives have coefficients $9,36,36$. In the heat exponential
+these are multiplied by $\hbar$, $\hbar^2/2$ and $\hbar^3/6$.
+
+The logarithm cancels the uncontracted quadratic term, giving the
+displayed expression after multiplication by $\hbar$.
+
+The term $g^2x^2y^2/4$ depends on both sites and lies outside the
+local subspace. Thus finite-scale transport requires a space of
+effective functionals larger than the local counterterms. The
+locality condition for a field theory must specify the allowed
+small-scale asymptotics and singular counterterms.
+\end{example}
+
+Fix compatible lower-order interactions and a filtration order
+$n$. If $C_n\in F^n$, then
+\[
+ W_P(I_{<n}+C_n)
+ =W_P(I_{<n})+T_{P,I_{<n}}C_n\pmod{F^{n+1}}.
+\]
+This statement requires the filtration to make terms with two new
+corrections lie in $F^{n+1}$. The order-$n$ mismatch of the already
+chosen lower interactions remains an inhomogeneous term. The
+linear transition on the next correction complex is the induced
+$T_{P,I_{<n}}$, with that mismatch retained separately.
+
+For local field theories one must construct continuous transport
+on the specified effective functionals. Its small-scale locality
+conditions and boundary identities require further analytic
+arguments. The finite Gaussian formula identifies the map whose
+properties must be proved.
+
+\section{A Weyl connection with prescribed central curvature}
+
+Coordinate transport also acts on the quantized coefficient
+algebra. A useful global construction begins with more geometric
+data than a symplectic form alone. Suppose that $(X,\omega)$ has a
+global holomorphic torsion-free symplectic connection $\nabla$.
+This is a hypothesis. Local Darboux connections do not themselves
+give such a global connection.
+
+Let $\mathcal W$ be the bundle of formal Weyl algebras on $T_X$.
+In a symplectic chart use fiber variables $Q,P$, with
+$[Q,P]_\star=\epsilon$. Complete by total weight, assigning weight
+one to $Q,P$ and weight two to $\epsilon$. Base holomorphic forms
+have weight zero. On $\Omega_X^\bullet(\mathcal W)$ define
+\[
+ \delta=dq\,\partial_Q+dp\,\partial_P.
+\]
+
+For a monomial of fiber degree $s$ and form degree $t$, put
+\[
+ \delta^{-1}a=
+ \begin{cases}
+  (s+t)^{-1}(Q\iota_{\partial_q}+P\iota_{\partial_p})a,
+       &s+t>0,\\
+  0,&s=t=0.
+ \end{cases}
+\]
+
+These operators are coordinate independent. If $\sigma$ projects
+to fiber degree and form degree zero, then
+\begin{equation}\label{mht:eq:fedosov-contraction}
+ \delta\delta^{-1}+\delta^{-1}\delta=1-\sigma,
+ \qquad (\delta^{-1})^2=0.
+\end{equation}
+The identity follows by counting the $s+t$ occurrences of a fiber
+variable or a base differential.
+
+The connection extends as a derivation of the Weyl product.
+Torsion-freeness and preservation of $\omega$ give
+\[
+ [\delta,\nabla]=0,\qquad
+ \nabla^2=\epsilon^{-1}[R,-]_\star,
+ \qquad \delta R=0,\qquad\nabla R=0,
+\]
+where $R$ is the quadratic fiber representative of its curvature,
+a two-form of total weight two. Brackets of form-valued elements
+use the graded product, including exterior multiplication.
+Division of a Weyl commutator by $\epsilon$ is integral: the
+commutator is divisible by $\epsilon$.
+
+Fix a closed central series
+$\Omega\in\epsilon\Omega^2_{X,\mathrm{cl}}[[\epsilon]]$.
+The word central means that its coefficients contain no fiber
+variables.
+
+\begin{theorem}\label{mht:thm:holomorphic-fedosov-resolution}
+There is a unique one-form $r$ of weight at least three satisfying
+$\delta^{-1}r=0$ and
+\begin{equation}\label{mht:eq:fedosov-recursion}
+ r=\delta^{-1}\left(R-\Omega+\nabla r
+                         +\frac1{2\epsilon}[r,r]_\star\right).
+\end{equation}
+The derivation
+\[
+ D=-\delta+\nabla+\epsilon^{-1}[r,-]_\star
+\]
+is flat. Projection $\sigma$ identifies its sheaf of flat
+degree-zero sections with $\mathcal O_X[[\epsilon]]$ as modules.
+The Weyl product transports to an associative deformation product
+on this module, with first commutator $\epsilon\{f,g\}$.
+The complex $(\Omega_X^\bullet(\mathcal W),D)$ has no positive
+cohomology sheaves.
+\end{theorem}
+
+\begin{proof}
+The operator $\delta^{-1}\nabla$ raises weight by one.
+For $r$ of weight at least three,
+$\delta^{-1}\epsilon^{-1}[r,-]_\star$ raises weight by at least
+two. Iteration of \eqref{mht:eq:fedosov-recursion}, starting with
+zero, therefore determines each weight after finitely many
+steps and gives the unique solution. It has weight at least three
+and satisfies the stated normalization by $(\delta^{-1})^2=0$.
+
+Put
+\[
+ F=R-\delta r+\nabla r+\frac1{2\epsilon}[r,r]_\star.
+\]
+Expansion gives $D^2=\epsilon^{-1}[F,-]_\star$. The connection
+identities give $DF=0$. Since $\Omega$ is central and closed,
+$D(F-\Omega)=0$ as well.
+
+The recursion and
+\eqref{mht:eq:fedosov-contraction} imply
+$\delta^{-1}(F-\Omega)=0$. Its form degree is two, so its
+$\sigma$ projection vanishes. It consequently satisfies
+\[
+ F-\Omega
+ =\delta^{-1}\left(\nabla(F-\Omega)
+               +\epsilon^{-1}[r,F-\Omega]_\star\right).
+\]
+The right side raises weight. The only solution in the separated
+completion is zero. Thus $F=\Omega$ is central and $D^2=0$.
+
+For $f\in\mathcal O_X[[\epsilon]]$, solve
+\begin{equation}\label{mht:eq:fedosov-flat-lift}
+ \tau(f)=f+\delta^{-1}\left(\nabla\tau(f)
+                         +\epsilon^{-1}[r,\tau(f)]_\star\right).
+\end{equation}
+The same weight argument gives a unique solution. Its defect
+$D\tau(f)$ has zero $\delta^{-1}$ component, is $D$-closed by
+flatness, and has positive form degree. The preceding contraction
+argument makes it zero. Conversely a flat section with symbol $f$
+satisfies \eqref{mht:eq:fedosov-flat-lift}, proving uniqueness.
+
+Define $f\star_X g=\sigma(\tau(f)\star\tau(g))$.
+The product of flat sections is flat, since $D$ is a derivation.
+Uniqueness of the lift gives associativity. Modulo $\epsilon$ and fiber degree at least two,
+$\tau(f)=f+Qf_q+Pf_p$. Their single contraction gives
+the first commutator $\epsilon\{f,g\}$.
+
+Finally let $a$ be $D$-closed of positive form degree. Solve
+\[
+ b=-\delta^{-1}a+
+        \delta^{-1}\left(\nabla b+\epsilon^{-1}[r,b]_\star\right),
+ \qquad \sigma b=0.
+\]
+Again the recursion converges. The error $Db-a$ is closed and
+has zero $\delta^{-1}$ component and zero symbol, hence is zero
+by the same weight argument. This proves positive-degree
+acyclicity.
+\end{proof}
+
+This is the Weyl version of the Fedosov contraction. Its formal
+resolution method also underlies the covariant formality
+construction of Dolgushev, \emph{Covariant and equivariant formality
+theorems}, \S3. The theorem above uses holomorphic data supplied
+globally. A smooth resolution or a Dolbeault resolution has
+different coefficients and requires its own comparison to
+holomorphic sections.
+
+\subsection*{Period and algebroid gluing}
+
+The central curvature retains information invisible to the flat
+derivation $D^2=0$. In a Darboux chart the linear one-form
+\[
+ \gamma_{-1}=P\,dq-Q\,dp
+\]
+satisfies
+$\epsilon^{-1}[\gamma_{-1},-]_\star=-\delta$ and
+$\epsilon^{-1}\gamma_{-1}\star\gamma_{-1}=\omega$.
+With this convention the scalar Weyl curvature is
+$\omega+\Omega$, and the associated period is
+\begin{equation}\label{mht:eq:weyl-period}
+ \vartheta=\epsilon^{-1}[\omega+\Omega]
+ \in\epsilon^{-1}[\omega]+H^2_{\mathrm{dR}}(X,\mathbb C)[[\epsilon]].
+\end{equation}
+
+The class is understood in holomorphic de Rham hypercohomology
+when no global form representative is available. A central
+one-form added to a connection representative changes its scalar
+curvature by an exact form. Thus such a change preserves
+\eqref{mht:eq:weyl-period}. A comparison allowing a different
+period is a different quantization problem. Flatness alone does
+not erase this parameter.
+
+When no global holomorphic connection has been specified, one
+can instead ask for local quantized algebras $A_i$ and algebroid
+descent data. In a strict presentation these consist of
+isomorphisms $g_{ij}:A_j\to A_i$ and invertible elements
+$a_{ijk}\in A_i$ with
+\begin{align*}
+ g_{ij}g_{jk}&=\operatorname{Ad}(a_{ijk})g_{ik},\\
+ a_{ijk}a_{ikl}&=g_{ij}(a_{jkl})a_{ijl}.
+\end{align*}
+
+All terms are restricted to the indicated intersection.
+The first equation identifies the two ways of transporting a
+module on a triple overlap. The second makes that identification
+coherent on quadruple overlaps. A strict algebra sheaf is the
+special case $a_{ijk}=1$. Local existence of a flat Weyl algebra
+does not choose these intertwiners or prove their coherence.
+
+Holomorphic quantization and its characteristic classes are
+treated by Nest--Tsygan, \emph{Deformations of symplectic Lie
+algebroids, deformations of holomorphic symplectic structures,
+and index theorems}, \S5. The local connection calculation above
+provides a construction on the stated class of surfaces with a
+global holomorphic symplectic connection. A general surface
+requires the additional descent or resolution data.
+
+\subsection*{The density and its unit value}
+
+A cyclic density is further structure: a map from the chosen cyclic
+chain complex to a specified complex of forms or currents.
+It must also have coherent overlap homotopies. A closed integration
+functional in the required degree, defined on the chosen supports,
+then gives the corresponding cyclic functional.
+
+The product and period do not fix its normalization. Multiplying
+a trace by $c(\epsilon)\in\mathbb C[[\epsilon]]^\times$ preserves
+cyclicity and multiplies its unit value by $c(\epsilon)$.
+
+For the logarithmic torus of
+Chapter~\ref{mht:ch:integral-cyclic}, the constant Laurent
+coefficient gives the explicit normalization $\tau(1)=1$.
+On a general quantization, a unit-index statement must specify
+its density map, normalization and supports. It must also fix
+the cohomology class in which the unit is evaluated.
+
+The periodic algebraic index theorem relates a localized trace
+density to the tangent bundle's characteristic classes and the
+quantization period. The relevant result is Theorem~3.3.1 of
+Bressler--Nest--Tsygan, \emph{Riemann--Roch theorems via
+deformation quantization II}. Its characteristic expression involves the
+$\widehat A$ class and the exponential of the period, with the
+parameter regrading of that theorem.
+
+It does not by itself give
+an integral comparison over $\mathbb C[[\epsilon,u]]$.
+The point-current classes in
+Chapter~\ref{mht:ch:integral-cyclic} are annihilated by both
+parameters. Inverting either parameter loses precisely such
+information. Recovering it requires an integral map and cannot
+be inferred from an equality after localization.
+
+\section{Descent of the structured comparison}
+
+The preceding constructions separate two questions: whether the
+objects glue, and whether the specified comparison glues with all
+its operations. State the latter in a category that retains the
+operations being compared.
+
+Let $\mathcal C$ be an infinity-category of complete complexes
+with a specified algebraic or supported operation structure.
+Assume that the required limits exist in $\mathcal C$. Let
+$P_\bullet,G_\bullet$ be their descent diagrams on a cover, with
+all overlap and higher coherence maps supplied. Effective descent
+means that the global objects under consideration are identified
+with $\operatorname*{holim}P_\bullet$ and
+$\operatorname*{holim}G_\bullet$. A map of diagrams includes
+homotopies in every simplicial degree, not merely maps on charts.
+
+\begin{proposition}\label{mht:prop:structured-global-descent}
+Under these hypotheses a homotopy-coherent map
+$\Phi_\bullet:P_\bullet\to G_\bullet$ induces a global map in
+$\mathcal C$. If each component is an equivalence, its global
+map is an equivalence. Every operation or marking retained in
+$\mathcal C$ is preserved by this map.
+\end{proposition}
+
+\begin{proof}
+Apply the limit functor to the map of diagrams. A componentwise
+equivalence is an equivalence in the diagram infinity-category,
+so a functor sends it to an equivalence. Effective descent
+identifies the resulting limits with the specified global
+objects. Their operations and markings are preserved because
+the construction takes place in $\mathcal C$.
+\end{proof}
+
+For unary complexes the overlap equations were written explicitly
+above. For a cyclic algebra comparison the category must also
+retain multiplication, the mixed differential, the coefficient
+completion, the unit and the density. For the chiral problem it
+must in addition retain the full supported collision diagram and
+normal derivatives. The proposition applies once these data and
+their descent theorem are supplied. An equivalence of the
+underlying complexes does not supply them.
+
+A sheaf of $E_2$ algebras illustrates the variance issue.
+Fix a holomorphic open $U$ and an $E_2$ algebra of sections.
+Its factorization realization on framed topological two-disks
+requires the corresponding theorem in the chosen completed tensor
+category.
+
+For $V\subset U$, sheaf restriction goes from sections on $U$ to
+sections on $V$. A factorization algebra on the product needs
+covariant structure maps for disjoint product opens and their
+descent. The sheaf restrictions therefore do not define the
+holomorphic part of that factorization algebra.
+Extension from
+framed disks to oriented disks also requires the appropriate
+rotation equivariance. A boundary category and a bulk action
+require additional maps even after the bulk realization exists.
+
+The global diagonal bimodule requires a comparison with the local
+diagonal resolutions. This comparison is needed to identify the
+global Morita center with derived sections of local Hochschild
+cochains. The affine derived Morita theorem
+of Chapter~\ref{mht:ch:centres-actions} supplies the comparison under its
+own generator hypotheses. A general holomorphic algebroid has
+no such identification solely from its local Weyl presentation.
+
+The global integral cyclic problem can now be stated with its
+data fixed. Choose a holomorphic symplectic surface, a quantized
+Weyl algebroid with period $\vartheta$, a normalized cyclic
+density, and a coefficient and support completion over
+$\mathbb C[[\epsilon,u]]$.
+
+Construct an integral cyclic comparison extending the local circle
+map on this algebroid. It must preserve coherent coordinate
+transport, the prescribed unit-index class and the mixed theory's
+supported operations.
+
+The two-chart
+kernel gives its first relative obstruction. Higher overlap
+equations and compatible filtered choices remain to be solved
+in their respective complexes. Finally a map from the geometric
+closed-source complex must identify this cyclic comparison with
+the physical one. The logarithmic torus and the global-connection
+construction establish specified portions of these data.
+The final physical map on a general surface remains to be constructed.

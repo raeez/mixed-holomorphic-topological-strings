@@ -1,0 +1,2025 @@
+\chapter{Normal sources and supported operations}
+\label{mht:ch:normal-sources}
+
+A closed field coupled to a boundary algebra must do more than
+produce a scalar cyclic cochain. Its insertion has a normal
+support, a differential and collision operations. The action
+determines a source in the closed equation as well as an action
+on the open fields. We first construct a classical model in
+which these two effects are transposes of one another.
+
+Normal jets then give explicit supported cyclic operations.
+Real normal currents, holomorphic principal parts and smooth
+source tests require different complexes. We compute their
+primitives and the obstruction to extending an operation across
+a collision. These constructions retain the data needed for
+a comparison with independently defined closed fields.
+The final section studies coefficient completion. It proves
+reconstruction in one normal direction and identifies the
+limits and duals that fail to preserve support.
+
+\section{A coupled Hamiltonian bulk and defect}
+
+Let
+\[
+ M=\mathbb R_r\times\mathbb R_s\times\mathbb C^2_{q,p},
+ \qquad Y=\{r=0\},\qquad i:Y\hookrightarrow M,
+ \qquad \Omega=dq\wedge dp.
+\]
+Orient the real normal line by increasing $r$. It is the whole
+line, so $Y$ is an internal defect.
+
+Let $\mathcal A_M$ denote
+smooth mixed forms, with the completed projective smooth
+topology and differential
+\[
+ D_M=d_r+d_s+\bar\partial.
+\]
+Define $\mathcal A_Y$ similarly, with $D_Y=d_s+\bar\partial$.
+An integral always has compact support in its integration
+variables. An unintegrated smooth factor may act as a multiplier.
+
+Complete coefficientwise in $\epsilon$, of degree zero. The
+holomorphic Moyal product is
+\begin{equation}\label{mht:eq:geometric-moyal}
+ a\star b=m\exp\!\left(\frac\epsilon2\mathsf P\right)(a\otimes b),
+ \qquad
+ \mathsf P=\partial_q\otimes\partial_p
+                    -\partial_p\otimes\partial_q.
+\end{equation}
+Exterior and matrix multiplication are included in $m$.
+Every parameter coefficient is a finite-order differential
+operator.
+
+For scalar mixed forms the graded commutator is
+divisible by $\epsilon$. Hence
+\[
+ [f,g]_\epsilon=\epsilon^{-1}[f,g]_\star,
+ \qquad
+ \rho_f(a)=\epsilon^{-1}[i^*fI_N,a]_\star
+\]
+are defined before parameter inversion. The second acts on
+matrix-valued defect forms. Associativity gives
+\[
+ [\rho_f,\rho_g]=\rho_{[f,g]_\epsilon},\qquad
+ \rho_f(a\star b)=(\rho_fa)\star b
+                    +(-1)^{|f||a|}a\star\rho_fb.
+\]
+
+The trace $\tau_Y(a)=\int_Y\Omega\wedge\operatorname{Tr}a$
+is graded cyclic. Integration by parts kills every positive
+two-input Moyal correction, so $\tau_Y(a\star b)=\tau_Y(ab)$.
+The action $\rho$ preserves the resulting pairing. Here $q,p$
+are physical coordinates. Proposition~\ref{mht:prop:physical-spencer}
+compares their jets with horizontal independent coefficients.
+Unconstrained coefficient fields have a different carrier.
+
+Let $\mathcal A_M^{\mathrm{nor}}$ admit distributions of locally
+finite order in $r$, with smooth distribution-valued tangential
+dependence. It is a module over smooth mixed forms and is
+stable under $D_M$. In particular it contains every finite
+derivative of $\delta(r)$.
+
+We use the fields
+\[
+ \alpha\in\mathcal A_M[1][[\epsilon]],\qquad
+ \beta\in\mathcal A_M^{\mathrm{nor}}[2][[\epsilon]],\qquad
+ A\in(\mathcal A_Y\otimes\operatorname{Mat}_N)[1][[\epsilon]].
+\]
+The bulk cotangent pairing and the defect trace pairing have
+degree $-1$. On the distributional domain the pairing is
+weak: we use its Hamiltonian bracket on functionals whose
+variational derivatives are represented in the paired field
+spaces. The functionals below have this property.
+
+At ghost number zero, $\alpha,A,\beta$ have
+mixed form degrees $1,1,2$. Define
+\begin{align}
+ S_c&=\int_M\Omega\wedge\beta\star
+             \left(D_M\alpha+\tfrac12[\alpha,\alpha]_\epsilon\right),
+       \label{mht:eq:geometric-bulk-action}\\
+ S_o&=\tau_Y\left(\tfrac12 A\star D_YA
+                             +\tfrac13 A\star A\star A\right),
+       \label{mht:eq:geometric-open-action}\\
+ S_{co}&=\tfrac12\tau_Y(A\star\rho_\alpha A).
+       \label{mht:eq:geometric-coupling}
+\end{align}
+For all BV components, use suspension of degree $-1$ with
+$b_1(sx)=-sDx$ and $b_2(sx,sy)=(-1)^{|x|}s[x,y]$.
+The cyclic pairing fixes the signs of the corresponding
+quadratic and cubic Hamiltonians.
+
+\begin{theorem}\label{mht:thm:geometric-coupled-classical}
+The functional $S_c+S_o+S_{co}$ satisfies the classical
+master equation. Its Hamiltonian vector field preserves the
+smooth and normal-distribution domains coefficientwise in
+$\epsilon$. It uses no product of two singular normal
+coefficients.
+\end{theorem}
+\begin{proof}
+Let $\mathfrak g=(\mathcal A_M[[\epsilon]],D_M,[-,-]_\epsilon)$,
+and let $\mathfrak a$ be the matrix defect dg Lie algebra with
+its graded star commutator. Its cyclic pairing has degree $-3$.
+Adjoin to $\mathfrak g\oplus i_*\mathfrak a$ the admissible
+paired dual of $\mathfrak g$. Integration identifies this
+summand with $\mathcal A_M^{\mathrm{nor}}[1][[\epsilon]]$
+before the common suspension.
+
+The dual summand is abelian. Let $\mathfrak g$ act on it
+coadjointly and on $\mathfrak a$ by $\rho$. Its bracket
+with $\mathfrak a$ is zero. The bracket of two open elements
+has its native component and a dual component $\mu$, determined
+by cyclicity:
+\[
+ \langle\mu(a,b),x\rangle=\langle a,[b,x]\rangle.
+\]
+For degree-zero inputs this reads
+$\mu(a,b)(x)=\langle\rho_xa,b\rangle$.
+The transpose of restriction is normal pushforward.
+
+Jacobi on two bulk inputs and one open input is the
+representation identity for $\rho$. On one bulk and two
+open inputs it is the derivation identity and equivariance
+of $\mu$. For three open inputs the native component is
+Jacobi in $\mathfrak a$. Pairing the dual component with
+$x$ gives the cyclic sum of $\langle\rho_x[a,b],c\rangle$.
+The derivation identity and cyclicity cancel its terms with
+their Koszul signs. The remaining triples give coadjoint
+identities or zero.
+
+The mixed differentials preserve these brackets by integration
+by parts. We have therefore constructed a cyclic dg Lie
+algebra. Its suspended Hamiltonian is exactly the sum of
+\eqref{mht:eq:geometric-bulk-action}--\eqref{mht:eq:geometric-coupling},
+and the dg Lie identities give the classical master equation.
+All singular coefficients lie in the abelian dual summand.
+Differentiation and multiplication by smooth fields preserve
+that summand, proving the domain assertion.
+\end{proof}
+
+The source follows directly by varying the coupling. Since
+$A$ is odd, $\operatorname{Tr}(A^2)=0$ at $\epsilon=0$.
+Graded exchange removes the even powers of $\mathsf P$, giving
+\begin{equation}\label{mht:eq:geometric-source-moment}
+ \mathcal M_\epsilon(A)=\epsilon^{-1}\operatorname{Tr}(A\star A)
+ =\sum_{k\geq0}\frac{\epsilon^{2k}}{2^{2k+1}(2k+1)!}
+       \operatorname{Tr}m\mathsf P^{2k+1}(A\otimes A).
+\end{equation}
+Its leading term is $\operatorname{Tr}(\partial_qA\wedge\partial_pA)$.
+
+Cyclic rotation rewrites the coupling as
+$\int_Y\Omega\wedge i^*\alpha\star\mathcal M_\epsilon(A)$.
+The ghost-zero equations are
+\begin{align}
+ D_M\alpha+\tfrac12[\alpha,\alpha]_\epsilon&=0,\notag\\
+ D_YA+A\star A+\rho_\alpha A&=0,\notag\\
+ D_M\beta+[\alpha,\beta]_\epsilon
+       &=\delta(r)dr\,\mathcal M_\epsilon(A).
+       \label{mht:eq:geometric-source-equation}
+\end{align}
+The last sign uses $dr$ before the orientation of $Y$.
+Equivalently, variation of $S_{co}$ in $\alpha$ has the
+positive pairing with $\mathcal M_\epsilon(A)$.
+
+The source is covariantly closed on an open solution.
+Indeed $D_\alpha=D_Y+\rho_\alpha$ is an odd derivation and
+$D_\alpha A=-A\star A$, so
+\[
+ D_\alpha(A\star A)
+   =(-A\star A)\star A-A\star(-A\star A)=0.
+\]
+Trace intertwines the scalar Hamiltonian action. This is
+the source condition in the bulk Bianchi identity.
+
+For two coincident blocks, the source also contains
+\[
+ \epsilon^{-1}\operatorname{Tr}
+       (A_{12}\star A_{21}+A_{21}\star A_{12}).
+\]
+The cubic action retains the corresponding mixed cyclic
+words. A block-diagonal field is a subtheory of this
+rank-added defect, not its full field space.
+
+\section{Inner actions and normal transport}
+
+An inner action can be removed from the open differential
+while leaving a closed cubic interaction. We first explain
+the algebraic change of variables. Let $\mathfrak a$ be an
+ordinary quadratic Lie algebra, and suppose
+$\rho_x=\operatorname{ad}_{j(x)}$ for a Lie map
+$j:\mathfrak g\to\mathfrak a$.
+Write $\kappa(x,y)=\langle jx,jy\rangle$ and let
+$j^\dagger$ be the adjoint into the paired dual.
+
+\begin{proposition}\label{mht:prop:inner-double-extension}
+In the double extension, the change
+\[
+ a'=a+jx,\qquad
+ \xi'=\xi-j^\dagger a-\tfrac12j^\dagger jx
+\]
+preserves the pairing and decouples the open Lie algebra.
+The remaining bulk-dual bracket has the cocycle
+$c(x,y)=\kappa([x,y],-)/2$.
+Its cyclic cubic Hamiltonian is $\kappa(x,[x,x])/12$.
+\end{proposition}
+\begin{proof}
+Substitution in $\langle a,a\rangle+2\langle x,\xi\rangle$
+cancels both cross terms and the term $\kappa(x,x)$.
+The new open vector has old coordinates $(0,a,j^\dagger a)$.
+The new bulk vector has coordinates
+$(x,-jx,-j^\dagger jx/2)$.
+
+Insert these vectors in the double-extension bracket.
+The mixed bracket vanishes. The open bracket is the
+original bracket of $\mathfrak a$, and the bracket of two
+new bulk vectors is $([x,y],0,c(x,y))$.
+Invariance of $\kappa$ proves the cocycle identity.
+Pairing with the third bulk vector and multiplying by
+$1/6$ gives the cubic Hamiltonian. The same calculation
+with the cyclic Koszul signs applies after suspension.
+\end{proof}
+
+In the geometric theory $j(\alpha)=\epsilon^{-1}i^*\alpha I_N$
+requires inversion of $\epsilon$. The canonical change is
+\[
+ A'=A+\epsilon^{-1}i^*\alpha I_N,\qquad
+ \beta'=\beta-\delta(r)dr
+       \left(\epsilon^{-1}\operatorname{Tr}A
+                         +\frac{N}{2\epsilon^2}i^*\alpha\right).
+\]
+It gives
+\begin{equation}\label{mht:eq:surviving-cyclic-cubic}
+ S=S_c(\alpha,\beta')+S_o(A')
+       +\frac{N}{6\epsilon^3}\int_Y\Omega\wedge(i^*\alpha)^{\star3}.
+\end{equation}
+
+The coefficient can be checked without suppressing the
+kinetic term. Put $B=i^*\alpha I_N/\epsilon$ and
+$F_B=D_YB+B\star B$. Modulo an integrated total derivative,
+\[
+ \operatorname{CS}(A+B)
+ =\operatorname{CS}(A)+\operatorname{CS}(B)
+       +\tau_Y(B\star A\star A)+\tau_Y(A\star F_B).
+\]
+
+The cotangent shifts contribute
+$\tau_Y(A\star F_B)+\tau_Y(B\star F_B)/2$ when the old
+$\beta$ is expressed in terms of $\beta'$. Consequently
+\[
+ S=S_c(\alpha,\beta')+S_o(A')
+          -S_o(B)+\tfrac12\tau_Y(B\star F_B).
+\]
+The last two terms equal $\tau_Y(B^{\star3})/6$.
+Taking the matrix trace gives
+\eqref{mht:eq:surviving-cyclic-cubic}.
+
+The residual cubic is closed and has zero self-bracket in
+the cotangent theory because it does not depend on $\beta'$.
+The transformation is not defined integrally at $\epsilon=0$.
+Thus innerness after localization does not remove the
+integral problem or its closed cubic vertex.
+
+To move the defect, write a smooth background on a collar as
+$\alpha=dr\,\alpha_r+\alpha_Y$. Complete in a field-amplitude
+parameter as well as $\epsilon$. The ordered series
+\begin{equation}\label{mht:eq:normal-hamiltonian-transport}
+ U(r_1,r_0)=1+\sum_{n\geq1}(-1)^n
+ \int_{r_0<t_1<\cdots<t_n<r_1}
+ \rho_{\alpha_r(t_n)}\cdots\rho_{\alpha_r(t_1)}
+                                      \,dt_1\cdots dt_n
+\end{equation}
+is finite at each amplitude degree. Set
+\[
+ D_{Y,\alpha}(r)=D_Y+\rho_{\alpha_Y(r)},\qquad
+ F_{rY}=\partial_r\alpha_Y-D_Y\alpha_r
+                         +[\alpha_r,\alpha_Y]_\epsilon.
+\]
+
+\begin{proposition}\label{mht:prop:normal-transport-curvature}
+The operator $U$ preserves the star product and integrated
+trace and composes under subdivision of the collar.
+Its differential defect is
+\begin{align}
+ &D_{Y,\alpha}(r_1)U(r_1,r_0)-U(r_1,r_0)D_{Y,\alpha}(r_0)
+       \notag\\
+ &\qquad=\int_{r_0}^{r_1}
+       U(r_1,t)\rho_{F_{rY}(t)}U(t,r_0)\,dt.
+       \label{mht:eq:normal-transport-defect}
+\end{align}
+In particular a flat background gives a cyclic dg algebra map.
+\end{proposition}
+\begin{proof}
+Differentiating the ordered simplex gives
+$\partial_{r_1}U=-\rho_{\alpha_r(r_1)}U$, with initial value
+the identity. The multiplicative defect satisfies the same
+homogeneous equation with zero initial value, since $\rho$
+is a derivation. Formal recursion proves it zero.
+Trace invariance follows from $\tau_Y\rho=0$.
+Subdivision of each simplex proves composition.
+
+Call the left side of \eqref{mht:eq:normal-transport-defect}
+$C(r_1)$. Differentiating gives
+$\partial_{r_1}C+\rho_{\alpha_r}C=\rho_{F_{rY}}U$ and
+$C(r_0)=0$. Variation of constants proves the formula.
+Every step is coefficientwise finite in amplitude and
+$\epsilon$.
+\end{proof}
+
+\section{Real normal jets and cyclic caps}
+
+Normal differentiation of an insertion must act on every
+input. Its algebraic model is dual to multiplication of
+normal test jets. For $M\geq1$ put
+\[
+ J_M=\mathbb C[r,dr]/(r^{M+1},r^Mdr),\qquad
+ |r|=0,\quad |dr|=1,\quad d r=dr.
+\]
+The second relation is the derivative of the first.
+Thus $J_M$ is a finite-dimensional commutative dg algebra.
+
+Let $C_M=J_M^\vee$ have basis $t_0,\ldots,t_M$ in degree
+zero and $e_0,\ldots,e_{M-1}$ in degree $-1$.
+They extract the coefficients of $r^n$ and $r^n dr$.
+For a homogeneous functional use $dc=-(-1)^{|c|}c d$.
+
+\begin{proposition}\label{mht:prop:real-normal-coalgebra}
+The dual is a counital dg coalgebra with
+\[
+ dt_n=0,\qquad de_n=(n+1)t_{n+1},
+\]
+\[
+ \Delta t_n=\sum_{a+b=n}t_a\otimes t_b,\qquad
+ \Delta e_n=\sum_{a+b=n}(e_a\otimes t_b+t_a\otimes e_b).
+\]
+The counit extracts $t_0$. If $i(1)=t_0$ and $p$ is the
+counit, then
+\[
+ Ht_n=e_{n-1}/n\quad(n>0),\qquad Ht_0=He_n=0
+\]
+satisfies $dH+Hd=1-ip$. The inclusions $C_M\to C_{M+1}$
+preserve the differential and coproduct.
+\end{proposition}
+\begin{proof}
+Evaluate on $d(r^k)=kr^{k-1}dr$ to obtain the differential.
+Dualizing monomial multiplication gives the coproduct.
+Associativity and the unit give coassociativity and the
+counit identities. For $i+j=n+1$, the two contributions
+to the coefficient of $t_i\otimes t_j$ in the coderivation
+identity have coefficients $i$ and $j$. Their sum is $n+1$.
+
+The formula for $H$ verifies the contraction on each basis
+vector. The quotient $J_{M+1}\to J_M$ is a dg algebra map,
+which proves compatibility between stages.
+\end{proof}
+
+The union $C=\varinjlim C_M$ retains every finite normal
+derivative. Its iterated coproduct distributes a divided
+derivative among all arguments:
+\[
+ \Delta^{(k-1)}t_n
+   =\sum_{n_1+\cdots+n_k=n}t_{n_1}\otimes\cdots\otimes t_{n_k}.
+\]
+For $e_n$ the same sum has one $e$ in every possible position.
+Normal differentiation raises the stage. It does not preserve
+each fixed truncation.
+
+These functionals have supported representatives. Define
+\[
+ E_n=\frac{(-1)^n}{n!}\delta^{(n)}(r),\qquad T_n=E_n\,dr.
+\]
+Then $\int T_n f=f^{(n)}(0)/n!$ and
+$\int E_n g\,dr=g^{(n)}(0)/n!$.
+Before shifting, $dE_n=-(n+1)T_{n+1}$.
+The assignments $t_n\mapsto T_n[1]$ and $e_n\mapsto E_n[1]$
+therefore identify $C$ with the finite-order supported
+currents in the shifted de Rham complex.
+Every evaluation is continuous in a finite smooth seminorm.
+
+A smooth Thom form has the same normal cohomology. Choose
+$\chi\in C_c^\infty(\mathbb R)$ with integral one and set
+$F_\chi(r)=\int_{-\infty}^r\chi(s)\,ds$.
+Before shifting, the homotopy on a compactly supported one-form is
+\[
+ h(g\,dr)(r)=\int_{-\infty}^r g(s)\,ds
+                       -F_\chi(r)\int_{\mathbb R}g(s)\,ds.
+\]
+It vanishes outside a compact set. Direct differentiation
+gives $dh+hd=1-ip$, with $i(1)=\chi\,dr$ and
+$p(g\,dr)=\int g$. The primitive of the difference between
+two unit-integral choices is compactly supported and gives
+a homotopy between their inclusions.
+
+Let $A$ now be a unital dg algebra. A test ideal can instead
+use its unitalization and relative normalized chains.
+In $\operatorname{CH}(A)$, an $n$-chain of internal degree
+$m$ has total degree $m-n$. Set
+\[
+ D=d_{\mathrm{int}}+(-1)^m b,\qquad
+ B_{\mathrm{tot}}=(-1)^m B.
+\]
+The faces defining $b$ include the graded cyclic last face.
+The operator $B$ is cyclic rotation with unit insertion.
+
+For the graded dual cochains use
+\[
+ (D^\vee\phi)(c)=-(-1)^{|\phi|}\phi(Dc),\qquad
+ (B^\vee\phi)(c)=-(-1)^{|\phi|}\phi(B_{\mathrm{tot}}c).
+\]
+Their degrees are $1,-1$ and they form a mixed complex.
+Completion over arities is a product.
+
+For $A_M=J_M\otimes A$, define
+\begin{equation}\label{mht:eq:normal-cap}
+ \begin{split}
+ \operatorname{Cap}(c,\phi)(j_0a_0,\ldots,j_na_n)
+  &={}(-1)^\sigma
+      \langle c,j_0\cdots j_n\rangle\phi(a_0,\ldots,a_n),\\
+ \sigma&=\sum_{i<j}|a_i||j_j|+|\phi|\sum_i|j_i|.
+ \end{split}
+\end{equation}
+Here $|\phi|$ is the total cochain degree, not its arity.
+
+\begin{theorem}\label{mht:thm:supported-cyclic-cap}
+The cap is a map of mixed complexes
+\[
+ C_M\otimes\operatorname{CH}(A)^\vee
+       \longrightarrow\operatorname{CH}(A_M)^\vee.
+\]
+It preserves the cyclic and unit identities and normal-jet
+refinement. It extends coefficientwise to $D^\vee+uB^\vee$,
+with $|u|=2$. Continuous tangential cochains give continuous
+finite-order normal operations supported at $r=0$.
+\end{theorem}
+\begin{proof}
+Move all normal factors to the left and multiply them.
+This gives a chain map
+\[
+ T:\operatorname{CH}(J_M\otimes A)\longrightarrow
+                                      J_M\otimes\operatorname{CH}(A),
+\]
+with sign $\sum_{i<j}|a_i||j_j|$. The internal differential
+commutes with this operation by the Leibniz rule.
+Each Hochschild face has the same normal product.
+The last face uses graded commutativity to move its normal
+factor around that product.
+
+The source totalization has sign $(-1)^{m_J+m_A}$ on $b$.
+The tensor differential on the target has the same sign,
+$(-1)^{m_J}(-1)^{m_A}$. Graded commutativity also preserves
+cyclic rotation, and inserting a unit multiplies the normal
+product by one. Hence $T$ commutes with $B_{\mathrm{tot}}$.
+A degenerate source tensor has a unit tangential bar entry,
+so the map descends to normalized chains.
+
+Graded transposition contributes the second term of $\sigma$.
+It proves the mixed identities and their descendant extension.
+The formulas are unchanged under refinement. Each normal
+coefficient uses finitely many smooth derivatives, proving
+the support and continuity assertions.
+\end{proof}
+
+For zero-form normal inputs, the cap of $t_n$ is the sum
+of tangential evaluations on all Taylor coefficients whose
+orders add to $n$. If $\phi$ is closed, the cap of $e_n$
+is a primitive of $(n+1)\operatorname{Cap}(t_{n+1},\phi)$.
+The sign is visible for $A=\Lambda(\theta)$, $|\theta|=1$,
+and the zero-arity functional $\phi(\theta)=1$.
+Then $|\phi|=-1$ and
+$\operatorname{Cap}(e_0,\phi)(dr\,\theta)=-1$.
+Its dual differential evaluates to $+1$ on $r\theta$.
+
+The bare scalar transposes in Chapter~\ref{mht:ch:integral-cyclic}
+use a different sign convention. For an ungraded algebra,
+the total-complex comparison is
+\begin{equation}\label{mht:eq:scalar-dual-convention}
+ u^j\phi_n\longmapsto
+             (-1)^{n(n+1)/2+j}u^j\phi_n.
+\end{equation}
+Increasing $n$ contributes $(-1)^{n+1}$.
+Decreasing $n$ and increasing $j$ contributes the same sign.
+Thus \eqref{mht:eq:scalar-dual-convention} intertwines both
+total differentials.
+
+It is semilinear for $u\mapsto-u$.
+It does not identify the two conventions over the identity
+map of the descendant coefficient ring.
+
+If $A$ has a closed graded trace $\tau$ and a degree-zero
+derivation $X$ with $[d_A,X]=0$ and $\tau X=0$, then
+$\phi_X(a_0,a_1)=\tau(a_0Xa_1)$ is a closed cyclic cochain.
+The derivation identity cancels its Hochschild boundary.
+Integration by parts proves cyclicity, and $X1=0$ gives
+the normalized Connes identity. The cap constructs all its
+finite normal descendants. A map from a physical closed
+field to $\phi_X$ remains separate data.
+
+\section{Holomorphic normal residues}
+
+A complex normal coordinate has a Dolbeault differential.
+Orient $\mathbb C_z$ by $dx\wedge dy$, so that
+$d\bar z\wedge dz=2i\,dx\wedge dy$.
+Define the higher polar distributions by
+$z^{-n-1}=(-1)^n\partial_z^n(z^{-1})/n!$ and put
+\[
+ \mathcal T_n=\frac1{2\pi i}\bar\partial(z^{-n-1}).
+\]
+The Cauchy formula and differentiation give
+\begin{equation}\label{mht:eq:holomorphic-normal-actions}
+ z\mathcal T_0=0,\qquad z\mathcal T_n=\mathcal T_{n-1}\ (n>0),
+ \qquad \partial_z\mathcal T_n=-(n+1)\mathcal T_{n+1}.
+\end{equation}
+For a test holomorphic near zero, with a compact cutoff,
+$\int\mathcal T_n\wedge dz\,f=[z^n]f$.
+These are complex normal residues, not the real Thom
+currents of the preceding section.
+
+For $a>0$ a smooth representative is
+\[
+ c_a(z)=\frac{1-e^{-|z|^2/a}}z,\qquad
+ \mathcal T_{0,a}=\frac{e^{-|z|^2/a}}{2\pi i a}\,d\bar z.
+\]
+The numerator vanishes quadratically at zero, so $c_a$
+extends smoothly. Direct differentiation gives
+$(2\pi i)^{-1}\bar\partial c_a=\mathcal T_{0,a}$.
+Polar integration shows that $\mathcal T_{0,a}\wedge dz$
+has mass one. This fixes a one-source normalization.
+
+The algebraic counterpart is the principal-parts module
+\[
+ \mathcal P_z=\mathbb C[z,z^{-1}]/\mathbb C[z]
+       =\bigoplus_{n\geq0}\mathbb C[z^{-n-1}].
+\]
+Its residue pairing with $\mathbb C[[z]]\,dz$ is continuous
+against the formal topology and separates coefficients.
+Several independent normal coordinates use tensor products
+of these modules. A product of distributions with the same
+normal support is not supplied by this tensor construction.
+
+\section{Supported operations and their normal contraction}
+
+We now keep the entire observable target while resolving
+the normal source differential. Let $(F,Q)$ be a Hausdorff
+locally convex cochain complex with continuous differential.
+No lower degree bound is assumed. Formal coefficient rings
+may be completed coefficientwise.
+
+For $n$ occupied source positions in a complex affine chart
+$V$, define
+\[
+ \mathcal K(V)=C_c^\infty(V)\otimes\Lambda(e_1,\ldots,e_n),
+ \qquad |e_i|=-1,\qquad
+ d_\partial=-\sum_i\iota_{e_i}\partial_{\bar z_i}.
+\]
+The exterior contraction uses the displayed order of the
+markers. An operation is supported on a closed set $Z$
+when it kills every test supported away from $Z$.
+Let $\mathcal O_Z(F)$ be the continuous supported Hom
+complex, with uniform convergence on bounded source sets
+in every target seminorm. Its differential is
+\begin{equation}\label{mht:eq:supported-Hom-differential}
+ \delta A=QA-(-1)^q A d_\partial,
+ \qquad |A|=q.
+\end{equation}
+
+Choose adapted affine coordinates
+$V=D\times W\subset\mathbb C^r_u\times\mathbb C^s_w$,
+where $r+s=n$ and $Z=\{u=0\}$.
+For a partial diagonal, $w_b$ is one representative of
+each block and the other coordinates are $u_i=z_i-w_b$.
+These are source collision normals. A physical normal
+coordinate such as $r$ on $M$ remains inside the target $F$.
+
+For compact $K\Subset W$, use the usual Fr\'echet space
+$C_K^\infty(W)$. The normal jet spaces are
+\begin{align*}
+ \mathcal J_r(W)
+   &=\underset{K\Subset W}{\operatorname{indlim}}
+         \prod_{\mathbf a,\mathbf b\in\mathbb N^r}C_K^\infty(W),\\
+ \mathcal J_r^{\mathrm{hol}}(W)
+   &=\underset{K\Subset W}{\operatorname{indlim}}
+         \prod_{\mathbf a\in\mathbb N^r}C_K^\infty(W).
+\end{align*}
+The products have their product topologies and the compact
+exhaustion gives a strict LF topology. All coefficients
+at one stage have a common compact support. Taylor expansion is
+\[
+ j\kappa=\sum_{\mathbf a,\mathbf b}
+ \frac{\partial_u^{\mathbf a}\partial_{\bar u}^{\mathbf b}
+                    \kappa(0,w)}{\mathbf a!\mathbf b!}
+                     u^{\mathbf a}\bar u^{\mathbf b}.
+\]
+A normal-flat test has every displayed coefficient zero.
+
+\begin{lemma}\label{mht:lem:bounded-normal-jets}
+The Taylor map $j:C_c^\infty(V)\to\mathcal J_r(W)$ is
+continuous and onto. Every bounded jet set has a bounded
+set of smooth lifts. For $r>0$ there is no continuous
+linear right inverse at a fixed nonzero support stage.
+\end{lemma}
+\begin{proof}
+Derivative restriction proves continuity. A bounded jet
+family lies at one support stage. Write $P_l(f;u,w)$
+for the sum of its monomials of total normal degree $l$.
+Choose a normal cutoff $\chi_0$ equal to one near zero.
+For $m<l$, the smooth seminorm through order $m$ of
+$\chi_0(u/\varepsilon)P_l$ is bounded by
+$C_{l,m}\varepsilon^{l-m}$ times finitely many coefficient
+seminorms. Tangential derivatives obey the same estimate.
+
+Choose $\varepsilon_l\downarrow0$ uniformly on the bounded
+family so that this bound is at most $2^{-l}$ for
+$m\leq l/2$, apart from finitely many initial terms.
+The series $\sum_l\chi_0(u/\varepsilon_l)P_l$ converges
+uniformly in every smooth seminorm. It has common compact
+support and the prescribed Taylor coefficients.
+
+A continuous linear right inverse would bound its output
+$C^0$ norm by finitely many seminorms of finitely many
+input coefficients. A jet supported in a coefficient
+outside this finite list would then lift to a function
+with zero $C^0$ norm. This contradicts its nonzero jet.
+\end{proof}
+
+\begin{lemma}\label{mht:lem:supported-jet-factorization}
+Every continuous operation supported on $Z$ factors uniquely
+through normal Taylor jets, componentwise in the markers.
+The resulting identification of Hom spaces preserves the
+bounded-set topologies.
+\end{lemma}
+\begin{proof}
+Let $A$ be supported on $Z$ and $\kappa$ normal-flat.
+Then $A\kappa=A(\chi_0(u/\varepsilon)\kappa)$.
+For each target seminorm, continuity bounds this by
+finitely many test derivatives on a common compact set.
+Normal flatness beats every inverse power of $\varepsilon$
+from the cutoff, so $A\kappa=0$.
+
+The Taylor map at a fixed compact stage is a surjection
+of Fr\'echet spaces. The open mapping theorem makes the
+factor continuous. Passing through the compact exhaustion
+gives the asserted factorization. Conversely, a continuous
+map on jets composed with $j$ is supported on $Z$.
+
+Precomposition with $j$ is continuous on bounded-set Hom
+spaces. For the inverse, lift each bounded jet set by
+Lemma~\ref{mht:lem:bounded-normal-jets}. Taking the supremum
+over these bounded lifts gives exactly the required bound
+in each target seminorm.
+\end{proof}
+
+The quotient is on smooth tests. It does not restrict
+a physical distribution to its own singular support.
+In particular no uniform normal-order bound across all
+target seminorms is required.
+
+Change the odd basis with the affine coordinates and put
+the normal markers first. The jet differential becomes
+\[
+ d=-\sum_{j=1}^r\iota_j\partial_{\bar u_j}
+       -\sum_{j=1}^s\iota_{r+j}\partial_{\bar w_j}.
+\]
+For a partial diagonal, the tangent marker of a block is
+the sum of its original markers. Let $\pi_j$ set
+$\bar u_j=0$, and define formal integration by
+\[
+ S_j(u^{\mathbf a}\bar u^{\mathbf b})
+  =\frac{u^{\mathbf a}\bar u^{\mathbf b+\mathbf e_j}}{b_j+1}.
+\]
+Thus $\partial_{\bar u_j}S_j=1$ and
+$S_j\partial_{\bar u_j}=1-\pi_j$.
+
+For an ordered marker set $B$, set
+\[
+ P_j(f\epsilon_B)=
+ \begin{cases}(\pi_jf)\epsilon_B,&j\in B,\\0,&j\notin B,
+ \end{cases}
+\]
+\[
+ h_j(f\epsilon_B)=
+ \begin{cases}
+ -(-1)^{\#\{i\in B:i<j\}}(S_jf)\epsilon_{B\cup\{j\}},&j\notin B,\\
+ 0,&j\in B.
+ \end{cases}
+\]
+These maps are continuous coefficientwise.
+
+Put
+\[
+ P=P_1\cdots P_r,
+ \qquad h=\sum_{j=1}^rP_1\cdots P_{j-1}h_j.
+\]
+The image $\mathcal E_{r,s}$ of $P$ contains all normal
+markers and only holomorphic normal coefficients. If
+$\nu=\epsilon_1\cdots\epsilon_r$, then
+\[
+ \mathcal E_{r,s}^{-r-k}
+ =\nu\,\mathcal J_r^{\mathrm{hol}}(W)
+       \otimes\Lambda^k(\epsilon_{w_1},\ldots,\epsilon_{w_s}),
+ \qquad d_E=(-1)^r d_w.
+\]
+Let $i$ be inclusion and $p$ projection, so $ip=P$.
+
+\begin{proposition}\label{mht:prop:normal-source-contraction}
+The maps satisfy
+\[
+ pi=1,\qquad dh+hd=1-ip,\qquad h^2=hi=ph=0.
+\]
+They commute with holomorphic source differential operators
+and extension by zero in the tangent variables.
+\end{proposition}
+\begin{proof}
+In one normal direction, integration gives
+$dh_j+h_jd=1-P_j$ and $h_j^2=h_jP_j=P_jh_j=0$.
+Its exterior sign makes $h_j$ anticommute with the
+differential in every other direction. Each $P_j$ commutes
+with all these operators. The telescoping sum gives
+\[
+ dh+hd=\sum_jP_1\cdots P_{j-1}(1-P_j)=1-P.
+\]
+
+In a product of two distinct homotopy summands, the later
+one has a projection in the earlier normal direction.
+This kills the earlier homotopy, in either order.
+The side conditions follow.
+
+Formal antiholomorphic integration and evaluation commute
+with holomorphic multiplication and differentiation.
+All maps preserve common tangent support and act on one
+coefficient at a time. These facts prove the remaining
+continuity and naturality statements.
+\end{proof}
+
+Write $A=\bar A j$ for the jet factor of an operation.
+Give $\operatorname{Hom}_{\mathrm{cont}}(\mathcal E_{r,s},F)$
+the Hom differential induced by $Q,d_E$.
+
+\begin{theorem}\label{mht:thm:normal-operation-contraction}
+There is a continuous cochain deformation retraction
+\[
+ \mathcal O_Z(F)\ \rightleftarrows\
+                   \operatorname{Hom}_{\mathrm{cont}}(\mathcal E_{r,s},F)
+\]
+with maps
+\[
+ \mathbf P(A)=\bar A i,\qquad
+ \mathbf I(B)=Bpj,\qquad
+ \mathbf H(A)=(-1)^q\bar A h j\quad(|A|=q).
+\]
+It is natural in continuous cochain maps on $F$ and in
+the individual holomorphic right differential actions.
+If an operation has normal order at most $N$, projection
+and inclusion preserve that bound and the homotopy lowers
+it to $N-1$. The homotopy vanishes at order zero.
+\end{theorem}
+\begin{proof}
+Taylor factorization identifies the supported space with
+continuous Hom from the jet complex. Precomposition is
+continuous on its bounded-set topology. For degree $q$,
+\[
+ \delta((-1)^qAh)=(-1)^qQAh+Ah d,
+ \qquad
+ (-1)^{q+1}(\delta A)h=(-1)^{q+1}QAh+Adh.
+\]
+Their sum is $A(1-ip)$. The contraction side conditions
+follow by precomposition. The formulas commute with target
+cochain maps and with holomorphic differentiation of tests.
+
+Every term of $h$ raises normal monomial degree by one,
+whereas $i,p$ never lower it. This proves the order bounds,
+also when a bound is fixed only for one target seminorm.
+\end{proof}
+
+For one normal coordinate and scalar target, let $c_{ab}^0$
+and $c_{ab}^1$ extract $[u^a\bar u^b]$ on the unmarked
+and marked component. Then
+\[
+ \delta c_{ab}^0=(b+1)c_{a,b+1}^1,
+ \qquad
+ \mathbf Hc_{ab}^1=b^{-1}c_{a,b-1}^0\quad(b>0).
+\]
+The surviving classes $c_{a0}^1$ have degree one.
+Their densities $\eta_a=(-1)^a\partial_u^a\delta_0/a!$
+obey the right-module rules
+\[
+ \eta_a\partial_u=(a+1)\eta_{a+1},\qquad
+ \eta_a u=\eta_{a-1}\ (a>0),\qquad \eta_0u=0.
+\]
+The positive sign in the right derivative comes from
+precomposition on tests. It is distinct from the left
+distributional derivative in \eqref{mht:eq:holomorphic-normal-actions}.
+
+Formal completion permits increasing normal order.
+For example, $\sum_{j\geq0}\chi^j c_{j0}^1$ is continuous
+coefficientwise in $\chi$. No fixed finite sum of principal
+parts represents it. Such a sum would annihilate every
+sole coefficient $u^{N+1}$ beyond its order $N$, whereas
+this operation returns $\chi^{N+1}$.
+Section~\ref{mht:sec:adic-normal} distinguishes this
+coefficientwise support from ordinary algebraic support.
+
+Let $C_{\mathbf a}:\mathcal E_{r,s}\to\mathcal K(W)$ remove
+$\nu$ and extract its $u^{\mathbf a}$ coefficient.
+It has degree $r$ and satisfies
+$C_{\mathbf a}d_E=(-1)^r d_w C_{\mathbf a}$.
+For any continuous degree-zero cochain map
+$M:\mathcal K(W)\to F$, the operation
+\begin{equation}\label{mht:eq:supported-current-lift}
+ A_{\mathbf a}(M)=MC_{\mathbf a}pj
+\end{equation}
+is a closed element of $\mathcal O_Z^r(F)$.
+Indeed $QM=Md_w$ gives
+$QA_{\mathbf a}=(-1)^rA_{\mathbf a}d_\partial$.
+Coefficient differentiation and multiplication give its
+normal right actions exactly as above.
+
+An augmented target gives a simple nonzero class. Suppose
+$1\in Z^0F$ and a continuous cochain map
+$\varepsilon:F\to\mathbb C$ satisfies $\varepsilon(1)=1$.
+Then
+\[
+ V_Z(\kappa\nu)=\pi^{-s}\int_W
+                    \kappa_{\mathbf0,\mathbf0}(w)\,d^{2s}w\;1
+\]
+and zero on tangent-marker components defines a nonzero
+class of degree $r$. Integration kills compact tangent
+derivatives. After applying $\varepsilon$, the reduced
+Hom complex has no degree below $r$, and $V_Z$ evaluates
+nontrivially on a test of nonzero integral. It cannot be
+a boundary.
+
+When $Z$ has positive codimension, every separated annular
+test vanishes near $Z$, so every supported operation kills
+it. Such tests do not detect this class. The class belongs
+to the occupied source set. The scalar of an empty
+configuration is separate data.
+
+Two adapted charts give two retractions of the same
+supported Hom complex. Their transition is
+$T_{ba}=\mathbf P_b\mathbf I_a$.
+For three charts,
+\[
+ K_{cba}=-\mathbf P_c\mathbf H_b\mathbf I_a,
+ \qquad
+ d_cK_{cba}+K_{cba}d_a=T_{cb}T_{ba}-T_{ca}.
+\]
+This follows by inserting
+$\delta\mathbf H_b+\mathbf H_b\delta=1-\mathbf I_b\mathbf P_b$.
+Taking $c=a$ gives a homotopy inverse. These transitions
+compare normal presentations on the same support, and
+preserve the intrinsic holomorphic right actions.
+
+\section{The tangent complex of the closed field}
+
+The preceding operation model accepts any specified target
+complex. It does not identify different closed theories.
+This distinction already appears in tangent cohomology.
+
+Put $\mathcal O=\mathbb C[[q,p]]$ and
+$V=\mathcal O\otimes\Lambda(\theta_q,\theta_p)$, with
+$|\theta_q|=|\theta_p|=1$ and $\pi=\theta_q\theta_p$.
+Fix the signs
+\begin{align*}
+ \Delta(a\theta_q+b\theta_p)&=a_q+b_p,&
+ \Delta(g\pi)&=g_q\theta_p-g_p\theta_q,\\
+ d_\pi f&=f_p\theta_q-f_q\theta_p,&
+ d_\pi(a\theta_q+b\theta_p)&=(a_q+b_p)\pi.
+\end{align*}
+
+The unspecified extreme components are zero. Direct
+differentiation gives $d_\pi^2=\Delta^2=d_\pi\Delta+\Delta d_\pi=0$.
+Define the fixed symplectic-background tangent complex
+\[
+ C_{\mathrm{symp}}=(V[[u]][2],d_\pi+u\Delta),
+ \qquad |u|=2.
+\]
+The background is fixed before completion. This is not
+evaluation at one of a background parameter completed
+at zero.
+
+For homogeneous coefficient degree $m$ define
+\[
+ Hf=0,\qquad
+ H(a\theta_q+b\theta_p)=\frac{pa-qb}{m+1},\qquad
+ H(g\pi)=\frac{qg\theta_q+pg\theta_p}{m+2}.
+\]
+Apply the formulas termwise to formal series and put
+$p_u(f+a\theta_q+b\theta_p+g\pi)=f(0)-ug(0)$.
+If $i$ includes constants, then
+\begin{equation}\label{mht:eq:fixed-symplectic-contraction}
+ (d_\pi+u\Delta)H+H(d_\pi+u\Delta)=1-ip_u.
+\end{equation}
+
+Indeed $\theta_q\mapsto dp$, $\theta_p\mapsto-dq$ identifies
+the $d_\pi$ part with radial de Rham contraction.
+On functions and vectors, $\Delta H+H\Delta=0$.
+On a positive-degree bivector its two terms cancel, while
+on a constant bivector it is evaluation at zero.
+This gives exactly the term $-ug(0)$ in the projection.
+
+For comparison, use formal mixed jets of the unmodified
+geometric BF fields:
+\[
+ \mathcal A=\mathcal O[[r,s,\bar q,\bar p]]
+       \otimes\Lambda(dr,ds,d\bar q,d\bar p),
+\]
+with the de Rham--Dolbeault differential in the four
+displayed jet variables. Before a normal-support or
+relative-source condition is imposed, its zero-field
+tangent is
+\[
+ C_{\mathrm{BF}}=\mathcal A[[u]][1]\oplus\mathcal A[[u]][2],
+\]
+where $u$ is a spectator. Formal radial integration gives
+a continuous contraction onto
+$\mathcal O[[u]][1]\oplus\mathcal O[[u]][2]$ with zero differential.
+
+\begin{proposition}\label{mht:prop:unchanged-tangent-obstruction}
+The complexes $C_{\mathrm{BF}}$ and $C_{\mathrm{symp}}$
+admit no quasi-isomorphism over $\mathbb C[[u]]$.
+\end{proposition}
+\begin{proof}
+Equation~\eqref{mht:eq:fixed-symplectic-contraction} gives
+$H^\bullet(C_{\mathrm{symp}})=\mathbb C[[u]][2]$.
+Thus its degree $-1$ cohomology is zero. The BF contraction
+gives $H^{-1}(C_{\mathrm{BF}})=\mathcal O$.
+A quasi-isomorphism would identify these groups.
+\end{proof}
+
+A normally supported cone, another background, a quotient
+or extra fields changes this comparison. Such a change
+must be specified with its map. The proposition concerns
+the two unchanged tangent complexes, and gives no
+obstruction to every possible relative closed-field model.
+
+\section{Closed operations with one normal current}
+
+A brane source may fail the closed Maurer--Cartan equation.
+Retaining that failure as curvature gives a precise local
+model.
+
+Work on a complex polydisk with coordinates $(p,q,z)$,
+volume $dp\wedge dq\wedge dz$ and source divisor $D=\{p=0\}$.
+Let $\xi_p,\xi_q,\xi_z$ be odd polyvector generators.
+Antiholomorphic differentials precede them, and every
+exterior generator has degree one. On smooth Dolbeault
+polyvectors define
+\[
+ \bar\partial=\sum_xd\bar x\,\partial_{\bar x},\qquad
+ \Delta=\sum_x\partial_x\partial^L_{\xi_x}.
+\]
+The left odd derivatives include signs from all preceding
+exterior generators. The operators anticommute and square
+to zero.
+
+Let $\mathscr A$ be this smooth graded algebra and
+$\mathscr M$ its module of normal distributions in $p$
+with smooth distribution-valued dependence on $(q,z)$.
+Smooth multiplication and differentiation act on $\mathscr M$.
+Use the square-zero extension
+\[
+ \mathscr B=\mathscr A\ltimes\nu(\mathscr M),\qquad
+ (a+\nu T)(b+\nu S)=ab+\nu(aS+Tb),
+\]
+with graded module signs. The symbol $\nu$ names a second
+summand of degree zero. Its products with itself vanish.
+
+In particular $\nu(1)$ is different from the algebra unit.
+The identity $p\nu(1/p)=\nu(1)$ does not invert $p$ in
+the unital algebra.
+
+Complete in a source parameter $\lambda$ of degree zero
+and a descendant $u$ of degree two. Set
+\[
+ E=\xi_p\xi_q,\qquad
+ C=\nu(p^{-1}\xi_q),\qquad
+ G=\nu(p^{-1}\xi_q\xi_z),\qquad
+ K=\nu(\bar\partial(p^{-1})\xi_q),
+\]
+\[
+ P=E+aG,\qquad a=\sigma\lambda,\qquad \sigma\in\{1,-1\}.
+\]
+The locally integrable function $1/p$ fixes the current.
+With the positive complex orientation,
+\begin{equation}\label{mht:eq:closed-source-residue}
+ \bar\partial(1/p)=\pi\delta_0\,d\bar p,
+ \qquad d(dp/p)=2\pi i\,\delta_0\,dx\wedge dy.
+\end{equation}
+The common $\xi_q$ gives $P^2=0$, and $\Delta P=0$.
+
+On $\mathscr B[[\lambda,u]][2]$ use symmetric Taylor
+operations. Before inserting $P$, let $b_0=0$,
+$b_1=\bar\partial+u\Delta$ and, for $n\geq2$, set
+\begin{equation}\label{mht:eq:closed-descendant-operations}
+ b_n(u^{k_1}x_1,\ldots,u^{k_n}x_n)=
+ \begin{cases}
+ -\dfrac{(n-2)!}{k_1!\cdots k_n!}\Delta(x_1\cdots x_n),
+                  &\sum_i k_i=n-2,\\[3pt]
+ 0,&\text{otherwise}.
+ \end{cases}
+\end{equation}
+Each operation has degree one after the shift.
+They are $\mathbb C[[\lambda]]$-multilinear, but are not
+multilinear over the descendant ring.
+
+\begin{theorem}\label{mht:thm:one-current-curved-operations}
+Translation by $P$ defines a curved $L_\infty$ algebra.
+Its curvature and unary operation are
+\[
+ b_0^P=aK\xi_z,
+ \qquad
+ b_1^Px=\bar\partial x+u\Delta x-\Delta(Px_0),
+ \qquad x=\sum_{k\geq0}u^kx_k.
+\]
+For $n\geq2$, the translated $n$th operation consists of
+\eqref{mht:eq:closed-descendant-operations} and the term
+\[
+ -\frac{(n-1)!}{k_1!\cdots k_n!}\Delta(Px_1\cdots x_n)
+       \quad\text{when }\sum_i k_i=n-1.
+\]
+Restriction of the chart commutes with every operation.
+An operation with one normal-distribution input preserves
+its support, and an operation with two such inputs is zero.
+\end{theorem}
+\begin{proof}
+For smooth compactly supported polyvectors, the classical
+BCOV interaction has Taylor coefficients
+\[
+ I(\mu)=\sum_{m\geq3}\frac1{m!}
+ \sum_{k_1+\cdots+k_m=m-3}
+ \frac{(m-3)!}{k_1!\cdots k_m!}
+              \operatorname{Tr}_\Omega(\mu_{k_1}\cdots\mu_{k_m}).
+\]
+Here $\operatorname{Tr}_\Omega(\gamma)$ is the integral of
+$(\gamma\mathbin{\lrcorner}\Omega)\wedge\Omega$ and vanishes
+outside top total degree. The genus-zero descendant recursion,
+the second-order identity for $\Delta$ and integration by
+parts give its classical master equation.\footnote{K.~Costello
+and S.~Li, \emph{Quantum BCOV theory on Calabi--Yau manifolds
+and the higher genus B-model},
+\href{https://arxiv.org/abs/1201.4501}{arXiv:1201.4501}.
+See Section~2.10, especially Lemma~2.10.2 and its proof.
+The displayed state operators use the contragredient sign
+convention for the nonlinear differential.}
+
+Differentiating once and applying the primary Poisson kernel
+gives \eqref{mht:eq:closed-descendant-operations}.
+The state identities are the signed unshuffle sums
+\[
+ \sum_{I\sqcup J=[n]}\chi(I,J)
+ b_{|J|+1}(b_{|I|}(x_I),x_J)=0.
+\]
+
+For one second-summand input, regularize its coefficient
+in the normal variable. The desired identity is the term
+linear in an auxiliary square-zero parameter in the smooth
+identity. Each term contains derivatives of only one current
+multiplied by smooth functions, so it passes to the
+distributional limit. With two second-summand inputs every
+nested term vanishes, either in the inner operation or
+in the outer one.
+
+Translation of a square-zero formal vector field preserves
+its square. Here the Taylor translation is finite: all
+products with two copies of $P$ vanish. Its constant term
+is $\bar\partial P=aK\xi_z$, and its other terms give
+the stated formulas. Smooth multiplication and differentiation
+preserve distributional support and commute with restriction.
+\end{proof}
+
+The first curved identity is already nontrivial on a
+holomorphic scalar $h(z)$:
+\[
+ b_1^Ph=ah'C,\qquad
+ (b_1^P)^2h=ah'K,\qquad
+ b_2^P(b_0^P,h)=-ah'K.
+\]
+The last equality uses the left odd derivative through
+$d\bar p$. Thus the unary operator on the whole carrier
+is not a differential for $a\ne0$.
+The interaction itself extends to monomials with one
+current by pairing it against compact smooth factors.
+A nondegenerate BV pairing on the entire square-zero
+extension, or a coupled disk action, is additional data.
+
+There is nevertheless a supported subcomplex. Let
+$\mathscr N\subset\mathscr M$ consist of currents supported
+on $D$, locally of bounded finite normal order.
+On $\nu(\mathscr N)[[\lambda,u]]$, the singular part of $P$
+has zero product with every input. The unary operation is
+\[
+ d_E=\bar\partial+u\Delta-\Delta M_E\Pi_0,
+ \qquad \Pi_0x=x_0,
+\]
+where $M_E$ is multiplication by $E$.
+Define $S_ux=(x-x_0)/u$, $A_E=1-M_ES_u$ and
+$Q_E=\bar\partial+[E,-]+u\Delta$, with
+$[E,-]=M_E\Delta-\Delta M_E$.
+
+\begin{proposition}\label{mht:prop:supported-closed-residue}
+The continuous support-preserving conjugations are
+\[
+ d_E=A_EQ_EA_E^{-1},\qquad A_E^{-1}=1+M_ES_u,
+\]
+\[
+ U_E=A_EuA_E^{-1}=u-M_E\Pi_0.
+\]
+The residue $K$ defines a nonzero class for $d_E$.
+Its first transported descendant is exact:
+\begin{equation}\label{mht:eq:closed-residue-descendant}
+ U_EK=uK=d_E(zK\xi_z).
+\end{equation}
+\end{proposition}
+\begin{proof}
+The exterior factors give $M_E^2=M_E\Delta M_E=0$.
+Also $\bar\partial E=0$, $S_uu=1$ and
+$uS_u=1-\Pi_0$. Expanding the two conjugations proves
+the formulas. Hence $U_E$ is a chain map. Ordinary
+multiplication by $u$ need not be one, since
+\[
+ d_E(ux)-u d_Ex=u\Delta(Ex_0).
+\]
+
+To detect $K$, first quotient by positive descendant degree.
+The differential becomes $\bar\partial-\Delta M_E$.
+Next quotient by $\xi_p,\xi_z,d\bar q,d\bar z$.
+This is a quotient complex: a term removing $\xi_z$
+from $Ex$ still has the factor $E$, and $Ex=0$ if
+$x$ already contains $\xi_p$.
+
+Write $e_0=d\bar p$, $e_1=\xi_q$ and represent the
+distribution $\partial_p^i\partial_{\bar p}^j\delta_0$
+by $R^iT^j$. The quotient is
+\[
+ \bigl(C^\infty(D)[R,T]\otimes\Lambda(e_0,e_1)\bigr)[[\lambda]],
+ \qquad d=T e_0-R e_1.
+\]
+The sequence $R,T$ is regular, so its degree-two cohomology
+is $C^\infty(D)[[\lambda]]e_0e_1$. The image of $K$ is
+$\pi e_0e_1$, detected by setting $R=T=0$.
+Thus $K$ was not exact in the original complex.
+
+Finally $\bar\partial K=\Delta K=EK=0$ and
+$\Delta(zK\xi_z)=K$. The other terms of $d_E$ on
+$zK\xi_z$ vanish, proving \eqref{mht:eq:closed-residue-descendant}.
+\end{proof}
+
+The normal orientation retains a boundary term. Let $\chi$
+be a radial cutoff equal to one near $p=0$ and zero near
+the outer circle. For a compact tangential top form $\psi_D$
+of integral one,
+\[
+ \int d\chi\wedge\frac{dp}{p}\wedge\psi_D=-2\pi i.
+\]
+The inner boundary has the opposite of the positive-circle
+orientation. Equation~\eqref{mht:eq:closed-source-residue}
+supplies the corresponding positive supported term.
+Removing the normal divisor would discard this information.
+
+\section{Two sources and collision extensions}
+
+A unit one-source residue does not determine a two-source
+contact. Write $\delta_a(z)=e^{-|z|^2/a}/(\pi a)$ and let
+$\Delta_{\mathbb R^2}=\partial_x^2+\partial_y^2$.
+For $\alpha,\beta>0$, multiplication of the smooth densities gives
+\[
+ \delta_{\alpha s}\delta_{\beta s}
+ =\frac1{\pi(\alpha+\beta)s}
+             \delta_{\alpha\beta s/(\alpha+\beta)}.
+\]
+
+The centered Gaussian has zero odd moments and second
+moments $a/2$ in each real coordinate. Taylor expansion
+through degree three therefore yields
+\begin{equation}\label{mht:eq:two-source-width-contact}
+ \delta_{\alpha s}\delta_{\beta s}
+ =\frac{\delta_0}{\pi(\alpha+\beta)s}
+ +\frac{\alpha\beta}{4\pi(\alpha+\beta)^2}
+                         \Delta_{\mathbb R^2}\delta_0+O(s).
+\end{equation}
+The remainder on a compact smooth test is bounded by a
+constant times $s$ and its fourth-derivative seminorm.
+
+The finite coefficient is $1/(16\pi)$ for equal widths
+and $1/(18\pi)$ for width ratio two. These are scalar
+coefficients after contraction. The calculation does not
+multiply two identical Dolbeault one-forms.
+
+More generally, let $t$ be a distribution on
+$\mathbb R^d\setminus\{0\}$ of finite scaling degree $s$.
+This means that $\lambda^{s'}t(\lambda\,\cdot)$ tends to
+zero distributionally for every $s'>s$.
+For $s\geq d$ put $m=\lfloor s-d\rfloor$ and choose
+$\chi=1$ near zero with compact support. Taylor subtraction is
+\begin{equation}\label{mht:eq:collision-taylor-subtraction}
+ R_\chi t(\varphi)=t\left(\varphi-\chi
+       \sum_{|\nu|\leq m}\frac{x^\nu}{\nu!}
+                                  \partial^\nu\varphi(0)\right).
+\end{equation}
+
+The pairing is the limit after removing a shrinking
+neighborhood of zero. On dyadic annuli, the Taylor remainder
+gives the convergent bound $2^{-j(d+m+1-s')}$ for
+$s<s'<d+m+1$. This proves existence and continuity.
+The rescaled estimate gives scaling degree at most $s$.
+For $s<d$ the same annular estimate requires no subtraction.
+
+Two extensions with this scaling bound differ by
+derivatives of delta of order at most $m$.
+Indeed their difference is supported at zero, and a
+distribution supported at one point has finite derivative
+order. Its highest derivative has scaling degree
+$d+|\nu|$, which gives the bound. In particular
+\[
+ (R_{\chi'}-R_\chi)t(\varphi)
+ =-\sum_{|\nu|\leq m}\frac{\partial^\nu\varphi(0)}{\nu!}
+                          t((\chi'-\chi)x^\nu).
+\]
+For $s<d$ the extension with the stated bound is unique.
+Nested and overlapping collisions still require compatible
+choices on the full collision diagram.
+
+Closedness adds an independent condition. Let
+$Z_0\subset Z_1$ be closed source sets and put
+$V^\circ=V\setminus Z_0$. Suppose $A^\circ$ is a closed
+degree-$q$ operation supported on $Z_1\cap V^\circ$.
+
+\begin{proposition}\label{mht:prop:supported-extension-obstruction}
+If $A^\circ$ has a continuous degree-$q$ extension
+$E\in\mathcal O_{Z_1}(F)$, then
+\[
+ [\delta E]\in H^{q+1}\mathcal O_{Z_0}(F)
+\]
+is independent of the extension. It vanishes exactly
+when there is a closed extension supported on $Z_1$.
+For a linear partial diagonal, its reduced representative
+is $\mathbf P(\delta E)$.
+\end{proposition}
+\begin{proof}
+Restriction is precomposition by extension of compact
+tests by zero and commutes with $\delta$.
+Thus $\delta E$ is supported on $Z_0$ and is closed.
+Two extensions differ by an operation supported on $Z_0$,
+so their differentials differ by a boundary there.
+
+If $\delta E=\delta C$ for a supported degree-$q$
+operation $C$, then $E-C$ is a closed extension.
+Conversely, a closed extension subtracted from $E$ gives
+such a $C$. The normal-operation contraction preserves
+the class and supplies the reduced representative.
+\end{proof}
+
+This cohomology uses the actual image of $\delta$, not
+its topological closure. If the permitted local corrections
+form a subcomplex $\mathcal L\subset\mathcal O_{Z_0}(F)$,
+the chosen $E$ can be corrected only when
+$\delta E\in\delta(\mathcal L^q)$.
+Vanishing in the larger complex need not imply this.
+Existence of a continuous extension is also a hypothesis.
+
+For $n$ occupied positions, shifting the operation complex
+by $[n-1]$ puts the current of an $s$-block partition in
+degree $r-(n-1)=1-s$. A three-position pair-diagonal
+current thus has degree $-1$, while a small-diagonal
+current has degree zero. This permits a homotopy equation
+between them. The degree calculation does not construct
+the homotopy or identify its boundary with a collision defect.
+
+\section{A four-position attachment}
+
+Even a scalar collision coefficient can have several
+cohomology modules joined by a nonzero extension.
+Take $X=\mathbb A^1_{\mathbb C}$ and four labeled positions.
+Let
+\[
+ D=\Delta_{14},\qquad P=\Delta_{13}\cap\Delta_{24},
+ \qquad \Delta=D\cap P,
+ \qquad Z=D\cup P.
+\]
+Here $D$ is a divisor, $P$ a codimension-two surface,
+and $\Delta$ the small diagonal. Work with right algebraic
+differential modules and define the specific coefficient
+\[
+ \mathcal K_4=R\Gamma_Z(\omega_{X^4})[3].
+\]
+
+This is a local-cohomology construction. Identifying it
+with another coefficient system requires a comparison map.
+
+\begin{proposition}\label{mht:prop:four-position-attachment}
+The only cohomology modules of $\mathcal K_4$ are
+\[
+ H^{-2}(\mathcal K_4)=i_{D,*}\omega_D,
+ \qquad
+ H^{-1}(\mathcal K_4)=i_{P,*}\omega_P(*\Delta).
+\]
+The resulting extension is nonzero. Its class spans
+\[
+ \operatorname{Ext}^2_{\mathcal D_{X^4}}
+       (i_{P,*}\omega_P(*\Delta),i_{D,*}\omega_D)
+       \cong\mathbb C.
+\]
+It is the principal part along $\Delta$ in $P$, followed
+by the codimension-two local-cohomology boundary in $D$.
+\end{proposition}
+\begin{proof}
+Use coordinates $a=x_1-x_4$, $b=x_1-x_3$,
+$c=x_2-x_4$, $w=x_4$. Then $D=(a)$, $P=(b,c)$
+and $\Delta=(a,b,c)$. The localization triangle for the
+pair $D\subset Z$ is
+\[
+ R\Gamma_D\omega\longrightarrow R\Gamma_Z\omega
+ \longrightarrow R\Gamma_P(\omega[a^{-1}])
+ \longrightarrow R\Gamma_D\omega[1].
+\]
+The first term has cohomology in degree one and the third
+in degree two. Their regular normal sequences give the
+two displayed modules after the shift by three.
+
+To compute the connecting class, tensor with the inverse
+density and use left differential modules in these coordinates.
+In one variable, write $O=\mathbb C[x]$ and
+$M=\mathbb C[x,x^{-1}]/\mathbb C[x]$.
+The two-term differential-module resolution of $M$ by
+right multiplication by $x$ gives
+$\operatorname{Hom}_{\mathcal D}(M,O)=0$ and
+$\operatorname{Ext}^1_{\mathcal D}(M,O)=\mathbb C$.
+The latter is detected by evaluation modulo $x$.
+
+Also $\operatorname{Hom}_{\mathcal D}(O[x^{-1}],M)$
+is a line generated by the principal part. A map from
+$O$ to $M$ must send $1$ to a vector killed by
+$\partial_x$. Differentiation is injective on $M$, so
+that map is zero. Every map therefore factors through
+the principal-part quotient, whose differential-module
+endomorphisms are scalars.
+
+In the $a$ direction the connecting map is this principal
+part. In the $b,c$ directions it is the tensor product
+of the two nonzero degree-one extension classes.
+The $w$ direction has the identity of $O_w$.
+The tensor-product resolutions therefore give the stated
+one-dimensional Ext group. The localization boundary
+has coefficient one in each factor, so its class is nonzero.
+A direct sum of the shifted cohomology modules would
+have zero connecting class.
+\end{proof}
+
+The crossing module has poles along the small diagonal.
+Keeping only regular coefficients on $P$ loses its
+principal-part boundary. Keeping the two cohomology modules
+but discarding their attachment also changes $\mathcal K_4$.
+A supported operation comparison must preserve both pieces
+and the connecting map.
+
+\section{A relative polar source algebra}
+
+The square-zero closed carrier and principal parts have
+different source products. There is a simple reason not
+to multiply all normal currents in an ordinary unital algebra.
+If a central element $z$ has an inverse $c$ with $zc=1$
+and annihilates $\delta$, then
+\[
+ \delta=(cz)\delta=c(z\delta)=0.
+\]
+Thus a nonzero source satisfying $z\delta=0$ cannot
+coexist with that central inverse. A relative operator
+algebra retains the source by making the inverse one-sided.
+
+On $\mathcal P_z$ write $e_n=[z^{-n-1}]$ and define
+\[
+ Le_0=0,\qquad Le_n=e_{n-1}\ (n>0),\qquad Se_n=e_{n+1}.
+\]
+Let $P_0$ project onto $e_0$. Then $LS=1$ and
+$SL=1-P_0$. The algebra $\mathcal T$ generated by $L,S$
+has finite-matrix ideal
+\[
+ \mathcal F=\bigoplus_{i,j\geq0}\mathbb C E_{ij},
+ \qquad E_{ij}=S^iP_0L^j,
+ \qquad E_{ij}E_{kl}=\delta_{jk}E_{il}.
+\]
+Here finite matrices are matrices with finitely many
+nonzero entries in this basis. They are not all
+finite-rank endomorphisms of an algebraic direct sum.
+
+The symbol sequence is exact:
+\begin{equation}\label{mht:eq:polar-symbol-extension}
+ 0\longrightarrow\mathcal F\longrightarrow\mathcal T
+ \xrightarrow{\sigma}\mathbb C[\zeta,\zeta^{-1}]
+ \longrightarrow0,
+ \qquad \sigma(S)=\zeta,\quad\sigma(L)=\zeta^{-1}.
+\end{equation}
+Indeed $LS=1$ reduces every word to $S^iL^j$.
+Repeated use of $SL=1-P_0$ expresses it as a Laurent
+lift plus a finite matrix. A nonzero Laurent symbol
+acts on all sufficiently high basis vectors and cannot
+be a finite matrix. This proves exactness and faithfulness
+of the shift presentation.
+
+For $N\geq1$, the projector
+\[
+ \Pi_N=1-S^NL^N=[L^N,S^N]=\sum_{i=0}^{N-1}E_{ii}
+\]
+has corner $\Pi_N\mathcal T\Pi_N\cong\operatorname{Mat}_N$,
+with corner unit $\Pi_N$ and trace $N$.
+The trace pairing is perfect since $E_{ij}$ pairs with
+$E_{ji}$. At rank two,
+$\operatorname{Tr}([E_{01},E_{10}]^2)=2$.
+Diagonal projection kills both inserted matrix units and
+gives zero, despite preserving the trace of the unit.
+
+Choose $T_{\zeta^a}=S^a$ for $a\geq0$ and
+$T_{\zeta^{-b}}=L^b$ for $b>0$. The contact is
+$c(f,g)=T_fT_g-T_{fg}\in\mathcal F$.
+For $a,b>0$,
+\begin{equation}\label{mht:eq:polar-section-contact}
+ c(\zeta^a,\zeta^{-b})
+   =-\sum_{j=\max(0,b-a)}^{b-1}E_{j+a-b,j}.
+\end{equation}
+The product $S^aL^b$ kills $e_j$ for $j<b$.
+Its Laurent lift differs exactly at the indices in the
+sum, proving the formula. Reverse-order and same-sign
+monomial contacts vanish.
+
+Associativity gives the full
+factor identity
+\[
+ T_fc(g,h)-c(fg,h)+c(f,gh)-c(f,g)T_h=0.
+\]
+For example, $c(\zeta^3,\zeta^{-2})=-E_{10}-E_{21}$.
+
+The finite-matrix trace gives
+\begin{equation}\label{mht:eq:polar-residue-transgression}
+ \operatorname{Tr}_{\mathcal F}[T_f,T_g]
+       =\operatorname{Res}_{\zeta=0}f\,dg=:\omega(f,g).
+\end{equation}
+For monomials $f=\zeta^a$, $g=\zeta^b$, a nonzero
+trace requires $a+b=0$ and has value $b$.
+These are exactly the residue coefficients.
+Changing a lift by a finite matrix changes its commutator
+by terms of trace zero. Antisymmetry and the product
+rule show that $\omega$ is a cyclic one-cocycle.
+No cyclic trace on all of $\mathcal T$ can extend this
+trace, since $[L,S]=P_0$ has trace one.
+
+Every element is uniquely $T_f+F$. Define
+$\widetilde\tau(T_f+F)=\operatorname{Tr}_{\mathcal F}F$.
+With the bare scalar Hochschild differential,
+\[
+ b\widetilde\tau=\sigma^*\omega.
+\]
+The finite-matrix cross commutators have zero trace,
+and \eqref{mht:eq:polar-residue-transgression} gives the
+remaining term. Consequently $(\widetilde\tau,\omega)$
+is closed in the relative cyclic complex with differential
+\[
+ d(\tau,\gamma)=(b\tau-\sigma^*\gamma,-b\gamma).
+\]
+Its degree-$n$ term is
+$C^n_\lambda(\mathcal T)\oplus C^{n+1}_\lambda
+(\mathbb C[\zeta,\zeta^{-1}])$, where cyclic cochains
+obey $\phi(a_n,a_0,\ldots,a_{n-1})=(-1)^n\phi(a_0,\ldots,a_n)$.
+
+Normal derivatives also act on $\mathcal P_z$:
+$\partial_z e_n=-(n+1)e_{n+1}$ and $[\partial_z,L]=1$.
+Adjoining this operator enlarges $\mathcal T$.
+Independent normal directions use tensor products, and
+their contacts compose as operators. Since $P_0^2=P_0$,
+no product-preserving map can send a square-zero source
+to $P_0$. The native action must determine which source
+product its collisions realize.
+
+The one-sided inverse also gives a homotopy obstruction.
+Let $D$ be a unital dg algebra with closed $S,L$ in
+degree zero, $LS=1$, $SL=1-e$. Suppose $eDe$ has a
+closed degree-zero functional $\tau$ with $\tau(e)=1$.
+Require the cohomology images $\zeta\mapsto S$, $\zeta^{-1}\mapsto L$.
+There is no such cochain map from the Laurent algebra to $D$
+that is unital and multiplicative up to homotopy.
+
+To prove this, write
+$F_1(1)=1+dh_0$, $F_1(\zeta)=S+dx$ and
+$F_1(\zeta^{-1})=L+dy$.
+If $dH(a,b)=F_1(a)F_1(b)-F_1(ab)$, then
+\[
+ h=-H(\zeta,\zeta^{-1})-h_0+xL+Sy+x\,dy
+ \quad\text{satisfies}\quad dh=e.
+\]
+The closed idempotent gives $d(ehe)=e$ inside the corner.
+Applying $\tau$ would give $1=0$. This obstruction retains
+the prescribed generators and corner detector. It does
+not exclude a relative comparison such as the cyclic
+pair above.
+
+\section{The joint source and quantum comparison}
+
+The coupled classical theory admits more loops than its
+pure cotangent sector. In a connected graph, let $v_B$
+be the number of bulk vertices, $v_C$ coupling vertices
+and $v_O$ open cubic vertices. If $b$ cotangent and $a$
+open legs are external, then
+\[
+ e_B=v_B-b,\qquad e_A=\frac{2v_C+3v_O-a}{2},\qquad
+ b_1=1-b+\frac{v_O-a}{2}.
+\]
+Two open cubic vertices joined by three propagators
+already have two loops. Any vanishing of their weight
+requires a geometric calculation.
+
+In a finite BV algebra, or on a specified renormalized
+domain where every term is defined, write
+$I=I_0+\hbar I_1+\hbar^2I_2+\cdots$.
+Suppose $I_0$ solves the classical master equation and
+put $Q_{I_0}=Q+\{I_0,-\}$. The quantum equation gives
+\begin{align}
+ Q_{I_0}I_1&=-\Delta I_0,\notag\\
+ Q_{I_0}I_n&=-\Delta I_{n-1}
+       -\tfrac12\sum_{a=1}^{n-1}\{I_a,I_{n-a}\},\qquad n\geq2.
+       \label{mht:eq:coupled-supported-QME}
+\end{align}
+The BV identities make the next right side closed once
+the preceding equations hold. A solution requires its
+primitive in the permitted local cyclic complex, including
+its normal support and boundary conditions.
+
+If a finite regularization realizes the change of variables
+in \eqref{mht:eq:surviving-cyclic-cubic} canonically, its
+triangular matrix has identity diagonal and Berezinian one.
+It preserves the finite BV measure and Laplacian.
+Quantum master solutions for the separated open sector
+and the bulk sector with its residual cubic therefore
+pull back to a coupled solution. This implication requires
+both separated solutions. It does not construct a
+continuum regulator or its allowed counterterms.
+
+A source comparison must retain its homotopy as well.
+For cochain maps $f:L_{\mathrm{nat}}\to L$ and
+$g:L_{\mathrm{cyc}}\to L$, the joint tangent complex is
+\[
+ \mathcal P^n=L_{\mathrm{nat}}^n\oplus L_{\mathrm{cyc}}^n
+                      \oplus L^{n-1},
+ \qquad
+ D(a,b,h)=(da,db,f(a)-g(b)-dh).
+\]
+The two cochain-map identities give $D^2=0$.
+The component $h$ is the comparison homotopy.
+
+For nonlinear deformation theory, use the path-object
+homotopy pullback of the dg Lie algebras. The linear
+cone alone supplies no Lie bracket. In the deformation
+complex, the next Maurer--Cartan obstruction has degree two.
+
+\begin{problem}\label{mht:qn:native-supported-source}
+Fix the polar action, its Neumann boundary domain and
+its normal lattice. Construct a map from independently
+defined sourced closed fields to continuous cyclic
+operations of the open fields. Determine the
+permitted normal markings and structured homotopies from
+these physical data. Match the quadratic pair, first
+ghost descendants, unit, support and cyclic pairing.
+
+Extend the map to simultaneous source insertions and
+all supported collision and sewing operations. Preserve
+the four-position attachment and identify the image of
+the allowed local counterterms in the supported operation
+complex. For a quantum comparison, construct a common
+regulator and solve \eqref{mht:eq:coupled-supported-QME}.
+\end{problem}
+
+The real internal defect, the holomorphic normal source
+and a spectral brane have independently specified supports.
+The cyclic cap and the scalar relative models give
+constructions on their stated domains. Their identification
+with the full sourced closed multiplet is the additional
+map required by the problem.
+
+\section{Completion in one normal direction}
+\label{mht:sec:adic-normal}
+
+Increasing normal order is compatible with formal coefficients,
+but changes what it means for a coefficient to be supported.
+We isolate this issue in one algebraic normal direction.
+The resulting reconstruction and convolution have explicit
+maps. Their comparison with the sourced fields of
+Problem~\ref{mht:qn:native-supported-source} remains separate.
+
+Put $R=\mathbb C[[\hbar]]$ and $R_r=R/(\hbar^r)$.
+Here $\hbar$ is a coefficient parameter independent of
+the normal coordinate $u$. Let
+\[
+ D_R=R\langle u,\partial\rangle/(\partial u-u\partial-1),
+ \qquad P_R=R[u,u^{-1}]/R[u].
+\]
+
+We use right differential modules. In the density basis
+$\beta_m=[u^{-m-1}]$, their normal actions are
+\[
+ \beta_0u=0,\qquad \beta_mu=\beta_{m-1}\quad(m>0),
+ \qquad \beta_m\partial=(m+1)\beta_{m+1}.
+\]
+Thus $P_R=D_R/uD_R$, with a free right-module resolution
+\begin{equation}\label{mht:eq:normal-free-resolution}
+ [D_R\xrightarrow{L_u}D_R]_{[-1,0]}\longrightarrow P_R.
+\end{equation}
+The map $L_u$ is left multiplication by $u$.
+The shift convention is $X[s]^i=X^{i+s}$.
+
+Work in the derived category of right $D_R$-modules.
+For a complex $X$, set
+\[
+ X_r=X\otimes_R^{\mathbb L}R_r,
+ \qquad \Lambda X=\mathbf R\varprojlim_r X_r.
+\]
+Ordinary open restriction $X[u^{-1}]$ localizes its underlying
+$R[u]$-complex and retains the induced differential action.
+It is exact.
+
+We call $X$ \emph{derived adically supported}
+if $X_r[u^{-1}]\simeq0$ for every $r$.
+Let $\mathcal C_\hbar$ be the full category of such complexes
+for which $X\to\Lambda X$ is an equivalence, and let
+$\mathcal G_\hbar$ be the category of derived-complete
+$R$-complexes. Neither category has a boundedness condition.
+There is no completion in $u$.
+
+\begin{lemma}\label{mht:lem:normal-completion-precision}
+The completion map induces
+$(\Lambda X)_r\simeq X_r$ for every complex $X$ and every $r$.
+Moreover,
+\[
+ X_r[u^{-1}]\simeq0\ \text{for all }r
+ \quad\Longleftrightarrow\quad X_1[u^{-1}]\simeq0
+ \quad\Longleftrightarrow\quad\Lambda(X[u^{-1}])\simeq0.
+\]
+Completion preserves derived adic support.
+\end{lemma}
+\begin{proof}
+The perfect scalar complex $[R\xrightarrow{\hbar^r}R]$
+computes $R_r$, so its tensor commutes with homotopy limits.
+Put $Y=X_r$. For $n\geq r$, the resolution computing
+$Y\otimes_R^{\mathbb L}R_n$ has zero differential in its
+two-term resolution direction. Its transition is the identity
+on the degree-zero term and multiplication by $\hbar$
+on the degree-minus-one term.
+
+The second tower has zero composite after $r$ transitions.
+In the product model for its homotopy limit, $1-\mathrm{shift}$
+has the finite geometric-series inverse. That limit vanishes,
+while the first tower has limit $Y$. This proves the assertion
+about the natural completion map, also for unbounded $X$.
+
+Put $N=X[u^{-1}]$. Exact localization commutes with
+tensoring by $R_r$. The condition $N_1\simeq0$ says that multiplication
+by $\hbar$ is an equivalence on $N$. It is equivalent to
+$N_r\simeq0$ for all $r$, and hence to $\Lambda N\simeq0$
+by the first assertion. Applying that assertion again proves
+preservation of support.
+\end{proof}
+
+For an $R$-flat module, the support condition is equivalent to
+\[
+ \text{for every }v\text{ and }r\text{ there is }N
+             \text{ such that }vu^N\in\hbar^rX.
+\]
+For a general complex the condition concerns all cohomology
+of the derived reductions, including their Tor terms.
+Ordinary quotient modules alone do not supply that condition.
+
+\begin{example}\label{mht:ex:completed-principal-parts}
+The completion of $P_R$ is the flat module
+\[
+ \widehat P_R=
+ \left\{\sum_{m\geq0}a_m\beta_m:
+       a_m\in R,\ a_m\longrightarrow0\ \hbar\text{-adically}\right\}.
+\]
+Its reduction is $P_{R_r}$, so it lies in $\mathcal C_\hbar$.
+Nevertheless it has nonzero ordinary open restriction.
+Indeed
+\[
+ p=\sum_{m\geq0}\hbar^m\beta_m
+ \qquad\text{satisfies}\qquad pu=\hbar p,
+\]
+and no power of $u$ kills $p$.
+
+More precisely, its $u$-torsion is exactly $P_R$.
+Lowering is surjective, so
+$\widehat P_R[u^{-1}]=\widehat P_R/P_R$.
+Multiplication by $\hbar$ is invertible on this quotient.
+Subtract a finite representative modulo $\hbar$ and divide
+to prove surjectivity. Finite support proves injectivity.
+The open quotient is therefore nonzero but
+has zero derived completion.
+
+Any complete complex with the specified compatible reductions
+$P_{R_r}$ is their derived inverse limit $\widehat P_R$.
+Consequently this tower has no complete realization with
+ordinary $u$-support. Its derived adic realization exists.
+\end{example}
+
+Completion is left adjoint to the inclusion of complete
+complexes. Taking the inverse limit of the multiplication
+triangles gives
+\[
+ T(X)\longrightarrow X\longrightarrow\Lambda X,
+ \qquad T(X)=\mathbf R\varprojlim(\cdots\xrightarrow{\hbar}X
+                                      \xrightarrow{\hbar}X).
+\]
+Multiplication by $\hbar$ is invertible on $T(X)$.
+Maps from such a complex to a complete complex vanish:
+after reduction the same scalar action is both invertible
+and nilpotent on the mapping complex. This proves the
+stated adjunction.
+
+\subsection{Reconstruction from the normal ground}
+
+Define induction and restriction by
+\[
+ I(E)=\Lambda(P_R\otimes_R^{\mathbb L}E),
+ \qquad K(M)=\operatorname{RHom}_{D_R}(P_R,M).
+\]
+Resolution~\eqref{mht:eq:normal-free-resolution} computes
+$K(M)$ as $[M\xrightarrow{\cdot u}M]$ in normal degrees
+$0,1$. This arrow is $R$-linear, without right
+$D_R$-linearity.
+
+\begin{theorem}\label{mht:thm:adic-normal-reconstruction}
+The adjunction maps give inverse equivalences
+\[
+ I:\mathcal G_\hbar\ \rightleftarrows\
+                       \mathcal C_\hbar:K.
+\]
+No flatness or finite-rank hypothesis on the scalar complex
+is required.
+\end{theorem}
+\begin{proof}
+Let $B$ be a commutative complex algebra. Write $D_B,P_B$
+for the normal algebra and module over $B$, and put
+$K_B(V)=\operatorname{RHom}_{D_B}(P_B,V)$.
+First suppose $V$ is a module with locally nilpotent $u$-action.
+The finite Taylor projector is
+\[
+ \pi(v)=\sum_{j\geq0}\frac{(-1)^j}{j!}(vu^j)\partial^j.
+\]
+The identity $\partial^ju=u\partial^j+j\partial^{j-1}$
+gives $\pi(v)u=0$. With $E=\ker u$, define
+\[
+ P_B\otimes_B E\longrightarrow V,
+ \qquad \beta_m\otimes e\longmapsto e\partial^m/m!.
+\]
+
+It respects both right actions. Applying the highest power
+of $u$ in a finite relation proves injectivity.
+Surjectivity follows from
+\[
+ v=\sum_{m\geq0}\frac{\pi(vu^m)\partial^m}{m!}.
+\]
+On expansion, the coefficient in total degree $l$ is
+$\sum_{j=0}^l(-1)^j/(j!(l-j)!)$, equal to zero for $l>0$
+and one for $l=0$. In particular, $u:V\to V$ is surjective.
+
+Now suppose the cohomology of a complex $V$ is locally
+$u$-nilpotent. The two-term restriction complex gives
+$H^qK_B(V)=\ker(u:H^qV\to H^qV)$, because the preceding
+cokernel vanishes. Since $P_B$ is free over $B$, the
+preceding module calculation proves that evaluation
+$P_B\otimes_B^{\mathbb L}K_B(V)\to V$ is an equivalence.
+The unit is an equivalence because $u:P_B\to P_B$ is a
+split scalar surjection with kernel $B\beta_0$.
+
+Apply this argument over $B=R_r$. The finite free resolution
+gives $K(M)_r\simeq K_r(M_r)$ and
+$K(\Lambda M)\simeq\Lambda K(M)$.
+Thus $K$ preserves completeness, and the reductions of
+$I(E)$ are $P_{R_r}\otimes_{R_r}^{\mathbb L}E_r$.
+The unit and counit are equivalences at every precision.
+Both sides are complete, so they are equivalences before
+reduction as well.
+\end{proof}
+
+For a complete differential-module complex $X$, evaluation
+$IK(X)\to X$ is consequently right adjoint to the inclusion
+of $\mathcal C_\hbar$. Limits taken in this supported
+category are
+\[
+ \varprojlim_{\mathcal C_\hbar}M_i
+       \simeq I\bigl(\mathbf R\varprojlim_i K(M_i)\bigr).
+\]
+They need not agree with ambient differential-module limits.
+
+\subsection{Additive convolution and relative tensors}
+
+The normal carrier has a geometric operation defined before
+using the equivalence. Let $a(x,y)=x+y=t$ and let $a_+$ be
+right differential-module direct image, computed by the
+relative de Rham complex. Set
+\[
+ M*_+N=\Lambda a_+(M\boxtimes_R^{\mathbb L}N),
+ \qquad E\widehat\otimes_R F=\Lambda(E\otimes_R^{\mathbb L}F).
+\]
+The second operation makes $\mathcal G_\hbar$ symmetric
+monoidal: the kernel of completion consists of the
+$\hbar$-invertible complexes and is a tensor ideal.
+
+\begin{proposition}\label{mht:prop:adic-normal-convolution}
+There is a natural equivalence
+\[
+ I(E)*_+I(F)\simeq I(E\widehat\otimes_R F).
+\]
+It makes $I$ a symmetric monoidal equivalence, with
+convolution unit $\widehat P_R$.
+\end{proposition}
+\begin{proof}
+At precision $r$, change coordinates to $t=x+y$, $s=y$.
+This identifies the normal distribution module
+$P_{x,R_r}\boxtimes P_{y,R_r}$ with
+$P_{t,R_r}\boxtimes P_{s,R_r}$.
+The relative de Rham complex is
+\[
+ [P_{s,R_r}\xrightarrow{\partial_s}P_{s,R_r}]_{[-1,0]}.
+\]
+Its differential sends $\beta_m$ to $(m+1)\beta_{m+1}$.
+It is injective, with free cokernel $R_r\beta_0$ and a
+scalar splitting. Hence the direct image is $P_{t,R_r}$,
+with no shift, also after tensoring with arbitrary scalar
+complexes.
+
+The coordinate change sends
+\[
+ \beta_i(x)\beta_j(y)\longmapsto
+       \sum_{k=0}^j\binom{i+k}{k}
+                       \beta_{i+k}(t)\beta_{j-k}(s).
+\]
+Relative de Rham projection therefore gives
+$\binom{i+j}{i}\beta_{i+j}(t)$.
+The multinomial identity gives the same result for three
+inputs in either order. Addition and iterated relative
+de Rham complexes supply the coherent associativity and
+symmetry maps. The origin inclusion supplies the unit.
+
+Scalar reduction commutes with these complexes.
+Lemma~\ref{mht:lem:normal-completion-precision} shows that
+completing the inputs changes none of their reductions.
+The comparison is an equivalence at each precision.
+Completion proves the assertion.
+\end{proof}
+
+Let $B$ be an associative algebra in $\mathcal G_\hbar$,
+with a right module $E$ and a left module $F$.
+Transporting their actual actions through the equivalence
+and realizing the two-sided bar gives
+\begin{equation}\label{mht:eq:normal-relative-convolution}
+ I(E)*_{I(B)}^{\mathbb L}I(F)
+       \simeq I\bigl(\Lambda(E\otimes_B^{\mathbb L}F)\bigr).
+\end{equation}
+Indeed the bar terms correspond under the monoidal
+equivalence, including every face and degeneracy.
+Colimits in the complete scalar category are completed
+ambient colimits. This proves the formula and support
+of the result without a flatness assumption.
+
+Flatness itself is not preserved. Take
+$B=\widehat{R[t]}^{\,(\hbar)}$, the series with coefficients
+tending to zero, and the two complete flat character
+modules $E_0=R$, $E_\hbar=R$ with $t=0,\hbar$.
+The free resolution of $E_0$ has differential $t$, so
+\[
+ E_0\otimes_B^{\mathbb L}E_\hbar
+       =[R\xrightarrow{\hbar}R]_{[-1,0]}
+       \simeq R/(\hbar).
+\]
+At precision $r$, this complex has both
+$H^{-1}=\mathbb C\hbar^{r-1}$ and $H^0=\mathbb C$.
+Both remain supported after normal induction.
+A flat-only coefficient class would lose this relative tensor.
+
+Two other operations have different output types.
+Write $(-)^t$ for transpose under
+$u\mapsto u$, $\partial\mapsto-\partial$. Then
+\[
+ \Lambda\bigl(I(E)\otimes_{D_R}^{\mathbb L}I(F)^t\bigr)
+       \simeq(E\widehat\otimes_R F)[1],
+ \qquad
+ \operatorname{RHom}_{D_R}(I(E),I(F))
+       \simeq\operatorname{RHom}_R(E,F).
+\]
+For the first formula, the normal resolution gives the
+surjective map $u:P_{R_r}^t\to P_{R_r}^t$ in degrees
+$-1,0$, with kernel $R_r$. The second is full faithfulness.
+
+Both outputs are scalar complexes. Neither retains a
+normal coordinate on which to impose support.
+
+\subsection{Products, duality and the class of tests}
+
+\begin{proposition}\label{mht:prop:normal-product-failure}
+The ambient product $W=\prod_{i\geq0}\widehat P_R$ is
+flat and complete, but is not derived adically supported.
+\end{proposition}
+\begin{proof}
+It is torsion-free over the discrete valuation ring $R$,
+hence flat. Componentwise division and inverse limits give
+$W/\hbar^rW=\prod_iP_{R_r}$ and completeness.
+In its special fiber, let $e=(\beta_i)_{i\geq0}$.
+For every $N$, coordinate $i=N$ of $eu^N$ is $\beta_0$.
+Thus no power of $u$ kills $e$, and $W_1[u^{-1}]\ne0$.
+\end{proof}
+
+The product inside $\mathcal C_\hbar$ is instead
+$U=I(R^{\mathbb N})$. In coefficients $a_{i,m}$ its
+inclusion into $W$ imposes
+\[
+ \text{for every }r\text{ there is }M_r\text{ such that }
+ a_{i,m}\in\hbar^rR\quad\text{for all }i\text{ and }m\geq M_r.
+\]
+The ambient product permits the mode bound to depend on $i$.
+The diagonal family above detects the nonzero quotient $L=W/U$.
+
+This inclusion is $\hbar$-saturated, so $L$ is flat. As a
+cofiber of complete complexes it is derived complete.
+Lowering is surjective on $U$ and $W$, with the same kernel
+$R^{\mathbb N}\beta_0$. Hence $u$ is invertible on $L$ and
+\[
+ K(L)=0,\qquad\operatorname{RHom}_{D_R}(D_R,L)=L\ne0.
+\]
+The normal ground misses a quotient that the free
+differential-module test detects.
+
+Define the ordinary normalized coefficient dual with
+complete target by
+\[
+ \mathbb D_\hbar(M)=
+       \operatorname{RHom}_{D_R}(M,\widehat D_R)^t[1],
+ \qquad \widehat D_R=\Lambda D_R.
+\]
+The shift is the dimension-one normalization.
+This dual takes values in ordinary differential modules.
+
+\begin{proposition}\label{mht:prop:normal-realized-dual}
+The flat supported complete module
+$M=\Lambda(\bigoplus_{i\geq0}P_R)$ has
+$\mathbb D_\hbar(M)\simeq W$, which is not supported.
+If $E$ is perfect over $R$, then
+\[
+ \mathbb D_\hbar(I(E))\simeq I(E^\vee),
+ \qquad E^\vee=\operatorname{RHom}_R(E,R).
+\]
+\end{proposition}
+\begin{proof}
+Dualizing~\eqref{mht:eq:normal-free-resolution} gives
+$[\widehat D_R\xrightarrow{R_u}\widehat D_R]$ in degrees
+$0,1$. Here $R_u$ is right multiplication by $u$, a
+left-module map. In the PBW order $\partial^ju^i$, it
+is an injective shift of $i$, with cokernel
+$\widehat P_R^t$. Thus the normalized dual of $P_R$
+is $\widehat P_R$.
+
+The complete target allows removal of source completion
+inside this derived Hom. Mapping out of the direct sum
+gives $W$. The source $M$ is flat, and its reductions
+$\bigoplus_iP_{R_r}$ are supported. The preceding
+proposition proves the failure for its dual.
+For perfect $E$, finite projective evaluation commutes
+with this calculation and introduces no infinite product.
+It gives the second formula.
+\end{proof}
+
+Keeping the finite-sum duals as a pro diagram preserves
+their support. It cannot be replaced by an ordinary
+supported realization preserving every perfect test.
+Indeed, already over $k=\mathbb C$, such a realization
+$Z$ would have natural equivalences
+\[
+ \operatorname{RHom}_{D_k}(F,Z)\simeq
+ \mathbf R\varprojlim_n
+             \operatorname{RHom}_{D_k}(F,P_k^{\oplus n})
+ \qquad(F\text{ perfect}).
+\]
+
+The free test $F=D_k$ identifies its underlying complex
+with $\prod_iP_k$, concentrated in degree zero.
+Naturality under the endomorphisms $L_d$ of $D_k$
+recovers the right $D_k$-action. The diagonal family
+then contradicts support. Restricting to supported tests
+would change this requirement: over $R$ they do not detect
+$L$, and over $k$ they do not detect its reduction.
+
+Perfect scalar grounds also need a relative finiteness
+condition if relative tensors are allowed. For
+$B=R[\epsilon]/(\epsilon^2)$ and the character module
+$R=B/(\epsilon)$, the free resolution has differential
+$\epsilon$ at every step. Tensoring with $R$ makes all
+differentials zero. Consequently
+$H^{-n}(\Lambda(R\otimes_B^{\mathbb L}R))=R$ for every
+$n\geq0$, although each input is scalar-perfect.
+The output remains supported after induction but is no
+longer scalar-perfect.
+
+These calculations specify an algebraic normal model with
+reconstruction and additive convolution, together with
+its limits of closure. Identifying this convolution with
+boundary fusion requires the geometric correspondence,
+tangential factors, unit and supported collision maps.
+Its unit $\widehat P_R$, the scalar unit $R$, the operator
+unit $1\in D_R$ and a prepared physical state have distinct
+roles. The physical comparison must also decide which
+probes are allowed: retaining a pro diagram and taking
+its supported limit preserve different test functors.

@@ -1,0 +1,447 @@
+\chapter{Angular cutoffs and smooth limits}
+\label{mht:ch:angular-cutoffs}
+
+The finite reductions of Chapter~\ref{mht:ch:finite-reductions}
+preserve the cyclic pairing. To remove the cutoff, their projections
+must also approximate smooth fields with controlled norms. On the
+round sphere the polar pairing determines such a family. Its rotation
+weights pair to one, so a symmetric harmonic cutoff omits the partners
+of its highest modes. Retaining one additional band restores the
+pairing and gives uniform estimates for each fixed higher operation.
+
+\section{Rotation weights and the Green polarization}
+
+Keep the round-sphere representative
+\[
+ f_0=\frac{z}{1+|z|^2},\qquad
+ \eta_0=d_Ef_0=-\frac{z^2}{(1+|z|^2)^2}d\bar z
+\]
+and the circular polar trace of
+Chapter~\ref{mht:ch:polar-neumann}. The scalar cyclic projection is
+the spherical mean:
+\begin{equation}\label{mht:eq:angular-mean}
+ p_0(f)=\int_{S^2}f\,d\mu,
+ \qquad d\mu=\frac{dx\,dy}{\pi(1+|z|^2)^2},
+ \qquad \mu(S^2)=1.
+\end{equation}
+Indeed, substitute $\eta_0$ into
+$p_0(f)=\kappa^{-1}\tau_E(f\eta_0)$ and use
+$dz\wedge d\bar z=-2i\,dx\wedge dy$.
+
+As before, $V=\ker p_0\subset E^0$, $W=\ker p_1\subset E^1$,
+and $d_E:V\to W$ has inverse $h$. Write
+\[
+ \omega(v,w)=\tau_E(vd_Ew).
+\]
+
+A function has rotation weight $m\in\mathbb Z$ if
+$f(e^{i\theta}z)=e^{im\theta}f(z)$. Let $\mathcal P_m$ be the
+corresponding Fourier projector and put $V_m=\mathcal P_mV$.
+The polar integral gives the selection rule
+\begin{equation}\label{mht:eq:angular-weight-pairing}
+ \omega(V_m,V_n)=0\qquad\text{unless }m+n=1.
+\end{equation}
+To see the shift, differentiation by $\bar z$ raises the coefficient
+weight by one. The coefficient of $vd_Ew$ therefore has weight
+$m+n+1$, whereas the factor $z^{-2}$ requires weight two.
+
+Let $V_-$ and $V_+$ be the closed subspaces with nonpositive and
+positive weights, respectively. The mean condition affects weight
+zero, and the first-jet condition affects weight one. Hence
+\[
+ V=V_-\oplus V_+.
+\]
+Both summands are isotropic. The Green operator identifies their
+pairing with the ordinary Hermitian pairing on one summand.
+
+\begin{proposition}\label{mht:prop:angular-polarization}
+The antilinear maps
+\begin{equation}\label{mht:eq:angular-green-pair}
+ \mathcal Cv=h(\eta_0\overline v)\quad(v\in V_-),
+ \qquad
+ \mathcal Rf=\overline{\frac{d_Ef}{\eta_0}}\quad(f\in V_+)
+\end{equation}
+are inverse continuous isomorphisms. For $u,v\in V_-$,
+\begin{equation}\label{mht:eq:angular-positive-pairing}
+ \omega(u,\mathcal Cv)
+       =\kappa\int_{S^2}u\overline v\,d\mu.
+\end{equation}
+For every integer $s\geq2$, the round Sobolev norms satisfy
+\[
+ \|\mathcal Rf\|_{H^s}\leq C_s\|f\|_{H^{s+6}},
+ \qquad
+ \|\mathcal Cv\|_{H^{s+1}}\leq C_s\|v\|_{H^s}.
+\]
+The loss of six derivatives is not asserted to be optimal.
+\end{proposition}
+
+\begin{proof}
+The mean of $\overline v$ is zero. In the formula for
+$h(\eta_0\overline v)$, the other scalar correction is the mean of
+$f_0\overline v$. Its weights are strictly positive, so it also
+vanishes. Thus
+\[
+ \mathcal Cv=G(\eta_0\overline v),\qquad
+ d_E\mathcal Cv=\eta_0\overline v.
+\]
+
+This function has positive weights. Its first jet is zero by polar
+Stokes and the zero mean of $v$. Equation~\eqref{mht:eq:angular-mean}
+now proves \eqref{mht:eq:angular-positive-pairing}.
+
+The quotient in \eqref{mht:eq:angular-green-pair} requires care only
+at $o$. If $f\in V_+$, the coefficient of $d_Ef$ has weights at
+least two. Every monomial $z^a\bar z^b$ in its Taylor polynomial
+satisfies $a-b\geq2$, and hence is divisible by $z^2$.
+
+Fix a nonnegative integer $r$. Expand that coefficient through
+degree $r+2$. The remainder and each derivative of order $j\leq r$
+are bounded by a constant times $|z|^{r+3-j}$. After division by
+$z^2$, the derivatives of order at most $r$ tend to zero at $o$.
+The divided polynomial supplies their limits. This proves smooth
+division and bounds the quotient in $C^r$ by the original coefficient
+in $C^{r+3}$.
+
+In the chart $w=1/z$, one has
+$\eta_0=(1+|w|^2)^{-2}d\bar w$, so division there is ordinary
+smooth division. Apply the local estimate with $r=s$, differentiate
+$f$ once, and use the Sobolev embedding
+$H^{s+6}\hookrightarrow C^{s+4}$ in real dimension two.
+This gives the estimate for $\mathcal R$. The estimate for
+$\mathcal C$ follows from the elliptic gain of one derivative for $G$.
+
+The quotient defining $\mathcal Rf$ has nonpositive weights after
+conjugation. Its mean is zero because
+$\tau_E(d_Ef)=\kappa j(f)=0$. Thus $\mathcal Rf\in V_-$.
+The differential formula proves $\mathcal R\mathcal C=1$.
+Conversely, $Gd_Ef=f-f(o)=f$ on positive weights, proving
+$\mathcal C\mathcal R=1$.
+\end{proof}
+
+The normalized form $\kappa^{-1}\omega(u,\mathcal Cv)$ is positive
+Hermitian on $V_-$. This statement uses the two isotropic sectors.
+The original bilinear form $\omega$ remains skew.
+
+\section{The additional harmonic band}
+
+Use the sphere of radius one, whose scalar Laplacian has eigenvalues
+$\ell(\ell+1)$. For an integer $L\geq0$, let $\mathscr H_{\leq L}$
+be its harmonics of degrees at most $L$, and set
+\[
+ W_L=V_-\cap\mathscr H_{\leq L},\qquad
+ d_L=\dim W_L=\frac{(L+1)(L+2)}2-1.
+\]
+There are $\ell+1$ nonpositive weights at degree $\ell$, and the
+constant has been removed. In particular, $W_0=0$.
+
+\begin{proposition}\label{mht:prop:angular-radical}
+For $L\geq1$,
+\begin{equation}\label{mht:eq:angular-ordinary-cutoff}
+ V\cap\mathscr H_{\leq L}=W_L\oplus\mathcal CW_{L-1}.
+\end{equation}
+The restricted form has radical
+$W_L\cap W_{L-1}^{\perp_{L^2}}$, of dimension $L+1$, and rank
+$L(L+1)-2$. The subspace
+\begin{equation}\label{mht:eq:angular-staggered-space}
+ \widehat V_L=W_L\oplus\mathcal CW_L,
+ \qquad \dim\widehat V_L=L(L+3),
+\end{equation}
+is nondegenerate, and the spaces $\widehat V_L$ are nested.
+\end{proposition}
+
+\begin{proof}
+The form $\eta_0=d_Ef_0$ belongs to the degree-one angular
+representation. Multiplication by it takes degrees at most $L-1$
+to degrees at most $L$. The round Dolbeault inverse preserves each
+nonconstant angular representation. Its normalization adds no
+constant on positive weights. Therefore
+\[
+ \mathcal CW_{L-1}\subset V_+\cap\mathscr H_{\leq L}.
+\]
+
+The space on the right has dimension $L(L+1)/2-1$: the first-jet
+condition removes one dimension from the positive-weight harmonics.
+This equals $d_{L-1}$, so the inclusion is an equality.
+
+Equation~\eqref{mht:eq:angular-positive-pairing} identifies the
+cross pairing with the Hermitian pairing between $W_L$ and $W_{L-1}$.
+Its radical is the orthogonal complement of $W_{L-1}$ in $W_L$.
+The dimension difference is $d_L-d_{L-1}=L+1$, and the rank is
+$2d_{L-1}=L(L+1)-2$. Retaining $\mathcal CW_L$ instead makes the
+cross pairing nondegenerate. Nesting follows from $W_L\subset W_{L+1}$.
+\end{proof}
+
+At the first cutoff, take
+\begin{equation}\label{mht:eq:angular-first-modes}
+ v=\frac{|z|^2}{1+|z|^2}-\frac12,
+ \qquad u=\frac{\bar z}{1+|z|^2}.
+\end{equation}
+Their partners are
+\[
+ \mathcal Cv=\frac{z^2\bar z}{2(1+|z|^2)^2},
+ \qquad \mathcal Cu=\frac{z^2}{2(1+|z|^2)^2}.
+\]
+
+Differentiation proves the defining equations, and each partner
+vanishes at $o$. All four functions are smooth on the sphere and
+satisfy the Neumann condition. In the basis
+$(v,u,\mathcal Cv,\mathcal Cu)$ of $\widehat V_1$, the pairing is
+\begin{equation}\label{mht:eq:angular-first-pairing}
+ \kappa\begin{pmatrix}
+ 0&0&1/12&0\\
+ 0&0&0&1/6\\
+ -1/12&0&0&0\\
+ 0&-1/6&0&0
+ \end{pmatrix}.
+\end{equation}
+The two nonzero entries are the spherical norms of $v$ and $u$.
+The mode $w$ of \eqref{mht:eq:finite-two-modes} is $2\mathcal Cv+u$.
+Thus the earlier six-dimensional complex retains a mixed-weight
+subspace of this first ten-dimensional coefficient complex.
+
+\section{Uniform estimates for the projections}
+
+Let $S_L^-$ be the orthogonal spectral projector onto $W_L$.
+For $f=f_-+f_+\in V$, define
+\begin{equation}\label{mht:eq:angular-projection}
+ \widehat\Pi_Lf=S_L^-f_-+\mathcal CS_L^-\mathcal Rf_+.
+\end{equation}
+The two antilinear maps make the second term complex linear.
+The cross pairing \eqref{mht:eq:angular-positive-pairing} shows that
+this is the $\omega$-orthogonal projection onto $\widehat V_L$.
+Consequently
+\[
+ \widehat\Pi_L\widehat\Pi_M=\widehat\Pi_{\min(L,M)},
+ \qquad
+ \omega(\widehat\Pi_Lf,g)=\omega(f,\widehat\Pi_Lg).
+\]
+
+\begin{theorem}\label{mht:thm:angular-tame}
+For integers $s\geq2$ and $r\geq0$, there are constants independent
+of $L$ such that
+\begin{align}
+ \|\widehat\Pi_Lf\|_{H^s}
+       &\leq C_s\|f\|_{H^{s+6}},\notag\\
+ \|(1-\widehat\Pi_L)f\|_{H^s}
+       &\leq C_{s,r}(1+L)^{-r}\|f\|_{H^{s+r+6}}.
+ \label{mht:eq:angular-tame}
+\end{align}
+The projections converge to the identity uniformly on bounded
+smooth sets in every smooth seminorm.
+\end{theorem}
+
+\begin{proof}
+The projections to positive and nonpositive rotation weights commute
+with the round Laplacian and are bounded on every Sobolev space.
+Spectral expansion on $V_-$ gives
+\[
+ \|(1-S_L^-)v\|_{H^s}
+       \leq C_r(1+L)^{-r}\|v\|_{H^{s+r}}.
+\]
+Indeed, every omitted harmonic has degree greater than $L$.
+Apply this inequality to $f_-$ and $\mathcal Rf_+$, and use both
+estimates in Proposition~\ref{mht:prop:angular-polarization}.
+The same argument without the tail factor bounds the projection.
+Every bounded smooth set has the higher Sobolev bounds on the right.
+\end{proof}
+
+The norms
+\begin{equation}\label{mht:eq:angular-adapted-norm}
+ \|f\|_{\mathfrak V_s}^2
+       =\|f_-\|_{H^s}^2+\|\mathcal Rf_+\|_{H^s}^2
+\end{equation}
+make $\widehat\Pi_L$ a contraction. The two finite-loss estimates
+show that their projective-limit topology is the original smooth
+topology. The inverse polarization is not bounded in the unchanged
+$L^2$ norms.
+
+For an explicit test, let $L\geq1$ and put
+\[
+ v_L=\frac{\bar z^L}{(1+|z|^2)^L},\qquad
+ \mathcal Cv_L=\frac{z^{L+1}}{(L+1)(1+|z|^2)^{L+1}}.
+\]
+The second equality follows by differentiation and normalization at
+$o$. With $r=|z|^2$, radial integration gives
+\[
+ \|v_L\|_{L^2}^2
+  =\int_0^\infty\frac{r^L}{(1+r)^{2L+2}}\,dr
+  =\frac{(L!)^2}{(2L+1)!},\qquad
+ \|\mathcal Cv_L\|_{L^2}^2=\frac{(L!)^2}{(2L+3)!}.
+\]
+Hence
+\begin{equation}\label{mht:eq:angular-conditioning}
+ \frac{\|\mathcal Cv_L\|_{L^2}^2}{\|v_L\|_{L^2}^2}
+       =\frac1{(2L+2)(2L+3)}.
+\end{equation}
+Since $\mathcal R\mathcal Cv_L=v_L$, these ratios exclude a uniform
+$L^2$ bound for $\mathcal R$.
+
+\section{Removal of the cutoff at each fixed arity}
+
+Use the finite complexes
+\[
+ \widehat E_L^0=\mathbb C1\oplus\widehat V_L,
+ \qquad
+ \widehat E_L^1=\mathbb C\eta_0\oplus d_E\widehat V_L.
+\]
+Their inclusion $\widehat i_L$, projection $\widehat p_L$ and
+homotopy $\widehat H_L$ are
+\begin{align}
+ \widehat p_L^0f&=p_0(f)1+
+                    \widehat\Pi_L(f-p_0(f)1),\notag\\
+ \widehat p_L^1\eta&=\eta_0p_1(\eta)
+                        +d_E\widehat\Pi_Lh\eta,&
+ \widehat H_L\eta&=(1-\widehat\Pi_L)h\eta.
+ \label{mht:eq:angular-contraction}
+\end{align}
+The homotopy is zero on degree zero. By
+Theorem~\ref{mht:thm:finite-cyclic-contraction}, these maps give a
+cyclic strong deformation retract preserving the unit and trace.
+Their nested homotopies satisfy
+\[
+ \widehat H_L=\widehat H_M+
+                \widehat i_M\widehat H_{ML}\widehat p_M,
+ \qquad
+ \widehat H_{ML}=(\widehat\Pi_M-\widehat\Pi_L)h|_{\widehat E_M}
+ \quad(L\leq M).
+\]
+
+Give the coefficient space the graded Sobolev norms
+\[
+ \mathcal E_s=(E^0\cap H^{s+1})\oplus(E^1\cap H^s),
+ \qquad s\geq2.
+\]
+Theorem~\ref{mht:thm:angular-tame} gives uniform loss six for
+$\widehat p_L$ and $\widehat H_L$. Both
+$1-\widehat i_L\widehat p_L$ and $\widehat H_L$ have the rapid
+tail estimate with this same loss. The additional derivative on
+functions matches the gain of $h$ and the derivative in $d_E$.
+
+Let $\beta_{n,L}$ be the shifted operations of
+\eqref{mht:eq:finite-tree-recursion} for this contraction.
+For a common domain, write $P_L=\widehat i_L\widehat p_L$ and set
+\[
+ B_{n,L}=\widehat i_L\beta_{n,L}\widehat p_L^{\otimes n}
+       :(E[1])^{\otimes n}\longrightarrow E[1].
+\]
+Suspension is understood on the inclusion and projection. Let
+$B_1=b_1$, $B_2=b_2$, and $B_n=0$ for $n\geq3$, using the
+signs of Chapter~\ref{mht:ch:finite-reductions}.
+
+\begin{theorem}\label{mht:thm:angular-tree-limit}
+For every fixed $n\geq1$, $s\geq2$ and integer $r\geq0$,
+\begin{equation}\label{mht:eq:angular-tree-bound}
+ \|(B_{n,L}-B_n)(a_1,\ldots,a_n)\|_{\mathcal E_s}
+ \leq C_{n,s,r}(1+L)^{-r}
+          \prod_{j=1}^n\|a_j\|_{\mathcal E_{s+r+12n+12}}.
+\end{equation}
+In particular, the finite operations converge uniformly on bounded
+smooth sets at each arity. Their binary limit is the native product,
+and their higher limits vanish.
+\end{theorem}
+
+\begin{proof}
+Multiplication is continuous on $\mathcal E_s$. At fixed arity
+there are finitely many planar binary trees. When $n\geq3$, each
+tree contributing to $\beta_{n,L}$ contains at least one internal
+$\widehat H_L$ edge. Use its rapid tail estimate on one edge and
+the uniform finite-loss estimates on every other homotopy and
+projection. Each root-to-input path meets at most $n-2$ internal
+homotopies, one input projection and one output projection.
+The displayed derivative budget exceeds their combined losses.
+
+For $n=2$, the extended product is $P_Lb_2(P_L\otimes P_L)$.
+Subtract $b_2$ and telescope over the output and the two input
+projections. Each difference contains a rapid tail $P_L-1$.
+For $n=1$, commutation with $b_1$ gives
+$B_{1,L}-b_1=(P_L-1)b_1$, to which the same estimate applies.
+This proves \eqref{mht:eq:angular-tree-bound}.
+
+The cyclic and higher-associativity identities involve finitely many
+compositions at each arity. The same estimates allow those finite
+compositions to pass to the limit.
+\end{proof}
+
+The loss grows with arity. Thus all arities together define a formal
+series in the field amplitude. The theorem gives no uniform analytic
+sum of that series. A fixed finite-order current can be applied to
+the smooth output. Products of currents on a common support and
+traces around loops require further extension estimates.
+
+\section{Polynomial dependence on the matrix background}
+
+The additional band also removes the artificial kinetic poles of a
+fixed compression. Let
+\[
+ X_L=\widehat\Pi_Lh\eta_0|_{\widehat V_L}.
+\]
+For $J\in\mathfrak g=\mathfrak{gl}_N(\mathbb C)$, define the
+compressed kinetic form by
+\[
+ K_{J,L}(a,b)=\tau_E\operatorname{tr}
+                     \bigl(a(d_Eb+\eta_0[J,b])\bigr),
+ \qquad a,b\in\widehat V_L\otimes\mathfrak g.
+\]
+Write $K_{0,L}$ for the form at $J=0$.
+
+\begin{proposition}\label{mht:prop:angular-background}
+The operator $X_L$ raises rotation weight by one and satisfies
+$X_L^{2L+2}=0$. Put $N_{J,L}=X_L\otimes\operatorname{ad}_J$.
+For every finite $J$,
+\begin{align}
+ K_{J,L}(a,b)&=K_{0,L}(a,(1+N_{J,L})b),\notag\\
+ (1+N_{J,L})^{-1}&=\sum_{q=0}^{2L+1}(-N_{J,L})^q,&
+ \det(1+N_{J,L})&=1.
+ \label{mht:eq:angular-background-inverse}
+\end{align}
+Thus the compressed kinetic form is nondegenerate, with inverse
+polynomial in the entries of $J$.
+\end{proposition}
+
+\begin{proof}
+Multiplication by $\eta_0$ raises total rotation weight by one.
+Here a one-form includes the weight of $d\bar z$.
+The normalized Green operator commutes with rotations fixing $o$,
+and the finite corrections defining $h$ occur in the matching weight.
+The projection $\widehat\Pi_L$ preserves weights. The weights of
+$\widehat V_L$ lie between $-L$ and $L+1$, so $2L+2$ successive
+applications of $X_L$ give zero.
+
+For $b\in V$, one has $d_Eh(\eta_0b)=\eta_0b$ because
+$p_0(b)=0$. Adjointness of $\widehat\Pi_L$ for $\omega$ gives the
+kinetic-form identity. The operator $N_{J,L}$ has the same
+nilpotence bound. Its finite geometric series is the inverse, and
+all eigenvalues of $1+N_{J,L}$ equal one. Nondegeneracy of
+$K_{0,L}$ follows from the cyclic pairing and the full matrix trace.
+\end{proof}
+
+For the first four modes, the compressed scalar operator is
+\begin{equation}\label{mht:eq:angular-first-background}
+ X_1u=-\frac12v,\qquad X_1v=\mathcal Cv,
+ \qquad X_1\mathcal Cv=\frac14\mathcal Cu,
+ \qquad X_1\mathcal Cu=0.
+\end{equation}
+Indeed, its matrix is $\Omega^{-1}S$, where $\Omega$ is
+\eqref{mht:eq:angular-first-pairing} and
+$S_{ab}=\kappa\int v_av_b\,d\mu$. Besides
+$\int v^2d\mu=1/12$, the only nonzero entry needed is
+$\int u\mathcal Cv\,d\mu=1/24$. These identities give
+\eqref{mht:eq:angular-first-background} directly.
+
+The inverse still depends on $J$, despite the unit determinant.
+The nilpotence bound alone gives no estimate for that inverse
+uniform in $L$. This finite compression therefore leaves the
+quantum contraction and cutoff limits as separate questions.
+
+Nor does the rotation grading restore strict associativity. For
+$m_2(a,b)=\widehat p_1^0(ab)$ on $\widehat E_1^0$, one has
+\[
+ m_2(v,v)=\frac1{12},\qquad m_2(v,u)=0,
+ \qquad
+ m_2(m_2(v,v),u)-m_2(v,m_2(v,u))=\frac u{12}.
+\]
+The retained weight-zero functions are $1,v$, and the retained
+weight-minus-one functions are multiples of $u$.
+The moments $\int v^3d\mu=0$ and $\int v|u|^2d\mu=0$ give the
+two projected products. The higher operations remain necessary
+even for a cutoff whose kinetic form is regular at every background.

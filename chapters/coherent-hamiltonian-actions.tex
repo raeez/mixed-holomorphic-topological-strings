@@ -1,0 +1,934 @@
+\chapter{Coherent Hamiltonian actions}
+\label{mht:ch:coherent-actions}
+
+Hamiltonian vector fields act on the commutative plane by a strict
+Lie action. Replacing functions by noncommutative words changes the
+problem. Symmetrized cyclic derivatives still preserve the
+commutativity relation, but their brackets acquire a defect.
+The variable resolving that relation supplies the first homotopy.
+A contraction of the same resolution supplies every higher one.
+
+The construction also works for the Weyl relation. We keep its
+coefficient parameter separate from quantization of matrix entries.
+After constructing the actions, we ask which homotopies preserve
+the volume and which are Hamiltonian functions on the matrix
+gauge complex. These are additional structures on an action.
+
+\section{The first bracket defect}
+
+Work over $\mathbb C$, with differentials of cohomological degree
+one. Write $q,p$ for the coordinates of the symplectic plane, and put
+\[
+ A=\mathbb C[q,p],\qquad
+ \mathfrak l=A/\mathbb C1,\qquad
+ \{f,g\}=f_qg_p-f_pg_q.
+\]
+Thus $X_f=\{f,-\}$ is independent of the constant term of $f$.
+For a monomial $q^ap^b$, let $\sigma(q^ap^b)$ be the average of
+all distinct words with $a$ factors $q$ and $b$ factors $p$.
+For a word $w=a_1\cdots a_m$, define
+\[
+ \partial_q^{\mathrm{cyc}}w
+ =\sum_{a_i=q}a_{i+1}\cdots a_ma_1\cdots a_{i-1},
+\]
+and define $\partial_p^{\mathrm{cyc}}$ in the same way.
+
+Introduce the free graded associative algebra
+\begin{equation}\label{mht:eq:relation-resolution}
+ R=\mathbb C\langle q,p,t\rangle,
+ \qquad |q|=|p|=0,\quad |t|=-1,
+ \qquad dq=dp=0,\quad dt=qp-pq.
+\end{equation}
+Here $t$ is a relation generator. For homogeneous words, brackets
+denote graded commutators:
+$[a,b]=ab-(-1)^{|a||b|}ba$. The projection $\pi:R\to A$ kills
+$t$ and makes $q,p$ commute.
+
+The cyclic lift is the degree-zero derivation
+\begin{equation}\label{mht:eq:cyclic-first-action}
+ F_1(f)q=-\partial_p^{\mathrm{cyc}}\sigma f,
+ \qquad F_1(f)p=\partial_q^{\mathrm{cyc}}\sigma f,
+ \qquad F_1(f)t=0.
+\end{equation}
+It kills constants. Telescoping the rotations of a word gives
+\[
+ [q,\partial_q^{\mathrm{cyc}}w]
+ +[p,\partial_p^{\mathrm{cyc}}w]=0.
+\]
+Consequently $[d,F_1(f)]=0$ and $\pi F_1(f)=X_f\pi$.
+
+Put $\mu=qp-pq$. Cyclic differentiation of the cubic pair gives
+\begin{equation}\label{mht:eq:cubic-action-defect}
+ \bigl([F_1(q^3),F_1(p^3)]-F_1(9q^2p^2)\bigr)(q,p,t)
+ =\bigl(3[\mu,q],3[\mu,p],0\bigr).
+\end{equation}
+This defect is nonzero. Substitution of
+$X=\operatorname{diag}(1,0)$ and $Y=E_{12}$ for $q,p$ gives
+$-3E_{12}$ in its first component.
+
+The defect is exact as a derivation. The degree-minus-one derivation
+\begin{equation}\label{mht:eq:cubic-action-homotopy}
+ \eta(q,p,t)=\bigl(3[t,q],3[t,p],3t^2\bigr)
+\end{equation}
+satisfies $[d,\eta]$ equal to \eqref{mht:eq:cubic-action-defect}.
+On $q,p$ this follows from $dt=\mu$. On $t$, the terms cancel
+because $d(t^2)=\mu t-t\mu$ and
+$\eta(\mu)=3[t,\mu]$. The value on $t$ is necessary.
+
+Changing the polynomial cyclic lift cannot make it a Lie section.
+Let $\mathcal N$ be the vector space of cyclic words in $q,p$,
+modulo constants. Equivalently, quotient the free algebra by the
+span of commutators and then by its constant class. Its necklace
+bracket is
+\[
+ \{[U],[V]\}_{\mathcal N}
+ =\bigl[\partial_q^{\mathrm{cyc}}U\,
+          \partial_p^{\mathrm{cyc}}V
+       -\partial_p^{\mathrm{cyc}}U\,
+          \partial_q^{\mathrm{cyc}}V\bigr].
+\]
+
+Expanding the derivatives identifies its Hamiltonian commutator.
+The cyclic Euler identity
+$[q\partial_q^{\mathrm{cyc}}U+p\partial_p^{\mathrm{cyc}}U]
+=m[U]$ in degree $m$ makes this action faithful modulo constants.
+Jacobi therefore follows from Jacobi for derivations.
+Abelianization is a Lie map $\mathcal N\to\mathfrak l$.
+
+\begin{proposition}\label{mht:prop:necklace-no-section}
+Abelianization $\mathcal N\to\mathfrak l$ has no linear Lie
+section, even without a degree-preservation requirement.
+\end{proposition}
+
+\begin{proof}
+Abelianization is injective in degrees at most three. A lift of a
+cubic therefore differs from its unique cyclic cubic by kernel
+terms of degree at least four. Their brackets with cubics have
+degree at least five.
+
+The cyclic classes $C=[q^2p^2]$ and $D=[qpqp]$ are distinct, and
+\[
+ \{[q^3],[p^3]\}_{\mathcal N}=9C,
+ \qquad
+ \{[q^2p],[qp^2]\}_{\mathcal N}=C+2D.
+\]
+The commutative brackets are $9q^2p^2$ and $3q^2p^2$.
+Thus the degree-four part of a Lie lift of $q^2p^2$ would be both
+$C$ and $(C+2D)/3$. This would identify the two distinct cyclic
+words.
+\end{proof}
+
+The proposition concerns sections through cyclic words. To
+construct an action on $R$, we instead solve the bracket defects
+in the complex of derivations.
+
+\section{A word contraction for the plane and its deformation}
+
+Introduce a degree-zero parameter $\varepsilon$ and set
+$k_\varepsilon=\mathbb C[\varepsilon]$. The family
+\begin{equation}\label{mht:eq:weyl-relation-resolution}
+ \mathcal R_\varepsilon
+   =k_\varepsilon\langle q,p,t\rangle,
+ \qquad dt=qp-pq-\varepsilon,
+ \qquad
+ W_\varepsilon
+   =k_\varepsilon\langle q,p\rangle/(qp-pq-\varepsilon)
+\end{equation}
+has the same generator degrees as $R$. Write $\pi_\varepsilon$
+for the projection killing $t$. The rule $qp\mapsto pq+\varepsilon$
+has no overlapping leading words. It gives the normal basis
+$p^bq^a$ of $W_\varepsilon$ and a $k_\varepsilon$-linear section
+$i$ of $\pi_\varepsilon$.
+
+This section is a chain map, not an algebra map:
+\[
+ i(q)i(p)-i(qp)=qp-(pq+\varepsilon)=dt.
+\]
+Here $qp$ inside $i$ denotes the product in $W_\varepsilon$.
+We now construct a homotopy for this linear section.
+
+First replace $dt$ by $d_0t=qp$. Expand each $t$ in a word into
+$qp$, marking the occurrence expanded. Occurrences of $qp$ do
+not overlap. For each expanded word, the subsets of marked
+occurrences form a Boolean complex. The differential $d_0$
+removes a mark, with sign $(-1)^a$ when $a$ marks precede it.
+
+Define $h_0$ by adding a mark at the leftmost occurrence if it is
+unmarked. Give zero if that occurrence is already marked, or if
+there is no occurrence. Let $p_0$ retain only the unmarked normal
+words. Removing and adding the distinguished mark gives
+\[
+ d_0h_0+h_0d_0=1-ip_0,
+ \qquad h_0^2=h_0i=p_0h_0=0.
+\]
+Every removal at another occurrence cancels with the corresponding
+addition, with the opposite tensor sign.
+
+Write $d=d_0+\delta$, where $\delta t=-pq-\varepsilon$. The
+exchange term lowers the number of pairs with a $q$ before a $p$.
+The scalar term lowers expanded-word length. Ordered first by
+length and then by this inversion number, every term of
+$\delta h_0$ decreases. Hence the sums
+\begin{equation}\label{mht:eq:finite-word-contraction}
+ h=h_0\sum_{j\geq0}(-\delta h_0)^j,
+ \qquad p'=p_0\sum_{j\geq0}(-\delta h_0)^j
+\end{equation}
+terminate on every polynomial word.
+
+\begin{proposition}\label{mht:prop:word-contraction}
+The map $p'$ equals $\pi_\varepsilon$, and
+\[
+ \pi_\varepsilon i=1,\qquad
+ dh+hd=1-i\pi_\varepsilon,
+ \qquad h^2=hi=\pi_\varepsilon h=0.
+\]
+Thus $\mathcal R_\varepsilon$ resolves $W_\varepsilon$ over
+$k_\varepsilon$. The same identities hold continuously after
+$\varepsilon$-adic completion.
+\end{proposition}
+
+\begin{proof}
+Insert the finite inverse $(1+\delta h_0)^{-1}$ into the Boolean
+contraction. Expanding its product with $1+\delta h_0$ cancels
+the perturbation terms. Since $\delta i=0$, the inclusion and
+the zero differential on the normal words stay unchanged. This
+gives the homotopy identity and its side conditions.
+
+On degree-zero words, $p'$ performs exactly the terminating rule
+$qp\mapsto pq+\varepsilon$. Its result is their image in the
+normal basis of $W_\varepsilon$. Negative-degree words have zero
+projection. Thus $p'=\pi_\varepsilon$.
+
+Every operation has nonnegative $\varepsilon$-order. Modulo
+$\varepsilon^m$, only finitely many coefficients of an input
+contribute, each with finite polynomial support. The formulas
+therefore define compatible continuous maps on all these
+quotients. Their identities pass to the separated inverse limit.
+\end{proof}
+
+The completed carrier is
+$\widehat{\mathcal R}_\varepsilon
+=\varprojlim_m\mathcal R_\varepsilon/\varepsilon^m$.
+It permits polynomial word support to grow with parameter order.
+At $\varepsilon=0$, the proposition gives a contraction of
+$R\to A$. Both the polynomial family and its classical fiber
+retain this explicit homotopy.
+
+\section{Contracting the derivation kernel}
+
+Give $\operatorname{Der}_{k_\varepsilon}(\mathcal R_\varepsilon)$
+the graded commutator and differential $\partial D=[d,D]$.
+Let $J_\varepsilon=\ker\pi_\varepsilon$, and define
+\[
+ K_\varepsilon
+ =\{D:\pi_\varepsilon D(q)
+          =\pi_\varepsilon D(p)
+          =\pi_\varepsilon D(t)=0\}.
+\]
+These are derivations with all values in $J_\varepsilon$.
+For a degree-$j$ derivation, write
+$U=Dq$, $V=Dp$, $W=Dt$, and put
+$L(U,V)=[U,p]+[q,V]$. Then
+\begin{equation}\label{mht:eq:derivation-kernel-differential}
+ (\partial D)(q,p,t)
+ =\bigl(dU,dV,dW-(-1)^jL(U,V)\bigr).
+\end{equation}
+
+\begin{lemma}\label{mht:lem:derivation-contraction}
+The operator of degree minus one defined by
+\begin{equation}\label{mht:eq:derivation-kernel-homotopy}
+ (HD)(q,p,t)
+ =\bigl(hU,hV,h(W-(-1)^jL(hU,hV))\bigr)
+\end{equation}
+preserves $K_\varepsilon$ and satisfies
+$\partial H+H\partial=1$ there. It has finite polynomial values
+and extends continuously in $\varepsilon$.
+\end{lemma}
+
+\begin{proof}
+The ideal $J_\varepsilon$ contains every argument of $h$ in the
+formula, and $\pi_\varepsilon h=0$. On $q,p$, the identity is
+$dh+hd=1$ on $J_\varepsilon$. Since $q,p$ are closed,
+$dL(U,V)=L(dU,dV)$. Substitution in the third component leaves
+$(dh+hd)W$ and the additional term
+\[
+ (-1)^j hL\bigl((dh+hd-1)U,(dh+hd-1)V\bigr).
+\]
+
+The first expression equals $W$ and the second vanishes. This
+proves the identity on arbitrary kernel derivations, including
+those which are not closed. Finiteness and continuity follow
+from Proposition~\ref{mht:prop:word-contraction}.
+\end{proof}
+
+\section{Solving every action equation}
+
+The Moyal product on $k_\varepsilon[q,p]$ is
+\[
+ f\star g
+ =m\exp\!\left(\frac{\varepsilon}{2}
+   (\partial_q\otimes\partial_p-\partial_p\otimes\partial_q)
+   \right)(f\otimes g).
+\]
+Its divided commutator
+$B_\varepsilon(f,g)=(f\star g-g\star f)/\varepsilon$
+is polynomial. This quotient belongs to $k_\varepsilon[q,p]$.
+Quotienting
+constant polynomials defines the Lie algebra
+$\mathfrak l_\varepsilon=k_\varepsilon[q,p]/k_\varepsilon1$.
+
+Weyl symmetrization identifies this product with $W_\varepsilon$.
+One can check the identification on auxiliary exponential series:
+the product of $\exp(sq+rp)$ and $\exp(s'q+r'p)$ acquires the
+factor $\exp(\varepsilon(sr'-rs')/2)$. The relation
+$[q,p]=\varepsilon$ gives this identity by differentiation in
+the auxiliary variables. Comparing their coefficients gives
+the polynomial identity.
+
+Use \eqref{mht:eq:cyclic-first-action} for $F_1$ over
+$k_\varepsilon$. The cyclic identity still proves $[d,F_1]=0$.
+Cyclic differentiation of a symmetrized polynomial is the
+symmetrization of its ordinary derivative. Thus its projection
+is the strict derivation $B_\varepsilon(f,-)$ of $W_\varepsilon$.
+
+We specify the signs of the higher equations by a coalgebra.
+For a differential graded Lie algebra $\mathfrak g$, let
+$s:\mathfrak g\to\mathfrak g[1]$ have degree $-1$.
+The codifferential of the cofree conilpotent symmetric coalgebra
+$S^c(\mathfrak g[1])$ has corestrictions
+\[
+ b_1(sa)=-s\partial a,
+ \qquad b_2(sa\,sb)=(-1)^{|a|}s[a,b].
+\]
+An $L_\infty$ morphism is a coaugmented coalgebra map commuting
+with these codifferentials. Its component on $n$ shifted
+degree-zero inputs is written $sF_n$. The unshifted alternating
+map $F_n$ has degree $1-n$.
+
+Suppose the components below arity $n$ have been chosen. Extend
+them by the set-partition formula to a coalgebra map
+$\mathcal F$, temporarily setting $F_n=0$. Let $\Omega_n$
+be the desuspended arity-$n$ corestriction of
+$b\mathcal F-\mathcal F b$. Set
+\begin{equation}\label{mht:eq:all-arity-recursion}
+ F_n=H\Omega_n\qquad(n\geq2).
+\end{equation}
+
+The first two residuals are
+\begin{align*}
+ \Omega_2(f,g)&=[F_1(f),F_1(g)]-F_1(B_\varepsilon(f,g)),\\
+ \Omega_3(f,g,k)&=\sum_{\mathrm{cyc}}
+   \bigl([F_1(f),F_2(g,k)]-F_2(B_\varepsilon(f,g),k)\bigr).
+\end{align*}
+At arity four the residual includes brackets of two binary
+components. The coalgebra definition fixes these terms and their
+signs along with all subsequent ones.
+
+\begin{theorem}\label{mht:thm:coherent-hamiltonian-action}
+The recursion defines an $L_\infty$ morphism
+\[
+ F:\mathfrak l_\varepsilon
+   \longrightarrow
+   \operatorname{Der}_{k_\varepsilon}(\mathcal R_\varepsilon)
+\]
+with first component \eqref{mht:eq:cyclic-first-action}.
+Every fixed-arity value on polynomial inputs is polynomial.
+The maps extend continuously to the parameter completions.
+Specialization at $\varepsilon=0$ gives an action of
+$\mathfrak l$ on $R$.
+\end{theorem}
+
+\begin{proof}
+The arity-one identity is $[d,F_1]=0$. Suppose the equations
+hold below arity $n$. The square-zero identities for the two
+codifferentials imply
+\[
+ b(b\mathcal F-\mathcal F b)
+ +(b\mathcal F-\mathcal F b)b=0.
+\]
+Its first nonzero corestriction says $\partial\Omega_n=0$.
+
+The binary residual projects to zero because the action on
+$W_\varepsilon$ is strict. Moreover, $F_1$ preserves
+$J_\varepsilon$ and normalizes $K_\varepsilon$.
+Higher components already constructed lie in $K_\varepsilon$.
+Every later residual therefore lies in $K_\varepsilon^{2-n}$.
+
+Lemma~\ref{mht:lem:derivation-contraction} gives
+$\partial F_n=\Omega_n$. The term $-s\partial F_n$ from $b_1$
+cancels the residual. This proves the equations inductively.
+There are finitely many partitions at each arity, and the word
+contraction terminates. All operations preserve nonnegative
+parameter order, so the same formulas define the completed action
+coefficient by coefficient.
+\end{proof}
+
+Several values make the higher structure visible. At
+$\varepsilon=0$, the chosen $F_2(q^3,p^3)$ is precisely
+$\eta$ from \eqref{mht:eq:cubic-action-homotopy}. For the triple
+$(q^4,p^4,q^2p)$, the recursion gives
+\begin{equation}\label{mht:eq:quartic-ternary-action}
+ \begin{aligned}
+ 5F_3q&=-128tq^2t+16tqtq+112t^2q^2,\\
+ 5F_3p&=-128ptqt-112pt^2q,\\
+ 5F_3t&=-64t^2qt-56t^3q.
+ \end{aligned}
+\end{equation}
+Substitution of $dt=qp-pq$ gives $\partial F_3=\Omega_3$
+on all three generators. The triple $(q^3,p^3,q^2p)$ instead
+has zero residual and zero third component.
+
+For $\mathbf f=(q^3,p^3,qp^3)$ and
+$\mathbf g=(q^3,p^3,qp^3,q^2p^2)$, another pair of values is
+\begin{equation}\label{mht:eq:third-fourth-action}
+ \begin{aligned}
+ F_3(\mathbf f)q&=-\tfrac92(tpt+pt^2),\\
+ F_4(\mathbf g)q&=\tfrac{33}{5}t^3p+\tfrac{39}{5}t^2pt
+                  +\tfrac{69}{5}tpt^2+\tfrac{99}{5}pt^3.
+ \end{aligned}
+\end{equation}
+Both components vanish on $p,t$. Applying the differential to
+these words gives their respective coalgebra residuals, including
+the binary--binary terms at arity four. Thus the specified action
+does not truncate after its second or third component.
+
+The deformation has its own first correction:
+\[
+ B_\varepsilon(q^3,p^4)=12q^2p^3+6\varepsilon^2p.
+\]
+For this pair the recursion gives
+\begin{equation}\label{mht:eq:quantum-binary-action}
+ \begin{aligned}
+ F_2q&=6(-pqt+ptq-qtp+tpq-\varepsilon t),\\
+ F_2p&=6(-p^2t+tp^2),\\
+ F_2t&=6(pt^2+tpt).
+ \end{aligned}
+\end{equation}
+For $(q^3,p^4,q^2p)$ it gives
+\[
+ F_3q=-12tqt+12t^2q,\qquad
+ F_3p=-12pt^2,\qquad F_3t=-6t^3.
+\]
+These identities follow by differentiating the displayed words
+with $dt=qp-pq-\varepsilon$. In particular, the term
+$-6\varepsilon t$ contributes $6\varepsilon^2$ to the first
+binary equation. Omitting it loses the derivative of the Moyal
+correction.
+
+\section{Choices of lifts and pointed completion}
+
+Return to $\varepsilon=0$. Let $\operatorname{Der}_\pi(R)$
+be the derivations preserving $J=\ker\pi$. They induce
+derivations of $A$, giving an exact sequence of complexes
+\[
+ 0\longrightarrow K\longrightarrow\operatorname{Der}_\pi(R)
+   \xrightarrow{\pi_*}\operatorname{Der}(A)\longrightarrow0.
+\]
+Here $K=K_0$ is understood in the classical construction.
+
+Surjectivity is degreewise: lift the values of a derivation on
+$q,p$ and set its value on $t$ to zero. This preserves $J$,
+although the chosen lift need not commute with $d$.
+The contracted kernel makes $\pi_*$ a quasi-isomorphism.
+
+To specify a space of choices, use the complete convolution
+Lie algebra
+\[
+ \mathcal G(L)=\prod_{n\geq1}
+   \operatorname{Hom}\bigl(S^n(\mathfrak l[1]),L\bigr),
+ \qquad
+ \mathcal F^r\mathcal G(L)=\prod_{n\geq r}
+   \operatorname{Hom}\bigl(S^n(\mathfrak l[1]),L\bigr).
+\]
+Its differential uses that of $L$ and the source Chevalley
+codifferential. Its bracket uses the reduced coproduct with
+the tensor Koszul sign. Degree-one Maurer--Cartan elements are
+the $L_\infty$ morphisms in the preceding convention.
+
+Define its simplicial Maurer--Cartan set by tensoring each
+arity quotient with polynomial differential forms on a simplex,
+then taking the inverse limit in arity. The derived space of
+lifts is the homotopy fiber over $f\mapsto X_f$ of the map
+induced by $\pi_*$. This fixes the commutative action.
+
+\begin{proposition}\label{mht:prop:contractible-action-lifts}
+The derived space of lifts of $X$ to
+$\operatorname{Der}_\pi(R)$ is nonempty and contractible.
+\end{proposition}
+
+\begin{proof}
+The recursion supplies a lift. The map of convolution complexes
+is degreewise onto, and its arity-$n$ associated-graded kernel is
+\[
+ \operatorname{Hom}\bigl(S^n(\mathfrak l[1]),K\bigr).
+\]
+Postcomposition with $H$ contracts it.
+
+Consider a compatible boundary or horn of polynomial simplex
+forms and a lift already chosen in lower arities. Polynomial
+forms extend from that boundary or horn. In barycentric
+coordinates the ideal of face $i$ is $(x_i,dx_i)$.
+Successive face extensions preserve the restrictions already
+fixed. Choose a tentative next component with the prescribed
+boundary and projection.
+
+Its Maurer--Cartan defect is a closed kernel element tensored
+with relative simplex forms. Closedness is the first nonzero
+arity of the Bianchi identity. The tensor extension of $H$
+contracts this relative kernel. Subtracting its primitive
+corrects the component without changing its boundary or
+projection. Arity completeness gives all the compatible
+corrections. The resulting simplicial map has lifts for all
+boundaries, so its nonempty fiber is contractible.
+\end{proof}
+
+This fiber imposes neither a symplectic form nor Hamiltonian
+functions on the homotopies. Its completion in the formal
+coordinates has an additional continuity requirement.
+Give $q,p$ weight one and $t$ weight two, and write
+$R_w$ for the homogeneous weight space. Define
+$\widehat R=\prod_{w\geq0}R_w$, with discrete homogeneous
+pieces and their product topology.
+
+\begin{proposition}\label{mht:prop:pointed-action-completion}
+For homogeneous classical inputs of polynomial degrees
+$d_1,\ldots,d_n$, the derivation $F_n$ shifts weight by
+$\sum_i(d_i-2)$. At every fixed arity the action therefore
+extends continuously to
+\[
+ \widehat{\mathfrak l}_{\mathrm{pt}}
+ =\prod_{d\geq2}\operatorname{Sym}^d(\mathbb Cq\oplus\mathbb Cp)
+\]
+acting on $\widehat R$.
+\end{proposition}
+
+\begin{proof}
+The differential and word contraction preserve weight.
+Cyclic differentiation gives the asserted shift for $F_1$.
+Brackets add shifts, and $H$ preserves them. Induction proves
+the formula for every $F_n$.
+
+For pointed inputs, each $d_i-2$ is nonnegative. At fixed
+arity and fixed output weight, only finitely many input
+degrees and source weights contribute. Each homogeneous
+piece is finite dimensional. The formulas and identities
+therefore extend coefficient by coefficient and are continuous.
+\end{proof}
+
+This fixed-arity extension gives no analytic summation over
+all arities. Its pointed classical source must
+also be distinguished from the quantum one. The term
+$6\varepsilon^2p$ above leaves the subspace of polynomials
+whose ordinary degree is at least two.
+
+\section{Matrix actions and Hamiltonian functions}
+
+For $N\geq1$, the commutative differential graded algebra of
+derived representations of \eqref{mht:eq:weyl-relation-resolution} is
+\begin{equation}\label{mht:eq:derived-matrix-action-carrier}
+ \mathcal R_{N,\varepsilon}
+ =\mathbb C[\varepsilon,X_{ij},Y_{ij}]
+       \otimes\Lambda(\Psi_{ij}),
+ \qquad |\Psi_{ij}|=-1,
+ \qquad Q\Psi=[X,Y]-\varepsilon I_N,
+\end{equation}
+with $QX=QY=0$. Matrix multiplication uses graded commutative
+coefficients. Substitution of $X,Y,\Psi$ in a derivation's
+generator values defines a derivation of their entries.
+The graded Leibniz rule makes substitution preserve brackets
+and differentials.
+
+It follows that $F$ defines a $GL_N$-equivariant $L_\infty$
+action on $\mathcal R_{N,\varepsilon}$ and its invariant
+algebra. At $\varepsilon=0$, giving $X,Y$ weight one and
+$\Psi$ weight two also gives the continuous pointed action
+on the weight completion.
+
+The matrix complex is not contracted by the universal word
+homotopy. At $\varepsilon=0$, the cycle
+$\operatorname{Tr}\Psi$ represents a nonzero class in degree
+$-1$. Evaluation at $X=Y=0$ maps it to the same nonzero element
+of $\Lambda(\Psi_{ij})$ with zero differential. It cannot be
+a boundary. Keeping the relation complex is therefore essential.
+
+To include gauge ghosts classically, introduce an odd matrix
+$c$ of degree one and put
+\[
+ \mathcal B_N
+ =\mathbb C[X_{ij},Y_{ij}]
+       \otimes\Lambda(c_{ij},\Psi_{ij}).
+\]
+
+Its even Poisson bracket is specified by
+\[
+ \{X_{ij},Y_{kl}\}=\delta_{il}\delta_{jk},\qquad
+ \{c_{ij},\Psi_{kl}\}=\{\Psi_{kl},c_{ij}\}
+       =\delta_{il}\delta_{jk}.
+\]
+All other generator brackets vanish. Set
+$\Theta=\operatorname{Tr}(c[X,Y]-\Psi c^2)$ and
+$Q=\{\Theta,-\}$. Then
+\begin{equation}\label{mht:eq:action-bfv-differential}
+ QX=-[c,X],\quad QY=-[c,Y],\quad Qc=-c^2,
+ \qquad Q\Psi=[X,Y]-[c,\Psi].
+\end{equation}
+
+Here $[c,\Psi]=c\Psi+\Psi c$. Expanding on the four
+generators, with the graded Leibniz rule, gives $Q^2=0$.
+These are the Chevalley--Eilenberg gauge differential and
+the moment Koszul differential on one algebra.
+
+Every matrix-word derivation extends by $Dc=0$. For a
+degree-$j$ derivation and a homogeneous matrix word $M$,
+\[
+ D[c,M]=(-1)^j[c,DM].
+\]
+Thus extension commutes with the gauge part of $Q$ in the
+graded sense. It preserves the differential and bracket,
+and extends the classical $L_\infty$ action to $\mathcal B_N$.
+
+The first action is Hamiltonian. For $f\in A$, put
+$J_N(f)=\operatorname{Tr}\sigma f(X,Y)$ and
+$H_{J_N(f)}=\{J_N(f),-\}$. Cyclic differentiation gives
+$H_{J_N(f)}=F_1(f)$, and conjugation invariance gives
+$QJ_N(f)=0$. For the cubic pair, a Hamiltonian primitive is
+\begin{equation}\label{mht:eq:hamiltonian-cubic-primitive}
+ K=-\tfrac32\operatorname{Tr}(\Psi\mu),\qquad
+ QK=-\tfrac32\operatorname{Tr}\mu^2
+    =\{J_N(q^3),J_N(p^3)\}-J_N(9q^2p^2),
+ \qquad \mu=[X,Y].
+\end{equation}
+The gauge terms cancel under the graded trace. Among the six
+words in $\sigma(q^2p^2)$, four have trace
+$\operatorname{Tr}(X^2Y^2)$ and two have trace
+$\operatorname{Tr}(XYXY)$, which proves the last equality.
+
+This Hamiltonian homotopy has components
+\[
+ H_KX=\tfrac32[\Psi,X],\quad
+ H_KY=\tfrac32[\Psi,Y],\quad
+ H_Kc=-\tfrac32\mu,\quad H_K\Psi=0.
+\]
+The extension of \eqref{mht:eq:cubic-action-homotopy} instead has
+\[
+ DX=3[\Psi,X],\quad DY=3[\Psi,Y],\quad
+ Dc=0,\quad D\Psi=3\Psi^2.
+\]
+Both have the same differential, the cubic action defect.
+For $N\geq2$, $D$ is not Hamiltonian. Indeed $Dc=0$ would
+make a Hamiltonian independent of $\Psi$. Such a polynomial
+has no component of degree $-1$, while $D$ is a nonzero
+derivation of that degree.
+
+\begin{proposition}\label{mht:prop:central-action-obstruction}
+There is no $L_\infty$ morphism from $\mathfrak l$ to
+$(\mathcal B_N,Q,\{-,-\})$ whose first component is $J_N$
+on the representatives with zero constant term. The same
+obstruction survives exact changes of these closed charges.
+\end{proposition}
+
+\begin{proof}
+The classes of $q,p$ have zero bracket in $\mathfrak l$, but
+$\{\operatorname{Tr}X,\operatorname{Tr}Y\}=N$.
+The binary morphism equation would make $N$ a $Q$-boundary.
+Evaluation at $X=Y=c=\Psi=0$ is a chain map to $\mathbb C$,
+since all values in \eqref{mht:eq:action-bfv-differential}
+have positive polynomial degree. It sends that proposed
+boundary to the nonzero scalar $N$. Exact changes do not
+change the induced bracket on cohomology.
+\end{proof}
+
+Retaining the central extension $A\to\mathfrak l$ with
+$J_N(1)=N$ removes this particular source obstruction.
+Choosing representatives vanishing at the origin gives its
+scalar cocycle $c(f,g)=\{f,g\}(0)$. This cocycle vanishes on
+$(q,p)^2$. Neither change by itself constructs the remaining
+Hamiltonian homotopies.
+
+\section{The volume in the normalized mixed complex}
+
+Return first to the classical resolution $R$. Its normalized
+Hochschild chains are
+$C_n(R)=R\otimes\overline R^{\otimes n}$, where
+$\overline R=R/\mathbb C1$. Write a chain as
+$a_0[a_1|\cdots|a_n]$. Its internal degree is
+$m=\sum_i|a_i|$, and its total cohomological degree is $m-n$.
+
+Use the raw tensor convention
+\begin{equation}\label{mht:eq:raw-mixed-convention}
+ d_{\mathrm H}=(-1)^n d_\otimes+b.
+\end{equation}
+The tensor differential $d_\otimes$ has its usual Koszul
+signs. The other operators are
+\begin{align*}
+ b(a_0[a_1|\cdots|a_n])
+ ={}&\sum_{j=0}^{n-1}(-1)^j
+       a_0[\cdots|a_ja_{j+1}|\cdots|a_n]\\
+ &+(-1)^{n+|a_n|\sum_{i<n}|a_i|}
+       a_na_0[a_1|\cdots|a_{n-1}],\\
+ B(a_0[a_1|\cdots|a_n])
+ ={}&\sum_{j=0}^n
+   (-1)^{nj+(\sum_{i<j}|a_i|)(\sum_{i\geq j}|a_i|)}
+   1[a_j|\cdots|a_n|a_0|\cdots|a_{j-1}].
+\end{align*}
+
+In the $j=0$ term of $b$, the product is the outer
+coefficient. A scalar in a bar slot gives zero. Adjacent
+mergers cancel in pairs, as do the cyclic faces, giving
+$d_{\mathrm H}^2=B^2=d_{\mathrm H}B+Bd_{\mathrm H}=0$.
+
+Let $\zeta$ have degree two. The negative-cyclic complex is
+\[
+ M_R=\bigl(C_\bullet(R)[[\zeta]],
+                  d_{\mathrm H}+\zeta B\bigr).
+\]
+Its volume cycle is
+\begin{equation}\label{mht:eq:resolved-volume-cycle}
+ \omega_0=1[q|p]-1[p|q]-1[t].
+\end{equation}
+
+The Hochschild boundary of the first two terms is
+$-1[qp-pq]$. In this convention the internal differential
+of $-1[t]$ is $+1[qp-pq]$. Every Connes term has a unit in
+a bar slot. Hence $d_{\mathrm H}\omega_0=B\omega_0=0$.
+
+Put $\Omega_A^a$ in degree $-a$. The normalized
+Hochschild--Kostant--Rosenberg projection is
+\begin{equation}\label{mht:eq:resolved-hkr-projection}
+ P(a_0[a_1|\cdots|a_n])
+ =\frac1{n!}\pi(a_0)\,
+       d_{\mathrm{dR}}\pi(a_1)\wedge\cdots\wedge
+       d_{\mathrm{dR}}\pi(a_n).
+\end{equation}
+It satisfies $Pd_{\mathrm H}=0$, $PB=d_{\mathrm{dR}}P$
+and $P\omega_0=dq\wedge dp$.
+
+Give $q,p,dq,dp$ weight one, $t$ weight two, and $\zeta$
+weight zero. Every normalized bar slot has positive weight.
+At fixed weight, bar length and internal degree are bounded,
+so each chain space is finite dimensional.
+
+\begin{proposition}\label{mht:prop:mixed-volume-contraction}
+There is a weight-preserving contraction $(P,I,T)$ from
+$(C_\bullet(R),d_{\mathrm H})$ to $(\Omega_A^\bullet,0)$,
+with $I(dq\wedge dp)=\omega_0$. It extends to a contraction
+from $M_R$ to $(\Omega_A^\bullet[[\zeta]],\zeta d_{\mathrm{dR}})$,
+with unchanged projection and
+\begin{equation}\label{mht:eq:mixed-perturbation}
+ I_\zeta=(1+T\zeta B)^{-1}I,
+ \qquad T_\zeta=T(1+\zeta BT)^{-1}.
+\end{equation}
+The inclusion still sends $dq\wedge dp$ to $\omega_0$.
+\end{proposition}
+
+\begin{proof}
+The contraction of $R\to A$ induces a quasi-isomorphism of
+Hochschild chains. Indeed the bar-length filtration is finite
+in each weight, and its associated-graded comparison is the
+tensor product of quasi-isomorphisms over $\mathbb C$.
+
+For $A$, the bimodule Koszul complex on
+$q_L-q_R,p_L-p_R$ resolves the diagonal. The first element
+is a non-zero-divisor in $A^e$. The second remains one in
+its quotient. Successive two-term resolutions prove exactness.
+
+Tensoring with the diagonal kills both differentials and
+gives $\Omega_A^\bullet$. Antisymmetrization identifies the
+projection with \eqref{mht:eq:resolved-hkr-projection}.
+The normalized formula for $B$ becomes $d_{\mathrm{dR}}$.
+
+Thus $P$ is a surjective quasi-isomorphism at each weight.
+Lift a basis of forms to cycles, choosing $\omega_0$ for the
+volume. Split its acyclic kernel in each degree as
+\[
+ (\ker P)^r=B^r\oplus L^r,\qquad
+ d_{\mathrm H}:L^r\xrightarrow{\sim}B^{r+1}.
+\]
+Let $T$ be this inverse on $B^{r+1}$ and zero on $L$ and
+the chosen lifts. Then
+$d_{\mathrm H}T+Td_{\mathrm H}=1-IP$ and
+$T^2=TI=PT=0$. These are finite linear-algebra choices.
+
+Perturb by $\zeta B$. Since $P\zeta BT
+=\zeta d_{\mathrm{dR}}PT=0$, the projection stays $P$ and
+the transferred differential has no higher terms beyond
+$\zeta d_{\mathrm{dR}}$. The series in
+\eqref{mht:eq:mixed-perturbation} converge in $\zeta$.
+At fixed weight and total degree they are finite, because
+bar length and internal degree bound the possible powers
+of $\zeta$. Finally $B\omega_0=0$ keeps its inclusion fixed.
+\end{proof}
+
+\section{Coherent invariance of the volume}
+
+For a degree-$r$ derivation $D$, its action on raw chains is
+\begin{equation}\label{mht:eq:raw-lie-derivative}
+ \mathcal L_D(a_0[a_1|\cdots|a_n])
+ =\sum_{j=0}^n(-1)^{nr+r\sum_{i<j}|a_i|}
+    a_0[\cdots|D(a_j)|\cdots|a_n].
+\end{equation}
+The $j=0$ term acts on the outer coefficient. The factor
+$(-1)^{nr}$ matches the internal differential in
+\eqref{mht:eq:raw-mixed-convention}. Tensor signs give
+\[
+ [d_{\mathrm H},\mathcal L_D]=\mathcal L_{[d,D]},
+ \qquad [B,\mathcal L_D]=0,
+ \qquad [\mathcal L_D,\mathcal L_E]=\mathcal L_{[D,E]}.
+\]
+The action $F$ therefore acts on the negative-cyclic complex.
+
+More explicitly, regard $F_n$ as the values of a degree-one
+twisting cochain
+$\alpha:S^c(\mathfrak l[1])\to\operatorname{Der}(R)$.
+Its equation, with the tensor sign in the convolution
+bracket, is
+\[
+ \partial\alpha+\alpha b_{\mathfrak l}
+       +\tfrac12[\alpha,\alpha]=0.
+\]
+Its arity-two equation is exactly
+$[d,F_2(f,g)]=[F_1(f),F_1(g)]-F_1\{f,g\}$.
+
+Use the arity product of maps from this coaugmented
+coalgebra to $M_R$. For a homogeneous map $\phi$, its
+differential is
+\[
+ (d_{\mathrm H}+\zeta B)\phi
+ -(-1)^{|\phi|}\phi b_{\mathfrak l}
+ +\mathcal L_\alpha\star\phi.
+\]
+The last product uses the unshuffle coproduct and its tensor
+Koszul sign. Let $\delta_F$ denote the terms beyond the
+internal differential. They raise arity.
+
+The projection $P$ intertwines $F_1$ with $X_f$ on forms.
+It kills the action of every $F_n$ for $n\geq2$, since
+their negative-degree generator values are killed by $\pi$.
+Thus it intertwines $\delta_F$ with the strict Hamiltonian
+action on the corresponding convolution of forms.
+
+\begin{theorem}\label{mht:thm:coherent-volume}
+For the fixed classical action $F$, the volume $dq\wedge dp$
+has a coherent negative-cyclic lift
+\begin{equation}\label{mht:eq:coherent-volume}
+ \omega_{\mathrm{eq}}
+ =(1+\mathcal T_\zeta\delta_F)^{-1}
+                  I_\zeta(dq\wedge dp),
+\end{equation}
+where $\mathcal T_\zeta$ is the contraction on convolution
+induced by $T_\zeta$. Its arity-$n$ component has values
+in $M_R^{-n-2}$. The derived fiber over this specified
+invariant volume is contractible. The construction extends
+continuously to pointed formal Hamiltonians at fixed arity.
+\end{theorem}
+
+\begin{proof}
+Extend Proposition~\ref{mht:prop:mixed-volume-contraction}
+to convolution and perturb by $\delta_F$. This series
+converges in arity. Since the projection intertwines the
+actions and $P\mathcal T_\zeta=0$, one has
+$P\delta_F\mathcal T_\zeta=0$. The transferred differential
+therefore consists of $\zeta d_{\mathrm{dR}}$ and the
+strict Chevalley action on forms.
+
+The volume is de Rham closed and Hamiltonian invariant:
+$\operatorname{div}(X_f)=-f_{pq}+f_{qp}=0$.
+Its perturbed inclusion is consequently closed. The same
+perturbation contracts the projection kernel. The homotopy
+fiber over the specified closed volume is an affine translate
+of this acyclic complex, so its derived mapping space is
+contractible. Both the action and its projection are fixed
+in this assertion.
+
+At fixed arity only finitely many arity perturbations
+contribute. At fixed weight and degree the mixed perturbation
+is finite. Proposition~\ref{mht:prop:pointed-action-completion}
+gives nonnegative input weight shifts, leaving finitely many
+input degrees at any fixed output weight. This proves
+continuity for the pointed completion.
+\end{proof}
+
+The first two coherence equations have explicit representatives.
+Write $\langle a_1|\cdots|a_n\rangle=1[a_1|\cdots|a_n]$.
+The arity-one equation is
+$d_{\mathrm H}\omega_1(f)=-\mathcal L_{F_1(f)}\omega_0$.
+For cubics choose
+\[
+ \omega_1(q^3)=-3\langle q|q|q\rangle,
+ \qquad \omega_1(p^3)=-3\langle p|p|p\rangle.
+\]
+A compatible quartic representative is
+\begin{align}\label{mht:eq:quartic-volume-homotopy}
+ \omega_1(q^2p^2)
+ ={}&-\tfrac23\langle tt\rangle\\
+ &+\tfrac23\bigl(
+  \langle q|pt\rangle-\langle q|tp\rangle
+ -\langle p|qt\rangle+\langle p|tq\rangle\bigr)\notag\\
+ &+\tfrac23\bigl(
+  \langle qt|p\rangle-\langle pt|q\rangle
+ -\langle tq|p\rangle+\langle tp|q\rangle\bigr)\notag\\
+ &-2\bigl(\langle q|p|qp\rangle
+          +\langle p|qp|q\rangle
+          +\langle qp|q|p\rangle\bigr).\notag
+\end{align}
+All these chains have zero $B$-image and zero HKR projection.
+
+For $f=q^3,g=p^3$, the next equation in the same convention is
+\begin{align}\label{mht:eq:second-volume-equation}
+ d_{\mathrm H}\omega_2(f,g)
+ ={}&\omega_1(\{f,g\})
+ -\mathcal L_{F_1(f)}\omega_1(g)
+ +\mathcal L_{F_1(g)}\omega_1(f)\notag\\
+ &-\mathcal L_{F_2(f,g)}\omega_0.
+\end{align}
+The minus sign uses $F_2=\eta$ as in
+\eqref{mht:eq:cubic-action-homotopy}. One solution is
+\begin{align}\label{mht:eq:second-volume-homotopy}
+ \tfrac19\omega_2(q^3,p^3)
+ ={}&\langle t|t\rangle
+ +\langle q|p|t\rangle-\langle p|q|t\rangle
+ -\langle q|t|p\rangle+\langle p|t|q\rangle\notag\\
+ &+\langle t|q|p\rangle-\langle t|p|q\rangle
+ -\langle q|q|p|p\rangle+\langle q|p|q|p\rangle\notag\\
+ &+\langle q|p|p|q\rangle+\langle p|q|q|p\rangle
+ -\langle p|q|p|q\rangle-\langle p|p|q|q\rangle.
+\end{align}
+Its Connes image and HKR projection vanish. Substitution in
+the raw differential verifies both displayed coherence
+equations: the internal terms use $dt=qp-pq$, and the
+adjacent mergers cancel the cyclic faces. The terms
+$\langle tt\rangle$ and $\langle t|t\rangle$ belong to
+different equations and are both necessary.
+
+These prescribed lower components extend to all arities
+because their later residuals lie in the contracted projection
+kernel. They need not coincide with the representatives
+selected by a different finite row-reduction convention.
+
+The volume also records nondegeneracy. The diagonal Koszul
+resolution of $A$ is finite free over $A^e$ and self-dual,
+with its top generator paired with $dq\wedge dp$. Hence
+\[
+ R\operatorname{Hom}_{A^e}(A,A^e)\simeq A[-2].
+\]
+Transport through $R\to A$ gives the smooth
+$2$-Calabi--Yau orientation of the associative resolution.
+This duality uses the diagonal bimodule. A proper scalar
+trace would require a different finiteness condition.
+
+\section{The quantum cycle and the remaining lift}
+
+For $\mathcal R_\varepsilon$, take normalized chains relative
+to $k_\varepsilon$ with the same raw convention. The expression
+$1[q|p]-1[p|q]-1[t]$ is still a negative-cyclic cycle.
+Its differential is $-\varepsilon1[1]$, which vanishes in
+the normalized complex, and its Connes image is zero.
+
+This produces the quantum volume cycle and the coherent
+quantum derivation action separately. Their compatible
+equivariant cyclic comparison requires its own construction.
+On the classical matrix gauge complex, a Hamiltonian-function
+lift must retain the central rank or specify the pointed source.
+Its moment-map equations still require compatible solutions.
+The associative derivation contraction supplies neither
+conclusion by forgetting the extra structure.
